@@ -5,6 +5,12 @@
 - **경량 데이터(JSON·아이콘)**: 이 저장소에 포함, GitHub Pages 로 서빙
 - **중량 자산(m3 모델·텍스처)**: 저장소에 포함하지 않음 — 사용자가 추출 도구로 자기 게임 설치본에서 직접 추출해 로컬로 사용
 
+## 권리 고지
+
+비영리 팬 프로젝트입니다. Heroes of the Storm 및 관련 이미지·게임 데이터의 권리는 Blizzard Entertainment 에 있습니다. 이 사이트는 어떤 수익도 창출하지 않으며, 권리자의 요청이 있으면 해당 자료를 즉시 제거합니다.
+
+This is a non-commercial fan project. Heroes of the Storm and all related assets are property of Blizzard Entertainment. No revenue is generated; any material will be removed promptly upon request by the rights holder.
+
 구조와 규약은 [PLAN.md](PLAN.md) 참고. 핵심 규칙:
 
 1. 앱은 `site/<앱>/` 폴더 하나로 완결 — 앱 간 코드 결합 금지, 이동은 URL 로만
