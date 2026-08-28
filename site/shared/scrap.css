@@ -1,0 +1,42 @@
+/* HotS Scrap 공통 디자인 토큰 — 새 앱은 이 파일을 링크하고 var(--scrap-*) 를 쓴다.
+   라이트가 기본, 다크는 OS 설정 또는 전역 바 토글(html[data-theme="dark"])로 켜진다.
+   기존 앱들은 자기 변수 체계를 유지하며 값만 이 팔레트에 맞춘다 (특화 계층). */
+:root {
+  --scrap-bg:#f3f6fb;
+  --scrap-card:#ffffff;
+  --scrap-card2:#eef2f8;
+  --scrap-line:#cdd9ea;
+  --scrap-fg:#122036;
+  --scrap-dim:#5d6d84;
+  --scrap-blue:#1758a8;
+  --scrap-blue-soft:#e8f0fb;
+  --scrap-gold:#a97e1f;
+  --scrap-gold-line:#d7b45c;
+  --scrap-bar:#0b1526;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --scrap-bg:#0b1526;
+    --scrap-card:#101f38;
+    --scrap-card2:#152747;
+    --scrap-line:#233a5c;
+    --scrap-fg:#eaf1fa;
+    --scrap-dim:#8fa2bd;
+    --scrap-blue:#5aa8ff;
+    --scrap-blue-soft:#132b4d;
+    --scrap-gold:#e8c268;
+    --scrap-gold-line:#8a6d2f;
+  }
+}
+:root[data-theme="dark"] {
+  --scrap-bg:#0b1526;
+  --scrap-card:#101f38;
+  --scrap-card2:#152747;
+  --scrap-line:#233a5c;
+  --scrap-fg:#eaf1fa;
+  --scrap-dim:#8fa2bd;
+  --scrap-blue:#5aa8ff;
+  --scrap-blue-soft:#132b4d;
+  --scrap-gold:#e8c268;
+  --scrap-gold-line:#8a6d2f;
+}
