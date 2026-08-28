@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>히오스 전장 기록 재생기 + 전술 보드</title>
+<link rel="stylesheet" href="css/style.css?v=48">
+</head>
+<body class="mode-map">
+<nav id="modebar" class="frame">
+  <span class="logo"><i>⬡</i><span class="tt"><b>전장 기록 재생기</b><em>맵 뷰어 &amp; 리플레이 분석</em></span></span>
+  <div class="tabs" role="tablist">
+    <button class="tab on" data-mode="map" role="tab">🗺 맵 보기</button>
+    <button class="tab" data-mode="replay" role="tab">▶ 리플레이 분석</button>
+  </div>
+  <span class="hgroup">
+    <select id="sampleSel" title="예제 리플레이"><option value="">예제 ▾</option></select>
+    <label class="load" id="repLoadLabel">리플레이 열기<input type="file" id="file" accept=".json,.StormReplay,application/json"></label>
+    <select id="mapSel" title="배경 맵 선택"></select>
+    <label class="load" id="bgLabel" title="직접 만든 배경(SVG/PNG)을 얹는다">배경 파일<input type="file" id="bgfile" accept=".svg,.png,.jpg,.webp,image/*"></label>
+    <button id="closeRep" class="mini" title="리플레이를 닫고 맵 보기로 돌아간다">✕ 리플레이 닫기</button>
+    <button id="boardShow" class="mini" title="스코어보드 다시 펴기 (Tab)">⌃ 스코어보드</button>
+  </span>
+  <span class="map-name" id="mapName"></span>
+</nav>
+<!-- 스코어보드 — reference/heroes-of-the-storm-analyzer 의 replay-analyzer 배치.
+     1팀 패널 | 가운데 점수 기둥 | 2팀 패널. 위 막대의 ⌄ 로 3단계(펼침/한 줄/숨김) -->
+<section id="board" class="frame">
+  <div class="bdhd">
+    <span class="tbadge b"><i>🛡</i><b id="bdName0">1팀</b><em id="bdWin0" hidden>승리</em></span>
+    <span class="bdmid">
+      <b class="hd" id="bdMap">전장</b>
+      <span class="sub" id="bdSub"></span>
+    </span>
+    <span class="tbadge r"><em id="bdWin1" hidden>승리</em><b id="bdName1">2팀</b><i>⚔</i></span>
+    <span class="bdmini" id="bdMini"></span>
+    <button id="openScore" class="mini" title="경기 통계 — 킬·어시·죽음·공성딜·영웅딜·치유·보호막·경험치 (S)">📊 통계</button>
+    <button id="openTalent" class="mini" title="특성 한눈에 보기 (T)">🎓 특성</button>
+    <button id="bdTgl" title="스코어보드 펼침 / 한 줄 / 숨김 (Tab)">⌄</button>
+  </div>
+  <div class="bdbody">
+    <div class="tpanel t0" id="top0"></div>
+    <div class="scorecol">
+      <div class="clockwrap">
+        <span class="clockbig" id="tClock">00:00</span>
+        <span class="sub" id="tClockSub"></span>
+      </div>
+      <span class="hr"></span>
+      <div class="srow"><b class="v b" id="tLv0">1</b>
+        <span class="mid"><i>📈</i><em class="hd">레벨</em></span><b class="v r" id="tLv1">1</b></div>
+      <div class="srow"><b class="v b" id="tK0">0</b>
+        <span class="mid"><i>💀</i><em class="hd">킬</em></span><b class="v r" id="tK1">0</b></div>
+      <div class="srow"><b class="v b" id="tS0">0</b>
+        <span class="mid"><i>🏰</i><em class="hd">건물<u class="estb" title="리플레이는 건물을 «누가» 부쉈는지 거의 남기지 않습니다 (실측 39건 중 4건). 건물이 붙어 있는 진영으로 부순 팀을 추론합니다.">추정치</u></em></span><b class="v r" id="tS1">0</b></div>
+      <span class="hr"></span>
+
+    </div>
+    <div class="tpanel t1" id="top1"></div>
+  </div>
+</section>
+
+<main>
+  <!-- 가운데: 지도 + 우측 레일 (이벤트 로그 · 지표 그래프) -->
+  <div id="mid">
+    <div id="mapwrap" class="frame">
+    <div id="stage">
+      <div id="world">
+        <img id="bgimg" alt="">
+        <canvas id="dc"></canvas>
+        <div id="objs"></div>
+      </div>
+      <canvas id="cv"></canvas>
+      <div id="zbar"><button id="zo">−</button><span id="zv">100%</span><button id="zi">+</button><button id="fitb">맞춤</button><span class="zsep"></span><button id="hires">🔍 고화질</button></div>
+      <div id="loading"></div>
+      <div id="needRep"><b>리플레이를 열어 주세요</b>
+        상단의 «리플레이 열기» 로 .StormReplay 파일을 고르거나<br>«예제 ▾» 에서 하나 골라 보세요</div>
+      <button id="tgl">🖌 도구</button>
+      <div id="tbar">
+        <div class="trow1">
+          <button class="it on" data-m="pan" title="이동/선택">✋</button>
+          <button class="it" data-m="pen" title="펜">✏️</button>
+          <button class="it" data-m="ers" title="지우개">🧽</button>
+          <button class="it" data-m="pin" title="핀 (영웅을 고르면 영웅 핀)">📍</button>
+          <button class="it" data-m="tok" title="토큰">♟</button>
+          <button class="it" id="imgbtn" title="이미지 넣기">🖼</button>
+          <div class="sep"></div>
+          <button class="it" id="undo" title="되돌리기 (Ctrl+Z)">↩️</button>
+          <button class="it" id="clrAll" title="모두 지우기 (되돌리기 가능)">🗑</button>
+        </div>
+        <div id="ctx">
+          <div class="crow" id="colors"></div>
+          <div class="trow" id="teamrow" style="display:none">
+            <button class="teamb on" data-t="blue">🔵 BLUE</button>
+            <button class="teamb" data-t="red">🔴 RED</button>
+          </div>
+          <input id="hsearch" type="search" placeholder="영웅 검색 (한/영)" style="display:none" autocomplete="off">
+          <div id="roles" style="display:none"></div>
+          <div id="heroes" style="display:none"></div>
+          <span id="szwrap" style="display:none"><input type="range" id="sz" min="2" max="40" value="5"><span id="szv"></span></span>
+          <span id="hint"></span>
+        </div>
+        <input type="file" id="imgfile" accept="image/*" hidden>
+        <input type="file" id="herofile" accept="image/*" multiple hidden>
+      </div>
+      <div id="trash">🗑</div>
+    </div>
+    <div id="calbar">
+      <span id="repToggles">
+        <label><input type="checkbox" id="showStruct" checked> 구조물</label>
+        <label><input type="checkbox" id="heroIconTgl" checked> 영웅 아이콘</label>
+        <label title="15초마다 오는 실측 위치에서 멀수록 흐리게 + 불확실 반경을 점선으로 — 어디가 «확실»하고 어디가 «짐작»인지 보여 준다"><input type="checkbox" id="confTgl" checked> 신뢰도</label>
+        <span class="estb" title="지도 위 영웅 위치는 15초 간격 스냅샷과 이동·조준 명령으로 되살린 값입니다 — 표본 검증 오차 평균 5.1 · 중앙값 3.7 타일. 스냅샷이 있는 순간만 «사실» 입니다.">위치 추정치</span>
+        <button id="snapBoard" class="mini" title="지금 화면의 영웅 위치를 전술 보드 말로 옮긴다 (맵 보기에서도 남는다)">📌 현재 배치를 보드로</button>
+        <span class="sep2"></span>
+      </span>
+      <span id="calGroup">
+        <span class="cl">배경 월드범위</span>
+        X <input type="number" id="calL" step="1" aria-label="왼쪽"> ~ <input type="number" id="calR" step="1" aria-label="오른쪽">
+        Y <input type="number" id="calB" step="1" aria-label="아래"> ~ <input type="number" id="calT" step="1" aria-label="위">
+        <span class="sep2"></span>
+      </span>
+      <span class="cl">투명도</span> <input type="range" id="bgAlpha" min="0" max="100" value="70" style="width:80px">
+      <span class="cl" id="heroSzWrap">영웅 크기 <input type="range" id="heroSz" min="12" max="52" step="1" value="27" style="width:72px" title="지도 위 영웅 아이콘 크기"></span>
+      <span class="cl">글씨 <input type="range" id="uiFs" min="90" max="150" step="5" value="110" style="width:72px" title="화면 글씨 크기 (%)"><b id="uiFsV">110%</b></span>
+      <span class="cl" id="calHint">🖌 도구를 켜면 맵 위에 그리기·핀·토큰 배치 가능</span>
+    </div>
+    </div>
+  <!-- 우측 레일 — 레퍼런스 배치: 이벤트 로그(늘어남) 위, 지표 그래프 아래 -->
+  <aside id="side">
+    <div class="rail log frame">
+      <h2 class="panhd"><button id="sideTgl" title="레일 접기/펴기">▸</button>
+        <span class="hd lbl">이벤트 로그</span>
+        <span class="cnt" id="logCnt"></span></h2>
+      <div id="filters">
+        <button data-f="kill" class="on">💀 킬</button>
+        <button data-f="struct" class="on">🏰 건물</button>
+        <button data-f="merc" class="on">⚔️ 용병</button>
+        <button data-f="obj" class="on">🪶 목표</button>
+        <button data-f="grow" class="on">⬆ 레벨·특성</button>
+      </div>
+      <div id="log"><div class="empty">리플레이를 열면 이벤트가 여기에 표시됩니다</div></div>
+    </div>
+    <div class="rail xp frame">
+      <h2 class="panhd"><span class="hd lbl">지표 그래프</span>
+        <select id="xpKind">
+          <option value="total">경험치 합계</option>
+          <option value="minion">돌격병</option>
+          <option value="creep">용병</option>
+          <option value="hero">영웅 처치</option>
+          <option value="struct">구조물</option>
+          <option value="trickle">시간 경과</option>
+        </select>
+        <button id="xpBig" title="그래프 크게 보기 (G)">⤢</button></h2>
+      <div id="xpLegend"></div>
+      <canvas id="gXp"></canvas>
+    </div>
+  </aside>
+  </div>
+  <!-- 하단: 이벤트 타임라인 — 재생 조작 + 팀별 시간축 -->
+  <section id="timeline" class="frame">
+    <div id="controls">
+      <button class="evnav" id="evPrev" title="이전 사건">⏮</button>
+      <button id="play">▶ 재생</button>
+      <button class="evnav" id="evNext" title="다음 사건">⏭</button>
+      <span id="clock">00:00<small>게임 시간</small></span>
+      <input type="range" id="seek" min="0" max="100" value="0" step="0.1" aria-label="타임라인">
+      <button class="spd" data-s="1">×1</button>
+      <button class="spd on" data-s="4">×4</button>
+      <button class="spd" data-s="8">×8</button>
+      <button class="spd" data-s="16">×16</button>
+      <span class="csep"></span>
+      <button class="evnav" id="spanA" title="구간 시작을 지금 시각에 찍는다 ( [ )">⟦</button>
+      <button class="evnav" id="spanB" title="구간 끝을 지금 시각에 찍는다 ( ] )">⟧</button>
+      <button class="evnav" id="spanGo" title="찍은 구간의 통계를 본다 ( \ )">Σ 구간</button>
+      <button class="evnav" id="spanLive" title="처음부터 지금까지 — 재생을 따라 계속 갱신된다 ( = )">Σ 지금까지</button>
+      <button class="evnav" id="spanClear" title="구간 표시 지우기">✕</button>
+    </div>
+    <div class="tlwrap">
+      <div class="tlrow t0"><span class="tag">1팀</span><div class="track" id="tl0"></div></div>
+      <div class="tlaxis" id="tlAxis"></div>
+      <div class="tlrow t1"><span class="tag">2팀</span><div class="track" id="tl1"></div></div>
+      <div class="spanband" id="spanBand" hidden></div>
+      <div class="tlnow" id="tlNow"></div>
+    </div>
+  </section>
+</main>
+
+<!-- 경기 통계 · 특성 -->
+<div id="scoreModal" hidden>
+  <div class="xmbox">
+    <div class="xmhd">
+      <span class="pagetabs" id="scoreTabs">
+        <button class="on" data-s="score">📊 경기 통계</button>
+        <button data-s="talent">🎓 특성</button>
+      </span>
+      <button id="scoreMore" title="곁들여 볼 항목 더 보기">＋ 자세히</button>
+      <button id="scoreClose" title="닫기 (Esc)">✕</button>
+    </div>
+    <div id="scoreBody"></div>
+  </div>
+</div>
+
+<!-- 구간 통계 (참고: SpazzoReplayStatKit 의 타임스탬프 기록) -->
+<div id="spanModal" hidden>
+  <div class="xmbox">
+    <div class="xmhd"><b>구간 통계</b><span id="spanTitle"></span>
+      <button id="spanClose" title="닫기 (Esc)">✕</button></div>
+    <div id="spanBody"></div>
+  </div>
+</div>
+
+<!-- 경험치 그래프 크게 보기 -->
+<div id="xpModal" hidden>
+  <div class="xmbox">
+    <div class="xmhd">
+      <b>시간별 경험치</b>
+      <select id="xpKind2"></select>
+      <label class="ck"><input type="checkbox" id="xpLvLines" checked> 레벨 문턱선</label>
+      <label class="ck"><input type="checkbox" id="xpPerTeam"> 팀별 항목 분해</label>
+      <label class="ck" title="켜면 파이가 재생 시각까지만 셉니다 — 재생을 따라 계속 바뀝니다">
+        <input type="checkbox" id="xpPieLive"> 파이: 재생 시각까지</label>
+      <button id="xpClose" title="닫기 (Esc)">✕</button>
+    </div>
+    <div class="xmrow">
+      <canvas id="gXpBig"></canvas>
+      <div id="xpPies"></div>
+    </div>
+    <div id="xpLegend2"></div>
+    <div id="lvTable"></div>
+  </div>
+</div>
+<script src="js/data_maps.js?v=48"></script>
+  <script src="js/data_levels.js?v=48"></script>
+<script src="js/data_heroes.js?v=48"></script>
+<script src="js/data_abilities.js?v=48"></script>
+<script src="js/data_talents.js?v=48"></script>
+<script src="js/data_samples.js?v=48"></script>
+<script src="js/data_pathing.js?v=48"></script>
+<script src="js/demo_replay.js?v=48"></script>
+<script src="js/py_bundle.js?v=48"></script>
+<script src="js/pathing.js?v=48"></script>
+<script src="js/engine.js?v=48"></script>
+<script src="js/render.js?v=48"></script>
+<script src="js/log.js?v=48"></script>
+<script src="js/teambar.js?v=48"></script>
+<script src="js/timeline.js?v=48"></script>
+<script src="js/stats.js?v=48"></script>
+<script src="js/score.js?v=48"></script>
+<script src="js/panzoom.js?v=48"></script>
+<script src="js/tools.js?v=48"></script>
+<script src="js/maps.js?v=48"></script>
+<script src="js/parser.js?v=48"></script>
+<script src="js/main.js?v=48"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HotS Scrap</title>
+<style>
+  /* 허브 전용 스타일 — 앱 폴더에는 관여하지 않는다 */
+  :root { --bg:#0e1116; --card:#161b24; --line:#232b38; --fg:#e6ebf2; --dim:#8b96a5; --accent:#6cb2ff; }
+  @media (prefers-color-scheme: light) {
+    :root { --bg:#f5f7fa; --card:#ffffff; --line:#dde3ea; --fg:#1a2230; --dim:#5b6675; --accent:#1a6fd4; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); font-family:"Malgun Gothic","Segoe UI",sans-serif; }
+  .wrap { max-width:880px; margin:0 auto; padding:48px 20px; }
+  h1 { margin:0 0 6px; font-size:28px; }
+  .sub { color:var(--dim); margin:0 0 8px; }
+  .build { color:var(--dim); font-size:13px; margin-bottom:32px; }
+  .build b { color:var(--accent); }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:14px; }
+  a.card { display:block; background:var(--card); border:1px solid var(--line); border-radius:10px;
+           padding:18px; text-decoration:none; color:inherit; transition:border-color .15s; }
+  a.card:hover { border-color:var(--accent); }
+  .card h2 { margin:0 0 6px; font-size:17px; }
+  .card p { margin:0; color:var(--dim); font-size:13px; line-height:1.5; }
+  .tag { display:inline-block; margin-top:10px; font-size:11px; color:var(--dim);
+         border:1px solid var(--line); border-radius:99px; padding:2px 8px; }
+  .tag.heavy { color:#d9a441; border-color:#d9a441; }
+  .planned { opacity:.5; pointer-events:none; }
+  .err { color:#d97070; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>HotS Scrap</h1>
+  <p class="sub">망겜에서 삭삭 긁어낸 조각들 — 원본 데이터 기반 히오스 도감·빌드·리플레이</p>
+  <p class="build" id="build">데이터 버전 확인 중…</p>
+  <div class="grid" id="grid"></div>
+</div>
+<script>
+// 허브는 apps.json / latest.json 만 읽는다. 앱 코드에는 관여하지 않는다.
+(async () => {
+  try {
+    const latest = await fetch('../data/latest.json').then(r => r.json());
+    document.getElementById('build').innerHTML = '데이터 버전: <b>build ' + latest.build + '</b>';
+  } catch (e) {
+    document.getElementById('build').textContent = '데이터 버전 정보를 읽지 못했습니다';
+  }
+  try {
+    const reg = await fetch('apps.json').then(r => r.json());
+    const grid = document.getElementById('grid');
+    for (const app of reg.apps) {
+      const a = document.createElement('a');
+      a.className = 'card' + (app.status === 'planned' ? ' planned' : '');
+      a.href = app.path;
+      a.innerHTML = '<h2>' + app.name + '</h2><p>' + app.desc + '</p>' +
+        '<span class="tag' + (app.requires === 'heavy' ? ' heavy' : '') + '">' +
+        (app.requires === 'heavy' ? '로컬 자산 필요' : '바로 사용') +
+        (app.status === 'planned' ? ' · 준비 중' : '') + '</span>';
+      grid.appendChild(a);
+    }
+  } catch (e) {
+    document.getElementById('grid').innerHTML = '<p class="err">apps.json 을 읽지 못했습니다: ' + e.message + '</p>';
+  }
+})();
+</script>
+</body>
+</html>

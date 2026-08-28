@@ -1,0 +1,28 @@
+{
+  "apps": [
+    {
+      "id": "encyclopedia",
+      "name": "영웅 도감",
+      "path": "encyclopedia/",
+      "desc": "원본 게임 데이터(build 97650) 기반 영웅·스킬·특성 도감",
+      "requires": "light",
+      "status": "active"
+    },
+    {
+      "id": "builds",
+      "name": "특성 빌드",
+      "path": "builds/",
+      "desc": "특성 빌드 제작·공유",
+      "requires": "light",
+      "status": "active"
+    },
+    {
+      "id": "replay",
+      "name": "리플레이 뷰어",
+      "path": "replay/",
+      "desc": ".StormReplay 파일을 드래그해 전황을 다시 보기",
+      "requires": "light",
+      "status": "active"
+    }
+  ]
+}
