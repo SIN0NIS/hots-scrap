@@ -34,7 +34,7 @@
 <body>
 <div class="wrap">
   <h1><picture><source srcset="shared/logo_light.svg" media="(prefers-color-scheme: dark)"><img src="shared/logo.svg" alt="" style="height:32px;width:32px;vertical-align:-5px;margin-right:10px;"></picture>HotS Scrap</h1>
-  <p class="sub">망겜에서 삭삭 긁어낸 조각들 — 원본 데이터 기반 히오스 도감·빌드·리플레이</p>
+  <p class="sub">Salvaging every scrap of the Storm — heroes, builds &amp; replays.</p>
   <p class="build" id="build">데이터 버전 확인 중…</p>
   <div class="grid" id="grid"></div>
   <p style="margin-top:40px;font-size:11px;color:var(--dim);line-height:1.6;">
@@ -47,7 +47,8 @@
 (async () => {
   try {
     const latest = await fetch('data/latest.json').then(r => r.json());
-    document.getElementById('build').innerHTML = '데이터 버전: <b>build ' + latest.build + '</b>';
+    document.getElementById('build').innerHTML = '데이터 버전: <b>build ' + latest.build + '</b>' +
+      (latest.updated ? ' · ' + latest.updated + ' 업데이트' : '');
   } catch (e) {
     document.getElementById('build').textContent = '데이터 버전 정보를 읽지 못했습니다';
   }
