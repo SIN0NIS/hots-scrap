@@ -151,6 +151,7 @@
         <div class="option-group">
             <span style="font-size:12px; color:#aaa;">이름 <input type="color" id="name-color" value="#a333ff"></span>
             <span style="font-size:12px; color:#aaa;">테두리 <input type="color" id="border-color" value="#a333ff"></span>
+            <button type="button" onclick="openBuildPreview()" style="background:#132b4d; border:1px solid #233a5c; color:#eaf1fa; border-radius:5px; padding:4px 12px; cursor:pointer; font-size:12px;">👁 미리보기</button>
             <input type="range" min="12" max="20" value="14" oninput="updateFontSize(this.value)">
         </div>
         <div class="btn-group">
@@ -386,6 +387,71 @@
   window.handleSearch = function (v) { _hs(v); renderHeroGrid(v); };
   renderHeroGrid('');
 })();
+</script>
+<!-- 저장 이미지 미리보기 — takeScreenshot 의 카드와 같은 마크업 (바꿀 때 함께 바꿀 것) -->
+<div id="bp-modal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.65); z-index:3000; overflow:auto; padding:16px;" onclick="if(event.target===this)closeBuildPreview()">
+  <div style="max-width:580px; margin:20px auto; background:#101f38; border:1px solid #233a5c; border-radius:12px; padding:14px;">
+    <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:12px;">
+      <b style="font-size:14px; color:#eaf1fa;">저장 이미지 미리보기</b>
+      <span style="font-size:12px; color:#aaa;">이름 <input type="color" id="bp-name-color"></span>
+      <span style="font-size:12px; color:#aaa;">테두리 <input type="color" id="bp-border-color"></span>
+      <button type="button" onclick="takeScreenshot('save')" style="background:#1758a8; border:none; color:#fff; border-radius:5px; padding:7px 14px; cursor:pointer; font-size:13px; font-weight:bold;">📸 저장</button>
+      <button type="button" onclick="takeScreenshot('copy')" style="background:#1c7d4f; border:none; color:#fff; border-radius:5px; padding:7px 14px; cursor:pointer; font-size:13px; font-weight:bold;">📋 복사</button>
+      <button type="button" onclick="closeBuildPreview()" style="margin-left:auto; background:none; border:1px solid #445; color:#aaa; border-radius:5px; padding:6px 10px; cursor:pointer;">✕</button>
+    </div>
+    <div id="bp-wrap" style="overflow:hidden;"><div id="bp-card"></div></div>
+  </div>
+</div>
+<script>
+/* 미리보기: 저장 카드와 동일한 DOM 을 라이브로 그린다. 색은 본 픽커와 양방향 동기화 */
+function bpRenderCard() {
+  if (!currentHeroId) return;
+  const nameColor = document.getElementById('name-color').value;
+  const borderColor = document.getElementById('border-color').value;
+  const card = document.getElementById('bp-card');
+  card.style.cssText = 'width:500px; background:#0b0b0d; padding:25px; border:3px solid ' + borderColor + '; color:white; border-radius:12px;';
+  let innerHTML = '<div style="text-align:center; margin-bottom:25px;"><div id="bp-hero-name" style="font-size:36px; font-weight:bold; color:' + nameColor + ';">' + getActiveData()[currentHeroId].name + '</div></div>';
+  const lvs = Object.keys(getActiveData()[currentHeroId].talents).filter(l => getActiveData()[currentHeroId].talents[l].length > 0).sort((a,b) => parseInt(a.replace(/\D/g,"")) - parseInt(b.replace(/\D/g,"")));
+  selectedTalents.forEach((tn, ti) => {
+    if (tn > 0) {
+      const t = getActiveData()[currentHeroId].talents[lvs[ti]][tn-1];
+      innerHTML += '<div class="cap-row"><div class="cap-lv">' + lvs[ti].replace(/\D/g,"") + 'Lv</div><img src="' + imgBase + t.icon + '" class="cap-img"><div style="flex:1; padding-left:15px;"><div style="font-size:18px; font-weight:bold;">' + t.name + '</div><div style="color:#bbb; font-size:14px;">' + processTooltip(t.fullTooltip, currentLevel) + '</div></div></div>';
+    }
+  });
+  card.innerHTML = innerHTML;
+  var wrap = document.getElementById('bp-wrap');
+  var avail = wrap.clientWidth, w = 556;
+  card.style.transformOrigin = 'top left';
+  if (avail < w) {
+    card.style.transform = 'scale(' + (avail / w) + ')';
+    requestAnimationFrame(function () { wrap.style.height = (card.offsetHeight * avail / w) + 'px'; });
+  } else { card.style.transform = ''; wrap.style.height = ''; }
+}
+function openBuildPreview() {
+  if (!currentHeroId) { alert(currentLang === 'ko' ? '영웅을 먼저 선택하세요.' : 'Select a hero first.'); return; }
+  document.getElementById('bp-name-color').value = document.getElementById('name-color').value;
+  document.getElementById('bp-border-color').value = document.getElementById('border-color').value;
+  document.getElementById('bp-modal').style.display = 'block';
+  bpRenderCard();
+}
+function closeBuildPreview() { document.getElementById('bp-modal').style.display = 'none'; }
+document.getElementById('bp-name-color').addEventListener('input', function () {
+  document.getElementById('name-color').value = this.value;
+  var n = document.getElementById('bp-hero-name');
+  if (n) n.style.color = this.value;
+});
+document.getElementById('bp-border-color').addEventListener('input', function () {
+  document.getElementById('border-color').value = this.value;
+  document.getElementById('bp-card').style.borderColor = this.value;
+});
+/* 본 픽커를 바꿔도 모달이 열려 있으면 반영 */
+document.getElementById('name-color').addEventListener('input', function () {
+  var n = document.getElementById('bp-hero-name');
+  if (n && document.getElementById('bp-modal').style.display === 'block') { n.style.color = this.value; document.getElementById('bp-name-color').value = this.value; }
+});
+document.getElementById('border-color').addEventListener('input', function () {
+  if (document.getElementById('bp-modal').style.display === 'block') { document.getElementById('bp-card').style.borderColor = this.value; document.getElementById('bp-border-color').value = this.value; }
+});
 </script>
 </body>
 </html>
