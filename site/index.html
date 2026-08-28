@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="utf-8">
@@ -6,56 +6,143 @@
 <title>HotS Scrap</title>
 <link rel="icon" type="image/svg+xml" href="shared/favicon.svg">
 <style>
-  /* 허브 전용 스타일 — 앱 폴더에는 관여하지 않는다 */
-  :root { --bg:#0e1116; --card:#161b24; --line:#232b38; --fg:#e6ebf2; --dim:#8b96a5; --accent:#6cb2ff; }
-  @media (prefers-color-scheme: light) {
-    :root { --bg:#f5f7fa; --card:#ffffff; --line:#dde3ea; --fg:#1a2230; --dim:#5b6675; --accent:#1a6fd4; }
+  /* ── HotS 팔레트: 남색(넥서스) · 흰색 · 황금 ─────────────────────
+     라이트가 기본(:root), 다크는 media + data-theme 로 겹쳐 쓴다.   */
+  :root {
+    --bg:#f3f6fb;            /* 옅은 청백 */
+    --bg-glow:radial-gradient(1200px 500px at 50% -10%, #dbe7f7 0%, transparent 60%);
+    --card:#ffffff;
+    --line:#cdd9ea;
+    --fg:#122036;            /* 짙은 남색 글자 */
+    --dim:#5d6d84;
+    --blue:#1758a8;          /* 히오스 UI 블루 */
+    --blue-soft:#e8f0fb;
+    --gold:#a97e1f;          /* 황금 (라이트에선 진하게) */
+    --gold-line:#d7b45c;
+    --bar:#0b1526;           /* 전역 바 톤과 동일 */
   }
-  * { box-sizing: border-box; }
-  body { margin:0; background:var(--bg); color:var(--fg); font-family:"Malgun Gothic","Segoe UI",sans-serif; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg:#0b1526;          /* 넥서스 심연 남색 */
+      --bg-glow:radial-gradient(1200px 500px at 50% -10%, #14294a 0%, transparent 60%);
+      --card:#101f38;
+      --line:#233a5c;
+      --fg:#eaf1fa;
+      --dim:#8fa2bd;
+      --blue:#5aa8ff;
+      --blue-soft:#132b4d;
+      --gold:#e8c268;        /* 황금 (다크에선 밝게) */
+      --gold-line:#8a6d2f;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg:#0b1526;
+    --bg-glow:radial-gradient(1200px 500px at 50% -10%, #14294a 0%, transparent 60%);
+    --card:#101f38;
+    --line:#233a5c;
+    --fg:#eaf1fa;
+    --dim:#8fa2bd;
+    --blue:#5aa8ff;
+    --blue-soft:#132b4d;
+    --gold:#e8c268;
+    --gold-line:#8a6d2f;
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); background-image:var(--bg-glow); background-repeat:no-repeat;
+         color:var(--fg); font-family:"Malgun Gothic","Segoe UI",sans-serif; min-height:100vh; }
   .wrap { max-width:880px; margin:0 auto; padding:48px 20px; }
-  h1 { margin:0 0 6px; font-size:28px; }
-  .sub { color:var(--dim); margin:0 0 8px; }
-  .build { color:var(--dim); font-size:13px; margin-bottom:32px; }
-  .build b { color:var(--accent); }
-  .grid { display:flex; flex-direction:column; gap:10px; }
-  a.card { display:flex; align-items:center; gap:16px; background:var(--card); border:1px solid var(--line);
-           border-radius:10px; padding:16px 20px; text-decoration:none; color:inherit; transition:border-color .15s; }
-  a.card:hover { border-color:var(--accent); }
-  .card h2 { margin:0; font-size:17px; white-space:nowrap; }
-  .card p { margin:0; margin-left:auto; color:var(--dim); font-size:13px; line-height:1.5; text-align:right; }
-  .tag { display:inline-block; flex-shrink:0; font-size:11px; color:var(--dim);
-         border:1px solid var(--line); border-radius:99px; padding:2px 8px; }
-  @media (max-width: 560px) {
-    a.card { flex-wrap:wrap; }
-    .card p { margin-left:0; text-align:left; width:100%; }
+
+  /* 타이틀 줄 */
+  .head { display:flex; align-items:center; gap:10px; }
+  .head img { height:34px; width:34px; display:block; }
+  h1 { margin:0; font-size:28px; letter-spacing:0.5px; }
+  h1 .s { color:var(--gold); }
+  .head img.logo-for-dark { display:none; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .head img.logo-for-dark { display:block; }
+    :root:not([data-theme="light"]) .head img.logo-for-light { display:none; }
   }
-  .tag.heavy { color:#d9a441; border-color:#d9a441; }
+  :root[data-theme="dark"] .head img.logo-for-dark { display:block; }
+  :root[data-theme="dark"] .head img.logo-for-light { display:none; }
+
+  .headbtn { white-space:nowrap; font-size:13px; color:var(--dim); text-decoration:none; border:1px solid var(--line);
+             border-radius:99px; padding:5px 14px; background:var(--card); cursor:pointer;
+             font-family:inherit; transition:border-color .15s, color .15s; }
+  .headbtn:hover { border-color:var(--gold-line); color:var(--gold); }
+  #themeBtn { margin-left:auto; }
+
+  .sub { color:var(--dim); margin:10px 0 6px; font-size:15px; }
+  .build { color:var(--dim); font-size:13px; margin:0 0 30px; }
+  .build b { color:var(--blue); }
+  .build .date { color:var(--gold); }
+
+  /* 앱 목록 — 1줄 1앱 */
+  .grid { display:flex; flex-direction:column; gap:10px; }
+  a.card { display:flex; align-items:center; gap:14px; background:var(--card); border:1px solid var(--line);
+           border-left:3px solid var(--gold-line); border-radius:10px; padding:16px 20px;
+           text-decoration:none; color:inherit; transition:border-color .15s, transform .1s; }
+  a.card:hover { border-color:var(--gold); border-left-color:var(--gold); transform:translateX(2px); }
+  .card h2 { margin:0; font-size:17px; white-space:nowrap; color:var(--blue); }
+  .card p { margin:0; margin-left:auto; color:var(--dim); font-size:13px; line-height:1.5; text-align:right; }
+  .tag { display:inline-block; flex-shrink:0; font-size:11px; color:var(--gold);
+         border:1px solid var(--gold-line); border-radius:99px; padding:2px 8px; }
   .planned { opacity:.5; pointer-events:none; }
   .err { color:#d97070; }
+
+  .foot { margin-top:40px; font-size:11px; color:var(--dim); line-height:1.6;
+          border-top:1px solid var(--line); padding-top:16px; }
+  @media (max-width:560px) {
+    a.card { flex-wrap:wrap; }
+    .card p { margin-left:0; text-align:left; width:100%; }
+    h1 { font-size:21px; white-space:nowrap; }
+    .head img { height:26px; width:26px; }
+    .headbtn { font-size:12px; padding:4px 10px; }
+  }
 </style>
 </head>
 <body>
 <div class="wrap">
-  <h1 style="display:flex;align-items:center;gap:10px;"><picture><source srcset="shared/logo_light.svg" media="(prefers-color-scheme: dark)"><img src="shared/logo.svg" alt="" style="height:32px;width:32px;display:block;"></picture>HotS Scrap
-    <a href="https://github.com/SIN0NIS/hots-scrap" target="_blank" rel="noopener" title="GitHub 저장소"
-       style="margin-left:auto;font-size:13px;font-weight:normal;color:var(--dim);text-decoration:none;border:1px solid var(--line);border-radius:99px;padding:5px 14px;">🔗 GitHub</a>
-  </h1>
+  <div class="head">
+    <img class="logo-for-light" src="shared/logo.svg" alt="">
+    <img class="logo-for-dark" src="shared/logo_light.svg" alt="">
+    <h1>HotS <span class="s">Scrap</span></h1>
+    <button id="themeBtn" class="headbtn" title="다크/라이트 전환">◐ 테마</button>
+    <a class="headbtn" href="https://github.com/SIN0NIS/hots-scrap" target="_blank" rel="noopener" title="GitHub 저장소">🔗 GitHub</a>
+  </div>
   <p class="sub">Salvaging every scrap of the Storm — heroes, builds &amp; replays.</p>
   <p class="build" id="build">데이터 버전 확인 중…</p>
   <div class="grid" id="grid"></div>
-  <p style="margin-top:40px;font-size:11px;color:var(--dim);line-height:1.6;">
+  <p class="foot">
     비영리 팬 프로젝트 — Heroes of the Storm™ 및 관련 자산의 권리는 Blizzard Entertainment 에 있습니다.<br>
     Non-commercial fan project. All game assets © Blizzard Entertainment.
   </p>
 </div>
 <script>
-// 허브는 apps.json / latest.json 만 읽는다. 앱 코드에는 관여하지 않는다.
+/* 테마 토글 — 선택은 localStorage('hub.theme') 에 기억, 미선택 시 OS 설정을 따른다 */
+(function () {
+  var KEY = 'hub.theme';
+  function apply(t) {
+    if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+    else document.documentElement.removeAttribute('data-theme');
+  }
+  var saved = null;
+  try { saved = localStorage.getItem(KEY); } catch (e) {}
+  apply(saved);
+  document.getElementById('themeBtn').addEventListener('click', function () {
+    var cur = document.documentElement.getAttribute('data-theme');
+    if (!cur) cur = (window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+    var next = cur === 'dark' ? 'light' : 'dark';
+    try { localStorage.setItem(KEY, next); } catch (e) {}
+    apply(next);
+  });
+})();
+
+/* 허브는 apps.json / latest.json 만 읽는다. 앱 코드에는 관여하지 않는다. */
 (async () => {
   try {
     const latest = await fetch('data/latest.json').then(r => r.json());
     document.getElementById('build').innerHTML = '데이터 버전: <b>build ' + latest.build + '</b>' +
-      (latest.updated ? ' · ' + latest.updated + ' 업데이트' : '');
+      (latest.updated ? ' · <span class="date">' + latest.updated + ' 업데이트</span>' : '');
   } catch (e) {
     document.getElementById('build').textContent = '데이터 버전 정보를 읽지 못했습니다';
   }
@@ -67,7 +154,7 @@
       a.className = 'card' + (app.status === 'planned' ? ' planned' : '');
       a.href = app.path;
       a.innerHTML = '<h2>' + app.name + '</h2>' +
-        '<span class="tag' + (app.requires === 'heavy' ? ' heavy' : '') + '">' +
+        '<span class="tag">' +
         (app.requires === 'heavy' ? '로컬 자산 필요' : '바로 사용') +
         (app.status === 'planned' ? ' · 준비 중' : '') + '</span>' +
         '<p>' + app.desc + '</p>';
