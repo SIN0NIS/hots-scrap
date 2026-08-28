@@ -357,7 +357,7 @@
             selectedTalents.forEach((tn, ti) => { 
                 if (tn > 0) { 
                     const t = getActiveData()[currentHeroId].talents[lvs[ti]][tn-1]; 
-                    innerHTML += `<div class="cap-row"><div class="cap-lv">${lvs[ti].replace(/\D/g,"")}Lv</div><img src="${imgBase}${t.icon}" class="cap-img"><div style="flex:1; padding-left:15px;"><div style="font-size:18px; font-weight:bold;">${t.name}</div><div style="color:#bbb; font-size:14px;">${processTooltip(t.fullTooltip, currentLevel)}</div></div></div>`; 
+                    innerHTML += `<div class="cap-row"><div class="cap-lv">${lvs[ti].replace(/\D/g,"")}Lv</div><img src="${imgBase}${t.icon}" class="cap-img"><div style="flex:1; padding-left:15px;"><div style="font-size:18px; font-weight:bold;">${t.name}</div><div style="opacity:0.78; font-size:14px;">${processTooltip(t.fullTooltip, currentLevel)}</div></div></div>`; 
                 } 
             });
             tempDiv.innerHTML = innerHTML; document.body.appendChild(tempDiv);
@@ -443,6 +443,12 @@
       <div style="display:flex; flex-direction:column; gap:12px; flex:1; min-width:150px;">
         <label style="display:flex; align-items:center; justify-content:space-between; gap:8px; font-size:13px; color:#aaa;">이름 색 <input type="color" id="bp-name-color" style="width:52px; height:30px;"></label>
         <label style="display:flex; align-items:center; justify-content:space-between; gap:8px; font-size:13px; color:#aaa;">테두리 색 <input type="color" id="bp-border-color" style="width:52px; height:30px;"></label>
+        <label style="display:flex; align-items:center; justify-content:space-between; gap:8px; font-size:13px; color:#aaa;">배경 색 <input type="color" id="bp-bg-color" oninput="onCardColorInput('bg', this.value)" style="width:52px; height:30px;"></label>
+        <label style="display:flex; align-items:center; justify-content:space-between; gap:8px; font-size:13px; color:#aaa;">폰트 색 <input type="color" id="bp-font-color" oninput="onCardColorInput('font', this.value)" style="width:52px; height:30px;"></label>
+        <div style="display:flex; gap:6px;">
+          <button type="button" onclick="setCardTheme('dark')" style="flex:1; background:#0b0b0d; border:1px solid #445; color:#eee; border-radius:5px; padding:7px 0; cursor:pointer; font-size:12px;">🌑 다크 기본</button>
+          <button type="button" onclick="setCardTheme('light')" style="flex:1; background:#f3f6fb; border:1px solid #cdd9ea; color:#122036; border-radius:5px; padding:7px 0; cursor:pointer; font-size:12px;">☀ 라이트 기본</button>
+        </div>
         <button type="button" onclick="takeScreenshot('save')" style="background:#1758a8; border:none; color:#fff; border-radius:5px; padding:10px 14px; cursor:pointer; font-size:13px; font-weight:bold;">📸 저장</button>
         <button type="button" onclick="takeScreenshot('copy')" style="background:#1c7d4f; border:none; color:#fff; border-radius:5px; padding:10px 14px; cursor:pointer; font-size:13px; font-weight:bold;">📋 복사</button>
       </div>
@@ -459,13 +465,13 @@ function bpRenderCard() {
   const nameColor = document.getElementById('name-color').value;
   const borderColor = document.getElementById('border-color').value;
   const card = document.getElementById('bp-card');
-  card.style.cssText = 'width:500px; background:#0b0b0d; padding:25px; border:3px solid ' + borderColor + '; color:white; border-radius:12px;';
+  card.style.cssText = 'width:500px; background:' + cardBg + '; padding:25px; border:3px solid ' + borderColor + '; color:' + cardFont + '; border-radius:12px;';
   let innerHTML = '<div style="text-align:center; margin-bottom:25px;"><div id="bp-hero-name" style="font-size:36px; font-weight:bold; color:' + nameColor + ';">' + getActiveData()[currentHeroId].name + '</div></div>';
   const lvs = Object.keys(getActiveData()[currentHeroId].talents).filter(l => getActiveData()[currentHeroId].talents[l].length > 0).sort((a,b) => parseInt(a.replace(/\D/g,"")) - parseInt(b.replace(/\D/g,"")));
   selectedTalents.forEach((tn, ti) => {
     if (tn > 0) {
       const t = getActiveData()[currentHeroId].talents[lvs[ti]][tn-1];
-      innerHTML += '<div class="cap-row"><div class="cap-lv">' + lvs[ti].replace(/\D/g,"") + 'Lv</div><img src="' + imgBase + t.icon + '" class="cap-img"><div style="flex:1; padding-left:15px;"><div style="font-size:18px; font-weight:bold;">' + t.name + '</div><div style="color:#bbb; font-size:14px;">' + processTooltip(t.fullTooltip, currentLevel) + '</div></div></div>';
+      innerHTML += '<div class="cap-row"><div class="cap-lv">' + lvs[ti].replace(/\D/g,"") + 'Lv</div><img src="' + imgBase + t.icon + '" class="cap-img"><div style="flex:1; padding-left:15px;"><div style="font-size:18px; font-weight:bold;">' + t.name + '</div><div style="opacity:0.78; font-size:14px;">' + processTooltip(t.fullTooltip, currentLevel) + '</div></div></div>';
     }
   });
   card.innerHTML = innerHTML;
@@ -482,6 +488,7 @@ function openBuildPreview() {
   document.getElementById('bp-name-color').value = document.getElementById('name-color').value;
   document.getElementById('bp-border-color').value = document.getElementById('border-color').value;
   document.getElementById('bp-modal').style.display = 'block';
+  syncCardPickers();
   bpRenderCard();
 }
 function closeBuildPreview() { document.getElementById('bp-modal').style.display = 'none'; }
@@ -520,6 +527,33 @@ document.getElementById('border-color').addEventListener('input', function () {
 <script>
 /* ── 보조(상황별) 특성 + 특성 나열 — 원본 함수를 래핑해 확장한다 (2026-08) ── */
 var subTalents = [];
+
+/* 저장 카드 배경·폰트 색 — 프리셋: 다크/라이트 기본 */
+var CARD_DARK = { bg: '#0b0b0d', font: '#ffffff' };
+var CARD_LIGHT = { bg: '#f3f6fb', font: '#122036' };
+var cardBg = CARD_DARK.bg, cardFont = CARD_DARK.font;
+try {
+  cardBg = localStorage.getItem('builds.cardBg') || cardBg;
+  cardFont = localStorage.getItem('builds.cardFont') || cardFont;
+} catch (e) {}
+function saveCardTheme() { try { localStorage.setItem('builds.cardBg', cardBg); localStorage.setItem('builds.cardFont', cardFont); } catch (e) {} }
+function syncCardPickers() {
+  ['bp-bg-color', 'tcp-bg-color'].forEach(function (id) { var el = document.getElementById(id); if (el) el.value = cardBg; });
+  ['bp-font-color', 'tcp-font-color'].forEach(function (id) { var el = document.getElementById(id); if (el) el.value = cardFont; });
+}
+function rerenderOpenPreviews() {
+  if (document.getElementById('bp-modal').style.display === 'block') bpRenderCard();
+  if (document.getElementById('tcp-modal').style.display === 'block') openTcPreview();
+}
+function setCardTheme(mode) {
+  var p = mode === 'light' ? CARD_LIGHT : CARD_DARK;
+  cardBg = p.bg; cardFont = p.font;
+  saveCardTheme(); syncCardPickers(); rerenderOpenPreviews();
+}
+function onCardColorInput(kind, v) {
+  if (kind === 'bg') cardBg = v; else cardFont = v;
+  saveCardTheme(); syncCardPickers(); rerenderOpenPreviews();
+}
 
 function tierLevels(hData) {
   return Object.keys(hData.talents).filter(function (l) { return hData.talents[l].length > 0; })
@@ -631,9 +665,9 @@ function buildCardInner(nameColor) {
       : (sub ? '<img src="' + imgBase + sub.icon + '" class="cap-img" style="border:2px dashed #4d9fff;">' : '');
     var text = '';
     if (t) {
-      text += '<div style="font-size:18px; font-weight:bold;">' + t.name + '</div><div style="color:#bbb; font-size:14px;">' + processTooltip(t.fullTooltip, currentLevel) + '</div>';
+      text += '<div style="font-size:18px; font-weight:bold;">' + t.name + '</div><div style="opacity:0.78; font-size:14px;">' + processTooltip(t.fullTooltip, currentLevel) + '</div>';
     } else if (sub) {
-      text += '<div style="font-size:18px; font-weight:bold; color:#9fc6ff;">' + sub.name + '</div><div style="color:#bbb; font-size:14px;">' + processTooltip(sub.fullTooltip, currentLevel) + '</div>';
+      text += '<div style="font-size:18px; font-weight:bold; color:#9fc6ff;">' + sub.name + '</div><div style="opacity:0.78; font-size:14px;">' + processTooltip(sub.fullTooltip, currentLevel) + '</div>';
     }
     /* 보조는 오른쪽 별도 칸 — 아이콘 + 이름만 */
     var subCol = (t && sub)
@@ -649,11 +683,11 @@ window.takeScreenshot = async function (mode) {
   if (!currentHeroId) return;
   var nameColor = document.getElementById('name-color').value, borderColor = document.getElementById('border-color').value;
   var tempDiv = document.createElement('div');
-  tempDiv.style.cssText = 'position:absolute; left:-9999px; top:0; width:500px; background:#0b0b0d; padding:25px; border:3px solid ' + borderColor + '; color:white; border-radius:12px;';
+  tempDiv.style.cssText = 'position:absolute; left:-9999px; top:0; width:500px; background:' + cardBg + '; padding:25px; border:3px solid ' + borderColor + '; color:' + cardFont + '; border-radius:12px;';
   tempDiv.innerHTML = buildCardInner(nameColor);
   document.body.appendChild(tempDiv);
   try {
-    var canvas = await html2canvas(tempDiv, { useCORS: true, backgroundColor: '#0b0b0d', scale: 2 });
+    var canvas = await html2canvas(tempDiv, { useCORS: true, backgroundColor: cardBg, scale: 2 });
     if (mode === 'save') {
       var hd = getActiveData()[currentHeroId];
       var igCode = '[T' + selectedTalents.join('') + ',' + hd.hyperlinkId + ']';
@@ -678,7 +712,7 @@ window.bpRenderCard = function () {
   if (!currentHeroId) return;
   var borderColor = document.getElementById('border-color').value;
   var card = document.getElementById('bp-card');
-  card.style.cssText = 'width:500px; background:#0b0b0d; padding:25px; border:3px solid ' + borderColor + '; color:white; border-radius:12px;';
+  card.style.cssText = 'width:500px; background:' + cardBg + '; padding:25px; border:3px solid ' + borderColor + '; color:' + cardFont + '; border-radius:12px;';
   card.innerHTML = buildCardInner(document.getElementById('name-color').value);
   var wrap = document.getElementById('bp-wrap');
   var avail = wrap.clientWidth, w = 556;
@@ -701,8 +735,9 @@ function closeTierList() { document.getElementById('tc-modal').style.display = '
 function openTcPreview() {
   if (!currentHeroId) return;
   document.getElementById('tcp-modal').style.display = 'block';
+  syncCardPickers();
   var card = document.getElementById('tcp-card');
-  card.style.cssText = 'width:500px; background:#0b0b0d; padding:25px; border:3px solid #233a5c; color:white; border-radius:12px;';
+  card.style.cssText = 'width:500px; background:' + cardBg + '; padding:25px; border:3px solid #233a5c; color:' + cardFont + '; border-radius:12px;';
   card.innerHTML = tcCardInner();
   var wrap = document.getElementById('tcp-wrap');
   var avail = wrap.clientWidth, w = 556;
@@ -767,11 +802,11 @@ async function tcCapture(mode) {
   var isAll = tcLevel === 'all';
   var lvNum = isAll ? '' : tcLevel.replace(/\D/g, '');
   var tempDiv = document.createElement('div');
-  tempDiv.style.cssText = 'position:absolute; left:-9999px; top:0; width:500px; background:#0b0b0d; padding:25px; border:3px solid #233a5c; color:white; border-radius:12px;';
+  tempDiv.style.cssText = 'position:absolute; left:-9999px; top:0; width:500px; background:' + cardBg + '; padding:25px; border:3px solid #233a5c; color:' + cardFont + '; border-radius:12px;';
   tempDiv.innerHTML = tcCardInner();
   document.body.appendChild(tempDiv);
   try {
-    var canvas = await html2canvas(tempDiv, { useCORS: true, backgroundColor: '#0b0b0d', scale: 2 });
+    var canvas = await html2canvas(tempDiv, { useCORS: true, backgroundColor: cardBg, scale: 2 });
     if (mode === 'save') {
       var link = document.createElement('a');
       link.download = 'hots_scrap_talents_' + (window.DATA_BUILD || '97650') + '_' + hData.name + '_' + (isAll ? 'all' : lvNum + 'Lv') + '.png';
@@ -797,6 +832,12 @@ async function tcCapture(mode) {
       <button type="button" onclick="tcCapture('save')" style="background:#1758a8; border:none; color:#fff; border-radius:5px; padding:6px 12px; cursor:pointer; font-size:12px; font-weight:bold;">📸 저장</button>
       <button type="button" onclick="tcCapture('copy')" style="background:#1c7d4f; border:none; color:#fff; border-radius:5px; padding:6px 12px; cursor:pointer; font-size:12px; font-weight:bold;">📋 복사</button>
       <button type="button" onclick="closeTcPreview()" class="x-btn">✕</button>
+    </div>
+    <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:10px;">
+      <label style="display:flex; align-items:center; gap:6px; font-size:12px; color:#aaa;">배경 <input type="color" id="tcp-bg-color" oninput="onCardColorInput('bg', this.value)" style="width:44px; height:26px;"></label>
+      <label style="display:flex; align-items:center; gap:6px; font-size:12px; color:#aaa;">폰트 <input type="color" id="tcp-font-color" oninput="onCardColorInput('font', this.value)" style="width:44px; height:26px;"></label>
+      <button type="button" onclick="setCardTheme('dark')" style="background:#0b0b0d; border:1px solid #445; color:#eee; border-radius:5px; padding:5px 10px; cursor:pointer; font-size:11px;">🌑 다크 기본</button>
+      <button type="button" onclick="setCardTheme('light')" style="background:#f3f6fb; border:1px solid #cdd9ea; color:#122036; border-radius:5px; padding:5px 10px; cursor:pointer; font-size:11px;">☀ 라이트 기본</button>
     </div>
     <div id="tcp-wrap" style="overflow:hidden;"><div id="tcp-card"></div></div>
   </div>
