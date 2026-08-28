@@ -446,8 +446,8 @@
         <label style="display:flex; align-items:center; justify-content:space-between; gap:8px; font-size:13px; color:#aaa;">배경 색 <input type="color" id="bp-bg-color" oninput="onCardColorInput('bg', this.value)" style="width:52px; height:30px;"></label>
         <label style="display:flex; align-items:center; justify-content:space-between; gap:8px; font-size:13px; color:#aaa;">폰트 색 <input type="color" id="bp-font-color" oninput="onCardColorInput('font', this.value)" style="width:52px; height:30px;"></label>
         <div style="display:flex; gap:6px;">
-          <button type="button" onclick="setCardTheme('dark')" style="flex:1; background:#0b0b0d; border:1px solid #445; color:#eee; border-radius:5px; padding:7px 0; cursor:pointer; font-size:12px;">🌑 다크 기본</button>
-          <button type="button" onclick="setCardTheme('light')" style="flex:1; background:#f3f6fb; border:1px solid #cdd9ea; color:#122036; border-radius:5px; padding:7px 0; cursor:pointer; font-size:12px;">☀ 라이트 기본</button>
+          <button type="button" onclick="setCardTheme('dark')" style="flex:1; background:#0b0b0d; border:1px solid #445; color:#eee; border-radius:5px; padding:7px 0; cursor:pointer; font-size:12px;">☾ Dark</button>
+          <button type="button" onclick="setCardTheme('light')" style="flex:1; background:#f3f6fb; border:1px solid #cdd9ea; color:#122036; border-radius:5px; padding:7px 0; cursor:pointer; font-size:12px;">☀ Light</button>
         </div>
         <button type="button" onclick="takeScreenshot('save')" style="background:#1758a8; border:none; color:#fff; border-radius:5px; padding:10px 14px; cursor:pointer; font-size:13px; font-weight:bold;">📸 저장</button>
         <button type="button" onclick="takeScreenshot('copy')" style="background:#1c7d4f; border:none; color:#fff; border-radius:5px; padding:10px 14px; cursor:pointer; font-size:13px; font-weight:bold;">📋 복사</button>
@@ -836,8 +836,8 @@ async function tcCapture(mode) {
     <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:10px;">
       <label style="display:flex; align-items:center; gap:6px; font-size:12px; color:#aaa;">배경 <input type="color" id="tcp-bg-color" oninput="onCardColorInput('bg', this.value)" style="width:44px; height:26px;"></label>
       <label style="display:flex; align-items:center; gap:6px; font-size:12px; color:#aaa;">폰트 <input type="color" id="tcp-font-color" oninput="onCardColorInput('font', this.value)" style="width:44px; height:26px;"></label>
-      <button type="button" onclick="setCardTheme('dark')" style="background:#0b0b0d; border:1px solid #445; color:#eee; border-radius:5px; padding:5px 10px; cursor:pointer; font-size:11px;">🌑 다크 기본</button>
-      <button type="button" onclick="setCardTheme('light')" style="background:#f3f6fb; border:1px solid #cdd9ea; color:#122036; border-radius:5px; padding:5px 10px; cursor:pointer; font-size:11px;">☀ 라이트 기본</button>
+      <button type="button" onclick="setCardTheme('dark')" style="background:#0b0b0d; border:1px solid #445; color:#eee; border-radius:5px; padding:5px 10px; cursor:pointer; font-size:11px;">☾ Dark</button>
+      <button type="button" onclick="setCardTheme('light')" style="background:#f3f6fb; border:1px solid #cdd9ea; color:#122036; border-radius:5px; padding:5px 10px; cursor:pointer; font-size:11px;">☀ Light</button>
     </div>
     <div id="tcp-wrap" style="overflow:hidden;"><div id="tcp-card"></div></div>
   </div>
