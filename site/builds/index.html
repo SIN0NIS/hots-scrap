@@ -42,6 +42,14 @@
         .tier-row { display: flex; align-items: center; background: var(--card); padding: 6px 8px; border-radius: 6px; border-left: 4px solid var(--p); gap: 8px; margin: 4px 8px; }
         .t-icon { width: 38px; height: 38px; border: 1px solid #444; cursor: pointer; border-radius: 5px; }
         .t-icon.selected { border-color: var(--gold); box-shadow: 0 0 6px var(--gold); }
+        .t-icon.sub { border: 1px dashed #4d9fff; box-shadow: 0 0 6px #4d9fff88; }
+        .tc-tab { background:#132b4d; border:1px solid #233a5c; color:#eaf1fa; border-radius:99px; padding:5px 14px; cursor:pointer; font-size:13px; }
+        .tc-tab.on { background:var(--p); border-color:var(--p); color:#fff; font-weight:bold; }
+        .tc-tier { font-size:15px; font-weight:bold; color:var(--gold); border-bottom:1px solid #233a5c; padding-bottom:4px; margin:16px 0 8px; }
+        .tc-card { display:flex; gap:10px; background:#0d1a30; border:1px solid #233a5c; border-radius:8px; padding:10px; margin-bottom:8px; }
+        .tc-card img { width:40px; height:40px; border:1px solid #444; border-radius:5px; flex-shrink:0; }
+        :root[data-theme="light"] .tc-card { background:#eef2f8; border-color:#dbe3ee; }
+        :root[data-theme="light"] .tc-tier { border-bottom-color:#d5deea; }
         
         #footer { position: fixed; bottom: 0; width: 100%; background: rgba(10,10,12,0.98); border-top: 2px solid var(--p); padding: 12px; box-sizing: border-box; display: flex; flex-direction: column; gap: 8px; z-index: 1500; }
         #selected-summary { display: flex; justify-content: center; gap: 4px; }
@@ -106,6 +114,7 @@
     <div id="top-bar">
         <span style="display:flex; align-items:center; gap:12px;">
           <a href="./" title="빌드 홈으로" style="font-weight:bold; color:var(--p); font-size:12px; text-decoration:none;">⌂ 특성 빌드</a>
+        <button type="button" onclick="openTierList()" style="margin-left:10px; background:#132b4d; border:1px solid #233a5c; color:#eaf1fa; border-radius:5px; padding:3px 10px; cursor:pointer; font-size:11px;">⚖ 특성 나열</button>
         </span>
         <button class="lang-btn" onclick="toggleLanguage()">KO / EN</button>
     </div>
@@ -216,7 +225,7 @@
             let h = ''; lvs.forEach((lv, i) => {
                 h += `<div class="tier-row"><div style="width:35px; color:var(--blue); font-weight:bold;">${lv.replace(/\D/g,"")}</div><div style="display:flex;gap:4px;">`;
                 hData.talents[lv].forEach((t, ti) => { h += `<img src="${imgBase}${t.icon}" class="t-icon t-row-${i}" onclick="toggleTalent(${i}, ${ti+1}, this)">`; });
-                h += `</div><div class="t-info-display" id="desc-${i}" style="font-size:0.9em; color:#aaa;">${currentLang==='ko'?'특성을 선택하세요.':'Select a Talent.'}</div></div>`;
+                h += `</div><div class="t-info-display" id="desc-${i}" style="font-size:0.9em; color:#aaa;">${currentLang==='ko'?'클릭 = 메인 · 우클릭 = 상황별(보조)':'Click = main · Right-click = situational'}</div></div>`;
             });
             document.getElementById("main-content").innerHTML = h; 
             renderStats(); renderAbilities(); updateBuildUI();
@@ -242,7 +251,7 @@
                 if(tn > 0) {
                     const t = hData.talents[lvs[ti]][tn-1];
                     box.innerHTML = `<b style="color:#fff; font-size:1.1em;">${t.name}</b><div style="color:#ccc; margin-top:2px;">${processTooltip(t.fullTooltip, currentLevel)}</div>`;
-                } else { box.innerHTML = currentLang==='ko'?'특성을 선택하세요.':'Select a Talent.'; }
+                } else { box.innerHTML = currentLang==='ko'?'클릭 = 메인 · 우클릭 = 상황별(보조)':'Click = main · Right-click = situational'; }
             });
             updateBuildUI();
         }
@@ -464,6 +473,183 @@ document.getElementById('name-color').addEventListener('input', function () {
 document.getElementById('border-color').addEventListener('input', function () {
   if (document.getElementById('bp-modal').style.display === 'block') { document.getElementById('bp-card').style.borderColor = this.value; document.getElementById('bp-border-color').value = this.value; }
 });
+</script>
+<!-- 특성 나열 모달 — 빌드 흐름과 무관하게 레벨별 특성을 전체 툴팁으로 나열 -->
+<div id="tc-modal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.65); z-index:3000; overflow:auto; padding:16px;" onclick="if(event.target===this)closeTierList()">
+  <div style="max-width:720px; margin:20px auto; background:#101f38; border:1px solid #233a5c; border-radius:12px; padding:14px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px;">
+      <b id="tc-title" style="font-size:14px; color:#eaf1fa;">특성 나열</b>
+      <button type="button" onclick="closeTierList()" style="margin-left:auto; background:none; border:1px solid #445; color:#aaa; border-radius:5px; padding:6px 10px; cursor:pointer;">✕</button>
+    </div>
+    <div id="tc-tabs" style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:8px;"></div>
+    <div id="tc-body"></div>
+  </div>
+</div>
+<script>
+/* ── 보조(상황별) 특성 + 특성 나열 — 원본 함수를 래핑해 확장한다 (2026-08) ── */
+var subTalents = [];
+
+function tierLevels(hData) {
+  return Object.keys(hData.talents).filter(function (l) { return hData.talents[l].length > 0; })
+    .sort(function (a, b) { return parseInt(a.replace(/\D/g, "")) - parseInt(b.replace(/\D/g, "")); });
+}
+
+/* 영웅 선택 시 보조 상태 초기화 */
+(function () {
+  var _sh = window.selectHero;
+  window.selectHero = function (id) {
+    _sh(id);
+    subTalents = (selectedTalents || []).map(function () { return []; });
+  };
+})();
+
+/* 메인으로 찍으면 보조에서 빠진다 */
+(function () {
+  var _tt = window.toggleTalent;
+  window.toggleTalent = function (ti, tn, el) {
+    _tt(ti, tn, el);
+    if (subTalents[ti]) subTalents[ti] = subTalents[ti].filter(function (x) { return x !== selectedTalents[ti]; });
+    applySubClasses();
+  };
+})();
+
+/* 선택 UI 갱신 뒤 보조 표시도 함께 */
+(function () {
+  var _rtu = window.refreshTalentUI;
+  window.refreshTalentUI = function () { _rtu(); applySubClasses(); };
+})();
+
+function applySubClasses() {
+  (subTalents || []).forEach(function (subs, ti) {
+    document.querySelectorAll('.t-row-' + ti).forEach(function (img, idx) {
+      img.classList.toggle('sub', subs.indexOf(idx + 1) > -1 && selectedTalents[ti] !== idx + 1);
+    });
+  });
+}
+
+function toggleSubTalent(ti, tn) {
+  if (!subTalents[ti]) subTalents[ti] = [];
+  if (selectedTalents[ti] === tn) return; // 메인은 보조가 될 수 없다
+  var i = subTalents[ti].indexOf(tn);
+  if (i > -1) subTalents[ti].splice(i, 1); else subTalents[ti].push(tn);
+  applySubClasses();
+}
+
+/* 우클릭(모바일 길게 누르기) = 보조 토글 — 델리게이션이라 다시 그려도 산다 */
+document.addEventListener('contextmenu', function (e) {
+  var el = e.target.closest ? e.target.closest('.t-icon') : null;
+  if (!el) return;
+  e.preventDefault();
+  var rowCls = null;
+  el.classList.forEach(function (c) { if (/^t-row-\d+$/.test(c)) rowCls = c; });
+  if (!rowCls) return;
+  var ti = parseInt(rowCls.slice(6), 10);
+  var icons = Array.prototype.slice.call(document.querySelectorAll('.' + rowCls));
+  toggleSubTalent(ti, icons.indexOf(el) + 1);
+});
+
+/* ── 저장 카드 공용 빌더 — 메인 줄 + ↳ 상황별 줄 ── */
+function buildCardInner(nameColor) {
+  var hData = getActiveData()[currentHeroId];
+  var lvs = tierLevels(hData);
+  var html = '<div style="text-align:center; margin-bottom:25px;"><div id="bp-hero-name" style="font-size:36px; font-weight:bold; color:' + nameColor + ';">' + hData.name + '</div></div>';
+  selectedTalents.forEach(function (tn, ti) {
+    var subs = (subTalents[ti] || []).filter(function (x) { return x !== tn; });
+    var lvLabel = lvs[ti].replace(/\D/g, "") + 'Lv';
+    if (tn > 0) {
+      var t = hData.talents[lvs[ti]][tn - 1];
+      html += '<div class="cap-row"><div class="cap-lv">' + lvLabel + '</div><img src="' + imgBase + t.icon + '" class="cap-img"><div style="flex:1; padding-left:15px;"><div style="font-size:18px; font-weight:bold;">' + t.name + '</div><div style="color:#bbb; font-size:14px;">' + processTooltip(t.fullTooltip, currentLevel) + '</div></div></div>';
+    } else if (subs.length) {
+      html += '<div class="cap-row" style="border-bottom:none; padding-bottom:0;"><div class="cap-lv">' + lvLabel + '</div></div>';
+    }
+    if (subs.length) {
+      html += '<div style="margin:-8px 0 14px 60px; display:flex; align-items:center; gap:10px; flex-wrap:wrap;"><span style="color:#4d9fff; font-size:13px; font-weight:bold;">↳ 상황별</span>';
+      subs.forEach(function (sn) {
+        var st = hData.talents[lvs[ti]][sn - 1];
+        html += '<span style="display:inline-flex; align-items:center; gap:5px;"><img src="' + imgBase + st.icon + '" style="width:26px; height:26px; border:1px solid #4d9fff; border-radius:4px;"><span style="font-size:13px; color:#ddd;">' + st.name + '</span></span>';
+      });
+      html += '</div>';
+    }
+  });
+  return html;
+}
+
+/* 저장·복사 — 보조 포함 카드로 캡처 (원본을 대체) */
+window.takeScreenshot = async function (mode) {
+  if (!currentHeroId) return;
+  var nameColor = document.getElementById('name-color').value, borderColor = document.getElementById('border-color').value;
+  var tempDiv = document.createElement('div');
+  tempDiv.style.cssText = 'position:absolute; left:-9999px; top:0; width:500px; background:#0b0b0d; padding:25px; border:3px solid ' + borderColor + '; color:white; border-radius:12px;';
+  tempDiv.innerHTML = buildCardInner(nameColor);
+  document.body.appendChild(tempDiv);
+  try {
+    var canvas = await html2canvas(tempDiv, { useCORS: true, backgroundColor: '#0b0b0d', scale: 2 });
+    if (mode === 'save') {
+      var hd = getActiveData()[currentHeroId];
+      var igCode = '[T' + selectedTalents.join('') + ',' + hd.hyperlinkId + ']';
+      var link = document.createElement('a');
+      link.download = 'hots_scrap_build_' + (window.DATA_BUILD || '97650') + '_' + hd.name + '_' + igCode + '.png';
+      link.href = canvas.toDataURL(); link.click();
+    } else {
+      canvas.toBlob(async function (blob) {
+        try {
+          if (navigator.clipboard && window.ClipboardItem) {
+            await navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })]);
+            alert(currentLang === 'ko' ? '복사되었습니다!' : 'Copied!');
+          } else { throw new Error(); }
+        } catch (e) { alert(currentLang === 'ko' ? '보안 문제로 차단되었습니다. [저장]을 이용해 주세요.' : 'Blocked by security.'); }
+      }, 'image/png');
+    }
+  } catch (err) { alert('Error'); } finally { document.body.removeChild(tempDiv); }
+};
+
+/* 미리보기도 공용 빌더 사용 (보조 포함) */
+window.bpRenderCard = function () {
+  if (!currentHeroId) return;
+  var borderColor = document.getElementById('border-color').value;
+  var card = document.getElementById('bp-card');
+  card.style.cssText = 'width:500px; background:#0b0b0d; padding:25px; border:3px solid ' + borderColor + '; color:white; border-radius:12px;';
+  card.innerHTML = buildCardInner(document.getElementById('name-color').value);
+  var wrap = document.getElementById('bp-wrap');
+  var avail = wrap.clientWidth, w = 556;
+  card.style.transformOrigin = 'top left';
+  if (avail > 0 && avail < w) {
+    card.style.transform = 'scale(' + (avail / w) + ')';
+    requestAnimationFrame(function () { wrap.style.height = (card.offsetHeight * avail / w) + 'px'; });
+  } else { card.style.transform = ''; wrap.style.height = ''; }
+};
+
+/* ── 특성 나열 모드 — 빌드 선택과 무관, 레벨 탭으로 전체 툴팁 나열 ── */
+var tcLevel = 'all';
+function openTierList() {
+  if (!currentHeroId) { alert(currentLang === 'ko' ? '영웅을 먼저 선택하세요.' : 'Select a hero first.'); return; }
+  tcLevel = 'all';
+  document.getElementById('tc-modal').style.display = 'block';
+  tcRender();
+}
+function closeTierList() { document.getElementById('tc-modal').style.display = 'none'; }
+function tcRender() {
+  var hData = getActiveData()[currentHeroId];
+  var lvs = tierLevels(hData);
+  document.getElementById('tc-title').textContent = hData.name + (currentLang === 'ko' ? ' — 특성 나열' : ' — Talents');
+  var tabs = '<button class="tc-tab' + (tcLevel === 'all' ? ' on' : '') + '" onclick="tcLevel=\'all\';tcRender()">' + (currentLang === 'ko' ? '전체' : 'All') + '</button>';
+  lvs.forEach(function (lv) {
+    var n = lv.replace(/\D/g, '');
+    tabs += '<button class="tc-tab' + (tcLevel === lv ? ' on' : '') + '" onclick="tcLevel=\'' + lv + '\';tcRender()">' + n + '</button>';
+  });
+  document.getElementById('tc-tabs').innerHTML = tabs;
+  var body = '';
+  lvs.forEach(function (lv, ti) {
+    if (tcLevel !== 'all' && tcLevel !== lv) return;
+    body += '<div class="tc-tier">' + lv.replace(/\D/g, '') + (currentLang === 'ko' ? '레벨' : ' Lv') + '</div>';
+    hData.talents[lv].forEach(function (t, idx) {
+      var mark = selectedTalents[ti] === idx + 1 ? ' <span style="color:var(--gold); font-size:11px;">● ' + (currentLang === 'ko' ? '메인' : 'main') + '</span>'
+        : ((subTalents[ti] || []).indexOf(idx + 1) > -1 ? ' <span style="color:#4d9fff; font-size:11px;">◐ ' + (currentLang === 'ko' ? '상황별' : 'situational') + '</span>' : '');
+      body += '<div class="tc-card"><img src="' + imgBase + t.icon + '"><div style="flex:1;"><div style="font-weight:bold; font-size:14px;">' + t.name + mark + '</div><div style="color:#bbb; font-size:13px; margin-top:3px; line-height:1.5;">' + processTooltip(t.fullTooltip, currentLevel) + '</div></div></div>';
+    });
+  });
+  document.getElementById('tc-body').innerHTML = body;
+}
 </script>
 </body>
 </html>
