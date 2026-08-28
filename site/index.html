@@ -124,6 +124,9 @@
   function apply(t) {
     if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
     else document.documentElement.removeAttribute('data-theme');
+    var eff = t || ((window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light');
+    var b = document.getElementById('themeBtn');
+    if (b) b.textContent = eff === 'light' ? '☀ Light' : '☾ Dark';
   }
   var saved = null;
   try { saved = localStorage.getItem(KEY) || localStorage.getItem('hub.theme'); } catch (e) {}

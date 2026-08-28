@@ -42,7 +42,7 @@
       var ctl = light ? 'background:#ffffff;border:1px solid #cdd9ea;color:#31405a;' : 'background:#132b4d;border:1px solid #233a5c;color:#eaf1fa;';
       btn.style.cssText = 'border-radius:99px;padding:4px 10px;cursor:pointer;font-size:12px;line-height:1;' + ctl;
       document.getElementById('scrap-gh').style.cssText = 'text-decoration:none;font-size:12px;line-height:1;border-radius:99px;padding:4px 10px;' + ctl;
-      btn.textContent = light ? '◑ 라이트' : '◐ 다크';
+      btn.textContent = light ? '☀ Light' : '☾ Dark';
     }
     btn.addEventListener('click', function () {
       var next = cur() === 'dark' ? 'light' : 'dark';
