@@ -483,6 +483,7 @@ document.getElementById('border-color').addEventListener('input', function () {
   <div style="max-width:720px; margin:20px auto; background:#101f38; border:1px solid #233a5c; border-radius:12px; padding:14px;">
     <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px;">
       <b id="tc-title" style="font-size:14px; color:#eaf1fa;">특성 나열</b>
+      <button type="button" onclick="openTcPreview()" style="background:#132b4d; border:1px solid #233a5c; color:#eaf1fa; border-radius:5px; padding:6px 12px; cursor:pointer; font-size:12px;">👁 미리보기</button>
       <button type="button" onclick="tcCapture('save')" style="background:#1758a8; border:none; color:#fff; border-radius:5px; padding:6px 12px; cursor:pointer; font-size:12px; font-weight:bold;">📸 저장</button>
       <button type="button" onclick="tcCapture('copy')" style="background:#1c7d4f; border:none; color:#fff; border-radius:5px; padding:6px 12px; cursor:pointer; font-size:12px; font-weight:bold;">📋 복사</button>
       <button type="button" onclick="closeTierList()" style="margin-left:auto; background:none; border:1px solid #445; color:#aaa; border-radius:5px; padding:6px 10px; cursor:pointer;">✕</button>
@@ -672,6 +673,21 @@ function openTierList() {
   tcRender();
 }
 function closeTierList() { document.getElementById('tc-modal').style.display = 'none'; }
+function openTcPreview() {
+  if (!currentHeroId) return;
+  document.getElementById('tcp-modal').style.display = 'block';
+  var card = document.getElementById('tcp-card');
+  card.style.cssText = 'width:500px; background:#0b0b0d; padding:25px; border:3px solid #233a5c; color:white; border-radius:12px;';
+  card.innerHTML = tcCardInner();
+  var wrap = document.getElementById('tcp-wrap');
+  var avail = wrap.clientWidth, w = 556;
+  card.style.transformOrigin = 'top left';
+  if (avail > 0 && avail < w) {
+    card.style.transform = 'scale(' + (avail / w) + ')';
+    requestAnimationFrame(function () { wrap.style.height = (card.offsetHeight * avail / w) + 'px'; });
+  } else { card.style.transform = ''; wrap.style.height = ''; }
+}
+function closeTcPreview() { document.getElementById('tcp-modal').style.display = 'none'; }
 function openTierAt(lv) {
   if (!currentHeroId) return;
   tcLevel = lv;
@@ -701,9 +717,8 @@ function tcRender() {
   document.getElementById('tc-body').innerHTML = body;
 }
 
-/* 나열 화면을 이미지로 — 빌드 카드 저장과 별개 */
-async function tcCapture(mode) {
-  if (!currentHeroId) return;
+/* 나열 카드 공용 빌더 — 미리보기와 캡처가 같은 마크업을 쓴다 */
+function tcCardInner() {
   var hData = getActiveData()[currentHeroId];
   var lvs = tierLevels(hData);
   var isAll = tcLevel === 'all';
@@ -717,9 +732,18 @@ async function tcCapture(mode) {
       html += '<div style="display:flex; gap:12px; padding:10px 0; border-bottom:1px solid #222;"><img src="' + imgBase + t.icon + '" style="width:44px; height:44px; border:1px solid #444; border-radius:6px; flex-shrink:0;"><div style="flex:1;"><div style="font-size:16px; font-weight:bold;">' + t.name + '</div><div style="color:#bbb; font-size:13px; margin-top:2px; line-height:1.5;">' + processTooltip(t.fullTooltip, currentLevel) + '</div></div></div>';
     });
   });
+  return html;
+}
+
+/* 나열 화면을 이미지로 — 빌드 카드 저장과 별개 */
+async function tcCapture(mode) {
+  if (!currentHeroId) return;
+  var hData = getActiveData()[currentHeroId];
+  var isAll = tcLevel === 'all';
+  var lvNum = isAll ? '' : tcLevel.replace(/\D/g, '');
   var tempDiv = document.createElement('div');
   tempDiv.style.cssText = 'position:absolute; left:-9999px; top:0; width:500px; background:#0b0b0d; padding:25px; border:3px solid #233a5c; color:white; border-radius:12px;';
-  tempDiv.innerHTML = html;
+  tempDiv.innerHTML = tcCardInner();
   document.body.appendChild(tempDiv);
   try {
     var canvas = await html2canvas(tempDiv, { useCORS: true, backgroundColor: '#0b0b0d', scale: 2 });
@@ -740,5 +764,17 @@ async function tcCapture(mode) {
   } catch (err) { alert('Error'); } finally { document.body.removeChild(tempDiv); }
 }
 </script>
+<!-- 나열 카드 미리보기 -->
+<div id="tcp-modal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.7); z-index:3100; overflow:auto; padding:16px;" onclick="if(event.target===this)closeTcPreview()">
+  <div style="max-width:620px; margin:20px auto; background:#101f38; border:1px solid #233a5c; border-radius:12px; padding:14px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px;">
+      <b style="font-size:14px; color:#eaf1fa;">저장 이미지 미리보기</b>
+      <button type="button" onclick="tcCapture('save')" style="background:#1758a8; border:none; color:#fff; border-radius:5px; padding:6px 12px; cursor:pointer; font-size:12px; font-weight:bold;">📸 저장</button>
+      <button type="button" onclick="tcCapture('copy')" style="background:#1c7d4f; border:none; color:#fff; border-radius:5px; padding:6px 12px; cursor:pointer; font-size:12px; font-weight:bold;">📋 복사</button>
+      <button type="button" onclick="closeTcPreview()" style="margin-left:auto; background:none; border:1px solid #445; color:#aaa; border-radius:5px; padding:6px 10px; cursor:pointer;">✕</button>
+    </div>
+    <div id="tcp-wrap" style="overflow:hidden;"><div id="tcp-card"></div></div>
+  </div>
+</div>
 </body>
 </html>
