@@ -42,7 +42,7 @@
 // 허브는 apps.json / latest.json 만 읽는다. 앱 코드에는 관여하지 않는다.
 (async () => {
   try {
-    const latest = await fetch('../data/latest.json').then(r => r.json());
+    const latest = await fetch('data/latest.json').then(r => r.json());
     document.getElementById('build').innerHTML = '데이터 버전: <b>build ' + latest.build + '</b>';
   } catch (e) {
     document.getElementById('build').textContent = '데이터 버전 정보를 읽지 못했습니다';

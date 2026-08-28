@@ -1,4 +1,4 @@
-﻿# HotS Scrap 통합 계획 (hots-scrap)
+# HotS Scrap 통합 계획 (hots-scrap)
 
 히오스 통합 아카이브 — 파편화된 세 프로젝트(도감·빌드·리플레이)를 하나의 모노레포/Pages 사이트로 통합한다.
 
@@ -28,10 +28,10 @@
 hots_scrap/
 ├─ pipeline/        # 추출→파싱→조립 (로컬 실행, 단계별 캐시)
 │   └─ steps/       # 단계 = 독립 스크립트 (스텝 추가로 확장)
-├─ data/
-│   ├─ 97650/       # 통합 JSON (heroes, talents, abilities, maps, strings)
-│   └─ latest       # 최신 버전 포인터 (JSON 파일: {"build": 97650})
-├─ site/
+├─ site/            # ★ Pages 배포 루트 — 주소가 짧아진다 (…github.io/hots-scrap/도감/)
+│   ├─ data/
+│   │   ├─ 97650/   # 통합 JSON (heroes, talents, abilities, maps, strings)
+│   │   └─ latest.json # 최신 버전 포인터 {"build": 97650}
 │   ├─ index.html   # 허브 랜딩 — apps.json 을 읽어 앱 카드 자동 나열
 │   ├─ apps.json    # 앱 레지스트리 (등록만 하면 허브에 노출)
 │   ├─ shared/      # 공통 JS/CSS, 데이터 로더, ID 매핑
