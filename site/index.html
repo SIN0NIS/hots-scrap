@@ -18,14 +18,18 @@
   .sub { color:var(--dim); margin:0 0 8px; }
   .build { color:var(--dim); font-size:13px; margin-bottom:32px; }
   .build b { color:var(--accent); }
-  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:14px; }
-  a.card { display:block; background:var(--card); border:1px solid var(--line); border-radius:10px;
-           padding:18px; text-decoration:none; color:inherit; transition:border-color .15s; }
+  .grid { display:flex; flex-direction:column; gap:10px; }
+  a.card { display:flex; align-items:center; gap:16px; background:var(--card); border:1px solid var(--line);
+           border-radius:10px; padding:16px 20px; text-decoration:none; color:inherit; transition:border-color .15s; }
   a.card:hover { border-color:var(--accent); }
-  .card h2 { margin:0 0 6px; font-size:17px; }
-  .card p { margin:0; color:var(--dim); font-size:13px; line-height:1.5; }
-  .tag { display:inline-block; margin-top:10px; font-size:11px; color:var(--dim);
+  .card h2 { margin:0; font-size:17px; white-space:nowrap; }
+  .card p { margin:0; margin-left:auto; color:var(--dim); font-size:13px; line-height:1.5; text-align:right; }
+  .tag { display:inline-block; flex-shrink:0; font-size:11px; color:var(--dim);
          border:1px solid var(--line); border-radius:99px; padding:2px 8px; }
+  @media (max-width: 560px) {
+    a.card { flex-wrap:wrap; }
+    .card p { margin-left:0; text-align:left; width:100%; }
+  }
   .tag.heavy { color:#d9a441; border-color:#d9a441; }
   .planned { opacity:.5; pointer-events:none; }
   .err { color:#d97070; }
@@ -59,10 +63,11 @@
       const a = document.createElement('a');
       a.className = 'card' + (app.status === 'planned' ? ' planned' : '');
       a.href = app.path;
-      a.innerHTML = '<h2>' + app.name + '</h2><p>' + app.desc + '</p>' +
+      a.innerHTML = '<h2>' + app.name + '</h2>' +
         '<span class="tag' + (app.requires === 'heavy' ? ' heavy' : '') + '">' +
         (app.requires === 'heavy' ? '로컬 자산 필요' : '바로 사용') +
-        (app.status === 'planned' ? ' · 준비 중' : '') + '</span>';
+        (app.status === 'planned' ? ' · 준비 중' : '') + '</span>' +
+        '<p>' + app.desc + '</p>';
       grid.appendChild(a);
     }
   } catch (e) {
