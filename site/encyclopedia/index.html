@@ -277,10 +277,11 @@ a { color:var(--blue); }
 <div id="top-bar">
   <div><span class="title" id="home-btn" onclick="showHome()" style="cursor:pointer;">📖 히오스 영웅 백과사전</span> <!--<<WIKI-FIELDS>>--><a class="gl-btn home-btn" href="index.html">🏠 메인</a> <button class="gl-btn" type="button" onclick="showGlossary()">📘 용어집</button> <!--<</WIKI-FIELDS>>--><span class="meta">Build 97650 · 생성일 2026-07-26 22:02</span></div>
   <div>
+    <a class="set-btn" href="../">🏠 HotS Scrap</a>
     <a class="set-btn" href="https://github.com/SIN0NIS/Hots_encyclopedia" target="_blank" rel="noopener">🔗 GitHub</a>
 <!--<<WIKI-FIELDS>>-->    <a class="set-btn" href="https://heroesofthestorm.fandom.com/wiki/Heroes_of_the_Storm_Wiki" target="_blank" rel="noopener">📚 위키</a>
 
-<!--<</WIKI-FIELDS>>-->    <a class="set-btn builder-link" id="builder-link" href="https://sin0nis.github.io/hots_talent_build_auto_git/hots_talent_build.html" target="_blank" rel="noopener">🧩 특성 찍기</a>
+<!--<</WIKI-FIELDS>>-->    <a class="set-btn builder-link" id="builder-link" href="../builds/" rel="noopener">🧩 특성 찍기</a>
     <button class="set-btn" onclick="toggleSettings()">⚙ 표시 설정</button>
     <button class="lang-btn" onclick="toggleLanguage()">KO / EN</button>
   </div>
@@ -526,7 +527,7 @@ function updateSidebarToggleLabel() {
   document.getElementById('sidebar-toggle-icon').textContent = collapsed ? '▸' : '▾';
 }
 
-const BUILDER_BASE_URL = "https://sin0nis.github.io/hots_talent_build_auto_git/hots_talent_build.html";
+const BUILDER_BASE_URL = "../builds/"; // HotS Scrap 내부 빌드 메이커 (앱 간 이동은 URL 로만)
 function updateBuilderLink(heroId) {
   const link = document.getElementById('builder-link');
   if (!link) return;
