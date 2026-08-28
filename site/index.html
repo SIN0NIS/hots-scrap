@@ -118,15 +118,15 @@
   </p>
 </div>
 <script>
-/* 테마 토글 — 선택은 localStorage('hub.theme') 에 기억, 미선택 시 OS 설정을 따른다 */
+/* 테마 토글 — localStorage('scrap.theme') 은 사이트 전역 공유 (앱 전역 바에서도 바꿀 수 있다) */
 (function () {
-  var KEY = 'hub.theme';
+  var KEY = 'scrap.theme';
   function apply(t) {
     if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
     else document.documentElement.removeAttribute('data-theme');
   }
   var saved = null;
-  try { saved = localStorage.getItem(KEY); } catch (e) {}
+  try { saved = localStorage.getItem(KEY) || localStorage.getItem('hub.theme'); } catch (e) {}
   apply(saved);
   document.getElementById('themeBtn').addEventListener('click', function () {
     var cur = document.documentElement.getAttribute('data-theme');
