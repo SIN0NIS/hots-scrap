@@ -54,7 +54,19 @@
         .cap-row { display: flex; align-items: flex-start; gap: 15px; border-bottom: 1px solid #333; padding: 15px 0; }
         .cap-lv { color: var(--blue); font-size: 14px; font-weight: bold; width: 45px; flex-shrink: 0; }
         .cap-img { width: 60px; height: 60px; border: 2px solid var(--gold); border-radius: 8px; flex-shrink: 0; }
-    </style>
+    /* 시작 화면 영웅 그리드 (역할군별) */
+#welcome-area .bh-role { font-size:15px; font-weight:bold; color:var(--gold); border-bottom:1px solid #233a5c; padding-bottom:5px; margin:18px 0 10px; text-align:left; }
+#welcome-area .bh-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(78px,1fr)); gap:10px; }
+#welcome-area .bh-card { display:flex; flex-direction:column; align-items:center; gap:5px; cursor:pointer; padding:6px 2px; border-radius:8px; text-align:center; }
+#welcome-area .bh-card:hover { background:#132b4d; }
+#welcome-area .bh-card img { width:56px; height:56px; border-radius:50%; border:2px solid #233a5c; object-fit:cover; background:#0d1a30; }
+#welcome-area .bh-card:hover img { border-color:var(--gold); }
+#welcome-area .bh-name { font-size:11px; color:#ccc; line-height:1.25; }
+:root[data-theme="light"] #welcome-area .bh-role { border-bottom-color:#d5deea; }
+:root[data-theme="light"] #welcome-area .bh-card:hover { background:#e3ebf5; }
+:root[data-theme="light"] #welcome-area .bh-card img { border-color:#cdd9ea; background:#dfe6f0; }
+:root[data-theme="light"] #welcome-area .bh-name { color:#31405a; }
+</style>
 <style id="scrap-theme">
 /* HotS Scrap 팔레트 — 원본 스타일 위에 겹쳐 쓴다 (허브와 통일) */
 :root { --p:#4d9fff; --bg:#0b1526; --card:#101f38; --blue:#5aa8ff; --gold:#e8c268; --green:#4dbc92; }
@@ -329,5 +341,52 @@
         }
     </script>
 <script src="../shared/scrap.js" defer></script>
+<script>
+/* 시작 화면: 위키 메인처럼 역할군별 초상화 그리드 — 검색과 연동 (2026-08) */
+(function () {
+  var ROLE_ORDER = ['전사', '투사', '근접 암살자', '원거리 암살자', '치유사', '지원가'];
+  var PBASE = 'https://sin0nis.github.io/images/heroportraits/';
+  function heroData(id) { try { return getActiveData()[id] || {}; } catch (e) { return {}; } }
+  function roleOf(id) { var d = heroData(id); return d.expandedRole || (d.roles && d.roles[0]) || '기타'; }
+  function portraitOf(id) { var p = heroData(id).portraits || {}; return p.heroSelect || p.draftScreen || p.loading || ''; }
+  window.renderHeroGrid = function (filter) {
+    var wrap = document.getElementById('welcome-area');
+    if (!wrap) return;
+    var f = (filter || '').toLowerCase().replace(/\s/g, '');
+    var fCho = f ? getChosung(f) : '';
+    var groups = {};
+    heroList.forEach(function (h) {
+      if (f) {
+        var ko = h.name_ko.toLowerCase().replace(/\s/g, ''), en = h.name_en.toLowerCase().replace(/\s/g, '');
+        if (!(ko.indexOf(f) > -1 || en.indexOf(f) > -1 || getChosung(ko).indexOf(fCho) > -1)) return;
+      }
+      var r = roleOf(h.id);
+      (groups[r] = groups[r] || []).push(h);
+    });
+    var order = ROLE_ORDER.concat(Object.keys(groups).filter(function (r) { return ROLE_ORDER.indexOf(r) < 0; }));
+    var html = '';
+    order.forEach(function (r) {
+      var list = groups[r];
+      if (!list || !list.length) return;
+      list.sort(function (a, b) { return a.name_ko.localeCompare(b.name_ko, 'ko'); });
+      html += '<div class="bh-role">' + r + ' <span style="font-weight:normal;font-size:11px;color:#888;">' + list.length + '</span></div><div class="bh-grid">';
+      list.forEach(function (h) {
+        var img = portraitOf(h.id);
+        html += '<div class="bh-card" onclick="selectHero(\'' + h.id + '\')" title="' + h.name_ko + '">'
+          + (img ? '<img loading="lazy" src="' + PBASE + img + '" alt="" onerror="this.style.visibility=\'hidden\'">'
+                 : '<div style="width:56px;height:56px;border-radius:50%;background:#222;"></div>')
+          + '<div class="bh-name">' + h.name_ko + '</div></div>';
+      });
+      html += '</div>';
+    });
+    wrap.style.padding = '4px 10px 60px';
+    wrap.style.textAlign = 'left';
+    wrap.innerHTML = html || '<div style="padding:40px;text-align:center;color:#888;">검색 결과가 없습니다</div>';
+  };
+  var _hs = window.handleSearch;
+  window.handleSearch = function (v) { _hs(v); renderHeroGrid(v); };
+  renderHeroGrid('');
+})();
+</script>
 </body>
 </html>

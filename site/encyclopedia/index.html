@@ -2045,24 +2045,17 @@ function xsRows(rows) {
   }).join('') + '</table>';
 }
 function xsAbil(nameId, buttonId) {
-  const s = XML_SPECS.a[nameId];
-  if (!s) return '';
-  let h = '<span class="xs-tag">XML 추출 제원 (빌드 97650 · 특성 미적용)</span>';
-  if (s.r && s.r.length) h += xsRows(s.r);
-  if (s.d && s.d.length)
-    h += '<div class="xs-dmg">피해량: ' + s.d.join(', ') + '</div>';
-  (s.u || []).forEach(u => h += '<div class="xs-sum">소환: ' + u + '</div>');
+  // XML 상세 표는 위키 필드와 중복·과잉이라 표시하지 않는다 (2026-08 결정).
+  // XML에서만 얻는 범위 그림 보충 버튼만 남긴다.
   const e = wikiFields.rows[buttonId];
   if (e && e.geom && e.geom.src === 'xml')   // 수기 그림이 없어서 XML로 보충된 것만
-    h += '<span class="xs-aoe" onclick="event.stopPropagation();' +
-         'openAoe(\'' + buttonId + '\', currentHeroId)">📐 범위 보기 (XML)</span>';
-  return h;
+    return '<span class="xs-aoe" onclick="event.stopPropagation();' +
+           'openAoe(\'' + buttonId + '\', currentHeroId)">📐 범위 보기</span>';
+  return '';
 }
 function xsTal(nameId) {
-  const s = XML_SPECS.t[nameId];
-  if (!s || !s.r || !s.r.length) return '';
-  return '<details class="xs"><summary>XML 필드 ' + s.r.length +
-    '개</summary>' + xsRows(s.r) + '</details>';
+  // XML 상세 표는 위키 필드와 중복·과잉이라 특성에서도 표시하지 않는다 (2026-08 결정)
+  return '';
 }
 // ---- 뒤로 가기: 화면 전환을 히스토리에 쌓는다 --------------------------
 (function () {
