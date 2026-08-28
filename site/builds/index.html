@@ -56,6 +56,10 @@
         /* ── 공통 위젯 색 — 테마를 따른다 ── */
         .x-btn { margin-left:auto; background:none; border:1px solid #445; color:#aaa; border-radius:5px; padding:6px 10px; cursor:pointer; }
         .tcd { color:#bbb; }
+        .tdesc { color:#bbb; }
+        .tname { color:#fff; }
+        :root[data-theme="light"] .tdesc { color:#43536b; }
+        :root[data-theme="light"] .tname { color:#122036; }
         :root[data-theme="light"] .x-btn { border-color:#cdd9ea; color:#5d6d84; }
         :root[data-theme="light"] .tcd { color:#43536b; }
         :root[data-theme="light"] .t-info-display { color:#43536b !important; }
@@ -275,7 +279,7 @@
                 const box = document.getElementById("desc-"+ti);
                 if(tn > 0) {
                     const t = hData.talents[lvs[ti]][tn-1];
-                    box.innerHTML = `<b style="color:#fff; font-size:1.1em;">${t.name}</b><div style="color:#ccc; margin-top:2px;">${processTooltip(t.fullTooltip, currentLevel)}</div>`;
+                    box.innerHTML = `<b class="tname" style="font-size:1.1em;">${t.name}</b><div class="tdesc" style="margin-top:2px;">${processTooltip(t.fullTooltip, currentLevel)}</div>`;
                 } else { box.innerHTML = currentLang==='ko'?'클릭: 메인 → 보조(1개) · 재클릭: 해제':'Click: main → sub · Click again: clear'; }
             });
             updateBuildUI();
@@ -338,7 +342,7 @@
 
         function renderAbilities() {
             const h = getActiveData()[currentHeroId]; let html = "";
-            const process = (list) => { if(!list) return; list.forEach(s => { html += `<div class="ability-item"><img src="${imgBase}${s.icon}" class="ability-icon"><div style="flex:1"><b style="color:var(--blue)">[${s.abilityType}] ${s.name}</b><div style="color:#bbb; font-size:0.95em;">${processTooltip(s.fullTooltip||s.description, currentLevel)}</div></div></div>`; }); };
+            const process = (list) => { if(!list) return; list.forEach(s => { html += `<div class="ability-item"><img src="${imgBase}${s.icon}" class="ability-icon"><div style="flex:1"><b style="color:var(--blue)">[${s.abilityType}] ${s.name}</b><div class="tdesc" style="font-size:0.95em;">${processTooltip(s.fullTooltip||s.description, currentLevel)}</div></div></div>`; }); };
             ["basic", "heroic", "trait", "mount", "activable"].forEach(k => process(h.abilities[k]));
             document.getElementById("ability-container").innerHTML = html;
         }
