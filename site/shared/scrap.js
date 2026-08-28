@@ -31,6 +31,13 @@
       marginCss = 'margin:-' + cs.paddingTop + ' -' + cs.paddingRight + ' 18px -' + cs.paddingLeft + ';';
     }
 
+    // 배경 워터마크 — 빈 공간에만 은은하게 비치는 큰 로고 (콘텐츠 뒤 z:-1)
+    if (!document.getElementById('scrap-wm')) {
+      var wm = document.createElement('div');
+      wm.id = 'scrap-wm';
+      document.body.appendChild(wm);
+    }
+
     // 뒤로가기 — 모든 페이지 우측 하단 (돌아갈 기록이 있을 때만)
     if (!document.getElementById('scrap-back') && history.length > 1) {
       var bk = document.createElement('button');
@@ -54,6 +61,10 @@
       btn.style.cssText = 'border-radius:99px;padding:4px 10px;cursor:pointer;font-size:12px;line-height:1;' + ctl;
       document.getElementById('scrap-gh').style.cssText = 'text-decoration:none;font-size:12px;line-height:1;border-radius:99px;padding:4px 10px;' + ctl;
       btn.textContent = light ? '☀ Light' : '☾ Dark';
+      var wm2 = document.getElementById('scrap-wm');
+      if (wm2) wm2.style.cssText = 'position:fixed;inset:0;z-index:-1;pointer-events:none;'
+        + 'background:url(' + BASE + 'shared/' + (light ? 'logo.svg' : 'logo_light.svg') + ') center/72vmin no-repeat;'
+        + 'opacity:' + (light ? '0.05' : '0.05') + ';';
       var bk2 = document.getElementById('scrap-back');
       if (bk2) {
         // 페이지가 자기 UI 와 겹치면 body 속성으로 위치를 옮길 수 있다

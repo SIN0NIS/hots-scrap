@@ -50,6 +50,13 @@
   * { box-sizing:border-box; }
   body { margin:0; background:var(--bg); background-image:var(--bg-glow); background-repeat:no-repeat;
          color:var(--fg); font-family:"Malgun Gothic","Segoe UI",sans-serif; min-height:100vh; }
+  /* 배경 워터마크 — 빈 공간에 은은한 큰 로고 */
+  body::before { content:''; position:fixed; inset:0; z-index:-1; pointer-events:none; opacity:0.05;
+                 background:url("shared/logo.svg") center/72vmin no-repeat; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) body::before { background-image:url("shared/logo_light.svg"); }
+  }
+  :root[data-theme="dark"] body::before { background-image:url("shared/logo_light.svg"); }
   .wrap { max-width:880px; margin:0 auto; padding:48px 20px; }
 
   /* 타이틀 줄 */
