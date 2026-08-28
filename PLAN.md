@@ -89,6 +89,7 @@ hots_scrap/
 
 ## 주의
 
+- **GitHub 제한 예방 규칙** (2026-08 점검): 수익화 금지(DMCA 트리거 1순위) · 단일 파일 100MB 초과 금지(push 거부됨 — 큰 파일은 Release 첨부로) · 저장소당 1GB 근처면 assets 저장소 분리 · Git LFS 금지(무료 대역폭 월 1GB 뿐) · Pages 대역폭 월 100GB 소프트리밋 · 스케줄 워크플로는 저장소 60일 무활동 시 자동 꺼짐
 - 아이콘은 Pages 로 서빙 (raw.githubusercontent 는 429 남 — talent_build 에서 확인된 사항)
 - Hots_talent_build 폴더의 Git-2.54.0-64-bit.exe(62MB) 등 잡파일은 이사에서 제외
 - 인코딩: 모든 JSON/JS 는 UTF-8(BOM 없음) 통일
