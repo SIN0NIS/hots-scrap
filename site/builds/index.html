@@ -43,6 +43,9 @@
         .t-icon { width: 38px; height: 38px; border: 1px solid #444; cursor: pointer; border-radius: 5px; }
         .t-icon.selected { border-color: var(--gold); box-shadow: 0 0 6px var(--gold); }
         .t-icon.sub { border: 1px dashed #4d9fff; box-shadow: 0 0 6px #4d9fff88; }
+        .lv-list-btn { width:35px; background:none; border:1px solid #233a5c; color:var(--blue); font-weight:bold; border-radius:5px; cursor:pointer; padding:4px 0; font:inherit; font-weight:bold; flex-shrink:0; }
+        .lv-list-btn:hover { border-color:var(--gold); color:var(--gold); }
+        :root[data-theme="light"] .lv-list-btn { border-color:#cdd9ea; }
         .tc-tab { background:#132b4d; border:1px solid #233a5c; color:#eaf1fa; border-radius:99px; padding:5px 14px; cursor:pointer; font-size:13px; }
         .tc-tab.on { background:var(--p); border-color:var(--p); color:#fff; font-weight:bold; }
         .tc-tier { font-size:15px; font-weight:bold; color:var(--gold); border-bottom:1px solid #233a5c; padding-bottom:4px; margin:16px 0 8px; }
@@ -224,7 +227,7 @@
             const lvs = Object.keys(hData.talents).filter(l => hData.talents[l].length > 0).sort((a,b) => parseInt(a.replace(/\D/g,"")) - parseInt(b.replace(/\D/g,"")));
             selectedTalents = new Array(lvs.length).fill(0);
             let h = ''; lvs.forEach((lv, i) => {
-                h += `<div class="tier-row"><div style="width:35px; color:var(--blue); font-weight:bold;">${lv.replace(/\D/g,"")}</div><div style="display:flex;gap:4px;">`;
+                h += `<div class="tier-row"><button type="button" class="lv-list-btn" title="${currentLang==='ko'?'이 레벨 특성 모두 보기':'Show all talents of this tier'}" onclick="openTierAt('${lv}')">${lv.replace(/\D/g,"")}</button><div style="display:flex;gap:4px;">`;
                 hData.talents[lv].forEach((t, ti) => { h += `<img src="${imgBase}${t.icon}" class="t-icon t-row-${i}" onclick="toggleTalent(${i}, ${ti+1}, this)">`; });
                 h += `</div><div class="t-info-display" id="desc-${i}" style="font-size:0.9em; color:#aaa;">${currentLang==='ko'?'클릭: 메인 → 보조(1개) · 재클릭: 해제':'Click: main → sub · Click again: clear'}</div></div>`;
             });
@@ -667,6 +670,12 @@ function openTierList() {
   tcRender();
 }
 function closeTierList() { document.getElementById('tc-modal').style.display = 'none'; }
+function openTierAt(lv) {
+  if (!currentHeroId) return;
+  tcLevel = lv;
+  document.getElementById('tc-modal').style.display = 'block';
+  tcRender();
+}
 function tcRender() {
   var hData = getActiveData()[currentHeroId];
   var lvs = tierLevels(hData);
