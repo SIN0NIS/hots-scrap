@@ -519,7 +519,7 @@ function tierLevels(hData) {
     } else if (main === 0) {
       selectedTalents[ti] = tn;                      // 첫 선택 → 메인
     } else {
-      subs.push(tn);                                 // 메인이 있으면 → 상황별 추가
+      subTalents[ti] = [tn];                         // 메인이 있으면 → 상황별 (1개만, 새로 찍으면 교체)
     }
     refreshTalentUI();
   };
@@ -594,21 +594,23 @@ function buildCardInner(nameColor) {
   var html = '<div style="text-align:center; margin-bottom:25px;"><div id="bp-hero-name" style="font-size:36px; font-weight:bold; color:' + nameColor + ';">' + hData.name + '</div></div>';
   selectedTalents.forEach(function (tn, ti) {
     var subs = (subTalents[ti] || []).filter(function (x) { return x !== tn; });
+    var sub = subs.length ? hData.talents[lvs[ti]][subs[0] - 1] : null;
     var lvLabel = lvs[ti].replace(/\D/g, "") + 'Lv';
-    if (tn > 0) {
-      var t = hData.talents[lvs[ti]][tn - 1];
-      html += '<div class="cap-row"><div class="cap-lv">' + lvLabel + '</div><img src="' + imgBase + t.icon + '" class="cap-img"><div style="flex:1; padding-left:15px;"><div style="font-size:18px; font-weight:bold;">' + t.name + '</div><div style="color:#bbb; font-size:14px;">' + processTooltip(t.fullTooltip, currentLevel) + '</div></div></div>';
-    } else if (subs.length) {
-      html += '<div class="cap-row" style="border-bottom:none; padding-bottom:0;"><div class="cap-lv">' + lvLabel + '</div></div>';
+    if (tn === 0 && !sub) return;
+    var t = tn > 0 ? hData.talents[lvs[ti]][tn - 1] : null;
+    /* 아이콘 기둥: 메인 아래 빈 칸에 상황별 아이콘 */
+    var iconCol = '<div style="display:flex; flex-direction:column; align-items:center; gap:3px; flex-shrink:0;">'
+      + (t ? '<img src="' + imgBase + t.icon + '" class="cap-img">' : '')
+      + (sub ? '<span style="font-size:9.5px; color:#4d9fff;">상황별</span><img src="' + imgBase + sub.icon + '" style="width:30px; height:30px; border:1px dashed #4d9fff; border-radius:5px;">' : '')
+      + '</div>';
+    var text = '';
+    if (t) {
+      text += '<div style="font-size:18px; font-weight:bold;">' + t.name + '</div><div style="color:#bbb; font-size:14px;">' + processTooltip(t.fullTooltip, currentLevel) + '</div>';
+      if (sub) text += '<div style="color:#4d9fff; font-size:12.5px; margin-top:5px;">상황별: ' + sub.name + '</div>';
+    } else if (sub) {
+      text += '<div style="font-size:16px; font-weight:bold; color:#4d9fff;">상황별: ' + sub.name + '</div><div style="color:#bbb; font-size:14px;">' + processTooltip(sub.fullTooltip, currentLevel) + '</div>';
     }
-    if (subs.length) {
-      html += '<div style="margin:-8px 0 14px 60px; display:flex; align-items:center; gap:10px; flex-wrap:wrap;"><span style="color:#4d9fff; font-size:13px; font-weight:bold;">↳ 상황별</span>';
-      subs.forEach(function (sn) {
-        var st = hData.talents[lvs[ti]][sn - 1];
-        html += '<span style="display:inline-flex; align-items:center; gap:5px;"><img src="' + imgBase + st.icon + '" style="width:26px; height:26px; border:1px solid #4d9fff; border-radius:4px;"><span style="font-size:13px; color:#ddd;">' + st.name + '</span></span>';
-      });
-      html += '</div>';
-    }
+    html += '<div class="cap-row"><div class="cap-lv">' + lvLabel + '</div>' + iconCol + '<div style="flex:1; padding-left:15px;">' + text + '</div></div>';
   });
   return html;
 }
