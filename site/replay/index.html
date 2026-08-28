@@ -6,6 +6,8 @@
 <title>히오스 전장 기록 재생기 + 전술 보드</title>
 <link rel="stylesheet" href="css/style.css?v=48">
 <style id="scrap-theme">
+/* 재생줄의 맨 시간 슬라이더는 이벤트 타임라인(클릭 탐색 지원)과 역할이 겹쳐 숨긴다 */
+#seek { display:none; }
 /* 라이트 테마 — 전역 바 토글(scrap.theme)이 data-theme 을 켠다. 원본 변수만 덮어쓴다 */
 :root[data-theme="light"]{
   --bg:#eef2f7; --panel:#ffffff; --panel2:#e6ecf4; --accent:#d9e3ef;
