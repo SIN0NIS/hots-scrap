@@ -46,6 +46,27 @@
         .lv-list-btn { width:35px; background:none; border:1px solid #233a5c; color:var(--blue); font-weight:bold; border-radius:5px; cursor:pointer; padding:4px 0; font:inherit; font-weight:bold; flex-shrink:0; }
         .lv-list-btn:hover { border-color:var(--gold); color:var(--gold); }
         :root[data-theme="light"] .lv-list-btn { border-color:#cdd9ea; }
+        /* ── 모바일: 좁은 폭에서 설명이 세로로 찌그러지지 않게 ── */
+        @media (max-width: 640px) {
+          .tier-row { flex-wrap: wrap; }
+          .t-info-display { flex-basis: 100%; margin-top: 4px; }
+          #bp-modal > div, #tc-modal > div, #tcp-modal > div { padding: 10px; margin: 8px auto; }
+          .option-group { gap: 8px; flex-wrap: wrap; }
+        }
+        /* ── 공통 위젯 색 — 테마를 따른다 ── */
+        .x-btn { margin-left:auto; background:none; border:1px solid #445; color:#aaa; border-radius:5px; padding:6px 10px; cursor:pointer; }
+        .tcd { color:#bbb; }
+        :root[data-theme="light"] .x-btn { border-color:#cdd9ea; color:#5d6d84; }
+        :root[data-theme="light"] .tcd { color:#43536b; }
+        :root[data-theme="light"] .t-info-display { color:#43536b !important; }
+        :root[data-theme="light"] .t-info-display b { color:#122036 !important; }
+        /* 모달 상자·글자 라이트 전환 (저장 카드 자체는 공유 이미지 일관성 위해 다크 고정) */
+        :root[data-theme="light"] #bp-modal > div, :root[data-theme="light"] #tc-modal > div, :root[data-theme="light"] #tcp-modal > div { background:#ffffff !important; border-color:#cdd9ea !important; }
+        :root[data-theme="light"] #bp-modal b, :root[data-theme="light"] #tc-modal b, :root[data-theme="light"] #tcp-modal b { color:#122036 !important; }
+        :root[data-theme="light"] #bp-modal label { color:#5d6d84 !important; }
+        :root[data-theme="light"] #tc-modal .tc-tab:not(.on) { background:#eef2f8; color:#31405a; border-color:#cdd9ea; }
+        :root[data-theme="light"] .tc-card div[style*="font-weight:bold"] { color:#122036; }
+        :root[data-theme="light"] #welcome-area .bh-role span { color:#8a97a8 !important; }
         .tc-tab { background:#132b4d; border:1px solid #233a5c; color:#eaf1fa; border-radius:99px; padding:5px 14px; cursor:pointer; font-size:13px; }
         .tc-tab.on { background:var(--p); border-color:var(--p); color:#fff; font-weight:bold; }
         .tc-tier { font-size:15px; font-weight:bold; color:var(--gold); border-bottom:1px solid #233a5c; padding-bottom:4px; margin:16px 0 8px; }
@@ -410,7 +431,7 @@
   <div style="max-width:790px; margin:20px auto; background:#101f38; border:1px solid #233a5c; border-radius:12px; padding:14px;">
     <div style="display:flex; align-items:center; margin-bottom:10px;">
       <b style="font-size:14px; color:#eaf1fa;">저장 이미지 미리보기</b>
-      <button type="button" onclick="closeBuildPreview()" style="margin-left:auto; background:none; border:1px solid #445; color:#aaa; border-radius:5px; padding:6px 10px; cursor:pointer;">✕</button>
+      <button type="button" onclick="closeBuildPreview()" class="x-btn">✕</button>
     </div>
     <div style="display:flex; gap:16px; flex-wrap:wrap; align-items:flex-start;">
       <div id="bp-wrap" style="overflow:hidden; flex:0 1 556px; min-width:0;"><div id="bp-card"></div></div>
@@ -486,7 +507,7 @@ document.getElementById('border-color').addEventListener('input', function () {
       <button type="button" onclick="openTcPreview()" style="background:#132b4d; border:1px solid #233a5c; color:#eaf1fa; border-radius:5px; padding:6px 12px; cursor:pointer; font-size:12px;">👁 미리보기</button>
       <button type="button" onclick="tcCapture('save')" style="background:#1758a8; border:none; color:#fff; border-radius:5px; padding:6px 12px; cursor:pointer; font-size:12px; font-weight:bold;">📸 저장</button>
       <button type="button" onclick="tcCapture('copy')" style="background:#1c7d4f; border:none; color:#fff; border-radius:5px; padding:6px 12px; cursor:pointer; font-size:12px; font-weight:bold;">📋 복사</button>
-      <button type="button" onclick="closeTierList()" style="margin-left:auto; background:none; border:1px solid #445; color:#aaa; border-radius:5px; padding:6px 10px; cursor:pointer;">✕</button>
+      <button type="button" onclick="closeTierList()" class="x-btn">✕</button>
     </div>
     <div id="tc-tabs" style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:8px;"></div>
     <div id="tc-body"></div>
@@ -711,7 +732,7 @@ function tcRender() {
     hData.talents[lv].forEach(function (t, idx) {
       var mark = selectedTalents[ti] === idx + 1 ? ' <span style="color:var(--gold); font-size:11px;">● ' + (currentLang === 'ko' ? '메인' : 'main') + '</span>'
         : ((subTalents[ti] || []).indexOf(idx + 1) > -1 ? ' <span style="color:#4d9fff; font-size:11px;">◐ ' + (currentLang === 'ko' ? '보조' : 'sub') + '</span>' : '');
-      body += '<div class="tc-card"><img src="' + imgBase + t.icon + '"><div style="flex:1;"><div style="font-weight:bold; font-size:14px;">' + t.name + mark + '</div><div style="color:#bbb; font-size:13px; margin-top:3px; line-height:1.5;">' + processTooltip(t.fullTooltip, currentLevel) + '</div></div></div>';
+      body += '<div class="tc-card"><img src="' + imgBase + t.icon + '"><div style="flex:1;"><div style="font-weight:bold; font-size:14px;">' + t.name + mark + '</div><div class="tcd" style="font-size:13px; margin-top:3px; line-height:1.5;">' + processTooltip(t.fullTooltip, currentLevel) + '</div></div></div>';
     });
   });
   document.getElementById('tc-body').innerHTML = body;
@@ -771,7 +792,7 @@ async function tcCapture(mode) {
       <b style="font-size:14px; color:#eaf1fa;">저장 이미지 미리보기</b>
       <button type="button" onclick="tcCapture('save')" style="background:#1758a8; border:none; color:#fff; border-radius:5px; padding:6px 12px; cursor:pointer; font-size:12px; font-weight:bold;">📸 저장</button>
       <button type="button" onclick="tcCapture('copy')" style="background:#1c7d4f; border:none; color:#fff; border-radius:5px; padding:6px 12px; cursor:pointer; font-size:12px; font-weight:bold;">📋 복사</button>
-      <button type="button" onclick="closeTcPreview()" style="margin-left:auto; background:none; border:1px solid #445; color:#aaa; border-radius:5px; padding:6px 10px; cursor:pointer;">✕</button>
+      <button type="button" onclick="closeTcPreview()" class="x-btn">✕</button>
     </div>
     <div id="tcp-wrap" style="overflow:hidden;"><div id="tcp-card"></div></div>
   </div>
