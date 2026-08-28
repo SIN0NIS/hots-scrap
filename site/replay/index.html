@@ -7,12 +7,6 @@
 <link rel="stylesheet" href="css/style.css?v=48">
 </head>
 <body class="mode-map">
-<!-- HotS Scrap 전역 바 — 아래 앱 화면에는 관여하지 않는다 -->
-<div style="background:#10141b;border-bottom:1px solid #2a3342;padding:6px 12px;text-align:center;font:13px/1 'Malgun Gothic','Segoe UI',sans-serif;position:relative;z-index:99999;">
-  <a href="../" style="color:#e3ebf5;font-weight:600;letter-spacing:0.3px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;">
-    <img src="../shared/logo_light.svg" alt="" style="height:18px;width:18px;"> HotS Scrap
-  </a>
-</div>
 <nav id="modebar" class="frame">
   <span class="logo"><i>⬡</i><span class="tt"><b>전장 기록 재생기</b><em>맵 뷰어 &amp; 리플레이 분석</em></span></span>
   <div class="tabs" role="tablist">
@@ -257,5 +251,21 @@
 <script src="js/maps.js?v=48"></script>
 <script src="js/parser.js?v=48"></script>
 <script src="js/main.js?v=48"></script>
+<script>
+/* HotS Scrap 전역 바 — 앱이 body 를 다시 그려도 다시 심는다 */
+(function () {
+  function addBar() {
+    if (document.getElementById('scrap-bar')) return;
+    var d = document.createElement('div');
+    d.id = 'scrap-bar';
+    d.style.cssText = 'background:#10141b;border-bottom:1px solid #2a3342;padding:6px 12px;text-align:center;font:13px/1 "Malgun Gothic","Segoe UI",sans-serif;position:relative;z-index:99999;';
+    d.innerHTML = '<a href="../" style="color:#e3ebf5;font-weight:600;letter-spacing:0.3px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;"><img src="../shared/logo_light.svg" alt="" style="height:18px;width:18px;"> HotS Scrap</a>';
+    document.body.prepend(d);
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', addBar);
+  else addBar();
+  window.addEventListener('load', addBar);
+})();
+</script>
 </body>
 </html>
