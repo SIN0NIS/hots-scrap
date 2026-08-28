@@ -5,6 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 <title>히오스 전장 기록 재생기 + 전술 보드</title>
 <link rel="stylesheet" href="css/style.css?v=48">
+<style id="scrap-theme">
+/* 라이트 테마 — 전역 바 토글(scrap.theme)이 data-theme 을 켠다. 원본 변수만 덮어쓴다 */
+:root[data-theme="light"]{
+  --bg:#eef2f7; --panel:#ffffff; --panel2:#e6ecf4; --accent:#d9e3ef;
+  --line:#b9a26955; --line2:#b9a26988;
+  --ink:#1a2434; --dim:#5d6b7f;
+  --blue:#1758a8; --blue-soft:#1758a820;
+  --red:#c03030; --red-soft:#c0303020;
+  --gold:#a97e1f; --gold-dim:#8a6d2f; --gold-soft:#a97e1f18;
+  --green:#1c7d4f;
+}
+</style>
 </head>
 <body class="mode-map">
 <nav id="modebar" class="frame">
@@ -274,12 +286,13 @@
       return t;
     }
     function label() { btn.textContent = cur() === 'dark' ? '◐ 다크' : '◑ 라이트'; }
+    function applyTheme() { document.documentElement.setAttribute('data-theme', cur()); }
     btn.addEventListener('click', function () {
       var next = cur() === 'dark' ? 'light' : 'dark';
       try { localStorage.setItem(KEY, next); } catch (e) {}
-      label();
+      label(); applyTheme();
     });
-    label();
+    label(); applyTheme();
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', addBar);
   else addBar();

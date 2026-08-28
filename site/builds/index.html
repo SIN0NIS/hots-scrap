@@ -67,6 +67,26 @@
 .stat-item, .ability-item, #build-code-box { background:#0d1a30; }
 #footer { background:rgba(8,16,31,0.98); }
 .summary-icon { background:#0b1526; }
+/* 라이트 테마 — 전역 바 토글(scrap.theme)이 data-theme 을 켠다 */
+:root[data-theme="light"] { --p:#1758a8; --bg:#f3f6fb; --card:#ffffff; --blue:#1758a8; --gold:#a97e1f; --green:#1c7d4f; }
+:root[data-theme="light"] body { color:#122036; }
+:root[data-theme="light"] #top-bar { background:#e8eef7; border-bottom:1px solid #cdd9ea; }
+:root[data-theme="light"] #top-bar a { color:#5d6d84; }
+:root[data-theme="light"] #header { background:#eef2f8; border-bottom:1px solid #cdd9ea; }
+:root[data-theme="light"] .search-box, :root[data-theme="light"] .lang-btn, :root[data-theme="light"] .option-group { background:#ffffff; color:#122036; }
+:root[data-theme="light"] #hero-list-dropdown { background:#ffffff; }
+:root[data-theme="light"] .hero-item { border-bottom-color:#dbe3ee; }
+:root[data-theme="light"] #capture-area { background:#f3f6fb; }
+:root[data-theme="light"] #hero-stat-container { background:#ffffff; border-color:#cdd9ea; }
+:root[data-theme="light"] .stat-item, :root[data-theme="light"] .ability-item, :root[data-theme="light"] #build-code-box { background:#eef2f8; }
+:root[data-theme="light"] .stat-value { color:#122036; }
+:root[data-theme="light"] .stat-label { color:#5d6d84; }
+:root[data-theme="light"] #footer { background:rgba(240,244,250,0.98); }
+:root[data-theme="light"] .summary-icon { background:#e6ecf5; }
+:root[data-theme="light"] #level-slider { background:#c6d2e2; }
+:root[data-theme="light"] .tick { color:#8a97a8; }
+:root[data-theme="light"] .ability-list { border-top-color:#cdd9ea; }
+:root[data-theme="light"] .cap-row { border-bottom-color:#dbe3ee; }
 </style>
 </head>
 <body>
@@ -327,12 +347,13 @@
       return t;
     }
     function label() { btn.textContent = cur() === 'dark' ? '◐ 다크' : '◑ 라이트'; }
+    function applyTheme() { document.documentElement.setAttribute('data-theme', cur()); }
     btn.addEventListener('click', function () {
       var next = cur() === 'dark' ? 'light' : 'dark';
       try { localStorage.setItem(KEY, next); } catch (e) {}
-      label();
+      label(); applyTheme();
     });
-    label();
+    label(); applyTheme();
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', addBar);
   else addBar();

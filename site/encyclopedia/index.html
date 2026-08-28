@@ -280,6 +280,22 @@ a { color:var(--blue); }
 .lang-btn, .set-btn, .search-box, .filter-chip { background:#132b4d; }
 .hero-item:hover { background:#132b4d; }
 .settings-panel { background:#101f38; }
+/* 라이트 테마 — 전역 바 토글(scrap.theme)이 data-theme 을 켠다 */
+:root[data-theme="light"] { --p:#1758a8; --bg:#f3f6fb; --card:#ffffff; --card2:#eef2f8; --blue:#1758a8; --gold:#a97e1f; }
+:root[data-theme="light"] body { color:#122036; }
+:root[data-theme="light"] #top-bar { background:#e8eef7; border-bottom:1px solid #cdd9ea; }
+:root[data-theme="light"] #top-bar .meta { color:#7b8798; }
+:root[data-theme="light"] #sidebar { background:#eef2f8; border-right:1px solid #cdd9ea; }
+:root[data-theme="light"] .lang-btn, :root[data-theme="light"] .set-btn { background:#ffffff; color:#122036; }
+:root[data-theme="light"] .search-box { background:#ffffff; color:#122036; }
+:root[data-theme="light"] .filter-chip { background:#ffffff; color:#5d6d84; border-color:#cdd9ea; }
+:root[data-theme="light"] .filter-chip.active { color:#ffffff; }
+:root[data-theme="light"] .hero-item:hover { background:#e3ebf5; }
+:root[data-theme="light"] .hero-item.active { color:#ffffff; }
+:root[data-theme="light"] .settings-panel { background:#ffffff; }
+:root[data-theme="light"] .home-hero-name { color:#31405a; }
+:root[data-theme="light"] .home-hero-card:hover { background:#e3ebf5; }
+:root[data-theme="light"] .home-hero-portrait { border-color:#cdd9ea; background:#dfe6f0; }
 </style>
 </head>
 <body>
@@ -2036,12 +2052,13 @@ function xsTal(nameId) {
       return t;
     }
     function label() { btn.textContent = cur() === 'dark' ? '◐ 다크' : '◑ 라이트'; }
+    function applyTheme() { document.documentElement.setAttribute('data-theme', cur()); }
     btn.addEventListener('click', function () {
       var next = cur() === 'dark' ? 'light' : 'dark';
       try { localStorage.setItem(KEY, next); } catch (e) {}
-      label();
+      label(); applyTheme();
     });
-    label();
+    label(); applyTheme();
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', addBar);
   else addBar();
