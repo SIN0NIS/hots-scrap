@@ -31,6 +31,17 @@
       marginCss = 'margin:-' + cs.paddingTop + ' -' + cs.paddingRight + ' 18px -' + cs.paddingLeft + ';';
     }
 
+    // 뒤로가기 — 모든 페이지 우측 하단 (돌아갈 기록이 있을 때만)
+    if (!document.getElementById('scrap-back') && history.length > 1) {
+      var bk = document.createElement('button');
+      bk.id = 'scrap-back';
+      bk.type = 'button';
+      bk.title = '뒤로가기';
+      bk.textContent = '←';
+      bk.addEventListener('click', function () { history.back(); });
+      document.body.appendChild(bk);
+    }
+
     var btn = document.getElementById('scrap-theme-btn');
     function paint() {
       var light = cur() === 'light';
@@ -43,6 +54,13 @@
       btn.style.cssText = 'border-radius:99px;padding:4px 10px;cursor:pointer;font-size:12px;line-height:1;' + ctl;
       document.getElementById('scrap-gh').style.cssText = 'text-decoration:none;font-size:12px;line-height:1;border-radius:99px;padding:4px 10px;' + ctl;
       btn.textContent = light ? '☀ Light' : '☾ Dark';
+      var bk2 = document.getElementById('scrap-back');
+      if (bk2) {
+        // 페이지가 자기 UI 와 겹치면 body 속성으로 위치를 옮길 수 있다
+        var bkBottom = document.body.getAttribute('data-scrap-back-bottom') || '12px';
+        var bkRight = document.body.getAttribute('data-scrap-back-right') || '12px';
+        bk2.style.cssText = 'position:fixed;right:' + bkRight + ';bottom:' + bkBottom + ';z-index:99998;width:40px;height:40px;border-radius:50%;font-size:18px;line-height:1;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.25);' + ctl;
+      }
     }
     btn.addEventListener('click', function () {
       var next = cur() === 'dark' ? 'light' : 'dark';

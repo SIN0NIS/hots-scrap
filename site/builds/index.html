@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
-    <title>히오스 빌드 메이커</title>
+    <title>특성 빌드 · HotS Scrap</title>
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
     <style>
         :root { --p: #a333ff; --bg: #0b0b0d; --card: #16161a; --blue: #00d4ff; --gold: #ffd700; --green: #00ff00; --fs: 14px; }
@@ -89,9 +89,12 @@
 :root[data-theme="light"] .cap-row { border-bottom-color:#dbe3ee; }
 </style>
 </head>
-<body>
+<body data-scrap-back-bottom="190px">
     <div id="top-bar">
-        <a href="https://github.com/SIN0NIS/hots_talent_build_auto_git" target="_blank">🔗 GitHub Link</a>
+        <span style="display:flex; align-items:center; gap:12px;">
+          <span style="font-weight:bold; color:var(--p); font-size:12px;">특성 빌드</span>
+          <a href="https://github.com/SIN0NIS/hots_talent_build_auto_git" target="_blank">🔗 GitHub Link</a>
+        </span>
         <button class="lang-btn" onclick="toggleLanguage()">KO / EN</button>
     </div>
 
