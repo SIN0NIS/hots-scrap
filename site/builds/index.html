@@ -60,6 +60,7 @@
         .tname { color:#fff; }
         :root[data-theme="light"] .tdesc { color:#43536b; }
         :root[data-theme="light"] .tname { color:#122036; }
+        :root[data-theme="light"] #code-load-input { background:#ffffff; border-color:#cdd9ea; color:#122036; }
         :root[data-theme="light"] .x-btn { border-color:#cdd9ea; color:#5d6d84; }
         :root[data-theme="light"] .tcd { color:#43536b; }
         :root[data-theme="light"] .t-info-display { color:#43536b !important; }
@@ -184,6 +185,10 @@
     </div>
     <div id="footer">
         <div id="selected-summary"></div>
+        <div style="display:flex; gap:6px;">
+            <input type="text" id="code-load-input" placeholder="[T3211224,Diablo] 코드 붙여넣기" style="flex:1; background:#132b4d; border:1px dashed #233a5c; color:#eaf1fa; border-radius:4px; padding:7px 10px; font-family:monospace; font-size:12px; outline:none;">
+            <button type="button" onclick="loadBuildCode(document.getElementById('code-load-input').value)" style="background:#1758a8; border:none; color:#fff; border-radius:4px; padding:0 14px; cursor:pointer; font-size:12px; font-weight:bold;">불러오기</button>
+        </div>
         <div id="build-code-box" onclick="copyBuildCode()">특성을 선택하세요.</div>
         <div class="option-group">
             <span style="font-size:12px; color:#aaa;">이름 <input type="color" id="name-color" value="#a333ff"></span>
@@ -747,6 +752,55 @@ function openTcPreview() {
     requestAnimationFrame(function () { wrap.style.height = (card.offsetHeight * avail / w) + 'px'; });
   } else { card.style.transform = ''; wrap.style.height = ''; }
 }
+/* 인게임 특성 코드 로드 — [T3211224,Diablo] 형태를 그대로 찍는다 */
+function loadBuildCode(raw) {
+  var m = /\[?\s*T(\d+)\s*,\s*([A-Za-z0-9.]+)\s*\]?/.exec((raw || '').trim());
+  if (!m) { alert(currentLang === 'ko' ? '코드 형식이 아닙니다. 예: [T3211224,Diablo]' : 'Invalid code. e.g. [T3211224,Diablo]'); return false; }
+  var digits = m[1], want = m[2].toLowerCase();
+  var entry = null;
+  heroList.forEach(function (h) {
+    if (entry) return;
+    var hd = getActiveData()[h.id] || {};
+    var cand = [h.id, h.hId, hd.hyperlinkId, h.name_en].filter(Boolean).map(function (s) { return String(s).toLowerCase(); });
+    if (cand.indexOf(want) > -1) entry = h;
+  });
+  if (!entry) { alert((currentLang === 'ko' ? '영웅을 찾을 수 없습니다: ' : 'Hero not found: ') + m[2]); return false; }
+  selectHero(entry.id);
+  var hData = getActiveData()[entry.id];
+  var lvs = tierLevels(hData);
+  for (var i = 0; i < lvs.length; i++) {
+    var d = i < digits.length ? parseInt(digits.charAt(i), 10) : 0;
+    selectedTalents[i] = (d >= 0 && d <= hData.talents[lvs[i]].length) ? d : 0;
+  }
+  refreshTalentUI();
+  var inp = document.getElementById('code-load-input');
+  if (inp) inp.value = '';
+  return true;
+}
+/* 영웅 검색창에 코드를 붙여넣어도 바로 로드된다 */
+(function () {
+  var _hs = window.handleSearch;
+  window.handleSearch = function (v) {
+    if (/\[?\s*T\d+\s*,/.test(v || '')) {
+      if (loadBuildCode(v)) { var s = document.getElementById('hero-search'); if (s) s.value = ''; return; }
+    }
+    _hs(v);
+  };
+})();
+document.getElementById('code-load-input').addEventListener('keydown', function (e) {
+  if (e.key === 'Enter') loadBuildCode(this.value);
+});
+/* URL 로 공유: ?b=[T3211224,Diablo] 또는 ?hero=Diablo */
+(function () {
+  try {
+    var q = new URLSearchParams(location.search);
+    var b = q.get('b') || q.get('code');
+    if (b) { loadBuildCode(b); return; }
+    var hero = q.get('hero');
+    if (hero) loadBuildCode('T0000000,' + hero);
+  } catch (e) {}
+})();
+
 function closeTcPreview() { document.getElementById('tcp-modal').style.display = 'none'; }
 function openTierAt(lv) {
   if (!currentHeroId) return;
