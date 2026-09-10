@@ -11,12 +11,13 @@
 
 | 기능 | 주소 형식 | 조건 |
 |---|---|---|
-| 리플레이 열기 | `…/replay/?replay=<리플레이파일 URL>` | https 주소, 파일 서버가 CORS 허용(`Access-Control-Allow-Origin`) |
+| 리플레이 열기 | `…/replay/?src=<리플레이파일 URL>` (`?replay=` 도 동일) | https 주소, 파일 서버가 CORS 허용, 출처 호스트가 허용 목록(`replay/js/main.js` 의 `SRC_ALLOW`)에 등록 |
 | 특성 빌드 열기 | `…/builds/?b=[T3211224,Diablo]` | 인게임 특성 코드 |
 | 영웅 선택 | `…/builds/?hero=Diablo` | hyperlinkId 또는 영문명 |
 
 리플레이 파일은 방문자의 브라우저 안에서만 파싱되며 어디에도 업로드되지 않습니다.
-연동 예: `https://sin0nis.github.io/hots-scrap/replay/?replay=https://example.com/replays/123.StormReplay`
+연동 예: `https://sin0nis.github.io/hots-scrap/replay/?src=https://hots.herossearch.com/replays/123.StormReplay`
+새 협업 요청은 GitHub 이슈로 — 허용 목록에 호스트 한 줄 추가로 연결됩니다.
 
 ## 권리 고지
 

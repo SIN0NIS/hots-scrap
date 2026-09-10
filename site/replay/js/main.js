@@ -378,15 +378,26 @@ startLoop();
      예) https://sin0nis.github.io/hots-scrap/replay/?replay=https://example.com/r/123.StormReplay
    요구 조건: https 주소 + 상대 서버가 CORS(Access-Control-Allow-Origin) 허용.
    파일은 브라우저 안에서만 파싱되고 어디에도 업로드되지 않는다. */
+/* 협업 사이트 출처 허용 목록 — 새 협업은 여기에 호스트 한 줄만 추가한다 */
+const SRC_ALLOW=[
+  'hots.herossearch.com',   // 리플레이 수집 사이트 (2026-09 협업)
+  'sin0nis.github.io',
+  'localhost','127.0.0.1',
+];
 window.addEventListener('load', async function(){
   if(location.protocol==='file:') return;
   let url=null;
-  try{ url=new URLSearchParams(location.search).get('replay'); }catch(e){}
+  try{
+    const q=new URLSearchParams(location.search);
+    url=q.get('src')||q.get('replay');
+  }catch(e){}
   if(!url) return;
   try{
     const u=new URL(url, location.href);
     const localOk=(u.hostname==='localhost'||u.hostname==='127.0.0.1');
     if(u.protocol!=='https:' && !localOk) throw new Error('https 주소만 허용됩니다');
+    const allowed=SRC_ALLOW.some(h=>u.hostname===h||u.hostname.endsWith('.'+h));
+    if(!allowed) throw new Error('허용 목록에 없는 출처입니다: '+u.hostname+'\n협업을 원하시면 GitHub(SIN0NIS/hots-scrap) 이슈로 연락 주세요');
     showLoading('외부 리플레이 내려받는 중…');
     const res=await fetch(u.href);
     if(!res.ok) throw new Error('HTTP '+res.status);
