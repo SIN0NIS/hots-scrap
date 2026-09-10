@@ -371,3 +371,34 @@ try{
   setStatus('⚠ 초기화 중 오류: ' + (err && err.message || err));
 }
 startLoop();
+
+/* --- 외부 연동: ?replay=<파일URL> ---------------------------------------
+   다른 사이트(예: 리플레이 수집 사이트)가 자기 서버의 .StormReplay 주소를
+   붙여 링크하면 뷰어가 바로 그 판을 연다.
+     예) https://sin0nis.github.io/hots-scrap/replay/?replay=https://example.com/r/123.StormReplay
+   요구 조건: https 주소 + 상대 서버가 CORS(Access-Control-Allow-Origin) 허용.
+   파일은 브라우저 안에서만 파싱되고 어디에도 업로드되지 않는다. */
+window.addEventListener('load', async function(){
+  if(location.protocol==='file:') return;
+  let url=null;
+  try{ url=new URLSearchParams(location.search).get('replay'); }catch(e){}
+  if(!url) return;
+  try{
+    const u=new URL(url, location.href);
+    const localOk=(u.hostname==='localhost'||u.hostname==='127.0.0.1');
+    if(u.protocol!=='https:' && !localOk) throw new Error('https 주소만 허용됩니다');
+    showLoading('외부 리플레이 내려받는 중…');
+    const res=await fetch(u.href);
+    if(!res.ok) throw new Error('HTTP '+res.status);
+    const blob=await res.blob();
+    hideLoading();
+    const name=decodeURIComponent(u.pathname.split('/').pop()||'replay.StormReplay');
+    const raw=await parseReplay(new File([blob], name));
+    load(raw);
+    setStatus('파싱 완료: '+name+' — 재생을 누르세요');
+  }catch(err){
+    hideLoading();
+    alert('외부 리플레이 로드 실패: '+err.message+'\n(상대 서버가 CORS 를 허용해야 합니다)');
+    setStatus('');
+  }
+});
