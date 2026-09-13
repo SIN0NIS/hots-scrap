@@ -1,0 +1,1464 @@
+{
+ "date": "2026-03-30",
+ "kind": "ptr",
+ "title": "Heroes of the Storm PTR Patch Notes - March 30, 2026",
+ "source": "https://news.blizzard.com/en-us/article/24264015/heroes-of-the-storm-ptr-patch-notes-march-30-2026",
+ "published": "2026-03-30T17:00:00Z",
+ "sections": [
+  {
+   "name": "머리말",
+   "key": "intro",
+   "html": "<p>Our next Heroes of the Storm patch has just hit the Public Test Realm and will be available for playtesting. As always, if you encounter any bugs during your PTR play sessions, please stop by the <a href=\"https://us.forums.blizzard.com/en/heroes/c/ptr-bug-report\" target=\"_blank\">PTR Bug Report forum</a> to let us know about your experiences.</p>",
+   "nameKo": "머리말"
+  },
+  {
+   "name": "General",
+   "key": "general",
+   "html": "<ul>\n<li>Unranked Mode has been removed.</li>\n<li>Respawn timers have been reduced in the mid-to-late game. By level 22, respawn timers are back at 65 Seconds.</li>\n<li>Updated Homescreen and Startup Music.</li>\n</ul>",
+   "nameKo": "일반"
+  },
+  {
+   "name": "Map Updates",
+   "key": "map_updates",
+   "html": "<ul>\n<li><strong class=\"pn-h\">Garden of Terror Classic</strong>\n<ul>\n<li>The original Garden of Terror has returned to Custom Games!</li>\n<li>The name has been changed to Garden of Terror Classic to differentiate from the current Garden of Terror.</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Haunted Mines</strong>\n<ul>\n<li>Haunted mines has returned to Quick Match!</li>\n<li>Map objective is now complete when one team collects 55 Skulls, rather than when all 100 Skulls have been collected.</li>\n<li>Hero vision is reduced while in the mines.</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Warhead Junction</strong>\n<ul>\n<li>Cast time for Nuke increased from 2.5 seconds to 3 seconds.</li>\n<li>Cast time for Nuke now breaks upon taking damage.</li>\n<li>DoT damage from Nuke increased by 100%.</li>\n<li>Damage to Forts and Keeps from Nuke increased from 100% to 125%.</li>\n</ul>\n</li>\n</ul>",
+   "items": [
+    {
+     "name": "Haunted Mines",
+     "battleground": "haunted_mines",
+     "html": "<strong class=\"pn-h\">Haunted Mines</strong>\n<ul>\n<li>Haunted mines has returned to Quick Match!</li>\n<li>Map objective is now complete when one team collects 55 Skulls, rather than when all 100 Skulls have been collected.</li>\n<li>Hero vision is reduced while in the mines.</li>\n</ul>",
+     "under": null
+    },
+    {
+     "name": "Warhead Junction",
+     "battleground": "warhead_junction",
+     "html": "<strong class=\"pn-h\">Warhead Junction</strong>\n<ul>\n<li>Cast time for Nuke increased from 2.5 seconds to 3 seconds.</li>\n<li>Cast time for Nuke now breaks upon taking damage.</li>\n<li>DoT damage from Nuke increased by 100%.</li>\n<li>Damage to Forts and Keeps from Nuke increased from 100% to 125%.</li>\n</ul>",
+     "under": null
+    }
+   ],
+   "nameKo": "전장 업데이트"
+  },
+  {
+   "name": "Balance Update",
+   "key": "balance",
+   "html": "<h3>Heroes</h3>\n<h4>Arthas</h4>\n<p>Arthas has been fully reworked! All abilities and talents will be listed below.</p>\n<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Death Coil [Q]</strong>\n<ul>\n<li>Mana: 40.</li>\n<li>Cooldown: 9 seconds.</li>\n<li>Deals 164 damage to target enemy.</li>\n<li>Can be self-cast to heal for 262 health.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Howling Blast [W]</strong>\n<ul>\n<li>Mana: 50.</li>\n<li>Cooldown: 10 seconds.</li>\n<li>Root enemies within the target area for 1.25 seconds and deals 68 damage.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Frozen Tempest [E]</strong>\n<ul>\n<li>Mana: 13 per second.</li>\n<li>Cooldown: 1 second.</li>\n<li>Deals 36 damage per second to nearby enemies and Slow their Movement Speed by 10% per second, stacking up to 40%. Heroes hit also have their Attack Speed Slowed by 10% per second, stacking up to 40%. Frozen Tempest's effects last for 1.5 seconds.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Army of the Dead [R]</strong>\n<ul>\n<li>Charge Cooldown: 18 seconds.</li>\n<li>Consume all charges to summon an equal number of Ghouls that last 15 seconds and attack for 20 damage. Ghouls can be sacrificed to heal Arthas for 240 Health. Stores up to 6 charges.</li>\n<li>Every time an enemy minion dies nearby, reduce the charge cooldown of this ability by 1 second. Takedowns reduce the charge cooldown of this ability by 6 seconds.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Summon Sindragosa [R]</strong>\n<ul>\n<li>Mana: 100.</li>\n<li>Cooldown: 100 seconds.</li>\n<li>Deals 230 damage and Slows enemies by 60% for 4 seconds. Also disables Minions, Mercenaries, Monsters, and Structures for 20 seconds.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Frostmourne Hungers [D]</strong>\n<ul>\n<li>Cooldown: 12 seconds.</li>\n<li>Activate to make Arthas' next Basic Attack strike immediately and deal 71 bonus damage. Dealing damage restores 40 Mana.</li>\n<li><b>QUEST:</b> Killing a Minion or hitting a Hero with Frostmourne Hungers permanently increases its bonus damage and Arthas' Basic Attack damage by 1.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Frost Presence</strong>\n<ul>\n<li>Increase the area of Howling Blast by 20%.</li>\n<li><b>QUEST:</b> Root enemy Heroes with Howling Blast.</li>\n<li><b>REWARD:</b> After Rooting 15 Heroes, Howling Blast's range is increased by 20% and it hits enemies in its path.</li>\n<li><b>REWARD:</b> After Rooting 30 Heroes, Death Coil Slows Heroes hit by 50% for 0.75 seconds.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Borean Winds</strong>\n<ul>\n<li>After Frozen Tempest has been active for 2 seconds, Arthas gains 10% Movement Speed.</li>\n<li><b>PASSIVE:</b> Frozen Tempest's Slowing effects last an additional 0.5 seconds and its Mana cost is reduced by 4 per second.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Rime</strong>\n<ul>\n<li>Every 5 seconds, gain 75 Physical Armor against the next enemy Hero Basic Attack, reducing the damage taken by 75%. Stores up to 3 charges.</li>\n<li><b>PASSIVE:</b> While Arthas is Slowed, Rooted, or Stunned he heals 24 Health a second.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Shattered Armor</strong>\n<ul>\n<li>Enemy Heroes hit by Howling Blast have their Armor reduced by 15 for 4 seconds.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Icy Talons</strong>\n<ul>\n<li>Gain 3% Attack Speed for 2 seconds every time a Hero is damaged by Frozen Tempest, to a maximum of 60%.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Frost Strike</strong>\n<ul>\n<li>Frostmourne Hungers deals an additional 115 Ability damage in an area and slows Heroes hit by 20% for 2 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Immortal Coil</strong>\n<ul>\n<li>Gain the healing effect of Death Coil even when used on enemies. If Death Coil is used on Arthas, it heals for an additional 75% bonus healing and its cooldown is reduced by 3 seconds.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Rune Tap</strong>\n<ul>\n<li>Every 3rd Basic Attack heals Arthas for 5% of his max Health.</li>\n<li><b>PASSIVE:</b> Each stack of Frostmourne Hungers increases Arthas' Maximum Health by 10.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Icebound Fortitude</strong>\n<ul>\n<li>Cooldown: 35 seconds.</li>\n<li>Activate to gain 25 Armor and reduce the duration of Stuns, Slows, and Roots against Arthas by 75% for 3 seconds.</li>\n<li>Each Hero Rooted by Howling Blast reduces the cooldown of this ability by 2 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Deathlord</strong>\n<ul>\n<li>If Death Coil is used on an enemy Hero, launch an additional Death Coil at a nearby enemy Hero.</li>\n<li><b>PASSIVE:</b> Death Coil deals more damage the lower Arthas' current Health is, to a maximum of 50% bonus damage.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Deathchill</strong>\n<ul>\n<li>Howling Blast's damage is increased by 2 for each stack of Frostmourne Hungers.</li>\n<li>Howling Blast deals 100% additional damage and Roots for an additional 0.25 seconds against Heroes under 50% health.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Biting Cold</strong>\n<ul>\n<li>Each second an enemy is damaged by Frozen Tempest, it deals 15% bonus damage, up to 75% bonus damage.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Remorseless Winter</strong>\n<ul>\n<li>Enemy Heroes that remain within Frozen Tempest for 2.5 seconds are Rooted for 1.25 seconds and heal Arthas for 3% of his maximum Health. This effect has an 8 second cooldown per target.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Frostmourne Feeds</strong>\n<ul>\n<li>Reduce the cooldown of Frostmourne Hungers by 6 seconds. Arthas heals for 75% of the Basic Attack damage dealt by Frostmourne Hungers.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Anti-Magic Shell</strong>\n<ul>\n<li>Cooldown 60 seconds.</li>\n<li>Activate to make Arthas immune to Spell Damage for 4 seconds and heal Arthas for 25% of the damage prevented.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Legion of Northrend</strong>\n<ul>\n<li>Reduce Army of the Dead's charge cooldown by 5 seconds.</li>\n<li>Each charge consumed spawns an additional Ghoul to attack nearby enemies. These Ghouls cannot be sacrificed.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Absolute Zero</strong>\n<ul>\n<li>Sindragosa flies twice as far. Enemy Heroes are Rooted for 2.5 seconds, and then Slowed by 60% for 4 seconds.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Death Pact</strong>\n<ul>\n<li>Instantly double your stacks of Frostmourne Hungers, but it no longer gains stacks from hitting Heroes or killing Minions.</li>\n<li><b>PASSIVE:</b> Takedowns grant 2 stacks of Frostmourne Hungers.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Path of Frost</strong>\n<ul>\n<li>Activate to instantly mount with 10% additional Movement Speed. Taking damage does not dismount Arthas from this mount. Lasts up to 5 seconds.</li>\n<li>When Arthas dismounts, Slow all nearby enemies by 30% for 2 seconds and deal 66 damage.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>Chen</h4>\n<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Keg Smash [W]</strong>\n<ul>\n<li>Breath of Fire initial damage lowered from 85 to 40.</li>\n<li>Breath of Fire duration increased from 3 seconds to 6 seconds.</li>\n<li>Breath of Fire no longer costs Energy.</li>\n<li>Keg Smash energy cost increased to 35 from 30.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Fortifying Brew [D]</strong>\n<ul>\n<li>Drinking now stops additional commands for a fraction of a second.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Accumulating Flames</strong>\n<ul>\n<li>Moved from Level 4 to Level 1.</li>\n<li><b>REWORK:</b> Quest: Gain stacks from hitting Heroes with DoT damage from Breath of Fire. Each stack provides 0.25 damage. At 20 damage, Keg Smash becomes ranged. Mythic Reward: At 75 damage, Breath of Fire lowers enemy armor by 20 and is refreshed from Chen's Basic Attacks.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Eye of the Tiger</strong>\n<ul>\n<li>Moved from Level 1 to Level 4.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Elusive Brawler</strong>\n<ul>\n<li>Movement Speed reduced from 30% to 20%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Wandering Keg</strong>\n<ul>\n<li>Cooldown increased from 50 seconds to 60 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Pressure Point</strong>\n<ul>\n<li>Slow duration increased from 1 second to 1.5 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>Deathwing</h4>\n<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Onslaught [E]</strong>\n<ul>\n<li>Cooldown increased from 5 seconds to 6 seconds.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Dragonflight [Z]</strong>\n<ul>\n<li>Cooldown increased from 15 seconds to 20 seconds.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Gaze onto Destruction</strong>\n<ul>\n<li>Duration reduced from 5 seconds to 3.5 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>Falstad</h4>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Frequent Flyer</strong>\n<ul>\n<li>Range to receive kill credit reduced from 14 to 8.5.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>Garrosh</h4>\n<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Wrecking Ball [E]</strong>\n<ul>\n<li>Range reduced from 6.5 to 6.</li>\n<li>Search range reduced from 2.5 to 2.25.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Unrivaled Strength</strong>\n<ul>\n<li>Ranged bonus reduced from 20% to 15%.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>Gazlowe</h4>\n<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Rock-It! Turret [Q]</strong>\n<ul>\n<li>Turret Health increased from 510 to 600.</li>\n</ul>\n</li>\n</ul>\n<h4>Mal'Ganis</h4>\n<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Necrotic Embrace [W]</strong>\n<ul>\n<li>Now benefits double the amount from Vampiric Touch.</li>\n<li>No longer provides Armor for 3 seconds.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Will of Tichondrius</strong>\n<ul>\n<li>Moved from Level 7 to Level 1.</li>\n<li><b>REWORK:</b> Hit Heroes with Fel Claws to gain 0.5 damage. Hit 4 Heroes in the first two swipes to cause the last wipe to provide 2 additional damage. Upon reaching 40 stacks, Fel Claws now steals 4% health from opponents and stuns for an additional 0.5 Seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Vampiric Aura</strong>\n<ul>\n<li>Moved from Level 1 to Level 4.</li>\n<li>Self healing increased from 30% to 40% and healing of nearby Allies increased from 15% to 20%.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Might of Sargeras</strong>\n<ul>\n<li>Now provides 25 Armor for 3 seconds when using Necrotic Embrace.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Fueled by Torment</strong>\n<ul>\n<li>Moved from Level 4 to Level 7.</li>\n<li>Now causes Necrotic Embrace to Slow by 25% for 3 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>Medivh</h4>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Winds of Celerity</strong>\n<ul>\n<li>Movement speed bonus increased from 50% to 75%.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Raven's Intellect</strong>\n<ul>\n<li>Bonus increased from 75% to 125%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Raven Familiar</strong>\n<ul>\n<li>Slow reduced from 30% to 20%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Force of Magic</strong>\n<ul>\n<li>Spell Power increased from 30% to 35%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Circle of Protection</strong>\n<ul>\n<li>No longer increases the cooldown of Force of Will.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Guardian of Tirisfal</strong>\n<ul>\n<li>Now also increases the range of Arcane Rift by 50%.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>Muradin</h4>\n<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">It's Hammer Time! [Q]</strong>\n<ul>\n<li>Muradin gains 5 stacks if a target dies within 3 seconds of being hit by Storm Bolt.</li>\n<li>Stack requirement for pierce increased from 40 to 45.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Mountain King</strong>\n<ul>\n<li>Dwarf Toss cooldown increased by 2 seconds.</li>\n<li>Thunder Clap cooldown increased by 2 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>Thrall</h4>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Crash Lightning</strong>\n<ul>\n<li>Amount stacks lost on death reduced from 6 to 4.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Echo of the Elements</strong>\n<ul>\n<li>Damage done by the chain lightning bounces rewarded from obtaining the Mythic Reward reduced from 85 to 70.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>Tyrande</h4>\n<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Lunar Flare [E]</strong>\n<ul>\n<li>Tyrande gains 1 stack if the target dies within 3 seconds of being hit.</li>\n<li>Mythic Reward now also increases attack range by 1.</li>\n<li>Lunar flare damage from hitting a hero reduced from 4% to 3.5%.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Commander of Sentinels</strong>\n<ul>\n<li>Cooldown of Sentinel increased by 3 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+   "heroes": [
+    {
+     "name": "Arthas",
+     "heroId": "Arthas",
+     "heroIds": [
+      "Arthas"
+     ],
+     "changes": [
+      {
+       "name": "Death Coil",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Mana: 40.",
+         "html": "Mana: 40.",
+         "added": false
+        },
+        {
+         "text": "Cooldown: 9 seconds.",
+         "html": "Cooldown: 9 seconds.",
+         "added": false
+        },
+        {
+         "text": "Deals 164 damage to target enemy.",
+         "html": "Deals 164 damage to target enemy.",
+         "added": false
+        },
+        {
+         "text": "Can be self-cast to heal for 262 health.",
+         "html": "Can be self-cast to heal for 262 health.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Howling Blast",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Mana: 50.",
+         "html": "Mana: 50.",
+         "added": false
+        },
+        {
+         "text": "Cooldown: 10 seconds.",
+         "html": "Cooldown: 10 seconds.",
+         "added": false
+        },
+        {
+         "text": "Root enemies within the target area for 1.25 seconds and deals 68 damage.",
+         "html": "Root enemies within the target area for 1.25 seconds and deals 68 damage.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Frozen Tempest",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Mana: 13 per second.",
+         "html": "Mana: 13 per second.",
+         "added": false
+        },
+        {
+         "text": "Cooldown: 1 second.",
+         "html": "Cooldown: 1 second.",
+         "added": false
+        },
+        {
+         "text": "Deals 36 damage per second to nearby enemies and Slow their Movement Speed by 10% per second, stacking up to 40%. Heroes hit also have their Attack Speed Slowed by 10% per second, stacking up to 40%. Frozen Tempest's effects last for 1.5 seconds.",
+         "html": "Deals 36 damage per second to nearby enemies and Slow their Movement Speed by 10% per second, stacking up to 40%. Heroes hit also have their Attack Speed Slowed by 10% per second, stacking up to 40%. Frozen Tempest's effects last for 1.5 seconds.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Army of the Dead",
+       "key": "R",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Charge Cooldown: 18 seconds.",
+         "html": "Charge Cooldown: 18 seconds.",
+         "added": false
+        },
+        {
+         "text": "Consume all charges to summon an equal number of Ghouls that last 15 seconds and attack for 20 damage. Ghouls can be sacrificed to heal Arthas for 240 Health. Stores up to 6 charges.",
+         "html": "Consume all charges to summon an equal number of Ghouls that last 15 seconds and attack for 20 damage. Ghouls can be sacrificed to heal Arthas for 240 Health. Stores up to 6 charges.",
+         "added": false
+        },
+        {
+         "text": "Every time an enemy minion dies nearby, reduce the charge cooldown of this ability by 1 second. Takedowns reduce the charge cooldown of this ability by 6 seconds.",
+         "html": "Every time an enemy minion dies nearby, reduce the charge cooldown of this ability by 1 second. Takedowns reduce the charge cooldown of this ability by 6 seconds.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Summon Sindragosa",
+       "key": "R",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Mana: 100.",
+         "html": "Mana: 100.",
+         "added": false
+        },
+        {
+         "text": "Cooldown: 100 seconds.",
+         "html": "Cooldown: 100 seconds.",
+         "added": false
+        },
+        {
+         "text": "Deals 230 damage and Slows enemies by 60% for 4 seconds. Also disables Minions, Mercenaries, Monsters, and Structures for 20 seconds.",
+         "html": "Deals 230 damage and Slows enemies by 60% for 4 seconds. Also disables Minions, Mercenaries, Monsters, and Structures for 20 seconds.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Frostmourne Hungers",
+       "key": "D",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Cooldown: 12 seconds.",
+         "html": "Cooldown: 12 seconds.",
+         "added": false
+        },
+        {
+         "text": "Activate to make Arthas' next Basic Attack strike immediately and deal 71 bonus damage. Dealing damage restores 40 Mana.",
+         "html": "Activate to make Arthas' next Basic Attack strike immediately and deal 71 bonus damage. Dealing damage restores 40 Mana.",
+         "added": false
+        },
+        {
+         "text": "QUEST: Killing a Minion or hitting a Hero with Frostmourne Hungers permanently increases its bonus damage and Arthas' Basic Attack damage by 1.",
+         "html": "<b>QUEST:</b> Killing a Minion or hitting a Hero with Frostmourne Hungers permanently increases its bonus damage and Arthas' Basic Attack damage by 1.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Frost Presence",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Increase the area of Howling Blast by 20%.",
+         "html": "Increase the area of Howling Blast by 20%.",
+         "added": false
+        },
+        {
+         "text": "QUEST: Root enemy Heroes with Howling Blast.",
+         "html": "<b>QUEST:</b> Root enemy Heroes with Howling Blast.",
+         "added": false
+        },
+        {
+         "text": "REWARD: After Rooting 15 Heroes, Howling Blast's range is increased by 20% and it hits enemies in its path.",
+         "html": "<b>REWARD:</b> After Rooting 15 Heroes, Howling Blast's range is increased by 20% and it hits enemies in its path.",
+         "added": false
+        },
+        {
+         "text": "REWARD: After Rooting 30 Heroes, Death Coil Slows Heroes hit by 50% for 0.75 seconds.",
+         "html": "<b>REWARD:</b> After Rooting 30 Heroes, Death Coil Slows Heroes hit by 50% for 0.75 seconds.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Borean Winds",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "After Frozen Tempest has been active for 2 seconds, Arthas gains 10% Movement Speed.",
+         "html": "After Frozen Tempest has been active for 2 seconds, Arthas gains 10% Movement Speed.",
+         "added": false
+        },
+        {
+         "text": "PASSIVE: Frozen Tempest's Slowing effects last an additional 0.5 seconds and its Mana cost is reduced by 4 per second.",
+         "html": "<b>PASSIVE:</b> Frozen Tempest's Slowing effects last an additional 0.5 seconds and its Mana cost is reduced by 4 per second.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Rime",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Every 5 seconds, gain 75 Physical Armor against the next enemy Hero Basic Attack, reducing the damage taken by 75%. Stores up to 3 charges.",
+         "html": "Every 5 seconds, gain 75 Physical Armor against the next enemy Hero Basic Attack, reducing the damage taken by 75%. Stores up to 3 charges.",
+         "added": false
+        },
+        {
+         "text": "PASSIVE: While Arthas is Slowed, Rooted, or Stunned he heals 24 Health a second.",
+         "html": "<b>PASSIVE:</b> While Arthas is Slowed, Rooted, or Stunned he heals 24 Health a second.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Shattered Armor",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "Enemy Heroes hit by Howling Blast have their Armor reduced by 15 for 4 seconds.",
+         "html": "Enemy Heroes hit by Howling Blast have their Armor reduced by 15 for 4 seconds.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Icy Talons",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "Gain 3% Attack Speed for 2 seconds every time a Hero is damaged by Frozen Tempest, to a maximum of 60%.",
+         "html": "Gain 3% Attack Speed for 2 seconds every time a Hero is damaged by Frozen Tempest, to a maximum of 60%.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Frost Strike",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "Frostmourne Hungers deals an additional 115 Ability damage in an area and slows Heroes hit by 20% for 2 seconds.",
+         "html": "Frostmourne Hungers deals an additional 115 Ability damage in an area and slows Heroes hit by 20% for 2 seconds.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Immortal Coil",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "Gain the healing effect of Death Coil even when used on enemies. If Death Coil is used on Arthas, it heals for an additional 75% bonus healing and its cooldown is reduced by 3 seconds.",
+         "html": "Gain the healing effect of Death Coil even when used on enemies. If Death Coil is used on Arthas, it heals for an additional 75% bonus healing and its cooldown is reduced by 3 seconds.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Rune Tap",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "Every 3rd Basic Attack heals Arthas for 5% of his max Health.",
+         "html": "Every 3rd Basic Attack heals Arthas for 5% of his max Health.",
+         "added": false
+        },
+        {
+         "text": "PASSIVE: Each stack of Frostmourne Hungers increases Arthas' Maximum Health by 10.",
+         "html": "<b>PASSIVE:</b> Each stack of Frostmourne Hungers increases Arthas' Maximum Health by 10.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Icebound Fortitude",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "Cooldown: 35 seconds.",
+         "html": "Cooldown: 35 seconds.",
+         "added": false
+        },
+        {
+         "text": "Activate to gain 25 Armor and reduce the duration of Stuns, Slows, and Roots against Arthas by 75% for 3 seconds.",
+         "html": "Activate to gain 25 Armor and reduce the duration of Stuns, Slows, and Roots against Arthas by 75% for 3 seconds.",
+         "added": false
+        },
+        {
+         "text": "Each Hero Rooted by Howling Blast reduces the cooldown of this ability by 2 seconds.",
+         "html": "Each Hero Rooted by Howling Blast reduces the cooldown of this ability by 2 seconds.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Deathlord",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "If Death Coil is used on an enemy Hero, launch an additional Death Coil at a nearby enemy Hero.",
+         "html": "If Death Coil is used on an enemy Hero, launch an additional Death Coil at a nearby enemy Hero.",
+         "added": false
+        },
+        {
+         "text": "PASSIVE: Death Coil deals more damage the lower Arthas' current Health is, to a maximum of 50% bonus damage.",
+         "html": "<b>PASSIVE:</b> Death Coil deals more damage the lower Arthas' current Health is, to a maximum of 50% bonus damage.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Deathchill",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "Howling Blast's damage is increased by 2 for each stack of Frostmourne Hungers.",
+         "html": "Howling Blast's damage is increased by 2 for each stack of Frostmourne Hungers.",
+         "added": false
+        },
+        {
+         "text": "Howling Blast deals 100% additional damage and Roots for an additional 0.25 seconds against Heroes under 50% health.",
+         "html": "Howling Blast deals 100% additional damage and Roots for an additional 0.25 seconds against Heroes under 50% health.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Biting Cold",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "Each second an enemy is damaged by Frozen Tempest, it deals 15% bonus damage, up to 75% bonus damage.",
+         "html": "Each second an enemy is damaged by Frozen Tempest, it deals 15% bonus damage, up to 75% bonus damage.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Remorseless Winter",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "Enemy Heroes that remain within Frozen Tempest for 2.5 seconds are Rooted for 1.25 seconds and heal Arthas for 3% of his maximum Health. This effect has an 8 second cooldown per target.",
+         "html": "Enemy Heroes that remain within Frozen Tempest for 2.5 seconds are Rooted for 1.25 seconds and heal Arthas for 3% of his maximum Health. This effect has an 8 second cooldown per target.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Frostmourne Feeds",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "Reduce the cooldown of Frostmourne Hungers by 6 seconds. Arthas heals for 75% of the Basic Attack damage dealt by Frostmourne Hungers.",
+         "html": "Reduce the cooldown of Frostmourne Hungers by 6 seconds. Arthas heals for 75% of the Basic Attack damage dealt by Frostmourne Hungers.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Anti-Magic Shell",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "Cooldown 60 seconds.",
+         "html": "Cooldown 60 seconds.",
+         "added": false
+        },
+        {
+         "text": "Activate to make Arthas immune to Spell Damage for 4 seconds and heal Arthas for 25% of the damage prevented.",
+         "html": "Activate to make Arthas immune to Spell Damage for 4 seconds and heal Arthas for 25% of the damage prevented.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Legion of Northrend",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "Reduce Army of the Dead's charge cooldown by 5 seconds.",
+         "html": "Reduce Army of the Dead's charge cooldown by 5 seconds.",
+         "added": false
+        },
+        {
+         "text": "Each charge consumed spawns an additional Ghoul to attack nearby enemies. These Ghouls cannot be sacrificed.",
+         "html": "Each charge consumed spawns an additional Ghoul to attack nearby enemies. These Ghouls cannot be sacrificed.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Absolute Zero",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "Sindragosa flies twice as far. Enemy Heroes are Rooted for 2.5 seconds, and then Slowed by 60% for 4 seconds.",
+         "html": "Sindragosa flies twice as far. Enemy Heroes are Rooted for 2.5 seconds, and then Slowed by 60% for 4 seconds.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Death Pact",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "Instantly double your stacks of Frostmourne Hungers, but it no longer gains stacks from hitting Heroes or killing Minions.",
+         "html": "Instantly double your stacks of Frostmourne Hungers, but it no longer gains stacks from hitting Heroes or killing Minions.",
+         "added": false
+        },
+        {
+         "text": "PASSIVE: Takedowns grant 2 stacks of Frostmourne Hungers.",
+         "html": "<b>PASSIVE:</b> Takedowns grant 2 stacks of Frostmourne Hungers.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Path of Frost",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "Activate to instantly mount with 10% additional Movement Speed. Taking damage does not dismount Arthas from this mount. Lasts up to 5 seconds.",
+         "html": "Activate to instantly mount with 10% additional Movement Speed. Taking damage does not dismount Arthas from this mount. Lasts up to 5 seconds.",
+         "added": false
+        },
+        {
+         "text": "When Arthas dismounts, Slow all nearby enemies by 30% for 2 seconds and deal 66 damage.",
+         "html": "When Arthas dismounts, Slow all nearby enemies by 30% for 2 seconds and deal 66 damage.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p>Arthas has been fully reworked! All abilities and talents will be listed below.</p>\n<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Death Coil [Q]</strong>\n<ul>\n<li>Mana: 40.</li>\n<li>Cooldown: 9 seconds.</li>\n<li>Deals 164 damage to target enemy.</li>\n<li>Can be self-cast to heal for 262 health.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Howling Blast [W]</strong>\n<ul>\n<li>Mana: 50.</li>\n<li>Cooldown: 10 seconds.</li>\n<li>Root enemies within the target area for 1.25 seconds and deals 68 damage.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Frozen Tempest [E]</strong>\n<ul>\n<li>Mana: 13 per second.</li>\n<li>Cooldown: 1 second.</li>\n<li>Deals 36 damage per second to nearby enemies and Slow their Movement Speed by 10% per second, stacking up to 40%. Heroes hit also have their Attack Speed Slowed by 10% per second, stacking up to 40%. Frozen Tempest's effects last for 1.5 seconds.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Army of the Dead [R]</strong>\n<ul>\n<li>Charge Cooldown: 18 seconds.</li>\n<li>Consume all charges to summon an equal number of Ghouls that last 15 seconds and attack for 20 damage. Ghouls can be sacrificed to heal Arthas for 240 Health. Stores up to 6 charges.</li>\n<li>Every time an enemy minion dies nearby, reduce the charge cooldown of this ability by 1 second. Takedowns reduce the charge cooldown of this ability by 6 seconds.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Summon Sindragosa [R]</strong>\n<ul>\n<li>Mana: 100.</li>\n<li>Cooldown: 100 seconds.</li>\n<li>Deals 230 damage and Slows enemies by 60% for 4 seconds. Also disables Minions, Mercenaries, Monsters, and Structures for 20 seconds.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Frostmourne Hungers [D]</strong>\n<ul>\n<li>Cooldown: 12 seconds.</li>\n<li>Activate to make Arthas' next Basic Attack strike immediately and deal 71 bonus damage. Dealing damage restores 40 Mana.</li>\n<li><b>QUEST:</b> Killing a Minion or hitting a Hero with Frostmourne Hungers permanently increases its bonus damage and Arthas' Basic Attack damage by 1.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Frost Presence</strong>\n<ul>\n<li>Increase the area of Howling Blast by 20%.</li>\n<li><b>QUEST:</b> Root enemy Heroes with Howling Blast.</li>\n<li><b>REWARD:</b> After Rooting 15 Heroes, Howling Blast's range is increased by 20% and it hits enemies in its path.</li>\n<li><b>REWARD:</b> After Rooting 30 Heroes, Death Coil Slows Heroes hit by 50% for 0.75 seconds.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Borean Winds</strong>\n<ul>\n<li>After Frozen Tempest has been active for 2 seconds, Arthas gains 10% Movement Speed.</li>\n<li><b>PASSIVE:</b> Frozen Tempest's Slowing effects last an additional 0.5 seconds and its Mana cost is reduced by 4 per second.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Rime</strong>\n<ul>\n<li>Every 5 seconds, gain 75 Physical Armor against the next enemy Hero Basic Attack, reducing the damage taken by 75%. Stores up to 3 charges.</li>\n<li><b>PASSIVE:</b> While Arthas is Slowed, Rooted, or Stunned he heals 24 Health a second.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Shattered Armor</strong>\n<ul>\n<li>Enemy Heroes hit by Howling Blast have their Armor reduced by 15 for 4 seconds.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Icy Talons</strong>\n<ul>\n<li>Gain 3% Attack Speed for 2 seconds every time a Hero is damaged by Frozen Tempest, to a maximum of 60%.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Frost Strike</strong>\n<ul>\n<li>Frostmourne Hungers deals an additional 115 Ability damage in an area and slows Heroes hit by 20% for 2 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Immortal Coil</strong>\n<ul>\n<li>Gain the healing effect of Death Coil even when used on enemies. If Death Coil is used on Arthas, it heals for an additional 75% bonus healing and its cooldown is reduced by 3 seconds.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Rune Tap</strong>\n<ul>\n<li>Every 3rd Basic Attack heals Arthas for 5% of his max Health.</li>\n<li><b>PASSIVE:</b> Each stack of Frostmourne Hungers increases Arthas' Maximum Health by 10.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Icebound Fortitude</strong>\n<ul>\n<li>Cooldown: 35 seconds.</li>\n<li>Activate to gain 25 Armor and reduce the duration of Stuns, Slows, and Roots against Arthas by 75% for 3 seconds.</li>\n<li>Each Hero Rooted by Howling Blast reduces the cooldown of this ability by 2 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Deathlord</strong>\n<ul>\n<li>If Death Coil is used on an enemy Hero, launch an additional Death Coil at a nearby enemy Hero.</li>\n<li><b>PASSIVE:</b> Death Coil deals more damage the lower Arthas' current Health is, to a maximum of 50% bonus damage.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Deathchill</strong>\n<ul>\n<li>Howling Blast's damage is increased by 2 for each stack of Frostmourne Hungers.</li>\n<li>Howling Blast deals 100% additional damage and Roots for an additional 0.25 seconds against Heroes under 50% health.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Biting Cold</strong>\n<ul>\n<li>Each second an enemy is damaged by Frozen Tempest, it deals 15% bonus damage, up to 75% bonus damage.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Remorseless Winter</strong>\n<ul>\n<li>Enemy Heroes that remain within Frozen Tempest for 2.5 seconds are Rooted for 1.25 seconds and heal Arthas for 3% of his maximum Health. This effect has an 8 second cooldown per target.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Frostmourne Feeds</strong>\n<ul>\n<li>Reduce the cooldown of Frostmourne Hungers by 6 seconds. Arthas heals for 75% of the Basic Attack damage dealt by Frostmourne Hungers.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Anti-Magic Shell</strong>\n<ul>\n<li>Cooldown 60 seconds.</li>\n<li>Activate to make Arthas immune to Spell Damage for 4 seconds and heal Arthas for 25% of the damage prevented.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Legion of Northrend</strong>\n<ul>\n<li>Reduce Army of the Dead's charge cooldown by 5 seconds.</li>\n<li>Each charge consumed spawns an additional Ghoul to attack nearby enemies. These Ghouls cannot be sacrificed.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Absolute Zero</strong>\n<ul>\n<li>Sindragosa flies twice as far. Enemy Heroes are Rooted for 2.5 seconds, and then Slowed by 60% for 4 seconds.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Death Pact</strong>\n<ul>\n<li>Instantly double your stacks of Frostmourne Hungers, but it no longer gains stacks from hitting Heroes or killing Minions.</li>\n<li><b>PASSIVE:</b> Takedowns grant 2 stacks of Frostmourne Hungers.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Path of Frost</strong>\n<ul>\n<li>Activate to instantly mount with 10% additional Movement Speed. Taking damage does not dismount Arthas from this mount. Lasts up to 5 seconds.</li>\n<li>When Arthas dismounts, Slow all nearby enemies by 30% for 2 seconds and deal 66 damage.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Chen",
+     "heroId": "Chen",
+     "heroIds": [
+      "Chen"
+     ],
+     "changes": [
+      {
+       "name": "Keg Smash",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Breath of Fire initial damage lowered from 85 to 40.",
+         "html": "Breath of Fire initial damage lowered from 85 to 40.",
+         "added": false
+        },
+        {
+         "text": "Breath of Fire duration increased from 3 seconds to 6 seconds.",
+         "html": "Breath of Fire duration increased from 3 seconds to 6 seconds.",
+         "added": false
+        },
+        {
+         "text": "Breath of Fire no longer costs Energy.",
+         "html": "Breath of Fire no longer costs Energy.",
+         "added": false
+        },
+        {
+         "text": "Keg Smash energy cost increased to 35 from 30.",
+         "html": "Keg Smash energy cost increased to 35 from 30.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Fortifying Brew",
+       "key": "D",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Drinking now stops additional commands for a fraction of a second.",
+         "html": "Drinking now stops additional commands for a fraction of a second.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Accumulating Flames",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Moved from Level 4 to Level 1.",
+         "html": "Moved from Level 4 to Level 1.",
+         "added": false
+        },
+        {
+         "text": "REWORK: Quest: Gain stacks from hitting Heroes with DoT damage from Breath of Fire. Each stack provides 0.25 damage. At 20 damage, Keg Smash becomes ranged. Mythic Reward: At 75 damage, Breath of Fire lowers enemy armor by 20 and is refreshed from Chen's Basic Attacks.",
+         "html": "<b>REWORK:</b> Quest: Gain stacks from hitting Heroes with DoT damage from Breath of Fire. Each stack provides 0.25 damage. At 20 damage, Keg Smash becomes ranged. Mythic Reward: At 75 damage, Breath of Fire lowers enemy armor by 20 and is refreshed from Chen's Basic Attacks.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Eye of the Tiger",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "Moved from Level 1 to Level 4.",
+         "html": "Moved from Level 1 to Level 4.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Elusive Brawler",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "Movement Speed reduced from 30% to 20%.",
+         "html": "Movement Speed reduced from 30% to 20%.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Wandering Keg",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "Cooldown increased from 50 seconds to 60 seconds.",
+         "html": "Cooldown increased from 50 seconds to 60 seconds.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Pressure Point",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "Slow duration increased from 1 second to 1.5 seconds.",
+         "html": "Slow duration increased from 1 second to 1.5 seconds.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Keg Smash [W]</strong>\n<ul>\n<li>Breath of Fire initial damage lowered from 85 to 40.</li>\n<li>Breath of Fire duration increased from 3 seconds to 6 seconds.</li>\n<li>Breath of Fire no longer costs Energy.</li>\n<li>Keg Smash energy cost increased to 35 from 30.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Fortifying Brew [D]</strong>\n<ul>\n<li>Drinking now stops additional commands for a fraction of a second.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Accumulating Flames</strong>\n<ul>\n<li>Moved from Level 4 to Level 1.</li>\n<li><b>REWORK:</b> Quest: Gain stacks from hitting Heroes with DoT damage from Breath of Fire. Each stack provides 0.25 damage. At 20 damage, Keg Smash becomes ranged. Mythic Reward: At 75 damage, Breath of Fire lowers enemy armor by 20 and is refreshed from Chen's Basic Attacks.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Eye of the Tiger</strong>\n<ul>\n<li>Moved from Level 1 to Level 4.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Elusive Brawler</strong>\n<ul>\n<li>Movement Speed reduced from 30% to 20%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Wandering Keg</strong>\n<ul>\n<li>Cooldown increased from 50 seconds to 60 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Pressure Point</strong>\n<ul>\n<li>Slow duration increased from 1 second to 1.5 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Deathwing",
+     "heroId": "Deathwing",
+     "heroIds": [
+      "Deathwing"
+     ],
+     "changes": [
+      {
+       "name": "Onslaught",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Cooldown increased from 5 seconds to 6 seconds.",
+         "html": "Cooldown increased from 5 seconds to 6 seconds.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Dragonflight",
+       "key": "Z",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Cooldown increased from 15 seconds to 20 seconds.",
+         "html": "Cooldown increased from 15 seconds to 20 seconds.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Gaze onto Destruction",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "Duration reduced from 5 seconds to 3.5 seconds.",
+         "html": "Duration reduced from 5 seconds to 3.5 seconds.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Onslaught [E]</strong>\n<ul>\n<li>Cooldown increased from 5 seconds to 6 seconds.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Dragonflight [Z]</strong>\n<ul>\n<li>Cooldown increased from 15 seconds to 20 seconds.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Gaze onto Destruction</strong>\n<ul>\n<li>Duration reduced from 5 seconds to 3.5 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Falstad",
+     "heroId": "Falstad",
+     "heroIds": [
+      "Falstad"
+     ],
+     "changes": [
+      {
+       "name": "Frequent Flyer",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Range to receive kill credit reduced from 14 to 8.5.",
+         "html": "Range to receive kill credit reduced from 14 to 8.5.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Frequent Flyer</strong>\n<ul>\n<li>Range to receive kill credit reduced from 14 to 8.5.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Garrosh",
+     "heroId": "Garrosh",
+     "heroIds": [
+      "Garrosh"
+     ],
+     "changes": [
+      {
+       "name": "Wrecking Ball",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Range reduced from 6.5 to 6.",
+         "html": "Range reduced from 6.5 to 6.",
+         "added": false
+        },
+        {
+         "text": "Search range reduced from 2.5 to 2.25.",
+         "html": "Search range reduced from 2.5 to 2.25.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Unrivaled Strength",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Ranged bonus reduced from 20% to 15%.",
+         "html": "Ranged bonus reduced from 20% to 15%.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Wrecking Ball [E]</strong>\n<ul>\n<li>Range reduced from 6.5 to 6.</li>\n<li>Search range reduced from 2.5 to 2.25.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Unrivaled Strength</strong>\n<ul>\n<li>Ranged bonus reduced from 20% to 15%.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Gazlowe",
+     "heroId": "Tinker",
+     "heroIds": [
+      "Tinker"
+     ],
+     "changes": [
+      {
+       "name": "Rock-It! Turret",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Turret Health increased from 510 to 600.",
+         "html": "Turret Health increased from 510 to 600.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Rock-It! Turret [Q]</strong>\n<ul>\n<li>Turret Health increased from 510 to 600.</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Mal'Ganis",
+     "heroId": "MalGanis",
+     "heroIds": [
+      "MalGanis"
+     ],
+     "changes": [
+      {
+       "name": "Necrotic Embrace",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Now benefits double the amount from Vampiric Touch.",
+         "html": "Now benefits double the amount from Vampiric Touch.",
+         "added": false
+        },
+        {
+         "text": "No longer provides Armor for 3 seconds.",
+         "html": "No longer provides Armor for 3 seconds.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Will of Tichondrius",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Moved from Level 7 to Level 1.",
+         "html": "Moved from Level 7 to Level 1.",
+         "added": false
+        },
+        {
+         "text": "REWORK: Hit Heroes with Fel Claws to gain 0.5 damage. Hit 4 Heroes in the first two swipes to cause the last wipe to provide 2 additional damage. Upon reaching 40 stacks, Fel Claws now steals 4% health from opponents and stuns for an additional 0.5 Seconds.",
+         "html": "<b>REWORK:</b> Hit Heroes with Fel Claws to gain 0.5 damage. Hit 4 Heroes in the first two swipes to cause the last wipe to provide 2 additional damage. Upon reaching 40 stacks, Fel Claws now steals 4% health from opponents and stuns for an additional 0.5 Seconds.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Vampiric Aura",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "Moved from Level 1 to Level 4.",
+         "html": "Moved from Level 1 to Level 4.",
+         "added": false
+        },
+        {
+         "text": "Self healing increased from 30% to 40% and healing of nearby Allies increased from 15% to 20%.",
+         "html": "Self healing increased from 30% to 40% and healing of nearby Allies increased from 15% to 20%.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Might of Sargeras",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "Now provides 25 Armor for 3 seconds when using Necrotic Embrace.",
+         "html": "Now provides 25 Armor for 3 seconds when using Necrotic Embrace.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Fueled by Torment",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "Moved from Level 4 to Level 7.",
+         "html": "Moved from Level 4 to Level 7.",
+         "added": false
+        },
+        {
+         "text": "Now causes Necrotic Embrace to Slow by 25% for 3 seconds.",
+         "html": "Now causes Necrotic Embrace to Slow by 25% for 3 seconds.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Necrotic Embrace [W]</strong>\n<ul>\n<li>Now benefits double the amount from Vampiric Touch.</li>\n<li>No longer provides Armor for 3 seconds.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Will of Tichondrius</strong>\n<ul>\n<li>Moved from Level 7 to Level 1.</li>\n<li><b>REWORK:</b> Hit Heroes with Fel Claws to gain 0.5 damage. Hit 4 Heroes in the first two swipes to cause the last wipe to provide 2 additional damage. Upon reaching 40 stacks, Fel Claws now steals 4% health from opponents and stuns for an additional 0.5 Seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Vampiric Aura</strong>\n<ul>\n<li>Moved from Level 1 to Level 4.</li>\n<li>Self healing increased from 30% to 40% and healing of nearby Allies increased from 15% to 20%.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Might of Sargeras</strong>\n<ul>\n<li>Now provides 25 Armor for 3 seconds when using Necrotic Embrace.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Fueled by Torment</strong>\n<ul>\n<li>Moved from Level 4 to Level 7.</li>\n<li>Now causes Necrotic Embrace to Slow by 25% for 3 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Medivh",
+     "heroId": "Medivh",
+     "heroIds": [
+      "Medivh"
+     ],
+     "changes": [
+      {
+       "name": "Winds of Celerity",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Movement speed bonus increased from 50% to 75%.",
+         "html": "Movement speed bonus increased from 50% to 75%.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Raven's Intellect",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Bonus increased from 75% to 125%.",
+         "html": "Bonus increased from 75% to 125%.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Raven Familiar",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "Slow reduced from 30% to 20%.",
+         "html": "Slow reduced from 30% to 20%.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Force of Magic",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "Spell Power increased from 30% to 35%.",
+         "html": "Spell Power increased from 30% to 35%.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Circle of Protection",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "No longer increases the cooldown of Force of Will.",
+         "html": "No longer increases the cooldown of Force of Will.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Guardian of Tirisfal",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "Now also increases the range of Arcane Rift by 50%.",
+         "html": "Now also increases the range of Arcane Rift by 50%.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Winds of Celerity</strong>\n<ul>\n<li>Movement speed bonus increased from 50% to 75%.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Raven's Intellect</strong>\n<ul>\n<li>Bonus increased from 75% to 125%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Raven Familiar</strong>\n<ul>\n<li>Slow reduced from 30% to 20%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Force of Magic</strong>\n<ul>\n<li>Spell Power increased from 30% to 35%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Circle of Protection</strong>\n<ul>\n<li>No longer increases the cooldown of Force of Will.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Guardian of Tirisfal</strong>\n<ul>\n<li>Now also increases the range of Arcane Rift by 50%.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Muradin",
+     "heroId": "Muradin",
+     "heroIds": [
+      "Muradin"
+     ],
+     "changes": [
+      {
+       "name": "It's Hammer Time!",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Muradin gains 5 stacks if a target dies within 3 seconds of being hit by Storm Bolt.",
+         "html": "Muradin gains 5 stacks if a target dies within 3 seconds of being hit by Storm Bolt.",
+         "added": false
+        },
+        {
+         "text": "Stack requirement for pierce increased from 40 to 45.",
+         "html": "Stack requirement for pierce increased from 40 to 45.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Mountain King",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "Dwarf Toss cooldown increased by 2 seconds.",
+         "html": "Dwarf Toss cooldown increased by 2 seconds.",
+         "added": false
+        },
+        {
+         "text": "Thunder Clap cooldown increased by 2 seconds.",
+         "html": "Thunder Clap cooldown increased by 2 seconds.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">It's Hammer Time! [Q]</strong>\n<ul>\n<li>Muradin gains 5 stacks if a target dies within 3 seconds of being hit by Storm Bolt.</li>\n<li>Stack requirement for pierce increased from 40 to 45.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Mountain King</strong>\n<ul>\n<li>Dwarf Toss cooldown increased by 2 seconds.</li>\n<li>Thunder Clap cooldown increased by 2 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Thrall",
+     "heroId": "Thrall",
+     "heroIds": [
+      "Thrall"
+     ],
+     "changes": [
+      {
+       "name": "Crash Lightning",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Amount stacks lost on death reduced from 6 to 4.",
+         "html": "Amount stacks lost on death reduced from 6 to 4.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Echo of the Elements",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Damage done by the chain lightning bounces rewarded from obtaining the Mythic Reward reduced from 85 to 70.",
+         "html": "Damage done by the chain lightning bounces rewarded from obtaining the Mythic Reward reduced from 85 to 70.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Crash Lightning</strong>\n<ul>\n<li>Amount stacks lost on death reduced from 6 to 4.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Echo of the Elements</strong>\n<ul>\n<li>Damage done by the chain lightning bounces rewarded from obtaining the Mythic Reward reduced from 85 to 70.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Tyrande",
+     "heroId": "Tyrande",
+     "heroIds": [
+      "Tyrande"
+     ],
+     "changes": [
+      {
+       "name": "Lunar Flare",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Tyrande gains 1 stack if the target dies within 3 seconds of being hit.",
+         "html": "Tyrande gains 1 stack if the target dies within 3 seconds of being hit.",
+         "added": false
+        },
+        {
+         "text": "Mythic Reward now also increases attack range by 1.",
+         "html": "Mythic Reward now also increases attack range by 1.",
+         "added": false
+        },
+        {
+         "text": "Lunar flare damage from hitting a hero reduced from 4% to 3.5%.",
+         "html": "Lunar flare damage from hitting a hero reduced from 4% to 3.5%.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Commander of Sentinels",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "Cooldown of Sentinel increased by 3 seconds.",
+         "html": "Cooldown of Sentinel increased by 3 seconds.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Lunar Flare [E]</strong>\n<ul>\n<li>Tyrande gains 1 stack if the target dies within 3 seconds of being hit.</li>\n<li>Mythic Reward now also increases attack range by 1.</li>\n<li>Lunar flare damage from hitting a hero reduced from 4% to 3.5%.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Commander of Sentinels</strong>\n<ul>\n<li>Cooldown of Sentinel increased by 3 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    }
+   ],
+   "nameKo": "밸런스 업데이트"
+  },
+  {
+   "name": "Bug Fixes",
+   "key": "bugs",
+   "html": "<h3>General</h3>\n<ul>\n<li>Fixed an issue that caused Unstoppable targets to not be immune to Blinds.</li>\n</ul>\n<h3>Maps</h3>\n<ul>\n<li><strong class=\"pn-h\">General</strong>\n<ul>\n<li>Fixed an issue that caused Bosses to attack Summoned units.</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Blackheart's Bay</strong>\n<ul>\n<li>Fixed an issue that caused the AI to have issues turning in coins.</li>\n</ul>\n</li>\n</ul>\n<h3>Heroes</h3>\n<ul>\n<li><strong class=\"pn-h\">D.Va</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Defense Matrix [W]</strong>\n<ul>\n<li>D.Va's Mech will now retarget Defense Matrix when controlled by an AI.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Deathwing</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Dragonflight [Z]</strong>\n<ul>\n<li>Fixed an issue that caused Dragonflight's cooldown to increase upon taking damage to only occur when the cooldown is below 4 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Garrosh</strong>\n<ul>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">In For the Kill</strong>\n<ul>\n<li>Fixed an issue that caused In For the Kill to not completely reset the cooldown of Bloodthirst.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Gul'dan</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Drain Life [W]</strong>\n<ul>\n<li>Fixed an issue that caused Drain Life to not always be interrupted if the target leaves its range.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Jaina</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Improved Ice Block [1]</strong>\n<ul>\n<li>Fixed an issue that caused Improved Ice Block and Ice Cold to not be used correctly by AI-controlled Jaina.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Kael'thas</strong>\n<ul>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Rebirth</strong>\n<ul>\n<li>Fixed an issue that caused Rebirth to not be used correctly by AI-controlled Kael'thas.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Li Li</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Cloud Serpent [W]</strong>\n<ul>\n<li>Fixed an issue that caused Cloud Serpent to not be made visible when damaging a target while in the Fog of War.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Medivh</strong>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Poly Bomb</strong>\n<ul>\n<li>Fixed an issue that caused Poly Bomb to not be used correctly by AI-controlled Medivh.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Nazeebo</strong>\n<ul>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Superstition</strong>\n<ul>\n<li>Fixed an issue that caused Superstition to display a blank ability for the damage dealt by its Corpse Spider.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Samuro</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Mirror Image [Q]</strong>\n<ul>\n<li>Mirror Images will no longer move towards Samuro's attack move target point on creation.</li>\n<li>Mirror Images will now properly have their AI enabled when Samuro has their AI enabled.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Thrall</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Feral Spirit [W]</strong>\n<ul>\n<li>Fixed an issue that caused Feral Spirit to not be extended correctly if it is about to expire.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<p><strong><a href=\"https://us.forums.blizzard.com/en/heroes/\" target=\"_blank\">Click here to discuss this post with other players in the official Heroes of the Storm forums</a>.</strong></p>\n<p><strong><img alt=\"\" class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/g6/G6G0N80EOC941426801305139.png\"/></strong></p>",
+   "items": [
+    {
+     "name": "Blackheart's Bay",
+     "battleground": "blackheart_s_bay",
+     "html": "<strong class=\"pn-h\">Blackheart's Bay</strong>\n<ul>\n<li>Fixed an issue that caused the AI to have issues turning in coins.</li>\n</ul>",
+     "under": "Maps"
+    },
+    {
+     "name": "D.Va",
+     "heroId": "DVa",
+     "heroIds": [
+      "DVa"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">D.Va</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Defense Matrix [W]</strong>\n<ul>\n<li>D.Va's Mech will now retarget Defense Matrix when controlled by an AI.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Defense Matrix",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "D.Va's Mech will now retarget Defense Matrix when controlled by an AI.",
+         "html": "D.Va's Mech will now retarget Defense Matrix when controlled by an AI.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Deathwing",
+     "heroId": "Deathwing",
+     "heroIds": [
+      "Deathwing"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Deathwing</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Dragonflight [Z]</strong>\n<ul>\n<li>Fixed an issue that caused Dragonflight's cooldown to increase upon taking damage to only occur when the cooldown is below 4 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Dragonflight",
+       "key": "Z",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Dragonflight's cooldown to increase upon taking damage to only occur when the cooldown is below 4 seconds.",
+         "html": "Fixed an issue that caused Dragonflight's cooldown to increase upon taking damage to only occur when the cooldown is below 4 seconds.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Garrosh",
+     "heroId": "Garrosh",
+     "heroIds": [
+      "Garrosh"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Garrosh</strong>\n<ul>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">In For the Kill</strong>\n<ul>\n<li>Fixed an issue that caused In For the Kill to not completely reset the cooldown of Bloodthirst.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "In For the Kill",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused In For the Kill to not completely reset the cooldown of Bloodthirst.",
+         "html": "Fixed an issue that caused In For the Kill to not completely reset the cooldown of Bloodthirst.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Gul'dan",
+     "heroId": "Guldan",
+     "heroIds": [
+      "Guldan"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Gul'dan</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Drain Life [W]</strong>\n<ul>\n<li>Fixed an issue that caused Drain Life to not always be interrupted if the target leaves its range.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Drain Life",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Drain Life to not always be interrupted if the target leaves its range.",
+         "html": "Fixed an issue that caused Drain Life to not always be interrupted if the target leaves its range.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Jaina",
+     "heroId": "Jaina",
+     "heroIds": [
+      "Jaina"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Jaina</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Improved Ice Block [1]</strong>\n<ul>\n<li>Fixed an issue that caused Improved Ice Block and Ice Cold to not be used correctly by AI-controlled Jaina.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Improved Ice Block",
+       "key": "1",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Improved Ice Block and Ice Cold to not be used correctly by AI-controlled Jaina.",
+         "html": "Fixed an issue that caused Improved Ice Block and Ice Cold to not be used correctly by AI-controlled Jaina.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Kael'thas",
+     "heroId": "Kaelthas",
+     "heroIds": [
+      "Kaelthas"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Kael'thas</strong>\n<ul>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Rebirth</strong>\n<ul>\n<li>Fixed an issue that caused Rebirth to not be used correctly by AI-controlled Kael'thas.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Rebirth",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Rebirth to not be used correctly by AI-controlled Kael'thas.",
+         "html": "Fixed an issue that caused Rebirth to not be used correctly by AI-controlled Kael'thas.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Li Li",
+     "heroId": "LiLi",
+     "heroIds": [
+      "LiLi"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Li Li</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Cloud Serpent [W]</strong>\n<ul>\n<li>Fixed an issue that caused Cloud Serpent to not be made visible when damaging a target while in the Fog of War.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Cloud Serpent",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Cloud Serpent to not be made visible when damaging a target while in the Fog of War.",
+         "html": "Fixed an issue that caused Cloud Serpent to not be made visible when damaging a target while in the Fog of War.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Medivh",
+     "heroId": "Medivh",
+     "heroIds": [
+      "Medivh"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Medivh</strong>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Poly Bomb</strong>\n<ul>\n<li>Fixed an issue that caused Poly Bomb to not be used correctly by AI-controlled Medivh.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Poly Bomb",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Poly Bomb to not be used correctly by AI-controlled Medivh.",
+         "html": "Fixed an issue that caused Poly Bomb to not be used correctly by AI-controlled Medivh.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Nazeebo",
+     "heroId": "WitchDoctor",
+     "heroIds": [
+      "WitchDoctor"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Nazeebo</strong>\n<ul>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Superstition</strong>\n<ul>\n<li>Fixed an issue that caused Superstition to display a blank ability for the damage dealt by its Corpse Spider.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Superstition",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Superstition to display a blank ability for the damage dealt by its Corpse Spider.",
+         "html": "Fixed an issue that caused Superstition to display a blank ability for the damage dealt by its Corpse Spider.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Samuro",
+     "heroId": "Samuro",
+     "heroIds": [
+      "Samuro"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Samuro</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Mirror Image [Q]</strong>\n<ul>\n<li>Mirror Images will no longer move towards Samuro's attack move target point on creation.</li>\n<li>Mirror Images will now properly have their AI enabled when Samuro has their AI enabled.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Mirror Image",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Mirror Images will no longer move towards Samuro's attack move target point on creation.",
+         "html": "Mirror Images will no longer move towards Samuro's attack move target point on creation.",
+         "added": false
+        },
+        {
+         "text": "Mirror Images will now properly have their AI enabled when Samuro has their AI enabled.",
+         "html": "Mirror Images will now properly have their AI enabled when Samuro has their AI enabled.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Thrall",
+     "heroId": "Thrall",
+     "heroIds": [
+      "Thrall"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Thrall</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Feral Spirit [W]</strong>\n<ul>\n<li>Fixed an issue that caused Feral Spirit to not be extended correctly if it is about to expire.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Feral Spirit",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Feral Spirit to not be extended correctly if it is about to expire.",
+         "html": "Fixed an issue that caused Feral Spirit to not be extended correctly if it is about to expire.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "nameKo": "버그 수정"
+  }
+ ],
+ "heroes": [
+  "Arthas",
+  "Chen",
+  "DVa",
+  "Deathwing",
+  "Falstad",
+  "Garrosh",
+  "Guldan",
+  "Jaina",
+  "Kaelthas",
+  "LiLi",
+  "MalGanis",
+  "Medivh",
+  "Muradin",
+  "Samuro",
+  "Thrall",
+  "Tinker",
+  "Tyrande",
+  "WitchDoctor"
+ ],
+ "battlegrounds": [
+  "blackheart_s_bay",
+  "haunted_mines",
+  "warhead_junction"
+ ],
+ "lang": "en",
+ "newsId": "24264015"
+}

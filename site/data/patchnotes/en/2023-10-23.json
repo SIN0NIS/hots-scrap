@@ -1,0 +1,4611 @@
+{
+ "date": "2023-10-23",
+ "kind": "ptr",
+ "title": "Heroes of the Storm PTR Patch Notes - October 23, 2023",
+ "source": "https://news.blizzard.com/en-us/article/24017507/heroes-of-the-storm-ptr-patch-notes-october-23-2023",
+ "published": "2023-10-23T17:45:00Z",
+ "sections": [
+  {
+   "name": "머리말",
+   "key": "intro",
+   "html": "<p>Our next Heroes of the Storm patch has just hit the Public Test Realm and will be available for playtesting. We would like to take a moment to thank the community for providing insight and feedback for these changes. Although we may not reply to your feedback and posts we do listen and appreciate all of it. As always, if you encounter any bugs during your PTR play sessions, please stop by the <a href=\"https://us.forums.blizzard.com/en/heroes/c/ptr-bug-report\">PTR Bug Report forum</a> to let us know about your experiences.</p>",
+   "nameKo": "머리말"
+  },
+  {
+   "name": "General",
+   "key": "general",
+   "html": "<p><span class=\"pn-h\"><strong>Observer UI</strong></span></p>\n<ul>\n<li>D.Va's Mech Healthbar is now displayed in the observer interface's top bar.</li>\n<li>Misha's Healthbar is now displayed in the observer interface's top bar.</li>\n<li>The Lost Vikings Healthbars are now displayed in the observer interface's top bar.</li>\n<li>XP Globes are now displayed as Blue for the left team and Gray for the right team.</li>\n</ul>\n<p><span class=\"pn-h\"><strong>Icons</strong></span></p>\n<ul>\n<li><strong class=\"pn-name\">Abathur</strong>\n<ul>\n<li>Changed Icon color for Locust Strain.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Anub'arak</strong>\n<ul>\n<li>Changed Icon color for Chitinous Plating.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Blaze</strong>\n<ul>\n<li>Incinerator Gauntlets Icon changed to non-Heroes Damage from Basic Attacks.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Cassia</strong>\n<ul>\n<li>Martial Law Icon changed to Searing Damage from Basic Attacks.</li>\n<li>Changed Icon color for Ball Lightning.</li>\n<li>Changed Icon color for Valkrie.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Dehaka</strong>\n<ul>\n<li>Changed Icon color for Elongated Tonuge.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Diablo</strong>\n<ul>\n<li>Changed Icon for Soul Shield to be different than Spell Shields.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Genji</strong>\n<ul>\n<li>Changed Icon color for Zanshin.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Jaina</strong>\n<ul>\n<li>Changed Improved Ice Block Button to be normal Ice Block.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Illidan</strong>\n<ul>\n<li>Fiery Brand Icon changed to Searing Damage from Basic Attacks.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Muradin</strong>\n<ul>\n<li>Changed Icon color for Perfect Storm.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Nova</strong>\n<ul>\n<li>Changed Icon color for Rapid Projection.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Sonya</strong>\n<ul>\n<li>Rampage Icon changed to Cooldown Reduction from Basic Attacks.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Sylvanas</strong>\n<ul>\n<li>Remorseless Icon changed to Range Increase for Basic Attacks.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">The Lost Vikings</strong>\n<ul>\n<li>Nordic Attack Squad Icon changed to Searing Damage from Basic Attacks.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Tychus</strong>\n<ul>\n<li>Sizzlin' Attacks Icon changed to Searing Damage from Basic Attacks.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Tyrande</strong>\n<ul>\n<li>Shooting Star Icon changed to Range Increase for Basic Attacks.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Valla</strong>\n<ul>\n<li>Manticore Icon changed to Searing Damage from Basic Attacks.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Whitemane</strong>\n<ul>\n<li>Changed Icon color for Saintly Greatstaff.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Zarya</strong>\n<ul>\n<li>Feel the Heat Icon changed to Damage Increase from Basic Attacks.</li>\n</ul>\n</li>\n</ul>\n<p><span class=\"pn-h\"><strong>Abilities</strong></span></p>\n<ul>\n<li><strong class=\"pn-name\">Bounce</strong>\n<ul>\n<li>Abilities that Bounce will require all targets to be visible.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Cleave</strong>\n<ul>\n<li>Abilities that Cleave will reveal the area and does not require target to be visibile.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Splash</strong>\n<ul>\n<li>Abilities that Splash will reveal the area and does not require target to be visibile.</li>\n</ul>\n</li>\n</ul>\n<p><span class=\"pn-h\"><strong>Invulnerability</strong></span></p>\n<ul>\n<li><strong class=\"pn-name\">Johanna</strong>\n<ul>\n<li>Blessed Shield no longer hits Invulnerable enemies.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Junkrat</strong>\n<ul>\n<li>Frag Launcher no longer hits Invulnerable enemies.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Kael'thas</strong>\n<ul>\n<li>Gravity Lapse no longer hits Invulnerable enemies.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Li-Ming</strong>\n<ul>\n<li>Magic Missiles no longer hits Invulnerable enemies.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Nazeebo</strong>\n<ul>\n<li>Plague of Toads no longer hits Invulnerable enemies.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Tracer</strong>\n<ul>\n<li>Parting Gift no longer hits Invulnerable enemies.</li>\n</ul>\n</li>\n</ul>\n<p><span class=\"pn-h\"><strong>ARAM</strong></span></p>\n<ul>\n<li>Increased experience given by Experience Globes.</li>\n</ul>\n<p><span class=\"pn-h\"><strong>UI</strong></span></p>\n<ul>\n<li>Floating Combat Text for Experience earned from killing blows now has a gold color.</li>\n</ul>",
+   "items": [
+    {
+     "name": "Abathur",
+     "heroId": "Abathur",
+     "heroIds": [
+      "Abathur"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Abathur</strong>\n<ul>\n<li>Changed Icon color for Locust Strain.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Changed Icon color for Locust Strain.",
+         "html": "Changed Icon color for Locust Strain.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Anub'arak",
+     "heroId": "Anubarak",
+     "heroIds": [
+      "Anubarak"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Anub'arak</strong>\n<ul>\n<li>Changed Icon color for Chitinous Plating.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Changed Icon color for Chitinous Plating.",
+         "html": "Changed Icon color for Chitinous Plating.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Blaze",
+     "heroId": "Firebat",
+     "heroIds": [
+      "Firebat"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Blaze</strong>\n<ul>\n<li>Incinerator Gauntlets Icon changed to non-Heroes Damage from Basic Attacks.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Incinerator Gauntlets Icon changed to non-Heroes Damage from Basic Attacks.",
+         "html": "Incinerator Gauntlets Icon changed to non-Heroes Damage from Basic Attacks.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Cassia",
+     "heroId": "Amazon",
+     "heroIds": [
+      "Amazon"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Cassia</strong>\n<ul>\n<li>Martial Law Icon changed to Searing Damage from Basic Attacks.</li>\n<li>Changed Icon color for Ball Lightning.</li>\n<li>Changed Icon color for Valkrie.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Martial Law Icon changed to Searing Damage from Basic Attacks.",
+         "html": "Martial Law Icon changed to Searing Damage from Basic Attacks.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Changed Icon color for Ball Lightning.",
+         "html": "Changed Icon color for Ball Lightning.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Changed Icon color for Valkrie.",
+         "html": "Changed Icon color for Valkrie.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Dehaka",
+     "heroId": "Dehaka",
+     "heroIds": [
+      "Dehaka"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Dehaka</strong>\n<ul>\n<li>Changed Icon color for Elongated Tonuge.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Changed Icon color for Elongated Tonuge.",
+         "html": "Changed Icon color for Elongated Tonuge.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Diablo",
+     "heroId": "Diablo",
+     "heroIds": [
+      "Diablo"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Diablo</strong>\n<ul>\n<li>Changed Icon for Soul Shield to be different than Spell Shields.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Changed Icon for Soul Shield to be different than Spell Shields.",
+         "html": "Changed Icon for Soul Shield to be different than Spell Shields.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Genji",
+     "heroId": "Genji",
+     "heroIds": [
+      "Genji"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Genji</strong>\n<ul>\n<li>Changed Icon color for Zanshin.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Changed Icon color for Zanshin.",
+         "html": "Changed Icon color for Zanshin.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Jaina",
+     "heroId": "Jaina",
+     "heroIds": [
+      "Jaina"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Jaina</strong>\n<ul>\n<li>Changed Improved Ice Block Button to be normal Ice Block.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Changed Improved Ice Block Button to be normal Ice Block.",
+         "html": "Changed Improved Ice Block Button to be normal Ice Block.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Illidan",
+     "heroId": "Illidan",
+     "heroIds": [
+      "Illidan"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Illidan</strong>\n<ul>\n<li>Fiery Brand Icon changed to Searing Damage from Basic Attacks.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fiery Brand Icon changed to Searing Damage from Basic Attacks.",
+         "html": "Fiery Brand Icon changed to Searing Damage from Basic Attacks.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Muradin",
+     "heroId": "Muradin",
+     "heroIds": [
+      "Muradin"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Muradin</strong>\n<ul>\n<li>Changed Icon color for Perfect Storm.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Changed Icon color for Perfect Storm.",
+         "html": "Changed Icon color for Perfect Storm.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Nova",
+     "heroId": "Nova",
+     "heroIds": [
+      "Nova"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Nova</strong>\n<ul>\n<li>Changed Icon color for Rapid Projection.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Changed Icon color for Rapid Projection.",
+         "html": "Changed Icon color for Rapid Projection.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Sonya",
+     "heroId": "Barbarian",
+     "heroIds": [
+      "Barbarian"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Sonya</strong>\n<ul>\n<li>Rampage Icon changed to Cooldown Reduction from Basic Attacks.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Rampage Icon changed to Cooldown Reduction from Basic Attacks.",
+         "html": "Rampage Icon changed to Cooldown Reduction from Basic Attacks.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Sylvanas",
+     "heroId": "Sylvanas",
+     "heroIds": [
+      "Sylvanas"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Sylvanas</strong>\n<ul>\n<li>Remorseless Icon changed to Range Increase for Basic Attacks.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Remorseless Icon changed to Range Increase for Basic Attacks.",
+         "html": "Remorseless Icon changed to Range Increase for Basic Attacks.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "The Lost Vikings",
+     "heroId": "LostVikings",
+     "heroIds": [
+      "LostVikings"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">The Lost Vikings</strong>\n<ul>\n<li>Nordic Attack Squad Icon changed to Searing Damage from Basic Attacks.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Nordic Attack Squad Icon changed to Searing Damage from Basic Attacks.",
+         "html": "Nordic Attack Squad Icon changed to Searing Damage from Basic Attacks.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Tychus",
+     "heroId": "Tychus",
+     "heroIds": [
+      "Tychus"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Tychus</strong>\n<ul>\n<li>Sizzlin' Attacks Icon changed to Searing Damage from Basic Attacks.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Sizzlin' Attacks Icon changed to Searing Damage from Basic Attacks.",
+         "html": "Sizzlin' Attacks Icon changed to Searing Damage from Basic Attacks.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Tyrande",
+     "heroId": "Tyrande",
+     "heroIds": [
+      "Tyrande"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Tyrande</strong>\n<ul>\n<li>Shooting Star Icon changed to Range Increase for Basic Attacks.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Shooting Star Icon changed to Range Increase for Basic Attacks.",
+         "html": "Shooting Star Icon changed to Range Increase for Basic Attacks.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Valla",
+     "heroId": "DemonHunter",
+     "heroIds": [
+      "DemonHunter"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Valla</strong>\n<ul>\n<li>Manticore Icon changed to Searing Damage from Basic Attacks.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Manticore Icon changed to Searing Damage from Basic Attacks.",
+         "html": "Manticore Icon changed to Searing Damage from Basic Attacks.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Whitemane",
+     "heroId": "Whitemane",
+     "heroIds": [
+      "Whitemane"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Whitemane</strong>\n<ul>\n<li>Changed Icon color for Saintly Greatstaff.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Changed Icon color for Saintly Greatstaff.",
+         "html": "Changed Icon color for Saintly Greatstaff.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Zarya",
+     "heroId": "Zarya",
+     "heroIds": [
+      "Zarya"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Zarya</strong>\n<ul>\n<li>Feel the Heat Icon changed to Damage Increase from Basic Attacks.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Feel the Heat Icon changed to Damage Increase from Basic Attacks.",
+         "html": "Feel the Heat Icon changed to Damage Increase from Basic Attacks.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Johanna",
+     "heroId": "Crusader",
+     "heroIds": [
+      "Crusader"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Johanna</strong>\n<ul>\n<li>Blessed Shield no longer hits Invulnerable enemies.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Blessed Shield no longer hits Invulnerable enemies.",
+         "html": "Blessed Shield no longer hits Invulnerable enemies.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Junkrat",
+     "heroId": "Junkrat",
+     "heroIds": [
+      "Junkrat"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Junkrat</strong>\n<ul>\n<li>Frag Launcher no longer hits Invulnerable enemies.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Frag Launcher no longer hits Invulnerable enemies.",
+         "html": "Frag Launcher no longer hits Invulnerable enemies.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Kael'thas",
+     "heroId": "Kaelthas",
+     "heroIds": [
+      "Kaelthas"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Kael'thas</strong>\n<ul>\n<li>Gravity Lapse no longer hits Invulnerable enemies.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Gravity Lapse no longer hits Invulnerable enemies.",
+         "html": "Gravity Lapse no longer hits Invulnerable enemies.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Li-Ming",
+     "heroId": "Wizard",
+     "heroIds": [
+      "Wizard"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Li-Ming</strong>\n<ul>\n<li>Magic Missiles no longer hits Invulnerable enemies.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Magic Missiles no longer hits Invulnerable enemies.",
+         "html": "Magic Missiles no longer hits Invulnerable enemies.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Nazeebo",
+     "heroId": "WitchDoctor",
+     "heroIds": [
+      "WitchDoctor"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Nazeebo</strong>\n<ul>\n<li>Plague of Toads no longer hits Invulnerable enemies.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Plague of Toads no longer hits Invulnerable enemies.",
+         "html": "Plague of Toads no longer hits Invulnerable enemies.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Tracer",
+     "heroId": "Tracer",
+     "heroIds": [
+      "Tracer"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Tracer</strong>\n<ul>\n<li>Parting Gift no longer hits Invulnerable enemies.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Parting Gift no longer hits Invulnerable enemies.",
+         "html": "Parting Gift no longer hits Invulnerable enemies.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "nameKo": "일반"
+  },
+  {
+   "name": "Balance Update",
+   "key": "balance",
+   "html": "<p><span class=\"pn-h\"><strong>General</strong></span></p>\n<ul>\n<li>Adjusted difficulty levels for a number of Heroes.</li>\n</ul>\n<p><span class=\"pn-h\"><strong>Heroes</strong></span></p>\n<ul>\n<li><strong class=\"pn-name\">Samuro</strong>\n<ul>\n<li>Increased Windwalk healing from 1% per second to 3% per second.</li>\n<li>Decreased Way of the Wind healing from 5% on cast to 4% on cast.</li>\n</ul>\n</li>\n</ul>",
+   "items": [
+    {
+     "name": "Samuro",
+     "heroId": "Samuro",
+     "heroIds": [
+      "Samuro"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Samuro</strong>\n<ul>\n<li>Increased Windwalk healing from 1% per second to 3% per second.</li>\n<li>Decreased Way of the Wind healing from 5% on cast to 4% on cast.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Increased Windwalk healing from 1% per second to 3% per second.",
+         "html": "Increased Windwalk healing from 1% per second to 3% per second.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Decreased Way of the Wind healing from 5% on cast to 4% on cast.",
+         "html": "Decreased Way of the Wind healing from 5% on cast to 4% on cast.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "nameKo": "밸런스 업데이트"
+  },
+  {
+   "name": "Bug Fixes",
+   "key": "bugs",
+   "html": "<p><span class=\"pn-h\"><strong>General</strong></span></p>\n<ul>\n<li>Fixed an issue that caused Evading targets to still lose armor to Hellbats and Gnolls.</li>\n<li>Fixed an issue that caused ARAM maps to use different XP systems.</li>\n</ul>\n<p><span class=\"pn-h\"><strong>Heroes</strong></span></p>\n<ul>\n<li><strong class=\"pn-name\">Abathur</strong>\n<ul>\n<li>Fixed an issue that caused Abathur's Monstrosity to gain an additional 0.02 damage per stack.</li>\n<li>Toxic Next no longer reveals attackers while Arming.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Anduin</strong>\n<ul>\n<li>Moral Compass is now considered Splash damage and will not hit targets Immune to AOE.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Blaze</strong>\n<ul>\n<li>Combustion now reveals area it affects.</li>\n<li>Fixed an issue that caused Heat Treatment to not match the damage dealt by Pyromania.</li>\n<li>Fixed an issue where Oil Spill granted more vision than intended.</li>\n<li>Flame Stream now reveals targets hit.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Brightwing</strong>\n<ul>\n<li>Invisible Friends now displays a healing over time preview.</li>\n<li>Phase Shift's heal now happens after teleportation instead of at the same time.</li>\n<li>Unstable Anomaly now reveals the area it affects and enemies it hits.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Butcher</strong>\n<ul>\n<li>Cleaver AOE no longer reveals targets hit.</li>\n<li>Fixed an issue that caused Butcher to lose more than intended stacks of Fresh Meat when killed.</li>\n<li>Furnace Blast now reveals targets hit.</li>\n<li>No longer revealed when Lamb of the Slaughter damages an enemy.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Cassia</strong>\n<ul>\n<li>Fend now reveals targets hit.</li>\n<li>Fixed an issue that caused Lightning Fury Bolts cast from Static Electricity and Lightning Fury to be inconsistently determined.</li>\n<li>Fixed an issue that caused Lightning Fury Bolts generated by Static Electricity to not heal for the appropriate amount with Ring of the Leech.</li>\n<li>Fixed an issue where Lightning Fury Bolts were not displaying as critical hits against Blinded enemies.</li>\n<li>Martial Law no longer damages Heroes while Blinded.</li>\n<li>Surge of Light now reveals the area it affects and enemies that it hits.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">ChoGall</strong>\n<ul>\n<li>Consuming Blaze now reveals targets when applied.</li>\n<li>Consuming Blaze will now interrupt channels that are interrupted by damage when applied.</li>\n<li>Dread Orb no longer has an abnormal vision height.</li>\n<li>Dread Orb now reveals targets hit.</li>\n<li>Fixed an issue that caused Cthun's Gift to Slow while Blinded.</li>\n<li>Fuel for the Flame no longer deals damage to evading enemies near the Basic Attack target.</li>\n<li>Fuel for the Flame no longer deals damage to the target of Basic Attacks while Blinded.</li>\n<li>Fuel for the Flame no longer display as critical damage against Heroes.</li>\n<li>Runic Blast now reveals targets hit.</li>\n<li>Shadowbolt Volley no longer has an abnormal vision height.</li>\n<li>Shadowbolt Volley now reveals targets hit.</li>\n<li>Shadowflame now reveals targets hit.</li>\n<li>Twisting Nether now reveals targets hit.</li>\n<li>The Will of Gall is now treated as a Quest talent and displays the progress in the talents tab.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Chromie</strong>\n<ul>\n<li>Fixed an issue that caused Sand Echo's Basic Attacks to grant stacks while Blinded.</li>\n<li>Shifting Sands will no longer be removed upon death.</li>\n<li>Time Trap will no longer prevent Allies from being revealed temporarily.</li>\n<li>Time Troubles' Armor granted to allies will no longer be removed by Stasis.</li>\n<li>Unravelling's Armor debuff will now be removed by Stasis.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Deathwing</strong>\n<ul>\n<li>Death Drop's Armor Reduction is now removed by Stasis.</li>\n<li>Gaze Onto Destruction no longer reduces the damage of non-Heroes hit.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Deckard</strong>\n<ul>\n<li>Fixed an issue where Horadric Staff does not consume the cooldown when used on an Evading target.</li>\n<li>Fixed an issue where Potion of Shielding increased Deckard's Self Healing.</li>\n<li>Fixed an issue where Scroll of Sealing revealed targets for 4 seconds when taken.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Dehaka</strong>\n<ul>\n<li>Burrow no longer prevents allied abilities from affecting Dehaka.</li>\n<li>Burrow will now cleanse negative effects.</li>\n<li>Lurker Strain no longer reveals area around knocked back targets.</li>\n<li>Lurker Strain now reveals targets hit.</li>\n<li>Lurker Strain's Knockback will no longer function as a Stun.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Diablo</strong>\n<ul>\n<li>Dying Breath will now display as Apocalypse on the Death Recap.</li>\n<li>Fixed an issue that caused Black Soulstone to be multiplicative with other health bonuses.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">D.Va</strong>\n<ul>\n<li>Defense Matrix now works on Zagara's Banelings.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Falstad</strong>\n<ul>\n<li>BOOMerang's Armor Reduction is now removed by Stasis.</li>\n<li>Hammerang now reveals targets hit on return.</li>\n<li>Hammerang's explosion no longer displays as a crit after selecting BOOMerang.</li>\n<li>Hammerang's reactivation explosion now reveals targets hit.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Fenix</strong>\n<ul>\n<li>Fixed an issue that caused Divert Power: Weapons to be refreshed while Blinded.</li>\n<li>Fixed an issue that could cause Mobile Offensive to not apply when moving.</li>\n<li>Phase Bomb Splash damage now consumes Block charges.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Garrosh</strong>\n<ul>\n<li>Decimate now reveals targets hit.</li>\n<li>Into the Fray now shows up on Garrosh's Try screen.</li>\n<li>Wrecking Ball and Into the Fray now reveal targets hit.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Gazlowe</strong>\n<ul>\n<li>Adjusted Ark Reaktor damage to 36.</li>\n<li>EZ-PZ Dimensional Ripper can now have the cooldown announced to your team.</li>\n<li>Mecha-Lord no longer grants Armor while Blinded.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Genji</strong>\n<ul>\n<li>Fixed an issue where Deflect did not grant full Self Healing score when preventing damage.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Greymane</strong>\n<ul>\n<li>Fixed an issue that caused Alpha Killer to be capable of activating on-hit effects on Invulnerable enemies.</li>\n<li>Fixed an issue that caused Go For the Throat to apply the incorrect cooldown to Disengage with Running Wild selected.</li>\n<li>Removed dual block visual from Thick Skin.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Gul'dan</strong>\n<ul>\n<li>Fixed self-healing bonus from Hunger for Power.</li>\n<li>Pursuit of Flame is no longer visible through fog.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Hanzo</strong>\n<ul>\n<li>Fixed an issue that allowed players to fire Storm Bow at maximum range without charging.</li>\n<li>Fixed an issue that caused Sharpened Arrowheads to not reduce Armor while Blinded when applied with Storm Bow.</li>\n<li>Fixed an issue that caused Sharpened Arrowheads to reduce Armor before damage is dealt with Storm Bow.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Jaina</strong>\n<ul>\n<li>Fixed an issue that caused Frost Bolt to hit targets behind Frost Bolt.</li>\n<li>Fixed an issue that caused Frost Shards to allow more than 2 additional targets to be hit.</li>\n<li>Frostbite Armor now has a block visual.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Johanna</strong>\n<ul>\n<li>Blessed Hammer now reveals the area it affects.</li>\n<li>Fixed an issue where Blessed Momentum stacks multiplicatively instead of additvely with other attack speed modifiers.</li>\n<li>Heaven's Fury no longer prevents allies from being revealed.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Junkrat</strong>\n<ul>\n<li>Fixed an issue that caused Junkrat's Frag Launcher to gain 0.002 damage per stack of Taste for Explosions.</li>\n<li>Splash damage now consumes Block charges.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Kel'Thuzad</strong>\n<ul>\n<li>Deathchill will no longer activate if the target loses Root or Slow by becoming Unstoppable.</li>\n<li>Fixed an issue that caused Basic Attacks against Rooted Heroes to activate Icy Grasp.</li>\n<li>Fixed an issue that caused Basic Attacks against Rooted targets to activate Hungering Cold.</li>\n<li>Fixed an issue that caused Kel'Thuzad's buttons to light up when getting 15 baseline quest stacks.</li>\n<li>Fixed an issue that caused Power of Icecrown's damage increase to be lost upon death.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Kerrigan</strong>\n<ul>\n<li>Fixed an issue that caused Kerrigan's Self Healing to increase when she gains Assimilation Shields.</li>\n<li>Fury of the Swarm no longer reveals targets.</li>\n<li>Impaling Blades now reveals targets hit.</li>\n<li>Primal Grasp's Pulse now reveals targets hit.</li>\n<li>Psionic Shift now reveals targets hit.</li>\n<li>Ultralisk Splash damage reveals targets.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Kharazim</strong>\n<ul>\n<li>Fixed an issue that caused Insight to progress while Blinded.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Leoric</strong>\n<ul>\n<li>Buried Alive can no longer have its duration reduced.</li>\n<li>Drain Essence no longer increases his Self Healing score.</li>\n<li>Deckard's Rejuvenation is now removed on Undying.</li>\n<li>Fixed an issue where Leoric could receive Tyrande's Shadowstalk Healing when Undying was active, thereby reducing his respawn timer.</li>\n<li>Ossein Renewal can no longer be cast while Undying is active.</li>\n<li>Drain Hope, Drain Essence, and March of the Black King are now removed if the target enters a vehicle.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Li-Ming</strong>\n<ul>\n<li>Fixed an issue that caused Tal Rasha's Elements to prevent Force Armor from granting Block charges.</li>\n<li>Fixed an issue where Aether Walker would sometime not reset correctly.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Lt. Morales</strong>\n<ul>\n<li>Medi Drone no longer heals Heroes in Undying state.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Lunara</strong>\n<ul>\n<li>Fixed an issue that caused Invigorating Spores to be capable of activating on-hit effects on Invulnerable enemies.</li>\n<li>Fixed an issue that caused Invigorating Spores to deal percent damage while Blinded.</li>\n<li>Fixed an issue that caused Nature's Toxin to be applied before damage dealt.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Maiev</strong>\n<ul>\n<li>Fixed an issue that caused Basic Attacks while Blinded to increase Vengeful Knives damage.</li>\n<li>Fixed an issue that caused Umbral Bind to not increase Vengeful Knives damage .</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Mal'Ganis</strong>\n<ul>\n<li>Winged Guard now has a block visual.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Malthael</strong>\n<ul>\n<li>Ethereal Existence now has a block visual at max stacks.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Mei</strong>\n<ul>\n<li>Fixed an issue that caused Cooling Servos to Slow while Blinded.</li>\n<li>Fixed an issue that caused Mei's Induce Hibernation Talent to reduce damage of non-Heroes.</li>\n<li>Skating Away now has a block visual.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Murky</strong>\n<ul>\n<li>Fixed an issue that caused Big Tuna Kahuna to be multiplicative with other health bonuses.</li>\n<li>Octograb now reveals the target instead of the area around the target.</li>\n<li>Pufferfish now reveals targets hit.</li>\n<li>Slime now reveals targets hit.</li>\n<li>While revealed, Murky will no longer reveal the area around him when his Egg is slain.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Nova</strong>\n<ul>\n<li>Anti-Armor Shells is now removed by Stasis.</li>\n<li>Anti-Armor Shells now applies debuff after damage.</li>\n<li>Explosive Snipe now reveals targets hit.</li>\n<li>Fixed an issue that caused Anti-Armor Shells to display an incorrect damage value for Nova's Holo Decoys.</li>\n<li>Holo Decoys no longer reveals area when killed.</li>\n<li>Holo Decoys are now visible from the center of the unit instead of their border.</li>\n<li>Precision Strike now reveals targets hit.</li>\n<li>Snipe no longer reveals around target.</li>\n<li>Triple Tap no longer reveals area around the target, and the target is now revealed for 2 seconds afterwards, up from 1.3 seconds.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Orphea</strong>\n<ul>\n<li>Fixed an issue that caused Dead Magic to splash to Evading targets.</li>\n<li>Fixed an issue that caused Empowered Eldritch Conduit to be lost on death.</li>\n<li>Fixed an issue that caused Empowered Eldritch Conduit to not be granted when going from 7 or 8 stacks to 10.</li>\n<li>Fixed an issue that caused Eternal Feast to hit dead objects.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Probius</strong>\n<ul>\n<li>Fixed an issue that caused Pylon Overcharge to deal additional damage when Construct Additional Pylons is selected.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Qhira</strong>\n<ul>\n<li>Basic Attacks will no longer reveal targets hit.</li>\n<li>Blood Rage's activation no longer grants Fatal Wounds progress.</li>\n<li>Fixed an issue that caused Finishing Touch to grant attack speed on attacks that bring the target below 50% health.</li>\n<li>Fixed an issue that caused Finishing Touch to grant attack speed while Blinded.</li>\n<li>Fixed an issue that caused Upstage to not apply if the targets were killed by the activation damage.</li>\n<li>Fixed an issue that caused Your Pain, My Gain to grant Armor while Blinded.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Ragnaros</strong>\n<ul>\n<li>Cauterize Wounds now displays on the Death Recap correctly.</li>\n<li>Fixed an issue that caused Empower Sulfuras to not reduce the cooldown of Blistering Attacks on non-Heroes.</li>\n<li>Tempered Flame no longer increases Self Healing on application.</li>\n<li>Lava Wave can no longer pickup or magnetize Experience Globes.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Raynor</strong>\n<ul>\n<li>Fixed an issue that caused Execute Orders to not display in the Death Recap.</li>\n<li>Fixed an issue that caused Give Em' Some Pepper damage to behaving incorrectly.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Rehgar</strong>\n<ul>\n<li>Fixed duration of Totemic Projection.</li>\n<li>Fixed an issue that caused Hunger of the Wolf to deal damage and heal while Blinded.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Rexxar</strong>\n<ul>\n<li>Fixed an issue that caused Kill Command's damage bonus to be multiplicative.</li>\n<li>Fixed an issue that caused Misha to not gain Primal Intimidation's Passive on respawn.</li>\n<li>Fixed an issue where Unleash the Boars was not affected by some damage modifications.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Samuro</strong>\n<ul>\n<li>Burning Blade is now Splash damage.</li>\n<li>Way of the Wind now increases Self Healing intead of Healing.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Sonya</strong>\n<ul>\n<li>Leap now also grants Unstoppable when used at minimum distance.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Stukov</strong>\n<ul>\n<li>Fixed an issue that caused Reactive Ballistospores to not work correctly with cooldown resets.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Sylvanas</strong>\n<ul>\n<li>Deafening Blast now applies Black Arrows if active.</li>\n<li>Deafening Blast now reveals targets hit.</li>\n<li>Fixed an issue that caused Evasive Fire to be refreshed while Blinded.</li>\n<li>Fixed an issue that caused Lost Soul to reduce cooldowns while Blinded.</li>\n<li>Fixed an issue that caused Overwhelming Affliction to apply the slow to a Remorseless target when firing at a target with 3 stacks.</li>\n<li>Fixed an issue that caused Possession to give more XP than intended for Catapults.</li>\n<li>Fixed an issue that caused Remorseless to not apply Black Arrows while Blinded.</li>\n<li>Fixed an issue that caused Remorseless to not Stun enemies while Black Arrows is active.</li>\n<li>Fixed an issue that caused Remorseless to not Stun Mercenaries with 3 stacks of Black Arrows and Merenary Queen.</li>\n<li>Might of the Banshee Queen is no longer removed on death.</li>\n<li>Wailing Arrow no longer reveals area around Sylvanas when cast.</li>\n<li>Wailing Arrow now reveals the area of detonation.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Tassadar</strong>\n<ul>\n<li>Archon no longer applies armor reduction while Blinded.</li>\n<li>Archon Splash damage no longer reveals targets hit.</li>\n<li>Archon's Armor reduction is now removed by Stasis.</li>\n<li>Feedback's Armor reduction is now removed by Stasis.</li>\n<li>Fixed an issue that caused Oracle to not show in the Death Recap.</li>\n<li>Khaydarin Amulet will now reveal while active after the attack expires.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Thrall</strong>\n<ul>\n<li>Feral Resilience now has a block visual.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">The Lost Vikings</strong>\n<ul>\n<li>Hunka' Burning Olaf now reveals target instead of the area around the target.</li>\n<li>It's a Sabotage can no longer be applied while Erik is Blinded.</li>\n<li>Nordic Attack Squad now shows in recap.</li>\n<li>Viking Bribery stack count is no longer visible on the scoreboard to other players.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Tracer</strong>\n<ul>\n<li>Bullet Spray now reveals targets hit.</li>\n<li>Fixed an issue that caused Composition B and Quantum Spike to deal percent damage to non-Heroes.</li>\n<li>Heavy Handed's Armor is now removed by Stasis.</li>\n<li>If Locked and Loaded has been activated, then the floating text for completing the reload will display as a crit.</li>\n<li>Is That a Healthpack can no longer heal Vehicles.</li>\n<li>Locked and Loaded no longer causes Basic Attacks to display as a crit.</li>\n<li>Ricochet will no longer reveal targets hit (Tracer Rounds will still apply if taken).</li>\n<li>Telefrag no longer reduces the cooldown of Recall while Blinded.</li>\n<li>When Tracer completes a reload, it now displays floating text.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Tyrael</strong>\n<ul>\n<li>Archangel's Wrath now reveals targets hit by the explosion.</li>\n<li>Bound by Law no longer refreshes El'Druin's Might while Blinded.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Tyrande</strong>\n<ul>\n<li>Fixed an issue that caused Elune's Chosen to heal for overkill damage.</li>\n<li>Fixed an issue that caused Self Healing to not increase her Self Healing.</li>\n<li>Fixed an issue that caused Sentinel to be reset if a Hallucination is killed while revealed.</li>\n<li>Fxied an issue where Mark of Mending was not healing Evading targets.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Uther</strong>\n<ul>\n<li>Divine Storm now reveals targets hit instead of area around targets hit.</li>\n<li>Divine Storm now reveals the area it affects.</li>\n<li>Holy Radiance now reveals enemies hit.</li>\n<li>Holy Radiance reveal updated to match area of effect.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Valeera</strong>\n<ul>\n<li>Ambush now reveals the target for 2 seconds.</li>\n<li>Blade Flurry now reveals targets for 2 seconds.</li>\n<li>Blade Flurry now reveals the area it affects.</li>\n<li>Cheap Shot now reveals the target for 2 seconds.</li>\n<li>Eviscerate now reveals the target for 2 seconds.</li>\n<li>Fixed an issue where Garrote's damage displayed incorrectly in the Death Recap.</li>\n<li>Garrote now reveals the target for 2 seconds.</li>\n<li>Sinister Strike now reveals the target for 2 seconds.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Varian</strong>\n<ul>\n<li>Fixed an issue that caused Juggernaut to be capable of activating on-hit effects on Invulnerable enemies.</li>\n<li>Fixed an issue that caused Varian's Victory Rush button to be grayed out.</li>\n<li>Master At Arms now reveals targets hit and the area affected.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Whitemane</strong>\n<ul>\n<li>Clemency no longer reveals the area around the heal target.</li>\n<li>Divine Reckoning now reveals targets hit.</li>\n<li>Inquisition and Shared Punishment now reveal the target for 2 seconds after expiring.</li>\n<li>Inquisition now reveals the target instead of the area around the target.</li>\n<li>Searing Lash now reveals targets hit.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Xul</strong>\n<ul>\n<li>Shackler no longer reveals the area it affects.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Yrel</strong>\n<ul>\n<li>Aegis of Light no longer reveals area it affects.</li>\n<li>Avenging Wrath now reveals targets hit.</li>\n<li>Dauntless now has a block visual.</li>\n<li>Holy Wrath now consumes Block charges.</li>\n<li>Righteous Hammer now reveals targets hit.</li>\n<li>Vindication now reveals targets hit.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Zarya</strong>\n<ul>\n<li>Explosive Barrier now reveals the area and targets.</li>\n<li>Fixing an issue where Zarya's Defensive Shielding did not stack correctly with other blocks.</li>\n<li>Splash damage no longer reveals targets.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Zeratul</strong>\n<ul>\n<li>Cleave now reveals the area it affects.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Zul'jin</strong>\n<ul>\n<li>Buzzsaw now reveals targets hit for 2 seconds.</li>\n<li>Grievous Throw now reveals targets hit for 2 seconds.</li>\n<li>Guillotine now reveals targets hit.</li>\n<li>Twin Cleave now reveals targets hit.</li>\n<li>Wrong Place Wrong Time now reveals targets hit for 2 seconds.</li>\n</ul>\n</li>\n</ul>\n<p><strong><a href=\"https://us.forums.blizzard.com/en/heroes/\" target=\"_blank\">Click here to discuss this post with other players in the official Heroes of the Storm forums</a>.</strong></p>\n<p><strong><img alt=\"\" class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/g6/G6G0N80EOC941426801305139.png\"/></strong></p>",
+   "items": [
+    {
+     "name": "Abathur",
+     "heroId": "Abathur",
+     "heroIds": [
+      "Abathur"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Abathur</strong>\n<ul>\n<li>Fixed an issue that caused Abathur's Monstrosity to gain an additional 0.02 damage per stack.</li>\n<li>Toxic Next no longer reveals attackers while Arming.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Abathur's Monstrosity to gain an additional 0.02 damage per stack.",
+         "html": "Fixed an issue that caused Abathur's Monstrosity to gain an additional 0.02 damage per stack.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Toxic Next no longer reveals attackers while Arming.",
+         "html": "Toxic Next no longer reveals attackers while Arming.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Anduin",
+     "heroId": "Anduin",
+     "heroIds": [
+      "Anduin"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Anduin</strong>\n<ul>\n<li>Moral Compass is now considered Splash damage and will not hit targets Immune to AOE.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Moral Compass is now considered Splash damage and will not hit targets Immune to AOE.",
+         "html": "Moral Compass is now considered Splash damage and will not hit targets Immune to AOE.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Blaze",
+     "heroId": "Firebat",
+     "heroIds": [
+      "Firebat"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Blaze</strong>\n<ul>\n<li>Combustion now reveals area it affects.</li>\n<li>Fixed an issue that caused Heat Treatment to not match the damage dealt by Pyromania.</li>\n<li>Fixed an issue where Oil Spill granted more vision than intended.</li>\n<li>Flame Stream now reveals targets hit.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Combustion now reveals area it affects.",
+         "html": "Combustion now reveals area it affects.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Heat Treatment to not match the damage dealt by Pyromania.",
+         "html": "Fixed an issue that caused Heat Treatment to not match the damage dealt by Pyromania.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue where Oil Spill granted more vision than intended.",
+         "html": "Fixed an issue where Oil Spill granted more vision than intended.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Flame Stream now reveals targets hit.",
+         "html": "Flame Stream now reveals targets hit.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Brightwing",
+     "heroId": "FaerieDragon",
+     "heroIds": [
+      "FaerieDragon"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Brightwing</strong>\n<ul>\n<li>Invisible Friends now displays a healing over time preview.</li>\n<li>Phase Shift's heal now happens after teleportation instead of at the same time.</li>\n<li>Unstable Anomaly now reveals the area it affects and enemies it hits.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Invisible Friends now displays a healing over time preview.",
+         "html": "Invisible Friends now displays a healing over time preview.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Phase Shift's heal now happens after teleportation instead of at the same time.",
+         "html": "Phase Shift's heal now happens after teleportation instead of at the same time.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Unstable Anomaly now reveals the area it affects and enemies it hits.",
+         "html": "Unstable Anomaly now reveals the area it affects and enemies it hits.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Cassia",
+     "heroId": "Amazon",
+     "heroIds": [
+      "Amazon"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Cassia</strong>\n<ul>\n<li>Fend now reveals targets hit.</li>\n<li>Fixed an issue that caused Lightning Fury Bolts cast from Static Electricity and Lightning Fury to be inconsistently determined.</li>\n<li>Fixed an issue that caused Lightning Fury Bolts generated by Static Electricity to not heal for the appropriate amount with Ring of the Leech.</li>\n<li>Fixed an issue where Lightning Fury Bolts were not displaying as critical hits against Blinded enemies.</li>\n<li>Martial Law no longer damages Heroes while Blinded.</li>\n<li>Surge of Light now reveals the area it affects and enemies that it hits.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fend now reveals targets hit.",
+         "html": "Fend now reveals targets hit.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Lightning Fury Bolts cast from Static Electricity and Lightning Fury to be inconsistently determined.",
+         "html": "Fixed an issue that caused Lightning Fury Bolts cast from Static Electricity and Lightning Fury to be inconsistently determined.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Lightning Fury Bolts generated by Static Electricity to not heal for the appropriate amount with Ring of the Leech.",
+         "html": "Fixed an issue that caused Lightning Fury Bolts generated by Static Electricity to not heal for the appropriate amount with Ring of the Leech.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue where Lightning Fury Bolts were not displaying as critical hits against Blinded enemies.",
+         "html": "Fixed an issue where Lightning Fury Bolts were not displaying as critical hits against Blinded enemies.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Martial Law no longer damages Heroes while Blinded.",
+         "html": "Martial Law no longer damages Heroes while Blinded.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Surge of Light now reveals the area it affects and enemies that it hits.",
+         "html": "Surge of Light now reveals the area it affects and enemies that it hits.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "ChoGall",
+     "heroId": "Cho",
+     "heroIds": [
+      "Cho",
+      "Gall"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">ChoGall</strong>\n<ul>\n<li>Consuming Blaze now reveals targets when applied.</li>\n<li>Consuming Blaze will now interrupt channels that are interrupted by damage when applied.</li>\n<li>Dread Orb no longer has an abnormal vision height.</li>\n<li>Dread Orb now reveals targets hit.</li>\n<li>Fixed an issue that caused Cthun's Gift to Slow while Blinded.</li>\n<li>Fuel for the Flame no longer deals damage to evading enemies near the Basic Attack target.</li>\n<li>Fuel for the Flame no longer deals damage to the target of Basic Attacks while Blinded.</li>\n<li>Fuel for the Flame no longer display as critical damage against Heroes.</li>\n<li>Runic Blast now reveals targets hit.</li>\n<li>Shadowbolt Volley no longer has an abnormal vision height.</li>\n<li>Shadowbolt Volley now reveals targets hit.</li>\n<li>Shadowflame now reveals targets hit.</li>\n<li>Twisting Nether now reveals targets hit.</li>\n<li>The Will of Gall is now treated as a Quest talent and displays the progress in the talents tab.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Consuming Blaze now reveals targets when applied.",
+         "html": "Consuming Blaze now reveals targets when applied.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Consuming Blaze will now interrupt channels that are interrupted by damage when applied.",
+         "html": "Consuming Blaze will now interrupt channels that are interrupted by damage when applied.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Dread Orb no longer has an abnormal vision height.",
+         "html": "Dread Orb no longer has an abnormal vision height.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Dread Orb now reveals targets hit.",
+         "html": "Dread Orb now reveals targets hit.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Cthun's Gift to Slow while Blinded.",
+         "html": "Fixed an issue that caused Cthun's Gift to Slow while Blinded.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fuel for the Flame no longer deals damage to evading enemies near the Basic Attack target.",
+         "html": "Fuel for the Flame no longer deals damage to evading enemies near the Basic Attack target.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fuel for the Flame no longer deals damage to the target of Basic Attacks while Blinded.",
+         "html": "Fuel for the Flame no longer deals damage to the target of Basic Attacks while Blinded.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fuel for the Flame no longer display as critical damage against Heroes.",
+         "html": "Fuel for the Flame no longer display as critical damage against Heroes.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Runic Blast now reveals targets hit.",
+         "html": "Runic Blast now reveals targets hit.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Shadowbolt Volley no longer has an abnormal vision height.",
+         "html": "Shadowbolt Volley no longer has an abnormal vision height.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Shadowbolt Volley now reveals targets hit.",
+         "html": "Shadowbolt Volley now reveals targets hit.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Shadowflame now reveals targets hit.",
+         "html": "Shadowflame now reveals targets hit.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Twisting Nether now reveals targets hit.",
+         "html": "Twisting Nether now reveals targets hit.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "The Will of Gall is now treated as a Quest talent and displays the progress in the talents tab.",
+         "html": "The Will of Gall is now treated as a Quest talent and displays the progress in the talents tab.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Chromie",
+     "heroId": "Chromie",
+     "heroIds": [
+      "Chromie"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Chromie</strong>\n<ul>\n<li>Fixed an issue that caused Sand Echo's Basic Attacks to grant stacks while Blinded.</li>\n<li>Shifting Sands will no longer be removed upon death.</li>\n<li>Time Trap will no longer prevent Allies from being revealed temporarily.</li>\n<li>Time Troubles' Armor granted to allies will no longer be removed by Stasis.</li>\n<li>Unravelling's Armor debuff will now be removed by Stasis.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Sand Echo's Basic Attacks to grant stacks while Blinded.",
+         "html": "Fixed an issue that caused Sand Echo's Basic Attacks to grant stacks while Blinded.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Shifting Sands will no longer be removed upon death.",
+         "html": "Shifting Sands will no longer be removed upon death.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Time Trap will no longer prevent Allies from being revealed temporarily.",
+         "html": "Time Trap will no longer prevent Allies from being revealed temporarily.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Time Troubles' Armor granted to allies will no longer be removed by Stasis.",
+         "html": "Time Troubles' Armor granted to allies will no longer be removed by Stasis.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Unravelling's Armor debuff will now be removed by Stasis.",
+         "html": "Unravelling's Armor debuff will now be removed by Stasis.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Deathwing",
+     "heroId": "Deathwing",
+     "heroIds": [
+      "Deathwing"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Deathwing</strong>\n<ul>\n<li>Death Drop's Armor Reduction is now removed by Stasis.</li>\n<li>Gaze Onto Destruction no longer reduces the damage of non-Heroes hit.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Death Drop's Armor Reduction is now removed by Stasis.",
+         "html": "Death Drop's Armor Reduction is now removed by Stasis.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Gaze Onto Destruction no longer reduces the damage of non-Heroes hit.",
+         "html": "Gaze Onto Destruction no longer reduces the damage of non-Heroes hit.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Deckard",
+     "heroId": "Deckard",
+     "heroIds": [
+      "Deckard"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Deckard</strong>\n<ul>\n<li>Fixed an issue where Horadric Staff does not consume the cooldown when used on an Evading target.</li>\n<li>Fixed an issue where Potion of Shielding increased Deckard's Self Healing.</li>\n<li>Fixed an issue where Scroll of Sealing revealed targets for 4 seconds when taken.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue where Horadric Staff does not consume the cooldown when used on an Evading target.",
+         "html": "Fixed an issue where Horadric Staff does not consume the cooldown when used on an Evading target.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue where Potion of Shielding increased Deckard's Self Healing.",
+         "html": "Fixed an issue where Potion of Shielding increased Deckard's Self Healing.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue where Scroll of Sealing revealed targets for 4 seconds when taken.",
+         "html": "Fixed an issue where Scroll of Sealing revealed targets for 4 seconds when taken.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Dehaka",
+     "heroId": "Dehaka",
+     "heroIds": [
+      "Dehaka"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Dehaka</strong>\n<ul>\n<li>Burrow no longer prevents allied abilities from affecting Dehaka.</li>\n<li>Burrow will now cleanse negative effects.</li>\n<li>Lurker Strain no longer reveals area around knocked back targets.</li>\n<li>Lurker Strain now reveals targets hit.</li>\n<li>Lurker Strain's Knockback will no longer function as a Stun.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Burrow no longer prevents allied abilities from affecting Dehaka.",
+         "html": "Burrow no longer prevents allied abilities from affecting Dehaka.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Burrow will now cleanse negative effects.",
+         "html": "Burrow will now cleanse negative effects.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Lurker Strain no longer reveals area around knocked back targets.",
+         "html": "Lurker Strain no longer reveals area around knocked back targets.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Lurker Strain now reveals targets hit.",
+         "html": "Lurker Strain now reveals targets hit.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Lurker Strain's Knockback will no longer function as a Stun.",
+         "html": "Lurker Strain's Knockback will no longer function as a Stun.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Diablo",
+     "heroId": "Diablo",
+     "heroIds": [
+      "Diablo"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Diablo</strong>\n<ul>\n<li>Dying Breath will now display as Apocalypse on the Death Recap.</li>\n<li>Fixed an issue that caused Black Soulstone to be multiplicative with other health bonuses.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Dying Breath will now display as Apocalypse on the Death Recap.",
+         "html": "Dying Breath will now display as Apocalypse on the Death Recap.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Black Soulstone to be multiplicative with other health bonuses.",
+         "html": "Fixed an issue that caused Black Soulstone to be multiplicative with other health bonuses.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "D.Va",
+     "heroId": "DVa",
+     "heroIds": [
+      "DVa"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">D.Va</strong>\n<ul>\n<li>Defense Matrix now works on Zagara's Banelings.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Defense Matrix now works on Zagara's Banelings.",
+         "html": "Defense Matrix now works on Zagara's Banelings.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Falstad",
+     "heroId": "Falstad",
+     "heroIds": [
+      "Falstad"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Falstad</strong>\n<ul>\n<li>BOOMerang's Armor Reduction is now removed by Stasis.</li>\n<li>Hammerang now reveals targets hit on return.</li>\n<li>Hammerang's explosion no longer displays as a crit after selecting BOOMerang.</li>\n<li>Hammerang's reactivation explosion now reveals targets hit.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "BOOMerang's Armor Reduction is now removed by Stasis.",
+         "html": "BOOMerang's Armor Reduction is now removed by Stasis.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Hammerang now reveals targets hit on return.",
+         "html": "Hammerang now reveals targets hit on return.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Hammerang's explosion no longer displays as a crit after selecting BOOMerang.",
+         "html": "Hammerang's explosion no longer displays as a crit after selecting BOOMerang.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Hammerang's reactivation explosion now reveals targets hit.",
+         "html": "Hammerang's reactivation explosion now reveals targets hit.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Fenix",
+     "heroId": "Fenix",
+     "heroIds": [
+      "Fenix"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Fenix</strong>\n<ul>\n<li>Fixed an issue that caused Divert Power: Weapons to be refreshed while Blinded.</li>\n<li>Fixed an issue that could cause Mobile Offensive to not apply when moving.</li>\n<li>Phase Bomb Splash damage now consumes Block charges.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Divert Power: Weapons to be refreshed while Blinded.",
+         "html": "Fixed an issue that caused Divert Power: Weapons to be refreshed while Blinded.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that could cause Mobile Offensive to not apply when moving.",
+         "html": "Fixed an issue that could cause Mobile Offensive to not apply when moving.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Phase Bomb Splash damage now consumes Block charges.",
+         "html": "Phase Bomb Splash damage now consumes Block charges.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Garrosh",
+     "heroId": "Garrosh",
+     "heroIds": [
+      "Garrosh"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Garrosh</strong>\n<ul>\n<li>Decimate now reveals targets hit.</li>\n<li>Into the Fray now shows up on Garrosh's Try screen.</li>\n<li>Wrecking Ball and Into the Fray now reveal targets hit.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Decimate now reveals targets hit.",
+         "html": "Decimate now reveals targets hit.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Into the Fray now shows up on Garrosh's Try screen.",
+         "html": "Into the Fray now shows up on Garrosh's Try screen.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Wrecking Ball and Into the Fray now reveal targets hit.",
+         "html": "Wrecking Ball and Into the Fray now reveal targets hit.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Gazlowe",
+     "heroId": "Tinker",
+     "heroIds": [
+      "Tinker"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Gazlowe</strong>\n<ul>\n<li>Adjusted Ark Reaktor damage to 36.</li>\n<li>EZ-PZ Dimensional Ripper can now have the cooldown announced to your team.</li>\n<li>Mecha-Lord no longer grants Armor while Blinded.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Adjusted Ark Reaktor damage to 36.",
+         "html": "Adjusted Ark Reaktor damage to 36.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "EZ-PZ Dimensional Ripper can now have the cooldown announced to your team.",
+         "html": "EZ-PZ Dimensional Ripper can now have the cooldown announced to your team.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Mecha-Lord no longer grants Armor while Blinded.",
+         "html": "Mecha-Lord no longer grants Armor while Blinded.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Genji",
+     "heroId": "Genji",
+     "heroIds": [
+      "Genji"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Genji</strong>\n<ul>\n<li>Fixed an issue where Deflect did not grant full Self Healing score when preventing damage.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue where Deflect did not grant full Self Healing score when preventing damage.",
+         "html": "Fixed an issue where Deflect did not grant full Self Healing score when preventing damage.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Greymane",
+     "heroId": "Greymane",
+     "heroIds": [
+      "Greymane"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Greymane</strong>\n<ul>\n<li>Fixed an issue that caused Alpha Killer to be capable of activating on-hit effects on Invulnerable enemies.</li>\n<li>Fixed an issue that caused Go For the Throat to apply the incorrect cooldown to Disengage with Running Wild selected.</li>\n<li>Removed dual block visual from Thick Skin.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Alpha Killer to be capable of activating on-hit effects on Invulnerable enemies.",
+         "html": "Fixed an issue that caused Alpha Killer to be capable of activating on-hit effects on Invulnerable enemies.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Go For the Throat to apply the incorrect cooldown to Disengage with Running Wild selected.",
+         "html": "Fixed an issue that caused Go For the Throat to apply the incorrect cooldown to Disengage with Running Wild selected.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Removed dual block visual from Thick Skin.",
+         "html": "Removed dual block visual from Thick Skin.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Gul'dan",
+     "heroId": "Guldan",
+     "heroIds": [
+      "Guldan"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Gul'dan</strong>\n<ul>\n<li>Fixed self-healing bonus from Hunger for Power.</li>\n<li>Pursuit of Flame is no longer visible through fog.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed self-healing bonus from Hunger for Power.",
+         "html": "Fixed self-healing bonus from Hunger for Power.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Pursuit of Flame is no longer visible through fog.",
+         "html": "Pursuit of Flame is no longer visible through fog.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Hanzo",
+     "heroId": "Hanzo",
+     "heroIds": [
+      "Hanzo"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Hanzo</strong>\n<ul>\n<li>Fixed an issue that allowed players to fire Storm Bow at maximum range without charging.</li>\n<li>Fixed an issue that caused Sharpened Arrowheads to not reduce Armor while Blinded when applied with Storm Bow.</li>\n<li>Fixed an issue that caused Sharpened Arrowheads to reduce Armor before damage is dealt with Storm Bow.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that allowed players to fire Storm Bow at maximum range without charging.",
+         "html": "Fixed an issue that allowed players to fire Storm Bow at maximum range without charging.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Sharpened Arrowheads to not reduce Armor while Blinded when applied with Storm Bow.",
+         "html": "Fixed an issue that caused Sharpened Arrowheads to not reduce Armor while Blinded when applied with Storm Bow.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Sharpened Arrowheads to reduce Armor before damage is dealt with Storm Bow.",
+         "html": "Fixed an issue that caused Sharpened Arrowheads to reduce Armor before damage is dealt with Storm Bow.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Jaina",
+     "heroId": "Jaina",
+     "heroIds": [
+      "Jaina"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Jaina</strong>\n<ul>\n<li>Fixed an issue that caused Frost Bolt to hit targets behind Frost Bolt.</li>\n<li>Fixed an issue that caused Frost Shards to allow more than 2 additional targets to be hit.</li>\n<li>Frostbite Armor now has a block visual.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Frost Bolt to hit targets behind Frost Bolt.",
+         "html": "Fixed an issue that caused Frost Bolt to hit targets behind Frost Bolt.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Frost Shards to allow more than 2 additional targets to be hit.",
+         "html": "Fixed an issue that caused Frost Shards to allow more than 2 additional targets to be hit.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Frostbite Armor now has a block visual.",
+         "html": "Frostbite Armor now has a block visual.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Johanna",
+     "heroId": "Crusader",
+     "heroIds": [
+      "Crusader"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Johanna</strong>\n<ul>\n<li>Blessed Hammer now reveals the area it affects.</li>\n<li>Fixed an issue where Blessed Momentum stacks multiplicatively instead of additvely with other attack speed modifiers.</li>\n<li>Heaven's Fury no longer prevents allies from being revealed.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Blessed Hammer now reveals the area it affects.",
+         "html": "Blessed Hammer now reveals the area it affects.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue where Blessed Momentum stacks multiplicatively instead of additvely with other attack speed modifiers.",
+         "html": "Fixed an issue where Blessed Momentum stacks multiplicatively instead of additvely with other attack speed modifiers.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Heaven's Fury no longer prevents allies from being revealed.",
+         "html": "Heaven's Fury no longer prevents allies from being revealed.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Junkrat",
+     "heroId": "Junkrat",
+     "heroIds": [
+      "Junkrat"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Junkrat</strong>\n<ul>\n<li>Fixed an issue that caused Junkrat's Frag Launcher to gain 0.002 damage per stack of Taste for Explosions.</li>\n<li>Splash damage now consumes Block charges.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Junkrat's Frag Launcher to gain 0.002 damage per stack of Taste for Explosions.",
+         "html": "Fixed an issue that caused Junkrat's Frag Launcher to gain 0.002 damage per stack of Taste for Explosions.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Splash damage now consumes Block charges.",
+         "html": "Splash damage now consumes Block charges.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Kel'Thuzad",
+     "heroId": "KelThuzad",
+     "heroIds": [
+      "KelThuzad"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Kel'Thuzad</strong>\n<ul>\n<li>Deathchill will no longer activate if the target loses Root or Slow by becoming Unstoppable.</li>\n<li>Fixed an issue that caused Basic Attacks against Rooted Heroes to activate Icy Grasp.</li>\n<li>Fixed an issue that caused Basic Attacks against Rooted targets to activate Hungering Cold.</li>\n<li>Fixed an issue that caused Kel'Thuzad's buttons to light up when getting 15 baseline quest stacks.</li>\n<li>Fixed an issue that caused Power of Icecrown's damage increase to be lost upon death.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Deathchill will no longer activate if the target loses Root or Slow by becoming Unstoppable.",
+         "html": "Deathchill will no longer activate if the target loses Root or Slow by becoming Unstoppable.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Basic Attacks against Rooted Heroes to activate Icy Grasp.",
+         "html": "Fixed an issue that caused Basic Attacks against Rooted Heroes to activate Icy Grasp.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Basic Attacks against Rooted targets to activate Hungering Cold.",
+         "html": "Fixed an issue that caused Basic Attacks against Rooted targets to activate Hungering Cold.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Kel'Thuzad's buttons to light up when getting 15 baseline quest stacks.",
+         "html": "Fixed an issue that caused Kel'Thuzad's buttons to light up when getting 15 baseline quest stacks.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Power of Icecrown's damage increase to be lost upon death.",
+         "html": "Fixed an issue that caused Power of Icecrown's damage increase to be lost upon death.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Kerrigan",
+     "heroId": "Kerrigan",
+     "heroIds": [
+      "Kerrigan"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Kerrigan</strong>\n<ul>\n<li>Fixed an issue that caused Kerrigan's Self Healing to increase when she gains Assimilation Shields.</li>\n<li>Fury of the Swarm no longer reveals targets.</li>\n<li>Impaling Blades now reveals targets hit.</li>\n<li>Primal Grasp's Pulse now reveals targets hit.</li>\n<li>Psionic Shift now reveals targets hit.</li>\n<li>Ultralisk Splash damage reveals targets.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Kerrigan's Self Healing to increase when she gains Assimilation Shields.",
+         "html": "Fixed an issue that caused Kerrigan's Self Healing to increase when she gains Assimilation Shields.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fury of the Swarm no longer reveals targets.",
+         "html": "Fury of the Swarm no longer reveals targets.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Impaling Blades now reveals targets hit.",
+         "html": "Impaling Blades now reveals targets hit.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Primal Grasp's Pulse now reveals targets hit.",
+         "html": "Primal Grasp's Pulse now reveals targets hit.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Psionic Shift now reveals targets hit.",
+         "html": "Psionic Shift now reveals targets hit.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Ultralisk Splash damage reveals targets.",
+         "html": "Ultralisk Splash damage reveals targets.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Kharazim",
+     "heroId": "Monk",
+     "heroIds": [
+      "Monk"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Kharazim</strong>\n<ul>\n<li>Fixed an issue that caused Insight to progress while Blinded.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Insight to progress while Blinded.",
+         "html": "Fixed an issue that caused Insight to progress while Blinded.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Leoric",
+     "heroId": "Leoric",
+     "heroIds": [
+      "Leoric"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Leoric</strong>\n<ul>\n<li>Buried Alive can no longer have its duration reduced.</li>\n<li>Drain Essence no longer increases his Self Healing score.</li>\n<li>Deckard's Rejuvenation is now removed on Undying.</li>\n<li>Fixed an issue where Leoric could receive Tyrande's Shadowstalk Healing when Undying was active, thereby reducing his respawn timer.</li>\n<li>Ossein Renewal can no longer be cast while Undying is active.</li>\n<li>Drain Hope, Drain Essence, and March of the Black King are now removed if the target enters a vehicle.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Buried Alive can no longer have its duration reduced.",
+         "html": "Buried Alive can no longer have its duration reduced.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Drain Essence no longer increases his Self Healing score.",
+         "html": "Drain Essence no longer increases his Self Healing score.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Deckard's Rejuvenation is now removed on Undying.",
+         "html": "Deckard's Rejuvenation is now removed on Undying.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue where Leoric could receive Tyrande's Shadowstalk Healing when Undying was active, thereby reducing his respawn timer.",
+         "html": "Fixed an issue where Leoric could receive Tyrande's Shadowstalk Healing when Undying was active, thereby reducing his respawn timer.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Ossein Renewal can no longer be cast while Undying is active.",
+         "html": "Ossein Renewal can no longer be cast while Undying is active.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Drain Hope, Drain Essence, and March of the Black King are now removed if the target enters a vehicle.",
+         "html": "Drain Hope, Drain Essence, and March of the Black King are now removed if the target enters a vehicle.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Li-Ming",
+     "heroId": "Wizard",
+     "heroIds": [
+      "Wizard"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Li-Ming</strong>\n<ul>\n<li>Fixed an issue that caused Tal Rasha's Elements to prevent Force Armor from granting Block charges.</li>\n<li>Fixed an issue where Aether Walker would sometime not reset correctly.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Tal Rasha's Elements to prevent Force Armor from granting Block charges.",
+         "html": "Fixed an issue that caused Tal Rasha's Elements to prevent Force Armor from granting Block charges.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue where Aether Walker would sometime not reset correctly.",
+         "html": "Fixed an issue where Aether Walker would sometime not reset correctly.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Lt. Morales",
+     "heroId": "Medic",
+     "heroIds": [
+      "Medic"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Lt. Morales</strong>\n<ul>\n<li>Medi Drone no longer heals Heroes in Undying state.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Medi Drone no longer heals Heroes in Undying state.",
+         "html": "Medi Drone no longer heals Heroes in Undying state.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Lunara",
+     "heroId": "Dryad",
+     "heroIds": [
+      "Dryad"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Lunara</strong>\n<ul>\n<li>Fixed an issue that caused Invigorating Spores to be capable of activating on-hit effects on Invulnerable enemies.</li>\n<li>Fixed an issue that caused Invigorating Spores to deal percent damage while Blinded.</li>\n<li>Fixed an issue that caused Nature's Toxin to be applied before damage dealt.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Invigorating Spores to be capable of activating on-hit effects on Invulnerable enemies.",
+         "html": "Fixed an issue that caused Invigorating Spores to be capable of activating on-hit effects on Invulnerable enemies.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Invigorating Spores to deal percent damage while Blinded.",
+         "html": "Fixed an issue that caused Invigorating Spores to deal percent damage while Blinded.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Nature's Toxin to be applied before damage dealt.",
+         "html": "Fixed an issue that caused Nature's Toxin to be applied before damage dealt.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Maiev",
+     "heroId": "Maiev",
+     "heroIds": [
+      "Maiev"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Maiev</strong>\n<ul>\n<li>Fixed an issue that caused Basic Attacks while Blinded to increase Vengeful Knives damage.</li>\n<li>Fixed an issue that caused Umbral Bind to not increase Vengeful Knives damage .</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Basic Attacks while Blinded to increase Vengeful Knives damage.",
+         "html": "Fixed an issue that caused Basic Attacks while Blinded to increase Vengeful Knives damage.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Umbral Bind to not increase Vengeful Knives damage .",
+         "html": "Fixed an issue that caused Umbral Bind to not increase Vengeful Knives damage .",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Mal'Ganis",
+     "heroId": "MalGanis",
+     "heroIds": [
+      "MalGanis"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Mal'Ganis</strong>\n<ul>\n<li>Winged Guard now has a block visual.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Winged Guard now has a block visual.",
+         "html": "Winged Guard now has a block visual.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Malthael",
+     "heroId": "Malthael",
+     "heroIds": [
+      "Malthael"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Malthael</strong>\n<ul>\n<li>Ethereal Existence now has a block visual at max stacks.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Ethereal Existence now has a block visual at max stacks.",
+         "html": "Ethereal Existence now has a block visual at max stacks.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Mei",
+     "heroId": "Mei",
+     "heroIds": [
+      "Mei"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Mei</strong>\n<ul>\n<li>Fixed an issue that caused Cooling Servos to Slow while Blinded.</li>\n<li>Fixed an issue that caused Mei's Induce Hibernation Talent to reduce damage of non-Heroes.</li>\n<li>Skating Away now has a block visual.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Cooling Servos to Slow while Blinded.",
+         "html": "Fixed an issue that caused Cooling Servos to Slow while Blinded.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Mei's Induce Hibernation Talent to reduce damage of non-Heroes.",
+         "html": "Fixed an issue that caused Mei's Induce Hibernation Talent to reduce damage of non-Heroes.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Skating Away now has a block visual.",
+         "html": "Skating Away now has a block visual.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Murky",
+     "heroId": "Murky",
+     "heroIds": [
+      "Murky"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Murky</strong>\n<ul>\n<li>Fixed an issue that caused Big Tuna Kahuna to be multiplicative with other health bonuses.</li>\n<li>Octograb now reveals the target instead of the area around the target.</li>\n<li>Pufferfish now reveals targets hit.</li>\n<li>Slime now reveals targets hit.</li>\n<li>While revealed, Murky will no longer reveal the area around him when his Egg is slain.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Big Tuna Kahuna to be multiplicative with other health bonuses.",
+         "html": "Fixed an issue that caused Big Tuna Kahuna to be multiplicative with other health bonuses.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Octograb now reveals the target instead of the area around the target.",
+         "html": "Octograb now reveals the target instead of the area around the target.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Pufferfish now reveals targets hit.",
+         "html": "Pufferfish now reveals targets hit.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Slime now reveals targets hit.",
+         "html": "Slime now reveals targets hit.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "While revealed, Murky will no longer reveal the area around him when his Egg is slain.",
+         "html": "While revealed, Murky will no longer reveal the area around him when his Egg is slain.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Nova",
+     "heroId": "Nova",
+     "heroIds": [
+      "Nova"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Nova</strong>\n<ul>\n<li>Anti-Armor Shells is now removed by Stasis.</li>\n<li>Anti-Armor Shells now applies debuff after damage.</li>\n<li>Explosive Snipe now reveals targets hit.</li>\n<li>Fixed an issue that caused Anti-Armor Shells to display an incorrect damage value for Nova's Holo Decoys.</li>\n<li>Holo Decoys no longer reveals area when killed.</li>\n<li>Holo Decoys are now visible from the center of the unit instead of their border.</li>\n<li>Precision Strike now reveals targets hit.</li>\n<li>Snipe no longer reveals around target.</li>\n<li>Triple Tap no longer reveals area around the target, and the target is now revealed for 2 seconds afterwards, up from 1.3 seconds.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Anti-Armor Shells is now removed by Stasis.",
+         "html": "Anti-Armor Shells is now removed by Stasis.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Anti-Armor Shells now applies debuff after damage.",
+         "html": "Anti-Armor Shells now applies debuff after damage.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Explosive Snipe now reveals targets hit.",
+         "html": "Explosive Snipe now reveals targets hit.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Anti-Armor Shells to display an incorrect damage value for Nova's Holo Decoys.",
+         "html": "Fixed an issue that caused Anti-Armor Shells to display an incorrect damage value for Nova's Holo Decoys.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Holo Decoys no longer reveals area when killed.",
+         "html": "Holo Decoys no longer reveals area when killed.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Holo Decoys are now visible from the center of the unit instead of their border.",
+         "html": "Holo Decoys are now visible from the center of the unit instead of their border.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Precision Strike now reveals targets hit.",
+         "html": "Precision Strike now reveals targets hit.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Snipe no longer reveals around target.",
+         "html": "Snipe no longer reveals around target.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Triple Tap no longer reveals area around the target, and the target is now revealed for 2 seconds afterwards, up from 1.3 seconds.",
+         "html": "Triple Tap no longer reveals area around the target, and the target is now revealed for 2 seconds afterwards, up from 1.3 seconds.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Orphea",
+     "heroId": "Orphea",
+     "heroIds": [
+      "Orphea"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Orphea</strong>\n<ul>\n<li>Fixed an issue that caused Dead Magic to splash to Evading targets.</li>\n<li>Fixed an issue that caused Empowered Eldritch Conduit to be lost on death.</li>\n<li>Fixed an issue that caused Empowered Eldritch Conduit to not be granted when going from 7 or 8 stacks to 10.</li>\n<li>Fixed an issue that caused Eternal Feast to hit dead objects.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Dead Magic to splash to Evading targets.",
+         "html": "Fixed an issue that caused Dead Magic to splash to Evading targets.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Empowered Eldritch Conduit to be lost on death.",
+         "html": "Fixed an issue that caused Empowered Eldritch Conduit to be lost on death.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Empowered Eldritch Conduit to not be granted when going from 7 or 8 stacks to 10.",
+         "html": "Fixed an issue that caused Empowered Eldritch Conduit to not be granted when going from 7 or 8 stacks to 10.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Eternal Feast to hit dead objects.",
+         "html": "Fixed an issue that caused Eternal Feast to hit dead objects.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Probius",
+     "heroId": "Probius",
+     "heroIds": [
+      "Probius"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Probius</strong>\n<ul>\n<li>Fixed an issue that caused Pylon Overcharge to deal additional damage when Construct Additional Pylons is selected.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Pylon Overcharge to deal additional damage when Construct Additional Pylons is selected.",
+         "html": "Fixed an issue that caused Pylon Overcharge to deal additional damage when Construct Additional Pylons is selected.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Qhira",
+     "heroId": "Qhira",
+     "heroIds": [
+      "Qhira"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Qhira</strong>\n<ul>\n<li>Basic Attacks will no longer reveal targets hit.</li>\n<li>Blood Rage's activation no longer grants Fatal Wounds progress.</li>\n<li>Fixed an issue that caused Finishing Touch to grant attack speed on attacks that bring the target below 50% health.</li>\n<li>Fixed an issue that caused Finishing Touch to grant attack speed while Blinded.</li>\n<li>Fixed an issue that caused Upstage to not apply if the targets were killed by the activation damage.</li>\n<li>Fixed an issue that caused Your Pain, My Gain to grant Armor while Blinded.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Basic Attacks will no longer reveal targets hit.",
+         "html": "Basic Attacks will no longer reveal targets hit.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Blood Rage's activation no longer grants Fatal Wounds progress.",
+         "html": "Blood Rage's activation no longer grants Fatal Wounds progress.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Finishing Touch to grant attack speed on attacks that bring the target below 50% health.",
+         "html": "Fixed an issue that caused Finishing Touch to grant attack speed on attacks that bring the target below 50% health.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Finishing Touch to grant attack speed while Blinded.",
+         "html": "Fixed an issue that caused Finishing Touch to grant attack speed while Blinded.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Upstage to not apply if the targets were killed by the activation damage.",
+         "html": "Fixed an issue that caused Upstage to not apply if the targets were killed by the activation damage.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Your Pain, My Gain to grant Armor while Blinded.",
+         "html": "Fixed an issue that caused Your Pain, My Gain to grant Armor while Blinded.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Ragnaros",
+     "heroId": "Ragnaros",
+     "heroIds": [
+      "Ragnaros"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Ragnaros</strong>\n<ul>\n<li>Cauterize Wounds now displays on the Death Recap correctly.</li>\n<li>Fixed an issue that caused Empower Sulfuras to not reduce the cooldown of Blistering Attacks on non-Heroes.</li>\n<li>Tempered Flame no longer increases Self Healing on application.</li>\n<li>Lava Wave can no longer pickup or magnetize Experience Globes.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Cauterize Wounds now displays on the Death Recap correctly.",
+         "html": "Cauterize Wounds now displays on the Death Recap correctly.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Empower Sulfuras to not reduce the cooldown of Blistering Attacks on non-Heroes.",
+         "html": "Fixed an issue that caused Empower Sulfuras to not reduce the cooldown of Blistering Attacks on non-Heroes.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Tempered Flame no longer increases Self Healing on application.",
+         "html": "Tempered Flame no longer increases Self Healing on application.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Lava Wave can no longer pickup or magnetize Experience Globes.",
+         "html": "Lava Wave can no longer pickup or magnetize Experience Globes.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Raynor",
+     "heroId": "Raynor",
+     "heroIds": [
+      "Raynor"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Raynor</strong>\n<ul>\n<li>Fixed an issue that caused Execute Orders to not display in the Death Recap.</li>\n<li>Fixed an issue that caused Give Em' Some Pepper damage to behaving incorrectly.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Execute Orders to not display in the Death Recap.",
+         "html": "Fixed an issue that caused Execute Orders to not display in the Death Recap.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Give Em' Some Pepper damage to behaving incorrectly.",
+         "html": "Fixed an issue that caused Give Em' Some Pepper damage to behaving incorrectly.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Rehgar",
+     "heroId": "Rehgar",
+     "heroIds": [
+      "Rehgar"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Rehgar</strong>\n<ul>\n<li>Fixed duration of Totemic Projection.</li>\n<li>Fixed an issue that caused Hunger of the Wolf to deal damage and heal while Blinded.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed duration of Totemic Projection.",
+         "html": "Fixed duration of Totemic Projection.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Hunger of the Wolf to deal damage and heal while Blinded.",
+         "html": "Fixed an issue that caused Hunger of the Wolf to deal damage and heal while Blinded.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Rexxar",
+     "heroId": "Rexxar",
+     "heroIds": [
+      "Rexxar"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Rexxar</strong>\n<ul>\n<li>Fixed an issue that caused Kill Command's damage bonus to be multiplicative.</li>\n<li>Fixed an issue that caused Misha to not gain Primal Intimidation's Passive on respawn.</li>\n<li>Fixed an issue where Unleash the Boars was not affected by some damage modifications.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Kill Command's damage bonus to be multiplicative.",
+         "html": "Fixed an issue that caused Kill Command's damage bonus to be multiplicative.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Misha to not gain Primal Intimidation's Passive on respawn.",
+         "html": "Fixed an issue that caused Misha to not gain Primal Intimidation's Passive on respawn.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue where Unleash the Boars was not affected by some damage modifications.",
+         "html": "Fixed an issue where Unleash the Boars was not affected by some damage modifications.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Samuro",
+     "heroId": "Samuro",
+     "heroIds": [
+      "Samuro"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Samuro</strong>\n<ul>\n<li>Burning Blade is now Splash damage.</li>\n<li>Way of the Wind now increases Self Healing intead of Healing.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Burning Blade is now Splash damage.",
+         "html": "Burning Blade is now Splash damage.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Way of the Wind now increases Self Healing intead of Healing.",
+         "html": "Way of the Wind now increases Self Healing intead of Healing.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Sonya",
+     "heroId": "Barbarian",
+     "heroIds": [
+      "Barbarian"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Sonya</strong>\n<ul>\n<li>Leap now also grants Unstoppable when used at minimum distance.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Leap now also grants Unstoppable when used at minimum distance.",
+         "html": "Leap now also grants Unstoppable when used at minimum distance.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Stukov",
+     "heroId": "Stukov",
+     "heroIds": [
+      "Stukov"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Stukov</strong>\n<ul>\n<li>Fixed an issue that caused Reactive Ballistospores to not work correctly with cooldown resets.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Reactive Ballistospores to not work correctly with cooldown resets.",
+         "html": "Fixed an issue that caused Reactive Ballistospores to not work correctly with cooldown resets.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Sylvanas",
+     "heroId": "Sylvanas",
+     "heroIds": [
+      "Sylvanas"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Sylvanas</strong>\n<ul>\n<li>Deafening Blast now applies Black Arrows if active.</li>\n<li>Deafening Blast now reveals targets hit.</li>\n<li>Fixed an issue that caused Evasive Fire to be refreshed while Blinded.</li>\n<li>Fixed an issue that caused Lost Soul to reduce cooldowns while Blinded.</li>\n<li>Fixed an issue that caused Overwhelming Affliction to apply the slow to a Remorseless target when firing at a target with 3 stacks.</li>\n<li>Fixed an issue that caused Possession to give more XP than intended for Catapults.</li>\n<li>Fixed an issue that caused Remorseless to not apply Black Arrows while Blinded.</li>\n<li>Fixed an issue that caused Remorseless to not Stun enemies while Black Arrows is active.</li>\n<li>Fixed an issue that caused Remorseless to not Stun Mercenaries with 3 stacks of Black Arrows and Merenary Queen.</li>\n<li>Might of the Banshee Queen is no longer removed on death.</li>\n<li>Wailing Arrow no longer reveals area around Sylvanas when cast.</li>\n<li>Wailing Arrow now reveals the area of detonation.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Deafening Blast now applies Black Arrows if active.",
+         "html": "Deafening Blast now applies Black Arrows if active.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Deafening Blast now reveals targets hit.",
+         "html": "Deafening Blast now reveals targets hit.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Evasive Fire to be refreshed while Blinded.",
+         "html": "Fixed an issue that caused Evasive Fire to be refreshed while Blinded.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Lost Soul to reduce cooldowns while Blinded.",
+         "html": "Fixed an issue that caused Lost Soul to reduce cooldowns while Blinded.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Overwhelming Affliction to apply the slow to a Remorseless target when firing at a target with 3 stacks.",
+         "html": "Fixed an issue that caused Overwhelming Affliction to apply the slow to a Remorseless target when firing at a target with 3 stacks.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Possession to give more XP than intended for Catapults.",
+         "html": "Fixed an issue that caused Possession to give more XP than intended for Catapults.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Remorseless to not apply Black Arrows while Blinded.",
+         "html": "Fixed an issue that caused Remorseless to not apply Black Arrows while Blinded.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Remorseless to not Stun enemies while Black Arrows is active.",
+         "html": "Fixed an issue that caused Remorseless to not Stun enemies while Black Arrows is active.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Remorseless to not Stun Mercenaries with 3 stacks of Black Arrows and Merenary Queen.",
+         "html": "Fixed an issue that caused Remorseless to not Stun Mercenaries with 3 stacks of Black Arrows and Merenary Queen.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Might of the Banshee Queen is no longer removed on death.",
+         "html": "Might of the Banshee Queen is no longer removed on death.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Wailing Arrow no longer reveals area around Sylvanas when cast.",
+         "html": "Wailing Arrow no longer reveals area around Sylvanas when cast.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Wailing Arrow now reveals the area of detonation.",
+         "html": "Wailing Arrow now reveals the area of detonation.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Tassadar",
+     "heroId": "Tassadar",
+     "heroIds": [
+      "Tassadar"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Tassadar</strong>\n<ul>\n<li>Archon no longer applies armor reduction while Blinded.</li>\n<li>Archon Splash damage no longer reveals targets hit.</li>\n<li>Archon's Armor reduction is now removed by Stasis.</li>\n<li>Feedback's Armor reduction is now removed by Stasis.</li>\n<li>Fixed an issue that caused Oracle to not show in the Death Recap.</li>\n<li>Khaydarin Amulet will now reveal while active after the attack expires.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Archon no longer applies armor reduction while Blinded.",
+         "html": "Archon no longer applies armor reduction while Blinded.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Archon Splash damage no longer reveals targets hit.",
+         "html": "Archon Splash damage no longer reveals targets hit.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Archon's Armor reduction is now removed by Stasis.",
+         "html": "Archon's Armor reduction is now removed by Stasis.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Feedback's Armor reduction is now removed by Stasis.",
+         "html": "Feedback's Armor reduction is now removed by Stasis.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Oracle to not show in the Death Recap.",
+         "html": "Fixed an issue that caused Oracle to not show in the Death Recap.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Khaydarin Amulet will now reveal while active after the attack expires.",
+         "html": "Khaydarin Amulet will now reveal while active after the attack expires.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Thrall",
+     "heroId": "Thrall",
+     "heroIds": [
+      "Thrall"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Thrall</strong>\n<ul>\n<li>Feral Resilience now has a block visual.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Feral Resilience now has a block visual.",
+         "html": "Feral Resilience now has a block visual.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "The Lost Vikings",
+     "heroId": "LostVikings",
+     "heroIds": [
+      "LostVikings"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">The Lost Vikings</strong>\n<ul>\n<li>Hunka' Burning Olaf now reveals target instead of the area around the target.</li>\n<li>It's a Sabotage can no longer be applied while Erik is Blinded.</li>\n<li>Nordic Attack Squad now shows in recap.</li>\n<li>Viking Bribery stack count is no longer visible on the scoreboard to other players.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Hunka' Burning Olaf now reveals target instead of the area around the target.",
+         "html": "Hunka' Burning Olaf now reveals target instead of the area around the target.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "It's a Sabotage can no longer be applied while Erik is Blinded.",
+         "html": "It's a Sabotage can no longer be applied while Erik is Blinded.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Nordic Attack Squad now shows in recap.",
+         "html": "Nordic Attack Squad now shows in recap.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Viking Bribery stack count is no longer visible on the scoreboard to other players.",
+         "html": "Viking Bribery stack count is no longer visible on the scoreboard to other players.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Tracer",
+     "heroId": "Tracer",
+     "heroIds": [
+      "Tracer"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Tracer</strong>\n<ul>\n<li>Bullet Spray now reveals targets hit.</li>\n<li>Fixed an issue that caused Composition B and Quantum Spike to deal percent damage to non-Heroes.</li>\n<li>Heavy Handed's Armor is now removed by Stasis.</li>\n<li>If Locked and Loaded has been activated, then the floating text for completing the reload will display as a crit.</li>\n<li>Is That a Healthpack can no longer heal Vehicles.</li>\n<li>Locked and Loaded no longer causes Basic Attacks to display as a crit.</li>\n<li>Ricochet will no longer reveal targets hit (Tracer Rounds will still apply if taken).</li>\n<li>Telefrag no longer reduces the cooldown of Recall while Blinded.</li>\n<li>When Tracer completes a reload, it now displays floating text.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Bullet Spray now reveals targets hit.",
+         "html": "Bullet Spray now reveals targets hit.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Composition B and Quantum Spike to deal percent damage to non-Heroes.",
+         "html": "Fixed an issue that caused Composition B and Quantum Spike to deal percent damage to non-Heroes.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Heavy Handed's Armor is now removed by Stasis.",
+         "html": "Heavy Handed's Armor is now removed by Stasis.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "If Locked and Loaded has been activated, then the floating text for completing the reload will display as a crit.",
+         "html": "If Locked and Loaded has been activated, then the floating text for completing the reload will display as a crit.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Is That a Healthpack can no longer heal Vehicles.",
+         "html": "Is That a Healthpack can no longer heal Vehicles.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Locked and Loaded no longer causes Basic Attacks to display as a crit.",
+         "html": "Locked and Loaded no longer causes Basic Attacks to display as a crit.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Ricochet will no longer reveal targets hit (Tracer Rounds will still apply if taken).",
+         "html": "Ricochet will no longer reveal targets hit (Tracer Rounds will still apply if taken).",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Telefrag no longer reduces the cooldown of Recall while Blinded.",
+         "html": "Telefrag no longer reduces the cooldown of Recall while Blinded.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "When Tracer completes a reload, it now displays floating text.",
+         "html": "When Tracer completes a reload, it now displays floating text.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Tyrael",
+     "heroId": "Tyrael",
+     "heroIds": [
+      "Tyrael"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Tyrael</strong>\n<ul>\n<li>Archangel's Wrath now reveals targets hit by the explosion.</li>\n<li>Bound by Law no longer refreshes El'Druin's Might while Blinded.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Archangel's Wrath now reveals targets hit by the explosion.",
+         "html": "Archangel's Wrath now reveals targets hit by the explosion.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Bound by Law no longer refreshes El'Druin's Might while Blinded.",
+         "html": "Bound by Law no longer refreshes El'Druin's Might while Blinded.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Tyrande",
+     "heroId": "Tyrande",
+     "heroIds": [
+      "Tyrande"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Tyrande</strong>\n<ul>\n<li>Fixed an issue that caused Elune's Chosen to heal for overkill damage.</li>\n<li>Fixed an issue that caused Self Healing to not increase her Self Healing.</li>\n<li>Fixed an issue that caused Sentinel to be reset if a Hallucination is killed while revealed.</li>\n<li>Fxied an issue where Mark of Mending was not healing Evading targets.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Elune's Chosen to heal for overkill damage.",
+         "html": "Fixed an issue that caused Elune's Chosen to heal for overkill damage.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Self Healing to not increase her Self Healing.",
+         "html": "Fixed an issue that caused Self Healing to not increase her Self Healing.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Sentinel to be reset if a Hallucination is killed while revealed.",
+         "html": "Fixed an issue that caused Sentinel to be reset if a Hallucination is killed while revealed.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fxied an issue where Mark of Mending was not healing Evading targets.",
+         "html": "Fxied an issue where Mark of Mending was not healing Evading targets.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Uther",
+     "heroId": "Uther",
+     "heroIds": [
+      "Uther"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Uther</strong>\n<ul>\n<li>Divine Storm now reveals targets hit instead of area around targets hit.</li>\n<li>Divine Storm now reveals the area it affects.</li>\n<li>Holy Radiance now reveals enemies hit.</li>\n<li>Holy Radiance reveal updated to match area of effect.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Divine Storm now reveals targets hit instead of area around targets hit.",
+         "html": "Divine Storm now reveals targets hit instead of area around targets hit.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Divine Storm now reveals the area it affects.",
+         "html": "Divine Storm now reveals the area it affects.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Holy Radiance now reveals enemies hit.",
+         "html": "Holy Radiance now reveals enemies hit.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Holy Radiance reveal updated to match area of effect.",
+         "html": "Holy Radiance reveal updated to match area of effect.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Valeera",
+     "heroId": "Valeera",
+     "heroIds": [
+      "Valeera"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Valeera</strong>\n<ul>\n<li>Ambush now reveals the target for 2 seconds.</li>\n<li>Blade Flurry now reveals targets for 2 seconds.</li>\n<li>Blade Flurry now reveals the area it affects.</li>\n<li>Cheap Shot now reveals the target for 2 seconds.</li>\n<li>Eviscerate now reveals the target for 2 seconds.</li>\n<li>Fixed an issue where Garrote's damage displayed incorrectly in the Death Recap.</li>\n<li>Garrote now reveals the target for 2 seconds.</li>\n<li>Sinister Strike now reveals the target for 2 seconds.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Ambush now reveals the target for 2 seconds.",
+         "html": "Ambush now reveals the target for 2 seconds.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Blade Flurry now reveals targets for 2 seconds.",
+         "html": "Blade Flurry now reveals targets for 2 seconds.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Blade Flurry now reveals the area it affects.",
+         "html": "Blade Flurry now reveals the area it affects.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Cheap Shot now reveals the target for 2 seconds.",
+         "html": "Cheap Shot now reveals the target for 2 seconds.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Eviscerate now reveals the target for 2 seconds.",
+         "html": "Eviscerate now reveals the target for 2 seconds.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue where Garrote's damage displayed incorrectly in the Death Recap.",
+         "html": "Fixed an issue where Garrote's damage displayed incorrectly in the Death Recap.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Garrote now reveals the target for 2 seconds.",
+         "html": "Garrote now reveals the target for 2 seconds.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Sinister Strike now reveals the target for 2 seconds.",
+         "html": "Sinister Strike now reveals the target for 2 seconds.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Varian",
+     "heroId": "Varian",
+     "heroIds": [
+      "Varian"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Varian</strong>\n<ul>\n<li>Fixed an issue that caused Juggernaut to be capable of activating on-hit effects on Invulnerable enemies.</li>\n<li>Fixed an issue that caused Varian's Victory Rush button to be grayed out.</li>\n<li>Master At Arms now reveals targets hit and the area affected.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Juggernaut to be capable of activating on-hit effects on Invulnerable enemies.",
+         "html": "Fixed an issue that caused Juggernaut to be capable of activating on-hit effects on Invulnerable enemies.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Varian's Victory Rush button to be grayed out.",
+         "html": "Fixed an issue that caused Varian's Victory Rush button to be grayed out.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Master At Arms now reveals targets hit and the area affected.",
+         "html": "Master At Arms now reveals targets hit and the area affected.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Whitemane",
+     "heroId": "Whitemane",
+     "heroIds": [
+      "Whitemane"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Whitemane</strong>\n<ul>\n<li>Clemency no longer reveals the area around the heal target.</li>\n<li>Divine Reckoning now reveals targets hit.</li>\n<li>Inquisition and Shared Punishment now reveal the target for 2 seconds after expiring.</li>\n<li>Inquisition now reveals the target instead of the area around the target.</li>\n<li>Searing Lash now reveals targets hit.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Clemency no longer reveals the area around the heal target.",
+         "html": "Clemency no longer reveals the area around the heal target.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Divine Reckoning now reveals targets hit.",
+         "html": "Divine Reckoning now reveals targets hit.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Inquisition and Shared Punishment now reveal the target for 2 seconds after expiring.",
+         "html": "Inquisition and Shared Punishment now reveal the target for 2 seconds after expiring.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Inquisition now reveals the target instead of the area around the target.",
+         "html": "Inquisition now reveals the target instead of the area around the target.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Searing Lash now reveals targets hit.",
+         "html": "Searing Lash now reveals targets hit.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Xul",
+     "heroId": "Necromancer",
+     "heroIds": [
+      "Necromancer"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Xul</strong>\n<ul>\n<li>Shackler no longer reveals the area it affects.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Shackler no longer reveals the area it affects.",
+         "html": "Shackler no longer reveals the area it affects.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Yrel",
+     "heroId": "Yrel",
+     "heroIds": [
+      "Yrel"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Yrel</strong>\n<ul>\n<li>Aegis of Light no longer reveals area it affects.</li>\n<li>Avenging Wrath now reveals targets hit.</li>\n<li>Dauntless now has a block visual.</li>\n<li>Holy Wrath now consumes Block charges.</li>\n<li>Righteous Hammer now reveals targets hit.</li>\n<li>Vindication now reveals targets hit.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Aegis of Light no longer reveals area it affects.",
+         "html": "Aegis of Light no longer reveals area it affects.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Avenging Wrath now reveals targets hit.",
+         "html": "Avenging Wrath now reveals targets hit.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Dauntless now has a block visual.",
+         "html": "Dauntless now has a block visual.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Holy Wrath now consumes Block charges.",
+         "html": "Holy Wrath now consumes Block charges.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Righteous Hammer now reveals targets hit.",
+         "html": "Righteous Hammer now reveals targets hit.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Vindication now reveals targets hit.",
+         "html": "Vindication now reveals targets hit.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Zarya",
+     "heroId": "Zarya",
+     "heroIds": [
+      "Zarya"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Zarya</strong>\n<ul>\n<li>Explosive Barrier now reveals the area and targets.</li>\n<li>Fixing an issue where Zarya's Defensive Shielding did not stack correctly with other blocks.</li>\n<li>Splash damage no longer reveals targets.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Explosive Barrier now reveals the area and targets.",
+         "html": "Explosive Barrier now reveals the area and targets.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixing an issue where Zarya's Defensive Shielding did not stack correctly with other blocks.",
+         "html": "Fixing an issue where Zarya's Defensive Shielding did not stack correctly with other blocks.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Splash damage no longer reveals targets.",
+         "html": "Splash damage no longer reveals targets.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Zeratul",
+     "heroId": "Zeratul",
+     "heroIds": [
+      "Zeratul"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Zeratul</strong>\n<ul>\n<li>Cleave now reveals the area it affects.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Cleave now reveals the area it affects.",
+         "html": "Cleave now reveals the area it affects.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Zul'jin",
+     "heroId": "Zuljin",
+     "heroIds": [
+      "Zuljin"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Zul'jin</strong>\n<ul>\n<li>Buzzsaw now reveals targets hit for 2 seconds.</li>\n<li>Grievous Throw now reveals targets hit for 2 seconds.</li>\n<li>Guillotine now reveals targets hit.</li>\n<li>Twin Cleave now reveals targets hit.</li>\n<li>Wrong Place Wrong Time now reveals targets hit for 2 seconds.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Buzzsaw now reveals targets hit for 2 seconds.",
+         "html": "Buzzsaw now reveals targets hit for 2 seconds.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Grievous Throw now reveals targets hit for 2 seconds.",
+         "html": "Grievous Throw now reveals targets hit for 2 seconds.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Guillotine now reveals targets hit.",
+         "html": "Guillotine now reveals targets hit.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Twin Cleave now reveals targets hit.",
+         "html": "Twin Cleave now reveals targets hit.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Wrong Place Wrong Time now reveals targets hit for 2 seconds.",
+         "html": "Wrong Place Wrong Time now reveals targets hit for 2 seconds.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "nameKo": "버그 수정"
+  }
+ ],
+ "heroes": [
+  "Abathur",
+  "Amazon",
+  "Anduin",
+  "Anubarak",
+  "Barbarian",
+  "Cho",
+  "Chromie",
+  "Crusader",
+  "DVa",
+  "Deathwing",
+  "Deckard",
+  "Dehaka",
+  "DemonHunter",
+  "Diablo",
+  "Dryad",
+  "FaerieDragon",
+  "Falstad",
+  "Fenix",
+  "Firebat",
+  "Gall",
+  "Garrosh",
+  "Genji",
+  "Greymane",
+  "Guldan",
+  "Hanzo",
+  "Illidan",
+  "Jaina",
+  "Junkrat",
+  "Kaelthas",
+  "KelThuzad",
+  "Kerrigan",
+  "Leoric",
+  "LostVikings",
+  "Maiev",
+  "MalGanis",
+  "Malthael",
+  "Medic",
+  "Mei",
+  "Monk",
+  "Muradin",
+  "Murky",
+  "Necromancer",
+  "Nova",
+  "Orphea",
+  "Probius",
+  "Qhira",
+  "Ragnaros",
+  "Raynor",
+  "Rehgar",
+  "Rexxar",
+  "Samuro",
+  "Stukov",
+  "Sylvanas",
+  "Tassadar",
+  "Thrall",
+  "Tinker",
+  "Tracer",
+  "Tychus",
+  "Tyrael",
+  "Tyrande",
+  "Uther",
+  "Valeera",
+  "Varian",
+  "Whitemane",
+  "WitchDoctor",
+  "Wizard",
+  "Yrel",
+  "Zarya",
+  "Zeratul",
+  "Zuljin"
+ ],
+ "battlegrounds": [],
+ "lang": "en",
+ "newsId": "24017507"
+}

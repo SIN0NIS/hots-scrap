@@ -1,0 +1,2176 @@
+{
+ "date": "2025-07-01",
+ "kind": "ptr",
+ "title": "Heroes of the Storm PTR Patch Notes - July 1, 2025",
+ "source": "https://news.blizzard.com/en-us/article/24217281/heroes-of-the-storm-ptr-patch-notes-july-1-2025",
+ "published": "2025-07-01T17:11:49Z",
+ "sections": [
+  {
+   "name": "머리말",
+   "key": "intro",
+   "html": "<p>Our next Heroes of the Storm patch has just hit the Public Test Realm and will be available for playtesting. As always, if you encounter any bugs during your PTR play sessions, please stop by the <a href=\"https://us.forums.blizzard.com/en/heroes/c/ptr-bug-report\" target=\"_blank\">PTR Bug Report forum</a> to let us know about your experiences.</p>",
+   "nameKo": "머리말"
+  },
+  {
+   "name": "General",
+   "key": "general",
+   "html": "<ul>\n<li>Knockback effects have been updated to be more consistent. Please check below for the Heroes that were affected.</li>\n<li>On death reveal duration on nearby units removed.</li>\n<li>Reduced the impact Roots have on knockback effects.</li>\n<li>Updated Homescreen and Startup Music.</li>\n</ul>",
+   "nameKo": "일반"
+  },
+  {
+   "name": "Balance Update",
+   "key": "balance",
+   "html": "<h3><strong>General</strong></h3>\n<ul>\n<li>The quest collection requirement for The Regeneration Master Talent has been reduced from 30 to 25.</li>\n</ul>\n<h3><strong>Heroes</strong></h3>\n<h4>Alarak</h4>\n<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li>Basic Attack damage increased from 150 to 160.</li>\n<li><strong class=\"pn-name\">Lightning Surge [E]</strong>\n<ul>\n<li>Healing increased from 70 to 75.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Telekinesis [W]</strong>\n<ul>\n<li>Knockback speed now slows down over the duration of the knockback.</li>\n<li>Push-to-point distance increased from 6.25 from where Telekinesis was targeted to 12.5.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Overwhelming Power</strong>\n<ul>\n<li><b>REWORK:</b> Healing reduced from 50% to 15% of damage dealt.</li>\n<li><b>REWORK:</b> Percent of damage converted to Healing is now increased by 50% of Sadism's bonus when attacking Heroes (For example: At 100% Sadism, this will be 65% of damage dealt).</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Applied Force</strong>\n<ul>\n<li>Now pushes targets 15% further.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Counter-Strike</strong>\n<ul>\n<li>Talent Removed.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Deadly Charge</strong>\n<ul>\n<li>Talent Removed.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Might of the Highlord</strong>\n<ul>\n<li><b>NEW:</b> Alarak gains access to his other Heroic which occupies the Trait slot. This also grants an ability to swap which slot each Heroic occupies.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Wrath of the Highlord</strong>\n<ul>\n<li><b>NEW:</b> If Counter-Strike is Alarak's Heroic, Basic Abilities reduce its cooldown by 3 seconds for each enemy Hero they hit.</li>\n<li><b>NEW:</b> If Deadly Charge is Alarak's Heroic, it reduces the Armor of enemy Heroes by 50 for 4 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>Auriel</h4>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Repeated Offense</strong>\n<ul>\n<li>Knockback strength increased from 28% to 30%.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>Brightwing</h4>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Emerald Wind</strong>\n<ul>\n<li>Targets will now be knocked back over the entire duration of the expanding nova.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>Deckard</h4>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Lorenado</strong>\n<ul>\n<li>Being hit by Lorenado while already knocked back will now refresh the duration of the knockback.</li>\n<li>Damage can only occur once every 0.1875 seconds per Lorenado per target.</li>\n<li>Knockback duration reduced by 33%. Distance pushed back from Lorenado is unchanged.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Morenados!</strong>\n<ul>\n<li>Each Lorenado now has its own cooldown reduction.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>Dehaka</h4>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Paralyzing Enzymes</strong>\n<ul>\n<li>Basic Attacks now also sets the remaining duration to 2 seconds.</li>\n<li>Healing reduction increased from 40% to 50%.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>Falstad</h4>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Mighty Gust</strong>\n<ul>\n<li>Knockback duration is now dynamic, with targets closer to Falstad being knocked back for longer.</li>\n<li>Knockback will now expire when targets are outside of Might Gust's search path.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>Imperius</h4>\n<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Molten Armor [E]</strong>\n<ul>\n<li>Now restores 1 Mana for each target hit by Molten Armor on expiration.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Blaze of Glory</strong>\n<ul>\n<li>Damage increased from 205 to 212.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Holy Fervor</strong>\n<ul>\n<li>Now resets Imperius' attack cooldown.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Molten Wrath</strong>\n<ul>\n<li>Now also increases Molten Armor radius by 25%.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>Li Li</h4>\n<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Healing Brew [Q]</strong>\n<ul>\n<li>Healing amount increased from 175 to 230.</li>\n</ul>\n</li>\n</ul>\n<h4>Lucio</h4>\n<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Soundwave [Q]</strong>\n<ul>\n<li>Knockback point is now centered on a point 2 radius behind where Soundwave was cast.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Up to Eleven</strong>\n<ul>\n<li>Duration increase granted by Push Off increased from .5 to 1 second.</li>\n<li>Duration increase granted by Soundwave increased from 0.25 to .5 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>Muradin</h4>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Haymaker</strong>\n<ul>\n<li>Secondary knockback duration reduced, but the speed of the knockback has been increased.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>Murky</h4>\n<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Spawn Egg [Trait D]</strong>\n<ul>\n<li>Health is reduced by 80% of its current value.</li>\n<li>Now has a Shield equal to the amount of Health removed.</li>\n<li>Shield starts regenerating after 5 seconds.</li>\n<li>Shield takes 8 seconds to re-fill from empty to full.</li>\n</ul>\n</li>\n</ul>\n<h4>Orphea</h4>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Backbiter</strong>\n<ul>\n<li>Duration reduced, but speed increased.</li>\n<li>Knockback is now instant.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>Sgt. Hammer</h4>\n<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Concussive Blast [W]</strong>\n<ul>\n<li>Base duration reduced by 20%. Distance pushed back from blast is not reduced.</li>\n</ul>\n</li>\n</ul>\n<h4>Stukov</h4>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Flailing Swipe</strong>\n<ul>\n<li>Each iteration of Flailing Swipe now has its own knockback point. The first swipe knocks targets away from a point 3 radius behind Stukov, the second swipe will be a point 2 radius behind, and the third swipe will be a point 1 radius behind.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>Thrall</h4>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Sundering</strong>\n<ul>\n<li>Secondary knockback duration and speed reduced.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>Tracer</h4>\n<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Recall [E]</strong>\n<ul>\n<li>Teleport delay increased from .0625 seconds to .1875 seconds.</li>\n</ul>\n</li>\n</ul>\n<h4>Tychus</h4>\n<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Frag Grenade [W]</strong>\n<ul>\n<li>Knockback duration reduced by 33%. Distance pushed back from blast is not reduced.</li>\n</ul>\n</li>\n</ul>\n<h4>Tyrael</h4>\n<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li>Basic Attack damage increased from 78 to 82.</li>\n<li><strong class=\"pn-name\">Smite [E]</strong>\n<ul>\n<li>Tooltip updated to include duration of the area granting Movement Speed.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">El'Druin's Might [Q]</strong>\n<ul>\n<li>Slow increased from 25% to 30%.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Righteousness [W]</strong>\n<ul>\n<li>Shield increased from 336 to 350.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Salvation</strong>\n<ul>\n<li>Healing increased from 140 to 150.</li>\n<li>Shield bonus reduced from 40% to 35%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Bound By Law</strong>\n<ul>\n<li>Is now a Level 16 Talent.</li>\n<li><b>REWORK:</b> El'Druin's Might now Slows targets by 80% for the first second, and then reduces to 30% over the remaining 1.5 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Reciprocate</strong>\n<ul>\n<li>Explosion damage now only hits enemy Heroes and Summons.</li>\n<li>Is now a Level 4 Talent.</li>\n<li>Tyrael is now healed for 3% of his maximum Health for each Hero hit by Reciprocate or El'Druin's Might.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Judgement</strong>\n<ul>\n<li>Cast range is no longer increased by Tyrael's radius.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Burning Halo</strong>\n<ul>\n<li>Damage bonus for teleporting with El'Druin's Might reduced from 150% to 125%.</li>\n<li>Damage reduced from 18 to 15.</li>\n<li>Is now a Level 7 Talent.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Aspect of Justice</strong>\n<ul>\n<li><b>NEW:</b> After channeling for 1.5 seconds, enter Archangel's Wrath. Cooldown is reduced by 10% for each enemy Hero it hits. 90 second cooldown.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+   "heroes": [
+    {
+     "name": "Alarak",
+     "heroId": "Alarak",
+     "heroIds": [
+      "Alarak"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Basic Attack damage increased from 150 to 160.",
+         "html": "Basic Attack damage increased from 150 to 160.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Lightning Surge",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Healing increased from 70 to 75.",
+         "html": "Healing increased from 70 to 75.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Telekinesis",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Knockback speed now slows down over the duration of the knockback.",
+         "html": "Knockback speed now slows down over the duration of the knockback.",
+         "added": false
+        },
+        {
+         "text": "Push-to-point distance increased from 6.25 from where Telekinesis was targeted to 12.5.",
+         "html": "Push-to-point distance increased from 6.25 from where Telekinesis was targeted to 12.5.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Overwhelming Power",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "REWORK: Healing reduced from 50% to 15% of damage dealt.",
+         "html": "<b>REWORK:</b> Healing reduced from 50% to 15% of damage dealt.",
+         "added": false
+        },
+        {
+         "text": "REWORK: Percent of damage converted to Healing is now increased by 50% of Sadism's bonus when attacking Heroes (For example: At 100% Sadism, this will be 65% of damage dealt).",
+         "html": "<b>REWORK:</b> Percent of damage converted to Healing is now increased by 50% of Sadism's bonus when attacking Heroes (For example: At 100% Sadism, this will be 65% of damage dealt).",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Applied Force",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "Now pushes targets 15% further.",
+         "html": "Now pushes targets 15% further.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Counter-Strike",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "Talent Removed.",
+         "html": "Talent Removed.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Deadly Charge",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "Talent Removed.",
+         "html": "Talent Removed.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Might of the Highlord",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "NEW: Alarak gains access to his other Heroic which occupies the Trait slot. This also grants an ability to swap which slot each Heroic occupies.",
+         "html": "<b>NEW:</b> Alarak gains access to his other Heroic which occupies the Trait slot. This also grants an ability to swap which slot each Heroic occupies.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Wrath of the Highlord",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "NEW: If Counter-Strike is Alarak's Heroic, Basic Abilities reduce its cooldown by 3 seconds for each enemy Hero they hit.",
+         "html": "<b>NEW:</b> If Counter-Strike is Alarak's Heroic, Basic Abilities reduce its cooldown by 3 seconds for each enemy Hero they hit.",
+         "added": false
+        },
+        {
+         "text": "NEW: If Deadly Charge is Alarak's Heroic, it reduces the Armor of enemy Heroes by 50 for 4 seconds.",
+         "html": "<b>NEW:</b> If Deadly Charge is Alarak's Heroic, it reduces the Armor of enemy Heroes by 50 for 4 seconds.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li>Basic Attack damage increased from 150 to 160.</li>\n<li><strong class=\"pn-name\">Lightning Surge [E]</strong>\n<ul>\n<li>Healing increased from 70 to 75.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Telekinesis [W]</strong>\n<ul>\n<li>Knockback speed now slows down over the duration of the knockback.</li>\n<li>Push-to-point distance increased from 6.25 from where Telekinesis was targeted to 12.5.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Overwhelming Power</strong>\n<ul>\n<li><b>REWORK:</b> Healing reduced from 50% to 15% of damage dealt.</li>\n<li><b>REWORK:</b> Percent of damage converted to Healing is now increased by 50% of Sadism's bonus when attacking Heroes (For example: At 100% Sadism, this will be 65% of damage dealt).</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Applied Force</strong>\n<ul>\n<li>Now pushes targets 15% further.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Counter-Strike</strong>\n<ul>\n<li>Talent Removed.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Deadly Charge</strong>\n<ul>\n<li>Talent Removed.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Might of the Highlord</strong>\n<ul>\n<li><b>NEW:</b> Alarak gains access to his other Heroic which occupies the Trait slot. This also grants an ability to swap which slot each Heroic occupies.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Wrath of the Highlord</strong>\n<ul>\n<li><b>NEW:</b> If Counter-Strike is Alarak's Heroic, Basic Abilities reduce its cooldown by 3 seconds for each enemy Hero they hit.</li>\n<li><b>NEW:</b> If Deadly Charge is Alarak's Heroic, it reduces the Armor of enemy Heroes by 50 for 4 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Auriel",
+     "heroId": "Auriel",
+     "heroIds": [
+      "Auriel"
+     ],
+     "changes": [
+      {
+       "name": "Repeated Offense",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "Knockback strength increased from 28% to 30%.",
+         "html": "Knockback strength increased from 28% to 30%.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Repeated Offense</strong>\n<ul>\n<li>Knockback strength increased from 28% to 30%.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Brightwing",
+     "heroId": "FaerieDragon",
+     "heroIds": [
+      "FaerieDragon"
+     ],
+     "changes": [
+      {
+       "name": "Emerald Wind",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "Targets will now be knocked back over the entire duration of the expanding nova.",
+         "html": "Targets will now be knocked back over the entire duration of the expanding nova.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Emerald Wind</strong>\n<ul>\n<li>Targets will now be knocked back over the entire duration of the expanding nova.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Deckard",
+     "heroId": "Deckard",
+     "heroIds": [
+      "Deckard"
+     ],
+     "changes": [
+      {
+       "name": "Lorenado",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "Being hit by Lorenado while already knocked back will now refresh the duration of the knockback.",
+         "html": "Being hit by Lorenado while already knocked back will now refresh the duration of the knockback.",
+         "added": false
+        },
+        {
+         "text": "Damage can only occur once every 0.1875 seconds per Lorenado per target.",
+         "html": "Damage can only occur once every 0.1875 seconds per Lorenado per target.",
+         "added": false
+        },
+        {
+         "text": "Knockback duration reduced by 33%. Distance pushed back from Lorenado is unchanged.",
+         "html": "Knockback duration reduced by 33%. Distance pushed back from Lorenado is unchanged.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Morenados!",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "Each Lorenado now has its own cooldown reduction.",
+         "html": "Each Lorenado now has its own cooldown reduction.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Lorenado</strong>\n<ul>\n<li>Being hit by Lorenado while already knocked back will now refresh the duration of the knockback.</li>\n<li>Damage can only occur once every 0.1875 seconds per Lorenado per target.</li>\n<li>Knockback duration reduced by 33%. Distance pushed back from Lorenado is unchanged.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Morenados!</strong>\n<ul>\n<li>Each Lorenado now has its own cooldown reduction.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Dehaka",
+     "heroId": "Dehaka",
+     "heroIds": [
+      "Dehaka"
+     ],
+     "changes": [
+      {
+       "name": "Paralyzing Enzymes",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "Basic Attacks now also sets the remaining duration to 2 seconds.",
+         "html": "Basic Attacks now also sets the remaining duration to 2 seconds.",
+         "added": false
+        },
+        {
+         "text": "Healing reduction increased from 40% to 50%.",
+         "html": "Healing reduction increased from 40% to 50%.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Paralyzing Enzymes</strong>\n<ul>\n<li>Basic Attacks now also sets the remaining duration to 2 seconds.</li>\n<li>Healing reduction increased from 40% to 50%.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Falstad",
+     "heroId": "Falstad",
+     "heroIds": [
+      "Falstad"
+     ],
+     "changes": [
+      {
+       "name": "Mighty Gust",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "Knockback duration is now dynamic, with targets closer to Falstad being knocked back for longer.",
+         "html": "Knockback duration is now dynamic, with targets closer to Falstad being knocked back for longer.",
+         "added": false
+        },
+        {
+         "text": "Knockback will now expire when targets are outside of Might Gust's search path.",
+         "html": "Knockback will now expire when targets are outside of Might Gust's search path.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Mighty Gust</strong>\n<ul>\n<li>Knockback duration is now dynamic, with targets closer to Falstad being knocked back for longer.</li>\n<li>Knockback will now expire when targets are outside of Might Gust's search path.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Imperius",
+     "heroId": "Imperius",
+     "heroIds": [
+      "Imperius"
+     ],
+     "changes": [
+      {
+       "name": "Molten Armor",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Now restores 1 Mana for each target hit by Molten Armor on expiration.",
+         "html": "Now restores 1 Mana for each target hit by Molten Armor on expiration.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Blaze of Glory",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "Damage increased from 205 to 212.",
+         "html": "Damage increased from 205 to 212.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Holy Fervor",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "Now resets Imperius' attack cooldown.",
+         "html": "Now resets Imperius' attack cooldown.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Molten Wrath",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "Now also increases Molten Armor radius by 25%.",
+         "html": "Now also increases Molten Armor radius by 25%.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Molten Armor [E]</strong>\n<ul>\n<li>Now restores 1 Mana for each target hit by Molten Armor on expiration.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Blaze of Glory</strong>\n<ul>\n<li>Damage increased from 205 to 212.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Holy Fervor</strong>\n<ul>\n<li>Now resets Imperius' attack cooldown.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Molten Wrath</strong>\n<ul>\n<li>Now also increases Molten Armor radius by 25%.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Li Li",
+     "heroId": "LiLi",
+     "heroIds": [
+      "LiLi"
+     ],
+     "changes": [
+      {
+       "name": "Healing Brew",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Healing amount increased from 175 to 230.",
+         "html": "Healing amount increased from 175 to 230.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Healing Brew [Q]</strong>\n<ul>\n<li>Healing amount increased from 175 to 230.</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Lucio",
+     "heroId": "Lucio",
+     "heroIds": [
+      "Lucio"
+     ],
+     "changes": [
+      {
+       "name": "Soundwave",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Knockback point is now centered on a point 2 radius behind where Soundwave was cast.",
+         "html": "Knockback point is now centered on a point 2 radius behind where Soundwave was cast.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Up to Eleven",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "Duration increase granted by Push Off increased from .5 to 1 second.",
+         "html": "Duration increase granted by Push Off increased from .5 to 1 second.",
+         "added": false
+        },
+        {
+         "text": "Duration increase granted by Soundwave increased from 0.25 to .5 seconds.",
+         "html": "Duration increase granted by Soundwave increased from 0.25 to .5 seconds.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Soundwave [Q]</strong>\n<ul>\n<li>Knockback point is now centered on a point 2 radius behind where Soundwave was cast.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Up to Eleven</strong>\n<ul>\n<li>Duration increase granted by Push Off increased from .5 to 1 second.</li>\n<li>Duration increase granted by Soundwave increased from 0.25 to .5 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Muradin",
+     "heroId": "Muradin",
+     "heroIds": [
+      "Muradin"
+     ],
+     "changes": [
+      {
+       "name": "Haymaker",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "Secondary knockback duration reduced, but the speed of the knockback has been increased.",
+         "html": "Secondary knockback duration reduced, but the speed of the knockback has been increased.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Haymaker</strong>\n<ul>\n<li>Secondary knockback duration reduced, but the speed of the knockback has been increased.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Murky",
+     "heroId": "Murky",
+     "heroIds": [
+      "Murky"
+     ],
+     "changes": [
+      {
+       "name": "Spawn Egg",
+       "key": "Trait D",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Health is reduced by 80% of its current value.",
+         "html": "Health is reduced by 80% of its current value.",
+         "added": false
+        },
+        {
+         "text": "Now has a Shield equal to the amount of Health removed.",
+         "html": "Now has a Shield equal to the amount of Health removed.",
+         "added": false
+        },
+        {
+         "text": "Shield starts regenerating after 5 seconds.",
+         "html": "Shield starts regenerating after 5 seconds.",
+         "added": false
+        },
+        {
+         "text": "Shield takes 8 seconds to re-fill from empty to full.",
+         "html": "Shield takes 8 seconds to re-fill from empty to full.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Spawn Egg [Trait D]</strong>\n<ul>\n<li>Health is reduced by 80% of its current value.</li>\n<li>Now has a Shield equal to the amount of Health removed.</li>\n<li>Shield starts regenerating after 5 seconds.</li>\n<li>Shield takes 8 seconds to re-fill from empty to full.</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Orphea",
+     "heroId": "Orphea",
+     "heroIds": [
+      "Orphea"
+     ],
+     "changes": [
+      {
+       "name": "Backbiter",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "Duration reduced, but speed increased.",
+         "html": "Duration reduced, but speed increased.",
+         "added": false
+        },
+        {
+         "text": "Knockback is now instant.",
+         "html": "Knockback is now instant.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Backbiter</strong>\n<ul>\n<li>Duration reduced, but speed increased.</li>\n<li>Knockback is now instant.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Sgt. Hammer",
+     "heroId": "SgtHammer",
+     "heroIds": [
+      "SgtHammer"
+     ],
+     "changes": [
+      {
+       "name": "Concussive Blast",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Base duration reduced by 20%. Distance pushed back from blast is not reduced.",
+         "html": "Base duration reduced by 20%. Distance pushed back from blast is not reduced.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Concussive Blast [W]</strong>\n<ul>\n<li>Base duration reduced by 20%. Distance pushed back from blast is not reduced.</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Stukov",
+     "heroId": "Stukov",
+     "heroIds": [
+      "Stukov"
+     ],
+     "changes": [
+      {
+       "name": "Flailing Swipe",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "Each iteration of Flailing Swipe now has its own knockback point. The first swipe knocks targets away from a point 3 radius behind Stukov, the second swipe will be a point 2 radius behind, and the third swipe will be a point 1 radius behind.",
+         "html": "Each iteration of Flailing Swipe now has its own knockback point. The first swipe knocks targets away from a point 3 radius behind Stukov, the second swipe will be a point 2 radius behind, and the third swipe will be a point 1 radius behind.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Flailing Swipe</strong>\n<ul>\n<li>Each iteration of Flailing Swipe now has its own knockback point. The first swipe knocks targets away from a point 3 radius behind Stukov, the second swipe will be a point 2 radius behind, and the third swipe will be a point 1 radius behind.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Thrall",
+     "heroId": "Thrall",
+     "heroIds": [
+      "Thrall"
+     ],
+     "changes": [
+      {
+       "name": "Sundering",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "Secondary knockback duration and speed reduced.",
+         "html": "Secondary knockback duration and speed reduced.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Sundering</strong>\n<ul>\n<li>Secondary knockback duration and speed reduced.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Tracer",
+     "heroId": "Tracer",
+     "heroIds": [
+      "Tracer"
+     ],
+     "changes": [
+      {
+       "name": "Recall",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Teleport delay increased from .0625 seconds to .1875 seconds.",
+         "html": "Teleport delay increased from .0625 seconds to .1875 seconds.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Recall [E]</strong>\n<ul>\n<li>Teleport delay increased from .0625 seconds to .1875 seconds.</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Tychus",
+     "heroId": "Tychus",
+     "heroIds": [
+      "Tychus"
+     ],
+     "changes": [
+      {
+       "name": "Frag Grenade",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Knockback duration reduced by 33%. Distance pushed back from blast is not reduced.",
+         "html": "Knockback duration reduced by 33%. Distance pushed back from blast is not reduced.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Frag Grenade [W]</strong>\n<ul>\n<li>Knockback duration reduced by 33%. Distance pushed back from blast is not reduced.</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Tyrael",
+     "heroId": "Tyrael",
+     "heroIds": [
+      "Tyrael"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Basic Attack damage increased from 78 to 82.",
+         "html": "Basic Attack damage increased from 78 to 82.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Smite",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Tooltip updated to include duration of the area granting Movement Speed.",
+         "html": "Tooltip updated to include duration of the area granting Movement Speed.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "El'Druin's Might",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Slow increased from 25% to 30%.",
+         "html": "Slow increased from 25% to 30%.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Righteousness",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Shield increased from 336 to 350.",
+         "html": "Shield increased from 336 to 350.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Salvation",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Healing increased from 140 to 150.",
+         "html": "Healing increased from 140 to 150.",
+         "added": false
+        },
+        {
+         "text": "Shield bonus reduced from 40% to 35%.",
+         "html": "Shield bonus reduced from 40% to 35%.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Bound By Law",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "Is now a Level 16 Talent.",
+         "html": "Is now a Level 16 Talent.",
+         "added": false
+        },
+        {
+         "text": "REWORK: El'Druin's Might now Slows targets by 80% for the first second, and then reduces to 30% over the remaining 1.5 seconds.",
+         "html": "<b>REWORK:</b> El'Druin's Might now Slows targets by 80% for the first second, and then reduces to 30% over the remaining 1.5 seconds.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Reciprocate",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "Explosion damage now only hits enemy Heroes and Summons.",
+         "html": "Explosion damage now only hits enemy Heroes and Summons.",
+         "added": false
+        },
+        {
+         "text": "Is now a Level 4 Talent.",
+         "html": "Is now a Level 4 Talent.",
+         "added": false
+        },
+        {
+         "text": "Tyrael is now healed for 3% of his maximum Health for each Hero hit by Reciprocate or El'Druin's Might.",
+         "html": "Tyrael is now healed for 3% of his maximum Health for each Hero hit by Reciprocate or El'Druin's Might.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Judgement",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "Cast range is no longer increased by Tyrael's radius.",
+         "html": "Cast range is no longer increased by Tyrael's radius.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Burning Halo",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "Damage bonus for teleporting with El'Druin's Might reduced from 150% to 125%.",
+         "html": "Damage bonus for teleporting with El'Druin's Might reduced from 150% to 125%.",
+         "added": false
+        },
+        {
+         "text": "Damage reduced from 18 to 15.",
+         "html": "Damage reduced from 18 to 15.",
+         "added": false
+        },
+        {
+         "text": "Is now a Level 7 Talent.",
+         "html": "Is now a Level 7 Talent.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Aspect of Justice",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "NEW: After channeling for 1.5 seconds, enter Archangel's Wrath. Cooldown is reduced by 10% for each enemy Hero it hits. 90 second cooldown.",
+         "html": "<b>NEW:</b> After channeling for 1.5 seconds, enter Archangel's Wrath. Cooldown is reduced by 10% for each enemy Hero it hits. 90 second cooldown.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li>Basic Attack damage increased from 78 to 82.</li>\n<li><strong class=\"pn-name\">Smite [E]</strong>\n<ul>\n<li>Tooltip updated to include duration of the area granting Movement Speed.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">El'Druin's Might [Q]</strong>\n<ul>\n<li>Slow increased from 25% to 30%.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Righteousness [W]</strong>\n<ul>\n<li>Shield increased from 336 to 350.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Salvation</strong>\n<ul>\n<li>Healing increased from 140 to 150.</li>\n<li>Shield bonus reduced from 40% to 35%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Bound By Law</strong>\n<ul>\n<li>Is now a Level 16 Talent.</li>\n<li><b>REWORK:</b> El'Druin's Might now Slows targets by 80% for the first second, and then reduces to 30% over the remaining 1.5 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Reciprocate</strong>\n<ul>\n<li>Explosion damage now only hits enemy Heroes and Summons.</li>\n<li>Is now a Level 4 Talent.</li>\n<li>Tyrael is now healed for 3% of his maximum Health for each Hero hit by Reciprocate or El'Druin's Might.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Judgement</strong>\n<ul>\n<li>Cast range is no longer increased by Tyrael's radius.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Burning Halo</strong>\n<ul>\n<li>Damage bonus for teleporting with El'Druin's Might reduced from 150% to 125%.</li>\n<li>Damage reduced from 18 to 15.</li>\n<li>Is now a Level 7 Talent.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Aspect of Justice</strong>\n<ul>\n<li><b>NEW:</b> After channeling for 1.5 seconds, enter Archangel's Wrath. Cooldown is reduced by 10% for each enemy Hero it hits. 90 second cooldown.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    }
+   ],
+   "nameKo": "밸런스 업데이트"
+  },
+  {
+   "name": "Bug Fixes",
+   "key": "bugs",
+   "html": "<h3><strong>General</strong></h3>\n<ul>\n<li>Catapults no longer give 1 experience.</li>\n<li>Fixed an issue that caused Vehicle Attacks to not consume Evasion charges.</li>\n</ul>\n<h3><strong>Map</strong></h3>\n<ul>\n<li><strong class=\"pn-h\">Dragon Shire</strong>\n<ul>\n<li>Fixed an issued that caused the on-death knockback from Dragon Knight to move the target in the direction the target is moving when first applied.</li>\n<li>Fixed an issued that caused the on-death knockback from Dragon Knight to not knock all targets back an equal distance.</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Volskaya Foundry</strong>\n<ul>\n<li>Fixed an issued that caused the on-death knockback from Triglav Protector to move the target in the direction the target is moving when first applied.</li>\n<li>Fixed an issued that caused the on-death knockback from Triglav Protector to not knock all targets back an equal distance.</li>\n</ul>\n</li>\n</ul>\n<h3><strong>Heroes</strong></h3>\n<ul>\n<li><strong class=\"pn-h\">Alarak</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Telekinesis [W]</strong>\n<ul>\n<li>Fixed an issue that caused Telekinesis to not interrupt targets hit.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Alexstrasza</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Wing Buffet [W]</strong>\n<ul>\n<li>Targets are now knocked away a point 2 range behind where Wing Buffet was cast, instead of Alexstrasza's position. Targets will now move in the direction where Wing Buffet was cast.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Blessing of the Red</strong>\n<ul>\n<li>Fixed an issue that caused Blessing of the Red's transfer effect to not maintain Alexstrasza as the caster.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Anduin</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Flash Heal [Q]</strong>\n<ul>\n<li>Fixed an issue that caused Flash Heal's channel effects to persist when interrupted.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Auriel</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Detainment Strike [E]</strong>\n<ul>\n<li>Targets are now knocked away from a point 5 range behind Auriel's position, instead of from Auriel's position. Targets will now be move in the direction the Detainment Strike was cast.</li>\n<li>Terrain detection is now based off of the target's radius.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Sacred Sweep [Q]</strong>\n<ul>\n<li>Critical hits will now display for Auriel's Sacred Sweep center hits.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Converging Force</strong>\n<ul>\n<li>Will now more consistently interrupt channeled abilities.</li>\n<li>Will now more consistently move the target towards the center point relative to the target's distance from Auriel.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Cassia</strong>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Valkyrie</strong>\n<ul>\n<li>Targets hit by Valkyrie after it has already impaled a target will now be moved to the side relative to the angle of direction the Valkyrie is traveling.</li>\n<li>The impaled target is now moved towards the Valkyrie's position.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Chen</strong>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Wandering Keg</strong>\n<ul>\n<li>Fixed an issue that caused Wandering Keg to not knock all targets back an equal distance.</li>\n<li>Hitting an enemy while already affected by its self-applied Slow will no longer cause the Slow to be removed faster than intended.</li>\n<li>Targets are now knocked away from a point .75 range behind Chen at the point of impact.</li>\n<li>Wandering Keg's self-applied Slow from hitting enemies will now reduce Chen's movement Speed to 100%, instead of 90%.</li>\n<li>Wandering Keg's self-applied Slow will now be also increased in strength to match the increased movement speed gained from Untapped Potential.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Cho'gall</strong>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Hammer of Twilight</strong>\n<ul>\n<li>Targets are now knocked away from a point 2 range behind where Hammer of Twilight was cast. Targets closer to Cho will move in the direction the Hammer of Twilight was cast.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Deathwing</strong>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Molten Blood</strong>\n<ul>\n<li>Fixed an issue that caused Molton Blood to cause duration displays to appear incorrectly.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Dehaka</strong>\n<ul>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Lurker Strain</strong>\n<ul>\n<li>Knockback is now centered on where Dehaka unburrowed.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Diablo</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Shadow Charge [Q]</strong>\n<ul>\n<li>Diablo will now move alongside the target relative to their position.</li>\n<li>Fixed an issue that caused Shadow Charge to deal damage to structures twice.</li>\n<li>Terrain detection for Shadow Charge is now based off of the target's radius.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">D.Va</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Boosters [Q]</strong>\n<ul>\n<li>Fixed an issue that caused Boosters to not knock all targets back an equal distance.</li>\n<li>Targets are now knocked away from a point .75 range behind D.Va at the point of impact.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Concussive Pulse [W]</strong>\n<ul>\n<li>Targets are now knocked away from a point 2 range behind where Concussive Pulse was cast, instead of D.Va's position. Targets closer to D.Va will move in the direction the Concussive Pulse was cast.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Falstad</strong>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Mighty Gust</strong>\n<ul>\n<li>Fixed an issue that caused Might Gust to send targets in an unintended direction.</li>\n<li>Targets are now knocked away from a point 50 range behind Falstad's position where Mighty Gust was cast.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Wind Tunnel</strong>\n<ul>\n<li>Targets are now knocked away from a point 50 range behind Falstad's position where Mighty Gust was cast.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Fenix</strong>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Arsenal Synergy</strong>\n<ul>\n<li>Progress is now displayed in the Buff Bar.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Garrosh</strong>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Warbreaker</strong>\n<ul>\n<li>Fixed an issue that caused damage over time to not be treated as such.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Gazlowe</strong>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Grav-O-Bomb 3000</strong>\n<ul>\n<li>Now Stuns when the target is pulled into the center.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Genji</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Deflect [W]</strong>\n<ul>\n<li>Fixed an issue that caused Genji's Reflect impact visuals to not display after Genji selects Deflect.</li>\n<li>Fixed an issue that caused Genji's Reflect to not deal damage instantly on impact.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Hanzo</strong>\n<ul>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Ignore All Distractions</strong>\n<ul>\n<li>Fixed an issue that caused Hanzo's Basic Attacks to not feature impact visuals when Ignore All Distractions kill the target.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Hogger</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Staggering Blow [Q]</strong>\n<ul>\n<li>Fixed an issue that caused Staggering Blow to not Stun from created pathing blockers (Example: Tassadar's Force Wall).</li>\n<li>Fixed an issue that caused the knockback of Staggering Blow to not knock all targets back an equal distance.</li>\n<li>Knockback point is now 2 radius behind where Staggering Blow was cast.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Loot Hoard [Trait D]</strong>\n<ul>\n<li>Fixed an issue that caused Loot Hoard's knockback to not interrupt stationary channels.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Imperius</strong>\n<ul>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Sovereign Armor</strong>\n<ul>\n<li>Tooltip text updated.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Johanna</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Condemn [W]</strong>\n<ul>\n<li>Fixed an issue that caused the knockback to move the target in the direction they are moving when first applied.</li>\n<li>Fixed an issue that caused the knockback to not knock all targets back an equal distance.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Blessed Hammer</strong>\n<ul>\n<li>Fixed tooltip not listing the correct cooldown reduction amount.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Kel'Thuzad</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Chains of Kel'Thuzad [E]</strong>\n<ul>\n<li>Fixed an issue that caused Barbed Chain's Armor reduction to apply to the Chains Link cast that granted the final stack of Blight.</li>\n<li>Knockback will now happen as soon as the chains make a connection between two targets.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Li Li</strong>\n<ul>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Surging Winds</strong>\n<ul>\n<li>Tooltip text updated.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Mass Vortex</strong>\n<ul>\n<li>Tooltip text updated.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Lt. Morales</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Displacement Grenade [E]</strong>\n<ul>\n<li>Fixed an issue that caused Displacement Grenade to not knock back some targets the full distance.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Mei</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Icing [E]</strong>\n<ul>\n<li>Fixed an issue that caused Icing to not knock all targets back an equal distance.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Muradin</strong>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Haymaker</strong>\n<ul>\n<li>Targets hit by the Haymaker target will now be moved to the side relative to the angle of the direction the initial target is traveling.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Murky</strong>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Octo-Grab</strong>\n<ul>\n<li>Fixed an issue that caused Octo Grab's cooldown to reset when not interrupted.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Raynor</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Penetrating Rounds [Q]</strong>\n<ul>\n<li>Knockback distances have been updated. Maximum distance increased by 10%, medium distance increased by 5%, short distance reduced by 5%.</li>\n<li>Targets are now knocked away from a point 5 range behind Raynor's position, instead of from Raynor's position. Targets will now move in the direction of the casted Penetrating Round.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Rehgar</strong>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Ancestral Healing</strong>\n<ul>\n<li>Can now be cast on Heroes with full Health.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Samuro</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Mirror images [Q]</strong>\n<ul>\n<li>Fixed an issue that caused Mirror Images to have the incorrect health after activating Image Transmission while affected by Blessing of the Red.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Kawarimi</strong>\n<ul>\n<li>Fixed an issue that caused Mirror Images created by Kawarimi to not have the correct starting health while affected by Blessing of the Red.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Harsh Winds</strong>\n<ul>\n<li>Fixed an issue that caused Harsh Winds to not apply to Burning Blade damage dealt by Samuro.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Sgt. Hammer</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Concussive Blast [W]</strong>\n<ul>\n<li>Targets are now knocked away a point 2 range behind where Concussive Blast was fired, instead of Sgt. Hammer's position. Targets will now move in the direction where Concussive Blast was fired.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Stitches</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Hook [Q]</strong>\n<ul>\n<li>Now shows progress to Extended Hook as Stitches levels up.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Stukov</strong>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Flailing Swipe</strong>\n<ul>\n<li>Fixed an issue that caused Flailing Swipe to not knock all targets back an equal distance.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">The Butcher</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Ruthless Onslaught [E]</strong>\n<ul>\n<li>Fixed an issue that caused Ruthless Onslaught to not interrupt in certain situations.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Thrall</strong>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Sundering</strong>\n<ul>\n<li>Targets hit by Sundering will now be moved to the side relative to the angle of Sundering.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Tracer</strong>\n<ul>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Get Stuffed!</strong>\n<ul>\n<li>Knockback point is now 5 radius behind where Tracer is located at the point of impact.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Tyrael</strong>\n<ul>\n<li>Fixed an issue that caused some cast range indicators to not match their affected areas.</li>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Archangel's Wrath [Trait D]</strong>\n<ul>\n<li>Fixed an issue that caused the Archangel's Wrath damage reduction to be applied twice for a brief period when Archangel's Wrath damages an enemy.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Burning Halo</strong>\n<ul>\n<li>Fixed an issue that caused Burning Halo's bonus damage to be granted to the El'Druins left behind by Sword of Justic.</li>\n<li>Fixed an issue that caused the Burning Halo on El'Druins to no longer cancel when Tyrael is Mounted or in Stasis.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Varian</strong>\n<ul>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Second Wind</strong>\n<ul>\n<li>Fixed an issue that caused Second Wind to not heal for a portion of the damage dealt if brought about 50% Health by the 1% Heal.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Yrel</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Righteous Hammer [W]</strong>\n<ul>\n<li>Fixed an issue that caused fully charged Righteous Hammer casts to apply the incorrect amount of knockback.</li>\n<li>Fixed an issue that caused Righteous Hammer to not knock all targets back an equal distance.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Zagara</strong>\n<ul>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Broodmother</strong>\n<ul>\n<li>Fixed an issue that caused Basic Attacks empowered by Envenomed Spines to not trigger Broodmother.</li>\n<li>Now displays as Broodmother in the Death Recap.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<p><strong><a href=\"https://us.forums.blizzard.com/en/heroes/\" target=\"_blank\">Click here to discuss this post with other players in the official Heroes of the Storm forums</a>.</strong></p>\n<p><strong><img alt=\"\" class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/g6/G6G0N80EOC941426801305139.png\"/></strong></p>",
+   "items": [
+    {
+     "name": "Dragon Shire",
+     "battleground": "dragon_shire",
+     "html": "<strong class=\"pn-h\">Dragon Shire</strong>\n<ul>\n<li>Fixed an issued that caused the on-death knockback from Dragon Knight to move the target in the direction the target is moving when first applied.</li>\n<li>Fixed an issued that caused the on-death knockback from Dragon Knight to not knock all targets back an equal distance.</li>\n</ul>",
+     "under": "Map"
+    },
+    {
+     "name": "Volskaya Foundry",
+     "battleground": "volskaya_foundry",
+     "html": "<strong class=\"pn-h\">Volskaya Foundry</strong>\n<ul>\n<li>Fixed an issued that caused the on-death knockback from Triglav Protector to move the target in the direction the target is moving when first applied.</li>\n<li>Fixed an issued that caused the on-death knockback from Triglav Protector to not knock all targets back an equal distance.</li>\n</ul>",
+     "under": "Map"
+    },
+    {
+     "name": "Alarak",
+     "heroId": "Alarak",
+     "heroIds": [
+      "Alarak"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Alarak</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Telekinesis [W]</strong>\n<ul>\n<li>Fixed an issue that caused Telekinesis to not interrupt targets hit.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Telekinesis",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Telekinesis to not interrupt targets hit.",
+         "html": "Fixed an issue that caused Telekinesis to not interrupt targets hit.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Alexstrasza",
+     "heroId": "Alexstrasza",
+     "heroIds": [
+      "Alexstrasza"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Alexstrasza</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Wing Buffet [W]</strong>\n<ul>\n<li>Targets are now knocked away a point 2 range behind where Wing Buffet was cast, instead of Alexstrasza's position. Targets will now move in the direction where Wing Buffet was cast.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Blessing of the Red</strong>\n<ul>\n<li>Fixed an issue that caused Blessing of the Red's transfer effect to not maintain Alexstrasza as the caster.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Wing Buffet",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Targets are now knocked away a point 2 range behind where Wing Buffet was cast, instead of Alexstrasza's position. Targets will now move in the direction where Wing Buffet was cast.",
+         "html": "Targets are now knocked away a point 2 range behind where Wing Buffet was cast, instead of Alexstrasza's position. Targets will now move in the direction where Wing Buffet was cast.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Blessing of the Red",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Blessing of the Red's transfer effect to not maintain Alexstrasza as the caster.",
+         "html": "Fixed an issue that caused Blessing of the Red's transfer effect to not maintain Alexstrasza as the caster.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Anduin",
+     "heroId": "Anduin",
+     "heroIds": [
+      "Anduin"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Anduin</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Flash Heal [Q]</strong>\n<ul>\n<li>Fixed an issue that caused Flash Heal's channel effects to persist when interrupted.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Flash Heal",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Flash Heal's channel effects to persist when interrupted.",
+         "html": "Fixed an issue that caused Flash Heal's channel effects to persist when interrupted.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Auriel",
+     "heroId": "Auriel",
+     "heroIds": [
+      "Auriel"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Auriel</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Detainment Strike [E]</strong>\n<ul>\n<li>Targets are now knocked away from a point 5 range behind Auriel's position, instead of from Auriel's position. Targets will now be move in the direction the Detainment Strike was cast.</li>\n<li>Terrain detection is now based off of the target's radius.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Sacred Sweep [Q]</strong>\n<ul>\n<li>Critical hits will now display for Auriel's Sacred Sweep center hits.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Converging Force</strong>\n<ul>\n<li>Will now more consistently interrupt channeled abilities.</li>\n<li>Will now more consistently move the target towards the center point relative to the target's distance from Auriel.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Detainment Strike",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Targets are now knocked away from a point 5 range behind Auriel's position, instead of from Auriel's position. Targets will now be move in the direction the Detainment Strike was cast.",
+         "html": "Targets are now knocked away from a point 5 range behind Auriel's position, instead of from Auriel's position. Targets will now be move in the direction the Detainment Strike was cast.",
+         "added": false
+        },
+        {
+         "text": "Terrain detection is now based off of the target's radius.",
+         "html": "Terrain detection is now based off of the target's radius.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Sacred Sweep",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Critical hits will now display for Auriel's Sacred Sweep center hits.",
+         "html": "Critical hits will now display for Auriel's Sacred Sweep center hits.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Converging Force",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "Will now more consistently interrupt channeled abilities.",
+         "html": "Will now more consistently interrupt channeled abilities.",
+         "added": false
+        },
+        {
+         "text": "Will now more consistently move the target towards the center point relative to the target's distance from Auriel.",
+         "html": "Will now more consistently move the target towards the center point relative to the target's distance from Auriel.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Cassia",
+     "heroId": "Amazon",
+     "heroIds": [
+      "Amazon"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Cassia</strong>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Valkyrie</strong>\n<ul>\n<li>Targets hit by Valkyrie after it has already impaled a target will now be moved to the side relative to the angle of direction the Valkyrie is traveling.</li>\n<li>The impaled target is now moved towards the Valkyrie's position.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Valkyrie",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "Targets hit by Valkyrie after it has already impaled a target will now be moved to the side relative to the angle of direction the Valkyrie is traveling.",
+         "html": "Targets hit by Valkyrie after it has already impaled a target will now be moved to the side relative to the angle of direction the Valkyrie is traveling.",
+         "added": false
+        },
+        {
+         "text": "The impaled target is now moved towards the Valkyrie's position.",
+         "html": "The impaled target is now moved towards the Valkyrie's position.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Chen",
+     "heroId": "Chen",
+     "heroIds": [
+      "Chen"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Chen</strong>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Wandering Keg</strong>\n<ul>\n<li>Fixed an issue that caused Wandering Keg to not knock all targets back an equal distance.</li>\n<li>Hitting an enemy while already affected by its self-applied Slow will no longer cause the Slow to be removed faster than intended.</li>\n<li>Targets are now knocked away from a point .75 range behind Chen at the point of impact.</li>\n<li>Wandering Keg's self-applied Slow from hitting enemies will now reduce Chen's movement Speed to 100%, instead of 90%.</li>\n<li>Wandering Keg's self-applied Slow will now be also increased in strength to match the increased movement speed gained from Untapped Potential.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Wandering Keg",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Wandering Keg to not knock all targets back an equal distance.",
+         "html": "Fixed an issue that caused Wandering Keg to not knock all targets back an equal distance.",
+         "added": false
+        },
+        {
+         "text": "Hitting an enemy while already affected by its self-applied Slow will no longer cause the Slow to be removed faster than intended.",
+         "html": "Hitting an enemy while already affected by its self-applied Slow will no longer cause the Slow to be removed faster than intended.",
+         "added": false
+        },
+        {
+         "text": "Targets are now knocked away from a point .75 range behind Chen at the point of impact.",
+         "html": "Targets are now knocked away from a point .75 range behind Chen at the point of impact.",
+         "added": false
+        },
+        {
+         "text": "Wandering Keg's self-applied Slow from hitting enemies will now reduce Chen's movement Speed to 100%, instead of 90%.",
+         "html": "Wandering Keg's self-applied Slow from hitting enemies will now reduce Chen's movement Speed to 100%, instead of 90%.",
+         "added": false
+        },
+        {
+         "text": "Wandering Keg's self-applied Slow will now be also increased in strength to match the increased movement speed gained from Untapped Potential.",
+         "html": "Wandering Keg's self-applied Slow will now be also increased in strength to match the increased movement speed gained from Untapped Potential.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Cho'gall",
+     "heroId": "Cho",
+     "heroIds": [
+      "Cho",
+      "Gall"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Cho'gall</strong>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Hammer of Twilight</strong>\n<ul>\n<li>Targets are now knocked away from a point 2 range behind where Hammer of Twilight was cast. Targets closer to Cho will move in the direction the Hammer of Twilight was cast.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Hammer of Twilight",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "Targets are now knocked away from a point 2 range behind where Hammer of Twilight was cast. Targets closer to Cho will move in the direction the Hammer of Twilight was cast.",
+         "html": "Targets are now knocked away from a point 2 range behind where Hammer of Twilight was cast. Targets closer to Cho will move in the direction the Hammer of Twilight was cast.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Deathwing",
+     "heroId": "Deathwing",
+     "heroIds": [
+      "Deathwing"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Deathwing</strong>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Molten Blood</strong>\n<ul>\n<li>Fixed an issue that caused Molton Blood to cause duration displays to appear incorrectly.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Molten Blood",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Molton Blood to cause duration displays to appear incorrectly.",
+         "html": "Fixed an issue that caused Molton Blood to cause duration displays to appear incorrectly.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Dehaka",
+     "heroId": "Dehaka",
+     "heroIds": [
+      "Dehaka"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Dehaka</strong>\n<ul>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Lurker Strain</strong>\n<ul>\n<li>Knockback is now centered on where Dehaka unburrowed.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Lurker Strain",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "Knockback is now centered on where Dehaka unburrowed.",
+         "html": "Knockback is now centered on where Dehaka unburrowed.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Diablo",
+     "heroId": "Diablo",
+     "heroIds": [
+      "Diablo"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Diablo</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Shadow Charge [Q]</strong>\n<ul>\n<li>Diablo will now move alongside the target relative to their position.</li>\n<li>Fixed an issue that caused Shadow Charge to deal damage to structures twice.</li>\n<li>Terrain detection for Shadow Charge is now based off of the target's radius.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Shadow Charge",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Diablo will now move alongside the target relative to their position.",
+         "html": "Diablo will now move alongside the target relative to their position.",
+         "added": false
+        },
+        {
+         "text": "Fixed an issue that caused Shadow Charge to deal damage to structures twice.",
+         "html": "Fixed an issue that caused Shadow Charge to deal damage to structures twice.",
+         "added": false
+        },
+        {
+         "text": "Terrain detection for Shadow Charge is now based off of the target's radius.",
+         "html": "Terrain detection for Shadow Charge is now based off of the target's radius.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "D.Va",
+     "heroId": "DVa",
+     "heroIds": [
+      "DVa"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">D.Va</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Boosters [Q]</strong>\n<ul>\n<li>Fixed an issue that caused Boosters to not knock all targets back an equal distance.</li>\n<li>Targets are now knocked away from a point .75 range behind D.Va at the point of impact.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Concussive Pulse [W]</strong>\n<ul>\n<li>Targets are now knocked away from a point 2 range behind where Concussive Pulse was cast, instead of D.Va's position. Targets closer to D.Va will move in the direction the Concussive Pulse was cast.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Boosters",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Boosters to not knock all targets back an equal distance.",
+         "html": "Fixed an issue that caused Boosters to not knock all targets back an equal distance.",
+         "added": false
+        },
+        {
+         "text": "Targets are now knocked away from a point .75 range behind D.Va at the point of impact.",
+         "html": "Targets are now knocked away from a point .75 range behind D.Va at the point of impact.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Concussive Pulse",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Targets are now knocked away from a point 2 range behind where Concussive Pulse was cast, instead of D.Va's position. Targets closer to D.Va will move in the direction the Concussive Pulse was cast.",
+         "html": "Targets are now knocked away from a point 2 range behind where Concussive Pulse was cast, instead of D.Va's position. Targets closer to D.Va will move in the direction the Concussive Pulse was cast.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Falstad",
+     "heroId": "Falstad",
+     "heroIds": [
+      "Falstad"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Falstad</strong>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Mighty Gust</strong>\n<ul>\n<li>Fixed an issue that caused Might Gust to send targets in an unintended direction.</li>\n<li>Targets are now knocked away from a point 50 range behind Falstad's position where Mighty Gust was cast.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Wind Tunnel</strong>\n<ul>\n<li>Targets are now knocked away from a point 50 range behind Falstad's position where Mighty Gust was cast.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Mighty Gust",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Might Gust to send targets in an unintended direction.",
+         "html": "Fixed an issue that caused Might Gust to send targets in an unintended direction.",
+         "added": false
+        },
+        {
+         "text": "Targets are now knocked away from a point 50 range behind Falstad's position where Mighty Gust was cast.",
+         "html": "Targets are now knocked away from a point 50 range behind Falstad's position where Mighty Gust was cast.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Wind Tunnel",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "Targets are now knocked away from a point 50 range behind Falstad's position where Mighty Gust was cast.",
+         "html": "Targets are now knocked away from a point 50 range behind Falstad's position where Mighty Gust was cast.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Fenix",
+     "heroId": "Fenix",
+     "heroIds": [
+      "Fenix"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Fenix</strong>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Arsenal Synergy</strong>\n<ul>\n<li>Progress is now displayed in the Buff Bar.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Arsenal Synergy",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Progress is now displayed in the Buff Bar.",
+         "html": "Progress is now displayed in the Buff Bar.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Garrosh",
+     "heroId": "Garrosh",
+     "heroIds": [
+      "Garrosh"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Garrosh</strong>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Warbreaker</strong>\n<ul>\n<li>Fixed an issue that caused damage over time to not be treated as such.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Warbreaker",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused damage over time to not be treated as such.",
+         "html": "Fixed an issue that caused damage over time to not be treated as such.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Gazlowe",
+     "heroId": "Tinker",
+     "heroIds": [
+      "Tinker"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Gazlowe</strong>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Grav-O-Bomb 3000</strong>\n<ul>\n<li>Now Stuns when the target is pulled into the center.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Grav-O-Bomb 3000",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "Now Stuns when the target is pulled into the center.",
+         "html": "Now Stuns when the target is pulled into the center.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Genji",
+     "heroId": "Genji",
+     "heroIds": [
+      "Genji"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Genji</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Deflect [W]</strong>\n<ul>\n<li>Fixed an issue that caused Genji's Reflect impact visuals to not display after Genji selects Deflect.</li>\n<li>Fixed an issue that caused Genji's Reflect to not deal damage instantly on impact.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Deflect",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Genji's Reflect impact visuals to not display after Genji selects Deflect.",
+         "html": "Fixed an issue that caused Genji's Reflect impact visuals to not display after Genji selects Deflect.",
+         "added": false
+        },
+        {
+         "text": "Fixed an issue that caused Genji's Reflect to not deal damage instantly on impact.",
+         "html": "Fixed an issue that caused Genji's Reflect to not deal damage instantly on impact.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Hanzo",
+     "heroId": "Hanzo",
+     "heroIds": [
+      "Hanzo"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Hanzo</strong>\n<ul>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Ignore All Distractions</strong>\n<ul>\n<li>Fixed an issue that caused Hanzo's Basic Attacks to not feature impact visuals when Ignore All Distractions kill the target.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Ignore All Distractions",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Hanzo's Basic Attacks to not feature impact visuals when Ignore All Distractions kill the target.",
+         "html": "Fixed an issue that caused Hanzo's Basic Attacks to not feature impact visuals when Ignore All Distractions kill the target.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Hogger",
+     "heroId": "Hogger",
+     "heroIds": [
+      "Hogger"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Hogger</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Staggering Blow [Q]</strong>\n<ul>\n<li>Fixed an issue that caused Staggering Blow to not Stun from created pathing blockers (Example: Tassadar's Force Wall).</li>\n<li>Fixed an issue that caused the knockback of Staggering Blow to not knock all targets back an equal distance.</li>\n<li>Knockback point is now 2 radius behind where Staggering Blow was cast.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Loot Hoard [Trait D]</strong>\n<ul>\n<li>Fixed an issue that caused Loot Hoard's knockback to not interrupt stationary channels.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Staggering Blow",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Staggering Blow to not Stun from created pathing blockers (Example: Tassadar's Force Wall).",
+         "html": "Fixed an issue that caused Staggering Blow to not Stun from created pathing blockers (Example: Tassadar's Force Wall).",
+         "added": false
+        },
+        {
+         "text": "Fixed an issue that caused the knockback of Staggering Blow to not knock all targets back an equal distance.",
+         "html": "Fixed an issue that caused the knockback of Staggering Blow to not knock all targets back an equal distance.",
+         "added": false
+        },
+        {
+         "text": "Knockback point is now 2 radius behind where Staggering Blow was cast.",
+         "html": "Knockback point is now 2 radius behind where Staggering Blow was cast.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Loot Hoard",
+       "key": "Trait D",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Loot Hoard's knockback to not interrupt stationary channels.",
+         "html": "Fixed an issue that caused Loot Hoard's knockback to not interrupt stationary channels.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Imperius",
+     "heroId": "Imperius",
+     "heroIds": [
+      "Imperius"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Imperius</strong>\n<ul>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Sovereign Armor</strong>\n<ul>\n<li>Tooltip text updated.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Sovereign Armor",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "Tooltip text updated.",
+         "html": "Tooltip text updated.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Johanna",
+     "heroId": "Crusader",
+     "heroIds": [
+      "Crusader"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Johanna</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Condemn [W]</strong>\n<ul>\n<li>Fixed an issue that caused the knockback to move the target in the direction they are moving when first applied.</li>\n<li>Fixed an issue that caused the knockback to not knock all targets back an equal distance.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Blessed Hammer</strong>\n<ul>\n<li>Fixed tooltip not listing the correct cooldown reduction amount.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Condemn",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused the knockback to move the target in the direction they are moving when first applied.",
+         "html": "Fixed an issue that caused the knockback to move the target in the direction they are moving when first applied.",
+         "added": false
+        },
+        {
+         "text": "Fixed an issue that caused the knockback to not knock all targets back an equal distance.",
+         "html": "Fixed an issue that caused the knockback to not knock all targets back an equal distance.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Blessed Hammer",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "Fixed tooltip not listing the correct cooldown reduction amount.",
+         "html": "Fixed tooltip not listing the correct cooldown reduction amount.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Kel'Thuzad",
+     "heroId": "KelThuzad",
+     "heroIds": [
+      "KelThuzad"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Kel'Thuzad</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Chains of Kel'Thuzad [E]</strong>\n<ul>\n<li>Fixed an issue that caused Barbed Chain's Armor reduction to apply to the Chains Link cast that granted the final stack of Blight.</li>\n<li>Knockback will now happen as soon as the chains make a connection between two targets.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Chains of Kel'Thuzad",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Barbed Chain's Armor reduction to apply to the Chains Link cast that granted the final stack of Blight.",
+         "html": "Fixed an issue that caused Barbed Chain's Armor reduction to apply to the Chains Link cast that granted the final stack of Blight.",
+         "added": false
+        },
+        {
+         "text": "Knockback will now happen as soon as the chains make a connection between two targets.",
+         "html": "Knockback will now happen as soon as the chains make a connection between two targets.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Li Li",
+     "heroId": "LiLi",
+     "heroIds": [
+      "LiLi"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Li Li</strong>\n<ul>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Surging Winds</strong>\n<ul>\n<li>Tooltip text updated.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Mass Vortex</strong>\n<ul>\n<li>Tooltip text updated.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Surging Winds",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "Tooltip text updated.",
+         "html": "Tooltip text updated.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Mass Vortex",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "Tooltip text updated.",
+         "html": "Tooltip text updated.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Lt. Morales",
+     "heroId": "Medic",
+     "heroIds": [
+      "Medic"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Lt. Morales</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Displacement Grenade [E]</strong>\n<ul>\n<li>Fixed an issue that caused Displacement Grenade to not knock back some targets the full distance.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Displacement Grenade",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Displacement Grenade to not knock back some targets the full distance.",
+         "html": "Fixed an issue that caused Displacement Grenade to not knock back some targets the full distance.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Mei",
+     "heroId": "Mei",
+     "heroIds": [
+      "Mei"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Mei</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Icing [E]</strong>\n<ul>\n<li>Fixed an issue that caused Icing to not knock all targets back an equal distance.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Icing",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Icing to not knock all targets back an equal distance.",
+         "html": "Fixed an issue that caused Icing to not knock all targets back an equal distance.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Muradin",
+     "heroId": "Muradin",
+     "heroIds": [
+      "Muradin"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Muradin</strong>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Haymaker</strong>\n<ul>\n<li>Targets hit by the Haymaker target will now be moved to the side relative to the angle of the direction the initial target is traveling.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Haymaker",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "Targets hit by the Haymaker target will now be moved to the side relative to the angle of the direction the initial target is traveling.",
+         "html": "Targets hit by the Haymaker target will now be moved to the side relative to the angle of the direction the initial target is traveling.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Murky",
+     "heroId": "Murky",
+     "heroIds": [
+      "Murky"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Murky</strong>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Octo-Grab</strong>\n<ul>\n<li>Fixed an issue that caused Octo Grab's cooldown to reset when not interrupted.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Octo-Grab",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Octo Grab's cooldown to reset when not interrupted.",
+         "html": "Fixed an issue that caused Octo Grab's cooldown to reset when not interrupted.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Raynor",
+     "heroId": "Raynor",
+     "heroIds": [
+      "Raynor"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Raynor</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Penetrating Rounds [Q]</strong>\n<ul>\n<li>Knockback distances have been updated. Maximum distance increased by 10%, medium distance increased by 5%, short distance reduced by 5%.</li>\n<li>Targets are now knocked away from a point 5 range behind Raynor's position, instead of from Raynor's position. Targets will now move in the direction of the casted Penetrating Round.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Penetrating Rounds",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Knockback distances have been updated. Maximum distance increased by 10%, medium distance increased by 5%, short distance reduced by 5%.",
+         "html": "Knockback distances have been updated. Maximum distance increased by 10%, medium distance increased by 5%, short distance reduced by 5%.",
+         "added": false
+        },
+        {
+         "text": "Targets are now knocked away from a point 5 range behind Raynor's position, instead of from Raynor's position. Targets will now move in the direction of the casted Penetrating Round.",
+         "html": "Targets are now knocked away from a point 5 range behind Raynor's position, instead of from Raynor's position. Targets will now move in the direction of the casted Penetrating Round.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Rehgar",
+     "heroId": "Rehgar",
+     "heroIds": [
+      "Rehgar"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Rehgar</strong>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Ancestral Healing</strong>\n<ul>\n<li>Can now be cast on Heroes with full Health.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Ancestral Healing",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "Can now be cast on Heroes with full Health.",
+         "html": "Can now be cast on Heroes with full Health.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Samuro",
+     "heroId": "Samuro",
+     "heroIds": [
+      "Samuro"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Samuro</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Mirror images [Q]</strong>\n<ul>\n<li>Fixed an issue that caused Mirror Images to have the incorrect health after activating Image Transmission while affected by Blessing of the Red.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Kawarimi</strong>\n<ul>\n<li>Fixed an issue that caused Mirror Images created by Kawarimi to not have the correct starting health while affected by Blessing of the Red.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Harsh Winds</strong>\n<ul>\n<li>Fixed an issue that caused Harsh Winds to not apply to Burning Blade damage dealt by Samuro.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Mirror images",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Mirror Images to have the incorrect health after activating Image Transmission while affected by Blessing of the Red.",
+         "html": "Fixed an issue that caused Mirror Images to have the incorrect health after activating Image Transmission while affected by Blessing of the Red.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Kawarimi",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Mirror Images created by Kawarimi to not have the correct starting health while affected by Blessing of the Red.",
+         "html": "Fixed an issue that caused Mirror Images created by Kawarimi to not have the correct starting health while affected by Blessing of the Red.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Harsh Winds",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Harsh Winds to not apply to Burning Blade damage dealt by Samuro.",
+         "html": "Fixed an issue that caused Harsh Winds to not apply to Burning Blade damage dealt by Samuro.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Sgt. Hammer",
+     "heroId": "SgtHammer",
+     "heroIds": [
+      "SgtHammer"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Sgt. Hammer</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Concussive Blast [W]</strong>\n<ul>\n<li>Targets are now knocked away a point 2 range behind where Concussive Blast was fired, instead of Sgt. Hammer's position. Targets will now move in the direction where Concussive Blast was fired.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Concussive Blast",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Targets are now knocked away a point 2 range behind where Concussive Blast was fired, instead of Sgt. Hammer's position. Targets will now move in the direction where Concussive Blast was fired.",
+         "html": "Targets are now knocked away a point 2 range behind where Concussive Blast was fired, instead of Sgt. Hammer's position. Targets will now move in the direction where Concussive Blast was fired.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Stitches",
+     "heroId": "Stitches",
+     "heroIds": [
+      "Stitches"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Stitches</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Hook [Q]</strong>\n<ul>\n<li>Now shows progress to Extended Hook as Stitches levels up.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Hook",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Now shows progress to Extended Hook as Stitches levels up.",
+         "html": "Now shows progress to Extended Hook as Stitches levels up.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Stukov",
+     "heroId": "Stukov",
+     "heroIds": [
+      "Stukov"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Stukov</strong>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Flailing Swipe</strong>\n<ul>\n<li>Fixed an issue that caused Flailing Swipe to not knock all targets back an equal distance.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Flailing Swipe",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Flailing Swipe to not knock all targets back an equal distance.",
+         "html": "Fixed an issue that caused Flailing Swipe to not knock all targets back an equal distance.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "The Butcher",
+     "heroId": "Butcher",
+     "heroIds": [
+      "Butcher"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">The Butcher</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Ruthless Onslaught [E]</strong>\n<ul>\n<li>Fixed an issue that caused Ruthless Onslaught to not interrupt in certain situations.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Ruthless Onslaught",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Ruthless Onslaught to not interrupt in certain situations.",
+         "html": "Fixed an issue that caused Ruthless Onslaught to not interrupt in certain situations.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Thrall",
+     "heroId": "Thrall",
+     "heroIds": [
+      "Thrall"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Thrall</strong>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Sundering</strong>\n<ul>\n<li>Targets hit by Sundering will now be moved to the side relative to the angle of Sundering.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Sundering",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "Targets hit by Sundering will now be moved to the side relative to the angle of Sundering.",
+         "html": "Targets hit by Sundering will now be moved to the side relative to the angle of Sundering.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Tracer",
+     "heroId": "Tracer",
+     "heroIds": [
+      "Tracer"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Tracer</strong>\n<ul>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Get Stuffed!</strong>\n<ul>\n<li>Knockback point is now 5 radius behind where Tracer is located at the point of impact.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Get Stuffed!",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "Knockback point is now 5 radius behind where Tracer is located at the point of impact.",
+         "html": "Knockback point is now 5 radius behind where Tracer is located at the point of impact.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Tyrael",
+     "heroId": "Tyrael",
+     "heroIds": [
+      "Tyrael"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Tyrael</strong>\n<ul>\n<li>Fixed an issue that caused some cast range indicators to not match their affected areas.</li>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Archangel's Wrath [Trait D]</strong>\n<ul>\n<li>Fixed an issue that caused the Archangel's Wrath damage reduction to be applied twice for a brief period when Archangel's Wrath damages an enemy.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Burning Halo</strong>\n<ul>\n<li>Fixed an issue that caused Burning Halo's bonus damage to be granted to the El'Druins left behind by Sword of Justic.</li>\n<li>Fixed an issue that caused the Burning Halo on El'Druins to no longer cancel when Tyrael is Mounted or in Stasis.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused some cast range indicators to not match their affected areas.",
+         "html": "Fixed an issue that caused some cast range indicators to not match their affected areas.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Archangel's Wrath",
+       "key": "Trait D",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused the Archangel's Wrath damage reduction to be applied twice for a brief period when Archangel's Wrath damages an enemy.",
+         "html": "Fixed an issue that caused the Archangel's Wrath damage reduction to be applied twice for a brief period when Archangel's Wrath damages an enemy.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Burning Halo",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Burning Halo's bonus damage to be granted to the El'Druins left behind by Sword of Justic.",
+         "html": "Fixed an issue that caused Burning Halo's bonus damage to be granted to the El'Druins left behind by Sword of Justic.",
+         "added": false
+        },
+        {
+         "text": "Fixed an issue that caused the Burning Halo on El'Druins to no longer cancel when Tyrael is Mounted or in Stasis.",
+         "html": "Fixed an issue that caused the Burning Halo on El'Druins to no longer cancel when Tyrael is Mounted or in Stasis.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Varian",
+     "heroId": "Varian",
+     "heroIds": [
+      "Varian"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Varian</strong>\n<ul>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Second Wind</strong>\n<ul>\n<li>Fixed an issue that caused Second Wind to not heal for a portion of the damage dealt if brought about 50% Health by the 1% Heal.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Second Wind",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Second Wind to not heal for a portion of the damage dealt if brought about 50% Health by the 1% Heal.",
+         "html": "Fixed an issue that caused Second Wind to not heal for a portion of the damage dealt if brought about 50% Health by the 1% Heal.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Yrel",
+     "heroId": "Yrel",
+     "heroIds": [
+      "Yrel"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Yrel</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Righteous Hammer [W]</strong>\n<ul>\n<li>Fixed an issue that caused fully charged Righteous Hammer casts to apply the incorrect amount of knockback.</li>\n<li>Fixed an issue that caused Righteous Hammer to not knock all targets back an equal distance.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Righteous Hammer",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused fully charged Righteous Hammer casts to apply the incorrect amount of knockback.",
+         "html": "Fixed an issue that caused fully charged Righteous Hammer casts to apply the incorrect amount of knockback.",
+         "added": false
+        },
+        {
+         "text": "Fixed an issue that caused Righteous Hammer to not knock all targets back an equal distance.",
+         "html": "Fixed an issue that caused Righteous Hammer to not knock all targets back an equal distance.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Zagara",
+     "heroId": "Zagara",
+     "heroIds": [
+      "Zagara"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Zagara</strong>\n<ul>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Broodmother</strong>\n<ul>\n<li>Fixed an issue that caused Basic Attacks empowered by Envenomed Spines to not trigger Broodmother.</li>\n<li>Now displays as Broodmother in the Death Recap.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Broodmother",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Basic Attacks empowered by Envenomed Spines to not trigger Broodmother.",
+         "html": "Fixed an issue that caused Basic Attacks empowered by Envenomed Spines to not trigger Broodmother.",
+         "added": false
+        },
+        {
+         "text": "Now displays as Broodmother in the Death Recap.",
+         "html": "Now displays as Broodmother in the Death Recap.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "nameKo": "버그 수정"
+  }
+ ],
+ "heroes": [
+  "Alarak",
+  "Alexstrasza",
+  "Amazon",
+  "Anduin",
+  "Auriel",
+  "Butcher",
+  "Chen",
+  "Cho",
+  "Crusader",
+  "DVa",
+  "Deathwing",
+  "Deckard",
+  "Dehaka",
+  "Diablo",
+  "FaerieDragon",
+  "Falstad",
+  "Fenix",
+  "Gall",
+  "Garrosh",
+  "Genji",
+  "Hanzo",
+  "Hogger",
+  "Imperius",
+  "KelThuzad",
+  "LiLi",
+  "Lucio",
+  "Medic",
+  "Mei",
+  "Muradin",
+  "Murky",
+  "Orphea",
+  "Raynor",
+  "Rehgar",
+  "Samuro",
+  "SgtHammer",
+  "Stitches",
+  "Stukov",
+  "Thrall",
+  "Tinker",
+  "Tracer",
+  "Tychus",
+  "Tyrael",
+  "Varian",
+  "Yrel",
+  "Zagara"
+ ],
+ "battlegrounds": [
+  "dragon_shire",
+  "volskaya_foundry"
+ ],
+ "lang": "en",
+ "newsId": "24217281"
+}

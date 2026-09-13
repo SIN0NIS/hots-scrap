@@ -1,0 +1,34 @@
+{
+ "from": "2.54.1.85276",
+ "to": "2.54.2.85311",
+ "fromBuild": 85276,
+ "toBuild": 85311,
+ "fromDate": "2021-06-16",
+ "toDate": "2021-06-21",
+ "toPtr": false,
+ "heroes": {
+  "Muradin": {
+   "name": "무라딘",
+   "changes": [
+    {
+     "type": "talent",
+     "id": "MuradinMasteryStormhammerSledgehammer",
+     "name": "거대 망치",
+     "level": 4,
+     "changes": [
+      {
+       "field": "full",
+       "before": "폭풍강타가 영웅이 아닌 대상에게 350%의 피해를 줍니다. 폭풍강타가 적 영웅에게 적중하면 기본 퀘스트가 1회 추가로 진행됩니다.",
+       "after": "폭풍강타가 영웅이 아닌 대상에게 350%의 피해를 줍니다.",
+       "diff": "[[-폭풍강타가 영웅이 아닌 대상에게 350%의 피해를 줍니다. 폭풍강타가 적 영웅에게 적중하면 기본 퀘스트가 1회 추가로 진행됩니다.-]]{{+폭풍강타가 영웅이 아닌 대상에게 350%의 피해를 줍니다.+}}"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "summary": {
+  "heroes": 1,
+  "changes": 1
+ }
+}

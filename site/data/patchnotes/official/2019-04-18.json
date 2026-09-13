@@ -1,0 +1,1930 @@
+{
+ "date": "2019-04-18",
+ "kind": "balance",
+ "title": "히어로즈 오브 더 스톰 밸런스 패치 노트 - 2019년 4월 18일",
+ "source": "https://news.blizzard.com/ko-kr/article/22933137/2019-4-18",
+ "published": "2019-04-17T20:48:00Z",
+ "sections": [
+  {
+   "name": "머리말",
+   "key": "intro",
+   "html": "<p>히어로즈 오브 더 스톰의 새로운 패치가 적용되었습니다. 이 패치에서는 밸런스에 몇 가지 변화가 이루어졌으며, 버그가 수정되었습니다! 아래에서 자세한 정보를 알아보세요.</p>"
+  },
+  {
+   "name": "일반",
+   "key": "general",
+   "html": "<ul>\n<li>더는 대전 로딩 화면에서 상대편의 파티 크기가 표시되지 않습니다.</li>\n<li>대전 상대 검색 과정에서 파티 크기 제한이 모두 제거되었습니다.</li>\n</ul>\n<blockquote><strong>개발자의 의견:</strong> 이 변화로 일부 파티의 대전 상대 검색 시간이 개선될 것이고, 게임 시작 이전에 다인으로 구성된 파티에 대한 선입견을 없앨 수 있을 것으로 예상합니다. 공정한 대전을 만들기 위한 여러 가지 변수 중에는 파티 크기가 있습니다. 두 팀의 파티 크기가 서로 다르면 (예시: [5]vs[1-1-1-1-1]) 대전의 균형을 위해 다른 변수들이 조절됩니다. 예를 들어 [5]인으로 구성된 파티의 MMR은 [1-1-1-1-1]인으로 구성된 파티보다 낮을 것입니다.</blockquote>"
+  },
+  {
+   "name": "영웅",
+   "key": "heroes",
+   "html": "<table class=\"table table-condensed\">\n<tbody>\n<tr>\n<th></th>\n<th></th>\n<th></th>\n<th></th>\n<th></th>\n<th></th>\n</tr>\n<tr>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n</tbody>\n</table>\n<blockquote>\n<p><strong>개발자의 의견: </strong>예고했던 것처럼 모든 영웅들에 걸쳐 마나의 가치를 검토해보았습니다. 앞으로도 마나에 대한 개발팀의 철학에 따라 게임을 개발하려고 합니다. </p>\n<ol>\n<li>마나는 게임 전반적으로 가치가 있어야 합니다. 특히 공격로를 정리하는 것이 중요한 초반에는 더욱 그래야 하고요. 마나의 가치는 게임이 진행되면서 점점 낮아져야 한다고 생각합니다. 최대 마나가 증가하고 게임의 중심이 팀 교전으로 전환되니까요.</li>\n<li>영웅마다 마나의 가치가 다를 수 있지만 모든 영웅들이 어느 정도의 가치는 느껴야 합니다. 그렇지 않으면 자원이라는 의미가 퇴색되죠.</li>\n<li>마나의 가치를 확연하게 바꾸는 특성들은 긍정적이라 생각합니다.</li>\n</ol>\n게임 전체적으로 보았을 때 현재 상태에서도 마나의 가치는 양호한 수준이라고 판단했습니다. 하지만 더 정교하게 만들고 향상할 수 있을 거라 생각했죠. 마나의 가치가 이상적인 말퓨리온, 타이커스, 정예 타우렌 족장 등의 영웅들은 아주 만족스럽습니다. 스펙트럼 양 끝에 있는 영웅들의 마나의 가치를 이들과 유사하게 만드는 게 목표입니다. 개발팀이 생각하는 마나의 가치에 대해 여러분의 의견도 들려주세요. 가치가 더 높아져야 할지, 낮아져야 할지, 아니면 조절해야 될 영웅들이 더 있는지 말이죠.\n</blockquote>"
+  },
+  {
+   "name": "전사",
+   "key": "role_tank",
+   "html": "<h4>아눕아락</h4>\n<img alt=\"Divider_Hero_anubarak_Crop.png\" data-id=\"17041692\" src=\"https://bnetcmsus-a.akamaihd.net/cms/gallery/CIQIEABN1A5L1552928294482.png\"/>\n<p><strong class=\"pn-h\">능력치</strong></p>\n<ul>\n<li>일반 공격력이 85에서 81로 감소했습니다.</li>\n</ul>\n<p><span class=\"pn-h\"><strong>기술</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>꿰뚫기 (Q)</strong></span>\n<ul>\n<li>공격력이 95에서 90으로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>잠복 돌진 (E)</strong></span>\n<ul>\n<li>공격력이 96에서 91로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><span class=\"pn-h\"><strong>특성</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>딱정벌레 군단 (고유 능력)\n<ul>\n<li>추가 기술 방어력이 40에서 30으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>10레벨</strong></span>\n<ul>\n<li>고치 (R2)\n<ul>\n<li>재사용 대기시간이 60초에서 70초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote>\n<p><strong>개발자의 의견: </strong>지난 업데이트 이후로 아눕아락은 아주 약간 강세인 모습을 보였습니다. 그래서 일반 공격력, 딱정벌레 군단, 고치 등을 약간씩 하향하여 균형을 맞추려 합니다.</p>\n</blockquote>\n<h4>아서스</h4>\n<img alt=\"Divider_Hero_Arthas_Crop.png\" data-id=\"17041692\" src=\"https://bnetcmsus-a.akamaihd.net/cms/gallery/Q26A3MMNCXOM1552928294588.png\"/>\n<p><span class=\"pn-h\"><strong>기술</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>서리 폭풍 (E)</strong></span>\n<ul>\n<li>마나 소모량이 초당 15에서 초당 13으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><span class=\"pn-h\"><strong>특성</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>얼어붙은 황무지 (E)\n<ul>\n<li>마나 소모량 감소량이 초당 4에서 초당 2로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote>\n<p><strong>개발자의 의견: </strong>마나의 가치 측면으로는 우선 얼어붙은 황무지의 효과의 일부를 기본 효과로 전환했습니다. 아서스에게 마나의 가치가 비교적 높으며 이를 끝없는 굶주림이나 얼어붙은 황무지으로 어느 정도 상쇄할 수 있지만, 지금은 이 두 특성에 너무 의지한다고 생각합니다. 그래서 다른 특성을 선택하는 데 드는 기회 비용을 줄이려고 합니다.</p>\n</blockquote>\n<h4>디아블로</h4>\n<img alt=\"Divider_Hero_Diablo_Crop.png\" data-id=\"17041692\" src=\"https://bnetcmsus-a.akamaihd.net/cms/gallery/O1Y1GW36O0331552928295139.png\"/>\n<p><span class=\"pn-h\"><strong>기술</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>화염 발구르기 (W)</strong></span>\n<ul>\n<li>마나 소모량이 30에서 35로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<h4>가로쉬</h4>\n<img alt=\"Divider_Hero_Garrosh_Crop.png\" data-id=\"17041692\" src=\"https://bnetcmsus-a.akamaihd.net/cms/gallery/22YFYIHBDNZ71552928295458.png\"/>\n<p><span class=\"pn-h\"><strong>기술</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>대지파괴자 (Q)</strong></span>\n<ul>\n<li>마나 소모량이 30에서 40으로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<h4>누더기</h4>\n<img alt=\"Divider_Hero_Stitches_Crop.png\" data-id=\"17041692\" src=\"https://bnetcmsus-a.akamaihd.net/cms/gallery/FAKEQVU7CNGI1552928297863.png\"/>\n<p><span class=\"pn-h\"><strong>기술</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>지면 강타 (W)</strong></span>\n<ul>\n<li>마나 소모량이 35에서 40으로 증가했습니다.</li>\n</ul>\n</li>\n</ul>",
+   "heroes": [
+    {
+     "name": "아눕아락",
+     "heroId": "Anubarak",
+     "heroIds": [
+      "Anubarak"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "일반 공격력이 85에서 81로 감소했습니다.",
+         "html": "일반 공격력이 85에서 81로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "꿰뚫기",
+       "key": "Q",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "공격력이 95에서 90으로 감소했습니다.",
+         "html": "공격력이 95에서 90으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "잠복 돌진",
+       "key": "E",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "공격력이 96에서 91로 감소했습니다.",
+         "html": "공격력이 96에서 91로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "딱정벌레 군단",
+       "key": "고유 능력",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "추가 기술 방어력이 40에서 30으로 감소했습니다.",
+         "html": "추가 기술 방어력이 40에서 30으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "고치",
+       "key": "R2",
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 60초에서 70초로 증가했습니다.",
+         "html": "재사용 대기시간이 60초에서 70초로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<img alt=\"Divider_Hero_anubarak_Crop.png\" data-id=\"17041692\" src=\"https://bnetcmsus-a.akamaihd.net/cms/gallery/CIQIEABN1A5L1552928294482.png\"/>\n<p><strong class=\"pn-h\">능력치</strong></p>\n<ul>\n<li>일반 공격력이 85에서 81로 감소했습니다.</li>\n</ul>\n<p><span class=\"pn-h\"><strong>기술</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>꿰뚫기 (Q)</strong></span>\n<ul>\n<li>공격력이 95에서 90으로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>잠복 돌진 (E)</strong></span>\n<ul>\n<li>공격력이 96에서 91로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><span class=\"pn-h\"><strong>특성</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>딱정벌레 군단 (고유 능력)\n<ul>\n<li>추가 기술 방어력이 40에서 30으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>10레벨</strong></span>\n<ul>\n<li>고치 (R2)\n<ul>\n<li>재사용 대기시간이 60초에서 70초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote>\n<p><strong>개발자의 의견: </strong>지난 업데이트 이후로 아눕아락은 아주 약간 강세인 모습을 보였습니다. 그래서 일반 공격력, 딱정벌레 군단, 고치 등을 약간씩 하향하여 균형을 맞추려 합니다.</p>\n</blockquote>"
+    },
+    {
+     "name": "아서스",
+     "heroId": "Arthas",
+     "heroIds": [
+      "Arthas"
+     ],
+     "changes": [
+      {
+       "name": "서리 폭풍",
+       "key": "E",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "마나 소모량이 초당 15에서 초당 13으로 감소했습니다.",
+         "html": "마나 소모량이 초당 15에서 초당 13으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "얼어붙은 황무지",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "마나 소모량 감소량이 초당 4에서 초당 2로 감소했습니다.",
+         "html": "마나 소모량 감소량이 초당 4에서 초당 2로 감소했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<img alt=\"Divider_Hero_Arthas_Crop.png\" data-id=\"17041692\" src=\"https://bnetcmsus-a.akamaihd.net/cms/gallery/Q26A3MMNCXOM1552928294588.png\"/>\n<p><span class=\"pn-h\"><strong>기술</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>서리 폭풍 (E)</strong></span>\n<ul>\n<li>마나 소모량이 초당 15에서 초당 13으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><span class=\"pn-h\"><strong>특성</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>얼어붙은 황무지 (E)\n<ul>\n<li>마나 소모량 감소량이 초당 4에서 초당 2로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote>\n<p><strong>개발자의 의견: </strong>마나의 가치 측면으로는 우선 얼어붙은 황무지의 효과의 일부를 기본 효과로 전환했습니다. 아서스에게 마나의 가치가 비교적 높으며 이를 끝없는 굶주림이나 얼어붙은 황무지으로 어느 정도 상쇄할 수 있지만, 지금은 이 두 특성에 너무 의지한다고 생각합니다. 그래서 다른 특성을 선택하는 데 드는 기회 비용을 줄이려고 합니다.</p>\n</blockquote>"
+    },
+    {
+     "name": "디아블로",
+     "heroId": "Diablo",
+     "heroIds": [
+      "Diablo"
+     ],
+     "changes": [
+      {
+       "name": "화염 발구르기",
+       "key": "W",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "마나 소모량이 30에서 35로 증가했습니다.",
+         "html": "마나 소모량이 30에서 35로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<img alt=\"Divider_Hero_Diablo_Crop.png\" data-id=\"17041692\" src=\"https://bnetcmsus-a.akamaihd.net/cms/gallery/O1Y1GW36O0331552928295139.png\"/>\n<p><span class=\"pn-h\"><strong>기술</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>화염 발구르기 (W)</strong></span>\n<ul>\n<li>마나 소모량이 30에서 35로 증가했습니다.</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "가로쉬",
+     "heroId": "Garrosh",
+     "heroIds": [
+      "Garrosh"
+     ],
+     "changes": [
+      {
+       "name": "대지파괴자",
+       "key": "Q",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "마나 소모량이 30에서 40으로 증가했습니다.",
+         "html": "마나 소모량이 30에서 40으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<img alt=\"Divider_Hero_Garrosh_Crop.png\" data-id=\"17041692\" src=\"https://bnetcmsus-a.akamaihd.net/cms/gallery/22YFYIHBDNZ71552928295458.png\"/>\n<p><span class=\"pn-h\"><strong>기술</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>대지파괴자 (Q)</strong></span>\n<ul>\n<li>마나 소모량이 30에서 40으로 증가했습니다.</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "누더기",
+     "heroId": "Stitches",
+     "heroIds": [
+      "Stitches"
+     ],
+     "changes": [
+      {
+       "name": "지면 강타",
+       "key": "W",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "마나 소모량이 35에서 40으로 증가했습니다.",
+         "html": "마나 소모량이 35에서 40으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<img alt=\"Divider_Hero_Stitches_Crop.png\" data-id=\"17041692\" src=\"https://bnetcmsus-a.akamaihd.net/cms/gallery/FAKEQVU7CNGI1552928297863.png\"/>\n<p><span class=\"pn-h\"><strong>기술</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>지면 강타 (W)</strong></span>\n<ul>\n<li>마나 소모량이 35에서 40으로 증가했습니다.</li>\n</ul>\n</li>\n</ul>"
+    }
+   ]
+  },
+  {
+   "name": "투사",
+   "key": "투사",
+   "html": "<h4>데하카</h4>\n<img alt=\"Divider_Hero_Dehaka_Crop.png\" data-id=\"17041692\" src=\"https://bnetcmsus-a.akamaihd.net/cms/gallery/OEMGL86R1U1G1552928295114.png\"/>\n<p><span class=\"pn-h\"><strong>특성</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>두터운 벌레떼 (W)\n<ul>\n<li>추가된 기능: 검은 벌레떼의 지속 시간이 0.5초 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>가시지옥 변종 (E)\n<ul>\n<li>추가된 기능: 잠복의 재사용 대기시간이 4초 감소합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>10레벨</strong></span>\n<ul>\n<li>고립 (R1)\n<ul>\n<li>마나 소모량이 100에서 70으로 감소했습니다.</li>\n</ul>\n</li>\n<li>적응 (R2)\n<ul>\n<li>재사용 대기시간이 80초에서 60초로 감소했습니다.</li>\n<li>마나 소모량이 85에서 70으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>13레벨</strong></span>\n<ul>\n<li>사나운 추적자 (W)\n<ul>\n<li>추가된 기능: 수풀추적자의 이동 속도 증가 효과가 활성화된 동안 검은 벌레떼가 적 영웅의 이동 속도를 0.75초 동안 15% 감소시킵니다.</li>\n<li>이 특성으로 검은 벌레떼의 공격력이 증가했을 때 피해량이 치명타로 표시됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote>\n<p><strong>개발자의 의견: </strong>데하카의 특성들 중에 비교적 인기가 적은 특성들을 둘러보았습니다. 모두가 좋아하는 원시 저그에게 새로운 특성 조합이 나타나길 바랍니다.</p>\n</blockquote>\n<h4>임페리우스</h4>\n<img alt=\"Divider_Hero_imperius_Crop.png\" data-id=\"17041692\" src=\"https://bnetcmsus-a.akamaihd.net/cms/gallery/WW5B0587UG9N1552928295778.png\"/>\n<p><span class=\"pn-h\"><strong>기술</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>솔라리온의 불길 (W)</strong></span>\n<ul>\n<li>마나 소모량이 60에서 50으로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>타오르는 갑옷 (E)</strong></span>\n<ul>\n<li>마나 소모량이 50에서 75로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><span class=\"pn-h\"><strong>특성</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>사로잡는 불길 (W)\n<ul>\n<li>추가된 기능: 퀘스트가 삭제되었습니다. 특성을 선택하면 솔라리온의 불길의 추가 공격력과 감속 효과가 즉시 적용됩니다.</li>\n<li>추가 공격력이 150에서 125로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>불길의 보루 (W)\n<ul>\n<li>물리 방어력 증가량이 70에서 75로 증가했습니다.</li>\n<li>최대 중첩수가 4에서 6으로 증가했습니다.</li>\n</ul>\n</li>\n<li>흔들리지 않는 신념 (E)\n<ul>\n<li>추가된 기능: 무력화 효과를 제거하지 않아도 생명력을 회복합니다.</li>\n<li>치유량이 250에서 200으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>7레벨</strong></span>\n<ul>\n<li>분노의 섬광 (Q)\n<ul>\n<li>공격력이 180에서 198로 증가했습니다.</li>\n<li>이 특성으로 피해를 주면 피해량이 치명타로 표시됩니다.</li>\n</ul>\n</li>\n<li>신성한 백열 (사용 효과)\n<ul>\n<li>재사용 대기시간이 18초에서 25초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote>\n<p><strong>개발자의 의견: </strong>임페리우스는 개발팀이 원하는 위치에 정확하게 있습니다. 높은 수준의 경기에서도 50.0%의 승률을 기록하고 있고요. 이런 아름다운 수치를 달성하게 되어 기쁘긴 하지만 초반 특성 단계에서는 선택률 문제가 약간 있는 편입니다. 그래서 자주 쓰이는 특성을 하향하는 대신, 다른 특성들을 상향하여 임페리우스가 더욱 다양하게 쓰이길 바랍니다.</p>\n</blockquote>\n<h4>말티엘</h4>\n<img alt=\"Divider_Hero_malthael_Crop.png\" data-id=\"17041692\" src=\"https://bnetcmsus-a.akamaihd.net/cms/gallery/Y60BRHGZ9QB31552928296658.png\"/>\n<p><span class=\"pn-h\"><strong>특성</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>10레벨</strong></span>\n<ul>\n<li>영혼 회오리 (R1)\n<ul>\n<li>추가된 기능: 영혼 회오리를 사용할 때, 그리고 만료될 때 망령의 일격의 재사용 대기시간이 초기화됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote>\n<p><strong>개발자의 의견: </strong>지난 AMA에서 Tomo00에게 이 업데이트를 적용할 것이라 약속했습니다. 보고 있죠?<br/>\n더 세부적으로 설명하자면, 개발팀은 영혼 회오리를 더욱 흥미로운 궁극기로 만들고 싶었습니다. 하지만 간편한 이용, 한때 메타를 지배했을 정도의 강력한 잠재력 때문에 생명력 회복, 방어력 증가, 생명력 흡수 등 궁극기 자체를 강하게 만드는 건 너무 위험했죠. 그래서 망령의 일격으로 전장 여기저기를 더욱 잘 누빌 수 있도록 변경해보았습니다.</p>\n</blockquote>\n<h4>렉사르</h4>\n<img alt=\"Divider_Hero_rexxar_Crop.png\" data-id=\"17041692\" src=\"https://bnetcmsus-a.akamaihd.net/cms/gallery/LVWW46X3O4XJ1552928297594.png\"/>\n<p><span class=\"pn-h\"><strong>특성</strong></span></p>\n<ul>\n<li>다른 영웅들처럼 렉사르의 특성 순서를 정렬했습니다. (예시: Q 특성은 맨 위에, 그 다음엔 W, 그 다음엔 E) </li>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>쉬운 사냥감 (지속 효과)\n<ul>\n<li>더는 미샤, 돌진!에 추가 공격력이 적용되지 않습니다.</li>\n<li>돌격병과 용병에게 주는 추가 피해량이 150%에서 200%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote>\n<p><strong>개발자의 의견: </strong>미샤, 돌진!의 공격력을 증가시킨 결과, 쉬운 사냥감과의 지나치게 높은 시너지가 의도치 않게 발생했습니다. 원래는 쉬운 사냥감은 용병 캠프를 점령하기 적절하고 공격로를 정리할 때에는 약간의 영향만 주어야 했습니다. 하지만 공격로를 정리하는 것도 탁월하여 디자인 측면에서 맹금 특성과 너무 유사해졌고, 이를 해결하기 위해 이번 업데이트를 진행했습니다.</p>\n</blockquote>\n<h4>바리안</h4>\n<img alt=\"Divider_Hero_varian_Crop.png\" data-id=\"17041692\" src=\"https://bnetcmsus-a.akamaihd.net/cms/gallery/6T4XJN036C801552928298392.png\"/>\n<p><span class=\"pn-h\"><strong>기술</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>무기 막기 (W)</strong></span>\n<ul>\n<li>마나 소모량이 20에서 30으로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><span class=\"pn-h\"><strong>특성</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>사자의 아귀 (Q)\n<ul>\n<li>적 영웅에게 적중할 때마다 증가하는 공격력이 4에서 5로 증가했습니다.</li>\n<li>퀘스트를 완료하는 데 필요한 영웅 적중 횟수가 30에서 25로 감소했습니다.</li>\n</ul>\n</li>\n<li>국왕의 길 (지속 효과)\n<ul>\n<li>퀘스트를 완료했을 때 증가하는 공격력이 45에서 30으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote>\n<p><strong>개발자의 의견: </strong>바리안의 마나 소모량을 다른 영웅들과 비슷하게 만들면서 사자의 아귀를 약간 상향함과 동시에 국왕의 길을 하향하려 합니다. 국왕의 길은 해당 특성 단계의 다른 특성들에 비해 선택률이 높고, 하위권에서 중위권까지의 대전에서 높은 승률을 보이는 분노의 쌍검을 선택했을 때 필수적인 특성이어서 이번에 하향하게 되었습니다.</p>\n</blockquote>\n<h4>줄</h4>\n<img alt=\"Divider_Hero_xul_Crop.png\" data-id=\"17041692\" src=\"https://bnetcmsus-a.akamaihd.net/cms/gallery/PKFYROO3VY891552928298409.png\"/>\n<p><span class=\"pn-h\"><strong>기술</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>저주의 수확 (W) </strong></span>\n<ul>\n<li>마나 소모량이 60에서 50으로 감소했습니다.</li>\n</ul>\n<span class=\"pn-name\"><strong> </strong></span></li>\n</ul>\n<p><strong><span class=\"pn-h\"><strong>특성</strong></span></strong></p>\n<ul>\n<li><strong><span class=\"pn-name\"><strong>4레벨</strong></span> </strong>\n<ul>\n<li>서슬낫 (Q)\n<ul>\n<li>퀘스트 완료 조건이 20회에서 16회로 감소했습니다.</li>\n<li>추가된 기능: 퀘스트를 완료하면 유령의 낫의 마나 소모량이 20 감소합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote>\n<p><strong>개발자의 의견: </strong>다른 영웅들의 마나 사용량과 비슷한 수준이 될 수 있도록 저주의 수확의 마나 소모량을 감소시켰고, 4레벨 특성 단계에서 좋지 않은 성적을 내고 있던 서슬낫을 약간 상향했습니다.</p>\n</blockquote>\n<h4>이렐</h4>\n<strong><img alt=\"Divider_Hero_Yrel_Crop.png\" data-id=\"17041692\" src=\"https://bnetcmsus-a.akamaihd.net/cms/gallery/UMRAVJZRZHSO1552928298550.png\"/></strong>\n<p><strong><span class=\"pn-h\"><strong>특성</strong></span></strong></p>\n<ul>\n<li><strong><span class=\"pn-name\"><strong>1레벨</strong></span> </strong>\n<ul>\n<li>카라보르의 빛 (Q)\n<ul>\n<li>변경된 기능: 비호의 반경이 15% 증가합니다. 비호가 적 영웅에게 적중하면 치유량이 40% 증가합니다. 비호가 2명 이상의 적 영웅에게 적중하면 치유량이 80% 증가합니다.</li>\n</ul>\n<strong> </strong></li>\n<li>투지 (지속 효과)\n<ul>\n<li>물리 방어력 증가량이 35에서 50으로 증가했습니다.</li>\n</ul>\n<strong> </strong></li>\n</ul>\n<strong> </strong></li>\n<li><strong><span class=\"pn-name\"><strong>10레벨</strong></span> </strong>\n<ul>\n<li>신성한 대지 (R2)\n<ul>\n<li>방어력 증가량이 40에서 50으로 증가했습니다.</li>\n</ul>\n<strong> </strong></li>\n</ul>\n<strong> </strong></li>\n</ul>\n<blockquote>\n<p><strong><strong>개발자의 의견: </strong></strong>이번 업데이트로 이렐의 특성들 중 선택률이 낮았던 것들을 상향하려 합니다. 뭔가 더 그럴싸한 말을 덧붙이고 싶지만 딱히 더 할 말이 없네요... 네, 하여튼 그렇습니다! </p>\n</blockquote>",
+   "heroes": [
+    {
+     "name": "데하카",
+     "heroId": "Dehaka",
+     "heroIds": [
+      "Dehaka"
+     ],
+     "changes": [
+      {
+       "name": "두터운 벌레떼",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "추가된 기능: 검은 벌레떼의 지속 시간이 0.5초 증가합니다.",
+         "html": "추가된 기능: 검은 벌레떼의 지속 시간이 0.5초 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "가시지옥 변종",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "추가된 기능: 잠복의 재사용 대기시간이 4초 감소합니다.",
+         "html": "추가된 기능: 잠복의 재사용 대기시간이 4초 감소합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "고립",
+       "key": "R1",
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "마나 소모량이 100에서 70으로 감소했습니다.",
+         "html": "마나 소모량이 100에서 70으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "적응",
+       "key": "R2",
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 80초에서 60초로 감소했습니다.",
+         "html": "재사용 대기시간이 80초에서 60초로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "마나 소모량이 85에서 70으로 감소했습니다.",
+         "html": "마나 소모량이 85에서 70으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "사나운 추적자",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "추가된 기능: 수풀추적자의 이동 속도 증가 효과가 활성화된 동안 검은 벌레떼가 적 영웅의 이동 속도를 0.75초 동안 15% 감소시킵니다.",
+         "html": "추가된 기능: 수풀추적자의 이동 속도 증가 효과가 활성화된 동안 검은 벌레떼가 적 영웅의 이동 속도를 0.75초 동안 15% 감소시킵니다.",
+         "added": false
+        },
+        {
+         "text": "이 특성으로 검은 벌레떼의 공격력이 증가했을 때 피해량이 치명타로 표시됩니다.",
+         "html": "이 특성으로 검은 벌레떼의 공격력이 증가했을 때 피해량이 치명타로 표시됩니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<img alt=\"Divider_Hero_Dehaka_Crop.png\" data-id=\"17041692\" src=\"https://bnetcmsus-a.akamaihd.net/cms/gallery/OEMGL86R1U1G1552928295114.png\"/>\n<p><span class=\"pn-h\"><strong>특성</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>두터운 벌레떼 (W)\n<ul>\n<li>추가된 기능: 검은 벌레떼의 지속 시간이 0.5초 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>가시지옥 변종 (E)\n<ul>\n<li>추가된 기능: 잠복의 재사용 대기시간이 4초 감소합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>10레벨</strong></span>\n<ul>\n<li>고립 (R1)\n<ul>\n<li>마나 소모량이 100에서 70으로 감소했습니다.</li>\n</ul>\n</li>\n<li>적응 (R2)\n<ul>\n<li>재사용 대기시간이 80초에서 60초로 감소했습니다.</li>\n<li>마나 소모량이 85에서 70으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>13레벨</strong></span>\n<ul>\n<li>사나운 추적자 (W)\n<ul>\n<li>추가된 기능: 수풀추적자의 이동 속도 증가 효과가 활성화된 동안 검은 벌레떼가 적 영웅의 이동 속도를 0.75초 동안 15% 감소시킵니다.</li>\n<li>이 특성으로 검은 벌레떼의 공격력이 증가했을 때 피해량이 치명타로 표시됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote>\n<p><strong>개발자의 의견: </strong>데하카의 특성들 중에 비교적 인기가 적은 특성들을 둘러보았습니다. 모두가 좋아하는 원시 저그에게 새로운 특성 조합이 나타나길 바랍니다.</p>\n</blockquote>"
+    },
+    {
+     "name": "임페리우스",
+     "heroId": "Imperius",
+     "heroIds": [
+      "Imperius"
+     ],
+     "changes": [
+      {
+       "name": "솔라리온의 불길",
+       "key": "W",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "마나 소모량이 60에서 50으로 감소했습니다.",
+         "html": "마나 소모량이 60에서 50으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "타오르는 갑옷",
+       "key": "E",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "마나 소모량이 50에서 75로 증가했습니다.",
+         "html": "마나 소모량이 50에서 75로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "사로잡는 불길",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "추가된 기능: 퀘스트가 삭제되었습니다. 특성을 선택하면 솔라리온의 불길의 추가 공격력과 감속 효과가 즉시 적용됩니다.",
+         "html": "추가된 기능: 퀘스트가 삭제되었습니다. 특성을 선택하면 솔라리온의 불길의 추가 공격력과 감속 효과가 즉시 적용됩니다.",
+         "added": false
+        },
+        {
+         "text": "추가 공격력이 150에서 125로 감소했습니다.",
+         "html": "추가 공격력이 150에서 125로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "불길의 보루",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "물리 방어력 증가량이 70에서 75로 증가했습니다.",
+         "html": "물리 방어력 증가량이 70에서 75로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "최대 중첩수가 4에서 6으로 증가했습니다.",
+         "html": "최대 중첩수가 4에서 6으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "흔들리지 않는 신념",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "추가된 기능: 무력화 효과를 제거하지 않아도 생명력을 회복합니다.",
+         "html": "추가된 기능: 무력화 효과를 제거하지 않아도 생명력을 회복합니다.",
+         "added": false
+        },
+        {
+         "text": "치유량이 250에서 200으로 감소했습니다.",
+         "html": "치유량이 250에서 200으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "분노의 섬광",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "공격력이 180에서 198로 증가했습니다.",
+         "html": "공격력이 180에서 198로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "이 특성으로 피해를 주면 피해량이 치명타로 표시됩니다.",
+         "html": "이 특성으로 피해를 주면 피해량이 치명타로 표시됩니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "신성한 백열",
+       "key": "사용 효과",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 18초에서 25초로 증가했습니다.",
+         "html": "재사용 대기시간이 18초에서 25초로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<img alt=\"Divider_Hero_imperius_Crop.png\" data-id=\"17041692\" src=\"https://bnetcmsus-a.akamaihd.net/cms/gallery/WW5B0587UG9N1552928295778.png\"/>\n<p><span class=\"pn-h\"><strong>기술</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>솔라리온의 불길 (W)</strong></span>\n<ul>\n<li>마나 소모량이 60에서 50으로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>타오르는 갑옷 (E)</strong></span>\n<ul>\n<li>마나 소모량이 50에서 75로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><span class=\"pn-h\"><strong>특성</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>사로잡는 불길 (W)\n<ul>\n<li>추가된 기능: 퀘스트가 삭제되었습니다. 특성을 선택하면 솔라리온의 불길의 추가 공격력과 감속 효과가 즉시 적용됩니다.</li>\n<li>추가 공격력이 150에서 125로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>불길의 보루 (W)\n<ul>\n<li>물리 방어력 증가량이 70에서 75로 증가했습니다.</li>\n<li>최대 중첩수가 4에서 6으로 증가했습니다.</li>\n</ul>\n</li>\n<li>흔들리지 않는 신념 (E)\n<ul>\n<li>추가된 기능: 무력화 효과를 제거하지 않아도 생명력을 회복합니다.</li>\n<li>치유량이 250에서 200으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>7레벨</strong></span>\n<ul>\n<li>분노의 섬광 (Q)\n<ul>\n<li>공격력이 180에서 198로 증가했습니다.</li>\n<li>이 특성으로 피해를 주면 피해량이 치명타로 표시됩니다.</li>\n</ul>\n</li>\n<li>신성한 백열 (사용 효과)\n<ul>\n<li>재사용 대기시간이 18초에서 25초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote>\n<p><strong>개발자의 의견: </strong>임페리우스는 개발팀이 원하는 위치에 정확하게 있습니다. 높은 수준의 경기에서도 50.0%의 승률을 기록하고 있고요. 이런 아름다운 수치를 달성하게 되어 기쁘긴 하지만 초반 특성 단계에서는 선택률 문제가 약간 있는 편입니다. 그래서 자주 쓰이는 특성을 하향하는 대신, 다른 특성들을 상향하여 임페리우스가 더욱 다양하게 쓰이길 바랍니다.</p>\n</blockquote>"
+    },
+    {
+     "name": "말티엘",
+     "heroId": "Malthael",
+     "heroIds": [
+      "Malthael"
+     ],
+     "changes": [
+      {
+       "name": "영혼 회오리",
+       "key": "R1",
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "추가된 기능: 영혼 회오리를 사용할 때, 그리고 만료될 때 망령의 일격의 재사용 대기시간이 초기화됩니다.",
+         "html": "추가된 기능: 영혼 회오리를 사용할 때, 그리고 만료될 때 망령의 일격의 재사용 대기시간이 초기화됩니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<img alt=\"Divider_Hero_malthael_Crop.png\" data-id=\"17041692\" src=\"https://bnetcmsus-a.akamaihd.net/cms/gallery/Y60BRHGZ9QB31552928296658.png\"/>\n<p><span class=\"pn-h\"><strong>특성</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>10레벨</strong></span>\n<ul>\n<li>영혼 회오리 (R1)\n<ul>\n<li>추가된 기능: 영혼 회오리를 사용할 때, 그리고 만료될 때 망령의 일격의 재사용 대기시간이 초기화됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote>\n<p><strong>개발자의 의견: </strong>지난 AMA에서 Tomo00에게 이 업데이트를 적용할 것이라 약속했습니다. 보고 있죠?<br/>\n더 세부적으로 설명하자면, 개발팀은 영혼 회오리를 더욱 흥미로운 궁극기로 만들고 싶었습니다. 하지만 간편한 이용, 한때 메타를 지배했을 정도의 강력한 잠재력 때문에 생명력 회복, 방어력 증가, 생명력 흡수 등 궁극기 자체를 강하게 만드는 건 너무 위험했죠. 그래서 망령의 일격으로 전장 여기저기를 더욱 잘 누빌 수 있도록 변경해보았습니다.</p>\n</blockquote>"
+    },
+    {
+     "name": "렉사르",
+     "heroId": "Rexxar",
+     "heroIds": [
+      "Rexxar"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": null,
+       "lines": [
+        {
+         "text": "다른 영웅들처럼 렉사르의 특성 순서를 정렬했습니다. (예시: Q 특성은 맨 위에, 그 다음엔 W, 그 다음엔 E)",
+         "html": "다른 영웅들처럼 렉사르의 특성 순서를 정렬했습니다. (예시: Q 특성은 맨 위에, 그 다음엔 W, 그 다음엔 E)",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "쉬운 사냥감",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "더는 미샤, 돌진!에 추가 공격력이 적용되지 않습니다.",
+         "html": "더는 미샤, 돌진!에 추가 공격력이 적용되지 않습니다.",
+         "added": false
+        },
+        {
+         "text": "돌격병과 용병에게 주는 추가 피해량이 150%에서 200%로 증가했습니다.",
+         "html": "돌격병과 용병에게 주는 추가 피해량이 150%에서 200%로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<img alt=\"Divider_Hero_rexxar_Crop.png\" data-id=\"17041692\" src=\"https://bnetcmsus-a.akamaihd.net/cms/gallery/LVWW46X3O4XJ1552928297594.png\"/>\n<p><span class=\"pn-h\"><strong>특성</strong></span></p>\n<ul>\n<li>다른 영웅들처럼 렉사르의 특성 순서를 정렬했습니다. (예시: Q 특성은 맨 위에, 그 다음엔 W, 그 다음엔 E) </li>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>쉬운 사냥감 (지속 효과)\n<ul>\n<li>더는 미샤, 돌진!에 추가 공격력이 적용되지 않습니다.</li>\n<li>돌격병과 용병에게 주는 추가 피해량이 150%에서 200%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote>\n<p><strong>개발자의 의견: </strong>미샤, 돌진!의 공격력을 증가시킨 결과, 쉬운 사냥감과의 지나치게 높은 시너지가 의도치 않게 발생했습니다. 원래는 쉬운 사냥감은 용병 캠프를 점령하기 적절하고 공격로를 정리할 때에는 약간의 영향만 주어야 했습니다. 하지만 공격로를 정리하는 것도 탁월하여 디자인 측면에서 맹금 특성과 너무 유사해졌고, 이를 해결하기 위해 이번 업데이트를 진행했습니다.</p>\n</blockquote>"
+    },
+    {
+     "name": "바리안",
+     "heroId": "Varian",
+     "heroIds": [
+      "Varian"
+     ],
+     "changes": [
+      {
+       "name": "무기 막기",
+       "key": "W",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "마나 소모량이 20에서 30으로 증가했습니다.",
+         "html": "마나 소모량이 20에서 30으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "사자의 아귀",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "적 영웅에게 적중할 때마다 증가하는 공격력이 4에서 5로 증가했습니다.",
+         "html": "적 영웅에게 적중할 때마다 증가하는 공격력이 4에서 5로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "퀘스트를 완료하는 데 필요한 영웅 적중 횟수가 30에서 25로 감소했습니다.",
+         "html": "퀘스트를 완료하는 데 필요한 영웅 적중 횟수가 30에서 25로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "국왕의 길",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "퀘스트를 완료했을 때 증가하는 공격력이 45에서 30으로 감소했습니다.",
+         "html": "퀘스트를 완료했을 때 증가하는 공격력이 45에서 30으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<img alt=\"Divider_Hero_varian_Crop.png\" data-id=\"17041692\" src=\"https://bnetcmsus-a.akamaihd.net/cms/gallery/6T4XJN036C801552928298392.png\"/>\n<p><span class=\"pn-h\"><strong>기술</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>무기 막기 (W)</strong></span>\n<ul>\n<li>마나 소모량이 20에서 30으로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><span class=\"pn-h\"><strong>특성</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>사자의 아귀 (Q)\n<ul>\n<li>적 영웅에게 적중할 때마다 증가하는 공격력이 4에서 5로 증가했습니다.</li>\n<li>퀘스트를 완료하는 데 필요한 영웅 적중 횟수가 30에서 25로 감소했습니다.</li>\n</ul>\n</li>\n<li>국왕의 길 (지속 효과)\n<ul>\n<li>퀘스트를 완료했을 때 증가하는 공격력이 45에서 30으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote>\n<p><strong>개발자의 의견: </strong>바리안의 마나 소모량을 다른 영웅들과 비슷하게 만들면서 사자의 아귀를 약간 상향함과 동시에 국왕의 길을 하향하려 합니다. 국왕의 길은 해당 특성 단계의 다른 특성들에 비해 선택률이 높고, 하위권에서 중위권까지의 대전에서 높은 승률을 보이는 분노의 쌍검을 선택했을 때 필수적인 특성이어서 이번에 하향하게 되었습니다.</p>\n</blockquote>"
+    },
+    {
+     "name": "줄",
+     "heroId": "Necromancer",
+     "heroIds": [
+      "Necromancer"
+     ],
+     "changes": [
+      {
+       "name": "저주의 수확",
+       "key": "W",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "마나 소모량이 60에서 50으로 감소했습니다.",
+         "html": "마나 소모량이 60에서 50으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "서슬낫",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "퀘스트 완료 조건이 20회에서 16회로 감소했습니다.",
+         "html": "퀘스트 완료 조건이 20회에서 16회로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "추가된 기능: 퀘스트를 완료하면 유령의 낫의 마나 소모량이 20 감소합니다.",
+         "html": "추가된 기능: 퀘스트를 완료하면 유령의 낫의 마나 소모량이 20 감소합니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<img alt=\"Divider_Hero_xul_Crop.png\" data-id=\"17041692\" src=\"https://bnetcmsus-a.akamaihd.net/cms/gallery/PKFYROO3VY891552928298409.png\"/>\n<p><span class=\"pn-h\"><strong>기술</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>저주의 수확 (W) </strong></span>\n<ul>\n<li>마나 소모량이 60에서 50으로 감소했습니다.</li>\n</ul>\n<span class=\"pn-name\"><strong> </strong></span></li>\n</ul>\n<p><strong><span class=\"pn-h\"><strong>특성</strong></span></strong></p>\n<ul>\n<li><strong><span class=\"pn-name\"><strong>4레벨</strong></span> </strong>\n<ul>\n<li>서슬낫 (Q)\n<ul>\n<li>퀘스트 완료 조건이 20회에서 16회로 감소했습니다.</li>\n<li>추가된 기능: 퀘스트를 완료하면 유령의 낫의 마나 소모량이 20 감소합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote>\n<p><strong>개발자의 의견: </strong>다른 영웅들의 마나 사용량과 비슷한 수준이 될 수 있도록 저주의 수확의 마나 소모량을 감소시켰고, 4레벨 특성 단계에서 좋지 않은 성적을 내고 있던 서슬낫을 약간 상향했습니다.</p>\n</blockquote>"
+    },
+    {
+     "name": "이렐",
+     "heroId": "Yrel",
+     "heroIds": [
+      "Yrel"
+     ],
+     "changes": [
+      {
+       "name": "카라보르의 빛",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "변경된 기능: 비호의 반경이 15% 증가합니다. 비호가 적 영웅에게 적중하면 치유량이 40% 증가합니다. 비호가 2명 이상의 적 영웅에게 적중하면 치유량이 80% 증가합니다.",
+         "html": "변경된 기능: 비호의 반경이 15% 증가합니다. 비호가 적 영웅에게 적중하면 치유량이 40% 증가합니다. 비호가 2명 이상의 적 영웅에게 적중하면 치유량이 80% 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "투지",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "물리 방어력 증가량이 35에서 50으로 증가했습니다.",
+         "html": "물리 방어력 증가량이 35에서 50으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "신성한 대지",
+       "key": "R2",
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "방어력 증가량이 40에서 50으로 증가했습니다.",
+         "html": "방어력 증가량이 40에서 50으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<strong><img alt=\"Divider_Hero_Yrel_Crop.png\" data-id=\"17041692\" src=\"https://bnetcmsus-a.akamaihd.net/cms/gallery/UMRAVJZRZHSO1552928298550.png\"/></strong>\n<p><strong><span class=\"pn-h\"><strong>특성</strong></span></strong></p>\n<ul>\n<li><strong><span class=\"pn-name\"><strong>1레벨</strong></span> </strong>\n<ul>\n<li>카라보르의 빛 (Q)\n<ul>\n<li>변경된 기능: 비호의 반경이 15% 증가합니다. 비호가 적 영웅에게 적중하면 치유량이 40% 증가합니다. 비호가 2명 이상의 적 영웅에게 적중하면 치유량이 80% 증가합니다.</li>\n</ul>\n<strong> </strong></li>\n<li>투지 (지속 효과)\n<ul>\n<li>물리 방어력 증가량이 35에서 50으로 증가했습니다.</li>\n</ul>\n<strong> </strong></li>\n</ul>\n<strong> </strong></li>\n<li><strong><span class=\"pn-name\"><strong>10레벨</strong></span> </strong>\n<ul>\n<li>신성한 대지 (R2)\n<ul>\n<li>방어력 증가량이 40에서 50으로 증가했습니다.</li>\n</ul>\n<strong> </strong></li>\n</ul>\n<strong> </strong></li>\n</ul>\n<blockquote>\n<p><strong><strong>개발자의 의견: </strong></strong>이번 업데이트로 이렐의 특성들 중 선택률이 낮았던 것들을 상향하려 합니다. 뭔가 더 그럴싸한 말을 덧붙이고 싶지만 딱히 더 할 말이 없네요... 네, 하여튼 그렇습니다! </p>\n</blockquote>"
+    }
+   ]
+  },
+  {
+   "name": "치유사",
+   "key": "role_healer",
+   "html": "<h4>아나</h4>\n<strong><img alt=\"Divider_Hero_Ana_Crop.png\" data-id=\"17041692\" src=\"https://bnetcmsus-a.akamaihd.net/cms/gallery/6UFJ5BKO8L771552928294550.png\"/></strong>\n<p><strong><span class=\"pn-h\"><strong>특성</strong></span></strong></p>\n<ul>\n<li><strong><span class=\"pn-name\"><strong>4레벨</strong></span> </strong>\n<ul>\n<li>생체 강화 (W)\n<ul>\n<li>재사용 대기시간 감소량이 4초에서 2초로 감소했습니다.</li>\n</ul>\n</li>\n<li>과다 복용 (E)\n<ul>\n<li>추가된 기능: 정조준이 활성화된 동안 수면총이 적 영웅을 관통합니다.</li>\n</ul>\n<strong> </strong></li>\n</ul>\n<strong> </strong></li>\n<li><strong><span class=\"pn-name\"><strong>7레벨</strong></span> </strong>\n<ul>\n<li>악몽의 여파\n<ul>\n<li>추가 피해가 대상 영웅의 최대 생명력의 8%에서 10%로 증가했습니다.</li>\n</ul>\n<strong> </strong></li>\n</ul>\n<strong> </strong></li>\n</ul>\n<blockquote>\n<p><strong><strong>개발자의 의견: </strong></strong>개편된 아나의 새로운 방향성은 아주 만족스럽지만 초반 특성 단계에서는 다양한 특성들이 쓰이지 않았습니다. 그래서 생체 수류탄과 관련된 특성들과 경쟁할 수 있도록 다른 특성들을 상향했고 생체 수류탄 특성 조합을 약간 하향하여 아나가 더욱 다양한 모습을 보여주길 바랍니다.</p>\n</blockquote>\n<h4>데커드 케인</h4>\n<strong><img alt=\"Divider_Hero_deckard_Crop.png\" data-id=\"17041692\" src=\"https://bnetcmsus-a.akamaihd.net/cms/gallery/E8HHW6WSNATD1552928295027.png\"/></strong>\n<p><strong><span class=\"pn-h\"><strong>기술</strong></span></strong></p>\n<ul>\n<li><strong><span class=\"pn-name\"><strong>생명력 물약 (Q)</strong></span> </strong>\n<ul>\n<li>치유량이 255에서 270으로 증가했습니다.</li>\n</ul>\n<strong> </strong></li>\n<li><strong><span class=\"pn-name\"><strong>호라드림의 함 (W)</strong></span> </strong>\n<ul>\n<li>재사용 대기시간이 14초에서 12초로 감소했습니다.</li>\n<li>마나 소모량이 40에서 35로 감소했습니다.</li>\n</ul>\n<strong> </strong></li>\n</ul>\n<p><strong><span class=\"pn-h\"><strong>특성</strong></span></strong></p>\n<ul>\n<li><strong><span class=\"pn-name\"><strong>4레벨</strong></span> </strong>\n<ul>\n<li>루비 (사용 효과)\n<ul>\n<li>하급 생명력 물약의 치유량이 220에서 250으로 증가했습니다.</li>\n</ul>\n<strong> </strong></li>\n</ul>\n<strong> </strong></li>\n<li><strong><span class=\"pn-name\"><strong>7레벨</strong></span> </strong>\n<ul>\n<li>함 전문화 (W)\n<ul>\n<li>추가된 기능: 결계의 두루마리의 마나 소모량이 40에서 30으로 감소합니다.</li>\n</ul>\n<strong> </strong></li>\n</ul>\n<strong> </strong></li>\n</ul>\n<blockquote>\n<p><strong>개발자의 의견: </strong>최근의 상향에도 불구하고 데커드는 다른 영웅들에 비해 큰 힘을 내지 못하고 있습니다. 이전에는 데커드의 후반 특성을 주로 손봤지만, 이번에는 기본 능력과 초반 특성을 변경하여 게임 전반적으로 더 좋은 모습을 보일 수 있게 만들었습니다.</p>\n</blockquote>\n<h4>루시우</h4>\n<strong><img alt=\"Divider_Hero_lucio_Crop.png\" data-id=\"17041692\" src=\"https://bnetcmsus-a.akamaihd.net/cms/gallery/H9I3PFMR53881552928296458.png\"/></strong>\n<p><strong><span class=\"pn-h\"><strong>특성</strong></span></strong></p>\n<ul>\n<li><strong><span class=\"pn-name\"><strong>7레벨</strong></span> </strong>\n<ul>\n<li>휴대용 라디오 (사용 효과)\n<ul>\n<li>휴대용 라디오의 생명력이 217에서 350으로 증가했습니다.</li>\n</ul>\n<strong> </strong></li>\n</ul>\n<strong> </strong></li>\n<li><strong><span class=\"pn-name\"><strong>10레벨</strong></span> </strong>\n<ul>\n<li>하이파이브 (R2)\n<ul>\n<li>마나 소모량이 50에서 35로 감소했습니다.</li>\n</ul>\n<strong> </strong></li>\n</ul>\n<strong> </strong></li>\n<li><strong><span class=\"pn-name\"><strong>16레벨</strong></span> </strong>\n<ul>\n<li>주파수를 높여 (E)\n<ul>\n<li>일반 공격으로 감소하는 재사용 대기시간이 0.45초에서 0.4초로 감소했습니다.</li>\n</ul>\n<strong> </strong></li>\n</ul>\n<strong> </strong></li>\n<li><strong><span class=\"pn-name\"><strong>20레벨</strong></span> </strong>\n<ul>\n<li>하우스 파티 (W)\n<ul>\n<li>분위기 전환!의 영향을 받는 아군 하나당 증가하는 치유량이 10%에서 8%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote>\n<p><strong>개발자의 의견: </strong>루시우의 개편은 밸런스 측면에서 꽤 양호했습니다. 수집한 데이터에 의하면 승률과 특성 선택률 또한 만족스럽고요. 하지만 몇 가지 부분을 더 개선할 수 있다고 판단했고, 하이파이브의 마나 소모량이 그중 하나였습니다. 앞으로도 루시우를 주시하면서 더 많은 변경이 필요할지 검토할 예정입니다!</p>\n</blockquote>\n<h4>레가르</h4>\n<strong><img alt=\"Divider_Hero_rehgar_Crop.png\" data-id=\"17041692\" src=\"https://bnetcmsus-a.akamaihd.net/cms/gallery/NVYT5O6ZMGCB1552928297589.png\"/></strong>\n<p><strong><span class=\"pn-h\"><strong>특성</strong></span></strong></p>\n<ul>\n<li><strong><span class=\"pn-name\"><strong>16레벨</strong></span> </strong>\n<ul>\n<li>몰려드는 폭풍 (W)\n<ul>\n<li>새로운 기능: 아군에게 번개 보호막을 시전하면, 특성이 적용되지 않은 번개 보호막이 자신에게도 시전됩니다. 두 번개 보호막이 적 영웅에게 피해를 줄 때마다 두 번개 보호막의 공격력이 증가합니다. 최대 15회 중첩됩니다.</li>\n<li>중첩당 추가 공격력이 15%에서 10%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote>\n<p><strong>개발자의 의견: </strong>몰려드는 폭풍은 레가르를 색다른 방법으로 플레이하게 만들었지만, 게임 초반에 돌격병을 정리하거나 용병 캠프를 점령할 때 매우 강력한 모습을 보여 번개 유대를 삭제했었습니다. 이번 업데이트로 번개 유대가 다시 추가되었지만 팀 교전이 더 중요한 16레벨 특성 단계에서 선택할 수 있게 되었습니다.</p>\n</blockquote>\n<h4>스투코프</h4>\n<strong><img alt=\"Divider_Hero_Stukov_Crop.png\" data-id=\"17041692\" src=\"https://bnetcmsus-a.akamaihd.net/cms/gallery/7LDK61PS94TT1552928297923.png\"/></strong>\n<p><strong><span class=\"pn-h\"><strong>특성</strong></span></strong></p>\n<ul>\n<li>다른 영웅들처럼 스투코프의 특성 순서를 정렬했습니다. (예시: Q 특성은 맨 위에, 그 다음엔 W, 그 다음엔 E)</li>\n<li><strong><span class=\"pn-name\"><strong>1레벨</strong></span> </strong>\n<ul>\n<li>반작용 탄도포자 (W)\n<ul>\n<li>13레벨에서 옮겨졌습니다.</li>\n<li>재사용 대기시간이 10초에서 15초로 증가했습니다.</li>\n</ul>\n<strong> </strong></li>\n</ul>\n<strong> </strong></li>\n<li><strong><span class=\"pn-name\"><strong>4레벨</strong></span> </strong>\n<ul>\n<li>생체 갑옷 (Q)\n<ul>\n<li>감염체 폭발로 치유성 병원균을 폭발시킬 때 증가시키는 방어력이 50에서 75로 증가했습니다.</li>\n</ul>\n<strong> </strong></li>\n</ul>\n<strong> </strong></li>\n<li><strong><span class=\"pn-name\"><strong>10레벨</strong></span> </strong>\n<ul>\n<li>거친 휩쓸기 (R1)\n<ul>\n<li>마나 소모량이 100에서 80으로 감소했습니다.</li>\n</ul>\n<strong> </strong></li>\n</ul>\n<strong> </strong></li>\n<li><strong><span class=\"pn-name\"><strong>13레벨</strong></span> </strong>\n<ul>\n<li>터지는 고름 (고유 능력)\n<ul>\n<li>1레벨에서 옮겨졌습니다.</li>\n<li>공격력 증가량이 100%에서 150%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote>\n<p><strong>개발자의 의견: </strong>반작용 탄도포자와 터지는 고름의 선택률 및 승률을 증가시키기 위해 서로의 위치를 바꿨습니다. 이로 인해 터지는 고름은 다른 특성들과 새로운 시너지를 내면서 반작용 탄도포자의 효과를 게임 초반에 누릴 수 있을 겁니다. 또한 감염체 폭발을 사용했을 때 생체 갑옷으로 증가하는 방어력이 더욱 높아져, 물리 피해 감소 효과를 크게 체감할 수 있을 겁니다.</p>\n</blockquote>\n<h4>우서</h4>\n<strong><img alt=\"Divider_Hero_Uther_Crop.png\" data-id=\"17041692\" src=\"https://bnetcmsus-a.akamaihd.net/cms/gallery/LIP7DURG3EQN1552928298190.png\"/></strong>\n<p><strong><span class=\"pn-h\"><strong>기술</strong></span></strong></p>\n<ul>\n<li><strong><span class=\"pn-name\"><strong>성스러운 빛 (Q)</strong></span> </strong>\n<ul>\n<li>마나 소모량이 90에서 80으로 감소했습니다.</li>\n</ul>\n<strong> </strong></li>\n</ul>",
+   "heroes": [
+    {
+     "name": "아나",
+     "heroId": "Ana",
+     "heroIds": [
+      "Ana"
+     ],
+     "changes": [
+      {
+       "name": "생체 강화",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "재사용 대기시간 감소량이 4초에서 2초로 감소했습니다.",
+         "html": "재사용 대기시간 감소량이 4초에서 2초로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "과다 복용",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "추가된 기능: 정조준이 활성화된 동안 수면총이 적 영웅을 관통합니다.",
+         "html": "추가된 기능: 정조준이 활성화된 동안 수면총이 적 영웅을 관통합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "악몽의 여파",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "추가 피해가 대상 영웅의 최대 생명력의 8%에서 10%로 증가했습니다.",
+         "html": "추가 피해가 대상 영웅의 최대 생명력의 8%에서 10%로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<strong><img alt=\"Divider_Hero_Ana_Crop.png\" data-id=\"17041692\" src=\"https://bnetcmsus-a.akamaihd.net/cms/gallery/6UFJ5BKO8L771552928294550.png\"/></strong>\n<p><strong><span class=\"pn-h\"><strong>특성</strong></span></strong></p>\n<ul>\n<li><strong><span class=\"pn-name\"><strong>4레벨</strong></span> </strong>\n<ul>\n<li>생체 강화 (W)\n<ul>\n<li>재사용 대기시간 감소량이 4초에서 2초로 감소했습니다.</li>\n</ul>\n</li>\n<li>과다 복용 (E)\n<ul>\n<li>추가된 기능: 정조준이 활성화된 동안 수면총이 적 영웅을 관통합니다.</li>\n</ul>\n<strong> </strong></li>\n</ul>\n<strong> </strong></li>\n<li><strong><span class=\"pn-name\"><strong>7레벨</strong></span> </strong>\n<ul>\n<li>악몽의 여파\n<ul>\n<li>추가 피해가 대상 영웅의 최대 생명력의 8%에서 10%로 증가했습니다.</li>\n</ul>\n<strong> </strong></li>\n</ul>\n<strong> </strong></li>\n</ul>\n<blockquote>\n<p><strong><strong>개발자의 의견: </strong></strong>개편된 아나의 새로운 방향성은 아주 만족스럽지만 초반 특성 단계에서는 다양한 특성들이 쓰이지 않았습니다. 그래서 생체 수류탄과 관련된 특성들과 경쟁할 수 있도록 다른 특성들을 상향했고 생체 수류탄 특성 조합을 약간 하향하여 아나가 더욱 다양한 모습을 보여주길 바랍니다.</p>\n</blockquote>"
+    },
+    {
+     "name": "데커드 케인",
+     "heroId": "Deckard",
+     "heroIds": [
+      "Deckard"
+     ],
+     "changes": [
+      {
+       "name": "생명력 물약",
+       "key": "Q",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "치유량이 255에서 270으로 증가했습니다.",
+         "html": "치유량이 255에서 270으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "호라드림의 함",
+       "key": "W",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 14초에서 12초로 감소했습니다.",
+         "html": "재사용 대기시간이 14초에서 12초로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "마나 소모량이 40에서 35로 감소했습니다.",
+         "html": "마나 소모량이 40에서 35로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "루비",
+       "key": "사용 효과",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "하급 생명력 물약의 치유량이 220에서 250으로 증가했습니다.",
+         "html": "하급 생명력 물약의 치유량이 220에서 250으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "함 전문화",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "추가된 기능: 결계의 두루마리의 마나 소모량이 40에서 30으로 감소합니다.",
+         "html": "추가된 기능: 결계의 두루마리의 마나 소모량이 40에서 30으로 감소합니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<strong><img alt=\"Divider_Hero_deckard_Crop.png\" data-id=\"17041692\" src=\"https://bnetcmsus-a.akamaihd.net/cms/gallery/E8HHW6WSNATD1552928295027.png\"/></strong>\n<p><strong><span class=\"pn-h\"><strong>기술</strong></span></strong></p>\n<ul>\n<li><strong><span class=\"pn-name\"><strong>생명력 물약 (Q)</strong></span> </strong>\n<ul>\n<li>치유량이 255에서 270으로 증가했습니다.</li>\n</ul>\n<strong> </strong></li>\n<li><strong><span class=\"pn-name\"><strong>호라드림의 함 (W)</strong></span> </strong>\n<ul>\n<li>재사용 대기시간이 14초에서 12초로 감소했습니다.</li>\n<li>마나 소모량이 40에서 35로 감소했습니다.</li>\n</ul>\n<strong> </strong></li>\n</ul>\n<p><strong><span class=\"pn-h\"><strong>특성</strong></span></strong></p>\n<ul>\n<li><strong><span class=\"pn-name\"><strong>4레벨</strong></span> </strong>\n<ul>\n<li>루비 (사용 효과)\n<ul>\n<li>하급 생명력 물약의 치유량이 220에서 250으로 증가했습니다.</li>\n</ul>\n<strong> </strong></li>\n</ul>\n<strong> </strong></li>\n<li><strong><span class=\"pn-name\"><strong>7레벨</strong></span> </strong>\n<ul>\n<li>함 전문화 (W)\n<ul>\n<li>추가된 기능: 결계의 두루마리의 마나 소모량이 40에서 30으로 감소합니다.</li>\n</ul>\n<strong> </strong></li>\n</ul>\n<strong> </strong></li>\n</ul>\n<blockquote>\n<p><strong>개발자의 의견: </strong>최근의 상향에도 불구하고 데커드는 다른 영웅들에 비해 큰 힘을 내지 못하고 있습니다. 이전에는 데커드의 후반 특성을 주로 손봤지만, 이번에는 기본 능력과 초반 특성을 변경하여 게임 전반적으로 더 좋은 모습을 보일 수 있게 만들었습니다.</p>\n</blockquote>"
+    },
+    {
+     "name": "루시우",
+     "heroId": "Lucio",
+     "heroIds": [
+      "Lucio"
+     ],
+     "changes": [
+      {
+       "name": "휴대용 라디오",
+       "key": "사용 효과",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "휴대용 라디오의 생명력이 217에서 350으로 증가했습니다.",
+         "html": "휴대용 라디오의 생명력이 217에서 350으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "하이파이브",
+       "key": "R2",
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "마나 소모량이 50에서 35로 감소했습니다.",
+         "html": "마나 소모량이 50에서 35로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "주파수를 높여",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "일반 공격으로 감소하는 재사용 대기시간이 0.45초에서 0.4초로 감소했습니다.",
+         "html": "일반 공격으로 감소하는 재사용 대기시간이 0.45초에서 0.4초로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "하우스 파티",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "분위기 전환!의 영향을 받는 아군 하나당 증가하는 치유량이 10%에서 8%로 감소했습니다.",
+         "html": "분위기 전환!의 영향을 받는 아군 하나당 증가하는 치유량이 10%에서 8%로 감소했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<strong><img alt=\"Divider_Hero_lucio_Crop.png\" data-id=\"17041692\" src=\"https://bnetcmsus-a.akamaihd.net/cms/gallery/H9I3PFMR53881552928296458.png\"/></strong>\n<p><strong><span class=\"pn-h\"><strong>특성</strong></span></strong></p>\n<ul>\n<li><strong><span class=\"pn-name\"><strong>7레벨</strong></span> </strong>\n<ul>\n<li>휴대용 라디오 (사용 효과)\n<ul>\n<li>휴대용 라디오의 생명력이 217에서 350으로 증가했습니다.</li>\n</ul>\n<strong> </strong></li>\n</ul>\n<strong> </strong></li>\n<li><strong><span class=\"pn-name\"><strong>10레벨</strong></span> </strong>\n<ul>\n<li>하이파이브 (R2)\n<ul>\n<li>마나 소모량이 50에서 35로 감소했습니다.</li>\n</ul>\n<strong> </strong></li>\n</ul>\n<strong> </strong></li>\n<li><strong><span class=\"pn-name\"><strong>16레벨</strong></span> </strong>\n<ul>\n<li>주파수를 높여 (E)\n<ul>\n<li>일반 공격으로 감소하는 재사용 대기시간이 0.45초에서 0.4초로 감소했습니다.</li>\n</ul>\n<strong> </strong></li>\n</ul>\n<strong> </strong></li>\n<li><strong><span class=\"pn-name\"><strong>20레벨</strong></span> </strong>\n<ul>\n<li>하우스 파티 (W)\n<ul>\n<li>분위기 전환!의 영향을 받는 아군 하나당 증가하는 치유량이 10%에서 8%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote>\n<p><strong>개발자의 의견: </strong>루시우의 개편은 밸런스 측면에서 꽤 양호했습니다. 수집한 데이터에 의하면 승률과 특성 선택률 또한 만족스럽고요. 하지만 몇 가지 부분을 더 개선할 수 있다고 판단했고, 하이파이브의 마나 소모량이 그중 하나였습니다. 앞으로도 루시우를 주시하면서 더 많은 변경이 필요할지 검토할 예정입니다!</p>\n</blockquote>"
+    },
+    {
+     "name": "레가르",
+     "heroId": "Rehgar",
+     "heroIds": [
+      "Rehgar"
+     ],
+     "changes": [
+      {
+       "name": "몰려드는 폭풍",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "새로운 기능: 아군에게 번개 보호막을 시전하면, 특성이 적용되지 않은 번개 보호막이 자신에게도 시전됩니다. 두 번개 보호막이 적 영웅에게 피해를 줄 때마다 두 번개 보호막의 공격력이 증가합니다. 최대 15회 중첩됩니다.",
+         "html": "새로운 기능: 아군에게 번개 보호막을 시전하면, 특성이 적용되지 않은 번개 보호막이 자신에게도 시전됩니다. 두 번개 보호막이 적 영웅에게 피해를 줄 때마다 두 번개 보호막의 공격력이 증가합니다. 최대 15회 중첩됩니다.",
+         "added": false
+        },
+        {
+         "text": "중첩당 추가 공격력이 15%에서 10%로 감소했습니다.",
+         "html": "중첩당 추가 공격력이 15%에서 10%로 감소했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<strong><img alt=\"Divider_Hero_rehgar_Crop.png\" data-id=\"17041692\" src=\"https://bnetcmsus-a.akamaihd.net/cms/gallery/NVYT5O6ZMGCB1552928297589.png\"/></strong>\n<p><strong><span class=\"pn-h\"><strong>특성</strong></span></strong></p>\n<ul>\n<li><strong><span class=\"pn-name\"><strong>16레벨</strong></span> </strong>\n<ul>\n<li>몰려드는 폭풍 (W)\n<ul>\n<li>새로운 기능: 아군에게 번개 보호막을 시전하면, 특성이 적용되지 않은 번개 보호막이 자신에게도 시전됩니다. 두 번개 보호막이 적 영웅에게 피해를 줄 때마다 두 번개 보호막의 공격력이 증가합니다. 최대 15회 중첩됩니다.</li>\n<li>중첩당 추가 공격력이 15%에서 10%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote>\n<p><strong>개발자의 의견: </strong>몰려드는 폭풍은 레가르를 색다른 방법으로 플레이하게 만들었지만, 게임 초반에 돌격병을 정리하거나 용병 캠프를 점령할 때 매우 강력한 모습을 보여 번개 유대를 삭제했었습니다. 이번 업데이트로 번개 유대가 다시 추가되었지만 팀 교전이 더 중요한 16레벨 특성 단계에서 선택할 수 있게 되었습니다.</p>\n</blockquote>"
+    },
+    {
+     "name": "스투코프",
+     "heroId": "Stukov",
+     "heroIds": [
+      "Stukov"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": null,
+       "lines": [
+        {
+         "text": "다른 영웅들처럼 스투코프의 특성 순서를 정렬했습니다. (예시: Q 특성은 맨 위에, 그 다음엔 W, 그 다음엔 E)",
+         "html": "다른 영웅들처럼 스투코프의 특성 순서를 정렬했습니다. (예시: Q 특성은 맨 위에, 그 다음엔 W, 그 다음엔 E)",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "반작용 탄도포자",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "13레벨에서 옮겨졌습니다.",
+         "html": "13레벨에서 옮겨졌습니다.",
+         "added": false
+        },
+        {
+         "text": "재사용 대기시간이 10초에서 15초로 증가했습니다.",
+         "html": "재사용 대기시간이 10초에서 15초로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "생체 갑옷",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "감염체 폭발로 치유성 병원균을 폭발시킬 때 증가시키는 방어력이 50에서 75로 증가했습니다.",
+         "html": "감염체 폭발로 치유성 병원균을 폭발시킬 때 증가시키는 방어력이 50에서 75로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "거친 휩쓸기",
+       "key": "R1",
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "마나 소모량이 100에서 80으로 감소했습니다.",
+         "html": "마나 소모량이 100에서 80으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "터지는 고름",
+       "key": "고유 능력",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "1레벨에서 옮겨졌습니다.",
+         "html": "1레벨에서 옮겨졌습니다.",
+         "added": false
+        },
+        {
+         "text": "공격력 증가량이 100%에서 150%로 증가했습니다.",
+         "html": "공격력 증가량이 100%에서 150%로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<strong><img alt=\"Divider_Hero_Stukov_Crop.png\" data-id=\"17041692\" src=\"https://bnetcmsus-a.akamaihd.net/cms/gallery/7LDK61PS94TT1552928297923.png\"/></strong>\n<p><strong><span class=\"pn-h\"><strong>특성</strong></span></strong></p>\n<ul>\n<li>다른 영웅들처럼 스투코프의 특성 순서를 정렬했습니다. (예시: Q 특성은 맨 위에, 그 다음엔 W, 그 다음엔 E)</li>\n<li><strong><span class=\"pn-name\"><strong>1레벨</strong></span> </strong>\n<ul>\n<li>반작용 탄도포자 (W)\n<ul>\n<li>13레벨에서 옮겨졌습니다.</li>\n<li>재사용 대기시간이 10초에서 15초로 증가했습니다.</li>\n</ul>\n<strong> </strong></li>\n</ul>\n<strong> </strong></li>\n<li><strong><span class=\"pn-name\"><strong>4레벨</strong></span> </strong>\n<ul>\n<li>생체 갑옷 (Q)\n<ul>\n<li>감염체 폭발로 치유성 병원균을 폭발시킬 때 증가시키는 방어력이 50에서 75로 증가했습니다.</li>\n</ul>\n<strong> </strong></li>\n</ul>\n<strong> </strong></li>\n<li><strong><span class=\"pn-name\"><strong>10레벨</strong></span> </strong>\n<ul>\n<li>거친 휩쓸기 (R1)\n<ul>\n<li>마나 소모량이 100에서 80으로 감소했습니다.</li>\n</ul>\n<strong> </strong></li>\n</ul>\n<strong> </strong></li>\n<li><strong><span class=\"pn-name\"><strong>13레벨</strong></span> </strong>\n<ul>\n<li>터지는 고름 (고유 능력)\n<ul>\n<li>1레벨에서 옮겨졌습니다.</li>\n<li>공격력 증가량이 100%에서 150%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote>\n<p><strong>개발자의 의견: </strong>반작용 탄도포자와 터지는 고름의 선택률 및 승률을 증가시키기 위해 서로의 위치를 바꿨습니다. 이로 인해 터지는 고름은 다른 특성들과 새로운 시너지를 내면서 반작용 탄도포자의 효과를 게임 초반에 누릴 수 있을 겁니다. 또한 감염체 폭발을 사용했을 때 생체 갑옷으로 증가하는 방어력이 더욱 높아져, 물리 피해 감소 효과를 크게 체감할 수 있을 겁니다.</p>\n</blockquote>"
+    },
+    {
+     "name": "우서",
+     "heroId": "Uther",
+     "heroIds": [
+      "Uther"
+     ],
+     "changes": [
+      {
+       "name": "성스러운 빛",
+       "key": "Q",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "마나 소모량이 90에서 80으로 감소했습니다.",
+         "html": "마나 소모량이 90에서 80으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<strong><img alt=\"Divider_Hero_Uther_Crop.png\" data-id=\"17041692\" src=\"https://bnetcmsus-a.akamaihd.net/cms/gallery/LIP7DURG3EQN1552928298190.png\"/></strong>\n<p><strong><span class=\"pn-h\"><strong>기술</strong></span></strong></p>\n<ul>\n<li><strong><span class=\"pn-name\"><strong>성스러운 빛 (Q)</strong></span> </strong>\n<ul>\n<li>마나 소모량이 90에서 80으로 감소했습니다.</li>\n</ul>\n<strong> </strong></li>\n</ul>"
+    }
+   ]
+  },
+  {
+   "name": "지원가",
+   "key": "role_support",
+   "html": "<h4>아바투르</h4>\n<strong><img alt=\"Divider_Hero_Abathur_Crop.png\" data-id=\"17041692\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/3PMD0Y6QQOHO1417483333660.png\"/></strong>\n<p><strong><span class=\"pn-h\"><strong>기술</strong></span></strong></p>\n<ul>\n<li><strong><span class=\"pn-name\"><strong>식충 변종 (고유 능력)</strong></span> </strong>\n<ul>\n<li>공격력이 40에서 46으로 증가했습니다.</li>\n</ul>\n<strong> </strong></li>\n<li><strong><span class=\"pn-name\"><strong>갑피 (E)</strong></span> </strong>\n<ul>\n<li>보호막이 157에서 150으로 감소했습니다.</li>\n</ul>\n<strong> </strong></li>\n</ul>\n<p><strong><span class=\"pn-h\"><strong>특성</strong></span></strong></p>\n<ul>\n<li><strong><span class=\"pn-name\"><strong>1레벨</strong></span> </strong>\n<ul>\n<li>갑피 보강 (E)\n<ul>\n<li>추가 보호막이 40%에서 30%로 감소했습니다.</li>\n</ul>\n</li>\n<li>생존 본능 (고유 능력)\n<ul>\n<li>추가 생명력이 60%에서 100%로 증가했습니다.</li>\n</ul>\n<strong> </strong></li>\n</ul>\n<strong> </strong></li>\n<li><strong><span class=\"pn-name\"><strong>4레벨</strong></span> </strong>\n<ul>\n<li>대량 살포\n<ul>\n<li>추가된 기능: 독성 둥지의 사거리가 30% 증가합니다.</li>\n</ul>\n<strong> </strong></li>\n</ul>\n<strong> </strong></li>\n<li><strong><span class=\"pn-name\"><strong>13레벨</strong></span> </strong>\n<ul>\n<li>포격충 변종 (고유 능력)\n<ul>\n<li>지속 시간 증가량이 50%에서 75%로 증가했습니다.</li>\n</ul>\n<strong> </strong></li>\n</ul>\n<strong> </strong></li>\n<li><strong><span class=\"pn-name\"><strong>16레벨</strong></span> </strong>\n<ul>\n<li>불안정한 변이 (궁극기)\n<ul>\n<li>회복되는 생명력이 준 피해의 50%에서 75%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote>\n<p><strong>개발자의 의견: </strong>개편 후의 아바투르는 전체적으로 양호했습니다. 하지만 갑피 특성 외의 특성들은 좀 더 상향할 여지가 있다고 판단했죠. 그래서 아바투르에게 운영 능력을 더 부여하는 대신, 갑피를 하향하게 되었습니다.</p>\n</blockquote>",
+   "heroes": [
+    {
+     "name": "아바투르",
+     "heroId": "Abathur",
+     "heroIds": [
+      "Abathur"
+     ],
+     "changes": [
+      {
+       "name": "식충 변종",
+       "key": "고유 능력",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "공격력이 40에서 46으로 증가했습니다.",
+         "html": "공격력이 40에서 46으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "갑피",
+       "key": "E",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "보호막이 157에서 150으로 감소했습니다.",
+         "html": "보호막이 157에서 150으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "갑피 보강",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "추가 보호막이 40%에서 30%로 감소했습니다.",
+         "html": "추가 보호막이 40%에서 30%로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "생존 본능",
+       "key": "고유 능력",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "추가 생명력이 60%에서 100%로 증가했습니다.",
+         "html": "추가 생명력이 60%에서 100%로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "대량 살포",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "추가된 기능: 독성 둥지의 사거리가 30% 증가합니다.",
+         "html": "추가된 기능: 독성 둥지의 사거리가 30% 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "포격충 변종",
+       "key": "고유 능력",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "지속 시간 증가량이 50%에서 75%로 증가했습니다.",
+         "html": "지속 시간 증가량이 50%에서 75%로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "불안정한 변이",
+       "key": "궁극기",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "회복되는 생명력이 준 피해의 50%에서 75%로 증가했습니다.",
+         "html": "회복되는 생명력이 준 피해의 50%에서 75%로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<strong><img alt=\"Divider_Hero_Abathur_Crop.png\" data-id=\"17041692\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/3PMD0Y6QQOHO1417483333660.png\"/></strong>\n<p><strong><span class=\"pn-h\"><strong>기술</strong></span></strong></p>\n<ul>\n<li><strong><span class=\"pn-name\"><strong>식충 변종 (고유 능력)</strong></span> </strong>\n<ul>\n<li>공격력이 40에서 46으로 증가했습니다.</li>\n</ul>\n<strong> </strong></li>\n<li><strong><span class=\"pn-name\"><strong>갑피 (E)</strong></span> </strong>\n<ul>\n<li>보호막이 157에서 150으로 감소했습니다.</li>\n</ul>\n<strong> </strong></li>\n</ul>\n<p><strong><span class=\"pn-h\"><strong>특성</strong></span></strong></p>\n<ul>\n<li><strong><span class=\"pn-name\"><strong>1레벨</strong></span> </strong>\n<ul>\n<li>갑피 보강 (E)\n<ul>\n<li>추가 보호막이 40%에서 30%로 감소했습니다.</li>\n</ul>\n</li>\n<li>생존 본능 (고유 능력)\n<ul>\n<li>추가 생명력이 60%에서 100%로 증가했습니다.</li>\n</ul>\n<strong> </strong></li>\n</ul>\n<strong> </strong></li>\n<li><strong><span class=\"pn-name\"><strong>4레벨</strong></span> </strong>\n<ul>\n<li>대량 살포\n<ul>\n<li>추가된 기능: 독성 둥지의 사거리가 30% 증가합니다.</li>\n</ul>\n<strong> </strong></li>\n</ul>\n<strong> </strong></li>\n<li><strong><span class=\"pn-name\"><strong>13레벨</strong></span> </strong>\n<ul>\n<li>포격충 변종 (고유 능력)\n<ul>\n<li>지속 시간 증가량이 50%에서 75%로 증가했습니다.</li>\n</ul>\n<strong> </strong></li>\n</ul>\n<strong> </strong></li>\n<li><strong><span class=\"pn-name\"><strong>16레벨</strong></span> </strong>\n<ul>\n<li>불안정한 변이 (궁극기)\n<ul>\n<li>회복되는 생명력이 준 피해의 50%에서 75%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote>\n<p><strong>개발자의 의견: </strong>개편 후의 아바투르는 전체적으로 양호했습니다. 하지만 갑피 특성 외의 특성들은 좀 더 상향할 여지가 있다고 판단했죠. 그래서 아바투르에게 운영 능력을 더 부여하는 대신, 갑피를 하향하게 되었습니다.</p>\n</blockquote>"
+    }
+   ]
+  },
+  {
+   "name": "근접 암살자",
+   "key": "role_melee",
+   "html": "<h4>알라라크</h4>\n<strong><img alt=\"Divider_Hero_Alarak_Crop.png\" data-id=\"17041692\" src=\"https://bnetcmsus-a.akamaihd.net/cms/gallery/F5OVGLJTTYTU1552928294327.png\"/></strong>\n<p><strong><span class=\"pn-h\"><strong>기술</strong></span></strong></p>\n<ul>\n<li><strong><span class=\"pn-name\"><strong>불화의 일격 (Q)</strong></span> </strong>\n<ul>\n<li>마나 소모량이 45에서 55로 증가했습니다.</li>\n</ul>\n<strong> </strong></li>\n</ul>\n<p><strong><span class=\"pn-h\"><strong>특성</strong></span></strong></p>\n<ul>\n<li><strong><span class=\"pn-name\"><strong>1레벨</strong></span> </strong>\n<ul>\n<li>잔혹한 여세 (W)\n<ul>\n<li>변경된 기능: 염동력의 마나 소모량이 30에서 20으로 감소합니다. 생명력이 75% 이상이면 염동력의 재사용 대기시간이 100% 더 빨리 감소합니다.</li>\n<li>이 효과가 활성화된 동안에는 염동력 버튼이 빛납니다.</li>\n</ul>\n<strong> </strong></li>\n</ul>\n<strong> </strong></li>\n<li><strong><span class=\"pn-name\"><strong>13레벨</strong></span> </strong>\n<ul>\n<li>군주의 칼날 (고유 능력)\n<ul>\n<li>가학성 최대 증가량이 30%에서 40%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote>\n<p><strong>개발자의 의견: </strong> 플레이어들이 개편 이전에 있던 기민한 정신 특성을 그리워한다는 의견을 들었습니다. 재사용 대기시간이 짧아 염동력을 더욱 창의적으로 사용할 수 있었기 때문이었죠. 개발팀도 이에 동의하고 잔혹한 여세에 이를 구현하려 했습니다. 알라라크의 모든 재사용 대기시간을 감소시키는 대신 특성에 맞게 염동력의 재사용 대기시간을 크게 감소시키기로 했습니다. 이제 이 특성을 선택하는 플레이어들은 위치를 선정하거나 아군에게서 적을 떼어주거나 적을 끌어올 수 있는 기회가 더욱 많아질 겁니다.</p>\n</blockquote>\n<h4>도살자</h4>\n<strong><img alt=\"Divider_Hero_Butcher_Crop.png\" data-id=\"17041692\" src=\"https://bnetcmsus-a.akamaihd.net/cms/gallery/84QA7187MS4C1552928294851.png\"/></strong>\n<p><strong><span class=\"pn-h\"><strong>기술</strong></span></strong></p>\n<ul>\n<li><strong><span class=\"pn-name\"><strong>도살자의 낙인 (W)</strong></span> </strong>\n<ul>\n<li>마나 소모량이 65에서 60으로 감소했습니다.</li>\n</ul>\n<strong> </strong></li>\n<li><strong><span class=\"pn-name\"><strong>무자비한 돌진 (E)</strong></span> </strong>\n<ul>\n<li>마나 소모량이 55에서 50으로 감소했습니다.</li>\n</ul>\n<strong> </strong></li>\n</ul>\n<h4>제라툴</h4>\n<strong><img alt=\"Divider_Hero_Zeratul_Crop.png\" data-id=\"17041692\" src=\"https://bnetcmsus-a.akamaihd.net/cms/gallery/XS58KB39MJ4V1552928298656.png\"/></strong>\n<p><strong><span class=\"pn-h\"><strong>기술</strong></span></strong></p>\n<ul>\n<li><strong><span class=\"pn-name\"><strong>특이점 폭발 (W)</strong></span> </strong>\n<ul>\n<li>마나 소모량이 80에서 70으로 감소했습니다.</li>\n</ul>\n<strong> </strong></li>\n</ul>",
+   "heroes": [
+    {
+     "name": "알라라크",
+     "heroId": "Alarak",
+     "heroIds": [
+      "Alarak"
+     ],
+     "changes": [
+      {
+       "name": "불화의 일격",
+       "key": "Q",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "마나 소모량이 45에서 55로 증가했습니다.",
+         "html": "마나 소모량이 45에서 55로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "잔혹한 여세",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "변경된 기능: 염동력의 마나 소모량이 30에서 20으로 감소합니다. 생명력이 75% 이상이면 염동력의 재사용 대기시간이 100% 더 빨리 감소합니다.",
+         "html": "변경된 기능: 염동력의 마나 소모량이 30에서 20으로 감소합니다. 생명력이 75% 이상이면 염동력의 재사용 대기시간이 100% 더 빨리 감소합니다.",
+         "added": false
+        },
+        {
+         "text": "이 효과가 활성화된 동안에는 염동력 버튼이 빛납니다.",
+         "html": "이 효과가 활성화된 동안에는 염동력 버튼이 빛납니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "군주의 칼날",
+       "key": "고유 능력",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "가학성 최대 증가량이 30%에서 40%로 증가했습니다.",
+         "html": "가학성 최대 증가량이 30%에서 40%로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<strong><img alt=\"Divider_Hero_Alarak_Crop.png\" data-id=\"17041692\" src=\"https://bnetcmsus-a.akamaihd.net/cms/gallery/F5OVGLJTTYTU1552928294327.png\"/></strong>\n<p><strong><span class=\"pn-h\"><strong>기술</strong></span></strong></p>\n<ul>\n<li><strong><span class=\"pn-name\"><strong>불화의 일격 (Q)</strong></span> </strong>\n<ul>\n<li>마나 소모량이 45에서 55로 증가했습니다.</li>\n</ul>\n<strong> </strong></li>\n</ul>\n<p><strong><span class=\"pn-h\"><strong>특성</strong></span></strong></p>\n<ul>\n<li><strong><span class=\"pn-name\"><strong>1레벨</strong></span> </strong>\n<ul>\n<li>잔혹한 여세 (W)\n<ul>\n<li>변경된 기능: 염동력의 마나 소모량이 30에서 20으로 감소합니다. 생명력이 75% 이상이면 염동력의 재사용 대기시간이 100% 더 빨리 감소합니다.</li>\n<li>이 효과가 활성화된 동안에는 염동력 버튼이 빛납니다.</li>\n</ul>\n<strong> </strong></li>\n</ul>\n<strong> </strong></li>\n<li><strong><span class=\"pn-name\"><strong>13레벨</strong></span> </strong>\n<ul>\n<li>군주의 칼날 (고유 능력)\n<ul>\n<li>가학성 최대 증가량이 30%에서 40%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote>\n<p><strong>개발자의 의견: </strong> 플레이어들이 개편 이전에 있던 기민한 정신 특성을 그리워한다는 의견을 들었습니다. 재사용 대기시간이 짧아 염동력을 더욱 창의적으로 사용할 수 있었기 때문이었죠. 개발팀도 이에 동의하고 잔혹한 여세에 이를 구현하려 했습니다. 알라라크의 모든 재사용 대기시간을 감소시키는 대신 특성에 맞게 염동력의 재사용 대기시간을 크게 감소시키기로 했습니다. 이제 이 특성을 선택하는 플레이어들은 위치를 선정하거나 아군에게서 적을 떼어주거나 적을 끌어올 수 있는 기회가 더욱 많아질 겁니다.</p>\n</blockquote>"
+    },
+    {
+     "name": "도살자",
+     "heroId": "Butcher",
+     "heroIds": [
+      "Butcher"
+     ],
+     "changes": [
+      {
+       "name": "도살자의 낙인",
+       "key": "W",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "마나 소모량이 65에서 60으로 감소했습니다.",
+         "html": "마나 소모량이 65에서 60으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "무자비한 돌진",
+       "key": "E",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "마나 소모량이 55에서 50으로 감소했습니다.",
+         "html": "마나 소모량이 55에서 50으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<strong><img alt=\"Divider_Hero_Butcher_Crop.png\" data-id=\"17041692\" src=\"https://bnetcmsus-a.akamaihd.net/cms/gallery/84QA7187MS4C1552928294851.png\"/></strong>\n<p><strong><span class=\"pn-h\"><strong>기술</strong></span></strong></p>\n<ul>\n<li><strong><span class=\"pn-name\"><strong>도살자의 낙인 (W)</strong></span> </strong>\n<ul>\n<li>마나 소모량이 65에서 60으로 감소했습니다.</li>\n</ul>\n<strong> </strong></li>\n<li><strong><span class=\"pn-name\"><strong>무자비한 돌진 (E)</strong></span> </strong>\n<ul>\n<li>마나 소모량이 55에서 50으로 감소했습니다.</li>\n</ul>\n<strong> </strong></li>\n</ul>"
+    },
+    {
+     "name": "제라툴",
+     "heroId": "Zeratul",
+     "heroIds": [
+      "Zeratul"
+     ],
+     "changes": [
+      {
+       "name": "특이점 폭발",
+       "key": "W",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "마나 소모량이 80에서 70으로 감소했습니다.",
+         "html": "마나 소모량이 80에서 70으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<strong><img alt=\"Divider_Hero_Zeratul_Crop.png\" data-id=\"17041692\" src=\"https://bnetcmsus-a.akamaihd.net/cms/gallery/XS58KB39MJ4V1552928298656.png\"/></strong>\n<p><strong><span class=\"pn-h\"><strong>기술</strong></span></strong></p>\n<ul>\n<li><strong><span class=\"pn-name\"><strong>특이점 폭발 (W)</strong></span> </strong>\n<ul>\n<li>마나 소모량이 80에서 70으로 감소했습니다.</li>\n</ul>\n<strong> </strong></li>\n</ul>"
+    }
+   ]
+  },
+  {
+   "name": "원거리 암살자",
+   "key": "role_ranged",
+   "html": "<h4>아즈모단</h4>\n<strong><img alt=\"Divider_Hero_Azmodan_Crop.png\" data-id=\"17041692\" src=\"https://bnetcmsus-a.akamaihd.net/cms/gallery/1G1XWL4SZJLK1552928294716.png\"/></strong>\n<p><strong><span class=\"pn-h\"><strong>기술</strong></span></strong></p>\n<ul>\n<li><strong><span class=\"pn-name\"><strong>파멸의 구슬 (Q)</strong></span> </strong>\n<ul>\n<li>마나 소모량이 60에서 70으로 증가했습니다.</li>\n</ul>\n<strong> </strong></li>\n<li><strong><span class=\"pn-name\"><strong>악마 전사 소환 (W)</strong></span> </strong>\n<ul>\n<li>마나 소모량이 30에서 25로 감소했습니다.</li>\n</ul>\n<strong> </strong></li>\n<li><strong><span class=\"pn-name\"><strong>모두 다 불타리라 (E)</strong></span> </strong>\n<ul>\n<li>마나 소모량이 40에서 30으로 감소했습니다.</li>\n</ul>\n<strong> </strong></li>\n</ul>\n<p><strong><span class=\"pn-h\"><strong>특성</strong></span></strong></p>\n<ul>\n<li><strong><span class=\"pn-name\"><strong>7레벨</strong></span> </strong>\n<ul>\n<li>혼돈의 미학 (Q)\n<ul>\n<li>돌려받는 마나가 30에서 40으로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote>\n<p><strong>개발자의 의견: </strong>파멸의 구슬 외의 특성 조합을 발전시키기 위해 아즈모단의 마나 소모량을 여러 방면에서 변경했습니다. 우선 파멸의 구슬의 마나 소모량을 증가시킨 대신 악마 전사 소환이나 모두 다 불타리라의 마나 소모량은 감소시켰습니다. 이로써 아즈모단은 게임 초반에 더욱 신중하게 파멸의 구슬을 사용해야 되겠지만 다른 기술들은 좀 더 자유롭게 사용할 수 있을 겁니다. 이런 변화는 게임 후반부에서도 지옥의 균열이나 죄악의 손아귀 등의 특성과 좋은 조합을 이룰 겁니다.</p>\n</blockquote>\n<h4>크로미</h4>\n<strong><img alt=\"Divider_Hero_Chromie_Crop.png\" data-id=\"17041692\" src=\"https://bnetcmsus-a.akamaihd.net/cms/gallery/69EVBCB14J4S1552928295044.png\"/></strong>\n<p><strong class=\"pn-h\">능력치</strong></p>\n<ul>\n<li>일반 공격력이 73에서 82로 증가했습니다.</li>\n</ul>\n<p><strong><span class=\"pn-h\"><strong>기술</strong></span></strong></p>\n<ul>\n<li><strong><span class=\"pn-name\"><strong>모래 강타 (Q)</strong></span> </strong> <strong> </strong>\n<ul>\n<li>공격력이 280에서 315로 증가했습니다.</li>\n<li>환영의 공격력이 크로미의 공격력의 50%에서 40%로 감소했습니다.</li>\n</ul>\n</li>\n<li><strong><span class=\"pn-name\"><strong>용의 숨결 (W)</strong></span> </strong> <strong> </strong>\n<ul>\n<li>공격력이 195에서 204로 증가했습니다.</li>\n<li>재사용 대기시간이 15초에서 14초로 감소했습니다.</li>\n<li>마나 소모량이 75에서 65로 감소했습니다.</li>\n</ul>\n</li>\n<li><strong><span class=\"pn-name\"><strong>시간의 덫 (E)</strong></span> </strong> <strong> </strong>\n<ul>\n<li>마나 소모량이 30에서 20으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong><span class=\"pn-h\"><strong>특성</strong></span></strong></p>\n<ul>\n<li><strong><span class=\"pn-name\"><strong>1레벨</strong></span> </strong>\n<ul>\n<li>깊은 숨결 (W)\n<ul>\n<li>공격력 증가량이 2(최대 50)에서 3(최대 60)으로 증가했습니다.</li>\n<li>퀘스트를 완료했을 때 증가하는 공격력이 50에서 60으로 증가했습니다.</li>\n</ul>\n</li>\n<li>시간여행자의 집념 (사용 효과)\n<ul>\n<li>더는 퀘스트를 완료해도 마나 재생량이 증가하지 않습니다.</li>\n<li>기술 위력 증가량이 5%에서 10%로 증가했습니다.</li>\n</ul>\n<strong> </strong></li>\n</ul>\n<strong> </strong></li>\n<li><strong><span class=\"pn-name\"><strong>2레벨</strong></span> </strong>\n<ul>\n<li>안돌할의 변형물 (E)\n<ul>\n<li>재사용 대기시간 감소량이 5초에서 8초로 증가했습니다.</li>\n</ul>\n</li>\n<li>만성적인 현상 (E)\n<ul>\n<li>이동 속도 감소 효과가 25%에서 30%로 증가했습니다.</li>\n</ul>\n<strong> </strong></li>\n</ul>\n<strong> </strong></li>\n<li><strong><span class=\"pn-name\"><strong>8레벨</strong></span> </strong>\n<ul>\n<li>감속의 모래 (R1)\n<ul>\n<li>마나 소모량이 초당 4에서 초당 3으로 감소했습니다.</li>\n</ul>\n<strong> </strong></li>\n</ul>\n<strong> </strong></li>\n<li><strong><span class=\"pn-name\"><strong>11레벨</strong></span> </strong>\n<ul>\n<li>달려라 노움! (Q)\n<ul>\n<li>더는 마나 재생량을 증가시키지 않습니다.</li>\n</ul>\n</li>\n<li>여기저기 (사용 효과)\n<ul>\n<li>사거리가 9에서 11로 증가했습니다.</li>\n<li>순간이동할 수 있는 환영 주위 반경이 3에서 4로 증가했습니다.</li>\n<li>재사용 대기시간이 30초에서 25초로 감소했습니다.</li>\n</ul>\n<strong> </strong></li>\n</ul>\n<strong> </strong></li>\n<li><strong><span class=\"pn-name\"><strong>14레벨</strong></span> </strong>\n<ul>\n<li>흐르는 모래 (Q)\n<ul>\n<li>영웅 적중 시 증가하는 기술 위력이 8%에서 5%로 감소했습니다.</li>\n<li>최대 기술 위력 증가량이 40%에서 50%로 증가했습니다.</li>\n<li>지속 시간이 10초에서 8초로 감소했습니다.</li>\n</ul>\n</li>\n<li>빨리감기 (Q)\n<ul>\n<li>모래 강타의 재사용 대기시간이 0.75초에서 0.5초로 감소했습니다.</li>\n<li>효과가 발동시키는 데 필요한 이동 거리가 기본 사거리의 70%에서 50%로 감소했습니다.</li>\n</ul>\n</li>\n<li>양자 급가속 (사용 효과)\n<ul>\n<li>재사용 대기시간이 30초에서 45초로 증가했습니다.</li>\n<li>지속 시간이 10초에서 8초로 감소했습니다.</li>\n<li>모래 강타가 적 영웅에게 적중할 때마다 양자 급가속의 재사용 대기시간이 3초 감소합니다.</li>\n</ul>\n<strong> </strong></li>\n</ul>\n<strong> </strong></li>\n<li><strong><span class=\"pn-name\"><strong>18레벨</strong></span> </strong>\n<ul>\n<li>모래의 매듭 (R1)\n<ul>\n<li>기술 방어력 감소량이 0.25초당 2에서 5로 증가했습니다. (최대치는 여전히 -30입니다.)</li>\n</ul>\n</li>\n<li>이중 굴레 (R2)\n<ul>\n<li>재사용 대기시간 감소량이 500%에서 700%로 증가했습니다.</li>\n</ul>\n</li>\n<li>청동용군단의 축복 (사용 효과)\n<ul>\n<li>이제 90초의 재사용 대기시간이 발생하는 사용 효과 특성입니다.</li>\n<li>8초 동안 지속됩니다.</li>\n<li>일반 기술 재사용 대기시간 감소량이 30%에서 35%로 증가했습니다.</li>\n<li>이동 속도 증가량이 10%에서 20%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote>\n<p><strong>개발자의 의견: </strong>크로미의 개편은 전체적으로 만족스럽지만 조금 더 상향할 여지는 있다고 생각합니다. (플레이어들이 새로운 크로미에 적응할수록 승률이 더 오를 것을 감안해도 말이죠.) 우선은 기본 능력을 살짝 향상시키며 몇 가지 특성들을 손봤습니다. 또한 청동용군단의 축복을 사용 효과로 바꿔 상대편이 이를 대처할 수 있게 변경했습니다. 크로미는 물론이고 커뮤니티 또한 이 특성이 하향될 것을 예상하고 있었기에 이왕이면 빨리 이를 적용하고 싶었습니다.</p>\n</blockquote>\n<h4>그레이메인</h4>\n<strong><img alt=\"Divider_Hero_greymane_Crop.png\" data-id=\"17041692\" src=\"https://bnetcmsus-a.akamaihd.net/cms/gallery/CP0DHCFKZHHH1552928295579.png\"/></strong>\n<p><strong><span class=\"pn-h\"><strong>기술</strong></span></strong></p>\n<ul>\n<li><strong><span class=\"pn-name\"><strong>잔혹한 할퀴기 (Q)</strong></span> </strong>\n<ul>\n<li>마나 소모량이 30에서 25로 감소했습니다.</li>\n</ul>\n<strong> </strong></li>\n</ul>\n<h4>한조</h4>\n<strong><img alt=\"Divider_Hero_hanzo_Crop.png\" data-id=\"17041692\" src=\"https://bnetcmsus-a.akamaihd.net/cms/gallery/D3M22Z8CXWB41552928295678.png\"/></strong>\n<p><strong><span class=\"pn-h\"><strong>기술</strong></span></strong></p>\n<ul>\n<li><strong><span class=\"pn-name\"><strong>폭풍활 (Q)</strong></span> </strong>\n<ul>\n<li>마나 소모량이 15에서 20으로 증가했습니다.</li>\n</ul>\n<strong> </strong></li>\n<li><strong><span class=\"pn-name\"><strong>갈래 화살 (W)</strong></span> </strong>\n<ul>\n<li>마나 소모량이 40에서 50으로 증가했습니다.</li>\n</ul>\n<strong> </strong></li>\n</ul>\n<h4>리밍</h4>\n<strong><img alt=\"Divider_Hero_LiMing_Crop.png\" data-id=\"17041692\" src=\"https://bnetcmsus-a.akamaihd.net/cms/gallery/MA8Q4Y8O8Y641552928296136.png\"/></strong>\n<p><strong><span class=\"pn-h\"><strong>기술</strong></span></strong></p>\n<ul>\n<li><strong><span class=\"pn-name\"><strong>구름밟이 (E)</strong></span> </strong>\n<ul>\n<li>추가된 기능: 순간이동이 마나를 소모하지 않습니다.</li>\n</ul>\n</li>\n</ul>\n<blockquote>\n<p><strong>개발자의 의견: </strong>이러면 어때요?</p>\n</blockquote>\n<h4>루나라</h4>\n<strong><img alt=\"Divider_Hero_Lunara_Crop.png\" data-id=\"17041692\" src=\"https://bnetcmsus-a.akamaihd.net/cms/gallery/1U37XPUPQZR01552928296439.png\"/></strong>\n<p><strong><span class=\"pn-h\"><strong>기술</strong></span></strong></p>\n<ul>\n<li><strong><span class=\"pn-name\"><strong>마비 포자 (W)</strong></span> </strong>\n<ul>\n<li>마나 소모량이 40에서 50으로 증가했습니다.</li>\n</ul>\n<strong> </strong></li>\n</ul>\n<h4>레이너</h4>\n<strong><img alt=\"Divider_Hero_Raynor_Crop.png\" data-id=\"17041692\" src=\"https://bnetcmsus-a.akamaihd.net/cms/gallery/1O75ANOM5QWH1552928297454.png\"/></strong>\n<p><strong><span class=\"pn-h\"><strong>기술</strong></span></strong></p>\n<ul>\n<li><strong><span class=\"pn-name\"><strong>천공 탄환 (Q)</strong></span> </strong>\n<ul>\n<li>마나 소모량이 50에서 65로 증가했습니다.</li>\n</ul>\n<strong> </strong></li>\n<li><strong><span class=\"pn-name\"><strong>격려 (W)</strong></span> </strong>\n<ul>\n<li>마나 소모량이 40에서 50으로 증가했습니다.</li>\n</ul>\n<strong> </strong></li>\n</ul>\n<h4>해머 상사</h4>\n<strong><img alt=\"Divider_Hero_SgtHammer_Crop.png\" data-id=\"17041692\" src=\"https://bnetcmsus-a.akamaihd.net/cms/gallery/UZC5UQQ8GCSZ1552928297718.png\"/></strong>\n<p><strong><span class=\"pn-h\"><strong>기술</strong></span></strong></p>\n<ul>\n<li><strong><span class=\"pn-name\"><strong>거미 지뢰 (Q)</strong></span> </strong>\n<ul>\n<li>마나 소모량이 45에서 50으로 증가했습니다.</li>\n</ul>\n<strong> </strong></li>\n<li><strong><span class=\"pn-name\"><strong>충격포 (W)</strong></span> </strong>\n<ul>\n<li>마나 소모량이 60에서 80으로 증가했습니다.</li>\n</ul>\n<strong> </strong></li>\n<li><strong><span class=\"pn-name\"><strong>신소재 강철 장갑 (E)</strong></span> </strong>\n<ul>\n<li>마나 소모량이 30에서 60으로 증가했습니다.</li>\n</ul>\n<strong> </strong></li>\n</ul>\n<h4>실바나스</h4>\n<strong><img alt=\"Divider_Hero_Sylvanas_Crop.png\" data-id=\"17041692\" src=\"https://bnetcmsus-a.akamaihd.net/cms/gallery/2RBYI4DOH32H1552928298007.png\"/></strong>\n<p><strong><span class=\"pn-h\"><strong>특성</strong></span></strong></p>\n<ul>\n<li><strong><span class=\"pn-name\"><strong>4레벨</strong></span> </strong>\n<ul>\n<li>빙의 (사용 효과)\n<ul>\n<li>재사용 대기시간이 8초에서 12초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote>\n<p><strong>개발자의 의견: </strong>빙의는 실바나스에게 상당한 공격로 압박 능력을 부여하고 해당 특성 단계의 다른 특성들에 비해도 큰 효과를 내고 있습니다. 이를 해결하기 위해 재사용 대기시간을 증가시켜 빙의를 더욱 신중하게 사용해야 하도록 변경했습니다.</p>\n</blockquote>\n<h4>줄진</h4>\n<strong><img alt=\"Divider_Hero_zuljin_Crop.png\" data-id=\"17041692\" src=\"https://bnetcmsus-a.akamaihd.net/cms/gallery/KYT6P0GTFANJ1552928298696.png\"/></strong>\n<p><strong><span class=\"pn-h\"><strong>기술</strong></span></strong></p>\n<ul>\n<li><strong><span class=\"pn-name\"><strong>잔혹한 투척 (Q)</strong></span> </strong>\n<ul>\n<li>마나 소모량이 50에서 40으로 감소했습니다.</li>\n</ul>\n<strong> </strong></li>\n</ul>",
+   "heroes": [
+    {
+     "name": "아즈모단",
+     "heroId": "Azmodan",
+     "heroIds": [
+      "Azmodan"
+     ],
+     "changes": [
+      {
+       "name": "파멸의 구슬",
+       "key": "Q",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "마나 소모량이 60에서 70으로 증가했습니다.",
+         "html": "마나 소모량이 60에서 70으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "악마 전사 소환",
+       "key": "W",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "마나 소모량이 30에서 25로 감소했습니다.",
+         "html": "마나 소모량이 30에서 25로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "모두 다 불타리라",
+       "key": "E",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "마나 소모량이 40에서 30으로 감소했습니다.",
+         "html": "마나 소모량이 40에서 30으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "혼돈의 미학",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "돌려받는 마나가 30에서 40으로 증가했습니다.",
+         "html": "돌려받는 마나가 30에서 40으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<strong><img alt=\"Divider_Hero_Azmodan_Crop.png\" data-id=\"17041692\" src=\"https://bnetcmsus-a.akamaihd.net/cms/gallery/1G1XWL4SZJLK1552928294716.png\"/></strong>\n<p><strong><span class=\"pn-h\"><strong>기술</strong></span></strong></p>\n<ul>\n<li><strong><span class=\"pn-name\"><strong>파멸의 구슬 (Q)</strong></span> </strong>\n<ul>\n<li>마나 소모량이 60에서 70으로 증가했습니다.</li>\n</ul>\n<strong> </strong></li>\n<li><strong><span class=\"pn-name\"><strong>악마 전사 소환 (W)</strong></span> </strong>\n<ul>\n<li>마나 소모량이 30에서 25로 감소했습니다.</li>\n</ul>\n<strong> </strong></li>\n<li><strong><span class=\"pn-name\"><strong>모두 다 불타리라 (E)</strong></span> </strong>\n<ul>\n<li>마나 소모량이 40에서 30으로 감소했습니다.</li>\n</ul>\n<strong> </strong></li>\n</ul>\n<p><strong><span class=\"pn-h\"><strong>특성</strong></span></strong></p>\n<ul>\n<li><strong><span class=\"pn-name\"><strong>7레벨</strong></span> </strong>\n<ul>\n<li>혼돈의 미학 (Q)\n<ul>\n<li>돌려받는 마나가 30에서 40으로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote>\n<p><strong>개발자의 의견: </strong>파멸의 구슬 외의 특성 조합을 발전시키기 위해 아즈모단의 마나 소모량을 여러 방면에서 변경했습니다. 우선 파멸의 구슬의 마나 소모량을 증가시킨 대신 악마 전사 소환이나 모두 다 불타리라의 마나 소모량은 감소시켰습니다. 이로써 아즈모단은 게임 초반에 더욱 신중하게 파멸의 구슬을 사용해야 되겠지만 다른 기술들은 좀 더 자유롭게 사용할 수 있을 겁니다. 이런 변화는 게임 후반부에서도 지옥의 균열이나 죄악의 손아귀 등의 특성과 좋은 조합을 이룰 겁니다.</p>\n</blockquote>"
+    },
+    {
+     "name": "크로미",
+     "heroId": "Chromie",
+     "heroIds": [
+      "Chromie"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "일반 공격력이 73에서 82로 증가했습니다.",
+         "html": "일반 공격력이 73에서 82로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "모래 강타",
+       "key": "Q",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "공격력이 280에서 315로 증가했습니다.",
+         "html": "공격력이 280에서 315로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "환영의 공격력이 크로미의 공격력의 50%에서 40%로 감소했습니다.",
+         "html": "환영의 공격력이 크로미의 공격력의 50%에서 40%로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "용의 숨결",
+       "key": "W",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "공격력이 195에서 204로 증가했습니다.",
+         "html": "공격력이 195에서 204로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "재사용 대기시간이 15초에서 14초로 감소했습니다.",
+         "html": "재사용 대기시간이 15초에서 14초로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "마나 소모량이 75에서 65로 감소했습니다.",
+         "html": "마나 소모량이 75에서 65로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "시간의 덫",
+       "key": "E",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "마나 소모량이 30에서 20으로 감소했습니다.",
+         "html": "마나 소모량이 30에서 20으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "깊은 숨결",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "공격력 증가량이 2(최대 50)에서 3(최대 60)으로 증가했습니다.",
+         "html": "공격력 증가량이 2(최대 50)에서 3(최대 60)으로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "퀘스트를 완료했을 때 증가하는 공격력이 50에서 60으로 증가했습니다.",
+         "html": "퀘스트를 완료했을 때 증가하는 공격력이 50에서 60으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "시간여행자의 집념",
+       "key": "사용 효과",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "더는 퀘스트를 완료해도 마나 재생량이 증가하지 않습니다.",
+         "html": "더는 퀘스트를 완료해도 마나 재생량이 증가하지 않습니다.",
+         "added": false
+        },
+        {
+         "text": "기술 위력 증가량이 5%에서 10%로 증가했습니다.",
+         "html": "기술 위력 증가량이 5%에서 10%로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "안돌할의 변형물",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 2,
+       "lines": [
+        {
+         "text": "재사용 대기시간 감소량이 5초에서 8초로 증가했습니다.",
+         "html": "재사용 대기시간 감소량이 5초에서 8초로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "만성적인 현상",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 2,
+       "lines": [
+        {
+         "text": "이동 속도 감소 효과가 25%에서 30%로 증가했습니다.",
+         "html": "이동 속도 감소 효과가 25%에서 30%로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "감속의 모래",
+       "key": "R1",
+       "new": false,
+       "group": "talent",
+       "level": 8,
+       "lines": [
+        {
+         "text": "마나 소모량이 초당 4에서 초당 3으로 감소했습니다.",
+         "html": "마나 소모량이 초당 4에서 초당 3으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "달려라 노움!",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 11,
+       "lines": [
+        {
+         "text": "더는 마나 재생량을 증가시키지 않습니다.",
+         "html": "더는 마나 재생량을 증가시키지 않습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "여기저기",
+       "key": "사용 효과",
+       "new": false,
+       "group": "talent",
+       "level": 11,
+       "lines": [
+        {
+         "text": "사거리가 9에서 11로 증가했습니다.",
+         "html": "사거리가 9에서 11로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "순간이동할 수 있는 환영 주위 반경이 3에서 4로 증가했습니다.",
+         "html": "순간이동할 수 있는 환영 주위 반경이 3에서 4로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "재사용 대기시간이 30초에서 25초로 감소했습니다.",
+         "html": "재사용 대기시간이 30초에서 25초로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "흐르는 모래",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 14,
+       "lines": [
+        {
+         "text": "영웅 적중 시 증가하는 기술 위력이 8%에서 5%로 감소했습니다.",
+         "html": "영웅 적중 시 증가하는 기술 위력이 8%에서 5%로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "최대 기술 위력 증가량이 40%에서 50%로 증가했습니다.",
+         "html": "최대 기술 위력 증가량이 40%에서 50%로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "지속 시간이 10초에서 8초로 감소했습니다.",
+         "html": "지속 시간이 10초에서 8초로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "빨리감기",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 14,
+       "lines": [
+        {
+         "text": "모래 강타의 재사용 대기시간이 0.75초에서 0.5초로 감소했습니다.",
+         "html": "모래 강타의 재사용 대기시간이 0.75초에서 0.5초로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "효과가 발동시키는 데 필요한 이동 거리가 기본 사거리의 70%에서 50%로 감소했습니다.",
+         "html": "효과가 발동시키는 데 필요한 이동 거리가 기본 사거리의 70%에서 50%로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "양자 급가속",
+       "key": "사용 효과",
+       "new": false,
+       "group": "talent",
+       "level": 14,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 30초에서 45초로 증가했습니다.",
+         "html": "재사용 대기시간이 30초에서 45초로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "지속 시간이 10초에서 8초로 감소했습니다.",
+         "html": "지속 시간이 10초에서 8초로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "모래 강타가 적 영웅에게 적중할 때마다 양자 급가속의 재사용 대기시간이 3초 감소합니다.",
+         "html": "모래 강타가 적 영웅에게 적중할 때마다 양자 급가속의 재사용 대기시간이 3초 감소합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "모래의 매듭",
+       "key": "R1",
+       "new": false,
+       "group": "talent",
+       "level": 18,
+       "lines": [
+        {
+         "text": "기술 방어력 감소량이 0.25초당 2에서 5로 증가했습니다. (최대치는 여전히 -30입니다.)",
+         "html": "기술 방어력 감소량이 0.25초당 2에서 5로 증가했습니다. (최대치는 여전히 -30입니다.)",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "이중 굴레",
+       "key": "R2",
+       "new": false,
+       "group": "talent",
+       "level": 18,
+       "lines": [
+        {
+         "text": "재사용 대기시간 감소량이 500%에서 700%로 증가했습니다.",
+         "html": "재사용 대기시간 감소량이 500%에서 700%로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "청동용군단의 축복",
+       "key": "사용 효과",
+       "new": false,
+       "group": "talent",
+       "level": 18,
+       "lines": [
+        {
+         "text": "이제 90초의 재사용 대기시간이 발생하는 사용 효과 특성입니다.",
+         "html": "이제 90초의 재사용 대기시간이 발생하는 사용 효과 특성입니다.",
+         "added": false
+        },
+        {
+         "text": "8초 동안 지속됩니다.",
+         "html": "8초 동안 지속됩니다.",
+         "added": false
+        },
+        {
+         "text": "일반 기술 재사용 대기시간 감소량이 30%에서 35%로 증가했습니다.",
+         "html": "일반 기술 재사용 대기시간 감소량이 30%에서 35%로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "이동 속도 증가량이 10%에서 20%로 증가했습니다.",
+         "html": "이동 속도 증가량이 10%에서 20%로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<strong><img alt=\"Divider_Hero_Chromie_Crop.png\" data-id=\"17041692\" src=\"https://bnetcmsus-a.akamaihd.net/cms/gallery/69EVBCB14J4S1552928295044.png\"/></strong>\n<p><strong class=\"pn-h\">능력치</strong></p>\n<ul>\n<li>일반 공격력이 73에서 82로 증가했습니다.</li>\n</ul>\n<p><strong><span class=\"pn-h\"><strong>기술</strong></span></strong></p>\n<ul>\n<li><strong><span class=\"pn-name\"><strong>모래 강타 (Q)</strong></span> </strong> <strong> </strong>\n<ul>\n<li>공격력이 280에서 315로 증가했습니다.</li>\n<li>환영의 공격력이 크로미의 공격력의 50%에서 40%로 감소했습니다.</li>\n</ul>\n</li>\n<li><strong><span class=\"pn-name\"><strong>용의 숨결 (W)</strong></span> </strong> <strong> </strong>\n<ul>\n<li>공격력이 195에서 204로 증가했습니다.</li>\n<li>재사용 대기시간이 15초에서 14초로 감소했습니다.</li>\n<li>마나 소모량이 75에서 65로 감소했습니다.</li>\n</ul>\n</li>\n<li><strong><span class=\"pn-name\"><strong>시간의 덫 (E)</strong></span> </strong> <strong> </strong>\n<ul>\n<li>마나 소모량이 30에서 20으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong><span class=\"pn-h\"><strong>특성</strong></span></strong></p>\n<ul>\n<li><strong><span class=\"pn-name\"><strong>1레벨</strong></span> </strong>\n<ul>\n<li>깊은 숨결 (W)\n<ul>\n<li>공격력 증가량이 2(최대 50)에서 3(최대 60)으로 증가했습니다.</li>\n<li>퀘스트를 완료했을 때 증가하는 공격력이 50에서 60으로 증가했습니다.</li>\n</ul>\n</li>\n<li>시간여행자의 집념 (사용 효과)\n<ul>\n<li>더는 퀘스트를 완료해도 마나 재생량이 증가하지 않습니다.</li>\n<li>기술 위력 증가량이 5%에서 10%로 증가했습니다.</li>\n</ul>\n<strong> </strong></li>\n</ul>\n<strong> </strong></li>\n<li><strong><span class=\"pn-name\"><strong>2레벨</strong></span> </strong>\n<ul>\n<li>안돌할의 변형물 (E)\n<ul>\n<li>재사용 대기시간 감소량이 5초에서 8초로 증가했습니다.</li>\n</ul>\n</li>\n<li>만성적인 현상 (E)\n<ul>\n<li>이동 속도 감소 효과가 25%에서 30%로 증가했습니다.</li>\n</ul>\n<strong> </strong></li>\n</ul>\n<strong> </strong></li>\n<li><strong><span class=\"pn-name\"><strong>8레벨</strong></span> </strong>\n<ul>\n<li>감속의 모래 (R1)\n<ul>\n<li>마나 소모량이 초당 4에서 초당 3으로 감소했습니다.</li>\n</ul>\n<strong> </strong></li>\n</ul>\n<strong> </strong></li>\n<li><strong><span class=\"pn-name\"><strong>11레벨</strong></span> </strong>\n<ul>\n<li>달려라 노움! (Q)\n<ul>\n<li>더는 마나 재생량을 증가시키지 않습니다.</li>\n</ul>\n</li>\n<li>여기저기 (사용 효과)\n<ul>\n<li>사거리가 9에서 11로 증가했습니다.</li>\n<li>순간이동할 수 있는 환영 주위 반경이 3에서 4로 증가했습니다.</li>\n<li>재사용 대기시간이 30초에서 25초로 감소했습니다.</li>\n</ul>\n<strong> </strong></li>\n</ul>\n<strong> </strong></li>\n<li><strong><span class=\"pn-name\"><strong>14레벨</strong></span> </strong>\n<ul>\n<li>흐르는 모래 (Q)\n<ul>\n<li>영웅 적중 시 증가하는 기술 위력이 8%에서 5%로 감소했습니다.</li>\n<li>최대 기술 위력 증가량이 40%에서 50%로 증가했습니다.</li>\n<li>지속 시간이 10초에서 8초로 감소했습니다.</li>\n</ul>\n</li>\n<li>빨리감기 (Q)\n<ul>\n<li>모래 강타의 재사용 대기시간이 0.75초에서 0.5초로 감소했습니다.</li>\n<li>효과가 발동시키는 데 필요한 이동 거리가 기본 사거리의 70%에서 50%로 감소했습니다.</li>\n</ul>\n</li>\n<li>양자 급가속 (사용 효과)\n<ul>\n<li>재사용 대기시간이 30초에서 45초로 증가했습니다.</li>\n<li>지속 시간이 10초에서 8초로 감소했습니다.</li>\n<li>모래 강타가 적 영웅에게 적중할 때마다 양자 급가속의 재사용 대기시간이 3초 감소합니다.</li>\n</ul>\n<strong> </strong></li>\n</ul>\n<strong> </strong></li>\n<li><strong><span class=\"pn-name\"><strong>18레벨</strong></span> </strong>\n<ul>\n<li>모래의 매듭 (R1)\n<ul>\n<li>기술 방어력 감소량이 0.25초당 2에서 5로 증가했습니다. (최대치는 여전히 -30입니다.)</li>\n</ul>\n</li>\n<li>이중 굴레 (R2)\n<ul>\n<li>재사용 대기시간 감소량이 500%에서 700%로 증가했습니다.</li>\n</ul>\n</li>\n<li>청동용군단의 축복 (사용 효과)\n<ul>\n<li>이제 90초의 재사용 대기시간이 발생하는 사용 효과 특성입니다.</li>\n<li>8초 동안 지속됩니다.</li>\n<li>일반 기술 재사용 대기시간 감소량이 30%에서 35%로 증가했습니다.</li>\n<li>이동 속도 증가량이 10%에서 20%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote>\n<p><strong>개발자의 의견: </strong>크로미의 개편은 전체적으로 만족스럽지만 조금 더 상향할 여지는 있다고 생각합니다. (플레이어들이 새로운 크로미에 적응할수록 승률이 더 오를 것을 감안해도 말이죠.) 우선은 기본 능력을 살짝 향상시키며 몇 가지 특성들을 손봤습니다. 또한 청동용군단의 축복을 사용 효과로 바꿔 상대편이 이를 대처할 수 있게 변경했습니다. 크로미는 물론이고 커뮤니티 또한 이 특성이 하향될 것을 예상하고 있었기에 이왕이면 빨리 이를 적용하고 싶었습니다.</p>\n</blockquote>"
+    },
+    {
+     "name": "그레이메인",
+     "heroId": "Greymane",
+     "heroIds": [
+      "Greymane"
+     ],
+     "changes": [
+      {
+       "name": "잔혹한 할퀴기",
+       "key": "Q",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "마나 소모량이 30에서 25로 감소했습니다.",
+         "html": "마나 소모량이 30에서 25로 감소했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<strong><img alt=\"Divider_Hero_greymane_Crop.png\" data-id=\"17041692\" src=\"https://bnetcmsus-a.akamaihd.net/cms/gallery/CP0DHCFKZHHH1552928295579.png\"/></strong>\n<p><strong><span class=\"pn-h\"><strong>기술</strong></span></strong></p>\n<ul>\n<li><strong><span class=\"pn-name\"><strong>잔혹한 할퀴기 (Q)</strong></span> </strong>\n<ul>\n<li>마나 소모량이 30에서 25로 감소했습니다.</li>\n</ul>\n<strong> </strong></li>\n</ul>"
+    },
+    {
+     "name": "한조",
+     "heroId": "Hanzo",
+     "heroIds": [
+      "Hanzo"
+     ],
+     "changes": [
+      {
+       "name": "폭풍활",
+       "key": "Q",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "마나 소모량이 15에서 20으로 증가했습니다.",
+         "html": "마나 소모량이 15에서 20으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "갈래 화살",
+       "key": "W",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "마나 소모량이 40에서 50으로 증가했습니다.",
+         "html": "마나 소모량이 40에서 50으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<strong><img alt=\"Divider_Hero_hanzo_Crop.png\" data-id=\"17041692\" src=\"https://bnetcmsus-a.akamaihd.net/cms/gallery/D3M22Z8CXWB41552928295678.png\"/></strong>\n<p><strong><span class=\"pn-h\"><strong>기술</strong></span></strong></p>\n<ul>\n<li><strong><span class=\"pn-name\"><strong>폭풍활 (Q)</strong></span> </strong>\n<ul>\n<li>마나 소모량이 15에서 20으로 증가했습니다.</li>\n</ul>\n<strong> </strong></li>\n<li><strong><span class=\"pn-name\"><strong>갈래 화살 (W)</strong></span> </strong>\n<ul>\n<li>마나 소모량이 40에서 50으로 증가했습니다.</li>\n</ul>\n<strong> </strong></li>\n</ul>"
+    },
+    {
+     "name": "리밍",
+     "heroId": "Wizard",
+     "heroIds": [
+      "Wizard"
+     ],
+     "changes": [
+      {
+       "name": "구름밟이",
+       "key": "E",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "추가된 기능: 순간이동이 마나를 소모하지 않습니다.",
+         "html": "추가된 기능: 순간이동이 마나를 소모하지 않습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<strong><img alt=\"Divider_Hero_LiMing_Crop.png\" data-id=\"17041692\" src=\"https://bnetcmsus-a.akamaihd.net/cms/gallery/MA8Q4Y8O8Y641552928296136.png\"/></strong>\n<p><strong><span class=\"pn-h\"><strong>기술</strong></span></strong></p>\n<ul>\n<li><strong><span class=\"pn-name\"><strong>구름밟이 (E)</strong></span> </strong>\n<ul>\n<li>추가된 기능: 순간이동이 마나를 소모하지 않습니다.</li>\n</ul>\n</li>\n</ul>\n<blockquote>\n<p><strong>개발자의 의견: </strong>이러면 어때요?</p>\n</blockquote>"
+    },
+    {
+     "name": "루나라",
+     "heroId": "Dryad",
+     "heroIds": [
+      "Dryad"
+     ],
+     "changes": [
+      {
+       "name": "마비 포자",
+       "key": "W",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "마나 소모량이 40에서 50으로 증가했습니다.",
+         "html": "마나 소모량이 40에서 50으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<strong><img alt=\"Divider_Hero_Lunara_Crop.png\" data-id=\"17041692\" src=\"https://bnetcmsus-a.akamaihd.net/cms/gallery/1U37XPUPQZR01552928296439.png\"/></strong>\n<p><strong><span class=\"pn-h\"><strong>기술</strong></span></strong></p>\n<ul>\n<li><strong><span class=\"pn-name\"><strong>마비 포자 (W)</strong></span> </strong>\n<ul>\n<li>마나 소모량이 40에서 50으로 증가했습니다.</li>\n</ul>\n<strong> </strong></li>\n</ul>"
+    },
+    {
+     "name": "레이너",
+     "heroId": "Raynor",
+     "heroIds": [
+      "Raynor"
+     ],
+     "changes": [
+      {
+       "name": "천공 탄환",
+       "key": "Q",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "마나 소모량이 50에서 65로 증가했습니다.",
+         "html": "마나 소모량이 50에서 65로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "격려",
+       "key": "W",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "마나 소모량이 40에서 50으로 증가했습니다.",
+         "html": "마나 소모량이 40에서 50으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<strong><img alt=\"Divider_Hero_Raynor_Crop.png\" data-id=\"17041692\" src=\"https://bnetcmsus-a.akamaihd.net/cms/gallery/1O75ANOM5QWH1552928297454.png\"/></strong>\n<p><strong><span class=\"pn-h\"><strong>기술</strong></span></strong></p>\n<ul>\n<li><strong><span class=\"pn-name\"><strong>천공 탄환 (Q)</strong></span> </strong>\n<ul>\n<li>마나 소모량이 50에서 65로 증가했습니다.</li>\n</ul>\n<strong> </strong></li>\n<li><strong><span class=\"pn-name\"><strong>격려 (W)</strong></span> </strong>\n<ul>\n<li>마나 소모량이 40에서 50으로 증가했습니다.</li>\n</ul>\n<strong> </strong></li>\n</ul>"
+    },
+    {
+     "name": "해머 상사",
+     "heroId": "SgtHammer",
+     "heroIds": [
+      "SgtHammer"
+     ],
+     "changes": [
+      {
+       "name": "거미 지뢰",
+       "key": "Q",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "마나 소모량이 45에서 50으로 증가했습니다.",
+         "html": "마나 소모량이 45에서 50으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "충격포",
+       "key": "W",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "마나 소모량이 60에서 80으로 증가했습니다.",
+         "html": "마나 소모량이 60에서 80으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "신소재 강철 장갑",
+       "key": "E",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "마나 소모량이 30에서 60으로 증가했습니다.",
+         "html": "마나 소모량이 30에서 60으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<strong><img alt=\"Divider_Hero_SgtHammer_Crop.png\" data-id=\"17041692\" src=\"https://bnetcmsus-a.akamaihd.net/cms/gallery/UZC5UQQ8GCSZ1552928297718.png\"/></strong>\n<p><strong><span class=\"pn-h\"><strong>기술</strong></span></strong></p>\n<ul>\n<li><strong><span class=\"pn-name\"><strong>거미 지뢰 (Q)</strong></span> </strong>\n<ul>\n<li>마나 소모량이 45에서 50으로 증가했습니다.</li>\n</ul>\n<strong> </strong></li>\n<li><strong><span class=\"pn-name\"><strong>충격포 (W)</strong></span> </strong>\n<ul>\n<li>마나 소모량이 60에서 80으로 증가했습니다.</li>\n</ul>\n<strong> </strong></li>\n<li><strong><span class=\"pn-name\"><strong>신소재 강철 장갑 (E)</strong></span> </strong>\n<ul>\n<li>마나 소모량이 30에서 60으로 증가했습니다.</li>\n</ul>\n<strong> </strong></li>\n</ul>"
+    },
+    {
+     "name": "실바나스",
+     "heroId": "Sylvanas",
+     "heroIds": [
+      "Sylvanas"
+     ],
+     "changes": [
+      {
+       "name": "빙의",
+       "key": "사용 효과",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 8초에서 12초로 증가했습니다.",
+         "html": "재사용 대기시간이 8초에서 12초로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<strong><img alt=\"Divider_Hero_Sylvanas_Crop.png\" data-id=\"17041692\" src=\"https://bnetcmsus-a.akamaihd.net/cms/gallery/2RBYI4DOH32H1552928298007.png\"/></strong>\n<p><strong><span class=\"pn-h\"><strong>특성</strong></span></strong></p>\n<ul>\n<li><strong><span class=\"pn-name\"><strong>4레벨</strong></span> </strong>\n<ul>\n<li>빙의 (사용 효과)\n<ul>\n<li>재사용 대기시간이 8초에서 12초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote>\n<p><strong>개발자의 의견: </strong>빙의는 실바나스에게 상당한 공격로 압박 능력을 부여하고 해당 특성 단계의 다른 특성들에 비해도 큰 효과를 내고 있습니다. 이를 해결하기 위해 재사용 대기시간을 증가시켜 빙의를 더욱 신중하게 사용해야 하도록 변경했습니다.</p>\n</blockquote>"
+    },
+    {
+     "name": "줄진",
+     "heroId": "Zuljin",
+     "heroIds": [
+      "Zuljin"
+     ],
+     "changes": [
+      {
+       "name": "잔혹한 투척",
+       "key": "Q",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "마나 소모량이 50에서 40으로 감소했습니다.",
+         "html": "마나 소모량이 50에서 40으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<strong><img alt=\"Divider_Hero_zuljin_Crop.png\" data-id=\"17041692\" src=\"https://bnetcmsus-a.akamaihd.net/cms/gallery/KYT6P0GTFANJ1552928298696.png\"/></strong>\n<p><strong><span class=\"pn-h\"><strong>기술</strong></span></strong></p>\n<ul>\n<li><strong><span class=\"pn-name\"><strong>잔혹한 투척 (Q)</strong></span> </strong>\n<ul>\n<li>마나 소모량이 50에서 40으로 감소했습니다.</li>\n</ul>\n<strong> </strong></li>\n</ul>"
+    }
+   ]
+  },
+  {
+   "name": "버그 수정",
+   "key": "bugs",
+   "html": "<ul>\n<li>인공지능이 영원의 전쟁터에서 불멸자를 공격할 때와 방어할 때를 더욱 잘 이해합니다.</li>\n<li>가로쉬가 하나무라 사원의 화물을 던질 수 있던 문제를 수정했습니다. (?!)</li>\n<li>크로미가 여기저기로 전장에서 이동할 수 없던 곳으로 이동할 수 있던 문제를 수정했습니다.</li>\n<li>퀘스트 창에서 칼데움 복합도시 이벤트가 남은 시간을 정상적으로 표시합니다.</li>\n<li>수집품에서 사이버펑크 스킨의 색상들이 봄 이벤트 아이콘을 정상적으로 표시합니다.</li>\n<li>클라이언트 강제 종료 현상을 해결하기 위해 3월 26일에서 4월 17일 패치 사이에 생성된 다시보기들이 비활성화되었습니다.</li>\n</ul>\n<p><strong><strong><a href=\"https://kr.forums.blizzard.com/ko/heroes/\" target=\"_blank\">여기를 클릭하면 히어로즈 오브 더 스톰 공식 토론장에서 다른 플레이어들과 이 게시글에 대한 의견을 나눌 수 있습니다</a>.</strong></strong></p>\n<p><strong><img alt=\"\" class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/g6/G6G0N80EOC941426801305139.png\"/></strong></p>\n<p><strong><img alt=\"InvisibleDividerLine_800x50.png\" class=\"no-border; no-shadow\" data-id=\"14509591\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/6VA2831Q81IU1403137406234.png\"/></strong></p>"
+  }
+ ],
+ "heroes": [
+  "Abathur",
+  "Alarak",
+  "Ana",
+  "Anubarak",
+  "Arthas",
+  "Azmodan",
+  "Butcher",
+  "Chromie",
+  "Deckard",
+  "Dehaka",
+  "Diablo",
+  "Dryad",
+  "Garrosh",
+  "Greymane",
+  "Hanzo",
+  "Imperius",
+  "Lucio",
+  "Malthael",
+  "Necromancer",
+  "Raynor",
+  "Rehgar",
+  "Rexxar",
+  "SgtHammer",
+  "Stitches",
+  "Stukov",
+  "Sylvanas",
+  "Uther",
+  "Varian",
+  "Wizard",
+  "Yrel",
+  "Zeratul",
+  "Zuljin"
+ ],
+ "battlegrounds": [],
+ "newsId": "22933137"
+}

@@ -1,0 +1,1343 @@
+{
+ "date": "2026-01-14",
+ "kind": "ptr",
+ "title": "Heroes of the Storm PTR Patch Notes - January 14, 2026",
+ "source": "https://news.blizzard.com/en-us/article/24245220/heroes-of-the-storm-ptr-patch-notes-january-14-2026",
+ "published": "2026-01-14T18:00:00Z",
+ "sections": [
+  {
+   "name": "머리말",
+   "key": "intro",
+   "html": "<p>Our next Heroes of the Storm patch has just hit the Public Test Realm and will be available for playtesting. As always, if you encounter any bugs during your PTR play sessions, please stop by the <a href=\"https://us.forums.blizzard.com/en/heroes/c/ptr-bug-report\" target=\"_blank\">PTR Bug Report forum</a> to let us know about your experiences.</p>",
+   "nameKo": "머리말"
+  },
+  {
+   "name": "General",
+   "key": "general",
+   "html": "<ul>\n<li>All Quests that can lose stacks will never cause the player to fall below milestone thresholds.</li>\n<li>Pinnacle Rewards are now named Mythic Rewards to give a more Blizzard feel. So Mythic-y!</li>\n<li>The following Summoned Units now lose health each second: Demon Lieutenants, Demon Warriors, Gargantuan, Hydralisks, Roaches, Rock-It Turrets, Rush Zombies, Scarabs, Treants, Tumors, and Water Elementals. Total Health and Duration of these Summoned Units have been adjusted to compensate for this.</li>\n<li>Structures now prioritize Summoned Units when there are no remaining minions.</li>\n<li>Summoned Units no longer take half damage from Structures.</li>\n<li>XP Globe pickup sound is now also played when killing a minion that instantly yields XP.</li>\n<li>Updated Homescreen and Startup Music.</li>\n</ul>",
+   "nameKo": "일반"
+  },
+  {
+   "name": "Map Updates",
+   "key": "map_updates",
+   "html": "<ul>\n<li><strong>General</strong>\n<ul>\n<li>Watch Towers will now reset to neutral after 45 seconds of not being occupied.</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Volskaya Foundry</strong>\n<ul>\n<li>Triglav Protector bonus Damage and cooldown speed increased from 25% to 40% when 2 players are inside.</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Warhead Junction</strong>\n<ul>\n<li>The burn duration is now displayed on structures affected by a Warhead.</li>\n</ul>\n</li>\n</ul>",
+   "items": [
+    {
+     "name": "Volskaya Foundry",
+     "battleground": "volskaya_foundry",
+     "html": "<strong class=\"pn-h\">Volskaya Foundry</strong>\n<ul>\n<li>Triglav Protector bonus Damage and cooldown speed increased from 25% to 40% when 2 players are inside.</li>\n</ul>",
+     "under": null
+    },
+    {
+     "name": "Warhead Junction",
+     "battleground": "warhead_junction",
+     "html": "<strong class=\"pn-h\">Warhead Junction</strong>\n<ul>\n<li>The burn duration is now displayed on structures affected by a Warhead.</li>\n</ul>",
+     "under": null
+    }
+   ],
+   "nameKo": "전장 업데이트"
+  },
+  {
+   "name": "Balance Update",
+   "key": "balance",
+   "html": "<h3><strong>Heroes</strong></h3>\n<h4>Azmodan</h4>\n<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Globe of Annihilation [Q]</strong>\n<ul>\n<li>Now deals 50% damage to non-Heroes.</li>\n<li>Upon reaching 225 Annihilation, Globe of Annihilation no longer deals reduced damage to non-Heroes.</li>\n<li>Window to kill minions for Annihilation increased to 3s (from 1.5s).</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Summon Demon Warrior [W]</strong>\n<ul>\n<li>Demon Warriors damage increased from 32 to 83. Now deals half damage to Heroes.</li>\n<li>Demon Warriors no longer have a duration, but lose 26 Health every second.</li>\n<li>Demon Warriors no longer have Immolation.</li>\n<li>Now has 2 charges.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Wrath</strong>\n<ul>\n<li><b>REWORK:</b> Now provides 1 stack for every 2 Basic Attacks hit against a Structure or Hero.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Brutish Vanguard</strong>\n<ul>\n<li>Now slows the attacked target by 30%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Art of Chaos</strong>\n<ul>\n<li>Extra Annihilation amount reduced from 4 to 2.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Bombardment</strong>\n<ul>\n<li>Amount of time Bombardment lasts reduced from 4 seconds to 3 seconds.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Master of Destruction</strong>\n<ul>\n<li>Amount of Annihilation granted reduced from 2 to 1.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Hell Rift</strong>\n<ul>\n<li>Damage bonus reduced from 75% to 35%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Inescapable Annihilation</strong>\n<ul>\n<li><b>NEW:</b> Globe of Annihilation has unlimited range.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Pride</strong>\n<ul>\n<li>Moved to baseline. Now requires 450 stacks.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>Deathwing</h4>\n<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li>Attack Damage decreased from 155 to 110.</li>\n<li><strong class=\"pn-name\">Form Switch [1]</strong>\n<ul>\n<li>Active ability removed. Deathwing now switches forms solely from landing.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Cataclysm [R]</strong>\n<ul>\n<li><b>NEW QUEST:</b> Damage Heroes with Molten Flame to gain 1 stack. Gain 50 stacks for killing a Hero. <b>Mythic Reward:</b> Upon reaching 2,000 stacks, Cataclysm now deals 2,500% damage to Structures and Minions. <i>\"I AM THE CATACLYSM\"</i>.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Onslaught [E]</strong>\n<ul>\n<li>Bonus damage increased from 72 to 120.</li>\n<li>Damage increased from 38 to 60.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Earth Shatter [E]</strong>\n<ul>\n<li>Projectile speed increased by 30%</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Molten Flame [Q]</strong>\n<ul>\n<li>Base Damage per Second reduced from 21 to 19.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Incinerate [W]</strong>\n<ul>\n<li>Cooldown increased from 4 seconds to 6 seconds.</li>\n<li>Energy cost increased from 20 to 30.</li>\n<li>Damage increased to 100 (from 65).</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Lava Burst [W]</strong>\n<ul>\n<li>Cast time reduced from 1 second to .75 seconds.</li>\n<li>Cooldown increased from 6 seconds to 9 seconds.</li>\n<li>Energy cost increased from 15 to 25.</li>\n<li>Explosion Damage increased from 30 to 35.</li>\n<li>Explosion Damage over Time increased from 6 to 7.</li>\n<li>Slow increased from 35% to 45%.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Dragonflight [Z]</strong>\n<ul>\n<li>Cooldown delay after dealing or taking damage increased from 4 seconds to 6 seconds.</li>\n<li>Cooldown reduced from 45 seconds to 15 seconds.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Dragon Soul</strong>\n<ul>\n<li>Healing increased from 75%, 150% to 100%, 200%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Heat Wave</strong>\n<ul>\n<li>Damage over Time increased from 6 to 9.</li>\n<li>Damage over Time stacks reduced from 4 to 3.</li>\n<li>Initial damage bonus increased from 125% to 150%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Firestorm</strong>\n<ul>\n<li>Damage increased from 70 to 77.</li>\n<li>No longer reduces cooldown of Dragonflight.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Fire and Fury</strong>\n<ul>\n<li>Damage bonus increased from 30% to 40%.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>Falstad</h4>\n<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Lightning Rod [W]</strong>\n<ul>\n<li>Range reduced by .5.</li>\n<li>Time between strikes increased from .8 seconds to .9 seconds.</li>\n</ul>\n</li>\n</ul>\n<h4>Jaina</h4>\n<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Frostbite [Trait]</strong>\n<ul>\n<li><b>NEW QUEST:</b> Deal Ability Damage to Frostbitten Heroes. Upon reaching 12,000 Damage, unlock Improved Ice Block, which allows Jaina to become temporarily Invulnerable. <b>Mythic Reward:</b> Upon dealing 30,000 Damage, Ice Block upgrades to Ice Cold, granting Jaina Protected instead of Stasis.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Ice Lance</strong>\n<ul>\n<li>Cooldown reduction increased from 1.5 seconds to 2 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Numbing Blast</strong>\n<ul>\n<li>Root duration reduced from 1 second to .75 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Wintermute</strong>\n<ul>\n<li>Water Elemental cast range and damage bonus decreased from 50% to 40%.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>Kael'thas</h4>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Convection</strong>\n<ul>\n<li>Increased reward damage and health from 150/50 to 200/100.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>Muradin</h4>\n<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Storm Bolt [Q]</strong>\n<ul>\n<li>Perfect Storm Quest removed.</li>\n<li><b>NEW QUEST:</b> Basic Attack Heroes affected by Slows or Stuns. Slows provide 1 stack and Stuns provide 2 stacks. At 35 stacks, Storm Bolt pierces to hit an additional target, and Muradin's Basic Attack reduces the cooldown of Storm Bolt by 0.5 seconds. <b>Mythic Reward:</b> At 150 stacks, Storm Bolt's range is increased by 50% and width is increased by 100%, and now pierces all targets.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Dwarf Block</strong>\n<ul>\n<li>Block charges reduced from 4 to 3.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Give 'em the Axe!</strong>\n<ul>\n<li>Moved Talent from Level 7 to Level 1.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Sledgehammer</strong>\n<ul>\n<li>No longer increases Storm Bolt's cooldown reduction.</li>\n<li>Now increases Storm Bolt damage to non-Heroes by 500%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Perfect Storm</strong>\n<ul>\n<li><b>NEW:</b> If an enemy hit with Storm Bolt dies within 3 seconds, reset its cooldown.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Dwarf Launch</strong>\n<ul>\n<li>Range bonus reduced from 40% to 30%.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>Murky</h4>\n<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li>Murky now gains a 35% Shield for 10 seconds upon reviving.</li>\n<li><strong class=\"pn-name\">Spawn Egg [D]</strong>\n<ul>\n<li>Egg now regenerates quickly instead of having a Shield.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Slime [Q]</strong>\n<ul>\n<li>Now applies its debuff to enemy Structures.</li>\n<li>Now deals 50% damage to Structures.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Pufferfish [W]</strong>\n<ul>\n<li>Damage reduced by 20%.</li>\n<li>Detonation time reduced from 3 seconds to 2.75 seconds.</li>\n<li><b>NEW QUEST:</b> Hit enemies affected by Slime with Pufferfish. Provides 1 stack per minion, 5 stacks per Hero or Structure hit. At 100 stacks, Basic Abilities now deal full damage to Structures. <b>Mythic Reward:</b> At 200 stacks, Murky gains 50% Health and increases in size.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Egg Hunt</strong>\n<ul>\n<li>Talent removed.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Shell Game</strong>\n<ul>\n<li><b>NEW:</b> Murky can now place 2 eggs, but randomly revives from one of them. Increases the cooldown of placing an egg to 30 seconds and goes on cooldown if either egg dies.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">March of the Murlocs</strong>\n<ul>\n<li>Damage increased by 4%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Egg Shell</strong>\n<ul>\n<li><b>REWORK:</b> Murky gains a Shield equal to 35% of his Health upon placing an egg or when one of his eggs dies.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Fish Tank</strong>\n<ul>\n<li>Healing reduced from 25% to 20%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Wrath of Cod</strong>\n<ul>\n<li>Damage over Time is dealt over 4 seconds (from 5s).</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Big Tuna Kahuna</strong>\n<ul>\n<li>Talent removed.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Faster Fish</strong>\n<ul>\n<li><b>NEW:</b> Pufferfish detonates 80% faster.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Making Inky</strong>\n<ul>\n<li>Cooldown reduction reduced from 2 seconds to 1.5 seconds.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Never-Ending Murlocs</strong>\n<ul>\n<li>No longer deals reduced damage to Structures.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>Sylvanas</h4>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Mercenary Queen</strong>\n<ul>\n<li>Now also causes Sylvanas' Basic Attacks to instantly apply 3 stacks of Black Arrows to Mercs.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>Thrall</h4>\n<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li>Basic Attack damage decreased from 173 to 167.</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Crash Lightning</strong>\n<ul>\n<li>Mythic Reward Damage bonus increased from 270 to 325.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Echo of the Elements</strong>\n<ul>\n<li>Mythic Reward now also allows Chain Lightning to bounce back to the same target.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>Tyrande</h4>\n<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li>Mana reduced from 500 to 450.</li>\n<li><strong class=\"pn-name\">Lunar Flare [E]</strong>\n<ul>\n<li><b>NEW QUEST:</b> Hitting a Hero with Lunar Flare increased its damage by 5%, up to 250%. After hitting 10 Heroes, increase Lunar Flare's range by 30%. After hitting 20 Heroes, Sentinel now pierces the first Hero hit. <b>Mythic Reward:</b> After hitting 50 Heroes, Tyrande's Basic Attacks occasionally trigger a Lunar Flare.</li>\n<li>Now restores 25 mana per enemy hit.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Ranger</strong>\n<ul>\n<li>No longer provides pierce.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Moonlit Arrows</strong>\n<ul>\n<li>Cooldown reduction reduced from .75 seconds to .5 seconds.</li>\n<li>Moved Talent from Level 7 to Level 1.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Trueshot Aura</strong>\n<ul>\n<li>No longer passively increases Tyrande's Attack Damage.</li>\n<li>Now also applies to Tyrande upon activation.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Elune's Gift</strong>\n<ul>\n<li><b>NEW:</b> Grants 20% Spell Power for 10 seconds after hitting an enemy with Lunar Flare.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Commander of Sentinels</strong>\n<ul>\n<li><b>NEW:</b> Sentinel now has an additional charge.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+   "heroes": [
+    {
+     "name": "Azmodan",
+     "heroId": "Azmodan",
+     "heroIds": [
+      "Azmodan"
+     ],
+     "changes": [
+      {
+       "name": "Globe of Annihilation",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Now deals 50% damage to non-Heroes.",
+         "html": "Now deals 50% damage to non-Heroes.",
+         "added": false
+        },
+        {
+         "text": "Upon reaching 225 Annihilation, Globe of Annihilation no longer deals reduced damage to non-Heroes.",
+         "html": "Upon reaching 225 Annihilation, Globe of Annihilation no longer deals reduced damage to non-Heroes.",
+         "added": false
+        },
+        {
+         "text": "Window to kill minions for Annihilation increased to 3s (from 1.5s).",
+         "html": "Window to kill minions for Annihilation increased to 3s (from 1.5s).",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Summon Demon Warrior",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Demon Warriors damage increased from 32 to 83. Now deals half damage to Heroes.",
+         "html": "Demon Warriors damage increased from 32 to 83. Now deals half damage to Heroes.",
+         "added": false
+        },
+        {
+         "text": "Demon Warriors no longer have a duration, but lose 26 Health every second.",
+         "html": "Demon Warriors no longer have a duration, but lose 26 Health every second.",
+         "added": false
+        },
+        {
+         "text": "Demon Warriors no longer have Immolation.",
+         "html": "Demon Warriors no longer have Immolation.",
+         "added": false
+        },
+        {
+         "text": "Now has 2 charges.",
+         "html": "Now has 2 charges.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Wrath",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "REWORK: Now provides 1 stack for every 2 Basic Attacks hit against a Structure or Hero.",
+         "html": "<b>REWORK:</b> Now provides 1 stack for every 2 Basic Attacks hit against a Structure or Hero.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Brutish Vanguard",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "Now slows the attacked target by 30%.",
+         "html": "Now slows the attacked target by 30%.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Art of Chaos",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "Extra Annihilation amount reduced from 4 to 2.",
+         "html": "Extra Annihilation amount reduced from 4 to 2.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Bombardment",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "Amount of time Bombardment lasts reduced from 4 seconds to 3 seconds.",
+         "html": "Amount of time Bombardment lasts reduced from 4 seconds to 3 seconds.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Master of Destruction",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "Amount of Annihilation granted reduced from 2 to 1.",
+         "html": "Amount of Annihilation granted reduced from 2 to 1.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Hell Rift",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "Damage bonus reduced from 75% to 35%.",
+         "html": "Damage bonus reduced from 75% to 35%.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Inescapable Annihilation",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "NEW: Globe of Annihilation has unlimited range.",
+         "html": "<b>NEW:</b> Globe of Annihilation has unlimited range.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Pride",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "Moved to baseline. Now requires 450 stacks.",
+         "html": "Moved to baseline. Now requires 450 stacks.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Globe of Annihilation [Q]</strong>\n<ul>\n<li>Now deals 50% damage to non-Heroes.</li>\n<li>Upon reaching 225 Annihilation, Globe of Annihilation no longer deals reduced damage to non-Heroes.</li>\n<li>Window to kill minions for Annihilation increased to 3s (from 1.5s).</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Summon Demon Warrior [W]</strong>\n<ul>\n<li>Demon Warriors damage increased from 32 to 83. Now deals half damage to Heroes.</li>\n<li>Demon Warriors no longer have a duration, but lose 26 Health every second.</li>\n<li>Demon Warriors no longer have Immolation.</li>\n<li>Now has 2 charges.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Wrath</strong>\n<ul>\n<li><b>REWORK:</b> Now provides 1 stack for every 2 Basic Attacks hit against a Structure or Hero.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Brutish Vanguard</strong>\n<ul>\n<li>Now slows the attacked target by 30%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Art of Chaos</strong>\n<ul>\n<li>Extra Annihilation amount reduced from 4 to 2.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Bombardment</strong>\n<ul>\n<li>Amount of time Bombardment lasts reduced from 4 seconds to 3 seconds.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Master of Destruction</strong>\n<ul>\n<li>Amount of Annihilation granted reduced from 2 to 1.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Hell Rift</strong>\n<ul>\n<li>Damage bonus reduced from 75% to 35%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Inescapable Annihilation</strong>\n<ul>\n<li><b>NEW:</b> Globe of Annihilation has unlimited range.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Pride</strong>\n<ul>\n<li>Moved to baseline. Now requires 450 stacks.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Deathwing",
+     "heroId": "Deathwing",
+     "heroIds": [
+      "Deathwing"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Attack Damage decreased from 155 to 110.",
+         "html": "Attack Damage decreased from 155 to 110.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Form Switch",
+       "key": "1",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Active ability removed. Deathwing now switches forms solely from landing.",
+         "html": "Active ability removed. Deathwing now switches forms solely from landing.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Cataclysm",
+       "key": "R",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "NEW QUEST: Damage Heroes with Molten Flame to gain 1 stack. Gain 50 stacks for killing a Hero. Mythic Reward: Upon reaching 2,000 stacks, Cataclysm now deals 2,500% damage to Structures and Minions. \"I AM THE CATACLYSM\" .",
+         "html": "<b>NEW QUEST:</b> Damage Heroes with Molten Flame to gain 1 stack. Gain 50 stacks for killing a Hero. <b>Mythic Reward:</b> Upon reaching 2,000 stacks, Cataclysm now deals 2,500% damage to Structures and Minions. <i>\"I AM THE CATACLYSM\"</i>.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Onslaught",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Bonus damage increased from 72 to 120.",
+         "html": "Bonus damage increased from 72 to 120.",
+         "added": false
+        },
+        {
+         "text": "Damage increased from 38 to 60.",
+         "html": "Damage increased from 38 to 60.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Earth Shatter",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Projectile speed increased by 30%",
+         "html": "Projectile speed increased by 30%",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Molten Flame",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Base Damage per Second reduced from 21 to 19.",
+         "html": "Base Damage per Second reduced from 21 to 19.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Incinerate",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Cooldown increased from 4 seconds to 6 seconds.",
+         "html": "Cooldown increased from 4 seconds to 6 seconds.",
+         "added": false
+        },
+        {
+         "text": "Energy cost increased from 20 to 30.",
+         "html": "Energy cost increased from 20 to 30.",
+         "added": false
+        },
+        {
+         "text": "Damage increased to 100 (from 65).",
+         "html": "Damage increased to 100 (from 65).",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Lava Burst",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Cast time reduced from 1 second to .75 seconds.",
+         "html": "Cast time reduced from 1 second to .75 seconds.",
+         "added": false
+        },
+        {
+         "text": "Cooldown increased from 6 seconds to 9 seconds.",
+         "html": "Cooldown increased from 6 seconds to 9 seconds.",
+         "added": false
+        },
+        {
+         "text": "Energy cost increased from 15 to 25.",
+         "html": "Energy cost increased from 15 to 25.",
+         "added": false
+        },
+        {
+         "text": "Explosion Damage increased from 30 to 35.",
+         "html": "Explosion Damage increased from 30 to 35.",
+         "added": false
+        },
+        {
+         "text": "Explosion Damage over Time increased from 6 to 7.",
+         "html": "Explosion Damage over Time increased from 6 to 7.",
+         "added": false
+        },
+        {
+         "text": "Slow increased from 35% to 45%.",
+         "html": "Slow increased from 35% to 45%.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Dragonflight",
+       "key": "Z",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Cooldown delay after dealing or taking damage increased from 4 seconds to 6 seconds.",
+         "html": "Cooldown delay after dealing or taking damage increased from 4 seconds to 6 seconds.",
+         "added": false
+        },
+        {
+         "text": "Cooldown reduced from 45 seconds to 15 seconds.",
+         "html": "Cooldown reduced from 45 seconds to 15 seconds.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Dragon Soul",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Healing increased from 75%, 150% to 100%, 200%.",
+         "html": "Healing increased from 75%, 150% to 100%, 200%.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Heat Wave",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "Damage over Time increased from 6 to 9.",
+         "html": "Damage over Time increased from 6 to 9.",
+         "added": false
+        },
+        {
+         "text": "Damage over Time stacks reduced from 4 to 3.",
+         "html": "Damage over Time stacks reduced from 4 to 3.",
+         "added": false
+        },
+        {
+         "text": "Initial damage bonus increased from 125% to 150%.",
+         "html": "Initial damage bonus increased from 125% to 150%.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Firestorm",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "Damage increased from 70 to 77.",
+         "html": "Damage increased from 70 to 77.",
+         "added": false
+        },
+        {
+         "text": "No longer reduces cooldown of Dragonflight.",
+         "html": "No longer reduces cooldown of Dragonflight.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Fire and Fury",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "Damage bonus increased from 30% to 40%.",
+         "html": "Damage bonus increased from 30% to 40%.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li>Attack Damage decreased from 155 to 110.</li>\n<li><strong class=\"pn-name\">Form Switch [1]</strong>\n<ul>\n<li>Active ability removed. Deathwing now switches forms solely from landing.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Cataclysm [R]</strong>\n<ul>\n<li><b>NEW QUEST:</b> Damage Heroes with Molten Flame to gain 1 stack. Gain 50 stacks for killing a Hero. <b>Mythic Reward:</b> Upon reaching 2,000 stacks, Cataclysm now deals 2,500% damage to Structures and Minions. <i>\"I AM THE CATACLYSM\"</i>.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Onslaught [E]</strong>\n<ul>\n<li>Bonus damage increased from 72 to 120.</li>\n<li>Damage increased from 38 to 60.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Earth Shatter [E]</strong>\n<ul>\n<li>Projectile speed increased by 30%</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Molten Flame [Q]</strong>\n<ul>\n<li>Base Damage per Second reduced from 21 to 19.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Incinerate [W]</strong>\n<ul>\n<li>Cooldown increased from 4 seconds to 6 seconds.</li>\n<li>Energy cost increased from 20 to 30.</li>\n<li>Damage increased to 100 (from 65).</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Lava Burst [W]</strong>\n<ul>\n<li>Cast time reduced from 1 second to .75 seconds.</li>\n<li>Cooldown increased from 6 seconds to 9 seconds.</li>\n<li>Energy cost increased from 15 to 25.</li>\n<li>Explosion Damage increased from 30 to 35.</li>\n<li>Explosion Damage over Time increased from 6 to 7.</li>\n<li>Slow increased from 35% to 45%.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Dragonflight [Z]</strong>\n<ul>\n<li>Cooldown delay after dealing or taking damage increased from 4 seconds to 6 seconds.</li>\n<li>Cooldown reduced from 45 seconds to 15 seconds.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Dragon Soul</strong>\n<ul>\n<li>Healing increased from 75%, 150% to 100%, 200%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Heat Wave</strong>\n<ul>\n<li>Damage over Time increased from 6 to 9.</li>\n<li>Damage over Time stacks reduced from 4 to 3.</li>\n<li>Initial damage bonus increased from 125% to 150%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Firestorm</strong>\n<ul>\n<li>Damage increased from 70 to 77.</li>\n<li>No longer reduces cooldown of Dragonflight.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Fire and Fury</strong>\n<ul>\n<li>Damage bonus increased from 30% to 40%.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Falstad",
+     "heroId": "Falstad",
+     "heroIds": [
+      "Falstad"
+     ],
+     "changes": [
+      {
+       "name": "Lightning Rod",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Range reduced by .5.",
+         "html": "Range reduced by .5.",
+         "added": false
+        },
+        {
+         "text": "Time between strikes increased from .8 seconds to .9 seconds.",
+         "html": "Time between strikes increased from .8 seconds to .9 seconds.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Lightning Rod [W]</strong>\n<ul>\n<li>Range reduced by .5.</li>\n<li>Time between strikes increased from .8 seconds to .9 seconds.</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Jaina",
+     "heroId": "Jaina",
+     "heroIds": [
+      "Jaina"
+     ],
+     "changes": [
+      {
+       "name": "Frostbite",
+       "key": "Trait",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "NEW QUEST: Deal Ability Damage to Frostbitten Heroes. Upon reaching 12,000 Damage, unlock Improved Ice Block, which allows Jaina to become temporarily Invulnerable. Mythic Reward: Upon dealing 30,000 Damage, Ice Block upgrades to Ice Cold, granting Jaina Protected instead of Stasis.",
+         "html": "<b>NEW QUEST:</b> Deal Ability Damage to Frostbitten Heroes. Upon reaching 12,000 Damage, unlock Improved Ice Block, which allows Jaina to become temporarily Invulnerable. <b>Mythic Reward:</b> Upon dealing 30,000 Damage, Ice Block upgrades to Ice Cold, granting Jaina Protected instead of Stasis.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Ice Lance",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "Cooldown reduction increased from 1.5 seconds to 2 seconds.",
+         "html": "Cooldown reduction increased from 1.5 seconds to 2 seconds.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Numbing Blast",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "Root duration reduced from 1 second to .75 seconds.",
+         "html": "Root duration reduced from 1 second to .75 seconds.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Wintermute",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "Water Elemental cast range and damage bonus decreased from 50% to 40%.",
+         "html": "Water Elemental cast range and damage bonus decreased from 50% to 40%.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Frostbite [Trait]</strong>\n<ul>\n<li><b>NEW QUEST:</b> Deal Ability Damage to Frostbitten Heroes. Upon reaching 12,000 Damage, unlock Improved Ice Block, which allows Jaina to become temporarily Invulnerable. <b>Mythic Reward:</b> Upon dealing 30,000 Damage, Ice Block upgrades to Ice Cold, granting Jaina Protected instead of Stasis.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Ice Lance</strong>\n<ul>\n<li>Cooldown reduction increased from 1.5 seconds to 2 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Numbing Blast</strong>\n<ul>\n<li>Root duration reduced from 1 second to .75 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Wintermute</strong>\n<ul>\n<li>Water Elemental cast range and damage bonus decreased from 50% to 40%.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Kael'thas",
+     "heroId": "Kaelthas",
+     "heroIds": [
+      "Kaelthas"
+     ],
+     "changes": [
+      {
+       "name": "Convection",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Increased reward damage and health from 150/50 to 200/100.",
+         "html": "Increased reward damage and health from 150/50 to 200/100.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Convection</strong>\n<ul>\n<li>Increased reward damage and health from 150/50 to 200/100.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Muradin",
+     "heroId": "Muradin",
+     "heroIds": [
+      "Muradin"
+     ],
+     "changes": [
+      {
+       "name": "Storm Bolt",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Perfect Storm Quest removed.",
+         "html": "Perfect Storm Quest removed.",
+         "added": false
+        },
+        {
+         "text": "NEW QUEST: Basic Attack Heroes affected by Slows or Stuns. Slows provide 1 stack and Stuns provide 2 stacks. At 35 stacks, Storm Bolt pierces to hit an additional target, and Muradin's Basic Attack reduces the cooldown of Storm Bolt by 0.5 seconds. Mythic Reward: At 150 stacks, Storm Bolt's range is increased by 50% and width is increased by 100%, and now pierces all targets.",
+         "html": "<b>NEW QUEST:</b> Basic Attack Heroes affected by Slows or Stuns. Slows provide 1 stack and Stuns provide 2 stacks. At 35 stacks, Storm Bolt pierces to hit an additional target, and Muradin's Basic Attack reduces the cooldown of Storm Bolt by 0.5 seconds. <b>Mythic Reward:</b> At 150 stacks, Storm Bolt's range is increased by 50% and width is increased by 100%, and now pierces all targets.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Dwarf Block",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Block charges reduced from 4 to 3.",
+         "html": "Block charges reduced from 4 to 3.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Give 'em the Axe!",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Moved Talent from Level 7 to Level 1.",
+         "html": "Moved Talent from Level 7 to Level 1.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Sledgehammer",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "No longer increases Storm Bolt's cooldown reduction.",
+         "html": "No longer increases Storm Bolt's cooldown reduction.",
+         "added": false
+        },
+        {
+         "text": "Now increases Storm Bolt damage to non-Heroes by 500%.",
+         "html": "Now increases Storm Bolt damage to non-Heroes by 500%.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Perfect Storm",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "NEW: If an enemy hit with Storm Bolt dies within 3 seconds, reset its cooldown.",
+         "html": "<b>NEW:</b> If an enemy hit with Storm Bolt dies within 3 seconds, reset its cooldown.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Dwarf Launch",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "Range bonus reduced from 40% to 30%.",
+         "html": "Range bonus reduced from 40% to 30%.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Storm Bolt [Q]</strong>\n<ul>\n<li>Perfect Storm Quest removed.</li>\n<li><b>NEW QUEST:</b> Basic Attack Heroes affected by Slows or Stuns. Slows provide 1 stack and Stuns provide 2 stacks. At 35 stacks, Storm Bolt pierces to hit an additional target, and Muradin's Basic Attack reduces the cooldown of Storm Bolt by 0.5 seconds. <b>Mythic Reward:</b> At 150 stacks, Storm Bolt's range is increased by 50% and width is increased by 100%, and now pierces all targets.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Dwarf Block</strong>\n<ul>\n<li>Block charges reduced from 4 to 3.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Give 'em the Axe!</strong>\n<ul>\n<li>Moved Talent from Level 7 to Level 1.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Sledgehammer</strong>\n<ul>\n<li>No longer increases Storm Bolt's cooldown reduction.</li>\n<li>Now increases Storm Bolt damage to non-Heroes by 500%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Perfect Storm</strong>\n<ul>\n<li><b>NEW:</b> If an enemy hit with Storm Bolt dies within 3 seconds, reset its cooldown.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Dwarf Launch</strong>\n<ul>\n<li>Range bonus reduced from 40% to 30%.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Murky",
+     "heroId": "Murky",
+     "heroIds": [
+      "Murky"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Murky now gains a 35% Shield for 10 seconds upon reviving.",
+         "html": "Murky now gains a 35% Shield for 10 seconds upon reviving.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Spawn Egg",
+       "key": "D",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Egg now regenerates quickly instead of having a Shield.",
+         "html": "Egg now regenerates quickly instead of having a Shield.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Slime",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Now applies its debuff to enemy Structures.",
+         "html": "Now applies its debuff to enemy Structures.",
+         "added": false
+        },
+        {
+         "text": "Now deals 50% damage to Structures.",
+         "html": "Now deals 50% damage to Structures.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Pufferfish",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Damage reduced by 20%.",
+         "html": "Damage reduced by 20%.",
+         "added": false
+        },
+        {
+         "text": "Detonation time reduced from 3 seconds to 2.75 seconds.",
+         "html": "Detonation time reduced from 3 seconds to 2.75 seconds.",
+         "added": false
+        },
+        {
+         "text": "NEW QUEST: Hit enemies affected by Slime with Pufferfish. Provides 1 stack per minion, 5 stacks per Hero or Structure hit. At 100 stacks, Basic Abilities now deal full damage to Structures. Mythic Reward: At 200 stacks, Murky gains 50% Health and increases in size.",
+         "html": "<b>NEW QUEST:</b> Hit enemies affected by Slime with Pufferfish. Provides 1 stack per minion, 5 stacks per Hero or Structure hit. At 100 stacks, Basic Abilities now deal full damage to Structures. <b>Mythic Reward:</b> At 200 stacks, Murky gains 50% Health and increases in size.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Egg Hunt",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Talent removed.",
+         "html": "Talent removed.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Shell Game",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "NEW: Murky can now place 2 eggs, but randomly revives from one of them. Increases the cooldown of placing an egg to 30 seconds and goes on cooldown if either egg dies.",
+         "html": "<b>NEW:</b> Murky can now place 2 eggs, but randomly revives from one of them. Increases the cooldown of placing an egg to 30 seconds and goes on cooldown if either egg dies.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "March of the Murlocs",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "Damage increased by 4%.",
+         "html": "Damage increased by 4%.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Egg Shell",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "REWORK: Murky gains a Shield equal to 35% of his Health upon placing an egg or when one of his eggs dies.",
+         "html": "<b>REWORK:</b> Murky gains a Shield equal to 35% of his Health upon placing an egg or when one of his eggs dies.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Fish Tank",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "Healing reduced from 25% to 20%.",
+         "html": "Healing reduced from 25% to 20%.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Wrath of Cod",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "Damage over Time is dealt over 4 seconds (from 5s).",
+         "html": "Damage over Time is dealt over 4 seconds (from 5s).",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Big Tuna Kahuna",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "Talent removed.",
+         "html": "Talent removed.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Faster Fish",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "NEW: Pufferfish detonates 80% faster.",
+         "html": "<b>NEW:</b> Pufferfish detonates 80% faster.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Making Inky",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "Cooldown reduction reduced from 2 seconds to 1.5 seconds.",
+         "html": "Cooldown reduction reduced from 2 seconds to 1.5 seconds.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Never-Ending Murlocs",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "No longer deals reduced damage to Structures.",
+         "html": "No longer deals reduced damage to Structures.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li>Murky now gains a 35% Shield for 10 seconds upon reviving.</li>\n<li><strong class=\"pn-name\">Spawn Egg [D]</strong>\n<ul>\n<li>Egg now regenerates quickly instead of having a Shield.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Slime [Q]</strong>\n<ul>\n<li>Now applies its debuff to enemy Structures.</li>\n<li>Now deals 50% damage to Structures.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Pufferfish [W]</strong>\n<ul>\n<li>Damage reduced by 20%.</li>\n<li>Detonation time reduced from 3 seconds to 2.75 seconds.</li>\n<li><b>NEW QUEST:</b> Hit enemies affected by Slime with Pufferfish. Provides 1 stack per minion, 5 stacks per Hero or Structure hit. At 100 stacks, Basic Abilities now deal full damage to Structures. <b>Mythic Reward:</b> At 200 stacks, Murky gains 50% Health and increases in size.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Egg Hunt</strong>\n<ul>\n<li>Talent removed.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Shell Game</strong>\n<ul>\n<li><b>NEW:</b> Murky can now place 2 eggs, but randomly revives from one of them. Increases the cooldown of placing an egg to 30 seconds and goes on cooldown if either egg dies.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">March of the Murlocs</strong>\n<ul>\n<li>Damage increased by 4%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Egg Shell</strong>\n<ul>\n<li><b>REWORK:</b> Murky gains a Shield equal to 35% of his Health upon placing an egg or when one of his eggs dies.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Fish Tank</strong>\n<ul>\n<li>Healing reduced from 25% to 20%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Wrath of Cod</strong>\n<ul>\n<li>Damage over Time is dealt over 4 seconds (from 5s).</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Big Tuna Kahuna</strong>\n<ul>\n<li>Talent removed.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Faster Fish</strong>\n<ul>\n<li><b>NEW:</b> Pufferfish detonates 80% faster.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Making Inky</strong>\n<ul>\n<li>Cooldown reduction reduced from 2 seconds to 1.5 seconds.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Never-Ending Murlocs</strong>\n<ul>\n<li>No longer deals reduced damage to Structures.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Sylvanas",
+     "heroId": "Sylvanas",
+     "heroIds": [
+      "Sylvanas"
+     ],
+     "changes": [
+      {
+       "name": "Mercenary Queen",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "Now also causes Sylvanas' Basic Attacks to instantly apply 3 stacks of Black Arrows to Mercs.",
+         "html": "Now also causes Sylvanas' Basic Attacks to instantly apply 3 stacks of Black Arrows to Mercs.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Mercenary Queen</strong>\n<ul>\n<li>Now also causes Sylvanas' Basic Attacks to instantly apply 3 stacks of Black Arrows to Mercs.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Thrall",
+     "heroId": "Thrall",
+     "heroIds": [
+      "Thrall"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Basic Attack damage decreased from 173 to 167.",
+         "html": "Basic Attack damage decreased from 173 to 167.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Crash Lightning",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Mythic Reward Damage bonus increased from 270 to 325.",
+         "html": "Mythic Reward Damage bonus increased from 270 to 325.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Echo of the Elements",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Mythic Reward now also allows Chain Lightning to bounce back to the same target.",
+         "html": "Mythic Reward now also allows Chain Lightning to bounce back to the same target.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li>Basic Attack damage decreased from 173 to 167.</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Crash Lightning</strong>\n<ul>\n<li>Mythic Reward Damage bonus increased from 270 to 325.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Echo of the Elements</strong>\n<ul>\n<li>Mythic Reward now also allows Chain Lightning to bounce back to the same target.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Tyrande",
+     "heroId": "Tyrande",
+     "heroIds": [
+      "Tyrande"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Mana reduced from 500 to 450.",
+         "html": "Mana reduced from 500 to 450.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Lunar Flare",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "NEW QUEST: Hitting a Hero with Lunar Flare increased its damage by 5%, up to 250%. After hitting 10 Heroes, increase Lunar Flare's range by 30%. After hitting 20 Heroes, Sentinel now pierces the first Hero hit. Mythic Reward: After hitting 50 Heroes, Tyrande's Basic Attacks occasionally trigger a Lunar Flare.",
+         "html": "<b>NEW QUEST:</b> Hitting a Hero with Lunar Flare increased its damage by 5%, up to 250%. After hitting 10 Heroes, increase Lunar Flare's range by 30%. After hitting 20 Heroes, Sentinel now pierces the first Hero hit. <b>Mythic Reward:</b> After hitting 50 Heroes, Tyrande's Basic Attacks occasionally trigger a Lunar Flare.",
+         "added": false
+        },
+        {
+         "text": "Now restores 25 mana per enemy hit.",
+         "html": "Now restores 25 mana per enemy hit.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Ranger",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "No longer provides pierce.",
+         "html": "No longer provides pierce.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Moonlit Arrows",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Cooldown reduction reduced from .75 seconds to .5 seconds.",
+         "html": "Cooldown reduction reduced from .75 seconds to .5 seconds.",
+         "added": false
+        },
+        {
+         "text": "Moved Talent from Level 7 to Level 1.",
+         "html": "Moved Talent from Level 7 to Level 1.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Trueshot Aura",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "No longer passively increases Tyrande's Attack Damage.",
+         "html": "No longer passively increases Tyrande's Attack Damage.",
+         "added": false
+        },
+        {
+         "text": "Now also applies to Tyrande upon activation.",
+         "html": "Now also applies to Tyrande upon activation.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Elune's Gift",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "NEW: Grants 20% Spell Power for 10 seconds after hitting an enemy with Lunar Flare.",
+         "html": "<b>NEW:</b> Grants 20% Spell Power for 10 seconds after hitting an enemy with Lunar Flare.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Commander of Sentinels",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "NEW: Sentinel now has an additional charge.",
+         "html": "<b>NEW:</b> Sentinel now has an additional charge.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li>Mana reduced from 500 to 450.</li>\n<li><strong class=\"pn-name\">Lunar Flare [E]</strong>\n<ul>\n<li><b>NEW QUEST:</b> Hitting a Hero with Lunar Flare increased its damage by 5%, up to 250%. After hitting 10 Heroes, increase Lunar Flare's range by 30%. After hitting 20 Heroes, Sentinel now pierces the first Hero hit. <b>Mythic Reward:</b> After hitting 50 Heroes, Tyrande's Basic Attacks occasionally trigger a Lunar Flare.</li>\n<li>Now restores 25 mana per enemy hit.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Ranger</strong>\n<ul>\n<li>No longer provides pierce.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Moonlit Arrows</strong>\n<ul>\n<li>Cooldown reduction reduced from .75 seconds to .5 seconds.</li>\n<li>Moved Talent from Level 7 to Level 1.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Trueshot Aura</strong>\n<ul>\n<li>No longer passively increases Tyrande's Attack Damage.</li>\n<li>Now also applies to Tyrande upon activation.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Elune's Gift</strong>\n<ul>\n<li><b>NEW:</b> Grants 20% Spell Power for 10 seconds after hitting an enemy with Lunar Flare.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Commander of Sentinels</strong>\n<ul>\n<li><b>NEW:</b> Sentinel now has an additional charge.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    }
+   ],
+   "nameKo": "밸런스 업데이트"
+  },
+  {
+   "name": "Known Issues & Bug Fixes",
+   "key": "known_issues_bug_fixes",
+   "html": "<h3><b>Known Issues</b></h3>\n<ul>\n<li><strong class=\"pn-h\">Jaina</strong>\n<ul>\n<li>Ice Cold's tooltip is incorrect.</li>\n<li>Resetting Jaina's talents after finishing her quest causes issues.</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Zul'jin</strong>\n<ul>\n<li>Resetting Zul'jin's talents does not reset cap.</li>\n</ul>\n</li>\n</ul>\n<h3><b>Bug Fixes</b></h3>\n<h4><strong>Heroes</strong></h4>\n<ul>\n<li><strong class=\"pn-h\">Alarak</strong>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Deadly Charge</strong>\n<ul>\n<li>Fixed an issue that caused Alarak's Deadly Charge to not be activated by clicking the left mouse button if it occupies the Trait slot.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Ana</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Aim Down Sights [D]</strong>\n<ul>\n<li>Can now be toggled while affected by a Silencing effect.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Jaina</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Frostbolt [Q]</strong>\n<ul>\n<li>Fixed an issue causing Jaina's Frostbolt to not have its model updated by Dreadlord Jaina or Lunar Jaina.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Orphea</strong>\n<ul>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Allegrissimo</strong>\n<ul>\n<li>Fixed an issue that could cause Allegrissimo's cooldown reduction to not be granted when hitting a Hero at Shadow Waltz' end.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Sylvanas</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Possession [1]</strong>\n<ul>\n<li>Fixed Possession not showing in the Quick Cast menu settings.</li>\n<li>Fixed Possession not being correctly affected by cooldown reduction affects granted by allies.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<p><strong><a href=\"https://us.forums.blizzard.com/en/heroes/\" target=\"_blank\">Click here to discuss this post with other players in the official Heroes of the Storm forums</a>.</strong></p>\n<p><strong><img alt=\"\" class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/g6/G6G0N80EOC941426801305139.png\"/></strong></p>",
+   "items": [
+    {
+     "name": "Jaina",
+     "heroId": "Jaina",
+     "heroIds": [
+      "Jaina"
+     ],
+     "under": "Known Issues",
+     "html": "<strong class=\"pn-h\">Jaina</strong>\n<ul>\n<li>Ice Cold's tooltip is incorrect.</li>\n<li>Resetting Jaina's talents after finishing her quest causes issues.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Ice Cold's tooltip is incorrect.",
+         "html": "Ice Cold's tooltip is incorrect.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Resetting Jaina's talents after finishing her quest causes issues.",
+         "html": "Resetting Jaina's talents after finishing her quest causes issues.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Zul'jin",
+     "heroId": "Zuljin",
+     "heroIds": [
+      "Zuljin"
+     ],
+     "under": "Known Issues",
+     "html": "<strong class=\"pn-h\">Zul'jin</strong>\n<ul>\n<li>Resetting Zul'jin's talents does not reset cap.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Resetting Zul'jin's talents does not reset cap.",
+         "html": "Resetting Zul'jin's talents does not reset cap.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Alarak",
+     "heroId": "Alarak",
+     "heroIds": [
+      "Alarak"
+     ],
+     "under": "Bug Fixes",
+     "html": "<strong class=\"pn-h\">Alarak</strong>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Deadly Charge</strong>\n<ul>\n<li>Fixed an issue that caused Alarak's Deadly Charge to not be activated by clicking the left mouse button if it occupies the Trait slot.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Deadly Charge",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Alarak's Deadly Charge to not be activated by clicking the left mouse button if it occupies the Trait slot.",
+         "html": "Fixed an issue that caused Alarak's Deadly Charge to not be activated by clicking the left mouse button if it occupies the Trait slot.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Ana",
+     "heroId": "Ana",
+     "heroIds": [
+      "Ana"
+     ],
+     "under": "Bug Fixes",
+     "html": "<strong class=\"pn-h\">Ana</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Aim Down Sights [D]</strong>\n<ul>\n<li>Can now be toggled while affected by a Silencing effect.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Aim Down Sights",
+       "key": "D",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Can now be toggled while affected by a Silencing effect.",
+         "html": "Can now be toggled while affected by a Silencing effect.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Jaina",
+     "heroId": "Jaina",
+     "heroIds": [
+      "Jaina"
+     ],
+     "under": "Bug Fixes",
+     "html": "<strong class=\"pn-h\">Jaina</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Frostbolt [Q]</strong>\n<ul>\n<li>Fixed an issue causing Jaina's Frostbolt to not have its model updated by Dreadlord Jaina or Lunar Jaina.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Frostbolt",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue causing Jaina's Frostbolt to not have its model updated by Dreadlord Jaina or Lunar Jaina.",
+         "html": "Fixed an issue causing Jaina's Frostbolt to not have its model updated by Dreadlord Jaina or Lunar Jaina.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Orphea",
+     "heroId": "Orphea",
+     "heroIds": [
+      "Orphea"
+     ],
+     "under": "Bug Fixes",
+     "html": "<strong class=\"pn-h\">Orphea</strong>\n<ul>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Allegrissimo</strong>\n<ul>\n<li>Fixed an issue that could cause Allegrissimo's cooldown reduction to not be granted when hitting a Hero at Shadow Waltz' end.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Allegrissimo",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "Fixed an issue that could cause Allegrissimo's cooldown reduction to not be granted when hitting a Hero at Shadow Waltz' end.",
+         "html": "Fixed an issue that could cause Allegrissimo's cooldown reduction to not be granted when hitting a Hero at Shadow Waltz' end.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Sylvanas",
+     "heroId": "Sylvanas",
+     "heroIds": [
+      "Sylvanas"
+     ],
+     "under": "Bug Fixes",
+     "html": "<strong class=\"pn-h\">Sylvanas</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Possession [1]</strong>\n<ul>\n<li>Fixed Possession not showing in the Quick Cast menu settings.</li>\n<li>Fixed Possession not being correctly affected by cooldown reduction affects granted by allies.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Possession",
+       "key": "1",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed Possession not showing in the Quick Cast menu settings.",
+         "html": "Fixed Possession not showing in the Quick Cast menu settings.",
+         "added": false
+        },
+        {
+         "text": "Fixed Possession not being correctly affected by cooldown reduction affects granted by allies.",
+         "html": "Fixed Possession not being correctly affected by cooldown reduction affects granted by allies.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "nameKo": ""
+  }
+ ],
+ "heroes": [
+  "Alarak",
+  "Ana",
+  "Azmodan",
+  "Deathwing",
+  "Falstad",
+  "Jaina",
+  "Kaelthas",
+  "Muradin",
+  "Murky",
+  "Orphea",
+  "Sylvanas",
+  "Thrall",
+  "Tyrande",
+  "Zuljin"
+ ],
+ "battlegrounds": [
+  "volskaya_foundry",
+  "warhead_junction"
+ ],
+ "lang": "en",
+ "newsId": "24245220"
+}

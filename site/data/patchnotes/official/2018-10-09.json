@@ -1,0 +1,610 @@
+{
+ "date": "2018-10-09",
+ "kind": "ptr",
+ "title": "히어로즈 오브 더 스톰 공개 테스트 서버 패치 노트 — 2018년 10월 9일",
+ "source": "https://news.blizzard.com/ko-kr/article/22547648/2018-10-9",
+ "published": "2018-10-08T17:30:00Z",
+ "sections": [
+  {
+   "name": "머리말",
+   "key": "intro",
+   "html": "<p>히어로즈 오브 더 스톰의 다음 패치가 공개 테스트 서버에 적용되어 10월 15일까지 이용할 수 있습니다. 공개 테스트 서버에서 게임을 플레이하다가 버그가 눈에 띄면 <a href=\"http://kr.battle.net/heroes/ko/forum/20013840/\">공개 테스트 서버 버그 제보</a> 게시판에 제보를 부탁드립니다.</p>"
+  },
+  {
+   "name": "전장",
+   "key": "battlegrounds",
+   "html": "<p><strong class=\"pn-h\">일반전 전장 로테이션:</strong></p>\n<ul>\n<li>일반전 전장 로테이션으로 아래 전장들이 활성화되었습니다.\n<ul>\n<li>알터랙 고개</li>\n<li>영원의 전쟁터</li>\n<li>블랙하트 항만</li>\n<li>브락시스 항전</li>\n<li>저주받은 골짜기</li>\n<li>용의 둥지</li>\n<li>공포의 정원</li>\n<li>하나무라 사원</li>\n<li>불지옥 신단</li>\n<li>하늘 사원</li>\n<li>거미 여왕의 무덤</li>\n<li>파멸의 탑</li>\n<li>볼스카야 공장</li>\n<li>핵탄두 격전지</li>\n</ul>\n</li>\n</ul>\n<ul>\n</ul>\n<ul>\n<li><strong>죽음의 광산:</strong>H죽음의 광산이 모든 대전 방식에서 제거되었습니다. 사용자 지정 게임에선 여전히 플레이할 수 있습니다.</li>\n<li><strong>용병:</strong> 폭파병이 돌진 공격 중에 침묵 상태가 되면 돌진이 취소되던 문제를 수정했습니다. 돌진 공격 전에 침묵 상태가 되면 돌진 공격은 여전히 사용할 수 없습니다.</li>\n</ul>\n<ul>\n</ul>"
+  },
+  {
+   "name": "새로운 영웅: 말가니스",
+   "key": "새로운_영웅_말가니스",
+   "html": "<p>교활하고 약삭빠른 말가니스에게 아서스 메네실을 유인해 리치 왕을 섬기게 하라는 명이 내려졌습니다. 왕자 아서스가 스트라솔름을 정화하도록 조종하는 데에는 성공했지만, 결국 리치 왕의 용사가 된 아서스의 서리한에 쓰러지고 말죠. 하지만, 악마는 그리 쉽게 죽지 않는 법이니...</p>\n<p><strong class=\"pn-h\">고유 능력</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>흡혈의 손길</strong></span>\n<ul>\n<li>적 영웅에게 준 피해의 45%만큼, 영웅이 아닌 대상에게 준 피해의 15%만큼 생명력을 회복합니다.</li>\n</ul>\n</li>\n</ul>\n<span class=\"pn-h\"><strong>일반 기술</strong></span>\n<ul>\n<li><font color=\"#0099ff\"><b>지옥 발톱 (Q)</b></font>\n<ul>\n<li>대상 방향으로 거칠게 할퀴며 나아가 적들에게 78의 피해를 줍니다.</li>\n<li>다시 사용해서 최대 2번 더 공격할 수 있습니다. 세 번째 공격은 적들을 0.75초 동안 기절시킵니다.</li>\n</ul>\n</li>\n<li><font color=\"#0099ff\"><b>괴저 기운 (W)</b></font>\n<ul>\n<li>대기를 더렵혀 주위 적들에게 119의 피해를 주고, 방어력이 3초 동안 25 증가합니다.</li>\n</ul>\n</li>\n<li><font color=\"#0099ff\"><b>밤의 질주 (E)</b></font>\n<ul>\n<li>0.75초 후, 이동 속도가 2초 동안 50% 증가합니다. 활성화된 동안 적 영웅을 통과하며 이동할 수 있고 통과한 적 영웅들을 2.5초 동안 수면 상태로 만듭니다.</li>\n</ul>\n</li>\n</ul>\n<span class=\"pn-h\"><strong>궁극기</strong></span>\n<ul>\n<li><span class=\"pn-name\"><strong>흡혈박쥐 떼 (R)</strong></span>\n<ul>\n<li>1초 후, 박쥐 떼로 흩어져 무적 상태가 되고 적들에게 3초 동안 초당 74의 피해를 줍니다.</li>\n<li>흡혈박쥐 떼는 적 영웅들에게 준 피해의 100%만큼 흡혈의 손길로 생명력을 회복시킵니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>부정한 전환 (R)</strong></span>\n<ul>\n<li>0.75초 동안 적 영웅에게 정신을 집중한 후 3초에 걸쳐 남은 생명력 비율을 대상과 교환합니다.</li>\n</ul>\n</li>\n</ul>"
+  },
+  {
+   "name": "디자인",
+   "key": "디자인",
+   "html": "<font color=\"#9900ff\"><b>지원가</b></font>\n<ul>\n<li>일부 치유 기술들이 영웅에게만 적용되고 돌격병이나 용병에게 적용되지 않도록 변경했습니다.</li>\n</ul>\n<strong>알렉스트라자</strong>\n<ul>\n<li>생명의 선물 (Q)</li>\n<li>생명의 숨결 (용의 여왕 Q)</li>\n</ul>\n<strong>빛나래</strong>\n<ul>\n<li>요정 가루 (E)</li>\n</ul>\n<strong>리 리</strong>\n<ul>\n<li>허브차 (Q)</li>\n</ul>\n<strong>레가르</strong>\n<ul>\n<li>치유의 토템 (사용 효과 - 4레벨)</li>\n<li>대지의 보호막 (W - 13레벨)</li>\n</ul>\n<strong>티란데</strong>\n<ul>\n<li>엘룬의 빛 (Q)</li>\n</ul>\n<strong>우서</strong>\n<ul>\n<li>성스러운 빛 (Q)</li>\n</ul>\n<blockquote><strong>개발자의 의견: </strong>대부분의 치유 기술을 주된 역할은 영웅을 치유하는 것이죠. 이를 위해 여러 치유 기술들이 영웅에게만 사용되도록 변경했습니다. 물론 돌격병에게 치유하는 것이 주된 게임플레이의 일부인 경우에는 변경하지 않았습니다. 자신을 치유하기 위한 모랄레스 중위의 치료 광선이라든가, 돌격병을 걸쳐서 아군 영웅을 치유할 수 있는 레가르의 연쇄 치유라든가, 돌격병들도 보호막을 부여하여 공격로를 압박하는 게 중요한 티리엘의 정의라든가, 적 돌격병에게도 피해를 줄 수 있기 때문에 이에 일관되게 아군 돌격병도 치유하는 우서의 신성한 광휘 등의 기술이 이에 해당되죠.</blockquote>",
+   "items": [
+    {
+     "name": "알렉스트라자",
+     "heroId": "Alexstrasza",
+     "heroIds": [
+      "Alexstrasza"
+     ],
+     "under": null,
+     "html": "<ul>\n<li>생명의 선물 (Q)</li>\n<li>생명의 숨결 (용의 여왕 Q)</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "생명의 선물 (Q)",
+         "html": "생명의 선물 (Q)",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "생명의 숨결 (용의 여왕 Q)",
+         "html": "생명의 숨결 (용의 여왕 Q)",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "빛나래",
+     "heroId": "FaerieDragon",
+     "heroIds": [
+      "FaerieDragon"
+     ],
+     "under": null,
+     "html": "<ul>\n<li>요정 가루 (E)</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "요정 가루 (E)",
+         "html": "요정 가루 (E)",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "리 리",
+     "heroId": "LiLi",
+     "heroIds": [
+      "LiLi"
+     ],
+     "under": null,
+     "html": "<ul>\n<li>허브차 (Q)</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "허브차 (Q)",
+         "html": "허브차 (Q)",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "레가르",
+     "heroId": "Rehgar",
+     "heroIds": [
+      "Rehgar"
+     ],
+     "under": null,
+     "html": "<ul>\n<li>치유의 토템 (사용 효과 - 4레벨)</li>\n<li>대지의 보호막 (W - 13레벨)</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "치유의 토템 (사용 효과 - 4레벨)",
+         "html": "치유의 토템 (사용 효과 - 4레벨)",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "대지의 보호막 (W - 13레벨)",
+         "html": "대지의 보호막 (W - 13레벨)",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "티란데",
+     "heroId": "Tyrande",
+     "heroIds": [
+      "Tyrande"
+     ],
+     "under": null,
+     "html": "<ul>\n<li>엘룬의 빛 (Q)</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "엘룬의 빛 (Q)",
+         "html": "엘룬의 빛 (Q)",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "우서",
+     "heroId": "Uther",
+     "heroIds": [
+      "Uther"
+     ],
+     "under": null,
+     "html": "<ul>\n<li>성스러운 빛 (Q)</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "성스러운 빛 (Q)",
+         "html": "성스러운 빛 (Q)",
+         "added": false
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "영웅",
+   "key": "heroes",
+   "html": "<table class=\"table table-condensed\">\n<tbody>\n<tr>\n<th></th>\n</tr>\n<tr>\n<td></td>\n</tr>\n</tbody>\n</table>"
+  },
+  {
+   "name": "지원가",
+   "key": "role_support",
+   "html": "<h4>아나</h4>\n<img alt=\"Divider_Hero_Ana.png\" data-id=\"21199661\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/E4NO4D2W1A101505345334072.png\"/>\n<strong class=\"pn-h\">기술</strong>\n<ul>\n<li><strong>치유탄 (Q)</strong>\n<ul>\n<li>치유탄이 생명력이 모두 회복된 대상을 관통합니다.</li>\n</ul>\n</li>\n</ul>",
+   "heroes": [
+    {
+     "name": "아나",
+     "heroId": "Ana",
+     "heroIds": [
+      "Ana"
+     ],
+     "changes": [
+      {
+       "name": "치유탄",
+       "key": "Q",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "치유탄이 생명력이 모두 회복된 대상을 관통합니다.",
+         "html": "치유탄이 생명력이 모두 회복된 대상을 관통합니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<img alt=\"Divider_Hero_Ana.png\" data-id=\"21199661\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/E4NO4D2W1A101505345334072.png\"/>\n<strong class=\"pn-h\">기술</strong>\n<ul>\n<li><strong>치유탄 (Q)</strong>\n<ul>\n<li>치유탄이 생명력이 모두 회복된 대상을 관통합니다.</li>\n</ul>\n</li>\n</ul>"
+    }
+   ]
+  },
+  {
+   "name": "수집품",
+   "key": "collection",
+   "html": "<span class=\"pn-h\"><strong>새로운 묶음 상품</strong></span>\n<ul>\n<li>다음 묶음 상품을 한정된 기간 동안 구매하실 수 있습니다!\n<ul>\n<li>말가니스 영웅 묶음 상품</li>\n<li>삶과 죽음 묶음 상품</li>\n<li>시체 수레 묶음 상품</li>\n</ul>\n</li>\n</ul>\n<span class=\"pn-h\"><strong>새로운 아나운서</strong></span>\n<ul>\n<li>말가니스</li>\n</ul>\n<span class=\"pn-h\"><strong>새로운 탈것</strong></span>\n<ul>\n<li><span class=\"pn-name\"><strong>시체 수레</strong></span>\n<ul>\n<li>노스렌드 시체 수레</li>\n<li>검은바위 시체 수레</li>\n<li>죽음경비병 시체 수레</li>\n</ul>\n</li>\n</ul>\n<span class=\"pn-h\"><strong>새로운 스킨</strong></span>\n<ul>\n<li><span class=\"pn-name\"><strong>말가니스</strong></span>\n<ul>\n<li>공포기계 말가니스</li>\n<li>네오카본 공포기계 말가니스</li>\n<li>마스터 공포기계 말가니스</li>\n<li>지옥불 말가니스</li>\n<li>노스렌드 말가니스</li>\n</ul>\n</li>\n</ul>\n<strong class=\"pn-h\">새로운 초상화, 스프레이, 이모티콘</strong>\n<ul>\n<li>여러 가지 이모티콘 팩과 초상화가 게임에 추가되었습니다. </li>\n</ul>",
+   "items": [
+    {
+     "name": "말가니스",
+     "heroId": "MalGanis",
+     "heroIds": [
+      "MalGanis"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>말가니스</strong></span>\n<ul>\n<li>공포기계 말가니스</li>\n<li>네오카본 공포기계 말가니스</li>\n<li>마스터 공포기계 말가니스</li>\n<li>지옥불 말가니스</li>\n<li>노스렌드 말가니스</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "공포기계 말가니스",
+         "html": "공포기계 말가니스",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "네오카본 공포기계 말가니스",
+         "html": "네오카본 공포기계 말가니스",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "마스터 공포기계 말가니스",
+         "html": "마스터 공포기계 말가니스",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "지옥불 말가니스",
+         "html": "지옥불 말가니스",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "노스렌드 말가니스",
+         "html": "노스렌드 말가니스",
+         "added": false
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "버그 수정",
+   "key": "bugs",
+   "html": "<span class=\"pn-h\"><strong>일반</strong></span>\n<ul>\n<li><strong>인공지능 영웅: </strong>여러 인공지능 영웅들이 기술을 올바르지 않게 사용하던 문제를 수정했습니다.</li>\n<li><strong>기술 위력:</strong> 일부 기술들이 영웅이 죽은 후에 기술 위력 효과가 반영되지 않던 문제를 수정했습니다. (예시: 기술 위력이 증가한 제이나의 눈보라가 첫 번째 공격 이후에 제이나가 죽어도 두 번째와 세 번째 공격 때 증가한 기술 위력이 적용됩니다.)</li>\n<li><strong>정지 / 시간 정지: </strong>플레이어가 생성한 지형이 정지나 시간 정지 상태인 영웅들을 이동시킬 수 있던 문제를 수정했습니다.</li>\n</ul>\n<span class=\"pn-h\"><strong>전장</strong></span>\n<ul>\n<li><strong>공포의 정원: </strong>정원 공포 셋이 한 공격로에 생성될 수 있던 문제를 수정했습니다.</li>\n<li><strong>돌격병 / 용병:</strong> 영웅들이 관문에서 투석기가 통과하지 못하도록 막을 수 있던 문제를 수정했습니다.</li>\n</ul>\n<strong class=\"pn-h\">사용자 인터페이스</strong>\n<ul>\n<li>귓속말 중에 플레이어의 이름 전에 공간이 발생하던 문제를 수정했습니다.</li>\n</ul>\n<span class=\"pn-h\"><strong>영웅, 기술, 특성</strong></span>\n<ul>\n<li><strong>아나: </strong>아나의 때까치의 치유량이 기술 위력이나 대상의 방어력 등으로 변경된 피해량을 반영하지 않던 문제를 수정했습니다.</li>\n<li><strong>크로미: </strong>시간의 굴레의 대상이 이동 기술을 사용하면 시간의 굴레로 돌아오는 지점이 올바르지 않게 표시되던 문제를 수정했습니다.</li>\n<li><strong>디아블로: </strong>제압을 사용하는 중에 밀치기 효과 등으로 위치가 바뀌지 않던 문제를 수정했습니다.</li>\n<li><strong>갈: </strong>받는 피해 감소 효과 중 일부가 갈에게 적용되지 않던 문제를 수정했습니다.</li>\n<li><strong>굴단: </strong>내면의 어둠의 기술 위력 증가 효과가 생명력 흡수의 치유량을 증가시키지 않던 문제를 수정했습니다.</li>\n<li><strong>카라짐: </strong>이제 점막 종양이나 독성 둥지 등의 아군 유닛에게 찬란한 질주를 사용할 수 있습니다.</li>\n<li><strong>리밍: </strong>탈 라샤의 덕목으로 증가한 기술 위력이 순간이동을 두 번 연속 사용해도 재앙에 적용되던 문제를 수정했습니다.</li>\n<li><strong>머키: </strong>가짜 알의 점액이 더는 점액 특성의 영향을 받지 않습니다.</li>\n<li><strong>실바나스: </strong>정신 지배에 걸리면 대상에게 내려진 기존 이동 명령이 자동으로 취소됩니다.</li>\n<li><strong>우서: </strong>성스러운 불꽃의 공격력이 기술 위력의 영향을 받전 문제를 수정했습니다.</li>\n</ul>\n<ul>\n</ul>\n<p><strong><a href=\"https://kr.battle.net/forums/heroes/index\" target=\"_blank\">여기</a>를 클릭하면 히어로즈 오브 더 스톰 공식 토론장에서 다른 플레이어들과 이 게시글에 대한 의견을 나눌 수 있습니다.</strong></p>\n<p><img alt=\"\" class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/g6/G6G0N80EOC941426801305139.png\"/></p>\n<p><img alt=\"InvisibleDividerLine_800x50.png\" class=\"no-border; no-shadow\" data-id=\"14509591\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/6VA2831Q81IU1403137406234.png\"/></p>",
+   "items": [
+    {
+     "name": "아나",
+     "heroId": "Ana",
+     "heroIds": [
+      "Ana"
+     ],
+     "under": null,
+     "html": "<strong>아나: </strong>아나의 때까치의 치유량이 기술 위력이나 대상의 방어력 등으로 변경된 피해량을 반영하지 않던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "아나: 아나의 때까치의 치유량이 기술 위력이나 대상의 방어력 등으로 변경된 피해량을 반영하지 않던 문제를 수정했습니다.",
+         "html": "<strong>아나: </strong>아나의 때까치의 치유량이 기술 위력이나 대상의 방어력 등으로 변경된 피해량을 반영하지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "크로미",
+     "heroId": "Chromie",
+     "heroIds": [
+      "Chromie"
+     ],
+     "under": null,
+     "html": "<strong>크로미: </strong>시간의 굴레의 대상이 이동 기술을 사용하면 시간의 굴레로 돌아오는 지점이 올바르지 않게 표시되던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "크로미: 시간의 굴레의 대상이 이동 기술을 사용하면 시간의 굴레로 돌아오는 지점이 올바르지 않게 표시되던 문제를 수정했습니다.",
+         "html": "<strong>크로미: </strong>시간의 굴레의 대상이 이동 기술을 사용하면 시간의 굴레로 돌아오는 지점이 올바르지 않게 표시되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "디아블로",
+     "heroId": "Diablo",
+     "heroIds": [
+      "Diablo"
+     ],
+     "under": null,
+     "html": "<strong>디아블로: </strong>제압을 사용하는 중에 밀치기 효과 등으로 위치가 바뀌지 않던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "디아블로: 제압을 사용하는 중에 밀치기 효과 등으로 위치가 바뀌지 않던 문제를 수정했습니다.",
+         "html": "<strong>디아블로: </strong>제압을 사용하는 중에 밀치기 효과 등으로 위치가 바뀌지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "갈",
+     "heroId": "Gall",
+     "heroIds": [
+      "Gall"
+     ],
+     "under": null,
+     "html": "<strong>갈: </strong>받는 피해 감소 효과 중 일부가 갈에게 적용되지 않던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "갈: 받는 피해 감소 효과 중 일부가 갈에게 적용되지 않던 문제를 수정했습니다.",
+         "html": "<strong>갈: </strong>받는 피해 감소 효과 중 일부가 갈에게 적용되지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "굴단",
+     "heroId": "Guldan",
+     "heroIds": [
+      "Guldan"
+     ],
+     "under": null,
+     "html": "<strong>굴단: </strong>내면의 어둠의 기술 위력 증가 효과가 생명력 흡수의 치유량을 증가시키지 않던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "굴단: 내면의 어둠의 기술 위력 증가 효과가 생명력 흡수의 치유량을 증가시키지 않던 문제를 수정했습니다.",
+         "html": "<strong>굴단: </strong>내면의 어둠의 기술 위력 증가 효과가 생명력 흡수의 치유량을 증가시키지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "카라짐",
+     "heroId": "Monk",
+     "heroIds": [
+      "Monk"
+     ],
+     "under": null,
+     "html": "<strong>카라짐: </strong>이제 점막 종양이나 독성 둥지 등의 아군 유닛에게 찬란한 질주를 사용할 수 있습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "카라짐: 이제 점막 종양이나 독성 둥지 등의 아군 유닛에게 찬란한 질주를 사용할 수 있습니다.",
+         "html": "<strong>카라짐: </strong>이제 점막 종양이나 독성 둥지 등의 아군 유닛에게 찬란한 질주를 사용할 수 있습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "리밍",
+     "heroId": "Wizard",
+     "heroIds": [
+      "Wizard"
+     ],
+     "under": null,
+     "html": "<strong>리밍: </strong>탈 라샤의 덕목으로 증가한 기술 위력이 순간이동을 두 번 연속 사용해도 재앙에 적용되던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "리밍: 탈 라샤의 덕목으로 증가한 기술 위력이 순간이동을 두 번 연속 사용해도 재앙에 적용되던 문제를 수정했습니다.",
+         "html": "<strong>리밍: </strong>탈 라샤의 덕목으로 증가한 기술 위력이 순간이동을 두 번 연속 사용해도 재앙에 적용되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "머키",
+     "heroId": "Murky",
+     "heroIds": [
+      "Murky"
+     ],
+     "under": null,
+     "html": "<strong>머키: </strong>가짜 알의 점액이 더는 점액 특성의 영향을 받지 않습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "머키: 가짜 알의 점액이 더는 점액 특성의 영향을 받지 않습니다.",
+         "html": "<strong>머키: </strong>가짜 알의 점액이 더는 점액 특성의 영향을 받지 않습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "실바나스",
+     "heroId": "Sylvanas",
+     "heroIds": [
+      "Sylvanas"
+     ],
+     "under": null,
+     "html": "<strong>실바나스: </strong>정신 지배에 걸리면 대상에게 내려진 기존 이동 명령이 자동으로 취소됩니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "실바나스: 정신 지배에 걸리면 대상에게 내려진 기존 이동 명령이 자동으로 취소됩니다.",
+         "html": "<strong>실바나스: </strong>정신 지배에 걸리면 대상에게 내려진 기존 이동 명령이 자동으로 취소됩니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "우서",
+     "heroId": "Uther",
+     "heroIds": [
+      "Uther"
+     ],
+     "under": null,
+     "html": "<strong>우서: </strong>성스러운 불꽃의 공격력이 기술 위력의 영향을 받전 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "우서: 성스러운 불꽃의 공격력이 기술 위력의 영향을 받전 문제를 수정했습니다.",
+         "html": "<strong>우서: </strong>성스러운 불꽃의 공격력이 기술 위력의 영향을 받전 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "heroes": [
+  "Alexstrasza",
+  "Ana",
+  "Chromie",
+  "Diablo",
+  "FaerieDragon",
+  "Gall",
+  "Guldan",
+  "LiLi",
+  "MalGanis",
+  "Monk",
+  "Murky",
+  "Rehgar",
+  "Sylvanas",
+  "Tyrande",
+  "Uther",
+  "Wizard"
+ ],
+ "battlegrounds": [],
+ "newsId": "22547648"
+}

@@ -1,0 +1,1806 @@
+{
+ "date": "2017-08-01",
+ "kind": "ptr",
+ "title": "히어로즈 오브 더 스톰 공개 테스트 서버 노트 — 2017년 8월 1일",
+ "source": "https://news.blizzard.com/ko-kr/article/20944067/2017-8-1",
+ "published": "2017-07-31T17:00:00Z",
+ "sections": [
+  {
+   "name": "머리말",
+   "key": "intro",
+   "html": "<p>히어로즈 오브 더 스톰의 다음 패치가 공개 테스트 서버에 적용되어 8월 8일 (태평양 표준시 기준)까지 이용할 수 있습니다. 공개 테스트 서버에서 새로운 콘텐츠를 체험해 보세요. 해당 패치는 조만간 히어로즈 오브 더 스톰의 본 서버에 적용됩니다. 기존과 마찬가지로, 공개 테스트 서버에서 게임을 플레이하다가 버그가 눈에 띄면 <a href=\"https://kr.battle.net/forums/ko/heroes/4007177/\" target=\"_blank\">버그 제보</a> 게시판에 제보를 부탁드립니다.</p>"
+  },
+  {
+   "name": "이동",
+   "key": "이동",
+   "html": "<figure class=\"pull-right\">\n<img src=\"https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/xz/XZJV25RMNFW91501096834016.jpg\"/>\n</figure>\n<ul>\n<li></li>\n<li></li>\n<li></li>\n<li></li>\n<li></li>\n<li></li>\n<li></li>\n<li></li>\n</ul>"
+  },
+  {
+   "name": "일반",
+   "key": "general",
+   "html": "<p><span class=\"pn-h\"><strong>인공지능 상대 팀 조합</strong></span></p>\n<ul>\n<li>동일 영웅 제거: 이제 인공지능 상대에서 상대방 팀에 아군과 같은 영웅이 등장하지 않습니다.</li>\n</ul>"
+  },
+  {
+   "name": "새로운 영웅: 가로쉬",
+   "key": "새로운_영웅_가로쉬",
+   "html": "<p>호드의 새로운 대족장인 가로쉬는 당당하고 흉포한 전사이며, 무시무시한 철권 통치로 호드 전체를 억압한 독재자입니다. 얼라이언스에 대한 그의 증오는 들불처럼 타올라, 어떤 장애물에도 굴하지 않고 적 진영의 파멸을 위해 앞장섭니다. 오크 본연의 영광을 되찾기 위해 그의 도끼는 오늘도 적의 피를 갈구합니다.</p>\n<p><span class=\"pn-h\"><strong>고유 능력 </strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>방어력 증가</strong></span>\n<ul>\n<li>잃은 생명력 2%당 방어력이 1 증가합니다.</li>\n</ul>\n</li>\n</ul>\n<p><span class=\"pn-h\"><strong>일반 기술</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>대지파괴자 (Q)</strong></span>\n<ul>\n<li>일정 지역 안의 적들에게 피해를 줍니다. 외곽의 적 영웅들은 끌어당깁니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>피의 갈증 (W)</strong></span>\n<ul>\n<li>적에게 피해를 주고 잃은 생명력의 10%를 회복합니다. 영웅을 대상으로 사용하면 회복량이 100% 증가합니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>파쇄추 (E)</strong></span>\n<ul>\n<li>주위의 적 영웅이나 돌격병, 용병을 내던져 대상 위치에 있는 적들에게 피해를 주고 2.5초 동안 30% 느려지게 합니다.</li>\n</ul>\n</li>\n</ul>\n<p><span class=\"pn-h\"><strong>궁극기</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>전쟁군주의 도전 (R)</strong></span>\n<ul>\n<li>주위의 적 영웅들을 침묵시키고 도발하여 1.5초 동안 자신을 공격하게 만듭니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>척살 (R)</strong></span>\n<ul>\n<li>주위 적들에게 피해를 주고 1.5초 동안 30% 느려지게 합니다. 영웅에게는 100%의 추가 피해를 주고 적중한 적 영웅 하나당 재사용 대기시간이 1초 감소합니다.</li>\n<li>최대 3회 충전됩니다.</li>\n</ul>\n</li>\n</ul>"
+  },
+  {
+   "name": "아트",
+   "key": "art",
+   "html": "<p><span class=\"pn-h\"><strong>아르타니스</strong></span></p>\n<ul>\n<li>댈람 아르타니스의 이연격 활성화 효과가 차원검과 동일한 녹색으로 변경되었습니다.</li>\n</ul>",
+   "items": [
+    {
+     "name": "아르타니스",
+     "heroId": "Artanis",
+     "heroIds": [
+      "Artanis"
+     ],
+     "under": null,
+     "html": "<ul>\n<li>댈람 아르타니스의 이연격 활성화 효과가 차원검과 동일한 녹색으로 변경되었습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "댈람 아르타니스의 이연격 활성화 효과가 차원검과 동일한 녹색으로 변경되었습니다.",
+         "html": "댈람 아르타니스의 이연격 활성화 효과가 차원검과 동일한 녹색으로 변경되었습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "사용자 인터페이스",
+   "key": "ui",
+   "html": "<p><span class=\"pn-h\"><strong>일반</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>방어력 표시</strong></span>\n<ul>\n<li>영웅의 생명력 막대 옆에 방어력 증가량 및 감소량을 나타내는 아이콘이 추가되었습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>커서 재사용 대기시간 표시</strong></span>\n<ul>\n<li>마우스 커서 주위에 기술의 재사용 대기시간을 표시할 수 있는 설정이 추가되었습니다.\n<ul>\n<li>이 기능은 설정 메뉴에서 활성화하거나 비활성화할 수 있습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>MVP 깃발</strong></span>\n<ul>\n<li>이제 MVP 화면에서 MVP 플레이어의 깃발이 표시됩니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>게임 내 대화 개선</strong></span>\n<ul>\n<li>게임 내 대화창이 열렸을 때 화살표 아이콘을 클릭하여 끌면 게임 내 대화창을 옮길 수 있습니다.</li>\n<li>'Page Up'과 'Page Down' 단축키를 누르면 게임 내 대화의 지난 내용을 확인할 수 있습니다.</li>\n<li>이제 게임 대 대화 좌측에 대화가 입력된 시간이 표시됩니다.</li>\n<li>대화 좌측에 표시되는 영웅 이름이 영웅 아이콘으로 변경됩니다.</li>\n</ul>\n</li>\n</ul>"
+  },
+  {
+   "name": "전장",
+   "key": "battlegrounds",
+   "html": "<p><span class=\"pn-h\"><strong>전장 로테이션 업데이트</strong></span></p>\n<ul>\n<li>등급전 전장 로테이션으로 아래 전장들이 활성화되었습니다.\n<ul>\n<li>브락시스 항전</li>\n<li>영원의 전쟁터</li>\n<li>하늘 사원</li>\n<li>저주받은 골짜기</li>\n<li>블랙하트 항만</li>\n<li>파멸의 탑</li>\n<li>핵탄두 격전지</li>\n<li>용의 둥지</li>\n<li>공포의 정원</li>\n</ul>\n</li>\n</ul>\n<p><span class=\"pn-h\"><strong>저주받은 골짜기</strong></span></p>\n<ul>\n<li>까마귀 군주의 저주가 10초 또는 5초 남았을 때 시각 및 소리 알림이 출력됩니다.</li>\n</ul>",
+   "items": [
+    {
+     "name": "저주받은 골짜기",
+     "battleground": "cursed_hollow",
+     "html": "<ul>\n<li>까마귀 군주의 저주가 10초 또는 5초 남았을 때 시각 및 소리 알림이 출력됩니다.</li>\n</ul>"
+    }
+   ]
+  },
+  {
+   "name": "영웅",
+   "key": "heroes",
+   "html": "<table class=\"table table-condensed\">\n<tbody>\n<tr>\n<th></th>\n<th></th>\n<th></th>\n<th></th>\n</tr>\n<tr>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n</tbody>\n</table>"
+  },
+  {
+   "name": "암살자",
+   "key": "role_assassin",
+   "html": "<h4>라그나로스</h4>\n<p><img alt=\"Divider_Hero_Ragnaros_crop.png\" data-id=\"20407319\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/ub/UB7KYPZXOLA01481923111737.png\"/></p>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>살아있는 유성 (W)</strong></span>\n<ul>\n<li>공격력이 72에서 68로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>화염 폭풍 (E)</strong></span>\n<ul>\n<li>재사용 대기시간이 10초에서 9초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>선회하는 유성 (W)\n<ul>\n<li>추가된 기능:\n<ul>\n<li>살아있는 유성이 같은 적에게 피해를 줄 때마다 그 대상에게 3%의 추가 피해를 줍니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>휘몰아치는 불길 (E)\n<ul>\n<li>변경된 기능:\n<ul>\n<li>더는 화염 폭풍의 재사용 대기시간을 감소시키지 않습니다.</li>\n<li>이제 화염 폭풍의 공격력을 75% 증가시킵니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>7레벨</strong></span>\n<ul>\n<li>과열 (E)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>새로운 특성: 열기의 일격 (지속 효과)\n<ul>\n<li>10초마다 다음 일반 공격이 적 영웅에게 60%의 추가 피해를 줍니다. 일반 기술이 적에게 적중할 때마다 재사용 대기시간이 1초 감소합니다.</li>\n</ul>\n</li>\n<li>녹아내리는 힘 (W)\n<ul>\n<li>적중한 적 영웅 하나당 증가하는 다음 살아있는 유성의 공격력이 15%에서 20%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>20레벨</strong></span>\n<ul>\n<li>용암 쇄도 (R)\n<ul>\n<li>재사용 대기시간 감소량이 10초에서 30초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<ul>\n</ul>\n<h4>도살자</h4>\n<p><img alt=\"Divider_Hero_Butcher_crop.png\" data-id=\"20073820\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/hr/HRHHM3FS4ABY1458592366407.png\"/></p>\n<p><strong class=\"pn-h\">능력치</strong></p>\n<ul>\n<li>일반 공격력이 140에서 130으로 감소했습니다.</li>\n</ul>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>신선한 고기 (고유 능력)</strong></span>\n<ul>\n<li>퀘스트를 완료하는 데 필요한 신선한 고기가 125에서 200으로 증가했습니다.</li>\n<li>고기당 추가 일반 공격력이 1에서 0.5로 감소했습니다.</li>\n<li>적 영웅이 떨어트리는 고기가 5에서 25로 증가했습니다.</li>\n<li>퀘스트를 완료했을 때 증가하는 공격력이 100에서 125로 증가했습니다.</li>\n<li>퀘스트를 완료해도 적 영웅은 신선한 고기를 떨어트리며 고기를 획득할 때마다 일반 공격력이 영구히 5 증가합니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>도살장 (고유 능력)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+   "heroes": [
+    {
+     "name": "라그나로스",
+     "heroId": "Ragnaros",
+     "heroIds": [
+      "Ragnaros"
+     ],
+     "changes": [
+      {
+       "name": "살아있는 유성",
+       "key": "W",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "공격력이 72에서 68로 감소했습니다.",
+         "html": "공격력이 72에서 68로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "화염 폭풍",
+       "key": "E",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 10초에서 9초로 감소했습니다.",
+         "html": "재사용 대기시간이 10초에서 9초로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "선회하는 유성",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": []
+      },
+      {
+       "name": "추가된 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "살아있는 유성이 같은 적에게 피해를 줄 때마다 그 대상에게 3%의 추가 피해를 줍니다.",
+         "html": "살아있는 유성이 같은 적에게 피해를 줄 때마다 그 대상에게 3%의 추가 피해를 줍니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "휘몰아치는 불길",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": []
+      },
+      {
+       "name": "변경된 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "더는 화염 폭풍의 재사용 대기시간을 감소시키지 않습니다.",
+         "html": "더는 화염 폭풍의 재사용 대기시간을 감소시키지 않습니다.",
+         "added": false
+        },
+        {
+         "text": "이제 화염 폭풍의 공격력을 75% 증가시킵니다.",
+         "html": "이제 화염 폭풍의 공격력을 75% 증가시킵니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "과열",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 특성: 열기의 일격",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "10초마다 다음 일반 공격이 적 영웅에게 60%의 추가 피해를 줍니다. 일반 기술이 적에게 적중할 때마다 재사용 대기시간이 1초 감소합니다.",
+         "html": "10초마다 다음 일반 공격이 적 영웅에게 60%의 추가 피해를 줍니다. 일반 기술이 적에게 적중할 때마다 재사용 대기시간이 1초 감소합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "녹아내리는 힘",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "적중한 적 영웅 하나당 증가하는 다음 살아있는 유성의 공격력이 15%에서 20%로 증가했습니다.",
+         "html": "적중한 적 영웅 하나당 증가하는 다음 살아있는 유성의 공격력이 15%에서 20%로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "용암 쇄도",
+       "key": "R",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "재사용 대기시간 감소량이 10초에서 30초로 증가했습니다.",
+         "html": "재사용 대기시간 감소량이 10초에서 30초로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_Ragnaros_crop.png\" data-id=\"20407319\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/ub/UB7KYPZXOLA01481923111737.png\"/></p>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>살아있는 유성 (W)</strong></span>\n<ul>\n<li>공격력이 72에서 68로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>화염 폭풍 (E)</strong></span>\n<ul>\n<li>재사용 대기시간이 10초에서 9초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>선회하는 유성 (W)\n<ul>\n<li>추가된 기능:\n<ul>\n<li>살아있는 유성이 같은 적에게 피해를 줄 때마다 그 대상에게 3%의 추가 피해를 줍니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>휘몰아치는 불길 (E)\n<ul>\n<li>변경된 기능:\n<ul>\n<li>더는 화염 폭풍의 재사용 대기시간을 감소시키지 않습니다.</li>\n<li>이제 화염 폭풍의 공격력을 75% 증가시킵니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>7레벨</strong></span>\n<ul>\n<li>과열 (E)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>새로운 특성: 열기의 일격 (지속 효과)\n<ul>\n<li>10초마다 다음 일반 공격이 적 영웅에게 60%의 추가 피해를 줍니다. 일반 기술이 적에게 적중할 때마다 재사용 대기시간이 1초 감소합니다.</li>\n</ul>\n</li>\n<li>녹아내리는 힘 (W)\n<ul>\n<li>적중한 적 영웅 하나당 증가하는 다음 살아있는 유성의 공격력이 15%에서 20%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>20레벨</strong></span>\n<ul>\n<li>용암 쇄도 (R)\n<ul>\n<li>재사용 대기시간 감소량이 10초에서 30초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<ul>\n</ul>"
+    },
+    {
+     "name": "도살자",
+     "heroId": "Butcher",
+     "heroIds": [
+      "Butcher"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "일반 공격력이 140에서 130으로 감소했습니다.",
+         "html": "일반 공격력이 140에서 130으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "신선한 고기",
+       "key": "고유 능력",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "퀘스트를 완료하는 데 필요한 신선한 고기가 125에서 200으로 증가했습니다.",
+         "html": "퀘스트를 완료하는 데 필요한 신선한 고기가 125에서 200으로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "고기당 추가 일반 공격력이 1에서 0.5로 감소했습니다.",
+         "html": "고기당 추가 일반 공격력이 1에서 0.5로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "적 영웅이 떨어트리는 고기가 5에서 25로 증가했습니다.",
+         "html": "적 영웅이 떨어트리는 고기가 5에서 25로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "퀘스트를 완료했을 때 증가하는 공격력이 100에서 125로 증가했습니다.",
+         "html": "퀘스트를 완료했을 때 증가하는 공격력이 100에서 125로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "퀘스트를 완료해도 적 영웅은 신선한 고기를 떨어트리며 고기를 획득할 때마다 일반 공격력이 영구히 5 증가합니다.",
+         "html": "퀘스트를 완료해도 적 영웅은 신선한 고기를 떨어트리며 고기를 획득할 때마다 일반 공격력이 영구히 5 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "도살장",
+       "key": "고유 능력",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_Butcher_crop.png\" data-id=\"20073820\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/hr/HRHHM3FS4ABY1458592366407.png\"/></p>\n<p><strong class=\"pn-h\">능력치</strong></p>\n<ul>\n<li>일반 공격력이 140에서 130으로 감소했습니다.</li>\n</ul>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>신선한 고기 (고유 능력)</strong></span>\n<ul>\n<li>퀘스트를 완료하는 데 필요한 신선한 고기가 125에서 200으로 증가했습니다.</li>\n<li>고기당 추가 일반 공격력이 1에서 0.5로 감소했습니다.</li>\n<li>적 영웅이 떨어트리는 고기가 5에서 25로 증가했습니다.</li>\n<li>퀘스트를 완료했을 때 증가하는 공격력이 100에서 125로 증가했습니다.</li>\n<li>퀘스트를 완료해도 적 영웅은 신선한 고기를 떨어트리며 고기를 획득할 때마다 일반 공격력이 영구히 5 증가합니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>도살장 (고유 능력)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    }
+   ]
+  },
+  {
+   "name": "전문가",
+   "key": "role_specialist",
+   "html": "<h4>프로비우스</h4>\n<p><img alt=\"Divider_Hero_Probius_crop.png\" data-id=\"20661861\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/c8/C8GV1YCWE9UR1490301685084.png\"/></p>\n<p><span class=\"pn-h\"><strong>기술</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>일꾼 러쉬 (Z)</strong></span>\n<ul>\n<li>이제 일꾼 러쉬 효과가 활성화된 동안에는 일꾼 러쉬를 사용할 수 없습니다. 이로써 폭풍의 전당에서 나오는 플레이어들이 실수로 일꾼 러쉬를 사용하는 경우가 없어질 것입니다.</li>\n</ul>\n</li>\n</ul>",
+   "heroes": [
+    {
+     "name": "프로비우스",
+     "heroId": "Probius",
+     "heroIds": [
+      "Probius"
+     ],
+     "changes": [
+      {
+       "name": "일꾼 러쉬",
+       "key": null,
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "이제 일꾼 러쉬 효과가 활성화된 동안에는 일꾼 러쉬를 사용할 수 없습니다. 이로써 폭풍의 전당에서 나오는 플레이어들이 실수로 일꾼 러쉬를 사용하는 경우가 없어질 것입니다.",
+         "html": "이제 일꾼 러쉬 효과가 활성화된 동안에는 일꾼 러쉬를 사용할 수 없습니다. 이로써 폭풍의 전당에서 나오는 플레이어들이 실수로 일꾼 러쉬를 사용하는 경우가 없어질 것입니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_Probius_crop.png\" data-id=\"20661861\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/c8/C8GV1YCWE9UR1490301685084.png\"/></p>\n<p><span class=\"pn-h\"><strong>기술</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>일꾼 러쉬 (Z)</strong></span>\n<ul>\n<li>이제 일꾼 러쉬 효과가 활성화된 동안에는 일꾼 러쉬를 사용할 수 없습니다. 이로써 폭풍의 전당에서 나오는 플레이어들이 실수로 일꾼 러쉬를 사용하는 경우가 없어질 것입니다.</li>\n</ul>\n</li>\n</ul>"
+    }
+   ]
+  },
+  {
+   "name": "지원가",
+   "key": "role_support",
+   "html": "<h4>아우리엘</h4>\n<p><img alt=\"Divider_Hero_Auriel_Crop.png\" data-id=\"20256907\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/ox/OX0P7L15DW4I1471895719519.png\"/></p>\n<ul>\n<li>이제 치유 에너지가 최대치에 달했을 때 아우리엘의 자원 막대가 빛나기 시작합니다.</li>\n</ul>",
+   "heroes": [
+    {
+     "name": "아우리엘",
+     "heroId": "Auriel",
+     "heroIds": [
+      "Auriel"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "이제 치유 에너지가 최대치에 달했을 때 아우리엘의 자원 막대가 빛나기 시작합니다.",
+         "html": "이제 치유 에너지가 최대치에 달했을 때 아우리엘의 자원 막대가 빛나기 시작합니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_Auriel_Crop.png\" data-id=\"20256907\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/ox/OX0P7L15DW4I1471895719519.png\"/></p>\n<ul>\n<li>이제 치유 에너지가 최대치에 달했을 때 아우리엘의 자원 막대가 빛나기 시작합니다.</li>\n</ul>"
+    }
+   ]
+  },
+  {
+   "name": "전사",
+   "key": "role_tank",
+   "html": "<h4>D.Va</h4>\n<p><img alt=\"Divider_Hero_DVa.png\" data-id=\"20767067\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/6FSHV4RMROYW1493916777206.png\"/></p>\n<p><span class=\"pn-h\"><strong>특성</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>동력 전환 (W)\n<ul>\n<li>이제 이동 불가 상태로 만들지 않고 이동 속도를 추가로 50% 감소시킵니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>소냐</h4>\n<p><img alt=\"Divider_Hero_Sonya.png\" data-id=\"20783186\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/kt/KTJ5G6MTBWXD1494449265980.png\"/></p>\n<p><font color=\"#9900ff\"><b>기술</b></font></p>\n<ul>\n<li><span class=\"pn-name\"><strong>소용돌이 (E)</strong></span>\n<ul>\n<li>기술을 취소하는 데 필요한 재사용 대기시간이 0.5초에서 1초로 증가했습니다. 이로써 이 기술을 실수로 취소하는 경우가 줄어들 것입니다.</li>\n</ul>\n</li>\n</ul>",
+   "heroes": [
+    {
+     "name": "D.Va",
+     "heroId": "DVa",
+     "heroIds": [
+      "DVa"
+     ],
+     "changes": [
+      {
+       "name": "동력 전환",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "이제 이동 불가 상태로 만들지 않고 이동 속도를 추가로 50% 감소시킵니다.",
+         "html": "이제 이동 불가 상태로 만들지 않고 이동 속도를 추가로 50% 감소시킵니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_DVa.png\" data-id=\"20767067\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/6FSHV4RMROYW1493916777206.png\"/></p>\n<p><span class=\"pn-h\"><strong>특성</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>동력 전환 (W)\n<ul>\n<li>이제 이동 불가 상태로 만들지 않고 이동 속도를 추가로 50% 감소시킵니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "소냐",
+     "heroId": "Barbarian",
+     "heroIds": [
+      "Barbarian"
+     ],
+     "changes": [
+      {
+       "name": "소용돌이",
+       "key": "E",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "기술을 취소하는 데 필요한 재사용 대기시간이 0.5초에서 1초로 증가했습니다. 이로써 이 기술을 실수로 취소하는 경우가 줄어들 것입니다.",
+         "html": "기술을 취소하는 데 필요한 재사용 대기시간이 0.5초에서 1초로 증가했습니다. 이로써 이 기술을 실수로 취소하는 경우가 줄어들 것입니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_Sonya.png\" data-id=\"20783186\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/kt/KTJ5G6MTBWXD1494449265980.png\"/></p>\n<p><font color=\"#9900ff\"><b>기술</b></font></p>\n<ul>\n<li><span class=\"pn-name\"><strong>소용돌이 (E)</strong></span>\n<ul>\n<li>기술을 취소하는 데 필요한 재사용 대기시간이 0.5초에서 1초로 증가했습니다. 이로써 이 기술을 실수로 취소하는 경우가 줄어들 것입니다.</li>\n</ul>\n</li>\n</ul>"
+    }
+   ]
+  },
+  {
+   "name": "수집품",
+   "key": "collection",
+   "html": "<p><span class=\"pn-h\"><strong>새로운 묶음 상품</strong></span> – 다음 묶음 상품과 스킨 팩이 추가되어 한정된 기간 동안 구매할 수 있습니다.</p>\n<ul>\n<li>가로위 영웅 묶음 상품</li>\n<li>매드 액스 가로쉬 스킨 팩</li>\n<li>스타크래프트 이중 세계관 묶음 상품</li>\n<li>워크래프트 무기고 묶음 상품</li>\n</ul>\n<p><span class=\"pn-h\"><strong>새로운 스킨</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>가로쉬</strong></span>\n<ul>\n<li>으스러진 손 가로쉬</li>\n<li>검은바위 가로쉬</li>\n<li>영광스러운 가로쉬</li>\n<li>치명적인 가로쉬</li>\n<li>매드 액스 가로쉬</li>\n<li>생화학전 매드 액스 가로쉬</li>\n<li>얼어붙은 매드 액스 가로쉬</li>\n<li>돌연변이 매드 액스 가로쉬</li>\n<li>호드 액스 가로쉬</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>아눕아락</strong></span>\n<ul>\n<li>아눕아리스크</li>\n<li>칼디르 아눕아리스크</li>\n<li>오메가 아눕아리크스</li>\n<li>맹독 아눕아리스크</li>\n<li>격노한 아눕아리스크</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>리밍</strong></span>\n<ul>\n<li>기사단 리밍</li>\n<li>첫 번째 승천자 리밍</li>\n<li>암흑 기사 리밍</li>\n<li>칠흑 기사 리밍</li>\n<li>공허 기사 리밍</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>정예 타우렌 족장 </strong></span>\n<ul>\n<li>레벨 800 정예 타우렌 족장</li>\n<li>악령 레벨 800 정예 타우렌 족장</li>\n<li>밀림 레벨 800 정예 타우렌 족장</li>\n<li>쇼크 레벨 800 정예 타우렌 족장</li>\n<li>호드 레벨 800 정예 타우렌 족장</li>\n<li>천상의 레벨 800 정예 타우렌 족장</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>도살자</strong></span>\n<ul>\n<li>그렌델 도살자리스크</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>발리라</strong></span>\n<ul>\n<li>\n상아색 악마사냥꾼 발리라\n</li>\n<li>\n진홍빛 악마사냥꾼 발리라\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>줄진</strong></span>\n<ul>\n<li>비전 잿불군주 줄진 </li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>D.Va</strong></span>\n<ul>\n<li>지옥의 개 골리앗 D.Va</li>\n<li>악령 골리앗 D.Va </li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>아바투르</strong></span>\n<ul>\n<li>야생 무리 아바투르 </li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>데하카</strong></span>\n<ul>\n<li>흉포한 무리 우두머리 데하카 </li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>바리안</strong></span>\n<ul>\n<li>치명적인 로고쉬 바리안 </li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>사무로</strong></span>\n<ul>\n<li>전쟁노래 지옥검 사무로 </li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>레가르</strong></span>\n<ul>\n<li>사로나이트 강철발톱 레가르 </li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>프로비우스</strong></span>\n<ul>\n<li>태양석 프로비우스 프라임</li>\n<li>사르가스 프로비우스 프라임 </li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>사무로</strong></span>\n<ul>\n<li>자수정 군주 알라라크 </li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">새로운 탈것</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>폭주족 바이크</strong></span>\n<ul>\n<li>폭주족 바이크</li>\n<li>생화학전 폭주족 바이크</li>\n<li>얼어붙은 폭주족 바이크</li>\n<li>호드 폭주족 바이크</li>\n<li>돌연변히 폭주종 바이크</li>\n</ul>\n</li>\n</ul>",
+   "items": [
+    {
+     "name": "가로쉬",
+     "heroId": "Garrosh",
+     "heroIds": [
+      "Garrosh"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>가로쉬</strong></span>\n<ul>\n<li>으스러진 손 가로쉬</li>\n<li>검은바위 가로쉬</li>\n<li>영광스러운 가로쉬</li>\n<li>치명적인 가로쉬</li>\n<li>매드 액스 가로쉬</li>\n<li>생화학전 매드 액스 가로쉬</li>\n<li>얼어붙은 매드 액스 가로쉬</li>\n<li>돌연변이 매드 액스 가로쉬</li>\n<li>호드 액스 가로쉬</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "으스러진 손 가로쉬",
+         "html": "으스러진 손 가로쉬",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "검은바위 가로쉬",
+         "html": "검은바위 가로쉬",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "영광스러운 가로쉬",
+         "html": "영광스러운 가로쉬",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "치명적인 가로쉬",
+         "html": "치명적인 가로쉬",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "매드 액스 가로쉬",
+         "html": "매드 액스 가로쉬",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "생화학전 매드 액스 가로쉬",
+         "html": "생화학전 매드 액스 가로쉬",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "얼어붙은 매드 액스 가로쉬",
+         "html": "얼어붙은 매드 액스 가로쉬",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "돌연변이 매드 액스 가로쉬",
+         "html": "돌연변이 매드 액스 가로쉬",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "호드 액스 가로쉬",
+         "html": "호드 액스 가로쉬",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "아눕아락",
+     "heroId": "Anubarak",
+     "heroIds": [
+      "Anubarak"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>아눕아락</strong></span>\n<ul>\n<li>아눕아리스크</li>\n<li>칼디르 아눕아리스크</li>\n<li>오메가 아눕아리크스</li>\n<li>맹독 아눕아리스크</li>\n<li>격노한 아눕아리스크</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "아눕아리스크",
+         "html": "아눕아리스크",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "칼디르 아눕아리스크",
+         "html": "칼디르 아눕아리스크",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "오메가 아눕아리크스",
+         "html": "오메가 아눕아리크스",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "맹독 아눕아리스크",
+         "html": "맹독 아눕아리스크",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "격노한 아눕아리스크",
+         "html": "격노한 아눕아리스크",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "리밍",
+     "heroId": "Wizard",
+     "heroIds": [
+      "Wizard"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>리밍</strong></span>\n<ul>\n<li>기사단 리밍</li>\n<li>첫 번째 승천자 리밍</li>\n<li>암흑 기사 리밍</li>\n<li>칠흑 기사 리밍</li>\n<li>공허 기사 리밍</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "기사단 리밍",
+         "html": "기사단 리밍",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "첫 번째 승천자 리밍",
+         "html": "첫 번째 승천자 리밍",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "암흑 기사 리밍",
+         "html": "암흑 기사 리밍",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "칠흑 기사 리밍",
+         "html": "칠흑 기사 리밍",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "공허 기사 리밍",
+         "html": "공허 기사 리밍",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "정예 타우렌 족장",
+     "heroId": "L90ETC",
+     "heroIds": [
+      "L90ETC"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>정예 타우렌 족장 </strong></span>\n<ul>\n<li>레벨 800 정예 타우렌 족장</li>\n<li>악령 레벨 800 정예 타우렌 족장</li>\n<li>밀림 레벨 800 정예 타우렌 족장</li>\n<li>쇼크 레벨 800 정예 타우렌 족장</li>\n<li>호드 레벨 800 정예 타우렌 족장</li>\n<li>천상의 레벨 800 정예 타우렌 족장</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "레벨 800 정예 타우렌 족장",
+         "html": "레벨 800 정예 타우렌 족장",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "악령 레벨 800 정예 타우렌 족장",
+         "html": "악령 레벨 800 정예 타우렌 족장",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "밀림 레벨 800 정예 타우렌 족장",
+         "html": "밀림 레벨 800 정예 타우렌 족장",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "쇼크 레벨 800 정예 타우렌 족장",
+         "html": "쇼크 레벨 800 정예 타우렌 족장",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "호드 레벨 800 정예 타우렌 족장",
+         "html": "호드 레벨 800 정예 타우렌 족장",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "천상의 레벨 800 정예 타우렌 족장",
+         "html": "천상의 레벨 800 정예 타우렌 족장",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "도살자",
+     "heroId": "Butcher",
+     "heroIds": [
+      "Butcher"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>도살자</strong></span>\n<ul>\n<li>그렌델 도살자리스크</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "그렌델 도살자리스크",
+         "html": "그렌델 도살자리스크",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "발리라",
+     "heroId": "Valeera",
+     "heroIds": [
+      "Valeera"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>발리라</strong></span>\n<ul>\n<li>\n상아색 악마사냥꾼 발리라\n</li>\n<li>\n진홍빛 악마사냥꾼 발리라\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "상아색 악마사냥꾼 발리라",
+         "html": "상아색 악마사냥꾼 발리라",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "진홍빛 악마사냥꾼 발리라",
+         "html": "진홍빛 악마사냥꾼 발리라",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "줄진",
+     "heroId": "Zuljin",
+     "heroIds": [
+      "Zuljin"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>줄진</strong></span>\n<ul>\n<li>비전 잿불군주 줄진 </li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "비전 잿불군주 줄진",
+         "html": "비전 잿불군주 줄진",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "D.Va",
+     "heroId": "DVa",
+     "heroIds": [
+      "DVa"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>D.Va</strong></span>\n<ul>\n<li>지옥의 개 골리앗 D.Va</li>\n<li>악령 골리앗 D.Va </li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "지옥의 개 골리앗 D.Va",
+         "html": "지옥의 개 골리앗 D.Va",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "악령 골리앗 D.Va",
+         "html": "악령 골리앗 D.Va",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "아바투르",
+     "heroId": "Abathur",
+     "heroIds": [
+      "Abathur"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>아바투르</strong></span>\n<ul>\n<li>야생 무리 아바투르 </li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "야생 무리 아바투르",
+         "html": "야생 무리 아바투르",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "데하카",
+     "heroId": "Dehaka",
+     "heroIds": [
+      "Dehaka"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>데하카</strong></span>\n<ul>\n<li>흉포한 무리 우두머리 데하카 </li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "흉포한 무리 우두머리 데하카",
+         "html": "흉포한 무리 우두머리 데하카",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "바리안",
+     "heroId": "Varian",
+     "heroIds": [
+      "Varian"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>바리안</strong></span>\n<ul>\n<li>치명적인 로고쉬 바리안 </li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "치명적인 로고쉬 바리안",
+         "html": "치명적인 로고쉬 바리안",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "사무로",
+     "heroId": "Samuro",
+     "heroIds": [
+      "Samuro"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>사무로</strong></span>\n<ul>\n<li>전쟁노래 지옥검 사무로 </li>\n</ul><span class=\"pn-name\"><strong>사무로</strong></span>\n<ul>\n<li>자수정 군주 알라라크 </li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "전쟁노래 지옥검 사무로",
+         "html": "전쟁노래 지옥검 사무로",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "자수정 군주 알라라크",
+         "html": "자수정 군주 알라라크",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "레가르",
+     "heroId": "Rehgar",
+     "heroIds": [
+      "Rehgar"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>레가르</strong></span>\n<ul>\n<li>사로나이트 강철발톱 레가르 </li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "사로나이트 강철발톱 레가르",
+         "html": "사로나이트 강철발톱 레가르",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "프로비우스",
+     "heroId": "Probius",
+     "heroIds": [
+      "Probius"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>프로비우스</strong></span>\n<ul>\n<li>태양석 프로비우스 프라임</li>\n<li>사르가스 프로비우스 프라임 </li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "태양석 프로비우스 프라임",
+         "html": "태양석 프로비우스 프라임",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "사르가스 프로비우스 프라임",
+         "html": "사르가스 프로비우스 프라임",
+         "added": false
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "버그 수정",
+   "key": "bugs",
+   "html": "<p><span class=\"pn-h\"><strong>일반</strong></span></p>\n<ul>\n<li>게임의 여러 부분에 걸쳐 몇몇 오타와 설명 오류가 수정되었습니다.</li>\n</ul>\n<p><span class=\"pn-h\"><strong>전장</strong></span></p>\n<ul>\n<li><strong>용병:</strong> 아군 용병이 영웅을 밀어낼 수 있던 문제를 수정했습니다.</li>\n<li><strong>돌격병:</strong> 투사체가 날아가는 동안 투석기가 파괴되면 절반의 피해만 주던 문제를 수정했습니다.</li>\n<li><strong>히어로즈 난투:</strong> 로딩 시간이 길어질 수 있게 만들던 문제를 수정했습니다.</li>\n<li><strong>체험하기:</strong> 메디브의 비전 충전물 특성 효과가 특성 초기화 이후에도 잔류하던 문제를 수정했습니다. </li>\n<li><strong>체험하기:</strong> 겐지의 추진력 특성 효과가 특성 초기화 이후에도 잔류하던 문제를 수정했습니다.</li>\n<li><strong>브락시스 항전:</strong> 아주 가끔씩 대형 유닛이 구조물 모서리에 낄 수 있던 문제를 수정했습니다. </li>\n<li><strong>핵탄두 격전지:</strong> 인공지능 플레이어가 하단 공격로에서 퇴각할 때 남서쪽 모서리에 낄 수 있던 문제를 수정했습니다. </li>\n</ul>\n<p><span class=\"pn-h\"><strong>영웅, 기술, 특성</strong></span></p>\n<ul>\n<li><strong>알라라크:</strong> 이제 길 잃은 바이킹의 함선에 라크쉬르 의식을 사용한 후에 함선을 파괴하면 정상적으로 가학성이 증가하고 라크쉬르 의식의 재사용 대기시간이 감소합니다.</li>\n<li><strong>알라라크 &amp; 아르타니스</strong>: 알라라크가 치명적인 돌진을 준비하는 동안 위상 분광기에 적중당하면 재사용 대기시간이 발생하던 문제를 수정했습니다.</li>\n<li><strong>아서스:</strong> 이제 냉기의 형상 퀘스트를 완료한 후에 사용한 울부짖는 한파가 부서진 갑옷 특성의 방어력 감소 효과를 정상적으로 적용합니다. </li>\n<li><strong>카시아:</strong> 눈부신 빛이 은신한 적 영웅을 드러내던 문제를 수정했습니다.</li>\n<li><strong>첸:</strong> 메디브의 봉인의 지맥으로 첸과 그의 폭풍, 대지, 불이 동시에 활성화될 수 있던 문제를 수정했습니다. </li>\n<li><strong>D.Va:</strong> 로봇에서 탈출하는 중에도 전장 목표를 계속 점령할 수 있습니다.</li>\n<li><strong>D.Va:</strong> 로봇에서 탈출하는 중에도 하나무라의 화물을 옮길 수 있습니다.</li>\n<li><strong>D.Va:</strong> D.Va가 도발 또는 춤 감정 표현을 하는 동안 일반 공격이 중지됩니다.</li>\n<li><strong>D.Va:</strong> D.Va의 파티 프레임 초상화 아래 있는 로봇 호출 상태 막대가 부활하여 로봇 모드일 때에도 지속되던 문제를 수정했습니다. </li>\n<li><strong>카라짐:</strong> 칠면 공격이 D.Va의 자폭 중인 로봇을 공격하던 문제를 수정했습니다. </li>\n<li><strong>겐지:</strong> 이제 정상적으로 폭렬참을 자신에게 사용할 수 있습니다. </li>\n<li><strong>그레이메인:</strong> D.Va의 로봇을 숨통을 노려라로 파괴해도 정상적으로 숨통을 노려라를 다시 사용할 수 있습니다. </li>\n<li><strong>모랄레스 중위:</strong> 의료선이 파괴되는 순간에 탑승하면 의료선 사용자 인터페이스가 화면에 남아있던 문제를 수정했습니다. </li>\n<li><strong>프로비우스:</strong> 제라툴의 공허의 감옥 등 시간 정지 효과에 걸린 수정탑들이 차원 균열의 재사용 대기시간을 정지시키던 문제를 수정했습니다.</li>\n<li><strong>라그나로스:</strong> 용암 파도가 정상적으로 라그나로스의 공성 피해 수치를 증가시킵니다. </li>\n<li><strong>렉사르:</strong> 렉사르가 시간 정지 상태일 때 미샤가 죽으면 미샤가 다시 부활했을 때 잠시 동안 미샤를 조종할 수 없던 문제를 수정했습니다. </li>\n<li><strong>사무로:</strong> 그룹으로 환영을 선택하면 기존에 수행 중이던 명령이 취소되던 문제를 수정했습니다. </li>\n<li><strong>소냐:</strong> 게임이 시작되기 전에 아군 관문에 고대의 작살을 사용하면 작살이 시각적으로 계속 남아있던 문제를 수정했습니다. </li>\n<li><strong>정지:</strong> 크로미의 일시 정지 등 자기 자신을 정지 상태로 만드는 기술이 만료되는 순간 죽으면 영웅이 부활하기 전까지 해당 기술의 재사용 대기시간이 감소하지 않던 문제를 수정했습니다.</li>\n<li><strong>은신:</strong> 영웅이 일반 공격을 하는 중에 발리라의 소멸이나 티란데의 그림자 추적을 사용하면 은신 효과가 풀릴 수 있던 문제를 수정했습니다.</li>\n<li><strong>실바나스:</strong> 이제 핵탄두 격전지의 우두머리가 생성하는 유닛에게 빙의를 시전할 수 있습니다.</li>\n<li><strong>스랄:</strong> 전장의 안개를 꿰뚫고 세계의 분리가 보이고 소리가 들릴 수 있던 문제를 수정했습니다.</li>\n<li><strong>도살자</strong>: 전장의 안개에 들어서는 적에게 무자비한 돌진이 사용되지 않던 문제를 수정했습니다. </li>\n<li><strong>트레이서:</strong> 도탄으로 튕긴 트레이서의 일반 공격이 은신한 영웅에게 적중할 수 있던 문제를 수정했습니다. </li>\n<li><strong>타이커스:</strong> 드라켄 레이저 천공기의 사거리 표시가 나타나지 않을 수 있던 문제를 수정했습니다. </li>\n<li><strong>티리엘 &amp; 도살자:</strong> 티리엘이 무자비한 돌진으로 기절당해도 축성을 사용할 수 있던 문제를 수정했습니다. </li>\n<li><strong>발라:</strong> 저승사자 특성을 선택한 후 도약 후에 구조물을 파괴했을 때 도약의 재사용 대기시간이 초기화되지 않던 문제를 수정했습니다. </li>\n<li><strong>발리라:</strong> 소멸을 사용하기 직전에 사악한 일격을 사용하면 은신이 풀리던 문제를 수정했습니다. </li>\n<li><strong>줄진:</strong> 단두대를 자신에게 사용할 수 없던 문제를 수정했습니다. </li>\n</ul>\n<p><span class=\"pn-h\"><strong>소리</strong></span></p>\n<ul>\n<li><strong>스투코프</strong>: 육중한 밀치기로 대상을 아주 멀리 밀쳐내면 육중한 밀치기의 소리 효과가 지나치게 길게 출력되던 문제를 수정했습니다.</li>\n<li><strong>겐지:</strong> 심안 특성을 선택한 후에 수리검 3개가 단일 대상에게 적중하면 퀘스트 진행 소리 효과가 출력되지 않던 문제를 수정했습니다. </li>\n<li><strong>영웅 대사</strong>: 가끔 선발전에서 영웅을 선택하면 이전에 선택된 영웅의 대사가 출력되던 문제를 수정했습니다. </li>\n</ul>\n<p><span class=\"pn-h\"><strong>사용자 인터페이스</strong></span></p>\n<ul>\n<li><strong>퀘스트:</strong> 로그인 후에 일일 퀘스트가 갱신되지 않고 지연되던 문제를 수정했습니다.</li>\n<li><strong>히어로즈 난투:</strong> 히어로즈 난투가 종료된 후에 '게임 결과를 기다리는 중...' 화면이 사라지지 않을 수 있던 문제를 수정했습니다.</li>\n</ul>\n<p><img alt=\"\" class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/g6/G6G0N80EOC941426801305139.png\"/></p>\n<p><img alt=\"InvisibleDividerLine_800x50.png\" class=\"no-border; no-shadow\" data-id=\"14509591\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/6VA2831Q81IU1403137406234.png\"/></p>\n<style type=\"text/css\">.article-container img { display: block; }\n.article-container p { display:inline; }\n</style>",
+   "items": [
+    {
+     "name": "알라라크",
+     "heroId": "Alarak",
+     "heroIds": [
+      "Alarak"
+     ],
+     "under": null,
+     "html": "<strong>알라라크:</strong> 이제 길 잃은 바이킹의 함선에 라크쉬르 의식을 사용한 후에 함선을 파괴하면 정상적으로 가학성이 증가하고 라크쉬르 의식의 재사용 대기시간이 감소합니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "알라라크: 이제 길 잃은 바이킹의 함선에 라크쉬르 의식을 사용한 후에 함선을 파괴하면 정상적으로 가학성이 증가하고 라크쉬르 의식의 재사용 대기시간이 감소합니다.",
+         "html": "<strong>알라라크:</strong> 이제 길 잃은 바이킹의 함선에 라크쉬르 의식을 사용한 후에 함선을 파괴하면 정상적으로 가학성이 증가하고 라크쉬르 의식의 재사용 대기시간이 감소합니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "아서스",
+     "heroId": "Arthas",
+     "heroIds": [
+      "Arthas"
+     ],
+     "under": null,
+     "html": "<strong>아서스:</strong> 이제 냉기의 형상 퀘스트를 완료한 후에 사용한 울부짖는 한파가 부서진 갑옷 특성의 방어력 감소 효과를 정상적으로 적용합니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "아서스: 이제 냉기의 형상 퀘스트를 완료한 후에 사용한 울부짖는 한파가 부서진 갑옷 특성의 방어력 감소 효과를 정상적으로 적용합니다.",
+         "html": "<strong>아서스:</strong> 이제 냉기의 형상 퀘스트를 완료한 후에 사용한 울부짖는 한파가 부서진 갑옷 특성의 방어력 감소 효과를 정상적으로 적용합니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "카시아",
+     "heroId": "Amazon",
+     "heroIds": [
+      "Amazon"
+     ],
+     "under": null,
+     "html": "<strong>카시아:</strong> 눈부신 빛이 은신한 적 영웅을 드러내던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "카시아: 눈부신 빛이 은신한 적 영웅을 드러내던 문제를 수정했습니다.",
+         "html": "<strong>카시아:</strong> 눈부신 빛이 은신한 적 영웅을 드러내던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "첸",
+     "heroId": "Chen",
+     "heroIds": [
+      "Chen"
+     ],
+     "under": null,
+     "html": "<strong>첸:</strong> 메디브의 봉인의 지맥으로 첸과 그의 폭풍, 대지, 불이 동시에 활성화될 수 있던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "첸: 메디브의 봉인의 지맥으로 첸과 그의 폭풍, 대지, 불이 동시에 활성화될 수 있던 문제를 수정했습니다.",
+         "html": "<strong>첸:</strong> 메디브의 봉인의 지맥으로 첸과 그의 폭풍, 대지, 불이 동시에 활성화될 수 있던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "D.Va",
+     "heroId": "DVa",
+     "heroIds": [
+      "DVa"
+     ],
+     "under": null,
+     "html": "<strong>D.Va:</strong> 로봇에서 탈출하는 중에도 전장 목표를 계속 점령할 수 있습니다.<strong>D.Va:</strong> 로봇에서 탈출하는 중에도 하나무라의 화물을 옮길 수 있습니다.<strong>D.Va:</strong> D.Va가 도발 또는 춤 감정 표현을 하는 동안 일반 공격이 중지됩니다.<strong>D.Va:</strong> D.Va의 파티 프레임 초상화 아래 있는 로봇 호출 상태 막대가 부활하여 로봇 모드일 때에도 지속되던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "D.Va: 로봇에서 탈출하는 중에도 전장 목표를 계속 점령할 수 있습니다.",
+         "html": "<strong>D.Va:</strong> 로봇에서 탈출하는 중에도 전장 목표를 계속 점령할 수 있습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "D.Va: 로봇에서 탈출하는 중에도 하나무라의 화물을 옮길 수 있습니다.",
+         "html": "<strong>D.Va:</strong> 로봇에서 탈출하는 중에도 하나무라의 화물을 옮길 수 있습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "D.Va: D.Va가 도발 또는 춤 감정 표현을 하는 동안 일반 공격이 중지됩니다.",
+         "html": "<strong>D.Va:</strong> D.Va가 도발 또는 춤 감정 표현을 하는 동안 일반 공격이 중지됩니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "D.Va: D.Va의 파티 프레임 초상화 아래 있는 로봇 호출 상태 막대가 부활하여 로봇 모드일 때에도 지속되던 문제를 수정했습니다.",
+         "html": "<strong>D.Va:</strong> D.Va의 파티 프레임 초상화 아래 있는 로봇 호출 상태 막대가 부활하여 로봇 모드일 때에도 지속되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "카라짐",
+     "heroId": "Monk",
+     "heroIds": [
+      "Monk"
+     ],
+     "under": null,
+     "html": "<strong>카라짐:</strong> 칠면 공격이 D.Va의 자폭 중인 로봇을 공격하던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "카라짐: 칠면 공격이 D.Va의 자폭 중인 로봇을 공격하던 문제를 수정했습니다.",
+         "html": "<strong>카라짐:</strong> 칠면 공격이 D.Va의 자폭 중인 로봇을 공격하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "겐지",
+     "heroId": "Genji",
+     "heroIds": [
+      "Genji"
+     ],
+     "under": null,
+     "html": "<strong>겐지:</strong> 이제 정상적으로 폭렬참을 자신에게 사용할 수 있습니다.<strong>겐지:</strong> 심안 특성을 선택한 후에 수리검 3개가 단일 대상에게 적중하면 퀘스트 진행 소리 효과가 출력되지 않던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "겐지: 이제 정상적으로 폭렬참을 자신에게 사용할 수 있습니다.",
+         "html": "<strong>겐지:</strong> 이제 정상적으로 폭렬참을 자신에게 사용할 수 있습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "겐지: 심안 특성을 선택한 후에 수리검 3개가 단일 대상에게 적중하면 퀘스트 진행 소리 효과가 출력되지 않던 문제를 수정했습니다.",
+         "html": "<strong>겐지:</strong> 심안 특성을 선택한 후에 수리검 3개가 단일 대상에게 적중하면 퀘스트 진행 소리 효과가 출력되지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "그레이메인",
+     "heroId": "Greymane",
+     "heroIds": [
+      "Greymane"
+     ],
+     "under": null,
+     "html": "<strong>그레이메인:</strong> D.Va의 로봇을 숨통을 노려라로 파괴해도 정상적으로 숨통을 노려라를 다시 사용할 수 있습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "그레이메인: D.Va의 로봇을 숨통을 노려라로 파괴해도 정상적으로 숨통을 노려라를 다시 사용할 수 있습니다.",
+         "html": "<strong>그레이메인:</strong> D.Va의 로봇을 숨통을 노려라로 파괴해도 정상적으로 숨통을 노려라를 다시 사용할 수 있습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "모랄레스 중위",
+     "heroId": "Medic",
+     "heroIds": [
+      "Medic"
+     ],
+     "under": null,
+     "html": "<strong>모랄레스 중위:</strong> 의료선이 파괴되는 순간에 탑승하면 의료선 사용자 인터페이스가 화면에 남아있던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "모랄레스 중위: 의료선이 파괴되는 순간에 탑승하면 의료선 사용자 인터페이스가 화면에 남아있던 문제를 수정했습니다.",
+         "html": "<strong>모랄레스 중위:</strong> 의료선이 파괴되는 순간에 탑승하면 의료선 사용자 인터페이스가 화면에 남아있던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "프로비우스",
+     "heroId": "Probius",
+     "heroIds": [
+      "Probius"
+     ],
+     "under": null,
+     "html": "<strong>프로비우스:</strong> 제라툴의 공허의 감옥 등 시간 정지 효과에 걸린 수정탑들이 차원 균열의 재사용 대기시간을 정지시키던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "프로비우스: 제라툴의 공허의 감옥 등 시간 정지 효과에 걸린 수정탑들이 차원 균열의 재사용 대기시간을 정지시키던 문제를 수정했습니다.",
+         "html": "<strong>프로비우스:</strong> 제라툴의 공허의 감옥 등 시간 정지 효과에 걸린 수정탑들이 차원 균열의 재사용 대기시간을 정지시키던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "라그나로스",
+     "heroId": "Ragnaros",
+     "heroIds": [
+      "Ragnaros"
+     ],
+     "under": null,
+     "html": "<strong>라그나로스:</strong> 용암 파도가 정상적으로 라그나로스의 공성 피해 수치를 증가시킵니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "라그나로스: 용암 파도가 정상적으로 라그나로스의 공성 피해 수치를 증가시킵니다.",
+         "html": "<strong>라그나로스:</strong> 용암 파도가 정상적으로 라그나로스의 공성 피해 수치를 증가시킵니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "렉사르",
+     "heroId": "Rexxar",
+     "heroIds": [
+      "Rexxar"
+     ],
+     "under": null,
+     "html": "<strong>렉사르:</strong> 렉사르가 시간 정지 상태일 때 미샤가 죽으면 미샤가 다시 부활했을 때 잠시 동안 미샤를 조종할 수 없던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "렉사르: 렉사르가 시간 정지 상태일 때 미샤가 죽으면 미샤가 다시 부활했을 때 잠시 동안 미샤를 조종할 수 없던 문제를 수정했습니다.",
+         "html": "<strong>렉사르:</strong> 렉사르가 시간 정지 상태일 때 미샤가 죽으면 미샤가 다시 부활했을 때 잠시 동안 미샤를 조종할 수 없던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "사무로",
+     "heroId": "Samuro",
+     "heroIds": [
+      "Samuro"
+     ],
+     "under": null,
+     "html": "<strong>사무로:</strong> 그룹으로 환영을 선택하면 기존에 수행 중이던 명령이 취소되던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "사무로: 그룹으로 환영을 선택하면 기존에 수행 중이던 명령이 취소되던 문제를 수정했습니다.",
+         "html": "<strong>사무로:</strong> 그룹으로 환영을 선택하면 기존에 수행 중이던 명령이 취소되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "소냐",
+     "heroId": "Barbarian",
+     "heroIds": [
+      "Barbarian"
+     ],
+     "under": null,
+     "html": "<strong>소냐:</strong> 게임이 시작되기 전에 아군 관문에 고대의 작살을 사용하면 작살이 시각적으로 계속 남아있던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "소냐: 게임이 시작되기 전에 아군 관문에 고대의 작살을 사용하면 작살이 시각적으로 계속 남아있던 문제를 수정했습니다.",
+         "html": "<strong>소냐:</strong> 게임이 시작되기 전에 아군 관문에 고대의 작살을 사용하면 작살이 시각적으로 계속 남아있던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "실바나스",
+     "heroId": "Sylvanas",
+     "heroIds": [
+      "Sylvanas"
+     ],
+     "under": null,
+     "html": "<strong>실바나스:</strong> 이제 핵탄두 격전지의 우두머리가 생성하는 유닛에게 빙의를 시전할 수 있습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "실바나스: 이제 핵탄두 격전지의 우두머리가 생성하는 유닛에게 빙의를 시전할 수 있습니다.",
+         "html": "<strong>실바나스:</strong> 이제 핵탄두 격전지의 우두머리가 생성하는 유닛에게 빙의를 시전할 수 있습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "스랄",
+     "heroId": "Thrall",
+     "heroIds": [
+      "Thrall"
+     ],
+     "under": null,
+     "html": "<strong>스랄:</strong> 전장의 안개를 꿰뚫고 세계의 분리가 보이고 소리가 들릴 수 있던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "스랄: 전장의 안개를 꿰뚫고 세계의 분리가 보이고 소리가 들릴 수 있던 문제를 수정했습니다.",
+         "html": "<strong>스랄:</strong> 전장의 안개를 꿰뚫고 세계의 분리가 보이고 소리가 들릴 수 있던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "도살자",
+     "heroId": "Butcher",
+     "heroIds": [
+      "Butcher"
+     ],
+     "under": null,
+     "html": "<strong>도살자</strong>: 전장의 안개에 들어서는 적에게 무자비한 돌진이 사용되지 않던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "도살자 : 전장의 안개에 들어서는 적에게 무자비한 돌진이 사용되지 않던 문제를 수정했습니다.",
+         "html": "<strong>도살자</strong>: 전장의 안개에 들어서는 적에게 무자비한 돌진이 사용되지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "트레이서",
+     "heroId": "Tracer",
+     "heroIds": [
+      "Tracer"
+     ],
+     "under": null,
+     "html": "<strong>트레이서:</strong> 도탄으로 튕긴 트레이서의 일반 공격이 은신한 영웅에게 적중할 수 있던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "트레이서: 도탄으로 튕긴 트레이서의 일반 공격이 은신한 영웅에게 적중할 수 있던 문제를 수정했습니다.",
+         "html": "<strong>트레이서:</strong> 도탄으로 튕긴 트레이서의 일반 공격이 은신한 영웅에게 적중할 수 있던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "타이커스",
+     "heroId": "Tychus",
+     "heroIds": [
+      "Tychus"
+     ],
+     "under": null,
+     "html": "<strong>타이커스:</strong> 드라켄 레이저 천공기의 사거리 표시가 나타나지 않을 수 있던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "타이커스: 드라켄 레이저 천공기의 사거리 표시가 나타나지 않을 수 있던 문제를 수정했습니다.",
+         "html": "<strong>타이커스:</strong> 드라켄 레이저 천공기의 사거리 표시가 나타나지 않을 수 있던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "발라",
+     "heroId": "DemonHunter",
+     "heroIds": [
+      "DemonHunter"
+     ],
+     "under": null,
+     "html": "<strong>발라:</strong> 저승사자 특성을 선택한 후 도약 후에 구조물을 파괴했을 때 도약의 재사용 대기시간이 초기화되지 않던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "발라: 저승사자 특성을 선택한 후 도약 후에 구조물을 파괴했을 때 도약의 재사용 대기시간이 초기화되지 않던 문제를 수정했습니다.",
+         "html": "<strong>발라:</strong> 저승사자 특성을 선택한 후 도약 후에 구조물을 파괴했을 때 도약의 재사용 대기시간이 초기화되지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "발리라",
+     "heroId": "Valeera",
+     "heroIds": [
+      "Valeera"
+     ],
+     "under": null,
+     "html": "<strong>발리라:</strong> 소멸을 사용하기 직전에 사악한 일격을 사용하면 은신이 풀리던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "발리라: 소멸을 사용하기 직전에 사악한 일격을 사용하면 은신이 풀리던 문제를 수정했습니다.",
+         "html": "<strong>발리라:</strong> 소멸을 사용하기 직전에 사악한 일격을 사용하면 은신이 풀리던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "줄진",
+     "heroId": "Zuljin",
+     "heroIds": [
+      "Zuljin"
+     ],
+     "under": null,
+     "html": "<strong>줄진:</strong> 단두대를 자신에게 사용할 수 없던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "줄진: 단두대를 자신에게 사용할 수 없던 문제를 수정했습니다.",
+         "html": "<strong>줄진:</strong> 단두대를 자신에게 사용할 수 없던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "스투코프",
+     "heroId": "Stukov",
+     "heroIds": [
+      "Stukov"
+     ],
+     "under": null,
+     "html": "<strong>스투코프</strong>: 육중한 밀치기로 대상을 아주 멀리 밀쳐내면 육중한 밀치기의 소리 효과가 지나치게 길게 출력되던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "스투코프 : 육중한 밀치기로 대상을 아주 멀리 밀쳐내면 육중한 밀치기의 소리 효과가 지나치게 길게 출력되던 문제를 수정했습니다.",
+         "html": "<strong>스투코프</strong>: 육중한 밀치기로 대상을 아주 멀리 밀쳐내면 육중한 밀치기의 소리 효과가 지나치게 길게 출력되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "heroes": [
+  "Abathur",
+  "Alarak",
+  "Amazon",
+  "Anubarak",
+  "Artanis",
+  "Arthas",
+  "Auriel",
+  "Barbarian",
+  "Butcher",
+  "Chen",
+  "DVa",
+  "Dehaka",
+  "DemonHunter",
+  "Garrosh",
+  "Genji",
+  "Greymane",
+  "L90ETC",
+  "Medic",
+  "Monk",
+  "Probius",
+  "Ragnaros",
+  "Rehgar",
+  "Rexxar",
+  "Samuro",
+  "Stukov",
+  "Sylvanas",
+  "Thrall",
+  "Tracer",
+  "Tychus",
+  "Valeera",
+  "Varian",
+  "Wizard",
+  "Zuljin"
+ ],
+ "battlegrounds": [
+  "cursed_hollow"
+ ],
+ "newsId": "20944067"
+}

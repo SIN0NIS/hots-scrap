@@ -1,0 +1,2331 @@
+{
+ "date": "2025-07-01",
+ "kind": "ptr",
+ "title": "히어로즈 오브 더 스톰 공개 테스트 서버 패치 노트 - 2025년 7월 1일",
+ "source": "https://news.blizzard.com/en-us/article/24217281/heroes-of-the-storm-ptr-patch-notes-july-1-2025",
+ "published": "2025-07-01T17:11:49Z",
+ "sections": [
+  {
+   "name": "머리말",
+   "key": "intro",
+   "html": "<p>다음 히어로즈 오브 더 스톰 패치가 공개 테스트 서버(PTR)에 적용되어 테스트 플레이가 가능합니다. 언제나 그렇듯, PTR에서 플레이하는 동안 버그를 발견하셨다면 <a href=\"https://us.forums.blizzard.com/en/heroes/c/ptr-bug-report\" target=\"_blank\">PTR 버그 신고 포럼</a>에 방문하여 경험하신 내용을 알려주시기 바랍니다.</p>",
+   "nameEn": "머리말"
+  },
+  {
+   "name": "일반",
+   "key": "general",
+   "html": "<ul>\n<li>밀쳐내기 효과가 더욱 일관되게 작동하도록 수정되었습니다. 영향을 받은 영웅은 아래에서 확인하시기 바랍니다.</li>\n<li>사망 시 주변 유닛에게 적용되던 드러내기 지속시간이 삭제되었습니다.</li>\n<li>이동 불가 효과가 밀쳐내기 효과에 미치는 영향이 감소했습니다.</li>\n<li>첫 화면 및 시작 음악이 업데이트되었습니다.</li>\n</ul>",
+   "nameEn": "General"
+  },
+  {
+   "name": "밸런스 업데이트",
+   "key": "balance",
+   "html": "<h3><strong>일반</strong></h3>\n<ul>\n<li>재생 전문가 특성의 퀘스트 수집 요구량이 30개에서 25개로 감소했습니다.</li>\n</ul>\n<h3><strong>영웅</strong></h3>\n<h4>알라라크</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li>일반 공격 피해량이 150에서 160으로 증가했습니다.</li>\n<li><strong class=\"pn-name\">번개 쇄도 [E]</strong><ul>\n<li>치유량이 70에서 75로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">염동력 [W]</strong><ul>\n<li>이제 밀쳐내기 속도가 밀려나는 동안 점차 느려집니다.</li>\n<li>지정 지점으로 밀어내는 거리가 염동력을 시전한 지점으로부터 6.25에서 12.5로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">압도적인 힘</strong><ul>\n<li><b>개편:</b> 치유량이 입힌 피해량의 50%에서 15%로 감소했습니다.</li>\n<li><b>개편:</b> 이제 영웅을 공격할 때 치유량으로 전환되는 피해량 비율이 가학성 증가량의 50%만큼 추가로 증가합니다(예: 가학성이 100%일 때는 입힌 피해량의 65%).</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">강제 이동</strong><ul>\n<li>이제 대상을 15% 더 멀리 밀어냅니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">반격</strong><ul>\n<li>특성이 삭제되었습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">치명적인 돌진</strong><ul>\n<li>특성이 삭제되었습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">군주의 힘</strong><ul>\n<li><b>신규:</b> 알라라크가 고유 능력 칸을 차지하는 다른 궁극기를 사용할 수 있게 됩니다. 또한 각 궁극기가 차지하는 칸을 서로 바꾸는 기술을 부여합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">군주의 분노</strong><ul>\n<li><b>신규:</b> 반격이 알라라크의 궁극기일 경우, 기본 기술이 적중한 적 영웅 1명당 반격의 재사용 대기시간이 3초 감소합니다.</li>\n<li><b>신규:</b> 치명적인 돌진이 알라라크의 궁극기일 경우, 적 영웅의 방어력을 4초 동안 50 감소시킵니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>아우리엘</h4>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">지속적인 공세</strong><ul>\n<li>밀쳐내기 강도가 28%에서 30%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>빛나래</h4>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">에메랄드 바람</strong><ul>\n<li>이제 대상이 퍼져 나가는 파동의 지속시간 내내 밀려납니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>데커드</h4>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">고서 회오리</strong><ul>\n<li>이미 밀려나는 중에 고서 회오리에 적중하면 이제 밀쳐내기의 지속시간이 갱신됩니다.</li>\n<li>피해는 대상 1명당 고서 회오리 1개마다 0.1875초에 한 번만 발생합니다.</li>\n<li>밀쳐내기 지속시간이 33% 감소했습니다. 고서 회오리에 밀려나는 거리는 변하지 않았습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">저리 꺼져라!</strong><ul>\n<li>이제 고서 회오리마다 개별적인 재사용 대기시간 감소가 적용됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>데하카</h4>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">마비성 효소</strong><ul>\n<li>이제 일반 공격이 남은 지속시간을 2초로 설정하기도 합니다.</li>\n<li>치유 감소량이 40%에서 50%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>폴스타트</h4>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">맹렬한 광풍</strong><ul>\n<li>이제 밀쳐내기 지속시간이 가변적으로 적용되어, 폴스타트에게 가까운 대상일수록 더 오래 밀려납니다.</li>\n<li>이제 대상이 강풍의 탐색 경로를 벗어나면 밀쳐내기가 종료됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>임페리우스</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">타오르는 갑옷 [E]</strong><ul>\n<li>이제 타오르는 갑옷이 종료될 때 적중한 대상 1명당 마나를 1 회복합니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">영광의 불꽃</strong><ul>\n<li>피해량이 205에서 212로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">신성한 백열</strong><ul>\n<li>이제 임페리우스의 공격 대기시간을 초기화합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">타오르는 분노</strong><ul>\n<li>이제 타오르는 갑옷의 반경도 25% 증가시킵니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>리 리</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">허브차 [Q]</strong><ul>\n<li>치유량이 175에서 230으로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<h4>루시우</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">소리 파동 [Q]</strong><ul>\n<li>이제 밀쳐내기 지점이 소리 파동을 시전한 위치에서 반경 2만큼 뒤쪽 지점을 중심으로 정해집니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">볼륨 최대로!</strong><ul>\n<li>길을 비켜라!로 증가하는 지속시간이 .5초에서 1초로 증가했습니다.</li>\n<li>소리 파동으로 증가하는 지속시간이 0.25초에서 .5초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>무라딘</h4>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">초강타</strong><ul>\n<li>2차 밀쳐내기의 지속시간이 감소했지만, 밀쳐내는 속도가 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>머키</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">알 놓기 [고유 능력 D]</strong><ul>\n<li>생명력이 현재 수치의 80%만큼 감소합니다.</li>\n<li>이제 감소한 생명력과 같은 양의 보호막을 얻습니다.</li>\n<li>보호막은 5초 후부터 재생을 시작합니다.</li>\n<li>보호막이 0에서 최대치까지 다시 채워지는 데 8초가 걸립니다.</li>\n</ul>\n</li>\n</ul>\n<h4>오르피아</h4>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">물고 빠지기</strong><ul>\n<li>지속시간이 감소했지만, 속도가 증가했습니다.</li>\n<li>이제 밀쳐내기가 즉시 적용됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>해머 상사</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">충격포 [W]</strong><ul>\n<li>기본 지속시간이 20% 감소했습니다. 폭발로 밀려나는 거리는 감소하지 않습니다.</li>\n</ul>\n</li>\n</ul>\n<h4>스투코프</h4>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">거친 휩쓸기</strong><ul>\n<li>이제 거친 휩쓸기의 각 휘두르기마다 개별적인 밀쳐내기 지점이 적용됩니다. 첫 번째 휩쓸기는 스투코프 뒤쪽 반경 3 지점을, 두 번째 휩쓸기는 뒤쪽 반경 2 지점을, 세 번째 휩쓸기는 뒤쪽 반경 1 지점을 기준으로 대상을 밀쳐냅니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>스랄</h4>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">세계의 분리</strong><ul>\n<li>2차 밀쳐내기의 지속시간과 속도가 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>트레이서</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">시간 역행 [E]</strong><ul>\n<li>순간이동 지연시간이 .0625초에서 .1875초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<h4>타이커스</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">수류탄 [W]</strong><ul>\n<li>밀쳐내기 지속시간이 33% 감소했습니다. 폭발로 밀려나는 거리는 감소하지 않습니다.</li>\n</ul>\n</li>\n</ul>\n<h4>티리엘</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li>일반 공격 피해량이 78에서 82로 증가했습니다.</li>\n<li><strong class=\"pn-name\">강타 [E]</strong><ul>\n<li>이동 속도를 부여하는 지역의 지속시간이 툴팁에 표시되도록 수정되었습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">엘드루인의 힘 [Q]</strong><ul>\n<li>감속량이 25%에서 30%로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">정의 [W]</strong><ul>\n<li>보호막이 336에서 350으로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">구원</strong><ul>\n<li>치유량이 140에서 150으로 증가했습니다.</li>\n<li>보호막 증가량이 40%에서 35%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">법의 구속력</strong><ul>\n<li>이제 16레벨 특성이 되었습니다.</li>\n<li><b>개편:</b> 이제 엘드루인의 힘이 첫 1초 동안 대상을 80% 감속시키고, 이후 남은 1.5초에 걸쳐 30%까지 감소합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">화답</strong><ul>\n<li>이제 폭발 피해량이 적 영웅과 소환물에게만 적용됩니다.</li>\n<li>이제 4레벨 특성이 되었습니다.</li>\n<li>이제 티리엘이 화답 또는 엘드루인의 힘에 적중당한 영웅 하나당 최대 생명력의 3%만큼 생명력을 회복합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">심판</strong><ul>\n<li>시전 거리가 더 이상 티리엘의 반경만큼 증가하지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">불타는 광륜</strong><ul>\n<li>엘드루인의 힘으로 순간이동했을 때의 피해량 증가량이 150%에서 125%로 감소했습니다.</li>\n<li>피해량이 18에서 15로 감소했습니다.</li>\n<li>이제 7레벨 특성이 되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">정의의 화신</strong><ul>\n<li><b>신규:</b> 1.5초 동안 정신을 집중한 후 대천사의 분노 상태가 됩니다. 적 영웅에게 적중할 때마다 재사용 대기시간이 10%씩 감소합니다. 재사용 대기시간은 90초입니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+   "heroes": [
+    {
+     "name": "알라라크",
+     "heroId": "Alarak",
+     "heroIds": [
+      "Alarak"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "일반 공격 피해량이 150에서 160으로 증가했습니다.",
+         "html": "일반 공격 피해량이 150에서 160으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "번개 쇄도",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "치유량이 70에서 75로 증가했습니다.",
+         "html": "치유량이 70에서 75로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Lightning Surge"
+      },
+      {
+       "name": "염동력",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "이제 밀쳐내기 속도가 밀려나는 동안 점차 느려집니다.",
+         "html": "이제 밀쳐내기 속도가 밀려나는 동안 점차 느려집니다.",
+         "added": false
+        },
+        {
+         "text": "지정 지점으로 밀어내는 거리가 염동력을 시전한 지점으로부터 6.25에서 12.5로 증가했습니다.",
+         "html": "지정 지점으로 밀어내는 거리가 염동력을 시전한 지점으로부터 6.25에서 12.5로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Telekinesis"
+      },
+      {
+       "name": "압도적인 힘",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "개편: 치유량이 입힌 피해량의 50%에서 15%로 감소했습니다.",
+         "html": "<b>개편:</b> 치유량이 입힌 피해량의 50%에서 15%로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "개편: 이제 영웅을 공격할 때 치유량으로 전환되는 피해량 비율이 가학성 증가량의 50%만큼 추가로 증가합니다(예: 가학성이 100%일 때는 입힌 피해량의 65%).",
+         "html": "<b>개편:</b> 이제 영웅을 공격할 때 치유량으로 전환되는 피해량 비율이 가학성 증가량의 50%만큼 추가로 증가합니다(예: 가학성이 100%일 때는 입힌 피해량의 65%).",
+         "added": false
+        }
+       ],
+       "nameEn": "Overwhelming Power"
+      },
+      {
+       "name": "강제 이동",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "이제 대상을 15% 더 멀리 밀어냅니다.",
+         "html": "이제 대상을 15% 더 멀리 밀어냅니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Applied Force"
+      },
+      {
+       "name": "반격",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "특성이 삭제되었습니다.",
+         "html": "특성이 삭제되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Counter-Strike"
+      },
+      {
+       "name": "치명적인 돌진",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "특성이 삭제되었습니다.",
+         "html": "특성이 삭제되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Deadly Charge"
+      },
+      {
+       "name": "군주의 힘",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "신규: 알라라크가 고유 능력 칸을 차지하는 다른 궁극기를 사용할 수 있게 됩니다. 또한 각 궁극기가 차지하는 칸을 서로 바꾸는 기술을 부여합니다.",
+         "html": "<b>신규:</b> 알라라크가 고유 능력 칸을 차지하는 다른 궁극기를 사용할 수 있게 됩니다. 또한 각 궁극기가 차지하는 칸을 서로 바꾸는 기술을 부여합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Might of the Highlord"
+      },
+      {
+       "name": "군주의 분노",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "신규: 반격이 알라라크의 궁극기일 경우, 기본 기술이 적중한 적 영웅 1명당 반격의 재사용 대기시간이 3초 감소합니다.",
+         "html": "<b>신규:</b> 반격이 알라라크의 궁극기일 경우, 기본 기술이 적중한 적 영웅 1명당 반격의 재사용 대기시간이 3초 감소합니다.",
+         "added": false
+        },
+        {
+         "text": "신규: 치명적인 돌진이 알라라크의 궁극기일 경우, 적 영웅의 방어력을 4초 동안 50 감소시킵니다.",
+         "html": "<b>신규:</b> 치명적인 돌진이 알라라크의 궁극기일 경우, 적 영웅의 방어력을 4초 동안 50 감소시킵니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Wrath of the Highlord"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li>일반 공격 피해량이 150에서 160으로 증가했습니다.</li>\n<li><strong class=\"pn-name\">번개 쇄도 [E]</strong><ul>\n<li>치유량이 70에서 75로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">염동력 [W]</strong><ul>\n<li>이제 밀쳐내기 속도가 밀려나는 동안 점차 느려집니다.</li>\n<li>지정 지점으로 밀어내는 거리가 염동력을 시전한 지점으로부터 6.25에서 12.5로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">압도적인 힘</strong><ul>\n<li><b>개편:</b> 치유량이 입힌 피해량의 50%에서 15%로 감소했습니다.</li>\n<li><b>개편:</b> 이제 영웅을 공격할 때 치유량으로 전환되는 피해량 비율이 가학성 증가량의 50%만큼 추가로 증가합니다(예: 가학성이 100%일 때는 입힌 피해량의 65%).</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">강제 이동</strong><ul>\n<li>이제 대상을 15% 더 멀리 밀어냅니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">반격</strong><ul>\n<li>특성이 삭제되었습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">치명적인 돌진</strong><ul>\n<li>특성이 삭제되었습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">군주의 힘</strong><ul>\n<li><b>신규:</b> 알라라크가 고유 능력 칸을 차지하는 다른 궁극기를 사용할 수 있게 됩니다. 또한 각 궁극기가 차지하는 칸을 서로 바꾸는 기술을 부여합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">군주의 분노</strong><ul>\n<li><b>신규:</b> 반격이 알라라크의 궁극기일 경우, 기본 기술이 적중한 적 영웅 1명당 반격의 재사용 대기시간이 3초 감소합니다.</li>\n<li><b>신규:</b> 치명적인 돌진이 알라라크의 궁극기일 경우, 적 영웅의 방어력을 4초 동안 50 감소시킵니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Alarak"
+    },
+    {
+     "name": "아우리엘",
+     "heroId": "Auriel",
+     "heroIds": [
+      "Auriel"
+     ],
+     "changes": [
+      {
+       "name": "지속적인 공세",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "밀쳐내기 강도가 28%에서 30%로 증가했습니다.",
+         "html": "밀쳐내기 강도가 28%에서 30%로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Repeated Offense"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">지속적인 공세</strong><ul>\n<li>밀쳐내기 강도가 28%에서 30%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Auriel"
+    },
+    {
+     "name": "빛나래",
+     "heroId": "FaerieDragon",
+     "heroIds": [
+      "FaerieDragon"
+     ],
+     "changes": [
+      {
+       "name": "에메랄드 바람",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "이제 대상이 퍼져 나가는 파동의 지속시간 내내 밀려납니다.",
+         "html": "이제 대상이 퍼져 나가는 파동의 지속시간 내내 밀려납니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Emerald Wind"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">에메랄드 바람</strong><ul>\n<li>이제 대상이 퍼져 나가는 파동의 지속시간 내내 밀려납니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Brightwing"
+    },
+    {
+     "name": "데커드",
+     "heroId": "Deckard",
+     "heroIds": [
+      "Deckard"
+     ],
+     "changes": [
+      {
+       "name": "고서 회오리",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "이미 밀려나는 중에 고서 회오리에 적중하면 이제 밀쳐내기의 지속시간이 갱신됩니다.",
+         "html": "이미 밀려나는 중에 고서 회오리에 적중하면 이제 밀쳐내기의 지속시간이 갱신됩니다.",
+         "added": false
+        },
+        {
+         "text": "피해는 대상 1명당 고서 회오리 1개마다 0.1875초에 한 번만 발생합니다.",
+         "html": "피해는 대상 1명당 고서 회오리 1개마다 0.1875초에 한 번만 발생합니다.",
+         "added": false
+        },
+        {
+         "text": "밀쳐내기 지속시간이 33% 감소했습니다. 고서 회오리에 밀려나는 거리는 변하지 않았습니다.",
+         "html": "밀쳐내기 지속시간이 33% 감소했습니다. 고서 회오리에 밀려나는 거리는 변하지 않았습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Lorenado"
+      },
+      {
+       "name": "저리 꺼져라!",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "이제 고서 회오리마다 개별적인 재사용 대기시간 감소가 적용됩니다.",
+         "html": "이제 고서 회오리마다 개별적인 재사용 대기시간 감소가 적용됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Morenados!"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">고서 회오리</strong><ul>\n<li>이미 밀려나는 중에 고서 회오리에 적중하면 이제 밀쳐내기의 지속시간이 갱신됩니다.</li>\n<li>피해는 대상 1명당 고서 회오리 1개마다 0.1875초에 한 번만 발생합니다.</li>\n<li>밀쳐내기 지속시간이 33% 감소했습니다. 고서 회오리에 밀려나는 거리는 변하지 않았습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">저리 꺼져라!</strong><ul>\n<li>이제 고서 회오리마다 개별적인 재사용 대기시간 감소가 적용됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Deckard"
+    },
+    {
+     "name": "데하카",
+     "heroId": "Dehaka",
+     "heroIds": [
+      "Dehaka"
+     ],
+     "changes": [
+      {
+       "name": "마비성 효소",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "이제 일반 공격이 남은 지속시간을 2초로 설정하기도 합니다.",
+         "html": "이제 일반 공격이 남은 지속시간을 2초로 설정하기도 합니다.",
+         "added": false
+        },
+        {
+         "text": "치유 감소량이 40%에서 50%로 증가했습니다.",
+         "html": "치유 감소량이 40%에서 50%로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Paralyzing Enzymes"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">마비성 효소</strong><ul>\n<li>이제 일반 공격이 남은 지속시간을 2초로 설정하기도 합니다.</li>\n<li>치유 감소량이 40%에서 50%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Dehaka"
+    },
+    {
+     "name": "폴스타트",
+     "heroId": "Falstad",
+     "heroIds": [
+      "Falstad"
+     ],
+     "changes": [
+      {
+       "name": "맹렬한 광풍",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "이제 밀쳐내기 지속시간이 가변적으로 적용되어, 폴스타트에게 가까운 대상일수록 더 오래 밀려납니다.",
+         "html": "이제 밀쳐내기 지속시간이 가변적으로 적용되어, 폴스타트에게 가까운 대상일수록 더 오래 밀려납니다.",
+         "added": false
+        },
+        {
+         "text": "이제 대상이 강풍의 탐색 경로를 벗어나면 밀쳐내기가 종료됩니다.",
+         "html": "이제 대상이 강풍의 탐색 경로를 벗어나면 밀쳐내기가 종료됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Mighty Gust"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">맹렬한 광풍</strong><ul>\n<li>이제 밀쳐내기 지속시간이 가변적으로 적용되어, 폴스타트에게 가까운 대상일수록 더 오래 밀려납니다.</li>\n<li>이제 대상이 강풍의 탐색 경로를 벗어나면 밀쳐내기가 종료됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Falstad"
+    },
+    {
+     "name": "임페리우스",
+     "heroId": "Imperius",
+     "heroIds": [
+      "Imperius"
+     ],
+     "changes": [
+      {
+       "name": "타오르는 갑옷",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "이제 타오르는 갑옷이 종료될 때 적중한 대상 1명당 마나를 1 회복합니다.",
+         "html": "이제 타오르는 갑옷이 종료될 때 적중한 대상 1명당 마나를 1 회복합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Molten Armor"
+      },
+      {
+       "name": "영광의 불꽃",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "피해량이 205에서 212로 증가했습니다.",
+         "html": "피해량이 205에서 212로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Blaze of Glory"
+      },
+      {
+       "name": "신성한 백열",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "이제 임페리우스의 공격 대기시간을 초기화합니다.",
+         "html": "이제 임페리우스의 공격 대기시간을 초기화합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Holy Fervor"
+      },
+      {
+       "name": "타오르는 분노",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "이제 타오르는 갑옷의 반경도 25% 증가시킵니다.",
+         "html": "이제 타오르는 갑옷의 반경도 25% 증가시킵니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Molten Wrath"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">타오르는 갑옷 [E]</strong><ul>\n<li>이제 타오르는 갑옷이 종료될 때 적중한 대상 1명당 마나를 1 회복합니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">영광의 불꽃</strong><ul>\n<li>피해량이 205에서 212로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">신성한 백열</strong><ul>\n<li>이제 임페리우스의 공격 대기시간을 초기화합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">타오르는 분노</strong><ul>\n<li>이제 타오르는 갑옷의 반경도 25% 증가시킵니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Imperius"
+    },
+    {
+     "name": "리 리",
+     "heroId": "LiLi",
+     "heroIds": [
+      "LiLi"
+     ],
+     "changes": [
+      {
+       "name": "허브차",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "치유량이 175에서 230으로 증가했습니다.",
+         "html": "치유량이 175에서 230으로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Healing Brew"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">허브차 [Q]</strong><ul>\n<li>치유량이 175에서 230으로 증가했습니다.</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Li Li"
+    },
+    {
+     "name": "루시우",
+     "heroId": "Lucio",
+     "heroIds": [
+      "Lucio"
+     ],
+     "changes": [
+      {
+       "name": "소리 파동",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "이제 밀쳐내기 지점이 소리 파동을 시전한 위치에서 반경 2만큼 뒤쪽 지점을 중심으로 정해집니다.",
+         "html": "이제 밀쳐내기 지점이 소리 파동을 시전한 위치에서 반경 2만큼 뒤쪽 지점을 중심으로 정해집니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Soundwave"
+      },
+      {
+       "name": "볼륨 최대로!",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "길을 비켜라!로 증가하는 지속시간이 .5초에서 1초로 증가했습니다.",
+         "html": "길을 비켜라!로 증가하는 지속시간이 .5초에서 1초로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "소리 파동으로 증가하는 지속시간이 0.25초에서 .5초로 증가했습니다.",
+         "html": "소리 파동으로 증가하는 지속시간이 0.25초에서 .5초로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Up to Eleven"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">소리 파동 [Q]</strong><ul>\n<li>이제 밀쳐내기 지점이 소리 파동을 시전한 위치에서 반경 2만큼 뒤쪽 지점을 중심으로 정해집니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">볼륨 최대로!</strong><ul>\n<li>길을 비켜라!로 증가하는 지속시간이 .5초에서 1초로 증가했습니다.</li>\n<li>소리 파동으로 증가하는 지속시간이 0.25초에서 .5초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Lucio"
+    },
+    {
+     "name": "무라딘",
+     "heroId": "Muradin",
+     "heroIds": [
+      "Muradin"
+     ],
+     "changes": [
+      {
+       "name": "초강타",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "2차 밀쳐내기의 지속시간이 감소했지만, 밀쳐내는 속도가 증가했습니다.",
+         "html": "2차 밀쳐내기의 지속시간이 감소했지만, 밀쳐내는 속도가 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Haymaker"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">초강타</strong><ul>\n<li>2차 밀쳐내기의 지속시간이 감소했지만, 밀쳐내는 속도가 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Muradin"
+    },
+    {
+     "name": "머키",
+     "heroId": "Murky",
+     "heroIds": [
+      "Murky"
+     ],
+     "changes": [
+      {
+       "name": "알 놓기",
+       "key": "Trait D",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "생명력이 현재 수치의 80%만큼 감소합니다.",
+         "html": "생명력이 현재 수치의 80%만큼 감소합니다.",
+         "added": false
+        },
+        {
+         "text": "이제 감소한 생명력과 같은 양의 보호막을 얻습니다.",
+         "html": "이제 감소한 생명력과 같은 양의 보호막을 얻습니다.",
+         "added": false
+        },
+        {
+         "text": "보호막은 5초 후부터 재생을 시작합니다.",
+         "html": "보호막은 5초 후부터 재생을 시작합니다.",
+         "added": false
+        },
+        {
+         "text": "보호막이 0에서 최대치까지 다시 채워지는 데 8초가 걸립니다.",
+         "html": "보호막이 0에서 최대치까지 다시 채워지는 데 8초가 걸립니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Spawn Egg"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">알 놓기 [고유 능력 D]</strong><ul>\n<li>생명력이 현재 수치의 80%만큼 감소합니다.</li>\n<li>이제 감소한 생명력과 같은 양의 보호막을 얻습니다.</li>\n<li>보호막은 5초 후부터 재생을 시작합니다.</li>\n<li>보호막이 0에서 최대치까지 다시 채워지는 데 8초가 걸립니다.</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Murky"
+    },
+    {
+     "name": "오르피아",
+     "heroId": "Orphea",
+     "heroIds": [
+      "Orphea"
+     ],
+     "changes": [
+      {
+       "name": "물고 빠지기",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "지속시간이 감소했지만, 속도가 증가했습니다.",
+         "html": "지속시간이 감소했지만, 속도가 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "이제 밀쳐내기가 즉시 적용됩니다.",
+         "html": "이제 밀쳐내기가 즉시 적용됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Backbiter"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">물고 빠지기</strong><ul>\n<li>지속시간이 감소했지만, 속도가 증가했습니다.</li>\n<li>이제 밀쳐내기가 즉시 적용됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Orphea"
+    },
+    {
+     "name": "해머 상사",
+     "heroId": "SgtHammer",
+     "heroIds": [
+      "SgtHammer"
+     ],
+     "changes": [
+      {
+       "name": "충격포",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "기본 지속시간이 20% 감소했습니다. 폭발로 밀려나는 거리는 감소하지 않습니다.",
+         "html": "기본 지속시간이 20% 감소했습니다. 폭발로 밀려나는 거리는 감소하지 않습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Concussive Blast"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">충격포 [W]</strong><ul>\n<li>기본 지속시간이 20% 감소했습니다. 폭발로 밀려나는 거리는 감소하지 않습니다.</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Sgt. Hammer"
+    },
+    {
+     "name": "스투코프",
+     "heroId": "Stukov",
+     "heroIds": [
+      "Stukov"
+     ],
+     "changes": [
+      {
+       "name": "거친 휩쓸기",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "이제 거친 휩쓸기의 각 휘두르기마다 개별적인 밀쳐내기 지점이 적용됩니다. 첫 번째 휩쓸기는 스투코프 뒤쪽 반경 3 지점을, 두 번째 휩쓸기는 뒤쪽 반경 2 지점을, 세 번째 휩쓸기는 뒤쪽 반경 1 지점을 기준으로 대상을 밀쳐냅니다.",
+         "html": "이제 거친 휩쓸기의 각 휘두르기마다 개별적인 밀쳐내기 지점이 적용됩니다. 첫 번째 휩쓸기는 스투코프 뒤쪽 반경 3 지점을, 두 번째 휩쓸기는 뒤쪽 반경 2 지점을, 세 번째 휩쓸기는 뒤쪽 반경 1 지점을 기준으로 대상을 밀쳐냅니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Flailing Swipe"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">거친 휩쓸기</strong><ul>\n<li>이제 거친 휩쓸기의 각 휘두르기마다 개별적인 밀쳐내기 지점이 적용됩니다. 첫 번째 휩쓸기는 스투코프 뒤쪽 반경 3 지점을, 두 번째 휩쓸기는 뒤쪽 반경 2 지점을, 세 번째 휩쓸기는 뒤쪽 반경 1 지점을 기준으로 대상을 밀쳐냅니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Stukov"
+    },
+    {
+     "name": "스랄",
+     "heroId": "Thrall",
+     "heroIds": [
+      "Thrall"
+     ],
+     "changes": [
+      {
+       "name": "세계의 분리",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "2차 밀쳐내기의 지속시간과 속도가 감소했습니다.",
+         "html": "2차 밀쳐내기의 지속시간과 속도가 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Sundering"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">세계의 분리</strong><ul>\n<li>2차 밀쳐내기의 지속시간과 속도가 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Thrall"
+    },
+    {
+     "name": "트레이서",
+     "heroId": "Tracer",
+     "heroIds": [
+      "Tracer"
+     ],
+     "changes": [
+      {
+       "name": "시간 역행",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "순간이동 지연시간이 .0625초에서 .1875초로 증가했습니다.",
+         "html": "순간이동 지연시간이 .0625초에서 .1875초로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Recall"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">시간 역행 [E]</strong><ul>\n<li>순간이동 지연시간이 .0625초에서 .1875초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Tracer"
+    },
+    {
+     "name": "타이커스",
+     "heroId": "Tychus",
+     "heroIds": [
+      "Tychus"
+     ],
+     "changes": [
+      {
+       "name": "수류탄",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "밀쳐내기 지속시간이 33% 감소했습니다. 폭발로 밀려나는 거리는 감소하지 않습니다.",
+         "html": "밀쳐내기 지속시간이 33% 감소했습니다. 폭발로 밀려나는 거리는 감소하지 않습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Frag Grenade"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">수류탄 [W]</strong><ul>\n<li>밀쳐내기 지속시간이 33% 감소했습니다. 폭발로 밀려나는 거리는 감소하지 않습니다.</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Tychus"
+    },
+    {
+     "name": "티리엘",
+     "heroId": "Tyrael",
+     "heroIds": [
+      "Tyrael"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "일반 공격 피해량이 78에서 82로 증가했습니다.",
+         "html": "일반 공격 피해량이 78에서 82로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "강타",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "이동 속도를 부여하는 지역의 지속시간이 툴팁에 표시되도록 수정되었습니다.",
+         "html": "이동 속도를 부여하는 지역의 지속시간이 툴팁에 표시되도록 수정되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Smite"
+      },
+      {
+       "name": "엘드루인의 힘",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "감속량이 25%에서 30%로 증가했습니다.",
+         "html": "감속량이 25%에서 30%로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "El'Druin's Might"
+      },
+      {
+       "name": "정의",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "보호막이 336에서 350으로 증가했습니다.",
+         "html": "보호막이 336에서 350으로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Righteousness"
+      },
+      {
+       "name": "구원",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "치유량이 140에서 150으로 증가했습니다.",
+         "html": "치유량이 140에서 150으로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "보호막 증가량이 40%에서 35%로 감소했습니다.",
+         "html": "보호막 증가량이 40%에서 35%로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Salvation"
+      },
+      {
+       "name": "법의 구속력",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "이제 16레벨 특성이 되었습니다.",
+         "html": "이제 16레벨 특성이 되었습니다.",
+         "added": false
+        },
+        {
+         "text": "개편: 이제 엘드루인의 힘이 첫 1초 동안 대상을 80% 감속시키고, 이후 남은 1.5초에 걸쳐 30%까지 감소합니다.",
+         "html": "<b>개편:</b> 이제 엘드루인의 힘이 첫 1초 동안 대상을 80% 감속시키고, 이후 남은 1.5초에 걸쳐 30%까지 감소합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Bound By Law"
+      },
+      {
+       "name": "화답",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "이제 폭발 피해량이 적 영웅과 소환물에게만 적용됩니다.",
+         "html": "이제 폭발 피해량이 적 영웅과 소환물에게만 적용됩니다.",
+         "added": false
+        },
+        {
+         "text": "이제 4레벨 특성이 되었습니다.",
+         "html": "이제 4레벨 특성이 되었습니다.",
+         "added": false
+        },
+        {
+         "text": "이제 티리엘이 화답 또는 엘드루인의 힘에 적중당한 영웅 하나당 최대 생명력의 3%만큼 생명력을 회복합니다.",
+         "html": "이제 티리엘이 화답 또는 엘드루인의 힘에 적중당한 영웅 하나당 최대 생명력의 3%만큼 생명력을 회복합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Reciprocate"
+      },
+      {
+       "name": "심판",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "시전 거리가 더 이상 티리엘의 반경만큼 증가하지 않습니다.",
+         "html": "시전 거리가 더 이상 티리엘의 반경만큼 증가하지 않습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Judgement"
+      },
+      {
+       "name": "불타는 광륜",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "엘드루인의 힘으로 순간이동했을 때의 피해량 증가량이 150%에서 125%로 감소했습니다.",
+         "html": "엘드루인의 힘으로 순간이동했을 때의 피해량 증가량이 150%에서 125%로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "피해량이 18에서 15로 감소했습니다.",
+         "html": "피해량이 18에서 15로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "이제 7레벨 특성이 되었습니다.",
+         "html": "이제 7레벨 특성이 되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Burning Halo"
+      },
+      {
+       "name": "정의의 화신",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "신규: 1.5초 동안 정신을 집중한 후 대천사의 분노 상태가 됩니다. 적 영웅에게 적중할 때마다 재사용 대기시간이 10%씩 감소합니다. 재사용 대기시간은 90초입니다.",
+         "html": "<b>신규:</b> 1.5초 동안 정신을 집중한 후 대천사의 분노 상태가 됩니다. 적 영웅에게 적중할 때마다 재사용 대기시간이 10%씩 감소합니다. 재사용 대기시간은 90초입니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Aspect of Justice"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li>일반 공격 피해량이 78에서 82로 증가했습니다.</li>\n<li><strong class=\"pn-name\">강타 [E]</strong><ul>\n<li>이동 속도를 부여하는 지역의 지속시간이 툴팁에 표시되도록 수정되었습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">엘드루인의 힘 [Q]</strong><ul>\n<li>감속량이 25%에서 30%로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">정의 [W]</strong><ul>\n<li>보호막이 336에서 350으로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">구원</strong><ul>\n<li>치유량이 140에서 150으로 증가했습니다.</li>\n<li>보호막 증가량이 40%에서 35%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">법의 구속력</strong><ul>\n<li>이제 16레벨 특성이 되었습니다.</li>\n<li><b>개편:</b> 이제 엘드루인의 힘이 첫 1초 동안 대상을 80% 감속시키고, 이후 남은 1.5초에 걸쳐 30%까지 감소합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">화답</strong><ul>\n<li>이제 폭발 피해량이 적 영웅과 소환물에게만 적용됩니다.</li>\n<li>이제 4레벨 특성이 되었습니다.</li>\n<li>이제 티리엘이 화답 또는 엘드루인의 힘에 적중당한 영웅 하나당 최대 생명력의 3%만큼 생명력을 회복합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">심판</strong><ul>\n<li>시전 거리가 더 이상 티리엘의 반경만큼 증가하지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">불타는 광륜</strong><ul>\n<li>엘드루인의 힘으로 순간이동했을 때의 피해량 증가량이 150%에서 125%로 감소했습니다.</li>\n<li>피해량이 18에서 15로 감소했습니다.</li>\n<li>이제 7레벨 특성이 되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">정의의 화신</strong><ul>\n<li><b>신규:</b> 1.5초 동안 정신을 집중한 후 대천사의 분노 상태가 됩니다. 적 영웅에게 적중할 때마다 재사용 대기시간이 10%씩 감소합니다. 재사용 대기시간은 90초입니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Tyrael"
+    }
+   ],
+   "nameEn": "Balance Update"
+  },
+  {
+   "name": "버그 수정",
+   "key": "bugs",
+   "html": "<h3><strong>일반</strong></h3>\n<ul>\n<li>투석기가 더 이상 경험치를 1 제공하지 않습니다.</li>\n<li>탈것의 공격이 회피의 충전 횟수를 소모하지 않던 문제를 수정했습니다.</li>\n</ul>\n<h3><strong>전장</strong></h3>\n<ul>\n<li><strong class=\"pn-h\">용의 둥지</strong><ul>\n<li>용기사의 사망 시 밀쳐내기가 처음 적용될 때 대상이 이동하던 방향으로 대상을 밀어내던 문제를 수정했습니다.</li>\n<li>용기사의 사망 시 밀쳐내기가 모든 대상을 동일한 거리만큼 밀어내지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">볼스카야 공장</strong><ul>\n<li>트리글라브 수호자의 사망 시 밀쳐내기가 처음 적용될 때 대상이 이동하던 방향으로 대상을 밀어내던 문제를 수정했습니다.</li>\n<li>트리글라브 수호자의 사망 시 밀쳐내기가 모든 대상을 동일한 거리만큼 밀어내지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n<h3><strong>영웅</strong></h3>\n<ul>\n<li><strong class=\"pn-h\">알라라크</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">염동력 [W]</strong><ul>\n<li>염동력이 적중한 대상을 방해하지 못하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">알렉스트라자</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">폭풍 날개 [W]</strong><ul>\n<li>이제 대상이 알렉스트라자의 위치가 아니라 폭풍 날개를 시전한 지점 뒤쪽 거리 2 지점을 기준으로 밀려납니다. 이제 대상은 폭풍 날개를 시전한 방향으로 이동합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">붉은용군단의 축복</strong><ul>\n<li>붉은용군단의 축복의 전이 효과가 알렉스트라자를 시전자로 유지하지 못하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">안두인</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">순간 치유 [Q]</strong><ul>\n<li>순간 치유의 정신 집중 효과가 방해받은 후에도 남아 있던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">아우리엘</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">억류의 일격 [E]</strong><ul>\n<li>이제 대상이 아우리엘의 위치가 아니라 아우리엘 뒤쪽 거리 5 지점을 기준으로 밀려납니다. 이제 대상은 억류의 일격을 시전한 방향으로 이동합니다.</li>\n<li>이제 지형 감지가 대상의 반경을 기준으로 이루어집니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">신성한 휩쓸기 [Q]</strong><ul>\n<li>이제 아우리엘의 신성한 휩쓸기 중앙에 적중하면 치명타가 표시됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">응집시키는 힘</strong><ul>\n<li>이제 정신 집중 기술을 더 일관되게 방해합니다.</li>\n<li>이제 아우리엘로부터 대상까지의 거리에 따라 대상을 중앙 지점 쪽으로 더 일관되게 이동시킵니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">카시아</strong><ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">발키리</strong><ul>\n<li>이제 발키리가 이미 대상을 꿰뚫은 후 적중당한 대상은 발키리가 이동하는 방향의 각도를 기준으로 옆으로 밀려납니다.</li>\n<li>이제 꿰뚫린 대상이 발키리의 위치 쪽으로 이동합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">첸</strong><ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">술통 구르기</strong><ul>\n<li>술통 구르기가 모든 대상을 동일한 거리만큼 밀쳐내지 못하던 문제를 수정했습니다.</li>\n<li>자신에게 적용된 감속 효과를 받고 있는 상태에서 적을 적중시켜도 더 이상 해당 감속 효과가 의도보다 빠르게 사라지지 않습니다.</li>\n<li>이제 대상이 충돌 지점에서 첸 뒤쪽 거리 .75 지점을 기준으로 밀려납니다.</li>\n<li>적을 적중시켰을 때 술통 구르기가 자신에게 적용하는 감속 효과가 이제 첸의 이동 속도를 90%가 아닌 100%로 감소시킵니다.</li>\n<li>이제 술통 구르기가 자신에게 적용하는 감속 효과도 술통 사고로 증가한 이동 속도에 맞춰 강도가 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">초갈</strong><ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">황혼의 망치</strong><ul>\n<li>이제 대상이 황혼의 망치를 시전한 지점 뒤쪽 거리 2 지점을 기준으로 밀려납니다. 초에게 더 가까운 대상은 황혼의 망치를 시전한 방향으로 이동합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">데스윙</strong><ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">용암의 피</strong><ul>\n<li>용암 방벽으로 인해 지속시간 표시가 잘못 나타나던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">데하카</strong><ul>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">가시지옥 변종</strong><ul>\n<li>이제 밀쳐내기가 데하카가 잠복에서 나온 지점을 중심으로 발생합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">디아블로</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">암흑의 돌진 [Q]</strong><ul>\n<li>이제 디아블로가 대상의 위치에 따라 대상과 나란히 이동합니다.</li>\n<li>암흑의 돌진이 구조물에 피해를 두 번 입히던 문제를 수정했습니다.</li>\n<li>이제 암흑의 돌진의 지형 감지가 대상의 반경을 기준으로 이루어집니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">디바</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">부스터 [Q]</strong><ul>\n<li>부스터가 모든 대상을 동일한 거리만큼 밀쳐내지 못하던 문제를 수정했습니다.</li>\n<li>이제 대상이 충돌 지점에서 D.Va 뒤쪽 거리 .75 지점을 기준으로 밀려납니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">충격 파동 [W]</strong><ul>\n<li>이제 대상이 D.Va의 위치가 아니라 충격 파동을 시전한 지점 뒤쪽 거리 2 지점을 기준으로 밀려납니다. D.Va에게 더 가까운 대상은 충격 파동을 시전한 방향으로 이동합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">폴스타트</strong><ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">맹렬한 광풍</strong><ul>\n<li>강력한 돌풍이 대상을 의도하지 않은 방향으로 날려 보내던 문제를 수정했습니다.</li>\n<li>이제 대상이 맹렬한 광풍을 시전한 폴스타트의 위치에서 50 사거리만큼 뒤에 있는 지점을 기준으로 밀려납니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">바람길</strong><ul>\n<li>이제 대상이 맹렬한 광풍을 시전한 폴스타트의 위치에서 50 사거리만큼 뒤에 있는 지점을 기준으로 밀려납니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">피닉스</strong><ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">광자 집중</strong><ul>\n<li>이제 진행 상황이 효과 표시줄에 표시됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">가로쉬</strong><ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">전쟁파괴자</strong><ul>\n<li>지속 피해가 지속 피해로 취급되지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">가즈로</strong><ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">중력폭탄 3000</strong><ul>\n<li>이제 대상이 중앙으로 끌려올 때 기절시킵니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">겐지</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">튕겨내기 [W]</strong><ul>\n<li>겐지가 튕겨내기를 선택한 후 겐지의 반사 충돌 시각 효과가 표시되지 않던 문제를 수정했습니다.</li>\n<li>겐지의 반사가 충돌 즉시 피해를 입히지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">한조</strong><ul>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">상념을 버려라</strong><ul>\n<li>상념을 버려라로 대상을 처치했을 때 한조의 일반 공격에 충돌 시각 효과가 나타나지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">들창코</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">거센 일격 [Q]</strong><ul>\n<li>거센 일격이 생성된 이동 경로 방해물(예: 태사다르의 역장)로 인해 기절시키지 못하던 문제를 수정했습니다.</li>\n<li>거센 일격의 밀쳐내기가 모든 대상을 동일한 거리만큼 밀쳐내지 못하던 문제를 수정했습니다.</li>\n<li>이제 밀쳐내기 지점이 거센 일격을 시전한 지점 뒤쪽 반경 2 지점이 됩니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">노획물 더미 [고유 능력 D]</strong><ul>\n<li>노획물 더미의 밀쳐내기가 제자리에서 시전하는 정신 집중을 방해하지 못하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">임페리우스</strong><ul>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">지존의 방어구</strong><ul>\n<li>도움말 문구가 업데이트되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">요한나</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">규탄 [W]</strong><ul>\n<li>밀쳐내기가 처음 적용될 때 대상을 그 대상이 이동하던 방향으로 밀어내던 문제를 수정했습니다.</li>\n<li>밀쳐내기가 모든 대상을 동일한 거리만큼 밀쳐내지 못하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">축복받은 망치</strong><ul>\n<li>툴팁에 올바른 재사용 대기시간 감소량이 표시되지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">켈투자드</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">켈투자드의 사슬 [E]</strong><ul>\n<li>가시 사슬의 방어력 감소 효과가 역병의 마지막 중첩을 부여한 사슬 연결 시전에 적용되던 문제를 수정했습니다.</li>\n<li>이제 사슬이 두 대상을 연결하는 즉시 밀쳐내기가 발생합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">리 리</strong><ul>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">쇄도의 바람</strong><ul>\n<li>도움말 문구가 업데이트되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">거대한 소용돌이</strong><ul>\n<li>도움말 문구가 업데이트되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">모랄레스 중위</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">변위 수류탄 [E]</strong><ul>\n<li>변위 수류탄이 일부 대상을 최대 거리만큼 밀쳐내지 못하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">메이</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">얼음 활주 [E]</strong><ul>\n<li>얼음 활주가 모든 대상을 동일한 거리만큼 밀쳐내지 못하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">무라딘</strong><ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">초강타</strong><ul>\n<li>이제 초강타에 맞은 대상과 충돌한 대상은 최초 대상이 이동하는 방향의 각도를 기준으로 옆으로 밀려납니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">머키</strong><ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">문어발 휘감기</strong><ul>\n<li>문어 습격이 방해받지 않았는데도 재사용 대기시간이 초기화되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">레이너</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">천공 탄환 [Q]</strong><ul>\n<li>밀쳐내기 거리가 조정되었습니다. 최대 거리가 10% 증가하고, 중간 거리가 5% 증가했으며, 짧은 거리가 5% 감소했습니다.</li>\n<li>이제 대상이 레이너의 위치가 아니라 레이너 뒤쪽 거리 5 지점을 기준으로 밀려납니다. 이제 대상은 시전한 천공 탄환의 방향으로 이동합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">레가르</strong><ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">선조의 치유</strong><ul>\n<li>이제 생명력이 가득 찬 영웅에게도 시전할 수 있습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">사무로</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">환영 복제 [Q]</strong><ul>\n<li>붉은용군단의 축복의 효과를 받는 동안 환영 이동술을 사용한 후 환영 복제의 환영이 잘못된 생명력을 지니던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">분신술</strong><ul>\n<li>붉은용군단의 축복의 효과를 받는 동안 분신술로 생성된 환영이 올바른 초기 생명력을 지니지 못하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">모진 바람</strong><ul>\n<li>모진 바람이 사무로가 입히는 불타는 칼날 피해량에 적용되지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">해머 상사</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">충격포 [W]</strong><ul>\n<li>이제 대상이 해머 상사의 위치가 아니라 충격포를 발사한 지점 뒤쪽 거리 2 지점을 기준으로 밀려납니다. 이제 대상은 충격포를 발사한 방향으로 이동합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">누더기</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">갈고리 [Q]</strong><ul>\n<li>이제 누더기가 레벨을 올릴 때 갈고리 연장의 진행 상황이 표시됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">스투코프</strong><ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">거친 휩쓸기</strong><ul>\n<li>거친 휩쓸기가 모든 대상을 동일한 거리만큼 밀쳐내지 못하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">도살자</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">무자비한 돌진 [E]</strong><ul>\n<li>무자비한 돌진이 특정 상황에서 대상을 방해하지 못하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">스랄</strong><ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">세계의 분리</strong><ul>\n<li>이제 세계의 분리에 적중당한 대상은 세계의 분리의 각도를 기준으로 옆으로 밀려납니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">트레이서</strong><ul>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">이거나 먹어라!</strong><ul>\n<li>이제 밀쳐내기 지점이 충돌 시점에 트레이서가 위치한 곳 뒤쪽 반경 5 지점이 됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">티리엘</strong><ul>\n<li>일부 시전 거리 표시기가 실제 적용 범위와 일치하지 않던 문제를 수정했습니다.</li>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">대천사의 분노 [고유 능력 D]</strong><ul>\n<li>대천사의 분노가 적에게 피해를 입힐 때 대천사의 분노의 피해 감소 효과가 잠시 두 번 적용되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">불타는 광륜</strong><ul>\n<li>불타는 광륜의 추가 피해량이 정의의 검으로 남겨진 엘드루인에게 부여되던 문제를 수정했습니다.</li>\n<li>티리엘이 탈것에 타거나 정지 상태가 되었을 때 엘드루인에 적용된 불타는 광륜이 취소되지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">바리안</strong><ul>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">재기의 바람</strong><ul>\n<li>재기의 바람의 1% 치유 효과로 생명력이 50% 이상이 된 경우 입힌 피해량의 일부만큼 생명력을 회복하지 못하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">이렐</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">정의의 망치 [W]</strong><ul>\n<li>완전히 충전된 정의의 망치를 시전했을 때 잘못된 양의 밀쳐내기가 적용되던 문제를 수정했습니다.</li>\n<li>정의의 망치가 모든 대상을 동일한 거리만큼 밀쳐내지 못하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">자가라</strong><ul>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">무리어미</strong><ul>\n<li>맹독 가시뼈로 강화된 일반 공격이 무리어미를 발동시키지 못하던 문제를 수정했습니다.</li>\n<li>이제 처치 요약에 무리어미로 표시됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<p><strong><a href=\"https://us.forums.blizzard.com/en/heroes/\" target=\"_blank\">공식 히어로즈 오브 더 스톰 포럼에서 다른 플레이어들과 이 글에 대해 이야기를 나누려면 여기를 클릭하십시오</a>.</strong></p>\n<p><strong><img alt=\"\" class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/g6/G6G0N80EOC941426801305139.png\"/></strong></p>",
+   "items": [
+    {
+     "name": "용의 둥지",
+     "battleground": "dragon_shire",
+     "html": "<strong class=\"pn-h\">용의 둥지</strong>\n<ul>\n<li>용기사의 사망 시 밀쳐내기가 처음 적용될 때 대상이 이동하던 방향으로 대상을 밀어내던 문제를 수정했습니다.</li>\n<li>용기사의 사망 시 밀쳐내기가 모든 대상을 동일한 거리만큼 밀어내지 않던 문제를 수정했습니다.</li>\n</ul>",
+     "under": "Map",
+     "nameEn": "Dragon Shire"
+    },
+    {
+     "name": "볼스카야 공장",
+     "battleground": "volskaya_foundry",
+     "html": "<strong class=\"pn-h\">볼스카야 공장</strong>\n<ul>\n<li>트리글라브 수호자의 사망 시 밀쳐내기가 처음 적용될 때 대상이 이동하던 방향으로 대상을 밀어내던 문제를 수정했습니다.</li>\n<li>트리글라브 수호자의 사망 시 밀쳐내기가 모든 대상을 동일한 거리만큼 밀어내지 않던 문제를 수정했습니다.</li>\n</ul>",
+     "under": "Map",
+     "nameEn": "Volskaya Foundry"
+    },
+    {
+     "name": "알라라크",
+     "heroId": "Alarak",
+     "heroIds": [
+      "Alarak"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">알라라크</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">염동력 [W]</strong><ul>\n<li>염동력이 적중한 대상을 방해하지 못하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "염동력",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "염동력이 적중한 대상을 방해하지 못하던 문제를 수정했습니다.",
+         "html": "염동력이 적중한 대상을 방해하지 못하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Telekinesis"
+      }
+     ],
+     "nameEn": "Alarak"
+    },
+    {
+     "name": "알렉스트라자",
+     "heroId": "Alexstrasza",
+     "heroIds": [
+      "Alexstrasza"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">알렉스트라자</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">폭풍 날개 [W]</strong><ul>\n<li>이제 대상이 알렉스트라자의 위치가 아니라 폭풍 날개를 시전한 지점 뒤쪽 거리 2 지점을 기준으로 밀려납니다. 이제 대상은 폭풍 날개를 시전한 방향으로 이동합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">붉은용군단의 축복</strong><ul>\n<li>붉은용군단의 축복의 전이 효과가 알렉스트라자를 시전자로 유지하지 못하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "폭풍 날개",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "이제 대상이 알렉스트라자의 위치가 아니라 폭풍 날개를 시전한 지점 뒤쪽 거리 2 지점을 기준으로 밀려납니다. 이제 대상은 폭풍 날개를 시전한 방향으로 이동합니다.",
+         "html": "이제 대상이 알렉스트라자의 위치가 아니라 폭풍 날개를 시전한 지점 뒤쪽 거리 2 지점을 기준으로 밀려납니다. 이제 대상은 폭풍 날개를 시전한 방향으로 이동합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Wing Buffet"
+      },
+      {
+       "name": "붉은용군단의 축복",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "붉은용군단의 축복의 전이 효과가 알렉스트라자를 시전자로 유지하지 못하던 문제를 수정했습니다.",
+         "html": "붉은용군단의 축복의 전이 효과가 알렉스트라자를 시전자로 유지하지 못하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Blessing of the Red"
+      }
+     ],
+     "nameEn": "Alexstrasza"
+    },
+    {
+     "name": "안두인",
+     "heroId": "Anduin",
+     "heroIds": [
+      "Anduin"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">안두인</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">순간 치유 [Q]</strong><ul>\n<li>순간 치유의 정신 집중 효과가 방해받은 후에도 남아 있던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "순간 치유",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "순간 치유의 정신 집중 효과가 방해받은 후에도 남아 있던 문제를 수정했습니다.",
+         "html": "순간 치유의 정신 집중 효과가 방해받은 후에도 남아 있던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Flash Heal"
+      }
+     ],
+     "nameEn": "Anduin"
+    },
+    {
+     "name": "아우리엘",
+     "heroId": "Auriel",
+     "heroIds": [
+      "Auriel"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">아우리엘</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">억류의 일격 [E]</strong><ul>\n<li>이제 대상이 아우리엘의 위치가 아니라 아우리엘 뒤쪽 거리 5 지점을 기준으로 밀려납니다. 이제 대상은 억류의 일격을 시전한 방향으로 이동합니다.</li>\n<li>이제 지형 감지가 대상의 반경을 기준으로 이루어집니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">신성한 휩쓸기 [Q]</strong><ul>\n<li>이제 아우리엘의 신성한 휩쓸기 중앙에 적중하면 치명타가 표시됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">응집시키는 힘</strong><ul>\n<li>이제 정신 집중 기술을 더 일관되게 방해합니다.</li>\n<li>이제 아우리엘로부터 대상까지의 거리에 따라 대상을 중앙 지점 쪽으로 더 일관되게 이동시킵니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "억류의 일격",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "이제 대상이 아우리엘의 위치가 아니라 아우리엘 뒤쪽 거리 5 지점을 기준으로 밀려납니다. 이제 대상은 억류의 일격을 시전한 방향으로 이동합니다.",
+         "html": "이제 대상이 아우리엘의 위치가 아니라 아우리엘 뒤쪽 거리 5 지점을 기준으로 밀려납니다. 이제 대상은 억류의 일격을 시전한 방향으로 이동합니다.",
+         "added": false
+        },
+        {
+         "text": "이제 지형 감지가 대상의 반경을 기준으로 이루어집니다.",
+         "html": "이제 지형 감지가 대상의 반경을 기준으로 이루어집니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Detainment Strike"
+      },
+      {
+       "name": "신성한 휩쓸기",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "이제 아우리엘의 신성한 휩쓸기 중앙에 적중하면 치명타가 표시됩니다.",
+         "html": "이제 아우리엘의 신성한 휩쓸기 중앙에 적중하면 치명타가 표시됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Sacred Sweep"
+      },
+      {
+       "name": "응집시키는 힘",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "이제 정신 집중 기술을 더 일관되게 방해합니다.",
+         "html": "이제 정신 집중 기술을 더 일관되게 방해합니다.",
+         "added": false
+        },
+        {
+         "text": "이제 아우리엘로부터 대상까지의 거리에 따라 대상을 중앙 지점 쪽으로 더 일관되게 이동시킵니다.",
+         "html": "이제 아우리엘로부터 대상까지의 거리에 따라 대상을 중앙 지점 쪽으로 더 일관되게 이동시킵니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Converging Force"
+      }
+     ],
+     "nameEn": "Auriel"
+    },
+    {
+     "name": "카시아",
+     "heroId": "Amazon",
+     "heroIds": [
+      "Amazon"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">카시아</strong>\n<ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">발키리</strong><ul>\n<li>이제 발키리가 이미 대상을 꿰뚫은 후 적중당한 대상은 발키리가 이동하는 방향의 각도를 기준으로 옆으로 밀려납니다.</li>\n<li>이제 꿰뚫린 대상이 발키리의 위치 쪽으로 이동합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "발키리",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "이제 발키리가 이미 대상을 꿰뚫은 후 적중당한 대상은 발키리가 이동하는 방향의 각도를 기준으로 옆으로 밀려납니다.",
+         "html": "이제 발키리가 이미 대상을 꿰뚫은 후 적중당한 대상은 발키리가 이동하는 방향의 각도를 기준으로 옆으로 밀려납니다.",
+         "added": false
+        },
+        {
+         "text": "이제 꿰뚫린 대상이 발키리의 위치 쪽으로 이동합니다.",
+         "html": "이제 꿰뚫린 대상이 발키리의 위치 쪽으로 이동합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Valkyrie"
+      }
+     ],
+     "nameEn": "Cassia"
+    },
+    {
+     "name": "첸",
+     "heroId": "Chen",
+     "heroIds": [
+      "Chen"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">첸</strong>\n<ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">술통 구르기</strong><ul>\n<li>술통 구르기가 모든 대상을 동일한 거리만큼 밀쳐내지 못하던 문제를 수정했습니다.</li>\n<li>자신에게 적용된 감속 효과를 받고 있는 상태에서 적을 적중시켜도 더 이상 해당 감속 효과가 의도보다 빠르게 사라지지 않습니다.</li>\n<li>이제 대상이 충돌 지점에서 첸 뒤쪽 거리 .75 지점을 기준으로 밀려납니다.</li>\n<li>적을 적중시켰을 때 술통 구르기가 자신에게 적용하는 감속 효과가 이제 첸의 이동 속도를 90%가 아닌 100%로 감소시킵니다.</li>\n<li>이제 술통 구르기가 자신에게 적용하는 감속 효과도 술통 사고로 증가한 이동 속도에 맞춰 강도가 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "술통 구르기",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "술통 구르기가 모든 대상을 동일한 거리만큼 밀쳐내지 못하던 문제를 수정했습니다.",
+         "html": "술통 구르기가 모든 대상을 동일한 거리만큼 밀쳐내지 못하던 문제를 수정했습니다.",
+         "added": false
+        },
+        {
+         "text": "자신에게 적용된 감속 효과를 받고 있는 상태에서 적을 적중시켜도 더 이상 해당 감속 효과가 의도보다 빠르게 사라지지 않습니다.",
+         "html": "자신에게 적용된 감속 효과를 받고 있는 상태에서 적을 적중시켜도 더 이상 해당 감속 효과가 의도보다 빠르게 사라지지 않습니다.",
+         "added": false
+        },
+        {
+         "text": "이제 대상이 충돌 지점에서 첸 뒤쪽 거리 .75 지점을 기준으로 밀려납니다.",
+         "html": "이제 대상이 충돌 지점에서 첸 뒤쪽 거리 .75 지점을 기준으로 밀려납니다.",
+         "added": false
+        },
+        {
+         "text": "적을 적중시켰을 때 술통 구르기가 자신에게 적용하는 감속 효과가 이제 첸의 이동 속도를 90%가 아닌 100%로 감소시킵니다.",
+         "html": "적을 적중시켰을 때 술통 구르기가 자신에게 적용하는 감속 효과가 이제 첸의 이동 속도를 90%가 아닌 100%로 감소시킵니다.",
+         "added": false
+        },
+        {
+         "text": "이제 술통 구르기가 자신에게 적용하는 감속 효과도 술통 사고로 증가한 이동 속도에 맞춰 강도가 증가합니다.",
+         "html": "이제 술통 구르기가 자신에게 적용하는 감속 효과도 술통 사고로 증가한 이동 속도에 맞춰 강도가 증가합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Wandering Keg"
+      }
+     ],
+     "nameEn": "Chen"
+    },
+    {
+     "name": "초갈",
+     "heroId": "Cho",
+     "heroIds": [
+      "Cho",
+      "Gall"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">초갈</strong>\n<ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">황혼의 망치</strong><ul>\n<li>이제 대상이 황혼의 망치를 시전한 지점 뒤쪽 거리 2 지점을 기준으로 밀려납니다. 초에게 더 가까운 대상은 황혼의 망치를 시전한 방향으로 이동합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "황혼의 망치",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "이제 대상이 황혼의 망치를 시전한 지점 뒤쪽 거리 2 지점을 기준으로 밀려납니다. 초에게 더 가까운 대상은 황혼의 망치를 시전한 방향으로 이동합니다.",
+         "html": "이제 대상이 황혼의 망치를 시전한 지점 뒤쪽 거리 2 지점을 기준으로 밀려납니다. 초에게 더 가까운 대상은 황혼의 망치를 시전한 방향으로 이동합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Hammer of Twilight"
+      }
+     ],
+     "nameEn": "Cho'gall"
+    },
+    {
+     "name": "데스윙",
+     "heroId": "Deathwing",
+     "heroIds": [
+      "Deathwing"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">데스윙</strong>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">용암의 피</strong><ul>\n<li>용암 방벽으로 인해 지속시간 표시가 잘못 나타나던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "용암의 피",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "용암 방벽으로 인해 지속시간 표시가 잘못 나타나던 문제를 수정했습니다.",
+         "html": "용암 방벽으로 인해 지속시간 표시가 잘못 나타나던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Molten Blood"
+      }
+     ],
+     "nameEn": "Deathwing"
+    },
+    {
+     "name": "데하카",
+     "heroId": "Dehaka",
+     "heroIds": [
+      "Dehaka"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">데하카</strong>\n<ul>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">가시지옥 변종</strong><ul>\n<li>이제 밀쳐내기가 데하카가 잠복에서 나온 지점을 중심으로 발생합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "가시지옥 변종",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "이제 밀쳐내기가 데하카가 잠복에서 나온 지점을 중심으로 발생합니다.",
+         "html": "이제 밀쳐내기가 데하카가 잠복에서 나온 지점을 중심으로 발생합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Lurker Strain"
+      }
+     ],
+     "nameEn": "Dehaka"
+    },
+    {
+     "name": "디아블로",
+     "heroId": "Diablo",
+     "heroIds": [
+      "Diablo"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">디아블로</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">암흑의 돌진 [Q]</strong><ul>\n<li>이제 디아블로가 대상의 위치에 따라 대상과 나란히 이동합니다.</li>\n<li>암흑의 돌진이 구조물에 피해를 두 번 입히던 문제를 수정했습니다.</li>\n<li>이제 암흑의 돌진의 지형 감지가 대상의 반경을 기준으로 이루어집니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "암흑의 돌진",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "이제 디아블로가 대상의 위치에 따라 대상과 나란히 이동합니다.",
+         "html": "이제 디아블로가 대상의 위치에 따라 대상과 나란히 이동합니다.",
+         "added": false
+        },
+        {
+         "text": "암흑의 돌진이 구조물에 피해를 두 번 입히던 문제를 수정했습니다.",
+         "html": "암흑의 돌진이 구조물에 피해를 두 번 입히던 문제를 수정했습니다.",
+         "added": false
+        },
+        {
+         "text": "이제 암흑의 돌진의 지형 감지가 대상의 반경을 기준으로 이루어집니다.",
+         "html": "이제 암흑의 돌진의 지형 감지가 대상의 반경을 기준으로 이루어집니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Shadow Charge"
+      }
+     ],
+     "nameEn": "Diablo"
+    },
+    {
+     "name": "디바",
+     "heroId": "DVa",
+     "heroIds": [
+      "DVa"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">디바</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">부스터 [Q]</strong><ul>\n<li>부스터가 모든 대상을 동일한 거리만큼 밀쳐내지 못하던 문제를 수정했습니다.</li>\n<li>이제 대상이 충돌 지점에서 D.Va 뒤쪽 거리 .75 지점을 기준으로 밀려납니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">충격 파동 [W]</strong><ul>\n<li>이제 대상이 D.Va의 위치가 아니라 충격 파동을 시전한 지점 뒤쪽 거리 2 지점을 기준으로 밀려납니다. D.Va에게 더 가까운 대상은 충격 파동을 시전한 방향으로 이동합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "부스터",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "부스터가 모든 대상을 동일한 거리만큼 밀쳐내지 못하던 문제를 수정했습니다.",
+         "html": "부스터가 모든 대상을 동일한 거리만큼 밀쳐내지 못하던 문제를 수정했습니다.",
+         "added": false
+        },
+        {
+         "text": "이제 대상이 충돌 지점에서 D.Va 뒤쪽 거리 .75 지점을 기준으로 밀려납니다.",
+         "html": "이제 대상이 충돌 지점에서 D.Va 뒤쪽 거리 .75 지점을 기준으로 밀려납니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Boosters"
+      },
+      {
+       "name": "충격 파동",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "이제 대상이 D.Va의 위치가 아니라 충격 파동을 시전한 지점 뒤쪽 거리 2 지점을 기준으로 밀려납니다. D.Va에게 더 가까운 대상은 충격 파동을 시전한 방향으로 이동합니다.",
+         "html": "이제 대상이 D.Va의 위치가 아니라 충격 파동을 시전한 지점 뒤쪽 거리 2 지점을 기준으로 밀려납니다. D.Va에게 더 가까운 대상은 충격 파동을 시전한 방향으로 이동합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Concussive Pulse"
+      }
+     ],
+     "nameEn": "D.Va"
+    },
+    {
+     "name": "폴스타트",
+     "heroId": "Falstad",
+     "heroIds": [
+      "Falstad"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">폴스타트</strong>\n<ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">맹렬한 광풍</strong><ul>\n<li>강력한 돌풍이 대상을 의도하지 않은 방향으로 날려 보내던 문제를 수정했습니다.</li>\n<li>이제 대상이 맹렬한 광풍을 시전한 폴스타트의 위치에서 50 사거리만큼 뒤에 있는 지점을 기준으로 밀려납니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">바람길</strong><ul>\n<li>이제 대상이 맹렬한 광풍을 시전한 폴스타트의 위치에서 50 사거리만큼 뒤에 있는 지점을 기준으로 밀려납니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "맹렬한 광풍",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "강력한 돌풍이 대상을 의도하지 않은 방향으로 날려 보내던 문제를 수정했습니다.",
+         "html": "강력한 돌풍이 대상을 의도하지 않은 방향으로 날려 보내던 문제를 수정했습니다.",
+         "added": false
+        },
+        {
+         "text": "이제 대상이 맹렬한 광풍을 시전한 폴스타트의 위치에서 50 사거리만큼 뒤에 있는 지점을 기준으로 밀려납니다.",
+         "html": "이제 대상이 맹렬한 광풍을 시전한 폴스타트의 위치에서 50 사거리만큼 뒤에 있는 지점을 기준으로 밀려납니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Mighty Gust"
+      },
+      {
+       "name": "바람길",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "이제 대상이 맹렬한 광풍을 시전한 폴스타트의 위치에서 50 사거리만큼 뒤에 있는 지점을 기준으로 밀려납니다.",
+         "html": "이제 대상이 맹렬한 광풍을 시전한 폴스타트의 위치에서 50 사거리만큼 뒤에 있는 지점을 기준으로 밀려납니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Wind Tunnel"
+      }
+     ],
+     "nameEn": "Falstad"
+    },
+    {
+     "name": "피닉스",
+     "heroId": "Fenix",
+     "heroIds": [
+      "Fenix"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">피닉스</strong>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">광자 집중</strong><ul>\n<li>이제 진행 상황이 효과 표시줄에 표시됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "광자 집중",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "이제 진행 상황이 효과 표시줄에 표시됩니다.",
+         "html": "이제 진행 상황이 효과 표시줄에 표시됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Arsenal Synergy"
+      }
+     ],
+     "nameEn": "Fenix"
+    },
+    {
+     "name": "가로쉬",
+     "heroId": "Garrosh",
+     "heroIds": [
+      "Garrosh"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">가로쉬</strong>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">전쟁파괴자</strong><ul>\n<li>지속 피해가 지속 피해로 취급되지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "전쟁파괴자",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "지속 피해가 지속 피해로 취급되지 않던 문제를 수정했습니다.",
+         "html": "지속 피해가 지속 피해로 취급되지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Warbreaker"
+      }
+     ],
+     "nameEn": "Garrosh"
+    },
+    {
+     "name": "가즈로",
+     "heroId": "Tinker",
+     "heroIds": [
+      "Tinker"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">가즈로</strong>\n<ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">중력폭탄 3000</strong><ul>\n<li>이제 대상이 중앙으로 끌려올 때 기절시킵니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "중력폭탄 3000",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "이제 대상이 중앙으로 끌려올 때 기절시킵니다.",
+         "html": "이제 대상이 중앙으로 끌려올 때 기절시킵니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Grav-O-Bomb 3000"
+      }
+     ],
+     "nameEn": "Gazlowe"
+    },
+    {
+     "name": "겐지",
+     "heroId": "Genji",
+     "heroIds": [
+      "Genji"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">겐지</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">튕겨내기 [W]</strong><ul>\n<li>겐지가 튕겨내기를 선택한 후 겐지의 반사 충돌 시각 효과가 표시되지 않던 문제를 수정했습니다.</li>\n<li>겐지의 반사가 충돌 즉시 피해를 입히지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "튕겨내기",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "겐지가 튕겨내기를 선택한 후 겐지의 반사 충돌 시각 효과가 표시되지 않던 문제를 수정했습니다.",
+         "html": "겐지가 튕겨내기를 선택한 후 겐지의 반사 충돌 시각 효과가 표시되지 않던 문제를 수정했습니다.",
+         "added": false
+        },
+        {
+         "text": "겐지의 반사가 충돌 즉시 피해를 입히지 않던 문제를 수정했습니다.",
+         "html": "겐지의 반사가 충돌 즉시 피해를 입히지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Deflect"
+      }
+     ],
+     "nameEn": "Genji"
+    },
+    {
+     "name": "한조",
+     "heroId": "Hanzo",
+     "heroIds": [
+      "Hanzo"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">한조</strong>\n<ul>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">상념을 버려라</strong><ul>\n<li>상념을 버려라로 대상을 처치했을 때 한조의 일반 공격에 충돌 시각 효과가 나타나지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "상념을 버려라",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "상념을 버려라로 대상을 처치했을 때 한조의 일반 공격에 충돌 시각 효과가 나타나지 않던 문제를 수정했습니다.",
+         "html": "상념을 버려라로 대상을 처치했을 때 한조의 일반 공격에 충돌 시각 효과가 나타나지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Ignore All Distractions"
+      }
+     ],
+     "nameEn": "Hanzo"
+    },
+    {
+     "name": "들창코",
+     "heroId": "Hogger",
+     "heroIds": [
+      "Hogger"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">들창코</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">거센 일격 [Q]</strong><ul>\n<li>거센 일격이 생성된 이동 경로 방해물(예: 태사다르의 역장)로 인해 기절시키지 못하던 문제를 수정했습니다.</li>\n<li>거센 일격의 밀쳐내기가 모든 대상을 동일한 거리만큼 밀쳐내지 못하던 문제를 수정했습니다.</li>\n<li>이제 밀쳐내기 지점이 거센 일격을 시전한 지점 뒤쪽 반경 2 지점이 됩니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">노획물 더미 [고유 능력 D]</strong><ul>\n<li>노획물 더미의 밀쳐내기가 제자리에서 시전하는 정신 집중을 방해하지 못하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "거센 일격",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "거센 일격이 생성된 이동 경로 방해물(예: 태사다르의 역장)로 인해 기절시키지 못하던 문제를 수정했습니다.",
+         "html": "거센 일격이 생성된 이동 경로 방해물(예: 태사다르의 역장)로 인해 기절시키지 못하던 문제를 수정했습니다.",
+         "added": false
+        },
+        {
+         "text": "거센 일격의 밀쳐내기가 모든 대상을 동일한 거리만큼 밀쳐내지 못하던 문제를 수정했습니다.",
+         "html": "거센 일격의 밀쳐내기가 모든 대상을 동일한 거리만큼 밀쳐내지 못하던 문제를 수정했습니다.",
+         "added": false
+        },
+        {
+         "text": "이제 밀쳐내기 지점이 거센 일격을 시전한 지점 뒤쪽 반경 2 지점이 됩니다.",
+         "html": "이제 밀쳐내기 지점이 거센 일격을 시전한 지점 뒤쪽 반경 2 지점이 됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Staggering Blow"
+      },
+      {
+       "name": "노획물 더미",
+       "key": "Trait D",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "노획물 더미의 밀쳐내기가 제자리에서 시전하는 정신 집중을 방해하지 못하던 문제를 수정했습니다.",
+         "html": "노획물 더미의 밀쳐내기가 제자리에서 시전하는 정신 집중을 방해하지 못하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Loot Hoard"
+      }
+     ],
+     "nameEn": "Hogger"
+    },
+    {
+     "name": "임페리우스",
+     "heroId": "Imperius",
+     "heroIds": [
+      "Imperius"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">임페리우스</strong>\n<ul>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">지존의 방어구</strong><ul>\n<li>도움말 문구가 업데이트되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "지존의 방어구",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "도움말 문구가 업데이트되었습니다.",
+         "html": "도움말 문구가 업데이트되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Sovereign Armor"
+      }
+     ],
+     "nameEn": "Imperius"
+    },
+    {
+     "name": "요한나",
+     "heroId": "Crusader",
+     "heroIds": [
+      "Crusader"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">요한나</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">규탄 [W]</strong><ul>\n<li>밀쳐내기가 처음 적용될 때 대상을 그 대상이 이동하던 방향으로 밀어내던 문제를 수정했습니다.</li>\n<li>밀쳐내기가 모든 대상을 동일한 거리만큼 밀쳐내지 못하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">축복받은 망치</strong><ul>\n<li>툴팁에 올바른 재사용 대기시간 감소량이 표시되지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "규탄",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "밀쳐내기가 처음 적용될 때 대상을 그 대상이 이동하던 방향으로 밀어내던 문제를 수정했습니다.",
+         "html": "밀쳐내기가 처음 적용될 때 대상을 그 대상이 이동하던 방향으로 밀어내던 문제를 수정했습니다.",
+         "added": false
+        },
+        {
+         "text": "밀쳐내기가 모든 대상을 동일한 거리만큼 밀쳐내지 못하던 문제를 수정했습니다.",
+         "html": "밀쳐내기가 모든 대상을 동일한 거리만큼 밀쳐내지 못하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Condemn"
+      },
+      {
+       "name": "축복받은 망치",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "툴팁에 올바른 재사용 대기시간 감소량이 표시되지 않던 문제를 수정했습니다.",
+         "html": "툴팁에 올바른 재사용 대기시간 감소량이 표시되지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Blessed Hammer"
+      }
+     ],
+     "nameEn": "Johanna"
+    },
+    {
+     "name": "켈투자드",
+     "heroId": "KelThuzad",
+     "heroIds": [
+      "KelThuzad"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">켈투자드</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">켈투자드의 사슬 [E]</strong><ul>\n<li>가시 사슬의 방어력 감소 효과가 역병의 마지막 중첩을 부여한 사슬 연결 시전에 적용되던 문제를 수정했습니다.</li>\n<li>이제 사슬이 두 대상을 연결하는 즉시 밀쳐내기가 발생합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "켈투자드의 사슬",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "가시 사슬의 방어력 감소 효과가 역병의 마지막 중첩을 부여한 사슬 연결 시전에 적용되던 문제를 수정했습니다.",
+         "html": "가시 사슬의 방어력 감소 효과가 역병의 마지막 중첩을 부여한 사슬 연결 시전에 적용되던 문제를 수정했습니다.",
+         "added": false
+        },
+        {
+         "text": "이제 사슬이 두 대상을 연결하는 즉시 밀쳐내기가 발생합니다.",
+         "html": "이제 사슬이 두 대상을 연결하는 즉시 밀쳐내기가 발생합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Chains of Kel'Thuzad"
+      }
+     ],
+     "nameEn": "Kel'Thuzad"
+    },
+    {
+     "name": "리 리",
+     "heroId": "LiLi",
+     "heroIds": [
+      "LiLi"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">리 리</strong>\n<ul>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">쇄도의 바람</strong><ul>\n<li>도움말 문구가 업데이트되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">거대한 소용돌이</strong><ul>\n<li>도움말 문구가 업데이트되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "쇄도의 바람",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "도움말 문구가 업데이트되었습니다.",
+         "html": "도움말 문구가 업데이트되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Surging Winds"
+      },
+      {
+       "name": "거대한 소용돌이",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "도움말 문구가 업데이트되었습니다.",
+         "html": "도움말 문구가 업데이트되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Mass Vortex"
+      }
+     ],
+     "nameEn": "Li Li"
+    },
+    {
+     "name": "모랄레스 중위",
+     "heroId": "Medic",
+     "heroIds": [
+      "Medic"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">모랄레스 중위</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">변위 수류탄 [E]</strong><ul>\n<li>변위 수류탄이 일부 대상을 최대 거리만큼 밀쳐내지 못하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "변위 수류탄",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "변위 수류탄이 일부 대상을 최대 거리만큼 밀쳐내지 못하던 문제를 수정했습니다.",
+         "html": "변위 수류탄이 일부 대상을 최대 거리만큼 밀쳐내지 못하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Displacement Grenade"
+      }
+     ],
+     "nameEn": "Lt. Morales"
+    },
+    {
+     "name": "메이",
+     "heroId": "Mei",
+     "heroIds": [
+      "Mei"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">메이</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">얼음 활주 [E]</strong><ul>\n<li>얼음 활주가 모든 대상을 동일한 거리만큼 밀쳐내지 못하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "얼음 활주",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "얼음 활주가 모든 대상을 동일한 거리만큼 밀쳐내지 못하던 문제를 수정했습니다.",
+         "html": "얼음 활주가 모든 대상을 동일한 거리만큼 밀쳐내지 못하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Icing"
+      }
+     ],
+     "nameEn": "Mei"
+    },
+    {
+     "name": "무라딘",
+     "heroId": "Muradin",
+     "heroIds": [
+      "Muradin"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">무라딘</strong>\n<ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">초강타</strong><ul>\n<li>이제 초강타에 맞은 대상과 충돌한 대상은 최초 대상이 이동하는 방향의 각도를 기준으로 옆으로 밀려납니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "초강타",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "이제 초강타에 맞은 대상과 충돌한 대상은 최초 대상이 이동하는 방향의 각도를 기준으로 옆으로 밀려납니다.",
+         "html": "이제 초강타에 맞은 대상과 충돌한 대상은 최초 대상이 이동하는 방향의 각도를 기준으로 옆으로 밀려납니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Haymaker"
+      }
+     ],
+     "nameEn": "Muradin"
+    },
+    {
+     "name": "머키",
+     "heroId": "Murky",
+     "heroIds": [
+      "Murky"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">머키</strong>\n<ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">문어발 휘감기</strong><ul>\n<li>문어 습격이 방해받지 않았는데도 재사용 대기시간이 초기화되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "문어발 휘감기",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "문어 습격이 방해받지 않았는데도 재사용 대기시간이 초기화되던 문제를 수정했습니다.",
+         "html": "문어 습격이 방해받지 않았는데도 재사용 대기시간이 초기화되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Octo-Grab"
+      }
+     ],
+     "nameEn": "Murky"
+    },
+    {
+     "name": "레이너",
+     "heroId": "Raynor",
+     "heroIds": [
+      "Raynor"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">레이너</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">천공 탄환 [Q]</strong><ul>\n<li>밀쳐내기 거리가 조정되었습니다. 최대 거리가 10% 증가하고, 중간 거리가 5% 증가했으며, 짧은 거리가 5% 감소했습니다.</li>\n<li>이제 대상이 레이너의 위치가 아니라 레이너 뒤쪽 거리 5 지점을 기준으로 밀려납니다. 이제 대상은 시전한 천공 탄환의 방향으로 이동합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "천공 탄환",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "밀쳐내기 거리가 조정되었습니다. 최대 거리가 10% 증가하고, 중간 거리가 5% 증가했으며, 짧은 거리가 5% 감소했습니다.",
+         "html": "밀쳐내기 거리가 조정되었습니다. 최대 거리가 10% 증가하고, 중간 거리가 5% 증가했으며, 짧은 거리가 5% 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "이제 대상이 레이너의 위치가 아니라 레이너 뒤쪽 거리 5 지점을 기준으로 밀려납니다. 이제 대상은 시전한 천공 탄환의 방향으로 이동합니다.",
+         "html": "이제 대상이 레이너의 위치가 아니라 레이너 뒤쪽 거리 5 지점을 기준으로 밀려납니다. 이제 대상은 시전한 천공 탄환의 방향으로 이동합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Penetrating Rounds"
+      }
+     ],
+     "nameEn": "Raynor"
+    },
+    {
+     "name": "레가르",
+     "heroId": "Rehgar",
+     "heroIds": [
+      "Rehgar"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">레가르</strong>\n<ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">선조의 치유</strong><ul>\n<li>이제 생명력이 가득 찬 영웅에게도 시전할 수 있습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "선조의 치유",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "이제 생명력이 가득 찬 영웅에게도 시전할 수 있습니다.",
+         "html": "이제 생명력이 가득 찬 영웅에게도 시전할 수 있습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Ancestral Healing"
+      }
+     ],
+     "nameEn": "Rehgar"
+    },
+    {
+     "name": "사무로",
+     "heroId": "Samuro",
+     "heroIds": [
+      "Samuro"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">사무로</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">환영 복제 [Q]</strong><ul>\n<li>붉은용군단의 축복의 효과를 받는 동안 환영 이동술을 사용한 후 환영 복제의 환영이 잘못된 생명력을 지니던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">분신술</strong><ul>\n<li>붉은용군단의 축복의 효과를 받는 동안 분신술로 생성된 환영이 올바른 초기 생명력을 지니지 못하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">모진 바람</strong><ul>\n<li>모진 바람이 사무로가 입히는 불타는 칼날 피해량에 적용되지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "환영 복제",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "붉은용군단의 축복의 효과를 받는 동안 환영 이동술을 사용한 후 환영 복제의 환영이 잘못된 생명력을 지니던 문제를 수정했습니다.",
+         "html": "붉은용군단의 축복의 효과를 받는 동안 환영 이동술을 사용한 후 환영 복제의 환영이 잘못된 생명력을 지니던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Mirror images"
+      },
+      {
+       "name": "분신술",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "붉은용군단의 축복의 효과를 받는 동안 분신술로 생성된 환영이 올바른 초기 생명력을 지니지 못하던 문제를 수정했습니다.",
+         "html": "붉은용군단의 축복의 효과를 받는 동안 분신술로 생성된 환영이 올바른 초기 생명력을 지니지 못하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Kawarimi"
+      },
+      {
+       "name": "모진 바람",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "모진 바람이 사무로가 입히는 불타는 칼날 피해량에 적용되지 않던 문제를 수정했습니다.",
+         "html": "모진 바람이 사무로가 입히는 불타는 칼날 피해량에 적용되지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Harsh Winds"
+      }
+     ],
+     "nameEn": "Samuro"
+    },
+    {
+     "name": "해머 상사",
+     "heroId": "SgtHammer",
+     "heroIds": [
+      "SgtHammer"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">해머 상사</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">충격포 [W]</strong><ul>\n<li>이제 대상이 해머 상사의 위치가 아니라 충격포를 발사한 지점 뒤쪽 거리 2 지점을 기준으로 밀려납니다. 이제 대상은 충격포를 발사한 방향으로 이동합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "충격포",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "이제 대상이 해머 상사의 위치가 아니라 충격포를 발사한 지점 뒤쪽 거리 2 지점을 기준으로 밀려납니다. 이제 대상은 충격포를 발사한 방향으로 이동합니다.",
+         "html": "이제 대상이 해머 상사의 위치가 아니라 충격포를 발사한 지점 뒤쪽 거리 2 지점을 기준으로 밀려납니다. 이제 대상은 충격포를 발사한 방향으로 이동합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Concussive Blast"
+      }
+     ],
+     "nameEn": "Sgt. Hammer"
+    },
+    {
+     "name": "누더기",
+     "heroId": "Stitches",
+     "heroIds": [
+      "Stitches"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">누더기</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">갈고리 [Q]</strong><ul>\n<li>이제 누더기가 레벨을 올릴 때 갈고리 연장의 진행 상황이 표시됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "갈고리",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "이제 누더기가 레벨을 올릴 때 갈고리 연장의 진행 상황이 표시됩니다.",
+         "html": "이제 누더기가 레벨을 올릴 때 갈고리 연장의 진행 상황이 표시됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Hook"
+      }
+     ],
+     "nameEn": "Stitches"
+    },
+    {
+     "name": "스투코프",
+     "heroId": "Stukov",
+     "heroIds": [
+      "Stukov"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">스투코프</strong>\n<ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">거친 휩쓸기</strong><ul>\n<li>거친 휩쓸기가 모든 대상을 동일한 거리만큼 밀쳐내지 못하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "거친 휩쓸기",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "거친 휩쓸기가 모든 대상을 동일한 거리만큼 밀쳐내지 못하던 문제를 수정했습니다.",
+         "html": "거친 휩쓸기가 모든 대상을 동일한 거리만큼 밀쳐내지 못하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Flailing Swipe"
+      }
+     ],
+     "nameEn": "Stukov"
+    },
+    {
+     "name": "도살자",
+     "heroId": "Butcher",
+     "heroIds": [
+      "Butcher"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">도살자</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">무자비한 돌진 [E]</strong><ul>\n<li>무자비한 돌진이 특정 상황에서 대상을 방해하지 못하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "무자비한 돌진",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "무자비한 돌진이 특정 상황에서 대상을 방해하지 못하던 문제를 수정했습니다.",
+         "html": "무자비한 돌진이 특정 상황에서 대상을 방해하지 못하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Ruthless Onslaught"
+      }
+     ],
+     "nameEn": "The Butcher"
+    },
+    {
+     "name": "스랄",
+     "heroId": "Thrall",
+     "heroIds": [
+      "Thrall"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">스랄</strong>\n<ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">세계의 분리</strong><ul>\n<li>이제 세계의 분리에 적중당한 대상은 세계의 분리의 각도를 기준으로 옆으로 밀려납니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "세계의 분리",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "이제 세계의 분리에 적중당한 대상은 세계의 분리의 각도를 기준으로 옆으로 밀려납니다.",
+         "html": "이제 세계의 분리에 적중당한 대상은 세계의 분리의 각도를 기준으로 옆으로 밀려납니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Sundering"
+      }
+     ],
+     "nameEn": "Thrall"
+    },
+    {
+     "name": "트레이서",
+     "heroId": "Tracer",
+     "heroIds": [
+      "Tracer"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">트레이서</strong>\n<ul>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">이거나 먹어라!</strong><ul>\n<li>이제 밀쳐내기 지점이 충돌 시점에 트레이서가 위치한 곳 뒤쪽 반경 5 지점이 됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "이거나 먹어라!",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "이제 밀쳐내기 지점이 충돌 시점에 트레이서가 위치한 곳 뒤쪽 반경 5 지점이 됩니다.",
+         "html": "이제 밀쳐내기 지점이 충돌 시점에 트레이서가 위치한 곳 뒤쪽 반경 5 지점이 됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Get Stuffed!"
+      }
+     ],
+     "nameEn": "Tracer"
+    },
+    {
+     "name": "티리엘",
+     "heroId": "Tyrael",
+     "heroIds": [
+      "Tyrael"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">티리엘</strong>\n<ul>\n<li>일부 시전 거리 표시기가 실제 적용 범위와 일치하지 않던 문제를 수정했습니다.</li>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">대천사의 분노 [고유 능력 D]</strong><ul>\n<li>대천사의 분노가 적에게 피해를 입힐 때 대천사의 분노의 피해 감소 효과가 잠시 두 번 적용되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">불타는 광륜</strong><ul>\n<li>불타는 광륜의 추가 피해량이 정의의 검으로 남겨진 엘드루인에게 부여되던 문제를 수정했습니다.</li>\n<li>티리엘이 탈것에 타거나 정지 상태가 되었을 때 엘드루인에 적용된 불타는 광륜이 취소되지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "일부 시전 거리 표시기가 실제 적용 범위와 일치하지 않던 문제를 수정했습니다.",
+         "html": "일부 시전 거리 표시기가 실제 적용 범위와 일치하지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "대천사의 분노",
+       "key": "Trait D",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "대천사의 분노가 적에게 피해를 입힐 때 대천사의 분노의 피해 감소 효과가 잠시 두 번 적용되던 문제를 수정했습니다.",
+         "html": "대천사의 분노가 적에게 피해를 입힐 때 대천사의 분노의 피해 감소 효과가 잠시 두 번 적용되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Archangel's Wrath"
+      },
+      {
+       "name": "불타는 광륜",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "불타는 광륜의 추가 피해량이 정의의 검으로 남겨진 엘드루인에게 부여되던 문제를 수정했습니다.",
+         "html": "불타는 광륜의 추가 피해량이 정의의 검으로 남겨진 엘드루인에게 부여되던 문제를 수정했습니다.",
+         "added": false
+        },
+        {
+         "text": "티리엘이 탈것에 타거나 정지 상태가 되었을 때 엘드루인에 적용된 불타는 광륜이 취소되지 않던 문제를 수정했습니다.",
+         "html": "티리엘이 탈것에 타거나 정지 상태가 되었을 때 엘드루인에 적용된 불타는 광륜이 취소되지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Burning Halo"
+      }
+     ],
+     "nameEn": "Tyrael"
+    },
+    {
+     "name": "바리안",
+     "heroId": "Varian",
+     "heroIds": [
+      "Varian"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">바리안</strong>\n<ul>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">재기의 바람</strong><ul>\n<li>재기의 바람의 1% 치유 효과로 생명력이 50% 이상이 된 경우 입힌 피해량의 일부만큼 생명력을 회복하지 못하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "재기의 바람",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "재기의 바람의 1% 치유 효과로 생명력이 50% 이상이 된 경우 입힌 피해량의 일부만큼 생명력을 회복하지 못하던 문제를 수정했습니다.",
+         "html": "재기의 바람의 1% 치유 효과로 생명력이 50% 이상이 된 경우 입힌 피해량의 일부만큼 생명력을 회복하지 못하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Second Wind"
+      }
+     ],
+     "nameEn": "Varian"
+    },
+    {
+     "name": "이렐",
+     "heroId": "Yrel",
+     "heroIds": [
+      "Yrel"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">이렐</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">정의의 망치 [W]</strong><ul>\n<li>완전히 충전된 정의의 망치를 시전했을 때 잘못된 양의 밀쳐내기가 적용되던 문제를 수정했습니다.</li>\n<li>정의의 망치가 모든 대상을 동일한 거리만큼 밀쳐내지 못하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "정의의 망치",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "완전히 충전된 정의의 망치를 시전했을 때 잘못된 양의 밀쳐내기가 적용되던 문제를 수정했습니다.",
+         "html": "완전히 충전된 정의의 망치를 시전했을 때 잘못된 양의 밀쳐내기가 적용되던 문제를 수정했습니다.",
+         "added": false
+        },
+        {
+         "text": "정의의 망치가 모든 대상을 동일한 거리만큼 밀쳐내지 못하던 문제를 수정했습니다.",
+         "html": "정의의 망치가 모든 대상을 동일한 거리만큼 밀쳐내지 못하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Righteous Hammer"
+      }
+     ],
+     "nameEn": "Yrel"
+    },
+    {
+     "name": "자가라",
+     "heroId": "Zagara",
+     "heroIds": [
+      "Zagara"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">자가라</strong>\n<ul>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">무리어미</strong><ul>\n<li>맹독 가시뼈로 강화된 일반 공격이 무리어미를 발동시키지 못하던 문제를 수정했습니다.</li>\n<li>이제 처치 요약에 무리어미로 표시됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "무리어미",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "맹독 가시뼈로 강화된 일반 공격이 무리어미를 발동시키지 못하던 문제를 수정했습니다.",
+         "html": "맹독 가시뼈로 강화된 일반 공격이 무리어미를 발동시키지 못하던 문제를 수정했습니다.",
+         "added": false
+        },
+        {
+         "text": "이제 처치 요약에 무리어미로 표시됩니다.",
+         "html": "이제 처치 요약에 무리어미로 표시됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Broodmother"
+      }
+     ],
+     "nameEn": "Zagara"
+    }
+   ],
+   "nameEn": "Bug Fixes"
+  }
+ ],
+ "heroes": [
+  "Alarak",
+  "Alexstrasza",
+  "Amazon",
+  "Anduin",
+  "Auriel",
+  "Butcher",
+  "Chen",
+  "Cho",
+  "Crusader",
+  "DVa",
+  "Deathwing",
+  "Deckard",
+  "Dehaka",
+  "Diablo",
+  "FaerieDragon",
+  "Falstad",
+  "Fenix",
+  "Gall",
+  "Garrosh",
+  "Genji",
+  "Hanzo",
+  "Hogger",
+  "Imperius",
+  "KelThuzad",
+  "LiLi",
+  "Lucio",
+  "Medic",
+  "Mei",
+  "Muradin",
+  "Murky",
+  "Orphea",
+  "Raynor",
+  "Rehgar",
+  "Samuro",
+  "SgtHammer",
+  "Stitches",
+  "Stukov",
+  "Thrall",
+  "Tinker",
+  "Tracer",
+  "Tychus",
+  "Tyrael",
+  "Varian",
+  "Yrel",
+  "Zagara"
+ ],
+ "battlegrounds": [
+  "dragon_shire",
+  "volskaya_foundry"
+ ],
+ "lang": "ko",
+ "newsId": "24217281",
+ "titleEn": "Heroes of the Storm PTR Patch Notes - July 1, 2025",
+ "translated": {
+  "by": "Claude (claude-opus-5)",
+  "at": "2026-09-14",
+  "source": "https://news.blizzard.com/en-us/article/24217281/heroes-of-the-storm-ptr-patch-notes-july-1-2025",
+  "glossary": "HeroesToolChest 공식 게임 텍스트(enus↔kokr) 대조",
+  "untranslated": 0
+ }
+}

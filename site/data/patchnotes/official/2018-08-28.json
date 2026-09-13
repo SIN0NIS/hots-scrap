@@ -1,0 +1,920 @@
+{
+ "date": "2018-08-28",
+ "kind": "ptr",
+ "title": "히어로즈 오브 더 스톰 공개 테스트 서버 노트 — 2018년 8월 28일",
+ "source": "https://news.blizzard.com/ko-kr/article/22358471/2018-8-28",
+ "published": "2018-08-21T18:02:00Z",
+ "sections": [
+  {
+   "name": "머리말",
+   "key": "intro",
+   "html": "<p>히어로즈 오브 더 스톰의 다음 패치가 공개 테스트 서버에 적용되어 9월 3일까지 (태평양 표준시 기준) 이용할 수 있습니다. 공개 테스트 서버에서 게임을 플레이하다가 버그가 눈에 띄면 <a href=\"https://kr.battle.net/forums/ko/heroes/4007177/\">버그 제보</a> 게시판에 제보를 부탁드립니다.</p>"
+  },
+  {
+   "name": "일반",
+   "key": "general",
+   "html": "<ul>\n<li>정신 집중 / 지속 시간 막대와 전장의 안개 등의 시각 효과가 더욱 부드럽게 나타납니다.</li>\n<li><span class=\"pn-h\"><strong>실시간 기술 위력 업데이트</strong></span>\n<ul>\n<li>기술 피해가 기술을 시전했을 때의 기술 위력이 아닌 실시간 기술 위력으로 계산됩니다.</li>\n</ul>\n</li>\n</ul>"
+  },
+  {
+   "name": "전장",
+   "key": "battlegrounds",
+   "html": "<ul>\n<li><span class=\"pn-h\"><strong>하나무라 사원</strong></span>\n<ul>\n<li>하나무라가 하나무라 사원으로 이름이 바뀌었으며 게임플레이가 대대적으로 변경됐습니다.</li>\n<li>전장 로테이션에 하나무라 사원이 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n<iframe allowfullscreen=\"\" frameborder=\"0\" height=\"315\" src=\"https://www.youtube.com/embed/48Xyjr5kCQk?theme=light&amp;color=white&amp;cc_load_policy=1&amp;HD=1&amp;rel=0&amp;showinfo=0\" width=\"560\"></iframe>\n<ul>\n<li><span class=\"pn-h\"><strong>전장 로테이션</strong></span>\n<ul>\n<li>일반전 전장 로테이션으로 아래 전장들이 활성화되었습니다. (공개 테스트 서버에서는 하나무라 사원만 활성화됩니다.)\n<ul>\n<li>저주받은 골짜기</li>\n<li>용의 둥지</li>\n<li>알터랙 고개</li>\n<li>하나무라 사원</li>\n<li>파멸의 탑</li>\n<li>불지옥 신단</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<ul>\n</ul>",
+   "items": [
+    {
+     "name": "하나무라 사원",
+     "battleground": "hanamura_temple",
+     "html": "<span class=\"pn-h\"><strong>하나무라 사원</strong></span>\n<ul>\n<li>하나무라가 하나무라 사원으로 이름이 바뀌었으며 게임플레이가 대대적으로 변경됐습니다.</li>\n<li>전장 로테이션에 하나무라 사원이 추가되었습니다.</li>\n</ul>"
+    }
+   ]
+  },
+  {
+   "name": "새로운 영웅: 메피스토",
+   "key": "새로운_영웅_메피스토",
+   "html": "<p>증오의 군주, 둘 메피스토스는 형제들 사이에서도 가장 교활하기로 알려져 있습니다. 영혼석에 갇혀 있는 동안에도 그의 사악한 기운은 자카룸을 타락시켰으며, 그들을 조종해 봉인을 파괴하게 했습니다. 메피스토는 이제 자유롭게 세계를 지배하며 대악마들을 다시 모아 온 인류를 종으로 삼으려 합니다.</p>\n<p><strong class=\"pn-h\">고유 능력</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>증오의 군주</strong></span>\n<ul>\n<li>일반 기술이 적 영웅에게 적중할 때마다 일반 기술의 재사용 대기시간이 감소합니다.</li>\n<li>섬뜩한 해골과 메피스토의 그림자는 적중한 영웅 하나당 1.5초씩, 번개 회오리는 적중한 영웅 하나당 0.3초씩 일반 기술의 재사용 대기시간을 감소시킵니다.</li>\n</ul>\n</li>\n</ul>\n<span class=\"pn-h\"><strong>일반 기술</strong></span>\n<ul>\n<li><span class=\"pn-name\"><strong>섬뜩한 해골 (Q)</strong></span>\n<ul>\n<li>0.75초 후에 대상 방향으로 날아가는 해골을 소환합니다. 해골은 적들에게 127의 피해를 주고 적 영웅을 2초 동안 25% 느려지게 합니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>번개 회오리 (W)</strong></span>\n<ul>\n<li>주위에 번개의 고리가 2.5초 동안 나타납니다. 고리에 닿은 적은 0.25초마다 48의 피해를 입습니다.</li>\n<li>번개 회오리가 적 영웅에게 적중할 때마다 번개 회오리의 공격력이 4% 증가하여 최대 40% 증가합니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>메피스토의 그림자 (E)</strong></span>\n<ul>\n<li>대상 위치로 순간이동해, 주위 적들에게 78의 피해를 주고 원래 위치에 메피스토의 그림자를 남깁니다. 2.5초 후, 그림자의 위치로 다시 순간이동합니다.</li>\n</ul>\n</li>\n</ul>\n<span class=\"pn-h\"><strong>궁극기</strong></span>\n<ul>\n<li><span class=\"pn-name\"><strong>영혼 삼키기 (R)</strong></span>\n<ul>\n<li>2.5초 동안 정신을 집중하여 모든 적 영웅을 드러냅니다. 정신 집중이 끝나면 모든 적 영웅에게 357의 피해를 주고 2.5초 동안 40% 느려지게 합니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>증오의 족쇄 (R)</strong></span>\n<ul>\n<li>1초 후, 사악한 영혼들을 내보내 처음 적중한 적 영웅을 2초 동안 이동 불가 상태로 만들고 지속 시간에 걸쳐 160의 피해를 줍니다.</li>\n<li>증오의 족쇄는 처음 적중한 대상으로부터 점점 퍼져 나가, 주위의 적 영웅들을 추가로 이동 불가 상태로 만들고 피해를 줍니다.</li>\n</ul>\n</li>\n</ul>"
+  },
+  {
+   "name": "사용자 인터페이스",
+   "key": "ui",
+   "html": "<p><span class=\"pn-h\"><strong>제이나 </strong></span></p>\n<ul>\n<li>기본 동상 퀘스트의 사용자 인터페이스가 개선되었습니다.</li>\n</ul>",
+   "items": [
+    {
+     "name": "제이나",
+     "heroId": "Jaina",
+     "heroIds": [
+      "Jaina"
+     ],
+     "under": null,
+     "html": "<ul>\n<li>기본 동상 퀘스트의 사용자 인터페이스가 개선되었습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "기본 동상 퀘스트의 사용자 인터페이스가 개선되었습니다.",
+         "html": "기본 동상 퀘스트의 사용자 인터페이스가 개선되었습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "영웅",
+   "key": "heroes",
+   "html": "<table class=\"table table-condensed\">\n<tbody>\n<tr>\n<th></th>\n</tr>\n<tr>\n<td></td>\n</tr>\n</tbody>\n</table>"
+  },
+  {
+   "name": "지원가",
+   "key": "role_support",
+   "html": "<h4>티란데</h4>\n<img alt=\"Divider_Hero_Tyrande_Crop.png\" data-id=\"17042307\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/L326XNRFITE41417483335724.png\"/>\n<strong class=\"pn-h\">능력치</strong>\n<ul>\n<li>일반 공격력이 82에서 55로 감소했습니다.</li>\n<li>일반 공격 사거리가 5.5에서 6으로 증가했습니다.</li>\n</ul>\n<strong class=\"pn-h\">기술</strong>\n<ul>\n<li><span class=\"pn-name\"><strong>엘룬의 빛 (Q)</strong></span>\n<ul>\n<li>치유량이 270에서 275로 증가했습니다.</li>\n<li>재사용 대기시간이 11초에서 15초로 증가했습니다.</li>\n<li>마나 소모량이 30에서 10으로 감소했습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>최대 2회 충전되고 한 번에 모두 충전됩니다.</li>\n<li>일반 공격을 할 때마다 이 기술의 재사용 대기시간이 1.5초 감소합니다.</li>\n<li>기술 공격이 적 영웅에게 적중할 때마다 이 기술의 재사용 대기시간이 1.5초 감소합니다.</li>\n<li>사용 후 1초의 재사용 대기시간이 생깁니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>파수 (W)</strong></span>\n<ul>\n<li>마나 소모량이 70에서 50으로 감소했습니다.</li>\n<li>재사용 대기시간이 18초에서 15초로 감소했습니다.</li>\n<li>공격력이 165에서 120으로 감소했습니다.</li>\n<li>기본 파수 퀘스트가 삭제되었습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>달의 섬광 (E)</strong></span>\n<ul>\n<li>공격력이 195에서 150으로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>사냥꾼의 징표 (D)</strong></span>\n<ul>\n<li>방어력 감소량이 25에서 15로 감소했습니다.</li>\n<li>사거리가 5.5에서 6으로 증가했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>그림자 추적 (R)</strong></span>\n<ul>\n<li>재사용 대기시간이 60초에서 80초로 증가했습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>모든 아군 영웅을 은신 상태로 만들고 생명력을 10초에 걸쳐 400 회복시킵니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>엘룬의 화살 (Q)\n<ul>\n<li>4레벨에서 옮겨졌습니다.</li>\n</ul>\n</li>\n<li>천체의 조율 (Q)\n<ul>\n<li>4레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>엘룬의 빛이 대상의 기절, 침묵, 감속 효과를 제거합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>칼도레이의 저항력 (Q)\n<ul>\n<li>4레벨에서 옮겨졌습니다.</li>\n<li>기술 방어력 증가 효과의 지속 시간이 6초에서 3초로 감소했습니다.</li>\n<li>최대 중첩수가 3에서 2로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>파수꾼 (W)\n<ul>\n<li>1레벨에서 옮겨졌습니다.</li>\n<li>거리에 비례해 증가하는 공격력이 75%에서 150%로 증가했습니다.</li>\n<li>추가된 기능:\n<ul>\n<li>사용하면 다음 파수가 적 영웅들을 관통합니다. 재사용 대기시간은 30초입니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>달의 불길 (E)\n<ul>\n<li>1레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>달빛 화살의 사거리가 50% 증가합니다.</li>\n<li>퀘스트: 달빛 화살이 적 영웅에게 적중할 때마다 달빛 화살의 공격력이 5% 증가하여 최대 100% 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>정조준 오라 (사용 효과)\n<ul>\n<li>7레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>일반 공격력이 영구히 20% 증가합니다.</li>\n<li>사용하면 사냥꾼의 징표의 재사용 대기시간이 초기화되고 주위 아군 영웅의 일반 공격력을 5초 동안 20% 증가시킵니다. 재사용 대기시간은 60초입니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>7레벨</strong></span>\n<ul>\n<li>치유의 징표 (D)\n<ul>\n<li>16레벨에서 옮겨졌습니다.</li>\n</ul>\n</li>\n<li>엘룬의 총애 (사용 효과)\n<ul>\n<li>16레벨에서 옮겨졌습니다.</li>\n<li>지속 시간이 5초에서 10초로 증가했습니다.</li>\n<li>사용하면 일반 공격으로 피해를 줄 때마다 피해량의 200%만큼 대상 아군을 치유합니다. 재사용 대기시간은 30초입니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 영원의 빛 (Q)</strong>\n<ul>\n<li>두 번째 엘룬의 빛을 처음과 다른 대상에게 시전하면 치유량이 40% 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>13레벨</strong></span>\n<ul>\n<li>활력의 축복 (Q)\n<ul>\n<li>이동 속도 증가량이 30%에서 20%로 감소했습니다.</li>\n<li>추가된 기능:\n<ul>\n<li>이동 속도가 영구히 10% 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>파수꾼의 징표 (D)\n<ul>\n<li>1레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>일반 공격을 하면 사냥꾼의 징표의 재사용 대기시간이 1초 감소합니다. 징표가 남겨진 대상에게 일반 공격을 할 때마다 사냥꾼의 징표의 지속 시간이 0.5초 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>냉혹한 달빛 (W)\n<ul>\n<li>변경된 기능:\n<ul>\n<li>파수가 처음 적중한 대상의 이동 속도를 40% 감소시키고 공격력을 40% 감소시킵니다. 4초 동안 지속됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>16레벨</strong></span>\n<ul>\n<li>넘치는 빛 (Q)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>여사냥꾼의 분노 (D)\n<ul>\n<li>7레벨에서 옮겨졌습니다.</li>\n<li>사냥꾼의 징표가 남겨진 대상에게 일반 공격을 하면 주위 적들에게 방사 피해를 줍니다.</li>\n<li>사거리 증가량이 50%에서 25%로 감소했습니다.</li>\n<li>추가된 기능:\n<ul>\n<li>사냥꾼의 징표의 지속 시간이 1초 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>강화 (W)\n<ul>\n<li>13레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>파수의 재사용 대기시간이 3초 감소합니다. 처음 적중한 적 영웅에게 대상의 최대 생명력의 7%만큼 추가 피해를 줍니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>다르나서스 궁술 (지속 효과)\n<ul>\n<li>7레벨에서 옮겨졌습니다.</li>\n<li>일반 공격으로 적 영웅을 공격할 때마다 증가하는 일반 공격력이 5%에서 10%로 증가했습니다.</li>\n<li>지속 시간이 4초에서 8초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>20레벨</strong></span>\n<ul>\n<li>여사냥꾼의 눈 (R)\n<ul>\n<li>적을 드러내는 시간이 3초에서 2초로 감소했습니다.</li>\n<li>추가된 기능:\n<ul>\n<li>최대 생명력이 50% 미만인 아군은 그림자 추적으로 받는 치유량이 50% 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>유성 (지속 효과)\n<ul>\n<li>발동에 필요한 일반 공격이 10회에서 8회로 감소했습니다.</li>\n<li>영웅이 아닌 대상에게 일반 공격을 해도 중첩이 쌓입니다.</li>\n<li>영웅이 아닌 적에게도 시전되지만 주위에 적 영웅이 있으면 적 영웅을 우선시합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<ul>\n</ul>\n<blockquote><strong>개발자의 의견:</strong> 티란데의 기술 조합 자체는 만족스럽지만 현재 메타에서 돋보이긴 어려웠습니다. 영웅의 역할을 점점 넓히는 과정에서 티란데를 작지만 확연히 바꿀 기회가 생겼다는 걸 깨달았습니다. 이번 개편으로 티란데는 공격력은 약간 낮아졌지만 치유량은 이전보다 훨씬 증가할 것입니다. 기존의 특성들은 여전히 존재하지만 이런 변화들을 반영하기 위해 약간 변경되거나 특성 단계가 변경되었습니다. 내부적으로도 매우 재밌게 즐긴 개편된 티란데가 어떤 모습을 보일지 기대되는군요!   </blockquote>",
+   "heroes": [
+    {
+     "name": "티란데",
+     "heroId": "Tyrande",
+     "heroIds": [
+      "Tyrande"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "일반 공격력이 82에서 55로 감소했습니다.",
+         "html": "일반 공격력이 82에서 55로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "일반 공격 사거리가 5.5에서 6으로 증가했습니다.",
+         "html": "일반 공격 사거리가 5.5에서 6으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "엘룬의 빛",
+       "key": "Q",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "치유량이 270에서 275로 증가했습니다.",
+         "html": "치유량이 270에서 275로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "재사용 대기시간이 11초에서 15초로 증가했습니다.",
+         "html": "재사용 대기시간이 11초에서 15초로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "마나 소모량이 30에서 10으로 감소했습니다.",
+         "html": "마나 소모량이 30에서 10으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "최대 2회 충전되고 한 번에 모두 충전됩니다.",
+         "html": "최대 2회 충전되고 한 번에 모두 충전됩니다.",
+         "added": false
+        },
+        {
+         "text": "일반 공격을 할 때마다 이 기술의 재사용 대기시간이 1.5초 감소합니다.",
+         "html": "일반 공격을 할 때마다 이 기술의 재사용 대기시간이 1.5초 감소합니다.",
+         "added": false
+        },
+        {
+         "text": "기술 공격이 적 영웅에게 적중할 때마다 이 기술의 재사용 대기시간이 1.5초 감소합니다.",
+         "html": "기술 공격이 적 영웅에게 적중할 때마다 이 기술의 재사용 대기시간이 1.5초 감소합니다.",
+         "added": false
+        },
+        {
+         "text": "사용 후 1초의 재사용 대기시간이 생깁니다.",
+         "html": "사용 후 1초의 재사용 대기시간이 생깁니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "파수",
+       "key": "W",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "마나 소모량이 70에서 50으로 감소했습니다.",
+         "html": "마나 소모량이 70에서 50으로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "재사용 대기시간이 18초에서 15초로 감소했습니다.",
+         "html": "재사용 대기시간이 18초에서 15초로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "공격력이 165에서 120으로 감소했습니다.",
+         "html": "공격력이 165에서 120으로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "기본 파수 퀘스트가 삭제되었습니다.",
+         "html": "기본 파수 퀘스트가 삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "달의 섬광",
+       "key": "E",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "공격력이 195에서 150으로 감소했습니다.",
+         "html": "공격력이 195에서 150으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "사냥꾼의 징표",
+       "key": "D",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "방어력 감소량이 25에서 15로 감소했습니다.",
+         "html": "방어력 감소량이 25에서 15로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "사거리가 5.5에서 6으로 증가했습니다.",
+         "html": "사거리가 5.5에서 6으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "그림자 추적",
+       "key": "R",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 60초에서 80초로 증가했습니다.",
+         "html": "재사용 대기시간이 60초에서 80초로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "모든 아군 영웅을 은신 상태로 만들고 생명력을 10초에 걸쳐 400 회복시킵니다.",
+         "html": "모든 아군 영웅을 은신 상태로 만들고 생명력을 10초에 걸쳐 400 회복시킵니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "엘룬의 화살",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "4레벨에서 옮겨졌습니다.",
+         "html": "4레벨에서 옮겨졌습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "천체의 조율",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "4레벨에서 옮겨졌습니다.",
+         "html": "4레벨에서 옮겨졌습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "엘룬의 빛이 대상의 기절, 침묵, 감속 효과를 제거합니다.",
+         "html": "엘룬의 빛이 대상의 기절, 침묵, 감속 효과를 제거합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "칼도레이의 저항력",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "4레벨에서 옮겨졌습니다.",
+         "html": "4레벨에서 옮겨졌습니다.",
+         "added": false
+        },
+        {
+         "text": "기술 방어력 증가 효과의 지속 시간이 6초에서 3초로 감소했습니다.",
+         "html": "기술 방어력 증가 효과의 지속 시간이 6초에서 3초로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "최대 중첩수가 3에서 2로 감소했습니다.",
+         "html": "최대 중첩수가 3에서 2로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "파수꾼",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "1레벨에서 옮겨졌습니다.",
+         "html": "1레벨에서 옮겨졌습니다.",
+         "added": false
+        },
+        {
+         "text": "거리에 비례해 증가하는 공격력이 75%에서 150%로 증가했습니다.",
+         "html": "거리에 비례해 증가하는 공격력이 75%에서 150%로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "추가된 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "사용하면 다음 파수가 적 영웅들을 관통합니다. 재사용 대기시간은 30초입니다.",
+         "html": "사용하면 다음 파수가 적 영웅들을 관통합니다. 재사용 대기시간은 30초입니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "달의 불길",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "1레벨에서 옮겨졌습니다.",
+         "html": "1레벨에서 옮겨졌습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "달빛 화살의 사거리가 50% 증가합니다.",
+         "html": "달빛 화살의 사거리가 50% 증가합니다.",
+         "added": false
+        },
+        {
+         "text": "퀘스트: 달빛 화살이 적 영웅에게 적중할 때마다 달빛 화살의 공격력이 5% 증가하여 최대 100% 증가합니다.",
+         "html": "퀘스트: 달빛 화살이 적 영웅에게 적중할 때마다 달빛 화살의 공격력이 5% 증가하여 최대 100% 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "정조준 오라",
+       "key": "사용 효과",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "7레벨에서 옮겨졌습니다.",
+         "html": "7레벨에서 옮겨졌습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "일반 공격력이 영구히 20% 증가합니다.",
+         "html": "일반 공격력이 영구히 20% 증가합니다.",
+         "added": false
+        },
+        {
+         "text": "사용하면 사냥꾼의 징표의 재사용 대기시간이 초기화되고 주위 아군 영웅의 일반 공격력을 5초 동안 20% 증가시킵니다. 재사용 대기시간은 60초입니다.",
+         "html": "사용하면 사냥꾼의 징표의 재사용 대기시간이 초기화되고 주위 아군 영웅의 일반 공격력을 5초 동안 20% 증가시킵니다. 재사용 대기시간은 60초입니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "치유의 징표",
+       "key": "D",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "16레벨에서 옮겨졌습니다.",
+         "html": "16레벨에서 옮겨졌습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "엘룬의 총애",
+       "key": "사용 효과",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "16레벨에서 옮겨졌습니다.",
+         "html": "16레벨에서 옮겨졌습니다.",
+         "added": false
+        },
+        {
+         "text": "지속 시간이 5초에서 10초로 증가했습니다.",
+         "html": "지속 시간이 5초에서 10초로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "사용하면 일반 공격으로 피해를 줄 때마다 피해량의 200%만큼 대상 아군을 치유합니다. 재사용 대기시간은 30초입니다.",
+         "html": "사용하면 일반 공격으로 피해를 줄 때마다 피해량의 200%만큼 대상 아군을 치유합니다. 재사용 대기시간은 30초입니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 특성: 영원의 빛",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "두 번째 엘룬의 빛을 처음과 다른 대상에게 시전하면 치유량이 40% 증가합니다.",
+         "html": "두 번째 엘룬의 빛을 처음과 다른 대상에게 시전하면 치유량이 40% 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "활력의 축복",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "이동 속도 증가량이 30%에서 20%로 감소했습니다.",
+         "html": "이동 속도 증가량이 30%에서 20%로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "추가된 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "이동 속도가 영구히 10% 증가합니다.",
+         "html": "이동 속도가 영구히 10% 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "파수꾼의 징표",
+       "key": "D",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "1레벨에서 옮겨졌습니다.",
+         "html": "1레벨에서 옮겨졌습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "일반 공격을 하면 사냥꾼의 징표의 재사용 대기시간이 1초 감소합니다. 징표가 남겨진 대상에게 일반 공격을 할 때마다 사냥꾼의 징표의 지속 시간이 0.5초 증가합니다.",
+         "html": "일반 공격을 하면 사냥꾼의 징표의 재사용 대기시간이 1초 감소합니다. 징표가 남겨진 대상에게 일반 공격을 할 때마다 사냥꾼의 징표의 지속 시간이 0.5초 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "냉혹한 달빛",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": []
+      },
+      {
+       "name": "변경된 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "파수가 처음 적중한 대상의 이동 속도를 40% 감소시키고 공격력을 40% 감소시킵니다. 4초 동안 지속됩니다.",
+         "html": "파수가 처음 적중한 대상의 이동 속도를 40% 감소시키고 공격력을 40% 감소시킵니다. 4초 동안 지속됩니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "넘치는 빛",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "여사냥꾼의 분노",
+       "key": "D",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "7레벨에서 옮겨졌습니다.",
+         "html": "7레벨에서 옮겨졌습니다.",
+         "added": false
+        },
+        {
+         "text": "사냥꾼의 징표가 남겨진 대상에게 일반 공격을 하면 주위 적들에게 방사 피해를 줍니다.",
+         "html": "사냥꾼의 징표가 남겨진 대상에게 일반 공격을 하면 주위 적들에게 방사 피해를 줍니다.",
+         "added": false
+        },
+        {
+         "text": "사거리 증가량이 50%에서 25%로 감소했습니다.",
+         "html": "사거리 증가량이 50%에서 25%로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "추가된 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "사냥꾼의 징표의 지속 시간이 1초 증가합니다.",
+         "html": "사냥꾼의 징표의 지속 시간이 1초 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "강화",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "13레벨에서 옮겨졌습니다.",
+         "html": "13레벨에서 옮겨졌습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "파수의 재사용 대기시간이 3초 감소합니다. 처음 적중한 적 영웅에게 대상의 최대 생명력의 7%만큼 추가 피해를 줍니다.",
+         "html": "파수의 재사용 대기시간이 3초 감소합니다. 처음 적중한 적 영웅에게 대상의 최대 생명력의 7%만큼 추가 피해를 줍니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "다르나서스 궁술",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "7레벨에서 옮겨졌습니다.",
+         "html": "7레벨에서 옮겨졌습니다.",
+         "added": false
+        },
+        {
+         "text": "일반 공격으로 적 영웅을 공격할 때마다 증가하는 일반 공격력이 5%에서 10%로 증가했습니다.",
+         "html": "일반 공격으로 적 영웅을 공격할 때마다 증가하는 일반 공격력이 5%에서 10%로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "지속 시간이 4초에서 8초로 증가했습니다.",
+         "html": "지속 시간이 4초에서 8초로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "여사냥꾼의 눈",
+       "key": "R",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "적을 드러내는 시간이 3초에서 2초로 감소했습니다.",
+         "html": "적을 드러내는 시간이 3초에서 2초로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "추가된 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "최대 생명력이 50% 미만인 아군은 그림자 추적으로 받는 치유량이 50% 증가합니다.",
+         "html": "최대 생명력이 50% 미만인 아군은 그림자 추적으로 받는 치유량이 50% 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "유성",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "발동에 필요한 일반 공격이 10회에서 8회로 감소했습니다.",
+         "html": "발동에 필요한 일반 공격이 10회에서 8회로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "영웅이 아닌 대상에게 일반 공격을 해도 중첩이 쌓입니다.",
+         "html": "영웅이 아닌 대상에게 일반 공격을 해도 중첩이 쌓입니다.",
+         "added": false
+        },
+        {
+         "text": "영웅이 아닌 적에게도 시전되지만 주위에 적 영웅이 있으면 적 영웅을 우선시합니다.",
+         "html": "영웅이 아닌 적에게도 시전되지만 주위에 적 영웅이 있으면 적 영웅을 우선시합니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<img alt=\"Divider_Hero_Tyrande_Crop.png\" data-id=\"17042307\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/L326XNRFITE41417483335724.png\"/>\n<strong class=\"pn-h\">능력치</strong>\n<ul>\n<li>일반 공격력이 82에서 55로 감소했습니다.</li>\n<li>일반 공격 사거리가 5.5에서 6으로 증가했습니다.</li>\n</ul>\n<strong class=\"pn-h\">기술</strong>\n<ul>\n<li><span class=\"pn-name\"><strong>엘룬의 빛 (Q)</strong></span>\n<ul>\n<li>치유량이 270에서 275로 증가했습니다.</li>\n<li>재사용 대기시간이 11초에서 15초로 증가했습니다.</li>\n<li>마나 소모량이 30에서 10으로 감소했습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>최대 2회 충전되고 한 번에 모두 충전됩니다.</li>\n<li>일반 공격을 할 때마다 이 기술의 재사용 대기시간이 1.5초 감소합니다.</li>\n<li>기술 공격이 적 영웅에게 적중할 때마다 이 기술의 재사용 대기시간이 1.5초 감소합니다.</li>\n<li>사용 후 1초의 재사용 대기시간이 생깁니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>파수 (W)</strong></span>\n<ul>\n<li>마나 소모량이 70에서 50으로 감소했습니다.</li>\n<li>재사용 대기시간이 18초에서 15초로 감소했습니다.</li>\n<li>공격력이 165에서 120으로 감소했습니다.</li>\n<li>기본 파수 퀘스트가 삭제되었습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>달의 섬광 (E)</strong></span>\n<ul>\n<li>공격력이 195에서 150으로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>사냥꾼의 징표 (D)</strong></span>\n<ul>\n<li>방어력 감소량이 25에서 15로 감소했습니다.</li>\n<li>사거리가 5.5에서 6으로 증가했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>그림자 추적 (R)</strong></span>\n<ul>\n<li>재사용 대기시간이 60초에서 80초로 증가했습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>모든 아군 영웅을 은신 상태로 만들고 생명력을 10초에 걸쳐 400 회복시킵니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>엘룬의 화살 (Q)\n<ul>\n<li>4레벨에서 옮겨졌습니다.</li>\n</ul>\n</li>\n<li>천체의 조율 (Q)\n<ul>\n<li>4레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>엘룬의 빛이 대상의 기절, 침묵, 감속 효과를 제거합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>칼도레이의 저항력 (Q)\n<ul>\n<li>4레벨에서 옮겨졌습니다.</li>\n<li>기술 방어력 증가 효과의 지속 시간이 6초에서 3초로 감소했습니다.</li>\n<li>최대 중첩수가 3에서 2로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>파수꾼 (W)\n<ul>\n<li>1레벨에서 옮겨졌습니다.</li>\n<li>거리에 비례해 증가하는 공격력이 75%에서 150%로 증가했습니다.</li>\n<li>추가된 기능:\n<ul>\n<li>사용하면 다음 파수가 적 영웅들을 관통합니다. 재사용 대기시간은 30초입니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>달의 불길 (E)\n<ul>\n<li>1레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>달빛 화살의 사거리가 50% 증가합니다.</li>\n<li>퀘스트: 달빛 화살이 적 영웅에게 적중할 때마다 달빛 화살의 공격력이 5% 증가하여 최대 100% 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>정조준 오라 (사용 효과)\n<ul>\n<li>7레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>일반 공격력이 영구히 20% 증가합니다.</li>\n<li>사용하면 사냥꾼의 징표의 재사용 대기시간이 초기화되고 주위 아군 영웅의 일반 공격력을 5초 동안 20% 증가시킵니다. 재사용 대기시간은 60초입니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>7레벨</strong></span>\n<ul>\n<li>치유의 징표 (D)\n<ul>\n<li>16레벨에서 옮겨졌습니다.</li>\n</ul>\n</li>\n<li>엘룬의 총애 (사용 효과)\n<ul>\n<li>16레벨에서 옮겨졌습니다.</li>\n<li>지속 시간이 5초에서 10초로 증가했습니다.</li>\n<li>사용하면 일반 공격으로 피해를 줄 때마다 피해량의 200%만큼 대상 아군을 치유합니다. 재사용 대기시간은 30초입니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 영원의 빛 (Q)</strong>\n<ul>\n<li>두 번째 엘룬의 빛을 처음과 다른 대상에게 시전하면 치유량이 40% 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>13레벨</strong></span>\n<ul>\n<li>활력의 축복 (Q)\n<ul>\n<li>이동 속도 증가량이 30%에서 20%로 감소했습니다.</li>\n<li>추가된 기능:\n<ul>\n<li>이동 속도가 영구히 10% 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>파수꾼의 징표 (D)\n<ul>\n<li>1레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>일반 공격을 하면 사냥꾼의 징표의 재사용 대기시간이 1초 감소합니다. 징표가 남겨진 대상에게 일반 공격을 할 때마다 사냥꾼의 징표의 지속 시간이 0.5초 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>냉혹한 달빛 (W)\n<ul>\n<li>변경된 기능:\n<ul>\n<li>파수가 처음 적중한 대상의 이동 속도를 40% 감소시키고 공격력을 40% 감소시킵니다. 4초 동안 지속됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>16레벨</strong></span>\n<ul>\n<li>넘치는 빛 (Q)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>여사냥꾼의 분노 (D)\n<ul>\n<li>7레벨에서 옮겨졌습니다.</li>\n<li>사냥꾼의 징표가 남겨진 대상에게 일반 공격을 하면 주위 적들에게 방사 피해를 줍니다.</li>\n<li>사거리 증가량이 50%에서 25%로 감소했습니다.</li>\n<li>추가된 기능:\n<ul>\n<li>사냥꾼의 징표의 지속 시간이 1초 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>강화 (W)\n<ul>\n<li>13레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>파수의 재사용 대기시간이 3초 감소합니다. 처음 적중한 적 영웅에게 대상의 최대 생명력의 7%만큼 추가 피해를 줍니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>다르나서스 궁술 (지속 효과)\n<ul>\n<li>7레벨에서 옮겨졌습니다.</li>\n<li>일반 공격으로 적 영웅을 공격할 때마다 증가하는 일반 공격력이 5%에서 10%로 증가했습니다.</li>\n<li>지속 시간이 4초에서 8초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>20레벨</strong></span>\n<ul>\n<li>여사냥꾼의 눈 (R)\n<ul>\n<li>적을 드러내는 시간이 3초에서 2초로 감소했습니다.</li>\n<li>추가된 기능:\n<ul>\n<li>최대 생명력이 50% 미만인 아군은 그림자 추적으로 받는 치유량이 50% 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>유성 (지속 효과)\n<ul>\n<li>발동에 필요한 일반 공격이 10회에서 8회로 감소했습니다.</li>\n<li>영웅이 아닌 대상에게 일반 공격을 해도 중첩이 쌓입니다.</li>\n<li>영웅이 아닌 적에게도 시전되지만 주위에 적 영웅이 있으면 적 영웅을 우선시합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<ul>\n</ul>\n<blockquote><strong>개발자의 의견:</strong> 티란데의 기술 조합 자체는 만족스럽지만 현재 메타에서 돋보이긴 어려웠습니다. 영웅의 역할을 점점 넓히는 과정에서 티란데를 작지만 확연히 바꿀 기회가 생겼다는 걸 깨달았습니다. 이번 개편으로 티란데는 공격력은 약간 낮아졌지만 치유량은 이전보다 훨씬 증가할 것입니다. 기존의 특성들은 여전히 존재하지만 이런 변화들을 반영하기 위해 약간 변경되거나 특성 단계가 변경되었습니다. 내부적으로도 매우 재밌게 즐긴 개편된 티란데가 어떤 모습을 보일지 기대되는군요!   </blockquote>"
+    }
+   ]
+  },
+  {
+   "name": "수집품",
+   "key": "collection",
+   "html": "<span class=\"pn-h\"><strong>새로운 묶음 상품</strong></span>\n<ul>\n<li>다음 묶음 상품을 한정된 기간 동안 구매하실 수 있습니다!\n<ul>\n<li>메피스토 영웅 묶음 상품</li>\n<li>성역의 영웅들 묶음 상품</li>\n</ul>\n</li>\n</ul>\n<span class=\"pn-h\"><strong>새로운 아나운서</strong></span>\n<ul>\n<li>메피스토</li>\n<li>벨레스</li>\n<li>아테나</li>\n</ul>\n<span class=\"pn-h\"><strong>새로운 스킨</strong></span>\n<ul>\n<li><span class=\"pn-name\"><strong>메피스토</strong></span>\n<ul>\n<li>은하계 망령 메피스토</li>\n<li>인공제어 은하계 망령 메피스토</li>\n<li>영원한 은하계 망령 메피스토</li>\n<li>황금 메피스토</li>\n<li>불탄 영혼 메피스토</li>\n</ul>\n</li>\n</ul>\n<strong class=\"pn-h\">새로운 초상화, 스프레이, 이모티콘</strong>\n<ul>\n<li>여러 가지 이모티콘 팩과 초상화가 게임에 추가되었습니다.</li>\n</ul>",
+   "items": [
+    {
+     "name": "메피스토",
+     "heroId": "Mephisto",
+     "heroIds": [
+      "Mephisto"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>메피스토</strong></span>\n<ul>\n<li>은하계 망령 메피스토</li>\n<li>인공제어 은하계 망령 메피스토</li>\n<li>영원한 은하계 망령 메피스토</li>\n<li>황금 메피스토</li>\n<li>불탄 영혼 메피스토</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "은하계 망령 메피스토",
+         "html": "은하계 망령 메피스토",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "인공제어 은하계 망령 메피스토",
+         "html": "인공제어 은하계 망령 메피스토",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "영원한 은하계 망령 메피스토",
+         "html": "영원한 은하계 망령 메피스토",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "황금 메피스토",
+         "html": "황금 메피스토",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "불탄 영혼 메피스토",
+         "html": "불탄 영혼 메피스토",
+         "added": false
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "버그 수정",
+   "key": "bugs",
+   "html": "<span class=\"pn-h\"><strong>일반</strong></span>\n<ul>\n<li><strong>불러오기 화면:</strong> 일부 해상도의 불러오기 화면에서 검은 선이 나타나던 문제를 수정했습니다.</li>\n<li><strong>사용자 지정 게임:</strong> 8명 이상의 플레이어들이 사용자 지정 게임에 참여하면 게임이 지연되던 문제를 수정했습니다.</li>\n</ul>\n<strong class=\"pn-h\">아트</strong>\n<ul>\n<li>탈것에 탄 직후 특정 기술을 사용하면 이동할 때 영웅이 탈것 위에서 걷는 것처럼 보이던 문제를 수정했습니다.</li>\n</ul>\n<span class=\"pn-h\"><strong>전장</strong></span>\n<ul>\n<li><strong>볼스카야 공장:</strong> 시간 정지 효과가 트리글라브 수호자에 탑승하기 위해 정신 집중하는 영웅을 방해하지 않던 문제를 수정했습니다.</li>\n</ul>\n<strong class=\"pn-h\">사용자 인터페이스</strong>\n<ul>\n<li>저지 불가 효과의 지속 시간 막대가 이름 밑에 추가되었습니다.</li>\n<li><strong>알라라크:</strong> 죽음 분석 화면에서 치명적인 돌진의 아이콘이 정상적으로 표시됩니다.</li>\n<li><strong>아나:</strong> 나노 강화제의 기술 위력 효과로 강화된 아나의 기술들이 적중하면 치명타 효과가 나타납니다.</li>\n</ul>\n<span class=\"pn-h\"><strong>영웅, 기술, 특성</strong></span>\n<ul>\n<li><strong>카시아:</strong> 발키리의 대상이 지형에 부딪히면 기절 효과가 일찍 끝날 수 있던 문제를 수정했습니다.</li>\n<li><strong>디아블로:</strong> 압도를 시전하는 중에 가로쉬의 파쇄추로 디아블로를 던질 수 없던 문제를 수정했습니다.</li>\n<li><strong>요한나 &amp; 리밍:</strong> 대상에게 보호막이 있는 상태거나 보호됨 상태일 때 일부 \"징표\" 효과가 정상적으로 소비되지 않던 문제를 수정했습니다.</li>\n<li><strong>루나라 &amp; 누더기: </strong>일부 상황에서 루나라가 누더기의 갈고리에 끌리면 화면히 영구히 흔들리던 문제를 수정했습니다.</li>\n</ul>\n<p><strong class=\"pn-h\">Mac</strong></p>\n<ul>\n<li>전체 화면 설정에서 마우스 가운데 버튼을 사용하면 반응 속도가 감소하던 문제를 수정했습니다.</li>\n</ul>\n<ul>\n</ul>\n<p><strong><a href=\"https://kr.battle.net/forums/heroes/index\" target=\"_blank\">여기를 클릭하면 히어로즈 오브 더 스톰 공식 토론장에서 다른 플레이어들과 이 게시글에 대한 의견을 나눌 수 있습니다</a>.</strong></p>\n<p><img alt=\"\" class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/g6/G6G0N80EOC941426801305139.png\"/></p>\n<p><img alt=\"InvisibleDividerLine_800x50.png\" class=\"no-border; no-shadow\" data-id=\"14509591\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/6VA2831Q81IU1403137406234.png\"/></p>",
+   "items": [
+    {
+     "name": "알라라크",
+     "heroId": "Alarak",
+     "heroIds": [
+      "Alarak"
+     ],
+     "under": null,
+     "html": "<strong>알라라크:</strong> 죽음 분석 화면에서 치명적인 돌진의 아이콘이 정상적으로 표시됩니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "알라라크: 죽음 분석 화면에서 치명적인 돌진의 아이콘이 정상적으로 표시됩니다.",
+         "html": "<strong>알라라크:</strong> 죽음 분석 화면에서 치명적인 돌진의 아이콘이 정상적으로 표시됩니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "아나",
+     "heroId": "Ana",
+     "heroIds": [
+      "Ana"
+     ],
+     "under": null,
+     "html": "<strong>아나:</strong> 나노 강화제의 기술 위력 효과로 강화된 아나의 기술들이 적중하면 치명타 효과가 나타납니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "아나: 나노 강화제의 기술 위력 효과로 강화된 아나의 기술들이 적중하면 치명타 효과가 나타납니다.",
+         "html": "<strong>아나:</strong> 나노 강화제의 기술 위력 효과로 강화된 아나의 기술들이 적중하면 치명타 효과가 나타납니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "카시아",
+     "heroId": "Amazon",
+     "heroIds": [
+      "Amazon"
+     ],
+     "under": null,
+     "html": "<strong>카시아:</strong> 발키리의 대상이 지형에 부딪히면 기절 효과가 일찍 끝날 수 있던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "카시아: 발키리의 대상이 지형에 부딪히면 기절 효과가 일찍 끝날 수 있던 문제를 수정했습니다.",
+         "html": "<strong>카시아:</strong> 발키리의 대상이 지형에 부딪히면 기절 효과가 일찍 끝날 수 있던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "디아블로",
+     "heroId": "Diablo",
+     "heroIds": [
+      "Diablo"
+     ],
+     "under": null,
+     "html": "<strong>디아블로:</strong> 압도를 시전하는 중에 가로쉬의 파쇄추로 디아블로를 던질 수 없던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "디아블로: 압도를 시전하는 중에 가로쉬의 파쇄추로 디아블로를 던질 수 없던 문제를 수정했습니다.",
+         "html": "<strong>디아블로:</strong> 압도를 시전하는 중에 가로쉬의 파쇄추로 디아블로를 던질 수 없던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "heroes": [
+  "Alarak",
+  "Amazon",
+  "Ana",
+  "Diablo",
+  "Jaina",
+  "Mephisto",
+  "Tyrande"
+ ],
+ "battlegrounds": [
+  "hanamura_temple"
+ ],
+ "newsId": "22358471"
+}

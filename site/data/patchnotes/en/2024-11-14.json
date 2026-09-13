@@ -1,0 +1,1583 @@
+{
+ "date": "2024-11-14",
+ "kind": "ptr",
+ "title": "Heroes of the Storm PTR Patch Notes - November 14, 2024",
+ "source": "https://news.blizzard.com/en-us/article/24158871/heroes-of-the-storm-ptr-patch-notes-november-14-2024",
+ "published": "2024-11-25T17:49:00Z",
+ "sections": [
+  {
+   "name": "머리말",
+   "key": "intro",
+   "html": "<p><strong class=\"pn-new\">NOTE: New changes are highlighted in Orange text.</strong></p>\n<p>Our next Heroes of the Storm patch has just hit the Public Test Realm and will be available for playtesting. As always, if you encounter any bugs during your PTR play sessions, please stop by the <a href=\"https://us.forums.blizzard.com/en/heroes/c/ptr-bug-report\" target=\"_blank\">PTR Bug Report forum</a> to let us know about your experiences.</p>",
+   "nameKo": "머리말"
+  },
+  {
+   "name": "Map Update",
+   "key": "map_update",
+   "html": "<h4>Volskaya</h4>\n<ul>\n<li>The Triglav Protector will now gain 25% increased energy regeneration and the Pilot and Gunner Abilities will both recharge 25% faster while both slots are occupied.</li>\n</ul>",
+   "items": [
+    {
+     "name": "Volskaya",
+     "battleground": "volskaya_foundry",
+     "html": "<ul>\n<li>The Triglav Protector will now gain 25% increased energy regeneration and the Pilot and Gunner Abilities will both recharge 25% faster while both slots are occupied.</li>\n</ul>"
+    }
+   ],
+   "nameKo": ""
+  },
+  {
+   "name": "Hero Updates",
+   "key": "hero_updates",
+   "html": "<h4>Chen</h4>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Wandering Keg</strong>\n<ul>\n<li><strong class=\"pn-new\">Wandering Keg updated to be a targeted forced Quick cast instead of a Self cast.</strong></li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>Samuro</h4>\n<p><strong class=\"pn-h\">General</strong></p>\n<ul>\n<li>Order of buffs in the Buff bar has been updated to match the order in which talents are gained.</li>\n<li>Samuro can no longer target a Mirror Image that is affected by launch effects (Example: Phase Prism).</li>\n<li>Samuro will no longer mirror Hearthstone and Mount commands on his Mirror Images if the command is sent while selecting a Mirror Image and not Samuro.</li>\n<li>Tooltips have been updated to reduce confusion.</li>\n</ul>\n<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-new\">Image Transmission [Trait] </strong>\n<ul>\n<li><strong class=\"pn-new\">Advancing Strikes will now copy Samuro's state for the following: creating a new Mirror Image, Image Transmission, Deflection, Press the Attack.</strong></li>\n</ul>\n<strong class=\"pn-new\"> </strong></li>\n<li><strong class=\"pn-name\">Wind Walk [E]</strong>\n<ul>\n<li>Wind Walk will no longer cancel move and attack commands in the command queue when activated.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Critical Strike [W]</strong>\n<ul>\n<li>Activating Critical Strike while Samuro's Basic Attack is being swung will now apply to that attack, rather than the next attack, and will carry the attack reset over to the next Basic Attack.</li>\n<li>Samuro can now see his Critical Strike progress below his Healthplate.</li>\n<li>Samuro can now see the remaining duration of Critical Strike's activation around the ability button.</li>\n<li><strong class=\"pn-new\">Critical Strike will now copy Samuro's state for the following: creating a new Mirror Image, Image Transmission, Deflection, Press the Attack.</strong></li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Way of Illusion</strong>\n<ul>\n<li>Way of Illusion quest progress is now correctly mirrored between different Mirror Images and Samuro.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Burning Blade</strong>\n<ul>\n<li>Burning Blade is now an additive modifier for both Samuro and his Mirror Images instead of just his Mirror Images.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Kawarimi</strong>\n<ul>\n<li>Kawarimi Mirror Images will now clear their command queue of Hearthstone commands when created.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Harsh Winds</strong>\n<ul>\n<li>Harsh Winds is now an additive modifier.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+   "heroes": [
+    {
+     "name": "Chen",
+     "heroId": "Chen",
+     "heroIds": [
+      "Chen"
+     ],
+     "changes": [
+      {
+       "name": "Wandering Keg",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "Wandering Keg updated to be a targeted forced Quick cast instead of a Self cast.",
+         "html": "<strong class=\"pn-new\">Wandering Keg updated to be a targeted forced Quick cast instead of a Self cast.</strong>",
+         "added": true
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Wandering Keg</strong>\n<ul>\n<li><strong class=\"pn-new\">Wandering Keg updated to be a targeted forced Quick cast instead of a Self cast.</strong></li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Samuro",
+     "heroId": "Samuro",
+     "heroIds": [
+      "Samuro"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Order of buffs in the Buff bar has been updated to match the order in which talents are gained.",
+         "html": "Order of buffs in the Buff bar has been updated to match the order in which talents are gained.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Samuro can no longer target a Mirror Image that is affected by launch effects (Example: Phase Prism).",
+         "html": "Samuro can no longer target a Mirror Image that is affected by launch effects (Example: Phase Prism).",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Samuro will no longer mirror Hearthstone and Mount commands on his Mirror Images if the command is sent while selecting a Mirror Image and not Samuro.",
+         "html": "Samuro will no longer mirror Hearthstone and Mount commands on his Mirror Images if the command is sent while selecting a Mirror Image and not Samuro.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Tooltips have been updated to reduce confusion.",
+         "html": "Tooltips have been updated to reduce confusion.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Image Transmission",
+       "key": "Trait",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Advancing Strikes will now copy Samuro's state for the following: creating a new Mirror Image, Image Transmission, Deflection, Press the Attack.",
+         "html": "<strong class=\"pn-new\">Advancing Strikes will now copy Samuro's state for the following: creating a new Mirror Image, Image Transmission, Deflection, Press the Attack.</strong>",
+         "added": true
+        }
+       ]
+      },
+      {
+       "name": "Wind Walk",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Wind Walk will no longer cancel move and attack commands in the command queue when activated.",
+         "html": "Wind Walk will no longer cancel move and attack commands in the command queue when activated.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Critical Strike",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Activating Critical Strike while Samuro's Basic Attack is being swung will now apply to that attack, rather than the next attack, and will carry the attack reset over to the next Basic Attack.",
+         "html": "Activating Critical Strike while Samuro's Basic Attack is being swung will now apply to that attack, rather than the next attack, and will carry the attack reset over to the next Basic Attack.",
+         "added": false
+        },
+        {
+         "text": "Samuro can now see his Critical Strike progress below his Healthplate.",
+         "html": "Samuro can now see his Critical Strike progress below his Healthplate.",
+         "added": false
+        },
+        {
+         "text": "Samuro can now see the remaining duration of Critical Strike's activation around the ability button.",
+         "html": "Samuro can now see the remaining duration of Critical Strike's activation around the ability button.",
+         "added": false
+        },
+        {
+         "text": "Critical Strike will now copy Samuro's state for the following: creating a new Mirror Image, Image Transmission, Deflection, Press the Attack.",
+         "html": "<strong class=\"pn-new\">Critical Strike will now copy Samuro's state for the following: creating a new Mirror Image, Image Transmission, Deflection, Press the Attack.</strong>",
+         "added": true
+        }
+       ]
+      },
+      {
+       "name": "Way of Illusion",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Way of Illusion quest progress is now correctly mirrored between different Mirror Images and Samuro.",
+         "html": "Way of Illusion quest progress is now correctly mirrored between different Mirror Images and Samuro.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Burning Blade",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "Burning Blade is now an additive modifier for both Samuro and his Mirror Images instead of just his Mirror Images.",
+         "html": "Burning Blade is now an additive modifier for both Samuro and his Mirror Images instead of just his Mirror Images.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Kawarimi",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "Kawarimi Mirror Images will now clear their command queue of Hearthstone commands when created.",
+         "html": "Kawarimi Mirror Images will now clear their command queue of Hearthstone commands when created.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Harsh Winds",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "Harsh Winds is now an additive modifier.",
+         "html": "Harsh Winds is now an additive modifier.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">General</strong></p>\n<ul>\n<li>Order of buffs in the Buff bar has been updated to match the order in which talents are gained.</li>\n<li>Samuro can no longer target a Mirror Image that is affected by launch effects (Example: Phase Prism).</li>\n<li>Samuro will no longer mirror Hearthstone and Mount commands on his Mirror Images if the command is sent while selecting a Mirror Image and not Samuro.</li>\n<li>Tooltips have been updated to reduce confusion.</li>\n</ul>\n<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-new\">Image Transmission [Trait] </strong>\n<ul>\n<li><strong class=\"pn-new\">Advancing Strikes will now copy Samuro's state for the following: creating a new Mirror Image, Image Transmission, Deflection, Press the Attack.</strong></li>\n</ul>\n<strong class=\"pn-new\"> </strong></li>\n<li><strong class=\"pn-name\">Wind Walk [E]</strong>\n<ul>\n<li>Wind Walk will no longer cancel move and attack commands in the command queue when activated.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Critical Strike [W]</strong>\n<ul>\n<li>Activating Critical Strike while Samuro's Basic Attack is being swung will now apply to that attack, rather than the next attack, and will carry the attack reset over to the next Basic Attack.</li>\n<li>Samuro can now see his Critical Strike progress below his Healthplate.</li>\n<li>Samuro can now see the remaining duration of Critical Strike's activation around the ability button.</li>\n<li><strong class=\"pn-new\">Critical Strike will now copy Samuro's state for the following: creating a new Mirror Image, Image Transmission, Deflection, Press the Attack.</strong></li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Way of Illusion</strong>\n<ul>\n<li>Way of Illusion quest progress is now correctly mirrored between different Mirror Images and Samuro.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Burning Blade</strong>\n<ul>\n<li>Burning Blade is now an additive modifier for both Samuro and his Mirror Images instead of just his Mirror Images.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Kawarimi</strong>\n<ul>\n<li>Kawarimi Mirror Images will now clear their command queue of Hearthstone commands when created.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Harsh Winds</strong>\n<ul>\n<li>Harsh Winds is now an additive modifier.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    }
+   ],
+   "nameKo": "영웅 업데이트"
+  },
+  {
+   "name": "Balance Update",
+   "key": "balance",
+   "html": "<h3><strong>Heroes</strong></h3>\n<h4>Arthas</h4>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Frost Strike</strong>\n<ul>\n<li><strong class=\"pn-new\">Rework: If Death Coil hits a target Slowed by Frost Strike, they will be Silenced for 1 second.</strong></li>\n<li><strong class=\"pn-new\">Rework: No Longer reduces the cooldown of Frostmourne Hungers.</strong></li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Frostmourne Feeds</strong>\n<ul>\n<li><strong class=\"pn-new\">Rework: The cooldown for Frostmourne Hungers now starts as soon as the first empowerment is used.</strong></li>\n<li><strong class=\"pn-new\">Rework: The second Frostmourne Hungers empowerment now only applies after hitting a Hero and lasts for 4 seconds.</strong></li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4><strong class=\"pn-new\">D.Va</strong></h4>\n<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li>Max Health increased from 2100 to 2150.</li>\n<li><strong class=\"pn-name\">Defense Matrix [W]</strong>\n<ul>\n<li>Damage reduction increased from -50% to -60%.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Liquid Cooling</strong>\n<ul>\n<li>Bonus duration increased from 35% to 50%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Get On The Point!</strong>\n<ul>\n<li>Movement Speed increase duration increased from 2 seconds to 3 seconds.</li>\n<li>Timer reduced from 3 seconds to 2 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Bunny Hop</strong>\n<ul>\n<li>Damage increased from 70 to 78.</li>\n<li>Proc bonus damage reduced from 100% to 80%.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Micro Missiles</strong>\n<ul>\n<li>Cooldown between charges reduced from 5 to 3 seconds.</li>\n<li>Cooldown per charge reduced from 20 to 19 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Target Locked</strong>\n<ul>\n<li>Armor reduction and Slow are now refreshed in duration if the enemy Hero already has the debuffs.</li>\n<li>Reduced the amount of time that enemy Heroes need to be in the Defense Matrix from 1 second to 0.75 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Diverting Power</strong>\n<ul>\n<li>Healing reduced from 35 to 31.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Emergency Shielding</strong>\n<ul>\n<li>Duration increased from 4 to 8 seconds.</li>\n<li>Shield increased from 280 to 290.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>Greymane</h4>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Lord Of His Pack</strong>\n<ul>\n<li><b>New:</b> Replaces Executioner. Basic Attacks against Slowed, Rooted or Stunned enemy Heroes deal 25% additional damage for 3 seconds, increased to 50% while in Worgen Form.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>Imperius</h4>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Wrath of the Angiris</strong>\n<ul>\n<li><b>Rework:</b> Damage reduced from 375 to <strong class=\"pn-new\">250</strong>.</li>\n<li><b>Rework:</b> Now deals 20% additional damage for each Valorous Brand marker on the target when landing.</li>\n<li><b>Rework:</b> Valorous Brand markers placed by Imperius will no longer be removed when launching the target into the air. These can still expire while in the air.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>Li Li</h4>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Free Drinks</strong>\n<ul>\n<li>Can now reduce the cooldown multiple times per cast (Example: Combined with Two For One).</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Shake It Off</strong>\n<ul>\n<li>Armor now persists for 2 seconds after Stun, Silence, or Root expires.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>Medivh</h4>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Glyph of Poly Bomb</strong>\n<ul>\n<li><b>Rework:</b> Target an area to apply Poly Bomb to all enemy Heroes in the area. Poly Bomb activates a second time 1 second after.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>Murky</h4>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Egg Shell</strong>\n<ul>\n<li>The Shield now regains an amount equal to 35% of Murky's current Health when Murky places a new Egg.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>Varian</h4>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Demoralizing Shout</strong>\n<ul>\n<li><strong class=\"pn-new\">Cooldown of Demoralizing Shout and Parry are reduced by 2.5% whenever an enemy Hero affected by Demoralizing Shout deals damage to a Hero.</strong></li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+   "heroes": [
+    {
+     "name": "Arthas",
+     "heroId": "Arthas",
+     "heroIds": [
+      "Arthas"
+     ],
+     "changes": [
+      {
+       "name": "Frost Strike",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "Rework: If Death Coil hits a target Slowed by Frost Strike, they will be Silenced for 1 second.",
+         "html": "<strong class=\"pn-new\">Rework: If Death Coil hits a target Slowed by Frost Strike, they will be Silenced for 1 second.</strong>",
+         "added": true
+        },
+        {
+         "text": "Rework: No Longer reduces the cooldown of Frostmourne Hungers.",
+         "html": "<strong class=\"pn-new\">Rework: No Longer reduces the cooldown of Frostmourne Hungers.</strong>",
+         "added": true
+        }
+       ]
+      },
+      {
+       "name": "Frostmourne Feeds",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "Rework: The cooldown for Frostmourne Hungers now starts as soon as the first empowerment is used.",
+         "html": "<strong class=\"pn-new\">Rework: The cooldown for Frostmourne Hungers now starts as soon as the first empowerment is used.</strong>",
+         "added": true
+        },
+        {
+         "text": "Rework: The second Frostmourne Hungers empowerment now only applies after hitting a Hero and lasts for 4 seconds.",
+         "html": "<strong class=\"pn-new\">Rework: The second Frostmourne Hungers empowerment now only applies after hitting a Hero and lasts for 4 seconds.</strong>",
+         "added": true
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Frost Strike</strong>\n<ul>\n<li><strong class=\"pn-new\">Rework: If Death Coil hits a target Slowed by Frost Strike, they will be Silenced for 1 second.</strong></li>\n<li><strong class=\"pn-new\">Rework: No Longer reduces the cooldown of Frostmourne Hungers.</strong></li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Frostmourne Feeds</strong>\n<ul>\n<li><strong class=\"pn-new\">Rework: The cooldown for Frostmourne Hungers now starts as soon as the first empowerment is used.</strong></li>\n<li><strong class=\"pn-new\">Rework: The second Frostmourne Hungers empowerment now only applies after hitting a Hero and lasts for 4 seconds.</strong></li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "D.Va",
+     "heroId": "DVa",
+     "heroIds": [
+      "DVa"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Max Health increased from 2100 to 2150.",
+         "html": "Max Health increased from 2100 to 2150.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Defense Matrix",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Damage reduction increased from -50% to -60%.",
+         "html": "Damage reduction increased from -50% to -60%.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Liquid Cooling",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Bonus duration increased from 35% to 50%.",
+         "html": "Bonus duration increased from 35% to 50%.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Get On The Point!",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "Movement Speed increase duration increased from 2 seconds to 3 seconds.",
+         "html": "Movement Speed increase duration increased from 2 seconds to 3 seconds.",
+         "added": false
+        },
+        {
+         "text": "Timer reduced from 3 seconds to 2 seconds.",
+         "html": "Timer reduced from 3 seconds to 2 seconds.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Bunny Hop",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "Damage increased from 70 to 78.",
+         "html": "Damage increased from 70 to 78.",
+         "added": false
+        },
+        {
+         "text": "Proc bonus damage reduced from 100% to 80%.",
+         "html": "Proc bonus damage reduced from 100% to 80%.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Micro Missiles",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "Cooldown between charges reduced from 5 to 3 seconds.",
+         "html": "Cooldown between charges reduced from 5 to 3 seconds.",
+         "added": false
+        },
+        {
+         "text": "Cooldown per charge reduced from 20 to 19 seconds.",
+         "html": "Cooldown per charge reduced from 20 to 19 seconds.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Target Locked",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "Armor reduction and Slow are now refreshed in duration if the enemy Hero already has the debuffs.",
+         "html": "Armor reduction and Slow are now refreshed in duration if the enemy Hero already has the debuffs.",
+         "added": false
+        },
+        {
+         "text": "Reduced the amount of time that enemy Heroes need to be in the Defense Matrix from 1 second to 0.75 seconds.",
+         "html": "Reduced the amount of time that enemy Heroes need to be in the Defense Matrix from 1 second to 0.75 seconds.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Diverting Power",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "Healing reduced from 35 to 31.",
+         "html": "Healing reduced from 35 to 31.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Emergency Shielding",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "Duration increased from 4 to 8 seconds.",
+         "html": "Duration increased from 4 to 8 seconds.",
+         "added": false
+        },
+        {
+         "text": "Shield increased from 280 to 290.",
+         "html": "Shield increased from 280 to 290.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li>Max Health increased from 2100 to 2150.</li>\n<li><strong class=\"pn-name\">Defense Matrix [W]</strong>\n<ul>\n<li>Damage reduction increased from -50% to -60%.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Liquid Cooling</strong>\n<ul>\n<li>Bonus duration increased from 35% to 50%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Get On The Point!</strong>\n<ul>\n<li>Movement Speed increase duration increased from 2 seconds to 3 seconds.</li>\n<li>Timer reduced from 3 seconds to 2 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Bunny Hop</strong>\n<ul>\n<li>Damage increased from 70 to 78.</li>\n<li>Proc bonus damage reduced from 100% to 80%.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Micro Missiles</strong>\n<ul>\n<li>Cooldown between charges reduced from 5 to 3 seconds.</li>\n<li>Cooldown per charge reduced from 20 to 19 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Target Locked</strong>\n<ul>\n<li>Armor reduction and Slow are now refreshed in duration if the enemy Hero already has the debuffs.</li>\n<li>Reduced the amount of time that enemy Heroes need to be in the Defense Matrix from 1 second to 0.75 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Diverting Power</strong>\n<ul>\n<li>Healing reduced from 35 to 31.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Emergency Shielding</strong>\n<ul>\n<li>Duration increased from 4 to 8 seconds.</li>\n<li>Shield increased from 280 to 290.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Greymane",
+     "heroId": "Greymane",
+     "heroIds": [
+      "Greymane"
+     ],
+     "changes": [
+      {
+       "name": "Lord Of His Pack",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "New: Replaces Executioner. Basic Attacks against Slowed, Rooted or Stunned enemy Heroes deal 25% additional damage for 3 seconds, increased to 50% while in Worgen Form.",
+         "html": "<b>New:</b> Replaces Executioner. Basic Attacks against Slowed, Rooted or Stunned enemy Heroes deal 25% additional damage for 3 seconds, increased to 50% while in Worgen Form.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Lord Of His Pack</strong>\n<ul>\n<li><b>New:</b> Replaces Executioner. Basic Attacks against Slowed, Rooted or Stunned enemy Heroes deal 25% additional damage for 3 seconds, increased to 50% while in Worgen Form.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Imperius",
+     "heroId": "Imperius",
+     "heroIds": [
+      "Imperius"
+     ],
+     "changes": [
+      {
+       "name": "Wrath of the Angiris",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "Rework: Damage reduced from 375 to 250 .",
+         "html": "<b>Rework:</b> Damage reduced from 375 to <strong class=\"pn-new\">250</strong>.",
+         "added": false
+        },
+        {
+         "text": "Rework: Now deals 20% additional damage for each Valorous Brand marker on the target when landing.",
+         "html": "<b>Rework:</b> Now deals 20% additional damage for each Valorous Brand marker on the target when landing.",
+         "added": false
+        },
+        {
+         "text": "Rework: Valorous Brand markers placed by Imperius will no longer be removed when launching the target into the air. These can still expire while in the air.",
+         "html": "<b>Rework:</b> Valorous Brand markers placed by Imperius will no longer be removed when launching the target into the air. These can still expire while in the air.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Wrath of the Angiris</strong>\n<ul>\n<li><b>Rework:</b> Damage reduced from 375 to <strong class=\"pn-new\">250</strong>.</li>\n<li><b>Rework:</b> Now deals 20% additional damage for each Valorous Brand marker on the target when landing.</li>\n<li><b>Rework:</b> Valorous Brand markers placed by Imperius will no longer be removed when launching the target into the air. These can still expire while in the air.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Li Li",
+     "heroId": "LiLi",
+     "heroIds": [
+      "LiLi"
+     ],
+     "changes": [
+      {
+       "name": "Free Drinks",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Can now reduce the cooldown multiple times per cast (Example: Combined with Two For One).",
+         "html": "Can now reduce the cooldown multiple times per cast (Example: Combined with Two For One).",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Shake It Off",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "Armor now persists for 2 seconds after Stun, Silence, or Root expires.",
+         "html": "Armor now persists for 2 seconds after Stun, Silence, or Root expires.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Free Drinks</strong>\n<ul>\n<li>Can now reduce the cooldown multiple times per cast (Example: Combined with Two For One).</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Shake It Off</strong>\n<ul>\n<li>Armor now persists for 2 seconds after Stun, Silence, or Root expires.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Medivh",
+     "heroId": "Medivh",
+     "heroIds": [
+      "Medivh"
+     ],
+     "changes": [
+      {
+       "name": "Glyph of Poly Bomb",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "Rework: Target an area to apply Poly Bomb to all enemy Heroes in the area. Poly Bomb activates a second time 1 second after.",
+         "html": "<b>Rework:</b> Target an area to apply Poly Bomb to all enemy Heroes in the area. Poly Bomb activates a second time 1 second after.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Glyph of Poly Bomb</strong>\n<ul>\n<li><b>Rework:</b> Target an area to apply Poly Bomb to all enemy Heroes in the area. Poly Bomb activates a second time 1 second after.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Murky",
+     "heroId": "Murky",
+     "heroIds": [
+      "Murky"
+     ],
+     "changes": [
+      {
+       "name": "Egg Shell",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "The Shield now regains an amount equal to 35% of Murky's current Health when Murky places a new Egg.",
+         "html": "The Shield now regains an amount equal to 35% of Murky's current Health when Murky places a new Egg.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Egg Shell</strong>\n<ul>\n<li>The Shield now regains an amount equal to 35% of Murky's current Health when Murky places a new Egg.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Varian",
+     "heroId": "Varian",
+     "heroIds": [
+      "Varian"
+     ],
+     "changes": [
+      {
+       "name": "Demoralizing Shout",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "Cooldown of Demoralizing Shout and Parry are reduced by 2.5% whenever an enemy Hero affected by Demoralizing Shout deals damage to a Hero.",
+         "html": "<strong class=\"pn-new\">Cooldown of Demoralizing Shout and Parry are reduced by 2.5% whenever an enemy Hero affected by Demoralizing Shout deals damage to a Hero.</strong>",
+         "added": true
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Demoralizing Shout</strong>\n<ul>\n<li><strong class=\"pn-new\">Cooldown of Demoralizing Shout and Parry are reduced by 2.5% whenever an enemy Hero affected by Demoralizing Shout deals damage to a Hero.</strong></li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    }
+   ],
+   "nameKo": "밸런스 업데이트"
+  },
+  {
+   "name": "Bug Fixes",
+   "key": "bugs",
+   "html": "<h3><strong>General</strong></h3>\n<ul>\n<li>Fixed issues with Block and Basic Attacks that Ignore Armor.</li>\n</ul>\n<h3><strong>Map</strong></h3>\n<ul>\n<li><strong class=\"pn-h\">Cursed Hollow</strong>\n<ul>\n<li>Fixed an issue that caused Cursed Hollow's Call for Help's Armor reduction to not be cleared by Stasis or Invulnerable.</li>\n</ul>\n</li>\n</ul>\n<h3><strong>Heroes</strong></h3>\n<ul>\n<li><strong class=\"pn-h\">Anubarak</strong>\n<ul>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Cryptweave</strong>\n<ul>\n<li>Fixed an issue that caused Cryptweave's duration increase to be granted while Anub'arak is dead.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Artanis</strong>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Purifier Beam</strong>\n<ul>\n<li>Fixed an issue that caused Purifier Beam to last up to an additional 0.5 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Azmodan</strong>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Demonic Invasion</strong>\n<ul>\n<li>Fixed an issue that caused Demonic Invasion grunts to attack Stealthed enemies.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Cassia</strong>\n<ul>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Titan's Revenge</strong>\n<ul>\n<li>Fixed an issue that caused Titan's Revenge empowered Basic Attacks to consume Block charges.</li>\n<li>Fixed an issue that caused Titan's Revenge to not apply to Charged Strikes bounce attacks.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Cho'Gall</strong>\n<ul>\n<li><strong>General</strong>\n<ul>\n<li>Fixed an issue that caused Cho and Gall to become separated if Cho enters a Vehicle the moment the Vehicle expires.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Deathwing</strong>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Bellowing Roar</strong>\n<ul>\n<li>Fixed an issue to allow Deathwing to cast Bellowing Roar while Dragonflight is active.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Diablo</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Black Soulstone [Trait]</strong>\n<ul>\n<li>Fixed an issue that caused Diablo's health gained from Black Soulstone to not be accurate.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-new\">D.Va</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Self Destruct [E]</strong>\n<ul>\n<li>Exploding Mech visibility has been updated from the detonation area to the expanding warning indicator area.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Boosters [Q]</strong>\n<ul>\n<li>Fixed an issue that caused Boosters to not be affected by cooldown reduction granted by Allied Heroes.</li>\n<li>Will now behave similarly to Defense Matrix and have a fresh cooldown when a new Mech is called.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-new\">Fenix</strong>\n<ul>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Unconquered Spirit</strong>\n<ul>\n<li>Ability will no longer be shaded as though it is disabled when off cooldown.</li>\n<li>Will now be properly reset when ability cooldowns are reset in Sandbox or Try Mode.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Gul'dan</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Drain Life [W]</strong>\n<ul>\n<li>Added a range indicator for Drain Life.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Hanzo</strong>\n<ul>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Piercing Arrows</strong>\n<ul>\n<li>Fixed an issue that caused Storm Bow to not hit targets in close proximity to the first target hit with Piercing Arrows.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-new\">Johanna</strong>\n<ul>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Indestructible</strong>\n<ul>\n<li>Ability will no longer be shaded as though it is disabled when off cooldown.</li>\n<li>Will now be properly reset when ability cooldowns are reset in Sandbox or Try Mode.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-new\">Junkrat</strong>\n<ul>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Dirty Trickster</strong>\n<ul>\n<li>Will now be properly reset when ability cooldowns are reset in Sandbox or Try Mode.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Leoric</strong>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Fealty Unto Death</strong>\n<ul>\n<li>Healing increased from 31.85 to 32. Updated the tooltip to display number instead of percentage.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Li Li</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Cloud Serpent [W]</strong>\n<ul>\n<li>Fixed an issue that caused crit floating modifiers to not apply to Cloud Serpent damage.</li>\n<li>Fixed an issue that caused Defense Matrix to not apply to any Cloud Serpent damage.</li>\n<li>Fixed an issue that caused Spell Power to not apply to Cloud Serpent healing.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">The Good Stuff</strong>\n<ul>\n<li>Fixed an issue that caused The Good Stuff's Fast Feet healing increase to be multiplicative.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Lightning Serpent</strong>\n<ul>\n<li>Fixed an issue that caused Spell Power and other damage mods to not apply to Lightning Serpent damage.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Pick Me Up</strong>\n<ul>\n<li>Fixed an issue that caused Pick Me Up's healing increase to be multiplicative.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-new\">Lt. Morales</strong>\n<ul>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Trauma Trigger</strong>\n<ul>\n<li>Will now be properly reset when ability cooldowns are reset in Sandbox or Try Mode.</li>\n<li>Fixed an issue that caused the cooldown displayed on the ability to show incorrectly.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Maiev</strong>\n<ul>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Sudden Vengeance</strong>\n<ul>\n<li>Fixed an issue that caused Sudden Vengeance to not activate Ruthless Spirit.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Mal'Ganis</strong>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Winged Guard</strong>\n<ul>\n<li>Fixed an issue that caused Winged Guard to lose Block charges to all effects that ignore Armor.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-new\">Mephisto</strong>\n<ul>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Lightning Reaction</strong>\n<ul>\n<li>Fixed an issue that caused Lightning Reaction to activate around Shades of Mephisto when Mephisto has not selected Mimic.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Nazeebo</strong>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Gargantuan</strong>\n<ul>\n<li>Fixed an issue that caused Gargantuan Stomp damage to not display the correct values in the tooltip.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Orphea</strong>\n<ul>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Dead Magic</strong>\n<ul>\n<li>Fixed an issue that caused Chaos-empowered Basic Attacks from Dead Magic to consume Block charges.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Rehgar</strong>\n<ul>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Purification</strong>\n<ul>\n<li>When selecting Purification, Purge will now be able to target Unstoppable enemy Heroes.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Rexxar</strong>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Unleash the Boars</strong>\n<ul>\n<li>Unleash the Boars damage updated to have Rexxar deal the damage instead of each Boar dealing its own damage.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Samuro</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Image Transmission [Trait]</strong>\n<ul>\n<li>Fixed an issue that allowed Samuro to cast Image Transmission on a destroyed Mirror Image if it was queued to happen directly after Mirror Image was cast.</li>\n<li>If Samuro activates Image Transmission or if a new Mirror Image is created, any Mirror Images that are updated will copy Blessing of the Red if it is present on Samuro instead of increasing their maximum Health as if Blessing of the Red were cast on them.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Crushing Blows</strong>\n<ul>\n<li>Fixed an issue that caused Crushing Blows to apply to the triggering Critical Strike.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Three Blade Style</strong>\n<ul>\n<li>Fixed an issue that caused Three Blade Style to increase Mirror Image maximum health if Samuro gained Blessing of the Red between the Images being created and the talent being selected.</li>\n<li>Fixed an issue that caused Three Blade Style to reset the duration on an active Mirror Image when selected.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Sgt. Hammer</strong>\n<ul>\n<li><strong>General</strong>\n<ul>\n<li>Sgt. Hammer's level 1 talent icon changes have been reverted.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Stitches</strong>\n<ul>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Meat Hook</strong>\n<ul>\n<li>Fixed an issue that caused the refresh duration to not match the full duration of Meat Hook.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">The Butcher</strong>\n<ul>\n<li><strong>General</strong>\n<ul>\n<li>Talent sorting for The Butcher has been updated to be the same as other Heroes.</li>\n</ul>\n</li>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Fresh Meat [Trait]</strong>\n<ul>\n<li>Fresh Meat is now referred to as stacks instead of charges.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Tyrande</strong>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Ranger</strong>\n<ul>\n<li>Fixed an issue that caused Ranger to allow Sentinel to hit up to 3 targets.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Whitemane</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Inquisition [W]</strong>\n<ul>\n<li>Added a range indicator for Inquisition.</li>\n<li>Fixed an issue that caused Inquisition to not be cancelled if the target leaves the radius while Stealthed.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Zul'jin</strong>\n<ul>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">No Mercy!</strong>\n<ul>\n<li>Fixed an issue that caused empowered Grievous Throw Basic Attacks from No Mercy! To not activate Medivh's Raven Familiar.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<p><strong><a href=\"https://us.forums.blizzard.com/en/heroes/\" target=\"_blank\">Click here to discuss this post with other players in the official Heroes of the Storm forums</a>.</strong></p>\n<p><strong><img alt=\"\" class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/g6/G6G0N80EOC941426801305139.png\"/></strong></p>",
+   "items": [
+    {
+     "name": "Cursed Hollow",
+     "battleground": "cursed_hollow",
+     "html": "<strong class=\"pn-h\">Cursed Hollow</strong>\n<ul>\n<li>Fixed an issue that caused Cursed Hollow's Call for Help's Armor reduction to not be cleared by Stasis or Invulnerable.</li>\n</ul>",
+     "under": "Map"
+    },
+    {
+     "name": "Anubarak",
+     "heroId": "Anubarak",
+     "heroIds": [
+      "Anubarak"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Anubarak</strong>\n<ul>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Cryptweave</strong>\n<ul>\n<li>Fixed an issue that caused Cryptweave's duration increase to be granted while Anub'arak is dead.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Cryptweave",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Cryptweave's duration increase to be granted while Anub'arak is dead.",
+         "html": "Fixed an issue that caused Cryptweave's duration increase to be granted while Anub'arak is dead.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Artanis",
+     "heroId": "Artanis",
+     "heroIds": [
+      "Artanis"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Artanis</strong>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Purifier Beam</strong>\n<ul>\n<li>Fixed an issue that caused Purifier Beam to last up to an additional 0.5 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Purifier Beam",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Purifier Beam to last up to an additional 0.5 seconds.",
+         "html": "Fixed an issue that caused Purifier Beam to last up to an additional 0.5 seconds.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Azmodan",
+     "heroId": "Azmodan",
+     "heroIds": [
+      "Azmodan"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Azmodan</strong>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Demonic Invasion</strong>\n<ul>\n<li>Fixed an issue that caused Demonic Invasion grunts to attack Stealthed enemies.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Demonic Invasion",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Demonic Invasion grunts to attack Stealthed enemies.",
+         "html": "Fixed an issue that caused Demonic Invasion grunts to attack Stealthed enemies.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Cassia",
+     "heroId": "Amazon",
+     "heroIds": [
+      "Amazon"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Cassia</strong>\n<ul>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Titan's Revenge</strong>\n<ul>\n<li>Fixed an issue that caused Titan's Revenge empowered Basic Attacks to consume Block charges.</li>\n<li>Fixed an issue that caused Titan's Revenge to not apply to Charged Strikes bounce attacks.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Titan's Revenge",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Titan's Revenge empowered Basic Attacks to consume Block charges.",
+         "html": "Fixed an issue that caused Titan's Revenge empowered Basic Attacks to consume Block charges.",
+         "added": false
+        },
+        {
+         "text": "Fixed an issue that caused Titan's Revenge to not apply to Charged Strikes bounce attacks.",
+         "html": "Fixed an issue that caused Titan's Revenge to not apply to Charged Strikes bounce attacks.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Cho'Gall",
+     "heroId": "Cho",
+     "heroIds": [
+      "Cho",
+      "Gall"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Cho'Gall</strong>\n<ul>\n<li><strong>General</strong>\n<ul>\n<li>Fixed an issue that caused Cho and Gall to become separated if Cho enters a Vehicle the moment the Vehicle expires.</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "General",
+       "key": null,
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Cho and Gall to become separated if Cho enters a Vehicle the moment the Vehicle expires.",
+         "html": "Fixed an issue that caused Cho and Gall to become separated if Cho enters a Vehicle the moment the Vehicle expires.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Deathwing",
+     "heroId": "Deathwing",
+     "heroIds": [
+      "Deathwing"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Deathwing</strong>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Bellowing Roar</strong>\n<ul>\n<li>Fixed an issue to allow Deathwing to cast Bellowing Roar while Dragonflight is active.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Bellowing Roar",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "Fixed an issue to allow Deathwing to cast Bellowing Roar while Dragonflight is active.",
+         "html": "Fixed an issue to allow Deathwing to cast Bellowing Roar while Dragonflight is active.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Diablo",
+     "heroId": "Diablo",
+     "heroIds": [
+      "Diablo"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Diablo</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Black Soulstone [Trait]</strong>\n<ul>\n<li>Fixed an issue that caused Diablo's health gained from Black Soulstone to not be accurate.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Black Soulstone",
+       "key": "Trait",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Diablo's health gained from Black Soulstone to not be accurate.",
+         "html": "Fixed an issue that caused Diablo's health gained from Black Soulstone to not be accurate.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "D.Va",
+     "heroId": "DVa",
+     "heroIds": [
+      "DVa"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-new\">D.Va</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Self Destruct [E]</strong>\n<ul>\n<li>Exploding Mech visibility has been updated from the detonation area to the expanding warning indicator area.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Boosters [Q]</strong>\n<ul>\n<li>Fixed an issue that caused Boosters to not be affected by cooldown reduction granted by Allied Heroes.</li>\n<li>Will now behave similarly to Defense Matrix and have a fresh cooldown when a new Mech is called.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Self Destruct",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Exploding Mech visibility has been updated from the detonation area to the expanding warning indicator area.",
+         "html": "Exploding Mech visibility has been updated from the detonation area to the expanding warning indicator area.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Boosters",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Boosters to not be affected by cooldown reduction granted by Allied Heroes.",
+         "html": "Fixed an issue that caused Boosters to not be affected by cooldown reduction granted by Allied Heroes.",
+         "added": false
+        },
+        {
+         "text": "Will now behave similarly to Defense Matrix and have a fresh cooldown when a new Mech is called.",
+         "html": "Will now behave similarly to Defense Matrix and have a fresh cooldown when a new Mech is called.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Fenix",
+     "heroId": "Fenix",
+     "heroIds": [
+      "Fenix"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-new\">Fenix</strong>\n<ul>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Unconquered Spirit</strong>\n<ul>\n<li>Ability will no longer be shaded as though it is disabled when off cooldown.</li>\n<li>Will now be properly reset when ability cooldowns are reset in Sandbox or Try Mode.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Unconquered Spirit",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "Ability will no longer be shaded as though it is disabled when off cooldown.",
+         "html": "Ability will no longer be shaded as though it is disabled when off cooldown.",
+         "added": false
+        },
+        {
+         "text": "Will now be properly reset when ability cooldowns are reset in Sandbox or Try Mode.",
+         "html": "Will now be properly reset when ability cooldowns are reset in Sandbox or Try Mode.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Gul'dan",
+     "heroId": "Guldan",
+     "heroIds": [
+      "Guldan"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Gul'dan</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Drain Life [W]</strong>\n<ul>\n<li>Added a range indicator for Drain Life.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Drain Life",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Added a range indicator for Drain Life.",
+         "html": "Added a range indicator for Drain Life.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Hanzo",
+     "heroId": "Hanzo",
+     "heroIds": [
+      "Hanzo"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Hanzo</strong>\n<ul>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Piercing Arrows</strong>\n<ul>\n<li>Fixed an issue that caused Storm Bow to not hit targets in close proximity to the first target hit with Piercing Arrows.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Piercing Arrows",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Storm Bow to not hit targets in close proximity to the first target hit with Piercing Arrows.",
+         "html": "Fixed an issue that caused Storm Bow to not hit targets in close proximity to the first target hit with Piercing Arrows.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Johanna",
+     "heroId": "Crusader",
+     "heroIds": [
+      "Crusader"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-new\">Johanna</strong>\n<ul>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Indestructible</strong>\n<ul>\n<li>Ability will no longer be shaded as though it is disabled when off cooldown.</li>\n<li>Will now be properly reset when ability cooldowns are reset in Sandbox or Try Mode.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Indestructible",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "Ability will no longer be shaded as though it is disabled when off cooldown.",
+         "html": "Ability will no longer be shaded as though it is disabled when off cooldown.",
+         "added": false
+        },
+        {
+         "text": "Will now be properly reset when ability cooldowns are reset in Sandbox or Try Mode.",
+         "html": "Will now be properly reset when ability cooldowns are reset in Sandbox or Try Mode.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Junkrat",
+     "heroId": "Junkrat",
+     "heroIds": [
+      "Junkrat"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-new\">Junkrat</strong>\n<ul>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Dirty Trickster</strong>\n<ul>\n<li>Will now be properly reset when ability cooldowns are reset in Sandbox or Try Mode.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Dirty Trickster",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "Will now be properly reset when ability cooldowns are reset in Sandbox or Try Mode.",
+         "html": "Will now be properly reset when ability cooldowns are reset in Sandbox or Try Mode.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Leoric",
+     "heroId": "Leoric",
+     "heroIds": [
+      "Leoric"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Leoric</strong>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Fealty Unto Death</strong>\n<ul>\n<li>Healing increased from 31.85 to 32. Updated the tooltip to display number instead of percentage.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Fealty Unto Death",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Healing increased from 31.85 to 32. Updated the tooltip to display number instead of percentage.",
+         "html": "Healing increased from 31.85 to 32. Updated the tooltip to display number instead of percentage.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Li Li",
+     "heroId": "LiLi",
+     "heroIds": [
+      "LiLi"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Li Li</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Cloud Serpent [W]</strong>\n<ul>\n<li>Fixed an issue that caused crit floating modifiers to not apply to Cloud Serpent damage.</li>\n<li>Fixed an issue that caused Defense Matrix to not apply to any Cloud Serpent damage.</li>\n<li>Fixed an issue that caused Spell Power to not apply to Cloud Serpent healing.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">The Good Stuff</strong>\n<ul>\n<li>Fixed an issue that caused The Good Stuff's Fast Feet healing increase to be multiplicative.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Lightning Serpent</strong>\n<ul>\n<li>Fixed an issue that caused Spell Power and other damage mods to not apply to Lightning Serpent damage.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Pick Me Up</strong>\n<ul>\n<li>Fixed an issue that caused Pick Me Up's healing increase to be multiplicative.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Cloud Serpent",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused crit floating modifiers to not apply to Cloud Serpent damage.",
+         "html": "Fixed an issue that caused crit floating modifiers to not apply to Cloud Serpent damage.",
+         "added": false
+        },
+        {
+         "text": "Fixed an issue that caused Defense Matrix to not apply to any Cloud Serpent damage.",
+         "html": "Fixed an issue that caused Defense Matrix to not apply to any Cloud Serpent damage.",
+         "added": false
+        },
+        {
+         "text": "Fixed an issue that caused Spell Power to not apply to Cloud Serpent healing.",
+         "html": "Fixed an issue that caused Spell Power to not apply to Cloud Serpent healing.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "The Good Stuff",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused The Good Stuff's Fast Feet healing increase to be multiplicative.",
+         "html": "Fixed an issue that caused The Good Stuff's Fast Feet healing increase to be multiplicative.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Lightning Serpent",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Spell Power and other damage mods to not apply to Lightning Serpent damage.",
+         "html": "Fixed an issue that caused Spell Power and other damage mods to not apply to Lightning Serpent damage.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Pick Me Up",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Pick Me Up's healing increase to be multiplicative.",
+         "html": "Fixed an issue that caused Pick Me Up's healing increase to be multiplicative.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Lt. Morales",
+     "heroId": "Medic",
+     "heroIds": [
+      "Medic"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-new\">Lt. Morales</strong>\n<ul>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Trauma Trigger</strong>\n<ul>\n<li>Will now be properly reset when ability cooldowns are reset in Sandbox or Try Mode.</li>\n<li>Fixed an issue that caused the cooldown displayed on the ability to show incorrectly.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Trauma Trigger",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "Will now be properly reset when ability cooldowns are reset in Sandbox or Try Mode.",
+         "html": "Will now be properly reset when ability cooldowns are reset in Sandbox or Try Mode.",
+         "added": false
+        },
+        {
+         "text": "Fixed an issue that caused the cooldown displayed on the ability to show incorrectly.",
+         "html": "Fixed an issue that caused the cooldown displayed on the ability to show incorrectly.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Maiev",
+     "heroId": "Maiev",
+     "heroIds": [
+      "Maiev"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Maiev</strong>\n<ul>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Sudden Vengeance</strong>\n<ul>\n<li>Fixed an issue that caused Sudden Vengeance to not activate Ruthless Spirit.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Sudden Vengeance",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Sudden Vengeance to not activate Ruthless Spirit.",
+         "html": "Fixed an issue that caused Sudden Vengeance to not activate Ruthless Spirit.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Mal'Ganis",
+     "heroId": "MalGanis",
+     "heroIds": [
+      "MalGanis"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Mal'Ganis</strong>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Winged Guard</strong>\n<ul>\n<li>Fixed an issue that caused Winged Guard to lose Block charges to all effects that ignore Armor.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Winged Guard",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Winged Guard to lose Block charges to all effects that ignore Armor.",
+         "html": "Fixed an issue that caused Winged Guard to lose Block charges to all effects that ignore Armor.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Mephisto",
+     "heroId": "Mephisto",
+     "heroIds": [
+      "Mephisto"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-new\">Mephisto</strong>\n<ul>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Lightning Reaction</strong>\n<ul>\n<li>Fixed an issue that caused Lightning Reaction to activate around Shades of Mephisto when Mephisto has not selected Mimic.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Lightning Reaction",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Lightning Reaction to activate around Shades of Mephisto when Mephisto has not selected Mimic.",
+         "html": "Fixed an issue that caused Lightning Reaction to activate around Shades of Mephisto when Mephisto has not selected Mimic.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Nazeebo",
+     "heroId": "WitchDoctor",
+     "heroIds": [
+      "WitchDoctor"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Nazeebo</strong>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Gargantuan</strong>\n<ul>\n<li>Fixed an issue that caused Gargantuan Stomp damage to not display the correct values in the tooltip.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Gargantuan",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Gargantuan Stomp damage to not display the correct values in the tooltip.",
+         "html": "Fixed an issue that caused Gargantuan Stomp damage to not display the correct values in the tooltip.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Orphea",
+     "heroId": "Orphea",
+     "heroIds": [
+      "Orphea"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Orphea</strong>\n<ul>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Dead Magic</strong>\n<ul>\n<li>Fixed an issue that caused Chaos-empowered Basic Attacks from Dead Magic to consume Block charges.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Dead Magic",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Chaos-empowered Basic Attacks from Dead Magic to consume Block charges.",
+         "html": "Fixed an issue that caused Chaos-empowered Basic Attacks from Dead Magic to consume Block charges.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Rehgar",
+     "heroId": "Rehgar",
+     "heroIds": [
+      "Rehgar"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Rehgar</strong>\n<ul>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Purification</strong>\n<ul>\n<li>When selecting Purification, Purge will now be able to target Unstoppable enemy Heroes.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Purification",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "When selecting Purification, Purge will now be able to target Unstoppable enemy Heroes.",
+         "html": "When selecting Purification, Purge will now be able to target Unstoppable enemy Heroes.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Rexxar",
+     "heroId": "Rexxar",
+     "heroIds": [
+      "Rexxar"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Rexxar</strong>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Unleash the Boars</strong>\n<ul>\n<li>Unleash the Boars damage updated to have Rexxar deal the damage instead of each Boar dealing its own damage.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Unleash the Boars",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "Unleash the Boars damage updated to have Rexxar deal the damage instead of each Boar dealing its own damage.",
+         "html": "Unleash the Boars damage updated to have Rexxar deal the damage instead of each Boar dealing its own damage.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Samuro",
+     "heroId": "Samuro",
+     "heroIds": [
+      "Samuro"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Samuro</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Image Transmission [Trait]</strong>\n<ul>\n<li>Fixed an issue that allowed Samuro to cast Image Transmission on a destroyed Mirror Image if it was queued to happen directly after Mirror Image was cast.</li>\n<li>If Samuro activates Image Transmission or if a new Mirror Image is created, any Mirror Images that are updated will copy Blessing of the Red if it is present on Samuro instead of increasing their maximum Health as if Blessing of the Red were cast on them.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Crushing Blows</strong>\n<ul>\n<li>Fixed an issue that caused Crushing Blows to apply to the triggering Critical Strike.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Three Blade Style</strong>\n<ul>\n<li>Fixed an issue that caused Three Blade Style to increase Mirror Image maximum health if Samuro gained Blessing of the Red between the Images being created and the talent being selected.</li>\n<li>Fixed an issue that caused Three Blade Style to reset the duration on an active Mirror Image when selected.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Image Transmission",
+       "key": "Trait",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that allowed Samuro to cast Image Transmission on a destroyed Mirror Image if it was queued to happen directly after Mirror Image was cast.",
+         "html": "Fixed an issue that allowed Samuro to cast Image Transmission on a destroyed Mirror Image if it was queued to happen directly after Mirror Image was cast.",
+         "added": false
+        },
+        {
+         "text": "If Samuro activates Image Transmission or if a new Mirror Image is created, any Mirror Images that are updated will copy Blessing of the Red if it is present on Samuro instead of increasing their maximum Health as if Blessing of the Red were cast on them.",
+         "html": "If Samuro activates Image Transmission or if a new Mirror Image is created, any Mirror Images that are updated will copy Blessing of the Red if it is present on Samuro instead of increasing their maximum Health as if Blessing of the Red were cast on them.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Crushing Blows",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Crushing Blows to apply to the triggering Critical Strike.",
+         "html": "Fixed an issue that caused Crushing Blows to apply to the triggering Critical Strike.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Three Blade Style",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Three Blade Style to increase Mirror Image maximum health if Samuro gained Blessing of the Red between the Images being created and the talent being selected.",
+         "html": "Fixed an issue that caused Three Blade Style to increase Mirror Image maximum health if Samuro gained Blessing of the Red between the Images being created and the talent being selected.",
+         "added": false
+        },
+        {
+         "text": "Fixed an issue that caused Three Blade Style to reset the duration on an active Mirror Image when selected.",
+         "html": "Fixed an issue that caused Three Blade Style to reset the duration on an active Mirror Image when selected.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Sgt. Hammer",
+     "heroId": "SgtHammer",
+     "heroIds": [
+      "SgtHammer"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Sgt. Hammer</strong>\n<ul>\n<li><strong>General</strong>\n<ul>\n<li>Sgt. Hammer's level 1 talent icon changes have been reverted.</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "General",
+       "key": null,
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "Sgt. Hammer's level 1 talent icon changes have been reverted.",
+         "html": "Sgt. Hammer's level 1 talent icon changes have been reverted.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Stitches",
+     "heroId": "Stitches",
+     "heroIds": [
+      "Stitches"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Stitches</strong>\n<ul>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Meat Hook</strong>\n<ul>\n<li>Fixed an issue that caused the refresh duration to not match the full duration of Meat Hook.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Meat Hook",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused the refresh duration to not match the full duration of Meat Hook.",
+         "html": "Fixed an issue that caused the refresh duration to not match the full duration of Meat Hook.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "The Butcher",
+     "heroId": "Butcher",
+     "heroIds": [
+      "Butcher"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">The Butcher</strong>\n<ul>\n<li><strong>General</strong>\n<ul>\n<li>Talent sorting for The Butcher has been updated to be the same as other Heroes.</li>\n</ul>\n</li>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Fresh Meat [Trait]</strong>\n<ul>\n<li>Fresh Meat is now referred to as stacks instead of charges.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "General",
+       "key": null,
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "Talent sorting for The Butcher has been updated to be the same as other Heroes.",
+         "html": "Talent sorting for The Butcher has been updated to be the same as other Heroes.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Fresh Meat",
+       "key": "Trait",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fresh Meat is now referred to as stacks instead of charges.",
+         "html": "Fresh Meat is now referred to as stacks instead of charges.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Tyrande",
+     "heroId": "Tyrande",
+     "heroIds": [
+      "Tyrande"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Tyrande</strong>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Ranger</strong>\n<ul>\n<li>Fixed an issue that caused Ranger to allow Sentinel to hit up to 3 targets.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Ranger",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Ranger to allow Sentinel to hit up to 3 targets.",
+         "html": "Fixed an issue that caused Ranger to allow Sentinel to hit up to 3 targets.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Whitemane",
+     "heroId": "Whitemane",
+     "heroIds": [
+      "Whitemane"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Whitemane</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Inquisition [W]</strong>\n<ul>\n<li>Added a range indicator for Inquisition.</li>\n<li>Fixed an issue that caused Inquisition to not be cancelled if the target leaves the radius while Stealthed.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Inquisition",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Added a range indicator for Inquisition.",
+         "html": "Added a range indicator for Inquisition.",
+         "added": false
+        },
+        {
+         "text": "Fixed an issue that caused Inquisition to not be cancelled if the target leaves the radius while Stealthed.",
+         "html": "Fixed an issue that caused Inquisition to not be cancelled if the target leaves the radius while Stealthed.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Zul'jin",
+     "heroId": "Zuljin",
+     "heroIds": [
+      "Zuljin"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Zul'jin</strong>\n<ul>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">No Mercy!</strong>\n<ul>\n<li>Fixed an issue that caused empowered Grievous Throw Basic Attacks from No Mercy! To not activate Medivh's Raven Familiar.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "No Mercy!",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused empowered Grievous Throw Basic Attacks from No Mercy! To not activate Medivh's Raven Familiar.",
+         "html": "Fixed an issue that caused empowered Grievous Throw Basic Attacks from No Mercy! To not activate Medivh's Raven Familiar.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "nameKo": "버그 수정"
+  }
+ ],
+ "heroes": [
+  "Amazon",
+  "Anubarak",
+  "Artanis",
+  "Arthas",
+  "Azmodan",
+  "Butcher",
+  "Chen",
+  "Cho",
+  "Crusader",
+  "DVa",
+  "Deathwing",
+  "Diablo",
+  "Fenix",
+  "Gall",
+  "Greymane",
+  "Guldan",
+  "Hanzo",
+  "Imperius",
+  "Junkrat",
+  "Leoric",
+  "LiLi",
+  "Maiev",
+  "MalGanis",
+  "Medic",
+  "Medivh",
+  "Mephisto",
+  "Murky",
+  "Orphea",
+  "Rehgar",
+  "Rexxar",
+  "Samuro",
+  "SgtHammer",
+  "Stitches",
+  "Tyrande",
+  "Varian",
+  "Whitemane",
+  "WitchDoctor",
+  "Zuljin"
+ ],
+ "battlegrounds": [
+  "cursed_hollow",
+  "volskaya_foundry"
+ ],
+ "lang": "en",
+ "newsId": "24158871"
+}

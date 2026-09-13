@@ -1,0 +1,1564 @@
+{
+ "date": "2026-03-30",
+ "kind": "ptr",
+ "title": "히어로즈 오브 더 스톰 공개 테스트 서버 패치 노트 - 2026년 3월 30일",
+ "source": "https://news.blizzard.com/en-us/article/24264015/heroes-of-the-storm-ptr-patch-notes-march-30-2026",
+ "published": "2026-03-30T17:00:00Z",
+ "sections": [
+  {
+   "name": "머리말",
+   "key": "intro",
+   "html": "<p>다음 히어로즈 오브 더 스톰 패치가 공개 테스트 서버(PTR)에 적용되어 테스트 플레이가 가능합니다. 언제나 그렇듯, PTR에서 플레이하는 동안 버그를 발견하셨다면 <a href=\"https://us.forums.blizzard.com/en/heroes/c/ptr-bug-report\" target=\"_blank\">PTR 버그 신고 포럼</a>에 방문하여 경험하신 내용을 알려주시기 바랍니다.</p>",
+   "nameEn": "머리말"
+  },
+  {
+   "name": "일반",
+   "key": "general",
+   "html": "<ul>\n<li>비등급전 모드가 삭제되었습니다.</li>\n<li>게임 중후반의 부활 대기시간이 감소했습니다. 22레벨에 도달하면 부활 대기시간은 다시 65초가 됩니다.</li>\n<li>첫 화면 및 시작 음악이 업데이트되었습니다.</li>\n</ul>",
+   "nameEn": "General"
+  },
+  {
+   "name": "전장 업데이트",
+   "key": "map_updates",
+   "html": "<ul>\n<li><strong class=\"pn-h\">공포의 정원 클래식</strong><ul>\n<li>기존의 공포의 정원이 사용자 지정 게임으로 돌아왔습니다!</li>\n<li>현재의 공포의 정원과 구분하기 위해 이름이 공포의 정원 클래식으로 변경되었습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">유령 광산</strong><ul>\n<li>유령 광산이 빠른 대전으로 돌아왔습니다!</li>\n<li>이제 전장 목표가 해골 100개를 모두 모았을 때가 아니라 한 팀이 해골 55개를 모았을 때 완료됩니다.</li>\n<li>광산 안에 있는 동안 영웅의 시야가 감소합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">핵탄두 격전지</strong><ul>\n<li>핵폭탄의 시전 시간이 2.5초에서 3초로 증가했습니다.</li>\n<li>이제 핵폭탄의 시전이 피해를 입으면 중단됩니다.</li>\n<li>핵폭탄의 지속 피해량이 100% 증가했습니다.</li>\n<li>핵폭탄이 요새와 성채에 입히는 피해량이 100%에서 125%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>",
+   "items": [
+    {
+     "name": "유령 광산",
+     "battleground": "haunted_mines",
+     "html": "<strong class=\"pn-h\">유령 광산</strong>\n<ul>\n<li>유령 광산이 빠른 대전으로 돌아왔습니다!</li>\n<li>이제 전장 목표가 해골 100개를 모두 모았을 때가 아니라 한 팀이 해골 55개를 모았을 때 완료됩니다.</li>\n<li>광산 안에 있는 동안 영웅의 시야가 감소합니다.</li>\n</ul>",
+     "under": null,
+     "nameEn": "Haunted Mines"
+    },
+    {
+     "name": "핵탄두 격전지",
+     "battleground": "warhead_junction",
+     "html": "<strong class=\"pn-h\">핵탄두 격전지</strong>\n<ul>\n<li>핵폭탄의 시전 시간이 2.5초에서 3초로 증가했습니다.</li>\n<li>이제 핵폭탄의 시전이 피해를 입으면 중단됩니다.</li>\n<li>핵폭탄의 지속 피해량이 100% 증가했습니다.</li>\n<li>핵폭탄이 요새와 성채에 입히는 피해량이 100%에서 125%로 증가했습니다.</li>\n</ul>",
+     "under": null,
+     "nameEn": "Warhead Junction"
+    }
+   ],
+   "nameEn": "Map Updates"
+  },
+  {
+   "name": "밸런스 업데이트",
+   "key": "balance",
+   "html": "<h3>영웅</h3>\n<h4>아서스</h4>\n<p>아서스가 전면 개편되었습니다! 모든 기술과 특성을 아래에 정리했습니다.</p>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">죽음의 고리 [Q]</strong><ul>\n<li>마나: 40.</li>\n<li>재사용 대기시간: 9초.</li>\n<li>대상 적에게 피해를 164 입힙니다.</li>\n<li>자신에게 시전하여 생명력을 262 회복할 수 있습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">울부짖는 한파 [W]</strong><ul>\n<li>마나: 50.</li>\n<li>재사용 대기시간: 10초.</li>\n<li>대상 지역 내의 적을 1.25초 동안 이동 불가 상태로 만들고 피해를 68 입힙니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">서리 폭풍 [E]</strong><ul>\n<li>마나: 초당 13.</li>\n<li>재사용 대기시간: 1초.</li>\n<li>근처의 적에게 초당 피해를 36 입히고 이동 속도를 초당 10%씩, 최대 40%까지 중첩하여 감소시킵니다. 적중당한 영웅은 공격 속도 또한 초당 10%씩, 최대 40%까지 중첩하여 감소합니다. 서리 폭풍의 효과는 1.5초 동안 지속됩니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">사자의 군대 [R]</strong><ul>\n<li>충전 대기시간: 18초.</li>\n<li>모든 충전 횟수를 소모하여 같은 수의 구울을 소환합니다. 구울은 15초 동안 유지되며 공격 시 피해를 20 입힙니다. 구울을 희생시켜 아서스의 생명력을 240 회복할 수 있습니다. 최대 6회까지 충전됩니다.</li>\n<li>근처에서 적 돌격병이 죽을 때마다 이 기술의 충전 대기시간이 1초 감소합니다. 적 영웅 처치 관여 시 이 기술의 충전 대기시간이 6초 감소합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">신드라고사 소환 [R]</strong><ul>\n<li>마나: 100.</li>\n<li>재사용 대기시간: 100초.</li>\n<li>피해를 230 입히고 적을 4초 동안 60% 감속시킵니다. 또한 돌격병, 용병, 괴물, 구조물을 20초 동안 무력화합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">서리한이 굶주렸다 [D]</strong><ul>\n<li>재사용 대기시간: 12초.</li>\n<li>사용 시 아서스의 다음 일반 공격이 즉시 적중하며 추가 피해를 71 입힙니다. 피해를 입히면 마나를 40 회복합니다.</li>\n<li><b>퀘스트:</b> 서리한이 굶주렸다로 돌격병을 처치하거나 영웅을 맞히면 추가 피해량과 아서스의 일반 공격 피해량이 영구적으로 1씩 증가합니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">냉기의 형상</strong><ul>\n<li>울부짖는 한파의 범위가 20% 증가합니다.</li>\n<li><b>퀘스트:</b> 울부짖는 한파로 적 영웅을 이동 불가 상태로 만드십시오.</li>\n<li><b>보상:</b> 영웅 15명을 이동 불가 상태로 만들면 울부짖는 한파의 사거리가 20% 증가하고 경로에 있는 적도 맞힙니다.</li>\n<li><b>보상:</b> 영웅 30명을 이동 불가 상태로 만들면 죽음의 고리가 적중한 영웅을 0.75초 동안 50% 감속시킵니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">북풍</strong><ul>\n<li>서리 폭풍이 2초 동안 활성화되면 아서스의 이동 속도가 10% 증가합니다.</li>\n<li><b>지속 효과:</b> 서리 폭풍의 감속 효과가 0.5초 더 지속되고 마나 소모량이 초당 4 감소합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">단단한 얼음</strong><ul>\n<li>5초마다 다음에 받는 적 영웅의 일반 공격에 대해 물리 방어력을 75 얻어 받는 피해를 75% 감소시킵니다. 최대 3회까지 충전됩니다.</li>\n<li><b>지속 효과:</b> 아서스가 감속, 이동 불가, 기절 상태일 때 초당 생명력을 24 회복합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">부서진 갑옷</strong><ul>\n<li>울부짖는 한파에 맞은 적 영웅의 방어력이 4초 동안 15 감소합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">얼음 발톱</strong><ul>\n<li>서리 폭풍으로 영웅에게 피해를 입힐 때마다 2초 동안 공격 속도가 3% 증가하며, 최대 60%까지 증가합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">냉기의 일격</strong><ul>\n<li>서리한이 굶주렸다가 범위 내에 기술 피해를 115 추가로 입히고 적중한 영웅을 2초 동안 20% 감속시킵니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">영원의 고리</strong><ul>\n<li>죽음의 고리를 적에게 사용해도 치유 효과를 얻습니다. 죽음의 고리를 아서스에게 사용하면 치유량이 75% 추가로 증가하고 재사용 대기시간이 3초 감소합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">룬 전환</strong><ul>\n<li>세 번째 일반 공격마다 아서스의 최대 생명력의 5%만큼 생명력을 회복합니다.</li>\n<li><b>지속 효과:</b> 서리한이 굶주렸다의 중첩당 아서스의 최대 생명력이 10 증가합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">얼음같은 인내력</strong><ul>\n<li>재사용 대기시간: 35초.</li>\n<li>사용 시 3초 동안 방어력을 25 얻고, 아서스에게 적용되는 기절과 감속, 이동 불가 효과의 지속시간이 75% 감소합니다.</li>\n<li>울부짖는 한파로 이동 불가 상태로 만든 영웅 1명당 이 기술의 재사용 대기시간이 2초 감소합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">죽음군주</strong><ul>\n<li>죽음의 고리를 적 영웅에게 사용하면 근처의 다른 적 영웅에게 죽음의 고리를 추가로 발사합니다.</li>\n<li><b>지속 효과:</b> 아서스의 현재 생명력이 낮을수록 죽음의 고리가 더 많은 피해를 입히며, 최대 50%의 추가 피해를 입힙니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">죽음의 한기</strong><ul>\n<li>서리한이 굶주렸다의 중첩당 울부짖는 한파의 피해량이 2 증가합니다.</li>\n<li>생명력이 50% 미만인 영웅에게 울부짖는 한파가 100%의 추가 피해를 입히고 0.25초 동안 추가로 이동 불가 상태로 만듭니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">매서운 추위</strong><ul>\n<li>적이 서리 폭풍으로 피해를 입는 1초마다 추가 피해량이 15%씩 증가하며, 최대 75%까지 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">냉혹한 겨울</strong><ul>\n<li>서리 폭풍 안에 2.5초 동안 머무른 적 영웅은 1.25초 동안 이동 불가 상태가 되고, 아서스의 최대 생명력의 3%만큼 생명력을 회복시킵니다. 이 효과는 대상마다 8초의 재사용 대기시간을 가집니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">서리한이 포식한다</strong><ul>\n<li>서리한이 굶주렸다의 재사용 대기시간이 6초 감소합니다. 아서스는 서리한이 굶주렸다로 입힌 일반 공격 피해량의 75%만큼 생명력을 회복합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">대마법 보호막</strong><ul>\n<li>재사용 대기시간 60초.</li>\n<li>사용 시 4초 동안 아서스가 기술 피해에 면역이 되고, 막아낸 피해량의 25%만큼 생명력을 회복합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">노스렌드의 대군</strong><ul>\n<li>사자의 군대의 충전 재사용 대기시간이 5초 감소합니다.</li>\n<li>충전을 소모할 때마다 근처의 적을 공격하는 구울이 추가로 소환됩니다. 이 구울은 희생시킬 수 없습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">절대 영점</strong><ul>\n<li>신드라고사가 두 배 멀리 날아갑니다. 적 영웅은 2.5초 동안 이동 불가 상태가 된 후 4초 동안 60% 감속합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">죽음의 서약</strong><ul>\n<li>서리한이 굶주렸다의 중첩이 즉시 두 배가 되지만, 더 이상 영웅을 적중시키거나 돌격병을 처치해도 중첩을 얻지 않습니다.</li>\n<li><b>지속 효과:</b> 적 영웅 처치 관여 시 서리한이 굶주렸다의 중첩을 2 얻습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">얼음길</strong><ul>\n<li>사용 시 즉시 탈것에 탑승하며 이동 속도가 10% 추가로 증가합니다. 피해를 입어도 아서스가 이 탈것에서 내리지 않습니다. 최대 5초 동안 지속됩니다.</li>\n<li>아서스가 탈것에서 내리면 근처의 모든 적을 2초 동안 30% 감속시키고 66의 피해를 입힙니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>첸</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">술통 부수기 [W]</strong><ul>\n<li>불의 숨결의 초기 피해량이 85에서 40으로 감소했습니다.</li>\n<li>불의 숨결의 지속시간이 3초에서 6초로 증가했습니다.</li>\n<li>불의 숨결이 더 이상 에너지를 소모하지 않습니다.</li>\n<li>술통 부수기의 에너지 소모량이 30에서 35로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">강화주 [D]</strong><ul>\n<li>이제 술을 마시면 아주 짧은 시간 동안 추가 명령이 중단됩니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">커져가는 불길</strong><ul>\n<li>4레벨에서 1레벨로 옮겨졌습니다.</li>\n<li><b>개편:</b> 퀘스트: 불의 숨결의 지속 피해로 영웅을 적중시켜 중첩을 얻습니다. 중첩당 피해량이 0.25 증가합니다. 피해량 20 달성 시 술통 부수기가 원거리 기술이 됩니다. 신화 보상: 피해량 75 달성 시 불의 숨결이 적의 방어력을 20 감소시키고 첸의 일반 공격으로 지속시간이 갱신됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">호랑이의 눈</strong><ul>\n<li>1레벨에서 4레벨로 옮겨졌습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">교묘한 싸움꾼</strong><ul>\n<li>이동 속도가 30%에서 20%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">술통 구르기</strong><ul>\n<li>재사용 대기시간이 50초에서 60초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">급소 차기</strong><ul>\n<li>감속 지속시간이 1초에서 1.5초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>데스윙</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">맹격 [E]</strong><ul>\n<li>재사용 대기시간이 5초에서 6초로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">용의 비상 [Z]</strong><ul>\n<li>재사용 대기시간이 15초에서 20초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">파괴를 목도하라</strong><ul>\n<li>지속시간이 5초에서 3.5초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>폴스타트</h4>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">하늘의 지배자</strong><ul>\n<li>처치 관여를 인정받는 사거리가 14에서 8.5로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>가로쉬</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">파쇄추 [E]</strong><ul>\n<li>사거리가 6.5에서 6으로 감소했습니다.</li>\n<li>탐색 범위가 2.5에서 2.25로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">비할 데 없는 힘</strong><ul>\n<li>원거리 추가 효과가 20%에서 15%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>가즈로</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">잘나가! 포탑 [Q]</strong><ul>\n<li>포탑의 생명력이 510에서 600으로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<h4>말가니스</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">괴저 기운 [W]</strong><ul>\n<li>이제 흡혈의 손길로부터 두 배의 효과를 받습니다.</li>\n<li>더 이상 3초 동안 방어력을 제공하지 않습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">티콘드리우스의 의지</strong><ul>\n<li>7레벨에서 1레벨로 옮겨졌습니다.</li>\n<li><b>개편:</b> 지옥 발톱으로 영웅을 적중시켜 피해량을 0.5 얻습니다. 처음 두 번의 할퀴기로 영웅 4명을 적중시키면 마지막 할퀴기가 2의 추가 피해량을 제공합니다. 40중첩에 도달하면 지옥 발톱이 상대의 생명력을 4% 흡수하고 0.5초 동안 추가로 기절시킵니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">흡혈의 오라</strong><ul>\n<li>1레벨에서 4레벨로 옮겨졌습니다.</li>\n<li>자신에 대한 치유량이 30%에서 40%로 증가했고, 근처 아군에 대한 치유량이 15%에서 20%로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">살게라스의 힘</strong><ul>\n<li>이제 괴저 기운을 사용하면 3초 동안 방어력을 25 제공합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">고통을 즐겨라</strong><ul>\n<li>4레벨에서 7레벨로 옮겨졌습니다.</li>\n<li>이제 괴저 기운이 3초 동안 25% 감속시킵니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>메디브</h4>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">기민함의 바람</strong><ul>\n<li>이동 속도 증가량이 50%에서 75%로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">까마귀의 지능</strong><ul>\n<li>추가 효과가 75%에서 125%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">까마귀 전령</strong><ul>\n<li>감속량이 30%에서 20%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">마력 투영</strong><ul>\n<li>기술 위력이 30%에서 35%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">수호의 원</strong><ul>\n<li>더 이상 의지 투영의 재사용 대기시간을 증가시키지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">티리스팔의 수호자</strong><ul>\n<li>이제 비전 균열의 사거리도 50% 증가시킵니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>무라딘</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">망치 들 시간! [Q]</strong><ul>\n<li>폭풍강타에 적중된 대상이 3초 이내에 죽으면 무라딘이 중첩을 5 얻습니다.</li>\n<li>관통에 필요한 중첩이 40에서 45로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">산왕</strong><ul>\n<li>드워프 도약의 재사용 대기시간이 2초 증가했습니다.</li>\n<li>천둥벼락의 재사용 대기시간이 2초 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>스랄</h4>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">낙뢰</strong><ul>\n<li>사망 시 잃는 중첩이 6에서 4로 감소했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">정기의 메아리</strong><ul>\n<li>신화 보상으로 얻는 연쇄 번개 튕김의 피해량이 85에서 70으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>티란데</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">달빛 화살 [E]</strong><ul>\n<li>적중된 대상이 3초 이내에 죽으면 티란데가 중첩을 1 얻습니다.</li>\n<li>이제 신화 보상이 사거리도 1 증가시킵니다.</li>\n<li>영웅 적중 시 달빛 화살의 피해량이 4%에서 3.5%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">파수 지휘관</strong><ul>\n<li>파수의 재사용 대기시간이 3초 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+   "heroes": [
+    {
+     "name": "아서스",
+     "heroId": "Arthas",
+     "heroIds": [
+      "Arthas"
+     ],
+     "changes": [
+      {
+       "name": "죽음의 고리",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "마나: 40.",
+         "html": "마나: 40.",
+         "added": false
+        },
+        {
+         "text": "재사용 대기시간: 9초.",
+         "html": "재사용 대기시간: 9초.",
+         "added": false
+        },
+        {
+         "text": "대상 적에게 피해를 164 입힙니다.",
+         "html": "대상 적에게 피해를 164 입힙니다.",
+         "added": false
+        },
+        {
+         "text": "자신에게 시전하여 생명력을 262 회복할 수 있습니다.",
+         "html": "자신에게 시전하여 생명력을 262 회복할 수 있습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Death Coil"
+      },
+      {
+       "name": "울부짖는 한파",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "마나: 50.",
+         "html": "마나: 50.",
+         "added": false
+        },
+        {
+         "text": "재사용 대기시간: 10초.",
+         "html": "재사용 대기시간: 10초.",
+         "added": false
+        },
+        {
+         "text": "대상 지역 내의 적을 1.25초 동안 이동 불가 상태로 만들고 피해를 68 입힙니다.",
+         "html": "대상 지역 내의 적을 1.25초 동안 이동 불가 상태로 만들고 피해를 68 입힙니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Howling Blast"
+      },
+      {
+       "name": "서리 폭풍",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "마나: 초당 13.",
+         "html": "마나: 초당 13.",
+         "added": false
+        },
+        {
+         "text": "재사용 대기시간: 1초.",
+         "html": "재사용 대기시간: 1초.",
+         "added": false
+        },
+        {
+         "text": "근처의 적에게 초당 피해를 36 입히고 이동 속도를 초당 10%씩, 최대 40%까지 중첩하여 감소시킵니다. 적중당한 영웅은 공격 속도 또한 초당 10%씩, 최대 40%까지 중첩하여 감소합니다. 서리 폭풍의 효과는 1.5초 동안 지속됩니다.",
+         "html": "근처의 적에게 초당 피해를 36 입히고 이동 속도를 초당 10%씩, 최대 40%까지 중첩하여 감소시킵니다. 적중당한 영웅은 공격 속도 또한 초당 10%씩, 최대 40%까지 중첩하여 감소합니다. 서리 폭풍의 효과는 1.5초 동안 지속됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Frozen Tempest"
+      },
+      {
+       "name": "사자의 군대",
+       "key": "R",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "충전 대기시간: 18초.",
+         "html": "충전 대기시간: 18초.",
+         "added": false
+        },
+        {
+         "text": "모든 충전 횟수를 소모하여 같은 수의 구울을 소환합니다. 구울은 15초 동안 유지되며 공격 시 피해를 20 입힙니다. 구울을 희생시켜 아서스의 생명력을 240 회복할 수 있습니다. 최대 6회까지 충전됩니다.",
+         "html": "모든 충전 횟수를 소모하여 같은 수의 구울을 소환합니다. 구울은 15초 동안 유지되며 공격 시 피해를 20 입힙니다. 구울을 희생시켜 아서스의 생명력을 240 회복할 수 있습니다. 최대 6회까지 충전됩니다.",
+         "added": false
+        },
+        {
+         "text": "근처에서 적 돌격병이 죽을 때마다 이 기술의 충전 대기시간이 1초 감소합니다. 적 영웅 처치 관여 시 이 기술의 충전 대기시간이 6초 감소합니다.",
+         "html": "근처에서 적 돌격병이 죽을 때마다 이 기술의 충전 대기시간이 1초 감소합니다. 적 영웅 처치 관여 시 이 기술의 충전 대기시간이 6초 감소합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Army of the Dead"
+      },
+      {
+       "name": "신드라고사 소환",
+       "key": "R",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "마나: 100.",
+         "html": "마나: 100.",
+         "added": false
+        },
+        {
+         "text": "재사용 대기시간: 100초.",
+         "html": "재사용 대기시간: 100초.",
+         "added": false
+        },
+        {
+         "text": "피해를 230 입히고 적을 4초 동안 60% 감속시킵니다. 또한 돌격병, 용병, 괴물, 구조물을 20초 동안 무력화합니다.",
+         "html": "피해를 230 입히고 적을 4초 동안 60% 감속시킵니다. 또한 돌격병, 용병, 괴물, 구조물을 20초 동안 무력화합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Summon Sindragosa"
+      },
+      {
+       "name": "서리한이 굶주렸다",
+       "key": "D",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "재사용 대기시간: 12초.",
+         "html": "재사용 대기시간: 12초.",
+         "added": false
+        },
+        {
+         "text": "사용 시 아서스의 다음 일반 공격이 즉시 적중하며 추가 피해를 71 입힙니다. 피해를 입히면 마나를 40 회복합니다.",
+         "html": "사용 시 아서스의 다음 일반 공격이 즉시 적중하며 추가 피해를 71 입힙니다. 피해를 입히면 마나를 40 회복합니다.",
+         "added": false
+        },
+        {
+         "text": "퀘스트: 서리한이 굶주렸다로 돌격병을 처치하거나 영웅을 맞히면 추가 피해량과 아서스의 일반 공격 피해량이 영구적으로 1씩 증가합니다.",
+         "html": "<b>퀘스트:</b> 서리한이 굶주렸다로 돌격병을 처치하거나 영웅을 맞히면 추가 피해량과 아서스의 일반 공격 피해량이 영구적으로 1씩 증가합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Frostmourne Hungers"
+      },
+      {
+       "name": "냉기의 형상",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "울부짖는 한파의 범위가 20% 증가합니다.",
+         "html": "울부짖는 한파의 범위가 20% 증가합니다.",
+         "added": false
+        },
+        {
+         "text": "퀘스트: 울부짖는 한파로 적 영웅을 이동 불가 상태로 만드십시오.",
+         "html": "<b>퀘스트:</b> 울부짖는 한파로 적 영웅을 이동 불가 상태로 만드십시오.",
+         "added": false
+        },
+        {
+         "text": "보상: 영웅 15명을 이동 불가 상태로 만들면 울부짖는 한파의 사거리가 20% 증가하고 경로에 있는 적도 맞힙니다.",
+         "html": "<b>보상:</b> 영웅 15명을 이동 불가 상태로 만들면 울부짖는 한파의 사거리가 20% 증가하고 경로에 있는 적도 맞힙니다.",
+         "added": false
+        },
+        {
+         "text": "보상: 영웅 30명을 이동 불가 상태로 만들면 죽음의 고리가 적중한 영웅을 0.75초 동안 50% 감속시킵니다.",
+         "html": "<b>보상:</b> 영웅 30명을 이동 불가 상태로 만들면 죽음의 고리가 적중한 영웅을 0.75초 동안 50% 감속시킵니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Frost Presence"
+      },
+      {
+       "name": "북풍",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "서리 폭풍이 2초 동안 활성화되면 아서스의 이동 속도가 10% 증가합니다.",
+         "html": "서리 폭풍이 2초 동안 활성화되면 아서스의 이동 속도가 10% 증가합니다.",
+         "added": false
+        },
+        {
+         "text": "지속 효과: 서리 폭풍의 감속 효과가 0.5초 더 지속되고 마나 소모량이 초당 4 감소합니다.",
+         "html": "<b>지속 효과:</b> 서리 폭풍의 감속 효과가 0.5초 더 지속되고 마나 소모량이 초당 4 감소합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Borean Winds"
+      },
+      {
+       "name": "단단한 얼음",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "5초마다 다음에 받는 적 영웅의 일반 공격에 대해 물리 방어력을 75 얻어 받는 피해를 75% 감소시킵니다. 최대 3회까지 충전됩니다.",
+         "html": "5초마다 다음에 받는 적 영웅의 일반 공격에 대해 물리 방어력을 75 얻어 받는 피해를 75% 감소시킵니다. 최대 3회까지 충전됩니다.",
+         "added": false
+        },
+        {
+         "text": "지속 효과: 아서스가 감속, 이동 불가, 기절 상태일 때 초당 생명력을 24 회복합니다.",
+         "html": "<b>지속 효과:</b> 아서스가 감속, 이동 불가, 기절 상태일 때 초당 생명력을 24 회복합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Rime"
+      },
+      {
+       "name": "부서진 갑옷",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "울부짖는 한파에 맞은 적 영웅의 방어력이 4초 동안 15 감소합니다.",
+         "html": "울부짖는 한파에 맞은 적 영웅의 방어력이 4초 동안 15 감소합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Shattered Armor"
+      },
+      {
+       "name": "얼음 발톱",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "서리 폭풍으로 영웅에게 피해를 입힐 때마다 2초 동안 공격 속도가 3% 증가하며, 최대 60%까지 증가합니다.",
+         "html": "서리 폭풍으로 영웅에게 피해를 입힐 때마다 2초 동안 공격 속도가 3% 증가하며, 최대 60%까지 증가합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Icy Talons"
+      },
+      {
+       "name": "냉기의 일격",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "서리한이 굶주렸다가 범위 내에 기술 피해를 115 추가로 입히고 적중한 영웅을 2초 동안 20% 감속시킵니다.",
+         "html": "서리한이 굶주렸다가 범위 내에 기술 피해를 115 추가로 입히고 적중한 영웅을 2초 동안 20% 감속시킵니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Frost Strike"
+      },
+      {
+       "name": "영원의 고리",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "죽음의 고리를 적에게 사용해도 치유 효과를 얻습니다. 죽음의 고리를 아서스에게 사용하면 치유량이 75% 추가로 증가하고 재사용 대기시간이 3초 감소합니다.",
+         "html": "죽음의 고리를 적에게 사용해도 치유 효과를 얻습니다. 죽음의 고리를 아서스에게 사용하면 치유량이 75% 추가로 증가하고 재사용 대기시간이 3초 감소합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Immortal Coil"
+      },
+      {
+       "name": "룬 전환",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "세 번째 일반 공격마다 아서스의 최대 생명력의 5%만큼 생명력을 회복합니다.",
+         "html": "세 번째 일반 공격마다 아서스의 최대 생명력의 5%만큼 생명력을 회복합니다.",
+         "added": false
+        },
+        {
+         "text": "지속 효과: 서리한이 굶주렸다의 중첩당 아서스의 최대 생명력이 10 증가합니다.",
+         "html": "<b>지속 효과:</b> 서리한이 굶주렸다의 중첩당 아서스의 최대 생명력이 10 증가합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Rune Tap"
+      },
+      {
+       "name": "얼음같은 인내력",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "재사용 대기시간: 35초.",
+         "html": "재사용 대기시간: 35초.",
+         "added": false
+        },
+        {
+         "text": "사용 시 3초 동안 방어력을 25 얻고, 아서스에게 적용되는 기절과 감속, 이동 불가 효과의 지속시간이 75% 감소합니다.",
+         "html": "사용 시 3초 동안 방어력을 25 얻고, 아서스에게 적용되는 기절과 감속, 이동 불가 효과의 지속시간이 75% 감소합니다.",
+         "added": false
+        },
+        {
+         "text": "울부짖는 한파로 이동 불가 상태로 만든 영웅 1명당 이 기술의 재사용 대기시간이 2초 감소합니다.",
+         "html": "울부짖는 한파로 이동 불가 상태로 만든 영웅 1명당 이 기술의 재사용 대기시간이 2초 감소합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Icebound Fortitude"
+      },
+      {
+       "name": "죽음군주",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "죽음의 고리를 적 영웅에게 사용하면 근처의 다른 적 영웅에게 죽음의 고리를 추가로 발사합니다.",
+         "html": "죽음의 고리를 적 영웅에게 사용하면 근처의 다른 적 영웅에게 죽음의 고리를 추가로 발사합니다.",
+         "added": false
+        },
+        {
+         "text": "지속 효과: 아서스의 현재 생명력이 낮을수록 죽음의 고리가 더 많은 피해를 입히며, 최대 50%의 추가 피해를 입힙니다.",
+         "html": "<b>지속 효과:</b> 아서스의 현재 생명력이 낮을수록 죽음의 고리가 더 많은 피해를 입히며, 최대 50%의 추가 피해를 입힙니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Deathlord"
+      },
+      {
+       "name": "죽음의 한기",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "서리한이 굶주렸다의 중첩당 울부짖는 한파의 피해량이 2 증가합니다.",
+         "html": "서리한이 굶주렸다의 중첩당 울부짖는 한파의 피해량이 2 증가합니다.",
+         "added": false
+        },
+        {
+         "text": "생명력이 50% 미만인 영웅에게 울부짖는 한파가 100%의 추가 피해를 입히고 0.25초 동안 추가로 이동 불가 상태로 만듭니다.",
+         "html": "생명력이 50% 미만인 영웅에게 울부짖는 한파가 100%의 추가 피해를 입히고 0.25초 동안 추가로 이동 불가 상태로 만듭니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Deathchill"
+      },
+      {
+       "name": "매서운 추위",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "적이 서리 폭풍으로 피해를 입는 1초마다 추가 피해량이 15%씩 증가하며, 최대 75%까지 증가합니다.",
+         "html": "적이 서리 폭풍으로 피해를 입는 1초마다 추가 피해량이 15%씩 증가하며, 최대 75%까지 증가합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Biting Cold"
+      },
+      {
+       "name": "냉혹한 겨울",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "서리 폭풍 안에 2.5초 동안 머무른 적 영웅은 1.25초 동안 이동 불가 상태가 되고, 아서스의 최대 생명력의 3%만큼 생명력을 회복시킵니다. 이 효과는 대상마다 8초의 재사용 대기시간을 가집니다.",
+         "html": "서리 폭풍 안에 2.5초 동안 머무른 적 영웅은 1.25초 동안 이동 불가 상태가 되고, 아서스의 최대 생명력의 3%만큼 생명력을 회복시킵니다. 이 효과는 대상마다 8초의 재사용 대기시간을 가집니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Remorseless Winter"
+      },
+      {
+       "name": "서리한이 포식한다",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "서리한이 굶주렸다의 재사용 대기시간이 6초 감소합니다. 아서스는 서리한이 굶주렸다로 입힌 일반 공격 피해량의 75%만큼 생명력을 회복합니다.",
+         "html": "서리한이 굶주렸다의 재사용 대기시간이 6초 감소합니다. 아서스는 서리한이 굶주렸다로 입힌 일반 공격 피해량의 75%만큼 생명력을 회복합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Frostmourne Feeds"
+      },
+      {
+       "name": "대마법 보호막",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "재사용 대기시간 60초.",
+         "html": "재사용 대기시간 60초.",
+         "added": false
+        },
+        {
+         "text": "사용 시 4초 동안 아서스가 기술 피해에 면역이 되고, 막아낸 피해량의 25%만큼 생명력을 회복합니다.",
+         "html": "사용 시 4초 동안 아서스가 기술 피해에 면역이 되고, 막아낸 피해량의 25%만큼 생명력을 회복합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Anti-Magic Shell"
+      },
+      {
+       "name": "노스렌드의 대군",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "사자의 군대의 충전 재사용 대기시간이 5초 감소합니다.",
+         "html": "사자의 군대의 충전 재사용 대기시간이 5초 감소합니다.",
+         "added": false
+        },
+        {
+         "text": "충전을 소모할 때마다 근처의 적을 공격하는 구울이 추가로 소환됩니다. 이 구울은 희생시킬 수 없습니다.",
+         "html": "충전을 소모할 때마다 근처의 적을 공격하는 구울이 추가로 소환됩니다. 이 구울은 희생시킬 수 없습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Legion of Northrend"
+      },
+      {
+       "name": "절대 영점",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "신드라고사가 두 배 멀리 날아갑니다. 적 영웅은 2.5초 동안 이동 불가 상태가 된 후 4초 동안 60% 감속합니다.",
+         "html": "신드라고사가 두 배 멀리 날아갑니다. 적 영웅은 2.5초 동안 이동 불가 상태가 된 후 4초 동안 60% 감속합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Absolute Zero"
+      },
+      {
+       "name": "죽음의 서약",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "서리한이 굶주렸다의 중첩이 즉시 두 배가 되지만, 더 이상 영웅을 적중시키거나 돌격병을 처치해도 중첩을 얻지 않습니다.",
+         "html": "서리한이 굶주렸다의 중첩이 즉시 두 배가 되지만, 더 이상 영웅을 적중시키거나 돌격병을 처치해도 중첩을 얻지 않습니다.",
+         "added": false
+        },
+        {
+         "text": "지속 효과: 적 영웅 처치 관여 시 서리한이 굶주렸다의 중첩을 2 얻습니다.",
+         "html": "<b>지속 효과:</b> 적 영웅 처치 관여 시 서리한이 굶주렸다의 중첩을 2 얻습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Death Pact"
+      },
+      {
+       "name": "얼음길",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "사용 시 즉시 탈것에 탑승하며 이동 속도가 10% 추가로 증가합니다. 피해를 입어도 아서스가 이 탈것에서 내리지 않습니다. 최대 5초 동안 지속됩니다.",
+         "html": "사용 시 즉시 탈것에 탑승하며 이동 속도가 10% 추가로 증가합니다. 피해를 입어도 아서스가 이 탈것에서 내리지 않습니다. 최대 5초 동안 지속됩니다.",
+         "added": false
+        },
+        {
+         "text": "아서스가 탈것에서 내리면 근처의 모든 적을 2초 동안 30% 감속시키고 66의 피해를 입힙니다.",
+         "html": "아서스가 탈것에서 내리면 근처의 모든 적을 2초 동안 30% 감속시키고 66의 피해를 입힙니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Path of Frost"
+      }
+     ],
+     "html": "<p>아서스가 전면 개편되었습니다! 모든 기술과 특성을 아래에 정리했습니다.</p>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">죽음의 고리 [Q]</strong><ul>\n<li>마나: 40.</li>\n<li>재사용 대기시간: 9초.</li>\n<li>대상 적에게 피해를 164 입힙니다.</li>\n<li>자신에게 시전하여 생명력을 262 회복할 수 있습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">울부짖는 한파 [W]</strong><ul>\n<li>마나: 50.</li>\n<li>재사용 대기시간: 10초.</li>\n<li>대상 지역 내의 적을 1.25초 동안 이동 불가 상태로 만들고 피해를 68 입힙니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">서리 폭풍 [E]</strong><ul>\n<li>마나: 초당 13.</li>\n<li>재사용 대기시간: 1초.</li>\n<li>근처의 적에게 초당 피해를 36 입히고 이동 속도를 초당 10%씩, 최대 40%까지 중첩하여 감소시킵니다. 적중당한 영웅은 공격 속도 또한 초당 10%씩, 최대 40%까지 중첩하여 감소합니다. 서리 폭풍의 효과는 1.5초 동안 지속됩니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">사자의 군대 [R]</strong><ul>\n<li>충전 대기시간: 18초.</li>\n<li>모든 충전 횟수를 소모하여 같은 수의 구울을 소환합니다. 구울은 15초 동안 유지되며 공격 시 피해를 20 입힙니다. 구울을 희생시켜 아서스의 생명력을 240 회복할 수 있습니다. 최대 6회까지 충전됩니다.</li>\n<li>근처에서 적 돌격병이 죽을 때마다 이 기술의 충전 대기시간이 1초 감소합니다. 적 영웅 처치 관여 시 이 기술의 충전 대기시간이 6초 감소합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">신드라고사 소환 [R]</strong><ul>\n<li>마나: 100.</li>\n<li>재사용 대기시간: 100초.</li>\n<li>피해를 230 입히고 적을 4초 동안 60% 감속시킵니다. 또한 돌격병, 용병, 괴물, 구조물을 20초 동안 무력화합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">서리한이 굶주렸다 [D]</strong><ul>\n<li>재사용 대기시간: 12초.</li>\n<li>사용 시 아서스의 다음 일반 공격이 즉시 적중하며 추가 피해를 71 입힙니다. 피해를 입히면 마나를 40 회복합니다.</li>\n<li><b>퀘스트:</b> 서리한이 굶주렸다로 돌격병을 처치하거나 영웅을 맞히면 추가 피해량과 아서스의 일반 공격 피해량이 영구적으로 1씩 증가합니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">냉기의 형상</strong><ul>\n<li>울부짖는 한파의 범위가 20% 증가합니다.</li>\n<li><b>퀘스트:</b> 울부짖는 한파로 적 영웅을 이동 불가 상태로 만드십시오.</li>\n<li><b>보상:</b> 영웅 15명을 이동 불가 상태로 만들면 울부짖는 한파의 사거리가 20% 증가하고 경로에 있는 적도 맞힙니다.</li>\n<li><b>보상:</b> 영웅 30명을 이동 불가 상태로 만들면 죽음의 고리가 적중한 영웅을 0.75초 동안 50% 감속시킵니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">북풍</strong><ul>\n<li>서리 폭풍이 2초 동안 활성화되면 아서스의 이동 속도가 10% 증가합니다.</li>\n<li><b>지속 효과:</b> 서리 폭풍의 감속 효과가 0.5초 더 지속되고 마나 소모량이 초당 4 감소합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">단단한 얼음</strong><ul>\n<li>5초마다 다음에 받는 적 영웅의 일반 공격에 대해 물리 방어력을 75 얻어 받는 피해를 75% 감소시킵니다. 최대 3회까지 충전됩니다.</li>\n<li><b>지속 효과:</b> 아서스가 감속, 이동 불가, 기절 상태일 때 초당 생명력을 24 회복합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">부서진 갑옷</strong><ul>\n<li>울부짖는 한파에 맞은 적 영웅의 방어력이 4초 동안 15 감소합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">얼음 발톱</strong><ul>\n<li>서리 폭풍으로 영웅에게 피해를 입힐 때마다 2초 동안 공격 속도가 3% 증가하며, 최대 60%까지 증가합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">냉기의 일격</strong><ul>\n<li>서리한이 굶주렸다가 범위 내에 기술 피해를 115 추가로 입히고 적중한 영웅을 2초 동안 20% 감속시킵니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">영원의 고리</strong><ul>\n<li>죽음의 고리를 적에게 사용해도 치유 효과를 얻습니다. 죽음의 고리를 아서스에게 사용하면 치유량이 75% 추가로 증가하고 재사용 대기시간이 3초 감소합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">룬 전환</strong><ul>\n<li>세 번째 일반 공격마다 아서스의 최대 생명력의 5%만큼 생명력을 회복합니다.</li>\n<li><b>지속 효과:</b> 서리한이 굶주렸다의 중첩당 아서스의 최대 생명력이 10 증가합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">얼음같은 인내력</strong><ul>\n<li>재사용 대기시간: 35초.</li>\n<li>사용 시 3초 동안 방어력을 25 얻고, 아서스에게 적용되는 기절과 감속, 이동 불가 효과의 지속시간이 75% 감소합니다.</li>\n<li>울부짖는 한파로 이동 불가 상태로 만든 영웅 1명당 이 기술의 재사용 대기시간이 2초 감소합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">죽음군주</strong><ul>\n<li>죽음의 고리를 적 영웅에게 사용하면 근처의 다른 적 영웅에게 죽음의 고리를 추가로 발사합니다.</li>\n<li><b>지속 효과:</b> 아서스의 현재 생명력이 낮을수록 죽음의 고리가 더 많은 피해를 입히며, 최대 50%의 추가 피해를 입힙니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">죽음의 한기</strong><ul>\n<li>서리한이 굶주렸다의 중첩당 울부짖는 한파의 피해량이 2 증가합니다.</li>\n<li>생명력이 50% 미만인 영웅에게 울부짖는 한파가 100%의 추가 피해를 입히고 0.25초 동안 추가로 이동 불가 상태로 만듭니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">매서운 추위</strong><ul>\n<li>적이 서리 폭풍으로 피해를 입는 1초마다 추가 피해량이 15%씩 증가하며, 최대 75%까지 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">냉혹한 겨울</strong><ul>\n<li>서리 폭풍 안에 2.5초 동안 머무른 적 영웅은 1.25초 동안 이동 불가 상태가 되고, 아서스의 최대 생명력의 3%만큼 생명력을 회복시킵니다. 이 효과는 대상마다 8초의 재사용 대기시간을 가집니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">서리한이 포식한다</strong><ul>\n<li>서리한이 굶주렸다의 재사용 대기시간이 6초 감소합니다. 아서스는 서리한이 굶주렸다로 입힌 일반 공격 피해량의 75%만큼 생명력을 회복합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">대마법 보호막</strong><ul>\n<li>재사용 대기시간 60초.</li>\n<li>사용 시 4초 동안 아서스가 기술 피해에 면역이 되고, 막아낸 피해량의 25%만큼 생명력을 회복합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">노스렌드의 대군</strong><ul>\n<li>사자의 군대의 충전 재사용 대기시간이 5초 감소합니다.</li>\n<li>충전을 소모할 때마다 근처의 적을 공격하는 구울이 추가로 소환됩니다. 이 구울은 희생시킬 수 없습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">절대 영점</strong><ul>\n<li>신드라고사가 두 배 멀리 날아갑니다. 적 영웅은 2.5초 동안 이동 불가 상태가 된 후 4초 동안 60% 감속합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">죽음의 서약</strong><ul>\n<li>서리한이 굶주렸다의 중첩이 즉시 두 배가 되지만, 더 이상 영웅을 적중시키거나 돌격병을 처치해도 중첩을 얻지 않습니다.</li>\n<li><b>지속 효과:</b> 적 영웅 처치 관여 시 서리한이 굶주렸다의 중첩을 2 얻습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">얼음길</strong><ul>\n<li>사용 시 즉시 탈것에 탑승하며 이동 속도가 10% 추가로 증가합니다. 피해를 입어도 아서스가 이 탈것에서 내리지 않습니다. 최대 5초 동안 지속됩니다.</li>\n<li>아서스가 탈것에서 내리면 근처의 모든 적을 2초 동안 30% 감속시키고 66의 피해를 입힙니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Arthas"
+    },
+    {
+     "name": "첸",
+     "heroId": "Chen",
+     "heroIds": [
+      "Chen"
+     ],
+     "changes": [
+      {
+       "name": "술통 부수기",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "불의 숨결의 초기 피해량이 85에서 40으로 감소했습니다.",
+         "html": "불의 숨결의 초기 피해량이 85에서 40으로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "불의 숨결의 지속시간이 3초에서 6초로 증가했습니다.",
+         "html": "불의 숨결의 지속시간이 3초에서 6초로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "불의 숨결이 더 이상 에너지를 소모하지 않습니다.",
+         "html": "불의 숨결이 더 이상 에너지를 소모하지 않습니다.",
+         "added": false
+        },
+        {
+         "text": "술통 부수기의 에너지 소모량이 30에서 35로 증가했습니다.",
+         "html": "술통 부수기의 에너지 소모량이 30에서 35로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Keg Smash"
+      },
+      {
+       "name": "강화주",
+       "key": "D",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "이제 술을 마시면 아주 짧은 시간 동안 추가 명령이 중단됩니다.",
+         "html": "이제 술을 마시면 아주 짧은 시간 동안 추가 명령이 중단됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Fortifying Brew"
+      },
+      {
+       "name": "커져가는 불길",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "4레벨에서 1레벨로 옮겨졌습니다.",
+         "html": "4레벨에서 1레벨로 옮겨졌습니다.",
+         "added": false
+        },
+        {
+         "text": "개편: 퀘스트: 불의 숨결의 지속 피해로 영웅을 적중시켜 중첩을 얻습니다. 중첩당 피해량이 0.25 증가합니다. 피해량 20 달성 시 술통 부수기가 원거리 기술이 됩니다. 신화 보상: 피해량 75 달성 시 불의 숨결이 적의 방어력을 20 감소시키고 첸의 일반 공격으로 지속시간이 갱신됩니다.",
+         "html": "<b>개편:</b> 퀘스트: 불의 숨결의 지속 피해로 영웅을 적중시켜 중첩을 얻습니다. 중첩당 피해량이 0.25 증가합니다. 피해량 20 달성 시 술통 부수기가 원거리 기술이 됩니다. 신화 보상: 피해량 75 달성 시 불의 숨결이 적의 방어력을 20 감소시키고 첸의 일반 공격으로 지속시간이 갱신됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Accumulating Flames"
+      },
+      {
+       "name": "호랑이의 눈",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "1레벨에서 4레벨로 옮겨졌습니다.",
+         "html": "1레벨에서 4레벨로 옮겨졌습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Eye of the Tiger"
+      },
+      {
+       "name": "교묘한 싸움꾼",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "이동 속도가 30%에서 20%로 감소했습니다.",
+         "html": "이동 속도가 30%에서 20%로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Elusive Brawler"
+      },
+      {
+       "name": "술통 구르기",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 50초에서 60초로 증가했습니다.",
+         "html": "재사용 대기시간이 50초에서 60초로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Wandering Keg"
+      },
+      {
+       "name": "급소 차기",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "감속 지속시간이 1초에서 1.5초로 증가했습니다.",
+         "html": "감속 지속시간이 1초에서 1.5초로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Pressure Point"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">술통 부수기 [W]</strong><ul>\n<li>불의 숨결의 초기 피해량이 85에서 40으로 감소했습니다.</li>\n<li>불의 숨결의 지속시간이 3초에서 6초로 증가했습니다.</li>\n<li>불의 숨결이 더 이상 에너지를 소모하지 않습니다.</li>\n<li>술통 부수기의 에너지 소모량이 30에서 35로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">강화주 [D]</strong><ul>\n<li>이제 술을 마시면 아주 짧은 시간 동안 추가 명령이 중단됩니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">커져가는 불길</strong><ul>\n<li>4레벨에서 1레벨로 옮겨졌습니다.</li>\n<li><b>개편:</b> 퀘스트: 불의 숨결의 지속 피해로 영웅을 적중시켜 중첩을 얻습니다. 중첩당 피해량이 0.25 증가합니다. 피해량 20 달성 시 술통 부수기가 원거리 기술이 됩니다. 신화 보상: 피해량 75 달성 시 불의 숨결이 적의 방어력을 20 감소시키고 첸의 일반 공격으로 지속시간이 갱신됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">호랑이의 눈</strong><ul>\n<li>1레벨에서 4레벨로 옮겨졌습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">교묘한 싸움꾼</strong><ul>\n<li>이동 속도가 30%에서 20%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">술통 구르기</strong><ul>\n<li>재사용 대기시간이 50초에서 60초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">급소 차기</strong><ul>\n<li>감속 지속시간이 1초에서 1.5초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Chen"
+    },
+    {
+     "name": "데스윙",
+     "heroId": "Deathwing",
+     "heroIds": [
+      "Deathwing"
+     ],
+     "changes": [
+      {
+       "name": "맹격",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 5초에서 6초로 증가했습니다.",
+         "html": "재사용 대기시간이 5초에서 6초로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Onslaught"
+      },
+      {
+       "name": "용의 비상",
+       "key": "Z",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 15초에서 20초로 증가했습니다.",
+         "html": "재사용 대기시간이 15초에서 20초로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Dragonflight"
+      },
+      {
+       "name": "파괴를 목도하라",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "지속시간이 5초에서 3.5초로 감소했습니다.",
+         "html": "지속시간이 5초에서 3.5초로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Gaze onto Destruction"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">맹격 [E]</strong><ul>\n<li>재사용 대기시간이 5초에서 6초로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">용의 비상 [Z]</strong><ul>\n<li>재사용 대기시간이 15초에서 20초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">파괴를 목도하라</strong><ul>\n<li>지속시간이 5초에서 3.5초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Deathwing"
+    },
+    {
+     "name": "폴스타트",
+     "heroId": "Falstad",
+     "heroIds": [
+      "Falstad"
+     ],
+     "changes": [
+      {
+       "name": "하늘의 지배자",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "처치 관여를 인정받는 사거리가 14에서 8.5로 감소했습니다.",
+         "html": "처치 관여를 인정받는 사거리가 14에서 8.5로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Frequent Flyer"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">하늘의 지배자</strong><ul>\n<li>처치 관여를 인정받는 사거리가 14에서 8.5로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Falstad"
+    },
+    {
+     "name": "가로쉬",
+     "heroId": "Garrosh",
+     "heroIds": [
+      "Garrosh"
+     ],
+     "changes": [
+      {
+       "name": "파쇄추",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "사거리가 6.5에서 6으로 감소했습니다.",
+         "html": "사거리가 6.5에서 6으로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "탐색 범위가 2.5에서 2.25로 감소했습니다.",
+         "html": "탐색 범위가 2.5에서 2.25로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Wrecking Ball"
+      },
+      {
+       "name": "비할 데 없는 힘",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "원거리 추가 효과가 20%에서 15%로 감소했습니다.",
+         "html": "원거리 추가 효과가 20%에서 15%로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Unrivaled Strength"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">파쇄추 [E]</strong><ul>\n<li>사거리가 6.5에서 6으로 감소했습니다.</li>\n<li>탐색 범위가 2.5에서 2.25로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">비할 데 없는 힘</strong><ul>\n<li>원거리 추가 효과가 20%에서 15%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Garrosh"
+    },
+    {
+     "name": "가즈로",
+     "heroId": "Tinker",
+     "heroIds": [
+      "Tinker"
+     ],
+     "changes": [
+      {
+       "name": "잘나가! 포탑",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "포탑의 생명력이 510에서 600으로 증가했습니다.",
+         "html": "포탑의 생명력이 510에서 600으로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Rock-It! Turret"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">잘나가! 포탑 [Q]</strong><ul>\n<li>포탑의 생명력이 510에서 600으로 증가했습니다.</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Gazlowe"
+    },
+    {
+     "name": "말가니스",
+     "heroId": "MalGanis",
+     "heroIds": [
+      "MalGanis"
+     ],
+     "changes": [
+      {
+       "name": "괴저 기운",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "이제 흡혈의 손길로부터 두 배의 효과를 받습니다.",
+         "html": "이제 흡혈의 손길로부터 두 배의 효과를 받습니다.",
+         "added": false
+        },
+        {
+         "text": "더 이상 3초 동안 방어력을 제공하지 않습니다.",
+         "html": "더 이상 3초 동안 방어력을 제공하지 않습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Necrotic Embrace"
+      },
+      {
+       "name": "티콘드리우스의 의지",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "7레벨에서 1레벨로 옮겨졌습니다.",
+         "html": "7레벨에서 1레벨로 옮겨졌습니다.",
+         "added": false
+        },
+        {
+         "text": "개편: 지옥 발톱으로 영웅을 적중시켜 피해량을 0.5 얻습니다. 처음 두 번의 할퀴기로 영웅 4명을 적중시키면 마지막 할퀴기가 2의 추가 피해량을 제공합니다. 40중첩에 도달하면 지옥 발톱이 상대의 생명력을 4% 흡수하고 0.5초 동안 추가로 기절시킵니다.",
+         "html": "<b>개편:</b> 지옥 발톱으로 영웅을 적중시켜 피해량을 0.5 얻습니다. 처음 두 번의 할퀴기로 영웅 4명을 적중시키면 마지막 할퀴기가 2의 추가 피해량을 제공합니다. 40중첩에 도달하면 지옥 발톱이 상대의 생명력을 4% 흡수하고 0.5초 동안 추가로 기절시킵니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Will of Tichondrius"
+      },
+      {
+       "name": "흡혈의 오라",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "1레벨에서 4레벨로 옮겨졌습니다.",
+         "html": "1레벨에서 4레벨로 옮겨졌습니다.",
+         "added": false
+        },
+        {
+         "text": "자신에 대한 치유량이 30%에서 40%로 증가했고, 근처 아군에 대한 치유량이 15%에서 20%로 증가했습니다.",
+         "html": "자신에 대한 치유량이 30%에서 40%로 증가했고, 근처 아군에 대한 치유량이 15%에서 20%로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Vampiric Aura"
+      },
+      {
+       "name": "살게라스의 힘",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "이제 괴저 기운을 사용하면 3초 동안 방어력을 25 제공합니다.",
+         "html": "이제 괴저 기운을 사용하면 3초 동안 방어력을 25 제공합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Might of Sargeras"
+      },
+      {
+       "name": "고통을 즐겨라",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "4레벨에서 7레벨로 옮겨졌습니다.",
+         "html": "4레벨에서 7레벨로 옮겨졌습니다.",
+         "added": false
+        },
+        {
+         "text": "이제 괴저 기운이 3초 동안 25% 감속시킵니다.",
+         "html": "이제 괴저 기운이 3초 동안 25% 감속시킵니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Fueled by Torment"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">괴저 기운 [W]</strong><ul>\n<li>이제 흡혈의 손길로부터 두 배의 효과를 받습니다.</li>\n<li>더 이상 3초 동안 방어력을 제공하지 않습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">티콘드리우스의 의지</strong><ul>\n<li>7레벨에서 1레벨로 옮겨졌습니다.</li>\n<li><b>개편:</b> 지옥 발톱으로 영웅을 적중시켜 피해량을 0.5 얻습니다. 처음 두 번의 할퀴기로 영웅 4명을 적중시키면 마지막 할퀴기가 2의 추가 피해량을 제공합니다. 40중첩에 도달하면 지옥 발톱이 상대의 생명력을 4% 흡수하고 0.5초 동안 추가로 기절시킵니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">흡혈의 오라</strong><ul>\n<li>1레벨에서 4레벨로 옮겨졌습니다.</li>\n<li>자신에 대한 치유량이 30%에서 40%로 증가했고, 근처 아군에 대한 치유량이 15%에서 20%로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">살게라스의 힘</strong><ul>\n<li>이제 괴저 기운을 사용하면 3초 동안 방어력을 25 제공합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">고통을 즐겨라</strong><ul>\n<li>4레벨에서 7레벨로 옮겨졌습니다.</li>\n<li>이제 괴저 기운이 3초 동안 25% 감속시킵니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Mal'Ganis"
+    },
+    {
+     "name": "메디브",
+     "heroId": "Medivh",
+     "heroIds": [
+      "Medivh"
+     ],
+     "changes": [
+      {
+       "name": "기민함의 바람",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "이동 속도 증가량이 50%에서 75%로 증가했습니다.",
+         "html": "이동 속도 증가량이 50%에서 75%로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Winds of Celerity"
+      },
+      {
+       "name": "까마귀의 지능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "추가 효과가 75%에서 125%로 증가했습니다.",
+         "html": "추가 효과가 75%에서 125%로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Raven's Intellect"
+      },
+      {
+       "name": "까마귀 전령",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "감속량이 30%에서 20%로 감소했습니다.",
+         "html": "감속량이 30%에서 20%로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Raven Familiar"
+      },
+      {
+       "name": "마력 투영",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "기술 위력이 30%에서 35%로 증가했습니다.",
+         "html": "기술 위력이 30%에서 35%로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Force of Magic"
+      },
+      {
+       "name": "수호의 원",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "더 이상 의지 투영의 재사용 대기시간을 증가시키지 않습니다.",
+         "html": "더 이상 의지 투영의 재사용 대기시간을 증가시키지 않습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Circle of Protection"
+      },
+      {
+       "name": "티리스팔의 수호자",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "이제 비전 균열의 사거리도 50% 증가시킵니다.",
+         "html": "이제 비전 균열의 사거리도 50% 증가시킵니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Guardian of Tirisfal"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">기민함의 바람</strong><ul>\n<li>이동 속도 증가량이 50%에서 75%로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">까마귀의 지능</strong><ul>\n<li>추가 효과가 75%에서 125%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">까마귀 전령</strong><ul>\n<li>감속량이 30%에서 20%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">마력 투영</strong><ul>\n<li>기술 위력이 30%에서 35%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">수호의 원</strong><ul>\n<li>더 이상 의지 투영의 재사용 대기시간을 증가시키지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">티리스팔의 수호자</strong><ul>\n<li>이제 비전 균열의 사거리도 50% 증가시킵니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Medivh"
+    },
+    {
+     "name": "무라딘",
+     "heroId": "Muradin",
+     "heroIds": [
+      "Muradin"
+     ],
+     "changes": [
+      {
+       "name": "망치 들 시간!",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "폭풍강타에 적중된 대상이 3초 이내에 죽으면 무라딘이 중첩을 5 얻습니다.",
+         "html": "폭풍강타에 적중된 대상이 3초 이내에 죽으면 무라딘이 중첩을 5 얻습니다.",
+         "added": false
+        },
+        {
+         "text": "관통에 필요한 중첩이 40에서 45로 증가했습니다.",
+         "html": "관통에 필요한 중첩이 40에서 45로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "It's Hammer Time!"
+      },
+      {
+       "name": "산왕",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "드워프 도약의 재사용 대기시간이 2초 증가했습니다.",
+         "html": "드워프 도약의 재사용 대기시간이 2초 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "천둥벼락의 재사용 대기시간이 2초 증가했습니다.",
+         "html": "천둥벼락의 재사용 대기시간이 2초 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Mountain King"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">망치 들 시간! [Q]</strong><ul>\n<li>폭풍강타에 적중된 대상이 3초 이내에 죽으면 무라딘이 중첩을 5 얻습니다.</li>\n<li>관통에 필요한 중첩이 40에서 45로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">산왕</strong><ul>\n<li>드워프 도약의 재사용 대기시간이 2초 증가했습니다.</li>\n<li>천둥벼락의 재사용 대기시간이 2초 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Muradin"
+    },
+    {
+     "name": "스랄",
+     "heroId": "Thrall",
+     "heroIds": [
+      "Thrall"
+     ],
+     "changes": [
+      {
+       "name": "낙뢰",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "사망 시 잃는 중첩이 6에서 4로 감소했습니다.",
+         "html": "사망 시 잃는 중첩이 6에서 4로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Crash Lightning"
+      },
+      {
+       "name": "정기의 메아리",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "신화 보상으로 얻는 연쇄 번개 튕김의 피해량이 85에서 70으로 감소했습니다.",
+         "html": "신화 보상으로 얻는 연쇄 번개 튕김의 피해량이 85에서 70으로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Echo of the Elements"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">낙뢰</strong><ul>\n<li>사망 시 잃는 중첩이 6에서 4로 감소했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">정기의 메아리</strong><ul>\n<li>신화 보상으로 얻는 연쇄 번개 튕김의 피해량이 85에서 70으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Thrall"
+    },
+    {
+     "name": "티란데",
+     "heroId": "Tyrande",
+     "heroIds": [
+      "Tyrande"
+     ],
+     "changes": [
+      {
+       "name": "달빛 화살",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "적중된 대상이 3초 이내에 죽으면 티란데가 중첩을 1 얻습니다.",
+         "html": "적중된 대상이 3초 이내에 죽으면 티란데가 중첩을 1 얻습니다.",
+         "added": false
+        },
+        {
+         "text": "이제 신화 보상이 사거리도 1 증가시킵니다.",
+         "html": "이제 신화 보상이 사거리도 1 증가시킵니다.",
+         "added": false
+        },
+        {
+         "text": "영웅 적중 시 달빛 화살의 피해량이 4%에서 3.5%로 감소했습니다.",
+         "html": "영웅 적중 시 달빛 화살의 피해량이 4%에서 3.5%로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Lunar Flare"
+      },
+      {
+       "name": "파수 지휘관",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "파수의 재사용 대기시간이 3초 증가했습니다.",
+         "html": "파수의 재사용 대기시간이 3초 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Commander of Sentinels"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">달빛 화살 [E]</strong><ul>\n<li>적중된 대상이 3초 이내에 죽으면 티란데가 중첩을 1 얻습니다.</li>\n<li>이제 신화 보상이 사거리도 1 증가시킵니다.</li>\n<li>영웅 적중 시 달빛 화살의 피해량이 4%에서 3.5%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">파수 지휘관</strong><ul>\n<li>파수의 재사용 대기시간이 3초 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Tyrande"
+    }
+   ],
+   "nameEn": "Balance Update"
+  },
+  {
+   "name": "버그 수정",
+   "key": "bugs",
+   "html": "<h3>일반</h3>\n<ul>\n<li>정지 불가 상태의 대상이 실명에 면역이 되지 않던 문제를 수정했습니다.</li>\n</ul>\n<h3>전장</h3>\n<ul>\n<li><strong class=\"pn-h\">일반</strong><ul>\n<li>우두머리가 소환 유닛을 공격하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">블랙하트 항만</strong><ul>\n<li>인공지능이 주화를 제대로 바치지 못하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n<h3>영웅</h3>\n<ul>\n<li><strong class=\"pn-h\">디바</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">방어 매트릭스 [W]</strong><ul>\n<li>이제 D.Va의 전투 로봇이 AI의 조종을 받을 때 방어 매트릭스의 대상을 변경합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">데스윙</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">용의 비상 [Z]</strong><ul>\n<li>피해를 입었을 때 용의 비상의 재사용 대기시간이 증가하는 효과가 재사용 대기시간이 4초 미만일 때만 적용되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">가로쉬</strong><ul>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">살상의 기회</strong><ul>\n<li>살상의 기회가 피의 갈증의 재사용 대기시간을 완전히 초기화하지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">굴단</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">생명력 흡수 [W]</strong><ul>\n<li>대상이 사거리를 벗어나도 생명력 흡수가 항상 중단되지는 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">제이나</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">향상된 얼음 방패 [1]</strong><ul>\n<li>AI가 조종하는 제이나가 향상된 얼음 방패와 얼음처럼 차갑게를 올바르게 사용하지 못하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">캘타스</strong><ul>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">환생</strong><ul>\n<li>AI가 조종하는 캘타스가 환생을 올바르게 사용하지 못하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">리 리</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">운룡 [W]</strong><ul>\n<li>운룡이 전장의 안개 속에서 대상에게 피해를 입힐 때 모습이 드러나지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">메디브</strong><ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">변이 폭탄</strong><ul>\n<li>AI가 조종하는 메디브가 변이 폭탄을 올바르게 사용하지 못하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">나지보</strong><ul>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">미신</strong><ul>\n<li>미신의 시체 거미가 입히는 피해가 빈 기술로 표시되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">사무로</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">환영 복제 [Q]</strong><ul>\n<li>이제 환영 복제의 환영이 생성될 때 사무로의 공격 이동 목표 지점으로 이동하지 않습니다.</li>\n<li>이제 사무로의 AI가 활성화되면 환영 복제의 환영도 AI가 올바르게 활성화됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">스랄</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">야수 정령 [W]</strong><ul>\n<li>야수 정령이 곧 사라지려 할 때 지속시간이 올바르게 연장되지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<p><strong><a href=\"https://us.forums.blizzard.com/en/heroes/\" target=\"_blank\">공식 히어로즈 오브 더 스톰 포럼에서 다른 플레이어들과 이 글에 대해 이야기를 나누려면 여기를 클릭하십시오</a>.</strong></p>\n<p><strong><img alt=\"\" class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/g6/G6G0N80EOC941426801305139.png\"/></strong></p>",
+   "items": [
+    {
+     "name": "블랙하트 항만",
+     "battleground": "blackheart_s_bay",
+     "html": "<strong class=\"pn-h\">블랙하트 항만</strong>\n<ul>\n<li>인공지능이 주화를 제대로 바치지 못하던 문제를 수정했습니다.</li>\n</ul>",
+     "under": "Maps",
+     "nameEn": "Blackheart's Bay"
+    },
+    {
+     "name": "디바",
+     "heroId": "DVa",
+     "heroIds": [
+      "DVa"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">디바</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">방어 매트릭스 [W]</strong><ul>\n<li>이제 D.Va의 전투 로봇이 AI의 조종을 받을 때 방어 매트릭스의 대상을 변경합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "방어 매트릭스",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "이제 D.Va의 전투 로봇이 AI의 조종을 받을 때 방어 매트릭스의 대상을 변경합니다.",
+         "html": "이제 D.Va의 전투 로봇이 AI의 조종을 받을 때 방어 매트릭스의 대상을 변경합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Defense Matrix"
+      }
+     ],
+     "nameEn": "D.Va"
+    },
+    {
+     "name": "데스윙",
+     "heroId": "Deathwing",
+     "heroIds": [
+      "Deathwing"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">데스윙</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">용의 비상 [Z]</strong><ul>\n<li>피해를 입었을 때 용의 비상의 재사용 대기시간이 증가하는 효과가 재사용 대기시간이 4초 미만일 때만 적용되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "용의 비상",
+       "key": "Z",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "피해를 입었을 때 용의 비상의 재사용 대기시간이 증가하는 효과가 재사용 대기시간이 4초 미만일 때만 적용되던 문제를 수정했습니다.",
+         "html": "피해를 입었을 때 용의 비상의 재사용 대기시간이 증가하는 효과가 재사용 대기시간이 4초 미만일 때만 적용되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Dragonflight"
+      }
+     ],
+     "nameEn": "Deathwing"
+    },
+    {
+     "name": "가로쉬",
+     "heroId": "Garrosh",
+     "heroIds": [
+      "Garrosh"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">가로쉬</strong>\n<ul>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">살상의 기회</strong><ul>\n<li>살상의 기회가 피의 갈증의 재사용 대기시간을 완전히 초기화하지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "살상의 기회",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "살상의 기회가 피의 갈증의 재사용 대기시간을 완전히 초기화하지 않던 문제를 수정했습니다.",
+         "html": "살상의 기회가 피의 갈증의 재사용 대기시간을 완전히 초기화하지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "In For the Kill"
+      }
+     ],
+     "nameEn": "Garrosh"
+    },
+    {
+     "name": "굴단",
+     "heroId": "Guldan",
+     "heroIds": [
+      "Guldan"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">굴단</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">생명력 흡수 [W]</strong><ul>\n<li>대상이 사거리를 벗어나도 생명력 흡수가 항상 중단되지는 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "생명력 흡수",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "대상이 사거리를 벗어나도 생명력 흡수가 항상 중단되지는 않던 문제를 수정했습니다.",
+         "html": "대상이 사거리를 벗어나도 생명력 흡수가 항상 중단되지는 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Drain Life"
+      }
+     ],
+     "nameEn": "Gul'dan"
+    },
+    {
+     "name": "제이나",
+     "heroId": "Jaina",
+     "heroIds": [
+      "Jaina"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">제이나</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">향상된 얼음 방패 [1]</strong><ul>\n<li>AI가 조종하는 제이나가 향상된 얼음 방패와 얼음처럼 차갑게를 올바르게 사용하지 못하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "향상된 얼음 방패",
+       "key": "1",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "AI가 조종하는 제이나가 향상된 얼음 방패와 얼음처럼 차갑게를 올바르게 사용하지 못하던 문제를 수정했습니다.",
+         "html": "AI가 조종하는 제이나가 향상된 얼음 방패와 얼음처럼 차갑게를 올바르게 사용하지 못하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Improved Ice Block"
+      }
+     ],
+     "nameEn": "Jaina"
+    },
+    {
+     "name": "캘타스",
+     "heroId": "Kaelthas",
+     "heroIds": [
+      "Kaelthas"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">캘타스</strong>\n<ul>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">환생</strong><ul>\n<li>AI가 조종하는 캘타스가 환생을 올바르게 사용하지 못하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "환생",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "AI가 조종하는 캘타스가 환생을 올바르게 사용하지 못하던 문제를 수정했습니다.",
+         "html": "AI가 조종하는 캘타스가 환생을 올바르게 사용하지 못하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Rebirth"
+      }
+     ],
+     "nameEn": "Kael'thas"
+    },
+    {
+     "name": "리 리",
+     "heroId": "LiLi",
+     "heroIds": [
+      "LiLi"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">리 리</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">운룡 [W]</strong><ul>\n<li>운룡이 전장의 안개 속에서 대상에게 피해를 입힐 때 모습이 드러나지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "운룡",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "운룡이 전장의 안개 속에서 대상에게 피해를 입힐 때 모습이 드러나지 않던 문제를 수정했습니다.",
+         "html": "운룡이 전장의 안개 속에서 대상에게 피해를 입힐 때 모습이 드러나지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Cloud Serpent"
+      }
+     ],
+     "nameEn": "Li Li"
+    },
+    {
+     "name": "메디브",
+     "heroId": "Medivh",
+     "heroIds": [
+      "Medivh"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">메디브</strong>\n<ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">변이 폭탄</strong><ul>\n<li>AI가 조종하는 메디브가 변이 폭탄을 올바르게 사용하지 못하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "변이 폭탄",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "AI가 조종하는 메디브가 변이 폭탄을 올바르게 사용하지 못하던 문제를 수정했습니다.",
+         "html": "AI가 조종하는 메디브가 변이 폭탄을 올바르게 사용하지 못하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Poly Bomb"
+      }
+     ],
+     "nameEn": "Medivh"
+    },
+    {
+     "name": "나지보",
+     "heroId": "WitchDoctor",
+     "heroIds": [
+      "WitchDoctor"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">나지보</strong>\n<ul>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">미신</strong><ul>\n<li>미신의 시체 거미가 입히는 피해가 빈 기술로 표시되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "미신",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "미신의 시체 거미가 입히는 피해가 빈 기술로 표시되던 문제를 수정했습니다.",
+         "html": "미신의 시체 거미가 입히는 피해가 빈 기술로 표시되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Superstition"
+      }
+     ],
+     "nameEn": "Nazeebo"
+    },
+    {
+     "name": "사무로",
+     "heroId": "Samuro",
+     "heroIds": [
+      "Samuro"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">사무로</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">환영 복제 [Q]</strong><ul>\n<li>이제 환영 복제의 환영이 생성될 때 사무로의 공격 이동 목표 지점으로 이동하지 않습니다.</li>\n<li>이제 사무로의 AI가 활성화되면 환영 복제의 환영도 AI가 올바르게 활성화됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "환영 복제",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "이제 환영 복제의 환영이 생성될 때 사무로의 공격 이동 목표 지점으로 이동하지 않습니다.",
+         "html": "이제 환영 복제의 환영이 생성될 때 사무로의 공격 이동 목표 지점으로 이동하지 않습니다.",
+         "added": false
+        },
+        {
+         "text": "이제 사무로의 AI가 활성화되면 환영 복제의 환영도 AI가 올바르게 활성화됩니다.",
+         "html": "이제 사무로의 AI가 활성화되면 환영 복제의 환영도 AI가 올바르게 활성화됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Mirror Image"
+      }
+     ],
+     "nameEn": "Samuro"
+    },
+    {
+     "name": "스랄",
+     "heroId": "Thrall",
+     "heroIds": [
+      "Thrall"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">스랄</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">야수 정령 [W]</strong><ul>\n<li>야수 정령이 곧 사라지려 할 때 지속시간이 올바르게 연장되지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "야수 정령",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "야수 정령이 곧 사라지려 할 때 지속시간이 올바르게 연장되지 않던 문제를 수정했습니다.",
+         "html": "야수 정령이 곧 사라지려 할 때 지속시간이 올바르게 연장되지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Feral Spirit"
+      }
+     ],
+     "nameEn": "Thrall"
+    }
+   ],
+   "nameEn": "Bug Fixes"
+  }
+ ],
+ "heroes": [
+  "Arthas",
+  "Chen",
+  "DVa",
+  "Deathwing",
+  "Falstad",
+  "Garrosh",
+  "Guldan",
+  "Jaina",
+  "Kaelthas",
+  "LiLi",
+  "MalGanis",
+  "Medivh",
+  "Muradin",
+  "Samuro",
+  "Thrall",
+  "Tinker",
+  "Tyrande",
+  "WitchDoctor"
+ ],
+ "battlegrounds": [
+  "blackheart_s_bay",
+  "haunted_mines",
+  "warhead_junction"
+ ],
+ "lang": "ko",
+ "newsId": "24264015",
+ "titleEn": "Heroes of the Storm PTR Patch Notes - March 30, 2026",
+ "translated": {
+  "by": "Claude (claude-opus-5)",
+  "at": "2026-09-14",
+  "source": "https://news.blizzard.com/en-us/article/24264015/heroes-of-the-storm-ptr-patch-notes-march-30-2026",
+  "glossary": "HeroesToolChest 공식 게임 텍스트(enus↔kokr) 대조",
+  "untranslated": 0
+ }
+}

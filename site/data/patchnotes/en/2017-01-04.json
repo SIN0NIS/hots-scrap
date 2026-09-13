@@ -1,0 +1,992 @@
+{
+ "date": "2017-01-04",
+ "kind": "patch",
+ "title": "Heroes of the Storm Patch Notes",
+ "source": "https://news.blizzard.com/en-us/article/20407400/heroes-of-the-storm-patch-notes-january-4-2017",
+ "published": "2017-01-04T15:45:00Z",
+ "sections": [
+  {
+   "name": "머리말",
+   "key": "intro",
+   "html": "<p>We just released a new patch for Heroes of the Storm, which brings a new Hero, a new Custom Games draft mode, balance updates, and more to the Nexus!</p>\n<p><img alt=\"\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/19RBT3IUQUYB1403137112368.png\"/></p>",
+   "nameKo": "머리말"
+  },
+  {
+   "name": "머리말",
+   "key": "intro",
+   "html": "<figure class=\"pull-right\">\n<img alt=\"alternate-image-name\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/3c/3CFYKX0MNJF41481923633728.jpg\"/>\n</figure>\n<p><img alt=\"\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/19RBT3IUQUYB1403137112368.png\"/></p>",
+   "nameKo": "머리말"
+  },
+  {
+   "name": "New Hero: Zul'jin",
+   "key": "new_hero_zul_jin",
+   "html": "Before the elves and their Alliance, the forests of Lordaeron belonged to the trolls of the Amani empire. As their warlord, Zul’jin has united the tribes into an army that stands ready to take back what is theirs and to slay the elves who stole it from them.\n<p><span class=\"pn-h\"><strong>Trait</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>Berserker (D)</strong></span>\n<ul>\n<li>Activate to increase Zul’jin’s Basic Attack damage by 25%, but consume 2% maximum Health per attack.</li>\n<li>Passive: Zul’jin attacks 1% faster for every 1% of maximum Health missing.</li>\n</ul>\n</li>\n</ul>\n<p><span class=\"pn-h\"><strong>Basic Abilities</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>Grievous Throw (Q)</strong></span>\n<ul>\n<li>Zul’jin throws an axe forward, dealing damage to the first 2 enemies hit and marking them for 8 seconds. Marked enemies take 50% bonus damage from Zul’jin’s next 3 Basic Attacks against them.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>Twin Cleave (W)</strong></span>\n<ul>\n<li>Throw 2 axes in a large circular arc, dealing damage and slowing affected enemies by 15% per axe for 2 seconds.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>Regeneration (E)</strong></span>\n<ul>\n<li>Zul’jin channels to regenerate 25% of his maximum Health over 4 seconds. Moving or taking damage while channeling will interrupt this effect.</li>\n</ul>\n</li>\n</ul>\n<p><span class=\"pn-h\"><strong>Heroic Abilities</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>Taz’dingo (R)</strong></span>\n<ul>\n<li>Zul’jin is Unkillable for the next 4 seconds, and cannot be reduced to less than 1 Health. Taz’dingo!</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>Guillotine (R)</strong></span>\n<ul>\n<li>Zul’jin throws a massive guillotine blade into the sky that crashes down on enemies in the targeted area. The lower Zul’jin’s Health, the more damage it deals. </li>\n</ul>\n</li>\n</ul>\n<p><img alt=\"\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/19RBT3IUQUYB1403137112368.png\"/></p>",
+   "nameKo": ""
+  },
+  {
+   "name": "Shop",
+   "key": "shop",
+   "html": "<p><span class=\"pn-h\"><strong>Bundles</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>New Bundles</strong></span>\n<ul>\n<li>Emberlord Zul’jin Bundle – Available until January 17, 2017</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>Removed Bundles</strong></span>\n<ul>\n<li>Lil’ Ragnaros Bundle</li>\n<li>Maraudin’ Muradin Bundle</li>\n<li>Winter Veil 2016 Bundle</li>\n<li>Winter Veil Classic Bundle</li>\n</ul>\n</li>\n</ul>\n<p><span class=\"pn-h\"><strong>New Hero </strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>Zul’jin</strong></span> has been added to the in-game Shop.</li>\n</ul>\n<p><span class=\"pn-h\"><strong>Mounts</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>New Mounts</strong></span>\n<ul>\n<li>Amani War Bear – Available by purchasing the Emberlord Zul’jin Bundle</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>Removed Mounts</strong></span>\n<ul>\n<li>Cyber Ram</li>\n<li>Special Snowflake</li>\n<li>Festive Treasure Goblin</li>\n</ul>\n</li>\n</ul>\n<p><span class=\"pn-h\"><strong>New Skins</strong></span></p>\n<ul>\n<li>Emberlord Zul’jin</li>\n<li>Master Zul’jin</li>\n</ul>\n<p><img alt=\"\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/19RBT3IUQUYB1403137112368.png\"/></p>",
+   "items": [
+    {
+     "name": "Zul’jin",
+     "heroId": "Zuljin",
+     "heroIds": [
+      "Zuljin"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>Zul’jin</strong></span> has been added to the in-game Shop.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Zul’jin has been added to the in-game Shop.",
+         "html": "<span class=\"pn-name\"><strong>Zul’jin</strong></span> has been added to the in-game Shop.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "nameKo": "상점"
+  },
+  {
+   "name": "User Interface",
+   "key": "ui",
+   "html": "<p><span class=\"pn-h\"><strong>New Draft Mode: Tournament Draft</strong></span></p>\n<ul>\n<li>Tournament Draft is a new draft mode added to Custom Games which allows players to swap their Hero Picks at-will at the end of a draft.</li>\n<li>Set up a Custom Game to use Tournament Draft by clicking the Lobby Mode dropdown, and then selecting Tournament Draft from the list.\n<ul>\n<li>All pick and ban timers have been set to 60 seconds during Tournament Draft mode.</li>\n<li>Tournament Draft uses First Come, First Served (FCFS) pick order, and Mid Bans.</li>\n</ul>\n</li>\n<li>Once all picks and bans are complete, a 20-second Swap Round will begin.\n<ul>\n<li>During this time, players can freely swap Hero picks with their teammates to help ensure that everyone is playing their strongest Heroes.</li>\n<li>After swapping Heroes with a teammate, the swap button next to that player’s name will go on a brief cooldown in order to prevent repeated or accidental swaps.</li>\n</ul>\n</li>\n<li>During a Tournament Draft, player names will not be visible to Referees or Spectators and picks will appear from top to bottom.\n<ul>\n<li>Chat will not be visible to spectators in the Draft screen.</li>\n</ul>\n</li>\n<li><strong>Please Note:</strong> This is our first implementation of Tournament Draft mode, and we plan to bring additional improvements and adjustments to it with future patches.</li>\n</ul>\n<p><span class=\"pn-h\"><strong>In-Game</strong></span></p>\n<ul>\n<li>Removed the Targeting indicator from Tracer’s Status Bar.</li>\n</ul>\n<p><span class=\"pn-h\"><strong>MVP and Commendations</strong></span></p>\n<ul>\n<li>The MVP screen will now display the MVP’s top three stats from the match instead of only displaying the stats that were the Best in Game or Best in Team.</li>\n</ul>\n<p><span class=\"pn-h\"><strong>Team League</strong></span></p>\n<ul>\n<li>A notification has been added to inform two-player parties when they may experience long wait times in the Team League queue and encourage them to add more party members to find matches more quickly.</li>\n</ul>\n<p><img alt=\"\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/19RBT3IUQUYB1403137112368.png\"/></p>",
+   "nameKo": "사용자 인터페이스"
+  },
+  {
+   "name": "Design & Gameplay",
+   "key": "design_gameplay",
+   "html": "<p><strong><span class=\"pn-h\">Armor &amp; Vulnerability</span></strong></p>\n<blockquote><em><strong>Developer Comments:  </strong></em>With today’s patch you will notice that a lot of our tooltips that used to reference the Resistant/Vulnerable system have been changed. Matthew Cooper <a href=\"https://us.battle.net/forums/en/heroes/topic/20752266255\" target=\"_blank\">detailed the changes on our forums</a> last month explaining a bit about the new system. While the tooltips may have changed, the actual functionality for the system has been in since the Varian patch hit during the week of November 14, so the game itself should not feel any different than what you are currently used to. You will also notice that we have added baseline Armor to three Heroes – Arthas, Anub’arak, and Greymane’s Worgen Form. These are the first of a handful that we are planning to release and would love to hear any feedback you have. We are hoping that the Armor System will open up future design flexibility, increase the depth of strategy (both in game, and in draft), and grant us another knob to help balance the game.</blockquote>\n<p><img alt=\"\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/19RBT3IUQUYB1403137112368.png\"/></p>",
+   "nameKo": ""
+  },
+  {
+   "name": "Battlegrounds",
+   "key": "battlegrounds",
+   "html": "<p><strong><span class=\"pn-h\">Haunted Mines</span></strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>Grave Golem</strong></span>\n<ul>\n<li>Attack Damage scaling for summoned Grave Golems has been increased at all stages of the game. </li>\n</ul>\n</li>\n</ul>\n<p><img alt=\"\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/19RBT3IUQUYB1403137112368.png\"/></p>",
+   "items": [
+    {
+     "name": "Haunted Mines",
+     "battleground": "haunted_mines",
+     "html": "<ul>\n<li><span class=\"pn-name\"><strong>Grave Golem</strong></span>\n<ul>\n<li>Attack Damage scaling for summoned Grave Golems has been increased at all stages of the game. </li>\n</ul>\n</li>\n</ul>"
+    }
+   ],
+   "nameKo": "전장"
+  },
+  {
+   "name": "Heroes",
+   "key": "heroes",
+   "html": "<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"schedule_table\">\n<tbody>\n<tr>\n<th bgcolor=\"#1A0A33\"><strong></strong></th>\n<th bgcolor=\"#1A0A33\"><strong></strong></th>\n<th bgcolor=\"#1A0A33\"><strong></strong></th>\n</tr>\n<tr>\n<td bgcolor=\"#100029\"></td>\n<td bgcolor=\"#100029\"></td>\n<td bgcolor=\"#100029\"></td>\n</tr>\n<tr>\n<td bgcolor=\"#100029\"></td>\n<td bgcolor=\"#100029\"></td>\n<td bgcolor=\"#100029\"></td>\n</tr>\n<tr>\n<td bgcolor=\"#100029\"></td>\n<td bgcolor=\"#100029\"></td>\n<td bgcolor=\"#100029\"></td>\n</tr>\n</tbody>\n</table>\n<p><img alt=\"\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/19RBT3IUQUYB1403137112368.png\"/></p>",
+   "nameKo": "영웅"
+  },
+  {
+   "name": "Assassin",
+   "key": "role_assassin",
+   "html": "<h4>Greymane</h4>\n<p><img alt=\"Divider_Hero_Greymane_crop.png\" data-id=\"20011597\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/3N30E9ZS7S2D1452704274681.png\"/></p>\n<p><span class=\"pn-h\"><strong>Stats</strong></span></p>\n<ul>\n<li>Now has 10 Armor while in Worgen form</li>\n</ul>\n<h4>Lunara</h4>\n<p><img alt=\"Divider_Hero_Lunara_crop.png\" data-id=\"20011598\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/K666Z00DJIK21452704274692.png\"/></p>\n<p><span class=\"pn-h\"><strong>Talents</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>Level 7</strong></span>\n<ul>\n<li>Nature's Culling and Siphoning Toxin have had their icon colors swapped (Siphoning Toxin now has the green icon since it heals.) Their position in the talent tier remains the same.</li>\n</ul>\n</li>\n</ul>\n<h4>Nova</h4>\n<p><img alt=\"Divider_Hero_Nova_Crop.png\" data-id=\"17042294\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/1P2JN07X4Q121417483335002.png\"/></p>\n<p><span class=\"pn-h\"><strong>Talents</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>Level 1</strong></span>\n<ul>\n<li>Tactical Espionage (Passive)\n<ul>\n<li>Removed</li>\n</ul>\n</li>\n<li>Advanced Cloaking (Passive)\n<ul>\n<li>Now also restores 2 Mana per second while Stealthed</li>\n</ul>\n</li>\n<li>Covert Ops (Passive)\n<ul>\n<li>Functionality changed:\n<ul>\n<li>After being Stealthed for 5 seconds, Pinning Shot’s slow is increased to 55% and costs no Mana. Bonus is lost after losing Stealth for 1 second.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><em><strong>Developer Comments:  </strong></em>The functionality of Covert Ops was overly complex for such a simple concept: Buff your Pinning Shot if you’ve been cloaked for a while. The talent was performing well, so this isn’t an attempt to make it worse or better, but rather make it more clear when you have the bonus and when you don’t. Tactical Espionage, however, was underperforming quite a bit, so we decided to roll some of its components into Advanced Cloaking, since the fantasy and flavor of both talents were so aligned anyways.</blockquote>\n<h4>Raynor</h4>\n<p><img alt=\"Divider_Hero_Raynor_Crop.png\" data-id=\"17042295\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/L1FZEBIMXPLI1417483335075.png\"/></p>\n<p><span class=\"pn-h\"><strong>Talents</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>Level 4</strong></span>\n<ul>\n<li>Relentless Leader (E)\n<ul>\n<li>Now places an inactive button on the item bar to display the cooldown of this talent’s AoE Knockback effect</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<p><img alt=\"\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/19RBT3IUQUYB1403137112368.png\"/></p>",
+   "heroes": [
+    {
+     "name": "Greymane",
+     "heroId": "Greymane",
+     "heroIds": [
+      "Greymane"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "Now has 10 Armor while in Worgen form",
+         "html": "Now has 10 Armor while in Worgen form",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_Greymane_crop.png\" data-id=\"20011597\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/3N30E9ZS7S2D1452704274681.png\"/></p>\n<p><span class=\"pn-h\"><strong>Stats</strong></span></p>\n<ul>\n<li>Now has 10 Armor while in Worgen form</li>\n</ul>"
+    },
+    {
+     "name": "Lunara",
+     "heroId": "Dryad",
+     "heroIds": [
+      "Dryad"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "Nature's Culling and Siphoning Toxin have had their icon colors swapped (Siphoning Toxin now has the green icon since it heals.) Their position in the talent tier remains the same.",
+         "html": "Nature's Culling and Siphoning Toxin have had their icon colors swapped (Siphoning Toxin now has the green icon since it heals.) Their position in the talent tier remains the same.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_Lunara_crop.png\" data-id=\"20011598\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/K666Z00DJIK21452704274692.png\"/></p>\n<p><span class=\"pn-h\"><strong>Talents</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>Level 7</strong></span>\n<ul>\n<li>Nature's Culling and Siphoning Toxin have had their icon colors swapped (Siphoning Toxin now has the green icon since it heals.) Their position in the talent tier remains the same.</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Nova",
+     "heroId": "Nova",
+     "heroIds": [
+      "Nova"
+     ],
+     "changes": [
+      {
+       "name": "Tactical Espionage",
+       "key": "Passive",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Removed",
+         "html": "Removed",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Advanced Cloaking",
+       "key": "Passive",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Now also restores 2 Mana per second while Stealthed",
+         "html": "Now also restores 2 Mana per second while Stealthed",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Covert Ops",
+       "key": "Passive",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": []
+      },
+      {
+       "name": "Functionality changed",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "After being Stealthed for 5 seconds, Pinning Shot’s slow is increased to 55% and costs no Mana. Bonus is lost after losing Stealth for 1 second.",
+         "html": "After being Stealthed for 5 seconds, Pinning Shot’s slow is increased to 55% and costs no Mana. Bonus is lost after losing Stealth for 1 second.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_Nova_Crop.png\" data-id=\"17042294\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/1P2JN07X4Q121417483335002.png\"/></p>\n<p><span class=\"pn-h\"><strong>Talents</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>Level 1</strong></span>\n<ul>\n<li>Tactical Espionage (Passive)\n<ul>\n<li>Removed</li>\n</ul>\n</li>\n<li>Advanced Cloaking (Passive)\n<ul>\n<li>Now also restores 2 Mana per second while Stealthed</li>\n</ul>\n</li>\n<li>Covert Ops (Passive)\n<ul>\n<li>Functionality changed:\n<ul>\n<li>After being Stealthed for 5 seconds, Pinning Shot’s slow is increased to 55% and costs no Mana. Bonus is lost after losing Stealth for 1 second.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><em><strong>Developer Comments:  </strong></em>The functionality of Covert Ops was overly complex for such a simple concept: Buff your Pinning Shot if you’ve been cloaked for a while. The talent was performing well, so this isn’t an attempt to make it worse or better, but rather make it more clear when you have the bonus and when you don’t. Tactical Espionage, however, was underperforming quite a bit, so we decided to roll some of its components into Advanced Cloaking, since the fantasy and flavor of both talents were so aligned anyways.</blockquote>"
+    },
+    {
+     "name": "Raynor",
+     "heroId": "Raynor",
+     "heroIds": [
+      "Raynor"
+     ],
+     "changes": [
+      {
+       "name": "Relentless Leader",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "Now places an inactive button on the item bar to display the cooldown of this talent’s AoE Knockback effect",
+         "html": "Now places an inactive button on the item bar to display the cooldown of this talent’s AoE Knockback effect",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_Raynor_Crop.png\" data-id=\"17042295\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/L1FZEBIMXPLI1417483335075.png\"/></p>\n<p><span class=\"pn-h\"><strong>Talents</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>Level 4</strong></span>\n<ul>\n<li>Relentless Leader (E)\n<ul>\n<li>Now places an inactive button on the item bar to display the cooldown of this talent’s AoE Knockback effect</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<p><img alt=\"\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/19RBT3IUQUYB1403137112368.png\"/></p>"
+    }
+   ],
+   "nameKo": "암살자"
+  },
+  {
+   "name": "Specialist",
+   "key": "role_specialist",
+   "html": "<h4>Azmodan</h4>\n<p><img alt=\"Divider_Hero_Azmodan_Crop.png\" data-id=\"17042278\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/MPC0MT16C6I91417483333902.png\"/></p>\n<p><span class=\"pn-h\"><strong>Abilities</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>All Shall Burn (E)</strong></span>\n<ul>\n<li>Can now move at 40% base Movement Speed while channeling</li>\n<li>Initial cast range of the ability has been decreased by 7%</li>\n<li>Tether range required to cancel the effect has been increased by 6%</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>Demonic Invasion (R)</strong></span>\n<ul>\n<li>Impact damage reduced from 110 to 104</li>\n<li>Demon Attack damage reduced from 54 to 51</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>Level 4</strong></span>\n<ul>\n<li>Mercenary Lord (Passive)\n<ul>\n<li>Removed</li>\n</ul>\n</li>\n<li><strong>New Talent: Hellish Hirelings (Trait)</strong>\n<ul>\n<li>Doubles the effects of General of Hell on Mercenaries (15 to 30%).</li>\n</ul>\n</li>\n<li>Sin’s Grasp (Active)\n<ul>\n<li>Cooldown increased from 100 to 120 seconds</li>\n<li>Cooldown reduction from killing Minions increased from 5 to 10 seconds</li>\n</ul>\n</li>\n<li>Gluttony (E)\n<ul>\n<li>Healing increased from 20 to 25% of All Shall Burn damage</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>  <strong class=\"pn-name\">Level 7</strong>\n<ul>\n<li>March of Sin (E)\n<ul>\n<li>Now increases Movement Speed while channeling All Shall Burn from 40 to 80%</li>\n</ul>\n</li>\n<li>Gluttonous Ward (Active)\n<ul>\n<li>Cooldown reduced from 60 to 45 seconds</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Level 16</strong>\n<ul>\n<li>Sin for Sin (Active)\n<ul>\n<li>Reduced cooldown from 60 to 45 seconds</li>\n</ul>\n</li>\n<li>Imposing Presence (Active)\n<ul>\n<li>Removed</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><em><strong>Developer Comments:  </strong></em>For a while now, Azmodan’s All Shall Burn hasn’t been an attractive ability to build around. We’re making part of March of Sin baseline to make it feel a little more useful in the early game, and reducing the initial cast range but increasing the tether range require to cancel it so that it will more consistently get some value (instead of cancelling immediately if cast at maximum range). A few of his less powerful Talents are also being improved to better fit the gluttonous Lord of Sin’s tastes.</blockquote>\n<h4>Sylvanas</h4>\n<p><img alt=\"Divider_Heroes_Sylvanas_Cropped.png\" data-id=\"19828416\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/I6HR01N9WF0Y1439221492511.png\"/></p>\n<p><strong class=\"pn-h\">Abilities</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>Mind Control (R)</strong></span>\n<ul>\n<li>Cast range increased from 10 to 11</li>\n<li>Cooldown decreased from 70 to 60 seconds</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>Level 1</strong></span>\n<ul>\n<li>Paralysis (Trait)\n<ul>\n<li>Removed</li>\n</ul>\n</li>\n<li><strong>New Talent: Dreadful Wake (E)</strong>\n<ul>\n<li>Haunting Wave now disables Minions and Mercenaries for 7 seconds</li>\n<li>Restores 5 Mana per minion hit by Haunting Wave</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>Level 7</strong></span>\n<ul>\n<li>Possession (Active)\n<ul>\n<li>Cooldown per charge decreased from 12 to 8 seconds</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>Level 13</strong></span>\n<ul>\n<li>Will of the Forsaken (Active)\n<ul>\n<li>Movement speed increased from 30 to 40%  </li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><em><strong>Developer Comments:  </strong></em>With the reintroduction of Haunted Mines, we wanted to take a look at Sylvanas and her ability to disable structures. While we feel this is a very important aspect of who Sylvanas is, the Paralysis talent at level 1 pushed this gameplay a little too far. Beyond that, we introduced a new level 1 talent to fill this spot and made some tuning changes to some of her under-performing talents.</blockquote>\n<p><img alt=\"\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/19RBT3IUQUYB1403137112368.png\"/></p>\n<h4></h4>",
+   "heroes": [
+    {
+     "name": "Azmodan",
+     "heroId": "Azmodan",
+     "heroIds": [
+      "Azmodan"
+     ],
+     "changes": [
+      {
+       "name": "All Shall Burn",
+       "key": "E",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "Can now move at 40% base Movement Speed while channeling",
+         "html": "Can now move at 40% base Movement Speed while channeling",
+         "added": false
+        },
+        {
+         "text": "Initial cast range of the ability has been decreased by 7%",
+         "html": "Initial cast range of the ability has been decreased by 7%",
+         "added": false
+        },
+        {
+         "text": "Tether range required to cancel the effect has been increased by 6%",
+         "html": "Tether range required to cancel the effect has been increased by 6%",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Demonic Invasion",
+       "key": "R",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "Impact damage reduced from 110 to 104",
+         "html": "Impact damage reduced from 110 to 104",
+         "added": false
+        },
+        {
+         "text": "Demon Attack damage reduced from 54 to 51",
+         "html": "Demon Attack damage reduced from 54 to 51",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Mercenary Lord",
+       "key": "Passive",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "Removed",
+         "html": "Removed",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "New Talent: Hellish Hirelings",
+       "key": "Trait",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "Doubles the effects of General of Hell on Mercenaries (15 to 30%).",
+         "html": "Doubles the effects of General of Hell on Mercenaries (15 to 30%).",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Sin’s Grasp",
+       "key": "Active",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "Cooldown increased from 100 to 120 seconds",
+         "html": "Cooldown increased from 100 to 120 seconds",
+         "added": false
+        },
+        {
+         "text": "Cooldown reduction from killing Minions increased from 5 to 10 seconds",
+         "html": "Cooldown reduction from killing Minions increased from 5 to 10 seconds",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Gluttony",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "Healing increased from 20 to 25% of All Shall Burn damage",
+         "html": "Healing increased from 20 to 25% of All Shall Burn damage",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "March of Sin",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "Now increases Movement Speed while channeling All Shall Burn from 40 to 80%",
+         "html": "Now increases Movement Speed while channeling All Shall Burn from 40 to 80%",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Gluttonous Ward",
+       "key": "Active",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "Cooldown reduced from 60 to 45 seconds",
+         "html": "Cooldown reduced from 60 to 45 seconds",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Sin for Sin",
+       "key": "Active",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "Reduced cooldown from 60 to 45 seconds",
+         "html": "Reduced cooldown from 60 to 45 seconds",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Imposing Presence",
+       "key": "Active",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "Removed",
+         "html": "Removed",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_Azmodan_Crop.png\" data-id=\"17042278\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/MPC0MT16C6I91417483333902.png\"/></p>\n<p><span class=\"pn-h\"><strong>Abilities</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>All Shall Burn (E)</strong></span>\n<ul>\n<li>Can now move at 40% base Movement Speed while channeling</li>\n<li>Initial cast range of the ability has been decreased by 7%</li>\n<li>Tether range required to cancel the effect has been increased by 6%</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>Demonic Invasion (R)</strong></span>\n<ul>\n<li>Impact damage reduced from 110 to 104</li>\n<li>Demon Attack damage reduced from 54 to 51</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>Level 4</strong></span>\n<ul>\n<li>Mercenary Lord (Passive)\n<ul>\n<li>Removed</li>\n</ul>\n</li>\n<li><strong>New Talent: Hellish Hirelings (Trait)</strong>\n<ul>\n<li>Doubles the effects of General of Hell on Mercenaries (15 to 30%).</li>\n</ul>\n</li>\n<li>Sin’s Grasp (Active)\n<ul>\n<li>Cooldown increased from 100 to 120 seconds</li>\n<li>Cooldown reduction from killing Minions increased from 5 to 10 seconds</li>\n</ul>\n</li>\n<li>Gluttony (E)\n<ul>\n<li>Healing increased from 20 to 25% of All Shall Burn damage</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>  <strong class=\"pn-name\">Level 7</strong>\n<ul>\n<li>March of Sin (E)\n<ul>\n<li>Now increases Movement Speed while channeling All Shall Burn from 40 to 80%</li>\n</ul>\n</li>\n<li>Gluttonous Ward (Active)\n<ul>\n<li>Cooldown reduced from 60 to 45 seconds</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Level 16</strong>\n<ul>\n<li>Sin for Sin (Active)\n<ul>\n<li>Reduced cooldown from 60 to 45 seconds</li>\n</ul>\n</li>\n<li>Imposing Presence (Active)\n<ul>\n<li>Removed</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><em><strong>Developer Comments:  </strong></em>For a while now, Azmodan’s All Shall Burn hasn’t been an attractive ability to build around. We’re making part of March of Sin baseline to make it feel a little more useful in the early game, and reducing the initial cast range but increasing the tether range require to cancel it so that it will more consistently get some value (instead of cancelling immediately if cast at maximum range). A few of his less powerful Talents are also being improved to better fit the gluttonous Lord of Sin’s tastes.</blockquote>"
+    },
+    {
+     "name": "Sylvanas",
+     "heroId": "Sylvanas",
+     "heroIds": [
+      "Sylvanas"
+     ],
+     "changes": [
+      {
+       "name": "Mind Control",
+       "key": "R",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "Cast range increased from 10 to 11",
+         "html": "Cast range increased from 10 to 11",
+         "added": false
+        },
+        {
+         "text": "Cooldown decreased from 70 to 60 seconds",
+         "html": "Cooldown decreased from 70 to 60 seconds",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Paralysis",
+       "key": "Trait",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Removed",
+         "html": "Removed",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "New Talent: Dreadful Wake",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Haunting Wave now disables Minions and Mercenaries for 7 seconds",
+         "html": "Haunting Wave now disables Minions and Mercenaries for 7 seconds",
+         "added": false
+        },
+        {
+         "text": "Restores 5 Mana per minion hit by Haunting Wave",
+         "html": "Restores 5 Mana per minion hit by Haunting Wave",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Possession",
+       "key": "Active",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "Cooldown per charge decreased from 12 to 8 seconds",
+         "html": "Cooldown per charge decreased from 12 to 8 seconds",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Will of the Forsaken",
+       "key": "Active",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "Movement speed increased from 30 to 40%",
+         "html": "Movement speed increased from 30 to 40%",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Heroes_Sylvanas_Cropped.png\" data-id=\"19828416\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/I6HR01N9WF0Y1439221492511.png\"/></p>\n<p><strong class=\"pn-h\">Abilities</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>Mind Control (R)</strong></span>\n<ul>\n<li>Cast range increased from 10 to 11</li>\n<li>Cooldown decreased from 70 to 60 seconds</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>Level 1</strong></span>\n<ul>\n<li>Paralysis (Trait)\n<ul>\n<li>Removed</li>\n</ul>\n</li>\n<li><strong>New Talent: Dreadful Wake (E)</strong>\n<ul>\n<li>Haunting Wave now disables Minions and Mercenaries for 7 seconds</li>\n<li>Restores 5 Mana per minion hit by Haunting Wave</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>Level 7</strong></span>\n<ul>\n<li>Possession (Active)\n<ul>\n<li>Cooldown per charge decreased from 12 to 8 seconds</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>Level 13</strong></span>\n<ul>\n<li>Will of the Forsaken (Active)\n<ul>\n<li>Movement speed increased from 30 to 40%  </li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><em><strong>Developer Comments:  </strong></em>With the reintroduction of Haunted Mines, we wanted to take a look at Sylvanas and her ability to disable structures. While we feel this is a very important aspect of who Sylvanas is, the Paralysis talent at level 1 pushed this gameplay a little too far. Beyond that, we introduced a new level 1 talent to fill this spot and made some tuning changes to some of her under-performing talents.</blockquote>\n<p><img alt=\"\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/19RBT3IUQUYB1403137112368.png\"/></p>\n<h4></h4>"
+    }
+   ],
+   "nameKo": "전문가"
+  },
+  {
+   "name": "Warrior",
+   "key": "role_tank",
+   "html": "<h4></h4>\n<h4>Anub'arak</h4>\n<p><img alt=\"Divider_Hero_AnubArak_Crop.png\" data-id=\"17041694\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/V0TGBEY50T4F1417483333676.png\"/></p>\n<p><strong class=\"pn-h\">Stats</strong></p>\n<ul>\n<li>Now has 25 Spell Armor</li>\n<li>Health decreased from 2226 to 2003</li>\n<li>Health Regeneration decreased from 4.64 to 4.17</li>\n</ul>\n<h4></h4>\n<h4>Arthas</h4>\n<p><img alt=\"Divider_Hero_Arthas_Crop.png\" data-id=\"17041693\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/Q00N5QG4L4441417483333667.png\"/></p>\n<p><strong class=\"pn-h\">Stats</strong></p>\n<ul>\n<li>Now has 15 Physical Armor</li>\n<li>Health decreased from 2582 to 2404</li>\n<li>Health Regeneration decreased from 5.36 to 5.01</li>\n</ul>\n<ul>\n</ul>\n<p><img alt=\"\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/19RBT3IUQUYB1403137112368.png\"/></p>",
+   "heroes": [
+    {
+     "name": "Anub'arak",
+     "heroId": "Anubarak",
+     "heroIds": [
+      "Anubarak"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "Now has 25 Spell Armor",
+         "html": "Now has 25 Spell Armor",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "Health decreased from 2226 to 2003",
+         "html": "Health decreased from 2226 to 2003",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "Health Regeneration decreased from 4.64 to 4.17",
+         "html": "Health Regeneration decreased from 4.64 to 4.17",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_AnubArak_Crop.png\" data-id=\"17041694\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/V0TGBEY50T4F1417483333676.png\"/></p>\n<p><strong class=\"pn-h\">Stats</strong></p>\n<ul>\n<li>Now has 25 Spell Armor</li>\n<li>Health decreased from 2226 to 2003</li>\n<li>Health Regeneration decreased from 4.64 to 4.17</li>\n</ul>\n<h4></h4>"
+    },
+    {
+     "name": "Arthas",
+     "heroId": "Arthas",
+     "heroIds": [
+      "Arthas"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "Now has 15 Physical Armor",
+         "html": "Now has 15 Physical Armor",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "Health decreased from 2582 to 2404",
+         "html": "Health decreased from 2582 to 2404",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "Health Regeneration decreased from 5.36 to 5.01",
+         "html": "Health Regeneration decreased from 5.36 to 5.01",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_Arthas_Crop.png\" data-id=\"17041693\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/Q00N5QG4L4441417483333667.png\"/></p>\n<p><strong class=\"pn-h\">Stats</strong></p>\n<ul>\n<li>Now has 15 Physical Armor</li>\n<li>Health decreased from 2582 to 2404</li>\n<li>Health Regeneration decreased from 5.36 to 5.01</li>\n</ul>\n<ul>\n</ul>\n<p><img alt=\"\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/19RBT3IUQUYB1403137112368.png\"/></p>"
+    }
+   ],
+   "nameKo": "전사"
+  },
+  {
+   "name": "Bug Fixes",
+   "key": "bugs",
+   "html": "<p><span class=\"pn-h\"><strong>General</strong></span></p>\n<ul>\n<li>Corrected a number of typos and tooltip errors across several aspects of the game.</li>\n</ul>\n<p><span class=\"pn-h\"><strong>Art</strong></span></p>\n<ul>\n<li><strong>Chromie:</strong> Chromie’s Hourglass will no longer appear to flicker after casting Hearthstone while moving.</li>\n<li><strong>Samuro:</strong> A bowl no longer appears at Samuro’s feet during his dance animation.</li>\n</ul>\n<p><span class=\"pn-h\"><strong>Battlegrounds</strong></span></p>\n<ul>\n<li><strong>Punisher Arena:</strong> Casting Zeratul’s Void Prison on Punishers just before they leap will no longer prevent them from attacking when Void Prison ends.</li>\n<li><strong>Temple Arena:</strong> Fixed an issue that could prevent Temples from activating correctly during the second round of the Brawl.</li>\n<li><strong>Battlefield of Eternity &amp; Infernal Shrines: </strong>Fixed an animation pop affecting Towers on the Heaven side of Diablo-themed Battlegrounds.</li>\n<li><strong>Sky Temple:</strong> Fixed an animation pop affecting Temple Guardians.</li>\n<li><strong>Try Mode:</strong> Fixed an animation issue affecting the allied Keep.</li>\n</ul>\n<p><span class=\"pn-h\"><strong>Heroes, Abilities, and Talents</strong></span></p>\n<ul>\n<li><strong>Alarak:</strong> Telekinesis will now correctly interrupt E.T.C.’s Mosh Pit.</li>\n<li><strong>Diablo</strong>: The Hellgate Talent is no longer removed after being struck by Falstad’s Hinterland Blast Heroic.</li>\n<li><strong>Diablo</strong>: The Hellgate Talent is no longer removed after being struck by the Archangel’s Bulletstorm Ability on Braxis Holdout.</li>\n<li><strong>Gazlowe:</strong> Rock-It! Turret range indicators will now correctly display while they are active.</li>\n<li><strong>Kharazim:</strong> Becoming trapped by Chromie’s Time Trap while using Radiant Dash with the Way of the Hundred Fists Talent will no longer prevent Kharazim from issuing Basic Attacks until Radiant Dash is cast a second time.</li>\n<li><strong>Raynor: </strong>Fixed an issue causing Hyperion to gain benefits from several of Raynor’s Basic Attack Talents.</li>\n<li><strong>Samuro:</strong> The cooldown for Critical Strike will no longer stop counting down when he is killed.</li>\n<li><strong>Samuro:</strong> Casting Mirror Image after learning Way of Illusion will no longer cause a Talent Quest progress sound to play.</li>\n<li><strong>Samuro:</strong> Fixed an issue that could cause certain Hero Abilities and Summons to continue tracking the primary Samuro after casting Mirror Image.</li>\n<li><strong>Thrall:</strong> The Earthquake tooltip has been updated to reflect that it pulses once every 4 seconds.</li>\n<li><strong>Tychus:</strong> The range indicator for Overkill will now correctly display while the Ability is active.</li>\n<li><strong>Tychus:</strong> The range indicator for Drakken Laser Drill will now correctly display while the Ability is active.</li>\n<li><strong>Zeratul:</strong> Fixed an issue that could prevent Shields granted by the Shroud of Adun Talent from fully recharging.</li>\n<li><strong>Zeratul:</strong> Shroud of Adun will no longer accumulate Shields while using Hearthstone.</li>\n<li><strong>Zeratul: </strong>Seeker in the Dark’s duration is now correctly paused while a target affected by Singularity Spike is caught within Void Prison.</li>\n</ul>\n<p><span class=\"pn-h\"><strong>Sound</strong></span></p>\n<ul>\n<li><strong>Core:</strong> Fixed an issue that could prevent the Core on the Hell side of Battlefield of Eternity and Infernal Shrines from playing certain attack sounds.</li>\n</ul>\n<p><span class=\"pn-h\"><strong>User Interface</strong></span></p>\n<ul>\n<li><strong>Death Recap:</strong> Fixed an issue that could cause Death Recaps to show inaccurate final blow damage.</li>\n<li><strong>Minimap: </strong>Catapult Minimap icons are now slightly lighter in color to help players more easily differentiate them from other Minions.</li>\n<li><strong>Profile:</strong> Fixed an issue in which the player portrait would not update correctly after selecting the Blackheart's Revenge portrait.<br/>\n\t </li>\n</ul>\n<p><img alt=\"\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/g6/G6G0N80EOC941426801305139.png\"/></p>\n<p><img alt=\"InvisibleDividerLine_800x50.png\" data-id=\"14509591\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/6VA2831Q81IU1403137406234.png\"/></p>\n<style type=\"text/css\">img\n{\ndisplay: block;\n}\n</style>\n<style type=\"text/css\">p\n{\ndisplay:inline;\n}\n</style>\n<style type=\"text/css\">ul.tile-list {\nwidth: 100%;\noverflow: hidden;\nmargin: 30px 0 0;\n}\nli.tile-list-item {\nfloat: left;\nclear: left;\nmargin: 0 0 20px;\nlist-style: none;\n}\nli.tile-list-item h4 {\ntext-align: center;\nmargin-bottom: 10px;\n}\nimg.tile-list-thumb {\nwidth: 50%;\nfloat: left;\n}\nli.tile-list-item ul {\nwidth: 50%;\nfloat: left;\nmargin: 0;\npadding-left: 15px;\n}\nli.tile-list-item li {\nfont-size: 14px;\nlist-style: disc;\nmargin-left: 15px;\n}\ntable.schedule_table {\nwidth: 100%;\n}\ntable.schedule_table th,\ntable.schedule_table td {\npadding: 4px;\n}\ntable.schedule_table th {\nfont-family: Metronic, sans-serif;\nfont-weight: normal;\ntext-align: left;\ncolor: #0099ff;\ntext-transform: uppercase;\n}\ntable.schedule_table td {\nfont-size: 14px;\nline-height: 18px;\nvertical-align: top;\n}\nul.schedule_list {\nmargin: 15px 0 30px 20px;\n}\nul.schedule_list li {\nfont-size: 14px;\n}\n@media (min-width: 564px) {\nli.tile-list-item {\nclear: none;\nmax-width: none;\nwidth: 31%;\nborder: none;\nmargin-bottom: 0;\n}\nli.tile-list-item:nth-child(2) {\nmargin: 0 3.5%;\n}\nimg.tile-list-thumb {\nwidth: 100%;\n}\nli.tile-list-item ul {\nclear: left;\nmargin-top: 15px;\nwidth: 100%;\n}\n}\n</style>\n<style class=\"blockquote-dev\" type=\"text/css\">blockquote {\nbackground: #140029;\nborder-left: 10px solid #320064;\nmargin: 1.5em 10px;\npadding: 0.5em 10px;;\nquotes: \"\\201C\"\"\\201D\"\"\\2018\"\"\\2019\";\n}\nblockquote p {\ndisplay: inline;\npadding: 0px 0px 0px 0px;\n}\n</style>",
+   "items": [
+    {
+     "name": "Chromie",
+     "heroId": "Chromie",
+     "heroIds": [
+      "Chromie"
+     ],
+     "under": null,
+     "html": "<strong>Chromie:</strong> Chromie’s Hourglass will no longer appear to flicker after casting Hearthstone while moving.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Chromie: Chromie’s Hourglass will no longer appear to flicker after casting Hearthstone while moving.",
+         "html": "<strong>Chromie:</strong> Chromie’s Hourglass will no longer appear to flicker after casting Hearthstone while moving.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Samuro",
+     "heroId": "Samuro",
+     "heroIds": [
+      "Samuro"
+     ],
+     "under": null,
+     "html": "<strong>Samuro:</strong> A bowl no longer appears at Samuro’s feet during his dance animation.<strong>Samuro:</strong> The cooldown for Critical Strike will no longer stop counting down when he is killed.<strong>Samuro:</strong> Casting Mirror Image after learning Way of Illusion will no longer cause a Talent Quest progress sound to play.<strong>Samuro:</strong> Fixed an issue that could cause certain Hero Abilities and Summons to continue tracking the primary Samuro after casting Mirror Image.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Samuro: A bowl no longer appears at Samuro’s feet during his dance animation.",
+         "html": "<strong>Samuro:</strong> A bowl no longer appears at Samuro’s feet during his dance animation.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Samuro: The cooldown for Critical Strike will no longer stop counting down when he is killed.",
+         "html": "<strong>Samuro:</strong> The cooldown for Critical Strike will no longer stop counting down when he is killed.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Samuro: Casting Mirror Image after learning Way of Illusion will no longer cause a Talent Quest progress sound to play.",
+         "html": "<strong>Samuro:</strong> Casting Mirror Image after learning Way of Illusion will no longer cause a Talent Quest progress sound to play.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Samuro: Fixed an issue that could cause certain Hero Abilities and Summons to continue tracking the primary Samuro after casting Mirror Image.",
+         "html": "<strong>Samuro:</strong> Fixed an issue that could cause certain Hero Abilities and Summons to continue tracking the primary Samuro after casting Mirror Image.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Alarak",
+     "heroId": "Alarak",
+     "heroIds": [
+      "Alarak"
+     ],
+     "under": null,
+     "html": "<strong>Alarak:</strong> Telekinesis will now correctly interrupt E.T.C.’s Mosh Pit.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Alarak: Telekinesis will now correctly interrupt E.T.C.’s Mosh Pit.",
+         "html": "<strong>Alarak:</strong> Telekinesis will now correctly interrupt E.T.C.’s Mosh Pit.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Diablo",
+     "heroId": "Diablo",
+     "heroIds": [
+      "Diablo"
+     ],
+     "under": null,
+     "html": "<strong>Diablo</strong>: The Hellgate Talent is no longer removed after being struck by Falstad’s Hinterland Blast Heroic.<strong>Diablo</strong>: The Hellgate Talent is no longer removed after being struck by the Archangel’s Bulletstorm Ability on Braxis Holdout.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Diablo : The Hellgate Talent is no longer removed after being struck by Falstad’s Hinterland Blast Heroic.",
+         "html": "<strong>Diablo</strong>: The Hellgate Talent is no longer removed after being struck by Falstad’s Hinterland Blast Heroic.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Diablo : The Hellgate Talent is no longer removed after being struck by the Archangel’s Bulletstorm Ability on Braxis Holdout.",
+         "html": "<strong>Diablo</strong>: The Hellgate Talent is no longer removed after being struck by the Archangel’s Bulletstorm Ability on Braxis Holdout.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Gazlowe",
+     "heroId": "Tinker",
+     "heroIds": [
+      "Tinker"
+     ],
+     "under": null,
+     "html": "<strong>Gazlowe:</strong> Rock-It! Turret range indicators will now correctly display while they are active.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Gazlowe: Rock-It! Turret range indicators will now correctly display while they are active.",
+         "html": "<strong>Gazlowe:</strong> Rock-It! Turret range indicators will now correctly display while they are active.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Kharazim",
+     "heroId": "Monk",
+     "heroIds": [
+      "Monk"
+     ],
+     "under": null,
+     "html": "<strong>Kharazim:</strong> Becoming trapped by Chromie’s Time Trap while using Radiant Dash with the Way of the Hundred Fists Talent will no longer prevent Kharazim from issuing Basic Attacks until Radiant Dash is cast a second time.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Kharazim: Becoming trapped by Chromie’s Time Trap while using Radiant Dash with the Way of the Hundred Fists Talent will no longer prevent Kharazim from issuing Basic Attacks until Radiant Dash is cast a second time.",
+         "html": "<strong>Kharazim:</strong> Becoming trapped by Chromie’s Time Trap while using Radiant Dash with the Way of the Hundred Fists Talent will no longer prevent Kharazim from issuing Basic Attacks until Radiant Dash is cast a second time.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Raynor",
+     "heroId": "Raynor",
+     "heroIds": [
+      "Raynor"
+     ],
+     "under": null,
+     "html": "<strong>Raynor: </strong>Fixed an issue causing Hyperion to gain benefits from several of Raynor’s Basic Attack Talents.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Raynor: Fixed an issue causing Hyperion to gain benefits from several of Raynor’s Basic Attack Talents.",
+         "html": "<strong>Raynor: </strong>Fixed an issue causing Hyperion to gain benefits from several of Raynor’s Basic Attack Talents.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Thrall",
+     "heroId": "Thrall",
+     "heroIds": [
+      "Thrall"
+     ],
+     "under": null,
+     "html": "<strong>Thrall:</strong> The Earthquake tooltip has been updated to reflect that it pulses once every 4 seconds.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Thrall: The Earthquake tooltip has been updated to reflect that it pulses once every 4 seconds.",
+         "html": "<strong>Thrall:</strong> The Earthquake tooltip has been updated to reflect that it pulses once every 4 seconds.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Tychus",
+     "heroId": "Tychus",
+     "heroIds": [
+      "Tychus"
+     ],
+     "under": null,
+     "html": "<strong>Tychus:</strong> The range indicator for Overkill will now correctly display while the Ability is active.<strong>Tychus:</strong> The range indicator for Drakken Laser Drill will now correctly display while the Ability is active.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Tychus: The range indicator for Overkill will now correctly display while the Ability is active.",
+         "html": "<strong>Tychus:</strong> The range indicator for Overkill will now correctly display while the Ability is active.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Tychus: The range indicator for Drakken Laser Drill will now correctly display while the Ability is active.",
+         "html": "<strong>Tychus:</strong> The range indicator for Drakken Laser Drill will now correctly display while the Ability is active.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Zeratul",
+     "heroId": "Zeratul",
+     "heroIds": [
+      "Zeratul"
+     ],
+     "under": null,
+     "html": "<strong>Zeratul:</strong> Fixed an issue that could prevent Shields granted by the Shroud of Adun Talent from fully recharging.<strong>Zeratul:</strong> Shroud of Adun will no longer accumulate Shields while using Hearthstone.<strong>Zeratul: </strong>Seeker in the Dark’s duration is now correctly paused while a target affected by Singularity Spike is caught within Void Prison.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Zeratul: Fixed an issue that could prevent Shields granted by the Shroud of Adun Talent from fully recharging.",
+         "html": "<strong>Zeratul:</strong> Fixed an issue that could prevent Shields granted by the Shroud of Adun Talent from fully recharging.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Zeratul: Shroud of Adun will no longer accumulate Shields while using Hearthstone.",
+         "html": "<strong>Zeratul:</strong> Shroud of Adun will no longer accumulate Shields while using Hearthstone.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Zeratul: Seeker in the Dark’s duration is now correctly paused while a target affected by Singularity Spike is caught within Void Prison.",
+         "html": "<strong>Zeratul: </strong>Seeker in the Dark’s duration is now correctly paused while a target affected by Singularity Spike is caught within Void Prison.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "nameKo": "버그 수정"
+  }
+ ],
+ "heroes": [
+  "Alarak",
+  "Anubarak",
+  "Arthas",
+  "Azmodan",
+  "Chromie",
+  "Diablo",
+  "Dryad",
+  "Greymane",
+  "Monk",
+  "Nova",
+  "Raynor",
+  "Samuro",
+  "Sylvanas",
+  "Thrall",
+  "Tinker",
+  "Tychus",
+  "Zeratul",
+  "Zuljin"
+ ],
+ "battlegrounds": [
+  "haunted_mines"
+ ],
+ "lang": "en",
+ "newsId": "20407400"
+}

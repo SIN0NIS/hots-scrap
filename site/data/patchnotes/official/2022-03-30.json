@@ -1,0 +1,1132 @@
+{
+ "date": "2022-03-30",
+ "kind": "balance",
+ "title": "히어로즈 오브 더 스톰 밸런스 패치 노트 - 2022년 3월 30일",
+ "source": "https://news.blizzard.com/ko-kr/article/23787368/2022-3-30",
+ "published": "2022-03-29T20:30:09Z",
+ "sections": [
+  {
+   "name": "머리말",
+   "key": "intro",
+   "html": "<p>히어로즈 오브 더 스톰에 밸런스 패치가 새롭게 적용되었습니다! 아래에서 자세한 정보를 알아보세요.</p>"
+  },
+  {
+   "name": "영웅",
+   "key": "heroes",
+   "html": "<table class=\"table table-condensed\">\n<tbody>\n<tr>\n<th></th>\n<th></th>\n<th></th>\n<th></th>\n<th></th>\n</tr>\n<tr>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n</tbody>\n</table>"
+  },
+  {
+   "name": "전사",
+   "key": "role_tank",
+   "html": "<h4>아눕아락</h4>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">네루비안 껍질 [W]</strong>\n<ul>\n<li>기술 방어력 증가량이 20에서 25로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">지하군주의 보호막 [E]</strong>\n<ul>\n<li>보호막이 345에서 400으로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">쐐기 돌출 [W]</strong>\n<ul>\n<li>공격력이 80에서 90으로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">산에 흠뻑 젖은 턱 [지속 효과]</strong>\n<ul>\n<li>공격력 증가량이 70%에서 80%로 증가했습니다.</li>\n<li>지속 시간이 3초에서 4초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">미라 휘감기 [R2]</strong>\n<ul>\n<li>지속 피해가 50에서 60으로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>개발자의 의견: </strong>이 특성들은 그동안 딱정벌레 무리의 잠재력에 걸맞지 않았습니다.</blockquote>\n<h4>요한나</h4>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">열성의 섬광 [E]</strong>\n<ul>\n<li>추가 공격력이 125%에서 75%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">포효 [Q]</strong>\n<ul>\n<li>징벌의 공격력 최대 증가량이 175%에서 150%로 감소했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">축복받은 망치 [사용 효과]</strong>\n<ul>\n<li>일반 기술 재사용 대기시간 감소량이 3초에서 2.5초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">하늘의 분노 [R1]</strong>\n<ul>\n<li>화살 세례 하나당 적중 대상의 수가 4에서 6으로 증가했습니다.</li>\n<li>화살 하나당 재사용 대기시간 감소량이 2초에서 1초로 감소했습니다.</li>\n<li>공격력이 68에서 50으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>개발자의 의견: </strong>요한나의 공격력이 너무 강력해 최근 상향했던 내용의 일부를 되돌렸습니다. 이번 기회에 하늘의 분노의 기능도 변경하려 합니다. 하늘의 분노는 이전까지 화살을 8번 쏟아내 1번당 최대 2명의 적과 2명의 아군을 적중시킬 수 있었습니다. 적군과 아군의 적중 대상 수를 각각 3명으로 증가시켰고, 천벌의 검을 아주 잘 사용했을 때 그만한 차이가 생기도록 재사용 대기시간 감소량은 줄였습니다.</blockquote>",
+   "heroes": [
+    {
+     "name": "아눕아락",
+     "heroId": "Anubarak",
+     "heroIds": [
+      "Anubarak"
+     ],
+     "changes": [
+      {
+       "name": "네루비안 껍질",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "기술 방어력 증가량이 20에서 25로 증가했습니다.",
+         "html": "기술 방어력 증가량이 20에서 25로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "지하군주의 보호막",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "보호막이 345에서 400으로 증가했습니다.",
+         "html": "보호막이 345에서 400으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "쐐기 돌출",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "공격력이 80에서 90으로 증가했습니다.",
+         "html": "공격력이 80에서 90으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "산에 흠뻑 젖은 턱",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "공격력 증가량이 70%에서 80%로 증가했습니다.",
+         "html": "공격력 증가량이 70%에서 80%로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "지속 시간이 3초에서 4초로 증가했습니다.",
+         "html": "지속 시간이 3초에서 4초로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "미라 휘감기",
+       "key": "R2",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "지속 피해가 50에서 60으로 증가했습니다.",
+         "html": "지속 피해가 50에서 60으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">네루비안 껍질 [W]</strong>\n<ul>\n<li>기술 방어력 증가량이 20에서 25로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">지하군주의 보호막 [E]</strong>\n<ul>\n<li>보호막이 345에서 400으로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">쐐기 돌출 [W]</strong>\n<ul>\n<li>공격력이 80에서 90으로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">산에 흠뻑 젖은 턱 [지속 효과]</strong>\n<ul>\n<li>공격력 증가량이 70%에서 80%로 증가했습니다.</li>\n<li>지속 시간이 3초에서 4초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">미라 휘감기 [R2]</strong>\n<ul>\n<li>지속 피해가 50에서 60으로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>개발자의 의견: </strong>이 특성들은 그동안 딱정벌레 무리의 잠재력에 걸맞지 않았습니다.</blockquote>"
+    },
+    {
+     "name": "요한나",
+     "heroId": "Crusader",
+     "heroIds": [
+      "Crusader"
+     ],
+     "changes": [
+      {
+       "name": "열성의 섬광",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "추가 공격력이 125%에서 75%로 감소했습니다.",
+         "html": "추가 공격력이 125%에서 75%로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "포효",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "징벌의 공격력 최대 증가량이 175%에서 150%로 감소했습니다.",
+         "html": "징벌의 공격력 최대 증가량이 175%에서 150%로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "축복받은 망치",
+       "key": "사용 효과",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "일반 기술 재사용 대기시간 감소량이 3초에서 2.5초로 감소했습니다.",
+         "html": "일반 기술 재사용 대기시간 감소량이 3초에서 2.5초로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "하늘의 분노",
+       "key": "R1",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "화살 세례 하나당 적중 대상의 수가 4에서 6으로 증가했습니다.",
+         "html": "화살 세례 하나당 적중 대상의 수가 4에서 6으로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "화살 하나당 재사용 대기시간 감소량이 2초에서 1초로 감소했습니다.",
+         "html": "화살 하나당 재사용 대기시간 감소량이 2초에서 1초로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "공격력이 68에서 50으로 감소했습니다.",
+         "html": "공격력이 68에서 50으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">열성의 섬광 [E]</strong>\n<ul>\n<li>추가 공격력이 125%에서 75%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">포효 [Q]</strong>\n<ul>\n<li>징벌의 공격력 최대 증가량이 175%에서 150%로 감소했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">축복받은 망치 [사용 효과]</strong>\n<ul>\n<li>일반 기술 재사용 대기시간 감소량이 3초에서 2.5초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">하늘의 분노 [R1]</strong>\n<ul>\n<li>화살 세례 하나당 적중 대상의 수가 4에서 6으로 증가했습니다.</li>\n<li>화살 하나당 재사용 대기시간 감소량이 2초에서 1초로 감소했습니다.</li>\n<li>공격력이 68에서 50으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>개발자의 의견: </strong>요한나의 공격력이 너무 강력해 최근 상향했던 내용의 일부를 되돌렸습니다. 이번 기회에 하늘의 분노의 기능도 변경하려 합니다. 하늘의 분노는 이전까지 화살을 8번 쏟아내 1번당 최대 2명의 적과 2명의 아군을 적중시킬 수 있었습니다. 적군과 아군의 적중 대상 수를 각각 3명으로 증가시켰고, 천벌의 검을 아주 잘 사용했을 때 그만한 차이가 생기도록 재사용 대기시간 감소량은 줄였습니다.</blockquote>"
+    }
+   ]
+  },
+  {
+   "name": "투사",
+   "key": "투사",
+   "html": "<h4>아르타니스</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li>생명력이 2525에서 2490으로 감소했습니다.</li>\n<li>생명력 재생량이 5.26에서 5.19로 감소했습니다.</li>\n<li><strong class=\"pn-name\">과부하 보호막 [고유 능력]</strong>\n<ul>\n<li>보호막이 385에서 365로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>4레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">보호막 쇄도 [고유 능력]</strong>\n<ul>\n<li>보호막 증가량이 75%에서 80%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>개발자의 의견: </strong>아르타니스가 서서히 인기와 승률 모두 가장 뛰어난 투사가 되었기 때문에 하향했습니다.</blockquote>\n<h4>스랄</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li>생명력이 1876에서 1896으로 증가했습니다.</li>\n<li>생명력 재생량이 3.91에서 3.95로 증가했습니다.</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>20레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">정령의 여세 [지속 효과]</strong>\n<ul>\n<li>영웅을 상대로 한 재사용 대기시간 감소량이 두 배에서 세 배로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>개발자의 의견: </strong>스랄은 이제 꽤 경쟁력 있는 선택이지만, 그래도 모든 빌드가 아주 약간 뒤떨어지는 경향이 있습니다.</blockquote>\n<h4>바리안</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">영웅의 일격 [고유 능력]</strong>\n<ul>\n<li>일반 공격으로 감소하는 재사용 대기시간이 2초에서 3초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">사자의 아귀 [Q]</strong>\n<ul>\n<li>중첩당 추가 공격력이 6에서 7로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>4레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">거인의 강타 [R2]</strong>\n<ul>\n<li>공격력이 160에서 185로 증가했습니다.</li>\n<li>방어력 감소량이 20에서 25로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>개발자의 의견: </strong>영웅의 일격이 변경되며 도발이나 거인의 강타를 주로 사용하는 바리안이 약간 상향되었습니다. 반가운 변화라고 생각합니다.</blockquote>",
+   "heroes": [
+    {
+     "name": "아르타니스",
+     "heroId": "Artanis",
+     "heroIds": [
+      "Artanis"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "생명력이 2525에서 2490으로 감소했습니다.",
+         "html": "생명력이 2525에서 2490으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "생명력 재생량이 5.26에서 5.19로 감소했습니다.",
+         "html": "생명력 재생량이 5.26에서 5.19로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "과부하 보호막",
+       "key": "고유 능력",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "보호막이 385에서 365로 감소했습니다.",
+         "html": "보호막이 385에서 365로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "보호막 쇄도",
+       "key": "고유 능력",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "보호막 증가량이 75%에서 80%로 증가했습니다.",
+         "html": "보호막 증가량이 75%에서 80%로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li>생명력이 2525에서 2490으로 감소했습니다.</li>\n<li>생명력 재생량이 5.26에서 5.19로 감소했습니다.</li>\n<li><strong class=\"pn-name\">과부하 보호막 [고유 능력]</strong>\n<ul>\n<li>보호막이 385에서 365로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>4레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">보호막 쇄도 [고유 능력]</strong>\n<ul>\n<li>보호막 증가량이 75%에서 80%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>개발자의 의견: </strong>아르타니스가 서서히 인기와 승률 모두 가장 뛰어난 투사가 되었기 때문에 하향했습니다.</blockquote>"
+    },
+    {
+     "name": "스랄",
+     "heroId": "Thrall",
+     "heroIds": [
+      "Thrall"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "생명력이 1876에서 1896으로 증가했습니다.",
+         "html": "생명력이 1876에서 1896으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "생명력 재생량이 3.91에서 3.95로 증가했습니다.",
+         "html": "생명력 재생량이 3.91에서 3.95로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "정령의 여세",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "영웅을 상대로 한 재사용 대기시간 감소량이 두 배에서 세 배로 증가했습니다.",
+         "html": "영웅을 상대로 한 재사용 대기시간 감소량이 두 배에서 세 배로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li>생명력이 1876에서 1896으로 증가했습니다.</li>\n<li>생명력 재생량이 3.91에서 3.95로 증가했습니다.</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>20레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">정령의 여세 [지속 효과]</strong>\n<ul>\n<li>영웅을 상대로 한 재사용 대기시간 감소량이 두 배에서 세 배로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>개발자의 의견: </strong>스랄은 이제 꽤 경쟁력 있는 선택이지만, 그래도 모든 빌드가 아주 약간 뒤떨어지는 경향이 있습니다.</blockquote>"
+    },
+    {
+     "name": "바리안",
+     "heroId": "Varian",
+     "heroIds": [
+      "Varian"
+     ],
+     "changes": [
+      {
+       "name": "영웅의 일격",
+       "key": "고유 능력",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "일반 공격으로 감소하는 재사용 대기시간이 2초에서 3초로 증가했습니다.",
+         "html": "일반 공격으로 감소하는 재사용 대기시간이 2초에서 3초로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "사자의 아귀",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "중첩당 추가 공격력이 6에서 7로 증가했습니다.",
+         "html": "중첩당 추가 공격력이 6에서 7로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "거인의 강타",
+       "key": "R2",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "공격력이 160에서 185로 증가했습니다.",
+         "html": "공격력이 160에서 185로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "방어력 감소량이 20에서 25로 증가했습니다.",
+         "html": "방어력 감소량이 20에서 25로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">영웅의 일격 [고유 능력]</strong>\n<ul>\n<li>일반 공격으로 감소하는 재사용 대기시간이 2초에서 3초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">사자의 아귀 [Q]</strong>\n<ul>\n<li>중첩당 추가 공격력이 6에서 7로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>4레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">거인의 강타 [R2]</strong>\n<ul>\n<li>공격력이 160에서 185로 증가했습니다.</li>\n<li>방어력 감소량이 20에서 25로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>개발자의 의견: </strong>영웅의 일격이 변경되며 도발이나 거인의 강타를 주로 사용하는 바리안이 약간 상향되었습니다. 반가운 변화라고 생각합니다.</blockquote>"
+    }
+   ]
+  },
+  {
+   "name": "치유사",
+   "key": "role_healer",
+   "html": "<h4>알렉스트라자</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">생명의 선물 [Q]</strong>\n<ul>\n<li>추가된 기능: [지속 효과] 알렉스트라자의 생명력 재생량이 150% 증가합니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>16레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">굳건한 사랑 [Q]</strong>\n<ul>\n<li>변경된 기능: 생명의 선물이 2.5초 동안 대상의 방어력을 10 증가시키고, 알렉스트라자의 생명력이 75%보다 높으면 대상의 방어력을 30 증가시킵니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">과보호 [W]</strong>\n<ul>\n<li>보호막의 지속 시간이 3초에서 6초로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">용족의 끈기 [D]</strong>\n<ul>\n<li>추가된 기능: 용의 여왕의 일반 공격 치유량이 50% 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>개발자의 의견: </strong>알렉스트라자는 보통 치유사 중 승률이 낮은 쪽에 속합니다. 생명력을 사용해 치유할 때 이전보다 생존력이 높아지도록 기본 재생량을 추가했습니다. 또한 16레벨 특성에도 약간의 매력을 더했습니다.</blockquote>\n<h4>레가르</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li>기본 생명력이 1935에서 1900으로 감소했습니다.</li>\n<li>생명력 재생량이 4.03에서 3.96으로 감소했습니다.</li>\n<li><strong class=\"pn-name\">정화 [D]</strong>\n<ul>\n<li>재사용 대기시간이 45초에서 60초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">거대 토템 [E]</strong>\n<ul>\n<li>토템 생명력 증가량이 50%에서 25%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>4레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">대지생명의 주문 [Q]</strong>\n<ul>\n<li>생명력 회복량이 200에서 160으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">흔들리지 않는 토템 [E]</strong>\n<ul>\n<li>공격 속도 감소 효과가 30%에서 25%로 감소했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">정제 [D]</strong>\n<ul>\n<li>정화의 재사용 대기시간 감소량이 10초에서 15초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">결박 토템 [E]</strong>\n<ul>\n<li>공격력이 145에서 115로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>개발자의 의견: </strong>레가르의 가장 강력한 특성들은 아직도 나머지 특성들보다 뛰어나지만, 레가르가 강력해지는 데 꼭 필요하지는 않습니다. 다시 레가르의 기본 생명력을 낮췄고, 이번에는 정화의 재사용 대기시간도 하향해 전반적인 위력을 줄였습니다.</blockquote>\n<h4>화이트메인</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">절박한 기도 [Q]</strong>\n<ul>\n<li>마나 소모량이 45에서 40으로 감소했습니다.</li>\n<li>절박함 중첩 하나당 증가하는 마나 소모량이 45에서 40으로 감소했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">열의 [D]</strong>\n<ul>\n<li>방어력 감소 효과가 25에서 15로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>7레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">중재 [사용 효과]</strong>\n<ul>\n<li>시전 사거리가 7에서 7.5로 증가했습니다.</li>\n<li>제거된 기능: 이제 절박함 중첩이 쌓이지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">광휘 [Q]</strong>\n<ul>\n<li>변경된 기능: 이제 광휘의 치유 효과가 열의를 다시 적용하여 열의의 지속 시간을 초기화합니다.</li>\n<li>이제 화이트메인의 방어력에 영향을 주지 않습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">연좌의 형벌 [W]</strong>\n<ul>\n<li>대상 주위 영웅에의 공격력이 심문 공격력의 70%에서 100%로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">엄격한 규율 [E]</strong>\n<ul>\n<li>추가된 기능: 심문의 재사용 대기시간이 2초 감소합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>개발자의 의견: </strong>화이트메인도 알렉스트라자와 비슷하게 다른 치유사보다 뒤떨어지는 경우가 많았습니다. 이번 기본 능력 개편으로 게임 초반 플레이가 수월해지기를 바랍니다.</blockquote>",
+   "heroes": [
+    {
+     "name": "알렉스트라자",
+     "heroId": "Alexstrasza",
+     "heroIds": [
+      "Alexstrasza"
+     ],
+     "changes": [
+      {
+       "name": "생명의 선물",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "추가된 기능: [지속 효과] 알렉스트라자의 생명력 재생량이 150% 증가합니다.",
+         "html": "추가된 기능: [지속 효과] 알렉스트라자의 생명력 재생량이 150% 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "굳건한 사랑",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "변경된 기능: 생명의 선물이 2.5초 동안 대상의 방어력을 10 증가시키고, 알렉스트라자의 생명력이 75%보다 높으면 대상의 방어력을 30 증가시킵니다.",
+         "html": "변경된 기능: 생명의 선물이 2.5초 동안 대상의 방어력을 10 증가시키고, 알렉스트라자의 생명력이 75%보다 높으면 대상의 방어력을 30 증가시킵니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "과보호",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "보호막의 지속 시간이 3초에서 6초로 증가했습니다.",
+         "html": "보호막의 지속 시간이 3초에서 6초로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "용족의 끈기",
+       "key": "D",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "추가된 기능: 용의 여왕의 일반 공격 치유량이 50% 증가합니다.",
+         "html": "추가된 기능: 용의 여왕의 일반 공격 치유량이 50% 증가합니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">생명의 선물 [Q]</strong>\n<ul>\n<li>추가된 기능: [지속 효과] 알렉스트라자의 생명력 재생량이 150% 증가합니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>16레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">굳건한 사랑 [Q]</strong>\n<ul>\n<li>변경된 기능: 생명의 선물이 2.5초 동안 대상의 방어력을 10 증가시키고, 알렉스트라자의 생명력이 75%보다 높으면 대상의 방어력을 30 증가시킵니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">과보호 [W]</strong>\n<ul>\n<li>보호막의 지속 시간이 3초에서 6초로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">용족의 끈기 [D]</strong>\n<ul>\n<li>추가된 기능: 용의 여왕의 일반 공격 치유량이 50% 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>개발자의 의견: </strong>알렉스트라자는 보통 치유사 중 승률이 낮은 쪽에 속합니다. 생명력을 사용해 치유할 때 이전보다 생존력이 높아지도록 기본 재생량을 추가했습니다. 또한 16레벨 특성에도 약간의 매력을 더했습니다.</blockquote>"
+    },
+    {
+     "name": "레가르",
+     "heroId": "Rehgar",
+     "heroIds": [
+      "Rehgar"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "기본 생명력이 1935에서 1900으로 감소했습니다.",
+         "html": "기본 생명력이 1935에서 1900으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "생명력 재생량이 4.03에서 3.96으로 감소했습니다.",
+         "html": "생명력 재생량이 4.03에서 3.96으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "정화",
+       "key": "D",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 45초에서 60초로 증가했습니다.",
+         "html": "재사용 대기시간이 45초에서 60초로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "거대 토템",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "토템 생명력 증가량이 50%에서 25%로 감소했습니다.",
+         "html": "토템 생명력 증가량이 50%에서 25%로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "대지생명의 주문",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "생명력 회복량이 200에서 160으로 감소했습니다.",
+         "html": "생명력 회복량이 200에서 160으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "흔들리지 않는 토템",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "공격 속도 감소 효과가 30%에서 25%로 감소했습니다.",
+         "html": "공격 속도 감소 효과가 30%에서 25%로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "정제",
+       "key": "D",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "정화의 재사용 대기시간 감소량이 10초에서 15초로 증가했습니다.",
+         "html": "정화의 재사용 대기시간 감소량이 10초에서 15초로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "결박 토템",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "공격력이 145에서 115로 감소했습니다.",
+         "html": "공격력이 145에서 115로 감소했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li>기본 생명력이 1935에서 1900으로 감소했습니다.</li>\n<li>생명력 재생량이 4.03에서 3.96으로 감소했습니다.</li>\n<li><strong class=\"pn-name\">정화 [D]</strong>\n<ul>\n<li>재사용 대기시간이 45초에서 60초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">거대 토템 [E]</strong>\n<ul>\n<li>토템 생명력 증가량이 50%에서 25%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>4레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">대지생명의 주문 [Q]</strong>\n<ul>\n<li>생명력 회복량이 200에서 160으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">흔들리지 않는 토템 [E]</strong>\n<ul>\n<li>공격 속도 감소 효과가 30%에서 25%로 감소했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">정제 [D]</strong>\n<ul>\n<li>정화의 재사용 대기시간 감소량이 10초에서 15초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">결박 토템 [E]</strong>\n<ul>\n<li>공격력이 145에서 115로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>개발자의 의견: </strong>레가르의 가장 강력한 특성들은 아직도 나머지 특성들보다 뛰어나지만, 레가르가 강력해지는 데 꼭 필요하지는 않습니다. 다시 레가르의 기본 생명력을 낮췄고, 이번에는 정화의 재사용 대기시간도 하향해 전반적인 위력을 줄였습니다.</blockquote>"
+    },
+    {
+     "name": "화이트메인",
+     "heroId": "Whitemane",
+     "heroIds": [
+      "Whitemane"
+     ],
+     "changes": [
+      {
+       "name": "절박한 기도",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "마나 소모량이 45에서 40으로 감소했습니다.",
+         "html": "마나 소모량이 45에서 40으로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "절박함 중첩 하나당 증가하는 마나 소모량이 45에서 40으로 감소했습니다.",
+         "html": "절박함 중첩 하나당 증가하는 마나 소모량이 45에서 40으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "열의",
+       "key": "D",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "방어력 감소 효과가 25에서 15로 감소했습니다.",
+         "html": "방어력 감소 효과가 25에서 15로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "중재",
+       "key": "사용 효과",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "시전 사거리가 7에서 7.5로 증가했습니다.",
+         "html": "시전 사거리가 7에서 7.5로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "제거된 기능: 이제 절박함 중첩이 쌓이지 않습니다.",
+         "html": "제거된 기능: 이제 절박함 중첩이 쌓이지 않습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "광휘",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "변경된 기능: 이제 광휘의 치유 효과가 열의를 다시 적용하여 열의의 지속 시간을 초기화합니다.",
+         "html": "변경된 기능: 이제 광휘의 치유 효과가 열의를 다시 적용하여 열의의 지속 시간을 초기화합니다.",
+         "added": false
+        },
+        {
+         "text": "이제 화이트메인의 방어력에 영향을 주지 않습니다.",
+         "html": "이제 화이트메인의 방어력에 영향을 주지 않습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "연좌의 형벌",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "대상 주위 영웅에의 공격력이 심문 공격력의 70%에서 100%로 증가했습니다.",
+         "html": "대상 주위 영웅에의 공격력이 심문 공격력의 70%에서 100%로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "엄격한 규율",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "추가된 기능: 심문의 재사용 대기시간이 2초 감소합니다.",
+         "html": "추가된 기능: 심문의 재사용 대기시간이 2초 감소합니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">절박한 기도 [Q]</strong>\n<ul>\n<li>마나 소모량이 45에서 40으로 감소했습니다.</li>\n<li>절박함 중첩 하나당 증가하는 마나 소모량이 45에서 40으로 감소했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">열의 [D]</strong>\n<ul>\n<li>방어력 감소 효과가 25에서 15로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>7레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">중재 [사용 효과]</strong>\n<ul>\n<li>시전 사거리가 7에서 7.5로 증가했습니다.</li>\n<li>제거된 기능: 이제 절박함 중첩이 쌓이지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">광휘 [Q]</strong>\n<ul>\n<li>변경된 기능: 이제 광휘의 치유 효과가 열의를 다시 적용하여 열의의 지속 시간을 초기화합니다.</li>\n<li>이제 화이트메인의 방어력에 영향을 주지 않습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">연좌의 형벌 [W]</strong>\n<ul>\n<li>대상 주위 영웅에의 공격력이 심문 공격력의 70%에서 100%로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">엄격한 규율 [E]</strong>\n<ul>\n<li>추가된 기능: 심문의 재사용 대기시간이 2초 감소합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>개발자의 의견: </strong>화이트메인도 알렉스트라자와 비슷하게 다른 치유사보다 뒤떨어지는 경우가 많았습니다. 이번 기본 능력 개편으로 게임 초반 플레이가 수월해지기를 바랍니다.</blockquote>"
+    }
+   ]
+  },
+  {
+   "name": "근접 암살자",
+   "key": "role_melee",
+   "html": "<h4>알라라크</h4>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">잔혹한 여세 [W]</strong>\n<ul>\n<li>재사용 대기시간 추가 감소량이 75%에서 100%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>4레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">음전하 [E]</strong>\n<ul>\n<li>중첩당 추가 공격력이 4% 에서 5%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">번개 포화 [E]</strong>\n<ul>\n<li>비용 없이 시전할 수 있는 시간 범위가 2초에서 3초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>개발자의 의견: </strong>알라라크 플레이어들이 불화의 일격과 근접 특성들을 성공적으로 활용하고 있어 만족스럽지만, 그 외의 빌드는 약간 뒤처졌습니다.</blockquote>",
+   "heroes": [
+    {
+     "name": "알라라크",
+     "heroId": "Alarak",
+     "heroIds": [
+      "Alarak"
+     ],
+     "changes": [
+      {
+       "name": "잔혹한 여세",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "재사용 대기시간 추가 감소량이 75%에서 100%로 증가했습니다.",
+         "html": "재사용 대기시간 추가 감소량이 75%에서 100%로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "음전하",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "중첩당 추가 공격력이 4% 에서 5%로 증가했습니다.",
+         "html": "중첩당 추가 공격력이 4% 에서 5%로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "번개 포화",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "비용 없이 시전할 수 있는 시간 범위가 2초에서 3초로 증가했습니다.",
+         "html": "비용 없이 시전할 수 있는 시간 범위가 2초에서 3초로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">잔혹한 여세 [W]</strong>\n<ul>\n<li>재사용 대기시간 추가 감소량이 75%에서 100%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>4레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">음전하 [E]</strong>\n<ul>\n<li>중첩당 추가 공격력이 4% 에서 5%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">번개 포화 [E]</strong>\n<ul>\n<li>비용 없이 시전할 수 있는 시간 범위가 2초에서 3초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>개발자의 의견: </strong>알라라크 플레이어들이 불화의 일격과 근접 특성들을 성공적으로 활용하고 있어 만족스럽지만, 그 외의 빌드는 약간 뒤처졌습니다.</blockquote>"
+    }
+   ]
+  },
+  {
+   "name": "원거리 암살자",
+   "key": "role_ranged",
+   "html": "<h4>카시아</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li>무기 공격력이 120에서 122로 증가했습니다.</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">번개의 일격 [지속 효과]</strong>\n<ul>\n<li>공격력 증가량이 15%에서 20%로 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>4레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">거머리의 반지 [지속 효과]</strong>\n<ul>\n<li>치유량이 15%에서 20%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">대천사의 찬가 [W]</strong>\n<ul>\n<li>재사용 대기시간 감소량이 1.5초에서 2초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">진압 [지속 효과]</strong>\n<ul>\n<li>추가된 기능: 대상이 실명된 경우에도 공격력 추가 조건이 충족됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>개발자의 의견: </strong>카시아를 일반 공격 빌드로 키울 경우 위험을 무릅쓰는 플레이가 필요하지만, 굳이 그런 위험을 감수할 가치를 느끼지 못하는 플레이어가 많아 빌드의 전반적인 보상을 높였습니다.</blockquote>\n<h4>크로미</h4>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>8레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">감속의 모래 [R1]</strong>\n<ul>\n<li>이제 ARAM 게임에서 감속의 모래를 선택할 수 없습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>개발자의 의견: </strong>이동할 공간이 좁은 경우에는 감속의 모래에 대처하기가 까다로울 수 있기 때문에 ARAM에서 감속의 모래를 제거했습니다.</blockquote>\n<h4>굴단</h4>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>4레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">생명력 전환 연마 [D]</strong>\n<ul>\n<li>회복되는 마나가 35%에서 40%로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">영혼 흡수 [사용 효과]</strong>\n<ul>\n<li>재사용 대기시간이 30초에서 25초로 감소했습니다.</li>\n<li>최대 중첩수가 2에서 3으로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">어둠의 결속 [Q]</strong>\n<ul>\n<li>재사용 대기시간 감소량이 1.5초에서 1.75초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">마의 갑옷 [Q]</strong>\n<ul>\n<li>기술 방어력 증가량이 40에서 50으로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">어둠의 거래 [지속 효과]</strong>\n<ul>\n<li>추가 생명력이 30%에서 40%로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">생명석 [사용 효과]</strong>\n<ul>\n<li>재사용 대기시간이 60초에서 45초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">타오르는 지옥불 [Q]</strong>\n<ul>\n<li>중첩당 추가 공격력이 10% 에서 12%로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">파괴적인 고통 [E]</strong>\n<ul>\n<li>3번째 타격의 공격력이 233에서 268로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>개발자의 의견: </strong>굴단이 두각을 드러내는 것은 대체로 생명력 흡수 빌드가 강력하기 때문이었습니다. 이 빌드가 지나치게 강하다고 생각되지는 않아 지옥 불길과 부패를 비슷한 수준으로 상향했습니다.</blockquote>\n<h4>해머 상사</h4>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">기습 포격 [D]</strong>\n<ul>\n<li>추가 공격력이 100%에서 125%로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">기갑포 강화 [D]</strong>\n<ul>\n<li>방사 피해가 50%에서 60%로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">소용돌이 포탄 [사용 효과]</strong>\n<ul>\n<li>재사용 대기시간이 100초에서 80초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">이동 공성 모드 [D]</strong>\n<ul>\n<li>이동 속도 증가량이 40%에서 50%로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">사거리 확대 [D]</strong>\n<ul>\n<li>사거리가 증가하는 시간 간격이 2초에서 1.5초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">유산탄 지뢰 [Q]</strong>\n<ul>\n<li>최대 방어력 감소량이 30에서 50으로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">초고용량 축전기 [D]</strong>\n<ul>\n<li>중첩당 증가하는 공격 속도가 5%에서 10%로 증가했습니다.</li>\n<li>최대 공격 속도가 40%에서 60%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>개발자의 의견: </strong>해머 상사의 특성은 적절한 균형을 이루고 있기 때문에 일부 핵심 특성의 위력을 높여 다양한 빌드의 개성을 두드러지게 했습니다.</blockquote>",
+   "heroes": [
+    {
+     "name": "카시아",
+     "heroId": "Amazon",
+     "heroIds": [
+      "Amazon"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "무기 공격력이 120에서 122로 증가했습니다.",
+         "html": "무기 공격력이 120에서 122로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "번개의 일격",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "공격력 증가량이 15%에서 20%로 증가합니다.",
+         "html": "공격력 증가량이 15%에서 20%로 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "거머리의 반지",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "치유량이 15%에서 20%로 증가했습니다.",
+         "html": "치유량이 15%에서 20%로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "대천사의 찬가",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "재사용 대기시간 감소량이 1.5초에서 2초로 증가했습니다.",
+         "html": "재사용 대기시간 감소량이 1.5초에서 2초로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "진압",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "추가된 기능: 대상이 실명된 경우에도 공격력 추가 조건이 충족됩니다.",
+         "html": "추가된 기능: 대상이 실명된 경우에도 공격력 추가 조건이 충족됩니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li>무기 공격력이 120에서 122로 증가했습니다.</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">번개의 일격 [지속 효과]</strong>\n<ul>\n<li>공격력 증가량이 15%에서 20%로 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>4레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">거머리의 반지 [지속 효과]</strong>\n<ul>\n<li>치유량이 15%에서 20%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">대천사의 찬가 [W]</strong>\n<ul>\n<li>재사용 대기시간 감소량이 1.5초에서 2초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">진압 [지속 효과]</strong>\n<ul>\n<li>추가된 기능: 대상이 실명된 경우에도 공격력 추가 조건이 충족됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>개발자의 의견: </strong>카시아를 일반 공격 빌드로 키울 경우 위험을 무릅쓰는 플레이가 필요하지만, 굳이 그런 위험을 감수할 가치를 느끼지 못하는 플레이어가 많아 빌드의 전반적인 보상을 높였습니다.</blockquote>"
+    },
+    {
+     "name": "크로미",
+     "heroId": "Chromie",
+     "heroIds": [
+      "Chromie"
+     ],
+     "changes": [
+      {
+       "name": "감속의 모래",
+       "key": "R1",
+       "new": false,
+       "group": "talent",
+       "level": 8,
+       "lines": [
+        {
+         "text": "이제 ARAM 게임에서 감속의 모래를 선택할 수 없습니다.",
+         "html": "이제 ARAM 게임에서 감속의 모래를 선택할 수 없습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>8레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">감속의 모래 [R1]</strong>\n<ul>\n<li>이제 ARAM 게임에서 감속의 모래를 선택할 수 없습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>개발자의 의견: </strong>이동할 공간이 좁은 경우에는 감속의 모래에 대처하기가 까다로울 수 있기 때문에 ARAM에서 감속의 모래를 제거했습니다.</blockquote>"
+    },
+    {
+     "name": "굴단",
+     "heroId": "Guldan",
+     "heroIds": [
+      "Guldan"
+     ],
+     "changes": [
+      {
+       "name": "생명력 전환 연마",
+       "key": "D",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "회복되는 마나가 35%에서 40%로 증가했습니다.",
+         "html": "회복되는 마나가 35%에서 40%로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "영혼 흡수",
+       "key": "사용 효과",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 30초에서 25초로 감소했습니다.",
+         "html": "재사용 대기시간이 30초에서 25초로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "최대 중첩수가 2에서 3으로 증가했습니다.",
+         "html": "최대 중첩수가 2에서 3으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "어둠의 결속",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "재사용 대기시간 감소량이 1.5초에서 1.75초로 증가했습니다.",
+         "html": "재사용 대기시간 감소량이 1.5초에서 1.75초로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "마의 갑옷",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "기술 방어력 증가량이 40에서 50으로 증가했습니다.",
+         "html": "기술 방어력 증가량이 40에서 50으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "어둠의 거래",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "추가 생명력이 30%에서 40%로 증가했습니다.",
+         "html": "추가 생명력이 30%에서 40%로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "생명석",
+       "key": "사용 효과",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 60초에서 45초로 감소했습니다.",
+         "html": "재사용 대기시간이 60초에서 45초로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "타오르는 지옥불",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "중첩당 추가 공격력이 10% 에서 12%로 증가했습니다.",
+         "html": "중첩당 추가 공격력이 10% 에서 12%로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "파괴적인 고통",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "3번째 타격의 공격력이 233에서 268로 증가했습니다.",
+         "html": "3번째 타격의 공격력이 233에서 268로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>4레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">생명력 전환 연마 [D]</strong>\n<ul>\n<li>회복되는 마나가 35%에서 40%로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">영혼 흡수 [사용 효과]</strong>\n<ul>\n<li>재사용 대기시간이 30초에서 25초로 감소했습니다.</li>\n<li>최대 중첩수가 2에서 3으로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">어둠의 결속 [Q]</strong>\n<ul>\n<li>재사용 대기시간 감소량이 1.5초에서 1.75초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">마의 갑옷 [Q]</strong>\n<ul>\n<li>기술 방어력 증가량이 40에서 50으로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">어둠의 거래 [지속 효과]</strong>\n<ul>\n<li>추가 생명력이 30%에서 40%로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">생명석 [사용 효과]</strong>\n<ul>\n<li>재사용 대기시간이 60초에서 45초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">타오르는 지옥불 [Q]</strong>\n<ul>\n<li>중첩당 추가 공격력이 10% 에서 12%로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">파괴적인 고통 [E]</strong>\n<ul>\n<li>3번째 타격의 공격력이 233에서 268로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>개발자의 의견: </strong>굴단이 두각을 드러내는 것은 대체로 생명력 흡수 빌드가 강력하기 때문이었습니다. 이 빌드가 지나치게 강하다고 생각되지는 않아 지옥 불길과 부패를 비슷한 수준으로 상향했습니다.</blockquote>"
+    },
+    {
+     "name": "해머 상사",
+     "heroId": "SgtHammer",
+     "heroIds": [
+      "SgtHammer"
+     ],
+     "changes": [
+      {
+       "name": "기습 포격",
+       "key": "D",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "추가 공격력이 100%에서 125%로 증가했습니다.",
+         "html": "추가 공격력이 100%에서 125%로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "기갑포 강화",
+       "key": "D",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "방사 피해가 50%에서 60%로 증가했습니다.",
+         "html": "방사 피해가 50%에서 60%로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "소용돌이 포탄",
+       "key": "사용 효과",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 100초에서 80초로 감소했습니다.",
+         "html": "재사용 대기시간이 100초에서 80초로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "이동 공성 모드",
+       "key": "D",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "이동 속도 증가량이 40%에서 50%로 증가했습니다.",
+         "html": "이동 속도 증가량이 40%에서 50%로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "사거리 확대",
+       "key": "D",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "사거리가 증가하는 시간 간격이 2초에서 1.5초로 감소했습니다.",
+         "html": "사거리가 증가하는 시간 간격이 2초에서 1.5초로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "유산탄 지뢰",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "최대 방어력 감소량이 30에서 50으로 증가했습니다.",
+         "html": "최대 방어력 감소량이 30에서 50으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "초고용량 축전기",
+       "key": "D",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "중첩당 증가하는 공격 속도가 5%에서 10%로 증가했습니다.",
+         "html": "중첩당 증가하는 공격 속도가 5%에서 10%로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "최대 공격 속도가 40%에서 60%로 증가했습니다.",
+         "html": "최대 공격 속도가 40%에서 60%로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">기습 포격 [D]</strong>\n<ul>\n<li>추가 공격력이 100%에서 125%로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">기갑포 강화 [D]</strong>\n<ul>\n<li>방사 피해가 50%에서 60%로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">소용돌이 포탄 [사용 효과]</strong>\n<ul>\n<li>재사용 대기시간이 100초에서 80초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">이동 공성 모드 [D]</strong>\n<ul>\n<li>이동 속도 증가량이 40%에서 50%로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">사거리 확대 [D]</strong>\n<ul>\n<li>사거리가 증가하는 시간 간격이 2초에서 1.5초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">유산탄 지뢰 [Q]</strong>\n<ul>\n<li>최대 방어력 감소량이 30에서 50으로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">초고용량 축전기 [D]</strong>\n<ul>\n<li>중첩당 증가하는 공격 속도가 5%에서 10%로 증가했습니다.</li>\n<li>최대 공격 속도가 40%에서 60%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>개발자의 의견: </strong>해머 상사의 특성은 적절한 균형을 이루고 있기 때문에 일부 핵심 특성의 위력을 높여 다양한 빌드의 개성을 두드러지게 했습니다.</blockquote>"
+    }
+   ]
+  },
+  {
+   "name": "버그 수정",
+   "key": "bugs",
+   "html": "<p><strong class=\"pn-h\">영웅</strong></p>\n<ul>\n<li><strong class=\"pn-name\">레가르</strong>\n<ul>\n<li>거대 토템 및 흔들리지 않는 토템 특성이 속박의 토템 고급 툴팁에 정확한 순서로 추가됩니다.</li>\n</ul>\n</li>\n</ul>\n<p><a href=\"https://kr.forums.blizzard.com/ko/heroes/\" target=\"_blank\">여기</a>를 클릭해 히어로즈 오브 더 스톰 공식 토론장에서 다른 플레이어들과 이 게시글에 대한 의견을 나눠 보세요.</p>\n<p><strong><img alt=\"\" class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/g6/G6G0N80EOC941426801305139.png\"/></strong></p>",
+   "items": [
+    {
+     "name": "레가르",
+     "heroId": "Rehgar",
+     "heroIds": [
+      "Rehgar"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">레가르</strong>\n<ul>\n<li>거대 토템 및 흔들리지 않는 토템 특성이 속박의 토템 고급 툴팁에 정확한 순서로 추가됩니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "거대 토템 및 흔들리지 않는 토템 특성이 속박의 토템 고급 툴팁에 정확한 순서로 추가됩니다.",
+         "html": "거대 토템 및 흔들리지 않는 토템 특성이 속박의 토템 고급 툴팁에 정확한 순서로 추가됩니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "heroes": [
+  "Alarak",
+  "Alexstrasza",
+  "Amazon",
+  "Anubarak",
+  "Artanis",
+  "Chromie",
+  "Crusader",
+  "Guldan",
+  "Rehgar",
+  "SgtHammer",
+  "Thrall",
+  "Varian",
+  "Whitemane"
+ ],
+ "battlegrounds": [],
+ "newsId": "23787368"
+}

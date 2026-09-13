@@ -1,0 +1,2635 @@
+{
+ "date": "2018-07-12",
+ "kind": "patch",
+ "title": "히어로즈 오브 더 스톰 패치 노트 – 2018년 7월 12일",
+ "source": "https://news.blizzard.com/ko-kr/article/21940930/2018-7-12",
+ "published": "2018-07-11T18:45:00Z",
+ "sections": [
+  {
+   "name": "머리말",
+   "key": "intro",
+   "html": "<p>히어로즈 오브 더 스톰의 새로운 패치가 적용되었습니다. 이 패치에서는 경쟁전이 개선되었고 레이너와 아즈모단이 개편되었으며 새로운 스킨들이 추가되었습니다!</p>"
+  },
+  {
+   "name": "머리말",
+   "key": "intro",
+   "html": "<figure class=\"pull-right\">\n<img src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/A7VV3NUGP5X51530166527015.jpg\"/>\n</figure>"
+  },
+  {
+   "name": "등급전",
+   "key": "등급전",
+   "html": "<p><span class=\"pn-new\"><strong>2018년 등급전 시즌3이 시작됐습니다!</strong></span></p>\n<ul>\n<li><span class=\"pn-new\">2018년 등급전 시즌 2의 등급에 따라 등급전 보상이 지급되었습니다.</span></li>\n<li><span class=\"pn-new\">이번 시즌의 보상은</span> <a href=\"https://kr.heroesofthestorm.com/blog/21905735\" target=\"_blank\">2018년 등급전 시즌 3 날짜 및 보상 게시글</a><span class=\"pn-new\">에서 확인할 수 있습니다.</span></li>\n<li><span class=\"pn-new\">또한 2018년 등급전 시즌 3부터 등급전이 개선되어 영웅 3명 금지, 등급 점수 자동 감소, 배치 경기 변화, 영웅 리그 대전 상대 검색 시스템 변경 등이 적용되었습니다. 아래에서 자세한 정보를 알아보세요.</span></li>\n</ul>\n<span class=\"pn-h\"><strong>영웅 3명 금지</strong></span>\n<ul>\n<li>이제 선발전에서 각 팀이 영웅을 3명 금지할 수 있습니다. 추가 금지 영웅은 초기 금지 단계에서 금지할 수 있습니다.\n<ul>\n<li>이로써 초기 금지 단계에서는 각 팀이 번갈아서 각각 2명의 영웅을 금지하게 됩니다.</li>\n<li>이에 맞춰 금지 단계와 선택 단계의 제한 시간이 조절되었습니다.</li>\n</ul>\n</li>\n<li>또한 선발전에서 마지막으로 선택할 수 있는 경우를 감안해 영웅 리그에 참여하기 위해 필요한 레벨 5 이상의 영웅이 14에서 16으로 증가했습니다.</li>\n</ul>\n<span class=\"pn-h\"><strong>등급 점수 자동 감소</strong></span>\n<ul>\n<li>이제 시즌 중에 영웅 리그에서 다이아몬드, 마스터, 그랜드 마스터에 도달했지만 일정 기간 동안 영웅 리그에서 게임을 하지 않은 플레이어들은 \"비활성화\" 상태로 전환됩니다.</li>\n<li>비활성화 상태가 된 플레이어들은 영웅 리그 경기를 1회 완료하기 전까지 등급 점수와 MMR이 조금씩 감소하기 시작합니다.\n<ul>\n<li>다이아몬드, 마스터, 그랜드 마스터는 각각 비활성화 상태로 전환되는 기점이 다릅니다.</li>\n<li>해당 시즌에 영웅 리그 경기에 일정 횟수 이상 참여하면 비활성화 상태로 전환되는 기점이 더욱 미뤄집니다.</li>\n</ul>\n</li>\n<li>비활성화된 플레이어들은 영웅 리그 경기를 1회 완료하여 등급 점수 자동 감소를 막고 계정을 다시 활성화할 수 있습니다.</li>\n</ul>\n<table class=\"table table-hover\">\n<tbody>\n<tr>\n<th><span class=\"pn-name\">리그</span></th>\n<th><span class=\"pn-name\">등급 점수 자동 감소까지의 기간</span></th>\n<th><span class=\"pn-name\">미뤄질 수 있는 기간</span></th>\n</tr>\n<tr>\n<td><strong>다이아몬드</strong></td>\n<td>20</td>\n<td>10</td>\n</tr>\n<tr>\n<td><strong>마스터</strong></td>\n<td>15</td>\n<td>10</td>\n</tr>\n<tr>\n<td><strong>그랜드 마스터</strong></td>\n<td>10</td>\n<td>10</td>\n</tr>\n</tbody>\n</table>\n<span class=\"pn-h\"><strong>배치 경기 변화</strong></span>\n<ul>\n<li>등급전을 처음 접하는 플레이어들은 배치 경기 이후에 골드 5 이상의 등급으로 배치받을 수 없습니다.</li>\n<li>긴 시간 동안 영웅 리그를 하지 않았다가 돌아온 플레이어들은 더는 다른 대전 방식에서의 성과에 따라 배치 경기가 진행되지 않습니다.</li>\n</ul>\n<span class=\"pn-h\"><strong>영웅 리그 대전 상대 검색 시스템 변화</strong></span>\n<ul>\n<li><span class=\"pn-name\"><strong>점수 대신 등급</strong></span>\n<ul>\n<li>이제 마스터와 그랜드 마스터 플레이어들은 대전 상대를 검색할 때 등급 점수가 더는 영향을 주지 않고 실력 지표로 아군과 적군이 결정됩니다.\n<ul>\n<li>이는 시즌 후반에 플레이하기 시작한 매우 출중한 실력의 플레이어들에게 더욱 나은 경험을 제공할 것입니다.</li>\n<li>이 플레이어들이 대전을 할 때 아군과 적군의 실력이 자신과 비슷하다는 것을 느끼는 것이 주된 목표입니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>대전 품질 제한 및 알림</strong></span>\n<ul>\n<li>3분 이하로 기다린 마스터 이하의 플레이어들은 해당 플레이어의 실력에 맞는 대전을 계속 검색하게 됩니다.</li>\n<li>이제 대전을 더욱 빨리 시작하기 위해 대전 상대 검색 시스템이 이 제한을 완화하면 사용자 인터페이스에 관련 알림이 나타납니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>등급 차이</strong></span>\n<ul>\n<li>이제 마스터와 그랜드 마스터 플레이어들은 세부 등급이 1 이내인 플레이어들과 대전을 하게 됩니다.\n<ul>\n<li>마스터 플레이어들은 다이아몬드 1이거나 그랜드 마스터인 플레이어들과 대전을 하게 되지만 둘 다인 경우는 허용되지 않습니다.</li>\n<li>그랜드 마스터 플레이어들은 마스터 미만인 플레이어들과 대전을 하지 않게 됩니다.</li>\n</ul>\n</li>\n<li>이는 유럽 및 북미 지역의 플레이어들에게는 무조건적으로 적용됩니다. 하지만 다른 지역의 플레이어들은 대전을 검색한지 1시간이 지나면 이 규칙이 완화됩니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>실력 지표 차이</strong></span>\n<ul>\n<li>마스터와 그랜드 마스터 플레이어들은 다른 등급보다 더욱 비슷한 실력 지표를 가진 플레이어들과 대전을 하게 됩니다.\n<ul>\n<li>그랜드 마스터 중에서도 상위에 위치한 플레이어는 다이아몬드로 강등되기 직전인 플레이어와 대전을 할 확률이 매우 희박해집니다.</li>\n<li>마스터인 플레이어가 그랜드 마스터인 플레이어와 대전을 하게 된다면 그 플레이어가 다른 그랜드 마스터 플레이어들과 실력 지표가 매우 비슷하다는 걸 의미합니다.\n<ul>\n<li>이 경우는 마스터인 플레이어의 등급 점수가 실력 지표에 아직 도달하지 않았다는 것을 의미합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+  },
+  {
+   "name": "전장",
+   "key": "battlegrounds",
+   "html": "<p><span class=\"pn-new\"><strong>등급전 외 전장 </strong></span></p>\n<ul>\n<li><span class=\"pn-new\">알터랙의 메아리 이벤트 기간 동안 일시적으로 제거되었던 모든 전장들이 인공지능 대전, 빠른 대전, 일반전에 돌아왔습니다.</span></li>\n</ul>\n<span class=\"pn-h\"><strong>용병</strong></span>\n<ul>\n<li>용병을 대상으로 할 수 있는 기술이 아닌 이상 영웅들이 더는 용병을 치유하거나 보호막을 부여하거나 대상으로 삼을 수 없습니다.</li>\n</ul>\n<span class=\"pn-h\"><strong>알터랙 고개</strong></span>\n<ul>\n<li><span class=\"pn-name\"><strong>얼음 거인</strong></span>\n<ul>\n<li>공격 속도가 약 30% 감소했습니다.</li>\n<li>중립 얼음 거인의 공격력이 240에서 312로 증가했습니다.</li>\n<li>고용된 얼음 거인의 공격력이 400에서 520으로 증가했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>기병대</strong></span>\n<ul>\n<li>이제 기병대가 부여하는 공격력 증가 효과가 10%로 고정되고 전장 목표가 완료될 때마다 증가하지 않습니다.</li>\n</ul>\n</li>\n</ul>\n<span class=\"pn-h\"><strong>영원의 전쟁터</strong></span>\n<ul>\n<li><span class=\"pn-name\"><strong>미니맵</strong></span>\n<ul>\n<li>전장 이벤트 중에 불멸자를 나타내는 미니맵 아이콘이 업데이트되었습니다.\n<ul>\n<li>이제 적 불멸자는 교차된 도끼 아이콘으로 나타나고 아군 불멸자는 방패 아이콘으로 나타납니다.</li>\n<li>이로써 플레이어들은 어느 불멸자를 지키고 어느 불멸자를 공격해야 할지 더욱 빠르게 확인할 수 있을 것입니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<span class=\"pn-h\"><strong>브락시스 항전</strong></span>\n<ul>\n<li><span class=\"pn-name\"><strong>신호기</strong></span>\n<ul>\n<li>이제 양 팀의 영웅들이 신호기에 다다르는 즉시 분쟁 상태로 인식됩니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>저그 공세</strong></span>\n<ul>\n<li>기본적인 저그 공세가 대폭 강해졌습니다.\n<ul>\n<li>이로써 상대보다 저그를 훨씬 많이 모은 팀이라도 5명의 영웅 모두 아군 저그 공세와 함께 공격하는 것보다 일부는 다가오는 적의 저그를 막아야 할 것입니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>신호기 막대</strong></span>\n<ul>\n<li>화면의 우측 하단에 있는 상태 막대가 위의 변화들을 반영하기 위해 시각적으로 개선되었습니다.</li>\n</ul>\n</li>\n</ul>"
+  },
+  {
+   "name": "영웅",
+   "key": "heroes",
+   "html": "<table class=\"table table-condensed\">\n<tbody>\n<tr>\n<th></th>\n<th></th>\n<th></th>\n</tr>\n<tr>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n</tbody>\n</table>"
+  },
+  {
+   "name": "암살자",
+   "key": "role_assassin",
+   "html": "<h4>카시아</h4>\n<img class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/xo/XO99KNWY86HC1490228462295.png\"/>\n<span class=\"pn-h\"><strong>기술</strong></span>\n<ul>\n<li><span class=\"pn-name\"><strong>눈부신 빛 (W)</strong></span>\n<ul>\n<li>추가로 대상 지역의 적들에게 50(레벨당 +4%)의 피해를 줍니다.</li>\n</ul>\n</li>\n</ul>\n<h4>크로미</h4>\n<img class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/MFJDRBHR7RV11463704045342.png\"/>\n<span class=\"pn-h\"><strong>기술</strong></span>\n<ul>\n<li><span class=\"pn-name\"><strong>시간의 덫 (E)</strong></span>\n<ul>\n<li>시간의 덫을 볼 수 있는 근접 영웅들은 시간의 덫을 발동시키지 않고 근접 공격으로 시간의 덫을 파괴할 수 있습니다.</li>\n</ul>\n</li>\n</ul>\n<h4>레이너</h4>\n<img class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/L1FZEBIMXPLI1417483335075.png\"/>\n<aside class=\"video-container center-block\">\n<iframe allowfullscreen=\"true\" frameborder=\"0\" height=\"315\" src=\"//www.youtube.com/embed/FOPqBT-KGEE\" width=\"560\"></iframe>\n</aside>\n<span class=\"pn-h\"><strong>능력치</strong></span>\n<ul>\n<li>생명력이 1302에서 1450으로 증가했습니다.</li>\n<li>생명력 재생량이 2.71에서 3.02로 증가했습니다.</li>\n<li>일반 공격력이 122에서 92로 감소했습니다.</li>\n<li>일반 공격 사거리가 6.5로 고정되었으며 더는 레이너의 고유 능력에 영향을 받지 않습니다.</li>\n<li>레벨당 증가하는 공격력이 4%에서 5%로 증가했습니다.</li>\n</ul>\n<span class=\"pn-h\"><strong>기술</strong></span>\n<ul>\n<li><span class=\"pn-name\"><strong>새로운 고유 능력: 뜨거운 맛을 보여주지</strong></span>\n<ul>\n<li>4번째 일반 공격이 대상 주위에도 피해를 주고 주 대상에게 125%의 추가 피해를 줍니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>천공 탄환 (Q)</strong></span>\n<ul>\n<li>공격력이 240에서 220으로 감소했습니다.</li>\n<li>마나 소모량이 60에서 50으로 감소했습니다.</li>\n<li>추가된 기능:\n<ul>\n<li>이동 속도를 2초 동안 20% 감소시킵니다.</li>\n<li>가까운 적들은 더욱 멀리 밀쳐냅니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>격려 (W)</strong></span>\n<ul>\n<li>재사용 대기시간이 10초에서 12초로 증가했습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>4초 동안 자신과 주위 돌격병 및 용병의 공격 속도가 30%, 이동 속도가 10% 증가합니다.</li>\n<li>격려를 사용하면 다음 일반 공격이 즉시 적중합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>아드레날린 촉진 (E)</strong></span>\n<ul>\n<li>재사용 대기시간이 30초에서 45초로 증가했습니다.</li>\n<li>마나 소모량이 0에서 75로 증가했습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>1초에 걸쳐 최대 생명력의 25%를 회복합니다. 일반 공격을 할 때마다 재사용 대기시간이 0.5초 감소합니다. 적 영웅에게 일반 공격을 하면 재사용 대기시간 감소량이 두 배가 됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>레이너 특공대 (R)</strong></span>\n<ul>\n<li>생명력이 766에서 1000으로 증가했습니다.</li>\n<li>미사일당 공격력이 31에서 24로 감소했습니다.</li>\n<li>초당 공격 횟수가 0.8에서 2로 증가했습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>레이너를 지원하는 밴시를 소환합니다. 밴시는 초당 96의 피해를 주며 4초 동안 피해를 받지 않으면 초당 75의 생명력을 회복합니다. 다시 사용하면 대상을 바꾸거나 이동시킬 수 있습니다.</li>\n<li>밴시는 45초 후에 자동으로 재생성됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<span class=\"pn-h\"><strong>특성</strong></span>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>노련한 명사수 (지속 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>정찰기 (사용 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 정예 명사수 (고유 능력)</strong>\n<ul>\n<li><strong>퀘스트:</strong> 뜨거운 맛을 보여주지의 주 대상이 적 영웅이면 추가 피해량이 영구히 0.75% 증가합니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 회심의 일격 (지속 효과)</strong>\n<ul>\n<li>기절, 감속 상태인 적 <strong><span class=\"pn-new\">영웅들</span></strong>에게 <strong><span class=\"pn-new\">30%</span></strong>의 추가 피해를 줍니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 박멸자 (지속 효과)</strong>\n<ul>\n<li>일반 공격이 돌격병, 용병, 괴물에게 50%의 추가 피해를 줍니다. 격려가 활성화된 동안에는 이 효과가 100%로 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>집중 공격 (지속 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>원기회복의 공격 (지속 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>신중한 조준 (Q)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>불굴의 지휘관 (지속 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>전투 반응 (E)\n<ul>\n<li>7레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>아드레날린 촉진의 재사용 대기시간이 10초 감소합니다. 아드레날린 촉진을 사용하면 방어력이 4초 동안 25 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 생존용 탄환 (고유 능력)</strong>\n<ul>\n<li>뜨거운 맛을 보여주지가 발동하면 최대 생명력의 3%를 회복합니다. 주 대상이 영웅이면 회복량이 최대 생명력의 6%로 증가합니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 베히모스 전투복 (지속 효과)</strong>\n<ul>\n<li>최대 생명력이 250 증가합니다. </li>\n<li><strong>퀘스트:</strong> 뜨거운 맛을 보여주지의 주 대상이 적 영웅이면 최대 생명력이 추가로 5 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>7레벨</strong></span>\n<ul>\n<li>인대 파열 사격 (Q)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>혁명의 질주 (W)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>승승장구 (지속 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 촉진 가속화 (지속 능력)</strong>\n<ul>\n<li>격려가 활성화된 동안 일반 공격으로 감소하는 아드레날린 촉진의 재사용 대기시간이 200% 증가합니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 불안정한 혼합물 (고유 능력)</strong>\n<ul>\n<li>뜨거운 맛을 보여주지의 범위가 15% 증가하고 뜨거운 맛을 보여주지가 적을 3초 동안 10% 느려지게 합니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 묵직한 녀석 (사용 효과)</strong>\n<ul>\n<li>사용하면 다음 천공 탄환의 사거리가 30% 증가하고 감속 효과의 지속 시간이 6초로 증가합니다. 재사용 대기시간은 30초입니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>13레벨</strong></span>\n<ul>\n<li>거인 사냥꾼 (지속 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>2연발 (Q)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>강철 투지 (W)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 쇠약의 탄환 (지속 효과)</strong>\n<ul>\n<li>천공 탄환의 재사용 대기시간이 3초 감소합니다. 격려가 활성화된 동안 천공 탄환의 감속 효과가 20% 증가합니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 재집결의 함성 (W)</strong>\n<ul>\n<li>격려의 지속 시간이 1초 증가합니다. 지속 시간 동안 주위 아군 영웅의 이동 속도 및 공격 속도가 10% 증가합니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 이랴! (W)</strong>\n<ul>\n<li>이동 속도가 10% 증가합니다. 탈것의 이동 속도 또한 동일하게 증가합니다. 격려의 이동 속도 증가 효과가 10% 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>16레벨</strong></span>\n<ul>\n<li>집행자 (지속 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>집속 탄환 (Q)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>명중 (Q)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>조금만 더! (E)\n<ul>\n<li>1레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>아드레날린 촉진의 치유량이 50% 증가합니다. 격려가 활성화된 동안 일반 공격 사거리가 1 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 벌집으로 만들어 주지 (Q)</strong>\n<ul>\n<li>천공 탄환의 공격력이 50% 증가하고 적 영웅에게 준 피해의 100%만큼 생명력을 회복합니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 현상금 사냥꾼 (고유 능력) (D)</strong>\n<ul>\n<li>뜨거운 맛을 보여주지의 대상이 적 영웅이면 대상의 최대 생명력의 3%만큼 추가 피해를 주고 방어력이 3초 동안 <span class=\"pn-new\"><strong>5</strong></span> 증가합니다.</li>\n<li>뜨거운 맛을 보여주지를 사용하여 다음 일반 공격에 발동시킬 수 있습니다. 재사용 대기시간은 40초입니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>20레벨</strong></span>\n<ul>\n<li>초토화 공습 (R)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>비장의 카드 (지속 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>시공의 광란 (지속 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>그늘날개 (R)\n<ul>\n<li>레이너 특공대의 공격력, 생명력, 조종 사거리가 100% 증가합니다. 레이너 특공대가 파괴되면 격려와 아드레날린 촉진이 비용 없이 즉시 사용됩니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 불굴의 다짐 (R)</strong>\n<ul>\n<li>뜨거운 맛을 보여주지의 주 대상이 적 영웅이면 히페리온의 재사용 대기시간이 5초 감소합니다. 격려를 사용하면 2초 동안 저지 불가 상태가 됩니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 약점을 포착했다 (고유 능력)</strong>\n<ul>\n<li>뜨거운 맛을 보여주지의 주 대상이 적 영웅이면 대상의 방어력이 2초 동안 25 감소합니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 마무리 (지속 효과)</strong>\n<ul>\n<li>공격 속도가 20% 증가합니다. 생명력이 50% 미만인 대상에게는 일반 공격력이 25% 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<table class=\"table table-condensed\">\n<tbody>\n<tr>\n<th><strong>레벨 (특성 단계)</strong></th>\n<th colspan=\"4\"><strong>레이너의 특성</strong></th>\n</tr>\n<tr>\n<td><strong>1 (1)</strong></td>\n<td><em>(!) 정예 명사수 (고유 능력)</em></td>\n<td><em>회심의 일격 (지속 효과)</em></td>\n<td><em>박멸자 (지속 효과)</em></td>\n<td>—</td>\n</tr>\n<tr>\n<td><strong>4 (2)</strong></td>\n<td><u>전투 반응 (E)</u></td>\n<td><em>생존용 탄환 (고유 능력)</em></td>\n<td><em>(!) 베히모스 전투복 (지속 효과)</em></td>\n<td>—</td>\n</tr>\n<tr>\n<td><strong>7 (3)</strong></td>\n<td><em>촉진 가속화 (지속 능력)</em></td>\n<td><em>불안정한 혼합물 (고유 능력)</em></td>\n<td><em>묵직한 녀석 (사용 효과)</em></td>\n<td>—</td>\n</tr>\n<tr>\n<td><strong>10 (4)</strong></td>\n<td>히페리온 (R)</td>\n<td>레이너 특공대 (R)</td>\n<td>—</td>\n<td>—</td>\n</tr>\n<tr>\n<td><strong>13 (5)</strong></td>\n<td><em>쇠약의 탄환 (지속 효과)</em></td>\n<td><em>재집결의 함성 (W)</em></td>\n<td><em>이랴! (W)</em></td>\n<td>—</td>\n</tr>\n<tr>\n<td><strong>16 (6)</strong></td>\n<td><em>벌집으로 만들어 주지 (Q)</em></td>\n<td><u>조금만 더! (E)</u></td>\n<td><em>현상금 사냥꾼 (고유 능력)</em></td>\n<td>—</td>\n</tr>\n<tr>\n<td><strong>20 (7)</strong></td>\n<td><em>불굴의 다짐 (R)</em></td>\n<td>그늘날개 (R)</td>\n<td><em>약점을 포착했다 (고유 능력)</em></td>\n<td><em>마무리 (지속 효과)</em></td>\n</tr>\n</tbody>\n</table>\n<ul>\n<li>(!)는 퀘스트 특성입니다.</li>\n<li><em>이탤릭체</em>는 <em>새로운</em> 특성입니다.</li>\n<li><u>밑줄</u>친 특성은 <u>옮겨진</u> 특성입니다.</li>\n</ul>\n<blockquote><strong>개발자의 의견:</strong> 마침내 개편된 레이너가 시공의 폭풍에 도착했습니다! 지난 1년에 걸쳐 수많은 피드백을 들었고 개편된 새로운 레이너가 이를 잘 반영했다고 생각합니다. 우선 새로운 고유 능력으로 공격로를 정리하는 능력이 월등히 나아졌고 히어로즈에서도 손꼽힐 정도로 오래된 여러 특성들 또한 전체적으로 개편했습니다. 레이너를 즐겨 사용하던 플레이어들은 새롭게 추가된 여러 가지의 특성들을 활용할 수 있으며 새롭게 접하는 플레이어들은 예전처럼 배우기 쉬운 영웅이라 느낄 것입니다. 개발팀 또한 새로워진 레이너를 재밌게 플레이하였으며 여러분 또한 그러길 바랍니다. 언제나 그랬든 새로워진 레이너에 대한 여러분의 의견을 보내주시고 적을 벌집으로 만드세요!</blockquote>",
+   "heroes": [
+    {
+     "name": "카시아",
+     "heroId": "Amazon",
+     "heroIds": [
+      "Amazon"
+     ],
+     "changes": [
+      {
+       "name": "눈부신 빛",
+       "key": "W",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "추가로 대상 지역의 적들에게 50(레벨당 +4%)의 피해를 줍니다.",
+         "html": "추가로 대상 지역의 적들에게 50(레벨당 +4%)의 피해를 줍니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<img class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/xo/XO99KNWY86HC1490228462295.png\"/>\n<span class=\"pn-h\"><strong>기술</strong></span>\n<ul>\n<li><span class=\"pn-name\"><strong>눈부신 빛 (W)</strong></span>\n<ul>\n<li>추가로 대상 지역의 적들에게 50(레벨당 +4%)의 피해를 줍니다.</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "크로미",
+     "heroId": "Chromie",
+     "heroIds": [
+      "Chromie"
+     ],
+     "changes": [
+      {
+       "name": "시간의 덫",
+       "key": "E",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "시간의 덫을 볼 수 있는 근접 영웅들은 시간의 덫을 발동시키지 않고 근접 공격으로 시간의 덫을 파괴할 수 있습니다.",
+         "html": "시간의 덫을 볼 수 있는 근접 영웅들은 시간의 덫을 발동시키지 않고 근접 공격으로 시간의 덫을 파괴할 수 있습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<img class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/MFJDRBHR7RV11463704045342.png\"/>\n<span class=\"pn-h\"><strong>기술</strong></span>\n<ul>\n<li><span class=\"pn-name\"><strong>시간의 덫 (E)</strong></span>\n<ul>\n<li>시간의 덫을 볼 수 있는 근접 영웅들은 시간의 덫을 발동시키지 않고 근접 공격으로 시간의 덫을 파괴할 수 있습니다.</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "레이너",
+     "heroId": "Raynor",
+     "heroIds": [
+      "Raynor"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "생명력이 1302에서 1450으로 증가했습니다.",
+         "html": "생명력이 1302에서 1450으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "생명력 재생량이 2.71에서 3.02로 증가했습니다.",
+         "html": "생명력 재생량이 2.71에서 3.02로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "일반 공격력이 122에서 92로 감소했습니다.",
+         "html": "일반 공격력이 122에서 92로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "일반 공격 사거리가 6.5로 고정되었으며 더는 레이너의 고유 능력에 영향을 받지 않습니다.",
+         "html": "일반 공격 사거리가 6.5로 고정되었으며 더는 레이너의 고유 능력에 영향을 받지 않습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "레벨당 증가하는 공격력이 4%에서 5%로 증가했습니다.",
+         "html": "레벨당 증가하는 공격력이 4%에서 5%로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 고유 능력: 뜨거운 맛을 보여주지",
+       "key": null,
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "4번째 일반 공격이 대상 주위에도 피해를 주고 주 대상에게 125%의 추가 피해를 줍니다.",
+         "html": "4번째 일반 공격이 대상 주위에도 피해를 주고 주 대상에게 125%의 추가 피해를 줍니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "천공 탄환",
+       "key": "Q",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "공격력이 240에서 220으로 감소했습니다.",
+         "html": "공격력이 240에서 220으로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "마나 소모량이 60에서 50으로 감소했습니다.",
+         "html": "마나 소모량이 60에서 50으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "추가된 기능",
+       "key": null,
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "이동 속도를 2초 동안 20% 감소시킵니다.",
+         "html": "이동 속도를 2초 동안 20% 감소시킵니다.",
+         "added": false
+        },
+        {
+         "text": "가까운 적들은 더욱 멀리 밀쳐냅니다.",
+         "html": "가까운 적들은 더욱 멀리 밀쳐냅니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "격려",
+       "key": "W",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 10초에서 12초로 증가했습니다.",
+         "html": "재사용 대기시간이 10초에서 12초로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "4초 동안 자신과 주위 돌격병 및 용병의 공격 속도가 30%, 이동 속도가 10% 증가합니다.",
+         "html": "4초 동안 자신과 주위 돌격병 및 용병의 공격 속도가 30%, 이동 속도가 10% 증가합니다.",
+         "added": false
+        },
+        {
+         "text": "격려를 사용하면 다음 일반 공격이 즉시 적중합니다.",
+         "html": "격려를 사용하면 다음 일반 공격이 즉시 적중합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "아드레날린 촉진",
+       "key": "E",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 30초에서 45초로 증가했습니다.",
+         "html": "재사용 대기시간이 30초에서 45초로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "마나 소모량이 0에서 75로 증가했습니다.",
+         "html": "마나 소모량이 0에서 75로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "1초에 걸쳐 최대 생명력의 25%를 회복합니다. 일반 공격을 할 때마다 재사용 대기시간이 0.5초 감소합니다. 적 영웅에게 일반 공격을 하면 재사용 대기시간 감소량이 두 배가 됩니다.",
+         "html": "1초에 걸쳐 최대 생명력의 25%를 회복합니다. 일반 공격을 할 때마다 재사용 대기시간이 0.5초 감소합니다. 적 영웅에게 일반 공격을 하면 재사용 대기시간 감소량이 두 배가 됩니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "레이너 특공대",
+       "key": "R",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "생명력이 766에서 1000으로 증가했습니다.",
+         "html": "생명력이 766에서 1000으로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "미사일당 공격력이 31에서 24로 감소했습니다.",
+         "html": "미사일당 공격력이 31에서 24로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "초당 공격 횟수가 0.8에서 2로 증가했습니다.",
+         "html": "초당 공격 횟수가 0.8에서 2로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "레이너를 지원하는 밴시를 소환합니다. 밴시는 초당 96의 피해를 주며 4초 동안 피해를 받지 않으면 초당 75의 생명력을 회복합니다. 다시 사용하면 대상을 바꾸거나 이동시킬 수 있습니다.",
+         "html": "레이너를 지원하는 밴시를 소환합니다. 밴시는 초당 96의 피해를 주며 4초 동안 피해를 받지 않으면 초당 75의 생명력을 회복합니다. 다시 사용하면 대상을 바꾸거나 이동시킬 수 있습니다.",
+         "added": false
+        },
+        {
+         "text": "밴시는 45초 후에 자동으로 재생성됩니다.",
+         "html": "밴시는 45초 후에 자동으로 재생성됩니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "노련한 명사수",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "정찰기",
+       "key": "사용 효과",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 특성: 정예 명사수",
+       "key": "고유 능력",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "퀘스트: 뜨거운 맛을 보여주지의 주 대상이 적 영웅이면 추가 피해량이 영구히 0.75% 증가합니다.",
+         "html": "<strong>퀘스트:</strong> 뜨거운 맛을 보여주지의 주 대상이 적 영웅이면 추가 피해량이 영구히 0.75% 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 특성: 회심의 일격",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "기절, 감속 상태인 적 영웅들 에게 30% 의 추가 피해를 줍니다.",
+         "html": "기절, 감속 상태인 적 <strong><span class=\"pn-new\">영웅들</span></strong>에게 <strong><span class=\"pn-new\">30%</span></strong>의 추가 피해를 줍니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 특성: 박멸자",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "일반 공격이 돌격병, 용병, 괴물에게 50%의 추가 피해를 줍니다. 격려가 활성화된 동안에는 이 효과가 100%로 증가합니다.",
+         "html": "일반 공격이 돌격병, 용병, 괴물에게 50%의 추가 피해를 줍니다. 격려가 활성화된 동안에는 이 효과가 100%로 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "집중 공격",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "원기회복의 공격",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "신중한 조준",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "불굴의 지휘관",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "전투 반응",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "7레벨에서 옮겨졌습니다.",
+         "html": "7레벨에서 옮겨졌습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "아드레날린 촉진의 재사용 대기시간이 10초 감소합니다. 아드레날린 촉진을 사용하면 방어력이 4초 동안 25 증가합니다.",
+         "html": "아드레날린 촉진의 재사용 대기시간이 10초 감소합니다. 아드레날린 촉진을 사용하면 방어력이 4초 동안 25 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 특성: 생존용 탄환",
+       "key": "고유 능력",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "뜨거운 맛을 보여주지가 발동하면 최대 생명력의 3%를 회복합니다. 주 대상이 영웅이면 회복량이 최대 생명력의 6%로 증가합니다.",
+         "html": "뜨거운 맛을 보여주지가 발동하면 최대 생명력의 3%를 회복합니다. 주 대상이 영웅이면 회복량이 최대 생명력의 6%로 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 특성: 베히모스 전투복",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "최대 생명력이 250 증가합니다.",
+         "html": "최대 생명력이 250 증가합니다.",
+         "added": false
+        },
+        {
+         "text": "퀘스트: 뜨거운 맛을 보여주지의 주 대상이 적 영웅이면 최대 생명력이 추가로 5 증가합니다.",
+         "html": "<strong>퀘스트:</strong> 뜨거운 맛을 보여주지의 주 대상이 적 영웅이면 최대 생명력이 추가로 5 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "인대 파열 사격",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "혁명의 질주",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "승승장구",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 특성: 촉진 가속화",
+       "key": "지속 능력",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "격려가 활성화된 동안 일반 공격으로 감소하는 아드레날린 촉진의 재사용 대기시간이 200% 증가합니다.",
+         "html": "격려가 활성화된 동안 일반 공격으로 감소하는 아드레날린 촉진의 재사용 대기시간이 200% 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 특성: 불안정한 혼합물",
+       "key": "고유 능력",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "뜨거운 맛을 보여주지의 범위가 15% 증가하고 뜨거운 맛을 보여주지가 적을 3초 동안 10% 느려지게 합니다.",
+         "html": "뜨거운 맛을 보여주지의 범위가 15% 증가하고 뜨거운 맛을 보여주지가 적을 3초 동안 10% 느려지게 합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 특성: 묵직한 녀석",
+       "key": "사용 효과",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "사용하면 다음 천공 탄환의 사거리가 30% 증가하고 감속 효과의 지속 시간이 6초로 증가합니다. 재사용 대기시간은 30초입니다.",
+         "html": "사용하면 다음 천공 탄환의 사거리가 30% 증가하고 감속 효과의 지속 시간이 6초로 증가합니다. 재사용 대기시간은 30초입니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "거인 사냥꾼",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "2연발",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "강철 투지",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 특성: 쇠약의 탄환",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "천공 탄환의 재사용 대기시간이 3초 감소합니다. 격려가 활성화된 동안 천공 탄환의 감속 효과가 20% 증가합니다.",
+         "html": "천공 탄환의 재사용 대기시간이 3초 감소합니다. 격려가 활성화된 동안 천공 탄환의 감속 효과가 20% 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 특성: 재집결의 함성",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "격려의 지속 시간이 1초 증가합니다. 지속 시간 동안 주위 아군 영웅의 이동 속도 및 공격 속도가 10% 증가합니다.",
+         "html": "격려의 지속 시간이 1초 증가합니다. 지속 시간 동안 주위 아군 영웅의 이동 속도 및 공격 속도가 10% 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 특성: 이랴!",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "이동 속도가 10% 증가합니다. 탈것의 이동 속도 또한 동일하게 증가합니다. 격려의 이동 속도 증가 효과가 10% 증가합니다.",
+         "html": "이동 속도가 10% 증가합니다. 탈것의 이동 속도 또한 동일하게 증가합니다. 격려의 이동 속도 증가 효과가 10% 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "집행자",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "집속 탄환",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "명중",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "조금만 더!",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "1레벨에서 옮겨졌습니다.",
+         "html": "1레벨에서 옮겨졌습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "아드레날린 촉진의 치유량이 50% 증가합니다. 격려가 활성화된 동안 일반 공격 사거리가 1 증가합니다.",
+         "html": "아드레날린 촉진의 치유량이 50% 증가합니다. 격려가 활성화된 동안 일반 공격 사거리가 1 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 특성: 벌집으로 만들어 주지",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "천공 탄환의 공격력이 50% 증가하고 적 영웅에게 준 피해의 100%만큼 생명력을 회복합니다.",
+         "html": "천공 탄환의 공격력이 50% 증가하고 적 영웅에게 준 피해의 100%만큼 생명력을 회복합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 특성: 현상금 사냥꾼 (고유 능력)",
+       "key": "D",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "뜨거운 맛을 보여주지의 대상이 적 영웅이면 대상의 최대 생명력의 3%만큼 추가 피해를 주고 방어력이 3초 동안 5 증가합니다.",
+         "html": "뜨거운 맛을 보여주지의 대상이 적 영웅이면 대상의 최대 생명력의 3%만큼 추가 피해를 주고 방어력이 3초 동안 <span class=\"pn-new\"><strong>5</strong></span> 증가합니다.",
+         "added": false
+        },
+        {
+         "text": "뜨거운 맛을 보여주지를 사용하여 다음 일반 공격에 발동시킬 수 있습니다. 재사용 대기시간은 40초입니다.",
+         "html": "뜨거운 맛을 보여주지를 사용하여 다음 일반 공격에 발동시킬 수 있습니다. 재사용 대기시간은 40초입니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "초토화 공습",
+       "key": "R",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "비장의 카드",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "시공의 광란",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "그늘날개",
+       "key": "R",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "레이너 특공대의 공격력, 생명력, 조종 사거리가 100% 증가합니다. 레이너 특공대가 파괴되면 격려와 아드레날린 촉진이 비용 없이 즉시 사용됩니다.",
+         "html": "레이너 특공대의 공격력, 생명력, 조종 사거리가 100% 증가합니다. 레이너 특공대가 파괴되면 격려와 아드레날린 촉진이 비용 없이 즉시 사용됩니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 특성: 불굴의 다짐",
+       "key": "R",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "뜨거운 맛을 보여주지의 주 대상이 적 영웅이면 히페리온의 재사용 대기시간이 5초 감소합니다. 격려를 사용하면 2초 동안 저지 불가 상태가 됩니다.",
+         "html": "뜨거운 맛을 보여주지의 주 대상이 적 영웅이면 히페리온의 재사용 대기시간이 5초 감소합니다. 격려를 사용하면 2초 동안 저지 불가 상태가 됩니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 특성: 약점을 포착했다",
+       "key": "고유 능력",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "뜨거운 맛을 보여주지의 주 대상이 적 영웅이면 대상의 방어력이 2초 동안 25 감소합니다.",
+         "html": "뜨거운 맛을 보여주지의 주 대상이 적 영웅이면 대상의 방어력이 2초 동안 25 감소합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 특성: 마무리",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "공격 속도가 20% 증가합니다. 생명력이 50% 미만인 대상에게는 일반 공격력이 25% 증가합니다.",
+         "html": "공격 속도가 20% 증가합니다. 생명력이 50% 미만인 대상에게는 일반 공격력이 25% 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "(!)는 퀘스트 특성입니다.",
+         "html": "(!)는 퀘스트 특성입니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "이탤릭체 는 새로운 특성입니다.",
+         "html": "<em>이탤릭체</em>는 <em>새로운</em> 특성입니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "밑줄 친 특성은 옮겨진 특성입니다.",
+         "html": "<u>밑줄</u>친 특성은 <u>옮겨진</u> 특성입니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<img class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/L1FZEBIMXPLI1417483335075.png\"/>\n<aside class=\"video-container center-block\">\n<iframe allowfullscreen=\"true\" frameborder=\"0\" height=\"315\" src=\"//www.youtube.com/embed/FOPqBT-KGEE\" width=\"560\"></iframe>\n</aside>\n<span class=\"pn-h\"><strong>능력치</strong></span>\n<ul>\n<li>생명력이 1302에서 1450으로 증가했습니다.</li>\n<li>생명력 재생량이 2.71에서 3.02로 증가했습니다.</li>\n<li>일반 공격력이 122에서 92로 감소했습니다.</li>\n<li>일반 공격 사거리가 6.5로 고정되었으며 더는 레이너의 고유 능력에 영향을 받지 않습니다.</li>\n<li>레벨당 증가하는 공격력이 4%에서 5%로 증가했습니다.</li>\n</ul>\n<span class=\"pn-h\"><strong>기술</strong></span>\n<ul>\n<li><span class=\"pn-name\"><strong>새로운 고유 능력: 뜨거운 맛을 보여주지</strong></span>\n<ul>\n<li>4번째 일반 공격이 대상 주위에도 피해를 주고 주 대상에게 125%의 추가 피해를 줍니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>천공 탄환 (Q)</strong></span>\n<ul>\n<li>공격력이 240에서 220으로 감소했습니다.</li>\n<li>마나 소모량이 60에서 50으로 감소했습니다.</li>\n<li>추가된 기능:\n<ul>\n<li>이동 속도를 2초 동안 20% 감소시킵니다.</li>\n<li>가까운 적들은 더욱 멀리 밀쳐냅니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>격려 (W)</strong></span>\n<ul>\n<li>재사용 대기시간이 10초에서 12초로 증가했습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>4초 동안 자신과 주위 돌격병 및 용병의 공격 속도가 30%, 이동 속도가 10% 증가합니다.</li>\n<li>격려를 사용하면 다음 일반 공격이 즉시 적중합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>아드레날린 촉진 (E)</strong></span>\n<ul>\n<li>재사용 대기시간이 30초에서 45초로 증가했습니다.</li>\n<li>마나 소모량이 0에서 75로 증가했습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>1초에 걸쳐 최대 생명력의 25%를 회복합니다. 일반 공격을 할 때마다 재사용 대기시간이 0.5초 감소합니다. 적 영웅에게 일반 공격을 하면 재사용 대기시간 감소량이 두 배가 됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>레이너 특공대 (R)</strong></span>\n<ul>\n<li>생명력이 766에서 1000으로 증가했습니다.</li>\n<li>미사일당 공격력이 31에서 24로 감소했습니다.</li>\n<li>초당 공격 횟수가 0.8에서 2로 증가했습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>레이너를 지원하는 밴시를 소환합니다. 밴시는 초당 96의 피해를 주며 4초 동안 피해를 받지 않으면 초당 75의 생명력을 회복합니다. 다시 사용하면 대상을 바꾸거나 이동시킬 수 있습니다.</li>\n<li>밴시는 45초 후에 자동으로 재생성됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<span class=\"pn-h\"><strong>특성</strong></span>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>노련한 명사수 (지속 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>정찰기 (사용 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 정예 명사수 (고유 능력)</strong>\n<ul>\n<li><strong>퀘스트:</strong> 뜨거운 맛을 보여주지의 주 대상이 적 영웅이면 추가 피해량이 영구히 0.75% 증가합니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 회심의 일격 (지속 효과)</strong>\n<ul>\n<li>기절, 감속 상태인 적 <strong><span class=\"pn-new\">영웅들</span></strong>에게 <strong><span class=\"pn-new\">30%</span></strong>의 추가 피해를 줍니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 박멸자 (지속 효과)</strong>\n<ul>\n<li>일반 공격이 돌격병, 용병, 괴물에게 50%의 추가 피해를 줍니다. 격려가 활성화된 동안에는 이 효과가 100%로 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>집중 공격 (지속 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>원기회복의 공격 (지속 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>신중한 조준 (Q)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>불굴의 지휘관 (지속 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>전투 반응 (E)\n<ul>\n<li>7레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>아드레날린 촉진의 재사용 대기시간이 10초 감소합니다. 아드레날린 촉진을 사용하면 방어력이 4초 동안 25 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 생존용 탄환 (고유 능력)</strong>\n<ul>\n<li>뜨거운 맛을 보여주지가 발동하면 최대 생명력의 3%를 회복합니다. 주 대상이 영웅이면 회복량이 최대 생명력의 6%로 증가합니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 베히모스 전투복 (지속 효과)</strong>\n<ul>\n<li>최대 생명력이 250 증가합니다. </li>\n<li><strong>퀘스트:</strong> 뜨거운 맛을 보여주지의 주 대상이 적 영웅이면 최대 생명력이 추가로 5 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>7레벨</strong></span>\n<ul>\n<li>인대 파열 사격 (Q)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>혁명의 질주 (W)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>승승장구 (지속 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 촉진 가속화 (지속 능력)</strong>\n<ul>\n<li>격려가 활성화된 동안 일반 공격으로 감소하는 아드레날린 촉진의 재사용 대기시간이 200% 증가합니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 불안정한 혼합물 (고유 능력)</strong>\n<ul>\n<li>뜨거운 맛을 보여주지의 범위가 15% 증가하고 뜨거운 맛을 보여주지가 적을 3초 동안 10% 느려지게 합니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 묵직한 녀석 (사용 효과)</strong>\n<ul>\n<li>사용하면 다음 천공 탄환의 사거리가 30% 증가하고 감속 효과의 지속 시간이 6초로 증가합니다. 재사용 대기시간은 30초입니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>13레벨</strong></span>\n<ul>\n<li>거인 사냥꾼 (지속 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>2연발 (Q)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>강철 투지 (W)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 쇠약의 탄환 (지속 효과)</strong>\n<ul>\n<li>천공 탄환의 재사용 대기시간이 3초 감소합니다. 격려가 활성화된 동안 천공 탄환의 감속 효과가 20% 증가합니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 재집결의 함성 (W)</strong>\n<ul>\n<li>격려의 지속 시간이 1초 증가합니다. 지속 시간 동안 주위 아군 영웅의 이동 속도 및 공격 속도가 10% 증가합니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 이랴! (W)</strong>\n<ul>\n<li>이동 속도가 10% 증가합니다. 탈것의 이동 속도 또한 동일하게 증가합니다. 격려의 이동 속도 증가 효과가 10% 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>16레벨</strong></span>\n<ul>\n<li>집행자 (지속 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>집속 탄환 (Q)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>명중 (Q)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>조금만 더! (E)\n<ul>\n<li>1레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>아드레날린 촉진의 치유량이 50% 증가합니다. 격려가 활성화된 동안 일반 공격 사거리가 1 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 벌집으로 만들어 주지 (Q)</strong>\n<ul>\n<li>천공 탄환의 공격력이 50% 증가하고 적 영웅에게 준 피해의 100%만큼 생명력을 회복합니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 현상금 사냥꾼 (고유 능력) (D)</strong>\n<ul>\n<li>뜨거운 맛을 보여주지의 대상이 적 영웅이면 대상의 최대 생명력의 3%만큼 추가 피해를 주고 방어력이 3초 동안 <span class=\"pn-new\"><strong>5</strong></span> 증가합니다.</li>\n<li>뜨거운 맛을 보여주지를 사용하여 다음 일반 공격에 발동시킬 수 있습니다. 재사용 대기시간은 40초입니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>20레벨</strong></span>\n<ul>\n<li>초토화 공습 (R)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>비장의 카드 (지속 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>시공의 광란 (지속 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>그늘날개 (R)\n<ul>\n<li>레이너 특공대의 공격력, 생명력, 조종 사거리가 100% 증가합니다. 레이너 특공대가 파괴되면 격려와 아드레날린 촉진이 비용 없이 즉시 사용됩니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 불굴의 다짐 (R)</strong>\n<ul>\n<li>뜨거운 맛을 보여주지의 주 대상이 적 영웅이면 히페리온의 재사용 대기시간이 5초 감소합니다. 격려를 사용하면 2초 동안 저지 불가 상태가 됩니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 약점을 포착했다 (고유 능력)</strong>\n<ul>\n<li>뜨거운 맛을 보여주지의 주 대상이 적 영웅이면 대상의 방어력이 2초 동안 25 감소합니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 마무리 (지속 효과)</strong>\n<ul>\n<li>공격 속도가 20% 증가합니다. 생명력이 50% 미만인 대상에게는 일반 공격력이 25% 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<table class=\"table table-condensed\">\n<tbody>\n<tr>\n<th><strong>레벨 (특성 단계)</strong></th>\n<th colspan=\"4\"><strong>레이너의 특성</strong></th>\n</tr>\n<tr>\n<td><strong>1 (1)</strong></td>\n<td><em>(!) 정예 명사수 (고유 능력)</em></td>\n<td><em>회심의 일격 (지속 효과)</em></td>\n<td><em>박멸자 (지속 효과)</em></td>\n<td>—</td>\n</tr>\n<tr>\n<td><strong>4 (2)</strong></td>\n<td><u>전투 반응 (E)</u></td>\n<td><em>생존용 탄환 (고유 능력)</em></td>\n<td><em>(!) 베히모스 전투복 (지속 효과)</em></td>\n<td>—</td>\n</tr>\n<tr>\n<td><strong>7 (3)</strong></td>\n<td><em>촉진 가속화 (지속 능력)</em></td>\n<td><em>불안정한 혼합물 (고유 능력)</em></td>\n<td><em>묵직한 녀석 (사용 효과)</em></td>\n<td>—</td>\n</tr>\n<tr>\n<td><strong>10 (4)</strong></td>\n<td>히페리온 (R)</td>\n<td>레이너 특공대 (R)</td>\n<td>—</td>\n<td>—</td>\n</tr>\n<tr>\n<td><strong>13 (5)</strong></td>\n<td><em>쇠약의 탄환 (지속 효과)</em></td>\n<td><em>재집결의 함성 (W)</em></td>\n<td><em>이랴! (W)</em></td>\n<td>—</td>\n</tr>\n<tr>\n<td><strong>16 (6)</strong></td>\n<td><em>벌집으로 만들어 주지 (Q)</em></td>\n<td><u>조금만 더! (E)</u></td>\n<td><em>현상금 사냥꾼 (고유 능력)</em></td>\n<td>—</td>\n</tr>\n<tr>\n<td><strong>20 (7)</strong></td>\n<td><em>불굴의 다짐 (R)</em></td>\n<td>그늘날개 (R)</td>\n<td><em>약점을 포착했다 (고유 능력)</em></td>\n<td><em>마무리 (지속 효과)</em></td>\n</tr>\n</tbody>\n</table>\n<ul>\n<li>(!)는 퀘스트 특성입니다.</li>\n<li><em>이탤릭체</em>는 <em>새로운</em> 특성입니다.</li>\n<li><u>밑줄</u>친 특성은 <u>옮겨진</u> 특성입니다.</li>\n</ul>\n<blockquote><strong>개발자의 의견:</strong> 마침내 개편된 레이너가 시공의 폭풍에 도착했습니다! 지난 1년에 걸쳐 수많은 피드백을 들었고 개편된 새로운 레이너가 이를 잘 반영했다고 생각합니다. 우선 새로운 고유 능력으로 공격로를 정리하는 능력이 월등히 나아졌고 히어로즈에서도 손꼽힐 정도로 오래된 여러 특성들 또한 전체적으로 개편했습니다. 레이너를 즐겨 사용하던 플레이어들은 새롭게 추가된 여러 가지의 특성들을 활용할 수 있으며 새롭게 접하는 플레이어들은 예전처럼 배우기 쉬운 영웅이라 느낄 것입니다. 개발팀 또한 새로워진 레이너를 재밌게 플레이하였으며 여러분 또한 그러길 바랍니다. 언제나 그랬든 새로워진 레이너에 대한 여러분의 의견을 보내주시고 적을 벌집으로 만드세요!</blockquote>"
+    }
+   ]
+  },
+  {
+   "name": "전문가",
+   "key": "role_specialist",
+   "html": "<h4>아즈모단</h4>\n<img class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/MPC0MT16C6I91417483333902.png\"/>\n<aside class=\"video-container center-block\">\n<iframe allowfullscreen=\"true\" frameborder=\"0\" height=\"315\" src=\"//www.youtube.com/embed/ebmut424C9M\" width=\"560\"></iframe>\n</aside>\n<span class=\"pn-h\"><strong>능력치</strong></span>\n<ul>\n<li>기본 생명력이 2738에서 2464로 감소했습니다.</li>\n<li>생명력 재생량이 초당 5.7031에서 5.1328로 감소했습니다.</li>\n</ul>\n<span class=\"pn-h\"><strong>기술</strong></span>\n<ul>\n<li><span class=\"pn-name\"><strong>지옥의 장군 (특성) (D)</strong></span>\n<ul>\n<li>이름이 악마 부관으로 변경되었습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>아군 용병, 돌격병, 또는 아즈모단의 악마에게 악마 부관을 소환합니다. 악마 부관은 7초마다 악마의 일격을 사용하여 적 돌격병을 즉시 처치합니다. 20초 동안 지속됩니다. 재사용 대기시간은 60초입니다.</li>\n<li>이제 미니맵을 클릭하여 시전할 수 있습니다.</li>\n<li>이제 모두 다 불타리라로 정신을 집중하는 동안에도 사용할 수 있습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>파멸의 구슬 (Q)</strong></span>\n<ul>\n<li>새로운 퀘스트:\n<ul>\n<li>파멸의 구슬이 적 영웅에게 적중하거나 파멸의 구슬이 적중한 적 돌격병을 1.5초 안에 처치하면 파멸이 2회 중첩됩니다. </li>\n</ul>\n</li>\n<li>보상:\n<ul>\n<li>파멸 중첩 하나당 파멸의 구슬의 공격력이 1 증가하여 최대 400 증가합니다.</li>\n</ul>\n</li>\n<li>적중 경고 범위가 훨씬 빨리 표시됩니다.</li>\n<li>사거리가 35에서 30으로 감소했습니다.</li>\n<li>시전 시간이 0.75초에서 0.5625초로 감소했습니다.</li>\n<li><span class=\"pn-new\">구슬의 속도가 15에서 18로 증가했습니다.</span></li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>악마 전사 (W)</strong></span>\n<ul>\n<li>모두 다 불타리라로 정신을 집중하는 동안에도 사용할 수 있습니다.</li>\n<li>더는 충전할 수 없습니다.</li>\n<li>이제 주위 적들에게 초당 소량의 피해를 줍니다.</li>\n<li>생명력이 365에서 390으로 증가했습니다.</li>\n<li>공격력이 37에서 28로 감소했습니다.</li>\n<li>공격 사거리가 1.5에서 1로 감소했습니다.</li>\n<li>이동 속도가 4에서 3.6으로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>모두 다 불타리라 (E)</strong></span>\n<ul>\n<li>새로운 기능:\n<ul>\n<li>정신을 집중하며 죽음의 광선으로 적을 공격해 2.5초 동안 초당 136의 피해를 줍니다. 모두 다 불타리라가 끝까지 지속되면 대상에게 272의 추가 피해를 줍니다.</li>\n<li>정신을 집중하는 동안 이동 속도가 <span class=\"pn-new\"><strong>30%</strong></span> 감소합니다.</li>\n</ul>\n</li>\n<li>재사용 대기시간이 6초에서 8초로 증가했습니다.</li>\n<li>마나 소모량이 초당 12에서 30으로 변경됐습니다.</li>\n<li>사거리가 7에서 6으로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>악마의 침공 (R)</strong></span>\n<ul>\n<li>새로운 기능:\n<ul>\n<li>적들에게 소규모 악마 보병 부대를 쏟아부어 적중할 때마다 65의 피해를 줍니다. 악마 보병은 일반 공격으로 42의 피해를 주고 750의 생명력을 지니며 8초 동안 지속됩니다. 악마 보병은 죽을 때 폭발하여 주위 적들에게 65의 피해를 줍니다.</li>\n</ul>\n</li>\n<li>악마 보병의 생명력이 365에서 750으로 증가했습니다.</li>\n<li>이제 악마 보병의 생명력이 8초에 걸쳐 서서히 감소합니다.</li>\n<li>악마 보병의 일반 공격력이 51에서 42로 감소했습니다.</li>\n<li>재사용 대기시간이 100초에서 90초로 감소했습니다.</li>\n<li>마나 소모량이 100에서 60으로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>새로운 궁극기: 죄악의 물결 (R)</strong></span>\n<ul>\n<li>사용하면 다음 파멸의 구슬이 마나를 소모하지 않고 공격력이 50% 증가합니다. 재사용 대기시간은 <span class=\"pn-new\"><strong>20 </strong></span>초입니다.</li>\n</ul>\n</li>\n</ul>\n<span class=\"pn-h\"><strong>특성</strong></span>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>피의 향기 (Q)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>커져가는 분노 (Q)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>폭식 (Q)\n<ul>\n<li>4레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>파멸의 구슬이 적 영웅에게 적중할 때마다 중첩되는 파멸이 2에서 3으로 증가합니다.</li>\n<li><strong>퀘스트:</strong> 파멸이 200회 중첩되면 파멸의 구슬이 적중한 적 하나당 파멸의 구슬의 재사용 대기시간이 0.25초 감소합니다. 적 영웅에게 적중하면 재사용 대기시간 감소량이 두 배가 됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 탐욕 (Q)</strong>\n<ul>\n<li>파멸의 구슬이 적 돌격병에게 적중한 후에 파멸이 중첩될 수 있는 시간이 1.5초에서 3초로 증가합니다.</li>\n<li><strong>퀘스트:</strong> 파멸이 200회 중첩되면 <span class=\"pn-new\">파멸의 구슬의 사거리가 33% 증가하고</span> 적 돌격병 및 용병에게 주는 피해가 20% 증가합니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 분노 (Q)</strong>\n<ul>\n<li>생명력이 75% 미만인 적 영웅에게 일반 공격을 할 때마다 파멸이 1회 중첩됩니다.</li>\n<li>&lt;s0&gt;퀘스트:&lt;/s0&gt; 파멸이 200회 중첩되면 파멸의 구슬이 적 영웅에게 적중한 후에 4초 내의 일반 공격이 대상 적 영웅에게 파멸 중첩만큼의 추가 피해를 줍니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>지옥의 용병 (고유 능력)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>지옥의 군대 (W)\n<ul>\n<li>새로운 기능:\n<ul>\n<li>악마 전사 소환으로 악마 전사가 추가로 소환되지만 재사용 대기시간이 10초 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>지옥의 갑옷 (W)\n<ul>\n<li>13레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>악마 전사와 악마 부관의 방어력이 35 증가하고 지속 시간이 4초 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>파멸의 종자 (지속 효과)\n<ul>\n<li>16레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>일반 공격을 할 때마다 악마 전사 소환의 재사용 대기시간이 0.5초 감소하고 악마 부관의 재사용 대기시간이 1초 감소합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>7레벨</strong></span>\n<ul>\n<li>지옥불 구슬 (Q)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>돌격병 강화 (고유 능력)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>폭식의 수호물 (사용 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>파괴의 대가 (E)\n<ul>\n<li>1레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>모두 다 불타리라의 마지막 피해가 대상 주위에도 피해를 주고, 적중한 적 영웅 하나당 파멸이 2회 중첩됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 포격 (Q)</strong>\n<ul>\n<li>파멸의 구슬을 사용하면 3초 내의 다음 일반 공격의 사거리가 <span class=\"pn-new\"><strong>2</strong></span> 증가하고 2명의 적에게 추가로 적중합니다. 포격으로 강화된 일반 공격이 적 영웅에게 적중하면 파멸이 1회 중첩됩니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 혼돈의 미학 (Q)</strong>\n<ul>\n<li>파멸의 구슬이 2명 이상의 적 영웅에게 적중하면 마나를 <span class=\"pn-new\"><strong>30</strong></span> 회복합니다. 3명 이상의 적 영웅에게 적중하면 파멸이 추가로 5회 중첩됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>13레벨</strong></span>\n<ul>\n<li>쾌락주의 (Q)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>주입된 마력 (E)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 난폭한 선봉대 (W)</strong>\n<ul>\n<li>악마 전사의 생명력이 25% 증가하고 주위 적들을 20% 느려지게 합니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 키데아의 입맞춤 (Q)</strong>\n<ul>\n<li>모두 다 불타리라의 정신 집중 시간이 0.5초 감소합니다. 모두 다 불타리라가 적 영웅에게 끝까지 지속되면 최대 생명력의 <span class=\"pn-new\"><strong>8%</strong></span>를 회복합니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 지휘 계통 (고유 능력) (D)</strong>\n<ul>\n<li>악마 부관이 주위 모든 아군 돌격병, 용병, 아즈모단의 소환수의 공격력을 25% 증가시킵니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>16레벨</strong></span>\n<ul>\n<li>악마의 일격 (고유 능력)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>죄악에는 죄악 (사용 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>강제 징집 (D)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>죄악의 손아귀 (E)\n<ul>\n<li>4레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>모두 다 불타리라의 사거리가 20% 증가합니다.</li>\n<li>모두 다 불타리라가 끝까지 지속되면 재사용 대기시간이 4초 감소합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 지옥의 균열 (E)</strong>\n<ul>\n<li>모두다 불타리라가 끝까지 지속되면 대상의 위치에 악마 전사가 소환되고 모든 악마 전사의 공격력이 4초 동안 100% 증가합니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 완전한 파멸 (Q)</strong>\n<ul>\n<li>파멸의 구슬이 적 영웅에게 대상의 최대 생명력의 <span class=\"pn-new\"><strong>5%</strong></span>만큼 추가 피해를 줍니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>20레벨</strong></span>\n<ul>\n<li><strong>새로운 특성: 공성파괴자 (R)</strong>\n<ul>\n<li>아즈모단의 악마들이 구조물에 50%의 추가 피해를 줍니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 검은 우물 (R)</strong>\n<ul>\n<li>죄악의 물결로 강화된 파멸의 구슬이 대상 위치에 검은 우물을 5초 동안 남깁니다. 검은 우물은 적의 방어력을 초당 8 감소시키고 초당 56의 피해를 줍니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 교만 (Q)</strong>\n<ul>\n<li>파멸이 400회 중첩되면 파멸의 구슬의 범위가 15% 증가하고 공격력이 추가로 100 증가합니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 밟아 뭉개기 (사용 효과)</strong>\n<ul>\n<li>사용하면 짧은 거리를 돌진하여 240의 피해를 주고 적중한 적들을 1초 동안 60% 느려지게 합니다. 재사용 대기시간은 60초입니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<table class=\"table table-condensed\">\n<tbody>\n<tr>\n<th><strong>레벨 (특성 단계)</strong></th>\n<th colspan=\"4\"><strong>아즈모단의 특성</strong></th>\n</tr>\n<tr>\n<td><strong>1 (1)</strong></td>\n<td><em>(!) 탐욕 (Q)</em></td>\n<td><u>(!) 폭식 (Q)</u></td>\n<td><em>(!) 분노 (Q)</em></td>\n<td>—</td>\n</tr>\n<tr>\n<td><strong>4 (2)</strong></td>\n<td>지옥의 군대 (W)</td>\n<td><u>지옥의 갑옷 (W)</u></td>\n<td><u>파멸의 종자 (지속 효과)</u></td>\n<td>—</td>\n</tr>\n<tr>\n<td><strong>7 (3)</strong></td>\n<td><em>혼돈의 미학 (Q)</em></td>\n<td><em>포격 (Q)</em></td>\n<td><u>파괴의 대가 (E)</u></td>\n<td>—</td>\n</tr>\n<tr>\n<td><strong>10 (4)</strong></td>\n<td>악마의 침공 (R)</td>\n<td><em>죄악의 물결 (R)</em></td>\n<td>—</td>\n<td>—</td>\n</tr>\n<tr>\n<td><strong>13 (5)</strong></td>\n<td><em>난폭한 선봉대 (W)</em></td>\n<td><em>키데아의 입맞춤 (Q)</em></td>\n<td><em>지휘 계통 (고유 능력) (D)</em></td>\n<td>—</td>\n</tr>\n<tr>\n<td><strong>16 (6)</strong></td>\n<td><em>완전한 파멸 (Q)</em></td>\n<td><em>지옥의 균열 (E)</em></td>\n<td><u>죄악의 손아귀 (E)</u></td>\n<td>—</td>\n</tr>\n<tr>\n<td><strong>20 (7)</strong></td>\n<td><em>공성파괴자 (R)</em></td>\n<td><em>검은 우물 (R)</em></td>\n<td><em>교만 (Q)</em></td>\n<td><em>밟아 뭉개기 (사용 효과)</em></td>\n</tr>\n</tbody>\n</table>\n<ul>\n<li>(!)는 퀘스트 특성입니다.</li>\n<li><em>이탤릭체</em>는 <em>새로운</em> 특성입니다.</li>\n<li><u>밑줄</u>친 특성은 <u>옮겨진</u> 특성입니다.</li>\n</ul>\n<blockquote><strong>개발자의 의견:</strong> 이번 아즈모단 대규모 개편에서는 게임 후반부의 강력한 공성 영웅이라는 데에 초점을 맞췄습니다. 또한 커져가는 분노와 피의 향기가 혼합된 파멸의 구슬 퀘스트를 기본적으로 가지게 되었죠. 이로써 파멸의 구슬이 시간이 지남에 따라 더욱 강력해지면서 PvE와 PvP 모두 큰 영향을 줄 것입니다. 이를 기본적인 능력으로 변경한 대신 파멸의 구슬의 적중 지점이 보이는 시간이 이전 보다 빨라져서 적들이 이를 피할 기회가 주어질 것입니다. 또한 이전 궁극기인 검은 우물이 죄악의 물결로 이름이 바뀌었으며 이제 오직 파멸의 구슬을 강화하는 데에만 사용할 수 있도록 변경되어, 대상을 지정하거나 Alt를 눌러 시전할 필요가 없고 가끔씩 파멸의 구슬을 자신의 위치에 쓰는 머쓱한 경우가 줄어들 것입니다. 악마 전사 또한 개별적으로 강해졌으며 지속적으로 광역 피해를 주지만 이전보다 느려지고 충전 기능이 사라졌습니다. 새로워진 모두 다 불타리라는 이전보다 훨씬 안정적으로 피해를 줄 수 있을 것이며 일부 특성들을 조합하면 아즈모단의 근접 및 중거리 공격력을 향상시킬 수 있을 것입니다. 지옥의 장군에서 악마 부관으로 이름이 바뀐 고유 능력은 여전히 어디서든 공격로를 압박할 수 있는 기술로 사용할 수 있지만 이전처럼 돌격병들이 여럿 모여있지 않아도 효과를 볼 수 있을 것입니다. 악마의 침공은 PvP에서의 사용을 장려하기 위해 적용했지만 PvE에서도 그리 큰 차이를 불러오지 않을 것입니다. 적 팀 한가운데에 악마의 침공을 사용하면 도망치지 않는 이상 막심한 피해를 감수해야 할 것입니다.</blockquote>",
+   "heroes": [
+    {
+     "name": "아즈모단",
+     "heroId": "Azmodan",
+     "heroIds": [
+      "Azmodan"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "기본 생명력이 2738에서 2464로 감소했습니다.",
+         "html": "기본 생명력이 2738에서 2464로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "생명력 재생량이 초당 5.7031에서 5.1328로 감소했습니다.",
+         "html": "생명력 재생량이 초당 5.7031에서 5.1328로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "지옥의 장군 (특성)",
+       "key": "D",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "이름이 악마 부관으로 변경되었습니다.",
+         "html": "이름이 악마 부관으로 변경되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "아군 용병, 돌격병, 또는 아즈모단의 악마에게 악마 부관을 소환합니다. 악마 부관은 7초마다 악마의 일격을 사용하여 적 돌격병을 즉시 처치합니다. 20초 동안 지속됩니다. 재사용 대기시간은 60초입니다.",
+         "html": "아군 용병, 돌격병, 또는 아즈모단의 악마에게 악마 부관을 소환합니다. 악마 부관은 7초마다 악마의 일격을 사용하여 적 돌격병을 즉시 처치합니다. 20초 동안 지속됩니다. 재사용 대기시간은 60초입니다.",
+         "added": false
+        },
+        {
+         "text": "이제 미니맵을 클릭하여 시전할 수 있습니다.",
+         "html": "이제 미니맵을 클릭하여 시전할 수 있습니다.",
+         "added": false
+        },
+        {
+         "text": "이제 모두 다 불타리라로 정신을 집중하는 동안에도 사용할 수 있습니다.",
+         "html": "이제 모두 다 불타리라로 정신을 집중하는 동안에도 사용할 수 있습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "파멸의 구슬",
+       "key": "Q",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "적중 경고 범위가 훨씬 빨리 표시됩니다.",
+         "html": "적중 경고 범위가 훨씬 빨리 표시됩니다.",
+         "added": false
+        },
+        {
+         "text": "사거리가 35에서 30으로 감소했습니다.",
+         "html": "사거리가 35에서 30으로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "시전 시간이 0.75초에서 0.5625초로 감소했습니다.",
+         "html": "시전 시간이 0.75초에서 0.5625초로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "구슬의 속도가 15에서 18로 증가했습니다.",
+         "html": "<span class=\"pn-new\">구슬의 속도가 15에서 18로 증가했습니다.</span>",
+         "added": true
+        }
+       ]
+      },
+      {
+       "name": "새로운 퀘스트",
+       "key": null,
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "파멸의 구슬이 적 영웅에게 적중하거나 파멸의 구슬이 적중한 적 돌격병을 1.5초 안에 처치하면 파멸이 2회 중첩됩니다.",
+         "html": "파멸의 구슬이 적 영웅에게 적중하거나 파멸의 구슬이 적중한 적 돌격병을 1.5초 안에 처치하면 파멸이 2회 중첩됩니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "보상",
+       "key": null,
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "파멸 중첩 하나당 파멸의 구슬의 공격력이 1 증가하여 최대 400 증가합니다.",
+         "html": "파멸 중첩 하나당 파멸의 구슬의 공격력이 1 증가하여 최대 400 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "악마 전사",
+       "key": "W",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "모두 다 불타리라로 정신을 집중하는 동안에도 사용할 수 있습니다.",
+         "html": "모두 다 불타리라로 정신을 집중하는 동안에도 사용할 수 있습니다.",
+         "added": false
+        },
+        {
+         "text": "더는 충전할 수 없습니다.",
+         "html": "더는 충전할 수 없습니다.",
+         "added": false
+        },
+        {
+         "text": "이제 주위 적들에게 초당 소량의 피해를 줍니다.",
+         "html": "이제 주위 적들에게 초당 소량의 피해를 줍니다.",
+         "added": false
+        },
+        {
+         "text": "생명력이 365에서 390으로 증가했습니다.",
+         "html": "생명력이 365에서 390으로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "공격력이 37에서 28로 감소했습니다.",
+         "html": "공격력이 37에서 28로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "공격 사거리가 1.5에서 1로 감소했습니다.",
+         "html": "공격 사거리가 1.5에서 1로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "이동 속도가 4에서 3.6으로 감소했습니다.",
+         "html": "이동 속도가 4에서 3.6으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "모두 다 불타리라",
+       "key": "E",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 6초에서 8초로 증가했습니다.",
+         "html": "재사용 대기시간이 6초에서 8초로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "마나 소모량이 초당 12에서 30으로 변경됐습니다.",
+         "html": "마나 소모량이 초당 12에서 30으로 변경됐습니다.",
+         "added": false
+        },
+        {
+         "text": "사거리가 7에서 6으로 감소했습니다.",
+         "html": "사거리가 7에서 6으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "정신을 집중하며 죽음의 광선으로 적을 공격해 2.5초 동안 초당 136의 피해를 줍니다. 모두 다 불타리라가 끝까지 지속되면 대상에게 272의 추가 피해를 줍니다.",
+         "html": "정신을 집중하며 죽음의 광선으로 적을 공격해 2.5초 동안 초당 136의 피해를 줍니다. 모두 다 불타리라가 끝까지 지속되면 대상에게 272의 추가 피해를 줍니다.",
+         "added": false
+        },
+        {
+         "text": "정신을 집중하는 동안 이동 속도가 30% 감소합니다.",
+         "html": "정신을 집중하는 동안 이동 속도가 <span class=\"pn-new\"><strong>30%</strong></span> 감소합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "악마의 침공",
+       "key": "R",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "악마 보병의 생명력이 365에서 750으로 증가했습니다.",
+         "html": "악마 보병의 생명력이 365에서 750으로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "이제 악마 보병의 생명력이 8초에 걸쳐 서서히 감소합니다.",
+         "html": "이제 악마 보병의 생명력이 8초에 걸쳐 서서히 감소합니다.",
+         "added": false
+        },
+        {
+         "text": "악마 보병의 일반 공격력이 51에서 42로 감소했습니다.",
+         "html": "악마 보병의 일반 공격력이 51에서 42로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "재사용 대기시간이 100초에서 90초로 감소했습니다.",
+         "html": "재사용 대기시간이 100초에서 90초로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "마나 소모량이 100에서 60으로 감소했습니다.",
+         "html": "마나 소모량이 100에서 60으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "적들에게 소규모 악마 보병 부대를 쏟아부어 적중할 때마다 65의 피해를 줍니다. 악마 보병은 일반 공격으로 42의 피해를 주고 750의 생명력을 지니며 8초 동안 지속됩니다. 악마 보병은 죽을 때 폭발하여 주위 적들에게 65의 피해를 줍니다.",
+         "html": "적들에게 소규모 악마 보병 부대를 쏟아부어 적중할 때마다 65의 피해를 줍니다. 악마 보병은 일반 공격으로 42의 피해를 주고 750의 생명력을 지니며 8초 동안 지속됩니다. 악마 보병은 죽을 때 폭발하여 주위 적들에게 65의 피해를 줍니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 궁극기: 죄악의 물결",
+       "key": "R",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "사용하면 다음 파멸의 구슬이 마나를 소모하지 않고 공격력이 50% 증가합니다. 재사용 대기시간은 20 초입니다.",
+         "html": "사용하면 다음 파멸의 구슬이 마나를 소모하지 않고 공격력이 50% 증가합니다. 재사용 대기시간은 <span class=\"pn-new\"><strong>20 </strong></span>초입니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "피의 향기",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "커져가는 분노",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "폭식",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "4레벨에서 옮겨졌습니다.",
+         "html": "4레벨에서 옮겨졌습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "파멸의 구슬이 적 영웅에게 적중할 때마다 중첩되는 파멸이 2에서 3으로 증가합니다.",
+         "html": "파멸의 구슬이 적 영웅에게 적중할 때마다 중첩되는 파멸이 2에서 3으로 증가합니다.",
+         "added": false
+        },
+        {
+         "text": "퀘스트: 파멸이 200회 중첩되면 파멸의 구슬이 적중한 적 하나당 파멸의 구슬의 재사용 대기시간이 0.25초 감소합니다. 적 영웅에게 적중하면 재사용 대기시간 감소량이 두 배가 됩니다.",
+         "html": "<strong>퀘스트:</strong> 파멸이 200회 중첩되면 파멸의 구슬이 적중한 적 하나당 파멸의 구슬의 재사용 대기시간이 0.25초 감소합니다. 적 영웅에게 적중하면 재사용 대기시간 감소량이 두 배가 됩니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 특성: 탐욕",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "파멸의 구슬이 적 돌격병에게 적중한 후에 파멸이 중첩될 수 있는 시간이 1.5초에서 3초로 증가합니다.",
+         "html": "파멸의 구슬이 적 돌격병에게 적중한 후에 파멸이 중첩될 수 있는 시간이 1.5초에서 3초로 증가합니다.",
+         "added": false
+        },
+        {
+         "text": "퀘스트: 파멸이 200회 중첩되면 파멸의 구슬의 사거리가 33% 증가하고 적 돌격병 및 용병에게 주는 피해가 20% 증가합니다.",
+         "html": "<strong>퀘스트:</strong> 파멸이 200회 중첩되면 <span class=\"pn-new\">파멸의 구슬의 사거리가 33% 증가하고</span> 적 돌격병 및 용병에게 주는 피해가 20% 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 특성: 분노",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "생명력이 75% 미만인 적 영웅에게 일반 공격을 할 때마다 파멸이 1회 중첩됩니다.",
+         "html": "생명력이 75% 미만인 적 영웅에게 일반 공격을 할 때마다 파멸이 1회 중첩됩니다.",
+         "added": false
+        },
+        {
+         "text": "<s0>퀘스트:</s0> 파멸이 200회 중첩되면 파멸의 구슬이 적 영웅에게 적중한 후에 4초 내의 일반 공격이 대상 적 영웅에게 파멸 중첩만큼의 추가 피해를 줍니다.",
+         "html": "&lt;s0&gt;퀘스트:&lt;/s0&gt; 파멸이 200회 중첩되면 파멸의 구슬이 적 영웅에게 적중한 후에 4초 내의 일반 공격이 대상 적 영웅에게 파멸 중첩만큼의 추가 피해를 줍니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "지옥의 용병",
+       "key": "고유 능력",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "지옥의 군대",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": []
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "악마 전사 소환으로 악마 전사가 추가로 소환되지만 재사용 대기시간이 10초 증가합니다.",
+         "html": "악마 전사 소환으로 악마 전사가 추가로 소환되지만 재사용 대기시간이 10초 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "지옥의 갑옷",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "13레벨에서 옮겨졌습니다.",
+         "html": "13레벨에서 옮겨졌습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "악마 전사와 악마 부관의 방어력이 35 증가하고 지속 시간이 4초 증가합니다.",
+         "html": "악마 전사와 악마 부관의 방어력이 35 증가하고 지속 시간이 4초 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "파멸의 종자",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "16레벨에서 옮겨졌습니다.",
+         "html": "16레벨에서 옮겨졌습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "일반 공격을 할 때마다 악마 전사 소환의 재사용 대기시간이 0.5초 감소하고 악마 부관의 재사용 대기시간이 1초 감소합니다.",
+         "html": "일반 공격을 할 때마다 악마 전사 소환의 재사용 대기시간이 0.5초 감소하고 악마 부관의 재사용 대기시간이 1초 감소합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "지옥불 구슬",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "돌격병 강화",
+       "key": "고유 능력",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "폭식의 수호물",
+       "key": "사용 효과",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "파괴의 대가",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "1레벨에서 옮겨졌습니다.",
+         "html": "1레벨에서 옮겨졌습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "모두 다 불타리라의 마지막 피해가 대상 주위에도 피해를 주고, 적중한 적 영웅 하나당 파멸이 2회 중첩됩니다.",
+         "html": "모두 다 불타리라의 마지막 피해가 대상 주위에도 피해를 주고, 적중한 적 영웅 하나당 파멸이 2회 중첩됩니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 특성: 포격",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "파멸의 구슬을 사용하면 3초 내의 다음 일반 공격의 사거리가 2 증가하고 2명의 적에게 추가로 적중합니다. 포격으로 강화된 일반 공격이 적 영웅에게 적중하면 파멸이 1회 중첩됩니다.",
+         "html": "파멸의 구슬을 사용하면 3초 내의 다음 일반 공격의 사거리가 <span class=\"pn-new\"><strong>2</strong></span> 증가하고 2명의 적에게 추가로 적중합니다. 포격으로 강화된 일반 공격이 적 영웅에게 적중하면 파멸이 1회 중첩됩니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 특성: 혼돈의 미학",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "파멸의 구슬이 2명 이상의 적 영웅에게 적중하면 마나를 30 회복합니다. 3명 이상의 적 영웅에게 적중하면 파멸이 추가로 5회 중첩됩니다.",
+         "html": "파멸의 구슬이 2명 이상의 적 영웅에게 적중하면 마나를 <span class=\"pn-new\"><strong>30</strong></span> 회복합니다. 3명 이상의 적 영웅에게 적중하면 파멸이 추가로 5회 중첩됩니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "쾌락주의",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "주입된 마력",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 특성: 난폭한 선봉대",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "악마 전사의 생명력이 25% 증가하고 주위 적들을 20% 느려지게 합니다.",
+         "html": "악마 전사의 생명력이 25% 증가하고 주위 적들을 20% 느려지게 합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 특성: 키데아의 입맞춤",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "모두 다 불타리라의 정신 집중 시간이 0.5초 감소합니다. 모두 다 불타리라가 적 영웅에게 끝까지 지속되면 최대 생명력의 8% 를 회복합니다.",
+         "html": "모두 다 불타리라의 정신 집중 시간이 0.5초 감소합니다. 모두 다 불타리라가 적 영웅에게 끝까지 지속되면 최대 생명력의 <span class=\"pn-new\"><strong>8%</strong></span>를 회복합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 특성: 지휘 계통 (고유 능력)",
+       "key": "D",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "악마 부관이 주위 모든 아군 돌격병, 용병, 아즈모단의 소환수의 공격력을 25% 증가시킵니다.",
+         "html": "악마 부관이 주위 모든 아군 돌격병, 용병, 아즈모단의 소환수의 공격력을 25% 증가시킵니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "악마의 일격",
+       "key": "고유 능력",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "죄악에는 죄악",
+       "key": "사용 효과",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "강제 징집",
+       "key": "D",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "죄악의 손아귀",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "4레벨에서 옮겨졌습니다.",
+         "html": "4레벨에서 옮겨졌습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "모두 다 불타리라의 사거리가 20% 증가합니다.",
+         "html": "모두 다 불타리라의 사거리가 20% 증가합니다.",
+         "added": false
+        },
+        {
+         "text": "모두 다 불타리라가 끝까지 지속되면 재사용 대기시간이 4초 감소합니다.",
+         "html": "모두 다 불타리라가 끝까지 지속되면 재사용 대기시간이 4초 감소합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 특성: 지옥의 균열",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "모두다 불타리라가 끝까지 지속되면 대상의 위치에 악마 전사가 소환되고 모든 악마 전사의 공격력이 4초 동안 100% 증가합니다.",
+         "html": "모두다 불타리라가 끝까지 지속되면 대상의 위치에 악마 전사가 소환되고 모든 악마 전사의 공격력이 4초 동안 100% 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 특성: 완전한 파멸",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "파멸의 구슬이 적 영웅에게 대상의 최대 생명력의 5% 만큼 추가 피해를 줍니다.",
+         "html": "파멸의 구슬이 적 영웅에게 대상의 최대 생명력의 <span class=\"pn-new\"><strong>5%</strong></span>만큼 추가 피해를 줍니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 특성: 공성파괴자",
+       "key": "R",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "아즈모단의 악마들이 구조물에 50%의 추가 피해를 줍니다.",
+         "html": "아즈모단의 악마들이 구조물에 50%의 추가 피해를 줍니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 특성: 검은 우물",
+       "key": "R",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "죄악의 물결로 강화된 파멸의 구슬이 대상 위치에 검은 우물을 5초 동안 남깁니다. 검은 우물은 적의 방어력을 초당 8 감소시키고 초당 56의 피해를 줍니다.",
+         "html": "죄악의 물결로 강화된 파멸의 구슬이 대상 위치에 검은 우물을 5초 동안 남깁니다. 검은 우물은 적의 방어력을 초당 8 감소시키고 초당 56의 피해를 줍니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 특성: 교만",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "파멸이 400회 중첩되면 파멸의 구슬의 범위가 15% 증가하고 공격력이 추가로 100 증가합니다.",
+         "html": "파멸이 400회 중첩되면 파멸의 구슬의 범위가 15% 증가하고 공격력이 추가로 100 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 특성: 밟아 뭉개기",
+       "key": "사용 효과",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "사용하면 짧은 거리를 돌진하여 240의 피해를 주고 적중한 적들을 1초 동안 60% 느려지게 합니다. 재사용 대기시간은 60초입니다.",
+         "html": "사용하면 짧은 거리를 돌진하여 240의 피해를 주고 적중한 적들을 1초 동안 60% 느려지게 합니다. 재사용 대기시간은 60초입니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "(!)는 퀘스트 특성입니다.",
+         "html": "(!)는 퀘스트 특성입니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "이탤릭체 는 새로운 특성입니다.",
+         "html": "<em>이탤릭체</em>는 <em>새로운</em> 특성입니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "밑줄 친 특성은 옮겨진 특성입니다.",
+         "html": "<u>밑줄</u>친 특성은 <u>옮겨진</u> 특성입니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<img class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/MPC0MT16C6I91417483333902.png\"/>\n<aside class=\"video-container center-block\">\n<iframe allowfullscreen=\"true\" frameborder=\"0\" height=\"315\" src=\"//www.youtube.com/embed/ebmut424C9M\" width=\"560\"></iframe>\n</aside>\n<span class=\"pn-h\"><strong>능력치</strong></span>\n<ul>\n<li>기본 생명력이 2738에서 2464로 감소했습니다.</li>\n<li>생명력 재생량이 초당 5.7031에서 5.1328로 감소했습니다.</li>\n</ul>\n<span class=\"pn-h\"><strong>기술</strong></span>\n<ul>\n<li><span class=\"pn-name\"><strong>지옥의 장군 (특성) (D)</strong></span>\n<ul>\n<li>이름이 악마 부관으로 변경되었습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>아군 용병, 돌격병, 또는 아즈모단의 악마에게 악마 부관을 소환합니다. 악마 부관은 7초마다 악마의 일격을 사용하여 적 돌격병을 즉시 처치합니다. 20초 동안 지속됩니다. 재사용 대기시간은 60초입니다.</li>\n<li>이제 미니맵을 클릭하여 시전할 수 있습니다.</li>\n<li>이제 모두 다 불타리라로 정신을 집중하는 동안에도 사용할 수 있습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>파멸의 구슬 (Q)</strong></span>\n<ul>\n<li>새로운 퀘스트:\n<ul>\n<li>파멸의 구슬이 적 영웅에게 적중하거나 파멸의 구슬이 적중한 적 돌격병을 1.5초 안에 처치하면 파멸이 2회 중첩됩니다. </li>\n</ul>\n</li>\n<li>보상:\n<ul>\n<li>파멸 중첩 하나당 파멸의 구슬의 공격력이 1 증가하여 최대 400 증가합니다.</li>\n</ul>\n</li>\n<li>적중 경고 범위가 훨씬 빨리 표시됩니다.</li>\n<li>사거리가 35에서 30으로 감소했습니다.</li>\n<li>시전 시간이 0.75초에서 0.5625초로 감소했습니다.</li>\n<li><span class=\"pn-new\">구슬의 속도가 15에서 18로 증가했습니다.</span></li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>악마 전사 (W)</strong></span>\n<ul>\n<li>모두 다 불타리라로 정신을 집중하는 동안에도 사용할 수 있습니다.</li>\n<li>더는 충전할 수 없습니다.</li>\n<li>이제 주위 적들에게 초당 소량의 피해를 줍니다.</li>\n<li>생명력이 365에서 390으로 증가했습니다.</li>\n<li>공격력이 37에서 28로 감소했습니다.</li>\n<li>공격 사거리가 1.5에서 1로 감소했습니다.</li>\n<li>이동 속도가 4에서 3.6으로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>모두 다 불타리라 (E)</strong></span>\n<ul>\n<li>새로운 기능:\n<ul>\n<li>정신을 집중하며 죽음의 광선으로 적을 공격해 2.5초 동안 초당 136의 피해를 줍니다. 모두 다 불타리라가 끝까지 지속되면 대상에게 272의 추가 피해를 줍니다.</li>\n<li>정신을 집중하는 동안 이동 속도가 <span class=\"pn-new\"><strong>30%</strong></span> 감소합니다.</li>\n</ul>\n</li>\n<li>재사용 대기시간이 6초에서 8초로 증가했습니다.</li>\n<li>마나 소모량이 초당 12에서 30으로 변경됐습니다.</li>\n<li>사거리가 7에서 6으로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>악마의 침공 (R)</strong></span>\n<ul>\n<li>새로운 기능:\n<ul>\n<li>적들에게 소규모 악마 보병 부대를 쏟아부어 적중할 때마다 65의 피해를 줍니다. 악마 보병은 일반 공격으로 42의 피해를 주고 750의 생명력을 지니며 8초 동안 지속됩니다. 악마 보병은 죽을 때 폭발하여 주위 적들에게 65의 피해를 줍니다.</li>\n</ul>\n</li>\n<li>악마 보병의 생명력이 365에서 750으로 증가했습니다.</li>\n<li>이제 악마 보병의 생명력이 8초에 걸쳐 서서히 감소합니다.</li>\n<li>악마 보병의 일반 공격력이 51에서 42로 감소했습니다.</li>\n<li>재사용 대기시간이 100초에서 90초로 감소했습니다.</li>\n<li>마나 소모량이 100에서 60으로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>새로운 궁극기: 죄악의 물결 (R)</strong></span>\n<ul>\n<li>사용하면 다음 파멸의 구슬이 마나를 소모하지 않고 공격력이 50% 증가합니다. 재사용 대기시간은 <span class=\"pn-new\"><strong>20 </strong></span>초입니다.</li>\n</ul>\n</li>\n</ul>\n<span class=\"pn-h\"><strong>특성</strong></span>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>피의 향기 (Q)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>커져가는 분노 (Q)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>폭식 (Q)\n<ul>\n<li>4레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>파멸의 구슬이 적 영웅에게 적중할 때마다 중첩되는 파멸이 2에서 3으로 증가합니다.</li>\n<li><strong>퀘스트:</strong> 파멸이 200회 중첩되면 파멸의 구슬이 적중한 적 하나당 파멸의 구슬의 재사용 대기시간이 0.25초 감소합니다. 적 영웅에게 적중하면 재사용 대기시간 감소량이 두 배가 됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 탐욕 (Q)</strong>\n<ul>\n<li>파멸의 구슬이 적 돌격병에게 적중한 후에 파멸이 중첩될 수 있는 시간이 1.5초에서 3초로 증가합니다.</li>\n<li><strong>퀘스트:</strong> 파멸이 200회 중첩되면 <span class=\"pn-new\">파멸의 구슬의 사거리가 33% 증가하고</span> 적 돌격병 및 용병에게 주는 피해가 20% 증가합니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 분노 (Q)</strong>\n<ul>\n<li>생명력이 75% 미만인 적 영웅에게 일반 공격을 할 때마다 파멸이 1회 중첩됩니다.</li>\n<li>&lt;s0&gt;퀘스트:&lt;/s0&gt; 파멸이 200회 중첩되면 파멸의 구슬이 적 영웅에게 적중한 후에 4초 내의 일반 공격이 대상 적 영웅에게 파멸 중첩만큼의 추가 피해를 줍니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>지옥의 용병 (고유 능력)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>지옥의 군대 (W)\n<ul>\n<li>새로운 기능:\n<ul>\n<li>악마 전사 소환으로 악마 전사가 추가로 소환되지만 재사용 대기시간이 10초 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>지옥의 갑옷 (W)\n<ul>\n<li>13레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>악마 전사와 악마 부관의 방어력이 35 증가하고 지속 시간이 4초 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>파멸의 종자 (지속 효과)\n<ul>\n<li>16레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>일반 공격을 할 때마다 악마 전사 소환의 재사용 대기시간이 0.5초 감소하고 악마 부관의 재사용 대기시간이 1초 감소합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>7레벨</strong></span>\n<ul>\n<li>지옥불 구슬 (Q)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>돌격병 강화 (고유 능력)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>폭식의 수호물 (사용 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>파괴의 대가 (E)\n<ul>\n<li>1레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>모두 다 불타리라의 마지막 피해가 대상 주위에도 피해를 주고, 적중한 적 영웅 하나당 파멸이 2회 중첩됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 포격 (Q)</strong>\n<ul>\n<li>파멸의 구슬을 사용하면 3초 내의 다음 일반 공격의 사거리가 <span class=\"pn-new\"><strong>2</strong></span> 증가하고 2명의 적에게 추가로 적중합니다. 포격으로 강화된 일반 공격이 적 영웅에게 적중하면 파멸이 1회 중첩됩니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 혼돈의 미학 (Q)</strong>\n<ul>\n<li>파멸의 구슬이 2명 이상의 적 영웅에게 적중하면 마나를 <span class=\"pn-new\"><strong>30</strong></span> 회복합니다. 3명 이상의 적 영웅에게 적중하면 파멸이 추가로 5회 중첩됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>13레벨</strong></span>\n<ul>\n<li>쾌락주의 (Q)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>주입된 마력 (E)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 난폭한 선봉대 (W)</strong>\n<ul>\n<li>악마 전사의 생명력이 25% 증가하고 주위 적들을 20% 느려지게 합니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 키데아의 입맞춤 (Q)</strong>\n<ul>\n<li>모두 다 불타리라의 정신 집중 시간이 0.5초 감소합니다. 모두 다 불타리라가 적 영웅에게 끝까지 지속되면 최대 생명력의 <span class=\"pn-new\"><strong>8%</strong></span>를 회복합니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 지휘 계통 (고유 능력) (D)</strong>\n<ul>\n<li>악마 부관이 주위 모든 아군 돌격병, 용병, 아즈모단의 소환수의 공격력을 25% 증가시킵니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>16레벨</strong></span>\n<ul>\n<li>악마의 일격 (고유 능력)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>죄악에는 죄악 (사용 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>강제 징집 (D)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>죄악의 손아귀 (E)\n<ul>\n<li>4레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>모두 다 불타리라의 사거리가 20% 증가합니다.</li>\n<li>모두 다 불타리라가 끝까지 지속되면 재사용 대기시간이 4초 감소합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 지옥의 균열 (E)</strong>\n<ul>\n<li>모두다 불타리라가 끝까지 지속되면 대상의 위치에 악마 전사가 소환되고 모든 악마 전사의 공격력이 4초 동안 100% 증가합니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 완전한 파멸 (Q)</strong>\n<ul>\n<li>파멸의 구슬이 적 영웅에게 대상의 최대 생명력의 <span class=\"pn-new\"><strong>5%</strong></span>만큼 추가 피해를 줍니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>20레벨</strong></span>\n<ul>\n<li><strong>새로운 특성: 공성파괴자 (R)</strong>\n<ul>\n<li>아즈모단의 악마들이 구조물에 50%의 추가 피해를 줍니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 검은 우물 (R)</strong>\n<ul>\n<li>죄악의 물결로 강화된 파멸의 구슬이 대상 위치에 검은 우물을 5초 동안 남깁니다. 검은 우물은 적의 방어력을 초당 8 감소시키고 초당 56의 피해를 줍니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 교만 (Q)</strong>\n<ul>\n<li>파멸이 400회 중첩되면 파멸의 구슬의 범위가 15% 증가하고 공격력이 추가로 100 증가합니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 밟아 뭉개기 (사용 효과)</strong>\n<ul>\n<li>사용하면 짧은 거리를 돌진하여 240의 피해를 주고 적중한 적들을 1초 동안 60% 느려지게 합니다. 재사용 대기시간은 60초입니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<table class=\"table table-condensed\">\n<tbody>\n<tr>\n<th><strong>레벨 (특성 단계)</strong></th>\n<th colspan=\"4\"><strong>아즈모단의 특성</strong></th>\n</tr>\n<tr>\n<td><strong>1 (1)</strong></td>\n<td><em>(!) 탐욕 (Q)</em></td>\n<td><u>(!) 폭식 (Q)</u></td>\n<td><em>(!) 분노 (Q)</em></td>\n<td>—</td>\n</tr>\n<tr>\n<td><strong>4 (2)</strong></td>\n<td>지옥의 군대 (W)</td>\n<td><u>지옥의 갑옷 (W)</u></td>\n<td><u>파멸의 종자 (지속 효과)</u></td>\n<td>—</td>\n</tr>\n<tr>\n<td><strong>7 (3)</strong></td>\n<td><em>혼돈의 미학 (Q)</em></td>\n<td><em>포격 (Q)</em></td>\n<td><u>파괴의 대가 (E)</u></td>\n<td>—</td>\n</tr>\n<tr>\n<td><strong>10 (4)</strong></td>\n<td>악마의 침공 (R)</td>\n<td><em>죄악의 물결 (R)</em></td>\n<td>—</td>\n<td>—</td>\n</tr>\n<tr>\n<td><strong>13 (5)</strong></td>\n<td><em>난폭한 선봉대 (W)</em></td>\n<td><em>키데아의 입맞춤 (Q)</em></td>\n<td><em>지휘 계통 (고유 능력) (D)</em></td>\n<td>—</td>\n</tr>\n<tr>\n<td><strong>16 (6)</strong></td>\n<td><em>완전한 파멸 (Q)</em></td>\n<td><em>지옥의 균열 (E)</em></td>\n<td><u>죄악의 손아귀 (E)</u></td>\n<td>—</td>\n</tr>\n<tr>\n<td><strong>20 (7)</strong></td>\n<td><em>공성파괴자 (R)</em></td>\n<td><em>검은 우물 (R)</em></td>\n<td><em>교만 (Q)</em></td>\n<td><em>밟아 뭉개기 (사용 효과)</em></td>\n</tr>\n</tbody>\n</table>\n<ul>\n<li>(!)는 퀘스트 특성입니다.</li>\n<li><em>이탤릭체</em>는 <em>새로운</em> 특성입니다.</li>\n<li><u>밑줄</u>친 특성은 <u>옮겨진</u> 특성입니다.</li>\n</ul>\n<blockquote><strong>개발자의 의견:</strong> 이번 아즈모단 대규모 개편에서는 게임 후반부의 강력한 공성 영웅이라는 데에 초점을 맞췄습니다. 또한 커져가는 분노와 피의 향기가 혼합된 파멸의 구슬 퀘스트를 기본적으로 가지게 되었죠. 이로써 파멸의 구슬이 시간이 지남에 따라 더욱 강력해지면서 PvE와 PvP 모두 큰 영향을 줄 것입니다. 이를 기본적인 능력으로 변경한 대신 파멸의 구슬의 적중 지점이 보이는 시간이 이전 보다 빨라져서 적들이 이를 피할 기회가 주어질 것입니다. 또한 이전 궁극기인 검은 우물이 죄악의 물결로 이름이 바뀌었으며 이제 오직 파멸의 구슬을 강화하는 데에만 사용할 수 있도록 변경되어, 대상을 지정하거나 Alt를 눌러 시전할 필요가 없고 가끔씩 파멸의 구슬을 자신의 위치에 쓰는 머쓱한 경우가 줄어들 것입니다. 악마 전사 또한 개별적으로 강해졌으며 지속적으로 광역 피해를 주지만 이전보다 느려지고 충전 기능이 사라졌습니다. 새로워진 모두 다 불타리라는 이전보다 훨씬 안정적으로 피해를 줄 수 있을 것이며 일부 특성들을 조합하면 아즈모단의 근접 및 중거리 공격력을 향상시킬 수 있을 것입니다. 지옥의 장군에서 악마 부관으로 이름이 바뀐 고유 능력은 여전히 어디서든 공격로를 압박할 수 있는 기술로 사용할 수 있지만 이전처럼 돌격병들이 여럿 모여있지 않아도 효과를 볼 수 있을 것입니다. 악마의 침공은 PvP에서의 사용을 장려하기 위해 적용했지만 PvE에서도 그리 큰 차이를 불러오지 않을 것입니다. 적 팀 한가운데에 악마의 침공을 사용하면 도망치지 않는 이상 막심한 피해를 감수해야 할 것입니다.</blockquote>"
+    }
+   ]
+  },
+  {
+   "name": "지원가",
+   "key": "role_support",
+   "html": "<h4>알렉스트라자</h4>\n<img class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/NZAPKZWKZG6U1510181901556.png\"/>\n<span class=\"pn-h\"><strong>기술</strong></span>\n<ul>\n<li><span class=\"pn-name\"><strong>생명 결속 (R)</strong></span>\n<ul>\n<li>결속된 동안 자신과 결속된 아군의 생명력을 초당 300 회복시킵니다.</li>\n</ul>\n</li>\n</ul>",
+   "heroes": [
+    {
+     "name": "알렉스트라자",
+     "heroId": "Alexstrasza",
+     "heroIds": [
+      "Alexstrasza"
+     ],
+     "changes": [
+      {
+       "name": "생명 결속",
+       "key": "R",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "결속된 동안 자신과 결속된 아군의 생명력을 초당 300 회복시킵니다.",
+         "html": "결속된 동안 자신과 결속된 아군의 생명력을 초당 300 회복시킵니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<img class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/NZAPKZWKZG6U1510181901556.png\"/>\n<span class=\"pn-h\"><strong>기술</strong></span>\n<ul>\n<li><span class=\"pn-name\"><strong>생명 결속 (R)</strong></span>\n<ul>\n<li>결속된 동안 자신과 결속된 아군의 생명력을 초당 300 회복시킵니다.</li>\n</ul>\n</li>\n</ul>"
+    }
+   ]
+  },
+  {
+   "name": "수집품",
+   "key": "collection",
+   "html": "<span class=\"pn-h\"><strong>새로운 묶음 상품과 스킨 팩</strong></span>\n<ul>\n<li>다음 묶음 상품을 한정된 기간 동안 구매하실 수 있습니다.\n<ul>\n<li><strong>2018 학교의 영웅 묶음 상품</strong> – 7월 23일까지 구매할 수 있습니다.</li>\n<li><strong>크롬의 약탈자들 묶음 상품 </strong>– 8월 6일까지 구매할 수 있습니다.</li>\n</ul>\n</li>\n<li>다음 스킨 팩을 월 6일까지 구매할 수 있습니다.\n<ul>\n<li><strong>도미누스 바일 아즈모단 스킨 팩</strong></li>\n<li><strong>디젤 현자 나지보 스킨 팩</strong></li>\n<li><strong>로드레이더 레이너 스킨 팩</strong></li>\n</ul>\n</li>\n</ul>\n<span class=\"pn-h\"><strong>크롬 스킨</strong></span>\n<ul>\n<li><span class=\"pn-name\"><strong>아즈모단</strong></span>\n<ul>\n<li>도미누스 바일 아즈모단</li>\n<li>해저더스 바일 아즈모단</li>\n<li>머시누스 바일 아즈모단</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>나지보</strong></span>\n<ul>\n<li>디젤 현자 나지보</li>\n<li>8기통 디젤 현자 나지보</li>\n<li>네온 디젤 현자 나지보</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>레이너</strong></span>\n<ul>\n<li>로드레이더 레이너</li>\n<li>유령 로드레이더 레이너</li>\n<li>무명의 로드레이더 레이너</li>\n</ul>\n</li>\n</ul>\n<span class=\"pn-h\"><strong>추가된 새로운 스킨</strong></span>\n<ul>\n<li><span class=\"pn-name\"><strong>아서스</strong></span>\n<ul>\n<li>루비 서리고룡 아서스</li>\n<li>스트롬가드 왕자 아서스</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>아즈모단</strong></span>\n<ul>\n<li>챔피언 아즈모덩크</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>정예 타우렌 족장 </strong></span>\n<ul>\n<li>지옥의 정예 타우렌 족장</li>\n<li>뉴 글램 메탈 정예 타우렌 족장</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>굴단</strong></span>\n<ul>\n<li>어둠달 굴단</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>케리건</strong></span>\n<ul>\n<li>챔피언 치어리더 케리건</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>리밍</strong></span>\n<ul>\n<li>챔피언 공격수 리밍</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>사무로</strong></span>\n<ul>\n<li>지옥의 불타는 칼날 사무로</li>\n<li>드레노어 불타는 칼날 사무로</li>\n</ul>\n</li>\n</ul>\n<span class=\"pn-h\"><strong>새로운 탈것</strong></span>\n<ul>\n<li><span class=\"pn-name\"><strong>천공의 아기 염소</strong></span>\n<ul>\n<li>이 탈것은 이번 패치 후에 실제 화폐를 사용하여 시공석을 처음 구매하는 플레이어들에게 주어집니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>헬도라도</strong></span>\n<ul>\n<li>헬도라도</li>\n<li>유령 헬도라도</li>\n<li>무명의 헬도라도</li>\n</ul>\n</li>\n</ul>\n<ul>\n</ul>\n<ul>\n<li><span class=\"pn-new\"><strong>2018년 등급전 시즌 2 탈것 보상</strong></span>\n<ul>\n<li><span class=\"pn-new\">2018년 등급전 시즌 2의 등급에 따라 다음 탈것들이 지급되었습니다.</span>\n<ul>\n<li><span class=\"pn-new\">원시 공포뿔</span></li>\n<li><span class=\"pn-new\">숄라자르 공포뿔</span></li>\n<li><span class=\"pn-new\">지옥불 공포뿔</span></li>\n<li><span class=\"pn-new\">영예로운 원시 공포뿔</span></li>\n<li><span class=\"pn-new\">영예로운 숄라자르 공포뿔</span></li>\n<li><span class=\"pn-new\">영예로운 지옥불 공포뿔</span></li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+   "items": [
+    {
+     "name": "아즈모단",
+     "heroId": "Azmodan",
+     "heroIds": [
+      "Azmodan"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>아즈모단</strong></span>\n<ul>\n<li>도미누스 바일 아즈모단</li>\n<li>해저더스 바일 아즈모단</li>\n<li>머시누스 바일 아즈모단</li>\n</ul><span class=\"pn-name\"><strong>아즈모단</strong></span>\n<ul>\n<li>챔피언 아즈모덩크</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "도미누스 바일 아즈모단",
+         "html": "도미누스 바일 아즈모단",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "해저더스 바일 아즈모단",
+         "html": "해저더스 바일 아즈모단",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "머시누스 바일 아즈모단",
+         "html": "머시누스 바일 아즈모단",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "챔피언 아즈모덩크",
+         "html": "챔피언 아즈모덩크",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "나지보",
+     "heroId": "WitchDoctor",
+     "heroIds": [
+      "WitchDoctor"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>나지보</strong></span>\n<ul>\n<li>디젤 현자 나지보</li>\n<li>8기통 디젤 현자 나지보</li>\n<li>네온 디젤 현자 나지보</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "디젤 현자 나지보",
+         "html": "디젤 현자 나지보",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "8기통 디젤 현자 나지보",
+         "html": "8기통 디젤 현자 나지보",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "네온 디젤 현자 나지보",
+         "html": "네온 디젤 현자 나지보",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "레이너",
+     "heroId": "Raynor",
+     "heroIds": [
+      "Raynor"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>레이너</strong></span>\n<ul>\n<li>로드레이더 레이너</li>\n<li>유령 로드레이더 레이너</li>\n<li>무명의 로드레이더 레이너</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "로드레이더 레이너",
+         "html": "로드레이더 레이너",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "유령 로드레이더 레이너",
+         "html": "유령 로드레이더 레이너",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "무명의 로드레이더 레이너",
+         "html": "무명의 로드레이더 레이너",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "아서스",
+     "heroId": "Arthas",
+     "heroIds": [
+      "Arthas"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>아서스</strong></span>\n<ul>\n<li>루비 서리고룡 아서스</li>\n<li>스트롬가드 왕자 아서스</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "루비 서리고룡 아서스",
+         "html": "루비 서리고룡 아서스",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "스트롬가드 왕자 아서스",
+         "html": "스트롬가드 왕자 아서스",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "정예 타우렌 족장",
+     "heroId": "L90ETC",
+     "heroIds": [
+      "L90ETC"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>정예 타우렌 족장 </strong></span>\n<ul>\n<li>지옥의 정예 타우렌 족장</li>\n<li>뉴 글램 메탈 정예 타우렌 족장</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "지옥의 정예 타우렌 족장",
+         "html": "지옥의 정예 타우렌 족장",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "뉴 글램 메탈 정예 타우렌 족장",
+         "html": "뉴 글램 메탈 정예 타우렌 족장",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "굴단",
+     "heroId": "Guldan",
+     "heroIds": [
+      "Guldan"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>굴단</strong></span>\n<ul>\n<li>어둠달 굴단</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "어둠달 굴단",
+         "html": "어둠달 굴단",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "케리건",
+     "heroId": "Kerrigan",
+     "heroIds": [
+      "Kerrigan"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>케리건</strong></span>\n<ul>\n<li>챔피언 치어리더 케리건</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "챔피언 치어리더 케리건",
+         "html": "챔피언 치어리더 케리건",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "리밍",
+     "heroId": "Wizard",
+     "heroIds": [
+      "Wizard"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>리밍</strong></span>\n<ul>\n<li>챔피언 공격수 리밍</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "챔피언 공격수 리밍",
+         "html": "챔피언 공격수 리밍",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "사무로",
+     "heroId": "Samuro",
+     "heroIds": [
+      "Samuro"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>사무로</strong></span>\n<ul>\n<li>지옥의 불타는 칼날 사무로</li>\n<li>드레노어 불타는 칼날 사무로</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "지옥의 불타는 칼날 사무로",
+         "html": "지옥의 불타는 칼날 사무로",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "드레노어 불타는 칼날 사무로",
+         "html": "드레노어 불타는 칼날 사무로",
+         "added": false
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "버그 수정",
+   "key": "bugs",
+   "html": "<span class=\"pn-h\"><strong>일반</strong></span>\n<ul>\n<li>게임의 여러 부분에 걸쳐 몇몇 오타와 설명 오류가 수정되었습니다.</li>\n</ul>\n<span class=\"pn-h\"><strong>아트</strong></span>\n<ul>\n<li><strong>디아블로:</strong> 암흑의 돌진이 방해된 후에 잘못된 방향을 바라보고 있는 것처럼 보이던 문제를 수정했습니다.</li>\n<li><strong>말티엘:</strong> 강화 효과 막대에서 사신을 두려워하라의 아이콘 아트가 특성창의 아이콘 아트와 일치하도록 변경됐습니다.</li>\n</ul>\n<span class=\"pn-h\"><strong>전장</strong></span>\n<ul>\n<li><strong>죽음의 광산:</strong> 광산에 있는 무덤 골렘이 일반 공격을 하지 않고 이동 불가 기술만 사용하던 문제를 수정했습니다.</li>\n<li><strong>핵탄두 격전지:</strong> 우두머리와 포자충 기술들로 생성된 시각 효과가 전장의 안개 속에서 보이던 문제를 수정했습니다.</li>\n<li><strong>체험하기:</strong> 적 영웅을 없음으로 바꾸고 레벨을 설정하면 적 영웅이 다시 생성되던 문제를 수정했습니다.</li>\n</ul>\n<span class=\"pn-h\"><strong>영웅, 기술, 특성</strong></span>\n<ul>\n<li><strong>기술:</strong> 스투코프의 스멀거리는 팔과 유사한 기술들이 시전과 동시에 즉시 취소될 수 있던 문제를 수정했습니다.</li>\n<li><strong>알라라크: </strong>이제 치명적인 돌진이 알라라크가 바라보고 있는 방향이 아닌 플레이어가 클릭한 방향으로 시전됩니다.</li>\n<li><strong>알렉스트라자:</strong> 정화의 불꽃을 사용하여 죽음의 광산의 광산 외부와 내부를 넘나들 수 있던 문제를 수정했습니다.</li>\n<li><strong>알렉스트라자:</strong> 용의 여왕이 만료되는 순간에 정화의 불꽃을 사용하면 시전이 취소되던 문제를 수정했습니다.</li>\n<li><strong>카시아:</strong> 고래의 판갑 특성이 의도한 것보다 더 많은 일반 공격을 흡수해야 효과가 발동하던 문제를 수정했습니다.</li>\n<li><strong>데커드:</strong> 자리야의 중력자탄의 영향을 받는 동안 정상적으로 생명력 물약을 사용할 수 있습니다.</li>\n<li><strong>데커드:</strong> 잠시 내 말 좀 들어보게나를 취소하면 수면 상태인 적들이 피해를 받아도 깨지 않던 문제를 수정했습니다.</li>\n<li><strong>디아블로:</strong> 암흑의 돌진을 시전하다 실패하면 다른 기술들을 사용할 수 없게 되던 문제를 수정했습니다.</li>\n<li><strong>디아블로:</strong> 첸의 날아차기나 일리단의 습격 등 돌진형 기술을 사용하는 적에게 암흑의 돌진을 사용한 후에 추가적인 기술을 사용할 수 없던 문제를 수정했습니다.</li>\n<li><strong>D.Va:</strong> 부스터를 사용하는 중에 예약 명령을 내리면 D.Va를 조종할 수 없게 되던 문제를 수정했습니다.</li>\n<li><strong>가로쉬:</strong> 저지 불가 상태인 아군에게 참전을 정상적으로 사용할 수 있습니다.</li>\n<li><strong>가로쉬:</strong> 전쟁군주의 도전이 무라딘의 재기의 바람이나 피닉스의 보호막 축전기 등 피해를 받아야 취소되는 기술들 또한 취소시키던 문제를 수정했습니다.</li>\n<li><strong>노바:</strong> 대장갑 탄환을 선택한 후에 대상 정보창에서 일반 공격으로 준 피해를 정상적으로 나타냅니다.</li>\n<li><strong>수면:</strong> 굴단의 부패나 블레이즈의 연소 등 적용과 동시에 피해를 주지 않는 기술들도 수면 상태인 적을 정상적으로 깨웁니다.</li>\n<li><strong>스투코프:</strong> 치유성 병원균의 대상이 변이되면 지속 시간 알림이 시각적으로 사라지던 문제를 수정했습니다.</li>\n<li><strong>영웅 처치:</strong> 대상이 죽기 전에 오랜 시간 동안 대상과 교전하지 않던 영웅도 처치에 참여한 것으로 간주되던 문제를 수정했습니다.</li>\n<li><strong>도살자:</strong> 무자비한 돌진의 대상이 은신 상태가 되어 기술이 취소되었을 때에도 시각 효과가 남아있던 문제를 수정했습니다.</li>\n<li><strong>발리라:</strong> 사악한 일격의 시각 효과가 표시된 범위에 더욱 맞게 조절되었습니다.</li>\n<li><strong>바리안:</strong> 거인의 강타를 사용하면 대상이 있던 위치가 아닌 대상 곁의 위치로 이동합니다.</li>\n</ul>\n<span class=\"pn-h\"><strong>소리</strong></span>\n<ul>\n<li><strong>소냐:</strong> 라 판테라 소냐 스킨이 구조물을 공격할 때 칼날 타격음이 나던 문제를 수정했습니다.</li>\n</ul>\n<p align=\"center\">히어로즈 공식 토론장에서 여러분의 의견을 남겨주세요.</p>\n<p><a class=\"btn btn-default btn-lg\" href=\"https://kr.battle.net/forums/en/heroes/index\" type=\"button\">히어로즈 공식 토론장</a></p>\n<p><img alt=\"\" class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/g6/G6G0N80EOC941426801305139.png\"/></p>\n<p><img alt=\"InvisibleDividerLine_800x50.png\" class=\"no-border; no-shadow\" data-id=\"14509591\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/6VA2831Q81IU1403137406234.png\"/></p>",
+   "items": [
+    {
+     "name": "디아블로",
+     "heroId": "Diablo",
+     "heroIds": [
+      "Diablo"
+     ],
+     "under": null,
+     "html": "<strong>디아블로:</strong> 암흑의 돌진이 방해된 후에 잘못된 방향을 바라보고 있는 것처럼 보이던 문제를 수정했습니다.<strong>디아블로:</strong> 암흑의 돌진을 시전하다 실패하면 다른 기술들을 사용할 수 없게 되던 문제를 수정했습니다.<strong>디아블로:</strong> 첸의 날아차기나 일리단의 습격 등 돌진형 기술을 사용하는 적에게 암흑의 돌진을 사용한 후에 추가적인 기술을 사용할 수 없던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "디아블로: 암흑의 돌진이 방해된 후에 잘못된 방향을 바라보고 있는 것처럼 보이던 문제를 수정했습니다.",
+         "html": "<strong>디아블로:</strong> 암흑의 돌진이 방해된 후에 잘못된 방향을 바라보고 있는 것처럼 보이던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "디아블로: 암흑의 돌진을 시전하다 실패하면 다른 기술들을 사용할 수 없게 되던 문제를 수정했습니다.",
+         "html": "<strong>디아블로:</strong> 암흑의 돌진을 시전하다 실패하면 다른 기술들을 사용할 수 없게 되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "디아블로: 첸의 날아차기나 일리단의 습격 등 돌진형 기술을 사용하는 적에게 암흑의 돌진을 사용한 후에 추가적인 기술을 사용할 수 없던 문제를 수정했습니다.",
+         "html": "<strong>디아블로:</strong> 첸의 날아차기나 일리단의 습격 등 돌진형 기술을 사용하는 적에게 암흑의 돌진을 사용한 후에 추가적인 기술을 사용할 수 없던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "말티엘",
+     "heroId": "Malthael",
+     "heroIds": [
+      "Malthael"
+     ],
+     "under": null,
+     "html": "<strong>말티엘:</strong> 강화 효과 막대에서 사신을 두려워하라의 아이콘 아트가 특성창의 아이콘 아트와 일치하도록 변경됐습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "말티엘: 강화 효과 막대에서 사신을 두려워하라의 아이콘 아트가 특성창의 아이콘 아트와 일치하도록 변경됐습니다.",
+         "html": "<strong>말티엘:</strong> 강화 효과 막대에서 사신을 두려워하라의 아이콘 아트가 특성창의 아이콘 아트와 일치하도록 변경됐습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "알라라크",
+     "heroId": "Alarak",
+     "heroIds": [
+      "Alarak"
+     ],
+     "under": null,
+     "html": "<strong>알라라크: </strong>이제 치명적인 돌진이 알라라크가 바라보고 있는 방향이 아닌 플레이어가 클릭한 방향으로 시전됩니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "알라라크: 이제 치명적인 돌진이 알라라크가 바라보고 있는 방향이 아닌 플레이어가 클릭한 방향으로 시전됩니다.",
+         "html": "<strong>알라라크: </strong>이제 치명적인 돌진이 알라라크가 바라보고 있는 방향이 아닌 플레이어가 클릭한 방향으로 시전됩니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "알렉스트라자",
+     "heroId": "Alexstrasza",
+     "heroIds": [
+      "Alexstrasza"
+     ],
+     "under": null,
+     "html": "<strong>알렉스트라자:</strong> 정화의 불꽃을 사용하여 죽음의 광산의 광산 외부와 내부를 넘나들 수 있던 문제를 수정했습니다.<strong>알렉스트라자:</strong> 용의 여왕이 만료되는 순간에 정화의 불꽃을 사용하면 시전이 취소되던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "알렉스트라자: 정화의 불꽃을 사용하여 죽음의 광산의 광산 외부와 내부를 넘나들 수 있던 문제를 수정했습니다.",
+         "html": "<strong>알렉스트라자:</strong> 정화의 불꽃을 사용하여 죽음의 광산의 광산 외부와 내부를 넘나들 수 있던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "알렉스트라자: 용의 여왕이 만료되는 순간에 정화의 불꽃을 사용하면 시전이 취소되던 문제를 수정했습니다.",
+         "html": "<strong>알렉스트라자:</strong> 용의 여왕이 만료되는 순간에 정화의 불꽃을 사용하면 시전이 취소되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "카시아",
+     "heroId": "Amazon",
+     "heroIds": [
+      "Amazon"
+     ],
+     "under": null,
+     "html": "<strong>카시아:</strong> 고래의 판갑 특성이 의도한 것보다 더 많은 일반 공격을 흡수해야 효과가 발동하던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "카시아: 고래의 판갑 특성이 의도한 것보다 더 많은 일반 공격을 흡수해야 효과가 발동하던 문제를 수정했습니다.",
+         "html": "<strong>카시아:</strong> 고래의 판갑 특성이 의도한 것보다 더 많은 일반 공격을 흡수해야 효과가 발동하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "데커드",
+     "heroId": "Deckard",
+     "heroIds": [
+      "Deckard"
+     ],
+     "under": null,
+     "html": "<strong>데커드:</strong> 자리야의 중력자탄의 영향을 받는 동안 정상적으로 생명력 물약을 사용할 수 있습니다.<strong>데커드:</strong> 잠시 내 말 좀 들어보게나를 취소하면 수면 상태인 적들이 피해를 받아도 깨지 않던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "데커드: 자리야의 중력자탄의 영향을 받는 동안 정상적으로 생명력 물약을 사용할 수 있습니다.",
+         "html": "<strong>데커드:</strong> 자리야의 중력자탄의 영향을 받는 동안 정상적으로 생명력 물약을 사용할 수 있습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "데커드: 잠시 내 말 좀 들어보게나를 취소하면 수면 상태인 적들이 피해를 받아도 깨지 않던 문제를 수정했습니다.",
+         "html": "<strong>데커드:</strong> 잠시 내 말 좀 들어보게나를 취소하면 수면 상태인 적들이 피해를 받아도 깨지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "D.Va",
+     "heroId": "DVa",
+     "heroIds": [
+      "DVa"
+     ],
+     "under": null,
+     "html": "<strong>D.Va:</strong> 부스터를 사용하는 중에 예약 명령을 내리면 D.Va를 조종할 수 없게 되던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "D.Va: 부스터를 사용하는 중에 예약 명령을 내리면 D.Va를 조종할 수 없게 되던 문제를 수정했습니다.",
+         "html": "<strong>D.Va:</strong> 부스터를 사용하는 중에 예약 명령을 내리면 D.Va를 조종할 수 없게 되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "가로쉬",
+     "heroId": "Garrosh",
+     "heroIds": [
+      "Garrosh"
+     ],
+     "under": null,
+     "html": "<strong>가로쉬:</strong> 저지 불가 상태인 아군에게 참전을 정상적으로 사용할 수 있습니다.<strong>가로쉬:</strong> 전쟁군주의 도전이 무라딘의 재기의 바람이나 피닉스의 보호막 축전기 등 피해를 받아야 취소되는 기술들 또한 취소시키던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "가로쉬: 저지 불가 상태인 아군에게 참전을 정상적으로 사용할 수 있습니다.",
+         "html": "<strong>가로쉬:</strong> 저지 불가 상태인 아군에게 참전을 정상적으로 사용할 수 있습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "가로쉬: 전쟁군주의 도전이 무라딘의 재기의 바람이나 피닉스의 보호막 축전기 등 피해를 받아야 취소되는 기술들 또한 취소시키던 문제를 수정했습니다.",
+         "html": "<strong>가로쉬:</strong> 전쟁군주의 도전이 무라딘의 재기의 바람이나 피닉스의 보호막 축전기 등 피해를 받아야 취소되는 기술들 또한 취소시키던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "노바",
+     "heroId": "Nova",
+     "heroIds": [
+      "Nova"
+     ],
+     "under": null,
+     "html": "<strong>노바:</strong> 대장갑 탄환을 선택한 후에 대상 정보창에서 일반 공격으로 준 피해를 정상적으로 나타냅니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "노바: 대장갑 탄환을 선택한 후에 대상 정보창에서 일반 공격으로 준 피해를 정상적으로 나타냅니다.",
+         "html": "<strong>노바:</strong> 대장갑 탄환을 선택한 후에 대상 정보창에서 일반 공격으로 준 피해를 정상적으로 나타냅니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "스투코프",
+     "heroId": "Stukov",
+     "heroIds": [
+      "Stukov"
+     ],
+     "under": null,
+     "html": "<strong>스투코프:</strong> 치유성 병원균의 대상이 변이되면 지속 시간 알림이 시각적으로 사라지던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "스투코프: 치유성 병원균의 대상이 변이되면 지속 시간 알림이 시각적으로 사라지던 문제를 수정했습니다.",
+         "html": "<strong>스투코프:</strong> 치유성 병원균의 대상이 변이되면 지속 시간 알림이 시각적으로 사라지던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "도살자",
+     "heroId": "Butcher",
+     "heroIds": [
+      "Butcher"
+     ],
+     "under": null,
+     "html": "<strong>도살자:</strong> 무자비한 돌진의 대상이 은신 상태가 되어 기술이 취소되었을 때에도 시각 효과가 남아있던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "도살자: 무자비한 돌진의 대상이 은신 상태가 되어 기술이 취소되었을 때에도 시각 효과가 남아있던 문제를 수정했습니다.",
+         "html": "<strong>도살자:</strong> 무자비한 돌진의 대상이 은신 상태가 되어 기술이 취소되었을 때에도 시각 효과가 남아있던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "발리라",
+     "heroId": "Valeera",
+     "heroIds": [
+      "Valeera"
+     ],
+     "under": null,
+     "html": "<strong>발리라:</strong> 사악한 일격의 시각 효과가 표시된 범위에 더욱 맞게 조절되었습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "발리라: 사악한 일격의 시각 효과가 표시된 범위에 더욱 맞게 조절되었습니다.",
+         "html": "<strong>발리라:</strong> 사악한 일격의 시각 효과가 표시된 범위에 더욱 맞게 조절되었습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "바리안",
+     "heroId": "Varian",
+     "heroIds": [
+      "Varian"
+     ],
+     "under": null,
+     "html": "<strong>바리안:</strong> 거인의 강타를 사용하면 대상이 있던 위치가 아닌 대상 곁의 위치로 이동합니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "바리안: 거인의 강타를 사용하면 대상이 있던 위치가 아닌 대상 곁의 위치로 이동합니다.",
+         "html": "<strong>바리안:</strong> 거인의 강타를 사용하면 대상이 있던 위치가 아닌 대상 곁의 위치로 이동합니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "소냐",
+     "heroId": "Barbarian",
+     "heroIds": [
+      "Barbarian"
+     ],
+     "under": null,
+     "html": "<strong>소냐:</strong> 라 판테라 소냐 스킨이 구조물을 공격할 때 칼날 타격음이 나던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "소냐: 라 판테라 소냐 스킨이 구조물을 공격할 때 칼날 타격음이 나던 문제를 수정했습니다.",
+         "html": "<strong>소냐:</strong> 라 판테라 소냐 스킨이 구조물을 공격할 때 칼날 타격음이 나던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "heroes": [
+  "Alarak",
+  "Alexstrasza",
+  "Amazon",
+  "Arthas",
+  "Azmodan",
+  "Barbarian",
+  "Butcher",
+  "Chromie",
+  "DVa",
+  "Deckard",
+  "Diablo",
+  "Garrosh",
+  "Guldan",
+  "Kerrigan",
+  "L90ETC",
+  "Malthael",
+  "Nova",
+  "Raynor",
+  "Samuro",
+  "Stukov",
+  "Valeera",
+  "Varian",
+  "WitchDoctor",
+  "Wizard"
+ ],
+ "battlegrounds": [],
+ "newsId": "21940930"
+}

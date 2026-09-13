@@ -1,0 +1,1047 @@
+{
+ "date": "2025-02-21",
+ "kind": "ptr",
+ "title": "히어로즈 오브 더 스톰 공개 테스트 서버 패치 노트 - 2025년 2월 21일",
+ "source": "https://news.blizzard.com/en-us/article/24180740/heroes-of-the-storm-ptr-patch-notes-february-21-2025",
+ "published": "2025-02-21T18:33:00Z",
+ "sections": [
+  {
+   "name": "머리말",
+   "key": "intro",
+   "html": "<p>다음 히어로즈 오브 더 스톰 패치가 공개 테스트 서버(PTR)에 적용되어 테스트 플레이가 가능합니다. 언제나 그렇듯, PTR에서 플레이하는 동안 버그를 발견하셨다면 <a href=\"https://us.forums.blizzard.com/en/heroes/c/ptr-bug-report\" target=\"_blank\">PTR 버그 신고 포럼</a>에 방문하여 경험하신 내용을 알려주시기 바랍니다.</p>",
+   "nameEn": "머리말"
+  },
+  {
+   "name": "밸런스 업데이트",
+   "key": "balance",
+   "html": "<h3><strong>영웅</strong></h3>\n<h4>아우리엘</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">희망 불어넣기 [고유 능력]</strong><ul>\n<li>영웅이 아닌 대상에게 입힌 피해량 중 저장되는 에너지의 양이 50%에서 40%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<h4>데하카</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">검은 벌레떼 [W]</strong><ul>\n<li>피해량이 52에서 48로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">영웅 추적자</strong><ul>\n<li>영웅을 2명 넘게 적중시켜도 정수 획득량이 증가하지 않습니다.</li>\n<li>이제 정수를 획득하려면 검은 벌레떼가 영웅 2명을 적중시켜야 합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">가시지옥 변종</strong><ul>\n<li>재사용 대기시간 감소 보너스가 3초에서 2초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">굶주린 광기</strong><ul>\n<li>개편: 재사용 대기시간 감소가 이제 도박 보너스로 적용되어 1.5초 감소부터 시작합니다. 사망할 때마다 이 수치가 0.25씩 감소하며, 최대 3회까지 적용됩니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">마비성 효소</strong><ul>\n<li>개편: 도박이 삭제되었습니다. 이제 끌기가 지속되는 동안과 종료 후 2초 동안 끌기 대상이 받는 치유량이 40% 감소합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">사나운 추적자</strong><ul>\n<li>피해량 보너스가 60%에서 50%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">굴착 발톱</strong><ul>\n<li>이동 속도가 125%에서 120%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">전염</strong><ul>\n<li>이제 고립의 피해량도 60% 감소시킵니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>카라짐</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li>생명력이 2027에서 2080으로 증가했습니다.</li>\n<li><strong class=\"pn-name\">천상의 숨결 [W]</strong><ul>\n<li>치유량이 285에서 295로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">공기의 벗</strong><ul>\n<li>생명력이 200에서 300으로 증가했습니다.</li>\n<li>기술 위력이 15%에서 20%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">신성 장법</strong><ul>\n<li>지속시간이 3초에서 4초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">육감</strong><ul>\n<li>이제 육감은 기절이 적용되는 즉시가 아니라 기절이 끝난 후부터 지속시간이 줄어들기 시작합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">해탈</strong><ul>\n<li>재사용 대기시간이 60초에서 70초로 증가했습니다.</li>\n<li>회복되는 마나가 33%에서 70%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>루시우</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">소리 파동 [Q]</strong><ul>\n<li>재사용 대기시간이 7초에서 8초로 증가했습니다.</li>\n<li>마나 소모량이 30에서 45로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">아첼레란도</strong><ul>\n<li>최대치에 도달하는 시간이 4초에서 6초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">하이파이브</strong><ul>\n<li>재사용 대기시간이 20초에서 25초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">묵직한 바퀴</strong><ul>\n<li>이제 길을 비켜라!가 여러 대상을 적중시키는 것도 방지합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">주파수를 높여</strong><ul>\n<li>재사용 대기시간 감소량이 0.4초에서 0.3초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>티리엘</h4>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">법과 질서</strong><ul>\n<li>최대 보너스가 아군 영웅 4명으로 제한되던 문제를 수정했습니다. 제한이 15명으로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>화이트메인</h4>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">재판관의 기도</strong><ul>\n<li>적 영웅을 일반 공격으로 3회 공격하면 화이트메인이 재판관의 기도 중첩도 1회 획득합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">붉은 분노</strong><ul>\n<li>개편: 이제 열의의 모든 대상에게 마나도 .5% 회복시킵니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+   "heroes": [
+    {
+     "name": "아우리엘",
+     "heroId": "Auriel",
+     "heroIds": [
+      "Auriel"
+     ],
+     "changes": [
+      {
+       "name": "희망 불어넣기",
+       "key": "Trait",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "영웅이 아닌 대상에게 입힌 피해량 중 저장되는 에너지의 양이 50%에서 40%로 감소했습니다.",
+         "html": "영웅이 아닌 대상에게 입힌 피해량 중 저장되는 에너지의 양이 50%에서 40%로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Bestow Hope"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">희망 불어넣기 [고유 능력]</strong><ul>\n<li>영웅이 아닌 대상에게 입힌 피해량 중 저장되는 에너지의 양이 50%에서 40%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Auriel"
+    },
+    {
+     "name": "데하카",
+     "heroId": "Dehaka",
+     "heroIds": [
+      "Dehaka"
+     ],
+     "changes": [
+      {
+       "name": "검은 벌레떼",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "피해량이 52에서 48로 감소했습니다.",
+         "html": "피해량이 52에서 48로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Dark Swarm"
+      },
+      {
+       "name": "영웅 추적자",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "영웅을 2명 넘게 적중시켜도 정수 획득량이 증가하지 않습니다.",
+         "html": "영웅을 2명 넘게 적중시켜도 정수 획득량이 증가하지 않습니다.",
+         "added": false
+        },
+        {
+         "text": "이제 정수를 획득하려면 검은 벌레떼가 영웅 2명을 적중시켜야 합니다.",
+         "html": "이제 정수를 획득하려면 검은 벌레떼가 영웅 2명을 적중시켜야 합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Hero Stalker"
+      },
+      {
+       "name": "가시지옥 변종",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "재사용 대기시간 감소 보너스가 3초에서 2초로 감소했습니다.",
+         "html": "재사용 대기시간 감소 보너스가 3초에서 2초로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Lurker Strain"
+      },
+      {
+       "name": "굶주린 광기",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "개편: 재사용 대기시간 감소가 이제 도박 보너스로 적용되어 1.5초 감소부터 시작합니다. 사망할 때마다 이 수치가 0.25씩 감소하며, 최대 3회까지 적용됩니다.",
+         "html": "개편: 재사용 대기시간 감소가 이제 도박 보너스로 적용되어 1.5초 감소부터 시작합니다. 사망할 때마다 이 수치가 0.25씩 감소하며, 최대 3회까지 적용됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Feeding Frenzy"
+      },
+      {
+       "name": "마비성 효소",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "개편: 도박이 삭제되었습니다. 이제 끌기가 지속되는 동안과 종료 후 2초 동안 끌기 대상이 받는 치유량이 40% 감소합니다.",
+         "html": "개편: 도박이 삭제되었습니다. 이제 끌기가 지속되는 동안과 종료 후 2초 동안 끌기 대상이 받는 치유량이 40% 감소합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Paralyzing Enzymes"
+      },
+      {
+       "name": "사나운 추적자",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "피해량 보너스가 60%에서 50%로 감소했습니다.",
+         "html": "피해량 보너스가 60%에서 50%로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Ferocious Stalker"
+      },
+      {
+       "name": "굴진 발톱",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "이동 속도가 125%에서 120%로 감소했습니다.",
+         "html": "이동 속도가 125%에서 120%로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Tunnelling Claws"
+      },
+      {
+       "name": "전염",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "이제 고립의 피해량도 60% 감소시킵니다.",
+         "html": "이제 고립의 피해량도 60% 감소시킵니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Contagion"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">검은 벌레떼 [W]</strong><ul>\n<li>피해량이 52에서 48로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">영웅 추적자</strong><ul>\n<li>영웅을 2명 넘게 적중시켜도 정수 획득량이 증가하지 않습니다.</li>\n<li>이제 정수를 획득하려면 검은 벌레떼가 영웅 2명을 적중시켜야 합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">가시지옥 변종</strong><ul>\n<li>재사용 대기시간 감소 보너스가 3초에서 2초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">굶주린 광기</strong><ul>\n<li>개편: 재사용 대기시간 감소가 이제 도박 보너스로 적용되어 1.5초 감소부터 시작합니다. 사망할 때마다 이 수치가 0.25씩 감소하며, 최대 3회까지 적용됩니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">마비성 효소</strong><ul>\n<li>개편: 도박이 삭제되었습니다. 이제 끌기가 지속되는 동안과 종료 후 2초 동안 끌기 대상이 받는 치유량이 40% 감소합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">사나운 추적자</strong><ul>\n<li>피해량 보너스가 60%에서 50%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">굴착 발톱</strong><ul>\n<li>이동 속도가 125%에서 120%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">전염</strong><ul>\n<li>이제 고립의 피해량도 60% 감소시킵니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Dehaka"
+    },
+    {
+     "name": "카라짐",
+     "heroId": "Monk",
+     "heroIds": [
+      "Monk"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "생명력이 2027에서 2080으로 증가했습니다.",
+         "html": "생명력이 2027에서 2080으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "천상의 숨결",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "치유량이 285에서 295로 증가했습니다.",
+         "html": "치유량이 285에서 295로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Breath of Heaven"
+      },
+      {
+       "name": "공기의 벗",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "생명력이 200에서 300으로 증가했습니다.",
+         "html": "생명력이 200에서 300으로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "기술 위력이 15%에서 20%로 증가했습니다.",
+         "html": "기술 위력이 15%에서 20%로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Air Ally"
+      },
+      {
+       "name": "신성 장법",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "지속시간이 3초에서 4초로 증가했습니다.",
+         "html": "지속시간이 3초에서 4초로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Divine Palm"
+      },
+      {
+       "name": "육감",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "이제 육감은 기절이 적용되는 즉시가 아니라 기절이 끝난 후부터 지속시간이 줄어들기 시작합니다.",
+         "html": "이제 육감은 기절이 적용되는 즉시가 아니라 기절이 끝난 후부터 지속시간이 줄어들기 시작합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Sixth Sense"
+      },
+      {
+       "name": "해탈",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 60초에서 70초로 증가했습니다.",
+         "html": "재사용 대기시간이 60초에서 70초로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "회복되는 마나가 33%에서 70%로 증가했습니다.",
+         "html": "회복되는 마나가 33%에서 70%로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Epiphany"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li>생명력이 2027에서 2080으로 증가했습니다.</li>\n<li><strong class=\"pn-name\">천상의 숨결 [W]</strong><ul>\n<li>치유량이 285에서 295로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">공기의 벗</strong><ul>\n<li>생명력이 200에서 300으로 증가했습니다.</li>\n<li>기술 위력이 15%에서 20%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">신성 장법</strong><ul>\n<li>지속시간이 3초에서 4초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">육감</strong><ul>\n<li>이제 육감은 기절이 적용되는 즉시가 아니라 기절이 끝난 후부터 지속시간이 줄어들기 시작합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">해탈</strong><ul>\n<li>재사용 대기시간이 60초에서 70초로 증가했습니다.</li>\n<li>회복되는 마나가 33%에서 70%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Kharazim"
+    },
+    {
+     "name": "루시우",
+     "heroId": "Lucio",
+     "heroIds": [
+      "Lucio"
+     ],
+     "changes": [
+      {
+       "name": "소리 파동",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 7초에서 8초로 증가했습니다.",
+         "html": "재사용 대기시간이 7초에서 8초로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "마나 소모량이 30에서 45로 증가했습니다.",
+         "html": "마나 소모량이 30에서 45로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Soundwave"
+      },
+      {
+       "name": "아첼레란도",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "최대치에 도달하는 시간이 4초에서 6초로 증가했습니다.",
+         "html": "최대치에 도달하는 시간이 4초에서 6초로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Accelerando"
+      },
+      {
+       "name": "하이파이브",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 20초에서 25초로 증가했습니다.",
+         "html": "재사용 대기시간이 20초에서 25초로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "High Five"
+      },
+      {
+       "name": "묵직한 바퀴",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "이제 길을 비켜라!가 여러 대상을 적중시키는 것도 방지합니다.",
+         "html": "이제 길을 비켜라!가 여러 대상을 적중시키는 것도 방지합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Heavy Casters"
+      },
+      {
+       "name": "주파수를 높여",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "재사용 대기시간 감소량이 0.4초에서 0.3초로 감소했습니다.",
+         "html": "재사용 대기시간 감소량이 0.4초에서 0.3초로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Up the Frequency"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">소리 파동 [Q]</strong><ul>\n<li>재사용 대기시간이 7초에서 8초로 증가했습니다.</li>\n<li>마나 소모량이 30에서 45로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">아첼레란도</strong><ul>\n<li>최대치에 도달하는 시간이 4초에서 6초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">하이파이브</strong><ul>\n<li>재사용 대기시간이 20초에서 25초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">묵직한 바퀴</strong><ul>\n<li>이제 길을 비켜라!가 여러 대상을 적중시키는 것도 방지합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">주파수를 높여</strong><ul>\n<li>재사용 대기시간 감소량이 0.4초에서 0.3초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Lúcio"
+    },
+    {
+     "name": "티리엘",
+     "heroId": "Tyrael",
+     "heroIds": [
+      "Tyrael"
+     ],
+     "changes": [
+      {
+       "name": "법과 질서",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "최대 보너스가 아군 영웅 4명으로 제한되던 문제를 수정했습니다. 제한이 15명으로 증가했습니다.",
+         "html": "최대 보너스가 아군 영웅 4명으로 제한되던 문제를 수정했습니다. 제한이 15명으로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Law and Order"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">법과 질서</strong><ul>\n<li>최대 보너스가 아군 영웅 4명으로 제한되던 문제를 수정했습니다. 제한이 15명으로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Tyrael"
+    },
+    {
+     "name": "화이트메인",
+     "heroId": "Whitemane",
+     "heroIds": [
+      "Whitemane"
+     ],
+     "changes": [
+      {
+       "name": "재판관의 기도",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "적 영웅을 일반 공격으로 3회 공격하면 화이트메인이 재판관의 기도 중첩도 1회 획득합니다.",
+         "html": "적 영웅을 일반 공격으로 3회 공격하면 화이트메인이 재판관의 기도 중첩도 1회 획득합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Inquisitor's Prayer"
+      },
+      {
+       "name": "붉은 분노",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "개편: 이제 열의의 모든 대상에게 마나도 .5% 회복시킵니다.",
+         "html": "개편: 이제 열의의 모든 대상에게 마나도 .5% 회복시킵니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Scarlet Wrath"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">재판관의 기도</strong><ul>\n<li>적 영웅을 일반 공격으로 3회 공격하면 화이트메인이 재판관의 기도 중첩도 1회 획득합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">붉은 분노</strong><ul>\n<li>개편: 이제 열의의 모든 대상에게 마나도 .5% 회복시킵니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Whitemane"
+    }
+   ],
+   "nameEn": "Balance Update"
+  },
+  {
+   "name": "버그 수정",
+   "key": "bugs",
+   "html": "<h3><strong>일반</strong></h3>\n<ul>\n<li>연습 모드와 체험하기 모드에서 표적 허수아비에 일부 효과가 올바르게 표시되지 않던 문제를 수정했습니다.</li>\n<li>대상 정보창에 일부 이동 속도 증가 효과가 잘못된 수치로 표시되던 문제를 수정했습니다.</li>\n</ul>\n<h3><strong>난투</strong></h3>\n<ul>\n<li>데스윙의 대격변이 투기장 모드에서 더 이상 재사용 대기시간이 적용된 상태로 시작하지 않습니다.</li>\n</ul>\n<h3><strong>전장</strong></h3>\n<ul>\n<li><strong class=\"pn-h\">브락시스 항전</strong><ul>\n<li>대천사의 시각 효과가 신호를 보낼 수 있는 사물로 인식되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">볼스카야</strong><ul>\n<li>트리글라브 수호자의 보호막 방출기가 아군에게 부여한 보호막이 피해를 흡수할 때 조종사의 자가 치유량 점수가 증가하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n<h3><strong>영웅</strong></h3>\n<ul>\n<li><strong class=\"pn-h\">아바투르</strong><ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">최종 진화물</strong><ul>\n<li>통찰을 선택한 카라짐의 복제는 이제 퀘스트를 완료한 것으로 취급됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">알라라크</strong><ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">반격</strong><ul>\n<li>이제 흡수한 피해량만큼 알라라크의 자가 치유 점수가 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">아나</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">정조준 [고유 능력]</strong><ul>\n<li>정밀 조준이 끝난 후에도 정밀 조준의 치유탄 보너스가 지속되던 문제를 수정했습니다.</li>\n<li>이제 정밀 조준을 사용하면 아나가 장난감 기차 탈것에서도 내립니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">아즈모단</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">악마 전사 소환 [W]</strong><ul>\n<li>아즈모단의 악마 전사의 오라 피해량이 다른 오라 피해 효과와 동일하게 작동하지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">빛나래</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">위안의 안개 [고유 능력]</strong><ul>\n<li>빛나래가 정지 상태일 때도 주변에서 진정의 안개가 발동되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">데하카</strong><ul>\n<li>끌기가 끝난 후 .25초 이내에 공격할 경우 일반 공격이 회피 중첩을 소모하지 않을 수 있던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">제이나</strong><ul>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">눈폭풍</strong><ul>\n<li>눈폭풍의 효과가 올바르게 적용되지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">캘타스</strong><ul>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">태양의 불꽃</strong><ul>\n<li>캘타스가 사망할 때 활성화된 태양의 불꽃 기술 위력 효과가 제거되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">카라짐</strong><ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">신성 장법</strong><ul>\n<li>신성 장법의 시간 정지가 카라짐에게 적용된 지속 피해 효과를 제거하던 문제를 수정했습니다.</li>\n<li>신성 장법이 발동 효과와 함께 적용된 부정적 효과를 제거하지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">레오릭</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">절망의 손아귀 [W]</strong><ul>\n<li>레오릭 또는 절망의 손아귀 대상에게 적용된 시간 정지가 절망의 손아귀를 중단시키지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">리 리</strong><ul>\n<li>물뱀의 이동 속도가 감소하던 문제를 수정했습니다.</li>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">쇄도의 바람</strong><ul>\n<li>리 리가 사망할 때 활성화된 쇄도의 바람 효과가 제거되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">리밍</strong><ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">비전력 갈구</strong><ul>\n<li>리밍이 사망할 때 활성화된 비전력 갈구 효과가 제거되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">루나라</strong><ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">도약 공격</strong><ul>\n<li>도약 공격이 게임 로직을 멈추게 하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">말티엘</strong><ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">사신을 두려워하라</strong><ul>\n<li>사신을 두려워하라의 지속시간 표시기가 기술 버튼에 연동되지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">도살자</strong><ul>\n<li>도살자가 신선한 고기를 모으는 동안 대상 지정을 회피할 수 있던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">길 잃은 바이킹</strong><ul>\n<li>롱보트의 이동 속도가 감소하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">타이커스</strong><ul>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">초점 조정 진공관</strong><ul>\n<li>이제 합연산으로 적용되는 피해량 증가 효과를 부여합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">화이트메인</strong><ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">성스러운 징벌</strong><ul>\n<li>성스러운 징벌이 입힌 피해량에 따라 마나를 회복할 때 부유 텍스트가 한 번만 표시되도록 변경했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">줄진</strong><ul>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">수풀요법</strong><ul>\n<li>수풀요법을 선택해도 더 이상 진행 중인 재생의 정신 집중이 중단되지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<p><strong><a href=\"https://us.forums.blizzard.com/en/heroes/\" target=\"_blank\">공식 히어로즈 오브 더 스톰 포럼에서 다른 플레이어들과 이 글에 대해 이야기를 나누려면 여기를 클릭하십시오</a>.</strong></p>\n<p><strong><img alt=\"\" class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/g6/G6G0N80EOC941426801305139.png\"/></strong></p>",
+   "items": [
+    {
+     "name": "브락시스 항전",
+     "battleground": "braxis_holdout",
+     "html": "<strong class=\"pn-h\">브락시스 항전</strong>\n<ul>\n<li>대천사의 시각 효과가 신호를 보낼 수 있는 사물로 인식되던 문제를 수정했습니다.</li>\n</ul>",
+     "under": "Map",
+     "nameEn": "Braxis Holdout"
+    },
+    {
+     "name": "볼스카야",
+     "battleground": "volskaya_foundry",
+     "html": "<strong class=\"pn-h\">볼스카야</strong>\n<ul>\n<li>트리글라브 수호자의 보호막 방출기가 아군에게 부여한 보호막이 피해를 흡수할 때 조종사의 자가 치유량 점수가 증가하던 문제를 수정했습니다.</li>\n</ul>",
+     "under": "Map",
+     "nameEn": "Volskaya"
+    },
+    {
+     "name": "아바투르",
+     "heroId": "Abathur",
+     "heroIds": [
+      "Abathur"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">아바투르</strong>\n<ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">최종 진화물</strong><ul>\n<li>통찰을 선택한 카라짐의 복제는 이제 퀘스트를 완료한 것으로 취급됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "최종 진화물",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "통찰을 선택한 카라짐의 복제는 이제 퀘스트를 완료한 것으로 취급됩니다.",
+         "html": "통찰을 선택한 카라짐의 복제는 이제 퀘스트를 완료한 것으로 취급됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Ultimate Evolution"
+      }
+     ],
+     "nameEn": "Abathur"
+    },
+    {
+     "name": "알라라크",
+     "heroId": "Alarak",
+     "heroIds": [
+      "Alarak"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">알라라크</strong>\n<ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">반격</strong><ul>\n<li>이제 흡수한 피해량만큼 알라라크의 자가 치유 점수가 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "반격",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "이제 흡수한 피해량만큼 알라라크의 자가 치유 점수가 증가합니다.",
+         "html": "이제 흡수한 피해량만큼 알라라크의 자가 치유 점수가 증가합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Counter-Strike"
+      }
+     ],
+     "nameEn": "Alarak"
+    },
+    {
+     "name": "아나",
+     "heroId": "Ana",
+     "heroIds": [
+      "Ana"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">아나</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">정조준 [고유 능력]</strong><ul>\n<li>정밀 조준이 끝난 후에도 정밀 조준의 치유탄 보너스가 지속되던 문제를 수정했습니다.</li>\n<li>이제 정밀 조준을 사용하면 아나가 장난감 기차 탈것에서도 내립니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "정조준",
+       "key": "Trait",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "정밀 조준이 끝난 후에도 정밀 조준의 치유탄 보너스가 지속되던 문제를 수정했습니다.",
+         "html": "정밀 조준이 끝난 후에도 정밀 조준의 치유탄 보너스가 지속되던 문제를 수정했습니다.",
+         "added": false
+        },
+        {
+         "text": "이제 정밀 조준을 사용하면 아나가 장난감 기차 탈것에서도 내립니다.",
+         "html": "이제 정밀 조준을 사용하면 아나가 장난감 기차 탈것에서도 내립니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Aim Down Sights"
+      }
+     ],
+     "nameEn": "Ana"
+    },
+    {
+     "name": "아즈모단",
+     "heroId": "Azmodan",
+     "heroIds": [
+      "Azmodan"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">아즈모단</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">악마 전사 소환 [W]</strong><ul>\n<li>아즈모단의 악마 전사의 오라 피해량이 다른 오라 피해 효과와 동일하게 작동하지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "악마 전사 소환",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "아즈모단의 악마 전사의 오라 피해량이 다른 오라 피해 효과와 동일하게 작동하지 않던 문제를 수정했습니다.",
+         "html": "아즈모단의 악마 전사의 오라 피해량이 다른 오라 피해 효과와 동일하게 작동하지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Summon Demon Warrior"
+      }
+     ],
+     "nameEn": "Azmodan"
+    },
+    {
+     "name": "빛나래",
+     "heroId": "FaerieDragon",
+     "heroIds": [
+      "FaerieDragon"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">빛나래</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">위안의 안개 [고유 능력]</strong><ul>\n<li>빛나래가 정지 상태일 때도 주변에서 진정의 안개가 발동되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "위안의 안개",
+       "key": "Trait",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "빛나래가 정지 상태일 때도 주변에서 진정의 안개가 발동되던 문제를 수정했습니다.",
+         "html": "빛나래가 정지 상태일 때도 주변에서 진정의 안개가 발동되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Soothing Mist"
+      }
+     ],
+     "nameEn": "Brightwing"
+    },
+    {
+     "name": "데하카",
+     "heroId": "Dehaka",
+     "heroIds": [
+      "Dehaka"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">데하카</strong>\n<ul>\n<li>끌기가 끝난 후 .25초 이내에 공격할 경우 일반 공격이 회피 중첩을 소모하지 않을 수 있던 문제를 수정했습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "끌기가 끝난 후 .25초 이내에 공격할 경우 일반 공격이 회피 중첩을 소모하지 않을 수 있던 문제를 수정했습니다.",
+         "html": "끌기가 끝난 후 .25초 이내에 공격할 경우 일반 공격이 회피 중첩을 소모하지 않을 수 있던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "Dehaka"
+    },
+    {
+     "name": "제이나",
+     "heroId": "Jaina",
+     "heroIds": [
+      "Jaina"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">제이나</strong>\n<ul>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">눈폭풍</strong><ul>\n<li>눈폭풍의 효과가 올바르게 적용되지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "눈폭풍",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "눈폭풍의 효과가 올바르게 적용되지 않던 문제를 수정했습니다.",
+         "html": "눈폭풍의 효과가 올바르게 적용되지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Snowstorm"
+      }
+     ],
+     "nameEn": "Jaina"
+    },
+    {
+     "name": "캘타스",
+     "heroId": "Kaelthas",
+     "heroIds": [
+      "Kaelthas"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">캘타스</strong>\n<ul>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">태양의 불꽃</strong><ul>\n<li>캘타스가 사망할 때 활성화된 태양의 불꽃 기술 위력 효과가 제거되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "태양의 불꽃",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "캘타스가 사망할 때 활성화된 태양의 불꽃 기술 위력 효과가 제거되던 문제를 수정했습니다.",
+         "html": "캘타스가 사망할 때 활성화된 태양의 불꽃 기술 위력 효과가 제거되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Sunfire Enchantment"
+      }
+     ],
+     "nameEn": "Kael'thas"
+    },
+    {
+     "name": "카라짐",
+     "heroId": "Monk",
+     "heroIds": [
+      "Monk"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">카라짐</strong>\n<ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">신성 장법</strong><ul>\n<li>신성 장법의 시간 정지가 카라짐에게 적용된 지속 피해 효과를 제거하던 문제를 수정했습니다.</li>\n<li>신성 장법이 발동 효과와 함께 적용된 부정적 효과를 제거하지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "신성 장법",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "신성 장법의 시간 정지가 카라짐에게 적용된 지속 피해 효과를 제거하던 문제를 수정했습니다.",
+         "html": "신성 장법의 시간 정지가 카라짐에게 적용된 지속 피해 효과를 제거하던 문제를 수정했습니다.",
+         "added": false
+        },
+        {
+         "text": "신성 장법이 발동 효과와 함께 적용된 부정적 효과를 제거하지 않던 문제를 수정했습니다.",
+         "html": "신성 장법이 발동 효과와 함께 적용된 부정적 효과를 제거하지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Divine Palm"
+      }
+     ],
+     "nameEn": "Kharazim"
+    },
+    {
+     "name": "레오릭",
+     "heroId": "Leoric",
+     "heroIds": [
+      "Leoric"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">레오릭</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">절망의 손아귀 [W]</strong><ul>\n<li>레오릭 또는 절망의 손아귀 대상에게 적용된 시간 정지가 절망의 손아귀를 중단시키지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "절망의 손아귀",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "레오릭 또는 절망의 손아귀 대상에게 적용된 시간 정지가 절망의 손아귀를 중단시키지 않던 문제를 수정했습니다.",
+         "html": "레오릭 또는 절망의 손아귀 대상에게 적용된 시간 정지가 절망의 손아귀를 중단시키지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Drain Hope"
+      }
+     ],
+     "nameEn": "Leoric"
+    },
+    {
+     "name": "리 리",
+     "heroId": "LiLi",
+     "heroIds": [
+      "LiLi"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">리 리</strong>\n<ul>\n<li>물뱀의 이동 속도가 감소하던 문제를 수정했습니다.</li>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">쇄도의 바람</strong><ul>\n<li>리 리가 사망할 때 활성화된 쇄도의 바람 효과가 제거되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "물뱀의 이동 속도가 감소하던 문제를 수정했습니다.",
+         "html": "물뱀의 이동 속도가 감소하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "쇄도의 바람",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "리 리가 사망할 때 활성화된 쇄도의 바람 효과가 제거되던 문제를 수정했습니다.",
+         "html": "리 리가 사망할 때 활성화된 쇄도의 바람 효과가 제거되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Surging Winds"
+      }
+     ],
+     "nameEn": "Li Li"
+    },
+    {
+     "name": "리밍",
+     "heroId": "Wizard",
+     "heroIds": [
+      "Wizard"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">리밍</strong>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">비전력 갈구</strong><ul>\n<li>리밍이 사망할 때 활성화된 비전력 갈구 효과가 제거되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "비전력 갈구",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "리밍이 사망할 때 활성화된 비전력 갈구 효과가 제거되던 문제를 수정했습니다.",
+         "html": "리밍이 사망할 때 활성화된 비전력 갈구 효과가 제거되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Power Hungry"
+      }
+     ],
+     "nameEn": "Li-Ming"
+    },
+    {
+     "name": "루나라",
+     "heroId": "Dryad",
+     "heroIds": [
+      "Dryad"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">루나라</strong>\n<ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">도약 공격</strong><ul>\n<li>도약 공격이 게임 로직을 멈추게 하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "도약 공격",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "도약 공격이 게임 로직을 멈추게 하던 문제를 수정했습니다.",
+         "html": "도약 공격이 게임 로직을 멈추게 하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Leaping Strike"
+      }
+     ],
+     "nameEn": "Lunara"
+    },
+    {
+     "name": "말티엘",
+     "heroId": "Malthael",
+     "heroIds": [
+      "Malthael"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">말티엘</strong>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">사신을 두려워하라</strong><ul>\n<li>사신을 두려워하라의 지속시간 표시기가 기술 버튼에 연동되지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "사신을 두려워하라",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "사신을 두려워하라의 지속시간 표시기가 기술 버튼에 연동되지 않던 문제를 수정했습니다.",
+         "html": "사신을 두려워하라의 지속시간 표시기가 기술 버튼에 연동되지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Fear The Reaper"
+      }
+     ],
+     "nameEn": "Malthael"
+    },
+    {
+     "name": "도살자",
+     "heroId": "Butcher",
+     "heroIds": [
+      "Butcher"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">도살자</strong>\n<ul>\n<li>도살자가 신선한 고기를 모으는 동안 대상 지정을 회피할 수 있던 문제를 수정했습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "도살자가 신선한 고기를 모으는 동안 대상 지정을 회피할 수 있던 문제를 수정했습니다.",
+         "html": "도살자가 신선한 고기를 모으는 동안 대상 지정을 회피할 수 있던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "The Butcher"
+    },
+    {
+     "name": "길 잃은 바이킹",
+     "heroId": "LostVikings",
+     "heroIds": [
+      "LostVikings"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">길 잃은 바이킹</strong>\n<ul>\n<li>롱보트의 이동 속도가 감소하던 문제를 수정했습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "롱보트의 이동 속도가 감소하던 문제를 수정했습니다.",
+         "html": "롱보트의 이동 속도가 감소하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "The Lost Vikings"
+    },
+    {
+     "name": "타이커스",
+     "heroId": "Tychus",
+     "heroIds": [
+      "Tychus"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">타이커스</strong>\n<ul>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">초점 조정 진공관</strong><ul>\n<li>이제 합연산으로 적용되는 피해량 증가 효과를 부여합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "초점 조정 진공관",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "이제 합연산으로 적용되는 피해량 증가 효과를 부여합니다.",
+         "html": "이제 합연산으로 적용되는 피해량 증가 효과를 부여합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Focusing Diodes"
+      }
+     ],
+     "nameEn": "Tychus"
+    },
+    {
+     "name": "화이트메인",
+     "heroId": "Whitemane",
+     "heroIds": [
+      "Whitemane"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">화이트메인</strong>\n<ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">성스러운 징벌</strong><ul>\n<li>성스러운 징벌이 입힌 피해량에 따라 마나를 회복할 때 부유 텍스트가 한 번만 표시되도록 변경했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "성스러운 징벌",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "성스러운 징벌이 입힌 피해량에 따라 마나를 회복할 때 부유 텍스트가 한 번만 표시되도록 변경했습니다.",
+         "html": "성스러운 징벌이 입힌 피해량에 따라 마나를 회복할 때 부유 텍스트가 한 번만 표시되도록 변경했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Divine Reckoning"
+      }
+     ],
+     "nameEn": "Whitemane"
+    },
+    {
+     "name": "줄진",
+     "heroId": "Zuljin",
+     "heroIds": [
+      "Zuljin"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">줄진</strong>\n<ul>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">수풀요법</strong><ul>\n<li>수풀요법을 선택해도 더 이상 진행 중인 재생의 정신 집중이 중단되지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "수풀요법",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "수풀요법을 선택해도 더 이상 진행 중인 재생의 정신 집중이 중단되지 않습니다.",
+         "html": "수풀요법을 선택해도 더 이상 진행 중인 재생의 정신 집중이 중단되지 않습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Forest Medicine"
+      }
+     ],
+     "nameEn": "Zul'jin"
+    }
+   ],
+   "nameEn": "Bug Fixes"
+  }
+ ],
+ "heroes": [
+  "Abathur",
+  "Alarak",
+  "Ana",
+  "Auriel",
+  "Azmodan",
+  "Butcher",
+  "Dehaka",
+  "Dryad",
+  "FaerieDragon",
+  "Jaina",
+  "Kaelthas",
+  "Leoric",
+  "LiLi",
+  "LostVikings",
+  "Lucio",
+  "Malthael",
+  "Monk",
+  "Tychus",
+  "Tyrael",
+  "Whitemane",
+  "Wizard",
+  "Zuljin"
+ ],
+ "battlegrounds": [
+  "braxis_holdout",
+  "volskaya_foundry"
+ ],
+ "lang": "ko",
+ "newsId": "24180740",
+ "titleEn": "Heroes of the Storm PTR Patch Notes - February 21, 2025",
+ "translated": {
+  "by": "Claude (claude-opus-5)",
+  "at": "2026-09-14",
+  "source": "https://news.blizzard.com/en-us/article/24180740/heroes-of-the-storm-ptr-patch-notes-february-21-2025",
+  "glossary": "HeroesToolChest 공식 게임 텍스트(enus↔kokr) 대조",
+  "untranslated": 0
+ }
+}

@@ -1,0 +1,676 @@
+{
+ "date": "2026-02-20",
+ "kind": "balance",
+ "title": "히어로즈 오브 더 스톰 밸런스 패치 노트 - 2026년 2월 20일",
+ "source": "https://news.blizzard.com/ko-kr/article/24244471/2026-2-20",
+ "published": "2026-02-19T18:12:38Z",
+ "sections": [
+  {
+   "name": "머리말",
+   "key": "intro",
+   "html": "<p>히어로즈 오브 더 스톰의 새로운 패치가 적용되었습니다. 이 패치에서는 밸런스에 몇 가지 변화가 이루어졌고 버그가 수정되었습니다.</p>"
+  },
+  {
+   "name": "밸런스 업데이트",
+   "key": "balance",
+   "html": "<h4>데스윙</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">소각 [W]</strong>\n<ul>\n<li>재사용 대기시간이 6초에서 7초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>7레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">죽음의 낙하</strong>\n<ul>\n<li>기술 방어력 증가 효과의 지속 시간이 6초에서 4초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>무라딘</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">폭풍강타 [Q]</strong>\n<ul>\n<li>퀘스트 요구 수치가 50/200에서 40/160으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">도끼 집행자</strong>\n<ul>\n<li>추가 공격력이 50%에서 40%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<ul>\n<li><strong>4레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">거대 망치</strong>\n<ul>\n<li>이제 폭풍강타의 재사용 대기시간 또한 1.5초 감소시킵니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<ul>\n<li><strong>7레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">완벽한 폭풍</strong>\n<ul>\n<li>효과의 재사용 대기시간이 10초에서 8.5초로 감소했습니다.</li>\n<li>이제 초기화 시 25의 마나를 회복합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<ul>\n<li><strong>13레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">치유의 벼락</strong>\n<ul>\n<li>적중한 적 영웅 하나당 치유량이 5%에서 6%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>머키</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">알 놓기 [D]</strong>\n<ul>\n<li>부활 보호막의 지속 시간이 10초에서 15초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>10레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">멀록 대행진</strong>\n<ul>\n<li>재사용 대기시간이 110초에서 100초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<ul>\n<li><strong>13레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">알껍질</strong>\n<ul>\n<li>보호막이 머키의 생명력의 35%에서 50%로 증가했습니다.</li>\n<li>보호막이 이제 파괴될 때까지 지속됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<ul>\n<li><strong>20레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">끝없는 멀록</strong>\n<ul>\n<li>이제 저지당해도 최소 7초 동안 지속됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>실바나스</h4>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>7레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">잃어버린 영혼</strong>\n<ul>\n<li>잃어버린 영혼에 의해 부여되는 10% 추가 피해량이 삭제되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>티란데</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">달빛 화살 [E]</strong>\n<ul>\n<li>신화 보상 완료 조건이 45회 적중에서 40회 적중으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>",
+   "heroes": [
+    {
+     "name": "데스윙",
+     "heroId": "Deathwing",
+     "heroIds": [
+      "Deathwing"
+     ],
+     "changes": [
+      {
+       "name": "소각",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 6초에서 7초로 증가했습니다.",
+         "html": "재사용 대기시간이 6초에서 7초로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "죽음의 낙하",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "기술 방어력 증가 효과의 지속 시간이 6초에서 4초로 감소했습니다.",
+         "html": "기술 방어력 증가 효과의 지속 시간이 6초에서 4초로 감소했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">소각 [W]</strong>\n<ul>\n<li>재사용 대기시간이 6초에서 7초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>7레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">죽음의 낙하</strong>\n<ul>\n<li>기술 방어력 증가 효과의 지속 시간이 6초에서 4초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "무라딘",
+     "heroId": "Muradin",
+     "heroIds": [
+      "Muradin"
+     ],
+     "changes": [
+      {
+       "name": "폭풍강타",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "퀘스트 요구 수치가 50/200에서 40/160으로 감소했습니다.",
+         "html": "퀘스트 요구 수치가 50/200에서 40/160으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "도끼 집행자",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "추가 공격력이 50%에서 40%로 감소했습니다.",
+         "html": "추가 공격력이 50%에서 40%로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "거대 망치",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "이제 폭풍강타의 재사용 대기시간 또한 1.5초 감소시킵니다.",
+         "html": "이제 폭풍강타의 재사용 대기시간 또한 1.5초 감소시킵니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "완벽한 폭풍",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "효과의 재사용 대기시간이 10초에서 8.5초로 감소했습니다.",
+         "html": "효과의 재사용 대기시간이 10초에서 8.5초로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "이제 초기화 시 25의 마나를 회복합니다.",
+         "html": "이제 초기화 시 25의 마나를 회복합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "치유의 벼락",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "적중한 적 영웅 하나당 치유량이 5%에서 6%로 증가했습니다.",
+         "html": "적중한 적 영웅 하나당 치유량이 5%에서 6%로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">폭풍강타 [Q]</strong>\n<ul>\n<li>퀘스트 요구 수치가 50/200에서 40/160으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">도끼 집행자</strong>\n<ul>\n<li>추가 공격력이 50%에서 40%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<ul>\n<li><strong>4레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">거대 망치</strong>\n<ul>\n<li>이제 폭풍강타의 재사용 대기시간 또한 1.5초 감소시킵니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<ul>\n<li><strong>7레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">완벽한 폭풍</strong>\n<ul>\n<li>효과의 재사용 대기시간이 10초에서 8.5초로 감소했습니다.</li>\n<li>이제 초기화 시 25의 마나를 회복합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<ul>\n<li><strong>13레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">치유의 벼락</strong>\n<ul>\n<li>적중한 적 영웅 하나당 치유량이 5%에서 6%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "머키",
+     "heroId": "Murky",
+     "heroIds": [
+      "Murky"
+     ],
+     "changes": [
+      {
+       "name": "알 놓기",
+       "key": "D",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "부활 보호막의 지속 시간이 10초에서 15초로 증가했습니다.",
+         "html": "부활 보호막의 지속 시간이 10초에서 15초로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "멀록 대행진",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 110초에서 100초로 감소했습니다.",
+         "html": "재사용 대기시간이 110초에서 100초로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "알껍질",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "보호막이 머키의 생명력의 35%에서 50%로 증가했습니다.",
+         "html": "보호막이 머키의 생명력의 35%에서 50%로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "보호막이 이제 파괴될 때까지 지속됩니다.",
+         "html": "보호막이 이제 파괴될 때까지 지속됩니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "끝없는 멀록",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "이제 저지당해도 최소 7초 동안 지속됩니다.",
+         "html": "이제 저지당해도 최소 7초 동안 지속됩니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">알 놓기 [D]</strong>\n<ul>\n<li>부활 보호막의 지속 시간이 10초에서 15초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>10레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">멀록 대행진</strong>\n<ul>\n<li>재사용 대기시간이 110초에서 100초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<ul>\n<li><strong>13레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">알껍질</strong>\n<ul>\n<li>보호막이 머키의 생명력의 35%에서 50%로 증가했습니다.</li>\n<li>보호막이 이제 파괴될 때까지 지속됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<ul>\n<li><strong>20레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">끝없는 멀록</strong>\n<ul>\n<li>이제 저지당해도 최소 7초 동안 지속됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "실바나스",
+     "heroId": "Sylvanas",
+     "heroIds": [
+      "Sylvanas"
+     ],
+     "changes": [
+      {
+       "name": "잃어버린 영혼",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "잃어버린 영혼에 의해 부여되는 10% 추가 피해량이 삭제되었습니다.",
+         "html": "잃어버린 영혼에 의해 부여되는 10% 추가 피해량이 삭제되었습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>7레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">잃어버린 영혼</strong>\n<ul>\n<li>잃어버린 영혼에 의해 부여되는 10% 추가 피해량이 삭제되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "티란데",
+     "heroId": "Tyrande",
+     "heroIds": [
+      "Tyrande"
+     ],
+     "changes": [
+      {
+       "name": "달빛 화살",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "신화 보상 완료 조건이 45회 적중에서 40회 적중으로 감소했습니다.",
+         "html": "신화 보상 완료 조건이 45회 적중에서 40회 적중으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">달빛 화살 [E]</strong>\n<ul>\n<li>신화 보상 완료 조건이 45회 적중에서 40회 적중으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>"
+    }
+   ]
+  },
+  {
+   "name": "버그 수정",
+   "key": "bugs",
+   "html": "<h3><strong>전장</strong></h3>\n<ul>\n<li><strong class=\"pn-h\">하나무라 사원</strong>\n<ul>\n<li>사무라이 파수꾼 캠프가 이제 투사 아이콘으로 정상적으로 표시됩니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">브락시스 항전</strong>\n<ul>\n<li>지형이 올바르지 않게 렌더링되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n<h3><strong>영웅</strong></h3>\n<ul>\n<li><strong class=\"pn-h\">아즈모단</strong>\n<ul>\n<li><strong>4레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">파멸의 종자</strong>\n<ul>\n<li>이제 악마 부관의 재사용 대기시간이 정상적으로 감소합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>10레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">검은 우물</strong>\n<ul>\n<li>이제 영웅이 아닌 대상에게 주는 피해가 정상적으로 감소합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">데스윙</strong>\n<ul>\n<li><strong>기본</strong>\n<ul>\n<li><strong class=\"pn-name\">형상 전환</strong>\n<ul>\n<li>인공지능이 더는 삭제된 형상 전환 기술을 사용하지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">굴단</strong>\n<ul>\n<li><strong>16레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">파괴적인 고통</strong>\n<ul>\n<li>파괴적인 고통이 3번째 및 6번째 적중이 아닌, 3번째 및 5번째 적중에서 증가된 피해를 주던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">제이나</strong>\n<ul>\n<li><strong>기본</strong>\n<ul>\n<li><strong class=\"pn-name\">동상 [고유 능력]</strong>\n<ul>\n<li>얼음 방패의 재사용 대기시간 값이 툴팁에서 올바르지 않게 나타나던 문제를 수정했습니다.</li>\n<li>제이나가 얼음처럼 차갑게로 경로 장애물 및 고정된 대상을 통과하여 움직일 수 있던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">무라딘</strong>\n<ul>\n<li><strong>기본</strong>\n<ul>\n<li><strong class=\"pn-name\">드워프 도약 [E]</strong>\n<ul>\n<li>유효하지 않은 지형에서 사용했을 때, 드워프 도약의 재사용 대기시간이 시작되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>1레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">드워프 막기</strong>\n<ul>\n<li>이제 충전이 3회를 초과하여 충전되지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">머키</strong>\n<ul>\n<li>머키가 더는 의도한 것보다 더 빨리 부활하지 않습니다.</li>\n<li>머키의 레벨 20 특성이 스킬 순서에 맞게 재정렬되었습니다.</li>\n<li><strong>기본</strong>\n<ul>\n<li><strong class=\"pn-name\">복어 [W]</strong>\n<ul>\n<li>터질 듯 말 듯이 이제 강화 효과 막대에서 첫 번째로 표시됩니다.</li>\n<li>머키가 사망 후 원래 크기로 돌아오던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">알 놓기 [D]</strong>\n<ul>\n<li>머키가 의도한 것보다 더 빨리 부활하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>1레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">야바위</strong>\n<ul>\n<li>야바위 특성이 이제 활성화 버튼이 아닌 고유 능력 버튼에 나타납니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">조기 폭발</strong>\n<ul>\n<li>조기 폭발이 이제 복어의 애니메이션 또한 더 빠르게 재생합니다.</li>\n<li>조기 폭발 특성이 이제 고유 능력 버튼이 아닌 이제 W 버튼에 나타납니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">레가르</strong>\n<ul>\n<li><strong>20레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">원소 출현</strong>\n<ul>\n<li>원소 출현의 보호막이 5초로 갱신되지 않던 문제를 수정했습니다.</li>\n<li>원소 출현 갱신 시, 보호막을 부여할 아군을 레가르의 위치가 아닌 적중한 대상 주위에서 탐색하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">스랄</strong>\n<ul>\n<li><strong>1레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">정기의 메아리</strong>\n<ul>\n<li>정기의 메아리가 은신 중인 대상에게 튕기던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">우레</strong>\n<ul>\n<li>우레가 입히는 피해가 이제 치명타로 표시됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">우두머리 늑대</strong>\n<ul>\n<li>우두머리 늑대가 입히는 피해가 이제 치명타로 표시됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">자가라</strong>\n<ul>\n<li><strong>기본</strong>\n<ul>\n<li><strong class=\"pn-name\">감염체 투하 [E]</strong>\n<ul>\n<li>바퀴의 근접 공격이 직접 적중하는 대신 투사체를 발사하던 문제를 수정했습니다.</li>\n<li>바퀴가 죽음 분석에서 정상적으로 표시되지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<p><strong><a href=\"https://us.forums.blizzard.com/en/heroes/\" target=\"_blank\">여기를 클릭해 히어로즈 오브 더 스톰 공식 토론장에서 다른 플레이어들과 이 게시글에 대한 의견을 나눠 보세요</a>.</strong></p>\n<p><strong><img alt=\"\" class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/g6/G6G0N80EOC941426801305139.png\"/></strong></p>",
+   "items": [
+    {
+     "name": "하나무라 사원",
+     "battleground": "hanamura_temple",
+     "html": "<strong class=\"pn-h\">하나무라 사원</strong>\n<ul>\n<li>사무라이 파수꾼 캠프가 이제 투사 아이콘으로 정상적으로 표시됩니다.</li>\n</ul>",
+     "under": "전장"
+    },
+    {
+     "name": "브락시스 항전",
+     "battleground": "braxis_holdout",
+     "html": "<strong class=\"pn-h\">브락시스 항전</strong>\n<ul>\n<li>지형이 올바르지 않게 렌더링되던 문제를 수정했습니다.</li>\n</ul>",
+     "under": "전장"
+    },
+    {
+     "name": "아즈모단",
+     "heroId": "Azmodan",
+     "heroIds": [
+      "Azmodan"
+     ],
+     "under": "영웅",
+     "html": "<strong class=\"pn-h\">아즈모단</strong>\n<ul>\n<li><strong>4레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">파멸의 종자</strong>\n<ul>\n<li>이제 악마 부관의 재사용 대기시간이 정상적으로 감소합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>10레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">검은 우물</strong>\n<ul>\n<li>이제 영웅이 아닌 대상에게 주는 피해가 정상적으로 감소합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "파멸의 종자",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "이제 악마 부관의 재사용 대기시간이 정상적으로 감소합니다.",
+         "html": "이제 악마 부관의 재사용 대기시간이 정상적으로 감소합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "검은 우물",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "이제 영웅이 아닌 대상에게 주는 피해가 정상적으로 감소합니다.",
+         "html": "이제 영웅이 아닌 대상에게 주는 피해가 정상적으로 감소합니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "데스윙",
+     "heroId": "Deathwing",
+     "heroIds": [
+      "Deathwing"
+     ],
+     "under": "영웅",
+     "html": "<strong class=\"pn-h\">데스윙</strong>\n<ul>\n<li><strong>기본</strong>\n<ul>\n<li><strong class=\"pn-name\">형상 전환</strong>\n<ul>\n<li>인공지능이 더는 삭제된 형상 전환 기술을 사용하지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "형상 전환",
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "인공지능이 더는 삭제된 형상 전환 기술을 사용하지 않습니다.",
+         "html": "인공지능이 더는 삭제된 형상 전환 기술을 사용하지 않습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "굴단",
+     "heroId": "Guldan",
+     "heroIds": [
+      "Guldan"
+     ],
+     "under": "영웅",
+     "html": "<strong class=\"pn-h\">굴단</strong>\n<ul>\n<li><strong>16레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">파괴적인 고통</strong>\n<ul>\n<li>파괴적인 고통이 3번째 및 6번째 적중이 아닌, 3번째 및 5번째 적중에서 증가된 피해를 주던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "파괴적인 고통",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "파괴적인 고통이 3번째 및 6번째 적중이 아닌, 3번째 및 5번째 적중에서 증가된 피해를 주던 문제를 수정했습니다.",
+         "html": "파괴적인 고통이 3번째 및 6번째 적중이 아닌, 3번째 및 5번째 적중에서 증가된 피해를 주던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "제이나",
+     "heroId": "Jaina",
+     "heroIds": [
+      "Jaina"
+     ],
+     "under": "영웅",
+     "html": "<strong class=\"pn-h\">제이나</strong>\n<ul>\n<li><strong>기본</strong>\n<ul>\n<li><strong class=\"pn-name\">동상 [고유 능력]</strong>\n<ul>\n<li>얼음 방패의 재사용 대기시간 값이 툴팁에서 올바르지 않게 나타나던 문제를 수정했습니다.</li>\n<li>제이나가 얼음처럼 차갑게로 경로 장애물 및 고정된 대상을 통과하여 움직일 수 있던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "동상",
+       "key": "고유 능력",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "얼음 방패의 재사용 대기시간 값이 툴팁에서 올바르지 않게 나타나던 문제를 수정했습니다.",
+         "html": "얼음 방패의 재사용 대기시간 값이 툴팁에서 올바르지 않게 나타나던 문제를 수정했습니다.",
+         "added": false
+        },
+        {
+         "text": "제이나가 얼음처럼 차갑게로 경로 장애물 및 고정된 대상을 통과하여 움직일 수 있던 문제를 수정했습니다.",
+         "html": "제이나가 얼음처럼 차갑게로 경로 장애물 및 고정된 대상을 통과하여 움직일 수 있던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "무라딘",
+     "heroId": "Muradin",
+     "heroIds": [
+      "Muradin"
+     ],
+     "under": "영웅",
+     "html": "<strong class=\"pn-h\">무라딘</strong>\n<ul>\n<li><strong>기본</strong>\n<ul>\n<li><strong class=\"pn-name\">드워프 도약 [E]</strong>\n<ul>\n<li>유효하지 않은 지형에서 사용했을 때, 드워프 도약의 재사용 대기시간이 시작되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>1레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">드워프 막기</strong>\n<ul>\n<li>이제 충전이 3회를 초과하여 충전되지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "드워프 도약",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "유효하지 않은 지형에서 사용했을 때, 드워프 도약의 재사용 대기시간이 시작되던 문제를 수정했습니다.",
+         "html": "유효하지 않은 지형에서 사용했을 때, 드워프 도약의 재사용 대기시간이 시작되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "드워프 막기",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "이제 충전이 3회를 초과하여 충전되지 않습니다.",
+         "html": "이제 충전이 3회를 초과하여 충전되지 않습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "머키",
+     "heroId": "Murky",
+     "heroIds": [
+      "Murky"
+     ],
+     "under": "영웅",
+     "html": "<strong class=\"pn-h\">머키</strong>\n<ul>\n<li>머키가 더는 의도한 것보다 더 빨리 부활하지 않습니다.</li>\n<li>머키의 레벨 20 특성이 스킬 순서에 맞게 재정렬되었습니다.</li>\n<li><strong>기본</strong>\n<ul>\n<li><strong class=\"pn-name\">복어 [W]</strong>\n<ul>\n<li>터질 듯 말 듯이 이제 강화 효과 막대에서 첫 번째로 표시됩니다.</li>\n<li>머키가 사망 후 원래 크기로 돌아오던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">알 놓기 [D]</strong>\n<ul>\n<li>머키가 의도한 것보다 더 빨리 부활하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>1레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">야바위</strong>\n<ul>\n<li>야바위 특성이 이제 활성화 버튼이 아닌 고유 능력 버튼에 나타납니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">조기 폭발</strong>\n<ul>\n<li>조기 폭발이 이제 복어의 애니메이션 또한 더 빠르게 재생합니다.</li>\n<li>조기 폭발 특성이 이제 고유 능력 버튼이 아닌 이제 W 버튼에 나타납니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "머키가 더는 의도한 것보다 더 빨리 부활하지 않습니다.",
+         "html": "머키가 더는 의도한 것보다 더 빨리 부활하지 않습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "머키의 레벨 20 특성이 스킬 순서에 맞게 재정렬되었습니다.",
+         "html": "머키의 레벨 20 특성이 스킬 순서에 맞게 재정렬되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "복어",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "터질 듯 말 듯이 이제 강화 효과 막대에서 첫 번째로 표시됩니다.",
+         "html": "터질 듯 말 듯이 이제 강화 효과 막대에서 첫 번째로 표시됩니다.",
+         "added": false
+        },
+        {
+         "text": "머키가 사망 후 원래 크기로 돌아오던 문제를 수정했습니다.",
+         "html": "머키가 사망 후 원래 크기로 돌아오던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "알 놓기",
+       "key": "D",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "머키가 의도한 것보다 더 빨리 부활하던 문제를 수정했습니다.",
+         "html": "머키가 의도한 것보다 더 빨리 부활하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "야바위",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "야바위 특성이 이제 활성화 버튼이 아닌 고유 능력 버튼에 나타납니다.",
+         "html": "야바위 특성이 이제 활성화 버튼이 아닌 고유 능력 버튼에 나타납니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "조기 폭발",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "조기 폭발이 이제 복어의 애니메이션 또한 더 빠르게 재생합니다.",
+         "html": "조기 폭발이 이제 복어의 애니메이션 또한 더 빠르게 재생합니다.",
+         "added": false
+        },
+        {
+         "text": "조기 폭발 특성이 이제 고유 능력 버튼이 아닌 이제 W 버튼에 나타납니다.",
+         "html": "조기 폭발 특성이 이제 고유 능력 버튼이 아닌 이제 W 버튼에 나타납니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "레가르",
+     "heroId": "Rehgar",
+     "heroIds": [
+      "Rehgar"
+     ],
+     "under": "영웅",
+     "html": "<strong class=\"pn-h\">레가르</strong>\n<ul>\n<li><strong>20레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">원소 출현</strong>\n<ul>\n<li>원소 출현의 보호막이 5초로 갱신되지 않던 문제를 수정했습니다.</li>\n<li>원소 출현 갱신 시, 보호막을 부여할 아군을 레가르의 위치가 아닌 적중한 대상 주위에서 탐색하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "원소 출현",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "원소 출현의 보호막이 5초로 갱신되지 않던 문제를 수정했습니다.",
+         "html": "원소 출현의 보호막이 5초로 갱신되지 않던 문제를 수정했습니다.",
+         "added": false
+        },
+        {
+         "text": "원소 출현 갱신 시, 보호막을 부여할 아군을 레가르의 위치가 아닌 적중한 대상 주위에서 탐색하던 문제를 수정했습니다.",
+         "html": "원소 출현 갱신 시, 보호막을 부여할 아군을 레가르의 위치가 아닌 적중한 대상 주위에서 탐색하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "스랄",
+     "heroId": "Thrall",
+     "heroIds": [
+      "Thrall"
+     ],
+     "under": "영웅",
+     "html": "<strong class=\"pn-h\">스랄</strong>\n<ul>\n<li><strong>1레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">정기의 메아리</strong>\n<ul>\n<li>정기의 메아리가 은신 중인 대상에게 튕기던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">우레</strong>\n<ul>\n<li>우레가 입히는 피해가 이제 치명타로 표시됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">우두머리 늑대</strong>\n<ul>\n<li>우두머리 늑대가 입히는 피해가 이제 치명타로 표시됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "정기의 메아리",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "정기의 메아리가 은신 중인 대상에게 튕기던 문제를 수정했습니다.",
+         "html": "정기의 메아리가 은신 중인 대상에게 튕기던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "우레",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "우레가 입히는 피해가 이제 치명타로 표시됩니다.",
+         "html": "우레가 입히는 피해가 이제 치명타로 표시됩니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "우두머리 늑대",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "우두머리 늑대가 입히는 피해가 이제 치명타로 표시됩니다.",
+         "html": "우두머리 늑대가 입히는 피해가 이제 치명타로 표시됩니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "자가라",
+     "heroId": "Zagara",
+     "heroIds": [
+      "Zagara"
+     ],
+     "under": "영웅",
+     "html": "<strong class=\"pn-h\">자가라</strong>\n<ul>\n<li><strong>기본</strong>\n<ul>\n<li><strong class=\"pn-name\">감염체 투하 [E]</strong>\n<ul>\n<li>바퀴의 근접 공격이 직접 적중하는 대신 투사체를 발사하던 문제를 수정했습니다.</li>\n<li>바퀴가 죽음 분석에서 정상적으로 표시되지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "감염체 투하",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "바퀴의 근접 공격이 직접 적중하는 대신 투사체를 발사하던 문제를 수정했습니다.",
+         "html": "바퀴의 근접 공격이 직접 적중하는 대신 투사체를 발사하던 문제를 수정했습니다.",
+         "added": false
+        },
+        {
+         "text": "바퀴가 죽음 분석에서 정상적으로 표시되지 않던 문제를 수정했습니다.",
+         "html": "바퀴가 죽음 분석에서 정상적으로 표시되지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "heroes": [
+  "Azmodan",
+  "Deathwing",
+  "Guldan",
+  "Jaina",
+  "Muradin",
+  "Murky",
+  "Rehgar",
+  "Sylvanas",
+  "Thrall",
+  "Tyrande",
+  "Zagara"
+ ],
+ "battlegrounds": [
+  "braxis_holdout",
+  "hanamura_temple"
+ ],
+ "newsId": "24244471"
+}

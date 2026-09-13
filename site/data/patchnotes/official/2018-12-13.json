@@ -1,0 +1,2441 @@
+{
+ "date": "2018-12-13",
+ "kind": "patch",
+ "title": "히어로즈 오브 더 스톰 패치 노트 - 2018년 12월 13일",
+ "source": "https://news.blizzard.com/ko-kr/article/22821338/2018-12-13",
+ "published": "2018-12-12T23:00:00Z",
+ "sections": [
+  {
+   "name": "머리말",
+   "key": "intro",
+   "html": "<p>히어로즈 오브 더 스톰의 새로운 패치가 적용되었습니다. 이 패치에서는 장난감 이벤트와 실바나스 및 누더기 게임플레이 개편이 적용되었습니다! 아래에서 자세한 정보를 알아보세요.</p>\n<p><span class=\"pn-new\"><strong>참고:</strong> 주황색 텍스트는 패치 노트에 추가된 텍스트입니다.</span></p>"
+  },
+  {
+   "name": "일반",
+   "key": "general",
+   "html": "<ul>\n<li><span class=\"pn-new\"><strong>장난감 이벤트 퀘스트</strong></span>\n<ul>\n<li><span class=\"pn-new\">히린이의 시공의 폭풍 보드 게임에서 주사위를 굴리고 퀘스트를 완료하며 멋진 보상을 얻으세요!</span></li>\n</ul>\n</li>\n<li><strong><span class=\"pn-new\">인증 화면</span></strong>\n<ul>\n<li><span class=\"pn-new\">인증/로그인 화면에 로그인 옵션이 추가되었습니다. 이는 앞으로 보안 개선에 활용될 것입니다.</span></li>\n</ul>\n</li>\n</ul>"
+  },
+  {
+   "name": "아트",
+   "key": "art",
+   "html": "<ul>\n<li>누더기가 개편되면서 여러 시각 효과와 애니메이션이 추가되고 변경됐습니다.</li>\n<li>실바나스가 개편되면서 여러 시각 효과와 애니메이션이 추가되고 변경됐습니다.</li>\n</ul>"
+  },
+  {
+   "name": "전장",
+   "key": "battlegrounds",
+   "html": "<p><span class=\"pn-h\"><strong>볼스카야 공장</strong></span></p>\n<ul>\n<li><span class=\"pn-new\">트리글라브 수호자를 탑승할 때의 정신 집중이 피해를 받아 방해되지 않습니다.</span>\n<ul>\n<li><span class=\"pn-new\"><strong>참고: </strong>이 변화는 11월 19일 주간부터 이미 적용되었습니다.</span></li>\n</ul>\n</li>\n</ul>\n<blockquote>\n<p><strong>개발자의 의견: </strong><span class=\"pn-new\">버그는 아니지만 오르피아의 영원한 만찬과 트리글라브 수호자간의 상호작용 효과로 전장 목표 하나를 아예 활용하지 못하도록 만들 수 있었습니다. 이처럼 전장 목표를 차지하기 위해 많은 노력을 했으나 정작 전장 목표를 사용할 수 없는 것은 옳지 않다고 판단하여 이번 업데이트 때 이를 변경했습니다.</span></p>\n</blockquote>",
+   "items": [
+    {
+     "name": "볼스카야 공장",
+     "battleground": "volskaya_foundry",
+     "html": "<ul>\n<li><span class=\"pn-new\">트리글라브 수호자를 탑승할 때의 정신 집중이 피해를 받아 방해되지 않습니다.</span>\n<ul>\n<li><span class=\"pn-new\"><strong>참고: </strong>이 변화는 11월 19일 주간부터 이미 적용되었습니다.</span></li>\n</ul>\n</li>\n</ul>"
+    }
+   ]
+  },
+  {
+   "name": "디자인",
+   "key": "디자인",
+   "html": "<p><span class=\"pn-h\"><strong>방어력</strong></span></p>\n<ul>\n<li>이제 방어력 증가 효과(혹은 감소 효과)가 서로 중첩되지 않고 가장 수치가 높은 효과만 적용됩니다. 이를 적용하기 위해 방어력과 관련된 강 영웅들의 기술과 특성을 조절했습니다.\n<ul>\n<li><span class=\"pn-name\"><strong>아눕아락</strong></span>\n<ul>\n<li>네루비안 껍질 (W)\n<ul>\n<li>새로운 기능:\n<ul>\n<li>강화 갑피로 증가하는 기술 방어력이 추가로 20 증가합니다. (총 60)</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>도살자</strong></span>\n<ul>\n<li>격분 (지속 효과)\n<ul>\n<li>방어력 증가량이 15에서 25로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>첸</strong></span>\n<ul>\n<li>정화주 (고유 능력)\n<ul>\n<li>기술 방어력 증가량이 30에서 40으로 증가했습니다.</li>\n</ul>\n</li>\n<li>술통 사고 (R)\n<ul>\n<li>방어력 증가량이 50에서 60으로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>디아블로</strong></span>\n<ul>\n<li>제물의 영혼 (Q)\n<ul>\n<li>방어력 증가량이 20에서 25로 증가했습니다.</li>\n<li>영혼을 최대로 보유하고 있을 때의 방어력 증가량이 40에서 50으로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>정예 타우렌 족장 </strong></span>\n<ul>\n<li>록스타 (고유 능력)\n<ul>\n<li>방어력 증가량이 20에서 25로 증가했습니다.</li>\n</ul>\n</li>\n<li>인터미션 (Q)\n<ul>\n<li>방어력 증가량이 15에서 35로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>가즈로</strong></span>\n<ul>\n<li>로보고블린 (R)\n<ul>\n<li>방어력 증가량이 30에서 40으로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>모랄레스 중위</strong></span>\n<ul>\n<li>보호기 (W)\n<ul>\n<li>방어력 증가량이 25에서 30으로 증가했습니다.</li>\n</ul>\n</li>\n<li>트라우마 방지기 (지속 효과)\n<ul>\n<li>방어력 증가량이 30에서 40으로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>노바</strong></span>\n<ul>\n<li>대장갑 탄환 (지속 효과)\n<ul>\n<li>물리 방어력 감소량이 10에서 15로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>레이너</strong></span>\n<ul>\n<li>현상금 사냥꾼 (고유 능력)\n<ul>\n<li>방어력 증가량이 5에서 10으로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>렉사르</strong></span>\n<ul>\n<li>수집 사냥꾼 (지속 효과)\n<ul>\n<li>방어력 증가량이 10에서 15로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>태사다르</strong></span>\n<ul>\n<li>칼라의 빛 (Q)\n<ul>\n<li>방어력 증가량이 15에서 20으로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>티리엘</strong></span>\n<ul>\n<li>천사들의 가호 (사용 효과)\n<ul>\n<li>방어력 증가량이 40에서 50으로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>우서</strong></span>\n<ul>\n<li>헌신 (고유 능력)\n<ul>\n<li>방어력 증가량이 15에서 25로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>발리라</strong></span>\n<ul>\n<li>연막탄 (R)\n<ul>\n<li>방어력 증가량이 25에서 30으로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>줄진</strong></span>\n<ul>\n<li>아마니의 가죽 (사용 효과)\n<ul>\n<li>방어력 증가량이 10에서 15로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<p><span class=\"pn-h\"><strong>투석기</strong></span></p>\n<ul>\n<li>팀이 요새를 파괴하면 해당 공격로의 3번째 돌격병 무리마다 투석기가 생성됩니다.\n<ul>\n<li><strong>참고</strong>: 게임 초반에 투석기가 지나치게 큰 위력을 내지 않도록 투석기의 광역 공격 범위, 사거리, 공격력/생명력은 게임이 진행되면서 점점 증가합니다.</li>\n</ul>\n</li>\n</ul>\n<p><span class=\"pn-h\"><strong>경험치 변경</strong></span></p>\n<ul>\n<li>요새 또는 성채를 파괴했을 때 얻는 경험치가 삭제되었습니다.</li>\n<li><span class=\"pn-new\">요새나 성채를 파괴하면 주기적으로 얻는 경험치가 20% 증가합니다. 이 효과는 중첩됩니다.</span>\n<ul>\n<li><span class=\"pn-new\"><strong>참고:</strong> 파멸의 탑은 경험치와 투석기 변경점이 적용되지 않습니다.</span></li>\n</ul>\n</li>\n<li>포탑을 파괴했을 때의 경험치가 50% 감소했습니다.</li>\n<li>지속적으로 얻는 경험치가 15% 증가했습니다.</li>\n<li>용병 캠프를 점령하여 얻는 경험치가 100% 증가했습니다.\n<ul>\n<li><span class=\"pn-new\">하나무라 사원과 볼스카야 공장의 아이템 캠프는 이 변경점이 적용되지 않습니다.</span></li>\n</ul>\n</li>\n<li>점령된 용병 경험치\n<ul>\n<li><s>점령된 용병을 처치했을 때에도 중립 용병 캠프를 점령했을 때와 동일한 양의 경험치를 얻습니다.</s></li>\n</ul>\n</li>\n</ul>\n<blockquote>\n<p><strong>개발자의 의견: </strong><span class=\"pn-new\">2019 게임플레이 업데이트에 대해 많은 의견을 주셔서 감사합니다. 이번 업데이트로 커뮤니티에서 다양한 결과를 예상하고 있는 가운데, 요새와 성채의 경험치가 삭제된 것에 대해서 많은 우려가 있습니다. 개발팀 또한 요새와 성채를 파괴하여 얻는 경험치를 아예 없애면 구조물을 파괴해야 할 필요성을 느끼기가 어려워진다는 것에 동의합니다. 높은 수준에서의 경기에서는 더더욱 말이죠. 이를 반영하여 구조물을 파괴했을 때 다시 경험치를 얻게 되지만 이전처럼 한 번에 폭발적인 양의 경험치를 얻는 것이 아니라 점진적으로 더 많은 경험치를 얻게끔 조절했습니다. 이로 인해 게임은 더욱 팽팽해지면서 적의 구조물을 빠르게 철거할 이유가 다시 생길 것입니다.</span></p>\n</blockquote>\n<blockquote>\n<p><strong>개발자의 의견: </strong>여러분의 의견을 반영하여 점령된 용병을 처치했을 때에 중립 용병 캠프를 점령했을 때와 동일한 양의 경험치를 얻는 부분을 삭제했습니다.</p>\n</blockquote>\n<p><span class=\"pn-h\"><strong>용병</strong></span></p>\n<ul>\n<li>우두머리 캠프, 파수 캠프(하나무라 사원), 지원 캠프(볼스카야 공장)가 정예 용병으로 분류됩니다. \n<ul>\n<li>정예 용병은 저지 불가 상태이며 매수할 수 없습니다.</li>\n</ul>\n</li>\n</ul>\n<p><span class=\"pn-h\"><strong>유닛 반경</strong></span></p>\n<ul>\n<li>대부분의 영웅들의 유닛 반경이 5%-15% 감소했습니다.</li>\n</ul>\n<blockquote>\n<p><strong>개발자의 의견: </strong><span class=\"pn-new\">여러 영웅이 화면에 있을 때의 가시성을 향상시키기 위해 영웅의 아래에 나타나는 고리의 아트를 업데이트했습니다. 또한 이에 맞춰 모든 영웅의 유닛 반경도 조절했습니다. 작지만 중요한 변화인만큼 기술이 적중하거나 피하는 데에도 영향을 줄 것이기에 이를 적용하기에는 2019 게임플레이 업데이트가 가장 알맞은 시기라 생각했습니다.</span></p>\n</blockquote>\n<ul>\n</ul>",
+   "items": [
+    {
+     "name": "아눕아락",
+     "heroId": "Anubarak",
+     "heroIds": [
+      "Anubarak"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>아눕아락</strong></span>\n<ul>\n<li>네루비안 껍질 (W)\n<ul>\n<li>새로운 기능:\n<ul>\n<li>강화 갑피로 증가하는 기술 방어력이 추가로 20 증가합니다. (총 60)</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "네루비안 껍질",
+       "key": "W",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": []
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "강화 갑피로 증가하는 기술 방어력이 추가로 20 증가합니다. (총 60)",
+         "html": "강화 갑피로 증가하는 기술 방어력이 추가로 20 증가합니다. (총 60)",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "도살자",
+     "heroId": "Butcher",
+     "heroIds": [
+      "Butcher"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>도살자</strong></span>\n<ul>\n<li>격분 (지속 효과)\n<ul>\n<li>방어력 증가량이 15에서 25로 증가했습니다.</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "격분",
+       "key": "지속 효과",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "방어력 증가량이 15에서 25로 증가했습니다.",
+         "html": "방어력 증가량이 15에서 25로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "첸",
+     "heroId": "Chen",
+     "heroIds": [
+      "Chen"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>첸</strong></span>\n<ul>\n<li>정화주 (고유 능력)\n<ul>\n<li>기술 방어력 증가량이 30에서 40으로 증가했습니다.</li>\n</ul>\n</li>\n<li>술통 사고 (R)\n<ul>\n<li>방어력 증가량이 50에서 60으로 증가했습니다.</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "정화주",
+       "key": "고유 능력",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "기술 방어력 증가량이 30에서 40으로 증가했습니다.",
+         "html": "기술 방어력 증가량이 30에서 40으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "술통 사고",
+       "key": "R",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "방어력 증가량이 50에서 60으로 증가했습니다.",
+         "html": "방어력 증가량이 50에서 60으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "디아블로",
+     "heroId": "Diablo",
+     "heroIds": [
+      "Diablo"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>디아블로</strong></span>\n<ul>\n<li>제물의 영혼 (Q)\n<ul>\n<li>방어력 증가량이 20에서 25로 증가했습니다.</li>\n<li>영혼을 최대로 보유하고 있을 때의 방어력 증가량이 40에서 50으로 증가했습니다.</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "제물의 영혼",
+       "key": "Q",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "방어력 증가량이 20에서 25로 증가했습니다.",
+         "html": "방어력 증가량이 20에서 25로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "영혼을 최대로 보유하고 있을 때의 방어력 증가량이 40에서 50으로 증가했습니다.",
+         "html": "영혼을 최대로 보유하고 있을 때의 방어력 증가량이 40에서 50으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "정예 타우렌 족장",
+     "heroId": "L90ETC",
+     "heroIds": [
+      "L90ETC"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>정예 타우렌 족장 </strong></span>\n<ul>\n<li>록스타 (고유 능력)\n<ul>\n<li>방어력 증가량이 20에서 25로 증가했습니다.</li>\n</ul>\n</li>\n<li>인터미션 (Q)\n<ul>\n<li>방어력 증가량이 15에서 35로 증가했습니다.</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "록스타",
+       "key": "고유 능력",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "방어력 증가량이 20에서 25로 증가했습니다.",
+         "html": "방어력 증가량이 20에서 25로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "인터미션",
+       "key": "Q",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "방어력 증가량이 15에서 35로 증가했습니다.",
+         "html": "방어력 증가량이 15에서 35로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "가즈로",
+     "heroId": "Tinker",
+     "heroIds": [
+      "Tinker"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>가즈로</strong></span>\n<ul>\n<li>로보고블린 (R)\n<ul>\n<li>방어력 증가량이 30에서 40으로 증가했습니다.</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "로보고블린",
+       "key": "R",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "방어력 증가량이 30에서 40으로 증가했습니다.",
+         "html": "방어력 증가량이 30에서 40으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "모랄레스 중위",
+     "heroId": "Medic",
+     "heroIds": [
+      "Medic"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>모랄레스 중위</strong></span>\n<ul>\n<li>보호기 (W)\n<ul>\n<li>방어력 증가량이 25에서 30으로 증가했습니다.</li>\n</ul>\n</li>\n<li>트라우마 방지기 (지속 효과)\n<ul>\n<li>방어력 증가량이 30에서 40으로 증가했습니다.</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "보호기",
+       "key": "W",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "방어력 증가량이 25에서 30으로 증가했습니다.",
+         "html": "방어력 증가량이 25에서 30으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "트라우마 방지기",
+       "key": "지속 효과",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "방어력 증가량이 30에서 40으로 증가했습니다.",
+         "html": "방어력 증가량이 30에서 40으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "노바",
+     "heroId": "Nova",
+     "heroIds": [
+      "Nova"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>노바</strong></span>\n<ul>\n<li>대장갑 탄환 (지속 효과)\n<ul>\n<li>물리 방어력 감소량이 10에서 15로 증가했습니다.</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "대장갑 탄환",
+       "key": "지속 효과",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "물리 방어력 감소량이 10에서 15로 증가했습니다.",
+         "html": "물리 방어력 감소량이 10에서 15로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "레이너",
+     "heroId": "Raynor",
+     "heroIds": [
+      "Raynor"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>레이너</strong></span>\n<ul>\n<li>현상금 사냥꾼 (고유 능력)\n<ul>\n<li>방어력 증가량이 5에서 10으로 증가했습니다.</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "현상금 사냥꾼",
+       "key": "고유 능력",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "방어력 증가량이 5에서 10으로 증가했습니다.",
+         "html": "방어력 증가량이 5에서 10으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "렉사르",
+     "heroId": "Rexxar",
+     "heroIds": [
+      "Rexxar"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>렉사르</strong></span>\n<ul>\n<li>수집 사냥꾼 (지속 효과)\n<ul>\n<li>방어력 증가량이 10에서 15로 증가했습니다.</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "수집 사냥꾼",
+       "key": "지속 효과",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "방어력 증가량이 10에서 15로 증가했습니다.",
+         "html": "방어력 증가량이 10에서 15로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "태사다르",
+     "heroId": "Tassadar",
+     "heroIds": [
+      "Tassadar"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>태사다르</strong></span>\n<ul>\n<li>칼라의 빛 (Q)\n<ul>\n<li>방어력 증가량이 15에서 20으로 증가했습니다.</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "칼라의 빛",
+       "key": "Q",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "방어력 증가량이 15에서 20으로 증가했습니다.",
+         "html": "방어력 증가량이 15에서 20으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "티리엘",
+     "heroId": "Tyrael",
+     "heroIds": [
+      "Tyrael"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>티리엘</strong></span>\n<ul>\n<li>천사들의 가호 (사용 효과)\n<ul>\n<li>방어력 증가량이 40에서 50으로 증가했습니다.</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "천사들의 가호",
+       "key": "사용 효과",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "방어력 증가량이 40에서 50으로 증가했습니다.",
+         "html": "방어력 증가량이 40에서 50으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "우서",
+     "heroId": "Uther",
+     "heroIds": [
+      "Uther"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>우서</strong></span>\n<ul>\n<li>헌신 (고유 능력)\n<ul>\n<li>방어력 증가량이 15에서 25로 증가했습니다.</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "헌신",
+       "key": "고유 능력",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "방어력 증가량이 15에서 25로 증가했습니다.",
+         "html": "방어력 증가량이 15에서 25로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "발리라",
+     "heroId": "Valeera",
+     "heroIds": [
+      "Valeera"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>발리라</strong></span>\n<ul>\n<li>연막탄 (R)\n<ul>\n<li>방어력 증가량이 25에서 30으로 증가했습니다.</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "연막탄",
+       "key": "R",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "방어력 증가량이 25에서 30으로 증가했습니다.",
+         "html": "방어력 증가량이 25에서 30으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "줄진",
+     "heroId": "Zuljin",
+     "heroIds": [
+      "Zuljin"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>줄진</strong></span>\n<ul>\n<li>아마니의 가죽 (사용 효과)\n<ul>\n<li>방어력 증가량이 10에서 15로 증가했습니다.</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "아마니의 가죽",
+       "key": "사용 효과",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "방어력 증가량이 10에서 15로 증가했습니다.",
+         "html": "방어력 증가량이 10에서 15로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "사용자 인터페이스",
+   "key": "ui",
+   "html": "<ul>\n<li>방어력, 받는 치유량 증가 및 감소 효과가 시각적으로 개선되었습니다.</li>\n</ul>\n<h3> </h3>"
+  },
+  {
+   "name": "영웅",
+   "key": "heroes",
+   "html": "<table class=\"table table-condensed\">\n<tbody>\n<tr>\n<th></th>\n<th></th>\n<th></th>\n</tr>\n<tr>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n</tbody>\n</table>"
+  },
+  {
+   "name": "암살자",
+   "key": "role_assassin",
+   "html": "<h4>피닉스</h4>\n<img alt=\"divider_hero_Fenix.png\" data-id=\"21590352\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/FWX7K6MDUZO51519929019805.png\"/>\n<p><span class=\"pn-h\"><strong>기술</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>정화 개시 (R)</strong></span>\n<ul>\n<li>공격력이 86에서 79로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><span class=\"pn-h\"><strong>특성</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>에너지 억제 (W)\n<ul>\n<li>이제 모든 감속 효과로 발동할 수 있습니다. (해당 특성의 감속 효과 제외)</li>\n<li>감속 효과의 지속 시간이 4초에서 3초로 감소했습니다.</li>\n<li>감속 효과가 35%에서 30%로 감소했습니다.</li>\n</ul>\n</li>\n<li>차원로 (E)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>7레벨</strong></span>\n<ul>\n<li>전술적 차원이동 (E)\n<ul>\n<li>추가된 기능:\n<ul>\n<li>추가로, 적 영웅을 처치하면 차원이동의 재사용 대기시간이 초기화됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>동력 전환: 무기 (사용 효과)\n<ul>\n<li>새로운 기능:\n<ul>\n<li>사용하면 일반 공격력이 5초 동안 40% 증가합니다. 적 영웅에게 일반 공격을 할 때마다 이 효과의 지속 시간이 갱신됩니다. 이 효과의 지속 시간이 만료되면 보호막 축전기로 얻은 보호막을 모두 잃습니다. 재사용 대기시간은 40초입니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>13레벨</strong></span>\n<ul>\n<li>감쇠장 (고유 능력)\n<ul>\n<li>기술 방어력 증가량이 20에서 25로 증가했습니다.</li>\n</ul>\n</li>\n<li>보조 보호막 (고유 능력)\n<ul>\n<li>보호막이 20%에서 40%로 증가했습니다.</li>\n<li>최대 생명력 감소량이 10%에서 30%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+   "heroes": [
+    {
+     "name": "피닉스",
+     "heroId": "Fenix",
+     "heroIds": [
+      "Fenix"
+     ],
+     "changes": [
+      {
+       "name": "정화 개시",
+       "key": "R",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "공격력이 86에서 79로 감소했습니다.",
+         "html": "공격력이 86에서 79로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "에너지 억제",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "이제 모든 감속 효과로 발동할 수 있습니다. (해당 특성의 감속 효과 제외)",
+         "html": "이제 모든 감속 효과로 발동할 수 있습니다. (해당 특성의 감속 효과 제외)",
+         "added": false
+        },
+        {
+         "text": "감속 효과의 지속 시간이 4초에서 3초로 감소했습니다.",
+         "html": "감속 효과의 지속 시간이 4초에서 3초로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "감속 효과가 35%에서 30%로 감소했습니다.",
+         "html": "감속 효과가 35%에서 30%로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "차원로",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "전술적 차원이동",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": []
+      },
+      {
+       "name": "추가된 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "추가로, 적 영웅을 처치하면 차원이동의 재사용 대기시간이 초기화됩니다.",
+         "html": "추가로, 적 영웅을 처치하면 차원이동의 재사용 대기시간이 초기화됩니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "동력 전환: 무기",
+       "key": "사용 효과",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": []
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "사용하면 일반 공격력이 5초 동안 40% 증가합니다. 적 영웅에게 일반 공격을 할 때마다 이 효과의 지속 시간이 갱신됩니다. 이 효과의 지속 시간이 만료되면 보호막 축전기로 얻은 보호막을 모두 잃습니다. 재사용 대기시간은 40초입니다.",
+         "html": "사용하면 일반 공격력이 5초 동안 40% 증가합니다. 적 영웅에게 일반 공격을 할 때마다 이 효과의 지속 시간이 갱신됩니다. 이 효과의 지속 시간이 만료되면 보호막 축전기로 얻은 보호막을 모두 잃습니다. 재사용 대기시간은 40초입니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "감쇠장",
+       "key": "고유 능력",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "기술 방어력 증가량이 20에서 25로 증가했습니다.",
+         "html": "기술 방어력 증가량이 20에서 25로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "보조 보호막",
+       "key": "고유 능력",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "보호막이 20%에서 40%로 증가했습니다.",
+         "html": "보호막이 20%에서 40%로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "최대 생명력 감소량이 10%에서 30%로 증가했습니다.",
+         "html": "최대 생명력 감소량이 10%에서 30%로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<img alt=\"divider_hero_Fenix.png\" data-id=\"21590352\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/FWX7K6MDUZO51519929019805.png\"/>\n<p><span class=\"pn-h\"><strong>기술</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>정화 개시 (R)</strong></span>\n<ul>\n<li>공격력이 86에서 79로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><span class=\"pn-h\"><strong>특성</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>에너지 억제 (W)\n<ul>\n<li>이제 모든 감속 효과로 발동할 수 있습니다. (해당 특성의 감속 효과 제외)</li>\n<li>감속 효과의 지속 시간이 4초에서 3초로 감소했습니다.</li>\n<li>감속 효과가 35%에서 30%로 감소했습니다.</li>\n</ul>\n</li>\n<li>차원로 (E)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>7레벨</strong></span>\n<ul>\n<li>전술적 차원이동 (E)\n<ul>\n<li>추가된 기능:\n<ul>\n<li>추가로, 적 영웅을 처치하면 차원이동의 재사용 대기시간이 초기화됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>동력 전환: 무기 (사용 효과)\n<ul>\n<li>새로운 기능:\n<ul>\n<li>사용하면 일반 공격력이 5초 동안 40% 증가합니다. 적 영웅에게 일반 공격을 할 때마다 이 효과의 지속 시간이 갱신됩니다. 이 효과의 지속 시간이 만료되면 보호막 축전기로 얻은 보호막을 모두 잃습니다. 재사용 대기시간은 40초입니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>13레벨</strong></span>\n<ul>\n<li>감쇠장 (고유 능력)\n<ul>\n<li>기술 방어력 증가량이 20에서 25로 증가했습니다.</li>\n</ul>\n</li>\n<li>보조 보호막 (고유 능력)\n<ul>\n<li>보호막이 20%에서 40%로 증가했습니다.</li>\n<li>최대 생명력 감소량이 10%에서 30%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    }
+   ]
+  },
+  {
+   "name": "전문가",
+   "key": "role_specialist",
+   "html": "<h4>실바나스</h4>\n<img alt=\"Divider_Heroes_Sylvanas_Cropped.png\" data-id=\"19828416\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/I6HR01N9WF0Y1439221492511.png\"/>\n<p><span class=\"pn-h\"><strong>능력치</strong></span></p>\n<ul>\n<li>생명력이 1425에서 1550으로 증가했습니다.</li>\n<li>생명력 재생량이 2.969에서 3.23으로 증가했습니다.</li>\n<li>일반 공격력이 90에서 81로 감소했습니다.</li>\n</ul>\n<p><span class=\"pn-h\"><strong>기술</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>부패의 사격 (Q)</strong></span>\n<ul>\n<li>변경된 기능:\n<ul>\n<li>Q를 한 번 누르면 부패의 사격 5발을 가장 가까운 적에게 발사합니다.</li>\n</ul>\n</li>\n<li>마나 소모량이 0에서 25로 증가했습니다.</li>\n<li>공격력이 48에서 39로 감소했습니다.</li>\n<li>사거리가 6.25에서 8로 증가했습니다.</li>\n<li>재사용 대기시간이 2초에서 8초로 증가했습니다.</li>\n<li>이제 한 번에 모두 충전됩니다.</li>\n<li>더는 돌격병을 처치해도 충전되지 않습니다.</li>\n<li>적 영웅을 처치하면 이 기술의 재사용 대기시간이 초기화됩니다.</li>\n<li>발사 빈도가 0.188에서 0.375로 감소했습니다. (약 50% 느려짐)</li>\n<li>이전 부패의 사격이 활성화된 동안에는 부패의 사격을 다시 사용할 수 없습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>어둠의 비수 (W)</strong></span>\n<ul>\n<li>변경된 기능:\n<ul>\n<li>더는 피해를 줄 때마다 주위 대상에게 퍼지지 않습니다. </li>\n<li>이제 어둠의 비수의 주 대상에게 실바나스가 피해를 주면 어둠의 비수가 주위 적들에게 퍼집니다.</li>\n</ul>\n</li>\n<li>마나 소모량이 75에서 50으로 감소했습니다.</li>\n<li>지속 시간이 2초에서 2.5초로 증가했습니다.</li>\n<li>공격력이 37에서 29로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>유령의 파도 (E)</strong></span>\n<ul>\n<li>유령의 이동 속도가 ~6% 증가했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>정신 지배 (R)</strong></span>\n<ul>\n<li>재사용 대기시간이 60초에서 50초로 감소했습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>0.25초 후, 파동을 발사하여 처음 적중하는 적 영웅의 정신을 지배합니다. 파동에 적중당한 적 영웅은 1.75초 동안 침묵 상태가 되고 30%만큼 느려지며 자신을 향해 이동합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>검은 화살 (고유 능력)</strong></span>\n<ul>\n<li>새로운 기능:\n<ul>\n<li>사용하면 일반 공격 및 기술이 돌격병, 일반 용병, 구조물을 3초 동안 기절 및 무력화시킵니다. 10초 동안 지속됩니다. 재사용 대기시간은 40초입니다.</li>\n</ul>\n</li>\n<li>새로운 지속 효과 – 밴시의 저주\n<ul>\n<li>일반 공격이 적에게 3초 동안 밴시의 저주를 겁니다. 최대 3회 중첩됩니다. 밴시의 저주가 3회 중첩된 적에게는 실바나스가 25%의 추가 피해를 줍니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<p><span class=\"pn-h\"><strong>특성</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>넘치는 화살 (Q)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>유령의 흔적 (E)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>지독한 고통 (고유 능력)\n<ul>\n<li>16레벨에서 옮겨졌습니다.</li>\n<li>변경된 기능:\n<ul>\n<li>밴시의 저주가 3회 중첩된 적 영웅이 15% 느려집니다. 느려진 적 영웅에게 일반 공격을 하면 대상의 최대 생명력의 1%만큼 추가 피해를 줍니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 깊어가는 어둠 (W)</strong>\n<ul>\n<li>퀘스트: 밴시의 저주가 3회 중첩된 적 영웅에게 어둠의 비수를 사용할 때마다 어둠의 비수의 공격력이 영구히 0.5% 증가합니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 밴시 여왕의 힘 (Q)</strong>\n<ul>\n<li>부패의 사격이 적 영웅에게 적중하면 공격 속도와 기술 위력이 6초 동안 5% 증가합니다. 최대 5회 중첩됩니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>바람에 실려 (Q)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>용병의 여왕 (고유 능력)\n<ul>\n<li>1레벨에서 옮겨졌습니다.</li>\n<li>변경된 기능:\n<ul>\n<li>주위 아군 일반 용병의 공격력이 60% 증가합니다. 용병에게 밴시의 저주를 3회 중첩시키면 대상을 기절시키고 모든 공격이 대상에게 30%의 추가 피해를 줍니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>빙의 (사용 효과)\n<ul>\n<li>7레벨에서 옮겨졌습니다.</li>\n<li>투석기를 아군으로 만들려면 3회의 충전 횟수를 소모해야 합니다.</li>\n</ul>\n</li>\n<li>불안정한 독 (W)\n<ul>\n<li>7레벨에서 옮겨졌습니다.</li>\n<li>공격력이 116에서 130으로 증가했습니다.</li>\n<li>이제 돌격병이 어둠의 비수 혹은 고유 능력의 영향을 받은 상태로 죽으면 발동합니다.</li>\n<li>반경이 2에서 2.5로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>7레벨</strong></span>\n<ul>\n<li>가시 돋친 화살 (Q)\n<ul>\n<li>새로운 기능:\n<ul>\n<li>부패의 사격 5발이 같은 적에게 적중하면 마지막 화살이 350%의 추가 피해를 줍니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>잃어버린 영혼 (W)\n<ul>\n<li>4레벨에서 옮겨졌습니다.</li>\n<li>변경된 기능:\n<ul>\n<li>밴시의 저주가 3회 중첩된 적 영웅에게 일반 공격을 할 때마다 어둠의 비수의 재사용 대기시간이 1.75초 감소합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 고름 상처 (E)</strong>\n<ul>\n<li>유령의 파도의 공격력이 25% 증가합니다. 유령의 파도가 밴시의 저주를 3회 중첩시킵니다. </li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>13레벨</strong></span>\n<ul>\n<li>차디찬 손아귀 (W)\n<ul>\n<li>16레벨에서 옮겨졌습니다.</li>\n<li>지속 시간이 2초에서 2.5초로 증가했습니다.</li>\n<li>추가로, 어둠의 비수가 전이된 적의 방어력을 10 감소시킵니다.</li>\n</ul>\n</li>\n<li>기술 보호막 (사용 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>냉혹 (고유 능력)\n<ul>\n<li>16레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>일반 공격의 사거리가 1 증가합니다. 밴시의 저주가 3회 중첩된 적 영웅에게 일반 공격을 하면 특성이 적용되지 않은 부패의 화살이 발사됩니다. 이 공격에도 밴시의 저주가 적용됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>바람길잡이 (E)\n<ul>\n<li>변경된 기능:\n<ul>\n<li>유령의 파도를 사용해 순간이동하면 5초 안에 유령의 파도를 비용 없이 한 번 더 사용할 수 있습니다. 유령의 파도로 순간이동할 때마다 부패의 사격의 재사용 대기시간이 초기화됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>16레벨</strong></span>\n<ul>\n<li>생명력 흡수 (W)\n<ul>\n<li>13레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>밴시의 저주가 3회 중첩된 적을 공격하면 준 피해의 15%만큼 생명력을 회복합니다. 영웅에게 피해를 주면 치유량이 두 배가 됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>회피의 사격 (Q)\n<ul>\n<li>변경된 기능:\n<ul>\n<li>부패의 사격이 적에게 적중할 때마다 이동 속도가 2초 동안 6% 증가하여 최대 30% 증가합니다. 일반 공격을 하면 지속 시간이 갱신됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>포세이큰의 의지 (사용 효과)\n<ul>\n<li>13레벨에서 옮겨졌습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>20레벨</strong></span>\n<ul>\n<li>어둠의 여왕을 받들라 (R)\n<ul>\n<li>새로운 기능:\n<ul>\n<li>정신 지배에 적중당한 영웅의 시야 반경이 5초 동안 크게 감소합니다. 정신 지배의 재사용 대기시간이 30초 감소합니다. </li>\n</ul>\n</li>\n</ul>\n</li>\n<li>부패의 난사 (Q)\n<ul>\n<li>4레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>부패의 사격이 적 영웅에게 적중할 때마다 부패의 사격의 재사용 대기시간이 0.75초 감소합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote>\n<p><strong>개발자의 의견: </strong><span class=\"pn-new\">대족장께서 새로운 모습으로 돌아왔습니다! 개발팀에서도 재밌게 플레이한 개편된 실바나스가 여러분의 마음에 들었으면 좋겠군요. 이제 실바나스는 적의 구조물을 무력화시킬 수 있는 능력과 더불어 교전에서도 놀라운 모습을 보일 수 있을 것입니다. 하지만 더 강해진만큼 여러 기술들이 반격당할 수 있는 상황도 더욱 증가하여 상대 영웅과의 상호작용이 더욱 흥미로워질 것이라 예상합니다. 또한 특성의 영향을 매우 크게 받도록 영웅을 재설계했습니다. 실험적인 시도이기에 체험해 보시고 여러분의 의견을 개발팀에게 들려주세요!</span></p>\n</blockquote>",
+   "heroes": [
+    {
+     "name": "실바나스",
+     "heroId": "Sylvanas",
+     "heroIds": [
+      "Sylvanas"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "생명력이 1425에서 1550으로 증가했습니다.",
+         "html": "생명력이 1425에서 1550으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "생명력 재생량이 2.969에서 3.23으로 증가했습니다.",
+         "html": "생명력 재생량이 2.969에서 3.23으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "일반 공격력이 90에서 81로 감소했습니다.",
+         "html": "일반 공격력이 90에서 81로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "부패의 사격",
+       "key": "Q",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "마나 소모량이 0에서 25로 증가했습니다.",
+         "html": "마나 소모량이 0에서 25로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "공격력이 48에서 39로 감소했습니다.",
+         "html": "공격력이 48에서 39로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "사거리가 6.25에서 8로 증가했습니다.",
+         "html": "사거리가 6.25에서 8로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "재사용 대기시간이 2초에서 8초로 증가했습니다.",
+         "html": "재사용 대기시간이 2초에서 8초로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "이제 한 번에 모두 충전됩니다.",
+         "html": "이제 한 번에 모두 충전됩니다.",
+         "added": false
+        },
+        {
+         "text": "더는 돌격병을 처치해도 충전되지 않습니다.",
+         "html": "더는 돌격병을 처치해도 충전되지 않습니다.",
+         "added": false
+        },
+        {
+         "text": "적 영웅을 처치하면 이 기술의 재사용 대기시간이 초기화됩니다.",
+         "html": "적 영웅을 처치하면 이 기술의 재사용 대기시간이 초기화됩니다.",
+         "added": false
+        },
+        {
+         "text": "발사 빈도가 0.188에서 0.375로 감소했습니다. (약 50% 느려짐)",
+         "html": "발사 빈도가 0.188에서 0.375로 감소했습니다. (약 50% 느려짐)",
+         "added": false
+        },
+        {
+         "text": "이전 부패의 사격이 활성화된 동안에는 부패의 사격을 다시 사용할 수 없습니다.",
+         "html": "이전 부패의 사격이 활성화된 동안에는 부패의 사격을 다시 사용할 수 없습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "변경된 기능",
+       "key": null,
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "Q를 한 번 누르면 부패의 사격 5발을 가장 가까운 적에게 발사합니다.",
+         "html": "Q를 한 번 누르면 부패의 사격 5발을 가장 가까운 적에게 발사합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "어둠의 비수",
+       "key": "W",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "마나 소모량이 75에서 50으로 감소했습니다.",
+         "html": "마나 소모량이 75에서 50으로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "지속 시간이 2초에서 2.5초로 증가했습니다.",
+         "html": "지속 시간이 2초에서 2.5초로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "공격력이 37에서 29로 감소했습니다.",
+         "html": "공격력이 37에서 29로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "변경된 기능",
+       "key": null,
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "더는 피해를 줄 때마다 주위 대상에게 퍼지지 않습니다.",
+         "html": "더는 피해를 줄 때마다 주위 대상에게 퍼지지 않습니다.",
+         "added": false
+        },
+        {
+         "text": "이제 어둠의 비수의 주 대상에게 실바나스가 피해를 주면 어둠의 비수가 주위 적들에게 퍼집니다.",
+         "html": "이제 어둠의 비수의 주 대상에게 실바나스가 피해를 주면 어둠의 비수가 주위 적들에게 퍼집니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "유령의 파도",
+       "key": "E",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "유령의 이동 속도가 ~6% 증가했습니다.",
+         "html": "유령의 이동 속도가 ~6% 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "정신 지배",
+       "key": "R",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 60초에서 50초로 감소했습니다.",
+         "html": "재사용 대기시간이 60초에서 50초로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "0.25초 후, 파동을 발사하여 처음 적중하는 적 영웅의 정신을 지배합니다. 파동에 적중당한 적 영웅은 1.75초 동안 침묵 상태가 되고 30%만큼 느려지며 자신을 향해 이동합니다.",
+         "html": "0.25초 후, 파동을 발사하여 처음 적중하는 적 영웅의 정신을 지배합니다. 파동에 적중당한 적 영웅은 1.75초 동안 침묵 상태가 되고 30%만큼 느려지며 자신을 향해 이동합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "검은 화살",
+       "key": "고유 능력",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": []
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "사용하면 일반 공격 및 기술이 돌격병, 일반 용병, 구조물을 3초 동안 기절 및 무력화시킵니다. 10초 동안 지속됩니다. 재사용 대기시간은 40초입니다.",
+         "html": "사용하면 일반 공격 및 기술이 돌격병, 일반 용병, 구조물을 3초 동안 기절 및 무력화시킵니다. 10초 동안 지속됩니다. 재사용 대기시간은 40초입니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 지속 효과 – 밴시의 저주",
+       "key": null,
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "일반 공격이 적에게 3초 동안 밴시의 저주를 겁니다. 최대 3회 중첩됩니다. 밴시의 저주가 3회 중첩된 적에게는 실바나스가 25%의 추가 피해를 줍니다.",
+         "html": "일반 공격이 적에게 3초 동안 밴시의 저주를 겁니다. 최대 3회 중첩됩니다. 밴시의 저주가 3회 중첩된 적에게는 실바나스가 25%의 추가 피해를 줍니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "넘치는 화살",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "유령의 흔적",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "지독한 고통",
+       "key": "고유 능력",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "16레벨에서 옮겨졌습니다.",
+         "html": "16레벨에서 옮겨졌습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "변경된 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "밴시의 저주가 3회 중첩된 적 영웅이 15% 느려집니다. 느려진 적 영웅에게 일반 공격을 하면 대상의 최대 생명력의 1%만큼 추가 피해를 줍니다.",
+         "html": "밴시의 저주가 3회 중첩된 적 영웅이 15% 느려집니다. 느려진 적 영웅에게 일반 공격을 하면 대상의 최대 생명력의 1%만큼 추가 피해를 줍니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 특성: 깊어가는 어둠",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "퀘스트: 밴시의 저주가 3회 중첩된 적 영웅에게 어둠의 비수를 사용할 때마다 어둠의 비수의 공격력이 영구히 0.5% 증가합니다.",
+         "html": "퀘스트: 밴시의 저주가 3회 중첩된 적 영웅에게 어둠의 비수를 사용할 때마다 어둠의 비수의 공격력이 영구히 0.5% 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 특성: 밴시 여왕의 힘",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "부패의 사격이 적 영웅에게 적중하면 공격 속도와 기술 위력이 6초 동안 5% 증가합니다. 최대 5회 중첩됩니다.",
+         "html": "부패의 사격이 적 영웅에게 적중하면 공격 속도와 기술 위력이 6초 동안 5% 증가합니다. 최대 5회 중첩됩니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "바람에 실려",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "용병의 여왕",
+       "key": "고유 능력",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "1레벨에서 옮겨졌습니다.",
+         "html": "1레벨에서 옮겨졌습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "변경된 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "주위 아군 일반 용병의 공격력이 60% 증가합니다. 용병에게 밴시의 저주를 3회 중첩시키면 대상을 기절시키고 모든 공격이 대상에게 30%의 추가 피해를 줍니다.",
+         "html": "주위 아군 일반 용병의 공격력이 60% 증가합니다. 용병에게 밴시의 저주를 3회 중첩시키면 대상을 기절시키고 모든 공격이 대상에게 30%의 추가 피해를 줍니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "빙의",
+       "key": "사용 효과",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "7레벨에서 옮겨졌습니다.",
+         "html": "7레벨에서 옮겨졌습니다.",
+         "added": false
+        },
+        {
+         "text": "투석기를 아군으로 만들려면 3회의 충전 횟수를 소모해야 합니다.",
+         "html": "투석기를 아군으로 만들려면 3회의 충전 횟수를 소모해야 합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "불안정한 독",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "7레벨에서 옮겨졌습니다.",
+         "html": "7레벨에서 옮겨졌습니다.",
+         "added": false
+        },
+        {
+         "text": "공격력이 116에서 130으로 증가했습니다.",
+         "html": "공격력이 116에서 130으로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "이제 돌격병이 어둠의 비수 혹은 고유 능력의 영향을 받은 상태로 죽으면 발동합니다.",
+         "html": "이제 돌격병이 어둠의 비수 혹은 고유 능력의 영향을 받은 상태로 죽으면 발동합니다.",
+         "added": false
+        },
+        {
+         "text": "반경이 2에서 2.5로 증가했습니다.",
+         "html": "반경이 2에서 2.5로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "가시 돋친 화살",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": []
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "부패의 사격 5발이 같은 적에게 적중하면 마지막 화살이 350%의 추가 피해를 줍니다.",
+         "html": "부패의 사격 5발이 같은 적에게 적중하면 마지막 화살이 350%의 추가 피해를 줍니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "잃어버린 영혼",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "4레벨에서 옮겨졌습니다.",
+         "html": "4레벨에서 옮겨졌습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "변경된 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "밴시의 저주가 3회 중첩된 적 영웅에게 일반 공격을 할 때마다 어둠의 비수의 재사용 대기시간이 1.75초 감소합니다.",
+         "html": "밴시의 저주가 3회 중첩된 적 영웅에게 일반 공격을 할 때마다 어둠의 비수의 재사용 대기시간이 1.75초 감소합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 특성: 고름 상처",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "유령의 파도의 공격력이 25% 증가합니다. 유령의 파도가 밴시의 저주를 3회 중첩시킵니다.",
+         "html": "유령의 파도의 공격력이 25% 증가합니다. 유령의 파도가 밴시의 저주를 3회 중첩시킵니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "차디찬 손아귀",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "16레벨에서 옮겨졌습니다.",
+         "html": "16레벨에서 옮겨졌습니다.",
+         "added": false
+        },
+        {
+         "text": "지속 시간이 2초에서 2.5초로 증가했습니다.",
+         "html": "지속 시간이 2초에서 2.5초로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "추가로, 어둠의 비수가 전이된 적의 방어력을 10 감소시킵니다.",
+         "html": "추가로, 어둠의 비수가 전이된 적의 방어력을 10 감소시킵니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "기술 보호막",
+       "key": "사용 효과",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "냉혹",
+       "key": "고유 능력",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "16레벨에서 옮겨졌습니다.",
+         "html": "16레벨에서 옮겨졌습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "일반 공격의 사거리가 1 증가합니다. 밴시의 저주가 3회 중첩된 적 영웅에게 일반 공격을 하면 특성이 적용되지 않은 부패의 화살이 발사됩니다. 이 공격에도 밴시의 저주가 적용됩니다.",
+         "html": "일반 공격의 사거리가 1 증가합니다. 밴시의 저주가 3회 중첩된 적 영웅에게 일반 공격을 하면 특성이 적용되지 않은 부패의 화살이 발사됩니다. 이 공격에도 밴시의 저주가 적용됩니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "바람길잡이",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": []
+      },
+      {
+       "name": "변경된 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "유령의 파도를 사용해 순간이동하면 5초 안에 유령의 파도를 비용 없이 한 번 더 사용할 수 있습니다. 유령의 파도로 순간이동할 때마다 부패의 사격의 재사용 대기시간이 초기화됩니다.",
+         "html": "유령의 파도를 사용해 순간이동하면 5초 안에 유령의 파도를 비용 없이 한 번 더 사용할 수 있습니다. 유령의 파도로 순간이동할 때마다 부패의 사격의 재사용 대기시간이 초기화됩니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "생명력 흡수",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "13레벨에서 옮겨졌습니다.",
+         "html": "13레벨에서 옮겨졌습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "밴시의 저주가 3회 중첩된 적을 공격하면 준 피해의 15%만큼 생명력을 회복합니다. 영웅에게 피해를 주면 치유량이 두 배가 됩니다.",
+         "html": "밴시의 저주가 3회 중첩된 적을 공격하면 준 피해의 15%만큼 생명력을 회복합니다. 영웅에게 피해를 주면 치유량이 두 배가 됩니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "회피의 사격",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": []
+      },
+      {
+       "name": "변경된 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "부패의 사격이 적에게 적중할 때마다 이동 속도가 2초 동안 6% 증가하여 최대 30% 증가합니다. 일반 공격을 하면 지속 시간이 갱신됩니다.",
+         "html": "부패의 사격이 적에게 적중할 때마다 이동 속도가 2초 동안 6% 증가하여 최대 30% 증가합니다. 일반 공격을 하면 지속 시간이 갱신됩니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "포세이큰의 의지",
+       "key": "사용 효과",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "13레벨에서 옮겨졌습니다.",
+         "html": "13레벨에서 옮겨졌습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "어둠의 여왕을 받들라",
+       "key": "R",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": []
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "정신 지배에 적중당한 영웅의 시야 반경이 5초 동안 크게 감소합니다. 정신 지배의 재사용 대기시간이 30초 감소합니다.",
+         "html": "정신 지배에 적중당한 영웅의 시야 반경이 5초 동안 크게 감소합니다. 정신 지배의 재사용 대기시간이 30초 감소합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "부패의 난사",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "4레벨에서 옮겨졌습니다.",
+         "html": "4레벨에서 옮겨졌습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "부패의 사격이 적 영웅에게 적중할 때마다 부패의 사격의 재사용 대기시간이 0.75초 감소합니다.",
+         "html": "부패의 사격이 적 영웅에게 적중할 때마다 부패의 사격의 재사용 대기시간이 0.75초 감소합니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<img alt=\"Divider_Heroes_Sylvanas_Cropped.png\" data-id=\"19828416\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/I6HR01N9WF0Y1439221492511.png\"/>\n<p><span class=\"pn-h\"><strong>능력치</strong></span></p>\n<ul>\n<li>생명력이 1425에서 1550으로 증가했습니다.</li>\n<li>생명력 재생량이 2.969에서 3.23으로 증가했습니다.</li>\n<li>일반 공격력이 90에서 81로 감소했습니다.</li>\n</ul>\n<p><span class=\"pn-h\"><strong>기술</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>부패의 사격 (Q)</strong></span>\n<ul>\n<li>변경된 기능:\n<ul>\n<li>Q를 한 번 누르면 부패의 사격 5발을 가장 가까운 적에게 발사합니다.</li>\n</ul>\n</li>\n<li>마나 소모량이 0에서 25로 증가했습니다.</li>\n<li>공격력이 48에서 39로 감소했습니다.</li>\n<li>사거리가 6.25에서 8로 증가했습니다.</li>\n<li>재사용 대기시간이 2초에서 8초로 증가했습니다.</li>\n<li>이제 한 번에 모두 충전됩니다.</li>\n<li>더는 돌격병을 처치해도 충전되지 않습니다.</li>\n<li>적 영웅을 처치하면 이 기술의 재사용 대기시간이 초기화됩니다.</li>\n<li>발사 빈도가 0.188에서 0.375로 감소했습니다. (약 50% 느려짐)</li>\n<li>이전 부패의 사격이 활성화된 동안에는 부패의 사격을 다시 사용할 수 없습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>어둠의 비수 (W)</strong></span>\n<ul>\n<li>변경된 기능:\n<ul>\n<li>더는 피해를 줄 때마다 주위 대상에게 퍼지지 않습니다. </li>\n<li>이제 어둠의 비수의 주 대상에게 실바나스가 피해를 주면 어둠의 비수가 주위 적들에게 퍼집니다.</li>\n</ul>\n</li>\n<li>마나 소모량이 75에서 50으로 감소했습니다.</li>\n<li>지속 시간이 2초에서 2.5초로 증가했습니다.</li>\n<li>공격력이 37에서 29로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>유령의 파도 (E)</strong></span>\n<ul>\n<li>유령의 이동 속도가 ~6% 증가했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>정신 지배 (R)</strong></span>\n<ul>\n<li>재사용 대기시간이 60초에서 50초로 감소했습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>0.25초 후, 파동을 발사하여 처음 적중하는 적 영웅의 정신을 지배합니다. 파동에 적중당한 적 영웅은 1.75초 동안 침묵 상태가 되고 30%만큼 느려지며 자신을 향해 이동합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>검은 화살 (고유 능력)</strong></span>\n<ul>\n<li>새로운 기능:\n<ul>\n<li>사용하면 일반 공격 및 기술이 돌격병, 일반 용병, 구조물을 3초 동안 기절 및 무력화시킵니다. 10초 동안 지속됩니다. 재사용 대기시간은 40초입니다.</li>\n</ul>\n</li>\n<li>새로운 지속 효과 – 밴시의 저주\n<ul>\n<li>일반 공격이 적에게 3초 동안 밴시의 저주를 겁니다. 최대 3회 중첩됩니다. 밴시의 저주가 3회 중첩된 적에게는 실바나스가 25%의 추가 피해를 줍니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<p><span class=\"pn-h\"><strong>특성</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>넘치는 화살 (Q)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>유령의 흔적 (E)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>지독한 고통 (고유 능력)\n<ul>\n<li>16레벨에서 옮겨졌습니다.</li>\n<li>변경된 기능:\n<ul>\n<li>밴시의 저주가 3회 중첩된 적 영웅이 15% 느려집니다. 느려진 적 영웅에게 일반 공격을 하면 대상의 최대 생명력의 1%만큼 추가 피해를 줍니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 깊어가는 어둠 (W)</strong>\n<ul>\n<li>퀘스트: 밴시의 저주가 3회 중첩된 적 영웅에게 어둠의 비수를 사용할 때마다 어둠의 비수의 공격력이 영구히 0.5% 증가합니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 밴시 여왕의 힘 (Q)</strong>\n<ul>\n<li>부패의 사격이 적 영웅에게 적중하면 공격 속도와 기술 위력이 6초 동안 5% 증가합니다. 최대 5회 중첩됩니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>바람에 실려 (Q)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>용병의 여왕 (고유 능력)\n<ul>\n<li>1레벨에서 옮겨졌습니다.</li>\n<li>변경된 기능:\n<ul>\n<li>주위 아군 일반 용병의 공격력이 60% 증가합니다. 용병에게 밴시의 저주를 3회 중첩시키면 대상을 기절시키고 모든 공격이 대상에게 30%의 추가 피해를 줍니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>빙의 (사용 효과)\n<ul>\n<li>7레벨에서 옮겨졌습니다.</li>\n<li>투석기를 아군으로 만들려면 3회의 충전 횟수를 소모해야 합니다.</li>\n</ul>\n</li>\n<li>불안정한 독 (W)\n<ul>\n<li>7레벨에서 옮겨졌습니다.</li>\n<li>공격력이 116에서 130으로 증가했습니다.</li>\n<li>이제 돌격병이 어둠의 비수 혹은 고유 능력의 영향을 받은 상태로 죽으면 발동합니다.</li>\n<li>반경이 2에서 2.5로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>7레벨</strong></span>\n<ul>\n<li>가시 돋친 화살 (Q)\n<ul>\n<li>새로운 기능:\n<ul>\n<li>부패의 사격 5발이 같은 적에게 적중하면 마지막 화살이 350%의 추가 피해를 줍니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>잃어버린 영혼 (W)\n<ul>\n<li>4레벨에서 옮겨졌습니다.</li>\n<li>변경된 기능:\n<ul>\n<li>밴시의 저주가 3회 중첩된 적 영웅에게 일반 공격을 할 때마다 어둠의 비수의 재사용 대기시간이 1.75초 감소합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 고름 상처 (E)</strong>\n<ul>\n<li>유령의 파도의 공격력이 25% 증가합니다. 유령의 파도가 밴시의 저주를 3회 중첩시킵니다. </li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>13레벨</strong></span>\n<ul>\n<li>차디찬 손아귀 (W)\n<ul>\n<li>16레벨에서 옮겨졌습니다.</li>\n<li>지속 시간이 2초에서 2.5초로 증가했습니다.</li>\n<li>추가로, 어둠의 비수가 전이된 적의 방어력을 10 감소시킵니다.</li>\n</ul>\n</li>\n<li>기술 보호막 (사용 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>냉혹 (고유 능력)\n<ul>\n<li>16레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>일반 공격의 사거리가 1 증가합니다. 밴시의 저주가 3회 중첩된 적 영웅에게 일반 공격을 하면 특성이 적용되지 않은 부패의 화살이 발사됩니다. 이 공격에도 밴시의 저주가 적용됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>바람길잡이 (E)\n<ul>\n<li>변경된 기능:\n<ul>\n<li>유령의 파도를 사용해 순간이동하면 5초 안에 유령의 파도를 비용 없이 한 번 더 사용할 수 있습니다. 유령의 파도로 순간이동할 때마다 부패의 사격의 재사용 대기시간이 초기화됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>16레벨</strong></span>\n<ul>\n<li>생명력 흡수 (W)\n<ul>\n<li>13레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>밴시의 저주가 3회 중첩된 적을 공격하면 준 피해의 15%만큼 생명력을 회복합니다. 영웅에게 피해를 주면 치유량이 두 배가 됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>회피의 사격 (Q)\n<ul>\n<li>변경된 기능:\n<ul>\n<li>부패의 사격이 적에게 적중할 때마다 이동 속도가 2초 동안 6% 증가하여 최대 30% 증가합니다. 일반 공격을 하면 지속 시간이 갱신됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>포세이큰의 의지 (사용 효과)\n<ul>\n<li>13레벨에서 옮겨졌습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>20레벨</strong></span>\n<ul>\n<li>어둠의 여왕을 받들라 (R)\n<ul>\n<li>새로운 기능:\n<ul>\n<li>정신 지배에 적중당한 영웅의 시야 반경이 5초 동안 크게 감소합니다. 정신 지배의 재사용 대기시간이 30초 감소합니다. </li>\n</ul>\n</li>\n</ul>\n</li>\n<li>부패의 난사 (Q)\n<ul>\n<li>4레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>부패의 사격이 적 영웅에게 적중할 때마다 부패의 사격의 재사용 대기시간이 0.75초 감소합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote>\n<p><strong>개발자의 의견: </strong><span class=\"pn-new\">대족장께서 새로운 모습으로 돌아왔습니다! 개발팀에서도 재밌게 플레이한 개편된 실바나스가 여러분의 마음에 들었으면 좋겠군요. 이제 실바나스는 적의 구조물을 무력화시킬 수 있는 능력과 더불어 교전에서도 놀라운 모습을 보일 수 있을 것입니다. 하지만 더 강해진만큼 여러 기술들이 반격당할 수 있는 상황도 더욱 증가하여 상대 영웅과의 상호작용이 더욱 흥미로워질 것이라 예상합니다. 또한 특성의 영향을 매우 크게 받도록 영웅을 재설계했습니다. 실험적인 시도이기에 체험해 보시고 여러분의 의견을 개발팀에게 들려주세요!</span></p>\n</blockquote>"
+    }
+   ]
+  },
+  {
+   "name": "전사",
+   "key": "role_tank",
+   "html": "<h4>누더기</h4>\n<img alt=\"Divider_Hero_Stitches_Crop.png\" data-id=\"17042298\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/ZEOLHHWJ9DIF1417483335223.png\"/>\n<p><span class=\"pn-h\"><strong>기술</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>갈고리 (Q)</strong></span>\n<ul>\n<li>사거리가 12.5에서 11로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>지면 강타 (W)</strong></span>\n<ul>\n<li>시전 시간이 0.25초에서 0.313초로 증가했습니다.</li>\n<li><span class=\"pn-new\">재사용 대기시간이 6초에서 7초로 증가했습니다.</span></li>\n<li>사거리가 8에서 9.5로 증가했습니다.</li>\n<li><span class=\"pn-new\">마나 소모량이 30에서 35로 증가했습니다.</span></li>\n<li>추가된 기능:\n<ul>\n<li>안쪽 범위 내의 적들에게는 40%의 추가 피해를 주고 1.5초 동안 40% 느려지게 합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>뜯어먹기 (E)</strong></span>\n<ul>\n<li>기술의 효과가 기술이 끝날 대가 아닌 시작될 때 발동합니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-new\"><strong>잡아먹기 (R)</strong></span>\n<ul>\n<li><span class=\"pn-new\">재사용 대기시간이 60초에서 70초로 증가했습니다.</span></li>\n</ul>\n</li>\n<li><span class=\"pn-new\"><strong>썩은 쓸개즙 (R)</strong></span>\n<ul>\n<li><span class=\"pn-new\">재사용 대기시간에 60초에서 75초로 증가했습니다.</span></li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>유독 식칼 (지속 효과)</strong></span>\n<ul>\n<li>새로운 기능:\n<ul>\n<li>일반 공격이 유독 가스를 방출하며 주위의 적을 중독시켜 3초에 걸쳐 45의 피해를 줍니다. 유독 가스가 다시 적용되면 지속 시간이 증가하여 최대 10초까지 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<p><span class=\"pn-h\"><strong>특성</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>씹어먹기 (E)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>마법 감쇠 (지속 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>지면 격파 (W)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>끝없는 허기 (지속 효과)\n<ul>\n<li>새로운 기능:\n<ul>\n<li>퀘스트: 재생의 구슬을 획득할 때마다 최대 생명력이 30 증가합니다.</li>\n<li>재생의 구슬을 15개 획득할 때마다 이동 속도가 영구히 5% 증가하여 최대 20% 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>음미 (E)</li>\n<li><span class=\"pn-new\">주기적인 치유 효과의 지속 시간이 5초에서 4초로 감소했습니다.</span></li>\n<li>7레벨에서 옮겨졌습니다.\n<ul>\n<li>새로운 기능:\n<ul>\n<li>뜯어먹기로 적 영웅을 공격하면 5초에 걸쳐 최대 생명력과 마나의 10%를 추가로 회복하고 생명력 재생량이 1 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 짜깁기 (지속 효과)</strong>\n<ul>\n<li>생명력 재생 효과 및 받는 치유량이 15% 증가합니다.</li>\n<li>주위에서 적 돌격병이 죽을 때마다 생명력을 30 회복합니다. 적 영웅을 처치하면 생명력을 300 회복합니다.\n<ul>\n<li><span class=\"pn-new\">적 영웅을 처치했을 때의 치유량이 300에서 240으로 감소했습니다.</span></li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>회복 증폭 (지속 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>치유의 가스 (고유 능력)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>부패한 땅 (W)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성 – 놀자! (W)</strong>\n<ul>\n<li>지면 강타가 적중한 적 영웅 하나당 다른 일반 기술의 재사용 대기시간이 0.5초 감소합니다. 안쪽 범위에 적중하면 2초 감소합니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성 – 썩둑 썩둑 (W)</strong>\n<ul>\n<li>지면 강타의 안쪽 범위에 적 영웅이 적중하면 공격 속도가 4초 동안 50% 증가합니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 톱니 갈고리 (Q)</strong>\n<ul>\n<li>갈고리가 적 영웅에게 적중하면 대상의 최대 생명력의 5%만큼 추가 피해를 주고 갈고리의 재사용 대기시간이 4초 감소합니다.\n<ul>\n<li><span class=\"pn-new\">재사용 대기시간 감소량이 4초에서 3초로 감소했습니다.</span></li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>7레벨</strong></span>\n<ul>\n<li>마지막 한 입 (E)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성 - 역병 (고유 능력)</strong>\n<ul>\n<li>유독 가스로 준 피해의 33%만큼 생명력을 회복합니다. 사용하면 유독 가스를 주위 적들에게 방출합니다. 적중당한 적 영웅은 받는 치유량이 5초 동안 20% 감소합니다. 재사용 대기시간은 40초입니다.</li>\n</ul>\n</li>\n<li>시체먹기 (지속 효과)\n<ul>\n<li>20레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>적 영웅에게 일반 공격을 하거나 지면 강타의 안쪽 범위에 적 영웅이 적중할 때마다 최대 생명력의 2%를 회복합니다.\n<ul>\n<li><span class=\"pn-new\">치유량이 최대 생명력의 2%에서 1.75%로 감소했습니다.</span></li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>고기 다지기 (지속 효과)\n<ul>\n<li>새로운 기능:\n<ul>\n<li>일반 공격이 적을 2.5초 동안 25% 느려지게 하고, 지진 강타 안쪽 범위의 감속 효과의 지속 시간을 갱신시킵니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>13레벨</strong></span>\n<ul>\n<li>벼룩투성이 (지속 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>지면 박살 (W)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>소화불량 (E)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성 – 유독성 가르기 (W)</strong>\n<ul>\n<li>지면 강타가 적들에게 유독 가스를 적용하고 적중당한 적 영웅의 방어력을 4초 동안 10 감소시킵니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성 – 소화액 (E)</strong>\n<ul>\n<li>뜯어먹기가 적 영웅의 공격력을 4초 동안 40% 감소시킵니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성 – 불타는 가스 (지속 효과)</strong>\n<ul>\n<li>주위 적들에게 초당 16의 피해를 줍니다. 갈고리가 적 영웅에게 적중하면 불타는 가스의 공격력이 4초 동안 150% 증가합니다.\n<ul>\n<li><span class=\"pn-new\">초당 공격력이 16에서 15로 감소했습니다.</span></li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>16레벨</strong></span>\n<ul>\n<li>분쇄 (W)\n<ul>\n<li>새로운 기능:\n<ul>\n<li>지면 강타에 적중당한 모든 적이 1초 동안 75% 느려집니다.\n<ul>\n<li><span class=\"pn-new\">감속 효과의 지속 시간이 1초에서 0.75초로 감소했습니다.</span></li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>꼬치구이 (Q)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>맹독 가스 (지속 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>낚시 갈고리 (Q)\n<ul>\n<li>추가 사거리가 40%에서 50%로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성 - 고기 갈고리 (Q)</strong>\n<ul>\n<li>갈고리가 적 영웅에게 적중하면 4초에 걸쳐 최대 생명력의 16%를 회복합니다. 이후 4초 동안 갈고리가 적중한 적에게 일반 공격을 하면 치유 효과의 지속 시간이 갱신됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>20레벨</strong></span>\n<ul>\n<li><strong>새로운 특성 – 한 점 더 (E)</strong>\n<ul>\n<li>뜯어먹기의 충전 횟수가 1회 증가합니다. 뜯어먹기를 적 영웅에게 사용하면 궁극기의 재사용 대기시간이 5초 감소합니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성 – 휘청이는 괴물 (사용 효과)</strong>\n<ul>\n<li>지속효과: 이동 속도가 100% 미만으로 감소하지 않습니다.</li>\n<li>사용하면 방어력이 4초 동안 50 증가합니다. 재사용 대기시간은 60초입니다.  </li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+   "heroes": [
+    {
+     "name": "누더기",
+     "heroId": "Stitches",
+     "heroIds": [
+      "Stitches"
+     ],
+     "changes": [
+      {
+       "name": "갈고리",
+       "key": "Q",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "사거리가 12.5에서 11로 감소했습니다.",
+         "html": "사거리가 12.5에서 11로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "지면 강타",
+       "key": "W",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "시전 시간이 0.25초에서 0.313초로 증가했습니다.",
+         "html": "시전 시간이 0.25초에서 0.313초로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "재사용 대기시간이 6초에서 7초로 증가했습니다.",
+         "html": "<span class=\"pn-new\">재사용 대기시간이 6초에서 7초로 증가했습니다.</span>",
+         "added": true
+        },
+        {
+         "text": "사거리가 8에서 9.5로 증가했습니다.",
+         "html": "사거리가 8에서 9.5로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "마나 소모량이 30에서 35로 증가했습니다.",
+         "html": "<span class=\"pn-new\">마나 소모량이 30에서 35로 증가했습니다.</span>",
+         "added": true
+        }
+       ]
+      },
+      {
+       "name": "추가된 기능",
+       "key": null,
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "안쪽 범위 내의 적들에게는 40%의 추가 피해를 주고 1.5초 동안 40% 느려지게 합니다.",
+         "html": "안쪽 범위 내의 적들에게는 40%의 추가 피해를 주고 1.5초 동안 40% 느려지게 합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "뜯어먹기",
+       "key": "E",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "기술의 효과가 기술이 끝날 대가 아닌 시작될 때 발동합니다.",
+         "html": "기술의 효과가 기술이 끝날 대가 아닌 시작될 때 발동합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "잡아먹기",
+       "key": "R",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 60초에서 70초로 증가했습니다.",
+         "html": "<span class=\"pn-new\">재사용 대기시간이 60초에서 70초로 증가했습니다.</span>",
+         "added": true
+        }
+       ]
+      },
+      {
+       "name": "썩은 쓸개즙",
+       "key": "R",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "재사용 대기시간에 60초에서 75초로 증가했습니다.",
+         "html": "<span class=\"pn-new\">재사용 대기시간에 60초에서 75초로 증가했습니다.</span>",
+         "added": true
+        }
+       ]
+      },
+      {
+       "name": "유독 식칼",
+       "key": "지속 효과",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": []
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "일반 공격이 유독 가스를 방출하며 주위의 적을 중독시켜 3초에 걸쳐 45의 피해를 줍니다. 유독 가스가 다시 적용되면 지속 시간이 증가하여 최대 10초까지 증가합니다.",
+         "html": "일반 공격이 유독 가스를 방출하며 주위의 적을 중독시켜 3초에 걸쳐 45의 피해를 줍니다. 유독 가스가 다시 적용되면 지속 시간이 증가하여 최대 10초까지 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "씹어먹기",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "마법 감쇠",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "지면 격파",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "끝없는 허기",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": []
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "퀘스트: 재생의 구슬을 획득할 때마다 최대 생명력이 30 증가합니다.",
+         "html": "퀘스트: 재생의 구슬을 획득할 때마다 최대 생명력이 30 증가합니다.",
+         "added": false
+        },
+        {
+         "text": "재생의 구슬을 15개 획득할 때마다 이동 속도가 영구히 5% 증가하여 최대 20% 증가합니다.",
+         "html": "재생의 구슬을 15개 획득할 때마다 이동 속도가 영구히 5% 증가하여 최대 20% 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "음미 (E)",
+         "html": "음미 (E)",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "주기적인 치유 효과의 지속 시간이 5초에서 4초로 감소했습니다.",
+         "html": "<span class=\"pn-new\">주기적인 치유 효과의 지속 시간이 5초에서 4초로 감소했습니다.</span>",
+         "added": true
+        }
+       ]
+      },
+      {
+       "name": "7레벨에서 옮겨졌습니다.",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": []
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "뜯어먹기로 적 영웅을 공격하면 5초에 걸쳐 최대 생명력과 마나의 10%를 추가로 회복하고 생명력 재생량이 1 증가합니다.",
+         "html": "뜯어먹기로 적 영웅을 공격하면 5초에 걸쳐 최대 생명력과 마나의 10%를 추가로 회복하고 생명력 재생량이 1 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 특성: 짜깁기",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "생명력 재생 효과 및 받는 치유량이 15% 증가합니다.",
+         "html": "생명력 재생 효과 및 받는 치유량이 15% 증가합니다.",
+         "added": false
+        },
+        {
+         "text": "주위에서 적 돌격병이 죽을 때마다 생명력을 30 회복합니다. 적 영웅을 처치하면 생명력을 300 회복합니다.",
+         "html": "주위에서 적 돌격병이 죽을 때마다 생명력을 30 회복합니다. 적 영웅을 처치하면 생명력을 300 회복합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "회복 증폭",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "치유의 가스",
+       "key": "고유 능력",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "부패한 땅",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 특성 – 놀자!",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "지면 강타가 적중한 적 영웅 하나당 다른 일반 기술의 재사용 대기시간이 0.5초 감소합니다. 안쪽 범위에 적중하면 2초 감소합니다.",
+         "html": "지면 강타가 적중한 적 영웅 하나당 다른 일반 기술의 재사용 대기시간이 0.5초 감소합니다. 안쪽 범위에 적중하면 2초 감소합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 특성 – 썩둑 썩둑",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "지면 강타의 안쪽 범위에 적 영웅이 적중하면 공격 속도가 4초 동안 50% 증가합니다.",
+         "html": "지면 강타의 안쪽 범위에 적 영웅이 적중하면 공격 속도가 4초 동안 50% 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 특성: 톱니 갈고리",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "갈고리가 적 영웅에게 적중하면 대상의 최대 생명력의 5%만큼 추가 피해를 주고 갈고리의 재사용 대기시간이 4초 감소합니다.",
+         "html": "갈고리가 적 영웅에게 적중하면 대상의 최대 생명력의 5%만큼 추가 피해를 주고 갈고리의 재사용 대기시간이 4초 감소합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "마지막 한 입",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 특성 - 역병",
+       "key": "고유 능력",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "유독 가스로 준 피해의 33%만큼 생명력을 회복합니다. 사용하면 유독 가스를 주위 적들에게 방출합니다. 적중당한 적 영웅은 받는 치유량이 5초 동안 20% 감소합니다. 재사용 대기시간은 40초입니다.",
+         "html": "유독 가스로 준 피해의 33%만큼 생명력을 회복합니다. 사용하면 유독 가스를 주위 적들에게 방출합니다. 적중당한 적 영웅은 받는 치유량이 5초 동안 20% 감소합니다. 재사용 대기시간은 40초입니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "시체먹기",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "20레벨에서 옮겨졌습니다.",
+         "html": "20레벨에서 옮겨졌습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "적 영웅에게 일반 공격을 하거나 지면 강타의 안쪽 범위에 적 영웅이 적중할 때마다 최대 생명력의 2%를 회복합니다.",
+         "html": "적 영웅에게 일반 공격을 하거나 지면 강타의 안쪽 범위에 적 영웅이 적중할 때마다 최대 생명력의 2%를 회복합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "고기 다지기",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": []
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "일반 공격이 적을 2.5초 동안 25% 느려지게 하고, 지진 강타 안쪽 범위의 감속 효과의 지속 시간을 갱신시킵니다.",
+         "html": "일반 공격이 적을 2.5초 동안 25% 느려지게 하고, 지진 강타 안쪽 범위의 감속 효과의 지속 시간을 갱신시킵니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "벼룩투성이",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "지면 박살",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "소화불량",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 특성 – 유독성 가르기",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "지면 강타가 적들에게 유독 가스를 적용하고 적중당한 적 영웅의 방어력을 4초 동안 10 감소시킵니다.",
+         "html": "지면 강타가 적들에게 유독 가스를 적용하고 적중당한 적 영웅의 방어력을 4초 동안 10 감소시킵니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 특성 – 소화액",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "뜯어먹기가 적 영웅의 공격력을 4초 동안 40% 감소시킵니다.",
+         "html": "뜯어먹기가 적 영웅의 공격력을 4초 동안 40% 감소시킵니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 특성 – 불타는 가스",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "주위 적들에게 초당 16의 피해를 줍니다. 갈고리가 적 영웅에게 적중하면 불타는 가스의 공격력이 4초 동안 150% 증가합니다.",
+         "html": "주위 적들에게 초당 16의 피해를 줍니다. 갈고리가 적 영웅에게 적중하면 불타는 가스의 공격력이 4초 동안 150% 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "분쇄",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": []
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": []
+      },
+      {
+       "name": "지면 강타에 적중당한 모든 적이 1초 동안 75% 느려집니다.",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "감속 효과의 지속 시간이 1초에서 0.75초로 감소했습니다.",
+         "html": "<span class=\"pn-new\">감속 효과의 지속 시간이 1초에서 0.75초로 감소했습니다.</span>",
+         "added": true
+        }
+       ]
+      },
+      {
+       "name": "꼬치구이",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "맹독 가스",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "낚시 갈고리",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "추가 사거리가 40%에서 50%로 증가했습니다.",
+         "html": "추가 사거리가 40%에서 50%로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 특성 - 고기 갈고리",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "갈고리가 적 영웅에게 적중하면 4초에 걸쳐 최대 생명력의 16%를 회복합니다. 이후 4초 동안 갈고리가 적중한 적에게 일반 공격을 하면 치유 효과의 지속 시간이 갱신됩니다.",
+         "html": "갈고리가 적 영웅에게 적중하면 4초에 걸쳐 최대 생명력의 16%를 회복합니다. 이후 4초 동안 갈고리가 적중한 적에게 일반 공격을 하면 치유 효과의 지속 시간이 갱신됩니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 특성 – 한 점 더",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "뜯어먹기의 충전 횟수가 1회 증가합니다. 뜯어먹기를 적 영웅에게 사용하면 궁극기의 재사용 대기시간이 5초 감소합니다.",
+         "html": "뜯어먹기의 충전 횟수가 1회 증가합니다. 뜯어먹기를 적 영웅에게 사용하면 궁극기의 재사용 대기시간이 5초 감소합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 특성 – 휘청이는 괴물",
+       "key": "사용 효과",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "지속효과: 이동 속도가 100% 미만으로 감소하지 않습니다.",
+         "html": "지속효과: 이동 속도가 100% 미만으로 감소하지 않습니다.",
+         "added": false
+        },
+        {
+         "text": "사용하면 방어력이 4초 동안 50 증가합니다. 재사용 대기시간은 60초입니다.",
+         "html": "사용하면 방어력이 4초 동안 50 증가합니다. 재사용 대기시간은 60초입니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<img alt=\"Divider_Hero_Stitches_Crop.png\" data-id=\"17042298\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/ZEOLHHWJ9DIF1417483335223.png\"/>\n<p><span class=\"pn-h\"><strong>기술</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>갈고리 (Q)</strong></span>\n<ul>\n<li>사거리가 12.5에서 11로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>지면 강타 (W)</strong></span>\n<ul>\n<li>시전 시간이 0.25초에서 0.313초로 증가했습니다.</li>\n<li><span class=\"pn-new\">재사용 대기시간이 6초에서 7초로 증가했습니다.</span></li>\n<li>사거리가 8에서 9.5로 증가했습니다.</li>\n<li><span class=\"pn-new\">마나 소모량이 30에서 35로 증가했습니다.</span></li>\n<li>추가된 기능:\n<ul>\n<li>안쪽 범위 내의 적들에게는 40%의 추가 피해를 주고 1.5초 동안 40% 느려지게 합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>뜯어먹기 (E)</strong></span>\n<ul>\n<li>기술의 효과가 기술이 끝날 대가 아닌 시작될 때 발동합니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-new\"><strong>잡아먹기 (R)</strong></span>\n<ul>\n<li><span class=\"pn-new\">재사용 대기시간이 60초에서 70초로 증가했습니다.</span></li>\n</ul>\n</li>\n<li><span class=\"pn-new\"><strong>썩은 쓸개즙 (R)</strong></span>\n<ul>\n<li><span class=\"pn-new\">재사용 대기시간에 60초에서 75초로 증가했습니다.</span></li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>유독 식칼 (지속 효과)</strong></span>\n<ul>\n<li>새로운 기능:\n<ul>\n<li>일반 공격이 유독 가스를 방출하며 주위의 적을 중독시켜 3초에 걸쳐 45의 피해를 줍니다. 유독 가스가 다시 적용되면 지속 시간이 증가하여 최대 10초까지 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<p><span class=\"pn-h\"><strong>특성</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>씹어먹기 (E)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>마법 감쇠 (지속 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>지면 격파 (W)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>끝없는 허기 (지속 효과)\n<ul>\n<li>새로운 기능:\n<ul>\n<li>퀘스트: 재생의 구슬을 획득할 때마다 최대 생명력이 30 증가합니다.</li>\n<li>재생의 구슬을 15개 획득할 때마다 이동 속도가 영구히 5% 증가하여 최대 20% 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>음미 (E)</li>\n<li><span class=\"pn-new\">주기적인 치유 효과의 지속 시간이 5초에서 4초로 감소했습니다.</span></li>\n<li>7레벨에서 옮겨졌습니다.\n<ul>\n<li>새로운 기능:\n<ul>\n<li>뜯어먹기로 적 영웅을 공격하면 5초에 걸쳐 최대 생명력과 마나의 10%를 추가로 회복하고 생명력 재생량이 1 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 짜깁기 (지속 효과)</strong>\n<ul>\n<li>생명력 재생 효과 및 받는 치유량이 15% 증가합니다.</li>\n<li>주위에서 적 돌격병이 죽을 때마다 생명력을 30 회복합니다. 적 영웅을 처치하면 생명력을 300 회복합니다.\n<ul>\n<li><span class=\"pn-new\">적 영웅을 처치했을 때의 치유량이 300에서 240으로 감소했습니다.</span></li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>회복 증폭 (지속 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>치유의 가스 (고유 능력)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>부패한 땅 (W)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성 – 놀자! (W)</strong>\n<ul>\n<li>지면 강타가 적중한 적 영웅 하나당 다른 일반 기술의 재사용 대기시간이 0.5초 감소합니다. 안쪽 범위에 적중하면 2초 감소합니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성 – 썩둑 썩둑 (W)</strong>\n<ul>\n<li>지면 강타의 안쪽 범위에 적 영웅이 적중하면 공격 속도가 4초 동안 50% 증가합니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 톱니 갈고리 (Q)</strong>\n<ul>\n<li>갈고리가 적 영웅에게 적중하면 대상의 최대 생명력의 5%만큼 추가 피해를 주고 갈고리의 재사용 대기시간이 4초 감소합니다.\n<ul>\n<li><span class=\"pn-new\">재사용 대기시간 감소량이 4초에서 3초로 감소했습니다.</span></li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>7레벨</strong></span>\n<ul>\n<li>마지막 한 입 (E)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성 - 역병 (고유 능력)</strong>\n<ul>\n<li>유독 가스로 준 피해의 33%만큼 생명력을 회복합니다. 사용하면 유독 가스를 주위 적들에게 방출합니다. 적중당한 적 영웅은 받는 치유량이 5초 동안 20% 감소합니다. 재사용 대기시간은 40초입니다.</li>\n</ul>\n</li>\n<li>시체먹기 (지속 효과)\n<ul>\n<li>20레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>적 영웅에게 일반 공격을 하거나 지면 강타의 안쪽 범위에 적 영웅이 적중할 때마다 최대 생명력의 2%를 회복합니다.\n<ul>\n<li><span class=\"pn-new\">치유량이 최대 생명력의 2%에서 1.75%로 감소했습니다.</span></li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>고기 다지기 (지속 효과)\n<ul>\n<li>새로운 기능:\n<ul>\n<li>일반 공격이 적을 2.5초 동안 25% 느려지게 하고, 지진 강타 안쪽 범위의 감속 효과의 지속 시간을 갱신시킵니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>13레벨</strong></span>\n<ul>\n<li>벼룩투성이 (지속 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>지면 박살 (W)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>소화불량 (E)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성 – 유독성 가르기 (W)</strong>\n<ul>\n<li>지면 강타가 적들에게 유독 가스를 적용하고 적중당한 적 영웅의 방어력을 4초 동안 10 감소시킵니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성 – 소화액 (E)</strong>\n<ul>\n<li>뜯어먹기가 적 영웅의 공격력을 4초 동안 40% 감소시킵니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성 – 불타는 가스 (지속 효과)</strong>\n<ul>\n<li>주위 적들에게 초당 16의 피해를 줍니다. 갈고리가 적 영웅에게 적중하면 불타는 가스의 공격력이 4초 동안 150% 증가합니다.\n<ul>\n<li><span class=\"pn-new\">초당 공격력이 16에서 15로 감소했습니다.</span></li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>16레벨</strong></span>\n<ul>\n<li>분쇄 (W)\n<ul>\n<li>새로운 기능:\n<ul>\n<li>지면 강타에 적중당한 모든 적이 1초 동안 75% 느려집니다.\n<ul>\n<li><span class=\"pn-new\">감속 효과의 지속 시간이 1초에서 0.75초로 감소했습니다.</span></li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>꼬치구이 (Q)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>맹독 가스 (지속 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>낚시 갈고리 (Q)\n<ul>\n<li>추가 사거리가 40%에서 50%로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성 - 고기 갈고리 (Q)</strong>\n<ul>\n<li>갈고리가 적 영웅에게 적중하면 4초에 걸쳐 최대 생명력의 16%를 회복합니다. 이후 4초 동안 갈고리가 적중한 적에게 일반 공격을 하면 치유 효과의 지속 시간이 갱신됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>20레벨</strong></span>\n<ul>\n<li><strong>새로운 특성 – 한 점 더 (E)</strong>\n<ul>\n<li>뜯어먹기의 충전 횟수가 1회 증가합니다. 뜯어먹기를 적 영웅에게 사용하면 궁극기의 재사용 대기시간이 5초 감소합니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성 – 휘청이는 괴물 (사용 효과)</strong>\n<ul>\n<li>지속효과: 이동 속도가 100% 미만으로 감소하지 않습니다.</li>\n<li>사용하면 방어력이 4초 동안 50 증가합니다. 재사용 대기시간은 60초입니다.  </li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    }
+   ]
+  },
+  {
+   "name": "수집품",
+   "key": "collection",
+   "html": "<p><strong>여러 시즌별 수집품들이 돌아왔습니다. 이 수집품들은 구입 및 전리품 상자로 획득할 수 있습니다!</strong></p>\n<p><span class=\"pn-name\"><strong>새로운 묶음 상품</strong></span></p>\n<ul>\n<li>다음 묶음 상품을 한정된 기간 동안 구매하실 수 있습니다!\n<ul>\n<li>장난감 영웅 묶음 상품</li>\n<li>곰돌이 누더기 스킨 팩</li>\n<li>우주 특공대 발리라 스킨 팩</li>\n<li>데하카사우루스 스킨 팩</li>\n</ul>\n</li>\n</ul>\n<p><span class=\"pn-name\"><strong>새로운 스킨 (기간 한정!)</strong></span></p>\n<ul>\n<li><strong>누더기</strong>\n<ul>\n<li>곰돌이 누더기</li>\n<li>부드러운 곰돌이 누더기</li>\n<li>달콤한 곰돌이 누더기</li>\n</ul>\n</li>\n<li><strong>데하카</strong>\n<ul>\n<li>데하카사우루스</li>\n<li>금속공룡 데하카사우루스</li>\n<li>놀이시간 데하카사우루스</li>\n</ul>\n</li>\n<li><strong>발리라</strong>\n<ul>\n<li>우주 특공대 발리라</li>\n<li>사이오닉 우주 특공대 발리라</li>\n<li>흑화 특공대 발리라</li>\n</ul>\n</li>\n<li><strong>실바나스</strong>\n<ul>\n<li>박하맛 달콤한 요정 실바나스</li>\n</ul>\n</li>\n</ul>\n<p><span class=\"pn-name\"><strong>새로운 탈것 (기간 한정!)</strong></span></p>\n<ul>\n<li><strong>우주 사자</strong>\n<ul>\n<li>사이오닉 사자</li>\n<li>흑화 사자</li>\n</ul>\n</li>\n<li><strong>인형 유니콘</strong>\n<ul>\n<li>인형 좀비콘</li>\n<li>예쁜 인형 유니콘</li>\n<li>솜털 인형 유니콘</li>\n<li>달콤한 인형 유니콘</li>\n</ul>\n</li>\n</ul>\n<p><span class=\"pn-name\"><strong>새로운 초상화, 스프레이, 이모티콘</strong></span></p>\n<ul>\n<li>여러 가지 이모티콘 팩과 초상화가 게임에 추가되었습니다.</li>\n</ul>",
+   "items": [
+    {
+     "name": "누더기",
+     "heroId": "Stitches",
+     "heroIds": [
+      "Stitches"
+     ],
+     "under": null,
+     "html": "<strong>누더기</strong>\n<ul>\n<li>곰돌이 누더기</li>\n<li>부드러운 곰돌이 누더기</li>\n<li>달콤한 곰돌이 누더기</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "곰돌이 누더기",
+         "html": "곰돌이 누더기",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "부드러운 곰돌이 누더기",
+         "html": "부드러운 곰돌이 누더기",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "달콤한 곰돌이 누더기",
+         "html": "달콤한 곰돌이 누더기",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "데하카",
+     "heroId": "Dehaka",
+     "heroIds": [
+      "Dehaka"
+     ],
+     "under": null,
+     "html": "<strong>데하카</strong>\n<ul>\n<li>데하카사우루스</li>\n<li>금속공룡 데하카사우루스</li>\n<li>놀이시간 데하카사우루스</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "데하카사우루스",
+         "html": "데하카사우루스",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "금속공룡 데하카사우루스",
+         "html": "금속공룡 데하카사우루스",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "놀이시간 데하카사우루스",
+         "html": "놀이시간 데하카사우루스",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "발리라",
+     "heroId": "Valeera",
+     "heroIds": [
+      "Valeera"
+     ],
+     "under": null,
+     "html": "<strong>발리라</strong>\n<ul>\n<li>우주 특공대 발리라</li>\n<li>사이오닉 우주 특공대 발리라</li>\n<li>흑화 특공대 발리라</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "우주 특공대 발리라",
+         "html": "우주 특공대 발리라",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "사이오닉 우주 특공대 발리라",
+         "html": "사이오닉 우주 특공대 발리라",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "흑화 특공대 발리라",
+         "html": "흑화 특공대 발리라",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "실바나스",
+     "heroId": "Sylvanas",
+     "heroIds": [
+      "Sylvanas"
+     ],
+     "under": null,
+     "html": "<strong>실바나스</strong>\n<ul>\n<li>박하맛 달콤한 요정 실바나스</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "박하맛 달콤한 요정 실바나스",
+         "html": "박하맛 달콤한 요정 실바나스",
+         "added": false
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "버그 수정",
+   "key": "bugs",
+   "html": "<p><span class=\"pn-name\"><strong>일반</strong></span></p>\n<ul>\n<li>드래그 스크롤을 이용할 때 카메라가 갑작스럽게 이동하거나 커서가 초기화되던 문제를 수정했습니다.</li>\n<li>인공지능이 다방면으로 개선되었습니다.</li>\n</ul>\n<p><span class=\"pn-name\"><strong>영웅, 기술, 특성</strong></span></p>\n<ul>\n<li><strong>빛나래:</strong> 비전 섬광이 여러 대상에게 적중했을 때 끈끈한 섬광 특성이 발동하지 않을 수 있던 문제를 수정했습니다.</li>\n<li><strong>빛나래:</strong> 비전 섬광이 여러 대상에게 적중했을 때 쉿! 특성이 발동하지 않을 수 있던 문제를 수정했습니다.</li>\n<li><strong>크로미:</strong> 적에게 용의 숨결의 범위가 기술을 사용한 후에 보이도록 수정했습니다.</li>\n<li><strong>데커드:</strong> 귀환석을 사용할 때 데커드의 차원문이 전장의 안개를 꿰뚫고 보이던 문제를 수정했습니다.</li>\n<li><strong>레오릭:</strong> 절망의 손아귀의 피해와 치유 효과가 시간 정지 효과 중에도 지속되던 문제를 수정했습니다.</li>\n<li><strong>루나라:</strong> 죽을 때 대사가 출력되지 않던 문제를 수정했습니다.</li>\n<li><span class=\"pn-new\"><strong>누더기:</strong> 지면 강타가 대상 지역과 적중한 대상들을 드러냅니다.</span></li>\n<li>\n<p><span class=\"pn-new\"><strong>누더기: </strong>톱니 갈고리 특성을 선택하고 도움의 손길을 사용했을 때 아군에게 피해를 주던 문제를 수정했습니다.</span></p>\n</li>\n<li><strong>스투코프:</strong> 육중한 밀치기가 대상으로부터 독성 고름을 제거하던 문제를 수정했습니다.</li>\n</ul>\n<p><span class=\"pn-name\"><strong>사용자 인터페이스</strong></span></p>\n<ul>\n<li>게임의 여러 부분에 걸쳐 오타와 설명 오류가 수정되었습니다.</li>\n<li>영웅 모델이 대전 검색 화면에서 준비 완료를 누르지 못하게 막던 문제를 수정했습니다.</li>\n<li>파티 중에 세 자리수 이상의 그랜드 마스터 순위가 초상화 바깥으로 표시되던 문제를 수정했습니다.</li>\n<li><strong>켈투자드: </strong>혹한의 쐐기의 빠른 시전 설정을 추가했습니다.</li>\n<li><strong>줄진: </strong>아마니의 분노의 빠른 시전 설정을 추가했습니다.</li>\n</ul>\n<ul>\n</ul>\n<p><strong><a href=\"https://kr.forums.blizzard.com/en/heroes/\" target=\"_blank\">여기를 클릭하면 히어로즈 오브 더 스톰 공식 토론장에서 다른 플레이어들과 이 게시글에 대한 의견을 나눌 수 있습니다</a>.</strong></p>\n<p><img alt=\"\" class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/g6/G6G0N80EOC941426801305139.png\"/></p>\n<p><img alt=\"InvisibleDividerLine_800x50.png\" class=\"no-border; no-shadow\" data-id=\"14509591\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/6VA2831Q81IU1403137406234.png\"/></p>",
+   "items": [
+    {
+     "name": "빛나래",
+     "heroId": "FaerieDragon",
+     "heroIds": [
+      "FaerieDragon"
+     ],
+     "under": null,
+     "html": "<strong>빛나래:</strong> 비전 섬광이 여러 대상에게 적중했을 때 끈끈한 섬광 특성이 발동하지 않을 수 있던 문제를 수정했습니다.<strong>빛나래:</strong> 비전 섬광이 여러 대상에게 적중했을 때 쉿! 특성이 발동하지 않을 수 있던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "빛나래: 비전 섬광이 여러 대상에게 적중했을 때 끈끈한 섬광 특성이 발동하지 않을 수 있던 문제를 수정했습니다.",
+         "html": "<strong>빛나래:</strong> 비전 섬광이 여러 대상에게 적중했을 때 끈끈한 섬광 특성이 발동하지 않을 수 있던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "빛나래: 비전 섬광이 여러 대상에게 적중했을 때 쉿! 특성이 발동하지 않을 수 있던 문제를 수정했습니다.",
+         "html": "<strong>빛나래:</strong> 비전 섬광이 여러 대상에게 적중했을 때 쉿! 특성이 발동하지 않을 수 있던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "크로미",
+     "heroId": "Chromie",
+     "heroIds": [
+      "Chromie"
+     ],
+     "under": null,
+     "html": "<strong>크로미:</strong> 적에게 용의 숨결의 범위가 기술을 사용한 후에 보이도록 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "크로미: 적에게 용의 숨결의 범위가 기술을 사용한 후에 보이도록 수정했습니다.",
+         "html": "<strong>크로미:</strong> 적에게 용의 숨결의 범위가 기술을 사용한 후에 보이도록 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "데커드",
+     "heroId": "Deckard",
+     "heroIds": [
+      "Deckard"
+     ],
+     "under": null,
+     "html": "<strong>데커드:</strong> 귀환석을 사용할 때 데커드의 차원문이 전장의 안개를 꿰뚫고 보이던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "데커드: 귀환석을 사용할 때 데커드의 차원문이 전장의 안개를 꿰뚫고 보이던 문제를 수정했습니다.",
+         "html": "<strong>데커드:</strong> 귀환석을 사용할 때 데커드의 차원문이 전장의 안개를 꿰뚫고 보이던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "레오릭",
+     "heroId": "Leoric",
+     "heroIds": [
+      "Leoric"
+     ],
+     "under": null,
+     "html": "<strong>레오릭:</strong> 절망의 손아귀의 피해와 치유 효과가 시간 정지 효과 중에도 지속되던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "레오릭: 절망의 손아귀의 피해와 치유 효과가 시간 정지 효과 중에도 지속되던 문제를 수정했습니다.",
+         "html": "<strong>레오릭:</strong> 절망의 손아귀의 피해와 치유 효과가 시간 정지 효과 중에도 지속되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "루나라",
+     "heroId": "Dryad",
+     "heroIds": [
+      "Dryad"
+     ],
+     "under": null,
+     "html": "<strong>루나라:</strong> 죽을 때 대사가 출력되지 않던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "루나라: 죽을 때 대사가 출력되지 않던 문제를 수정했습니다.",
+         "html": "<strong>루나라:</strong> 죽을 때 대사가 출력되지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "누더기",
+     "heroId": "Stitches",
+     "heroIds": [
+      "Stitches"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-new\"><strong>누더기:</strong> 지면 강타가 대상 지역과 적중한 대상들을 드러냅니다.</span><p><span class=\"pn-new\"><strong>누더기: </strong>톱니 갈고리 특성을 선택하고 도움의 손길을 사용했을 때 아군에게 피해를 주던 문제를 수정했습니다.</span></p>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "누더기: 지면 강타가 대상 지역과 적중한 대상들을 드러냅니다.",
+         "html": "<span class=\"pn-new\"><strong>누더기:</strong> 지면 강타가 대상 지역과 적중한 대상들을 드러냅니다.</span>",
+         "added": true
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "누더기: 톱니 갈고리 특성을 선택하고 도움의 손길을 사용했을 때 아군에게 피해를 주던 문제를 수정했습니다.",
+         "html": "<p><span class=\"pn-new\"><strong>누더기: </strong>톱니 갈고리 특성을 선택하고 도움의 손길을 사용했을 때 아군에게 피해를 주던 문제를 수정했습니다.</span></p>",
+         "added": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "스투코프",
+     "heroId": "Stukov",
+     "heroIds": [
+      "Stukov"
+     ],
+     "under": null,
+     "html": "<strong>스투코프:</strong> 육중한 밀치기가 대상으로부터 독성 고름을 제거하던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "스투코프: 육중한 밀치기가 대상으로부터 독성 고름을 제거하던 문제를 수정했습니다.",
+         "html": "<strong>스투코프:</strong> 육중한 밀치기가 대상으로부터 독성 고름을 제거하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "켈투자드",
+     "heroId": "KelThuzad",
+     "heroIds": [
+      "KelThuzad"
+     ],
+     "under": null,
+     "html": "<strong>켈투자드: </strong>혹한의 쐐기의 빠른 시전 설정을 추가했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "켈투자드: 혹한의 쐐기의 빠른 시전 설정을 추가했습니다.",
+         "html": "<strong>켈투자드: </strong>혹한의 쐐기의 빠른 시전 설정을 추가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "줄진",
+     "heroId": "Zuljin",
+     "heroIds": [
+      "Zuljin"
+     ],
+     "under": null,
+     "html": "<strong>줄진: </strong>아마니의 분노의 빠른 시전 설정을 추가했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "줄진: 아마니의 분노의 빠른 시전 설정을 추가했습니다.",
+         "html": "<strong>줄진: </strong>아마니의 분노의 빠른 시전 설정을 추가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "heroes": [
+  "Anubarak",
+  "Butcher",
+  "Chen",
+  "Chromie",
+  "Deckard",
+  "Dehaka",
+  "Diablo",
+  "Dryad",
+  "FaerieDragon",
+  "Fenix",
+  "KelThuzad",
+  "L90ETC",
+  "Leoric",
+  "Medic",
+  "Nova",
+  "Raynor",
+  "Rexxar",
+  "Stitches",
+  "Stukov",
+  "Sylvanas",
+  "Tassadar",
+  "Tinker",
+  "Tyrael",
+  "Uther",
+  "Valeera",
+  "Zuljin"
+ ],
+ "battlegrounds": [
+  "volskaya_foundry"
+ ],
+ "newsId": "22821338"
+}

@@ -1,0 +1,862 @@
+{
+ "date": "2023-09-20",
+ "kind": "patch",
+ "title": "히어로즈 오브 더 스톰 패치 노트 - 2023년 9월 20일",
+ "source": "https://news.blizzard.com/ko-kr/article/23999073/2023-9-20",
+ "published": "2023-09-20T18:00:00Z",
+ "sections": [
+  {
+   "name": "머리말",
+   "key": "intro",
+   "html": "<p>히어로즈 오브 더 스톰의 다음 패치가 출시되었습니다. 이번 패치에서는 커뮤니티에 보고된 여러 버그 수정에 중점을 두었습니다.</p>\n<p><strong>버그 수정</strong></p>\n<p><span class=\"pn-h\"><strong>영웅</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>아바투르</strong></span>\n<ul>\n<li>흉물에게 강제 이동 명령을 내릴 수 없던 문제를 수정했습니다.</li>\n<li>특정 특성을 선택한 길 잃은 바이킹을 복제할 경우 최종 진화물이 해당 특성을 갖던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>알렉스트라자</strong></span>\n<ul>\n<li>분노의 화염 특성 선택 시 용의 불씨로 불타고 있는 적을 공격했을 때 소모한 마나를 돌려받지 못하던 문제를 수정했습니다.</li>\n<li>용의 비늘 강화 효과가 유지되는 동안 특정 조건이 충족되면 지속 시간이 초기화되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>안두인</strong></span>\n<ul>\n<li>천상의 별로 아군 영웅의 체력을 완전히 회복할 경우 신앙이 깊은 자의 속도로 인한 재사용 대기시간 감소가 발동되지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>블레이즈</strong></span>\n<ul>\n<li>불지옥 신단 응징자의 공격 한 번에 벙커가 바로 파괴되던 문제를 수정했습니다.</li>\n<li>블레이즈가 기름을 직접 점화하지 않은 경우 점화된 기름 뿌리기에 어떠한 공격력 변화 효과도 적용되지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>초</strong></span>\n<ul>\n<li>쇄도의 주먹을 시전한 후 초의 공격 반경이 넓어지던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>크로미</strong></span>\n<ul>\n<li>특정 상황에서 시간의 굴레가 대상을 영구적으로 드러내던 문제를 수정했습니다.</li>\n<li>이제 크로미는 시간의 덫을 놓을 수 없는 곳에는 덫을 놓으려 하지 않습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>데스윙</strong></span>\n<ul>\n<li>파괴를 목도하라 특성이 영웅이 아닌 대상의 공격력도 감소시키던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>D.Va</strong></span>\n<ul>\n<li>부스터를 사용하는 중에 메카가 피해를 받아 D.Va가 탈출할 경우 자폭이 활성화되던 문제를 수정했습니다.</li>\n<li>자폭을 활성화한 직후 메카 호출을 사용하면 액랭이 제대로 적용되지 않던 문제를 수정했습니다.</li>\n<li>동력 전환 특성을 선택했을 때 방어 매트릭스가 밀어낼 수 없는 대상을 밀어내던 문제를 수정했습니다.</li>\n<li>동력 전환 특성을 선택했을 때 메카의 체력을 회복하는 동안 D.Va의 자가 치유량이 증가하지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>들창코</strong></span>\n<ul>\n<li>춤 명령을 사용했을 때 들창코의 이동 제한이 발생하지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>임페리우스</strong></span>\n<ul>\n<li>타오르는 갑옷의 피해가 일정하지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>리 리</strong></span>\n<ul>\n<li>위론의 축복이 운룡의 치유량을 감소시키던 문제를 수정했습니다.</li>\n<li>운무사가 리 리에게 주는 치유량이 잘못 적용되던 문제를 수정했습니다.</li>\n<li>위론의 축복, 운룡, 복수의 리 리 영웅들 사이의 상호 작용 문제를 수정했습니다.</li>\n<li>리 리의 운룡 치유량 점수 및 관련 텍스트가 잘못 표기되던 문제를 수정했습니다.</li>\n<li>리 리가 운룡을 자신에게 시전하지 않았을 때 위론의 축복의 치유량이 잘못 적용되던 문제를 수정했습니다.</li>\n<li>위론의 축복 특성이 없어도 리 리의 치유량이 증가하던 문제를 수정했습니다.</li>\n<li>풍룡 특성이 없어도 리 리의 이동 속도가 증가하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>말가니스</strong></span>\n<ul>\n<li>눈먼 공포를 사용하면 지옥 발톱의 재사용 대기시간과 마나 소모량이 변경되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>메이</strong></span>\n<ul>\n<li>스케이팅 특성이 인근 영웅이 아닌 대상에게 방어력 50 증가 효과를 주지 않던 문제를 수정했습니다.</li>\n<li>대왕 뭉치가 진창 눈뭉치로부터 50%의 추가 피해만 얻던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>오르피아</strong></span>\n<ul>\n<li>오르피아가 적 방향으로 조준하지 않아도 적에게 어둠의 왈츠를 사용할 수 있던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>사무로</strong></span>\n<ul>\n<li>사무로가 귀환석을 활성화한 직후 환영 복제에 환영 이동술을 사용할 수 있던 문제를 수정했습니다.</li>\n<li>환영 복제가 활성화된 상태에서 삼도류 특성을 선택하면 사무로의 비껴내기 특성 효과가 사라지던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>실바나스</strong></span>\n<ul>\n<li>부패의 사격의 투사체와 관련된 문제를 수정했습니다.</li>\n<li>검은 화살이 기본 공격으로 피해를 주기 전에 적용되면서, 검은 화살의 세 번째 중첩 공격에 공격력 25% 증가 효과가 부여되던 문제를 수정했습니다.</li>\n<li>잃어버린 영혼 특성의 중첩량을 확인하기 전에 기본 공격에 검은 화살이 적용되면서, 검은 화살의 세 번째 중첩 공격에 재사용 대기시간 감소 효과가 부여되던 문제를 수정했습니다.</li>\n<li>냉혹 특성의 중첩량을 확인하기 전에 기본 공격에 검은 화살이 적용되면서, 검은 화살의 세 번째 중첩 공격에 냉혹 효과가 활성화되던 문제를 수정했습니다.</li>\n<li>지독한 고통 특성의 중첩량을 확인하기 전에 기본 공격에 검은 화살이 적용되면서, 검은 화살의 세 번째 중첩 공격이 대상을 느려지게 만들고, 만약 느려질 수 있는 대상이 전 공격으로 인해 느려지지 않았다면 해당 공격에서 추가 피해를 주던 문제를 수정했습니다.</li>\n<li>피해를 주기 전에 냉혹 특성이 검은 화살에 적용되면서, 대상이 2회 중첩량을 획득한 상태일 경우 해당 대상에게 25%의 추가 피해를 주던 문제를 수정했습니다.</li>\n<li>피해를 주기 전에 부패의 사격이 검은 화살에 적용되면서(부패의 난사 특성 선택 시), 피해를 주기 전에 대상이 검은 화살 2회 중첩량을 획득한 상태일 경우 해당 대상에게 25%의 추가 피해를 주던 문제를 수정했습니다.</li>\n<li>피해를 주기 전에 유령의 파도가 검은 화살에 적용되면서(고름 상처 특성 선택 시), 피해를 주기 전에 대상이 검은 화살 3회 중첩량을 획득하지 않은 상태일 경우에도 해당 대상에게 25%의 추가 피해를 주던 문제를 수정했습니다.</li>\n<li>피해를 주기 전에 어둠의 비수의 피해가 깊어가는 어둠 퀘스트 진행도를 제공하여 공격력이 0.5% 증가하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>길 잃은 바이킹</strong></span>\n<ul>\n<li>바이킹의 습격에 강제 이동 명령을 내릴 수 없던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>타이커스</strong></span>\n<ul>\n<li>점수 화면에서 타이커스의 피해량에 알 수 없는 능력이 표시되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>티리엘</strong></span>\n<ul>\n<li>대천사의 분노가 영웅이 아닌 대상의 공격력을 감소시키던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>제라툴</strong></span>\n<ul>\n<li>네라짐의 힘으로 시전한 특이점 폭발이 일반 특이점 폭발처럼 발동되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><span class=\"pn-h\"><strong>탈것</strong></span></p>\n<ul>\n<li>울새알 숲 수호자 탈것을 사용할 수 없던 문제를 수정했습니다.</li>\n<li>귤빛 숲 수호자 탈것을 사용할 수 없던 문제를 수정했습니다.</li>\n<li>장난감 기차를 탄 동안에도 몇몇 능력을 사용할 수 있던 문제를 수정했습니다.</li>\n<li>탈것을 탄 동안에도 몇몇 능력을 사용할 수 있던 문제를 수정했습니다.</li>\n</ul>\n<p><span class=\"pn-h\"><strong>무작위 영웅 대전</strong></span></p>\n<ul>\n<li>모두가 같은 영웅을 선택해야 하는 확률이 5%에서 2%로 감소했습니다.</li>\n</ul>",
+   "items": [
+    {
+     "name": "아바투르",
+     "heroId": "Abathur",
+     "heroIds": [
+      "Abathur"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>아바투르</strong></span>\n<ul>\n<li>흉물에게 강제 이동 명령을 내릴 수 없던 문제를 수정했습니다.</li>\n<li>특정 특성을 선택한 길 잃은 바이킹을 복제할 경우 최종 진화물이 해당 특성을 갖던 문제를 수정했습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "흉물에게 강제 이동 명령을 내릴 수 없던 문제를 수정했습니다.",
+         "html": "흉물에게 강제 이동 명령을 내릴 수 없던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "특정 특성을 선택한 길 잃은 바이킹을 복제할 경우 최종 진화물이 해당 특성을 갖던 문제를 수정했습니다.",
+         "html": "특정 특성을 선택한 길 잃은 바이킹을 복제할 경우 최종 진화물이 해당 특성을 갖던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "알렉스트라자",
+     "heroId": "Alexstrasza",
+     "heroIds": [
+      "Alexstrasza"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>알렉스트라자</strong></span>\n<ul>\n<li>분노의 화염 특성 선택 시 용의 불씨로 불타고 있는 적을 공격했을 때 소모한 마나를 돌려받지 못하던 문제를 수정했습니다.</li>\n<li>용의 비늘 강화 효과가 유지되는 동안 특정 조건이 충족되면 지속 시간이 초기화되던 문제를 수정했습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "분노의 화염 특성 선택 시 용의 불씨로 불타고 있는 적을 공격했을 때 소모한 마나를 돌려받지 못하던 문제를 수정했습니다.",
+         "html": "분노의 화염 특성 선택 시 용의 불씨로 불타고 있는 적을 공격했을 때 소모한 마나를 돌려받지 못하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "용의 비늘 강화 효과가 유지되는 동안 특정 조건이 충족되면 지속 시간이 초기화되던 문제를 수정했습니다.",
+         "html": "용의 비늘 강화 효과가 유지되는 동안 특정 조건이 충족되면 지속 시간이 초기화되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "안두인",
+     "heroId": "Anduin",
+     "heroIds": [
+      "Anduin"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>안두인</strong></span>\n<ul>\n<li>천상의 별로 아군 영웅의 체력을 완전히 회복할 경우 신앙이 깊은 자의 속도로 인한 재사용 대기시간 감소가 발동되지 않던 문제를 수정했습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "천상의 별로 아군 영웅의 체력을 완전히 회복할 경우 신앙이 깊은 자의 속도로 인한 재사용 대기시간 감소가 발동되지 않던 문제를 수정했습니다.",
+         "html": "천상의 별로 아군 영웅의 체력을 완전히 회복할 경우 신앙이 깊은 자의 속도로 인한 재사용 대기시간 감소가 발동되지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "블레이즈",
+     "heroId": "Firebat",
+     "heroIds": [
+      "Firebat"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>블레이즈</strong></span>\n<ul>\n<li>불지옥 신단 응징자의 공격 한 번에 벙커가 바로 파괴되던 문제를 수정했습니다.</li>\n<li>블레이즈가 기름을 직접 점화하지 않은 경우 점화된 기름 뿌리기에 어떠한 공격력 변화 효과도 적용되지 않던 문제를 수정했습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "불지옥 신단 응징자의 공격 한 번에 벙커가 바로 파괴되던 문제를 수정했습니다.",
+         "html": "불지옥 신단 응징자의 공격 한 번에 벙커가 바로 파괴되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "블레이즈가 기름을 직접 점화하지 않은 경우 점화된 기름 뿌리기에 어떠한 공격력 변화 효과도 적용되지 않던 문제를 수정했습니다.",
+         "html": "블레이즈가 기름을 직접 점화하지 않은 경우 점화된 기름 뿌리기에 어떠한 공격력 변화 효과도 적용되지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "초",
+     "heroId": "Cho",
+     "heroIds": [
+      "Cho"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>초</strong></span>\n<ul>\n<li>쇄도의 주먹을 시전한 후 초의 공격 반경이 넓어지던 문제를 수정했습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "쇄도의 주먹을 시전한 후 초의 공격 반경이 넓어지던 문제를 수정했습니다.",
+         "html": "쇄도의 주먹을 시전한 후 초의 공격 반경이 넓어지던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "크로미",
+     "heroId": "Chromie",
+     "heroIds": [
+      "Chromie"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>크로미</strong></span>\n<ul>\n<li>특정 상황에서 시간의 굴레가 대상을 영구적으로 드러내던 문제를 수정했습니다.</li>\n<li>이제 크로미는 시간의 덫을 놓을 수 없는 곳에는 덫을 놓으려 하지 않습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "특정 상황에서 시간의 굴레가 대상을 영구적으로 드러내던 문제를 수정했습니다.",
+         "html": "특정 상황에서 시간의 굴레가 대상을 영구적으로 드러내던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "이제 크로미는 시간의 덫을 놓을 수 없는 곳에는 덫을 놓으려 하지 않습니다.",
+         "html": "이제 크로미는 시간의 덫을 놓을 수 없는 곳에는 덫을 놓으려 하지 않습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "데스윙",
+     "heroId": "Deathwing",
+     "heroIds": [
+      "Deathwing"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>데스윙</strong></span>\n<ul>\n<li>파괴를 목도하라 특성이 영웅이 아닌 대상의 공격력도 감소시키던 문제를 수정했습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "파괴를 목도하라 특성이 영웅이 아닌 대상의 공격력도 감소시키던 문제를 수정했습니다.",
+         "html": "파괴를 목도하라 특성이 영웅이 아닌 대상의 공격력도 감소시키던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "D.Va",
+     "heroId": "DVa",
+     "heroIds": [
+      "DVa"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>D.Va</strong></span>\n<ul>\n<li>부스터를 사용하는 중에 메카가 피해를 받아 D.Va가 탈출할 경우 자폭이 활성화되던 문제를 수정했습니다.</li>\n<li>자폭을 활성화한 직후 메카 호출을 사용하면 액랭이 제대로 적용되지 않던 문제를 수정했습니다.</li>\n<li>동력 전환 특성을 선택했을 때 방어 매트릭스가 밀어낼 수 없는 대상을 밀어내던 문제를 수정했습니다.</li>\n<li>동력 전환 특성을 선택했을 때 메카의 체력을 회복하는 동안 D.Va의 자가 치유량이 증가하지 않던 문제를 수정했습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "부스터를 사용하는 중에 메카가 피해를 받아 D.Va가 탈출할 경우 자폭이 활성화되던 문제를 수정했습니다.",
+         "html": "부스터를 사용하는 중에 메카가 피해를 받아 D.Va가 탈출할 경우 자폭이 활성화되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "자폭을 활성화한 직후 메카 호출을 사용하면 액랭이 제대로 적용되지 않던 문제를 수정했습니다.",
+         "html": "자폭을 활성화한 직후 메카 호출을 사용하면 액랭이 제대로 적용되지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "동력 전환 특성을 선택했을 때 방어 매트릭스가 밀어낼 수 없는 대상을 밀어내던 문제를 수정했습니다.",
+         "html": "동력 전환 특성을 선택했을 때 방어 매트릭스가 밀어낼 수 없는 대상을 밀어내던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "동력 전환 특성을 선택했을 때 메카의 체력을 회복하는 동안 D.Va의 자가 치유량이 증가하지 않던 문제를 수정했습니다.",
+         "html": "동력 전환 특성을 선택했을 때 메카의 체력을 회복하는 동안 D.Va의 자가 치유량이 증가하지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "들창코",
+     "heroId": "Hogger",
+     "heroIds": [
+      "Hogger"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>들창코</strong></span>\n<ul>\n<li>춤 명령을 사용했을 때 들창코의 이동 제한이 발생하지 않던 문제를 수정했습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "춤 명령을 사용했을 때 들창코의 이동 제한이 발생하지 않던 문제를 수정했습니다.",
+         "html": "춤 명령을 사용했을 때 들창코의 이동 제한이 발생하지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "임페리우스",
+     "heroId": "Imperius",
+     "heroIds": [
+      "Imperius"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>임페리우스</strong></span>\n<ul>\n<li>타오르는 갑옷의 피해가 일정하지 않던 문제를 수정했습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "타오르는 갑옷의 피해가 일정하지 않던 문제를 수정했습니다.",
+         "html": "타오르는 갑옷의 피해가 일정하지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "리 리",
+     "heroId": "LiLi",
+     "heroIds": [
+      "LiLi"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>리 리</strong></span>\n<ul>\n<li>위론의 축복이 운룡의 치유량을 감소시키던 문제를 수정했습니다.</li>\n<li>운무사가 리 리에게 주는 치유량이 잘못 적용되던 문제를 수정했습니다.</li>\n<li>위론의 축복, 운룡, 복수의 리 리 영웅들 사이의 상호 작용 문제를 수정했습니다.</li>\n<li>리 리의 운룡 치유량 점수 및 관련 텍스트가 잘못 표기되던 문제를 수정했습니다.</li>\n<li>리 리가 운룡을 자신에게 시전하지 않았을 때 위론의 축복의 치유량이 잘못 적용되던 문제를 수정했습니다.</li>\n<li>위론의 축복 특성이 없어도 리 리의 치유량이 증가하던 문제를 수정했습니다.</li>\n<li>풍룡 특성이 없어도 리 리의 이동 속도가 증가하던 문제를 수정했습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "위론의 축복이 운룡의 치유량을 감소시키던 문제를 수정했습니다.",
+         "html": "위론의 축복이 운룡의 치유량을 감소시키던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "운무사가 리 리에게 주는 치유량이 잘못 적용되던 문제를 수정했습니다.",
+         "html": "운무사가 리 리에게 주는 치유량이 잘못 적용되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "위론의 축복, 운룡, 복수의 리 리 영웅들 사이의 상호 작용 문제를 수정했습니다.",
+         "html": "위론의 축복, 운룡, 복수의 리 리 영웅들 사이의 상호 작용 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "리 리의 운룡 치유량 점수 및 관련 텍스트가 잘못 표기되던 문제를 수정했습니다.",
+         "html": "리 리의 운룡 치유량 점수 및 관련 텍스트가 잘못 표기되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "리 리가 운룡을 자신에게 시전하지 않았을 때 위론의 축복의 치유량이 잘못 적용되던 문제를 수정했습니다.",
+         "html": "리 리가 운룡을 자신에게 시전하지 않았을 때 위론의 축복의 치유량이 잘못 적용되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "위론의 축복 특성이 없어도 리 리의 치유량이 증가하던 문제를 수정했습니다.",
+         "html": "위론의 축복 특성이 없어도 리 리의 치유량이 증가하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "풍룡 특성이 없어도 리 리의 이동 속도가 증가하던 문제를 수정했습니다.",
+         "html": "풍룡 특성이 없어도 리 리의 이동 속도가 증가하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "말가니스",
+     "heroId": "MalGanis",
+     "heroIds": [
+      "MalGanis"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>말가니스</strong></span>\n<ul>\n<li>눈먼 공포를 사용하면 지옥 발톱의 재사용 대기시간과 마나 소모량이 변경되던 문제를 수정했습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "눈먼 공포를 사용하면 지옥 발톱의 재사용 대기시간과 마나 소모량이 변경되던 문제를 수정했습니다.",
+         "html": "눈먼 공포를 사용하면 지옥 발톱의 재사용 대기시간과 마나 소모량이 변경되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "메이",
+     "heroId": "MeiOW",
+     "heroIds": [
+      "MeiOW"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>메이</strong></span>\n<ul>\n<li>스케이팅 특성이 인근 영웅이 아닌 대상에게 방어력 50 증가 효과를 주지 않던 문제를 수정했습니다.</li>\n<li>대왕 뭉치가 진창 눈뭉치로부터 50%의 추가 피해만 얻던 문제를 수정했습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "스케이팅 특성이 인근 영웅이 아닌 대상에게 방어력 50 증가 효과를 주지 않던 문제를 수정했습니다.",
+         "html": "스케이팅 특성이 인근 영웅이 아닌 대상에게 방어력 50 증가 효과를 주지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "대왕 뭉치가 진창 눈뭉치로부터 50%의 추가 피해만 얻던 문제를 수정했습니다.",
+         "html": "대왕 뭉치가 진창 눈뭉치로부터 50%의 추가 피해만 얻던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "오르피아",
+     "heroId": "Orphea",
+     "heroIds": [
+      "Orphea"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>오르피아</strong></span>\n<ul>\n<li>오르피아가 적 방향으로 조준하지 않아도 적에게 어둠의 왈츠를 사용할 수 있던 문제를 수정했습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "오르피아가 적 방향으로 조준하지 않아도 적에게 어둠의 왈츠를 사용할 수 있던 문제를 수정했습니다.",
+         "html": "오르피아가 적 방향으로 조준하지 않아도 적에게 어둠의 왈츠를 사용할 수 있던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "사무로",
+     "heroId": "Samuro",
+     "heroIds": [
+      "Samuro"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>사무로</strong></span>\n<ul>\n<li>사무로가 귀환석을 활성화한 직후 환영 복제에 환영 이동술을 사용할 수 있던 문제를 수정했습니다.</li>\n<li>환영 복제가 활성화된 상태에서 삼도류 특성을 선택하면 사무로의 비껴내기 특성 효과가 사라지던 문제를 수정했습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "사무로가 귀환석을 활성화한 직후 환영 복제에 환영 이동술을 사용할 수 있던 문제를 수정했습니다.",
+         "html": "사무로가 귀환석을 활성화한 직후 환영 복제에 환영 이동술을 사용할 수 있던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "환영 복제가 활성화된 상태에서 삼도류 특성을 선택하면 사무로의 비껴내기 특성 효과가 사라지던 문제를 수정했습니다.",
+         "html": "환영 복제가 활성화된 상태에서 삼도류 특성을 선택하면 사무로의 비껴내기 특성 효과가 사라지던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "실바나스",
+     "heroId": "Sylvanas",
+     "heroIds": [
+      "Sylvanas"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>실바나스</strong></span>\n<ul>\n<li>부패의 사격의 투사체와 관련된 문제를 수정했습니다.</li>\n<li>검은 화살이 기본 공격으로 피해를 주기 전에 적용되면서, 검은 화살의 세 번째 중첩 공격에 공격력 25% 증가 효과가 부여되던 문제를 수정했습니다.</li>\n<li>잃어버린 영혼 특성의 중첩량을 확인하기 전에 기본 공격에 검은 화살이 적용되면서, 검은 화살의 세 번째 중첩 공격에 재사용 대기시간 감소 효과가 부여되던 문제를 수정했습니다.</li>\n<li>냉혹 특성의 중첩량을 확인하기 전에 기본 공격에 검은 화살이 적용되면서, 검은 화살의 세 번째 중첩 공격에 냉혹 효과가 활성화되던 문제를 수정했습니다.</li>\n<li>지독한 고통 특성의 중첩량을 확인하기 전에 기본 공격에 검은 화살이 적용되면서, 검은 화살의 세 번째 중첩 공격이 대상을 느려지게 만들고, 만약 느려질 수 있는 대상이 전 공격으로 인해 느려지지 않았다면 해당 공격에서 추가 피해를 주던 문제를 수정했습니다.</li>\n<li>피해를 주기 전에 냉혹 특성이 검은 화살에 적용되면서, 대상이 2회 중첩량을 획득한 상태일 경우 해당 대상에게 25%의 추가 피해를 주던 문제를 수정했습니다.</li>\n<li>피해를 주기 전에 부패의 사격이 검은 화살에 적용되면서(부패의 난사 특성 선택 시), 피해를 주기 전에 대상이 검은 화살 2회 중첩량을 획득한 상태일 경우 해당 대상에게 25%의 추가 피해를 주던 문제를 수정했습니다.</li>\n<li>피해를 주기 전에 유령의 파도가 검은 화살에 적용되면서(고름 상처 특성 선택 시), 피해를 주기 전에 대상이 검은 화살 3회 중첩량을 획득하지 않은 상태일 경우에도 해당 대상에게 25%의 추가 피해를 주던 문제를 수정했습니다.</li>\n<li>피해를 주기 전에 어둠의 비수의 피해가 깊어가는 어둠 퀘스트 진행도를 제공하여 공격력이 0.5% 증가하던 문제를 수정했습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "부패의 사격의 투사체와 관련된 문제를 수정했습니다.",
+         "html": "부패의 사격의 투사체와 관련된 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "검은 화살이 기본 공격으로 피해를 주기 전에 적용되면서, 검은 화살의 세 번째 중첩 공격에 공격력 25% 증가 효과가 부여되던 문제를 수정했습니다.",
+         "html": "검은 화살이 기본 공격으로 피해를 주기 전에 적용되면서, 검은 화살의 세 번째 중첩 공격에 공격력 25% 증가 효과가 부여되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "잃어버린 영혼 특성의 중첩량을 확인하기 전에 기본 공격에 검은 화살이 적용되면서, 검은 화살의 세 번째 중첩 공격에 재사용 대기시간 감소 효과가 부여되던 문제를 수정했습니다.",
+         "html": "잃어버린 영혼 특성의 중첩량을 확인하기 전에 기본 공격에 검은 화살이 적용되면서, 검은 화살의 세 번째 중첩 공격에 재사용 대기시간 감소 효과가 부여되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "냉혹 특성의 중첩량을 확인하기 전에 기본 공격에 검은 화살이 적용되면서, 검은 화살의 세 번째 중첩 공격에 냉혹 효과가 활성화되던 문제를 수정했습니다.",
+         "html": "냉혹 특성의 중첩량을 확인하기 전에 기본 공격에 검은 화살이 적용되면서, 검은 화살의 세 번째 중첩 공격에 냉혹 효과가 활성화되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "지독한 고통 특성의 중첩량을 확인하기 전에 기본 공격에 검은 화살이 적용되면서, 검은 화살의 세 번째 중첩 공격이 대상을 느려지게 만들고, 만약 느려질 수 있는 대상이 전 공격으로 인해 느려지지 않았다면 해당 공격에서 추가 피해를 주던 문제를 수정했습니다.",
+         "html": "지독한 고통 특성의 중첩량을 확인하기 전에 기본 공격에 검은 화살이 적용되면서, 검은 화살의 세 번째 중첩 공격이 대상을 느려지게 만들고, 만약 느려질 수 있는 대상이 전 공격으로 인해 느려지지 않았다면 해당 공격에서 추가 피해를 주던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "피해를 주기 전에 냉혹 특성이 검은 화살에 적용되면서, 대상이 2회 중첩량을 획득한 상태일 경우 해당 대상에게 25%의 추가 피해를 주던 문제를 수정했습니다.",
+         "html": "피해를 주기 전에 냉혹 특성이 검은 화살에 적용되면서, 대상이 2회 중첩량을 획득한 상태일 경우 해당 대상에게 25%의 추가 피해를 주던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "피해를 주기 전에 부패의 사격이 검은 화살에 적용되면서(부패의 난사 특성 선택 시), 피해를 주기 전에 대상이 검은 화살 2회 중첩량을 획득한 상태일 경우 해당 대상에게 25%의 추가 피해를 주던 문제를 수정했습니다.",
+         "html": "피해를 주기 전에 부패의 사격이 검은 화살에 적용되면서(부패의 난사 특성 선택 시), 피해를 주기 전에 대상이 검은 화살 2회 중첩량을 획득한 상태일 경우 해당 대상에게 25%의 추가 피해를 주던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "피해를 주기 전에 유령의 파도가 검은 화살에 적용되면서(고름 상처 특성 선택 시), 피해를 주기 전에 대상이 검은 화살 3회 중첩량을 획득하지 않은 상태일 경우에도 해당 대상에게 25%의 추가 피해를 주던 문제를 수정했습니다.",
+         "html": "피해를 주기 전에 유령의 파도가 검은 화살에 적용되면서(고름 상처 특성 선택 시), 피해를 주기 전에 대상이 검은 화살 3회 중첩량을 획득하지 않은 상태일 경우에도 해당 대상에게 25%의 추가 피해를 주던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "피해를 주기 전에 어둠의 비수의 피해가 깊어가는 어둠 퀘스트 진행도를 제공하여 공격력이 0.5% 증가하던 문제를 수정했습니다.",
+         "html": "피해를 주기 전에 어둠의 비수의 피해가 깊어가는 어둠 퀘스트 진행도를 제공하여 공격력이 0.5% 증가하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "길 잃은 바이킹",
+     "heroId": "LostVikings",
+     "heroIds": [
+      "LostVikings"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>길 잃은 바이킹</strong></span>\n<ul>\n<li>바이킹의 습격에 강제 이동 명령을 내릴 수 없던 문제를 수정했습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "바이킹의 습격에 강제 이동 명령을 내릴 수 없던 문제를 수정했습니다.",
+         "html": "바이킹의 습격에 강제 이동 명령을 내릴 수 없던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "타이커스",
+     "heroId": "Tychus",
+     "heroIds": [
+      "Tychus"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>타이커스</strong></span>\n<ul>\n<li>점수 화면에서 타이커스의 피해량에 알 수 없는 능력이 표시되던 문제를 수정했습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "점수 화면에서 타이커스의 피해량에 알 수 없는 능력이 표시되던 문제를 수정했습니다.",
+         "html": "점수 화면에서 타이커스의 피해량에 알 수 없는 능력이 표시되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "티리엘",
+     "heroId": "Tyrael",
+     "heroIds": [
+      "Tyrael"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>티리엘</strong></span>\n<ul>\n<li>대천사의 분노가 영웅이 아닌 대상의 공격력을 감소시키던 문제를 수정했습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "대천사의 분노가 영웅이 아닌 대상의 공격력을 감소시키던 문제를 수정했습니다.",
+         "html": "대천사의 분노가 영웅이 아닌 대상의 공격력을 감소시키던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "제라툴",
+     "heroId": "Zeratul",
+     "heroIds": [
+      "Zeratul"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>제라툴</strong></span>\n<ul>\n<li>네라짐의 힘으로 시전한 특이점 폭발이 일반 특이점 폭발처럼 발동되던 문제를 수정했습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "네라짐의 힘으로 시전한 특이점 폭발이 일반 특이점 폭발처럼 발동되던 문제를 수정했습니다.",
+         "html": "네라짐의 힘으로 시전한 특이점 폭발이 일반 특이점 폭발처럼 발동되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "heroes": [
+  "Abathur",
+  "Alexstrasza",
+  "Anduin",
+  "Cho",
+  "Chromie",
+  "DVa",
+  "Deathwing",
+  "Firebat",
+  "Hogger",
+  "Imperius",
+  "LiLi",
+  "LostVikings",
+  "MalGanis",
+  "MeiOW",
+  "Orphea",
+  "Samuro",
+  "Sylvanas",
+  "Tychus",
+  "Tyrael",
+  "Zeratul"
+ ],
+ "battlegrounds": [],
+ "newsId": "23999073"
+}

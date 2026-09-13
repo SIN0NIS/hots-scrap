@@ -1,0 +1,131 @@
+{
+ "date": "2018-05-02",
+ "kind": "hotfix",
+ "title": "히어로즈 오브 더 스톰 긴급 수정 노트 – 2018년 5월 2일",
+ "source": "https://news.blizzard.com/ko-kr/article/21702123/2018-5-2",
+ "published": "2018-05-01T17:30:00Z",
+ "sections": [
+  {
+   "name": "머리말",
+   "key": "intro",
+   "html": "<p>히어로즈 오브 더 스톰의 새로운 패치가 적용되었습니다. 이 패치에서는 몇 가지 버그가 수정되었습니다.</p>"
+  },
+  {
+   "name": "버그 수정",
+   "key": "bugs",
+   "html": "<span class=\"pn-h\"><strong>일반</strong></span>\n<ul>\n<li>최신 패치를 다운로드한 후에 히어로즈 오브 더 스톰을 실행할 때 \"게임 데이터 준비 중\"이라는 창이 잠시 동안 나오던 문제를 수정했습니다.</li>\n</ul>\n<span class=\"pn-h\"><strong>전장</strong></span>\n<ul>\n<li><strong>전장 목표: </strong>다음 전장 목표를 차지하는 중에 제라툴의 공허의 감옥 등의 정지 상태 효과에 적중당하면 정상적으로 정신 집중이 방해됩니다.\n<ul>\n<li>용의 둥지: 용기사</li>\n<li>파멸의 탑: 재단</li>\n<li>핵탄두 격전지: 핵탄두</li>\n</ul>\n</li>\n</ul>\n<span class=\"pn-h\"><strong>영웅, 기술, 특성</strong></span>\n<ul>\n<li><strong>데커드:</strong> 원기의 물약이 자리야의 에너지나 소냐의 분노 등 마나가 아닌 자원도 회복시키던 문제를 수정했습니다.</li>\n<li><strong>데커드:</strong> 저지 불가 상태인 영웅이 하급 생명력 물약을 획득할 수 없던 문제를 수정했습니다.</li>\n<li><strong>가로쉬:</strong> 시야가 확보되지 않은 적이 대지파괴자의 최대 사거리에서 적중당하면 대상이 정상적으로 드러납니다.</li>\n<li><strong>얼음 방패:</strong> 얼음 방패 중에 일부 기술을 사용할 수 있던 문제를 수정했습니다.</li>\n<li><strong>스랄:</strong> 낙뢰 퀘스트를 완료하기 전에 연쇄 번개가 적 영웅을 우선시하던 문제를 수정했습니다.</li>\n</ul>\n<span class=\"pn-h\"><strong>소리</strong></span>\n<ul>\n<li><strong>데커드:</strong> 대만 게임 클라이언트에서 데커드를 반복해서 클릭하면 이전 대사가 출력되던 문제를 수정했습니다.</li>\n</ul>\n<span class=\"pn-h\"><strong>사용자 인터페이스</strong></span>\n<ul>\n<li><strong>전리품 상자:</strong> 전리품 화면에서 전설 전리품 상자를 개봉할 수 없던 문제를 수정했습니다.</li>\n<li><strong>음성:</strong> 음성 대화 사용으로 인해 간혹 클라이언트가 종료되던 문제를 수정했습니다.</li>\n</ul>\n<p align=\"center\">히어로즈 공식 토론장에서 여러분의 의견을 남겨주세요.</p>\n<p><a class=\"btn btn-default btn-lg\" href=\"https://kr.battle.net/forums/en/heroes/index\" type=\"button\">히어로즈 공식 토론장</a></p>\n<p><img class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/g6/G6G0N80EOC941426801305139.png\"/></p>\n<p><img class=\"no-border; no-shadow\" data-id=\"14509591\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/6VA2831Q81IU1403137406234.png\"/></p>",
+   "items": [
+    {
+     "name": "데커드",
+     "heroId": "Deckard",
+     "heroIds": [
+      "Deckard"
+     ],
+     "under": null,
+     "html": "<strong>데커드:</strong> 원기의 물약이 자리야의 에너지나 소냐의 분노 등 마나가 아닌 자원도 회복시키던 문제를 수정했습니다.<strong>데커드:</strong> 저지 불가 상태인 영웅이 하급 생명력 물약을 획득할 수 없던 문제를 수정했습니다.<strong>데커드:</strong> 대만 게임 클라이언트에서 데커드를 반복해서 클릭하면 이전 대사가 출력되던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "데커드: 원기의 물약이 자리야의 에너지나 소냐의 분노 등 마나가 아닌 자원도 회복시키던 문제를 수정했습니다.",
+         "html": "<strong>데커드:</strong> 원기의 물약이 자리야의 에너지나 소냐의 분노 등 마나가 아닌 자원도 회복시키던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "데커드: 저지 불가 상태인 영웅이 하급 생명력 물약을 획득할 수 없던 문제를 수정했습니다.",
+         "html": "<strong>데커드:</strong> 저지 불가 상태인 영웅이 하급 생명력 물약을 획득할 수 없던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "데커드: 대만 게임 클라이언트에서 데커드를 반복해서 클릭하면 이전 대사가 출력되던 문제를 수정했습니다.",
+         "html": "<strong>데커드:</strong> 대만 게임 클라이언트에서 데커드를 반복해서 클릭하면 이전 대사가 출력되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "가로쉬",
+     "heroId": "Garrosh",
+     "heroIds": [
+      "Garrosh"
+     ],
+     "under": null,
+     "html": "<strong>가로쉬:</strong> 시야가 확보되지 않은 적이 대지파괴자의 최대 사거리에서 적중당하면 대상이 정상적으로 드러납니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "가로쉬: 시야가 확보되지 않은 적이 대지파괴자의 최대 사거리에서 적중당하면 대상이 정상적으로 드러납니다.",
+         "html": "<strong>가로쉬:</strong> 시야가 확보되지 않은 적이 대지파괴자의 최대 사거리에서 적중당하면 대상이 정상적으로 드러납니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "스랄",
+     "heroId": "Thrall",
+     "heroIds": [
+      "Thrall"
+     ],
+     "under": null,
+     "html": "<strong>스랄:</strong> 낙뢰 퀘스트를 완료하기 전에 연쇄 번개가 적 영웅을 우선시하던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "스랄: 낙뢰 퀘스트를 완료하기 전에 연쇄 번개가 적 영웅을 우선시하던 문제를 수정했습니다.",
+         "html": "<strong>스랄:</strong> 낙뢰 퀘스트를 완료하기 전에 연쇄 번개가 적 영웅을 우선시하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "heroes": [
+  "Deckard",
+  "Garrosh",
+  "Thrall"
+ ],
+ "battlegrounds": [],
+ "newsId": "21702123"
+}

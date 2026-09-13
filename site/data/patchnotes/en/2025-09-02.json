@@ -1,0 +1,2800 @@
+{
+ "date": "2025-09-02",
+ "kind": "ptr",
+ "title": "Heroes of the Storm PTR Patch Notes - September 2, 2025",
+ "source": "https://news.blizzard.com/en-us/article/24232472/heroes-of-the-storm-ptr-patch-notes-september-2-2025",
+ "published": "2025-09-02T17:03:00Z",
+ "sections": [
+  {
+   "name": "머리말",
+   "key": "intro",
+   "html": "<p>Our next Heroes of the Storm patch has just hit the Public Test Realm and will be available for playtesting. As always, if you encounter any bugs during your PTR play sessions, please stop by the <a href=\"https://us.forums.blizzard.com/en/heroes/c/ptr-bug-report\" target=\"_blank\">PTR Bug Report forum</a> to let us know about your experiences.</p>",
+   "nameKo": "머리말"
+  },
+  {
+   "name": "General",
+   "key": "general",
+   "html": "<ul>\n<li>Basic, Cleave, and Splash Attacks will now function more consistently across all Heroes through various situations. Changes that may impact the balance of the Hero will be listed in the Balance section.</li>\n<li>Updated Homescreen and Startup Music.</li>\n</ul>",
+   "nameKo": "일반"
+  },
+  {
+   "name": "Map Updates",
+   "key": "map_updates",
+   "html": "<ul>\n<li><strong>General</strong>\n<ul>\n<li>Forts, Keeps, and the Core will now grant Allied Heroes that take damage in their radius 50 Armor for 4 seconds. This effect has a 4 second cooldown and can only be granted to 1 Hero per Structure. While this Armor is in effect, Enemy Heroes that attack the target will be slowed by 20%.</li>\n<li>Forts, Keeps, and Core will no longer prioritize an Enemy Hero when an Allied Hero is attacked.</li>\n<li>Mercenary camps now spawn 30 seconds after the match begins (Down from 60 seconds).</li>\n<li>Small XP globes will now vanish if no allied Hero is within 15 radius of the globe.</li>\n<li>Structure Health increased by 12.5%.</li>\n<li>When a Hero attacks an enemy structure with a Basic Attack, minions near the building become inspired and gain 35% attack speed and 35% move speed for 3 seconds. This does not affect illusions or summons.</li>\n<li>Minions will now spawn exactly at MM:00 and MM:30.</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Blackheart's Bay</strong>\n<ul>\n<li>Bombardment now deals 20% reduced damage to Keeps and Cores.</li>\n<li>Cast time to turn in coins decreased from 7 seconds to 5 seconds.</li>\n<li>There are now 3 treasure chest locations. The first chest spawns in the top lane during the first phase, two chests spawn in the next three phases, and all three chests spawn every phase after that.</li>\n<li>There are now sight towers near Blackheart.</li>\n<li>You will now only drop half your coins upon death (rounded down).</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Hanamura</strong>\n<ul>\n<li>Payload damage increase by 12.5%.</li>\n<li>Payload now moves 25% faster.</li>\n<li>Samurai lane pusher health reduced by 12.5%.</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Infernal Shrines</strong>\n<ul>\n<li>Punishers will no longer leap over gates.</li>\n<li>Skeleton minions damage reduced by 25%.</li>\n<li>Skeleton minions health decreased from 400 to 300.</li>\n<li>Skeleton minions move speed increased from 3 to 3.5.</li>\n<li>Skeleton minions now have 20 magic Armor.</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Sky Temple</strong>\n<ul>\n<li>Guardian Mighty Swing knockback duration reduced from 0.5 seconds to 0.375 seconds.</li>\n<li>Guardian Mighty Swing knockback is now interrupted by other knockback effects.</li>\n<li>Guardian Mighty Swing knockback speed increased to match pervious knockback distance.</li>\n<li>Guardian Mighty Swing will now interrupt any ongoing knockback effects.</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Warhead Junction</strong>\n<ul>\n<li>Nukes damage updated to 1000 + 12.5% of target's Max Health (was 2300 damage before).</li>\n<li>Nukes now ignite structures, dealing 0.8% of their Health per second for 12 seconds. Attacking the building will refresh the duration up to 8 seconds.</li>\n<li>Nukes now take 2.5 seconds to launch (Up from 1.5 seconds).</li>\n<li>There will now be fewer nukes that spawn.</li>\n</ul>\n</li>\n</ul>",
+   "items": [
+    {
+     "name": "Blackheart's Bay",
+     "battleground": "blackheart_s_bay",
+     "html": "<strong class=\"pn-h\">Blackheart's Bay</strong>\n<ul>\n<li>Bombardment now deals 20% reduced damage to Keeps and Cores.</li>\n<li>Cast time to turn in coins decreased from 7 seconds to 5 seconds.</li>\n<li>There are now 3 treasure chest locations. The first chest spawns in the top lane during the first phase, two chests spawn in the next three phases, and all three chests spawn every phase after that.</li>\n<li>There are now sight towers near Blackheart.</li>\n<li>You will now only drop half your coins upon death (rounded down).</li>\n</ul>",
+     "under": null
+    },
+    {
+     "name": "Hanamura",
+     "battleground": "hanamura_temple",
+     "html": "<strong class=\"pn-h\">Hanamura</strong>\n<ul>\n<li>Payload damage increase by 12.5%.</li>\n<li>Payload now moves 25% faster.</li>\n<li>Samurai lane pusher health reduced by 12.5%.</li>\n</ul>",
+     "under": null
+    },
+    {
+     "name": "Infernal Shrines",
+     "battleground": "infernal_shrines",
+     "html": "<strong class=\"pn-h\">Infernal Shrines</strong>\n<ul>\n<li>Punishers will no longer leap over gates.</li>\n<li>Skeleton minions damage reduced by 25%.</li>\n<li>Skeleton minions health decreased from 400 to 300.</li>\n<li>Skeleton minions move speed increased from 3 to 3.5.</li>\n<li>Skeleton minions now have 20 magic Armor.</li>\n</ul>",
+     "under": null
+    },
+    {
+     "name": "Sky Temple",
+     "battleground": "sky_temple",
+     "html": "<strong class=\"pn-h\">Sky Temple</strong>\n<ul>\n<li>Guardian Mighty Swing knockback duration reduced from 0.5 seconds to 0.375 seconds.</li>\n<li>Guardian Mighty Swing knockback is now interrupted by other knockback effects.</li>\n<li>Guardian Mighty Swing knockback speed increased to match pervious knockback distance.</li>\n<li>Guardian Mighty Swing will now interrupt any ongoing knockback effects.</li>\n</ul>",
+     "under": null
+    },
+    {
+     "name": "Warhead Junction",
+     "battleground": "warhead_junction",
+     "html": "<strong class=\"pn-h\">Warhead Junction</strong>\n<ul>\n<li>Nukes damage updated to 1000 + 12.5% of target's Max Health (was 2300 damage before).</li>\n<li>Nukes now ignite structures, dealing 0.8% of their Health per second for 12 seconds. Attacking the building will refresh the duration up to 8 seconds.</li>\n<li>Nukes now take 2.5 seconds to launch (Up from 1.5 seconds).</li>\n<li>There will now be fewer nukes that spawn.</li>\n</ul>",
+     "under": null
+    }
+   ],
+   "nameKo": "전장 업데이트"
+  },
+  {
+   "name": "Balance Update",
+   "key": "balance",
+   "html": "<h3><strong>Heroes</strong></h3>\n<h4>Dehaka</h4>\n<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Brushstalker [D]</strong>\n<ul>\n<li>Cooldown increased from 75 seconds to 240 seconds.</li>\n<li>Cooldown is reduced by 50 seconds when a Regen Globe is picked up.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Apex Predator</strong>\n<ul>\n<li>Cooldown reduction increased from 50 to 190 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>Illidan</h4>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Fiery Brand</strong>\n<ul>\n<li>Attacking a different Hero from the last Hero attacked now resets progress on the previously attacked Hero.</li>\n<li>Blinds and Evasion now prevent any progress from being granted.</li>\n<li>If the target gains Stasis or Invulnerable, progress will be lost.</li>\n<li>Stacks now last 300 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>Kael'thas</h4>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Rebirth</strong>\n<ul>\n<li>Now has 3 charges.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>The Butcher</h4>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Brutal Strike</strong>\n<ul>\n<li>Now loses stacks when attacking while Blinded or against Evading enemies.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>The Lost Vikings</h4>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Longboat Raid</strong>\n<ul>\n<li>Decreased Move speed no longer decreases the Longboat Raid's starting speed and now reduces Longboat Raid Move speed by 25%.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>Thrall</h4>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Elemental Assault</strong>\n<ul>\n<li><b>NEW:</b> After using a Basic or Heroic Ability, Thrall's next Basic Attack within 4 seconds deals 45% more damage.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Follow Through</strong>\n<ul>\n<li>Talent Removed.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>Uther</h4>\n<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Holy Light [Q]</strong>\n<ul>\n<li>Range increased from 7.75 to 8.</li>\n<li>Range is no longer increased to 8.75 after selecting Holy Shock.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Holy Shock</strong>\n<ul>\n<li>No longer grants reduced cooldown or Mana cost and instead costs less Mana and has a lower cooldown.</li>\n<li>Now features its own active button.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>Valeera</h4>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Slice and Dice</strong>\n<ul>\n<li><b>REWORK:</b> Grants 400% Attack Speed which is lost after attacking 3 times or after 3 seconds. Cooldown for the next attack after the third will not be reduced.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>Varian</h4>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Warbringer</strong>\n<ul>\n<li>Warbringer mana cost reduction reduced from 22.5 to 20.</li>\n<li>Mana cost reduction reduced from 22.5 to 20.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Demoralizing Shout</strong>\n<ul>\n<li>Cooldown reduction increased from 2.5% to 5%.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+   "heroes": [
+    {
+     "name": "Dehaka",
+     "heroId": "Dehaka",
+     "heroIds": [
+      "Dehaka"
+     ],
+     "changes": [
+      {
+       "name": "Brushstalker",
+       "key": "D",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Cooldown increased from 75 seconds to 240 seconds.",
+         "html": "Cooldown increased from 75 seconds to 240 seconds.",
+         "added": false
+        },
+        {
+         "text": "Cooldown is reduced by 50 seconds when a Regen Globe is picked up.",
+         "html": "Cooldown is reduced by 50 seconds when a Regen Globe is picked up.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Apex Predator",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "Cooldown reduction increased from 50 to 190 seconds.",
+         "html": "Cooldown reduction increased from 50 to 190 seconds.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Brushstalker [D]</strong>\n<ul>\n<li>Cooldown increased from 75 seconds to 240 seconds.</li>\n<li>Cooldown is reduced by 50 seconds when a Regen Globe is picked up.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Apex Predator</strong>\n<ul>\n<li>Cooldown reduction increased from 50 to 190 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Illidan",
+     "heroId": "Illidan",
+     "heroIds": [
+      "Illidan"
+     ],
+     "changes": [
+      {
+       "name": "Fiery Brand",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "Attacking a different Hero from the last Hero attacked now resets progress on the previously attacked Hero.",
+         "html": "Attacking a different Hero from the last Hero attacked now resets progress on the previously attacked Hero.",
+         "added": false
+        },
+        {
+         "text": "Blinds and Evasion now prevent any progress from being granted.",
+         "html": "Blinds and Evasion now prevent any progress from being granted.",
+         "added": false
+        },
+        {
+         "text": "If the target gains Stasis or Invulnerable, progress will be lost.",
+         "html": "If the target gains Stasis or Invulnerable, progress will be lost.",
+         "added": false
+        },
+        {
+         "text": "Stacks now last 300 seconds.",
+         "html": "Stacks now last 300 seconds.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Fiery Brand</strong>\n<ul>\n<li>Attacking a different Hero from the last Hero attacked now resets progress on the previously attacked Hero.</li>\n<li>Blinds and Evasion now prevent any progress from being granted.</li>\n<li>If the target gains Stasis or Invulnerable, progress will be lost.</li>\n<li>Stacks now last 300 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Kael'thas",
+     "heroId": "Kaelthas",
+     "heroIds": [
+      "Kaelthas"
+     ],
+     "changes": [
+      {
+       "name": "Rebirth",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "Now has 3 charges.",
+         "html": "Now has 3 charges.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Rebirth</strong>\n<ul>\n<li>Now has 3 charges.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "The Butcher",
+     "heroId": "Butcher",
+     "heroIds": [
+      "Butcher"
+     ],
+     "changes": [
+      {
+       "name": "Brutal Strike",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "Now loses stacks when attacking while Blinded or against Evading enemies.",
+         "html": "Now loses stacks when attacking while Blinded or against Evading enemies.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Brutal Strike</strong>\n<ul>\n<li>Now loses stacks when attacking while Blinded or against Evading enemies.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "The Lost Vikings",
+     "heroId": "LostVikings",
+     "heroIds": [
+      "LostVikings"
+     ],
+     "changes": [
+      {
+       "name": "Longboat Raid",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "Decreased Move speed no longer decreases the Longboat Raid's starting speed and now reduces Longboat Raid Move speed by 25%.",
+         "html": "Decreased Move speed no longer decreases the Longboat Raid's starting speed and now reduces Longboat Raid Move speed by 25%.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Longboat Raid</strong>\n<ul>\n<li>Decreased Move speed no longer decreases the Longboat Raid's starting speed and now reduces Longboat Raid Move speed by 25%.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Thrall",
+     "heroId": "Thrall",
+     "heroIds": [
+      "Thrall"
+     ],
+     "changes": [
+      {
+       "name": "Elemental Assault",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "NEW: After using a Basic or Heroic Ability, Thrall's next Basic Attack within 4 seconds deals 45% more damage.",
+         "html": "<b>NEW:</b> After using a Basic or Heroic Ability, Thrall's next Basic Attack within 4 seconds deals 45% more damage.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Follow Through",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "Talent Removed.",
+         "html": "Talent Removed.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Elemental Assault</strong>\n<ul>\n<li><b>NEW:</b> After using a Basic or Heroic Ability, Thrall's next Basic Attack within 4 seconds deals 45% more damage.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Follow Through</strong>\n<ul>\n<li>Talent Removed.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Uther",
+     "heroId": "Uther",
+     "heroIds": [
+      "Uther"
+     ],
+     "changes": [
+      {
+       "name": "Holy Light",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Range increased from 7.75 to 8.",
+         "html": "Range increased from 7.75 to 8.",
+         "added": false
+        },
+        {
+         "text": "Range is no longer increased to 8.75 after selecting Holy Shock.",
+         "html": "Range is no longer increased to 8.75 after selecting Holy Shock.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Holy Shock",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "No longer grants reduced cooldown or Mana cost and instead costs less Mana and has a lower cooldown.",
+         "html": "No longer grants reduced cooldown or Mana cost and instead costs less Mana and has a lower cooldown.",
+         "added": false
+        },
+        {
+         "text": "Now features its own active button.",
+         "html": "Now features its own active button.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Holy Light [Q]</strong>\n<ul>\n<li>Range increased from 7.75 to 8.</li>\n<li>Range is no longer increased to 8.75 after selecting Holy Shock.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Holy Shock</strong>\n<ul>\n<li>No longer grants reduced cooldown or Mana cost and instead costs less Mana and has a lower cooldown.</li>\n<li>Now features its own active button.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Valeera",
+     "heroId": "Valeera",
+     "heroIds": [
+      "Valeera"
+     ],
+     "changes": [
+      {
+       "name": "Slice and Dice",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "REWORK: Grants 400% Attack Speed which is lost after attacking 3 times or after 3 seconds. Cooldown for the next attack after the third will not be reduced.",
+         "html": "<b>REWORK:</b> Grants 400% Attack Speed which is lost after attacking 3 times or after 3 seconds. Cooldown for the next attack after the third will not be reduced.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Slice and Dice</strong>\n<ul>\n<li><b>REWORK:</b> Grants 400% Attack Speed which is lost after attacking 3 times or after 3 seconds. Cooldown for the next attack after the third will not be reduced.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Varian",
+     "heroId": "Varian",
+     "heroIds": [
+      "Varian"
+     ],
+     "changes": [
+      {
+       "name": "Warbringer",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "Warbringer mana cost reduction reduced from 22.5 to 20.",
+         "html": "Warbringer mana cost reduction reduced from 22.5 to 20.",
+         "added": false
+        },
+        {
+         "text": "Mana cost reduction reduced from 22.5 to 20.",
+         "html": "Mana cost reduction reduced from 22.5 to 20.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Demoralizing Shout",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "Cooldown reduction increased from 2.5% to 5%.",
+         "html": "Cooldown reduction increased from 2.5% to 5%.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Warbringer</strong>\n<ul>\n<li>Warbringer mana cost reduction reduced from 22.5 to 20.</li>\n<li>Mana cost reduction reduced from 22.5 to 20.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Demoralizing Shout</strong>\n<ul>\n<li>Cooldown reduction increased from 2.5% to 5%.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    }
+   ],
+   "nameKo": "밸런스 업데이트"
+  },
+  {
+   "name": "Bug Fixes",
+   "key": "bugs",
+   "html": "<h3><strong>Map</strong></h3>\n<ul>\n<li><strong class=\"pn-h\">Sky Temple</strong>\n<ul>\n<li>Fixed an issue that caused Roots to prevent Guardian Mighty Swing knockback.</li>\n</ul>\n</li>\n</ul>\n<h3><strong>Heroes</strong></h3>\n<ul>\n<li><strong class=\"pn-h\">Alarak</strong>\n<ul>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Mocking Strikes</strong>\n<ul>\n<li>Fixed an issue that caused Basic Attacks to display incorrectly when attacking a Silenced Hero after selecting Mocking Strikes.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Artanis</strong>\n<ul>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Shield Surge</strong>\n<ul>\n<li>Buff Bar tooltip updated.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Final Cut</strong>\n<ul>\n<li>Buff Bar updated to show remaining duration.</li>\n<li>Now consumed if attacking while Blinded.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Titan Killer</strong>\n<ul>\n<li>Bonus damage is now dealt before the primary Basic Attack damage. All other associated effects will still occur if this kills the target.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Arthas</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Frostmourne Hungers [D]</strong>\n<ul>\n<li>Fixed an issue that caused impact visuals and sound effects to be created on Arthas.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Azmodan</strong>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Greed</strong>\n<ul>\n<li>Fixed an issue that caused Globes of Annihilation empowered by Tide of Sin to deal more damage than intended to non-Heroes.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Battleborn</strong>\n<ul>\n<li>Fixed an issue that caused impact visuals and sound effects to be created on Azmodan.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Total Annihilation</strong>\n<ul>\n<li>Now displays as Total Annihilation in the Death Recap.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Pride</strong>\n<ul>\n<li>Now displays as a quest.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Brightwing</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Phase Shift [Z]</strong>\n<ul>\n<li>Cast indicator is no longer hidden if the target is Polymorphed.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Pixie Boost</strong>\n<ul>\n<li>Movement Speed now gradually decays over is duration instead of in chunks.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Cassia</strong>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Charged Strikes</strong>\n<ul>\n<li>Fixed an issue that caused Charged Strikes to trigger multiple times in a row when gaining attack speed.</li>\n<li>Now applies to the next Basic Attack that is fired instead of the next Basic Attack that connects.</li>\n<li>Now displayed in the Buff Bar while in progress.</li>\n<li>Now increases in progress when Cassia fires her Basic Attack instead of after the missile impact.</li>\n<li>Progress is now displayed in the Buff Bar.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Martial Law</strong>\n<ul>\n<li>Bonus damage is now dealt before the primary Basic Attack damage. All associated effects will still occur if this kills the target.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Chen</strong>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Storm, Earth, Fire</strong>\n<ul>\n<li>Earth's attack Slow is now prevent by Blinds and Evasion.</li>\n<li>Earth's Splash attacks are now prevented if the primary target is Evading.</li>\n<li>Storm and Fire's attacks will now display as crits if granted an applicable Physical damage buff instead of a Spell damage buff.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Cho'gall</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Shove [Z]</strong>\n<ul>\n<li>Fixed an issue that caused Shove to not push Cho if he is Rooted.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Calloused Hide</strong>\n<ul>\n<li>Fixed an issue that caused Shove and other knockback effects to temporarily disable this talent's benefits.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Fuel for the Flame</strong>\n<ul>\n<li>Will no longer hit inactive Mercenaries if targets near these Mercenaries are hit.</li>\n<li>Will no longer hit inactive Mercenaries unless the primary target is also an inactive Mercenary.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Chromie</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Sand Blast [Q]</strong>\n<ul>\n<li>Sand Echo will now be revealed to the target when hit by Sand Echo's Basic Attack.</li>\n<li>Sand Echo will now be revealed when their Basic Attacks or Sand Blast deals damage while they are not visible.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Unravelling</strong>\n<ul>\n<li>Sand Echo will now be revealed when their Basic Attacks or Sand Blast deals damage while they are not visible.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Deathwing</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Dragonflight [Z]</strong>\n<ul>\n<li>Fixed an issue that caused Dragonflight's cast animation to be interrupted when Deathwing hits another Deathwing with his Basic Attack.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Death Drop</strong>\n<ul>\n<li>Armor reduction is now refreshed in duration when re-applied.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Fire and Fury</strong>\n<ul>\n<li>Fixed an issue that caused Basic Attack impact visuals to be displayed on Deathwing if attacking a Slowed Hero.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">D.Va</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Self-Destruct [E]</strong>\n<ul>\n<li>Charge gained from Basic Attacks now occurs after all targets have been hit.</li>\n<li>Fixed an issue that caused Self-Destruct knockback to not apply correctly.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Nuclear Option</strong>\n<ul>\n<li>Self-Destruct charge gained from hitting targets in the Basic Attack bonus area now occurs after all targets have been hit.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">E.T.C.</strong>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Guitar Hero</strong>\n<ul>\n<li>Healing visuals will no longer occur if E.T.C. is Blinded, the target is Evading, or if E.T.C.'s Health is at max.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Falstad</strong>\n<ul>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Sustained Winds</strong>\n<ul>\n<li>Bonus damage is now dealt before the primary Basic Attack damage. All other effects will still occur if this kills the target.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Fenix</strong>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Arsenal Synergy</strong>\n<ul>\n<li>Now applies to the next Basic Attack fired, instead of the next Basic Attack that connects.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Mobile Offense</strong>\n<ul>\n<li>Now applies to the next Basic Attack fired, instead of the next Basic Attack that connects.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Inhibiting Energy</strong>\n<ul>\n<li>Cooldown is now applied when Phase Bomb is fired.</li>\n<li>Now applies to the next Basic Attack fired, instead of the next Basic Attack that connects.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Gazlowe</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Rock-It! Turret [Q]</strong>\n<ul>\n<li>Fixed an issue that caused Defense Matrix applied to Gazlowe to not reduce Turret damage.</li>\n<li>Fixed an issue that caused Rock-It! Turrets created by an Ultimate Evolution clone of Gazlowe to not gain the increased damage.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Positive Reinforcement</strong>\n<ul>\n<li>Fixed an issue that caused the bonuses to be applied when a Rock-It Turret attacked a target, instead of when it hits a target.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Ark Reaktor</strong>\n<ul>\n<li>Fixed an issue that caused Defense Matrix applied to Gazlowe to not modify their damage.</li>\n<li>Fixed an issue that caused the miniature Rock-It! Turret to not fire at the correct location.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Firin' Mah Lazors</strong>\n<ul>\n<li>Fixed an issue that caused the warning indicator to be visible in the Fog of War.</li>\n<li>Fixed an issue that caused Defense Matrix applied to Gazlowe to not modify their damage.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Overklock</strong>\n<ul>\n<li>Bonus damage is now dealt before the primary Basic Attack damage. All other effects will still occur if this kills the target.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Greymane</strong>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Go for the Throat</strong>\n<ul>\n<li>Fixed an issue that caused Go for the Throat to play its cast animation on the target when Greymane targets another Greymane.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Alpha Killer</strong>\n<ul>\n<li>Bonus damage is now dealt before the primary Basic Attack damage. All other effects will still occur if this kills the target.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Hunter's Blunderbuss</strong>\n<ul>\n<li>Now occurs while Blinded.</li>\n<li>Now searches after all effects on the primary target have completed, with the exception of Wizened Duelist.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Tooth and Claw</strong>\n<ul>\n<li>Now searches after all effects on the primary target have completed, with the exception of Wizened Duelist.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Illidan</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Dive [Q]</strong>\n<ul>\n<li>Fixed an issue that caused Dive to play sound and visual effects twice if Illidan is targeting another Illidan.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Fiery Brand</strong>\n<ul>\n<li>Bonus damage is now dealt before the primary Basic Attack damage. All other effects will still occur if this kills the target.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Imperius</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Valorous Brand [Q]</strong>\n<ul>\n<li>Fixed an issue that caused Valorous Brand's benefits for being consumed to be granted when the target gains Invulnerable, Stasis, or is killed.</li>\n<li>Fixed an issue that caused Valorous Brands to heal Imperius when a Branded target enters Stasis, gains Invulnerable, or is killed.</li>\n<li>Valorous Brands are no longer consumed if Imperius is Blinded or the target is Evading.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Burn the Impure</strong>\n<ul>\n<li>Bonus damage is now dealt before the primary Basic Attack damage. All other effects will still occur if this kills the target.</li>\n<li>Now displays as Burn the Impure in the Death Recap.</li>\n<li>Since Blinds no longer consume Valorous Brands, this is now prevented by those effects.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Flash of Anger</strong>\n<ul>\n<li>Additional target search now occurs after all effects on the primary target.</li>\n<li>Since Blinds no longer consume Valorous Brands, this is now prevented by those effects.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Holy Fervor</strong>\n<ul>\n<li>No longer prevented by Blinds or Evasion.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Divine Rage</strong>\n<ul>\n<li>Fixed an issue that caused Valorous Brands to grant cooldown reduction when a Branded target enters Stasis, gains Invulnerable, or is killed.</li>\n<li>Since Blinds no longer consume Valorous Brands, this is now prevented by those effects.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Unrelenting Descent</strong>\n<ul>\n<li>Fixed an issue that caused Valorous Brands to grant cooldown reduction when a Branded target enters Stasis, gains Invulnerable, or is killed.</li>\n<li>Since Blinds no longer consume Valorous Brands, this is now prevented by those effects.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Jaina</strong>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Water Elemental</strong>\n<ul>\n<li>Fixed an issue that caused Water Elemental's Basic Attack splash to hit Evading targets.</li>\n<li>Water Elemental's Basic Attack splash no longer reveals the targets it hits.</li>\n<li>Water Elemental's Basic Attack splash now reveals the area.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Johanna</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Condemn [W]</strong>\n<ul>\n<li>Fixed an issue that caused Condemn to pull Unstoppable targets.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Junkrat</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li>Basic Attack Splash damage now occurs while Blinded, but is still prevented by Evading targets.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Kael'thas</strong>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Phoenix</strong>\n<ul>\n<li>Attack damage is now affected by Defense Matrix when Kael'thas is under its effects.</li>\n<li>Attack Splash no longer reveals targets hit.</li>\n<li>Attack Splash now reveals the area it hits.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Kel'Thuzad</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Chains of Kel'Thuzad [E]</strong>\n<ul>\n<li>Now reveal both targets on chain link connection.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">The Damned Return</strong>\n<ul>\n<li>Fixed an issue that caused the Shade to not be revealed when it deals damage.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Kerrigan</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Ravage [Q]</strong>\n<ul>\n<li>Fixed an issue that caused Ravage to play its cast animation on the target when Kerrigan targets another Kerrigan at close range.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Kharazim</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Radiant Dash [Q]</strong>\n<ul>\n<li>Fixed an issue that caused Radiant Dash to appear incorrectly when cast on another Kharazim.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Iron Fists</strong>\n<ul>\n<li>Fixed an issue that caused the triggering attack to not play the correct impact sound.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Li-Ming</strong>\n<ul>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Charged Blast</strong>\n<ul>\n<li>Tal Rasha's Elements bonus is now additive instead of multiplicative.</li>\n<li>Now deals damage before the Basic Attack deals damage.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Seeker</strong>\n<ul>\n<li>Now shows in the Death Recap as its own entry.</li>\n<li>Now displays as Seeker in the Death Recap.</li>\n<li>Now happens after the third Magic Missile deals damage.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Tal Rasha's Elements</strong>\n<ul>\n<li>Tal Rasha's Elements bonus is now additive instead of multiplicative.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Lucio</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Crossfade [W]</strong>\n<ul>\n<li>Crossfades from different Lúcios can now stack together.</li>\n<li>Fixed an issue that caused the display of affected allies to not display correctly if more than 7 Heroes are in Crossfade's radius.</li>\n<li>The display of affected allies of Crossfade now include targets in the Boombox Crossfade radius.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Soundwave [Q]</strong>\n<ul>\n<li>Fixed an issue that caused Soundwave to push Unstoppable targets.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Party Mix</strong>\n<ul>\n<li>Fixed an issue that caused toggling between Healing Boost and Speed Boost to cause the duration counter to be inaccurate.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">All Together</strong>\n<ul>\n<li>Fixed an issue that caused allies in the Boombox's Crossfade radius to not grant Movement Speed.</li>\n<li>Fixed an issue that caused the Movement Speed bonus to not behave consistently if multiple Lúcios are in the game.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">House Party</strong>\n<ul>\n<li>Fixed an issue that caused allies in the Boombox's Crossfade radius to not grant bonus Healing.</li>\n<li>Fixed an issue that caused the Healing bonus to not behave consistently if multiple Lúcios are in the game.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Summer Anthem</strong>\n<ul>\n<li>Now grants its effects to allies in Boombox's Crossfade radius.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Lunara</strong>\n<ul>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Wild Vigor</strong>\n<ul>\n<li>Fixed an issue that caused the 4th Basic Attack to not display impact effects.</li>\n<li>Now applies to the next 4 Basic Attacks fired, instead of the next 4 Basic Attacks that connect.</li>\n<li>Now applies to the next attack fired instead of the next attack that hits.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Nazeebo</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Corpse Spiders [Q]</strong>\n<ul>\n<li>Fixed an issue that caused Defense Matrix to not reduce the damage of Corpse Spiders.</li>\n<li>Fixed an issue that caused Ultimate Evolution clones of Nazeebo to not grant Spell Power bonuses to Corpse Spiders.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Zombie Wall [W]</strong>\n<ul>\n<li>Fixed an issue that caused Defense Matrix to not reduce the damage of Zombie Wall.</li>\n<li>Fixed an issue that caused Ultimate Evolution clones of Nazeebo to not grant Spell Power bonuses to Zombie Wall.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Dead Rush</strong>\n<ul>\n<li>Now increases the damage of already existing Zombie Wall Zombies when the talent is selected.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Gargantuan</strong>\n<ul>\n<li>Fixed an issue that caused Defense Matrix to not reduce the damage of the Gargantuan.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Orphea</strong>\n<ul>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Backbiter</strong>\n<ul>\n<li>Fixed an issue that caused Backbiter to not move Orphea if she is Rooted.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Chaotic Assault</strong>\n<ul>\n<li>Fixed an issue that caused the damage bonus to be granted when Orphea has less than 3 Overwhelming Chaos if she dies with 3 Overwhelming Chaos.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Crushing Jaws</strong>\n<ul>\n<li>Fixed an issue that caused Crushing Jaws pull to not apply correctly.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Raynor</strong>\n<ul>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Unstable Compound</strong>\n<ul>\n<li>Mana restored is now bundled together when multiple Heroes are hit.</li>\n<li>Mana restoration now restores all Mana at once, instead of 10 Mana for each individual Hero hit.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Rehgar</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Ghost Wolf [Z]</strong>\n<ul>\n<li>Fixed an issue that caused Ghost Wolf Lunge attacks targeted at Rehgar to cause the target Rehgar to play an attack animation.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Hunger of the Wolf</strong>\n<ul>\n<li>Fixed an issue that caused Blinds and Evasion to not prevent this from activating.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Rexxar</strong>\n<ul>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Dire Beast</strong>\n<ul>\n<li>Now causes Misha, Charge! to display as a critical when at 5 or more stacks.</li>\n<li>Bonus damage is now applied to the next Misha, Charge!</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Samuro</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Advancing Strikes [Trait DQ]</strong>\n<ul>\n<li>Blind and Evasion now prevent activation.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Sgt. Hammer</strong>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Ambush</strong>\n<ul>\n<li>Now displays the remaining duration until the Cloak becomes active around the Trait button.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Pulse Detonation Core</strong>\n<ul>\n<li>First instance of damage is now displayed as Spider Mines in the Death Recap.</li>\n<li>Mana restored is now bundled together when multiple Heroes are hit.</li>\n<li>Mana restored is now combined for Siege Mode attacks.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Shrapnel Mines</strong>\n<ul>\n<li>Duration of all Amor reduction stacks are now refreshed when re-applied.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Sonya</strong>\n<ul>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Giant Slammer</strong>\n<ul>\n<li>Bonus damage is now dealt before the primary Basic Attack damage. All other effects will still occur if this kills the target.</li>\n<li>Now displays as Giant Slammer in the Death Recap.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Stitches</strong>\n<ul>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Playtime!</strong>\n<ul>\n<li>Mana restored is now bundled together when multiple Heroes are hit.</li>\n<li>Tooltip updated to include Mana restored when hitting Heroes with Slam's inner area.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Tassadar</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Resonance Beam [Trait]</strong>\n<ul>\n<li>Fixed an issue that caused Resonance Beam to gain charge prior to dealing damage past the first instance of damage.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Arc Discharge</strong>\n<ul>\n<li>Now happens prior to all other effects when a Basic Attack would grant progress.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Archon</strong>\n<ul>\n<li>Splash attacks now happen after all other effects on the primary target have completed.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">The Butcher</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Butcher's Brand [W]</strong>\n<ul>\n<li>Fixed an issue that caused Butcher's Basic Attack impact visuals to not be correctly altered against Branded targets.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Brutal Strike</strong>\n<ul>\n<li>Now consumed while Blinded or against Evading enemies.</li>\n<li>Now displays in the Buff Bar.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Savage Charge</strong>\n<ul>\n<li>Now displays as Savage Charge in the Death Recap.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">The Lost Vikings</strong>\n<ul>\n<li>Baleog's Basic Attack damage will now be properly affected by other damage modifiers when empowered by Explosive Attacks.</li>\n<li>Fixed an issue that caused Olaf's charging attack to not gain the benefits of Nordic Attack Squad or Impatience is a Virtue.</li>\n<li><strong class=\"pn-name\">Olaf</strong>\n<ul>\n<li>Fixed an issue that caused Charge to not grant the bonuses from Nordic Attack Squad.</li>\n<li>Fixed an issue that caused Charge to go on cooldown when targeting enemies near Olaf's position.</li>\n<li>Fixed an issue that caused Charge to not grant the bonuses from Impatience is a Virtue.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Erik</strong>\n<ul>\n<li>Increase Move speed no longer increases Erik's starting speed and now grants Erik 15% Move speed, stacking with other effects.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Baleog</strong>\n<ul>\n<li>Fixed an issue that caused Splash damage to not grant bonuses from Impatience is a Virtue.</li>\n</ul>\n</li>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Explosive Attacks</strong>\n<ul>\n<li>Bonus damage is now a multiplicative bonus.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Nordic Attack Squad</strong>\n<ul>\n<li>Bonus damage is now dealt before the primary Basic Attack damage. All other effects will still occur if this kills the target.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Thrall</strong>\n<ul>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Tempest Fury</strong>\n<ul>\n<li>The initial third Windfury attack now features impact visuals.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Tracer</strong>\n<ul>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Focus Fire</strong>\n<ul>\n<li>No longer progresses while Blinded or against Evading targets.</li>\n<li>Now displays in the Buff Bar how many hits have occurred on the current attack target, as well as the window before tracking resets.</li>\n<li>Now progresses prior to dealing damage instead of after dealing damage.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Tyrael</strong>\n<ul>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Law and Order</strong>\n<ul>\n<li>Now displays in the Buff Bar.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Tyrande</strong>\n<ul>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Mark of Mending</strong>\n<ul>\n<li>Now displays as Mark of Mending in the Death Recap.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Uther</strong>\n<ul>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Guardian of Ancient Kings</strong>\n<ul>\n<li>Duration is now increased by talents that grant additional Devotion Armor duration.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Benediction</strong>\n<ul>\n<li>Fixed an issue that could cause abilities cast while Benediction is active to grant Uther Mana.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Valla</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Vault [E]</strong>\n<ul>\n<li>Damage bonus now applies to the next Basic Attack fired.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Rain of Vengeance</strong>\n<ul>\n<li>Fixed an issue that caused cast visuals to not display correctly.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Varian</strong>\n<ul>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Twin Blades of Fury</strong>\n<ul>\n<li>Fixed an issue that caused Twin Blades of Fury to display the wrong cooldown reduction value.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Glory of the Alliance</strong>\n<ul>\n<li>Fixed an issue that caused Glory to the Alliance to display incorrect cooldown reduction value after selection.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Whitemane</strong>\n<ul>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Saintly Greatstaff</strong>\n<ul>\n<li>Marker is no longer removed if Whitemane is Blinded or target is Evading.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Zagara</strong>\n<ul>\n<li>Summons are now affected by Defense Matrix and Ultimate Evolution damage modifications.</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Zarya</strong>\n<ul>\n<li>Targets that enter the splash area between instances of Zarya's Basic Attack hitting the primary target will no longer be hit instantly.</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Deep Burn</strong>\n<ul>\n<li>Energy gained is now bundled together when multiple marked Heroes are hit.</li>\n<li>Energy is now gained after the primary target and all Splash attack targets have been hit, causing all target to take equal damage when Deep Burn grants Zarya Energy.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Zul'jin</strong>\n<ul>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">A Surprise For Ya!</strong>\n<ul>\n<li>Now gains the benefits of Berserker being active if the fired Attack had Berserker active.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<p><strong><a href=\"https://us.forums.blizzard.com/en/heroes/\" target=\"_blank\">Click here to discuss this post with other players in the official Heroes of the Storm forums</a>.</strong></p>\n<p><strong><img alt=\"\" class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/g6/G6G0N80EOC941426801305139.png\"/></strong></p>",
+   "items": [
+    {
+     "name": "Sky Temple",
+     "battleground": "sky_temple",
+     "html": "<strong class=\"pn-h\">Sky Temple</strong>\n<ul>\n<li>Fixed an issue that caused Roots to prevent Guardian Mighty Swing knockback.</li>\n</ul>",
+     "under": "Map"
+    },
+    {
+     "name": "Alarak",
+     "heroId": "Alarak",
+     "heroIds": [
+      "Alarak"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Alarak</strong>\n<ul>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Mocking Strikes</strong>\n<ul>\n<li>Fixed an issue that caused Basic Attacks to display incorrectly when attacking a Silenced Hero after selecting Mocking Strikes.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Mocking Strikes",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Basic Attacks to display incorrectly when attacking a Silenced Hero after selecting Mocking Strikes.",
+         "html": "Fixed an issue that caused Basic Attacks to display incorrectly when attacking a Silenced Hero after selecting Mocking Strikes.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Artanis",
+     "heroId": "Artanis",
+     "heroIds": [
+      "Artanis"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Artanis</strong>\n<ul>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Shield Surge</strong>\n<ul>\n<li>Buff Bar tooltip updated.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Final Cut</strong>\n<ul>\n<li>Buff Bar updated to show remaining duration.</li>\n<li>Now consumed if attacking while Blinded.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Titan Killer</strong>\n<ul>\n<li>Bonus damage is now dealt before the primary Basic Attack damage. All other associated effects will still occur if this kills the target.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Shield Surge",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "Buff Bar tooltip updated.",
+         "html": "Buff Bar tooltip updated.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Final Cut",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "Buff Bar updated to show remaining duration.",
+         "html": "Buff Bar updated to show remaining duration.",
+         "added": false
+        },
+        {
+         "text": "Now consumed if attacking while Blinded.",
+         "html": "Now consumed if attacking while Blinded.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Titan Killer",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "Bonus damage is now dealt before the primary Basic Attack damage. All other associated effects will still occur if this kills the target.",
+         "html": "Bonus damage is now dealt before the primary Basic Attack damage. All other associated effects will still occur if this kills the target.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Arthas",
+     "heroId": "Arthas",
+     "heroIds": [
+      "Arthas"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Arthas</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Frostmourne Hungers [D]</strong>\n<ul>\n<li>Fixed an issue that caused impact visuals and sound effects to be created on Arthas.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Frostmourne Hungers",
+       "key": "D",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused impact visuals and sound effects to be created on Arthas.",
+         "html": "Fixed an issue that caused impact visuals and sound effects to be created on Arthas.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Azmodan",
+     "heroId": "Azmodan",
+     "heroIds": [
+      "Azmodan"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Azmodan</strong>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Greed</strong>\n<ul>\n<li>Fixed an issue that caused Globes of Annihilation empowered by Tide of Sin to deal more damage than intended to non-Heroes.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Battleborn</strong>\n<ul>\n<li>Fixed an issue that caused impact visuals and sound effects to be created on Azmodan.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Total Annihilation</strong>\n<ul>\n<li>Now displays as Total Annihilation in the Death Recap.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Pride</strong>\n<ul>\n<li>Now displays as a quest.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Greed",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Globes of Annihilation empowered by Tide of Sin to deal more damage than intended to non-Heroes.",
+         "html": "Fixed an issue that caused Globes of Annihilation empowered by Tide of Sin to deal more damage than intended to non-Heroes.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Battleborn",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused impact visuals and sound effects to be created on Azmodan.",
+         "html": "Fixed an issue that caused impact visuals and sound effects to be created on Azmodan.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Total Annihilation",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "Now displays as Total Annihilation in the Death Recap.",
+         "html": "Now displays as Total Annihilation in the Death Recap.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Pride",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "Now displays as a quest.",
+         "html": "Now displays as a quest.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Brightwing",
+     "heroId": "FaerieDragon",
+     "heroIds": [
+      "FaerieDragon"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Brightwing</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Phase Shift [Z]</strong>\n<ul>\n<li>Cast indicator is no longer hidden if the target is Polymorphed.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Pixie Boost</strong>\n<ul>\n<li>Movement Speed now gradually decays over is duration instead of in chunks.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Phase Shift",
+       "key": "Z",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Cast indicator is no longer hidden if the target is Polymorphed.",
+         "html": "Cast indicator is no longer hidden if the target is Polymorphed.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Pixie Boost",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "Movement Speed now gradually decays over is duration instead of in chunks.",
+         "html": "Movement Speed now gradually decays over is duration instead of in chunks.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Cassia",
+     "heroId": "Amazon",
+     "heroIds": [
+      "Amazon"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Cassia</strong>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Charged Strikes</strong>\n<ul>\n<li>Fixed an issue that caused Charged Strikes to trigger multiple times in a row when gaining attack speed.</li>\n<li>Now applies to the next Basic Attack that is fired instead of the next Basic Attack that connects.</li>\n<li>Now displayed in the Buff Bar while in progress.</li>\n<li>Now increases in progress when Cassia fires her Basic Attack instead of after the missile impact.</li>\n<li>Progress is now displayed in the Buff Bar.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Martial Law</strong>\n<ul>\n<li>Bonus damage is now dealt before the primary Basic Attack damage. All associated effects will still occur if this kills the target.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Charged Strikes",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Charged Strikes to trigger multiple times in a row when gaining attack speed.",
+         "html": "Fixed an issue that caused Charged Strikes to trigger multiple times in a row when gaining attack speed.",
+         "added": false
+        },
+        {
+         "text": "Now applies to the next Basic Attack that is fired instead of the next Basic Attack that connects.",
+         "html": "Now applies to the next Basic Attack that is fired instead of the next Basic Attack that connects.",
+         "added": false
+        },
+        {
+         "text": "Now displayed in the Buff Bar while in progress.",
+         "html": "Now displayed in the Buff Bar while in progress.",
+         "added": false
+        },
+        {
+         "text": "Now increases in progress when Cassia fires her Basic Attack instead of after the missile impact.",
+         "html": "Now increases in progress when Cassia fires her Basic Attack instead of after the missile impact.",
+         "added": false
+        },
+        {
+         "text": "Progress is now displayed in the Buff Bar.",
+         "html": "Progress is now displayed in the Buff Bar.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Martial Law",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "Bonus damage is now dealt before the primary Basic Attack damage. All associated effects will still occur if this kills the target.",
+         "html": "Bonus damage is now dealt before the primary Basic Attack damage. All associated effects will still occur if this kills the target.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Chen",
+     "heroId": "Chen",
+     "heroIds": [
+      "Chen"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Chen</strong>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Storm, Earth, Fire</strong>\n<ul>\n<li>Earth's attack Slow is now prevent by Blinds and Evasion.</li>\n<li>Earth's Splash attacks are now prevented if the primary target is Evading.</li>\n<li>Storm and Fire's attacks will now display as crits if granted an applicable Physical damage buff instead of a Spell damage buff.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Storm, Earth, Fire",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "Earth's attack Slow is now prevent by Blinds and Evasion.",
+         "html": "Earth's attack Slow is now prevent by Blinds and Evasion.",
+         "added": false
+        },
+        {
+         "text": "Earth's Splash attacks are now prevented if the primary target is Evading.",
+         "html": "Earth's Splash attacks are now prevented if the primary target is Evading.",
+         "added": false
+        },
+        {
+         "text": "Storm and Fire's attacks will now display as crits if granted an applicable Physical damage buff instead of a Spell damage buff.",
+         "html": "Storm and Fire's attacks will now display as crits if granted an applicable Physical damage buff instead of a Spell damage buff.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Cho'gall",
+     "heroId": "Cho",
+     "heroIds": [
+      "Cho",
+      "Gall"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Cho'gall</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Shove [Z]</strong>\n<ul>\n<li>Fixed an issue that caused Shove to not push Cho if he is Rooted.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Calloused Hide</strong>\n<ul>\n<li>Fixed an issue that caused Shove and other knockback effects to temporarily disable this talent's benefits.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Fuel for the Flame</strong>\n<ul>\n<li>Will no longer hit inactive Mercenaries if targets near these Mercenaries are hit.</li>\n<li>Will no longer hit inactive Mercenaries unless the primary target is also an inactive Mercenary.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Shove",
+       "key": "Z",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Shove to not push Cho if he is Rooted.",
+         "html": "Fixed an issue that caused Shove to not push Cho if he is Rooted.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Calloused Hide",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Shove and other knockback effects to temporarily disable this talent's benefits.",
+         "html": "Fixed an issue that caused Shove and other knockback effects to temporarily disable this talent's benefits.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Fuel for the Flame",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "Will no longer hit inactive Mercenaries if targets near these Mercenaries are hit.",
+         "html": "Will no longer hit inactive Mercenaries if targets near these Mercenaries are hit.",
+         "added": false
+        },
+        {
+         "text": "Will no longer hit inactive Mercenaries unless the primary target is also an inactive Mercenary.",
+         "html": "Will no longer hit inactive Mercenaries unless the primary target is also an inactive Mercenary.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Chromie",
+     "heroId": "Chromie",
+     "heroIds": [
+      "Chromie"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Chromie</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Sand Blast [Q]</strong>\n<ul>\n<li>Sand Echo will now be revealed to the target when hit by Sand Echo's Basic Attack.</li>\n<li>Sand Echo will now be revealed when their Basic Attacks or Sand Blast deals damage while they are not visible.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Unravelling</strong>\n<ul>\n<li>Sand Echo will now be revealed when their Basic Attacks or Sand Blast deals damage while they are not visible.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Sand Blast",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Sand Echo will now be revealed to the target when hit by Sand Echo's Basic Attack.",
+         "html": "Sand Echo will now be revealed to the target when hit by Sand Echo's Basic Attack.",
+         "added": false
+        },
+        {
+         "text": "Sand Echo will now be revealed when their Basic Attacks or Sand Blast deals damage while they are not visible.",
+         "html": "Sand Echo will now be revealed when their Basic Attacks or Sand Blast deals damage while they are not visible.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Unravelling",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "Sand Echo will now be revealed when their Basic Attacks or Sand Blast deals damage while they are not visible.",
+         "html": "Sand Echo will now be revealed when their Basic Attacks or Sand Blast deals damage while they are not visible.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Deathwing",
+     "heroId": "Deathwing",
+     "heroIds": [
+      "Deathwing"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Deathwing</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Dragonflight [Z]</strong>\n<ul>\n<li>Fixed an issue that caused Dragonflight's cast animation to be interrupted when Deathwing hits another Deathwing with his Basic Attack.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Death Drop</strong>\n<ul>\n<li>Armor reduction is now refreshed in duration when re-applied.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Fire and Fury</strong>\n<ul>\n<li>Fixed an issue that caused Basic Attack impact visuals to be displayed on Deathwing if attacking a Slowed Hero.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Dragonflight",
+       "key": "Z",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Dragonflight's cast animation to be interrupted when Deathwing hits another Deathwing with his Basic Attack.",
+         "html": "Fixed an issue that caused Dragonflight's cast animation to be interrupted when Deathwing hits another Deathwing with his Basic Attack.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Death Drop",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "Armor reduction is now refreshed in duration when re-applied.",
+         "html": "Armor reduction is now refreshed in duration when re-applied.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Fire and Fury",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Basic Attack impact visuals to be displayed on Deathwing if attacking a Slowed Hero.",
+         "html": "Fixed an issue that caused Basic Attack impact visuals to be displayed on Deathwing if attacking a Slowed Hero.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "D.Va",
+     "heroId": "DVa",
+     "heroIds": [
+      "DVa"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">D.Va</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Self-Destruct [E]</strong>\n<ul>\n<li>Charge gained from Basic Attacks now occurs after all targets have been hit.</li>\n<li>Fixed an issue that caused Self-Destruct knockback to not apply correctly.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Nuclear Option</strong>\n<ul>\n<li>Self-Destruct charge gained from hitting targets in the Basic Attack bonus area now occurs after all targets have been hit.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Self-Destruct",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Charge gained from Basic Attacks now occurs after all targets have been hit.",
+         "html": "Charge gained from Basic Attacks now occurs after all targets have been hit.",
+         "added": false
+        },
+        {
+         "text": "Fixed an issue that caused Self-Destruct knockback to not apply correctly.",
+         "html": "Fixed an issue that caused Self-Destruct knockback to not apply correctly.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Nuclear Option",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "Self-Destruct charge gained from hitting targets in the Basic Attack bonus area now occurs after all targets have been hit.",
+         "html": "Self-Destruct charge gained from hitting targets in the Basic Attack bonus area now occurs after all targets have been hit.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "E.T.C.",
+     "heroId": "L90ETC",
+     "heroIds": [
+      "L90ETC"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">E.T.C.</strong>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Guitar Hero</strong>\n<ul>\n<li>Healing visuals will no longer occur if E.T.C. is Blinded, the target is Evading, or if E.T.C.'s Health is at max.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Guitar Hero",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Healing visuals will no longer occur if E.T.C. is Blinded, the target is Evading, or if E.T.C.'s Health is at max.",
+         "html": "Healing visuals will no longer occur if E.T.C. is Blinded, the target is Evading, or if E.T.C.'s Health is at max.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Falstad",
+     "heroId": "Falstad",
+     "heroIds": [
+      "Falstad"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Falstad</strong>\n<ul>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Sustained Winds</strong>\n<ul>\n<li>Bonus damage is now dealt before the primary Basic Attack damage. All other effects will still occur if this kills the target.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Sustained Winds",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "Bonus damage is now dealt before the primary Basic Attack damage. All other effects will still occur if this kills the target.",
+         "html": "Bonus damage is now dealt before the primary Basic Attack damage. All other effects will still occur if this kills the target.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Fenix",
+     "heroId": "Fenix",
+     "heroIds": [
+      "Fenix"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Fenix</strong>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Arsenal Synergy</strong>\n<ul>\n<li>Now applies to the next Basic Attack fired, instead of the next Basic Attack that connects.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Mobile Offense</strong>\n<ul>\n<li>Now applies to the next Basic Attack fired, instead of the next Basic Attack that connects.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Inhibiting Energy</strong>\n<ul>\n<li>Cooldown is now applied when Phase Bomb is fired.</li>\n<li>Now applies to the next Basic Attack fired, instead of the next Basic Attack that connects.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Arsenal Synergy",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Now applies to the next Basic Attack fired, instead of the next Basic Attack that connects.",
+         "html": "Now applies to the next Basic Attack fired, instead of the next Basic Attack that connects.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Mobile Offense",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Now applies to the next Basic Attack fired, instead of the next Basic Attack that connects.",
+         "html": "Now applies to the next Basic Attack fired, instead of the next Basic Attack that connects.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Inhibiting Energy",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "Cooldown is now applied when Phase Bomb is fired.",
+         "html": "Cooldown is now applied when Phase Bomb is fired.",
+         "added": false
+        },
+        {
+         "text": "Now applies to the next Basic Attack fired, instead of the next Basic Attack that connects.",
+         "html": "Now applies to the next Basic Attack fired, instead of the next Basic Attack that connects.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Gazlowe",
+     "heroId": "Tinker",
+     "heroIds": [
+      "Tinker"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Gazlowe</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Rock-It! Turret [Q]</strong>\n<ul>\n<li>Fixed an issue that caused Defense Matrix applied to Gazlowe to not reduce Turret damage.</li>\n<li>Fixed an issue that caused Rock-It! Turrets created by an Ultimate Evolution clone of Gazlowe to not gain the increased damage.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Positive Reinforcement</strong>\n<ul>\n<li>Fixed an issue that caused the bonuses to be applied when a Rock-It Turret attacked a target, instead of when it hits a target.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Ark Reaktor</strong>\n<ul>\n<li>Fixed an issue that caused Defense Matrix applied to Gazlowe to not modify their damage.</li>\n<li>Fixed an issue that caused the miniature Rock-It! Turret to not fire at the correct location.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Firin' Mah Lazors</strong>\n<ul>\n<li>Fixed an issue that caused the warning indicator to be visible in the Fog of War.</li>\n<li>Fixed an issue that caused Defense Matrix applied to Gazlowe to not modify their damage.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Overklock</strong>\n<ul>\n<li>Bonus damage is now dealt before the primary Basic Attack damage. All other effects will still occur if this kills the target.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Rock-It! Turret",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Defense Matrix applied to Gazlowe to not reduce Turret damage.",
+         "html": "Fixed an issue that caused Defense Matrix applied to Gazlowe to not reduce Turret damage.",
+         "added": false
+        },
+        {
+         "text": "Fixed an issue that caused Rock-It! Turrets created by an Ultimate Evolution clone of Gazlowe to not gain the increased damage.",
+         "html": "Fixed an issue that caused Rock-It! Turrets created by an Ultimate Evolution clone of Gazlowe to not gain the increased damage.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Positive Reinforcement",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused the bonuses to be applied when a Rock-It Turret attacked a target, instead of when it hits a target.",
+         "html": "Fixed an issue that caused the bonuses to be applied when a Rock-It Turret attacked a target, instead of when it hits a target.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Ark Reaktor",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Defense Matrix applied to Gazlowe to not modify their damage.",
+         "html": "Fixed an issue that caused Defense Matrix applied to Gazlowe to not modify their damage.",
+         "added": false
+        },
+        {
+         "text": "Fixed an issue that caused the miniature Rock-It! Turret to not fire at the correct location.",
+         "html": "Fixed an issue that caused the miniature Rock-It! Turret to not fire at the correct location.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Firin' Mah Lazors",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused the warning indicator to be visible in the Fog of War.",
+         "html": "Fixed an issue that caused the warning indicator to be visible in the Fog of War.",
+         "added": false
+        },
+        {
+         "text": "Fixed an issue that caused Defense Matrix applied to Gazlowe to not modify their damage.",
+         "html": "Fixed an issue that caused Defense Matrix applied to Gazlowe to not modify their damage.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Overklock",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "Bonus damage is now dealt before the primary Basic Attack damage. All other effects will still occur if this kills the target.",
+         "html": "Bonus damage is now dealt before the primary Basic Attack damage. All other effects will still occur if this kills the target.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Greymane",
+     "heroId": "Greymane",
+     "heroIds": [
+      "Greymane"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Greymane</strong>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Go for the Throat</strong>\n<ul>\n<li>Fixed an issue that caused Go for the Throat to play its cast animation on the target when Greymane targets another Greymane.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Alpha Killer</strong>\n<ul>\n<li>Bonus damage is now dealt before the primary Basic Attack damage. All other effects will still occur if this kills the target.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Hunter's Blunderbuss</strong>\n<ul>\n<li>Now occurs while Blinded.</li>\n<li>Now searches after all effects on the primary target have completed, with the exception of Wizened Duelist.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Tooth and Claw</strong>\n<ul>\n<li>Now searches after all effects on the primary target have completed, with the exception of Wizened Duelist.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Go for the Throat",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Go for the Throat to play its cast animation on the target when Greymane targets another Greymane.",
+         "html": "Fixed an issue that caused Go for the Throat to play its cast animation on the target when Greymane targets another Greymane.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Alpha Killer",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "Bonus damage is now dealt before the primary Basic Attack damage. All other effects will still occur if this kills the target.",
+         "html": "Bonus damage is now dealt before the primary Basic Attack damage. All other effects will still occur if this kills the target.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Hunter's Blunderbuss",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "Now occurs while Blinded.",
+         "html": "Now occurs while Blinded.",
+         "added": false
+        },
+        {
+         "text": "Now searches after all effects on the primary target have completed, with the exception of Wizened Duelist.",
+         "html": "Now searches after all effects on the primary target have completed, with the exception of Wizened Duelist.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Tooth and Claw",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "Now searches after all effects on the primary target have completed, with the exception of Wizened Duelist.",
+         "html": "Now searches after all effects on the primary target have completed, with the exception of Wizened Duelist.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Illidan",
+     "heroId": "Illidan",
+     "heroIds": [
+      "Illidan"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Illidan</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Dive [Q]</strong>\n<ul>\n<li>Fixed an issue that caused Dive to play sound and visual effects twice if Illidan is targeting another Illidan.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Fiery Brand</strong>\n<ul>\n<li>Bonus damage is now dealt before the primary Basic Attack damage. All other effects will still occur if this kills the target.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Dive",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Dive to play sound and visual effects twice if Illidan is targeting another Illidan.",
+         "html": "Fixed an issue that caused Dive to play sound and visual effects twice if Illidan is targeting another Illidan.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Fiery Brand",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "Bonus damage is now dealt before the primary Basic Attack damage. All other effects will still occur if this kills the target.",
+         "html": "Bonus damage is now dealt before the primary Basic Attack damage. All other effects will still occur if this kills the target.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Imperius",
+     "heroId": "Imperius",
+     "heroIds": [
+      "Imperius"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Imperius</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Valorous Brand [Q]</strong>\n<ul>\n<li>Fixed an issue that caused Valorous Brand's benefits for being consumed to be granted when the target gains Invulnerable, Stasis, or is killed.</li>\n<li>Fixed an issue that caused Valorous Brands to heal Imperius when a Branded target enters Stasis, gains Invulnerable, or is killed.</li>\n<li>Valorous Brands are no longer consumed if Imperius is Blinded or the target is Evading.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Burn the Impure</strong>\n<ul>\n<li>Bonus damage is now dealt before the primary Basic Attack damage. All other effects will still occur if this kills the target.</li>\n<li>Now displays as Burn the Impure in the Death Recap.</li>\n<li>Since Blinds no longer consume Valorous Brands, this is now prevented by those effects.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Flash of Anger</strong>\n<ul>\n<li>Additional target search now occurs after all effects on the primary target.</li>\n<li>Since Blinds no longer consume Valorous Brands, this is now prevented by those effects.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Holy Fervor</strong>\n<ul>\n<li>No longer prevented by Blinds or Evasion.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Divine Rage</strong>\n<ul>\n<li>Fixed an issue that caused Valorous Brands to grant cooldown reduction when a Branded target enters Stasis, gains Invulnerable, or is killed.</li>\n<li>Since Blinds no longer consume Valorous Brands, this is now prevented by those effects.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Unrelenting Descent</strong>\n<ul>\n<li>Fixed an issue that caused Valorous Brands to grant cooldown reduction when a Branded target enters Stasis, gains Invulnerable, or is killed.</li>\n<li>Since Blinds no longer consume Valorous Brands, this is now prevented by those effects.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Valorous Brand",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Valorous Brand's benefits for being consumed to be granted when the target gains Invulnerable, Stasis, or is killed.",
+         "html": "Fixed an issue that caused Valorous Brand's benefits for being consumed to be granted when the target gains Invulnerable, Stasis, or is killed.",
+         "added": false
+        },
+        {
+         "text": "Fixed an issue that caused Valorous Brands to heal Imperius when a Branded target enters Stasis, gains Invulnerable, or is killed.",
+         "html": "Fixed an issue that caused Valorous Brands to heal Imperius when a Branded target enters Stasis, gains Invulnerable, or is killed.",
+         "added": false
+        },
+        {
+         "text": "Valorous Brands are no longer consumed if Imperius is Blinded or the target is Evading.",
+         "html": "Valorous Brands are no longer consumed if Imperius is Blinded or the target is Evading.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Burn the Impure",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Bonus damage is now dealt before the primary Basic Attack damage. All other effects will still occur if this kills the target.",
+         "html": "Bonus damage is now dealt before the primary Basic Attack damage. All other effects will still occur if this kills the target.",
+         "added": false
+        },
+        {
+         "text": "Now displays as Burn the Impure in the Death Recap.",
+         "html": "Now displays as Burn the Impure in the Death Recap.",
+         "added": false
+        },
+        {
+         "text": "Since Blinds no longer consume Valorous Brands, this is now prevented by those effects.",
+         "html": "Since Blinds no longer consume Valorous Brands, this is now prevented by those effects.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Flash of Anger",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "Additional target search now occurs after all effects on the primary target.",
+         "html": "Additional target search now occurs after all effects on the primary target.",
+         "added": false
+        },
+        {
+         "text": "Since Blinds no longer consume Valorous Brands, this is now prevented by those effects.",
+         "html": "Since Blinds no longer consume Valorous Brands, this is now prevented by those effects.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Holy Fervor",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "No longer prevented by Blinds or Evasion.",
+         "html": "No longer prevented by Blinds or Evasion.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Divine Rage",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Valorous Brands to grant cooldown reduction when a Branded target enters Stasis, gains Invulnerable, or is killed.",
+         "html": "Fixed an issue that caused Valorous Brands to grant cooldown reduction when a Branded target enters Stasis, gains Invulnerable, or is killed.",
+         "added": false
+        },
+        {
+         "text": "Since Blinds no longer consume Valorous Brands, this is now prevented by those effects.",
+         "html": "Since Blinds no longer consume Valorous Brands, this is now prevented by those effects.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Unrelenting Descent",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Valorous Brands to grant cooldown reduction when a Branded target enters Stasis, gains Invulnerable, or is killed.",
+         "html": "Fixed an issue that caused Valorous Brands to grant cooldown reduction when a Branded target enters Stasis, gains Invulnerable, or is killed.",
+         "added": false
+        },
+        {
+         "text": "Since Blinds no longer consume Valorous Brands, this is now prevented by those effects.",
+         "html": "Since Blinds no longer consume Valorous Brands, this is now prevented by those effects.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Jaina",
+     "heroId": "Jaina",
+     "heroIds": [
+      "Jaina"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Jaina</strong>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Water Elemental</strong>\n<ul>\n<li>Fixed an issue that caused Water Elemental's Basic Attack splash to hit Evading targets.</li>\n<li>Water Elemental's Basic Attack splash no longer reveals the targets it hits.</li>\n<li>Water Elemental's Basic Attack splash now reveals the area.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Water Elemental",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Water Elemental's Basic Attack splash to hit Evading targets.",
+         "html": "Fixed an issue that caused Water Elemental's Basic Attack splash to hit Evading targets.",
+         "added": false
+        },
+        {
+         "text": "Water Elemental's Basic Attack splash no longer reveals the targets it hits.",
+         "html": "Water Elemental's Basic Attack splash no longer reveals the targets it hits.",
+         "added": false
+        },
+        {
+         "text": "Water Elemental's Basic Attack splash now reveals the area.",
+         "html": "Water Elemental's Basic Attack splash now reveals the area.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Johanna",
+     "heroId": "Crusader",
+     "heroIds": [
+      "Crusader"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Johanna</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Condemn [W]</strong>\n<ul>\n<li>Fixed an issue that caused Condemn to pull Unstoppable targets.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Condemn",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Condemn to pull Unstoppable targets.",
+         "html": "Fixed an issue that caused Condemn to pull Unstoppable targets.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Junkrat",
+     "heroId": "Junkrat",
+     "heroIds": [
+      "Junkrat"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Junkrat</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li>Basic Attack Splash damage now occurs while Blinded, but is still prevented by Evading targets.</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Basic Attack Splash damage now occurs while Blinded, but is still prevented by Evading targets.",
+         "html": "Basic Attack Splash damage now occurs while Blinded, but is still prevented by Evading targets.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Kael'thas",
+     "heroId": "Kaelthas",
+     "heroIds": [
+      "Kaelthas"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Kael'thas</strong>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Phoenix</strong>\n<ul>\n<li>Attack damage is now affected by Defense Matrix when Kael'thas is under its effects.</li>\n<li>Attack Splash no longer reveals targets hit.</li>\n<li>Attack Splash now reveals the area it hits.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Phoenix",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "Attack damage is now affected by Defense Matrix when Kael'thas is under its effects.",
+         "html": "Attack damage is now affected by Defense Matrix when Kael'thas is under its effects.",
+         "added": false
+        },
+        {
+         "text": "Attack Splash no longer reveals targets hit.",
+         "html": "Attack Splash no longer reveals targets hit.",
+         "added": false
+        },
+        {
+         "text": "Attack Splash now reveals the area it hits.",
+         "html": "Attack Splash now reveals the area it hits.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Kel'Thuzad",
+     "heroId": "KelThuzad",
+     "heroIds": [
+      "KelThuzad"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Kel'Thuzad</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Chains of Kel'Thuzad [E]</strong>\n<ul>\n<li>Now reveal both targets on chain link connection.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">The Damned Return</strong>\n<ul>\n<li>Fixed an issue that caused the Shade to not be revealed when it deals damage.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Chains of Kel'Thuzad",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Now reveal both targets on chain link connection.",
+         "html": "Now reveal both targets on chain link connection.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "The Damned Return",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused the Shade to not be revealed when it deals damage.",
+         "html": "Fixed an issue that caused the Shade to not be revealed when it deals damage.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Kerrigan",
+     "heroId": "Kerrigan",
+     "heroIds": [
+      "Kerrigan"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Kerrigan</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Ravage [Q]</strong>\n<ul>\n<li>Fixed an issue that caused Ravage to play its cast animation on the target when Kerrigan targets another Kerrigan at close range.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Ravage",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Ravage to play its cast animation on the target when Kerrigan targets another Kerrigan at close range.",
+         "html": "Fixed an issue that caused Ravage to play its cast animation on the target when Kerrigan targets another Kerrigan at close range.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Kharazim",
+     "heroId": "Monk",
+     "heroIds": [
+      "Monk"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Kharazim</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Radiant Dash [Q]</strong>\n<ul>\n<li>Fixed an issue that caused Radiant Dash to appear incorrectly when cast on another Kharazim.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Iron Fists</strong>\n<ul>\n<li>Fixed an issue that caused the triggering attack to not play the correct impact sound.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Radiant Dash",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Radiant Dash to appear incorrectly when cast on another Kharazim.",
+         "html": "Fixed an issue that caused Radiant Dash to appear incorrectly when cast on another Kharazim.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Iron Fists",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused the triggering attack to not play the correct impact sound.",
+         "html": "Fixed an issue that caused the triggering attack to not play the correct impact sound.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Li-Ming",
+     "heroId": "Wizard",
+     "heroIds": [
+      "Wizard"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Li-Ming</strong>\n<ul>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Charged Blast</strong>\n<ul>\n<li>Tal Rasha's Elements bonus is now additive instead of multiplicative.</li>\n<li>Now deals damage before the Basic Attack deals damage.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Seeker</strong>\n<ul>\n<li>Now shows in the Death Recap as its own entry.</li>\n<li>Now displays as Seeker in the Death Recap.</li>\n<li>Now happens after the third Magic Missile deals damage.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Tal Rasha's Elements</strong>\n<ul>\n<li>Tal Rasha's Elements bonus is now additive instead of multiplicative.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Charged Blast",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "Tal Rasha's Elements bonus is now additive instead of multiplicative.",
+         "html": "Tal Rasha's Elements bonus is now additive instead of multiplicative.",
+         "added": false
+        },
+        {
+         "text": "Now deals damage before the Basic Attack deals damage.",
+         "html": "Now deals damage before the Basic Attack deals damage.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Seeker",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "Now shows in the Death Recap as its own entry.",
+         "html": "Now shows in the Death Recap as its own entry.",
+         "added": false
+        },
+        {
+         "text": "Now displays as Seeker in the Death Recap.",
+         "html": "Now displays as Seeker in the Death Recap.",
+         "added": false
+        },
+        {
+         "text": "Now happens after the third Magic Missile deals damage.",
+         "html": "Now happens after the third Magic Missile deals damage.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Tal Rasha's Elements",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "Tal Rasha's Elements bonus is now additive instead of multiplicative.",
+         "html": "Tal Rasha's Elements bonus is now additive instead of multiplicative.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Lucio",
+     "heroId": "Lucio",
+     "heroIds": [
+      "Lucio"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Lucio</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Crossfade [W]</strong>\n<ul>\n<li>Crossfades from different Lúcios can now stack together.</li>\n<li>Fixed an issue that caused the display of affected allies to not display correctly if more than 7 Heroes are in Crossfade's radius.</li>\n<li>The display of affected allies of Crossfade now include targets in the Boombox Crossfade radius.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Soundwave [Q]</strong>\n<ul>\n<li>Fixed an issue that caused Soundwave to push Unstoppable targets.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Party Mix</strong>\n<ul>\n<li>Fixed an issue that caused toggling between Healing Boost and Speed Boost to cause the duration counter to be inaccurate.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">All Together</strong>\n<ul>\n<li>Fixed an issue that caused allies in the Boombox's Crossfade radius to not grant Movement Speed.</li>\n<li>Fixed an issue that caused the Movement Speed bonus to not behave consistently if multiple Lúcios are in the game.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">House Party</strong>\n<ul>\n<li>Fixed an issue that caused allies in the Boombox's Crossfade radius to not grant bonus Healing.</li>\n<li>Fixed an issue that caused the Healing bonus to not behave consistently if multiple Lúcios are in the game.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Summer Anthem</strong>\n<ul>\n<li>Now grants its effects to allies in Boombox's Crossfade radius.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Crossfade",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Crossfades from different Lúcios can now stack together.",
+         "html": "Crossfades from different Lúcios can now stack together.",
+         "added": false
+        },
+        {
+         "text": "Fixed an issue that caused the display of affected allies to not display correctly if more than 7 Heroes are in Crossfade's radius.",
+         "html": "Fixed an issue that caused the display of affected allies to not display correctly if more than 7 Heroes are in Crossfade's radius.",
+         "added": false
+        },
+        {
+         "text": "The display of affected allies of Crossfade now include targets in the Boombox Crossfade radius.",
+         "html": "The display of affected allies of Crossfade now include targets in the Boombox Crossfade radius.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Soundwave",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Soundwave to push Unstoppable targets.",
+         "html": "Fixed an issue that caused Soundwave to push Unstoppable targets.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Party Mix",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused toggling between Healing Boost and Speed Boost to cause the duration counter to be inaccurate.",
+         "html": "Fixed an issue that caused toggling between Healing Boost and Speed Boost to cause the duration counter to be inaccurate.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "All Together",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused allies in the Boombox's Crossfade radius to not grant Movement Speed.",
+         "html": "Fixed an issue that caused allies in the Boombox's Crossfade radius to not grant Movement Speed.",
+         "added": false
+        },
+        {
+         "text": "Fixed an issue that caused the Movement Speed bonus to not behave consistently if multiple Lúcios are in the game.",
+         "html": "Fixed an issue that caused the Movement Speed bonus to not behave consistently if multiple Lúcios are in the game.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "House Party",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused allies in the Boombox's Crossfade radius to not grant bonus Healing.",
+         "html": "Fixed an issue that caused allies in the Boombox's Crossfade radius to not grant bonus Healing.",
+         "added": false
+        },
+        {
+         "text": "Fixed an issue that caused the Healing bonus to not behave consistently if multiple Lúcios are in the game.",
+         "html": "Fixed an issue that caused the Healing bonus to not behave consistently if multiple Lúcios are in the game.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Summer Anthem",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "Now grants its effects to allies in Boombox's Crossfade radius.",
+         "html": "Now grants its effects to allies in Boombox's Crossfade radius.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Lunara",
+     "heroId": "Dryad",
+     "heroIds": [
+      "Dryad"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Lunara</strong>\n<ul>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Wild Vigor</strong>\n<ul>\n<li>Fixed an issue that caused the 4th Basic Attack to not display impact effects.</li>\n<li>Now applies to the next 4 Basic Attacks fired, instead of the next 4 Basic Attacks that connect.</li>\n<li>Now applies to the next attack fired instead of the next attack that hits.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Wild Vigor",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused the 4th Basic Attack to not display impact effects.",
+         "html": "Fixed an issue that caused the 4th Basic Attack to not display impact effects.",
+         "added": false
+        },
+        {
+         "text": "Now applies to the next 4 Basic Attacks fired, instead of the next 4 Basic Attacks that connect.",
+         "html": "Now applies to the next 4 Basic Attacks fired, instead of the next 4 Basic Attacks that connect.",
+         "added": false
+        },
+        {
+         "text": "Now applies to the next attack fired instead of the next attack that hits.",
+         "html": "Now applies to the next attack fired instead of the next attack that hits.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Nazeebo",
+     "heroId": "WitchDoctor",
+     "heroIds": [
+      "WitchDoctor"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Nazeebo</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Corpse Spiders [Q]</strong>\n<ul>\n<li>Fixed an issue that caused Defense Matrix to not reduce the damage of Corpse Spiders.</li>\n<li>Fixed an issue that caused Ultimate Evolution clones of Nazeebo to not grant Spell Power bonuses to Corpse Spiders.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Zombie Wall [W]</strong>\n<ul>\n<li>Fixed an issue that caused Defense Matrix to not reduce the damage of Zombie Wall.</li>\n<li>Fixed an issue that caused Ultimate Evolution clones of Nazeebo to not grant Spell Power bonuses to Zombie Wall.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Dead Rush</strong>\n<ul>\n<li>Now increases the damage of already existing Zombie Wall Zombies when the talent is selected.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Gargantuan</strong>\n<ul>\n<li>Fixed an issue that caused Defense Matrix to not reduce the damage of the Gargantuan.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Corpse Spiders",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Defense Matrix to not reduce the damage of Corpse Spiders.",
+         "html": "Fixed an issue that caused Defense Matrix to not reduce the damage of Corpse Spiders.",
+         "added": false
+        },
+        {
+         "text": "Fixed an issue that caused Ultimate Evolution clones of Nazeebo to not grant Spell Power bonuses to Corpse Spiders.",
+         "html": "Fixed an issue that caused Ultimate Evolution clones of Nazeebo to not grant Spell Power bonuses to Corpse Spiders.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Zombie Wall",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Defense Matrix to not reduce the damage of Zombie Wall.",
+         "html": "Fixed an issue that caused Defense Matrix to not reduce the damage of Zombie Wall.",
+         "added": false
+        },
+        {
+         "text": "Fixed an issue that caused Ultimate Evolution clones of Nazeebo to not grant Spell Power bonuses to Zombie Wall.",
+         "html": "Fixed an issue that caused Ultimate Evolution clones of Nazeebo to not grant Spell Power bonuses to Zombie Wall.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Dead Rush",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "Now increases the damage of already existing Zombie Wall Zombies when the talent is selected.",
+         "html": "Now increases the damage of already existing Zombie Wall Zombies when the talent is selected.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Gargantuan",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Defense Matrix to not reduce the damage of the Gargantuan.",
+         "html": "Fixed an issue that caused Defense Matrix to not reduce the damage of the Gargantuan.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Orphea",
+     "heroId": "Orphea",
+     "heroIds": [
+      "Orphea"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Orphea</strong>\n<ul>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Backbiter</strong>\n<ul>\n<li>Fixed an issue that caused Backbiter to not move Orphea if she is Rooted.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Chaotic Assault</strong>\n<ul>\n<li>Fixed an issue that caused the damage bonus to be granted when Orphea has less than 3 Overwhelming Chaos if she dies with 3 Overwhelming Chaos.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Crushing Jaws</strong>\n<ul>\n<li>Fixed an issue that caused Crushing Jaws pull to not apply correctly.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Backbiter",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Backbiter to not move Orphea if she is Rooted.",
+         "html": "Fixed an issue that caused Backbiter to not move Orphea if she is Rooted.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Chaotic Assault",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused the damage bonus to be granted when Orphea has less than 3 Overwhelming Chaos if she dies with 3 Overwhelming Chaos.",
+         "html": "Fixed an issue that caused the damage bonus to be granted when Orphea has less than 3 Overwhelming Chaos if she dies with 3 Overwhelming Chaos.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Crushing Jaws",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Crushing Jaws pull to not apply correctly.",
+         "html": "Fixed an issue that caused Crushing Jaws pull to not apply correctly.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Raynor",
+     "heroId": "Raynor",
+     "heroIds": [
+      "Raynor"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Raynor</strong>\n<ul>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Unstable Compound</strong>\n<ul>\n<li>Mana restored is now bundled together when multiple Heroes are hit.</li>\n<li>Mana restoration now restores all Mana at once, instead of 10 Mana for each individual Hero hit.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Unstable Compound",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "Mana restored is now bundled together when multiple Heroes are hit.",
+         "html": "Mana restored is now bundled together when multiple Heroes are hit.",
+         "added": false
+        },
+        {
+         "text": "Mana restoration now restores all Mana at once, instead of 10 Mana for each individual Hero hit.",
+         "html": "Mana restoration now restores all Mana at once, instead of 10 Mana for each individual Hero hit.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Rehgar",
+     "heroId": "Rehgar",
+     "heroIds": [
+      "Rehgar"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Rehgar</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Ghost Wolf [Z]</strong>\n<ul>\n<li>Fixed an issue that caused Ghost Wolf Lunge attacks targeted at Rehgar to cause the target Rehgar to play an attack animation.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Hunger of the Wolf</strong>\n<ul>\n<li>Fixed an issue that caused Blinds and Evasion to not prevent this from activating.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Ghost Wolf",
+       "key": "Z",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Ghost Wolf Lunge attacks targeted at Rehgar to cause the target Rehgar to play an attack animation.",
+         "html": "Fixed an issue that caused Ghost Wolf Lunge attacks targeted at Rehgar to cause the target Rehgar to play an attack animation.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Hunger of the Wolf",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Blinds and Evasion to not prevent this from activating.",
+         "html": "Fixed an issue that caused Blinds and Evasion to not prevent this from activating.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Rexxar",
+     "heroId": "Rexxar",
+     "heroIds": [
+      "Rexxar"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Rexxar</strong>\n<ul>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Dire Beast</strong>\n<ul>\n<li>Now causes Misha, Charge! to display as a critical when at 5 or more stacks.</li>\n<li>Bonus damage is now applied to the next Misha, Charge!</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Dire Beast",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "Now causes Misha, Charge! to display as a critical when at 5 or more stacks.",
+         "html": "Now causes Misha, Charge! to display as a critical when at 5 or more stacks.",
+         "added": false
+        },
+        {
+         "text": "Bonus damage is now applied to the next Misha, Charge!",
+         "html": "Bonus damage is now applied to the next Misha, Charge!",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Samuro",
+     "heroId": "Samuro",
+     "heroIds": [
+      "Samuro"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Samuro</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Advancing Strikes [Trait DQ]</strong>\n<ul>\n<li>Blind and Evasion now prevent activation.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Advancing Strikes",
+       "key": "Trait DQ",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Blind and Evasion now prevent activation.",
+         "html": "Blind and Evasion now prevent activation.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Sgt. Hammer",
+     "heroId": "SgtHammer",
+     "heroIds": [
+      "SgtHammer"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Sgt. Hammer</strong>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Ambush</strong>\n<ul>\n<li>Now displays the remaining duration until the Cloak becomes active around the Trait button.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Pulse Detonation Core</strong>\n<ul>\n<li>First instance of damage is now displayed as Spider Mines in the Death Recap.</li>\n<li>Mana restored is now bundled together when multiple Heroes are hit.</li>\n<li>Mana restored is now combined for Siege Mode attacks.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Shrapnel Mines</strong>\n<ul>\n<li>Duration of all Amor reduction stacks are now refreshed when re-applied.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Ambush",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Now displays the remaining duration until the Cloak becomes active around the Trait button.",
+         "html": "Now displays the remaining duration until the Cloak becomes active around the Trait button.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Pulse Detonation Core",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "First instance of damage is now displayed as Spider Mines in the Death Recap.",
+         "html": "First instance of damage is now displayed as Spider Mines in the Death Recap.",
+         "added": false
+        },
+        {
+         "text": "Mana restored is now bundled together when multiple Heroes are hit.",
+         "html": "Mana restored is now bundled together when multiple Heroes are hit.",
+         "added": false
+        },
+        {
+         "text": "Mana restored is now combined for Siege Mode attacks.",
+         "html": "Mana restored is now combined for Siege Mode attacks.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Shrapnel Mines",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "Duration of all Amor reduction stacks are now refreshed when re-applied.",
+         "html": "Duration of all Amor reduction stacks are now refreshed when re-applied.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Sonya",
+     "heroId": "Barbarian",
+     "heroIds": [
+      "Barbarian"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Sonya</strong>\n<ul>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Giant Slammer</strong>\n<ul>\n<li>Bonus damage is now dealt before the primary Basic Attack damage. All other effects will still occur if this kills the target.</li>\n<li>Now displays as Giant Slammer in the Death Recap.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Giant Slammer",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "Bonus damage is now dealt before the primary Basic Attack damage. All other effects will still occur if this kills the target.",
+         "html": "Bonus damage is now dealt before the primary Basic Attack damage. All other effects will still occur if this kills the target.",
+         "added": false
+        },
+        {
+         "text": "Now displays as Giant Slammer in the Death Recap.",
+         "html": "Now displays as Giant Slammer in the Death Recap.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Stitches",
+     "heroId": "Stitches",
+     "heroIds": [
+      "Stitches"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Stitches</strong>\n<ul>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Playtime!</strong>\n<ul>\n<li>Mana restored is now bundled together when multiple Heroes are hit.</li>\n<li>Tooltip updated to include Mana restored when hitting Heroes with Slam's inner area.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Playtime!",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "Mana restored is now bundled together when multiple Heroes are hit.",
+         "html": "Mana restored is now bundled together when multiple Heroes are hit.",
+         "added": false
+        },
+        {
+         "text": "Tooltip updated to include Mana restored when hitting Heroes with Slam's inner area.",
+         "html": "Tooltip updated to include Mana restored when hitting Heroes with Slam's inner area.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Tassadar",
+     "heroId": "Tassadar",
+     "heroIds": [
+      "Tassadar"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Tassadar</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Resonance Beam [Trait]</strong>\n<ul>\n<li>Fixed an issue that caused Resonance Beam to gain charge prior to dealing damage past the first instance of damage.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Arc Discharge</strong>\n<ul>\n<li>Now happens prior to all other effects when a Basic Attack would grant progress.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Archon</strong>\n<ul>\n<li>Splash attacks now happen after all other effects on the primary target have completed.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Resonance Beam",
+       "key": "Trait",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Resonance Beam to gain charge prior to dealing damage past the first instance of damage.",
+         "html": "Fixed an issue that caused Resonance Beam to gain charge prior to dealing damage past the first instance of damage.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Arc Discharge",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "Now happens prior to all other effects when a Basic Attack would grant progress.",
+         "html": "Now happens prior to all other effects when a Basic Attack would grant progress.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Archon",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "Splash attacks now happen after all other effects on the primary target have completed.",
+         "html": "Splash attacks now happen after all other effects on the primary target have completed.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "The Butcher",
+     "heroId": "Butcher",
+     "heroIds": [
+      "Butcher"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">The Butcher</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Butcher's Brand [W]</strong>\n<ul>\n<li>Fixed an issue that caused Butcher's Basic Attack impact visuals to not be correctly altered against Branded targets.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Brutal Strike</strong>\n<ul>\n<li>Now consumed while Blinded or against Evading enemies.</li>\n<li>Now displays in the Buff Bar.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Savage Charge</strong>\n<ul>\n<li>Now displays as Savage Charge in the Death Recap.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Butcher's Brand",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Butcher's Basic Attack impact visuals to not be correctly altered against Branded targets.",
+         "html": "Fixed an issue that caused Butcher's Basic Attack impact visuals to not be correctly altered against Branded targets.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Brutal Strike",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "Now consumed while Blinded or against Evading enemies.",
+         "html": "Now consumed while Blinded or against Evading enemies.",
+         "added": false
+        },
+        {
+         "text": "Now displays in the Buff Bar.",
+         "html": "Now displays in the Buff Bar.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Savage Charge",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "Now displays as Savage Charge in the Death Recap.",
+         "html": "Now displays as Savage Charge in the Death Recap.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "The Lost Vikings",
+     "heroId": "LostVikings",
+     "heroIds": [
+      "LostVikings"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">The Lost Vikings</strong>\n<ul>\n<li>Baleog's Basic Attack damage will now be properly affected by other damage modifiers when empowered by Explosive Attacks.</li>\n<li>Fixed an issue that caused Olaf's charging attack to not gain the benefits of Nordic Attack Squad or Impatience is a Virtue.</li>\n<li><strong class=\"pn-name\">Olaf</strong>\n<ul>\n<li>Fixed an issue that caused Charge to not grant the bonuses from Nordic Attack Squad.</li>\n<li>Fixed an issue that caused Charge to go on cooldown when targeting enemies near Olaf's position.</li>\n<li>Fixed an issue that caused Charge to not grant the bonuses from Impatience is a Virtue.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Erik</strong>\n<ul>\n<li>Increase Move speed no longer increases Erik's starting speed and now grants Erik 15% Move speed, stacking with other effects.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Baleog</strong>\n<ul>\n<li>Fixed an issue that caused Splash damage to not grant bonuses from Impatience is a Virtue.</li>\n</ul>\n</li>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Explosive Attacks</strong>\n<ul>\n<li>Bonus damage is now a multiplicative bonus.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Nordic Attack Squad</strong>\n<ul>\n<li>Bonus damage is now dealt before the primary Basic Attack damage. All other effects will still occur if this kills the target.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Baleog's Basic Attack damage will now be properly affected by other damage modifiers when empowered by Explosive Attacks.",
+         "html": "Baleog's Basic Attack damage will now be properly affected by other damage modifiers when empowered by Explosive Attacks.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Olaf's charging attack to not gain the benefits of Nordic Attack Squad or Impatience is a Virtue.",
+         "html": "Fixed an issue that caused Olaf's charging attack to not gain the benefits of Nordic Attack Squad or Impatience is a Virtue.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Olaf",
+       "key": null,
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Charge to not grant the bonuses from Nordic Attack Squad.",
+         "html": "Fixed an issue that caused Charge to not grant the bonuses from Nordic Attack Squad.",
+         "added": false
+        },
+        {
+         "text": "Fixed an issue that caused Charge to go on cooldown when targeting enemies near Olaf's position.",
+         "html": "Fixed an issue that caused Charge to go on cooldown when targeting enemies near Olaf's position.",
+         "added": false
+        },
+        {
+         "text": "Fixed an issue that caused Charge to not grant the bonuses from Impatience is a Virtue.",
+         "html": "Fixed an issue that caused Charge to not grant the bonuses from Impatience is a Virtue.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Erik",
+       "key": null,
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "Increase Move speed no longer increases Erik's starting speed and now grants Erik 15% Move speed, stacking with other effects.",
+         "html": "Increase Move speed no longer increases Erik's starting speed and now grants Erik 15% Move speed, stacking with other effects.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Baleog",
+       "key": null,
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Splash damage to not grant bonuses from Impatience is a Virtue.",
+         "html": "Fixed an issue that caused Splash damage to not grant bonuses from Impatience is a Virtue.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Explosive Attacks",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Bonus damage is now a multiplicative bonus.",
+         "html": "Bonus damage is now a multiplicative bonus.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Nordic Attack Squad",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "Bonus damage is now dealt before the primary Basic Attack damage. All other effects will still occur if this kills the target.",
+         "html": "Bonus damage is now dealt before the primary Basic Attack damage. All other effects will still occur if this kills the target.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Thrall",
+     "heroId": "Thrall",
+     "heroIds": [
+      "Thrall"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Thrall</strong>\n<ul>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Tempest Fury</strong>\n<ul>\n<li>The initial third Windfury attack now features impact visuals.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Tempest Fury",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "The initial third Windfury attack now features impact visuals.",
+         "html": "The initial third Windfury attack now features impact visuals.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Tracer",
+     "heroId": "Tracer",
+     "heroIds": [
+      "Tracer"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Tracer</strong>\n<ul>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Focus Fire</strong>\n<ul>\n<li>No longer progresses while Blinded or against Evading targets.</li>\n<li>Now displays in the Buff Bar how many hits have occurred on the current attack target, as well as the window before tracking resets.</li>\n<li>Now progresses prior to dealing damage instead of after dealing damage.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Focus Fire",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "No longer progresses while Blinded or against Evading targets.",
+         "html": "No longer progresses while Blinded or against Evading targets.",
+         "added": false
+        },
+        {
+         "text": "Now displays in the Buff Bar how many hits have occurred on the current attack target, as well as the window before tracking resets.",
+         "html": "Now displays in the Buff Bar how many hits have occurred on the current attack target, as well as the window before tracking resets.",
+         "added": false
+        },
+        {
+         "text": "Now progresses prior to dealing damage instead of after dealing damage.",
+         "html": "Now progresses prior to dealing damage instead of after dealing damage.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Tyrael",
+     "heroId": "Tyrael",
+     "heroIds": [
+      "Tyrael"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Tyrael</strong>\n<ul>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Law and Order</strong>\n<ul>\n<li>Now displays in the Buff Bar.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Law and Order",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "Now displays in the Buff Bar.",
+         "html": "Now displays in the Buff Bar.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Tyrande",
+     "heroId": "Tyrande",
+     "heroIds": [
+      "Tyrande"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Tyrande</strong>\n<ul>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Mark of Mending</strong>\n<ul>\n<li>Now displays as Mark of Mending in the Death Recap.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Mark of Mending",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "Now displays as Mark of Mending in the Death Recap.",
+         "html": "Now displays as Mark of Mending in the Death Recap.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Uther",
+     "heroId": "Uther",
+     "heroIds": [
+      "Uther"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Uther</strong>\n<ul>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Guardian of Ancient Kings</strong>\n<ul>\n<li>Duration is now increased by talents that grant additional Devotion Armor duration.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Benediction</strong>\n<ul>\n<li>Fixed an issue that could cause abilities cast while Benediction is active to grant Uther Mana.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Guardian of Ancient Kings",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "Duration is now increased by talents that grant additional Devotion Armor duration.",
+         "html": "Duration is now increased by talents that grant additional Devotion Armor duration.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Benediction",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "Fixed an issue that could cause abilities cast while Benediction is active to grant Uther Mana.",
+         "html": "Fixed an issue that could cause abilities cast while Benediction is active to grant Uther Mana.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Valla",
+     "heroId": "DemonHunter",
+     "heroIds": [
+      "DemonHunter"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Valla</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Vault [E]</strong>\n<ul>\n<li>Damage bonus now applies to the next Basic Attack fired.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Rain of Vengeance</strong>\n<ul>\n<li>Fixed an issue that caused cast visuals to not display correctly.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Vault",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Damage bonus now applies to the next Basic Attack fired.",
+         "html": "Damage bonus now applies to the next Basic Attack fired.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Rain of Vengeance",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused cast visuals to not display correctly.",
+         "html": "Fixed an issue that caused cast visuals to not display correctly.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Varian",
+     "heroId": "Varian",
+     "heroIds": [
+      "Varian"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Varian</strong>\n<ul>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Twin Blades of Fury</strong>\n<ul>\n<li>Fixed an issue that caused Twin Blades of Fury to display the wrong cooldown reduction value.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Glory of the Alliance</strong>\n<ul>\n<li>Fixed an issue that caused Glory to the Alliance to display incorrect cooldown reduction value after selection.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Twin Blades of Fury",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Twin Blades of Fury to display the wrong cooldown reduction value.",
+         "html": "Fixed an issue that caused Twin Blades of Fury to display the wrong cooldown reduction value.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Glory of the Alliance",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Glory to the Alliance to display incorrect cooldown reduction value after selection.",
+         "html": "Fixed an issue that caused Glory to the Alliance to display incorrect cooldown reduction value after selection.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Whitemane",
+     "heroId": "Whitemane",
+     "heroIds": [
+      "Whitemane"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Whitemane</strong>\n<ul>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Saintly Greatstaff</strong>\n<ul>\n<li>Marker is no longer removed if Whitemane is Blinded or target is Evading.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Saintly Greatstaff",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "Marker is no longer removed if Whitemane is Blinded or target is Evading.",
+         "html": "Marker is no longer removed if Whitemane is Blinded or target is Evading.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Zagara",
+     "heroId": "Zagara",
+     "heroIds": [
+      "Zagara"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Zagara</strong>\n<ul>\n<li>Summons are now affected by Defense Matrix and Ultimate Evolution damage modifications.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Summons are now affected by Defense Matrix and Ultimate Evolution damage modifications.",
+         "html": "Summons are now affected by Defense Matrix and Ultimate Evolution damage modifications.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Zarya",
+     "heroId": "Zarya",
+     "heroIds": [
+      "Zarya"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Zarya</strong>\n<ul>\n<li>Targets that enter the splash area between instances of Zarya's Basic Attack hitting the primary target will no longer be hit instantly.</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Deep Burn</strong>\n<ul>\n<li>Energy gained is now bundled together when multiple marked Heroes are hit.</li>\n<li>Energy is now gained after the primary target and all Splash attack targets have been hit, causing all target to take equal damage when Deep Burn grants Zarya Energy.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Targets that enter the splash area between instances of Zarya's Basic Attack hitting the primary target will no longer be hit instantly.",
+         "html": "Targets that enter the splash area between instances of Zarya's Basic Attack hitting the primary target will no longer be hit instantly.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Deep Burn",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "Energy gained is now bundled together when multiple marked Heroes are hit.",
+         "html": "Energy gained is now bundled together when multiple marked Heroes are hit.",
+         "added": false
+        },
+        {
+         "text": "Energy is now gained after the primary target and all Splash attack targets have been hit, causing all target to take equal damage when Deep Burn grants Zarya Energy.",
+         "html": "Energy is now gained after the primary target and all Splash attack targets have been hit, causing all target to take equal damage when Deep Burn grants Zarya Energy.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Zul'jin",
+     "heroId": "Zuljin",
+     "heroIds": [
+      "Zuljin"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Zul'jin</strong>\n<ul>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">A Surprise For Ya!</strong>\n<ul>\n<li>Now gains the benefits of Berserker being active if the fired Attack had Berserker active.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "A Surprise For Ya!",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "Now gains the benefits of Berserker being active if the fired Attack had Berserker active.",
+         "html": "Now gains the benefits of Berserker being active if the fired Attack had Berserker active.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "nameKo": "버그 수정"
+  }
+ ],
+ "heroes": [
+  "Alarak",
+  "Amazon",
+  "Artanis",
+  "Arthas",
+  "Azmodan",
+  "Barbarian",
+  "Butcher",
+  "Chen",
+  "Cho",
+  "Chromie",
+  "Crusader",
+  "DVa",
+  "Deathwing",
+  "Dehaka",
+  "DemonHunter",
+  "Dryad",
+  "FaerieDragon",
+  "Falstad",
+  "Fenix",
+  "Gall",
+  "Greymane",
+  "Illidan",
+  "Imperius",
+  "Jaina",
+  "Junkrat",
+  "Kaelthas",
+  "KelThuzad",
+  "Kerrigan",
+  "L90ETC",
+  "LostVikings",
+  "Lucio",
+  "Monk",
+  "Orphea",
+  "Raynor",
+  "Rehgar",
+  "Rexxar",
+  "Samuro",
+  "SgtHammer",
+  "Stitches",
+  "Tassadar",
+  "Thrall",
+  "Tinker",
+  "Tracer",
+  "Tyrael",
+  "Tyrande",
+  "Uther",
+  "Valeera",
+  "Varian",
+  "Whitemane",
+  "WitchDoctor",
+  "Wizard",
+  "Zagara",
+  "Zarya",
+  "Zuljin"
+ ],
+ "battlegrounds": [
+  "blackheart_s_bay",
+  "hanamura_temple",
+  "infernal_shrines",
+  "sky_temple",
+  "warhead_junction"
+ ],
+ "lang": "en",
+ "newsId": "24232472"
+}

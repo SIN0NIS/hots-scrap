@@ -1,0 +1,1329 @@
+{
+ "date": "2024-09-26",
+ "kind": "ptr",
+ "title": "히어로즈 오브 더 스톰 공개 테스트 서버 패치 노트 - 2024년 9월 26일",
+ "source": "https://news.blizzard.com/en-us/article/24140804/heroes-of-the-storm-ptr-patch-notes-september-26-2024",
+ "published": "2024-09-26T17:04:49Z",
+ "sections": [
+  {
+   "name": "머리말",
+   "key": "intro",
+   "html": "<p>다음 히어로즈 오브 더 스톰 패치가 공개 테스트 서버(PTR)에 적용되어 테스트 플레이가 가능합니다. 언제나 그렇듯, PTR에서 플레이하는 동안 버그를 발견하셨다면 <a href=\"https://us.forums.blizzard.com/en/heroes/c/ptr-bug-report\" target=\"_blank\">PTR 버그 신고 포럼</a>에 방문하여 경험하신 내용을 알려주시기 바랍니다.</p>",
+   "nameEn": "머리말"
+  },
+  {
+   "name": "일반",
+   "key": "general",
+   "html": "<ul>\n<li>첫 화면 및 시작 음악이 업데이트되었습니다.</li>\n</ul>",
+   "nameEn": "General"
+  },
+  {
+   "name": "영웅 업데이트",
+   "key": "hero_updates",
+   "html": "<h4>크로미</h4>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">시간의 굴레</strong><ul>\n<li>이제 예약 시전 시 시야 제한을 무시하지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>가로쉬</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">피의 갈증 [W]</strong><ul>\n<li>이제 예약 시전 시 시야 제한을 무시하지 않습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">들이치기</strong><ul>\n<li>이제 예약 시전 시 시야 제한을 무시하지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>굴단</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">생명력 흡수 [W]</strong><ul>\n<li>이제 예약 시전 시 시야 제한을 무시하지 않습니다.</li>\n</ul>\n</li>\n</ul>\n<h4>켈투자드</h4>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">냉기 작렬</strong><ul>\n<li>이제 예약 시전 시 시야 제한을 무시하지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+   "heroes": [
+    {
+     "name": "크로미",
+     "heroId": "Chromie",
+     "heroIds": [
+      "Chromie"
+     ],
+     "changes": [
+      {
+       "name": "시간의 굴레",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "이제 예약 시전 시 시야 제한을 무시하지 않습니다.",
+         "html": "이제 예약 시전 시 시야 제한을 무시하지 않습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Temporal Loop"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">시간의 굴레</strong><ul>\n<li>이제 예약 시전 시 시야 제한을 무시하지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Chromie"
+    },
+    {
+     "name": "가로쉬",
+     "heroId": "Garrosh",
+     "heroIds": [
+      "Garrosh"
+     ],
+     "changes": [
+      {
+       "name": "피의 갈증",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "이제 예약 시전 시 시야 제한을 무시하지 않습니다.",
+         "html": "이제 예약 시전 시 시야 제한을 무시하지 않습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Bloodthirst"
+      },
+      {
+       "name": "들이치기",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "이제 예약 시전 시 시야 제한을 무시하지 않습니다.",
+         "html": "이제 예약 시전 시 시야 제한을 무시하지 않습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Body Check"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">피의 갈증 [W]</strong><ul>\n<li>이제 예약 시전 시 시야 제한을 무시하지 않습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">들이치기</strong><ul>\n<li>이제 예약 시전 시 시야 제한을 무시하지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Garrosh"
+    },
+    {
+     "name": "굴단",
+     "heroId": "Guldan",
+     "heroIds": [
+      "Guldan"
+     ],
+     "changes": [
+      {
+       "name": "생명력 흡수",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "이제 예약 시전 시 시야 제한을 무시하지 않습니다.",
+         "html": "이제 예약 시전 시 시야 제한을 무시하지 않습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Drain Life"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">생명력 흡수 [W]</strong><ul>\n<li>이제 예약 시전 시 시야 제한을 무시하지 않습니다.</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Guldan"
+    },
+    {
+     "name": "켈투자드",
+     "heroId": "KelThuzad",
+     "heroIds": [
+      "KelThuzad"
+     ],
+     "changes": [
+      {
+       "name": "냉기 작렬",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "이제 예약 시전 시 시야 제한을 무시하지 않습니다.",
+         "html": "이제 예약 시전 시 시야 제한을 무시하지 않습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Frost Blast"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">냉기 작렬</strong><ul>\n<li>이제 예약 시전 시 시야 제한을 무시하지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Kel'Thuzad"
+    }
+   ],
+   "nameEn": "Hero Updates"
+  },
+  {
+   "name": "밸런스 업데이트",
+   "key": "balance_updates",
+   "html": "<h3><strong>무작위 영웅 대전</strong></h3>\n<ul>\n<li>이제 동일 영웅 모드에서 기본적으로 생명력 및 마나 재생이 활성화되며, 재생량이 초당 8%에서 초당 3.2%로 감소했습니다.</li>\n<li>이제 동일 영웅 모드에서 귀환석 기술을 사용할 수 있으나, 시전 완료 후의 즉시 치유 효과는 적용되지 않습니다.</li>\n</ul>\n<h3><strong>영웅</strong></h3>\n<h4>블레이즈</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li>일반 공격 피해량이 55에서 60으로 증가했습니다.</li>\n<li><strong class=\"pn-name\">화염 방사 [Q]</strong><ul>\n<li>더 이상 구조물에 추가 피해를 줄 수 없습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">아드레날린 전투 자극제</strong><ul>\n<li>지속 효과의 공격 속도 증가량이 25%에서 20%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">화염증폭기</strong><ul>\n<li>추가 피해량이 50%에서 40%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">나노기계 점막</strong><ul>\n<li>공격 속도 감소량이 50%에서 35%로 감소했습니다.</li>\n<li>지속시간이 3초에서 4초로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">제압 방사</strong><ul>\n<li>기술 위력 감소량이 25%에서 20%로, 50%에서 40%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">벙커 투하</strong><ul>\n<li>재사용 대기시간이 70에서 80으로 증가했습니다.</li>\n<li>화염방사기 피해량이 170에서 150으로 감소했습니다.</li>\n<li>마나 소모량이 70에서 80으로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">추진 전개</strong><ul>\n<li>피해량이 275에서 260으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>카시아</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li>일반 공격 피해량이 122에서 125로 증가했습니다.</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">꿰뚫기</strong><ul>\n<li>추가 피해량이 50%에서 70%로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">벼락</strong><ul>\n<li>추가 피해량이 15에서 20으로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">무한한 번개</strong><ul>\n<li>재사용 대기시간 감소량이 5초에서 4초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>첸</h4>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">호랑이의 눈</strong><ul>\n<li>추가 피해량이 40%에서 50%로 증가했습니다.</li>\n<li>흡혈량이 40%에서 60%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">커져가는 불길</strong><ul>\n<li>추가 피해량이 20%에서 30%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">소의 선물</strong><ul>\n<li>추가 지속시간이 1.5초에서 2초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">꿀 바르기</strong><ul>\n<li>추가 감속 효과가 20%에서 30%로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">불의 고리</strong><ul>\n<li>피해량이 55에서 60으로 증가했습니다.</li>\n<li>지속시간이 5초에서 6초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">술통 사고</strong><ul>\n<li>추가 방어력 지속시간이 3초에서 5초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>한조</h4>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">거인 사냥</strong><ul>\n<li>피해량이 최대 생명력의 2%에서 최대 생명력의 1.6%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>메피스토</h4>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">앙심</strong><ul>\n<li>추가 지속시간이 150%에서 100%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">번개 반응</strong><ul>\n<li>피해량이 138에서 120으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>스랄</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li>생명력이 1896에서 1946으로 증가했습니다.</li>\n<li>생명력 재생이 3.9492에서 4.0546으로 증가했습니다.</li>\n<li><strong class=\"pn-name\">서리늑대의 회복력 [고유 능력]</strong><ul>\n<li>치유량이 223에서 240으로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">연쇄 번개 [Q]</strong><ul>\n<li>튕김 피해량이 81에서 85로 증가했습니다.</li>\n<li>피해량이 162에서 170으로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">야수 정령 [W]</strong><ul>\n<li>재사용 대기시간이 12초에서 10초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">영혼의 보호막</strong><ul>\n<li>기술 방어력이 50에서 70으로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>발라</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">증오 [고유 능력]</strong><ul>\n<li>지속시간이 6초에서 5초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">난사</strong><ul>\n<li>번개당 피해량이 60에서 70으로 증가했습니다.</li>\n<li>마나 소모량이 80에서 60으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">만티코어</strong><ul>\n<li>추가 피해량이 최대 생명력의 5%에서 최대 생명력의 4%로 감소했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">처벌</strong><ul>\n<li>다발 사격의 마나 소모량이 20 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+   "heroes": [
+    {
+     "name": "블레이즈",
+     "heroId": "Firebat",
+     "heroIds": [
+      "Firebat"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "일반 공격 피해량이 55에서 60으로 증가했습니다.",
+         "html": "일반 공격 피해량이 55에서 60으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "화염 방사",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "더 이상 구조물에 추가 피해를 줄 수 없습니다.",
+         "html": "더 이상 구조물에 추가 피해를 줄 수 없습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Flame Stream"
+      },
+      {
+       "name": "아드레날린 전투 자극제",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "지속 효과의 공격 속도 증가량이 25%에서 20%로 감소했습니다.",
+         "html": "지속 효과의 공격 속도 증가량이 25%에서 20%로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Adrenaline Stimpack"
+      },
+      {
+       "name": "화염증폭기",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "추가 피해량이 50%에서 40%로 감소했습니다.",
+         "html": "추가 피해량이 50%에서 40%로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Incinerator Gauntlets"
+      },
+      {
+       "name": "나노기계 점막",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "공격 속도 감소량이 50%에서 35%로 감소했습니다.",
+         "html": "공격 속도 감소량이 50%에서 35%로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "지속시간이 3초에서 4초로 증가했습니다.",
+         "html": "지속시간이 3초에서 4초로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Nanomachine Coating"
+      },
+      {
+       "name": "제압 방사",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "기술 위력 감소량이 25%에서 20%로, 50%에서 40%로 감소했습니다.",
+         "html": "기술 위력 감소량이 25%에서 20%로, 50%에서 40%로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Suppressive Fire"
+      },
+      {
+       "name": "벙커 투하",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 70에서 80으로 증가했습니다.",
+         "html": "재사용 대기시간이 70에서 80으로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "화염방사기 피해량이 170에서 150으로 감소했습니다.",
+         "html": "화염방사기 피해량이 170에서 150으로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "마나 소모량이 70에서 80으로 증가했습니다.",
+         "html": "마나 소모량이 70에서 80으로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Bunker Drop"
+      },
+      {
+       "name": "추진 전개",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "피해량이 275에서 260으로 감소했습니다.",
+         "html": "피해량이 275에서 260으로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Collision Course"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li>일반 공격 피해량이 55에서 60으로 증가했습니다.</li>\n<li><strong class=\"pn-name\">화염 방사 [Q]</strong><ul>\n<li>더 이상 구조물에 추가 피해를 줄 수 없습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">아드레날린 전투 자극제</strong><ul>\n<li>지속 효과의 공격 속도 증가량이 25%에서 20%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">화염증폭기</strong><ul>\n<li>추가 피해량이 50%에서 40%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">나노기계 점막</strong><ul>\n<li>공격 속도 감소량이 50%에서 35%로 감소했습니다.</li>\n<li>지속시간이 3초에서 4초로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">제압 방사</strong><ul>\n<li>기술 위력 감소량이 25%에서 20%로, 50%에서 40%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">벙커 투하</strong><ul>\n<li>재사용 대기시간이 70에서 80으로 증가했습니다.</li>\n<li>화염방사기 피해량이 170에서 150으로 감소했습니다.</li>\n<li>마나 소모량이 70에서 80으로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">추진 전개</strong><ul>\n<li>피해량이 275에서 260으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Blaze"
+    },
+    {
+     "name": "카시아",
+     "heroId": "Amazon",
+     "heroIds": [
+      "Amazon"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "일반 공격 피해량이 122에서 125로 증가했습니다.",
+         "html": "일반 공격 피해량이 122에서 125로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "꿰뚫기",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "추가 피해량이 50%에서 70%로 증가했습니다.",
+         "html": "추가 피해량이 50%에서 70%로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Impale"
+      },
+      {
+       "name": "벼락",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "추가 피해량이 15에서 20으로 증가했습니다.",
+         "html": "추가 피해량이 15에서 20으로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Thunderstroke"
+      },
+      {
+       "name": "무한한 번개",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "재사용 대기시간 감소량이 5초에서 4초로 감소했습니다.",
+         "html": "재사용 대기시간 감소량이 5초에서 4초로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Infinite Lightning"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li>일반 공격 피해량이 122에서 125로 증가했습니다.</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">꿰뚫기</strong><ul>\n<li>추가 피해량이 50%에서 70%로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">벼락</strong><ul>\n<li>추가 피해량이 15에서 20으로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">무한한 번개</strong><ul>\n<li>재사용 대기시간 감소량이 5초에서 4초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Cassia"
+    },
+    {
+     "name": "첸",
+     "heroId": "Chen",
+     "heroIds": [
+      "Chen"
+     ],
+     "changes": [
+      {
+       "name": "호랑이의 눈",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "추가 피해량이 40%에서 50%로 증가했습니다.",
+         "html": "추가 피해량이 40%에서 50%로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "흡혈량이 40%에서 60%로 증가했습니다.",
+         "html": "흡혈량이 40%에서 60%로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Eye of the Tiger"
+      },
+      {
+       "name": "커져가는 불길",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "추가 피해량이 20%에서 30%로 증가했습니다.",
+         "html": "추가 피해량이 20%에서 30%로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Accumulating Flame"
+      },
+      {
+       "name": "소의 선물",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "추가 지속시간이 1.5초에서 2초로 증가했습니다.",
+         "html": "추가 지속시간이 1.5초에서 2초로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Gift of the Ox"
+      },
+      {
+       "name": "꿀 바르기",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "추가 감속 효과가 20%에서 30%로 증가했습니다.",
+         "html": "추가 감속 효과가 20%에서 30%로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "A Touch of Honey"
+      },
+      {
+       "name": "불의 고리",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "피해량이 55에서 60으로 증가했습니다.",
+         "html": "피해량이 55에서 60으로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "지속시간이 5초에서 6초로 증가했습니다.",
+         "html": "지속시간이 5초에서 6초로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Ring of Fire"
+      },
+      {
+       "name": "술통 사고",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "추가 방어력 지속시간이 3초에서 5초로 증가했습니다.",
+         "html": "추가 방어력 지속시간이 3초에서 5초로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Untapped Potential"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">호랑이의 눈</strong><ul>\n<li>추가 피해량이 40%에서 50%로 증가했습니다.</li>\n<li>흡혈량이 40%에서 60%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">커져가는 불길</strong><ul>\n<li>추가 피해량이 20%에서 30%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">소의 선물</strong><ul>\n<li>추가 지속시간이 1.5초에서 2초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">꿀 바르기</strong><ul>\n<li>추가 감속 효과가 20%에서 30%로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">불의 고리</strong><ul>\n<li>피해량이 55에서 60으로 증가했습니다.</li>\n<li>지속시간이 5초에서 6초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">술통 사고</strong><ul>\n<li>추가 방어력 지속시간이 3초에서 5초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Chen"
+    },
+    {
+     "name": "한조",
+     "heroId": "Hanzo",
+     "heroIds": [
+      "Hanzo"
+     ],
+     "changes": [
+      {
+       "name": "거인 사냥",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "피해량이 최대 생명력의 2%에서 최대 생명력의 1.6%로 감소했습니다.",
+         "html": "피해량이 최대 생명력의 2%에서 최대 생명력의 1.6%로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Giant Slayer"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">거인 사냥</strong><ul>\n<li>피해량이 최대 생명력의 2%에서 최대 생명력의 1.6%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Hanzo"
+    },
+    {
+     "name": "메피스토",
+     "heroId": "Mephisto",
+     "heroIds": [
+      "Mephisto"
+     ],
+     "changes": [
+      {
+       "name": "앙심",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "추가 지속시간이 150%에서 100%로 감소했습니다.",
+         "html": "추가 지속시간이 150%에서 100%로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Spite"
+      },
+      {
+       "name": "번개 반응",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "피해량이 138에서 120으로 감소했습니다.",
+         "html": "피해량이 138에서 120으로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Lightning Reaction"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">앙심</strong><ul>\n<li>추가 지속시간이 150%에서 100%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">번개 반응</strong><ul>\n<li>피해량이 138에서 120으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Mephisto"
+    },
+    {
+     "name": "스랄",
+     "heroId": "Thrall",
+     "heroIds": [
+      "Thrall"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "생명력이 1896에서 1946으로 증가했습니다.",
+         "html": "생명력이 1896에서 1946으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "생명력 재생이 3.9492에서 4.0546으로 증가했습니다.",
+         "html": "생명력 재생이 3.9492에서 4.0546으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "서리늑대의 회복력",
+       "key": "Trait",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "치유량이 223에서 240으로 증가했습니다.",
+         "html": "치유량이 223에서 240으로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Frostwolf Resilience"
+      },
+      {
+       "name": "연쇄 번개",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "튕김 피해량이 81에서 85로 증가했습니다.",
+         "html": "튕김 피해량이 81에서 85로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "피해량이 162에서 170으로 증가했습니다.",
+         "html": "피해량이 162에서 170으로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Chain Lightning"
+      },
+      {
+       "name": "야수 정령",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 12초에서 10초로 감소했습니다.",
+         "html": "재사용 대기시간이 12초에서 10초로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Feral Spirit"
+      },
+      {
+       "name": "영혼의 보호막",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "기술 방어력이 50에서 70으로 증가했습니다.",
+         "html": "기술 방어력이 50에서 70으로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Spirit Shield"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li>생명력이 1896에서 1946으로 증가했습니다.</li>\n<li>생명력 재생이 3.9492에서 4.0546으로 증가했습니다.</li>\n<li><strong class=\"pn-name\">서리늑대의 회복력 [고유 능력]</strong><ul>\n<li>치유량이 223에서 240으로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">연쇄 번개 [Q]</strong><ul>\n<li>튕김 피해량이 81에서 85로 증가했습니다.</li>\n<li>피해량이 162에서 170으로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">야수 정령 [W]</strong><ul>\n<li>재사용 대기시간이 12초에서 10초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">영혼의 보호막</strong><ul>\n<li>기술 방어력이 50에서 70으로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Thrall"
+    },
+    {
+     "name": "발라",
+     "heroId": "DemonHunter",
+     "heroIds": [
+      "DemonHunter"
+     ],
+     "changes": [
+      {
+       "name": "증오",
+       "key": "Trait",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "지속시간이 6초에서 5초로 감소했습니다.",
+         "html": "지속시간이 6초에서 5초로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Hatred"
+      },
+      {
+       "name": "난사",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "번개당 피해량이 60에서 70으로 증가했습니다.",
+         "html": "번개당 피해량이 60에서 70으로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "마나 소모량이 80에서 60으로 감소했습니다.",
+         "html": "마나 소모량이 80에서 60으로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Strafe"
+      },
+      {
+       "name": "만티코어",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "추가 피해량이 최대 생명력의 5%에서 최대 생명력의 4%로 감소했습니다.",
+         "html": "추가 피해량이 최대 생명력의 5%에서 최대 생명력의 4%로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Manticore"
+      },
+      {
+       "name": "처벌",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "다발 사격의 마나 소모량이 20 감소했습니다.",
+         "html": "다발 사격의 마나 소모량이 20 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Punishment"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">증오 [고유 능력]</strong><ul>\n<li>지속시간이 6초에서 5초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">난사</strong><ul>\n<li>번개당 피해량이 60에서 70으로 증가했습니다.</li>\n<li>마나 소모량이 80에서 60으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">만티코어</strong><ul>\n<li>추가 피해량이 최대 생명력의 5%에서 최대 생명력의 4%로 감소했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">처벌</strong><ul>\n<li>다발 사격의 마나 소모량이 20 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Valla"
+    }
+   ],
+   "nameEn": "Balance Updates"
+  },
+  {
+   "name": "버그 수정",
+   "key": "bugs",
+   "html": "<h3><strong>영웅</strong></h3>\n<ul>\n<li><strong class=\"pn-h\">알라라크</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">가학성 [고유 능력]</strong><ul>\n<li>주 대상이 영웅이 아닐 때 가학성의 추가 효과가 번개 쇄도의 치유량에 적용되지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">카시아</strong><ul>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">전쟁의 여군주</strong><ul>\n<li>전쟁의 여군주로 방지한 피해량을 표시하는 부유 문구가 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">초갈</strong><ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">계속 움직여!</strong><ul>\n<li>이제 밀치기의 이동 속도 증가 효과가 지속되는 동안 초의 달리기 동작도 변경됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">디아블로</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">압도 [E]</strong><ul>\n<li>압도가 스투코프의 우월종을 두 번 발동시키던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">정예 타우렌 족장</strong><ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">프로그레시브 록</strong><ul>\n<li>아군이 프로그레시브 록의 범위 치유 효과를 받지 못할 수 있던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">가로쉬</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">참전 [1]</strong><ul>\n<li>더 이상 정지 불가의 지속시간을 표시하지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">임페리우스</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">천공의 돌진 [Q]</strong><ul>\n<li>천공의 돌진이 스투코프의 우월종을 두 번 발동시키던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">정크랫</strong><ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">죽이는 타이어</strong><ul>\n<li>죽이는 타이어를 사용할 때 제대로 표시되지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">카라짐</strong><ul>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">흙의 벗</strong><ul>\n<li>흙의 벗이 부여하는 물리 방어력의 남은 지속시간이 흙의 벗의 남은 지속시간과 일치하도록 변경되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">리 리</strong><ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">제가 쏠게요!</strong><ul>\n<li>부유 문구가 치명타로 표시되도록 변경되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">메디브</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">차원문 [E]</strong><ul>\n<li>메디브가 차원문을 사용해 폭풍의 전당을 벗어난 후 즉시 탈것에 탑승할 수 있던 문제를 수정했습니다.</li>\n<li>메디브의 차원문이 정신 집중하는 동안 정신 집중 표시줄을 표시하지 않고 시각 효과도 적용하지 않던 문제를 수정했습니다.</li>\n<li>이제 차원문의 순간이동이 정신 집중을 완료한 뒤 잠시 후가 아니라 즉시 이루어집니다.</li>\n<li>메디브의 차원문을 사용해도 더 이상 명령 대기열이 초기화되지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">까마귀 전령</strong><ul>\n<li>이제 피해량이 메디브가 아니라 차원문을 사용한 대상이 입히는 것으로 처리됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">나지보</strong><ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">굶주린 혼령</strong><ul>\n<li>다른 나지보가 자신의 굶주린 혼령을 취소하면 굶주린 혼령이 함께 취소되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">프로비우스</strong><ul>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">양자 뒤얽힘</strong><ul>\n<li>차원 균열이 활성화되자마자 폭발시키면 양자 뒤얽힘이 적용되지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">레이너</strong><ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">레이너 특공대</strong><ul>\n<li>레이너 특공대의 밴시가 파멸의 탑의 터널과 핵탄두 격전지의 하수도 차원문을 이용할 때 치유되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">명령 수행</strong><ul>\n<li>명령 수행의 야마토 포가 반경 밖에 있는 대상을 향해 발사되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">레가르</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">번개 보호막 [W]</strong><ul>\n<li>레가르가 기술 흡혈을 얻었을 때 번개 보호막이 입힌 피해량으로 치유되지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">전하</strong><ul>\n<li>전하가 보유자의 자가 치유량 점수를 증가시키던 문제를 수정했습니다.</li>\n<li>보유자를 치유하는 양이 하나로 합쳐진 단일 효과로 적용되도록 변경되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">렉사르</strong><ul>\n<li>미샤가 파멸의 탑의 터널과 핵탄두 격전지의 하수도 차원문을 이용할 때 치유되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">스투코프</strong><ul>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">우월종</strong><ul>\n<li>우월종이 발동할 때 효과가 표시되지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">트레이서</strong><ul>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">저거, 설마 생명력 팩?!</strong><ul>\n<li>저거, 설마 생명력 팩?!이 발동할 때 트레이서의 치유량 점수를 증가시키던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<p><strong><a href=\"https://us.forums.blizzard.com/en/heroes/\" target=\"_blank\">공식 히어로즈 오브 더 스톰 포럼에서 다른 플레이어들과 이 글에 대해 이야기를 나누려면 여기를 클릭하십시오</a>.</strong></p>\n<p><strong><img alt=\"\" class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/g6/G6G0N80EOC941426801305139.png\"/></strong></p>",
+   "items": [
+    {
+     "name": "알라라크",
+     "heroId": "Alarak",
+     "heroIds": [
+      "Alarak"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">알라라크</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">가학성 [고유 능력]</strong><ul>\n<li>주 대상이 영웅이 아닐 때 가학성의 추가 효과가 번개 쇄도의 치유량에 적용되지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "가학성",
+       "key": "Trait",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "주 대상이 영웅이 아닐 때 가학성의 추가 효과가 번개 쇄도의 치유량에 적용되지 않던 문제를 수정했습니다.",
+         "html": "주 대상이 영웅이 아닐 때 가학성의 추가 효과가 번개 쇄도의 치유량에 적용되지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Sadism"
+      }
+     ],
+     "nameEn": "Alarak"
+    },
+    {
+     "name": "카시아",
+     "heroId": "Amazon",
+     "heroIds": [
+      "Amazon"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">카시아</strong>\n<ul>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">전쟁의 여군주</strong><ul>\n<li>전쟁의 여군주로 방지한 피해량을 표시하는 부유 문구가 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "전쟁의 여군주",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "전쟁의 여군주로 방지한 피해량을 표시하는 부유 문구가 추가되었습니다.",
+         "html": "전쟁의 여군주로 방지한 피해량을 표시하는 부유 문구가 추가되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "War Matron"
+      }
+     ],
+     "nameEn": "Cassia"
+    },
+    {
+     "name": "초갈",
+     "heroId": "Cho",
+     "heroIds": [
+      "Cho",
+      "Gall"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">초갈</strong>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">계속 움직여!</strong><ul>\n<li>이제 밀치기의 이동 속도 증가 효과가 지속되는 동안 초의 달리기 동작도 변경됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "계속 움직여!",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "이제 밀치기의 이동 속도 증가 효과가 지속되는 동안 초의 달리기 동작도 변경됩니다.",
+         "html": "이제 밀치기의 이동 속도 증가 효과가 지속되는 동안 초의 달리기 동작도 변경됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Keep Moving!"
+      }
+     ],
+     "nameEn": "Cho'Gall"
+    },
+    {
+     "name": "디아블로",
+     "heroId": "Diablo",
+     "heroIds": [
+      "Diablo"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">디아블로</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">압도 [E]</strong><ul>\n<li>압도가 스투코프의 우월종을 두 번 발동시키던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "압도",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "압도가 스투코프의 우월종을 두 번 발동시키던 문제를 수정했습니다.",
+         "html": "압도가 스투코프의 우월종을 두 번 발동시키던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Overpower"
+      }
+     ],
+     "nameEn": "Diablo"
+    },
+    {
+     "name": "정예 타우렌 족장",
+     "heroId": "L90ETC",
+     "heroIds": [
+      "L90ETC"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">정예 타우렌 족장</strong>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">프로그레시브 록</strong><ul>\n<li>아군이 프로그레시브 록의 범위 치유 효과를 받지 못할 수 있던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "프로그레시브 록",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "아군이 프로그레시브 록의 범위 치유 효과를 받지 못할 수 있던 문제를 수정했습니다.",
+         "html": "아군이 프로그레시브 록의 범위 치유 효과를 받지 못할 수 있던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Prog Rock"
+      }
+     ],
+     "nameEn": "E.T.C."
+    },
+    {
+     "name": "가로쉬",
+     "heroId": "Garrosh",
+     "heroIds": [
+      "Garrosh"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">가로쉬</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">참전 [1]</strong><ul>\n<li>더 이상 정지 불가의 지속시간을 표시하지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "참전",
+       "key": "1",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "더 이상 정지 불가의 지속시간을 표시하지 않습니다.",
+         "html": "더 이상 정지 불가의 지속시간을 표시하지 않습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Into the Fray"
+      }
+     ],
+     "nameEn": "Garrosh"
+    },
+    {
+     "name": "임페리우스",
+     "heroId": "Imperius",
+     "heroIds": [
+      "Imperius"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">임페리우스</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">천공의 돌진 [Q]</strong><ul>\n<li>천공의 돌진이 스투코프의 우월종을 두 번 발동시키던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "천공의 돌진",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "천공의 돌진이 스투코프의 우월종을 두 번 발동시키던 문제를 수정했습니다.",
+         "html": "천공의 돌진이 스투코프의 우월종을 두 번 발동시키던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Celestial Charge"
+      }
+     ],
+     "nameEn": "Imperius"
+    },
+    {
+     "name": "정크랫",
+     "heroId": "Junkrat",
+     "heroIds": [
+      "Junkrat"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">정크랫</strong>\n<ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">죽이는 타이어</strong><ul>\n<li>죽이는 타이어를 사용할 때 제대로 표시되지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "죽이는 타이어",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "죽이는 타이어를 사용할 때 제대로 표시되지 않던 문제를 수정했습니다.",
+         "html": "죽이는 타이어를 사용할 때 제대로 표시되지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "RIP-Tire"
+      }
+     ],
+     "nameEn": "Junkrat"
+    },
+    {
+     "name": "카라짐",
+     "heroId": "Monk",
+     "heroIds": [
+      "Monk"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">카라짐</strong>\n<ul>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">흙의 벗</strong><ul>\n<li>흙의 벗이 부여하는 물리 방어력의 남은 지속시간이 흙의 벗의 남은 지속시간과 일치하도록 변경되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "흙의 벗",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "흙의 벗이 부여하는 물리 방어력의 남은 지속시간이 흙의 벗의 남은 지속시간과 일치하도록 변경되었습니다.",
+         "html": "흙의 벗이 부여하는 물리 방어력의 남은 지속시간이 흙의 벗의 남은 지속시간과 일치하도록 변경되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Earth Ally"
+      }
+     ],
+     "nameEn": "Kharazim"
+    },
+    {
+     "name": "리 리",
+     "heroId": "LiLi",
+     "heroIds": [
+      "LiLi"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">리 리</strong>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">제가 쏠게요!</strong><ul>\n<li>부유 문구가 치명타로 표시되도록 변경되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "제가 쏠게요!",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "부유 문구가 치명타로 표시되도록 변경되었습니다.",
+         "html": "부유 문구가 치명타로 표시되도록 변경되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Free Drinks"
+      }
+     ],
+     "nameEn": "Li Li"
+    },
+    {
+     "name": "메디브",
+     "heroId": "Medivh",
+     "heroIds": [
+      "Medivh"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">메디브</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">차원문 [E]</strong><ul>\n<li>메디브가 차원문을 사용해 폭풍의 전당을 벗어난 후 즉시 탈것에 탑승할 수 있던 문제를 수정했습니다.</li>\n<li>메디브의 차원문이 정신 집중하는 동안 정신 집중 표시줄을 표시하지 않고 시각 효과도 적용하지 않던 문제를 수정했습니다.</li>\n<li>이제 차원문의 순간이동이 정신 집중을 완료한 뒤 잠시 후가 아니라 즉시 이루어집니다.</li>\n<li>메디브의 차원문을 사용해도 더 이상 명령 대기열이 초기화되지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">까마귀 전령</strong><ul>\n<li>이제 피해량이 메디브가 아니라 차원문을 사용한 대상이 입히는 것으로 처리됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "차원문",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "메디브가 차원문을 사용해 폭풍의 전당을 벗어난 후 즉시 탈것에 탑승할 수 있던 문제를 수정했습니다.",
+         "html": "메디브가 차원문을 사용해 폭풍의 전당을 벗어난 후 즉시 탈것에 탑승할 수 있던 문제를 수정했습니다.",
+         "added": false
+        },
+        {
+         "text": "메디브의 차원문이 정신 집중하는 동안 정신 집중 표시줄을 표시하지 않고 시각 효과도 적용하지 않던 문제를 수정했습니다.",
+         "html": "메디브의 차원문이 정신 집중하는 동안 정신 집중 표시줄을 표시하지 않고 시각 효과도 적용하지 않던 문제를 수정했습니다.",
+         "added": false
+        },
+        {
+         "text": "이제 차원문의 순간이동이 정신 집중을 완료한 뒤 잠시 후가 아니라 즉시 이루어집니다.",
+         "html": "이제 차원문의 순간이동이 정신 집중을 완료한 뒤 잠시 후가 아니라 즉시 이루어집니다.",
+         "added": false
+        },
+        {
+         "text": "메디브의 차원문을 사용해도 더 이상 명령 대기열이 초기화되지 않습니다.",
+         "html": "메디브의 차원문을 사용해도 더 이상 명령 대기열이 초기화되지 않습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Portal"
+      },
+      {
+       "name": "까마귀 전령",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "이제 피해량이 메디브가 아니라 차원문을 사용한 대상이 입히는 것으로 처리됩니다.",
+         "html": "이제 피해량이 메디브가 아니라 차원문을 사용한 대상이 입히는 것으로 처리됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Raven Familiar"
+      }
+     ],
+     "nameEn": "Medivh"
+    },
+    {
+     "name": "나지보",
+     "heroId": "WitchDoctor",
+     "heroIds": [
+      "WitchDoctor"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">나지보</strong>\n<ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">굶주린 혼령</strong><ul>\n<li>다른 나지보가 자신의 굶주린 혼령을 취소하면 굶주린 혼령이 함께 취소되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "굶주린 혼령",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "다른 나지보가 자신의 굶주린 혼령을 취소하면 굶주린 혼령이 함께 취소되던 문제를 수정했습니다.",
+         "html": "다른 나지보가 자신의 굶주린 혼령을 취소하면 굶주린 혼령이 함께 취소되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Ravenous Spirit"
+      }
+     ],
+     "nameEn": "Nazeebo"
+    },
+    {
+     "name": "프로비우스",
+     "heroId": "Probius",
+     "heroIds": [
+      "Probius"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">프로비우스</strong>\n<ul>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">양자 뒤얽힘</strong><ul>\n<li>차원 균열이 활성화되자마자 폭발시키면 양자 뒤얽힘이 적용되지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "양자 뒤얽힘",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "차원 균열이 활성화되자마자 폭발시키면 양자 뒤얽힘이 적용되지 않던 문제를 수정했습니다.",
+         "html": "차원 균열이 활성화되자마자 폭발시키면 양자 뒤얽힘이 적용되지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Quantum Entanglement"
+      }
+     ],
+     "nameEn": "Probius"
+    },
+    {
+     "name": "레이너",
+     "heroId": "Raynor",
+     "heroIds": [
+      "Raynor"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">레이너</strong>\n<ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">레이너 특공대</strong><ul>\n<li>레이너 특공대의 밴시가 파멸의 탑의 터널과 핵탄두 격전지의 하수도 차원문을 이용할 때 치유되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">명령 수행</strong><ul>\n<li>명령 수행의 야마토 포가 반경 밖에 있는 대상을 향해 발사되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "레이너 특공대",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "레이너 특공대의 밴시가 파멸의 탑의 터널과 핵탄두 격전지의 하수도 차원문을 이용할 때 치유되던 문제를 수정했습니다.",
+         "html": "레이너 특공대의 밴시가 파멸의 탑의 터널과 핵탄두 격전지의 하수도 차원문을 이용할 때 치유되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Raynor's Raider"
+      },
+      {
+       "name": "명령 수행",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "명령 수행의 야마토 포가 반경 밖에 있는 대상을 향해 발사되던 문제를 수정했습니다.",
+         "html": "명령 수행의 야마토 포가 반경 밖에 있는 대상을 향해 발사되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Execute Orders"
+      }
+     ],
+     "nameEn": "Raynor"
+    },
+    {
+     "name": "레가르",
+     "heroId": "Rehgar",
+     "heroIds": [
+      "Rehgar"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">레가르</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">번개 보호막 [W]</strong><ul>\n<li>레가르가 기술 흡혈을 얻었을 때 번개 보호막이 입힌 피해량으로 치유되지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">전하</strong><ul>\n<li>전하가 보유자의 자가 치유량 점수를 증가시키던 문제를 수정했습니다.</li>\n<li>보유자를 치유하는 양이 하나로 합쳐진 단일 효과로 적용되도록 변경되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "번개 보호막",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "레가르가 기술 흡혈을 얻었을 때 번개 보호막이 입힌 피해량으로 치유되지 않던 문제를 수정했습니다.",
+         "html": "레가르가 기술 흡혈을 얻었을 때 번개 보호막이 입힌 피해량으로 치유되지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Lightning Shield"
+      },
+      {
+       "name": "전하",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "전하가 보유자의 자가 치유량 점수를 증가시키던 문제를 수정했습니다.",
+         "html": "전하가 보유자의 자가 치유량 점수를 증가시키던 문제를 수정했습니다.",
+         "added": false
+        },
+        {
+         "text": "보유자를 치유하는 양이 하나로 합쳐진 단일 효과로 적용되도록 변경되었습니다.",
+         "html": "보유자를 치유하는 양이 하나로 합쳐진 단일 효과로 적용되도록 변경되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Electric Charge"
+      }
+     ],
+     "nameEn": "Rehgar"
+    },
+    {
+     "name": "렉사르",
+     "heroId": "Rexxar",
+     "heroIds": [
+      "Rexxar"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">렉사르</strong>\n<ul>\n<li>미샤가 파멸의 탑의 터널과 핵탄두 격전지의 하수도 차원문을 이용할 때 치유되던 문제를 수정했습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "미샤가 파멸의 탑의 터널과 핵탄두 격전지의 하수도 차원문을 이용할 때 치유되던 문제를 수정했습니다.",
+         "html": "미샤가 파멸의 탑의 터널과 핵탄두 격전지의 하수도 차원문을 이용할 때 치유되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "Rexxar"
+    },
+    {
+     "name": "스투코프",
+     "heroId": "Stukov",
+     "heroIds": [
+      "Stukov"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">스투코프</strong>\n<ul>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">우월종</strong><ul>\n<li>우월종이 발동할 때 효과가 표시되지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "우월종",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "우월종이 발동할 때 효과가 표시되지 않던 문제를 수정했습니다.",
+         "html": "우월종이 발동할 때 효과가 표시되지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Superstrain"
+      }
+     ],
+     "nameEn": "Stukov"
+    },
+    {
+     "name": "트레이서",
+     "heroId": "Tracer",
+     "heroIds": [
+      "Tracer"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">트레이서</strong>\n<ul>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">저거, 설마 생명력 팩?!</strong><ul>\n<li>저거, 설마 생명력 팩?!이 발동할 때 트레이서의 치유량 점수를 증가시키던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "저거, 설마 생명력 팩?!",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "저거, 설마 생명력 팩?!이 발동할 때 트레이서의 치유량 점수를 증가시키던 문제를 수정했습니다.",
+         "html": "저거, 설마 생명력 팩?!이 발동할 때 트레이서의 치유량 점수를 증가시키던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Is That a Health Pack?!"
+      }
+     ],
+     "nameEn": "Tracer"
+    }
+   ],
+   "nameEn": "Bug Fixes"
+  }
+ ],
+ "heroes": [
+  "Alarak",
+  "Amazon",
+  "Chen",
+  "Cho",
+  "Chromie",
+  "DemonHunter",
+  "Diablo",
+  "Firebat",
+  "Gall",
+  "Garrosh",
+  "Guldan",
+  "Hanzo",
+  "Imperius",
+  "Junkrat",
+  "KelThuzad",
+  "L90ETC",
+  "LiLi",
+  "Medivh",
+  "Mephisto",
+  "Monk",
+  "Probius",
+  "Raynor",
+  "Rehgar",
+  "Rexxar",
+  "Stukov",
+  "Thrall",
+  "Tracer",
+  "WitchDoctor"
+ ],
+ "battlegrounds": [],
+ "lang": "ko",
+ "newsId": "24140804",
+ "titleEn": "Heroes of the Storm PTR Patch Notes - September 26, 2024",
+ "translated": {
+  "by": "Claude (claude-opus-5)",
+  "at": "2026-09-14",
+  "source": "https://news.blizzard.com/en-us/article/24140804/heroes-of-the-storm-ptr-patch-notes-september-26-2024",
+  "glossary": "HeroesToolChest 공식 게임 텍스트(enus↔kokr) 대조",
+  "untranslated": 0
+ }
+}

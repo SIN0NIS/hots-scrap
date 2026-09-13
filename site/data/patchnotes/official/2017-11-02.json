@@ -1,0 +1,839 @@
+{
+ "date": "2017-11-02",
+ "kind": "patch",
+ "title": "히어로즈 오브 더 스톰 패치 노트 — 2017년 11월 2일",
+ "source": "https://news.blizzard.com/ko-kr/article/21159501/2017-11-2",
+ "published": "2017-11-01T17:00:00Z",
+ "sections": [
+  {
+   "name": "머리말",
+   "key": "intro",
+   "html": "<p>히어로즈 오브 더 스톰의 새로운 패치가 적용되었습니다. 이 패치에서는 밸런스에 몇 가지 변화가 이루어졌고 버그가 수정되었습니다.</p>"
+  },
+  {
+   "name": "디자인",
+   "key": "디자인",
+   "html": "<p><span class=\"pn-h\"><strong>은신</strong></span></p>\n<ul>\n<li>연쇄 번개, 어둠의 비수 등 튕기거나 연속으로 적중하는 기술들이 아군 시야 밖의 대상에게도 튕귑니다.</li>\n</ul>"
+  },
+  {
+   "name": "영웅",
+   "key": "heroes",
+   "html": "<table class=\"table table-condensed\">\n<tbody>\n<tr>\n<th></th>\n<th></th>\n<th></th>\n<th></th>\n</tr>\n<tr>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n</tbody>\n</table>"
+  },
+  {
+   "name": "암살자",
+   "key": "role_assassin",
+   "html": "<h4>정크랫</h4>\n<p><img class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/0JYG2RU09ORP1507240171927.png\"/></p>\n<p><strong class=\"pn-h\">능력치</strong></p>\n<ul>\n<li>기본 생명력이 1273에서 1350으로 증가했습니다.</li>\n<li>생명력 재생량이 2.7에서 2.8로 증가했습니다.</li>\n</ul>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>폭탄 발사기 (Q)</strong></span>\n<ul>\n<li>공격력이 117에서 128로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>폭탄마 (Q)\n<ul>\n<li>공격력 증가량이 0.75에서 0.5로 감소했고 최대 증가량이 150에서 100으로 감소했습니다.</li>\n</ul>\n</li>\n<li>빵! 터졌어 (W)\n<ul>\n<li>공격력 증가량이 30%에서 40%로 증가했습니다.</li>\n</ul>\n</li>\n<li>전부 잡아버리겠어! (E)\n<ul>\n<li>퀘스트를 완료하는 데 필요한 영웅 적중 횟수가 8에서 7로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>7레벨</strong></span>\n<ul>\n<li>끈끈이 덫 (E)\n<ul>\n<li>감속 효과의 지속 시간이 3초에서 3.5초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>레이너</h4>\n<p><img class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/L1FZEBIMXPLI1417483335075.png\"/></p>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>아드레날린 촉진 (E)</strong></span>\n<ul>\n<li>재사용 대기시간이 40초에서 30초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>불굴의 지휘관 (지속 효과)\n<ul>\n<li>아드레날린 촉진의 재사용 대기시간 감소량이 15초에서 10초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>타이커스</h4>\n<p><img class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/C0A9M41RWSJQ1417483335476.png\"/></p>\n<p><strong class=\"pn-h\">능력치</strong></p>\n<ul>\n<li>일반 공격력이 44에서 48로 증가했습니다.</li>\n</ul>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><strong>포화 (Q)</strong>\n<ul>\n<li>주 대상에게 주는 피해가 43에서 46으로 증가했습니다.</li>\n<li>주위에 주는 피해가 21에서 23으로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<h4>발라</h4>\n<p><img class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/RHUC14VVAAUN1417483335722.png\"/></p>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>굶주린 화살 (Q)</strong></span>\n<ul>\n<li>첫 피해가 151에서 140으로 감소했습니다.</li>\n<li>추가 피해가 86에서 80으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>쇠못 덫 (E)\n<ul>\n<li>퀘스트를 완료하는 데 필요한 증오 10중첩 상태 유지 시간이 180초에서 160초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>줄진</h4>\n<p><img class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/ep/EPJ9RJVTT6AA1481923618065.png\"/></p>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>단두대 (R)</strong></span>\n<ul>\n<li>재사용 대기시간이 30초에서 40초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>절단마 (Q)\n<ul>\n<li>돌려받는 마나가 10에서 15로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>부두 춤 (사용 효과)\n<ul>\n<li>재사용 대기시간 및 마나 소모량 감소량이 33%에서 40%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>7레벨</strong></span>\n<ul>\n<li>흉포한 본성 (지속 효과)\n<ul>\n<li>공격 속도 증가 효과가 35%에서 40%로 증가했습니다.</li>\n</ul>\n</li>\n<li>잔악한 공격 (Q)\n<ul>\n<li>공격력 증가량이 30%에서 35%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>13레벨</strong></span>\n<ul>\n<li>줄진의 눈 (지속 효과)\n<ul>\n<li>중첩당 증가하는 이동 속도가 3%에서 6%로 증가했습니다.\n<ul>\n<li>최대치는 여전히 30%입니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+   "heroes": [
+    {
+     "name": "정크랫",
+     "heroId": "Junkrat",
+     "heroIds": [
+      "Junkrat"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "기본 생명력이 1273에서 1350으로 증가했습니다.",
+         "html": "기본 생명력이 1273에서 1350으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "생명력 재생량이 2.7에서 2.8로 증가했습니다.",
+         "html": "생명력 재생량이 2.7에서 2.8로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "폭탄 발사기",
+       "key": "Q",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "공격력이 117에서 128로 증가했습니다.",
+         "html": "공격력이 117에서 128로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "폭탄마",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "공격력 증가량이 0.75에서 0.5로 감소했고 최대 증가량이 150에서 100으로 감소했습니다.",
+         "html": "공격력 증가량이 0.75에서 0.5로 감소했고 최대 증가량이 150에서 100으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "빵! 터졌어",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "공격력 증가량이 30%에서 40%로 증가했습니다.",
+         "html": "공격력 증가량이 30%에서 40%로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "전부 잡아버리겠어!",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "퀘스트를 완료하는 데 필요한 영웅 적중 횟수가 8에서 7로 감소했습니다.",
+         "html": "퀘스트를 완료하는 데 필요한 영웅 적중 횟수가 8에서 7로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "끈끈이 덫",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "감속 효과의 지속 시간이 3초에서 3.5초로 증가했습니다.",
+         "html": "감속 효과의 지속 시간이 3초에서 3.5초로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/0JYG2RU09ORP1507240171927.png\"/></p>\n<p><strong class=\"pn-h\">능력치</strong></p>\n<ul>\n<li>기본 생명력이 1273에서 1350으로 증가했습니다.</li>\n<li>생명력 재생량이 2.7에서 2.8로 증가했습니다.</li>\n</ul>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>폭탄 발사기 (Q)</strong></span>\n<ul>\n<li>공격력이 117에서 128로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>폭탄마 (Q)\n<ul>\n<li>공격력 증가량이 0.75에서 0.5로 감소했고 최대 증가량이 150에서 100으로 감소했습니다.</li>\n</ul>\n</li>\n<li>빵! 터졌어 (W)\n<ul>\n<li>공격력 증가량이 30%에서 40%로 증가했습니다.</li>\n</ul>\n</li>\n<li>전부 잡아버리겠어! (E)\n<ul>\n<li>퀘스트를 완료하는 데 필요한 영웅 적중 횟수가 8에서 7로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>7레벨</strong></span>\n<ul>\n<li>끈끈이 덫 (E)\n<ul>\n<li>감속 효과의 지속 시간이 3초에서 3.5초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "레이너",
+     "heroId": "Raynor",
+     "heroIds": [
+      "Raynor"
+     ],
+     "changes": [
+      {
+       "name": "아드레날린 촉진",
+       "key": "E",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 40초에서 30초로 감소했습니다.",
+         "html": "재사용 대기시간이 40초에서 30초로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "불굴의 지휘관",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "아드레날린 촉진의 재사용 대기시간 감소량이 15초에서 10초로 감소했습니다.",
+         "html": "아드레날린 촉진의 재사용 대기시간 감소량이 15초에서 10초로 감소했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/L1FZEBIMXPLI1417483335075.png\"/></p>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>아드레날린 촉진 (E)</strong></span>\n<ul>\n<li>재사용 대기시간이 40초에서 30초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>불굴의 지휘관 (지속 효과)\n<ul>\n<li>아드레날린 촉진의 재사용 대기시간 감소량이 15초에서 10초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "타이커스",
+     "heroId": "Tychus",
+     "heroIds": [
+      "Tychus"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "일반 공격력이 44에서 48로 증가했습니다.",
+         "html": "일반 공격력이 44에서 48로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "포화",
+       "key": "Q",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "주 대상에게 주는 피해가 43에서 46으로 증가했습니다.",
+         "html": "주 대상에게 주는 피해가 43에서 46으로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "주위에 주는 피해가 21에서 23으로 증가했습니다.",
+         "html": "주위에 주는 피해가 21에서 23으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/C0A9M41RWSJQ1417483335476.png\"/></p>\n<p><strong class=\"pn-h\">능력치</strong></p>\n<ul>\n<li>일반 공격력이 44에서 48로 증가했습니다.</li>\n</ul>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><strong>포화 (Q)</strong>\n<ul>\n<li>주 대상에게 주는 피해가 43에서 46으로 증가했습니다.</li>\n<li>주위에 주는 피해가 21에서 23으로 증가했습니다.</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "발라",
+     "heroId": "DemonHunter",
+     "heroIds": [
+      "DemonHunter"
+     ],
+     "changes": [
+      {
+       "name": "굶주린 화살",
+       "key": "Q",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "첫 피해가 151에서 140으로 감소했습니다.",
+         "html": "첫 피해가 151에서 140으로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "추가 피해가 86에서 80으로 감소했습니다.",
+         "html": "추가 피해가 86에서 80으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "쇠못 덫",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "퀘스트를 완료하는 데 필요한 증오 10중첩 상태 유지 시간이 180초에서 160초로 감소했습니다.",
+         "html": "퀘스트를 완료하는 데 필요한 증오 10중첩 상태 유지 시간이 180초에서 160초로 감소했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/RHUC14VVAAUN1417483335722.png\"/></p>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>굶주린 화살 (Q)</strong></span>\n<ul>\n<li>첫 피해가 151에서 140으로 감소했습니다.</li>\n<li>추가 피해가 86에서 80으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>쇠못 덫 (E)\n<ul>\n<li>퀘스트를 완료하는 데 필요한 증오 10중첩 상태 유지 시간이 180초에서 160초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "줄진",
+     "heroId": "Zuljin",
+     "heroIds": [
+      "Zuljin"
+     ],
+     "changes": [
+      {
+       "name": "단두대",
+       "key": "R",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 30초에서 40초로 증가했습니다.",
+         "html": "재사용 대기시간이 30초에서 40초로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "절단마",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "돌려받는 마나가 10에서 15로 증가했습니다.",
+         "html": "돌려받는 마나가 10에서 15로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "부두 춤",
+       "key": "사용 효과",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "재사용 대기시간 및 마나 소모량 감소량이 33%에서 40%로 증가했습니다.",
+         "html": "재사용 대기시간 및 마나 소모량 감소량이 33%에서 40%로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "흉포한 본성",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "공격 속도 증가 효과가 35%에서 40%로 증가했습니다.",
+         "html": "공격 속도 증가 효과가 35%에서 40%로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "잔악한 공격",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "공격력 증가량이 30%에서 35%로 증가했습니다.",
+         "html": "공격력 증가량이 30%에서 35%로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "줄진의 눈",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": []
+      },
+      {
+       "name": "중첩당 증가하는 이동 속도가 3%에서 6%로 증가했습니다.",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "최대치는 여전히 30%입니다.",
+         "html": "최대치는 여전히 30%입니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/ep/EPJ9RJVTT6AA1481923618065.png\"/></p>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>단두대 (R)</strong></span>\n<ul>\n<li>재사용 대기시간이 30초에서 40초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>절단마 (Q)\n<ul>\n<li>돌려받는 마나가 10에서 15로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>부두 춤 (사용 효과)\n<ul>\n<li>재사용 대기시간 및 마나 소모량 감소량이 33%에서 40%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>7레벨</strong></span>\n<ul>\n<li>흉포한 본성 (지속 효과)\n<ul>\n<li>공격 속도 증가 효과가 35%에서 40%로 증가했습니다.</li>\n</ul>\n</li>\n<li>잔악한 공격 (Q)\n<ul>\n<li>공격력 증가량이 30%에서 35%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>13레벨</strong></span>\n<ul>\n<li>줄진의 눈 (지속 효과)\n<ul>\n<li>중첩당 증가하는 이동 속도가 3%에서 6%로 증가했습니다.\n<ul>\n<li>최대치는 여전히 30%입니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    }
+   ]
+  },
+  {
+   "name": "전문가",
+   "key": "role_specialist",
+   "html": "<h4>아즈모단</h4>\n<p><img class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/MPC0MT16C6I91417483333902.png\"/></p>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>지옥의 장군 (D)</strong></span>\n<ul>\n<li>더는 돌격병과 용병의 최대 생명력을 증가시키지 않습니다.</li>\n<li>돌격병과 용병의 공격력 증가량이 15%에서 25%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>커져가는 분노 (Q)\n<ul>\n<li>영웅 적중시 증가하는 공격력이 4에서 3으로 감소했습니다.</li>\n<li>퀘스트 완료에 필요한 공격력 증가량이 100에서 90으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>자가라</h4>\n<p><img class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/XJJMXTLU20DP1417483335816.png\"/></p>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>땅굴망 (R)</strong></span>\n<ul>\n<li>충전 대기시간이 60초에서 100초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>",
+   "heroes": [
+    {
+     "name": "아즈모단",
+     "heroId": "Azmodan",
+     "heroIds": [
+      "Azmodan"
+     ],
+     "changes": [
+      {
+       "name": "지옥의 장군",
+       "key": "D",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "더는 돌격병과 용병의 최대 생명력을 증가시키지 않습니다.",
+         "html": "더는 돌격병과 용병의 최대 생명력을 증가시키지 않습니다.",
+         "added": false
+        },
+        {
+         "text": "돌격병과 용병의 공격력 증가량이 15%에서 25%로 증가했습니다.",
+         "html": "돌격병과 용병의 공격력 증가량이 15%에서 25%로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "커져가는 분노",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "영웅 적중시 증가하는 공격력이 4에서 3으로 감소했습니다.",
+         "html": "영웅 적중시 증가하는 공격력이 4에서 3으로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "퀘스트 완료에 필요한 공격력 증가량이 100에서 90으로 감소했습니다.",
+         "html": "퀘스트 완료에 필요한 공격력 증가량이 100에서 90으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/MPC0MT16C6I91417483333902.png\"/></p>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>지옥의 장군 (D)</strong></span>\n<ul>\n<li>더는 돌격병과 용병의 최대 생명력을 증가시키지 않습니다.</li>\n<li>돌격병과 용병의 공격력 증가량이 15%에서 25%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>커져가는 분노 (Q)\n<ul>\n<li>영웅 적중시 증가하는 공격력이 4에서 3으로 감소했습니다.</li>\n<li>퀘스트 완료에 필요한 공격력 증가량이 100에서 90으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "자가라",
+     "heroId": "Zagara",
+     "heroIds": [
+      "Zagara"
+     ],
+     "changes": [
+      {
+       "name": "땅굴망",
+       "key": "R",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "충전 대기시간이 60초에서 100초로 증가했습니다.",
+         "html": "충전 대기시간이 60초에서 100초로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/XJJMXTLU20DP1417483335816.png\"/></p>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>땅굴망 (R)</strong></span>\n<ul>\n<li>충전 대기시간이 60초에서 100초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>"
+    }
+   ]
+  },
+  {
+   "name": "지원가",
+   "key": "role_support",
+   "html": "<h4>카라짐</h4>\n<p><img class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/ZNF0FO7V6W8J1439221492354.png\"/></p>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>철권 (고유 능력)\n<ul>\n<li>이동 속도 증가량이 30%에서 25%로 감소했습니다.</li>\n</ul>\n</li>\n<li>초월 (고유 능력)\n<ul>\n<li>추가된 기능:\n<ul>\n<li>3번째 일반 공격마다 이동 속도가 25% 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>통찰 (고유 능력)\n<ul>\n<li>추가된 기능:\n<ul>\n<li>3번째 일반 공격마다 이동 속도가 25% 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>스투코프</h4>\n<p><img class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/HVLATI65JATJ1498610396437.png\"/></p>\n<p><strong class=\"pn-h\">능력치</strong></p>\n<ul>\n<li>기본 생명력이 1590에서 1682로 증가했습니다.</li>\n<li>생명력 재생량이 3.31에서 3.5로 증가했습니다. </li>\n</ul>",
+   "heroes": [
+    {
+     "name": "카라짐",
+     "heroId": "Monk",
+     "heroIds": [
+      "Monk"
+     ],
+     "changes": [
+      {
+       "name": "철권",
+       "key": "고유 능력",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "이동 속도 증가량이 30%에서 25%로 감소했습니다.",
+         "html": "이동 속도 증가량이 30%에서 25%로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "초월",
+       "key": "고유 능력",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": []
+      },
+      {
+       "name": "추가된 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "3번째 일반 공격마다 이동 속도가 25% 증가합니다.",
+         "html": "3번째 일반 공격마다 이동 속도가 25% 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "통찰",
+       "key": "고유 능력",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": []
+      },
+      {
+       "name": "추가된 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "3번째 일반 공격마다 이동 속도가 25% 증가합니다.",
+         "html": "3번째 일반 공격마다 이동 속도가 25% 증가합니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/ZNF0FO7V6W8J1439221492354.png\"/></p>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>철권 (고유 능력)\n<ul>\n<li>이동 속도 증가량이 30%에서 25%로 감소했습니다.</li>\n</ul>\n</li>\n<li>초월 (고유 능력)\n<ul>\n<li>추가된 기능:\n<ul>\n<li>3번째 일반 공격마다 이동 속도가 25% 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>통찰 (고유 능력)\n<ul>\n<li>추가된 기능:\n<ul>\n<li>3번째 일반 공격마다 이동 속도가 25% 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "스투코프",
+     "heroId": "Stukov",
+     "heroIds": [
+      "Stukov"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "기본 생명력이 1590에서 1682로 증가했습니다.",
+         "html": "기본 생명력이 1590에서 1682로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "생명력 재생량이 3.31에서 3.5로 증가했습니다.",
+         "html": "생명력 재생량이 3.31에서 3.5로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/HVLATI65JATJ1498610396437.png\"/></p>\n<p><strong class=\"pn-h\">능력치</strong></p>\n<ul>\n<li>기본 생명력이 1590에서 1682로 증가했습니다.</li>\n<li>생명력 재생량이 3.31에서 3.5로 증가했습니다. </li>\n</ul>"
+    }
+   ]
+  },
+  {
+   "name": "전사",
+   "key": "role_tank",
+   "html": "<h4>가로쉬</h4>\n<p><img class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/7d/7DDW9GCJ6TPK1501096598432.png\"/></p>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>16레벨</strong></span>\n<ul>\n<li>대지진 (E)\n<ul>\n<li>기절의 지속 시간이 0.75초에서 0.6초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>레오릭</h4>\n<p><img class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/10VUJ6C6M9DG1439221492653.png\"/></p>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>망자의 묘실 (R)</strong></span>\n<ul>\n<li>재사용 대기시간이 60초에서 50초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>무릎 꿇어라, 미천한 것아! (Q)\n<ul>\n<li>돌격병에게 주는 추가 피해가 75%에서 100%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>무라딘</h4>\n<p><img class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/TM8DLIER5QEH1417483334689.png\"/></p>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>폭풍강타 (Q)</strong></span>\n<ul>\n<li>마나 소모량이 50에서 45로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>거대 망치 (Q)\n<ul>\n<li>추가 공격력이 300%에서 350%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>7레벨</strong></span>\n<ul>\n<li>해골파쇄 (지속 효과)\n<ul>\n<li>공격력 증가량이 60%에서 70%로 증가했습니다.</li>\n</ul>\n</li>\n<li>육중한 충격 (E)\n<ul>\n<li>변경된 기능:\n<ul>\n<li>이제 적의 이동 속도를 0.75초 동안 80% 감소시킵니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+   "heroes": [
+    {
+     "name": "가로쉬",
+     "heroId": "Garrosh",
+     "heroIds": [
+      "Garrosh"
+     ],
+     "changes": [
+      {
+       "name": "대지진",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "기절의 지속 시간이 0.75초에서 0.6초로 감소했습니다.",
+         "html": "기절의 지속 시간이 0.75초에서 0.6초로 감소했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/7d/7DDW9GCJ6TPK1501096598432.png\"/></p>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>16레벨</strong></span>\n<ul>\n<li>대지진 (E)\n<ul>\n<li>기절의 지속 시간이 0.75초에서 0.6초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "레오릭",
+     "heroId": "Leoric",
+     "heroIds": [
+      "Leoric"
+     ],
+     "changes": [
+      {
+       "name": "망자의 묘실",
+       "key": "R",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 60초에서 50초로 감소했습니다.",
+         "html": "재사용 대기시간이 60초에서 50초로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "무릎 꿇어라, 미천한 것아!",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "돌격병에게 주는 추가 피해가 75%에서 100%로 증가했습니다.",
+         "html": "돌격병에게 주는 추가 피해가 75%에서 100%로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/10VUJ6C6M9DG1439221492653.png\"/></p>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>망자의 묘실 (R)</strong></span>\n<ul>\n<li>재사용 대기시간이 60초에서 50초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>무릎 꿇어라, 미천한 것아! (Q)\n<ul>\n<li>돌격병에게 주는 추가 피해가 75%에서 100%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "무라딘",
+     "heroId": "Muradin",
+     "heroIds": [
+      "Muradin"
+     ],
+     "changes": [
+      {
+       "name": "폭풍강타",
+       "key": "Q",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "마나 소모량이 50에서 45로 감소했습니다.",
+         "html": "마나 소모량이 50에서 45로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "거대 망치",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "추가 공격력이 300%에서 350%로 증가했습니다.",
+         "html": "추가 공격력이 300%에서 350%로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "해골파쇄",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "공격력 증가량이 60%에서 70%로 증가했습니다.",
+         "html": "공격력 증가량이 60%에서 70%로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "육중한 충격",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": []
+      },
+      {
+       "name": "변경된 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "이제 적의 이동 속도를 0.75초 동안 80% 감소시킵니다.",
+         "html": "이제 적의 이동 속도를 0.75초 동안 80% 감소시킵니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/TM8DLIER5QEH1417483334689.png\"/></p>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>폭풍강타 (Q)</strong></span>\n<ul>\n<li>마나 소모량이 50에서 45로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>거대 망치 (Q)\n<ul>\n<li>추가 공격력이 300%에서 350%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>7레벨</strong></span>\n<ul>\n<li>해골파쇄 (지속 효과)\n<ul>\n<li>공격력 증가량이 60%에서 70%로 증가했습니다.</li>\n</ul>\n</li>\n<li>육중한 충격 (E)\n<ul>\n<li>변경된 기능:\n<ul>\n<li>이제 적의 이동 속도를 0.75초 동안 80% 감소시킵니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    }
+   ]
+  },
+  {
+   "name": "버그 수정",
+   "key": "bugs",
+   "html": "<p><strong class=\"pn-h\">영웅, 기술, 특성</strong></p>\n<ul>\n<li><strong>케리건:</strong> 군단의 분노 특성을 선택하고 이중 타격이 발동하면 다음 일반 공격으로 주는 피해의 방사 피해가 의도치 않게 많은 피해를 주던 문제를 수정했습니다.</li>\n<li><strong>무라딘:</strong> 천둥연소를 선택한 뒤에 적이 천둥벼락의 외곽에 적중당하면 폭발이 일어나지 않던 문제를 수정했습니다.</li>\n<li><strong>무라딘:</strong> 재기의 바람과 극기의 바람 특성이 의도한 것보다 적은 생명력을 회복시키던 문제를 수정했습니다.</li>\n<li><strong>나지보:</strong> 나지보가 죽은 뒤에도 미신 특성의 시각 효과가 지속되던 문제를 수정했습니다.</li>\n<li><strong>줄진:</strong> 트롤의 피를 선택한 후 재생을 끝까지 시전하면 최대 마나의 10%를 정상적으로 회복합니다.</li>\n</ul>\n<p><strong class=\"pn-h\">사용자 인터페이스</strong></p>\n<ul>\n<li><strong>선발전:</strong> 선발전 대기실에서 괴식물 머키 스킨을 선택할 수 없던 문제를 수정했습니다.</li>\n</ul>\n<p><img alt=\"\" class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/g6/G6G0N80EOC941426801305139.png\"/></p>\n<p><img alt=\"InvisibleDividerLine_800x50.png\" class=\"no-border; no-shadow\" data-id=\"14509591\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/6VA2831Q81IU1403137406234.png\"/></p>\n<style type=\"text/css\">.article-container img { display: block; }\n.article-container p { display:inline; }\n</style>",
+   "items": [
+    {
+     "name": "케리건",
+     "heroId": "Kerrigan",
+     "heroIds": [
+      "Kerrigan"
+     ],
+     "under": null,
+     "html": "<strong>케리건:</strong> 군단의 분노 특성을 선택하고 이중 타격이 발동하면 다음 일반 공격으로 주는 피해의 방사 피해가 의도치 않게 많은 피해를 주던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "케리건: 군단의 분노 특성을 선택하고 이중 타격이 발동하면 다음 일반 공격으로 주는 피해의 방사 피해가 의도치 않게 많은 피해를 주던 문제를 수정했습니다.",
+         "html": "<strong>케리건:</strong> 군단의 분노 특성을 선택하고 이중 타격이 발동하면 다음 일반 공격으로 주는 피해의 방사 피해가 의도치 않게 많은 피해를 주던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "무라딘",
+     "heroId": "Muradin",
+     "heroIds": [
+      "Muradin"
+     ],
+     "under": null,
+     "html": "<strong>무라딘:</strong> 천둥연소를 선택한 뒤에 적이 천둥벼락의 외곽에 적중당하면 폭발이 일어나지 않던 문제를 수정했습니다.<strong>무라딘:</strong> 재기의 바람과 극기의 바람 특성이 의도한 것보다 적은 생명력을 회복시키던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "무라딘: 천둥연소를 선택한 뒤에 적이 천둥벼락의 외곽에 적중당하면 폭발이 일어나지 않던 문제를 수정했습니다.",
+         "html": "<strong>무라딘:</strong> 천둥연소를 선택한 뒤에 적이 천둥벼락의 외곽에 적중당하면 폭발이 일어나지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "무라딘: 재기의 바람과 극기의 바람 특성이 의도한 것보다 적은 생명력을 회복시키던 문제를 수정했습니다.",
+         "html": "<strong>무라딘:</strong> 재기의 바람과 극기의 바람 특성이 의도한 것보다 적은 생명력을 회복시키던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "나지보",
+     "heroId": "WitchDoctor",
+     "heroIds": [
+      "WitchDoctor"
+     ],
+     "under": null,
+     "html": "<strong>나지보:</strong> 나지보가 죽은 뒤에도 미신 특성의 시각 효과가 지속되던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "나지보: 나지보가 죽은 뒤에도 미신 특성의 시각 효과가 지속되던 문제를 수정했습니다.",
+         "html": "<strong>나지보:</strong> 나지보가 죽은 뒤에도 미신 특성의 시각 효과가 지속되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "줄진",
+     "heroId": "Zuljin",
+     "heroIds": [
+      "Zuljin"
+     ],
+     "under": null,
+     "html": "<strong>줄진:</strong> 트롤의 피를 선택한 후 재생을 끝까지 시전하면 최대 마나의 10%를 정상적으로 회복합니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "줄진: 트롤의 피를 선택한 후 재생을 끝까지 시전하면 최대 마나의 10%를 정상적으로 회복합니다.",
+         "html": "<strong>줄진:</strong> 트롤의 피를 선택한 후 재생을 끝까지 시전하면 최대 마나의 10%를 정상적으로 회복합니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "heroes": [
+  "Azmodan",
+  "DemonHunter",
+  "Garrosh",
+  "Junkrat",
+  "Kerrigan",
+  "Leoric",
+  "Monk",
+  "Muradin",
+  "Raynor",
+  "Stukov",
+  "Tychus",
+  "WitchDoctor",
+  "Zagara",
+  "Zuljin"
+ ],
+ "battlegrounds": [],
+ "newsId": "21159501"
+}

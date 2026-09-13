@@ -1,0 +1,710 @@
+{
+ "date": "2018-10-31",
+ "kind": "balance",
+ "title": "히어로즈 오브 더 스톰 밸런스 패치 노트 – 2018년 10월 31일",
+ "source": "https://news.blizzard.com/ko-kr/article/22636768/2018-10-31",
+ "published": "2018-10-31T17:00:00Z",
+ "sections": [
+  {
+   "name": "머리말",
+   "key": "intro",
+   "html": "<p>히어로즈 오브 더 스톰의 새로운 패치가 적용될 예정입니다. 이 패치에서는 몇 가지 버그가 수정되었습니다. 아래에서 자세한 정보를 알아보세요.</p>"
+  },
+  {
+   "name": "영웅",
+   "key": "heroes",
+   "html": "<table class=\"table table-condensed\">\n<tbody>\n<tr>\n<th></th>\n<th></th>\n<th></th>\n<th></th>\n</tr>\n<tr>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n</tbody>\n</table>"
+  },
+  {
+   "name": "암살자",
+   "key": "role_assassin",
+   "html": "<h4>폴스타트</h4>\n<p><img alt=\"Divider_Hero_Falstad_Crop.png\" data-id=\"17042281\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/XZ4PPH8K5IF51417483334088.png\"/></p>\n<p><span class=\"pn-h\"><strong>기술</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>비행 (Z)</strong></span>\n<ul>\n<li>재사용 대기시간이 60초에서 75초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><span class=\"pn-h\"><strong>특성</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>20레벨</strong></span>\n<ul>\n<li>힘찬 날갯짓 (Z)\n<ul>\n<li>재사용 대기시간 감소량이 30초에서 40초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>켈투자드</h4>\n<p><img alt=\"divider_hero_Junkrat.png\" data-id=\"21590352\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/ru/RUB8NMJ8YFYG1505345361709.png\"/></p>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><strong class=\"pn-name\">냉기 작렬 (R)</strong>\n<ul>\n<li>재사용 대기시간이 70초에서 60초로 감소했습니다.</li>\n<li>마나 소모량이 60에서 50으로 감소했습니다.</li>\n<li>이동 불가 효과의 지속 시간이 1.5초에서 1.75초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>가시 돋친 사슬 (E)\n<ul>\n<li>방어력 감소량이 15에서 10으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>7레벨</strong></span>\n<ul>\n<li>얼음처럼 차갑게 (지속 효과)\n<ul>\n<li>공격력 증가량이 250%에서 300%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>13레벨</strong></span>\n<ul>\n<li>얼음 손아귀 (W)\n<ul>\n<li>얼음 회오리의 감속 효과 증가량이 10%에서 15%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote>\n</blockquote>\n<h4>루나라</h4>\n<p><img alt=\"Divider_Hero_Lunara_crop.png\" data-id=\"20011598\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/K666Z00DJIK21452704274692.png\"/></p>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong class=\"pn-name\">7레벨</strong>\n<ul>\n<li>질식 꽃가루 (Q)\n<ul>\n<li>자연의 독소가 적용된 적 영웅에게 치명적인 꽃으로 주는 추가 피해가 75%에서 85%로 증가했습니다.</li>\n<li>자연의 독소가 3회 중첩된 적에게 주는 추가 피해가 125%에서 135%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote>\n</blockquote>",
+   "heroes": [
+    {
+     "name": "폴스타트",
+     "heroId": "Falstad",
+     "heroIds": [
+      "Falstad"
+     ],
+     "changes": [
+      {
+       "name": "비행",
+       "key": "Z",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 60초에서 75초로 증가했습니다.",
+         "html": "재사용 대기시간이 60초에서 75초로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "힘찬 날갯짓",
+       "key": "Z",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "재사용 대기시간 감소량이 30초에서 40초로 증가했습니다.",
+         "html": "재사용 대기시간 감소량이 30초에서 40초로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_Falstad_Crop.png\" data-id=\"17042281\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/XZ4PPH8K5IF51417483334088.png\"/></p>\n<p><span class=\"pn-h\"><strong>기술</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>비행 (Z)</strong></span>\n<ul>\n<li>재사용 대기시간이 60초에서 75초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><span class=\"pn-h\"><strong>특성</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>20레벨</strong></span>\n<ul>\n<li>힘찬 날갯짓 (Z)\n<ul>\n<li>재사용 대기시간 감소량이 30초에서 40초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "켈투자드",
+     "heroId": "KelThuzad",
+     "heroIds": [
+      "KelThuzad"
+     ],
+     "changes": [
+      {
+       "name": "냉기 작렬",
+       "key": "R",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 70초에서 60초로 감소했습니다.",
+         "html": "재사용 대기시간이 70초에서 60초로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "마나 소모량이 60에서 50으로 감소했습니다.",
+         "html": "마나 소모량이 60에서 50으로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "이동 불가 효과의 지속 시간이 1.5초에서 1.75초로 증가했습니다.",
+         "html": "이동 불가 효과의 지속 시간이 1.5초에서 1.75초로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "가시 돋친 사슬",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "방어력 감소량이 15에서 10으로 감소했습니다.",
+         "html": "방어력 감소량이 15에서 10으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "얼음처럼 차갑게",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "공격력 증가량이 250%에서 300%로 증가했습니다.",
+         "html": "공격력 증가량이 250%에서 300%로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "얼음 손아귀",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "얼음 회오리의 감속 효과 증가량이 10%에서 15%로 증가했습니다.",
+         "html": "얼음 회오리의 감속 효과 증가량이 10%에서 15%로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img alt=\"divider_hero_Junkrat.png\" data-id=\"21590352\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/ru/RUB8NMJ8YFYG1505345361709.png\"/></p>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><strong class=\"pn-name\">냉기 작렬 (R)</strong>\n<ul>\n<li>재사용 대기시간이 70초에서 60초로 감소했습니다.</li>\n<li>마나 소모량이 60에서 50으로 감소했습니다.</li>\n<li>이동 불가 효과의 지속 시간이 1.5초에서 1.75초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>가시 돋친 사슬 (E)\n<ul>\n<li>방어력 감소량이 15에서 10으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>7레벨</strong></span>\n<ul>\n<li>얼음처럼 차갑게 (지속 효과)\n<ul>\n<li>공격력 증가량이 250%에서 300%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>13레벨</strong></span>\n<ul>\n<li>얼음 손아귀 (W)\n<ul>\n<li>얼음 회오리의 감속 효과 증가량이 10%에서 15%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote>\n</blockquote>"
+    },
+    {
+     "name": "루나라",
+     "heroId": "Dryad",
+     "heroIds": [
+      "Dryad"
+     ],
+     "changes": [
+      {
+       "name": "질식 꽃가루",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "자연의 독소가 적용된 적 영웅에게 치명적인 꽃으로 주는 추가 피해가 75%에서 85%로 증가했습니다.",
+         "html": "자연의 독소가 적용된 적 영웅에게 치명적인 꽃으로 주는 추가 피해가 75%에서 85%로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "자연의 독소가 3회 중첩된 적에게 주는 추가 피해가 125%에서 135%로 증가했습니다.",
+         "html": "자연의 독소가 3회 중첩된 적에게 주는 추가 피해가 125%에서 135%로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_Lunara_crop.png\" data-id=\"20011598\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/K666Z00DJIK21452704274692.png\"/></p>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong class=\"pn-name\">7레벨</strong>\n<ul>\n<li>질식 꽃가루 (Q)\n<ul>\n<li>자연의 독소가 적용된 적 영웅에게 치명적인 꽃으로 주는 추가 피해가 75%에서 85%로 증가했습니다.</li>\n<li>자연의 독소가 3회 중첩된 적에게 주는 추가 피해가 125%에서 135%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote>\n</blockquote>"
+    }
+   ]
+  },
+  {
+   "name": "전문가",
+   "key": "role_specialist",
+   "html": "<h4>자가라</h4>\n<p><img alt=\"Divider_Hero_Zagara_Crop.png\" data-id=\"17042308\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/XJJMXTLU20DP1417483335816.png\"/></p>\n<p><span class=\"pn-h\"><strong>기술</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>땅굴망 (R)</strong></span>\n<ul>\n<li>최대로 소환할 수 있는 땅굴벌레의 수가 10에서 4로 감소했습니다.</li>\n</ul>\n</li>\n</ul>",
+   "heroes": [
+    {
+     "name": "자가라",
+     "heroId": "Zagara",
+     "heroIds": [
+      "Zagara"
+     ],
+     "changes": [
+      {
+       "name": "땅굴망",
+       "key": "R",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "최대로 소환할 수 있는 땅굴벌레의 수가 10에서 4로 감소했습니다.",
+         "html": "최대로 소환할 수 있는 땅굴벌레의 수가 10에서 4로 감소했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_Zagara_Crop.png\" data-id=\"17042308\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/XJJMXTLU20DP1417483335816.png\"/></p>\n<p><span class=\"pn-h\"><strong>기술</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>땅굴망 (R)</strong></span>\n<ul>\n<li>최대로 소환할 수 있는 땅굴벌레의 수가 10에서 4로 감소했습니다.</li>\n</ul>\n</li>\n</ul>"
+    }
+   ]
+  },
+  {
+   "name": "지원가",
+   "key": "role_support",
+   "html": "<h4>리 리</h4>\n<h4><img alt=\"Divider_Hero_LiLi_Crop.png\" data-id=\"17042288\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/AVO3T8MOM0SM1417483334438.png\"/></h4>\n<p><font color=\"#9900ff\"><b>기술</b></font></p>\n<ul>\n<li><span class=\"pn-name\"><strong>허브차 (Q)</strong></span>\n<ul>\n<li>치유량이 190에서 181로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>휘감는 바람 (E)\n<ul>\n<li>지속 시간이 2초에서 1.5초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>루시우</h4>\n<h4><img alt=\"Divider_Hero_Lucio.png\" data-id=\"20563586\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/2s/2S6L7YADVZQR1487796012090.png\"/></h4>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>분위기 전환! (W)</strong></span>\n<ul>\n<li>속도 증폭 음악의 이동 속도 증가 효과가 15%에서 20%로 증가했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>볼륨을 높여라! (E)</strong></span>\n<ul>\n<li>재사용 대기시간이 15초에서 13초로 감소했습니다.</li>\n<li>마나 소모량이 100에서 90으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>우리는 함께 움직인다 (W)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<ul>\n</ul>\n<h4>티란데</h4>\n<h4><img alt=\"Divider_Hero_Tyrande_Crop.png\" data-id=\"17042307\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/L326XNRFITE41417483335724.png\"/></h4>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>엘룬의 빛 (Q)</strong></span>\n<ul>\n<li>치유량이 265에서 255로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>달의 섬광 (E)</strong></span>\n<ul>\n<li>재사용 대기시간이 12초에서 13초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><span class=\"pn-h\"><strong>특성</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>칼도레이의 저항력 (Q)\n<ul>\n<li>기술 방어력 증가 효과의 지속 시간이 3초에서 2초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>파수꾼 (W)\n<ul>\n<li>날아간 거리에 비례해 증가하는 최대 공격력이 150%에서 250%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>20레벨</strong></span>\n<ul>\n<li>얼음날 화살 (지속 효과)\n<ul>\n<li>공격 속도 증가량이 25%에서 20%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>우서</h4>\n<p><img alt=\"Divider_Hero_Uther_Crop.png\" data-id=\"17042305\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/5W8VDU5725O81417483335719.png\"/></p>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>심판의 망치 (E)</strong></span>\n<ul>\n<li>기절 효과의 지속 시간이 0.75초에서 1초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>",
+   "heroes": [
+    {
+     "name": "리 리",
+     "heroId": "LiLi",
+     "heroIds": [
+      "LiLi"
+     ],
+     "changes": [
+      {
+       "name": "허브차",
+       "key": "Q",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "치유량이 190에서 181로 감소했습니다.",
+         "html": "치유량이 190에서 181로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "휘감는 바람",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "지속 시간이 2초에서 1.5초로 감소했습니다.",
+         "html": "지속 시간이 2초에서 1.5초로 감소했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<h4><img alt=\"Divider_Hero_LiLi_Crop.png\" data-id=\"17042288\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/AVO3T8MOM0SM1417483334438.png\"/></h4>\n<p><font color=\"#9900ff\"><b>기술</b></font></p>\n<ul>\n<li><span class=\"pn-name\"><strong>허브차 (Q)</strong></span>\n<ul>\n<li>치유량이 190에서 181로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>휘감는 바람 (E)\n<ul>\n<li>지속 시간이 2초에서 1.5초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "루시우",
+     "heroId": "Lucio",
+     "heroIds": [
+      "Lucio"
+     ],
+     "changes": [
+      {
+       "name": "분위기 전환!",
+       "key": "W",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "속도 증폭 음악의 이동 속도 증가 효과가 15%에서 20%로 증가했습니다.",
+         "html": "속도 증폭 음악의 이동 속도 증가 효과가 15%에서 20%로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "볼륨을 높여라!",
+       "key": "E",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 15초에서 13초로 감소했습니다.",
+         "html": "재사용 대기시간이 15초에서 13초로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "마나 소모량이 100에서 90으로 감소했습니다.",
+         "html": "마나 소모량이 100에서 90으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "우리는 함께 움직인다",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<h4><img alt=\"Divider_Hero_Lucio.png\" data-id=\"20563586\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/2s/2S6L7YADVZQR1487796012090.png\"/></h4>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>분위기 전환! (W)</strong></span>\n<ul>\n<li>속도 증폭 음악의 이동 속도 증가 효과가 15%에서 20%로 증가했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>볼륨을 높여라! (E)</strong></span>\n<ul>\n<li>재사용 대기시간이 15초에서 13초로 감소했습니다.</li>\n<li>마나 소모량이 100에서 90으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>우리는 함께 움직인다 (W)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<ul>\n</ul>"
+    },
+    {
+     "name": "티란데",
+     "heroId": "Tyrande",
+     "heroIds": [
+      "Tyrande"
+     ],
+     "changes": [
+      {
+       "name": "엘룬의 빛",
+       "key": "Q",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "치유량이 265에서 255로 감소했습니다.",
+         "html": "치유량이 265에서 255로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "달의 섬광",
+       "key": "E",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 12초에서 13초로 증가했습니다.",
+         "html": "재사용 대기시간이 12초에서 13초로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "칼도레이의 저항력",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "기술 방어력 증가 효과의 지속 시간이 3초에서 2초로 감소했습니다.",
+         "html": "기술 방어력 증가 효과의 지속 시간이 3초에서 2초로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "파수꾼",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "날아간 거리에 비례해 증가하는 최대 공격력이 150%에서 250%로 증가했습니다.",
+         "html": "날아간 거리에 비례해 증가하는 최대 공격력이 150%에서 250%로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "얼음날 화살",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "공격 속도 증가량이 25%에서 20%로 감소했습니다.",
+         "html": "공격 속도 증가량이 25%에서 20%로 감소했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<h4><img alt=\"Divider_Hero_Tyrande_Crop.png\" data-id=\"17042307\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/L326XNRFITE41417483335724.png\"/></h4>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>엘룬의 빛 (Q)</strong></span>\n<ul>\n<li>치유량이 265에서 255로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>달의 섬광 (E)</strong></span>\n<ul>\n<li>재사용 대기시간이 12초에서 13초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><span class=\"pn-h\"><strong>특성</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>칼도레이의 저항력 (Q)\n<ul>\n<li>기술 방어력 증가 효과의 지속 시간이 3초에서 2초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>파수꾼 (W)\n<ul>\n<li>날아간 거리에 비례해 증가하는 최대 공격력이 150%에서 250%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>20레벨</strong></span>\n<ul>\n<li>얼음날 화살 (지속 효과)\n<ul>\n<li>공격 속도 증가량이 25%에서 20%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "우서",
+     "heroId": "Uther",
+     "heroIds": [
+      "Uther"
+     ],
+     "changes": [
+      {
+       "name": "심판의 망치",
+       "key": "E",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "기절 효과의 지속 시간이 0.75초에서 1초로 증가했습니다.",
+         "html": "기절 효과의 지속 시간이 0.75초에서 1초로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_Uther_Crop.png\" data-id=\"17042305\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/5W8VDU5725O81417483335719.png\"/></p>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>심판의 망치 (E)</strong></span>\n<ul>\n<li>기절 효과의 지속 시간이 0.75초에서 1초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>"
+    }
+   ]
+  },
+  {
+   "name": "전사",
+   "key": "role_tank",
+   "html": "<h4>아르타니스</h4>\n<p><img alt=\"Divider_Hero_Artanis_crop.png\" data-id=\"20011596\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/RI0KPP58OKKA1452704274381.png\"/></p>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>위상 분광기 (E)</strong></span>\n<ul>\n<li>재사용 대기시간이 16초에서 14초로 감소했습니다.</li>\n<li>마나 소모량이 70에서 60으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><span class=\"pn-h\"><strong>특성</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>13레벨</strong></span>\n<ul>\n<li>중력자 소용돌이 (E)\n<ul>\n<li>마나 소모량 감소량이 35에서 30으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>블레이즈</h4>\n<p><img alt=\"Divider_Hero_Blaze.png\" data-id=\"21368492\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/6CD8XHJELKVR1513881172085.png\"/></p>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>기름 뿌리기 (W)</strong></span>\n<ul>\n<li>감속 효과가 40%에서 50%로 증가했습니다.</li>\n<li>점화된 기름의 공격력이 18에서 16으로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>제트 추진기 (E)</strong></span>\n<ul>\n<li>재사용 대기시간이 10초에서 9초로 감소했습니다.</li>\n<li>마나 소모량이 50에서 45로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>방화광 (D)</strong></span>\n<ul>\n<li>방어력 증가량이 25에서 35로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<h4>데하카</h4>\n<p><img alt=\"Divider_Hero_Dehaka_crop.png\" data-id=\"20168482\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/s5/S5T04ROESNVH1466787135735.png\"/></p>\n<p><b class=\"pn-h\">기술</b></p>\n<ul>\n<li><span class=\"pn-name\"><strong>수풀추적자 (Z)</strong></span>\n<ul>\n<li>재사용 대기시간이 60초에서 75초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><font color=\"#9900ff\"><b>특성</b></font></p>\n<ul>\n<li><span class=\"pn-name\"><strong>20레벨</strong></span>\n<ul>\n<li>최상위 포식자 (Z)\n<ul>\n<li>재사용 대기시간 감소량이 25초에서 35초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>말가니스</h4>\n<p><img alt=\"Divider_Hero_Malganis_Crop.png\" data-id=\"22636757\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/br/BRYVXAYY68U91540514896008.png\"/></p>\n<p><b class=\"pn-h\">기술</b></p>\n<ul>\n<li><span class=\"pn-name\"><strong>지옥 발톱 (Q)</strong></span>\n<ul>\n<li>공격력이 72에서 69로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>흡혈의 손길 (고유 능력)</strong></span>\n<ul>\n<li>회복량이 영웅이 아닌 대상에게 준 피해의 15%에서 10%로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>흡혈박쥐 떼 (R)</strong></span>\n<ul>\n<li>회복량이 영웅에게 준 피해의 100%에서 75%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><font color=\"#9900ff\"><b>특성</b></font></p>\n<ul>\n<li><span class=\"pn-name\"><strong>16레벨</strong></span>\n<ul>\n<li>역병 박쥐 (W)\n<ul>\n<li>공격력이 85에서 81로 감소했습니다.</li>\n</ul>\n</li>\n<li>광란의 공격 (지속 효과)\n<ul>\n<li>물리 공격력 증가량이 10%에서 15%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+   "heroes": [
+    {
+     "name": "아르타니스",
+     "heroId": "Artanis",
+     "heroIds": [
+      "Artanis"
+     ],
+     "changes": [
+      {
+       "name": "위상 분광기",
+       "key": "E",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 16초에서 14초로 감소했습니다.",
+         "html": "재사용 대기시간이 16초에서 14초로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "마나 소모량이 70에서 60으로 감소했습니다.",
+         "html": "마나 소모량이 70에서 60으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "중력자 소용돌이",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "마나 소모량 감소량이 35에서 30으로 감소했습니다.",
+         "html": "마나 소모량 감소량이 35에서 30으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_Artanis_crop.png\" data-id=\"20011596\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/RI0KPP58OKKA1452704274381.png\"/></p>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>위상 분광기 (E)</strong></span>\n<ul>\n<li>재사용 대기시간이 16초에서 14초로 감소했습니다.</li>\n<li>마나 소모량이 70에서 60으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><span class=\"pn-h\"><strong>특성</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>13레벨</strong></span>\n<ul>\n<li>중력자 소용돌이 (E)\n<ul>\n<li>마나 소모량 감소량이 35에서 30으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "블레이즈",
+     "heroId": "Firebat",
+     "heroIds": [
+      "Firebat"
+     ],
+     "changes": [
+      {
+       "name": "기름 뿌리기",
+       "key": "W",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "감속 효과가 40%에서 50%로 증가했습니다.",
+         "html": "감속 효과가 40%에서 50%로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "점화된 기름의 공격력이 18에서 16으로 감소했습니다.",
+         "html": "점화된 기름의 공격력이 18에서 16으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "제트 추진기",
+       "key": "E",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 10초에서 9초로 감소했습니다.",
+         "html": "재사용 대기시간이 10초에서 9초로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "마나 소모량이 50에서 45로 감소했습니다.",
+         "html": "마나 소모량이 50에서 45로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "방화광",
+       "key": "D",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "방어력 증가량이 25에서 35로 증가했습니다.",
+         "html": "방어력 증가량이 25에서 35로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_Blaze.png\" data-id=\"21368492\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/6CD8XHJELKVR1513881172085.png\"/></p>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>기름 뿌리기 (W)</strong></span>\n<ul>\n<li>감속 효과가 40%에서 50%로 증가했습니다.</li>\n<li>점화된 기름의 공격력이 18에서 16으로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>제트 추진기 (E)</strong></span>\n<ul>\n<li>재사용 대기시간이 10초에서 9초로 감소했습니다.</li>\n<li>마나 소모량이 50에서 45로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>방화광 (D)</strong></span>\n<ul>\n<li>방어력 증가량이 25에서 35로 증가했습니다.</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "데하카",
+     "heroId": "Dehaka",
+     "heroIds": [
+      "Dehaka"
+     ],
+     "changes": [
+      {
+       "name": "수풀추적자",
+       "key": "Z",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 60초에서 75초로 증가했습니다.",
+         "html": "재사용 대기시간이 60초에서 75초로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "최상위 포식자",
+       "key": "Z",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "재사용 대기시간 감소량이 25초에서 35초로 증가했습니다.",
+         "html": "재사용 대기시간 감소량이 25초에서 35초로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_Dehaka_crop.png\" data-id=\"20168482\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/s5/S5T04ROESNVH1466787135735.png\"/></p>\n<p><b class=\"pn-h\">기술</b></p>\n<ul>\n<li><span class=\"pn-name\"><strong>수풀추적자 (Z)</strong></span>\n<ul>\n<li>재사용 대기시간이 60초에서 75초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><font color=\"#9900ff\"><b>특성</b></font></p>\n<ul>\n<li><span class=\"pn-name\"><strong>20레벨</strong></span>\n<ul>\n<li>최상위 포식자 (Z)\n<ul>\n<li>재사용 대기시간 감소량이 25초에서 35초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "말가니스",
+     "heroId": "MalGanis",
+     "heroIds": [
+      "MalGanis"
+     ],
+     "changes": [
+      {
+       "name": "지옥 발톱",
+       "key": "Q",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "공격력이 72에서 69로 감소했습니다.",
+         "html": "공격력이 72에서 69로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "흡혈의 손길",
+       "key": "고유 능력",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "회복량이 영웅이 아닌 대상에게 준 피해의 15%에서 10%로 감소했습니다.",
+         "html": "회복량이 영웅이 아닌 대상에게 준 피해의 15%에서 10%로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "흡혈박쥐 떼",
+       "key": "R",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "회복량이 영웅에게 준 피해의 100%에서 75%로 감소했습니다.",
+         "html": "회복량이 영웅에게 준 피해의 100%에서 75%로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "역병 박쥐",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "공격력이 85에서 81로 감소했습니다.",
+         "html": "공격력이 85에서 81로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "광란의 공격",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "물리 공격력 증가량이 10%에서 15%로 증가했습니다.",
+         "html": "물리 공격력 증가량이 10%에서 15%로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_Malganis_Crop.png\" data-id=\"22636757\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/br/BRYVXAYY68U91540514896008.png\"/></p>\n<p><b class=\"pn-h\">기술</b></p>\n<ul>\n<li><span class=\"pn-name\"><strong>지옥 발톱 (Q)</strong></span>\n<ul>\n<li>공격력이 72에서 69로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>흡혈의 손길 (고유 능력)</strong></span>\n<ul>\n<li>회복량이 영웅이 아닌 대상에게 준 피해의 15%에서 10%로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>흡혈박쥐 떼 (R)</strong></span>\n<ul>\n<li>회복량이 영웅에게 준 피해의 100%에서 75%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><font color=\"#9900ff\"><b>특성</b></font></p>\n<ul>\n<li><span class=\"pn-name\"><strong>16레벨</strong></span>\n<ul>\n<li>역병 박쥐 (W)\n<ul>\n<li>공격력이 85에서 81로 감소했습니다.</li>\n</ul>\n</li>\n<li>광란의 공격 (지속 효과)\n<ul>\n<li>물리 공격력 증가량이 10%에서 15%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    }
+   ]
+  },
+  {
+   "name": "버그 수정",
+   "key": "bugs",
+   "html": "<p><strong class=\"pn-h\">일반</strong></p>\n<ul>\n<li><strong>깃발:</strong> Roll 20 Esports 깃발의 텍스쳐가 비정상적이던 문제를 수정했습니다.</li>\n<li><strong>아나운서: </strong>말가니스 아나운서가 게임이 시작된 후에 말퓨리온으로 바뀔 수 있던 문제를 수정했습니다.</li>\n</ul>\n<p><span class=\"pn-h\"><strong>영웅</strong></span></p>\n<ul>\n<li><strong>아나: </strong>13레벨의 치유탄 특성들이 생명력이 최대인 영웅들에게 효과가 적용되지 않던 문제를 수정했습니다.</li>\n<li><strong>말가니스:</strong> 눈먼 공포가 활성화된 동안 말가니스의 시야에 소환수가 보일 수 있던 문제를 수정했습니다.</li>\n</ul>\n<p><strong class=\"pn-h\">사용자 인터페이스</strong></p>\n<ul>\n<li>5레벨 및 15레벨 진척도 보상 아이콘이 하얀 네모로 보이던 문제를 수정했습니다.</li>\n</ul>\n<ul>\n</ul>\n<p><strong><a href=\"https://us.forums.blizzard.com/en/heroes/\" target=\"_blank\">여기를 클릭하면 히어로즈 오브 더 스톰 공식 토론장에서 다른 플레이어들과 이 게시글에 대한 의견을 나눌 수 있습니다</a>.</strong></p>\n<p><img alt=\"\" class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/g6/G6G0N80EOC941426801305139.png\"/></p>",
+   "items": [
+    {
+     "name": "아나",
+     "heroId": "Ana",
+     "heroIds": [
+      "Ana"
+     ],
+     "under": null,
+     "html": "<strong>아나: </strong>13레벨의 치유탄 특성들이 생명력이 최대인 영웅들에게 효과가 적용되지 않던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "아나: 13레벨의 치유탄 특성들이 생명력이 최대인 영웅들에게 효과가 적용되지 않던 문제를 수정했습니다.",
+         "html": "<strong>아나: </strong>13레벨의 치유탄 특성들이 생명력이 최대인 영웅들에게 효과가 적용되지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "말가니스",
+     "heroId": "MalGanis",
+     "heroIds": [
+      "MalGanis"
+     ],
+     "under": null,
+     "html": "<strong>말가니스:</strong> 눈먼 공포가 활성화된 동안 말가니스의 시야에 소환수가 보일 수 있던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "말가니스: 눈먼 공포가 활성화된 동안 말가니스의 시야에 소환수가 보일 수 있던 문제를 수정했습니다.",
+         "html": "<strong>말가니스:</strong> 눈먼 공포가 활성화된 동안 말가니스의 시야에 소환수가 보일 수 있던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "heroes": [
+  "Ana",
+  "Artanis",
+  "Dehaka",
+  "Dryad",
+  "Falstad",
+  "Firebat",
+  "KelThuzad",
+  "LiLi",
+  "Lucio",
+  "MalGanis",
+  "Tyrande",
+  "Uther",
+  "Zagara"
+ ],
+ "battlegrounds": [],
+ "newsId": "22636768"
+}

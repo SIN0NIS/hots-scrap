@@ -1,0 +1,1057 @@
+{
+ "date": "2025-04-21",
+ "kind": "ptr",
+ "title": "히어로즈 오브 더 스톰 공개 테스트 서버 패치 노트 - 2025년 4월 21일",
+ "source": "https://news.blizzard.com/en-us/article/24197273/heroes-of-the-storm-ptr-patch-notes-april-21-2025",
+ "published": "2025-04-21T16:52:00Z",
+ "sections": [
+  {
+   "name": "머리말",
+   "key": "intro",
+   "html": "<p>다음 히어로즈 오브 더 스톰 패치가 공개 테스트 서버(PTR)에 적용되어 테스트 플레이가 가능합니다. 언제나 그렇듯, PTR에서 플레이하는 동안 버그를 발견하셨다면 <a href=\"https://us.forums.blizzard.com/en/heroes/c/ptr-bug-report\" target=\"_blank\">PTR 버그 신고 포럼</a>에 방문하여 경험하신 내용을 알려주시기 바랍니다.</p>",
+   "nameEn": "머리말"
+  },
+  {
+   "name": "일반",
+   "key": "general",
+   "html": "<ul>\n<li>체험하기 모드의 아군 영웅이 말퓨리온에서 안두인으로 변경되었습니다.</li>\n<li>현재 게임 플레이를 반영하도록 다수의 게임 내 문구가 수정되었습니다.</li>\n<li>첫 화면 및 시작 음악이 업데이트되었습니다.</li>\n</ul>",
+   "nameEn": "General"
+  },
+  {
+   "name": "폭풍 리그",
+   "key": "storm_league",
+   "html": "<ul>\n<li>등급 하락이 이제 마스터 및 그랜드마스터 리그 플레이어에게만 적용됩니다.</li>\n<li>마스터 및 그랜드마스터 플레이어의 최대 파티 인원이 2명으로 감소했습니다.</li>\n</ul>",
+   "nameEn": "Storm League"
+  },
+  {
+   "name": "밸런스 업데이트",
+   "key": "balance",
+   "html": "<h3><strong>영웅</strong></h3>\n<h4>아나</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">생체 수류탄 [W]</strong><ul>\n<li><b>추가된 기능:</b> 생체 수류탄이 적에게 적중하지 않으면 재사용 대기시간이 3초 감소합니다.</li>\n<li><b>추가된 기능:</b> 생체 수류탄이 아나에게만 적중하면 재사용 대기시간이 2초 감소합니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">흡혈탄</strong><ul>\n<li>이제 때까치가 지속 효과로 치유량을 15% 증가시킵니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">우제트의 심판</strong><ul>\n<li><b>추가된 기능:</b> 이제 호루스의 눈을 켜고 끌 수 있습니다.</li>\n<li><b>추가된 기능:</b> 이제 호루스의 눈의 재사용 대기시간이 0.5초입니다.</li>\n<li><b>추가된 기능:</b> 호루스의 눈의 탄환이 10초마다 1회 재충전됩니다.</li>\n<li>우제트의 심판으로 얻는 효과가 이제 7초 동안 지속됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>아즈모단</h4>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">밟아 뭉개기</strong><ul>\n<li><b>추가된 기능:</b> 이제 밟아 뭉개기가 영웅에게 적중하면 궁극기 재사용 대기시간이 25% 감소합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>겐지</h4>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">길잡이</strong><ul>\n<li><b>추가된 기능:</b> 이제 궁극기가 적 영웅에게 입힌 피해량의 최대 30%만큼 겐지를 치유합니다. 치유량은 겐지의 생명력이 낮을수록 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">폭렬참</strong><ul>\n<li>재사용 대기시간이 60초에서 75초로 증가했습니다.</li>\n<li>폭발 피해량이 275에서 290으로 증가했습니다.</li>\n<li>베기 피해량이 135에서 145로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">심안</strong><ul>\n<li>이제 구조물에 40% 감소한 피해를 입힙니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">살아 있는 무기</strong><ul>\n<li>재사용 대기시간 감소량이 10초에서 12.5초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>임페리우스</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">타오르는 갑옷 [E]</strong><ul>\n<li>이제 사거리 내에 영웅이 없으면 추가 대상 1명을 더 타격합니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">꿰뚫는 빛줄기</strong><ul>\n<li><b>개편:</b> 꿰뚫는 빛줄기의 재사용 대기시간이 2초 감소합니다.</li>\n<li><b>개편:</b> 꿰뚫는 빛줄기가 영웅에게 180% 증가한 피해를 입히며, 추가로 적중한 영웅 1명당 20%씩 감소합니다.</li>\n<li><b>개편:</b> 꿰뚫는 빛줄기의 마나 소모량이 40에서 30으로 감소합니다.</li>\n<li><b>개편:</b> 용기의 낙인이 적용된 대상의 기절이 끝나면, 대상에게 적용된 용기의 낙인 1개당 꿰뚫는 빛줄기의 재사용 대기시간이 1초 감소합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">영광의 불꽃</strong><ul>\n<li>영광의 불꽃의 지연 시간이 2초에서 1.75초로 감소했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">신성한 백열</strong><ul>\n<li>타오르는 갑옷이 더 이상 신성한 백열을 부여하지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">천상의 군단장</strong><ul>\n<li><b>추가된 기능:</b> 천사의 무구로 생성된 모든 보호막이 더 이상 사라지지 않습니다.</li>\n<li><b>추가된 기능:</b> 천상의 군단장 보호막이 발사하는 검이 영웅이 아닌 대상도 공격할 수 있지만, 영웅을 우선합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">타오르는 분노</strong><ul>\n<li><b>신규 특성:</b> 이제 사거리 내에 적 영웅이 있어도 타오르는 갑옷이 추가 대상 1명을 더 타격합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>루나라</h4>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">갈래창</strong><ul>\n<li><b>추가된 기능:</b> 이제 갈래창 중첩을 3회 부여합니다. 추가 대상을 공격하면 중첩이 1회 소모됩니다. 최대 3회까지 중첩되며, 한 번의 공격으로 모든 중첩을 소모할 수 있습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">무한한 포자</strong><ul>\n<li>이제 마나도 50 돌려받습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">자생지를 위하여!</strong><ul>\n<li><b>신규 특성:</b> 이제 가시나무 덩굴이 부채꼴로 덩굴 4개를 추가로 발사합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">숲의 분노</strong><ul>\n<li>이제 어느 궁극기를 선택해도 고를 수 있습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>말티엘</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">망령의 일격 [W]</strong><ul>\n<li>사거리가 6에서 7로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">암흑의 수확</strong><ul>\n<li>퀘스트 목표가 180초에서 150초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">영혼 회오리</strong><ul>\n<li>영혼 회오리가 끝날 때 더 이상 망령의 일격의 재사용 대기시간을 초기화하지 않습니다.</li>\n<li>이제 영혼 회오리가 활성화된 동안 망령의 일격의 재사용 대기시간이 2초로 감소하고 마나 소모량이 사라집니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">영혼을 거두는 자</strong><ul>\n<li>적 영웅 2명 이상이 영혼 회오리의 반경 안에 있는 동안에는 지속시간이 감소하지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>자가라</h4>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">부식성 타액</strong><ul>\n<li>피해량이 최대 생명력의 1.75%에서 1.5%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+   "heroes": [
+    {
+     "name": "아나",
+     "heroId": "Ana",
+     "heroIds": [
+      "Ana"
+     ],
+     "changes": [
+      {
+       "name": "생체 수류탄",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "추가된 기능: 생체 수류탄이 적에게 적중하지 않으면 재사용 대기시간이 3초 감소합니다.",
+         "html": "<b>추가된 기능:</b> 생체 수류탄이 적에게 적중하지 않으면 재사용 대기시간이 3초 감소합니다.",
+         "added": false
+        },
+        {
+         "text": "추가된 기능: 생체 수류탄이 아나에게만 적중하면 재사용 대기시간이 2초 감소합니다.",
+         "html": "<b>추가된 기능:</b> 생체 수류탄이 아나에게만 적중하면 재사용 대기시간이 2초 감소합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Biotic Grenade"
+      },
+      {
+       "name": "흡혈탄",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "이제 때까치가 지속 효과로 치유량을 15% 증가시킵니다.",
+         "html": "이제 때까치가 지속 효과로 치유량을 15% 증가시킵니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Vampiric Rounds"
+      },
+      {
+       "name": "우제트의 심판",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "추가된 기능: 이제 호루스의 눈을 켜고 끌 수 있습니다.",
+         "html": "<b>추가된 기능:</b> 이제 호루스의 눈을 켜고 끌 수 있습니다.",
+         "added": false
+        },
+        {
+         "text": "추가된 기능: 이제 호루스의 눈의 재사용 대기시간이 0.5초입니다.",
+         "html": "<b>추가된 기능:</b> 이제 호루스의 눈의 재사용 대기시간이 0.5초입니다.",
+         "added": false
+        },
+        {
+         "text": "추가된 기능: 호루스의 눈의 탄환이 10초마다 1회 재충전됩니다.",
+         "html": "<b>추가된 기능:</b> 호루스의 눈의 탄환이 10초마다 1회 재충전됩니다.",
+         "added": false
+        },
+        {
+         "text": "우제트의 심판으로 얻는 효과가 이제 7초 동안 지속됩니다.",
+         "html": "우제트의 심판으로 얻는 효과가 이제 7초 동안 지속됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Deadeye"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">생체 수류탄 [W]</strong><ul>\n<li><b>추가된 기능:</b> 생체 수류탄이 적에게 적중하지 않으면 재사용 대기시간이 3초 감소합니다.</li>\n<li><b>추가된 기능:</b> 생체 수류탄이 아나에게만 적중하면 재사용 대기시간이 2초 감소합니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">흡혈탄</strong><ul>\n<li>이제 때까치가 지속 효과로 치유량을 15% 증가시킵니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">우제트의 심판</strong><ul>\n<li><b>추가된 기능:</b> 이제 호루스의 눈을 켜고 끌 수 있습니다.</li>\n<li><b>추가된 기능:</b> 이제 호루스의 눈의 재사용 대기시간이 0.5초입니다.</li>\n<li><b>추가된 기능:</b> 호루스의 눈의 탄환이 10초마다 1회 재충전됩니다.</li>\n<li>우제트의 심판으로 얻는 효과가 이제 7초 동안 지속됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Ana"
+    },
+    {
+     "name": "아즈모단",
+     "heroId": "Azmodan",
+     "heroIds": [
+      "Azmodan"
+     ],
+     "changes": [
+      {
+       "name": "밟아 뭉개기",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "추가된 기능: 이제 밟아 뭉개기가 영웅에게 적중하면 궁극기 재사용 대기시간이 25% 감소합니다.",
+         "html": "<b>추가된 기능:</b> 이제 밟아 뭉개기가 영웅에게 적중하면 궁극기 재사용 대기시간이 25% 감소합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Trample"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">밟아 뭉개기</strong><ul>\n<li><b>추가된 기능:</b> 이제 밟아 뭉개기가 영웅에게 적중하면 궁극기 재사용 대기시간이 25% 감소합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Azmodan"
+    },
+    {
+     "name": "겐지",
+     "heroId": "Genji",
+     "heroIds": [
+      "Genji"
+     ],
+     "changes": [
+      {
+       "name": "길잡이",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "추가된 기능: 이제 궁극기가 적 영웅에게 입힌 피해량의 최대 30%만큼 겐지를 치유합니다. 치유량은 겐지의 생명력이 낮을수록 증가합니다.",
+         "html": "<b>추가된 기능:</b> 이제 궁극기가 적 영웅에게 입힌 피해량의 최대 30%만큼 겐지를 치유합니다. 치유량은 겐지의 생명력이 낮을수록 증가합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Pathfinder"
+      },
+      {
+       "name": "폭렬참",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 60초에서 75초로 증가했습니다.",
+         "html": "재사용 대기시간이 60초에서 75초로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "폭발 피해량이 275에서 290으로 증가했습니다.",
+         "html": "폭발 피해량이 275에서 290으로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "베기 피해량이 135에서 145로 증가했습니다.",
+         "html": "베기 피해량이 135에서 145로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "X-Strike"
+      },
+      {
+       "name": "심안",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "이제 구조물에 40% 감소한 피해를 입힙니다.",
+         "html": "이제 구조물에 40% 감소한 피해를 입힙니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Shingan"
+      },
+      {
+       "name": "살아 있는 무기",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "재사용 대기시간 감소량이 10초에서 12.5초로 증가했습니다.",
+         "html": "재사용 대기시간 감소량이 10초에서 12.5초로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Living Weapon"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">길잡이</strong><ul>\n<li><b>추가된 기능:</b> 이제 궁극기가 적 영웅에게 입힌 피해량의 최대 30%만큼 겐지를 치유합니다. 치유량은 겐지의 생명력이 낮을수록 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">폭렬참</strong><ul>\n<li>재사용 대기시간이 60초에서 75초로 증가했습니다.</li>\n<li>폭발 피해량이 275에서 290으로 증가했습니다.</li>\n<li>베기 피해량이 135에서 145로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">심안</strong><ul>\n<li>이제 구조물에 40% 감소한 피해를 입힙니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">살아 있는 무기</strong><ul>\n<li>재사용 대기시간 감소량이 10초에서 12.5초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Genji"
+    },
+    {
+     "name": "임페리우스",
+     "heroId": "Imperius",
+     "heroIds": [
+      "Imperius"
+     ],
+     "changes": [
+      {
+       "name": "타오르는 갑옷",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "이제 사거리 내에 영웅이 없으면 추가 대상 1명을 더 타격합니다.",
+         "html": "이제 사거리 내에 영웅이 없으면 추가 대상 1명을 더 타격합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Molten Armor"
+      },
+      {
+       "name": "꿰뚫는 빛줄기",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "개편: 꿰뚫는 빛줄기의 재사용 대기시간이 2초 감소합니다.",
+         "html": "<b>개편:</b> 꿰뚫는 빛줄기의 재사용 대기시간이 2초 감소합니다.",
+         "added": false
+        },
+        {
+         "text": "개편: 꿰뚫는 빛줄기가 영웅에게 180% 증가한 피해를 입히며, 추가로 적중한 영웅 1명당 20%씩 감소합니다.",
+         "html": "<b>개편:</b> 꿰뚫는 빛줄기가 영웅에게 180% 증가한 피해를 입히며, 추가로 적중한 영웅 1명당 20%씩 감소합니다.",
+         "added": false
+        },
+        {
+         "text": "개편: 꿰뚫는 빛줄기의 마나 소모량이 40에서 30으로 감소합니다.",
+         "html": "<b>개편:</b> 꿰뚫는 빛줄기의 마나 소모량이 40에서 30으로 감소합니다.",
+         "added": false
+        },
+        {
+         "text": "개편: 용기의 낙인이 적용된 대상의 기절이 끝나면, 대상에게 적용된 용기의 낙인 1개당 꿰뚫는 빛줄기의 재사용 대기시간이 1초 감소합니다.",
+         "html": "<b>개편:</b> 용기의 낙인이 적용된 대상의 기절이 끝나면, 대상에게 적용된 용기의 낙인 1개당 꿰뚫는 빛줄기의 재사용 대기시간이 1초 감소합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Impaling Light"
+      },
+      {
+       "name": "영광의 불꽃",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "영광의 불꽃의 지연 시간이 2초에서 1.75초로 감소했습니다.",
+         "html": "영광의 불꽃의 지연 시간이 2초에서 1.75초로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Blaze of Glory"
+      },
+      {
+       "name": "신성한 백열",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "타오르는 갑옷이 더 이상 신성한 백열을 부여하지 않습니다.",
+         "html": "타오르는 갑옷이 더 이상 신성한 백열을 부여하지 않습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Holy Fervor"
+      },
+      {
+       "name": "천상의 군단장",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "추가된 기능: 천사의 무구로 생성된 모든 보호막이 더 이상 사라지지 않습니다.",
+         "html": "<b>추가된 기능:</b> 천사의 무구로 생성된 모든 보호막이 더 이상 사라지지 않습니다.",
+         "added": false
+        },
+        {
+         "text": "추가된 기능: 천상의 군단장 보호막이 발사하는 검이 영웅이 아닌 대상도 공격할 수 있지만, 영웅을 우선합니다.",
+         "html": "<b>추가된 기능:</b> 천상의 군단장 보호막이 발사하는 검이 영웅이 아닌 대상도 공격할 수 있지만, 영웅을 우선합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Heavenly Host"
+      },
+      {
+       "name": "타오르는 분노",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "신규 특성: 이제 사거리 내에 적 영웅이 있어도 타오르는 갑옷이 추가 대상 1명을 더 타격합니다.",
+         "html": "<b>신규 특성:</b> 이제 사거리 내에 적 영웅이 있어도 타오르는 갑옷이 추가 대상 1명을 더 타격합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Molten Wrath"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">타오르는 갑옷 [E]</strong><ul>\n<li>이제 사거리 내에 영웅이 없으면 추가 대상 1명을 더 타격합니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">꿰뚫는 빛줄기</strong><ul>\n<li><b>개편:</b> 꿰뚫는 빛줄기의 재사용 대기시간이 2초 감소합니다.</li>\n<li><b>개편:</b> 꿰뚫는 빛줄기가 영웅에게 180% 증가한 피해를 입히며, 추가로 적중한 영웅 1명당 20%씩 감소합니다.</li>\n<li><b>개편:</b> 꿰뚫는 빛줄기의 마나 소모량이 40에서 30으로 감소합니다.</li>\n<li><b>개편:</b> 용기의 낙인이 적용된 대상의 기절이 끝나면, 대상에게 적용된 용기의 낙인 1개당 꿰뚫는 빛줄기의 재사용 대기시간이 1초 감소합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">영광의 불꽃</strong><ul>\n<li>영광의 불꽃의 지연 시간이 2초에서 1.75초로 감소했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">신성한 백열</strong><ul>\n<li>타오르는 갑옷이 더 이상 신성한 백열을 부여하지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">천상의 군단장</strong><ul>\n<li><b>추가된 기능:</b> 천사의 무구로 생성된 모든 보호막이 더 이상 사라지지 않습니다.</li>\n<li><b>추가된 기능:</b> 천상의 군단장 보호막이 발사하는 검이 영웅이 아닌 대상도 공격할 수 있지만, 영웅을 우선합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">타오르는 분노</strong><ul>\n<li><b>신규 특성:</b> 이제 사거리 내에 적 영웅이 있어도 타오르는 갑옷이 추가 대상 1명을 더 타격합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Imperius"
+    },
+    {
+     "name": "루나라",
+     "heroId": "Dryad",
+     "heroIds": [
+      "Dryad"
+     ],
+     "changes": [
+      {
+       "name": "갈래창",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "추가된 기능: 이제 갈래창 중첩을 3회 부여합니다. 추가 대상을 공격하면 중첩이 1회 소모됩니다. 최대 3회까지 중첩되며, 한 번의 공격으로 모든 중첩을 소모할 수 있습니다.",
+         "html": "<b>추가된 기능:</b> 이제 갈래창 중첩을 3회 부여합니다. 추가 대상을 공격하면 중첩이 1회 소모됩니다. 최대 3회까지 중첩되며, 한 번의 공격으로 모든 중첩을 소모할 수 있습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Splintered Spear"
+      },
+      {
+       "name": "무한한 포자",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "이제 마나도 50 돌려받습니다.",
+         "html": "이제 마나도 50 돌려받습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Endless Spores"
+      },
+      {
+       "name": "자생지를 위하여!",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "신규 특성: 이제 가시나무 덩굴이 부채꼴로 덩굴 4개를 추가로 발사합니다.",
+         "html": "<b>신규 특성:</b> 이제 가시나무 덩굴이 부채꼴로 덩굴 4개를 추가로 발사합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "For The Wildlands!"
+      },
+      {
+       "name": "숲의 분노",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "이제 어느 궁극기를 선택해도 고를 수 있습니다.",
+         "html": "이제 어느 궁극기를 선택해도 고를 수 있습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Forest's Wrath"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">갈래창</strong><ul>\n<li><b>추가된 기능:</b> 이제 갈래창 중첩을 3회 부여합니다. 추가 대상을 공격하면 중첩이 1회 소모됩니다. 최대 3회까지 중첩되며, 한 번의 공격으로 모든 중첩을 소모할 수 있습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">무한한 포자</strong><ul>\n<li>이제 마나도 50 돌려받습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">자생지를 위하여!</strong><ul>\n<li><b>신규 특성:</b> 이제 가시나무 덩굴이 부채꼴로 덩굴 4개를 추가로 발사합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">숲의 분노</strong><ul>\n<li>이제 어느 궁극기를 선택해도 고를 수 있습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Lunara"
+    },
+    {
+     "name": "말티엘",
+     "heroId": "Malthael",
+     "heroIds": [
+      "Malthael"
+     ],
+     "changes": [
+      {
+       "name": "망령의 일격",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "사거리가 6에서 7로 증가했습니다.",
+         "html": "사거리가 6에서 7로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Wraith Strike"
+      },
+      {
+       "name": "암흑의 수확",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "퀘스트 목표가 180초에서 150초로 감소했습니다.",
+         "html": "퀘스트 목표가 180초에서 150초로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Black Harvest"
+      },
+      {
+       "name": "영혼 회오리",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "영혼 회오리가 끝날 때 더 이상 망령의 일격의 재사용 대기시간을 초기화하지 않습니다.",
+         "html": "영혼 회오리가 끝날 때 더 이상 망령의 일격의 재사용 대기시간을 초기화하지 않습니다.",
+         "added": false
+        },
+        {
+         "text": "이제 영혼 회오리가 활성화된 동안 망령의 일격의 재사용 대기시간이 2초로 감소하고 마나 소모량이 사라집니다.",
+         "html": "이제 영혼 회오리가 활성화된 동안 망령의 일격의 재사용 대기시간이 2초로 감소하고 마나 소모량이 사라집니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Tormented Souls"
+      },
+      {
+       "name": "영혼을 거두는 자",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "적 영웅 2명 이상이 영혼 회오리의 반경 안에 있는 동안에는 지속시간이 감소하지 않습니다.",
+         "html": "적 영웅 2명 이상이 영혼 회오리의 반경 안에 있는 동안에는 지속시간이 감소하지 않습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Reaper of Souls"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">망령의 일격 [W]</strong><ul>\n<li>사거리가 6에서 7로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">암흑의 수확</strong><ul>\n<li>퀘스트 목표가 180초에서 150초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">영혼 회오리</strong><ul>\n<li>영혼 회오리가 끝날 때 더 이상 망령의 일격의 재사용 대기시간을 초기화하지 않습니다.</li>\n<li>이제 영혼 회오리가 활성화된 동안 망령의 일격의 재사용 대기시간이 2초로 감소하고 마나 소모량이 사라집니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">영혼을 거두는 자</strong><ul>\n<li>적 영웅 2명 이상이 영혼 회오리의 반경 안에 있는 동안에는 지속시간이 감소하지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Malthael"
+    },
+    {
+     "name": "자가라",
+     "heroId": "Zagara",
+     "heroIds": [
+      "Zagara"
+     ],
+     "changes": [
+      {
+       "name": "부식성 타액",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "피해량이 최대 생명력의 1.75%에서 1.5%로 감소했습니다.",
+         "html": "피해량이 최대 생명력의 1.75%에서 1.5%로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Corrosive Saliva"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">부식성 타액</strong><ul>\n<li>피해량이 최대 생명력의 1.75%에서 1.5%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Zagara"
+    }
+   ],
+   "nameEn": "Balance Update"
+  },
+  {
+   "name": "버그 수정",
+   "key": "bugs",
+   "html": "<h3><strong>일반</strong></h3>\n<ul>\n<li>도발 효과의 지속시간 표시줄 우선순위가 잘못 적용되던 문제를 수정했습니다.</li>\n</ul>\n<h3><strong>전장</strong></h3>\n<ul>\n<li><strong class=\"pn-h\">영원의 전쟁터</strong><ul>\n<li>전장의 일부 지역이 전쟁의 안개로 덮이지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">블랙하트 항만</strong><ul>\n<li>일부 영웅이 치유의 샘 주위로 이동 경로를 찾지 못하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">저주받은 골짜기</strong><ul>\n<li>들창코가 전장의 이동 불가 지역을 통과할 수 있던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">핵탄두 격전지</strong><ul>\n<li>전장의 치유의 샘이 좌우 대칭으로 배치되지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n<h3><strong>영웅</strong></h3>\n<ul>\n<li><strong class=\"pn-h\">아르타니스</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">과부하 보호막 [Q]</strong><ul>\n<li>과부하 보호막이 보호막 쇄도로 강화되었을 때 올바르게 표시되지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">빛나래</strong><ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">점멸 치유</strong><ul>\n<li>빛나래에게 남은 점멸 치유 충전 횟수가 없는데도 점멸 치유의 잔상이 보이던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">첸</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">강화주 [고유 능력 D]</strong><ul>\n<li>강화주가 즉시 파괴될 경우 공격 속도가 증가하지 않던 문제를 수정했습니다.</li>\n<li>강화주가 효과 표시줄에 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">데하카</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">잠복 [E]</strong><ul>\n<li>잠복이 끝난 직후 데하카가 날아갈 경우 잠복의 시각 효과 위치가 어긋나던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">제이나</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">동상 [고유 능력]</strong><ul>\n<li>이제 제이나가 사망할 때도 얼음 방패의 첫 사용 전 주의 표시가 제거됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">요한나</strong><ul>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">끝없는 응징</strong><ul>\n<li>끝없는 응징의 시각 효과가 요한나에게만 보이도록 변경했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">축복받은 방패</strong><ul>\n<li>축복받은 방패의 지속시간 표시줄 표시 우선순위 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">모랄레스 중위</strong><ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">의료선</strong><ul>\n<li>의료선 지원 병력의 표시 광선이 지원 병력을 시전한 위치가 아니라 모랄레스 중위의 현재 위치를 가리키던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">메피스토</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">메피스토의 그림자 [E]</strong><ul>\n<li>메피스토의 그림자의 지속시간 표시줄 표시 우선순위 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">라그나로스</strong><ul>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">상처 소작</strong><ul>\n<li>이제 상처 소작의 치유가 적중한 영웅마다 개별 치유 효과로 적용되지 않고, 치유할 때마다 하나로 합쳐진 효과로 적용됩니다.</li>\n<li>상처 소작의 치유량이 설퍼라스 강화의 주 대상에게서 가장 멀리 떨어진 대상에게 입힌 피해량으로 결정되던 문제를 수정했습니다.</li>\n<li>상처 소작이 이미 적용된 상태에서 다시 적용되면, 남아 있는 치유량이 갱신된 지속시간에 걸쳐 적용됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">사무로</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">치명타 [W]</strong><ul>\n<li>사무로의 치명타 중첩이 적 사무로에게 보이던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">소냐</strong><ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">광전사의 진노</strong><ul>\n<li>광전사의 진노의 지속시간 표시줄 표시 우선순위 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">스투코프</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">치유성 병원균 [Q]</strong><ul>\n<li>감염체 폭발을 사용한 뒤에도 치유성 병원균이 잠시 동안 지속되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">실바나스</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">검은 화살 [고유 능력 D]</strong><ul>\n<li>검은 화살의 지속시간 표시줄 표시 우선순위 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">정신 지배</strong><ul>\n<li>정신 지배의 지속시간 표시줄 표시 시간 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">굉음</strong><ul>\n<li>굉음이 유닛의 가장자리가 아니라 중심을 기준으로 발동하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">길 잃은 바이킹</strong><ul>\n<li>올라프가 침묵 상태에서 돌진하지 못하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">발리라</strong><ul>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">암살</strong><ul>\n<li>이제 피해량 증가가 합연산으로 적용됩니다.</li>\n<li>지속시간 연장과 관련된 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<p><strong><a href=\"https://us.forums.blizzard.com/en/heroes/\" target=\"_blank\">공식 히어로즈 오브 더 스톰 포럼에서 다른 플레이어들과 이 글에 대해 이야기를 나누려면 여기를 클릭하십시오</a>.</strong></p>\n<p><strong><img alt=\"\" class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/g6/G6G0N80EOC941426801305139.png\"/></strong></p>",
+   "items": [
+    {
+     "name": "영원의 전쟁터",
+     "battleground": "battlefield_of_eternity",
+     "html": "<strong class=\"pn-h\">영원의 전쟁터</strong>\n<ul>\n<li>전장의 일부 지역이 전쟁의 안개로 덮이지 않던 문제를 수정했습니다.</li>\n</ul>",
+     "under": "Map",
+     "nameEn": "Battlefield of Eternity"
+    },
+    {
+     "name": "블랙하트 항만",
+     "battleground": "blackheart_s_bay",
+     "html": "<strong class=\"pn-h\">블랙하트 항만</strong>\n<ul>\n<li>일부 영웅이 치유의 샘 주위로 이동 경로를 찾지 못하던 문제를 수정했습니다.</li>\n</ul>",
+     "under": "Map",
+     "nameEn": "Blackheart's Bay"
+    },
+    {
+     "name": "저주받은 골짜기",
+     "battleground": "cursed_hollow",
+     "html": "<strong class=\"pn-h\">저주받은 골짜기</strong>\n<ul>\n<li>들창코가 전장의 이동 불가 지역을 통과할 수 있던 문제를 수정했습니다.</li>\n</ul>",
+     "under": "Map",
+     "nameEn": "Cursed Hollow"
+    },
+    {
+     "name": "핵탄두 격전지",
+     "battleground": "warhead_junction",
+     "html": "<strong class=\"pn-h\">핵탄두 격전지</strong>\n<ul>\n<li>전장의 치유의 샘이 좌우 대칭으로 배치되지 않던 문제를 수정했습니다.</li>\n</ul>",
+     "under": "Map",
+     "nameEn": "Warhead Junction"
+    },
+    {
+     "name": "아르타니스",
+     "heroId": "Artanis",
+     "heroIds": [
+      "Artanis"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">아르타니스</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">과부하 보호막 [Q]</strong><ul>\n<li>과부하 보호막이 보호막 쇄도로 강화되었을 때 올바르게 표시되지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "과부하 보호막",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "과부하 보호막이 보호막 쇄도로 강화되었을 때 올바르게 표시되지 않던 문제를 수정했습니다.",
+         "html": "과부하 보호막이 보호막 쇄도로 강화되었을 때 올바르게 표시되지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Shield Overload"
+      }
+     ],
+     "nameEn": "Artanis"
+    },
+    {
+     "name": "빛나래",
+     "heroId": "FaerieDragon",
+     "heroIds": [
+      "FaerieDragon"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">빛나래</strong>\n<ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">점멸 치유</strong><ul>\n<li>빛나래에게 남은 점멸 치유 충전 횟수가 없는데도 점멸 치유의 잔상이 보이던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "점멸 치유",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "빛나래에게 남은 점멸 치유 충전 횟수가 없는데도 점멸 치유의 잔상이 보이던 문제를 수정했습니다.",
+         "html": "빛나래에게 남은 점멸 치유 충전 횟수가 없는데도 점멸 치유의 잔상이 보이던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Blink Heal"
+      }
+     ],
+     "nameEn": "Brightwing"
+    },
+    {
+     "name": "첸",
+     "heroId": "Chen",
+     "heroIds": [
+      "Chen"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">첸</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">강화주 [고유 능력 D]</strong><ul>\n<li>강화주가 즉시 파괴될 경우 공격 속도가 증가하지 않던 문제를 수정했습니다.</li>\n<li>강화주가 효과 표시줄에 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "강화주",
+       "key": "Trait D",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "강화주가 즉시 파괴될 경우 공격 속도가 증가하지 않던 문제를 수정했습니다.",
+         "html": "강화주가 즉시 파괴될 경우 공격 속도가 증가하지 않던 문제를 수정했습니다.",
+         "added": false
+        },
+        {
+         "text": "강화주가 효과 표시줄에 추가되었습니다.",
+         "html": "강화주가 효과 표시줄에 추가되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Fortifying Brew"
+      }
+     ],
+     "nameEn": "Chen"
+    },
+    {
+     "name": "데하카",
+     "heroId": "Dehaka",
+     "heroIds": [
+      "Dehaka"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">데하카</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">잠복 [E]</strong><ul>\n<li>잠복이 끝난 직후 데하카가 날아갈 경우 잠복의 시각 효과 위치가 어긋나던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "잠복",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "잠복이 끝난 직후 데하카가 날아갈 경우 잠복의 시각 효과 위치가 어긋나던 문제를 수정했습니다.",
+         "html": "잠복이 끝난 직후 데하카가 날아갈 경우 잠복의 시각 효과 위치가 어긋나던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Burrow"
+      }
+     ],
+     "nameEn": "Dehaka"
+    },
+    {
+     "name": "제이나",
+     "heroId": "Jaina",
+     "heroIds": [
+      "Jaina"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">제이나</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">동상 [고유 능력]</strong><ul>\n<li>이제 제이나가 사망할 때도 얼음 방패의 첫 사용 전 주의 표시가 제거됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "동상",
+       "key": "Trait",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "이제 제이나가 사망할 때도 얼음 방패의 첫 사용 전 주의 표시가 제거됩니다.",
+         "html": "이제 제이나가 사망할 때도 얼음 방패의 첫 사용 전 주의 표시가 제거됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Frostbite"
+      }
+     ],
+     "nameEn": "Jaina"
+    },
+    {
+     "name": "요한나",
+     "heroId": "Crusader",
+     "heroIds": [
+      "Crusader"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">요한나</strong>\n<ul>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">끝없는 응징</strong><ul>\n<li>끝없는 응징의 시각 효과가 요한나에게만 보이도록 변경했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">축복받은 방패</strong><ul>\n<li>축복받은 방패의 지속시간 표시줄 표시 우선순위 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "끝없는 응징",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "끝없는 응징의 시각 효과가 요한나에게만 보이도록 변경했습니다.",
+         "html": "끝없는 응징의 시각 효과가 요한나에게만 보이도록 변경했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Eternal Retaliation"
+      },
+      {
+       "name": "축복받은 방패",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "축복받은 방패의 지속시간 표시줄 표시 우선순위 문제를 수정했습니다.",
+         "html": "축복받은 방패의 지속시간 표시줄 표시 우선순위 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Blessed Shield"
+      }
+     ],
+     "nameEn": "Johanna"
+    },
+    {
+     "name": "모랄레스 중위",
+     "heroId": "Medic",
+     "heroIds": [
+      "Medic"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">모랄레스 중위</strong>\n<ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">의료선</strong><ul>\n<li>의료선 지원 병력의 표시 광선이 지원 병력을 시전한 위치가 아니라 모랄레스 중위의 현재 위치를 가리키던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "의료선",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "의료선 지원 병력의 표시 광선이 지원 병력을 시전한 위치가 아니라 모랄레스 중위의 현재 위치를 가리키던 문제를 수정했습니다.",
+         "html": "의료선 지원 병력의 표시 광선이 지원 병력을 시전한 위치가 아니라 모랄레스 중위의 현재 위치를 가리키던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Medivac Dropships"
+      }
+     ],
+     "nameEn": "Lt. Morales"
+    },
+    {
+     "name": "메피스토",
+     "heroId": "Mephisto",
+     "heroIds": [
+      "Mephisto"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">메피스토</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">메피스토의 그림자 [E]</strong><ul>\n<li>메피스토의 그림자의 지속시간 표시줄 표시 우선순위 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "메피스토의 그림자",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "메피스토의 그림자의 지속시간 표시줄 표시 우선순위 문제를 수정했습니다.",
+         "html": "메피스토의 그림자의 지속시간 표시줄 표시 우선순위 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Shade of Mephisto"
+      }
+     ],
+     "nameEn": "Mephisto"
+    },
+    {
+     "name": "라그나로스",
+     "heroId": "Ragnaros",
+     "heroIds": [
+      "Ragnaros"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">라그나로스</strong>\n<ul>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">상처 소작</strong><ul>\n<li>이제 상처 소작의 치유가 적중한 영웅마다 개별 치유 효과로 적용되지 않고, 치유할 때마다 하나로 합쳐진 효과로 적용됩니다.</li>\n<li>상처 소작의 치유량이 설퍼라스 강화의 주 대상에게서 가장 멀리 떨어진 대상에게 입힌 피해량으로 결정되던 문제를 수정했습니다.</li>\n<li>상처 소작이 이미 적용된 상태에서 다시 적용되면, 남아 있는 치유량이 갱신된 지속시간에 걸쳐 적용됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "상처 소작",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "이제 상처 소작의 치유가 적중한 영웅마다 개별 치유 효과로 적용되지 않고, 치유할 때마다 하나로 합쳐진 효과로 적용됩니다.",
+         "html": "이제 상처 소작의 치유가 적중한 영웅마다 개별 치유 효과로 적용되지 않고, 치유할 때마다 하나로 합쳐진 효과로 적용됩니다.",
+         "added": false
+        },
+        {
+         "text": "상처 소작의 치유량이 설퍼라스 강화의 주 대상에게서 가장 멀리 떨어진 대상에게 입힌 피해량으로 결정되던 문제를 수정했습니다.",
+         "html": "상처 소작의 치유량이 설퍼라스 강화의 주 대상에게서 가장 멀리 떨어진 대상에게 입힌 피해량으로 결정되던 문제를 수정했습니다.",
+         "added": false
+        },
+        {
+         "text": "상처 소작이 이미 적용된 상태에서 다시 적용되면, 남아 있는 치유량이 갱신된 지속시간에 걸쳐 적용됩니다.",
+         "html": "상처 소작이 이미 적용된 상태에서 다시 적용되면, 남아 있는 치유량이 갱신된 지속시간에 걸쳐 적용됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Cauterize Wounds"
+      }
+     ],
+     "nameEn": "Ragnaros"
+    },
+    {
+     "name": "사무로",
+     "heroId": "Samuro",
+     "heroIds": [
+      "Samuro"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">사무로</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">치명타 [W]</strong><ul>\n<li>사무로의 치명타 중첩이 적 사무로에게 보이던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "치명타",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "사무로의 치명타 중첩이 적 사무로에게 보이던 문제를 수정했습니다.",
+         "html": "사무로의 치명타 중첩이 적 사무로에게 보이던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Critical Strike"
+      }
+     ],
+     "nameEn": "Samuro"
+    },
+    {
+     "name": "소냐",
+     "heroId": "Barbarian",
+     "heroIds": [
+      "Barbarian"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">소냐</strong>\n<ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">광전사의 진노</strong><ul>\n<li>광전사의 진노의 지속시간 표시줄 표시 우선순위 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "광전사의 진노",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "광전사의 진노의 지속시간 표시줄 표시 우선순위 문제를 수정했습니다.",
+         "html": "광전사의 진노의 지속시간 표시줄 표시 우선순위 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Wrath of the Berserker"
+      }
+     ],
+     "nameEn": "Sonya"
+    },
+    {
+     "name": "스투코프",
+     "heroId": "Stukov",
+     "heroIds": [
+      "Stukov"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">스투코프</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">치유성 병원균 [Q]</strong><ul>\n<li>감염체 폭발을 사용한 뒤에도 치유성 병원균이 잠시 동안 지속되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "치유성 병원균",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "감염체 폭발을 사용한 뒤에도 치유성 병원균이 잠시 동안 지속되던 문제를 수정했습니다.",
+         "html": "감염체 폭발을 사용한 뒤에도 치유성 병원균이 잠시 동안 지속되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Healing Pathogen"
+      }
+     ],
+     "nameEn": "Stukov"
+    },
+    {
+     "name": "실바나스",
+     "heroId": "Sylvanas",
+     "heroIds": [
+      "Sylvanas"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">실바나스</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">검은 화살 [고유 능력 D]</strong><ul>\n<li>검은 화살의 지속시간 표시줄 표시 우선순위 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">정신 지배</strong><ul>\n<li>정신 지배의 지속시간 표시줄 표시 시간 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">굉음</strong><ul>\n<li>굉음이 유닛의 가장자리가 아니라 중심을 기준으로 발동하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "검은 화살",
+       "key": "Trait D",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "검은 화살의 지속시간 표시줄 표시 우선순위 문제를 수정했습니다.",
+         "html": "검은 화살의 지속시간 표시줄 표시 우선순위 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Black Arrows"
+      },
+      {
+       "name": "정신 지배",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "정신 지배의 지속시간 표시줄 표시 시간 문제를 수정했습니다.",
+         "html": "정신 지배의 지속시간 표시줄 표시 시간 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Mind Control"
+      },
+      {
+       "name": "끔찍한 비명",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "굉음이 유닛의 가장자리가 아니라 중심을 기준으로 발동하던 문제를 수정했습니다.",
+         "html": "굉음이 유닛의 가장자리가 아니라 중심을 기준으로 발동하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Deafening Blast"
+      }
+     ],
+     "nameEn": "Sylvanas"
+    },
+    {
+     "name": "길 잃은 바이킹",
+     "heroId": "LostVikings",
+     "heroIds": [
+      "LostVikings"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">길 잃은 바이킹</strong>\n<ul>\n<li>올라프가 침묵 상태에서 돌진하지 못하던 문제를 수정했습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "올라프가 침묵 상태에서 돌진하지 못하던 문제를 수정했습니다.",
+         "html": "올라프가 침묵 상태에서 돌진하지 못하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "The Lost Vikings"
+    },
+    {
+     "name": "발리라",
+     "heroId": "Valeera",
+     "heroIds": [
+      "Valeera"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">발리라</strong>\n<ul>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">암살</strong><ul>\n<li>이제 피해량 증가가 합연산으로 적용됩니다.</li>\n<li>지속시간 연장과 관련된 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "암살",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "이제 피해량 증가가 합연산으로 적용됩니다.",
+         "html": "이제 피해량 증가가 합연산으로 적용됩니다.",
+         "added": false
+        },
+        {
+         "text": "지속시간 연장과 관련된 문제를 수정했습니다.",
+         "html": "지속시간 연장과 관련된 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Assassinate"
+      }
+     ],
+     "nameEn": "Valeera"
+    }
+   ],
+   "nameEn": "Bug Fixes"
+  }
+ ],
+ "heroes": [
+  "Ana",
+  "Artanis",
+  "Azmodan",
+  "Barbarian",
+  "Chen",
+  "Crusader",
+  "Dehaka",
+  "Dryad",
+  "FaerieDragon",
+  "Genji",
+  "Imperius",
+  "Jaina",
+  "LostVikings",
+  "Malthael",
+  "Medic",
+  "Mephisto",
+  "Ragnaros",
+  "Samuro",
+  "Stukov",
+  "Sylvanas",
+  "Valeera",
+  "Zagara"
+ ],
+ "battlegrounds": [
+  "battlefield_of_eternity",
+  "blackheart_s_bay",
+  "cursed_hollow",
+  "warhead_junction"
+ ],
+ "lang": "ko",
+ "newsId": "24197273",
+ "titleEn": "Heroes of the Storm PTR Patch Notes - April 21, 2025",
+ "translated": {
+  "by": "Claude (claude-opus-5)",
+  "at": "2026-09-14",
+  "source": "https://news.blizzard.com/en-us/article/24197273/heroes-of-the-storm-ptr-patch-notes-april-21-2025",
+  "glossary": "HeroesToolChest 공식 게임 텍스트(enus↔kokr) 대조",
+  "untranslated": 0
+ }
+}

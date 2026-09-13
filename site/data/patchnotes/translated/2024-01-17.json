@@ -1,0 +1,1948 @@
+{
+ "date": "2024-01-17",
+ "kind": "ptr",
+ "title": "히어로즈 오브 더 스톰 공개 테스트 서버 패치 노트 - 2024년 1월 17일",
+ "source": "https://news.blizzard.com/en-us/article/24056177/heroes-of-the-storm-ptr-patch-notes-january-17-2024",
+ "published": "2024-01-17T18:00:00Z",
+ "sections": [
+  {
+   "name": "머리말",
+   "key": "intro",
+   "html": "<p>다음 히어로즈 오브 더 스톰 패치가 공개 테스트 서버에 적용되어 직접 플레이해 보실 수 있게 되었습니다. 이번 변경 사항에 대해 소중한 의견과 피드백을 보내주신 커뮤니티 여러분께 감사드립니다. 언제나 그렇듯, 공개 테스트 서버에서 플레이하시는 동안 버그를 발견하셨다면 <a href=\"https://us.forums.blizzard.com/en/heroes/c/ptr-bug-report\" target=\"_blank\">공개 테스트 서버 버그 신고 게시판</a>에 방문하여 알려주시기 바랍니다.</p>",
+   "nameEn": "머리말"
+  },
+  {
+   "name": "일반",
+   "key": "general",
+   "html": "<ul>\n<li>적에게 제공하는 경험치 표시가 추가되었습니다.</li>\n</ul>",
+   "nameEn": "General"
+  },
+  {
+   "name": "밸런스 업데이트",
+   "key": "balance",
+   "html": "<p><span class=\"pn-h\"><strong>영웅</strong></span></p>\n<ul>\n<li><strong class=\"pn-name\">리 리</strong><ul>\n<li>1,000잔 돌리기의 치유량이 66에서 80으로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">메디브</strong><ul>\n<li>마법사 갑옷의 지속시간이 4초에서 6초로 증가했습니다.</li>\n<li>마법사 갑옷의 방어력이 30에서 50으로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">노바</strong><ul>\n<li>향상된 은신의 추가 마나 재생이 3에서 6으로 증가했습니다.</li>\n<li>대장갑 탄환의 지속시간이 3초에서 5초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>",
+   "items": [
+    {
+     "name": "리 리",
+     "heroId": "LiLi",
+     "heroIds": [
+      "LiLi"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">리 리</strong>\n<ul>\n<li>1,000잔 돌리기의 치유량이 66에서 80으로 증가했습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "1,000잔 돌리기의 치유량이 66에서 80으로 증가했습니다.",
+         "html": "1,000잔 돌리기의 치유량이 66에서 80으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "Li Li"
+    },
+    {
+     "name": "메디브",
+     "heroId": "Medivh",
+     "heroIds": [
+      "Medivh"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">메디브</strong>\n<ul>\n<li>마법사 갑옷의 지속시간이 4초에서 6초로 증가했습니다.</li>\n<li>마법사 갑옷의 방어력이 30에서 50으로 증가했습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "마법사 갑옷의 지속시간이 4초에서 6초로 증가했습니다.",
+         "html": "마법사 갑옷의 지속시간이 4초에서 6초로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "마법사 갑옷의 방어력이 30에서 50으로 증가했습니다.",
+         "html": "마법사 갑옷의 방어력이 30에서 50으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "Medivh"
+    },
+    {
+     "name": "노바",
+     "heroId": "Nova",
+     "heroIds": [
+      "Nova"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">노바</strong>\n<ul>\n<li>향상된 은신의 추가 마나 재생이 3에서 6으로 증가했습니다.</li>\n<li>대장갑 탄환의 지속시간이 3초에서 5초로 증가했습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "향상된 은신의 추가 마나 재생이 3에서 6으로 증가했습니다.",
+         "html": "향상된 은신의 추가 마나 재생이 3에서 6으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "대장갑 탄환의 지속시간이 3초에서 5초로 증가했습니다.",
+         "html": "대장갑 탄환의 지속시간이 3초에서 5초로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "Nova"
+    }
+   ],
+   "nameEn": "Balance Update"
+  },
+  {
+   "name": "버그 수정",
+   "key": "bugs",
+   "html": "<p><span class=\"pn-h\"><strong>일반</strong></span></p>\n<ul>\n<li>영웅 선택 화면 표시의 고정 위치가 어긋나던 문제를 수정했습니다.</li>\n<li>사망 요약에서 보호막이 올바르게 표시되지 않던 문제를 수정했습니다.</li>\n<li>화염기갑병과 놀이 피해를 입히기 전에 적의 방어력을 감소시키던 문제를 수정했습니다.</li>\n<li>일반적이지 않은 공격 기술을 사용하는 영웅에게 잘못된 명령 확인 효과가 표시되던 문제를 수정했습니다.</li>\n<li>사망 지점이 근처 수풀 안까지 드러내던 문제를 수정했습니다.</li>\n<li>핵이 파괴된 후에도 플레이어 위치에 표시되는 재사용 대기시간이 계속 회복되던 문제를 수정했습니다.</li>\n<li>폭파병 용병의 공격이 적중한 후에도 지역 경고 표시가 사라지지 않던 문제를 수정했습니다.</li>\n<li>특정 플레이어의 사망 요약이 새로 생성될 때 모든 플레이어의 사망 요약 항목 수가 갱신되던 문제를 수정했습니다.</li>\n</ul>\n<p><span class=\"pn-h\"><strong>전장</strong></span></p>\n<ul>\n<li><strong class=\"pn-name\">블랙하트 항만</strong><ul>\n<li>이제 상자에서 주화가 떨어지는 위치에 경고 표시가 나타납니다.</li>\n</ul>\n</li>\n</ul>\n<p><span class=\"pn-h\"><strong>영웅</strong></span></p>\n<ul>\n<li><strong class=\"pn-name\">아바투르</strong><ul>\n<li>흉물 진화의 중첩이 이제 궁극기 퀘스트로 변경되었습니다.</li>\n<li>독성 둥지가 더 이상 무적 상태인 적에 의해 발동되지 않습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">알라라크</strong><ul>\n<li>기술 흡혈 효과를 얻은 경우 최후의 웃음이 치유하던 문제를 수정했습니다. (예: 아나의 나노 재구성)</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">안두인</strong><ul>\n<li>꿰뚫는 빛이 첫 번째 적중을 두 번째 적중으로 처리하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">아눕아락</strong><ul>\n<li>아눕아락의 불타는 딱정벌레 피해량이 이제 모든 형태의 피해량 변경 효과에 영향을 받습니다.</li>\n<li>장난감 기차에 탑승한 상태에서는 더 이상 착취의 무리를 사용할 수 없습니다.</li>\n<li>강화 보호막의 취소 동작을 유사한 시각 효과에 맞게 변경했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">아르타니스</strong><ul>\n<li>정화 완료가 두 배의 피해량을 입히던 문제를 수정했습니다.</li>\n<li>이연격으로 발동된 거인 학살자가 무적 상태인 대상에게 피해를 입힐 수 있던 문제를 수정했습니다.</li>\n<li>기술 방어력의 시각 효과가 업데이트되었습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">아서스</strong><ul>\n<li>노스렌드의 대군의 추가 치유량이 이제 합산 방식으로 적용됩니다.</li>\n<li>단단한 얼음에 이제 막기 시각 효과가 표시됩니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">아즈모단</strong><ul>\n<li>포격이 더 이상 비활성 용병을 공격하지 않습니다. 단, 공격 대상이 비활성 용병인 경우는 예외입니다.</li>\n<li>파멸의 구슬이 더 이상 지배당한 돌격병으로 중첩을 쌓지 않도록 수정했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">빛나래</strong><ul>\n<li>위상 이동이 이전 대상에게 발동되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">푸주한</strong><ul>\n<li>도살자의 신선한 고기가 지배당한 돌격병에게서도 고기를 생성하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">카시아</strong><ul>\n<li>강화 보호막의 취소 동작을 유사한 시각 효과에 맞게 변경했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">첸</strong><ul>\n<li>기술 흡혈 효과를 얻은 경우 시간차가 치유하던 문제를 수정했습니다. (예: 아나의 나노 재구성)</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">초갈</strong><ul>\n<li>격노의 재생력이 죽음 요약에 잘못 표시되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">데스윙</strong><ul>\n<li>우레의 포효에 카메라 고정 기능이 추가되었습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">데커드</strong><ul>\n<li>고대의 축복이 지속되는 동안 대상이 레벨을 올리면 피해량이 함께 증가하지 않던 문제를 수정했습니다.</li>\n<li>데커드의 검색어에 '물약'이 추가되었습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">데하카</strong><ul>\n<li>기술 방어력의 시각 효과가 업데이트되었습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">디바</strong><ul>\n<li>액랭이 무작위 영웅 대전에서 치유의 샘을 잘못 초기화하던 문제를 수정했습니다.</li>\n<li>조종사 모드에서 이제 자폭의 충전 상태를 확인할 수 있습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">정예 타우렌 족장</strong><ul>\n<li>크라우드 서핑이 이제 마나 반환량을 부유 문구로 표시합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">폴스타트</strong><ul>\n<li>힘찬 날갯짓을 선택한 후 폴스타트의 비행 경고 표시가 나타나지 않던 문제를 수정했습니다.</li>\n<li>지속되는 바람이 무적 상태인 대상에게 피해를 입히던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">가즈로</strong><ul>\n<li>폭발 화약이 아군의 재사용 대기시간 감소 효과에 영향을 받지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">겐지</strong><ul>\n<li>심장을 노려라가 피해량 미리보기를 표시하지 않던 문제를 수정했습니다.</li>\n<li>질풍참이 이제 마나 반환량을 부유 문구로 표시합니다.</li>\n<li>기술 방어력의 시각 효과가 업데이트되었습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">한조</strong><ul>\n<li>상념을 버려라가 이제 실명 효과로 빗나갈 경우 빗나감! 문구를 표시합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">들창코</strong><ul>\n<li>들창코가 보이는 상태일 때 들창코의 들창 폭풍 시각 효과가 함께 표시되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">임페리우스</strong><ul>\n<li>천공의 돌진이 빛나래와 폴스타트, 그리고 다른 영웅을 최소 한 명 이상 기절시킨 후 빛나래와 폴스타트가 잘못된 높이에 위치하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">정크랫</strong><ul>\n<li>달그락거리는 이빨을 선택했을 때 설치 중인 강철 덫에도 효과가 적용되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">케리건</strong><ul>\n<li>예리한 칼날이 지배당한 돌격병으로 중첩을 쌓던 문제를 수정했습니다.</li>\n<li>케리건의 검색어에 '감염'이 추가되었습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">레오릭</strong><ul>\n<li>해골 왕의 휩쓸기의 마나 반환량이 이제 치명타로 표시됩니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">리밍</strong><ul>\n<li>힘의 갑옷을 선택한 상태에서 마력탄이 날아가는 도중 집중탄을 선택하면 발생하던 문제를 수정했습니다.</li>\n<li>힘의 갑옷이 동일한 마력탄 시전으로 여러 번 중첩을 부여하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">루시우</strong><ul>\n<li>대상에게 보호막이 적용된 상태에서 보사노바를 선택하면 소리 방벽의 보호막이 감소하지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">루나라</strong><ul>\n<li>갈래창이 더 이상 비활성 용병을 공격하지 않습니다. 단, 발동시킨 공격의 대상이 비활성 용병인 경우는 예외입니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">마이에브</strong><ul>\n<li>나이샤의 유품의 첫 번째 도약은 발동시킨 공격의 대상이 비활성 용병인 경우 이제 비활성 용병에게 도약할 수 있습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">말가니스</strong><ul>\n<li>말가니스의 검색어에 '흡혈귀'가 추가되었습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">메디브</strong><ul>\n<li>메디브의 차원문을 이제 아군 기술의 대상으로 지정할 수 없습니다. (예: 빛나래의 점멸 치유)</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">메이</strong><ul>\n<li>대왕 뭉치가 진창 눈뭉치의 효과를 온전히 받지 못하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">메피스토</strong><ul>\n<li>대상이 밀려날 때 형언할 수 없는 공포가 일시적으로 비활성화되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">머키</strong><ul>\n<li>달걀 찾기 달걀이 더 이상 구조물의 공격 한 번에 파괴되지 않습니다.</li>\n<li>수상한 거래가 지배당한 돌격병으로 중첩을 쌓던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">나지보</strong><ul>\n<li>부두 의식이 지배당한 돌격병으로 중첩을 쌓던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">노바</strong><ul>\n<li>보호 효과가 사라진 후 홀로그램 분신의 생명력 막대가 잘못 표시되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">오르피아</strong><ul>\n<li>포악한 허기가 지배당한 돌격병으로 중첩을 쌓던 문제를 수정했습니다.</li>\n<li>어둠의 왈츠가 시전 한 번에 마나를 여러 번 반환하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">프로비우스</strong><ul>\n<li>지배당한 돌격병으로 광물이 생성되던 문제를 수정했습니다.</li>\n<li>프로비우스의 검색어에 '건설'이 추가되었습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">키히라</strong><ul>\n<li>기술 방어력의 시각 효과가 업데이트되었습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">라그나로스</strong><ul>\n<li>설퍼라스가 굶주렸다가 지배당한 돌격병으로 중첩을 쌓던 문제를 수정했습니다.</li>\n<li>기술 방어력의 시각 효과가 업데이트되었습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">레가르</strong><ul>\n<li>늑대의 굶주림의 죽음 요약 표시가 개선되었습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">사무로</strong><ul>\n<li>신기루가 이제 다른 기술 방어력 막기 효과와 동일하게 작동합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">누더기</strong><ul>\n<li>부패가 부유 문구를 한 번에 여러 번 표시하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">스투코프</strong><ul>\n<li>독성 고름이 피해량 미리보기를 표시하지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">실바나스</strong><ul>\n<li>부패의 사격이 잘못 표시되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">태사다르</strong><ul>\n<li>황혼의 집정관 상태에서 장난감 기차를 사용할 수 있던 문제를 수정했습니다.</li>\n<li>케이다린 부적은 대상이 비활성 용병인 경우 이제 스스로 취소됩니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">스랄</strong><ul>\n<li>정기의 메아리가 지배당한 돌격병과 환영으로 발동되던 문제를 수정했습니다.</li>\n<li>우레가 광풍의 공격으로 발동되지 않던 문제를 수정했습니다.</li>\n<li>늑대 무리가 특성 초기화 시 야수 정령을 잘못 초기화하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">길 잃은 바이킹</strong><ul>\n<li>바이킹 공격단이 무적 상태인 대상에게 피해를 입힐 수 있던 문제를 수정했습니다.</li>\n<li>사망 시 생명력이 최대치로 설정되지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">트레이서</strong><ul>\n<li>도탄은 공격 대상이 비활성 용병인 경우 이제 비활성 용병에게 도약할 수 있습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">화이트메인</strong><ul>\n<li>화이트메인의 검색어에 '모자'가 추가되었습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">자가라</strong><ul>\n<li>메두사 칼날이 더 이상 비활성 상태의 용병을 공격하지 않습니다. 단, 공격을 유발한 대상이 비활성 상태의 용병인 경우는 예외입니다.</li>\n<li>이제 비활성 상태의 용병을 대상으로 공격한 경우 뮤탈리스크의 첫 번째 도약이 비활성 상태의 용병에게 도약할 수 있습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">자리야</strong><ul>\n<li>일반 공격이 공격 속도 보정의 영향을 제대로 받지 못하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">제라툴</strong><ul>\n<li>그림자의 재생력 사용 시 네라짐의 힘 기술이 의도보다 많은 피해량만큼 치유하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">줄진</strong><ul>\n<li>이제 비활성 상태의 용병을 대상으로 공격한 경우 깜짝 선물!이 비활성 상태의 용병에게 도약할 수 있습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong><a href=\"https://us.forums.blizzard.com/en/heroes/\" target=\"_blank\">공식 히어로즈 오브 더 스톰 포럼에서 다른 플레이어들과 이 글에 대해 이야기를 나누려면 여기를 클릭하십시오</a>.</strong></p>\n<p><strong><img alt=\"\" class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/g6/G6G0N80EOC941426801305139.png\"/></strong></p>",
+   "items": [
+    {
+     "name": "블랙하트 항만",
+     "battleground": "blackheart_s_bay",
+     "html": "<strong class=\"pn-name\">블랙하트 항만</strong>\n<ul>\n<li>이제 상자에서 주화가 떨어지는 위치에 경고 표시가 나타납니다.</li>\n</ul>",
+     "under": null,
+     "nameEn": "Blackheart's Bay"
+    },
+    {
+     "name": "아바투르",
+     "heroId": "Abathur",
+     "heroIds": [
+      "Abathur"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">아바투르</strong>\n<ul>\n<li>흉물 진화의 중첩이 이제 궁극기 퀘스트로 변경되었습니다.</li>\n<li>독성 둥지가 더 이상 무적 상태인 적에 의해 발동되지 않습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "흉물 진화의 중첩이 이제 궁극기 퀘스트로 변경되었습니다.",
+         "html": "흉물 진화의 중첩이 이제 궁극기 퀘스트로 변경되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "독성 둥지가 더 이상 무적 상태인 적에 의해 발동되지 않습니다.",
+         "html": "독성 둥지가 더 이상 무적 상태인 적에 의해 발동되지 않습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "Abathur"
+    },
+    {
+     "name": "알라라크",
+     "heroId": "Alarak",
+     "heroIds": [
+      "Alarak"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">알라라크</strong>\n<ul>\n<li>기술 흡혈 효과를 얻은 경우 최후의 웃음이 치유하던 문제를 수정했습니다. (예: 아나의 나노 재구성)</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "기술 흡혈 효과를 얻은 경우 최후의 웃음이 치유하던 문제를 수정했습니다. (예: 아나의 나노 재구성)",
+         "html": "기술 흡혈 효과를 얻은 경우 최후의 웃음이 치유하던 문제를 수정했습니다. (예: 아나의 나노 재구성)",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "Alarak"
+    },
+    {
+     "name": "안두인",
+     "heroId": "Anduin",
+     "heroIds": [
+      "Anduin"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">안두인</strong>\n<ul>\n<li>꿰뚫는 빛이 첫 번째 적중을 두 번째 적중으로 처리하던 문제를 수정했습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "꿰뚫는 빛이 첫 번째 적중을 두 번째 적중으로 처리하던 문제를 수정했습니다.",
+         "html": "꿰뚫는 빛이 첫 번째 적중을 두 번째 적중으로 처리하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "Anduin"
+    },
+    {
+     "name": "아눕아락",
+     "heroId": "Anubarak",
+     "heroIds": [
+      "Anubarak"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">아눕아락</strong>\n<ul>\n<li>아눕아락의 불타는 딱정벌레 피해량이 이제 모든 형태의 피해량 변경 효과에 영향을 받습니다.</li>\n<li>장난감 기차에 탑승한 상태에서는 더 이상 착취의 무리를 사용할 수 없습니다.</li>\n<li>강화 보호막의 취소 동작을 유사한 시각 효과에 맞게 변경했습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "아눕아락의 불타는 딱정벌레 피해량이 이제 모든 형태의 피해량 변경 효과에 영향을 받습니다.",
+         "html": "아눕아락의 불타는 딱정벌레 피해량이 이제 모든 형태의 피해량 변경 효과에 영향을 받습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "장난감 기차에 탑승한 상태에서는 더 이상 착취의 무리를 사용할 수 없습니다.",
+         "html": "장난감 기차에 탑승한 상태에서는 더 이상 착취의 무리를 사용할 수 없습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "강화 보호막의 취소 동작을 유사한 시각 효과에 맞게 변경했습니다.",
+         "html": "강화 보호막의 취소 동작을 유사한 시각 효과에 맞게 변경했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "Anubarak"
+    },
+    {
+     "name": "아르타니스",
+     "heroId": "Artanis",
+     "heroIds": [
+      "Artanis"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">아르타니스</strong>\n<ul>\n<li>정화 완료가 두 배의 피해량을 입히던 문제를 수정했습니다.</li>\n<li>이연격으로 발동된 거인 학살자가 무적 상태인 대상에게 피해를 입힐 수 있던 문제를 수정했습니다.</li>\n<li>기술 방어력의 시각 효과가 업데이트되었습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "정화 완료가 두 배의 피해량을 입히던 문제를 수정했습니다.",
+         "html": "정화 완료가 두 배의 피해량을 입히던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "이연격으로 발동된 거인 학살자가 무적 상태인 대상에게 피해를 입힐 수 있던 문제를 수정했습니다.",
+         "html": "이연격으로 발동된 거인 학살자가 무적 상태인 대상에게 피해를 입힐 수 있던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "기술 방어력의 시각 효과가 업데이트되었습니다.",
+         "html": "기술 방어력의 시각 효과가 업데이트되었습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "Artanis"
+    },
+    {
+     "name": "아서스",
+     "heroId": "Arthas",
+     "heroIds": [
+      "Arthas"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">아서스</strong>\n<ul>\n<li>노스렌드의 대군의 추가 치유량이 이제 합산 방식으로 적용됩니다.</li>\n<li>단단한 얼음에 이제 막기 시각 효과가 표시됩니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "노스렌드의 대군의 추가 치유량이 이제 합산 방식으로 적용됩니다.",
+         "html": "노스렌드의 대군의 추가 치유량이 이제 합산 방식으로 적용됩니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "단단한 얼음에 이제 막기 시각 효과가 표시됩니다.",
+         "html": "단단한 얼음에 이제 막기 시각 효과가 표시됩니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "Arthas"
+    },
+    {
+     "name": "아즈모단",
+     "heroId": "Azmodan",
+     "heroIds": [
+      "Azmodan"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">아즈모단</strong>\n<ul>\n<li>포격이 더 이상 비활성 용병을 공격하지 않습니다. 단, 공격 대상이 비활성 용병인 경우는 예외입니다.</li>\n<li>파멸의 구슬이 더 이상 지배당한 돌격병으로 중첩을 쌓지 않도록 수정했습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "포격이 더 이상 비활성 용병을 공격하지 않습니다. 단, 공격 대상이 비활성 용병인 경우는 예외입니다.",
+         "html": "포격이 더 이상 비활성 용병을 공격하지 않습니다. 단, 공격 대상이 비활성 용병인 경우는 예외입니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "파멸의 구슬이 더 이상 지배당한 돌격병으로 중첩을 쌓지 않도록 수정했습니다.",
+         "html": "파멸의 구슬이 더 이상 지배당한 돌격병으로 중첩을 쌓지 않도록 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "Azmodan"
+    },
+    {
+     "name": "빛나래",
+     "heroId": "FaerieDragon",
+     "heroIds": [
+      "FaerieDragon"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">빛나래</strong>\n<ul>\n<li>위상 이동이 이전 대상에게 발동되던 문제를 수정했습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "위상 이동이 이전 대상에게 발동되던 문제를 수정했습니다.",
+         "html": "위상 이동이 이전 대상에게 발동되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "Brightwing"
+    },
+    {
+     "name": "카시아",
+     "heroId": "Amazon",
+     "heroIds": [
+      "Amazon"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">카시아</strong>\n<ul>\n<li>강화 보호막의 취소 동작을 유사한 시각 효과에 맞게 변경했습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "강화 보호막의 취소 동작을 유사한 시각 효과에 맞게 변경했습니다.",
+         "html": "강화 보호막의 취소 동작을 유사한 시각 효과에 맞게 변경했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "Cassia"
+    },
+    {
+     "name": "첸",
+     "heroId": "Chen",
+     "heroIds": [
+      "Chen"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">첸</strong>\n<ul>\n<li>기술 흡혈 효과를 얻은 경우 시간차가 치유하던 문제를 수정했습니다. (예: 아나의 나노 재구성)</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "기술 흡혈 효과를 얻은 경우 시간차가 치유하던 문제를 수정했습니다. (예: 아나의 나노 재구성)",
+         "html": "기술 흡혈 효과를 얻은 경우 시간차가 치유하던 문제를 수정했습니다. (예: 아나의 나노 재구성)",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "Chen"
+    },
+    {
+     "name": "초갈",
+     "heroId": "Cho",
+     "heroIds": [
+      "Cho",
+      "Gall"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">초갈</strong>\n<ul>\n<li>격노의 재생력이 죽음 요약에 잘못 표시되던 문제를 수정했습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "격노의 재생력이 죽음 요약에 잘못 표시되던 문제를 수정했습니다.",
+         "html": "격노의 재생력이 죽음 요약에 잘못 표시되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "ChoGall"
+    },
+    {
+     "name": "데스윙",
+     "heroId": "Deathwing",
+     "heroIds": [
+      "Deathwing"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">데스윙</strong>\n<ul>\n<li>우레의 포효에 카메라 고정 기능이 추가되었습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "우레의 포효에 카메라 고정 기능이 추가되었습니다.",
+         "html": "우레의 포효에 카메라 고정 기능이 추가되었습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "Deathwing"
+    },
+    {
+     "name": "데커드",
+     "heroId": "Deckard",
+     "heroIds": [
+      "Deckard"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">데커드</strong>\n<ul>\n<li>고대의 축복이 지속되는 동안 대상이 레벨을 올리면 피해량이 함께 증가하지 않던 문제를 수정했습니다.</li>\n<li>데커드의 검색어에 '물약'이 추가되었습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "고대의 축복이 지속되는 동안 대상이 레벨을 올리면 피해량이 함께 증가하지 않던 문제를 수정했습니다.",
+         "html": "고대의 축복이 지속되는 동안 대상이 레벨을 올리면 피해량이 함께 증가하지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "데커드의 검색어에 '물약'이 추가되었습니다.",
+         "html": "데커드의 검색어에 '물약'이 추가되었습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "Deckard"
+    },
+    {
+     "name": "데하카",
+     "heroId": "Dehaka",
+     "heroIds": [
+      "Dehaka"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">데하카</strong>\n<ul>\n<li>기술 방어력의 시각 효과가 업데이트되었습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "기술 방어력의 시각 효과가 업데이트되었습니다.",
+         "html": "기술 방어력의 시각 효과가 업데이트되었습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "Dehaka"
+    },
+    {
+     "name": "디바",
+     "heroId": "DVa",
+     "heroIds": [
+      "DVa"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">디바</strong>\n<ul>\n<li>액랭이 무작위 영웅 대전에서 치유의 샘을 잘못 초기화하던 문제를 수정했습니다.</li>\n<li>조종사 모드에서 이제 자폭의 충전 상태를 확인할 수 있습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "액랭이 무작위 영웅 대전에서 치유의 샘을 잘못 초기화하던 문제를 수정했습니다.",
+         "html": "액랭이 무작위 영웅 대전에서 치유의 샘을 잘못 초기화하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "조종사 모드에서 이제 자폭의 충전 상태를 확인할 수 있습니다.",
+         "html": "조종사 모드에서 이제 자폭의 충전 상태를 확인할 수 있습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "D.Va"
+    },
+    {
+     "name": "정예 타우렌 족장",
+     "heroId": "L90ETC",
+     "heroIds": [
+      "L90ETC"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">정예 타우렌 족장</strong>\n<ul>\n<li>크라우드 서핑이 이제 마나 반환량을 부유 문구로 표시합니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "크라우드 서핑이 이제 마나 반환량을 부유 문구로 표시합니다.",
+         "html": "크라우드 서핑이 이제 마나 반환량을 부유 문구로 표시합니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "E.T.C."
+    },
+    {
+     "name": "폴스타트",
+     "heroId": "Falstad",
+     "heroIds": [
+      "Falstad"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">폴스타트</strong>\n<ul>\n<li>힘찬 날갯짓을 선택한 후 폴스타트의 비행 경고 표시가 나타나지 않던 문제를 수정했습니다.</li>\n<li>지속되는 바람이 무적 상태인 대상에게 피해를 입히던 문제를 수정했습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "힘찬 날갯짓을 선택한 후 폴스타트의 비행 경고 표시가 나타나지 않던 문제를 수정했습니다.",
+         "html": "힘찬 날갯짓을 선택한 후 폴스타트의 비행 경고 표시가 나타나지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "지속되는 바람이 무적 상태인 대상에게 피해를 입히던 문제를 수정했습니다.",
+         "html": "지속되는 바람이 무적 상태인 대상에게 피해를 입히던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "Falstad"
+    },
+    {
+     "name": "가즈로",
+     "heroId": "Tinker",
+     "heroIds": [
+      "Tinker"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">가즈로</strong>\n<ul>\n<li>폭발 화약이 아군의 재사용 대기시간 감소 효과에 영향을 받지 않던 문제를 수정했습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "폭발 화약이 아군의 재사용 대기시간 감소 효과에 영향을 받지 않던 문제를 수정했습니다.",
+         "html": "폭발 화약이 아군의 재사용 대기시간 감소 효과에 영향을 받지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "Gazlowe"
+    },
+    {
+     "name": "겐지",
+     "heroId": "Genji",
+     "heroIds": [
+      "Genji"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">겐지</strong>\n<ul>\n<li>심장을 노려라가 피해량 미리보기를 표시하지 않던 문제를 수정했습니다.</li>\n<li>질풍참이 이제 마나 반환량을 부유 문구로 표시합니다.</li>\n<li>기술 방어력의 시각 효과가 업데이트되었습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "심장을 노려라가 피해량 미리보기를 표시하지 않던 문제를 수정했습니다.",
+         "html": "심장을 노려라가 피해량 미리보기를 표시하지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "질풍참이 이제 마나 반환량을 부유 문구로 표시합니다.",
+         "html": "질풍참이 이제 마나 반환량을 부유 문구로 표시합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "기술 방어력의 시각 효과가 업데이트되었습니다.",
+         "html": "기술 방어력의 시각 효과가 업데이트되었습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "Genji"
+    },
+    {
+     "name": "한조",
+     "heroId": "Hanzo",
+     "heroIds": [
+      "Hanzo"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">한조</strong>\n<ul>\n<li>상념을 버려라가 이제 실명 효과로 빗나갈 경우 빗나감! 문구를 표시합니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "상념을 버려라가 이제 실명 효과로 빗나갈 경우 빗나감! 문구를 표시합니다.",
+         "html": "상념을 버려라가 이제 실명 효과로 빗나갈 경우 빗나감! 문구를 표시합니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "Hanzo"
+    },
+    {
+     "name": "들창코",
+     "heroId": "Hogger",
+     "heroIds": [
+      "Hogger"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">들창코</strong>\n<ul>\n<li>들창코가 보이는 상태일 때 들창코의 들창 폭풍 시각 효과가 함께 표시되던 문제를 수정했습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "들창코가 보이는 상태일 때 들창코의 들창 폭풍 시각 효과가 함께 표시되던 문제를 수정했습니다.",
+         "html": "들창코가 보이는 상태일 때 들창코의 들창 폭풍 시각 효과가 함께 표시되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "Hogger"
+    },
+    {
+     "name": "임페리우스",
+     "heroId": "Imperius",
+     "heroIds": [
+      "Imperius"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">임페리우스</strong>\n<ul>\n<li>천공의 돌진이 빛나래와 폴스타트, 그리고 다른 영웅을 최소 한 명 이상 기절시킨 후 빛나래와 폴스타트가 잘못된 높이에 위치하던 문제를 수정했습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "천공의 돌진이 빛나래와 폴스타트, 그리고 다른 영웅을 최소 한 명 이상 기절시킨 후 빛나래와 폴스타트가 잘못된 높이에 위치하던 문제를 수정했습니다.",
+         "html": "천공의 돌진이 빛나래와 폴스타트, 그리고 다른 영웅을 최소 한 명 이상 기절시킨 후 빛나래와 폴스타트가 잘못된 높이에 위치하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "Imperius"
+    },
+    {
+     "name": "정크랫",
+     "heroId": "Junkrat",
+     "heroIds": [
+      "Junkrat"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">정크랫</strong>\n<ul>\n<li>달그락거리는 이빨을 선택했을 때 설치 중인 강철 덫에도 효과가 적용되던 문제를 수정했습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "달그락거리는 이빨을 선택했을 때 설치 중인 강철 덫에도 효과가 적용되던 문제를 수정했습니다.",
+         "html": "달그락거리는 이빨을 선택했을 때 설치 중인 강철 덫에도 효과가 적용되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "Junkrat"
+    },
+    {
+     "name": "케리건",
+     "heroId": "Kerrigan",
+     "heroIds": [
+      "Kerrigan"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">케리건</strong>\n<ul>\n<li>예리한 칼날이 지배당한 돌격병으로 중첩을 쌓던 문제를 수정했습니다.</li>\n<li>케리건의 검색어에 '감염'이 추가되었습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "예리한 칼날이 지배당한 돌격병으로 중첩을 쌓던 문제를 수정했습니다.",
+         "html": "예리한 칼날이 지배당한 돌격병으로 중첩을 쌓던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "케리건의 검색어에 '감염'이 추가되었습니다.",
+         "html": "케리건의 검색어에 '감염'이 추가되었습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "Kerrigan"
+    },
+    {
+     "name": "레오릭",
+     "heroId": "Leoric",
+     "heroIds": [
+      "Leoric"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">레오릭</strong>\n<ul>\n<li>해골 왕의 휩쓸기의 마나 반환량이 이제 치명타로 표시됩니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "해골 왕의 휩쓸기의 마나 반환량이 이제 치명타로 표시됩니다.",
+         "html": "해골 왕의 휩쓸기의 마나 반환량이 이제 치명타로 표시됩니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "Leoric"
+    },
+    {
+     "name": "리밍",
+     "heroId": "Wizard",
+     "heroIds": [
+      "Wizard"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">리밍</strong>\n<ul>\n<li>힘의 갑옷을 선택한 상태에서 마력탄이 날아가는 도중 집중탄을 선택하면 발생하던 문제를 수정했습니다.</li>\n<li>힘의 갑옷이 동일한 마력탄 시전으로 여러 번 중첩을 부여하던 문제를 수정했습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "힘의 갑옷을 선택한 상태에서 마력탄이 날아가는 도중 집중탄을 선택하면 발생하던 문제를 수정했습니다.",
+         "html": "힘의 갑옷을 선택한 상태에서 마력탄이 날아가는 도중 집중탄을 선택하면 발생하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "힘의 갑옷이 동일한 마력탄 시전으로 여러 번 중첩을 부여하던 문제를 수정했습니다.",
+         "html": "힘의 갑옷이 동일한 마력탄 시전으로 여러 번 중첩을 부여하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "Li-Ming"
+    },
+    {
+     "name": "루시우",
+     "heroId": "Lucio",
+     "heroIds": [
+      "Lucio"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">루시우</strong>\n<ul>\n<li>대상에게 보호막이 적용된 상태에서 보사노바를 선택하면 소리 방벽의 보호막이 감소하지 않던 문제를 수정했습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "대상에게 보호막이 적용된 상태에서 보사노바를 선택하면 소리 방벽의 보호막이 감소하지 않던 문제를 수정했습니다.",
+         "html": "대상에게 보호막이 적용된 상태에서 보사노바를 선택하면 소리 방벽의 보호막이 감소하지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "Lucio"
+    },
+    {
+     "name": "루나라",
+     "heroId": "Dryad",
+     "heroIds": [
+      "Dryad"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">루나라</strong>\n<ul>\n<li>갈래창이 더 이상 비활성 용병을 공격하지 않습니다. 단, 발동시킨 공격의 대상이 비활성 용병인 경우는 예외입니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "갈래창이 더 이상 비활성 용병을 공격하지 않습니다. 단, 발동시킨 공격의 대상이 비활성 용병인 경우는 예외입니다.",
+         "html": "갈래창이 더 이상 비활성 용병을 공격하지 않습니다. 단, 발동시킨 공격의 대상이 비활성 용병인 경우는 예외입니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "Lunara"
+    },
+    {
+     "name": "마이에브",
+     "heroId": "Maiev",
+     "heroIds": [
+      "Maiev"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">마이에브</strong>\n<ul>\n<li>나이샤의 유품의 첫 번째 도약은 발동시킨 공격의 대상이 비활성 용병인 경우 이제 비활성 용병에게 도약할 수 있습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "나이샤의 유품의 첫 번째 도약은 발동시킨 공격의 대상이 비활성 용병인 경우 이제 비활성 용병에게 도약할 수 있습니다.",
+         "html": "나이샤의 유품의 첫 번째 도약은 발동시킨 공격의 대상이 비활성 용병인 경우 이제 비활성 용병에게 도약할 수 있습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "Maiev"
+    },
+    {
+     "name": "말가니스",
+     "heroId": "MalGanis",
+     "heroIds": [
+      "MalGanis"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">말가니스</strong>\n<ul>\n<li>말가니스의 검색어에 '흡혈귀'가 추가되었습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "말가니스의 검색어에 '흡혈귀'가 추가되었습니다.",
+         "html": "말가니스의 검색어에 '흡혈귀'가 추가되었습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "Mal'Ganis"
+    },
+    {
+     "name": "메디브",
+     "heroId": "Medivh",
+     "heroIds": [
+      "Medivh"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">메디브</strong>\n<ul>\n<li>메디브의 차원문을 이제 아군 기술의 대상으로 지정할 수 없습니다. (예: 빛나래의 점멸 치유)</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "메디브의 차원문을 이제 아군 기술의 대상으로 지정할 수 없습니다. (예: 빛나래의 점멸 치유)",
+         "html": "메디브의 차원문을 이제 아군 기술의 대상으로 지정할 수 없습니다. (예: 빛나래의 점멸 치유)",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "Medivh"
+    },
+    {
+     "name": "메이",
+     "heroId": "Mei",
+     "heroIds": [
+      "Mei"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">메이</strong>\n<ul>\n<li>대왕 뭉치가 진창 눈뭉치의 효과를 온전히 받지 못하던 문제를 수정했습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "대왕 뭉치가 진창 눈뭉치의 효과를 온전히 받지 못하던 문제를 수정했습니다.",
+         "html": "대왕 뭉치가 진창 눈뭉치의 효과를 온전히 받지 못하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "Mei"
+    },
+    {
+     "name": "메피스토",
+     "heroId": "Mephisto",
+     "heroIds": [
+      "Mephisto"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">메피스토</strong>\n<ul>\n<li>대상이 밀려날 때 형언할 수 없는 공포가 일시적으로 비활성화되던 문제를 수정했습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "대상이 밀려날 때 형언할 수 없는 공포가 일시적으로 비활성화되던 문제를 수정했습니다.",
+         "html": "대상이 밀려날 때 형언할 수 없는 공포가 일시적으로 비활성화되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "Mephisto"
+    },
+    {
+     "name": "머키",
+     "heroId": "Murky",
+     "heroIds": [
+      "Murky"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">머키</strong>\n<ul>\n<li>달걀 찾기 달걀이 더 이상 구조물의 공격 한 번에 파괴되지 않습니다.</li>\n<li>수상한 거래가 지배당한 돌격병으로 중첩을 쌓던 문제를 수정했습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "달걀 찾기 달걀이 더 이상 구조물의 공격 한 번에 파괴되지 않습니다.",
+         "html": "달걀 찾기 달걀이 더 이상 구조물의 공격 한 번에 파괴되지 않습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "수상한 거래가 지배당한 돌격병으로 중첩을 쌓던 문제를 수정했습니다.",
+         "html": "수상한 거래가 지배당한 돌격병으로 중첩을 쌓던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "Murky"
+    },
+    {
+     "name": "나지보",
+     "heroId": "WitchDoctor",
+     "heroIds": [
+      "WitchDoctor"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">나지보</strong>\n<ul>\n<li>부두 의식이 지배당한 돌격병으로 중첩을 쌓던 문제를 수정했습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "부두 의식이 지배당한 돌격병으로 중첩을 쌓던 문제를 수정했습니다.",
+         "html": "부두 의식이 지배당한 돌격병으로 중첩을 쌓던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "Nazeebo"
+    },
+    {
+     "name": "노바",
+     "heroId": "Nova",
+     "heroIds": [
+      "Nova"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">노바</strong>\n<ul>\n<li>보호 효과가 사라진 후 홀로그램 분신의 생명력 막대가 잘못 표시되던 문제를 수정했습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "보호 효과가 사라진 후 홀로그램 분신의 생명력 막대가 잘못 표시되던 문제를 수정했습니다.",
+         "html": "보호 효과가 사라진 후 홀로그램 분신의 생명력 막대가 잘못 표시되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "Nova"
+    },
+    {
+     "name": "오르피아",
+     "heroId": "Orphea",
+     "heroIds": [
+      "Orphea"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">오르피아</strong>\n<ul>\n<li>포악한 허기가 지배당한 돌격병으로 중첩을 쌓던 문제를 수정했습니다.</li>\n<li>어둠의 왈츠가 시전 한 번에 마나를 여러 번 반환하던 문제를 수정했습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "포악한 허기가 지배당한 돌격병으로 중첩을 쌓던 문제를 수정했습니다.",
+         "html": "포악한 허기가 지배당한 돌격병으로 중첩을 쌓던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "어둠의 왈츠가 시전 한 번에 마나를 여러 번 반환하던 문제를 수정했습니다.",
+         "html": "어둠의 왈츠가 시전 한 번에 마나를 여러 번 반환하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "Orphea"
+    },
+    {
+     "name": "프로비우스",
+     "heroId": "Probius",
+     "heroIds": [
+      "Probius"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">프로비우스</strong>\n<ul>\n<li>지배당한 돌격병으로 광물이 생성되던 문제를 수정했습니다.</li>\n<li>프로비우스의 검색어에 '건설'이 추가되었습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "지배당한 돌격병으로 광물이 생성되던 문제를 수정했습니다.",
+         "html": "지배당한 돌격병으로 광물이 생성되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "프로비우스의 검색어에 '건설'이 추가되었습니다.",
+         "html": "프로비우스의 검색어에 '건설'이 추가되었습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "Probius"
+    },
+    {
+     "name": "키히라",
+     "heroId": "Qhira",
+     "heroIds": [
+      "Qhira"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">키히라</strong>\n<ul>\n<li>기술 방어력의 시각 효과가 업데이트되었습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "기술 방어력의 시각 효과가 업데이트되었습니다.",
+         "html": "기술 방어력의 시각 효과가 업데이트되었습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "Qhira"
+    },
+    {
+     "name": "라그나로스",
+     "heroId": "Ragnaros",
+     "heroIds": [
+      "Ragnaros"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">라그나로스</strong>\n<ul>\n<li>설퍼라스가 굶주렸다가 지배당한 돌격병으로 중첩을 쌓던 문제를 수정했습니다.</li>\n<li>기술 방어력의 시각 효과가 업데이트되었습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "설퍼라스가 굶주렸다가 지배당한 돌격병으로 중첩을 쌓던 문제를 수정했습니다.",
+         "html": "설퍼라스가 굶주렸다가 지배당한 돌격병으로 중첩을 쌓던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "기술 방어력의 시각 효과가 업데이트되었습니다.",
+         "html": "기술 방어력의 시각 효과가 업데이트되었습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "Ragnaros"
+    },
+    {
+     "name": "레가르",
+     "heroId": "Rehgar",
+     "heroIds": [
+      "Rehgar"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">레가르</strong>\n<ul>\n<li>늑대의 굶주림의 죽음 요약 표시가 개선되었습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "늑대의 굶주림의 죽음 요약 표시가 개선되었습니다.",
+         "html": "늑대의 굶주림의 죽음 요약 표시가 개선되었습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "Rehgar"
+    },
+    {
+     "name": "사무로",
+     "heroId": "Samuro",
+     "heroIds": [
+      "Samuro"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">사무로</strong>\n<ul>\n<li>신기루가 이제 다른 기술 방어력 막기 효과와 동일하게 작동합니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "신기루가 이제 다른 기술 방어력 막기 효과와 동일하게 작동합니다.",
+         "html": "신기루가 이제 다른 기술 방어력 막기 효과와 동일하게 작동합니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "Samuro"
+    },
+    {
+     "name": "누더기",
+     "heroId": "Stitches",
+     "heroIds": [
+      "Stitches"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">누더기</strong>\n<ul>\n<li>부패가 부유 문구를 한 번에 여러 번 표시하던 문제를 수정했습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "부패가 부유 문구를 한 번에 여러 번 표시하던 문제를 수정했습니다.",
+         "html": "부패가 부유 문구를 한 번에 여러 번 표시하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "Stitches"
+    },
+    {
+     "name": "스투코프",
+     "heroId": "Stukov",
+     "heroIds": [
+      "Stukov"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">스투코프</strong>\n<ul>\n<li>독성 고름이 피해량 미리보기를 표시하지 않던 문제를 수정했습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "독성 고름이 피해량 미리보기를 표시하지 않던 문제를 수정했습니다.",
+         "html": "독성 고름이 피해량 미리보기를 표시하지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "Stukov"
+    },
+    {
+     "name": "실바나스",
+     "heroId": "Sylvanas",
+     "heroIds": [
+      "Sylvanas"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">실바나스</strong>\n<ul>\n<li>부패의 사격이 잘못 표시되던 문제를 수정했습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "부패의 사격이 잘못 표시되던 문제를 수정했습니다.",
+         "html": "부패의 사격이 잘못 표시되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "Sylvanas"
+    },
+    {
+     "name": "태사다르",
+     "heroId": "Tassadar",
+     "heroIds": [
+      "Tassadar"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">태사다르</strong>\n<ul>\n<li>황혼의 집정관 상태에서 장난감 기차를 사용할 수 있던 문제를 수정했습니다.</li>\n<li>케이다린 부적은 대상이 비활성 용병인 경우 이제 스스로 취소됩니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "황혼의 집정관 상태에서 장난감 기차를 사용할 수 있던 문제를 수정했습니다.",
+         "html": "황혼의 집정관 상태에서 장난감 기차를 사용할 수 있던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "케이다린 부적은 대상이 비활성 용병인 경우 이제 스스로 취소됩니다.",
+         "html": "케이다린 부적은 대상이 비활성 용병인 경우 이제 스스로 취소됩니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "Tassadar"
+    },
+    {
+     "name": "스랄",
+     "heroId": "Thrall",
+     "heroIds": [
+      "Thrall"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">스랄</strong>\n<ul>\n<li>정기의 메아리가 지배당한 돌격병과 환영으로 발동되던 문제를 수정했습니다.</li>\n<li>우레가 광풍의 공격으로 발동되지 않던 문제를 수정했습니다.</li>\n<li>늑대 무리가 특성 초기화 시 야수 정령을 잘못 초기화하던 문제를 수정했습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "정기의 메아리가 지배당한 돌격병과 환영으로 발동되던 문제를 수정했습니다.",
+         "html": "정기의 메아리가 지배당한 돌격병과 환영으로 발동되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "우레가 광풍의 공격으로 발동되지 않던 문제를 수정했습니다.",
+         "html": "우레가 광풍의 공격으로 발동되지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "늑대 무리가 특성 초기화 시 야수 정령을 잘못 초기화하던 문제를 수정했습니다.",
+         "html": "늑대 무리가 특성 초기화 시 야수 정령을 잘못 초기화하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "Thrall"
+    },
+    {
+     "name": "길 잃은 바이킹",
+     "heroId": "LostVikings",
+     "heroIds": [
+      "LostVikings"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">길 잃은 바이킹</strong>\n<ul>\n<li>바이킹 공격단이 무적 상태인 대상에게 피해를 입힐 수 있던 문제를 수정했습니다.</li>\n<li>사망 시 생명력이 최대치로 설정되지 않던 문제를 수정했습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "바이킹 공격단이 무적 상태인 대상에게 피해를 입힐 수 있던 문제를 수정했습니다.",
+         "html": "바이킹 공격단이 무적 상태인 대상에게 피해를 입힐 수 있던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "사망 시 생명력이 최대치로 설정되지 않던 문제를 수정했습니다.",
+         "html": "사망 시 생명력이 최대치로 설정되지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "The Lost Vikings"
+    },
+    {
+     "name": "트레이서",
+     "heroId": "Tracer",
+     "heroIds": [
+      "Tracer"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">트레이서</strong>\n<ul>\n<li>도탄은 공격 대상이 비활성 용병인 경우 이제 비활성 용병에게 도약할 수 있습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "도탄은 공격 대상이 비활성 용병인 경우 이제 비활성 용병에게 도약할 수 있습니다.",
+         "html": "도탄은 공격 대상이 비활성 용병인 경우 이제 비활성 용병에게 도약할 수 있습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "Tracer"
+    },
+    {
+     "name": "화이트메인",
+     "heroId": "Whitemane",
+     "heroIds": [
+      "Whitemane"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">화이트메인</strong>\n<ul>\n<li>화이트메인의 검색어에 '모자'가 추가되었습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "화이트메인의 검색어에 '모자'가 추가되었습니다.",
+         "html": "화이트메인의 검색어에 '모자'가 추가되었습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "Whitemane"
+    },
+    {
+     "name": "자가라",
+     "heroId": "Zagara",
+     "heroIds": [
+      "Zagara"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">자가라</strong>\n<ul>\n<li>메두사 칼날이 더 이상 비활성 상태의 용병을 공격하지 않습니다. 단, 공격을 유발한 대상이 비활성 상태의 용병인 경우는 예외입니다.</li>\n<li>이제 비활성 상태의 용병을 대상으로 공격한 경우 뮤탈리스크의 첫 번째 도약이 비활성 상태의 용병에게 도약할 수 있습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "메두사 칼날이 더 이상 비활성 상태의 용병을 공격하지 않습니다. 단, 공격을 유발한 대상이 비활성 상태의 용병인 경우는 예외입니다.",
+         "html": "메두사 칼날이 더 이상 비활성 상태의 용병을 공격하지 않습니다. 단, 공격을 유발한 대상이 비활성 상태의 용병인 경우는 예외입니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "이제 비활성 상태의 용병을 대상으로 공격한 경우 뮤탈리스크의 첫 번째 도약이 비활성 상태의 용병에게 도약할 수 있습니다.",
+         "html": "이제 비활성 상태의 용병을 대상으로 공격한 경우 뮤탈리스크의 첫 번째 도약이 비활성 상태의 용병에게 도약할 수 있습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "Zagara"
+    },
+    {
+     "name": "자리야",
+     "heroId": "Zarya",
+     "heroIds": [
+      "Zarya"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">자리야</strong>\n<ul>\n<li>일반 공격이 공격 속도 보정의 영향을 제대로 받지 못하던 문제를 수정했습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "일반 공격이 공격 속도 보정의 영향을 제대로 받지 못하던 문제를 수정했습니다.",
+         "html": "일반 공격이 공격 속도 보정의 영향을 제대로 받지 못하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "Zarya"
+    },
+    {
+     "name": "제라툴",
+     "heroId": "Zeratul",
+     "heroIds": [
+      "Zeratul"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">제라툴</strong>\n<ul>\n<li>그림자의 재생력 사용 시 네라짐의 힘 기술이 의도보다 많은 피해량만큼 치유하던 문제를 수정했습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "그림자의 재생력 사용 시 네라짐의 힘 기술이 의도보다 많은 피해량만큼 치유하던 문제를 수정했습니다.",
+         "html": "그림자의 재생력 사용 시 네라짐의 힘 기술이 의도보다 많은 피해량만큼 치유하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "Zeratul"
+    },
+    {
+     "name": "줄진",
+     "heroId": "Zuljin",
+     "heroIds": [
+      "Zuljin"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">줄진</strong>\n<ul>\n<li>이제 비활성 상태의 용병을 대상으로 공격한 경우 깜짝 선물!이 비활성 상태의 용병에게 도약할 수 있습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "이제 비활성 상태의 용병을 대상으로 공격한 경우 깜짝 선물!이 비활성 상태의 용병에게 도약할 수 있습니다.",
+         "html": "이제 비활성 상태의 용병을 대상으로 공격한 경우 깜짝 선물!이 비활성 상태의 용병에게 도약할 수 있습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "Zul'jin"
+    }
+   ],
+   "nameEn": "Bug Fixes"
+  }
+ ],
+ "heroes": [
+  "Abathur",
+  "Alarak",
+  "Amazon",
+  "Anduin",
+  "Anubarak",
+  "Artanis",
+  "Arthas",
+  "Azmodan",
+  "Chen",
+  "Cho",
+  "DVa",
+  "Deathwing",
+  "Deckard",
+  "Dehaka",
+  "Dryad",
+  "FaerieDragon",
+  "Falstad",
+  "Gall",
+  "Genji",
+  "Hanzo",
+  "Hogger",
+  "Imperius",
+  "Junkrat",
+  "Kerrigan",
+  "L90ETC",
+  "Leoric",
+  "LiLi",
+  "LostVikings",
+  "Lucio",
+  "Maiev",
+  "MalGanis",
+  "Medivh",
+  "Mei",
+  "Mephisto",
+  "Murky",
+  "Nova",
+  "Orphea",
+  "Probius",
+  "Qhira",
+  "Ragnaros",
+  "Rehgar",
+  "Samuro",
+  "Stitches",
+  "Stukov",
+  "Sylvanas",
+  "Tassadar",
+  "Thrall",
+  "Tinker",
+  "Tracer",
+  "Whitemane",
+  "WitchDoctor",
+  "Wizard",
+  "Zagara",
+  "Zarya",
+  "Zeratul",
+  "Zuljin"
+ ],
+ "battlegrounds": [
+  "blackheart_s_bay"
+ ],
+ "lang": "ko",
+ "newsId": "24056177",
+ "titleEn": "Heroes of the Storm PTR Patch Notes - January 17, 2024",
+ "translated": {
+  "by": "Claude (claude-opus-5)",
+  "at": "2026-09-14",
+  "source": "https://news.blizzard.com/en-us/article/24056177/heroes-of-the-storm-ptr-patch-notes-january-17-2024",
+  "glossary": "HeroesToolChest 공식 게임 텍스트(enus↔kokr) 대조",
+  "untranslated": 0
+ }
+}

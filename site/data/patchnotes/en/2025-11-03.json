@@ -1,0 +1,976 @@
+{
+ "date": "2025-11-03",
+ "kind": "ptr",
+ "title": "Heroes of the Storm PTR Patch Notes - November 3, 2025",
+ "source": "https://news.blizzard.com/en-us/article/24242860/heroes-of-the-storm-ptr-patch-notes-november-3-2025",
+ "published": "2025-11-03T17:11:00Z",
+ "sections": [
+  {
+   "name": "머리말",
+   "key": "intro",
+   "html": "<p>Our next Heroes of the Storm patch has just hit the Public Test Realm and will be available for playtesting. As always, if you encounter any bugs during your PTR play sessions, please stop by the <a href=\"https://us.forums.blizzard.com/en/heroes/c/ptr-bug-report\" target=\"_blank\">PTR Bug Report forum</a> to let us know about your experiences.</p>",
+   "nameKo": "머리말"
+  },
+  {
+   "name": "General",
+   "key": "general",
+   "html": "<ul>\n<li>Updated Homescreen and Startup Music.</li>\n</ul>",
+   "nameKo": "일반"
+  },
+  {
+   "name": "Map Updates",
+   "key": "map_updates",
+   "html": "<ul>\n<li><strong>General</strong>\n<ul>\n<li>A new Fallback Tower has been added to the longer lanes on each of the following battleground maps. This new tower will die when its corresponding Fort dies: Alterac Pass, Battlefield of Eternity, Blackheart's Bay, Braxis Holdout, Cursed Hollow, Dragon Shire, Garden of Terror, Hanamura Temple, Infernal Shrines, Sky Temple, Tomb of the Spider Queen, Volskaya Foundry, and Warhead Junction.</li>\n<li>Attacks from the Core, Keeps, Forts, Fallback Towers, and Towers near Keeps will now reduce Hero armor, and the reduction has been increased from -10/-20 Armor to -20/-40 Armor.</li>\n<li>Fallback Towers have the same HP and Attack Damage as Keep Towers.</li>\n<li>Forts, Keeps, and the Core will no longer grant Allied Heroes that take damage in their radius 35 Armor for 4 seconds.</li>\n<li>The comeback system has been slightly magnified, particularly at wide level gaps.</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Alterac Pass</strong>\n<ul>\n<li>Cavalry now gain more health in the later stages of the game.</li>\n<li>Cavalry now take 60% damage from structures (up from 50%).</li>\n<li>Early capture time reduced from 30 seconds to 25 seconds. The first spawn only spawns a single defending unit.</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Braxis Holdout</strong>\n<ul>\n<li>Early objectives have lowered in health by 15%, but scaling has been increased significantly after 15 minutes.</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Garden of Terror</strong>\n<ul>\n<li>Garden Terror health scaling increased.</li>\n<li>Garden Terror structure disabling plant bulb now damages itself at 10% per second (up from 6%).</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Infernal Shrines</strong>\n<ul>\n<li>Early objectives have lowered in health by 15%, but scaling has been increased significantly after 15 minutes.</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Warhead Junction</strong>\n<ul>\n<li>Nuke damage has been changed to flat, scaling damage. Scaling is updated when a Warhead is picked up.</li>\n<li>Nukes now deal double damage versus Forts, Keeps, and the Core.</li>\n</ul>\n</li>\n</ul>",
+   "items": [
+    {
+     "name": "Alterac Pass",
+     "battleground": "alterac_pass",
+     "html": "<strong class=\"pn-h\">Alterac Pass</strong>\n<ul>\n<li>Cavalry now gain more health in the later stages of the game.</li>\n<li>Cavalry now take 60% damage from structures (up from 50%).</li>\n<li>Early capture time reduced from 30 seconds to 25 seconds. The first spawn only spawns a single defending unit.</li>\n</ul>",
+     "under": null
+    },
+    {
+     "name": "Braxis Holdout",
+     "battleground": "braxis_holdout",
+     "html": "<strong class=\"pn-h\">Braxis Holdout</strong>\n<ul>\n<li>Early objectives have lowered in health by 15%, but scaling has been increased significantly after 15 minutes.</li>\n</ul>",
+     "under": null
+    },
+    {
+     "name": "Garden of Terror",
+     "battleground": "garden_of_terror",
+     "html": "<strong class=\"pn-h\">Garden of Terror</strong>\n<ul>\n<li>Garden Terror health scaling increased.</li>\n<li>Garden Terror structure disabling plant bulb now damages itself at 10% per second (up from 6%).</li>\n</ul>",
+     "under": null
+    },
+    {
+     "name": "Infernal Shrines",
+     "battleground": "infernal_shrines",
+     "html": "<strong class=\"pn-h\">Infernal Shrines</strong>\n<ul>\n<li>Early objectives have lowered in health by 15%, but scaling has been increased significantly after 15 minutes.</li>\n</ul>",
+     "under": null
+    },
+    {
+     "name": "Warhead Junction",
+     "battleground": "warhead_junction",
+     "html": "<strong class=\"pn-h\">Warhead Junction</strong>\n<ul>\n<li>Nuke damage has been changed to flat, scaling damage. Scaling is updated when a Warhead is picked up.</li>\n<li>Nukes now deal double damage versus Forts, Keeps, and the Core.</li>\n</ul>",
+     "under": null
+    }
+   ],
+   "nameKo": "전장 업데이트"
+  },
+  {
+   "name": "Balance Update",
+   "key": "balance",
+   "html": "<h3><strong>General</strong></h3>\n<ul>\n<li><b>Pinnacle Rewards</b> have been added to mutiple Heroes. These will be hard to obtain but provide powerful rewards.</li>\n</ul>\n<h3><strong>Heroes</strong></h3>\n<h4>Falstad</h4>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Dishonorable Discharge</strong>\n<ul>\n<li><b>REWORK:</b> Bonuses are now provided at 20/45/75 hits. At 20 hits, gain 30% damage. At 45 hits, gain 75% damage and reduces the cooldown by 2 seconds. <b>Pinnacle Reward:</b> At 75 hits, Lightning Rod provides 2 additional strikes.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Frequent Flyer</strong>\n<ul>\n<li><b>REWORK:</b> Reduced attack speed bonus from 40% to 25%. Now provides 1 stack per minion and 5 stacks per Hero. At 50 stacks, gain 20 attack damage. At 125 stacks, gain 50 attack damage. <b>Pinnacle Reward:</b> At 300 stacks, gain 125 attack damage.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Gathering Storm</strong>\n<ul>\n<li><b>REWORK:</b> Bonuses are now provided at 30/80/150 stacks, rather than incremental gains. At 30 stacks, gain 30% damage. At 80 stacks, gain 50% damage. <b>Pinnacle Reward:</b> At 150 stacks, gain 70% damage.</li>\n<li><b>REWORK:</b> Lose 8 stacks on death, but can not lose milestones that have already been completed.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Charged Up</strong>\n<ul>\n<li>Moved to be a Level 13 Talent.</li>\n<li>No longer provides additional hits, but instead provides cooldown refresh on Hero takedowns.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Thunderstrikes</strong>\n<ul>\n<li>Moved to be a Level 7 Talent.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>Guldan</h4>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Echoed Corruption</strong>\n<ul>\n<li>Increased stack requirement to 60. <b>Pinnacle Reward:</b> At 100 stacks, Corruption now heals for 50% of the damage dealt.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Pursuit of Flame</strong>\n<ul>\n<li>Increased radius from 10% to 15%.</li>\n<li>Reworded to say \"Fel Flame's area is increased by 33%\".</li>\n<li>You now lose 6 stacks upon death and can not lose progress upon completion.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>Kerrigan</h4>\n<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Primal Grasp [E]</strong>\n<ul>\n<li>Cooldown reduced from 10 to 8.</li>\n<li>Delayed damage reduced from 195 to 165.</li>\n<li>Initial damage increased from 25 to 40.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Ravage [Q]</strong>\n<ul>\n<li>Damage reduced from 130 to 115.</li>\n<li>Now includes a baseline quest: Kill enemies within 1.5 seconds of hitting them with Ravage. Minions grant 1 progress and Heroes grant 5. At 75 stacks, Ravage gains 125 damage. <b>Pinnacle Reward:</b> At 125 stacks, Ravage gains 200 additional damage.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Impaling Blades [W]</strong>\n<ul>\n<li>Cooldown reduced from 12 seconds to 9 seconds.</li>\n<li>Damage reduced from 165 to 150.</li>\n<li>Radius increased from 1.5 to 1.65.</li>\n<li>Stun duration reduced from 1 second to .75 seconds.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Assimilation [D]</strong>\n<ul>\n<li>Increased the amount of shield gained from Basic Attacks from 10% to 20% of damage dealt.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Fury of the Swarm</strong>\n<ul>\n<li>No longer increases shields gained from Basic Attacks.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Sharpened Blades</strong>\n<ul>\n<li>Talent has been removed.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Ravaging Ferocity</strong>\n<ul>\n<li><b>NEW:</b> Gain 25% attack speed for 3 seconds after using Ravage.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Boundless Fury</strong>\n<ul>\n<li>Cooldown increased from 10 seconds to 12 seconds.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Queen of Blades</strong>\n<ul>\n<li>Cooldown reduction reduced from 3 seconds to 4 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Summon Ultralisk</strong>\n<ul>\n<li>Damage reduced from 250 to 225.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Chrysalis</strong>\n<ul>\n<li>HP lowered from 750 to 650.</li>\n<li>Reduced the amount of health regenerated from 5% max health per second to 4%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Painful Spikes</strong>\n<ul>\n<li>Damage reduced from 70 to 60.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Omegastorm</strong>\n<ul>\n<li>Increased extended duration from .25 seconds per hit to .4 seconds per hit.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>Sylvanas</h4>\n<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Black Arrows [D]</strong>\n<ul>\n<li>Black Arrows now refers to what was previously called \"Banshee's Curse\".</li>\n<li>New Baseline Quest: Deal damage to non-minions with 3 stacks of black arrows. At 200 stacks, increased the damage bonus of Black Arrows to 50%. <b>Pinnacle Reward:</b> At 400 stacks, heal for 50% of damage dealt against enemies with 3 stacks of Black Arrows.</li>\n<li>Reduced base damage bonus of Black Arrows to 15%.</li>\n<li>Activatable portion of Black Arrows has been removed.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Unfurling Shadows</strong>\n<ul>\n<li>Talent has been removed.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Unrelenting Torment</strong>\n<ul>\n<li><b>NEW:</b> Increases the damage of Shadow Dagger by 20% and increase its duration by 1 second.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Haunting Arrows</strong>\n<ul>\n<li><b>NEW:</b> You can now activate Black Arrows to cause all damage dealt to stun non-heroes. 90 second cooldown, reduced by 3 seconds when attacking a structure.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Possession</strong>\n<ul>\n<li>Now a Baseline ability. 25 seconds to restore each charge, 2 seconds cooldown. Max 4 charges.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Barbed Shot</strong>\n<ul>\n<li>Bonus damage increased from 350% to 400%.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Lost Soul</strong>\n<ul>\n<li><b>REWORK:</b> Reduces the cooldown of Shadow Dagger when attacking non-minions with 3 stacks of Black Arrows by .75 seconds, doubled against Heroes.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Windrunner</strong>\n<ul>\n<li>Recast window reduced from 5 seconds to 4 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>Thrall</h4>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Crash Lightning</strong>\n<ul>\n<li><b>REWORK:</b> Bonuses are now provided at 15 and 30 stacks. At each milestone, Chain Lightning gains 240 damage. Lose 6 stacks on death, but can not lose milestones that have already been completed.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Echo of the Elements</strong>\n<ul>\n<li><b>REWORK:</b> Bonuses are now provided at 20/40/100 stacks. At 20 stacks, reduce mana cost of Chain Lightning by 20. At 40 stacks, Chain Lightning will bounce one additional time. <b>Pinnacle Reward:</b> At 100 stacks, Chain Lightning gains an extra charge.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Rolling Thunder</strong>\n<ul>\n<li>Moved to be a Level 7 Talent.</li>\n<li>No longer increases Chain Lightning bounces by 1.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Maelstrom Weapon</strong>\n<ul>\n<li>Moved to be a Level 1 Talent.</li>\n<li><b>REWORK:</b> Bonuses are now provided at 20/40/100 stacks, rather than incremental gains. At 20 stacks, gain 20 damage. At 40 stacks, gain 40 damage in addition to the previous benefits. <b>Pinnacle Reward:</b> At 100 stacks, Frostwolf Resilience now provides +200% Healing.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Tempest Fury</strong>\n<ul>\n<li>No longer provides additional quest stacks.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Thunderstorm</strong>\n<ul>\n<li>Increased damage bonus provided at max stacks from 25% to 30%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Wind Rush</strong>\n<ul>\n<li>Cooldown increased from 80 seconds to 90 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>Zul'jin</h4>\n<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li>Basic Attack damage decreased from 96 to 94.</li>\n<li><strong class=\"pn-name\">You Want Axe? [D]</strong>\n<ul>\n<li>No longer has a cap on stacks.</li>\n<li>Now causes Zul'jin to lose 3 stacks (15 hits) on death.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Headhunter</strong>\n<ul>\n<li>Increased damage bonus per hero kill from 2% to 2.5%.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+   "heroes": [
+    {
+     "name": "Falstad",
+     "heroId": "Falstad",
+     "heroIds": [
+      "Falstad"
+     ],
+     "changes": [
+      {
+       "name": "Dishonorable Discharge",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "REWORK: Bonuses are now provided at 20/45/75 hits. At 20 hits, gain 30% damage. At 45 hits, gain 75% damage and reduces the cooldown by 2 seconds. Pinnacle Reward: At 75 hits, Lightning Rod provides 2 additional strikes.",
+         "html": "<b>REWORK:</b> Bonuses are now provided at 20/45/75 hits. At 20 hits, gain 30% damage. At 45 hits, gain 75% damage and reduces the cooldown by 2 seconds. <b>Pinnacle Reward:</b> At 75 hits, Lightning Rod provides 2 additional strikes.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Frequent Flyer",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "REWORK: Reduced attack speed bonus from 40% to 25%. Now provides 1 stack per minion and 5 stacks per Hero. At 50 stacks, gain 20 attack damage. At 125 stacks, gain 50 attack damage. Pinnacle Reward: At 300 stacks, gain 125 attack damage.",
+         "html": "<b>REWORK:</b> Reduced attack speed bonus from 40% to 25%. Now provides 1 stack per minion and 5 stacks per Hero. At 50 stacks, gain 20 attack damage. At 125 stacks, gain 50 attack damage. <b>Pinnacle Reward:</b> At 300 stacks, gain 125 attack damage.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Gathering Storm",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "REWORK: Bonuses are now provided at 30/80/150 stacks, rather than incremental gains. At 30 stacks, gain 30% damage. At 80 stacks, gain 50% damage. Pinnacle Reward: At 150 stacks, gain 70% damage.",
+         "html": "<b>REWORK:</b> Bonuses are now provided at 30/80/150 stacks, rather than incremental gains. At 30 stacks, gain 30% damage. At 80 stacks, gain 50% damage. <b>Pinnacle Reward:</b> At 150 stacks, gain 70% damage.",
+         "added": false
+        },
+        {
+         "text": "REWORK: Lose 8 stacks on death, but can not lose milestones that have already been completed.",
+         "html": "<b>REWORK:</b> Lose 8 stacks on death, but can not lose milestones that have already been completed.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Charged Up",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "Moved to be a Level 13 Talent.",
+         "html": "Moved to be a Level 13 Talent.",
+         "added": false
+        },
+        {
+         "text": "No longer provides additional hits, but instead provides cooldown refresh on Hero takedowns.",
+         "html": "No longer provides additional hits, but instead provides cooldown refresh on Hero takedowns.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Thunderstrikes",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "Moved to be a Level 7 Talent.",
+         "html": "Moved to be a Level 7 Talent.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Dishonorable Discharge</strong>\n<ul>\n<li><b>REWORK:</b> Bonuses are now provided at 20/45/75 hits. At 20 hits, gain 30% damage. At 45 hits, gain 75% damage and reduces the cooldown by 2 seconds. <b>Pinnacle Reward:</b> At 75 hits, Lightning Rod provides 2 additional strikes.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Frequent Flyer</strong>\n<ul>\n<li><b>REWORK:</b> Reduced attack speed bonus from 40% to 25%. Now provides 1 stack per minion and 5 stacks per Hero. At 50 stacks, gain 20 attack damage. At 125 stacks, gain 50 attack damage. <b>Pinnacle Reward:</b> At 300 stacks, gain 125 attack damage.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Gathering Storm</strong>\n<ul>\n<li><b>REWORK:</b> Bonuses are now provided at 30/80/150 stacks, rather than incremental gains. At 30 stacks, gain 30% damage. At 80 stacks, gain 50% damage. <b>Pinnacle Reward:</b> At 150 stacks, gain 70% damage.</li>\n<li><b>REWORK:</b> Lose 8 stacks on death, but can not lose milestones that have already been completed.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Charged Up</strong>\n<ul>\n<li>Moved to be a Level 13 Talent.</li>\n<li>No longer provides additional hits, but instead provides cooldown refresh on Hero takedowns.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Thunderstrikes</strong>\n<ul>\n<li>Moved to be a Level 7 Talent.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Guldan",
+     "heroId": "Guldan",
+     "heroIds": [
+      "Guldan"
+     ],
+     "changes": [
+      {
+       "name": "Echoed Corruption",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Increased stack requirement to 60. Pinnacle Reward: At 100 stacks, Corruption now heals for 50% of the damage dealt.",
+         "html": "Increased stack requirement to 60. <b>Pinnacle Reward:</b> At 100 stacks, Corruption now heals for 50% of the damage dealt.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Pursuit of Flame",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Increased radius from 10% to 15%.",
+         "html": "Increased radius from 10% to 15%.",
+         "added": false
+        },
+        {
+         "text": "Reworded to say \"Fel Flame's area is increased by 33%\".",
+         "html": "Reworded to say \"Fel Flame's area is increased by 33%\".",
+         "added": false
+        },
+        {
+         "text": "You now lose 6 stacks upon death and can not lose progress upon completion.",
+         "html": "You now lose 6 stacks upon death and can not lose progress upon completion.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Echoed Corruption</strong>\n<ul>\n<li>Increased stack requirement to 60. <b>Pinnacle Reward:</b> At 100 stacks, Corruption now heals for 50% of the damage dealt.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Pursuit of Flame</strong>\n<ul>\n<li>Increased radius from 10% to 15%.</li>\n<li>Reworded to say \"Fel Flame's area is increased by 33%\".</li>\n<li>You now lose 6 stacks upon death and can not lose progress upon completion.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Kerrigan",
+     "heroId": "Kerrigan",
+     "heroIds": [
+      "Kerrigan"
+     ],
+     "changes": [
+      {
+       "name": "Primal Grasp",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Cooldown reduced from 10 to 8.",
+         "html": "Cooldown reduced from 10 to 8.",
+         "added": false
+        },
+        {
+         "text": "Delayed damage reduced from 195 to 165.",
+         "html": "Delayed damage reduced from 195 to 165.",
+         "added": false
+        },
+        {
+         "text": "Initial damage increased from 25 to 40.",
+         "html": "Initial damage increased from 25 to 40.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Ravage",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Damage reduced from 130 to 115.",
+         "html": "Damage reduced from 130 to 115.",
+         "added": false
+        },
+        {
+         "text": "Now includes a baseline quest: Kill enemies within 1.5 seconds of hitting them with Ravage. Minions grant 1 progress and Heroes grant 5. At 75 stacks, Ravage gains 125 damage. Pinnacle Reward: At 125 stacks, Ravage gains 200 additional damage.",
+         "html": "Now includes a baseline quest: Kill enemies within 1.5 seconds of hitting them with Ravage. Minions grant 1 progress and Heroes grant 5. At 75 stacks, Ravage gains 125 damage. <b>Pinnacle Reward:</b> At 125 stacks, Ravage gains 200 additional damage.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Impaling Blades",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Cooldown reduced from 12 seconds to 9 seconds.",
+         "html": "Cooldown reduced from 12 seconds to 9 seconds.",
+         "added": false
+        },
+        {
+         "text": "Damage reduced from 165 to 150.",
+         "html": "Damage reduced from 165 to 150.",
+         "added": false
+        },
+        {
+         "text": "Radius increased from 1.5 to 1.65.",
+         "html": "Radius increased from 1.5 to 1.65.",
+         "added": false
+        },
+        {
+         "text": "Stun duration reduced from 1 second to .75 seconds.",
+         "html": "Stun duration reduced from 1 second to .75 seconds.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Assimilation",
+       "key": "D",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Increased the amount of shield gained from Basic Attacks from 10% to 20% of damage dealt.",
+         "html": "Increased the amount of shield gained from Basic Attacks from 10% to 20% of damage dealt.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Fury of the Swarm",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "No longer increases shields gained from Basic Attacks.",
+         "html": "No longer increases shields gained from Basic Attacks.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Sharpened Blades",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "Talent has been removed.",
+         "html": "Talent has been removed.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Ravaging Ferocity",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "NEW: Gain 25% attack speed for 3 seconds after using Ravage.",
+         "html": "<b>NEW:</b> Gain 25% attack speed for 3 seconds after using Ravage.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Boundless Fury",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "Cooldown increased from 10 seconds to 12 seconds.",
+         "html": "Cooldown increased from 10 seconds to 12 seconds.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Queen of Blades",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "Cooldown reduction reduced from 3 seconds to 4 seconds.",
+         "html": "Cooldown reduction reduced from 3 seconds to 4 seconds.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Summon Ultralisk",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "Damage reduced from 250 to 225.",
+         "html": "Damage reduced from 250 to 225.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Chrysalis",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "HP lowered from 750 to 650.",
+         "html": "HP lowered from 750 to 650.",
+         "added": false
+        },
+        {
+         "text": "Reduced the amount of health regenerated from 5% max health per second to 4%.",
+         "html": "Reduced the amount of health regenerated from 5% max health per second to 4%.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Painful Spikes",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "Damage reduced from 70 to 60.",
+         "html": "Damage reduced from 70 to 60.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Omegastorm",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "Increased extended duration from .25 seconds per hit to .4 seconds per hit.",
+         "html": "Increased extended duration from .25 seconds per hit to .4 seconds per hit.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Primal Grasp [E]</strong>\n<ul>\n<li>Cooldown reduced from 10 to 8.</li>\n<li>Delayed damage reduced from 195 to 165.</li>\n<li>Initial damage increased from 25 to 40.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Ravage [Q]</strong>\n<ul>\n<li>Damage reduced from 130 to 115.</li>\n<li>Now includes a baseline quest: Kill enemies within 1.5 seconds of hitting them with Ravage. Minions grant 1 progress and Heroes grant 5. At 75 stacks, Ravage gains 125 damage. <b>Pinnacle Reward:</b> At 125 stacks, Ravage gains 200 additional damage.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Impaling Blades [W]</strong>\n<ul>\n<li>Cooldown reduced from 12 seconds to 9 seconds.</li>\n<li>Damage reduced from 165 to 150.</li>\n<li>Radius increased from 1.5 to 1.65.</li>\n<li>Stun duration reduced from 1 second to .75 seconds.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Assimilation [D]</strong>\n<ul>\n<li>Increased the amount of shield gained from Basic Attacks from 10% to 20% of damage dealt.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Fury of the Swarm</strong>\n<ul>\n<li>No longer increases shields gained from Basic Attacks.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Sharpened Blades</strong>\n<ul>\n<li>Talent has been removed.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Ravaging Ferocity</strong>\n<ul>\n<li><b>NEW:</b> Gain 25% attack speed for 3 seconds after using Ravage.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Boundless Fury</strong>\n<ul>\n<li>Cooldown increased from 10 seconds to 12 seconds.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Queen of Blades</strong>\n<ul>\n<li>Cooldown reduction reduced from 3 seconds to 4 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Summon Ultralisk</strong>\n<ul>\n<li>Damage reduced from 250 to 225.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Chrysalis</strong>\n<ul>\n<li>HP lowered from 750 to 650.</li>\n<li>Reduced the amount of health regenerated from 5% max health per second to 4%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Painful Spikes</strong>\n<ul>\n<li>Damage reduced from 70 to 60.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Omegastorm</strong>\n<ul>\n<li>Increased extended duration from .25 seconds per hit to .4 seconds per hit.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Sylvanas",
+     "heroId": "Sylvanas",
+     "heroIds": [
+      "Sylvanas"
+     ],
+     "changes": [
+      {
+       "name": "Black Arrows",
+       "key": "D",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Black Arrows now refers to what was previously called \"Banshee's Curse\".",
+         "html": "Black Arrows now refers to what was previously called \"Banshee's Curse\".",
+         "added": false
+        },
+        {
+         "text": "New Baseline Quest: Deal damage to non-minions with 3 stacks of black arrows. At 200 stacks, increased the damage bonus of Black Arrows to 50%. Pinnacle Reward: At 400 stacks, heal for 50% of damage dealt against enemies with 3 stacks of Black Arrows.",
+         "html": "New Baseline Quest: Deal damage to non-minions with 3 stacks of black arrows. At 200 stacks, increased the damage bonus of Black Arrows to 50%. <b>Pinnacle Reward:</b> At 400 stacks, heal for 50% of damage dealt against enemies with 3 stacks of Black Arrows.",
+         "added": false
+        },
+        {
+         "text": "Reduced base damage bonus of Black Arrows to 15%.",
+         "html": "Reduced base damage bonus of Black Arrows to 15%.",
+         "added": false
+        },
+        {
+         "text": "Activatable portion of Black Arrows has been removed.",
+         "html": "Activatable portion of Black Arrows has been removed.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Unfurling Shadows",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Talent has been removed.",
+         "html": "Talent has been removed.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Unrelenting Torment",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "NEW: Increases the damage of Shadow Dagger by 20% and increase its duration by 1 second.",
+         "html": "<b>NEW:</b> Increases the damage of Shadow Dagger by 20% and increase its duration by 1 second.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Haunting Arrows",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "NEW: You can now activate Black Arrows to cause all damage dealt to stun non-heroes. 90 second cooldown, reduced by 3 seconds when attacking a structure.",
+         "html": "<b>NEW:</b> You can now activate Black Arrows to cause all damage dealt to stun non-heroes. 90 second cooldown, reduced by 3 seconds when attacking a structure.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Possession",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "Now a Baseline ability. 25 seconds to restore each charge, 2 seconds cooldown. Max 4 charges.",
+         "html": "Now a Baseline ability. 25 seconds to restore each charge, 2 seconds cooldown. Max 4 charges.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Barbed Shot",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "Bonus damage increased from 350% to 400%.",
+         "html": "Bonus damage increased from 350% to 400%.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Lost Soul",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "REWORK: Reduces the cooldown of Shadow Dagger when attacking non-minions with 3 stacks of Black Arrows by .75 seconds, doubled against Heroes.",
+         "html": "<b>REWORK:</b> Reduces the cooldown of Shadow Dagger when attacking non-minions with 3 stacks of Black Arrows by .75 seconds, doubled against Heroes.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Windrunner",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "Recast window reduced from 5 seconds to 4 seconds.",
+         "html": "Recast window reduced from 5 seconds to 4 seconds.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Black Arrows [D]</strong>\n<ul>\n<li>Black Arrows now refers to what was previously called \"Banshee's Curse\".</li>\n<li>New Baseline Quest: Deal damage to non-minions with 3 stacks of black arrows. At 200 stacks, increased the damage bonus of Black Arrows to 50%. <b>Pinnacle Reward:</b> At 400 stacks, heal for 50% of damage dealt against enemies with 3 stacks of Black Arrows.</li>\n<li>Reduced base damage bonus of Black Arrows to 15%.</li>\n<li>Activatable portion of Black Arrows has been removed.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Unfurling Shadows</strong>\n<ul>\n<li>Talent has been removed.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Unrelenting Torment</strong>\n<ul>\n<li><b>NEW:</b> Increases the damage of Shadow Dagger by 20% and increase its duration by 1 second.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Haunting Arrows</strong>\n<ul>\n<li><b>NEW:</b> You can now activate Black Arrows to cause all damage dealt to stun non-heroes. 90 second cooldown, reduced by 3 seconds when attacking a structure.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Possession</strong>\n<ul>\n<li>Now a Baseline ability. 25 seconds to restore each charge, 2 seconds cooldown. Max 4 charges.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Barbed Shot</strong>\n<ul>\n<li>Bonus damage increased from 350% to 400%.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Lost Soul</strong>\n<ul>\n<li><b>REWORK:</b> Reduces the cooldown of Shadow Dagger when attacking non-minions with 3 stacks of Black Arrows by .75 seconds, doubled against Heroes.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Windrunner</strong>\n<ul>\n<li>Recast window reduced from 5 seconds to 4 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Thrall",
+     "heroId": "Thrall",
+     "heroIds": [
+      "Thrall"
+     ],
+     "changes": [
+      {
+       "name": "Crash Lightning",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "REWORK: Bonuses are now provided at 15 and 30 stacks. At each milestone, Chain Lightning gains 240 damage. Lose 6 stacks on death, but can not lose milestones that have already been completed.",
+         "html": "<b>REWORK:</b> Bonuses are now provided at 15 and 30 stacks. At each milestone, Chain Lightning gains 240 damage. Lose 6 stacks on death, but can not lose milestones that have already been completed.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Echo of the Elements",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "REWORK: Bonuses are now provided at 20/40/100 stacks. At 20 stacks, reduce mana cost of Chain Lightning by 20. At 40 stacks, Chain Lightning will bounce one additional time. Pinnacle Reward: At 100 stacks, Chain Lightning gains an extra charge.",
+         "html": "<b>REWORK:</b> Bonuses are now provided at 20/40/100 stacks. At 20 stacks, reduce mana cost of Chain Lightning by 20. At 40 stacks, Chain Lightning will bounce one additional time. <b>Pinnacle Reward:</b> At 100 stacks, Chain Lightning gains an extra charge.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Rolling Thunder",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Moved to be a Level 7 Talent.",
+         "html": "Moved to be a Level 7 Talent.",
+         "added": false
+        },
+        {
+         "text": "No longer increases Chain Lightning bounces by 1.",
+         "html": "No longer increases Chain Lightning bounces by 1.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Maelstrom Weapon",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "Moved to be a Level 1 Talent.",
+         "html": "Moved to be a Level 1 Talent.",
+         "added": false
+        },
+        {
+         "text": "REWORK: Bonuses are now provided at 20/40/100 stacks, rather than incremental gains. At 20 stacks, gain 20 damage. At 40 stacks, gain 40 damage in addition to the previous benefits. Pinnacle Reward: At 100 stacks, Frostwolf Resilience now provides +200% Healing.",
+         "html": "<b>REWORK:</b> Bonuses are now provided at 20/40/100 stacks, rather than incremental gains. At 20 stacks, gain 20 damage. At 40 stacks, gain 40 damage in addition to the previous benefits. <b>Pinnacle Reward:</b> At 100 stacks, Frostwolf Resilience now provides +200% Healing.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Tempest Fury",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "No longer provides additional quest stacks.",
+         "html": "No longer provides additional quest stacks.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Thunderstorm",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "Increased damage bonus provided at max stacks from 25% to 30%.",
+         "html": "Increased damage bonus provided at max stacks from 25% to 30%.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Wind Rush",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "Cooldown increased from 80 seconds to 90 seconds.",
+         "html": "Cooldown increased from 80 seconds to 90 seconds.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Crash Lightning</strong>\n<ul>\n<li><b>REWORK:</b> Bonuses are now provided at 15 and 30 stacks. At each milestone, Chain Lightning gains 240 damage. Lose 6 stacks on death, but can not lose milestones that have already been completed.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Echo of the Elements</strong>\n<ul>\n<li><b>REWORK:</b> Bonuses are now provided at 20/40/100 stacks. At 20 stacks, reduce mana cost of Chain Lightning by 20. At 40 stacks, Chain Lightning will bounce one additional time. <b>Pinnacle Reward:</b> At 100 stacks, Chain Lightning gains an extra charge.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Rolling Thunder</strong>\n<ul>\n<li>Moved to be a Level 7 Talent.</li>\n<li>No longer increases Chain Lightning bounces by 1.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Maelstrom Weapon</strong>\n<ul>\n<li>Moved to be a Level 1 Talent.</li>\n<li><b>REWORK:</b> Bonuses are now provided at 20/40/100 stacks, rather than incremental gains. At 20 stacks, gain 20 damage. At 40 stacks, gain 40 damage in addition to the previous benefits. <b>Pinnacle Reward:</b> At 100 stacks, Frostwolf Resilience now provides +200% Healing.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Tempest Fury</strong>\n<ul>\n<li>No longer provides additional quest stacks.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Thunderstorm</strong>\n<ul>\n<li>Increased damage bonus provided at max stacks from 25% to 30%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Wind Rush</strong>\n<ul>\n<li>Cooldown increased from 80 seconds to 90 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Zul'jin",
+     "heroId": "Zuljin",
+     "heroIds": [
+      "Zuljin"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Basic Attack damage decreased from 96 to 94.",
+         "html": "Basic Attack damage decreased from 96 to 94.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "You Want Axe?",
+       "key": "D",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "No longer has a cap on stacks.",
+         "html": "No longer has a cap on stacks.",
+         "added": false
+        },
+        {
+         "text": "Now causes Zul'jin to lose 3 stacks (15 hits) on death.",
+         "html": "Now causes Zul'jin to lose 3 stacks (15 hits) on death.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Headhunter",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Increased damage bonus per hero kill from 2% to 2.5%.",
+         "html": "Increased damage bonus per hero kill from 2% to 2.5%.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li>Basic Attack damage decreased from 96 to 94.</li>\n<li><strong class=\"pn-name\">You Want Axe? [D]</strong>\n<ul>\n<li>No longer has a cap on stacks.</li>\n<li>Now causes Zul'jin to lose 3 stacks (15 hits) on death.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Headhunter</strong>\n<ul>\n<li>Increased damage bonus per hero kill from 2% to 2.5%.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    }
+   ],
+   "nameKo": "밸런스 업데이트"
+  },
+  {
+   "name": "Bug Fixes",
+   "key": "bugs",
+   "html": "<h3><strong>Map</strong></h3>\n<ul>\n<li><strong class=\"pn-h\">Blackheart's Bay</strong>\n<ul>\n<li>Fixed an issue that caused the Battleground Objective to not start if a particular chest is the last destroyed chest.</li>\n<li>Fixed an issue that caused the help text for attacking the Treasure Chest to not disappear if a particular chest is attacked.</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Warhead Junction</strong>\n<ul>\n<li>Fixed Warhead Junction Nuke Damage Dealt tracking.</li>\n</ul>\n</li>\n</ul>\n<h3><strong>Heroes</strong></h3>\n<ul>\n<li><strong class=\"pn-h\">D.Va</strong>\n<ul>\n<li>Fixed an issue that caused D.Va's Mech to not respawn with the correct amount of Blackheart's Bay Doubloons.</li>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Defense Matrix [W]</strong>\n<ul>\n<li>Fixed missing icon in D.Va's Quick Cast setting for Retarget Defense Matrix.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Gazlowe</strong>\n<ul>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Firin' Mah Lazors</strong>\n<ul>\n<li>Fixed an issue that caused Firin' Mah Lazorz's warning to not display correctly.</li>\n<li>Fixed an issue that caused Big Top Gazlowe's Firin' Mah Lazorz to create permanent visuals.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Kael'thas</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Living Bomb [W]</strong>\n<ul>\n<li>Living Bomb will not activate its effects on a target that becomes immune to Living Bomb.</li>\n<li>Living Bomb will now apply its effects if the target dies with Living Bomb.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Stukov</strong>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Reactive Ballistospores</strong>\n<ul>\n<li>Fixed Reactive Ballistospores tooltip.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Valla</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Hatred [D]</strong>\n<ul>\n<li>Fixed Hatred Tooltip.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Zagara</strong>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Infest</strong>\n<ul>\n<li>Fixed Infest active current bonus tooltip.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Mutalisk</strong>\n<ul>\n<li>Fixed Mutalisk tooltip.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<p><strong><a href=\"https://us.forums.blizzard.com/en/heroes/\" target=\"_blank\">Click here to discuss this post with other players in the official Heroes of the Storm forums</a>.</strong></p>\n<p><strong><img alt=\"\" class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/g6/G6G0N80EOC941426801305139.png\"/></strong></p>",
+   "items": [
+    {
+     "name": "Blackheart's Bay",
+     "battleground": "blackheart_s_bay",
+     "html": "<strong class=\"pn-h\">Blackheart's Bay</strong>\n<ul>\n<li>Fixed an issue that caused the Battleground Objective to not start if a particular chest is the last destroyed chest.</li>\n<li>Fixed an issue that caused the help text for attacking the Treasure Chest to not disappear if a particular chest is attacked.</li>\n</ul>",
+     "under": "Map"
+    },
+    {
+     "name": "Warhead Junction",
+     "battleground": "warhead_junction",
+     "html": "<strong class=\"pn-h\">Warhead Junction</strong>\n<ul>\n<li>Fixed Warhead Junction Nuke Damage Dealt tracking.</li>\n</ul>",
+     "under": "Map"
+    },
+    {
+     "name": "D.Va",
+     "heroId": "DVa",
+     "heroIds": [
+      "DVa"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">D.Va</strong>\n<ul>\n<li>Fixed an issue that caused D.Va's Mech to not respawn with the correct amount of Blackheart's Bay Doubloons.</li>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Defense Matrix [W]</strong>\n<ul>\n<li>Fixed missing icon in D.Va's Quick Cast setting for Retarget Defense Matrix.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused D.Va's Mech to not respawn with the correct amount of Blackheart's Bay Doubloons.",
+         "html": "Fixed an issue that caused D.Va's Mech to not respawn with the correct amount of Blackheart's Bay Doubloons.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Defense Matrix",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed missing icon in D.Va's Quick Cast setting for Retarget Defense Matrix.",
+         "html": "Fixed missing icon in D.Va's Quick Cast setting for Retarget Defense Matrix.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Gazlowe",
+     "heroId": "Tinker",
+     "heroIds": [
+      "Tinker"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Gazlowe</strong>\n<ul>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Firin' Mah Lazors</strong>\n<ul>\n<li>Fixed an issue that caused Firin' Mah Lazorz's warning to not display correctly.</li>\n<li>Fixed an issue that caused Big Top Gazlowe's Firin' Mah Lazorz to create permanent visuals.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Firin' Mah Lazors",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Firin' Mah Lazorz's warning to not display correctly.",
+         "html": "Fixed an issue that caused Firin' Mah Lazorz's warning to not display correctly.",
+         "added": false
+        },
+        {
+         "text": "Fixed an issue that caused Big Top Gazlowe's Firin' Mah Lazorz to create permanent visuals.",
+         "html": "Fixed an issue that caused Big Top Gazlowe's Firin' Mah Lazorz to create permanent visuals.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Kael'thas",
+     "heroId": "Kaelthas",
+     "heroIds": [
+      "Kaelthas"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Kael'thas</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Living Bomb [W]</strong>\n<ul>\n<li>Living Bomb will not activate its effects on a target that becomes immune to Living Bomb.</li>\n<li>Living Bomb will now apply its effects if the target dies with Living Bomb.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Living Bomb",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Living Bomb will not activate its effects on a target that becomes immune to Living Bomb.",
+         "html": "Living Bomb will not activate its effects on a target that becomes immune to Living Bomb.",
+         "added": false
+        },
+        {
+         "text": "Living Bomb will now apply its effects if the target dies with Living Bomb.",
+         "html": "Living Bomb will now apply its effects if the target dies with Living Bomb.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Stukov",
+     "heroId": "Stukov",
+     "heroIds": [
+      "Stukov"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Stukov</strong>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Reactive Ballistospores</strong>\n<ul>\n<li>Fixed Reactive Ballistospores tooltip.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Reactive Ballistospores",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Fixed Reactive Ballistospores tooltip.",
+         "html": "Fixed Reactive Ballistospores tooltip.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Valla",
+     "heroId": "DemonHunter",
+     "heroIds": [
+      "DemonHunter"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Valla</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Hatred [D]</strong>\n<ul>\n<li>Fixed Hatred Tooltip.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Hatred",
+       "key": "D",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed Hatred Tooltip.",
+         "html": "Fixed Hatred Tooltip.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Zagara",
+     "heroId": "Zagara",
+     "heroIds": [
+      "Zagara"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Zagara</strong>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Infest</strong>\n<ul>\n<li>Fixed Infest active current bonus tooltip.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Mutalisk</strong>\n<ul>\n<li>Fixed Mutalisk tooltip.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Infest",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Fixed Infest active current bonus tooltip.",
+         "html": "Fixed Infest active current bonus tooltip.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Mutalisk",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "Fixed Mutalisk tooltip.",
+         "html": "Fixed Mutalisk tooltip.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "nameKo": "버그 수정"
+  }
+ ],
+ "heroes": [
+  "DVa",
+  "DemonHunter",
+  "Falstad",
+  "Guldan",
+  "Kaelthas",
+  "Kerrigan",
+  "Stukov",
+  "Sylvanas",
+  "Thrall",
+  "Tinker",
+  "Zagara",
+  "Zuljin"
+ ],
+ "battlegrounds": [
+  "alterac_pass",
+  "blackheart_s_bay",
+  "braxis_holdout",
+  "garden_of_terror",
+  "infernal_shrines",
+  "warhead_junction"
+ ],
+ "lang": "en",
+ "newsId": "24242860"
+}

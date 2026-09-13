@@ -1,0 +1,1153 @@
+{
+ "date": "2018-07-31",
+ "kind": "ptr",
+ "title": "히어로즈 오브 더 스톰 공개 테스트 서버 패치 노트 — 2018년 7월 31일",
+ "source": "https://news.blizzard.com/ko-kr/article/21971414/2018-7-31",
+ "published": "2018-07-30T17:00:00Z",
+ "sections": [
+  {
+   "name": "머리말",
+   "key": "intro",
+   "html": "<p>히어로즈 오브 더 스톰의 다음 패치가 공개 테스트 서버에 적용되어 8월 6일까지 이용할 수 있습니다. 공개 테스트 서버에서 게임을 플레이하다가 버그가 눈에 띄면 <a href=\"http://kr.battle.net/heroes/ko/forum/20013840/\">공개 테스트 서버 버그 제보</a> 게시판에 제보를 부탁드립니다.</p>"
+  },
+  {
+   "name": "일반",
+   "key": "general",
+   "html": "<ul>\n<li>클라이언트와 서버 간에 게임 정보를 전송할 때 요구되는 대역폭이 감소했습니다</li>\n<li>다시보기 파일들의 용량이 감소했습니다..</li>\n</ul>"
+  },
+  {
+   "name": "새로운 영웅: 화이트메인",
+   "key": "새로운_영웅_화이트메인",
+   "html": "<p>붉은십자군의 열성적인 종교재판관 샐리 화이트메인은 자신의 투사들을 이끌며 언데드와의 끝없는 전쟁에 나섭니다. 죽음의 역병을 접한 자들은 아무리 저항하더라도 화이트메인이 인도하는 정화의 불길에 사그라들 것입니다.</p>\n<span class=\"pn-h\"><strong>고유 능력 </strong></span>\n<ul>\n<li><span class=\"pn-name\"><strong>열의</strong></span>\n<ul>\n<li>치유 기술이 대상에게 8초 동안 열의를 부여합니다.</li>\n<li>적 영웅에게 피해를 줄 때마다 열의가 부여된 아군의 생명력을 준 피해의 100%만큼 회복시킵니다.</li>\n</ul>\n</li>\n</ul>\n<span class=\"pn-h\"><strong>일반 기술</strong></span>\n<ul>\n<li><span class=\"pn-name\"><strong>절박한 기도 (Q)</strong></span>\n<ul>\n<li>마나: 30</li>\n<li>재사용 대기시간: 없음</li>\n<li>아군 영웅의 생명력을 145 회복시키고, 4초 동안 절박함을 얻습니다.</li>\n<li>절박함은 절박한 기도의 마나 소모량을 60 증가시킵니다. 최대 3회 중첩됩니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>심문 (W)</strong></span>\n<ul>\n<li>정신을 집중하며 적 영웅에게 3초 동안 0.5초마다 53의 피해를 주고 30% 느려지게 합니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>이글거리는 채찍 (E)</strong></span>\n<ul>\n<li>0.5초 후, 일직선상의 적들을 강타하여 82의 피해를 줍니다.</li>\n<li>첫 번째 타격이 적 영웅에게 적중하면 일정 시간 후 두 번째 타격이 발동합니다.</li>\n</ul>\n</li>\n</ul>\n<span class=\"pn-h\"><strong>궁극기</strong></span>\n<ul>\n<li><span class=\"pn-name\"><strong>붉은 가호 (R)</strong></span>\n<ul>\n<li>재사용 대기시간: 60초</li>\n<li>주위 아군 영웅들을 격려하여 250의 생명력을 회복시키고 방어력을 4초 동안 40 증가시킵니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>성스러운 징벌 (R)</strong></span>\n<ul>\n<li>재사용 대기시간: 100초</li>\n<li>1초 후, 대상 지역을 신성화하여 적들에게 4초 동안 0.5초마다 50의 피해를 줍니다.</li>\n</ul>\n</li>\n</ul>"
+  },
+  {
+   "name": "아트",
+   "key": "art",
+   "html": "<ul>\n<li>수집품 메뉴에서 영웅, 스킨, 탈것 플랫폼이 시각적으로 개선되었습니다.</li>\n</ul>"
+  },
+  {
+   "name": "디자인",
+   "key": "디자인",
+   "html": "<span class=\"pn-h\"><strong>소환 기술</strong></span>\n<ul>\n<li>이제 자가라의 바퀴, 아즈모단의 악마 등 소환된 유닛들이 기술 피해를 줍니다. 이는 영웅의 기술 공격력에 따라 증가할 수 있습니다.</li>\n<li>소환된 유닛들이 실명 및 회피 규칙을 따릅니다.</li>\n</ul>"
+  },
+  {
+   "name": "영웅",
+   "key": "heroes",
+   "html": "<table class=\"table table-condensed\">\n<tbody>\n<tr>\n<th></th>\n<th>지원가</th>\n</tr>\n<tr>\n<td>크로미</td>\n<td>스투코프</td>\n</tr>\n</tbody>\n</table>"
+  },
+  {
+   "name": "암살자",
+   "key": "role_assassin",
+   "html": "<h4>크로미</h4>\n<img alt=\"Divider_Hero_Chromie_Crop.png\" data-id=\"20131266\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/MFJDRBHR7RV11463704045342.png\"/>\n<strong class=\"pn-h\">능력치</strong>\n<ul>\n<li>일반 공격 사거리가 5.5에서 7로 증가했습니다.</li>\n</ul>\n<p><font color=\"#9900ff\"><b>기술</b></font></p>\n<ul>\n<li><span class=\"pn-name\"><strong>모래 강타 (Q)</strong></span>\n<ul>\n<li>더는 적 영웅에게 적중해도 공격력이 증가하지 않습니다.</li>\n<li>사거리가 17에서 15로 감소했습니다.</li>\n<li>레벨당 증가하는 공격력이 2%에서 4%로 증가했습니다.</li>\n<li>환영의 레벨당 증가하는 공격력이 2%에서 4%로 증가했습니다.</li>\n<li>시전 시간이 1초에서 0.8초로 감소했습니다.</li>\n<li>마나 소모량이 20에서 15로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>과거의 나, 미래의 나 (모래 강타 퀘스트)</strong></span>\n<ul>\n<li>퀘스트 완료 조건이 60회에서 50회로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>용의 숨결 (W)</strong></span>\n<ul>\n<li>마나 소모량이 70에서 50으로 감소했습니다.</li>\n<li>사거리가 17에서 15로 감소했습니다.</li>\n<li>용의 숨결을 시전하면 0.5초 후에 용의 숨결의 범위가 적에게도 보입니다.</li>\n<li>공격력이 480에서 360으로 감소했습니다.</li>\n<li>재사용 대기시간이 12초에서 9초로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>고유 능력 추가: 청동 발톱</strong></span>\n<ul>\n<li>일반 기술이 적 영웅에게 적중하면 다음 일반 공격이 100%의 추가 피해를 줍니다.</li>\n</ul>\n</li>\n</ul>\n<p><font color=\"#9900ff\"><b>특성</b></font></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>쌓이는 모래 (Q)\n<ul>\n<li>추가된 기능:\n<ul>\n<li>환영의 모래 강타의 공격력이 40% 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>시간여행자의 집념 (사용 효과)\n<ul>\n<li>변경된 기능:\n<ul>\n<li>더는 재생의 구슬을 획득할 때마다 마나 재생량이 증가하지 않습니다. 이제 퀘스트를 완료하면 마나 재생량이 1 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>2레벨</strong></span>\n<ul>\n<li>청동 발톱 (지속 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 용족의 발톱 (고유 능력)</strong>\n<ul>\n<li>청동 발톱의 공격력이 추가로 100% 증가합니다. 모래 강타가 적 영웅에게 적중하면 청동 발톱이 다음 2회의 일반 공격에 적용됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>5레벨</strong></span>\n<ul>\n<li>뫼비우스의 고리 (W)\n<ul>\n<li>새로운 기능:\n<ul>\n<li>용의 숨결이 적 영웅에게 적중하면 재사용 대기시간이 2초 감소하고 소모한 마나를 돌려받습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>시간 후유증 (E)\n<ul>\n<li>감속 효과가 50%에서 35%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>11레벨</strong></span>\n<ul>\n<li>일시 정지 (사용 효과)\n<ul>\n<li>지속 시간이 7초에서 5초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>14레벨</strong></span>\n<ul>\n<li>빨리감기 (Q)\n<ul>\n<li>사거리 요구치가 75%에서 70%로 감소했습니다.</li>\n</ul>\n</li>\n<li>양자 급가속 (사용 효과)\n<ul>\n<li>기술 위력 증가량이 20%에서 25%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>개발자의 의견:</strong> 이번 업데이트에서는 크로미를 상대할 때의 난처함을 줄이면서 크로미 또한 게임마다 더욱 안정적인 모습을 보일 수 있도록 노력했습니다. 우선 크로미를 상대할 때 대처할 여지를 조금 더 두었습니다. 사거리를 감소시켰고 용의 숨결이 시전되면 일정 시간 후 적들도 범위를 볼 수 있게 했죠 이를 상쇄하기 위해 모래 강타의 시전 시간이 감소했고 약간 변형된 청동 발톱 특성을 기본적으로 가지게 되었습니다. 이제 기술 사이에 일반 공격을 적절히 조합 하는 게 더욱 중요해졌죠. 청동 발톱을 고유 능력에 추가한 이유는 크로미가 상대편과 더 많이 상호작용하는 것을 바랐기 때문입니다. 이전보다 위험한 위치에서 적을 공격해야 하지만 그만큼 더욱 많은 피해를 줄 수 있도록 변경했습니다. 긴 사거리와 폭발적인 공격력을 약간 감소시켜 상대편이 대처할 여지를 더 두는 거죠. 초장거리 마법사형 영웅이라는 크로미의 고유한 역할과 크로미를 상대할 때 위치 선정에 각별히 신경을 써야 한다는 점은 만족스럽지만, 오랜 시간 동안 확인한 결과 지금은 사거리와 폭발적인 공격력이 너무 과해 상대편 입장에서는 재밌는 경험을 하기가 어려웠습니다. 이번 변화는 내부 테스트에서도 큰 인기를 누렸지만 필요에 따라 추가적인 조치 또한 계획할 것입니다. </blockquote>",
+   "heroes": [
+    {
+     "name": "크로미",
+     "heroId": "Chromie",
+     "heroIds": [
+      "Chromie"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "일반 공격 사거리가 5.5에서 7로 증가했습니다.",
+         "html": "일반 공격 사거리가 5.5에서 7로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "모래 강타",
+       "key": "Q",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "더는 적 영웅에게 적중해도 공격력이 증가하지 않습니다.",
+         "html": "더는 적 영웅에게 적중해도 공격력이 증가하지 않습니다.",
+         "added": false
+        },
+        {
+         "text": "사거리가 17에서 15로 감소했습니다.",
+         "html": "사거리가 17에서 15로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "레벨당 증가하는 공격력이 2%에서 4%로 증가했습니다.",
+         "html": "레벨당 증가하는 공격력이 2%에서 4%로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "환영의 레벨당 증가하는 공격력이 2%에서 4%로 증가했습니다.",
+         "html": "환영의 레벨당 증가하는 공격력이 2%에서 4%로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "시전 시간이 1초에서 0.8초로 감소했습니다.",
+         "html": "시전 시간이 1초에서 0.8초로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "마나 소모량이 20에서 15로 감소했습니다.",
+         "html": "마나 소모량이 20에서 15로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "과거의 나, 미래의 나",
+       "key": "모래 강타 퀘스트",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "퀘스트 완료 조건이 60회에서 50회로 감소했습니다.",
+         "html": "퀘스트 완료 조건이 60회에서 50회로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "용의 숨결",
+       "key": "W",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "마나 소모량이 70에서 50으로 감소했습니다.",
+         "html": "마나 소모량이 70에서 50으로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "사거리가 17에서 15로 감소했습니다.",
+         "html": "사거리가 17에서 15로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "용의 숨결을 시전하면 0.5초 후에 용의 숨결의 범위가 적에게도 보입니다.",
+         "html": "용의 숨결을 시전하면 0.5초 후에 용의 숨결의 범위가 적에게도 보입니다.",
+         "added": false
+        },
+        {
+         "text": "공격력이 480에서 360으로 감소했습니다.",
+         "html": "공격력이 480에서 360으로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "재사용 대기시간이 12초에서 9초로 감소했습니다.",
+         "html": "재사용 대기시간이 12초에서 9초로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "고유 능력 추가: 청동 발톱",
+       "key": null,
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "일반 기술이 적 영웅에게 적중하면 다음 일반 공격이 100%의 추가 피해를 줍니다.",
+         "html": "일반 기술이 적 영웅에게 적중하면 다음 일반 공격이 100%의 추가 피해를 줍니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "쌓이는 모래",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": []
+      },
+      {
+       "name": "추가된 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "환영의 모래 강타의 공격력이 40% 증가합니다.",
+         "html": "환영의 모래 강타의 공격력이 40% 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "시간여행자의 집념",
+       "key": "사용 효과",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": []
+      },
+      {
+       "name": "변경된 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "더는 재생의 구슬을 획득할 때마다 마나 재생량이 증가하지 않습니다. 이제 퀘스트를 완료하면 마나 재생량이 1 증가합니다.",
+         "html": "더는 재생의 구슬을 획득할 때마다 마나 재생량이 증가하지 않습니다. 이제 퀘스트를 완료하면 마나 재생량이 1 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "청동 발톱",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 2,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 특성: 용족의 발톱",
+       "key": "고유 능력",
+       "new": false,
+       "group": "talent",
+       "level": 2,
+       "lines": [
+        {
+         "text": "청동 발톱의 공격력이 추가로 100% 증가합니다. 모래 강타가 적 영웅에게 적중하면 청동 발톱이 다음 2회의 일반 공격에 적용됩니다.",
+         "html": "청동 발톱의 공격력이 추가로 100% 증가합니다. 모래 강타가 적 영웅에게 적중하면 청동 발톱이 다음 2회의 일반 공격에 적용됩니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "뫼비우스의 고리",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 5,
+       "lines": []
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 5,
+       "lines": [
+        {
+         "text": "용의 숨결이 적 영웅에게 적중하면 재사용 대기시간이 2초 감소하고 소모한 마나를 돌려받습니다.",
+         "html": "용의 숨결이 적 영웅에게 적중하면 재사용 대기시간이 2초 감소하고 소모한 마나를 돌려받습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "시간 후유증",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 5,
+       "lines": [
+        {
+         "text": "감속 효과가 50%에서 35%로 감소했습니다.",
+         "html": "감속 효과가 50%에서 35%로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "일시 정지",
+       "key": "사용 효과",
+       "new": false,
+       "group": "talent",
+       "level": 11,
+       "lines": [
+        {
+         "text": "지속 시간이 7초에서 5초로 감소했습니다.",
+         "html": "지속 시간이 7초에서 5초로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "빨리감기",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 14,
+       "lines": [
+        {
+         "text": "사거리 요구치가 75%에서 70%로 감소했습니다.",
+         "html": "사거리 요구치가 75%에서 70%로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "양자 급가속",
+       "key": "사용 효과",
+       "new": false,
+       "group": "talent",
+       "level": 14,
+       "lines": [
+        {
+         "text": "기술 위력 증가량이 20%에서 25%로 증가했습니다.",
+         "html": "기술 위력 증가량이 20%에서 25%로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<img alt=\"Divider_Hero_Chromie_Crop.png\" data-id=\"20131266\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/MFJDRBHR7RV11463704045342.png\"/>\n<strong class=\"pn-h\">능력치</strong>\n<ul>\n<li>일반 공격 사거리가 5.5에서 7로 증가했습니다.</li>\n</ul>\n<p><font color=\"#9900ff\"><b>기술</b></font></p>\n<ul>\n<li><span class=\"pn-name\"><strong>모래 강타 (Q)</strong></span>\n<ul>\n<li>더는 적 영웅에게 적중해도 공격력이 증가하지 않습니다.</li>\n<li>사거리가 17에서 15로 감소했습니다.</li>\n<li>레벨당 증가하는 공격력이 2%에서 4%로 증가했습니다.</li>\n<li>환영의 레벨당 증가하는 공격력이 2%에서 4%로 증가했습니다.</li>\n<li>시전 시간이 1초에서 0.8초로 감소했습니다.</li>\n<li>마나 소모량이 20에서 15로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>과거의 나, 미래의 나 (모래 강타 퀘스트)</strong></span>\n<ul>\n<li>퀘스트 완료 조건이 60회에서 50회로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>용의 숨결 (W)</strong></span>\n<ul>\n<li>마나 소모량이 70에서 50으로 감소했습니다.</li>\n<li>사거리가 17에서 15로 감소했습니다.</li>\n<li>용의 숨결을 시전하면 0.5초 후에 용의 숨결의 범위가 적에게도 보입니다.</li>\n<li>공격력이 480에서 360으로 감소했습니다.</li>\n<li>재사용 대기시간이 12초에서 9초로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>고유 능력 추가: 청동 발톱</strong></span>\n<ul>\n<li>일반 기술이 적 영웅에게 적중하면 다음 일반 공격이 100%의 추가 피해를 줍니다.</li>\n</ul>\n</li>\n</ul>\n<p><font color=\"#9900ff\"><b>특성</b></font></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>쌓이는 모래 (Q)\n<ul>\n<li>추가된 기능:\n<ul>\n<li>환영의 모래 강타의 공격력이 40% 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>시간여행자의 집념 (사용 효과)\n<ul>\n<li>변경된 기능:\n<ul>\n<li>더는 재생의 구슬을 획득할 때마다 마나 재생량이 증가하지 않습니다. 이제 퀘스트를 완료하면 마나 재생량이 1 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>2레벨</strong></span>\n<ul>\n<li>청동 발톱 (지속 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 용족의 발톱 (고유 능력)</strong>\n<ul>\n<li>청동 발톱의 공격력이 추가로 100% 증가합니다. 모래 강타가 적 영웅에게 적중하면 청동 발톱이 다음 2회의 일반 공격에 적용됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>5레벨</strong></span>\n<ul>\n<li>뫼비우스의 고리 (W)\n<ul>\n<li>새로운 기능:\n<ul>\n<li>용의 숨결이 적 영웅에게 적중하면 재사용 대기시간이 2초 감소하고 소모한 마나를 돌려받습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>시간 후유증 (E)\n<ul>\n<li>감속 효과가 50%에서 35%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>11레벨</strong></span>\n<ul>\n<li>일시 정지 (사용 효과)\n<ul>\n<li>지속 시간이 7초에서 5초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>14레벨</strong></span>\n<ul>\n<li>빨리감기 (Q)\n<ul>\n<li>사거리 요구치가 75%에서 70%로 감소했습니다.</li>\n</ul>\n</li>\n<li>양자 급가속 (사용 효과)\n<ul>\n<li>기술 위력 증가량이 20%에서 25%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>개발자의 의견:</strong> 이번 업데이트에서는 크로미를 상대할 때의 난처함을 줄이면서 크로미 또한 게임마다 더욱 안정적인 모습을 보일 수 있도록 노력했습니다. 우선 크로미를 상대할 때 대처할 여지를 조금 더 두었습니다. 사거리를 감소시켰고 용의 숨결이 시전되면 일정 시간 후 적들도 범위를 볼 수 있게 했죠 이를 상쇄하기 위해 모래 강타의 시전 시간이 감소했고 약간 변형된 청동 발톱 특성을 기본적으로 가지게 되었습니다. 이제 기술 사이에 일반 공격을 적절히 조합 하는 게 더욱 중요해졌죠. 청동 발톱을 고유 능력에 추가한 이유는 크로미가 상대편과 더 많이 상호작용하는 것을 바랐기 때문입니다. 이전보다 위험한 위치에서 적을 공격해야 하지만 그만큼 더욱 많은 피해를 줄 수 있도록 변경했습니다. 긴 사거리와 폭발적인 공격력을 약간 감소시켜 상대편이 대처할 여지를 더 두는 거죠. 초장거리 마법사형 영웅이라는 크로미의 고유한 역할과 크로미를 상대할 때 위치 선정에 각별히 신경을 써야 한다는 점은 만족스럽지만, 오랜 시간 동안 확인한 결과 지금은 사거리와 폭발적인 공격력이 너무 과해 상대편 입장에서는 재밌는 경험을 하기가 어려웠습니다. 이번 변화는 내부 테스트에서도 큰 인기를 누렸지만 필요에 따라 추가적인 조치 또한 계획할 것입니다. </blockquote>"
+    }
+   ]
+  },
+  {
+   "name": "지원가",
+   "key": "role_support",
+   "html": "<h4>스투코프</h4>\n<img alt=\"Divider_Hero_Stukov.png\" data-id=\"20888364\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/HVLATI65JATJ1498610396437.png\"/>\n<strong class=\"pn-h\">특성</strong>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>탐식 (E)\n<ul>\n<li>13레벨에서 옮겨졌습니다.</li>\n<li>추가 공격력이 150%에서 100%로 감소했습니다.</li>\n</ul>\n</li>\n<li>터지는 고름 (D)\n<ul>\n<li>퀘스트가 삭제되었습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>독성 고름의 지속 시간이 1.5초 이하로 남았을 때 감염체 폭발을 사용하면 감염체 폭발의 공격력이 100% 증가하고 주위 적들에게도 피해를 주고 느려지게 합니다.</li>\n</ul>\n</li>\n<li>폭발 반경이 4.5에서 3.75로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>생체 갑옷 (Q)\n<ul>\n<li>물리 방어력 증가량이 50에서 15로 감소했습니다.</li>\n<li>치유성 병원균이 활성화된 모든 대상에게 적용됩니다.</li>\n<li>추가된 기능:\n<ul>\n<li>감염체 폭발로 치유성 병원균을 폭발시키면 대상들의 방어력이 2.5초 동안 50 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>왕성한 재섭취 (D)\n<ul>\n<li>퀘스트가 삭제되었습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>치유성 병원균을 3개 이상 폭발시키면 감염체 폭발의 치유량이 25% 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>7레벨</strong></span>\n<ul>\n<li>내 손바닥 안이지 (E)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>전력 투구 (W)\n<ul>\n<li>사거리 증가량이 100%에서 50%로 감소했습니다.</li>\n<li>추가된 기능:\n<ul>\n<li>독성 고름을 2개 이상 폭발시키면 감염체 폭발과 일반 기술의 재사용 대기시간이 3초 동안 100% 더 빨리 감소합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>퍼져가는 감염 (E)\n<ul>\n<li>1레벨에서 옮겨졌습니다.</li>\n<li>더는 스멀거리는 팔의 재사용 대기시간을 증가시키지 않습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>스멀거리는 팔의 최대 지속 시간이 4초로 감소합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>13레벨</strong></span>\n<ul>\n<li>왼쪽이가 굶주렸다 (E)\n<ul>\n<li>7레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>스멀거리는 팔의 사거리가 20% 증가합니다. 스멀거리는 팔이 적 영웅들에게 15회 이상 피해를 주면 재사용 대기시간이 초기화되고 소모한 마나를 돌려받습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>20레벨</strong></span>\n<ul>\n<li>밀어서 사지 해체 (R)\n<ul>\n<li>더는 속도가 증가하지 않습니다.</li>\n<li>추가된 기능:\n<ul>\n<li>대상이 지형에 부딪힐 때 이동 속도를 4초 동안 50% 감소시킵니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>건강한 숙주 (Q)\n<ul>\n<li>4레벨에서 옮겨졌습니다.</li>\n<li>추가 치유량이 50%에서 30%로 감소했습니다.</li>\n<li>변경된 기능:\n<ul>\n<li>치유성 병원균이 활성화된 모든 대상에게 적용됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>개발자의 의견:</strong> 캘타스와 마찬가지로 스투코프 또한 더욱 다양한 특성을 사용하는 걸 원했습니다. 여러 특성, 특히 초반 특성들의 기능을 바꿔 새로운 특성 조합과 플레이 스타일이 형성되길 바랍니다. </blockquote>",
+   "heroes": [
+    {
+     "name": "스투코프",
+     "heroId": "Stukov",
+     "heroIds": [
+      "Stukov"
+     ],
+     "changes": [
+      {
+       "name": "탐식",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "13레벨에서 옮겨졌습니다.",
+         "html": "13레벨에서 옮겨졌습니다.",
+         "added": false
+        },
+        {
+         "text": "추가 공격력이 150%에서 100%로 감소했습니다.",
+         "html": "추가 공격력이 150%에서 100%로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "터지는 고름",
+       "key": "D",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "퀘스트가 삭제되었습니다.",
+         "html": "퀘스트가 삭제되었습니다.",
+         "added": false
+        },
+        {
+         "text": "폭발 반경이 4.5에서 3.75로 감소했습니다.",
+         "html": "폭발 반경이 4.5에서 3.75로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "독성 고름의 지속 시간이 1.5초 이하로 남았을 때 감염체 폭발을 사용하면 감염체 폭발의 공격력이 100% 증가하고 주위 적들에게도 피해를 주고 느려지게 합니다.",
+         "html": "독성 고름의 지속 시간이 1.5초 이하로 남았을 때 감염체 폭발을 사용하면 감염체 폭발의 공격력이 100% 증가하고 주위 적들에게도 피해를 주고 느려지게 합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "생체 갑옷",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "물리 방어력 증가량이 50에서 15로 감소했습니다.",
+         "html": "물리 방어력 증가량이 50에서 15로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "치유성 병원균이 활성화된 모든 대상에게 적용됩니다.",
+         "html": "치유성 병원균이 활성화된 모든 대상에게 적용됩니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "추가된 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "감염체 폭발로 치유성 병원균을 폭발시키면 대상들의 방어력이 2.5초 동안 50 증가합니다.",
+         "html": "감염체 폭발로 치유성 병원균을 폭발시키면 대상들의 방어력이 2.5초 동안 50 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "왕성한 재섭취",
+       "key": "D",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "퀘스트가 삭제되었습니다.",
+         "html": "퀘스트가 삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "치유성 병원균을 3개 이상 폭발시키면 감염체 폭발의 치유량이 25% 증가합니다.",
+         "html": "치유성 병원균을 3개 이상 폭발시키면 감염체 폭발의 치유량이 25% 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "내 손바닥 안이지",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "전력 투구",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "사거리 증가량이 100%에서 50%로 감소했습니다.",
+         "html": "사거리 증가량이 100%에서 50%로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "추가된 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "독성 고름을 2개 이상 폭발시키면 감염체 폭발과 일반 기술의 재사용 대기시간이 3초 동안 100% 더 빨리 감소합니다.",
+         "html": "독성 고름을 2개 이상 폭발시키면 감염체 폭발과 일반 기술의 재사용 대기시간이 3초 동안 100% 더 빨리 감소합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "퍼져가는 감염",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "1레벨에서 옮겨졌습니다.",
+         "html": "1레벨에서 옮겨졌습니다.",
+         "added": false
+        },
+        {
+         "text": "더는 스멀거리는 팔의 재사용 대기시간을 증가시키지 않습니다.",
+         "html": "더는 스멀거리는 팔의 재사용 대기시간을 증가시키지 않습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "스멀거리는 팔의 최대 지속 시간이 4초로 감소합니다.",
+         "html": "스멀거리는 팔의 최대 지속 시간이 4초로 감소합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "왼쪽이가 굶주렸다",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "7레벨에서 옮겨졌습니다.",
+         "html": "7레벨에서 옮겨졌습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "스멀거리는 팔의 사거리가 20% 증가합니다. 스멀거리는 팔이 적 영웅들에게 15회 이상 피해를 주면 재사용 대기시간이 초기화되고 소모한 마나를 돌려받습니다.",
+         "html": "스멀거리는 팔의 사거리가 20% 증가합니다. 스멀거리는 팔이 적 영웅들에게 15회 이상 피해를 주면 재사용 대기시간이 초기화되고 소모한 마나를 돌려받습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "밀어서 사지 해체",
+       "key": "R",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "더는 속도가 증가하지 않습니다.",
+         "html": "더는 속도가 증가하지 않습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "추가된 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "대상이 지형에 부딪힐 때 이동 속도를 4초 동안 50% 감소시킵니다.",
+         "html": "대상이 지형에 부딪힐 때 이동 속도를 4초 동안 50% 감소시킵니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "건강한 숙주",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "4레벨에서 옮겨졌습니다.",
+         "html": "4레벨에서 옮겨졌습니다.",
+         "added": false
+        },
+        {
+         "text": "추가 치유량이 50%에서 30%로 감소했습니다.",
+         "html": "추가 치유량이 50%에서 30%로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "변경된 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "치유성 병원균이 활성화된 모든 대상에게 적용됩니다.",
+         "html": "치유성 병원균이 활성화된 모든 대상에게 적용됩니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<img alt=\"Divider_Hero_Stukov.png\" data-id=\"20888364\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/HVLATI65JATJ1498610396437.png\"/>\n<strong class=\"pn-h\">특성</strong>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>탐식 (E)\n<ul>\n<li>13레벨에서 옮겨졌습니다.</li>\n<li>추가 공격력이 150%에서 100%로 감소했습니다.</li>\n</ul>\n</li>\n<li>터지는 고름 (D)\n<ul>\n<li>퀘스트가 삭제되었습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>독성 고름의 지속 시간이 1.5초 이하로 남았을 때 감염체 폭발을 사용하면 감염체 폭발의 공격력이 100% 증가하고 주위 적들에게도 피해를 주고 느려지게 합니다.</li>\n</ul>\n</li>\n<li>폭발 반경이 4.5에서 3.75로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>생체 갑옷 (Q)\n<ul>\n<li>물리 방어력 증가량이 50에서 15로 감소했습니다.</li>\n<li>치유성 병원균이 활성화된 모든 대상에게 적용됩니다.</li>\n<li>추가된 기능:\n<ul>\n<li>감염체 폭발로 치유성 병원균을 폭발시키면 대상들의 방어력이 2.5초 동안 50 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>왕성한 재섭취 (D)\n<ul>\n<li>퀘스트가 삭제되었습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>치유성 병원균을 3개 이상 폭발시키면 감염체 폭발의 치유량이 25% 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>7레벨</strong></span>\n<ul>\n<li>내 손바닥 안이지 (E)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>전력 투구 (W)\n<ul>\n<li>사거리 증가량이 100%에서 50%로 감소했습니다.</li>\n<li>추가된 기능:\n<ul>\n<li>독성 고름을 2개 이상 폭발시키면 감염체 폭발과 일반 기술의 재사용 대기시간이 3초 동안 100% 더 빨리 감소합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>퍼져가는 감염 (E)\n<ul>\n<li>1레벨에서 옮겨졌습니다.</li>\n<li>더는 스멀거리는 팔의 재사용 대기시간을 증가시키지 않습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>스멀거리는 팔의 최대 지속 시간이 4초로 감소합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>13레벨</strong></span>\n<ul>\n<li>왼쪽이가 굶주렸다 (E)\n<ul>\n<li>7레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>스멀거리는 팔의 사거리가 20% 증가합니다. 스멀거리는 팔이 적 영웅들에게 15회 이상 피해를 주면 재사용 대기시간이 초기화되고 소모한 마나를 돌려받습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>20레벨</strong></span>\n<ul>\n<li>밀어서 사지 해체 (R)\n<ul>\n<li>더는 속도가 증가하지 않습니다.</li>\n<li>추가된 기능:\n<ul>\n<li>대상이 지형에 부딪힐 때 이동 속도를 4초 동안 50% 감소시킵니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>건강한 숙주 (Q)\n<ul>\n<li>4레벨에서 옮겨졌습니다.</li>\n<li>추가 치유량이 50%에서 30%로 감소했습니다.</li>\n<li>변경된 기능:\n<ul>\n<li>치유성 병원균이 활성화된 모든 대상에게 적용됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>개발자의 의견:</strong> 캘타스와 마찬가지로 스투코프 또한 더욱 다양한 특성을 사용하는 걸 원했습니다. 여러 특성, 특히 초반 특성들의 기능을 바꿔 새로운 특성 조합과 플레이 스타일이 형성되길 바랍니다. </blockquote>"
+    }
+   ]
+  },
+  {
+   "name": "수집품",
+   "key": "collection",
+   "html": "<span class=\"pn-h\"><strong>새로운 묶음 상품</strong></span>\n<ul>\n<li>다음 묶음 상품을 한정된 기간 동안 구매하실 수 있습니다! 최근에 게시된 <a href=\"https://kr.heroesofthestorm.com/ko-kr/blog/21992993\">블로그 게시글</a>에서 자세한 정보를 알아보세요.\n<ul>\n<li>독사단에게 굴복해라 묶음 상품</li>\n<li>화이트메인 영웅 묶음 상품</li>\n<li>살무사 아나 스킨 팩</li>\n<li>독사단장 스투코프 스킨 팩</li>\n<li>죽음송곳니 겐지 스킨 팩</li>\n</ul>\n</li>\n</ul>\n<span class=\"pn-h\"><strong>새로운 아나운서</strong></span>\n<ul>\n<li>화이트메인</li>\n</ul>\n<span class=\"pn-h\"><strong>새로운 스킨</strong></span>\n<ul>\n<li><span class=\"pn-name\"><strong>화이트메인</strong></span>\n<ul>\n<li>붉은 화이트메인</li>\n<li>황혼의 화이트메인</li>\n<li>천공의 여제 화이트메인</li>\n<li>은하계 여제 화이트메인</li>\n<li>시공간 여제 화이트메인</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>아나</strong></span>\n<ul>\n<li>살무사 아나</li>\n<li>치명적인 살무사 아나</li>\n<li>극지 살무사 아나</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>스투코프</strong></span>\n<ul>\n<li>독사단장 스투코프</li>\n<li>치명적인 독사단장 스투코프</li>\n<li>극지 독사단장 스투코프</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>겐지</strong></span>\n<ul>\n<li>죽음송곳니 겐지</li>\n<li>치명적인 죽음송곳니 겐지</li>\n<li>극지 죽음송곳니 겐지</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>무라딘</strong></span>\n<ul>\n<li>버터 스카치 사탕왕 무라딘</li>\n<li>설탕가득 사탕왕 무라딘</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>루나라</strong></span>\n<ul>\n<li>에메랄드 루나라</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>머키</strong></span>\n<ul>\n<li>흰줄무늬 머키</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>첸</strong></span>\n<ul>\n<li>순백의 첸</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>크로미</strong></span>\n<ul>\n<li>흑요석 크로미</li>\n</ul>\n</li>\n</ul>\n<span class=\"pn-h\"><strong>새로운 탈것</strong></span>\n<ul>\n<li><span class=\"pn-name\"><strong>독사단 통솔자</strong></span>\n<ul>\n<li>위험한 독사단 통솔자</li>\n<li>치명적인 독사단 통솔자</li>\n</ul>\n</li>\n</ul>\n<strong class=\"pn-h\">새로운 초상화, 스프레이, 이모티콘</strong>\n<ul>\n<li>여러 가지 이모티콘 팩과 초상화가 게임에 추가되었습니다. 최근에 게시된 <a href=\"https://kr.heroesofthestorm.com/ko-kr/blog/21992993\">블로그 게시글</a>에서 자세한 정보를 알아보세요.</li>\n</ul>",
+   "items": [
+    {
+     "name": "화이트메인",
+     "heroId": "Whitemane",
+     "heroIds": [
+      "Whitemane"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>화이트메인</strong></span>\n<ul>\n<li>붉은 화이트메인</li>\n<li>황혼의 화이트메인</li>\n<li>천공의 여제 화이트메인</li>\n<li>은하계 여제 화이트메인</li>\n<li>시공간 여제 화이트메인</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "붉은 화이트메인",
+         "html": "붉은 화이트메인",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "황혼의 화이트메인",
+         "html": "황혼의 화이트메인",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "천공의 여제 화이트메인",
+         "html": "천공의 여제 화이트메인",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "은하계 여제 화이트메인",
+         "html": "은하계 여제 화이트메인",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "시공간 여제 화이트메인",
+         "html": "시공간 여제 화이트메인",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "아나",
+     "heroId": "Ana",
+     "heroIds": [
+      "Ana"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>아나</strong></span>\n<ul>\n<li>살무사 아나</li>\n<li>치명적인 살무사 아나</li>\n<li>극지 살무사 아나</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "살무사 아나",
+         "html": "살무사 아나",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "치명적인 살무사 아나",
+         "html": "치명적인 살무사 아나",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "극지 살무사 아나",
+         "html": "극지 살무사 아나",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "스투코프",
+     "heroId": "Stukov",
+     "heroIds": [
+      "Stukov"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>스투코프</strong></span>\n<ul>\n<li>독사단장 스투코프</li>\n<li>치명적인 독사단장 스투코프</li>\n<li>극지 독사단장 스투코프</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "독사단장 스투코프",
+         "html": "독사단장 스투코프",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "치명적인 독사단장 스투코프",
+         "html": "치명적인 독사단장 스투코프",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "극지 독사단장 스투코프",
+         "html": "극지 독사단장 스투코프",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "겐지",
+     "heroId": "Genji",
+     "heroIds": [
+      "Genji"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>겐지</strong></span>\n<ul>\n<li>죽음송곳니 겐지</li>\n<li>치명적인 죽음송곳니 겐지</li>\n<li>극지 죽음송곳니 겐지</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "죽음송곳니 겐지",
+         "html": "죽음송곳니 겐지",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "치명적인 죽음송곳니 겐지",
+         "html": "치명적인 죽음송곳니 겐지",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "극지 죽음송곳니 겐지",
+         "html": "극지 죽음송곳니 겐지",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "무라딘",
+     "heroId": "Muradin",
+     "heroIds": [
+      "Muradin"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>무라딘</strong></span>\n<ul>\n<li>버터 스카치 사탕왕 무라딘</li>\n<li>설탕가득 사탕왕 무라딘</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "버터 스카치 사탕왕 무라딘",
+         "html": "버터 스카치 사탕왕 무라딘",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "설탕가득 사탕왕 무라딘",
+         "html": "설탕가득 사탕왕 무라딘",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "루나라",
+     "heroId": "Dryad",
+     "heroIds": [
+      "Dryad"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>루나라</strong></span>\n<ul>\n<li>에메랄드 루나라</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "에메랄드 루나라",
+         "html": "에메랄드 루나라",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "머키",
+     "heroId": "Murky",
+     "heroIds": [
+      "Murky"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>머키</strong></span>\n<ul>\n<li>흰줄무늬 머키</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "흰줄무늬 머키",
+         "html": "흰줄무늬 머키",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "첸",
+     "heroId": "Chen",
+     "heroIds": [
+      "Chen"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>첸</strong></span>\n<ul>\n<li>순백의 첸</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "순백의 첸",
+         "html": "순백의 첸",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "크로미",
+     "heroId": "Chromie",
+     "heroIds": [
+      "Chromie"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>크로미</strong></span>\n<ul>\n<li>흑요석 크로미</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "흑요석 크로미",
+         "html": "흑요석 크로미",
+         "added": false
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "버그 수정",
+   "key": "bugs",
+   "html": "<span class=\"pn-h\"><strong>일반</strong></span>\n<ul>\n<li>게임의 여러 부분에 걸쳐 몇몇 오타와 설명 오류가 수정되었습니다.</li>\n<li>마우스 오른쪽 버튼을 계속 누르고 있으면 일부 기술들이 반복적으로 시전될 수 있던 문제를 수정했습니다.</li>\n<li><strong>빠른 시전: </strong>끌어서 사용하는 일부 기술들이 빠른 시전을 항상 활성화한 것처럼 작동하던 문제를 수정했습니다.</li>\n</ul>\n<span class=\"pn-h\"><strong>소리</strong></span>\n<ul>\n<li>알라라크 아나운서 팩의 음량을 높였습니다.</li>\n</ul>\n<span class=\"pn-h\"><strong>아트</strong></span>\n<ul>\n<li><strong>디아블로:</strong> 디아블로의 꼬리의 구조를 수정했습니다.</li>\n</ul>\n<span class=\"pn-h\"><strong>전장</strong></span>\n<ul>\n<li><strong>알터랙 고개: </strong>기병대의 오라 효과가 낮은 품질의 그래픽에서 보이지 않던 문제를 수정했습니다.</li>\n</ul>\n<span class=\"pn-h\"><strong>영웅, 기술, 특성</strong></span>\n<ul>\n<li><strong>한조: </strong>표적 연습 퀘스트 추적기가 폭풍활이 3회 적중한 대상과 1회도 적중하지 않은 대상을 구분해서 나타냅니다.</li>\n<li><strong>레오릭:</strong> 불길한 명령의 시각 효과가 영웅에게서 나타나지 않을 수 있던 문제를 수정했습니다.</li>\n<li><strong>모랄레스</strong> <strong>중위:</strong> 치료 광선으로 시간 정지 상태인 대상을 치료할 수 있던 문제를 수정했습니다.</li>\n<li><strong>메디브:</strong> 칠흑의 대학자 메디브의 까마귀가 스킨의 색감에 맞게 변경되었습니다.</li>\n<li><strong>메디브:</strong> 이제 까마귀 형상인 메디브를 선택하여 대상 정보창을 확인할 수 있습니다.</li>\n<li><strong>메디브:</strong> 차원문 특화 차원문 또한 재사용 대기시간 감소 효과를 정상적으로 받습니다.</li>\n</ul>\n<p><strong><a href=\"https://kr.battle.net/forums/heroes/index\" target=\"_blank\">여기를 클릭하면 히어로즈 오브 더 스톰 공식 토론장에서 다른 플레이어들과 이 게시글에 대한 의견을 나눌 수 있습니다</a>.</strong></p>\n<p><img alt=\"\" class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/g6/G6G0N80EOC941426801305139.png\"/></p>\n<p><img alt=\"InvisibleDividerLine_800x50.png\" class=\"no-border; no-shadow\" data-id=\"14509591\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/6VA2831Q81IU1403137406234.png\"/></p>",
+   "items": [
+    {
+     "name": "디아블로",
+     "heroId": "Diablo",
+     "heroIds": [
+      "Diablo"
+     ],
+     "under": null,
+     "html": "<strong>디아블로:</strong> 디아블로의 꼬리의 구조를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "디아블로: 디아블로의 꼬리의 구조를 수정했습니다.",
+         "html": "<strong>디아블로:</strong> 디아블로의 꼬리의 구조를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "한조",
+     "heroId": "Hanzo",
+     "heroIds": [
+      "Hanzo"
+     ],
+     "under": null,
+     "html": "<strong>한조: </strong>표적 연습 퀘스트 추적기가 폭풍활이 3회 적중한 대상과 1회도 적중하지 않은 대상을 구분해서 나타냅니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "한조: 표적 연습 퀘스트 추적기가 폭풍활이 3회 적중한 대상과 1회도 적중하지 않은 대상을 구분해서 나타냅니다.",
+         "html": "<strong>한조: </strong>표적 연습 퀘스트 추적기가 폭풍활이 3회 적중한 대상과 1회도 적중하지 않은 대상을 구분해서 나타냅니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "레오릭",
+     "heroId": "Leoric",
+     "heroIds": [
+      "Leoric"
+     ],
+     "under": null,
+     "html": "<strong>레오릭:</strong> 불길한 명령의 시각 효과가 영웅에게서 나타나지 않을 수 있던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "레오릭: 불길한 명령의 시각 효과가 영웅에게서 나타나지 않을 수 있던 문제를 수정했습니다.",
+         "html": "<strong>레오릭:</strong> 불길한 명령의 시각 효과가 영웅에게서 나타나지 않을 수 있던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "메디브",
+     "heroId": "Medivh",
+     "heroIds": [
+      "Medivh"
+     ],
+     "under": null,
+     "html": "<strong>메디브:</strong> 칠흑의 대학자 메디브의 까마귀가 스킨의 색감에 맞게 변경되었습니다.<strong>메디브:</strong> 이제 까마귀 형상인 메디브를 선택하여 대상 정보창을 확인할 수 있습니다.<strong>메디브:</strong> 차원문 특화 차원문 또한 재사용 대기시간 감소 효과를 정상적으로 받습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "메디브: 칠흑의 대학자 메디브의 까마귀가 스킨의 색감에 맞게 변경되었습니다.",
+         "html": "<strong>메디브:</strong> 칠흑의 대학자 메디브의 까마귀가 스킨의 색감에 맞게 변경되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "메디브: 이제 까마귀 형상인 메디브를 선택하여 대상 정보창을 확인할 수 있습니다.",
+         "html": "<strong>메디브:</strong> 이제 까마귀 형상인 메디브를 선택하여 대상 정보창을 확인할 수 있습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "메디브: 차원문 특화 차원문 또한 재사용 대기시간 감소 효과를 정상적으로 받습니다.",
+         "html": "<strong>메디브:</strong> 차원문 특화 차원문 또한 재사용 대기시간 감소 효과를 정상적으로 받습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "heroes": [
+  "Ana",
+  "Chen",
+  "Chromie",
+  "Diablo",
+  "Dryad",
+  "Genji",
+  "Hanzo",
+  "Leoric",
+  "Medivh",
+  "Muradin",
+  "Murky",
+  "Stukov",
+  "Whitemane"
+ ],
+ "battlegrounds": [],
+ "newsId": "21971414"
+}

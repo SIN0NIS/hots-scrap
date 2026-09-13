@@ -1,0 +1,2311 @@
+{
+ "date": "2017-11-30",
+ "kind": "patch",
+ "title": "히어로즈 오브 더 스톰 패치 노트 — 2017년 11월 30일",
+ "source": "https://news.blizzard.com/ko-kr/article/21273597/2017-11-30",
+ "published": "2017-11-29T17:40:00Z",
+ "sections": [
+  {
+   "name": "머리말",
+   "key": "intro",
+   "html": "<p>히어로즈 오브 더 스톰의 새로운 패치가 적용될 예정입니다. 이 패치에서는 밸런스에 몇 가지 변화가 이루어지고 버그가 수정될 것입니다.</p>\n<p><strong>공개 테스트 서버</strong>: <em>오늘의 변경 사항 대부분은 공개 테스트 서버에서 확인할 수 있지만 일부는 11월 30일에 본서버에 적용된 후에 확인할 수 있을 것입니다.</em></p>"
+  },
+  {
+   "name": "영웅",
+   "key": "heroes",
+   "html": "<table class=\"table table-condensed\">\n<tbody>\n<tr>\n<th></th>\n<th></th>\n<th></th>\n<th></th>\n</tr>\n<tr>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n</tbody>\n</table>"
+  },
+  {
+   "name": "암살자",
+   "key": "role_assassin",
+   "html": "<h4>타이커스</h4>\n<p><img alt=\"Divider_Hero_Tychus_Crop.png\" data-id=\"17042302\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/C0A9M41RWSJQ1417483335476.png\"/></p>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>미니건 (고유 능력)</strong></span>\n<ul>\n<li>마나 소모량이 삭제되었습니다.</li>\n</ul>\n</li>\n</ul>\n<h4>줄진</h4>\n<p><img class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/ep/EPJ9RJVTT6AA1481923618065.png\"/></p>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>단두대 (R)</strong></span>\n<ul>\n<li>공격력이 350에서 330으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>무모함 (고유 능력)\n<ul>\n<li>변경된 기능:\n<ul>\n<li>생명력이 75% 미만이면 기술 위력이 10% 증가합니다.</li>\n<li>생명력이 50% 미만이면 일반 공격력이 20% 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>아마니의 분노 (사용 효과)\n<ul>\n<li>잃은 생명력을 회복하는 시간이 6초에서 10초로 증가했습니다.</li>\n<li>방어력 증가 효과가 10에서 5로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>7레벨</strong></span>\n<ul>\n<li>아케이나이트 투척용 도끼 (W)\n<ul>\n<li>더는 톱날 베기의 재사용 대기시간을 감소시키지 않습니다.</li>\n</ul>\n</li>\n<li>잔악한 공격 (Q)\n<ul>\n<li>추가된 기능:\n<ul>\n<li>잔혹한 투척의 표식의 지속 시간이 3 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>13레벨</strong></span>\n<ul>\n<li>발목 긋기 (W)\n<ul>\n<li>감속 효과가 15%에서 10%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>16레벨</strong></span>\n<ul>\n<li>영 좋지 않은 곳 (W)\n<ul>\n<li>도끼가 교차했을 때의 추가 피해가 150에서 100으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+   "heroes": [
+    {
+     "name": "타이커스",
+     "heroId": "Tychus",
+     "heroIds": [
+      "Tychus"
+     ],
+     "changes": [
+      {
+       "name": "미니건",
+       "key": "고유 능력",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "마나 소모량이 삭제되었습니다.",
+         "html": "마나 소모량이 삭제되었습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_Tychus_Crop.png\" data-id=\"17042302\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/C0A9M41RWSJQ1417483335476.png\"/></p>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>미니건 (고유 능력)</strong></span>\n<ul>\n<li>마나 소모량이 삭제되었습니다.</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "줄진",
+     "heroId": "Zuljin",
+     "heroIds": [
+      "Zuljin"
+     ],
+     "changes": [
+      {
+       "name": "단두대",
+       "key": "R",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "공격력이 350에서 330으로 감소했습니다.",
+         "html": "공격력이 350에서 330으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "무모함",
+       "key": "고유 능력",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": []
+      },
+      {
+       "name": "변경된 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "생명력이 75% 미만이면 기술 위력이 10% 증가합니다.",
+         "html": "생명력이 75% 미만이면 기술 위력이 10% 증가합니다.",
+         "added": false
+        },
+        {
+         "text": "생명력이 50% 미만이면 일반 공격력이 20% 증가합니다.",
+         "html": "생명력이 50% 미만이면 일반 공격력이 20% 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "아마니의 분노",
+       "key": "사용 효과",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "잃은 생명력을 회복하는 시간이 6초에서 10초로 증가했습니다.",
+         "html": "잃은 생명력을 회복하는 시간이 6초에서 10초로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "방어력 증가 효과가 10에서 5로 감소했습니다.",
+         "html": "방어력 증가 효과가 10에서 5로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "아케이나이트 투척용 도끼",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "더는 톱날 베기의 재사용 대기시간을 감소시키지 않습니다.",
+         "html": "더는 톱날 베기의 재사용 대기시간을 감소시키지 않습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "잔악한 공격",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": []
+      },
+      {
+       "name": "추가된 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "잔혹한 투척의 표식의 지속 시간이 3 증가합니다.",
+         "html": "잔혹한 투척의 표식의 지속 시간이 3 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "발목 긋기",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "감속 효과가 15%에서 10%로 감소했습니다.",
+         "html": "감속 효과가 15%에서 10%로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "영 좋지 않은 곳",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "도끼가 교차했을 때의 추가 피해가 150에서 100으로 감소했습니다.",
+         "html": "도끼가 교차했을 때의 추가 피해가 150에서 100으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/ep/EPJ9RJVTT6AA1481923618065.png\"/></p>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>단두대 (R)</strong></span>\n<ul>\n<li>공격력이 350에서 330으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>무모함 (고유 능력)\n<ul>\n<li>변경된 기능:\n<ul>\n<li>생명력이 75% 미만이면 기술 위력이 10% 증가합니다.</li>\n<li>생명력이 50% 미만이면 일반 공격력이 20% 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>아마니의 분노 (사용 효과)\n<ul>\n<li>잃은 생명력을 회복하는 시간이 6초에서 10초로 증가했습니다.</li>\n<li>방어력 증가 효과가 10에서 5로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>7레벨</strong></span>\n<ul>\n<li>아케이나이트 투척용 도끼 (W)\n<ul>\n<li>더는 톱날 베기의 재사용 대기시간을 감소시키지 않습니다.</li>\n</ul>\n</li>\n<li>잔악한 공격 (Q)\n<ul>\n<li>추가된 기능:\n<ul>\n<li>잔혹한 투척의 표식의 지속 시간이 3 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>13레벨</strong></span>\n<ul>\n<li>발목 긋기 (W)\n<ul>\n<li>감속 효과가 15%에서 10%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>16레벨</strong></span>\n<ul>\n<li>영 좋지 않은 곳 (W)\n<ul>\n<li>도끼가 교차했을 때의 추가 피해가 150에서 100으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    }
+   ]
+  },
+  {
+   "name": "전문가",
+   "key": "role_specialist",
+   "html": "<h4>해머 상사</h4>\n<p><img alt=\"Divider_Hero_SgtHammer_Crop.png\" data-id=\"17042299\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/3448NN16TK6K1417483335280.png\"/></p>\n<ul>\n<li>해머 상사의 일반 공격의 반응 속도가 향상되었습니다.</li>\n</ul>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>기갑포 (고유 능력)</strong></span>\n<ul>\n<li>삭제되었습니다. (일반 공격 사거리 +1 포함)</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>공성 모드 (D)</strong></span>\n<ul>\n<li>(D) (고유 능력)키로 옮겨졌습니다.</li>\n<li>마나 소모량이 삭제되었습니다.</li>\n<li>일반 공격 사거리 증가량이 5에서 6으로 증가했습니다.</li>\n<li>해머 상사의 일반 공격력이 공성 모드일 때 20% 증가하고 더는 돌격병과 구조물에 30%의 추가 피해를 주지 않습니다.</li>\n<li>해머 상사가 더는 공성 모드에 돌입하는 중에 기술을 사용할 수 없습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>거미 지뢰 (Q)</strong></span>\n<ul>\n<li>공성 모드일 때 시전 사거리가 100% 증가합니다.</li>\n<li>마나 소모량이 50에서 45로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>충격포 (W)</strong></span>\n<ul>\n<li>범위가 전방 60도에서 45도로 감소했습니다.</li>\n<li>공성 모드일 때 시전 사거리가 50% 증가합니다.</li>\n<li>마나 소모량이 75에서 60으로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>(새로운 기술) 신소재 강철 장갑 (E)</strong></span>\n<ul>\n<li>사용하면 방어력이 2초 동안 25 증가합니다.</li>\n<li>공성 모드일 때 방어력 증가량이 50으로 증가합니다.</li>\n<li>재사용 대기시간은 12초, 마나 소모량은 30입니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>기갑포 강화 (D)\n<ul>\n<li>새로운 기능:\n<ul>\n<li> 공성 모드의 방사 피해가 일반 공격력의 50%로 증가하고 반경이 25% 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>저항 (D)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>기습 포격 (D)\n<ul>\n<li>변경된 기능:\n<ul>\n<li>해머 해머 상사가 공성 모드일 때 3초 동안 피해를 주거나 받지 않아도 은신 상태가 됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>재생 전문가\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li><strong>(새로운 특성) 소용돌이 포탄</strong>\n<ul>\n<li>사용하면 일반 공격력이 5초 동안 40% 증가합니다. 최대 3회 충전할 수 있습니다. 재사용 대기시간은 90초입니다. 구조물에 일반 공격을 할 때마다 소용돌이 포탄의 재사용 대기시간이 5초 감소합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>원기회복의 공격 (지속 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>집중 공격 (지속 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>넘치는 위력 (W)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>방호벽 (W)\n<ul>\n<li>13레벨에서 옮겨졌습니다.</li>\n</ul>\n</li>\n<li><strong>(새로운 특성) 공성 전술 (E)</strong>\n<ul>\n<li>해머 상사가 공성 모드일 때 신소재 강철 장갑을 사용하면 2초 동안 저지 불가 상태가 됩니다.</li>\n</ul>\n</li>\n<li><strong>(새로운 특성) 재생성 생체강철 (D)</strong>\n<ul>\n<li>해머 상사가 공성 모드일 때 일반 공격으로 준 피해의 15%만큼 생명력을 회복합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>7레벨</strong></span>\n<ul>\n<li>지뢰밭 (Q)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>응급치료 (사용 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li><strong>(새로운 특성) 펄스 지뢰 핵 (Q)</strong>\n<ul>\n<li>거미 지뢰가 3초에 걸쳐 3회 폭발합니다.</li>\n</ul>\n</li>\n<li>이동 공성 모드 (D)\n<ul>\n<li>16레벨에서 옮겨졌습니다.</li>\n<li>이동 속도가 50%에서 25%로 감소했습니다.</li>\n</ul>\n</li>\n<li>사거리 확대 (D)\n<ul>\n<li>16레벨에서 옮겨졌습니다.</li>\n<li>사거리 최대 증가량이 5.5에서 3.3으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>13레벨</strong></span>\n<ul>\n<li>선제공격 (D)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>충돌 지뢰 (Q)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li><strong>(새로운 특성) 전술적 지뢰 배치 (Q)</strong>\n<ul>\n<li>거미 지뢰의 감속 효과가 25%에서 40%로 증가합니다. 추진기가 활성화된 동안 이동하면 지나간 경로에 최대 5개의 거미 지뢰를 남깁니다.</li>\n</ul>\n</li>\n<li><strong>(새로운 특성) 참호 형성 (W)</strong>\n<ul>\n<li>공성 모드일 때 충격포의 공격력과 밀쳐내는 거리가 75% 증가합니다.</li>\n</ul>\n</li>\n<li>초고속 냉각기 (Z)\n<ul>\n<li>7레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>공성 모드일 때 일반 공격으로 적 영웅을 공격할 때마다 추진기의 재사용 대기시간이 5초 감소합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>16레벨</strong></span>\n<ul>\n<li>돌가죽 (사용 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>거인 사냥꾼 (지속 효과)\n<ul>\n<li>13레벨에서 옮겨졌습니다.</li>\n</ul>\n</li>\n<li><strong>(새로운 특성) 기계 노하우 (E)</strong>\n<ul>\n<li>신소재 강철 장갑이 2초 동안 최대 생명력의 5%에 해당하는 보호막을 부여합니다. 이 보호막이 파괴되면 일반 공격력이 5초 동안 50% 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>20레벨</strong></span>\n<ul>\n<li>폭풍의 분노 (지속 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>시공의 광란 (지속 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li><strong>(새로운 특성) 유산탄 지뢰 (Q)</strong>\n<ul>\n<li>거미 지뢰가 적 영웅의 방어력을 3초 동안 10 감소시킵니다.</li>\n</ul>\n</li>\n<li><strong>(새로운 특성) 초고용량 축전기 (D)</strong>\n<ul>\n<li>공성 모드일 때 일반 공격으로 적 영웅을 공격할 때마다 공격 속도가 5초 동안 5% 증가하여 최대 40% 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+   "heroes": [
+    {
+     "name": "해머 상사",
+     "heroId": "SgtHammer",
+     "heroIds": [
+      "SgtHammer"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "해머 상사의 일반 공격의 반응 속도가 향상되었습니다.",
+         "html": "해머 상사의 일반 공격의 반응 속도가 향상되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "기갑포",
+       "key": "고유 능력",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "삭제되었습니다. (일반 공격 사거리 +1 포함)",
+         "html": "삭제되었습니다. (일반 공격 사거리 +1 포함)",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "공성 모드",
+       "key": "D",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "(D) (고유 능력)키로 옮겨졌습니다.",
+         "html": "(D) (고유 능력)키로 옮겨졌습니다.",
+         "added": false
+        },
+        {
+         "text": "마나 소모량이 삭제되었습니다.",
+         "html": "마나 소모량이 삭제되었습니다.",
+         "added": false
+        },
+        {
+         "text": "일반 공격 사거리 증가량이 5에서 6으로 증가했습니다.",
+         "html": "일반 공격 사거리 증가량이 5에서 6으로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "해머 상사의 일반 공격력이 공성 모드일 때 20% 증가하고 더는 돌격병과 구조물에 30%의 추가 피해를 주지 않습니다.",
+         "html": "해머 상사의 일반 공격력이 공성 모드일 때 20% 증가하고 더는 돌격병과 구조물에 30%의 추가 피해를 주지 않습니다.",
+         "added": false
+        },
+        {
+         "text": "해머 상사가 더는 공성 모드에 돌입하는 중에 기술을 사용할 수 없습니다.",
+         "html": "해머 상사가 더는 공성 모드에 돌입하는 중에 기술을 사용할 수 없습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "거미 지뢰",
+       "key": "Q",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "공성 모드일 때 시전 사거리가 100% 증가합니다.",
+         "html": "공성 모드일 때 시전 사거리가 100% 증가합니다.",
+         "added": false
+        },
+        {
+         "text": "마나 소모량이 50에서 45로 감소했습니다.",
+         "html": "마나 소모량이 50에서 45로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "충격포",
+       "key": "W",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "범위가 전방 60도에서 45도로 감소했습니다.",
+         "html": "범위가 전방 60도에서 45도로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "공성 모드일 때 시전 사거리가 50% 증가합니다.",
+         "html": "공성 모드일 때 시전 사거리가 50% 증가합니다.",
+         "added": false
+        },
+        {
+         "text": "마나 소모량이 75에서 60으로 감소했습니다.",
+         "html": "마나 소모량이 75에서 60으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "(새로운 기술) 신소재 강철 장갑",
+       "key": "E",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "사용하면 방어력이 2초 동안 25 증가합니다.",
+         "html": "사용하면 방어력이 2초 동안 25 증가합니다.",
+         "added": false
+        },
+        {
+         "text": "공성 모드일 때 방어력 증가량이 50으로 증가합니다.",
+         "html": "공성 모드일 때 방어력 증가량이 50으로 증가합니다.",
+         "added": false
+        },
+        {
+         "text": "재사용 대기시간은 12초, 마나 소모량은 30입니다.",
+         "html": "재사용 대기시간은 12초, 마나 소모량은 30입니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "기갑포 강화",
+       "key": "D",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": []
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "공성 모드의 방사 피해가 일반 공격력의 50%로 증가하고 반경이 25% 증가합니다.",
+         "html": "공성 모드의 방사 피해가 일반 공격력의 50%로 증가하고 반경이 25% 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "저항",
+       "key": "D",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "기습 포격",
+       "key": "D",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": []
+      },
+      {
+       "name": "변경된 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "해머 해머 상사가 공성 모드일 때 3초 동안 피해를 주거나 받지 않아도 은신 상태가 됩니다.",
+         "html": "해머 해머 상사가 공성 모드일 때 3초 동안 피해를 주거나 받지 않아도 은신 상태가 됩니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "재생 전문가",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "(새로운 특성) 소용돌이 포탄",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "사용하면 일반 공격력이 5초 동안 40% 증가합니다. 최대 3회 충전할 수 있습니다. 재사용 대기시간은 90초입니다. 구조물에 일반 공격을 할 때마다 소용돌이 포탄의 재사용 대기시간이 5초 감소합니다.",
+         "html": "사용하면 일반 공격력이 5초 동안 40% 증가합니다. 최대 3회 충전할 수 있습니다. 재사용 대기시간은 90초입니다. 구조물에 일반 공격을 할 때마다 소용돌이 포탄의 재사용 대기시간이 5초 감소합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "원기회복의 공격",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "집중 공격",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "넘치는 위력",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "방호벽",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "13레벨에서 옮겨졌습니다.",
+         "html": "13레벨에서 옮겨졌습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "(새로운 특성) 공성 전술",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "해머 상사가 공성 모드일 때 신소재 강철 장갑을 사용하면 2초 동안 저지 불가 상태가 됩니다.",
+         "html": "해머 상사가 공성 모드일 때 신소재 강철 장갑을 사용하면 2초 동안 저지 불가 상태가 됩니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "(새로운 특성) 재생성 생체강철",
+       "key": "D",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "해머 상사가 공성 모드일 때 일반 공격으로 준 피해의 15%만큼 생명력을 회복합니다.",
+         "html": "해머 상사가 공성 모드일 때 일반 공격으로 준 피해의 15%만큼 생명력을 회복합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "지뢰밭",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "응급치료",
+       "key": "사용 효과",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "(새로운 특성) 펄스 지뢰 핵",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "거미 지뢰가 3초에 걸쳐 3회 폭발합니다.",
+         "html": "거미 지뢰가 3초에 걸쳐 3회 폭발합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "이동 공성 모드",
+       "key": "D",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "16레벨에서 옮겨졌습니다.",
+         "html": "16레벨에서 옮겨졌습니다.",
+         "added": false
+        },
+        {
+         "text": "이동 속도가 50%에서 25%로 감소했습니다.",
+         "html": "이동 속도가 50%에서 25%로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "사거리 확대",
+       "key": "D",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "16레벨에서 옮겨졌습니다.",
+         "html": "16레벨에서 옮겨졌습니다.",
+         "added": false
+        },
+        {
+         "text": "사거리 최대 증가량이 5.5에서 3.3으로 감소했습니다.",
+         "html": "사거리 최대 증가량이 5.5에서 3.3으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "선제공격",
+       "key": "D",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "충돌 지뢰",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "(새로운 특성) 전술적 지뢰 배치",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "거미 지뢰의 감속 효과가 25%에서 40%로 증가합니다. 추진기가 활성화된 동안 이동하면 지나간 경로에 최대 5개의 거미 지뢰를 남깁니다.",
+         "html": "거미 지뢰의 감속 효과가 25%에서 40%로 증가합니다. 추진기가 활성화된 동안 이동하면 지나간 경로에 최대 5개의 거미 지뢰를 남깁니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "(새로운 특성) 참호 형성",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "공성 모드일 때 충격포의 공격력과 밀쳐내는 거리가 75% 증가합니다.",
+         "html": "공성 모드일 때 충격포의 공격력과 밀쳐내는 거리가 75% 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "초고속 냉각기",
+       "key": "Z",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "7레벨에서 옮겨졌습니다.",
+         "html": "7레벨에서 옮겨졌습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "공성 모드일 때 일반 공격으로 적 영웅을 공격할 때마다 추진기의 재사용 대기시간이 5초 감소합니다.",
+         "html": "공성 모드일 때 일반 공격으로 적 영웅을 공격할 때마다 추진기의 재사용 대기시간이 5초 감소합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "돌가죽",
+       "key": "사용 효과",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "거인 사냥꾼",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "13레벨에서 옮겨졌습니다.",
+         "html": "13레벨에서 옮겨졌습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "(새로운 특성) 기계 노하우",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "신소재 강철 장갑이 2초 동안 최대 생명력의 5%에 해당하는 보호막을 부여합니다. 이 보호막이 파괴되면 일반 공격력이 5초 동안 50% 증가합니다.",
+         "html": "신소재 강철 장갑이 2초 동안 최대 생명력의 5%에 해당하는 보호막을 부여합니다. 이 보호막이 파괴되면 일반 공격력이 5초 동안 50% 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "폭풍의 분노",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "시공의 광란",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "(새로운 특성) 유산탄 지뢰",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "거미 지뢰가 적 영웅의 방어력을 3초 동안 10 감소시킵니다.",
+         "html": "거미 지뢰가 적 영웅의 방어력을 3초 동안 10 감소시킵니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "(새로운 특성) 초고용량 축전기",
+       "key": "D",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "공성 모드일 때 일반 공격으로 적 영웅을 공격할 때마다 공격 속도가 5초 동안 5% 증가하여 최대 40% 증가합니다.",
+         "html": "공성 모드일 때 일반 공격으로 적 영웅을 공격할 때마다 공격 속도가 5초 동안 5% 증가하여 최대 40% 증가합니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_SgtHammer_Crop.png\" data-id=\"17042299\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/3448NN16TK6K1417483335280.png\"/></p>\n<ul>\n<li>해머 상사의 일반 공격의 반응 속도가 향상되었습니다.</li>\n</ul>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>기갑포 (고유 능력)</strong></span>\n<ul>\n<li>삭제되었습니다. (일반 공격 사거리 +1 포함)</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>공성 모드 (D)</strong></span>\n<ul>\n<li>(D) (고유 능력)키로 옮겨졌습니다.</li>\n<li>마나 소모량이 삭제되었습니다.</li>\n<li>일반 공격 사거리 증가량이 5에서 6으로 증가했습니다.</li>\n<li>해머 상사의 일반 공격력이 공성 모드일 때 20% 증가하고 더는 돌격병과 구조물에 30%의 추가 피해를 주지 않습니다.</li>\n<li>해머 상사가 더는 공성 모드에 돌입하는 중에 기술을 사용할 수 없습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>거미 지뢰 (Q)</strong></span>\n<ul>\n<li>공성 모드일 때 시전 사거리가 100% 증가합니다.</li>\n<li>마나 소모량이 50에서 45로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>충격포 (W)</strong></span>\n<ul>\n<li>범위가 전방 60도에서 45도로 감소했습니다.</li>\n<li>공성 모드일 때 시전 사거리가 50% 증가합니다.</li>\n<li>마나 소모량이 75에서 60으로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>(새로운 기술) 신소재 강철 장갑 (E)</strong></span>\n<ul>\n<li>사용하면 방어력이 2초 동안 25 증가합니다.</li>\n<li>공성 모드일 때 방어력 증가량이 50으로 증가합니다.</li>\n<li>재사용 대기시간은 12초, 마나 소모량은 30입니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>기갑포 강화 (D)\n<ul>\n<li>새로운 기능:\n<ul>\n<li> 공성 모드의 방사 피해가 일반 공격력의 50%로 증가하고 반경이 25% 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>저항 (D)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>기습 포격 (D)\n<ul>\n<li>변경된 기능:\n<ul>\n<li>해머 해머 상사가 공성 모드일 때 3초 동안 피해를 주거나 받지 않아도 은신 상태가 됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>재생 전문가\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li><strong>(새로운 특성) 소용돌이 포탄</strong>\n<ul>\n<li>사용하면 일반 공격력이 5초 동안 40% 증가합니다. 최대 3회 충전할 수 있습니다. 재사용 대기시간은 90초입니다. 구조물에 일반 공격을 할 때마다 소용돌이 포탄의 재사용 대기시간이 5초 감소합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>원기회복의 공격 (지속 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>집중 공격 (지속 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>넘치는 위력 (W)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>방호벽 (W)\n<ul>\n<li>13레벨에서 옮겨졌습니다.</li>\n</ul>\n</li>\n<li><strong>(새로운 특성) 공성 전술 (E)</strong>\n<ul>\n<li>해머 상사가 공성 모드일 때 신소재 강철 장갑을 사용하면 2초 동안 저지 불가 상태가 됩니다.</li>\n</ul>\n</li>\n<li><strong>(새로운 특성) 재생성 생체강철 (D)</strong>\n<ul>\n<li>해머 상사가 공성 모드일 때 일반 공격으로 준 피해의 15%만큼 생명력을 회복합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>7레벨</strong></span>\n<ul>\n<li>지뢰밭 (Q)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>응급치료 (사용 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li><strong>(새로운 특성) 펄스 지뢰 핵 (Q)</strong>\n<ul>\n<li>거미 지뢰가 3초에 걸쳐 3회 폭발합니다.</li>\n</ul>\n</li>\n<li>이동 공성 모드 (D)\n<ul>\n<li>16레벨에서 옮겨졌습니다.</li>\n<li>이동 속도가 50%에서 25%로 감소했습니다.</li>\n</ul>\n</li>\n<li>사거리 확대 (D)\n<ul>\n<li>16레벨에서 옮겨졌습니다.</li>\n<li>사거리 최대 증가량이 5.5에서 3.3으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>13레벨</strong></span>\n<ul>\n<li>선제공격 (D)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>충돌 지뢰 (Q)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li><strong>(새로운 특성) 전술적 지뢰 배치 (Q)</strong>\n<ul>\n<li>거미 지뢰의 감속 효과가 25%에서 40%로 증가합니다. 추진기가 활성화된 동안 이동하면 지나간 경로에 최대 5개의 거미 지뢰를 남깁니다.</li>\n</ul>\n</li>\n<li><strong>(새로운 특성) 참호 형성 (W)</strong>\n<ul>\n<li>공성 모드일 때 충격포의 공격력과 밀쳐내는 거리가 75% 증가합니다.</li>\n</ul>\n</li>\n<li>초고속 냉각기 (Z)\n<ul>\n<li>7레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>공성 모드일 때 일반 공격으로 적 영웅을 공격할 때마다 추진기의 재사용 대기시간이 5초 감소합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>16레벨</strong></span>\n<ul>\n<li>돌가죽 (사용 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>거인 사냥꾼 (지속 효과)\n<ul>\n<li>13레벨에서 옮겨졌습니다.</li>\n</ul>\n</li>\n<li><strong>(새로운 특성) 기계 노하우 (E)</strong>\n<ul>\n<li>신소재 강철 장갑이 2초 동안 최대 생명력의 5%에 해당하는 보호막을 부여합니다. 이 보호막이 파괴되면 일반 공격력이 5초 동안 50% 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>20레벨</strong></span>\n<ul>\n<li>폭풍의 분노 (지속 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>시공의 광란 (지속 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li><strong>(새로운 특성) 유산탄 지뢰 (Q)</strong>\n<ul>\n<li>거미 지뢰가 적 영웅의 방어력을 3초 동안 10 감소시킵니다.</li>\n</ul>\n</li>\n<li><strong>(새로운 특성) 초고용량 축전기 (D)</strong>\n<ul>\n<li>공성 모드일 때 일반 공격으로 적 영웅을 공격할 때마다 공격 속도가 5초 동안 5% 증가하여 최대 40% 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    }
+   ]
+  },
+  {
+   "name": "지원가",
+   "key": "role_support",
+   "html": "<h4>알렉스트라자</h4>\n<p><img alt=\"Divider_Hero_Alexstrasza_crop.png\" data-id=\"21199661\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/NZAPKZWKZG6U1510181901556.png\"/></p>\n<p><strong class=\"pn-h\">능력치</strong></p>\n<ul>\n<li>기본 생명력이 1787에서 1698로 감소했습니다.</li>\n<li>생명력 재생량이 3.72에서 3.54로 감소했습니다.</li>\n</ul>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>풍요 (W)</strong></span>\n<ul>\n<li>시전 사거리가 11% 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<h4>아나</h4>\n<p><img alt=\"Divider_Hero_Ana.png\" data-id=\"21059133\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/E4NO4D2W1A101505345334072.png\"/></p>\n<p><strong class=\"pn-h\">능력치</strong></p>\n<ul>\n<li>기본 생명력이 1682에서 1598로 감소했습니다.</li>\n<li>생명력 재생량이 3.5에서 3.32로 감소했습니다.</li>\n<li>일반 공격력이 33에서 30으로 감소했습니다.</li>\n</ul>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>치유탄 (Q)</strong></span>\n<ul>\n<li>치유량이 255에서 237로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>생체 수류탄 (W)</strong></span>\n<ul>\n<li>치유량이 175에서 166으로 감소했습니다.</li>\n<li>공격력이 60에서 57로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>호루스의 눈 (R)</strong></span>\n<ul>\n<li>치유량이 300에서 285로 감소했습니다.</li>\n<li>공격력이 175에서 166으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<h4>아우리엘</h4>\n<p><img alt=\"Divider_Hero_Auriel_Crop.png\" data-id=\"20256907\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/ox/OX0P7L15DW4I1471895719519.png\"/></p>\n<p><strong class=\"pn-h\">능력치</strong></p>\n<ul>\n<li>기본 생명력이 1850에서 1758로 감소했습니다.</li>\n<li>생명력 재생량이 3.85에서 3.66으로 감소했습니다.</li>\n<li>일반 공격력이 60에서 57로 감소했습니다.</li>\n</ul>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>신성한 휩쓸기 (Q)</strong></span>\n<ul>\n<li>외곽 부분의 공격력이 60에서 57로 감소했습니다.</li>\n<li>증심부의 공격력이 180에서 171로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>억류의 일격 (E)</strong></span>\n<ul>\n<li>공격력이 58에서 55로 감소했습니다.</li>\n<li>지형 충돌 시 공격력이 174에서 165로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>희망 불어넣기 (D)</strong></span>\n<ul>\n<li>최대 치유 에너지가 505에서 475로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>수정 방패 (R)</strong></span>\n<ul>\n<li>공격력이 270에서 255로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<h4>빛나래</h4>\n<p><img alt=\"Divider_Hero_Brightwing_Crop.png\" data-id=\"17042280\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/PI2CATL8H1IZ1417483333975.png\"/></p>\n<p><strong class=\"pn-h\">능력치</strong></p>\n<ul>\n<li>기본 생명력이 1470에서 1395로 감소했습니다.</li>\n<li>생명력 재생량이 3.06에서 2.91로 감소했습니다.</li>\n<li>일반 공격력이 85에서 81로 감소했습니다.</li>\n</ul>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>비전 섬광 (Q)</strong></span>\n<ul>\n<li>외곽 부분의 공격력이 91에서 87로 감소했습니다.</li>\n<li>증심부의 공격력이 274에서 260으로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>위안의 안개 (고유 능력)</strong></span>\n<ul>\n<li>치유량이 115에서 109로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>점멸 치유 (R)</strong></span>\n<ul>\n<li>치유량이 204에서 194로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>에메랄드 바람 (R)</strong></span>\n<ul>\n<li>공격력이 318에서 303으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>불안정한 기형 (W)\n<ul>\n<li>공격력이 114에서 108로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>7레벨</strong></span>\n<ul>\n<li>위상 보호막 (Z)\n<ul>\n<li>보호막이 350에서 335로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>카라짐</h4>\n<p><img class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/ZNF0FO7V6W8J1439221492354.png\"/></p>\n<p><strong class=\"pn-h\">능력치</strong></p>\n<ul>\n<li>일반 공격력이 63에서 60으로 감소했습니다.</li>\n</ul>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>천상의 숨결 (W)</strong></span>\n<ul>\n<li>치유량이 290에서 276으로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>신성 장법 (R)</strong></span>\n<ul>\n<li>치유량이 1141에서 1084로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>초월 (고유 능력)\n<ul>\n<li>치유량이 103에서 98로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>16레벨</strong></span>\n<ul>\n<li>천지권법 (E)\n<ul>\n<li>추가 피해가 50%에서 45%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>리 리</h4>\n<p><img alt=\"Divider_Hero_LiLi_Crop.png\" data-id=\"17042288\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/AVO3T8MOM0SM1417483334438.png\"/></p>\n<p><strong class=\"pn-h\">능력치</strong></p>\n<ul>\n<li>기본 생명력이 1552에서 1475로 감소했습니다.</li>\n<li>생명력 재생량이 3.23에서 3.07로 감소했습니다.</li>\n<li>일반 공격력이 63에서 60으로 감소했습니다.</li>\n</ul>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>허브차 (Q)</strong></span>\n<ul>\n<li>치유량이 177에서 190으로 증가했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>운룡 (W)</strong></span>\n<ul>\n<li>치유량이 13.5에서 15로 증가했습니다.</li>\n<li>공격력이 27에서 26으로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>실명의 바람 (E)</strong></span>\n<ul>\n<li>공격력이 140에서 133으로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>1,000잔 돌리기 (R)</strong></span>\n<ul>\n<li>치유량이 66.5에서 70으로 증가했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>수룡 (R)</strong></span>\n<ul>\n<li>공격력이 318에서 300으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<h4>모랄레스 중위</h4>\n<p><img alt=\"Divider_Hero_LtMorales_cropped.png\" data-id=\"19922293\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/yd/YDNL0OKJTAHV1445037034465.png\"/></p>\n<p><strong class=\"pn-h\">능력치</strong></p>\n<ul>\n<li>기본 생명력이 1550에서 1472로 감소했습니다.</li>\n<li>생명력 재생량이 3.23에서 3.07로 감소했습니다.</li>\n<li>일반 공격력이 88에서 83으로 감소했습니다.</li>\n</ul>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>치료 광선 (Q)</strong></span>\n<ul>\n<li>치유량이 90에서 86으로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>변위 수류탄 (E)</strong></span>\n<ul>\n<li>공격력이 210에서 198로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<h4><strong>루시우</strong></h4>\n<p><img alt=\"Divider_Hero_Lucio.png\" data-id=\"20563586\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/2s/2S6L7YADVZQR1487796012090.png\"/></p>\n<p><strong class=\"pn-h\">능력치</strong></p>\n<ul>\n<li>기본 생명력이 1518에서 1442로 감소했습니다.</li>\n<li>생명력 재생량이 3.16에서 3으로 감소했습니다.</li>\n<li>일반 공격력이 24에서 23으로 감소했습니다.</li>\n</ul>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>소리 파동 (Q)</strong></span>\n<ul>\n<li>공격력이 112에서 105로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>볼륨을 높여라! (E)</strong></span>\n<ul>\n<li>치유량이 15.5에서 15로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>소리 방벽 (R)</strong></span>\n<ul>\n<li>보호막이 1392에서 1296으로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>역재생 앰프 (R)</strong></span>\n<ul>\n<li>공격력이 14에서 13으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>13레벨</strong></span>\n<ul>\n<li>다시 놀아볼까? (지속 효과)\n<ul>\n<li>치유량이 260에서 245로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>16레벨</strong></span>\n<ul>\n<li>헤주베네센시아 (E)\n<ul>\n<li>치유량이 아군의 최대 생명력의 3%에서 2.5%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<ul>\n</ul>\n<h4><strong>말퓨리온</strong></h4>\n<p><img alt=\"Divider_Hero_Malfurion_Crop.png\" data-id=\"17042290\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/1JZXW9JSV6ZW1417483334684.png\"/></p>\n<p><strong class=\"pn-h\">능력치</strong></p>\n<ul>\n<li>기본 생명력이 1682에서 1598로 감소했습니다.</li>\n<li>생명력 재생량이 3.5에서 3.33으로 감소했습니다.</li>\n<li>일반 공격력이 67에서 64로 감소했습니다.</li>\n</ul>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>재생 (Q)</strong></span>\n<ul>\n<li>초기 치유량이 150에서 142로 감소했습니다.</li>\n<li>주기적인 치유량이 28에서 27로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>달빛섬광 (W)</strong></span>\n<ul>\n<li>공격력이 105에서 100으로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>휘감는 뿌리 (E)</strong></span>\n<ul>\n<li>공격력이 39에서 37로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>평온 (R)</strong></span>\n<ul>\n<li>치유량이 40에서 38로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>황혼의 꿈 (R)</strong></span>\n<ul>\n<li>공격력이 374에서 355로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>달빛불꽃 (W)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li><strong>(새로운 특성) 천체의 정렬 (W)</strong>\n<ul>\n<li>달빛섬광이 대상을 드러내는 시간이 3초 증가합니다. 달빛섬광으로 드러난 적에게 일반 공격을 하면 100%의 추가 피해를 줍니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>보복의 뿌리 (E)\n<ul>\n<li>나무정령의 일반 공격력이 70에서 65로 감소했습니다.</li>\n<li>퀘스트 중첩당 증가하는 공격력이 8에서 7로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<ul>\n</ul>\n<h4><strong>레가르</strong></h4>\n<p><img alt=\"Divider_Hero_Rehgar_Crop.png\" data-id=\"17042296\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/HM0ECRA7F3U91417483335126.png\"/></p>\n<p><strong class=\"pn-h\">능력치</strong></p>\n<ul>\n<li>일반 공격력이 120에서 113으로 감소했습니다.</li>\n</ul>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>연쇄 치유 (Q)</strong></span>\n<ul>\n<li>치유량이 250에서 240으로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>번개 보호막 (W)</strong></span>\n<ul>\n<li>공격력이 35에서 32로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>선조의 치유 (R)</strong></span>\n<ul>\n<li>치유량이 1552에서 1475로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>번개 유대 (W)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<ul>\n</ul>\n<h4>스투코프</h4>\n<p><img class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/HVLATI65JATJ1498610396437.png\"/></p>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>치유성 병원균 (Q)</strong></span>\n<ul>\n<li>치유량이 37에서 35로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>스멀거리는 팔 (E)</strong></span>\n<ul>\n<li>공격력이 36에서 34로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>감염체 폭발 (D)</strong></span>\n<ul>\n<li>치유량이 500에서 475로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>거친 휩쓸기 (R)</strong></span>\n<ul>\n<li>공격력이 50에서 48로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>육중한 밀치기 (R)</strong></span>\n<ul>\n<li>공격력이 200에서 190으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<h4>태사다르</h4>\n<p><img alt=\"Divider_Hero_Tassadar_Crop.png\" data-id=\"17042301\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/2J5UMQ9U8Y951417483335330.png\"/></p>\n<p><strong class=\"pn-h\">능력치</strong></p>\n<ul>\n<li>기본 생명력이 1355에서 1287로 감소했습니다.</li>\n<li>생명력 재생량이 2.82에서 2.68로 감소했습니다.</li>\n</ul>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>플라스마 보호막 (Q)</strong></span>\n<ul>\n<li>보호막이 475에서 455로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>사이오닉 폭풍 (W)</strong></span>\n<ul>\n<li>공격력이 44에서 41로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>집정관 (R)</strong></span>\n<ul>\n<li>추가 공격력이 166에서 158로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<h4>티란데</h4>\n<p><img alt=\"Divider_Hero_Tyrande_Crop.png\" data-id=\"17042307\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/L326XNRFITE41417483335724.png\"/></p>\n<p><strong class=\"pn-h\">능력치</strong></p>\n<ul>\n<li>기본 생명력이 1591에서 1511로 감소했습니다.</li>\n<li>생명력 재생량이 3.32에서 3.15로 감소했습니다.</li>\n<li>일반 공격력이 82에서 80으로 감소했습니다.</li>\n</ul>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>파수 (W)</strong></span>\n<ul>\n<li>공격력이 173에서 165로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>달의 섬광 (E)</strong></span>\n<ul>\n<li>공격력이 205에서 195로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>별똥별 (R)</strong></span>\n<ul>\n<li>공격력이 91에서 88로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<h4>우서</h4>\n<p><img alt=\"Divider_Hero_Uther_Crop.png\" data-id=\"17042305\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/5W8VDU5725O81417483335719.png\"/></p>\n<p><strong class=\"pn-h\">능력치</strong></p>\n<ul>\n<li>일반 공격력이 78에서 75로 감소했습니다.</li>\n</ul>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>성스러운 빛 (Q)</strong></span>\n<ul>\n<li>치유량이 380에서 362로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>신성한 광휘 (W)</strong></span>\n<ul>\n<li>치유량이 185에서 177로 감소했습니다.</li>\n<li>공격력이 185에서 177로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>빛의 섬광 (Q)</strong></span>\n<ul>\n<li>치유량이 242에서 230으로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>심판의 망치 (E)</strong></span>\n<ul>\n<li>공격력이 114에서 109로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>천상의 폭풍 (R)</strong></span>\n<ul>\n<li>공격력이 178에서 170으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>성스러운 불꽃 (지속 효과)\n<ul>\n<li>공격력이 14에서 13으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<ul>\n</ul>",
+   "heroes": [
+    {
+     "name": "알렉스트라자",
+     "heroId": "Alexstrasza",
+     "heroIds": [
+      "Alexstrasza"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "기본 생명력이 1787에서 1698로 감소했습니다.",
+         "html": "기본 생명력이 1787에서 1698로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "생명력 재생량이 3.72에서 3.54로 감소했습니다.",
+         "html": "생명력 재생량이 3.72에서 3.54로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "풍요",
+       "key": "W",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "시전 사거리가 11% 증가했습니다.",
+         "html": "시전 사거리가 11% 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_Alexstrasza_crop.png\" data-id=\"21199661\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/NZAPKZWKZG6U1510181901556.png\"/></p>\n<p><strong class=\"pn-h\">능력치</strong></p>\n<ul>\n<li>기본 생명력이 1787에서 1698로 감소했습니다.</li>\n<li>생명력 재생량이 3.72에서 3.54로 감소했습니다.</li>\n</ul>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>풍요 (W)</strong></span>\n<ul>\n<li>시전 사거리가 11% 증가했습니다.</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "아나",
+     "heroId": "Ana",
+     "heroIds": [
+      "Ana"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "기본 생명력이 1682에서 1598로 감소했습니다.",
+         "html": "기본 생명력이 1682에서 1598로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "생명력 재생량이 3.5에서 3.32로 감소했습니다.",
+         "html": "생명력 재생량이 3.5에서 3.32로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "일반 공격력이 33에서 30으로 감소했습니다.",
+         "html": "일반 공격력이 33에서 30으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "치유탄",
+       "key": "Q",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "치유량이 255에서 237로 감소했습니다.",
+         "html": "치유량이 255에서 237로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "생체 수류탄",
+       "key": "W",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "치유량이 175에서 166으로 감소했습니다.",
+         "html": "치유량이 175에서 166으로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "공격력이 60에서 57로 감소했습니다.",
+         "html": "공격력이 60에서 57로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "호루스의 눈",
+       "key": "R",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "치유량이 300에서 285로 감소했습니다.",
+         "html": "치유량이 300에서 285로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "공격력이 175에서 166으로 감소했습니다.",
+         "html": "공격력이 175에서 166으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_Ana.png\" data-id=\"21059133\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/E4NO4D2W1A101505345334072.png\"/></p>\n<p><strong class=\"pn-h\">능력치</strong></p>\n<ul>\n<li>기본 생명력이 1682에서 1598로 감소했습니다.</li>\n<li>생명력 재생량이 3.5에서 3.32로 감소했습니다.</li>\n<li>일반 공격력이 33에서 30으로 감소했습니다.</li>\n</ul>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>치유탄 (Q)</strong></span>\n<ul>\n<li>치유량이 255에서 237로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>생체 수류탄 (W)</strong></span>\n<ul>\n<li>치유량이 175에서 166으로 감소했습니다.</li>\n<li>공격력이 60에서 57로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>호루스의 눈 (R)</strong></span>\n<ul>\n<li>치유량이 300에서 285로 감소했습니다.</li>\n<li>공격력이 175에서 166으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "아우리엘",
+     "heroId": "Auriel",
+     "heroIds": [
+      "Auriel"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "기본 생명력이 1850에서 1758로 감소했습니다.",
+         "html": "기본 생명력이 1850에서 1758로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "생명력 재생량이 3.85에서 3.66으로 감소했습니다.",
+         "html": "생명력 재생량이 3.85에서 3.66으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "일반 공격력이 60에서 57로 감소했습니다.",
+         "html": "일반 공격력이 60에서 57로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "신성한 휩쓸기",
+       "key": "Q",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "외곽 부분의 공격력이 60에서 57로 감소했습니다.",
+         "html": "외곽 부분의 공격력이 60에서 57로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "증심부의 공격력이 180에서 171로 감소했습니다.",
+         "html": "증심부의 공격력이 180에서 171로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "억류의 일격",
+       "key": "E",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "공격력이 58에서 55로 감소했습니다.",
+         "html": "공격력이 58에서 55로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "지형 충돌 시 공격력이 174에서 165로 감소했습니다.",
+         "html": "지형 충돌 시 공격력이 174에서 165로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "희망 불어넣기",
+       "key": "D",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "최대 치유 에너지가 505에서 475로 감소했습니다.",
+         "html": "최대 치유 에너지가 505에서 475로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "수정 방패",
+       "key": "R",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "공격력이 270에서 255로 감소했습니다.",
+         "html": "공격력이 270에서 255로 감소했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_Auriel_Crop.png\" data-id=\"20256907\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/ox/OX0P7L15DW4I1471895719519.png\"/></p>\n<p><strong class=\"pn-h\">능력치</strong></p>\n<ul>\n<li>기본 생명력이 1850에서 1758로 감소했습니다.</li>\n<li>생명력 재생량이 3.85에서 3.66으로 감소했습니다.</li>\n<li>일반 공격력이 60에서 57로 감소했습니다.</li>\n</ul>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>신성한 휩쓸기 (Q)</strong></span>\n<ul>\n<li>외곽 부분의 공격력이 60에서 57로 감소했습니다.</li>\n<li>증심부의 공격력이 180에서 171로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>억류의 일격 (E)</strong></span>\n<ul>\n<li>공격력이 58에서 55로 감소했습니다.</li>\n<li>지형 충돌 시 공격력이 174에서 165로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>희망 불어넣기 (D)</strong></span>\n<ul>\n<li>최대 치유 에너지가 505에서 475로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>수정 방패 (R)</strong></span>\n<ul>\n<li>공격력이 270에서 255로 감소했습니다.</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "빛나래",
+     "heroId": "FaerieDragon",
+     "heroIds": [
+      "FaerieDragon"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "기본 생명력이 1470에서 1395로 감소했습니다.",
+         "html": "기본 생명력이 1470에서 1395로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "생명력 재생량이 3.06에서 2.91로 감소했습니다.",
+         "html": "생명력 재생량이 3.06에서 2.91로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "일반 공격력이 85에서 81로 감소했습니다.",
+         "html": "일반 공격력이 85에서 81로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "비전 섬광",
+       "key": "Q",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "외곽 부분의 공격력이 91에서 87로 감소했습니다.",
+         "html": "외곽 부분의 공격력이 91에서 87로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "증심부의 공격력이 274에서 260으로 감소했습니다.",
+         "html": "증심부의 공격력이 274에서 260으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "위안의 안개",
+       "key": "고유 능력",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "치유량이 115에서 109로 감소했습니다.",
+         "html": "치유량이 115에서 109로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "점멸 치유",
+       "key": "R",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "치유량이 204에서 194로 감소했습니다.",
+         "html": "치유량이 204에서 194로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "에메랄드 바람",
+       "key": "R",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "공격력이 318에서 303으로 감소했습니다.",
+         "html": "공격력이 318에서 303으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "불안정한 기형",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "공격력이 114에서 108로 감소했습니다.",
+         "html": "공격력이 114에서 108로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "위상 보호막",
+       "key": "Z",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "보호막이 350에서 335로 감소했습니다.",
+         "html": "보호막이 350에서 335로 감소했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_Brightwing_Crop.png\" data-id=\"17042280\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/PI2CATL8H1IZ1417483333975.png\"/></p>\n<p><strong class=\"pn-h\">능력치</strong></p>\n<ul>\n<li>기본 생명력이 1470에서 1395로 감소했습니다.</li>\n<li>생명력 재생량이 3.06에서 2.91로 감소했습니다.</li>\n<li>일반 공격력이 85에서 81로 감소했습니다.</li>\n</ul>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>비전 섬광 (Q)</strong></span>\n<ul>\n<li>외곽 부분의 공격력이 91에서 87로 감소했습니다.</li>\n<li>증심부의 공격력이 274에서 260으로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>위안의 안개 (고유 능력)</strong></span>\n<ul>\n<li>치유량이 115에서 109로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>점멸 치유 (R)</strong></span>\n<ul>\n<li>치유량이 204에서 194로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>에메랄드 바람 (R)</strong></span>\n<ul>\n<li>공격력이 318에서 303으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>불안정한 기형 (W)\n<ul>\n<li>공격력이 114에서 108로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>7레벨</strong></span>\n<ul>\n<li>위상 보호막 (Z)\n<ul>\n<li>보호막이 350에서 335로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "카라짐",
+     "heroId": "Monk",
+     "heroIds": [
+      "Monk"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "일반 공격력이 63에서 60으로 감소했습니다.",
+         "html": "일반 공격력이 63에서 60으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "천상의 숨결",
+       "key": "W",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "치유량이 290에서 276으로 감소했습니다.",
+         "html": "치유량이 290에서 276으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "신성 장법",
+       "key": "R",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "치유량이 1141에서 1084로 감소했습니다.",
+         "html": "치유량이 1141에서 1084로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "초월",
+       "key": "고유 능력",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "치유량이 103에서 98로 감소했습니다.",
+         "html": "치유량이 103에서 98로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "천지권법",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "추가 피해가 50%에서 45%로 감소했습니다.",
+         "html": "추가 피해가 50%에서 45%로 감소했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/ZNF0FO7V6W8J1439221492354.png\"/></p>\n<p><strong class=\"pn-h\">능력치</strong></p>\n<ul>\n<li>일반 공격력이 63에서 60으로 감소했습니다.</li>\n</ul>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>천상의 숨결 (W)</strong></span>\n<ul>\n<li>치유량이 290에서 276으로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>신성 장법 (R)</strong></span>\n<ul>\n<li>치유량이 1141에서 1084로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>초월 (고유 능력)\n<ul>\n<li>치유량이 103에서 98로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>16레벨</strong></span>\n<ul>\n<li>천지권법 (E)\n<ul>\n<li>추가 피해가 50%에서 45%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "리 리",
+     "heroId": "LiLi",
+     "heroIds": [
+      "LiLi"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "기본 생명력이 1552에서 1475로 감소했습니다.",
+         "html": "기본 생명력이 1552에서 1475로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "생명력 재생량이 3.23에서 3.07로 감소했습니다.",
+         "html": "생명력 재생량이 3.23에서 3.07로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "일반 공격력이 63에서 60으로 감소했습니다.",
+         "html": "일반 공격력이 63에서 60으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "허브차",
+       "key": "Q",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "치유량이 177에서 190으로 증가했습니다.",
+         "html": "치유량이 177에서 190으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "운룡",
+       "key": "W",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "치유량이 13.5에서 15로 증가했습니다.",
+         "html": "치유량이 13.5에서 15로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "공격력이 27에서 26으로 감소했습니다.",
+         "html": "공격력이 27에서 26으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "실명의 바람",
+       "key": "E",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "공격력이 140에서 133으로 감소했습니다.",
+         "html": "공격력이 140에서 133으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "1,000잔 돌리기",
+       "key": "R",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "치유량이 66.5에서 70으로 증가했습니다.",
+         "html": "치유량이 66.5에서 70으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "수룡",
+       "key": "R",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "공격력이 318에서 300으로 감소했습니다.",
+         "html": "공격력이 318에서 300으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_LiLi_Crop.png\" data-id=\"17042288\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/AVO3T8MOM0SM1417483334438.png\"/></p>\n<p><strong class=\"pn-h\">능력치</strong></p>\n<ul>\n<li>기본 생명력이 1552에서 1475로 감소했습니다.</li>\n<li>생명력 재생량이 3.23에서 3.07로 감소했습니다.</li>\n<li>일반 공격력이 63에서 60으로 감소했습니다.</li>\n</ul>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>허브차 (Q)</strong></span>\n<ul>\n<li>치유량이 177에서 190으로 증가했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>운룡 (W)</strong></span>\n<ul>\n<li>치유량이 13.5에서 15로 증가했습니다.</li>\n<li>공격력이 27에서 26으로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>실명의 바람 (E)</strong></span>\n<ul>\n<li>공격력이 140에서 133으로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>1,000잔 돌리기 (R)</strong></span>\n<ul>\n<li>치유량이 66.5에서 70으로 증가했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>수룡 (R)</strong></span>\n<ul>\n<li>공격력이 318에서 300으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "모랄레스 중위",
+     "heroId": "Medic",
+     "heroIds": [
+      "Medic"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "기본 생명력이 1550에서 1472로 감소했습니다.",
+         "html": "기본 생명력이 1550에서 1472로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "생명력 재생량이 3.23에서 3.07로 감소했습니다.",
+         "html": "생명력 재생량이 3.23에서 3.07로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "일반 공격력이 88에서 83으로 감소했습니다.",
+         "html": "일반 공격력이 88에서 83으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "치료 광선",
+       "key": "Q",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "치유량이 90에서 86으로 감소했습니다.",
+         "html": "치유량이 90에서 86으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "변위 수류탄",
+       "key": "E",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "공격력이 210에서 198로 감소했습니다.",
+         "html": "공격력이 210에서 198로 감소했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_LtMorales_cropped.png\" data-id=\"19922293\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/yd/YDNL0OKJTAHV1445037034465.png\"/></p>\n<p><strong class=\"pn-h\">능력치</strong></p>\n<ul>\n<li>기본 생명력이 1550에서 1472로 감소했습니다.</li>\n<li>생명력 재생량이 3.23에서 3.07로 감소했습니다.</li>\n<li>일반 공격력이 88에서 83으로 감소했습니다.</li>\n</ul>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>치료 광선 (Q)</strong></span>\n<ul>\n<li>치유량이 90에서 86으로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>변위 수류탄 (E)</strong></span>\n<ul>\n<li>공격력이 210에서 198로 감소했습니다.</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "루시우",
+     "heroId": "Lucio",
+     "heroIds": [
+      "Lucio"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "기본 생명력이 1518에서 1442로 감소했습니다.",
+         "html": "기본 생명력이 1518에서 1442로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "생명력 재생량이 3.16에서 3으로 감소했습니다.",
+         "html": "생명력 재생량이 3.16에서 3으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "일반 공격력이 24에서 23으로 감소했습니다.",
+         "html": "일반 공격력이 24에서 23으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "소리 파동",
+       "key": "Q",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "공격력이 112에서 105로 감소했습니다.",
+         "html": "공격력이 112에서 105로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "볼륨을 높여라!",
+       "key": "E",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "치유량이 15.5에서 15로 감소했습니다.",
+         "html": "치유량이 15.5에서 15로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "소리 방벽",
+       "key": "R",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "보호막이 1392에서 1296으로 감소했습니다.",
+         "html": "보호막이 1392에서 1296으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "역재생 앰프",
+       "key": "R",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "공격력이 14에서 13으로 감소했습니다.",
+         "html": "공격력이 14에서 13으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "다시 놀아볼까?",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "치유량이 260에서 245로 감소했습니다.",
+         "html": "치유량이 260에서 245로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "헤주베네센시아",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "치유량이 아군의 최대 생명력의 3%에서 2.5%로 감소했습니다.",
+         "html": "치유량이 아군의 최대 생명력의 3%에서 2.5%로 감소했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_Lucio.png\" data-id=\"20563586\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/2s/2S6L7YADVZQR1487796012090.png\"/></p>\n<p><strong class=\"pn-h\">능력치</strong></p>\n<ul>\n<li>기본 생명력이 1518에서 1442로 감소했습니다.</li>\n<li>생명력 재생량이 3.16에서 3으로 감소했습니다.</li>\n<li>일반 공격력이 24에서 23으로 감소했습니다.</li>\n</ul>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>소리 파동 (Q)</strong></span>\n<ul>\n<li>공격력이 112에서 105로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>볼륨을 높여라! (E)</strong></span>\n<ul>\n<li>치유량이 15.5에서 15로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>소리 방벽 (R)</strong></span>\n<ul>\n<li>보호막이 1392에서 1296으로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>역재생 앰프 (R)</strong></span>\n<ul>\n<li>공격력이 14에서 13으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>13레벨</strong></span>\n<ul>\n<li>다시 놀아볼까? (지속 효과)\n<ul>\n<li>치유량이 260에서 245로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>16레벨</strong></span>\n<ul>\n<li>헤주베네센시아 (E)\n<ul>\n<li>치유량이 아군의 최대 생명력의 3%에서 2.5%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<ul>\n</ul>"
+    },
+    {
+     "name": "말퓨리온",
+     "heroId": "Malfurion",
+     "heroIds": [
+      "Malfurion"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "기본 생명력이 1682에서 1598로 감소했습니다.",
+         "html": "기본 생명력이 1682에서 1598로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "생명력 재생량이 3.5에서 3.33으로 감소했습니다.",
+         "html": "생명력 재생량이 3.5에서 3.33으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "일반 공격력이 67에서 64로 감소했습니다.",
+         "html": "일반 공격력이 67에서 64로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "재생",
+       "key": "Q",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "초기 치유량이 150에서 142로 감소했습니다.",
+         "html": "초기 치유량이 150에서 142로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "주기적인 치유량이 28에서 27로 감소했습니다.",
+         "html": "주기적인 치유량이 28에서 27로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "달빛섬광",
+       "key": "W",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "공격력이 105에서 100으로 감소했습니다.",
+         "html": "공격력이 105에서 100으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "휘감는 뿌리",
+       "key": "E",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "공격력이 39에서 37로 감소했습니다.",
+         "html": "공격력이 39에서 37로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "평온",
+       "key": "R",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "치유량이 40에서 38로 감소했습니다.",
+         "html": "치유량이 40에서 38로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "황혼의 꿈",
+       "key": "R",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "공격력이 374에서 355로 감소했습니다.",
+         "html": "공격력이 374에서 355로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "달빛불꽃",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "(새로운 특성) 천체의 정렬",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "달빛섬광이 대상을 드러내는 시간이 3초 증가합니다. 달빛섬광으로 드러난 적에게 일반 공격을 하면 100%의 추가 피해를 줍니다.",
+         "html": "달빛섬광이 대상을 드러내는 시간이 3초 증가합니다. 달빛섬광으로 드러난 적에게 일반 공격을 하면 100%의 추가 피해를 줍니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "보복의 뿌리",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "나무정령의 일반 공격력이 70에서 65로 감소했습니다.",
+         "html": "나무정령의 일반 공격력이 70에서 65로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "퀘스트 중첩당 증가하는 공격력이 8에서 7로 감소했습니다.",
+         "html": "퀘스트 중첩당 증가하는 공격력이 8에서 7로 감소했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_Malfurion_Crop.png\" data-id=\"17042290\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/1JZXW9JSV6ZW1417483334684.png\"/></p>\n<p><strong class=\"pn-h\">능력치</strong></p>\n<ul>\n<li>기본 생명력이 1682에서 1598로 감소했습니다.</li>\n<li>생명력 재생량이 3.5에서 3.33으로 감소했습니다.</li>\n<li>일반 공격력이 67에서 64로 감소했습니다.</li>\n</ul>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>재생 (Q)</strong></span>\n<ul>\n<li>초기 치유량이 150에서 142로 감소했습니다.</li>\n<li>주기적인 치유량이 28에서 27로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>달빛섬광 (W)</strong></span>\n<ul>\n<li>공격력이 105에서 100으로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>휘감는 뿌리 (E)</strong></span>\n<ul>\n<li>공격력이 39에서 37로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>평온 (R)</strong></span>\n<ul>\n<li>치유량이 40에서 38로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>황혼의 꿈 (R)</strong></span>\n<ul>\n<li>공격력이 374에서 355로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>달빛불꽃 (W)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li><strong>(새로운 특성) 천체의 정렬 (W)</strong>\n<ul>\n<li>달빛섬광이 대상을 드러내는 시간이 3초 증가합니다. 달빛섬광으로 드러난 적에게 일반 공격을 하면 100%의 추가 피해를 줍니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>보복의 뿌리 (E)\n<ul>\n<li>나무정령의 일반 공격력이 70에서 65로 감소했습니다.</li>\n<li>퀘스트 중첩당 증가하는 공격력이 8에서 7로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<ul>\n</ul>"
+    },
+    {
+     "name": "레가르",
+     "heroId": "Rehgar",
+     "heroIds": [
+      "Rehgar"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "일반 공격력이 120에서 113으로 감소했습니다.",
+         "html": "일반 공격력이 120에서 113으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "연쇄 치유",
+       "key": "Q",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "치유량이 250에서 240으로 감소했습니다.",
+         "html": "치유량이 250에서 240으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "번개 보호막",
+       "key": "W",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "공격력이 35에서 32로 감소했습니다.",
+         "html": "공격력이 35에서 32로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "선조의 치유",
+       "key": "R",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "치유량이 1552에서 1475로 감소했습니다.",
+         "html": "치유량이 1552에서 1475로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "번개 유대",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_Rehgar_Crop.png\" data-id=\"17042296\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/HM0ECRA7F3U91417483335126.png\"/></p>\n<p><strong class=\"pn-h\">능력치</strong></p>\n<ul>\n<li>일반 공격력이 120에서 113으로 감소했습니다.</li>\n</ul>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>연쇄 치유 (Q)</strong></span>\n<ul>\n<li>치유량이 250에서 240으로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>번개 보호막 (W)</strong></span>\n<ul>\n<li>공격력이 35에서 32로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>선조의 치유 (R)</strong></span>\n<ul>\n<li>치유량이 1552에서 1475로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>번개 유대 (W)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<ul>\n</ul>"
+    },
+    {
+     "name": "스투코프",
+     "heroId": "Stukov",
+     "heroIds": [
+      "Stukov"
+     ],
+     "changes": [
+      {
+       "name": "치유성 병원균",
+       "key": "Q",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "치유량이 37에서 35로 감소했습니다.",
+         "html": "치유량이 37에서 35로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "스멀거리는 팔",
+       "key": "E",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "공격력이 36에서 34로 감소했습니다.",
+         "html": "공격력이 36에서 34로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "감염체 폭발",
+       "key": "D",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "치유량이 500에서 475로 감소했습니다.",
+         "html": "치유량이 500에서 475로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "거친 휩쓸기",
+       "key": "R",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "공격력이 50에서 48로 감소했습니다.",
+         "html": "공격력이 50에서 48로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "육중한 밀치기",
+       "key": "R",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "공격력이 200에서 190으로 감소했습니다.",
+         "html": "공격력이 200에서 190으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/HVLATI65JATJ1498610396437.png\"/></p>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>치유성 병원균 (Q)</strong></span>\n<ul>\n<li>치유량이 37에서 35로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>스멀거리는 팔 (E)</strong></span>\n<ul>\n<li>공격력이 36에서 34로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>감염체 폭발 (D)</strong></span>\n<ul>\n<li>치유량이 500에서 475로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>거친 휩쓸기 (R)</strong></span>\n<ul>\n<li>공격력이 50에서 48로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>육중한 밀치기 (R)</strong></span>\n<ul>\n<li>공격력이 200에서 190으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "태사다르",
+     "heroId": "Tassadar",
+     "heroIds": [
+      "Tassadar"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "기본 생명력이 1355에서 1287로 감소했습니다.",
+         "html": "기본 생명력이 1355에서 1287로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "생명력 재생량이 2.82에서 2.68로 감소했습니다.",
+         "html": "생명력 재생량이 2.82에서 2.68로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "플라스마 보호막",
+       "key": "Q",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "보호막이 475에서 455로 감소했습니다.",
+         "html": "보호막이 475에서 455로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "사이오닉 폭풍",
+       "key": "W",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "공격력이 44에서 41로 감소했습니다.",
+         "html": "공격력이 44에서 41로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "집정관",
+       "key": "R",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "추가 공격력이 166에서 158로 감소했습니다.",
+         "html": "추가 공격력이 166에서 158로 감소했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_Tassadar_Crop.png\" data-id=\"17042301\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/2J5UMQ9U8Y951417483335330.png\"/></p>\n<p><strong class=\"pn-h\">능력치</strong></p>\n<ul>\n<li>기본 생명력이 1355에서 1287로 감소했습니다.</li>\n<li>생명력 재생량이 2.82에서 2.68로 감소했습니다.</li>\n</ul>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>플라스마 보호막 (Q)</strong></span>\n<ul>\n<li>보호막이 475에서 455로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>사이오닉 폭풍 (W)</strong></span>\n<ul>\n<li>공격력이 44에서 41로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>집정관 (R)</strong></span>\n<ul>\n<li>추가 공격력이 166에서 158로 감소했습니다.</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "티란데",
+     "heroId": "Tyrande",
+     "heroIds": [
+      "Tyrande"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "기본 생명력이 1591에서 1511로 감소했습니다.",
+         "html": "기본 생명력이 1591에서 1511로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "생명력 재생량이 3.32에서 3.15로 감소했습니다.",
+         "html": "생명력 재생량이 3.32에서 3.15로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "일반 공격력이 82에서 80으로 감소했습니다.",
+         "html": "일반 공격력이 82에서 80으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "파수",
+       "key": "W",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "공격력이 173에서 165로 감소했습니다.",
+         "html": "공격력이 173에서 165로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "달의 섬광",
+       "key": "E",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "공격력이 205에서 195로 감소했습니다.",
+         "html": "공격력이 205에서 195로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "별똥별",
+       "key": "R",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "공격력이 91에서 88로 감소했습니다.",
+         "html": "공격력이 91에서 88로 감소했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_Tyrande_Crop.png\" data-id=\"17042307\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/L326XNRFITE41417483335724.png\"/></p>\n<p><strong class=\"pn-h\">능력치</strong></p>\n<ul>\n<li>기본 생명력이 1591에서 1511로 감소했습니다.</li>\n<li>생명력 재생량이 3.32에서 3.15로 감소했습니다.</li>\n<li>일반 공격력이 82에서 80으로 감소했습니다.</li>\n</ul>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>파수 (W)</strong></span>\n<ul>\n<li>공격력이 173에서 165로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>달의 섬광 (E)</strong></span>\n<ul>\n<li>공격력이 205에서 195로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>별똥별 (R)</strong></span>\n<ul>\n<li>공격력이 91에서 88로 감소했습니다.</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "우서",
+     "heroId": "Uther",
+     "heroIds": [
+      "Uther"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "일반 공격력이 78에서 75로 감소했습니다.",
+         "html": "일반 공격력이 78에서 75로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "성스러운 빛",
+       "key": "Q",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "치유량이 380에서 362로 감소했습니다.",
+         "html": "치유량이 380에서 362로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "신성한 광휘",
+       "key": "W",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "치유량이 185에서 177로 감소했습니다.",
+         "html": "치유량이 185에서 177로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "공격력이 185에서 177로 감소했습니다.",
+         "html": "공격력이 185에서 177로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "빛의 섬광",
+       "key": "Q",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "치유량이 242에서 230으로 감소했습니다.",
+         "html": "치유량이 242에서 230으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "심판의 망치",
+       "key": "E",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "공격력이 114에서 109로 감소했습니다.",
+         "html": "공격력이 114에서 109로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "천상의 폭풍",
+       "key": "R",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "공격력이 178에서 170으로 감소했습니다.",
+         "html": "공격력이 178에서 170으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "성스러운 불꽃",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "공격력이 14에서 13으로 감소했습니다.",
+         "html": "공격력이 14에서 13으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_Uther_Crop.png\" data-id=\"17042305\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/5W8VDU5725O81417483335719.png\"/></p>\n<p><strong class=\"pn-h\">능력치</strong></p>\n<ul>\n<li>일반 공격력이 78에서 75로 감소했습니다.</li>\n</ul>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>성스러운 빛 (Q)</strong></span>\n<ul>\n<li>치유량이 380에서 362로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>신성한 광휘 (W)</strong></span>\n<ul>\n<li>치유량이 185에서 177로 감소했습니다.</li>\n<li>공격력이 185에서 177로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>빛의 섬광 (Q)</strong></span>\n<ul>\n<li>치유량이 242에서 230으로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>심판의 망치 (E)</strong></span>\n<ul>\n<li>공격력이 114에서 109로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>천상의 폭풍 (R)</strong></span>\n<ul>\n<li>공격력이 178에서 170으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>성스러운 불꽃 (지속 효과)\n<ul>\n<li>공격력이 14에서 13으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<ul>\n</ul>"
+    }
+   ]
+  },
+  {
+   "name": "전사",
+   "key": "role_tank",
+   "html": "<h4>요한나</h4>\n<p><img alt=\"Divider_Hero_Johanna_Crop.png\" data-id=\"20020920\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/cl/CL282YHEXJD81453761576243.png\"/></p>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>철갑 피부 (고유 능력)</strong></span>\n<ul>\n<li>마나 소모량이 삭제되었습니다.</li>\n</ul>\n</li>\n</ul>\n<h4>소냐</h4>\n<p><img alt=\"Divider_Hero_Sonya.png\" data-id=\"20783186\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/kt/KTJ5G6MTBWXD1494449265980.png\"/></p>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>7레벨</strong></span>\n<ul>\n<li>독 작살 (Q)\n<ul>\n<li>공격력이 150%에서 125%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+   "heroes": [
+    {
+     "name": "요한나",
+     "heroId": "Crusader",
+     "heroIds": [
+      "Crusader"
+     ],
+     "changes": [
+      {
+       "name": "철갑 피부",
+       "key": "고유 능력",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "마나 소모량이 삭제되었습니다.",
+         "html": "마나 소모량이 삭제되었습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_Johanna_Crop.png\" data-id=\"20020920\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/cl/CL282YHEXJD81453761576243.png\"/></p>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>철갑 피부 (고유 능력)</strong></span>\n<ul>\n<li>마나 소모량이 삭제되었습니다.</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "소냐",
+     "heroId": "Barbarian",
+     "heroIds": [
+      "Barbarian"
+     ],
+     "changes": [
+      {
+       "name": "독 작살",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "공격력이 150%에서 125%로 감소했습니다.",
+         "html": "공격력이 150%에서 125%로 감소했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_Sonya.png\" data-id=\"20783186\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/kt/KTJ5G6MTBWXD1494449265980.png\"/></p>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>7레벨</strong></span>\n<ul>\n<li>독 작살 (Q)\n<ul>\n<li>공격력이 150%에서 125%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    }
+   ]
+  },
+  {
+   "name": "버그 수정",
+   "key": "bugs",
+   "html": "<p><strong class=\"pn-h\">일반</strong></p>\n<ul>\n<li><strong>Mac</strong>: Mac 클라이언트에서 게임이 비정상적으로 종료될 수 있던 문제를 수정했습니다.</li>\n<li><strong>Mac:</strong> Mac 클라이언트에서 의도하지 않은 설정들이 표시되던 문제를 수정했습니다.</li>\n<li><strong>음향:</strong> 영웅의 대사가 양팀 모두에게 들릴 수 있던 문제를 수정했습니다.</li>\n</ul>\n<p><img alt=\"\" class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/g6/G6G0N80EOC941426801305139.png\"/></p>\n<p><img alt=\"InvisibleDividerLine_800x50.png\" class=\"no-border; no-shadow\" data-id=\"14509591\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/6VA2831Q81IU1403137406234.png\"/></p>\n<style type=\"text/css\">.article-container img { display: block; }\n.article-container p { display:inline; }\n</style>"
+  }
+ ],
+ "heroes": [
+  "Alexstrasza",
+  "Ana",
+  "Auriel",
+  "Barbarian",
+  "Crusader",
+  "FaerieDragon",
+  "LiLi",
+  "Lucio",
+  "Malfurion",
+  "Medic",
+  "Monk",
+  "Rehgar",
+  "SgtHammer",
+  "Stukov",
+  "Tassadar",
+  "Tychus",
+  "Tyrande",
+  "Uther",
+  "Zuljin"
+ ],
+ "battlegrounds": [],
+ "newsId": "21273597"
+}

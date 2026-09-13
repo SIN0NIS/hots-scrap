@@ -1,0 +1,671 @@
+{
+ "date": "2016-11-10",
+ "kind": "balance",
+ "title": "Heroes of the Storm Balance Update",
+ "source": "https://news.blizzard.com/en-us/article/20352063/heroes-of-the-storm-balance-update-november-10-2016",
+ "published": "2016-11-10T00:42:00Z",
+ "sections": [
+  {
+   "name": "머리말",
+   "key": "intro",
+   "html": "<p>We've just released a new patch for Heroes of the Storm in order to apply a few balance changes to the Nexus. Check out the full patch notes below.</p>\n<p><img alt=\"\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/19RBT3IUQUYB1403137112368.png\"/></p>",
+   "nameKo": "머리말"
+  },
+  {
+   "name": "Heroes",
+   "key": "heroes",
+   "html": "<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"schedule_table\">\n<tbody>\n<tr>\n<th bgcolor=\"#1A0A33\"><strong></strong></th>\n<th bgcolor=\"#1A0A33\"><strong></strong></th>\n<th bgcolor=\"#1A0A33\"><strong></strong></th>\n<th bgcolor=\"#1A0A33\"><strong></strong></th>\n</tr>\n<tr>\n<td bgcolor=\"#100029\"></td>\n<td bgcolor=\"#100029\"></td>\n<td bgcolor=\"#100029\"></td>\n<td bgcolor=\"#100029\"></td>\n</tr>\n<tr>\n<td bgcolor=\"#100029\"></td>\n<td bgcolor=\"#100029\"></td>\n<td bgcolor=\"#100029\"></td>\n<td bgcolor=\"#100029\"></td>\n</tr>\n<tr>\n<td bgcolor=\"#100029\"></td>\n<td bgcolor=\"#100029\"></td>\n<td bgcolor=\"#100029\"></td>\n<td bgcolor=\"#100029\"></td>\n</tr>\n</tbody>\n</table>\n<p><img alt=\"\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/19RBT3IUQUYB1403137112368.png\"/></p>",
+   "nameKo": "영웅"
+  },
+  {
+   "name": "Assassin",
+   "key": "role_assassin",
+   "html": "<h4>Kael'thas</h4>\n<p><img alt=\"Divider_Heroes_Kaelthas_Cropped.png\" data-id=\"19828415\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/RRZWEAEXJ8441439221492336.png\"/></p>\n<p><span class=\"pn-h\"><strong>Talents</strong></span></p>\n<p><span class=\"pn-name\"><strong>Level 7</strong></span></p>\n<ul>\n<li>Sun King's Fury (W)\n<ul>\n<li>Increased damage bonus from 30 to 35%</li>\n</ul>\n</li>\n</ul>\n<h4>Valla</h4>\n<p><img alt=\"Divider_Hero_Valla_Crop.png\" data-id=\"17042306\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/RHUC14VVAAUN1417483335722.png\"/></p>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<p><span class=\"pn-name\"><strong>Level 4</strong></span></p>\n<ul>\n<li>Punishment (W)\n<ul>\n<li>Bonus damage per Hatred stack decreased from 5 to 4%</li>\n</ul>\n</li>\n</ul>\n<p><span class=\"pn-name\"><strong>Level 7</strong></span></p>\n<ul>\n<li>Arsenal (W)\n<ul>\n<li>Cooldown reduction per Hero hit reduced from 3 to 2 seconds</li>\n</ul>\n</li>\n</ul>\n<blockquote><em><strong>Developer Comments:  </strong></em>Valla is sitting in a really good spot right now, but we feel like the damage output compared to ease of use is too high on her Multishot talents. The changes to Punishment and Arsenal should incentivize players into taking the higher skill-vs-reward talents on those tiers. </blockquote>\n<h4>Samuro</h4>\n<p><img alt=\"Divider_Hero_Samuro_crop.png\" data-id=\"20327808\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/s3/S3OEVZYDSFQR1476921929062.png\"/></p>\n<p><strong class=\"pn-h\">Stats</strong></p>\n<ul>\n<li>Basic Attack Damage decreased from 93 to 88</li>\n</ul>\n<p><strong class=\"pn-h\">Abilities</strong></p>\n<ul>\n<li><strong>Mirror Images (Q)</strong>\n<ul>\n<li>Damage dealt reduced from 30 to 25% of Samuro’s damage</li>\n</ul>\n</li>\n<li><strong>Illusion Master (R)</strong>\n<ul>\n<li>Damage increase reduced from 15 to 10%</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<p><span class=\"pn-name\"><strong>Level 13</strong></span></p>\n<ul>\n<li>Shukuchi (E)\n<ul>\n<li>Teleport range decreased by 20%</li>\n</ul>\n</li>\n</ul>\n<blockquote><em><strong>Developer Comments:  </strong></em>While there are a lot of knobs for us to turn in order to help bring Samuro’s win rate more in line, we felt that his damage output (especially burst) was where we wanted to start first. We are happy with his survivability options and feel his fantasy should cater towards being elusive. We also realize that damage and confusion are really all he brings to a team, so we wanted to be careful with the changes. We feel that these small tweaks to his damage (and the fact that they compound on each other) will cause a reasonable drop in his win rate and will continue to closely monitor him. </blockquote>\n<p><img alt=\"\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/19RBT3IUQUYB1403137112368.png\"/></p>",
+   "heroes": [
+    {
+     "name": "Kael'thas",
+     "heroId": "Kaelthas",
+     "heroIds": [
+      "Kaelthas"
+     ],
+     "changes": [
+      {
+       "name": "Sun King's Fury",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": null,
+       "lines": [
+        {
+         "text": "Increased damage bonus from 30 to 35%",
+         "html": "Increased damage bonus from 30 to 35%",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Heroes_Kaelthas_Cropped.png\" data-id=\"19828415\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/RRZWEAEXJ8441439221492336.png\"/></p>\n<p><span class=\"pn-h\"><strong>Talents</strong></span></p>\n<p><span class=\"pn-name\"><strong>Level 7</strong></span></p>\n<ul>\n<li>Sun King's Fury (W)\n<ul>\n<li>Increased damage bonus from 30 to 35%</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Valla",
+     "heroId": "DemonHunter",
+     "heroIds": [
+      "DemonHunter"
+     ],
+     "changes": [
+      {
+       "name": "Punishment",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": null,
+       "lines": [
+        {
+         "text": "Bonus damage per Hatred stack decreased from 5 to 4%",
+         "html": "Bonus damage per Hatred stack decreased from 5 to 4%",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Arsenal",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": null,
+       "lines": [
+        {
+         "text": "Cooldown reduction per Hero hit reduced from 3 to 2 seconds",
+         "html": "Cooldown reduction per Hero hit reduced from 3 to 2 seconds",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_Valla_Crop.png\" data-id=\"17042306\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/RHUC14VVAAUN1417483335722.png\"/></p>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<p><span class=\"pn-name\"><strong>Level 4</strong></span></p>\n<ul>\n<li>Punishment (W)\n<ul>\n<li>Bonus damage per Hatred stack decreased from 5 to 4%</li>\n</ul>\n</li>\n</ul>\n<p><span class=\"pn-name\"><strong>Level 7</strong></span></p>\n<ul>\n<li>Arsenal (W)\n<ul>\n<li>Cooldown reduction per Hero hit reduced from 3 to 2 seconds</li>\n</ul>\n</li>\n</ul>\n<blockquote><em><strong>Developer Comments:  </strong></em>Valla is sitting in a really good spot right now, but we feel like the damage output compared to ease of use is too high on her Multishot talents. The changes to Punishment and Arsenal should incentivize players into taking the higher skill-vs-reward talents on those tiers. </blockquote>"
+    },
+    {
+     "name": "Samuro",
+     "heroId": "Samuro",
+     "heroIds": [
+      "Samuro"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "Basic Attack Damage decreased from 93 to 88",
+         "html": "Basic Attack Damage decreased from 93 to 88",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Mirror Images",
+       "key": "Q",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "Damage dealt reduced from 30 to 25% of Samuro’s damage",
+         "html": "Damage dealt reduced from 30 to 25% of Samuro’s damage",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Illusion Master",
+       "key": "R",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "Damage increase reduced from 15 to 10%",
+         "html": "Damage increase reduced from 15 to 10%",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Shukuchi",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": null,
+       "lines": [
+        {
+         "text": "Teleport range decreased by 20%",
+         "html": "Teleport range decreased by 20%",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_Samuro_crop.png\" data-id=\"20327808\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/s3/S3OEVZYDSFQR1476921929062.png\"/></p>\n<p><strong class=\"pn-h\">Stats</strong></p>\n<ul>\n<li>Basic Attack Damage decreased from 93 to 88</li>\n</ul>\n<p><strong class=\"pn-h\">Abilities</strong></p>\n<ul>\n<li><strong>Mirror Images (Q)</strong>\n<ul>\n<li>Damage dealt reduced from 30 to 25% of Samuro’s damage</li>\n</ul>\n</li>\n<li><strong>Illusion Master (R)</strong>\n<ul>\n<li>Damage increase reduced from 15 to 10%</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<p><span class=\"pn-name\"><strong>Level 13</strong></span></p>\n<ul>\n<li>Shukuchi (E)\n<ul>\n<li>Teleport range decreased by 20%</li>\n</ul>\n</li>\n</ul>\n<blockquote><em><strong>Developer Comments:  </strong></em>While there are a lot of knobs for us to turn in order to help bring Samuro’s win rate more in line, we felt that his damage output (especially burst) was where we wanted to start first. We are happy with his survivability options and feel his fantasy should cater towards being elusive. We also realize that damage and confusion are really all he brings to a team, so we wanted to be careful with the changes. We feel that these small tweaks to his damage (and the fact that they compound on each other) will cause a reasonable drop in his win rate and will continue to closely monitor him. </blockquote>\n<p><img alt=\"\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/19RBT3IUQUYB1403137112368.png\"/></p>"
+    }
+   ],
+   "nameKo": "암살자"
+  },
+  {
+   "name": "Specialist",
+   "key": "role_specialist",
+   "html": "<h4>Murky</h4>\n<p><img alt=\"Divider_Hero_Murky_Crop.png\" data-id=\"17042292\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/ALZFYULQAD0J1417483334906.png\"/></p>\n<p><strong class=\"pn-h\">Abilities</strong></p>\n<ul>\n<li><strong>Slime (Q)</strong>\n<ul>\n<li>Damage increased from 82 to 86</li>\n</ul>\n</li>\n<li><strong>Pufferfish (W)</strong>\n<ul>\n<li>Damage increased from 390 to 410</li>\n</ul>\n</li>\n</ul>\n<blockquote><em><strong>Developer Comments:  </strong></em>“Aaaaaughibbrgubugbugrguburgle!” Translated, that means he’s getting a 5% buff to most of his damage, but expect to see larger Talent changes in the early part of next year.</blockquote>\n<p><img alt=\"\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/19RBT3IUQUYB1403137112368.png\"/></p>",
+   "heroes": [
+    {
+     "name": "Murky",
+     "heroId": "Murky",
+     "heroIds": [
+      "Murky"
+     ],
+     "changes": [
+      {
+       "name": "Slime",
+       "key": "Q",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "Damage increased from 82 to 86",
+         "html": "Damage increased from 82 to 86",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Pufferfish",
+       "key": "W",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "Damage increased from 390 to 410",
+         "html": "Damage increased from 390 to 410",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_Murky_Crop.png\" data-id=\"17042292\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/ALZFYULQAD0J1417483334906.png\"/></p>\n<p><strong class=\"pn-h\">Abilities</strong></p>\n<ul>\n<li><strong>Slime (Q)</strong>\n<ul>\n<li>Damage increased from 82 to 86</li>\n</ul>\n</li>\n<li><strong>Pufferfish (W)</strong>\n<ul>\n<li>Damage increased from 390 to 410</li>\n</ul>\n</li>\n</ul>\n<blockquote><em><strong>Developer Comments:  </strong></em>“Aaaaaughibbrgubugbugrguburgle!” Translated, that means he’s getting a 5% buff to most of his damage, but expect to see larger Talent changes in the early part of next year.</blockquote>\n<p><img alt=\"\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/19RBT3IUQUYB1403137112368.png\"/></p>"
+    }
+   ],
+   "nameKo": "전문가"
+  },
+  {
+   "name": "Support",
+   "key": "role_support",
+   "html": "<h4>Malfurion</h4>\n<p><img alt=\"Divider_Hero_Malfurion_Crop.png\" data-id=\"17042290\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/1JZXW9JSV6ZW1417483334684.png\"/></p>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<p><strong>Level 1</strong></p>\n<ul>\n<li>Shan'do's Clarity (Trait)\n<ul>\n<li>Cooldown reduction decreased from 10 to 8 seconds</li>\n</ul>\n</li>\n<li>Moonburn (W)\n<ul>\n<li>Bonus damage against non-heroes reduced from 100 to 75%</li>\n</ul>\n</li>\n</ul>\n<p><strong>Level 4</strong></p>\n<ul>\n<li>Elune's Grace (Passive)\n<ul>\n<li>Ability range decreased from 30 to 25%</li>\n</ul>\n</li>\n</ul>\n<blockquote><em><strong>Developer Comments:  </strong></em>Similar to ETC, Malfurion is simply a little too powerful. We’re toning down some of his talents to keep him more in line with other supports. </blockquote>\n<p><img alt=\"\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/19RBT3IUQUYB1403137112368.png\"/></p>\n<h3></h3>",
+   "heroes": [
+    {
+     "name": "Malfurion",
+     "heroId": "Malfurion",
+     "heroIds": [
+      "Malfurion"
+     ],
+     "changes": [
+      {
+       "name": "Shan'do's Clarity",
+       "key": "Trait",
+       "new": false,
+       "group": "talent",
+       "level": null,
+       "lines": [
+        {
+         "text": "Cooldown reduction decreased from 10 to 8 seconds",
+         "html": "Cooldown reduction decreased from 10 to 8 seconds",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Moonburn",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": null,
+       "lines": [
+        {
+         "text": "Bonus damage against non-heroes reduced from 100 to 75%",
+         "html": "Bonus damage against non-heroes reduced from 100 to 75%",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Elune's Grace",
+       "key": "Passive",
+       "new": false,
+       "group": "talent",
+       "level": null,
+       "lines": [
+        {
+         "text": "Ability range decreased from 30 to 25%",
+         "html": "Ability range decreased from 30 to 25%",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_Malfurion_Crop.png\" data-id=\"17042290\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/1JZXW9JSV6ZW1417483334684.png\"/></p>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<p><strong>Level 1</strong></p>\n<ul>\n<li>Shan'do's Clarity (Trait)\n<ul>\n<li>Cooldown reduction decreased from 10 to 8 seconds</li>\n</ul>\n</li>\n<li>Moonburn (W)\n<ul>\n<li>Bonus damage against non-heroes reduced from 100 to 75%</li>\n</ul>\n</li>\n</ul>\n<p><strong>Level 4</strong></p>\n<ul>\n<li>Elune's Grace (Passive)\n<ul>\n<li>Ability range decreased from 30 to 25%</li>\n</ul>\n</li>\n</ul>\n<blockquote><em><strong>Developer Comments:  </strong></em>Similar to ETC, Malfurion is simply a little too powerful. We’re toning down some of his talents to keep him more in line with other supports. </blockquote>\n<p><img alt=\"\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/19RBT3IUQUYB1403137112368.png\"/></p>\n<h3></h3>"
+    }
+   ],
+   "nameKo": "지원가"
+  },
+  {
+   "name": "Warrior",
+   "key": "role_tank",
+   "html": "<h4>E.T.C.</h4>\n<p><img alt=\"Divider_Hero_ETC_Crop.png\" data-id=\"17042283\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/6L0DECUU5AUA1417483334095.png\"/></p>\n<p><strong class=\"pn-h\">Stats</strong></p>\n<ul>\n<li>Maximum Base Health decreased from 2556 to 2428</li>\n<li>Base Health Regen from 5.32 to 5.06</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<p><strong>Level 1</strong></p>\n<ul>\n<li>Prog Rock (E)\n<ul>\n<li>Quest reward ally heal reduced from 53 to 50</li>\n</ul>\n</li>\n</ul>\n<p><strong>Level 7</strong></p>\n<ul>\n<li>Echo Pedal (Passive)\n<ul>\n<li>Bonus damage to Minions and Mercenaries reduced from 100 to 75%</li>\n</ul>\n</li>\n</ul>\n<p><strong>Level 13</strong></p>\n<ul>\n<li>Face Smelt (W)\n<ul>\n<li>Slow amount reduced from 60 to 50%</li>\n</ul>\n</li>\n</ul>\n<blockquote><em><strong>Developer Comments:  </strong></em>ETC is a little too strong at all levels of play, so we’re looking to trim down his power. He also has a few over performing talents in Prog Rock, Echo Pedal, and Face Smelt, so we’re lowering their power to make the other talents on their tiers more competitive. </blockquote>\n<h4>Muradin</h4>\n<p><img alt=\"Divider_Hero_Muradin_Crop.png\" data-id=\"17042291\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/TM8DLIER5QEH1417483334689.png\"/></p>\n<p><strong class=\"pn-h\">Stats</strong></p>\n<ul>\n<li>Base Maximum Health increased from 2556 to 2633</li>\n<li>Health Regen increased from 5.32 to 5.48</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<p><span class=\"pn-name\"><strong>Level 4</strong></span></p>\n<ul>\n<li>Crowd Control (W)\n<ul>\n<li>Added functionality:\n<ul>\n<li>Now also refunds 5 Mana per enemy hit</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<p><span class=\"pn-name\"><strong>Level 7</strong></span></p>\n<ul>\n<li>Skullcracker (Passive)\n<ul>\n<li>Added functionality:\n<ul>\n<li>Now also passively increases Muradin’s attack speed by 25%</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>Iron-Forged Momentum (Passive)\n<ul>\n<li>No longer decreases the cooldown of Dwarf Toss</li>\n</ul>\n</li>\n</ul>\n<p><span class=\"pn-name\"><strong>Level 16</strong></span></p>\n<ul>\n<li>Heavy Impact (E)\n<ul>\n<li>Stun duration reduced from .75 to .5</li>\n</ul>\n</li>\n</ul>\n<blockquote><em><strong>Developer Comments:  </strong></em>Muradin’s pick rate in both Hero League and Pro Play continues to be extremely high. Oddly enough his win rate is actually below average in most levels of play. We realize that he brings a very versatile kit that allows him to be a great solo-Warrior for his team. Our main change to offset his Health is to remove the escape effectiveness of Iron-Forged Momentum. Next week we will also be reducing the amount of Health that Avatar provides. The rest of the changes are minimal and targeted towards talent win/pick rates.</blockquote>\n<h4>Zarya</h4>\n<p><img alt=\"Divider_Hero_Zarya_crop.png\" data-id=\"20311161\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/1v/1VUWFBVGUHBY1475167033295.png\"/></p>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<p><strong>Level 1</strong></p>\n<ul>\n<li>Demolitions Expert (Q)\n<ul>\n<li>Quest reward of hitting 5 Heroes increased from .375 to .5</li>\n</ul>\n</li>\n<li>Together We Are Strong (E)\n<ul>\n<li>Decreased Energy per damage dealt from 10 to 9</li>\n<li>Increased the maximum Energy gained from 25 to 30</li>\n</ul>\n</li>\n<li>Maximum Charge (Trait)\n<ul>\n<li>Quest completion time increased from 120 to 150 seconds</li>\n</ul>\n</li>\n</ul>\n<p><strong>Level 4</strong></p>\n<ul>\n<li>Defensive Shielding (Passive)\n<ul>\n<li>Block charge duration reduced from 12 to 6 seconds</li>\n</ul>\n</li>\n</ul>\n<p><strong>Level 7</strong></p>\n<ul>\n<li>Hit Me (Trait)\n<ul>\n<li>Bonus Energy from Zarya’s Shields decreased from 20 to 15%</li>\n</ul>\n</li>\n</ul>\n<p><strong>Level 13</strong></p>\n<ul>\n<li>Unstoppable Competitor (W)\n<ul>\n<li>Unstoppable duration increased from 1.5 to 2 seconds</li>\n</ul>\n</li>\n<li>Endurance Training (Passive)\n<ul>\n<li>Damage reduction decreased from 25 to 20%</li>\n</ul>\n</li>\n</ul>\n<p><strong>Level 16</strong></p>\n<ul>\n<li>Plasma Shock (Q)\n<ul>\n<li>Slow duration increased from 1 to 1.5 seconds</li>\n</ul>\n</li>\n<li>Cleansing Shield (E)\n<ul>\n<li>Added functionality\n<ul>\n<li>Also decreases Cooldown of Shield Ally from 12 to 10 seconds</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<p><strong>Level 20</strong></p>\n<ul>\n<li>Unyielding Defender (Active)\n<ul>\n<li>Cooldown increased from 45 to 60 seconds</li>\n</ul>\n</li>\n</ul>\n<ul>\n</ul>\n<blockquote><em><strong>Developer Comments:  </strong></em>Zarya’s power level is slightly higher than what we’d like, and in general her Energy Talents are stronger than all the other options on their tiers. These changes should increase Talent diversity and deliver a slight nerf to the Hero..</blockquote>\n<h3><img alt=\"\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/19RBT3IUQUYB1403137112368.png\"/></h3>",
+   "heroes": [
+    {
+     "name": "E.T.C.",
+     "heroId": "L90ETC",
+     "heroIds": [
+      "L90ETC"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "Maximum Base Health decreased from 2556 to 2428",
+         "html": "Maximum Base Health decreased from 2556 to 2428",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "Base Health Regen from 5.32 to 5.06",
+         "html": "Base Health Regen from 5.32 to 5.06",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Prog Rock",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": null,
+       "lines": [
+        {
+         "text": "Quest reward ally heal reduced from 53 to 50",
+         "html": "Quest reward ally heal reduced from 53 to 50",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Echo Pedal",
+       "key": "Passive",
+       "new": false,
+       "group": "talent",
+       "level": null,
+       "lines": [
+        {
+         "text": "Bonus damage to Minions and Mercenaries reduced from 100 to 75%",
+         "html": "Bonus damage to Minions and Mercenaries reduced from 100 to 75%",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Face Smelt",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": null,
+       "lines": [
+        {
+         "text": "Slow amount reduced from 60 to 50%",
+         "html": "Slow amount reduced from 60 to 50%",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_ETC_Crop.png\" data-id=\"17042283\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/6L0DECUU5AUA1417483334095.png\"/></p>\n<p><strong class=\"pn-h\">Stats</strong></p>\n<ul>\n<li>Maximum Base Health decreased from 2556 to 2428</li>\n<li>Base Health Regen from 5.32 to 5.06</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<p><strong>Level 1</strong></p>\n<ul>\n<li>Prog Rock (E)\n<ul>\n<li>Quest reward ally heal reduced from 53 to 50</li>\n</ul>\n</li>\n</ul>\n<p><strong>Level 7</strong></p>\n<ul>\n<li>Echo Pedal (Passive)\n<ul>\n<li>Bonus damage to Minions and Mercenaries reduced from 100 to 75%</li>\n</ul>\n</li>\n</ul>\n<p><strong>Level 13</strong></p>\n<ul>\n<li>Face Smelt (W)\n<ul>\n<li>Slow amount reduced from 60 to 50%</li>\n</ul>\n</li>\n</ul>\n<blockquote><em><strong>Developer Comments:  </strong></em>ETC is a little too strong at all levels of play, so we’re looking to trim down his power. He also has a few over performing talents in Prog Rock, Echo Pedal, and Face Smelt, so we’re lowering their power to make the other talents on their tiers more competitive. </blockquote>"
+    },
+    {
+     "name": "Muradin",
+     "heroId": "Muradin",
+     "heroIds": [
+      "Muradin"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "Base Maximum Health increased from 2556 to 2633",
+         "html": "Base Maximum Health increased from 2556 to 2633",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "Health Regen increased from 5.32 to 5.48",
+         "html": "Health Regen increased from 5.32 to 5.48",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Crowd Control",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": null,
+       "lines": []
+      },
+      {
+       "name": "Added functionality",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": null,
+       "lines": [
+        {
+         "text": "Now also refunds 5 Mana per enemy hit",
+         "html": "Now also refunds 5 Mana per enemy hit",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Skullcracker",
+       "key": "Passive",
+       "new": false,
+       "group": "talent",
+       "level": null,
+       "lines": []
+      },
+      {
+       "name": "Added functionality",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": null,
+       "lines": [
+        {
+         "text": "Now also passively increases Muradin’s attack speed by 25%",
+         "html": "Now also passively increases Muradin’s attack speed by 25%",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Iron-Forged Momentum",
+       "key": "Passive",
+       "new": false,
+       "group": "talent",
+       "level": null,
+       "lines": [
+        {
+         "text": "No longer decreases the cooldown of Dwarf Toss",
+         "html": "No longer decreases the cooldown of Dwarf Toss",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Heavy Impact",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": null,
+       "lines": [
+        {
+         "text": "Stun duration reduced from .75 to .5",
+         "html": "Stun duration reduced from .75 to .5",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_Muradin_Crop.png\" data-id=\"17042291\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/TM8DLIER5QEH1417483334689.png\"/></p>\n<p><strong class=\"pn-h\">Stats</strong></p>\n<ul>\n<li>Base Maximum Health increased from 2556 to 2633</li>\n<li>Health Regen increased from 5.32 to 5.48</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<p><span class=\"pn-name\"><strong>Level 4</strong></span></p>\n<ul>\n<li>Crowd Control (W)\n<ul>\n<li>Added functionality:\n<ul>\n<li>Now also refunds 5 Mana per enemy hit</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<p><span class=\"pn-name\"><strong>Level 7</strong></span></p>\n<ul>\n<li>Skullcracker (Passive)\n<ul>\n<li>Added functionality:\n<ul>\n<li>Now also passively increases Muradin’s attack speed by 25%</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>Iron-Forged Momentum (Passive)\n<ul>\n<li>No longer decreases the cooldown of Dwarf Toss</li>\n</ul>\n</li>\n</ul>\n<p><span class=\"pn-name\"><strong>Level 16</strong></span></p>\n<ul>\n<li>Heavy Impact (E)\n<ul>\n<li>Stun duration reduced from .75 to .5</li>\n</ul>\n</li>\n</ul>\n<blockquote><em><strong>Developer Comments:  </strong></em>Muradin’s pick rate in both Hero League and Pro Play continues to be extremely high. Oddly enough his win rate is actually below average in most levels of play. We realize that he brings a very versatile kit that allows him to be a great solo-Warrior for his team. Our main change to offset his Health is to remove the escape effectiveness of Iron-Forged Momentum. Next week we will also be reducing the amount of Health that Avatar provides. The rest of the changes are minimal and targeted towards talent win/pick rates.</blockquote>"
+    },
+    {
+     "name": "Zarya",
+     "heroId": "Zarya",
+     "heroIds": [
+      "Zarya"
+     ],
+     "changes": [
+      {
+       "name": "Demolitions Expert",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": null,
+       "lines": [
+        {
+         "text": "Quest reward of hitting 5 Heroes increased from .375 to .5",
+         "html": "Quest reward of hitting 5 Heroes increased from .375 to .5",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Together We Are Strong",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": null,
+       "lines": [
+        {
+         "text": "Decreased Energy per damage dealt from 10 to 9",
+         "html": "Decreased Energy per damage dealt from 10 to 9",
+         "added": false
+        },
+        {
+         "text": "Increased the maximum Energy gained from 25 to 30",
+         "html": "Increased the maximum Energy gained from 25 to 30",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Maximum Charge",
+       "key": "Trait",
+       "new": false,
+       "group": "talent",
+       "level": null,
+       "lines": [
+        {
+         "text": "Quest completion time increased from 120 to 150 seconds",
+         "html": "Quest completion time increased from 120 to 150 seconds",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Defensive Shielding",
+       "key": "Passive",
+       "new": false,
+       "group": "talent",
+       "level": null,
+       "lines": [
+        {
+         "text": "Block charge duration reduced from 12 to 6 seconds",
+         "html": "Block charge duration reduced from 12 to 6 seconds",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Hit Me",
+       "key": "Trait",
+       "new": false,
+       "group": "talent",
+       "level": null,
+       "lines": [
+        {
+         "text": "Bonus Energy from Zarya’s Shields decreased from 20 to 15%",
+         "html": "Bonus Energy from Zarya’s Shields decreased from 20 to 15%",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Unstoppable Competitor",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": null,
+       "lines": [
+        {
+         "text": "Unstoppable duration increased from 1.5 to 2 seconds",
+         "html": "Unstoppable duration increased from 1.5 to 2 seconds",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Endurance Training",
+       "key": "Passive",
+       "new": false,
+       "group": "talent",
+       "level": null,
+       "lines": [
+        {
+         "text": "Damage reduction decreased from 25 to 20%",
+         "html": "Damage reduction decreased from 25 to 20%",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Plasma Shock",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": null,
+       "lines": [
+        {
+         "text": "Slow duration increased from 1 to 1.5 seconds",
+         "html": "Slow duration increased from 1 to 1.5 seconds",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Cleansing Shield",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": null,
+       "lines": []
+      },
+      {
+       "name": "Added functionality",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": null,
+       "lines": [
+        {
+         "text": "Also decreases Cooldown of Shield Ally from 12 to 10 seconds",
+         "html": "Also decreases Cooldown of Shield Ally from 12 to 10 seconds",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Unyielding Defender",
+       "key": "Active",
+       "new": false,
+       "group": "talent",
+       "level": null,
+       "lines": [
+        {
+         "text": "Cooldown increased from 45 to 60 seconds",
+         "html": "Cooldown increased from 45 to 60 seconds",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_Zarya_crop.png\" data-id=\"20311161\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/1v/1VUWFBVGUHBY1475167033295.png\"/></p>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<p><strong>Level 1</strong></p>\n<ul>\n<li>Demolitions Expert (Q)\n<ul>\n<li>Quest reward of hitting 5 Heroes increased from .375 to .5</li>\n</ul>\n</li>\n<li>Together We Are Strong (E)\n<ul>\n<li>Decreased Energy per damage dealt from 10 to 9</li>\n<li>Increased the maximum Energy gained from 25 to 30</li>\n</ul>\n</li>\n<li>Maximum Charge (Trait)\n<ul>\n<li>Quest completion time increased from 120 to 150 seconds</li>\n</ul>\n</li>\n</ul>\n<p><strong>Level 4</strong></p>\n<ul>\n<li>Defensive Shielding (Passive)\n<ul>\n<li>Block charge duration reduced from 12 to 6 seconds</li>\n</ul>\n</li>\n</ul>\n<p><strong>Level 7</strong></p>\n<ul>\n<li>Hit Me (Trait)\n<ul>\n<li>Bonus Energy from Zarya’s Shields decreased from 20 to 15%</li>\n</ul>\n</li>\n</ul>\n<p><strong>Level 13</strong></p>\n<ul>\n<li>Unstoppable Competitor (W)\n<ul>\n<li>Unstoppable duration increased from 1.5 to 2 seconds</li>\n</ul>\n</li>\n<li>Endurance Training (Passive)\n<ul>\n<li>Damage reduction decreased from 25 to 20%</li>\n</ul>\n</li>\n</ul>\n<p><strong>Level 16</strong></p>\n<ul>\n<li>Plasma Shock (Q)\n<ul>\n<li>Slow duration increased from 1 to 1.5 seconds</li>\n</ul>\n</li>\n<li>Cleansing Shield (E)\n<ul>\n<li>Added functionality\n<ul>\n<li>Also decreases Cooldown of Shield Ally from 12 to 10 seconds</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<p><strong>Level 20</strong></p>\n<ul>\n<li>Unyielding Defender (Active)\n<ul>\n<li>Cooldown increased from 45 to 60 seconds</li>\n</ul>\n</li>\n</ul>\n<ul>\n</ul>\n<blockquote><em><strong>Developer Comments:  </strong></em>Zarya’s power level is slightly higher than what we’d like, and in general her Energy Talents are stronger than all the other options on their tiers. These changes should increase Talent diversity and deliver a slight nerf to the Hero..</blockquote>\n<h3><img alt=\"\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/19RBT3IUQUYB1403137112368.png\"/></h3>"
+    }
+   ],
+   "nameKo": "전사"
+  },
+  {
+   "name": "Bug Fixes",
+   "key": "bugs",
+   "html": "<p><b class=\"pn-name\">Heroes and Talents</b></p>\n<ul>\n<li><strong>Tyrael</strong>: Fixed an issue that could cause Tyrael’s Sanctification ability to fail if Zarya cast Expulsion Zone at the same location.</li>\n</ul>\n<p><img alt=\"\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/19RBT3IUQUYB1403137112368.png\"/></p>\n<p><img alt=\"\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/g6/G6G0N80EOC941426801305139.png\"/></p>\n<style class=\"blockquote-dev\" type=\"text/css\">blockquote {\nbackground: #140029;\nborder-left: 10px solid #320064;\nmargin: 1.5em 10px;\npadding: 0.5em 10px;;\nquotes: \"\\201C\"\"\\201D\"\"\\2018\"\"\\2019\";\n}\nblockquote p {\ndisplay: inline;\npadding: 0px 0px 0px 0px;\n}\n</style>\n<style type=\"text/css\">table\n{\nmargin-left: auto;\nmargin-right: auto;\n}\n</style>\n<style type=\"text/css\">ul.tile-list {\nwidth: 100%;\noverflow: hidden;\nmargin: 30px 0 0;\n}\nli.tile-list-item {\nfloat: left;\nclear: left;\nmargin: 0 0 20px;\nlist-style: none;\n}\nli.tile-list-item h4 {\ntext-align: center;\nmargin-bottom: 10px;\n}\nimg.tile-list-thumb {\nwidth: 50%;\nfloat: left;\n}\nli.tile-list-item ul {\nwidth: 50%;\nfloat: left;\nmargin: 0;\npadding-left: 15px;\n}\nli.tile-list-item li {\nfont-size: 14px;\nlist-style: disc;\nmargin-left: 15px;\n}\ntable.schedule_table {\nwidth: 80%;\n}\ntable.schedule_table th,\ntable.schedule_table td {\npadding: 4px;\n}\ntable.schedule_table th {\nfont-family: Metronic, sans-serif;\nfont-weight: normal;\ntext-align: left;\ncolor: #0099ff;\ntext-transform: uppercase;\n}\ntable.schedule_table td {\nfont-size: 14px;\nline-height: 18px;\nvertical-align: top;\n}\nul.schedule_list {\nmargin: 15px 0 30px 20px;\n}\nul.schedule_list li {\nfont-size: 14px;\n}\n@media (min-width: 564px) {\nli.tile-list-item {\nclear: none;\nmax-width: none;\nwidth: 31%;\nborder: none;\nmargin-bottom: 0;\n}\nli.tile-list-item:nth-child(2) {\nmargin: 0 3.5%;\n}\nimg.tile-list-thumb {\nwidth: 100%;\n}\nli.tile-list-item ul {\nclear: left;\nmargin-top: 15px;\nwidth: 100%;\n}\n}\n</style>",
+   "items": [
+    {
+     "name": "Tyrael",
+     "heroId": "Tyrael",
+     "heroIds": [
+      "Tyrael"
+     ],
+     "under": null,
+     "html": "<strong>Tyrael</strong>: Fixed an issue that could cause Tyrael’s Sanctification ability to fail if Zarya cast Expulsion Zone at the same location.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Tyrael : Fixed an issue that could cause Tyrael’s Sanctification ability to fail if Zarya cast Expulsion Zone at the same location.",
+         "html": "<strong>Tyrael</strong>: Fixed an issue that could cause Tyrael’s Sanctification ability to fail if Zarya cast Expulsion Zone at the same location.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "nameKo": "버그 수정"
+  }
+ ],
+ "heroes": [
+  "DemonHunter",
+  "Kaelthas",
+  "L90ETC",
+  "Malfurion",
+  "Muradin",
+  "Murky",
+  "Samuro",
+  "Tyrael",
+  "Zarya"
+ ],
+ "battlegrounds": [],
+ "lang": "en",
+ "newsId": "20352063"
+}

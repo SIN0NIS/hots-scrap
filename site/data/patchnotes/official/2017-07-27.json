@@ -1,0 +1,843 @@
+{
+ "date": "2017-07-27",
+ "kind": "balance",
+ "title": "히어로즈 오브 더 스톰 밸런스 업데이트 - 2017년 7월 27일",
+ "source": "https://news.blizzard.com/ko-kr/article/20931726/2017-7-27",
+ "published": "2017-07-26T17:10:00Z",
+ "sections": [
+  {
+   "name": "머리말",
+   "key": "intro",
+   "html": "<p>히어로즈 오브 더 스톰의 새로운 패치가 적용되었습니다. 이 패치에서는 밸런스에 몇 가지 변화가 이루어졌고 버그가 수정되었습니다.</p>"
+  },
+  {
+   "name": "영웅",
+   "key": "heroes",
+   "html": "<table class=\"table table-condensed\">\n<tbody>\n<tr>\n<th></th>\n<th></th>\n<th></th>\n<th></th>\n</tr>\n<tr>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n</tbody>\n</table>"
+  },
+  {
+   "name": "암살자",
+   "key": "role_assassin",
+   "html": "<h4>겐지</h4>\n<p><img class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/L1U82J9IR3NY1493916348655.png\"/></p>\n<p><strong class=\"pn-h\">능력치</strong></p>\n<ul>\n<li>기본 생명력이 1600에서 1550으로 감소했습니다.</li>\n<li>생명력 재생량이 3.3에서 3.2로 감소했습니다.</li>\n</ul>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>수리검 (Q)</strong></span>\n<ul>\n<li>마나 소모량이 15에서 20으로 증가했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>용검 (R)</strong></span>\n<ul>\n<li>재사용 대기시간이 80초에서 100초로 증가했습니다.</li>\n<li>마나 소모량이 50에서 75로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>7레벨</strong></span>\n<ul>\n<li>회피 (지속 효과)\n<ul>\n<li>최대 충전 횟수가 3회에서 1회로 감소했습니다.</li>\n<li>재사용 대기시간이 12초에서 8초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>그레이메인</h4>\n<p><img class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/3N30E9ZS7S2D1452704274681.png\"/></p>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>저주받은 탄환 (R)</strong></span>\n<ul>\n<li>주는 피해가 대상 영웅의 현재 생명력의 40%에서 35%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<h4>타이커스</h4>\n<p><img alt=\"Divider_Hero_Thrall_Crop.png\" data-id=\"17042303\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/C0A9M41RWSJQ1417483335476.png\"/></p>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>만반의 준비 (D)\n<ul>\n<li>재사용 대기시간 감소량이 33%(4초)에서 41%(5초)로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+   "heroes": [
+    {
+     "name": "겐지",
+     "heroId": "Genji",
+     "heroIds": [
+      "Genji"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "기본 생명력이 1600에서 1550으로 감소했습니다.",
+         "html": "기본 생명력이 1600에서 1550으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "생명력 재생량이 3.3에서 3.2로 감소했습니다.",
+         "html": "생명력 재생량이 3.3에서 3.2로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "수리검",
+       "key": "Q",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "마나 소모량이 15에서 20으로 증가했습니다.",
+         "html": "마나 소모량이 15에서 20으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "용검",
+       "key": "R",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 80초에서 100초로 증가했습니다.",
+         "html": "재사용 대기시간이 80초에서 100초로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "마나 소모량이 50에서 75로 증가했습니다.",
+         "html": "마나 소모량이 50에서 75로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "회피",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "최대 충전 횟수가 3회에서 1회로 감소했습니다.",
+         "html": "최대 충전 횟수가 3회에서 1회로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "재사용 대기시간이 12초에서 8초로 감소했습니다.",
+         "html": "재사용 대기시간이 12초에서 8초로 감소했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/L1U82J9IR3NY1493916348655.png\"/></p>\n<p><strong class=\"pn-h\">능력치</strong></p>\n<ul>\n<li>기본 생명력이 1600에서 1550으로 감소했습니다.</li>\n<li>생명력 재생량이 3.3에서 3.2로 감소했습니다.</li>\n</ul>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>수리검 (Q)</strong></span>\n<ul>\n<li>마나 소모량이 15에서 20으로 증가했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>용검 (R)</strong></span>\n<ul>\n<li>재사용 대기시간이 80초에서 100초로 증가했습니다.</li>\n<li>마나 소모량이 50에서 75로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>7레벨</strong></span>\n<ul>\n<li>회피 (지속 효과)\n<ul>\n<li>최대 충전 횟수가 3회에서 1회로 감소했습니다.</li>\n<li>재사용 대기시간이 12초에서 8초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "그레이메인",
+     "heroId": "Greymane",
+     "heroIds": [
+      "Greymane"
+     ],
+     "changes": [
+      {
+       "name": "저주받은 탄환",
+       "key": "R",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "주는 피해가 대상 영웅의 현재 생명력의 40%에서 35%로 감소했습니다.",
+         "html": "주는 피해가 대상 영웅의 현재 생명력의 40%에서 35%로 감소했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/3N30E9ZS7S2D1452704274681.png\"/></p>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>저주받은 탄환 (R)</strong></span>\n<ul>\n<li>주는 피해가 대상 영웅의 현재 생명력의 40%에서 35%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "타이커스",
+     "heroId": "Tychus",
+     "heroIds": [
+      "Tychus"
+     ],
+     "changes": [
+      {
+       "name": "만반의 준비",
+       "key": "D",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "재사용 대기시간 감소량이 33%(4초)에서 41%(5초)로 증가했습니다.",
+         "html": "재사용 대기시간 감소량이 33%(4초)에서 41%(5초)로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_Thrall_Crop.png\" data-id=\"17042303\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/C0A9M41RWSJQ1417483335476.png\"/></p>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>만반의 준비 (D)\n<ul>\n<li>재사용 대기시간 감소량이 33%(4초)에서 41%(5초)로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    }
+   ]
+  },
+  {
+   "name": "전문가",
+   "key": "role_specialist",
+   "html": "<h4>줄</h4>\n<p><img class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/9o/9OYJKO9K415A1457120431885.png\"/></p>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>해골 되살리기 (고유 능력)</strong></span>\n<ul>\n<li>해골 전사의 기본 생명력이 300에서 270으로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>저주의 수확 (W)</strong></span>\n<ul>\n<li>재사용 대기시간이 15초에서 16초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>가시 (고유 능력)\n<ul>\n<li>주는 피해가 대상 영웅의 최대 생명력의 15%에서 12%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>사신의 낫 (W)\n<ul>\n<li>일반 공격으로 감소하는 재사용 대기시간이 0.5초에서 0.75초로 감소했습니다.</li>\n<li>최대 재사용 대기시간 감소량이 10초에서 12초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+   "heroes": [
+    {
+     "name": "줄",
+     "heroId": "Necromancer",
+     "heroIds": [
+      "Necromancer"
+     ],
+     "changes": [
+      {
+       "name": "해골 되살리기",
+       "key": "고유 능력",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "해골 전사의 기본 생명력이 300에서 270으로 감소했습니다.",
+         "html": "해골 전사의 기본 생명력이 300에서 270으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "저주의 수확",
+       "key": "W",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 15초에서 16초로 증가했습니다.",
+         "html": "재사용 대기시간이 15초에서 16초로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "가시",
+       "key": "고유 능력",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "주는 피해가 대상 영웅의 최대 생명력의 15%에서 12%로 감소했습니다.",
+         "html": "주는 피해가 대상 영웅의 최대 생명력의 15%에서 12%로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "사신의 낫",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "일반 공격으로 감소하는 재사용 대기시간이 0.5초에서 0.75초로 감소했습니다.",
+         "html": "일반 공격으로 감소하는 재사용 대기시간이 0.5초에서 0.75초로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "최대 재사용 대기시간 감소량이 10초에서 12초로 증가했습니다.",
+         "html": "최대 재사용 대기시간 감소량이 10초에서 12초로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/9o/9OYJKO9K415A1457120431885.png\"/></p>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>해골 되살리기 (고유 능력)</strong></span>\n<ul>\n<li>해골 전사의 기본 생명력이 300에서 270으로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>저주의 수확 (W)</strong></span>\n<ul>\n<li>재사용 대기시간이 15초에서 16초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>가시 (고유 능력)\n<ul>\n<li>주는 피해가 대상 영웅의 최대 생명력의 15%에서 12%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>사신의 낫 (W)\n<ul>\n<li>일반 공격으로 감소하는 재사용 대기시간이 0.5초에서 0.75초로 감소했습니다.</li>\n<li>최대 재사용 대기시간 감소량이 10초에서 12초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    }
+   ]
+  },
+  {
+   "name": "지원가",
+   "key": "role_support",
+   "html": "<h4>스투코프</h4>\n<p><img alt=\"Divider_Hero_Tassadar_Crop.png\" data-id=\"17042301\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/HVLATI65JATJ1498610396437.png\"/></p>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>치유성 병원균 (Q)</strong></span>\n<ul>\n<li>마나 소모량이 30에서 40으로 증가했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>거친 휩쓸기 (R)</strong></span>\n<ul>\n<li>밀쳐내는 거리가 50% 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>가시뼈 발사 (지속 능력)\n<ul>\n<li>감속의 지속 시간이 1초에서 1.5초로 증가했습니다. 이제 지속 시간이 공격 속도와 일치합니다.</li>\n</ul>\n</li>\n<li>역겨운 손길 (W)\n<ul>\n<li>퀘스트 완료 조건이 20회와 40회에서 15회와 30회로 감소했습니다.</li>\n</ul>\n</li>\n<li>퍼져가는 감염 (E)\n<ul>\n<li>추가된 기능:\n<ul>\n<li>이제 스멀거리는 팔의 재사용 대기시간이 4초 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>일석사조 (Q)\n<ul>\n<li>마나 반환에 필요한 전염 횟수가 영웅 4명에서 영웅 3명으로 감소했습니다. (특성명은 일석삼조로 바뀔 예정입니다.)</li>\n<li>돌려받는 마나가 30에서 40으로 증가했습니다.</li>\n</ul>\n</li>\n<li>건강한 숙주 (D)\n<ul>\n<li>치유량 증가량이 50%에서 40%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>16레벨</strong></span>\n<ul>\n<li>재생성 감염체 (D)\n<ul>\n<li>변경된 기능:\n<ul>\n<li>감염체 폭발을 사용하면 더는 치유성 병원균을의 지속 시간을 갱신시키지 않고 지속 시간을 3초 증가시킵니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>20레벨</strong></span>\n<ul>\n<li>통제된 혼돈 (R)\n<ul>\n<li>연속으로 휩쓸 때의 재사용 대기시간이 3초에서 1초로 감소했습니다.</li>\n<li>충전 대기시간이 40초에서 30초로 감소했습니다.</li>\n</ul>\n</li>\n<li>밀어서 사지 해체 (R)\n<ul>\n<li>재사용 대기시간이 감소하는 데 필요한 지속 시간이 1.5초에서 1.25초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>우서</h4>\n<p><img class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/5W8VDU5725O81417483335719.png\"/></p>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>성스러운 빛 (Q)</strong></span>\n<ul>\n<li>치유량이 380에서 360으로 감소했습니다.</li>\n<li>자가 치유량이 190에서 180으로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>신성한 광휘 (W)</strong></span>\n<ul>\n<li>마나 소모량이 60에서 70으로 증가했습니다.</li>\n</ul>\n</li>\n</ul>",
+   "heroes": [
+    {
+     "name": "스투코프",
+     "heroId": "Stukov",
+     "heroIds": [
+      "Stukov"
+     ],
+     "changes": [
+      {
+       "name": "치유성 병원균",
+       "key": "Q",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "마나 소모량이 30에서 40으로 증가했습니다.",
+         "html": "마나 소모량이 30에서 40으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "거친 휩쓸기",
+       "key": "R",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "밀쳐내는 거리가 50% 증가했습니다.",
+         "html": "밀쳐내는 거리가 50% 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "가시뼈 발사",
+       "key": "지속 능력",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "감속의 지속 시간이 1초에서 1.5초로 증가했습니다. 이제 지속 시간이 공격 속도와 일치합니다.",
+         "html": "감속의 지속 시간이 1초에서 1.5초로 증가했습니다. 이제 지속 시간이 공격 속도와 일치합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "역겨운 손길",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "퀘스트 완료 조건이 20회와 40회에서 15회와 30회로 감소했습니다.",
+         "html": "퀘스트 완료 조건이 20회와 40회에서 15회와 30회로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "퍼져가는 감염",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": []
+      },
+      {
+       "name": "추가된 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "이제 스멀거리는 팔의 재사용 대기시간이 4초 증가합니다.",
+         "html": "이제 스멀거리는 팔의 재사용 대기시간이 4초 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "일석사조",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "마나 반환에 필요한 전염 횟수가 영웅 4명에서 영웅 3명으로 감소했습니다. (특성명은 일석삼조로 바뀔 예정입니다.)",
+         "html": "마나 반환에 필요한 전염 횟수가 영웅 4명에서 영웅 3명으로 감소했습니다. (특성명은 일석삼조로 바뀔 예정입니다.)",
+         "added": false
+        },
+        {
+         "text": "돌려받는 마나가 30에서 40으로 증가했습니다.",
+         "html": "돌려받는 마나가 30에서 40으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "건강한 숙주",
+       "key": "D",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "치유량 증가량이 50%에서 40%로 감소했습니다.",
+         "html": "치유량 증가량이 50%에서 40%로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "재생성 감염체",
+       "key": "D",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": []
+      },
+      {
+       "name": "변경된 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "감염체 폭발을 사용하면 더는 치유성 병원균을의 지속 시간을 갱신시키지 않고 지속 시간을 3초 증가시킵니다.",
+         "html": "감염체 폭발을 사용하면 더는 치유성 병원균을의 지속 시간을 갱신시키지 않고 지속 시간을 3초 증가시킵니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "통제된 혼돈",
+       "key": "R",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "연속으로 휩쓸 때의 재사용 대기시간이 3초에서 1초로 감소했습니다.",
+         "html": "연속으로 휩쓸 때의 재사용 대기시간이 3초에서 1초로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "충전 대기시간이 40초에서 30초로 감소했습니다.",
+         "html": "충전 대기시간이 40초에서 30초로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "밀어서 사지 해체",
+       "key": "R",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 감소하는 데 필요한 지속 시간이 1.5초에서 1.25초로 감소했습니다.",
+         "html": "재사용 대기시간이 감소하는 데 필요한 지속 시간이 1.5초에서 1.25초로 감소했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_Tassadar_Crop.png\" data-id=\"17042301\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/HVLATI65JATJ1498610396437.png\"/></p>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>치유성 병원균 (Q)</strong></span>\n<ul>\n<li>마나 소모량이 30에서 40으로 증가했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>거친 휩쓸기 (R)</strong></span>\n<ul>\n<li>밀쳐내는 거리가 50% 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>가시뼈 발사 (지속 능력)\n<ul>\n<li>감속의 지속 시간이 1초에서 1.5초로 증가했습니다. 이제 지속 시간이 공격 속도와 일치합니다.</li>\n</ul>\n</li>\n<li>역겨운 손길 (W)\n<ul>\n<li>퀘스트 완료 조건이 20회와 40회에서 15회와 30회로 감소했습니다.</li>\n</ul>\n</li>\n<li>퍼져가는 감염 (E)\n<ul>\n<li>추가된 기능:\n<ul>\n<li>이제 스멀거리는 팔의 재사용 대기시간이 4초 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>일석사조 (Q)\n<ul>\n<li>마나 반환에 필요한 전염 횟수가 영웅 4명에서 영웅 3명으로 감소했습니다. (특성명은 일석삼조로 바뀔 예정입니다.)</li>\n<li>돌려받는 마나가 30에서 40으로 증가했습니다.</li>\n</ul>\n</li>\n<li>건강한 숙주 (D)\n<ul>\n<li>치유량 증가량이 50%에서 40%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>16레벨</strong></span>\n<ul>\n<li>재생성 감염체 (D)\n<ul>\n<li>변경된 기능:\n<ul>\n<li>감염체 폭발을 사용하면 더는 치유성 병원균을의 지속 시간을 갱신시키지 않고 지속 시간을 3초 증가시킵니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>20레벨</strong></span>\n<ul>\n<li>통제된 혼돈 (R)\n<ul>\n<li>연속으로 휩쓸 때의 재사용 대기시간이 3초에서 1초로 감소했습니다.</li>\n<li>충전 대기시간이 40초에서 30초로 감소했습니다.</li>\n</ul>\n</li>\n<li>밀어서 사지 해체 (R)\n<ul>\n<li>재사용 대기시간이 감소하는 데 필요한 지속 시간이 1.5초에서 1.25초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "우서",
+     "heroId": "Uther",
+     "heroIds": [
+      "Uther"
+     ],
+     "changes": [
+      {
+       "name": "성스러운 빛",
+       "key": "Q",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "치유량이 380에서 360으로 감소했습니다.",
+         "html": "치유량이 380에서 360으로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "자가 치유량이 190에서 180으로 감소했습니다.",
+         "html": "자가 치유량이 190에서 180으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "신성한 광휘",
+       "key": "W",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "마나 소모량이 60에서 70으로 증가했습니다.",
+         "html": "마나 소모량이 60에서 70으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/5W8VDU5725O81417483335719.png\"/></p>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>성스러운 빛 (Q)</strong></span>\n<ul>\n<li>치유량이 380에서 360으로 감소했습니다.</li>\n<li>자가 치유량이 190에서 180으로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>신성한 광휘 (W)</strong></span>\n<ul>\n<li>마나 소모량이 60에서 70으로 증가했습니다.</li>\n</ul>\n</li>\n</ul>"
+    }
+   ]
+  },
+  {
+   "name": "전사",
+   "key": "role_tank",
+   "html": "<h4>첸</h4>\n<p><img class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/0WB1N574QT991417483333970.png\"/></p>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>강화주 (고유 능력)</strong></span>\n<ul>\n<li>초당 회복하는 취기가 40에서 30으로 감소했습니다.</li>\n<li>이제 사용하면 즉시 25의 취기를 획득합니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>교묘한 싸움꾼 (사용 효과)\n<ul>\n<li>재사용 대기시간이 20초에서 25초로 증가했습니다.</li>\n<li>일반 공격으로 감소하는 재사용 대기시간이 3초에서 2초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>무라딘</h4>\n<p><img class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/TM8DLIER5QEH1417483334689.png\"/></p>\n<p><font color=\"#9900ff\"><b>능력치</b></font></p>\n<ul>\n<li>생명력이 2633에서 2765로 증가했습니다.</li>\n<li>생명력 재생량이 5.5에서 5.8로 증가했습니다.</li>\n</ul>\n<h4>렉사르</h4>\n<p><img class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/vi/VIQFO0SSQW1W1442362642092.png\"/></p>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>섬광 (사용 효과)\n<ul>\n<li>재사용 대기시간이 25초에서 20초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>누더기</h4>\n<p><img class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/ZEOLHHWJ9DIF1417483335223.png\"/></p>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>유독 가스 (고유 능력)</strong></span>\n<ul>\n<li>공격력이 18에서 17로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>지면 격파 (W)\n<ul>\n<li>추가 공격력이 50%에서 40%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+   "heroes": [
+    {
+     "name": "첸",
+     "heroId": "Chen",
+     "heroIds": [
+      "Chen"
+     ],
+     "changes": [
+      {
+       "name": "강화주",
+       "key": "고유 능력",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "초당 회복하는 취기가 40에서 30으로 감소했습니다.",
+         "html": "초당 회복하는 취기가 40에서 30으로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "이제 사용하면 즉시 25의 취기를 획득합니다.",
+         "html": "이제 사용하면 즉시 25의 취기를 획득합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "교묘한 싸움꾼",
+       "key": "사용 효과",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 20초에서 25초로 증가했습니다.",
+         "html": "재사용 대기시간이 20초에서 25초로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "일반 공격으로 감소하는 재사용 대기시간이 3초에서 2초로 감소했습니다.",
+         "html": "일반 공격으로 감소하는 재사용 대기시간이 3초에서 2초로 감소했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/0WB1N574QT991417483333970.png\"/></p>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>강화주 (고유 능력)</strong></span>\n<ul>\n<li>초당 회복하는 취기가 40에서 30으로 감소했습니다.</li>\n<li>이제 사용하면 즉시 25의 취기를 획득합니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>교묘한 싸움꾼 (사용 효과)\n<ul>\n<li>재사용 대기시간이 20초에서 25초로 증가했습니다.</li>\n<li>일반 공격으로 감소하는 재사용 대기시간이 3초에서 2초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "무라딘",
+     "heroId": "Muradin",
+     "heroIds": [
+      "Muradin"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "생명력이 2633에서 2765로 증가했습니다.",
+         "html": "생명력이 2633에서 2765로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "생명력 재생량이 5.5에서 5.8로 증가했습니다.",
+         "html": "생명력 재생량이 5.5에서 5.8로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/TM8DLIER5QEH1417483334689.png\"/></p>\n<p><font color=\"#9900ff\"><b>능력치</b></font></p>\n<ul>\n<li>생명력이 2633에서 2765로 증가했습니다.</li>\n<li>생명력 재생량이 5.5에서 5.8로 증가했습니다.</li>\n</ul>"
+    },
+    {
+     "name": "렉사르",
+     "heroId": "Rexxar",
+     "heroIds": [
+      "Rexxar"
+     ],
+     "changes": [
+      {
+       "name": "섬광",
+       "key": "사용 효과",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 25초에서 20초로 감소했습니다.",
+         "html": "재사용 대기시간이 25초에서 20초로 감소했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/vi/VIQFO0SSQW1W1442362642092.png\"/></p>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>섬광 (사용 효과)\n<ul>\n<li>재사용 대기시간이 25초에서 20초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "누더기",
+     "heroId": "Stitches",
+     "heroIds": [
+      "Stitches"
+     ],
+     "changes": [
+      {
+       "name": "유독 가스",
+       "key": "고유 능력",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "공격력이 18에서 17로 감소했습니다.",
+         "html": "공격력이 18에서 17로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "지면 격파",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "추가 공격력이 50%에서 40%로 감소했습니다.",
+         "html": "추가 공격력이 50%에서 40%로 감소했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/ZEOLHHWJ9DIF1417483335223.png\"/></p>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>유독 가스 (고유 능력)</strong></span>\n<ul>\n<li>공격력이 18에서 17로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>지면 격파 (W)\n<ul>\n<li>추가 공격력이 50%에서 40%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    }
+   ]
+  },
+  {
+   "name": "버그 수정",
+   "key": "bugs",
+   "html": "<p><strong class=\"pn-h\">영웅, 기술, 특성</strong></p>\n<ul>\n<li><strong>디아블로:</strong> 공성 모드 중인 해머 상사에게 암흑의 돌진을 사용하면 디아블로가 해머 상사를 통과하던 문제를 수정했습니다.</li>\n<li><strong>말퓨리온:</strong> 달빛불꽃 반복 퀘스트를 완료하기 전에 용병과 괴물에게 추가 피해를 주던 문제를 수정했습니다.</li>\n<li><strong>말퓨리온:</strong> 천공의 교감이 정상적으로 100의 마나를 소모합니다.</li>\n<li><strong>나지보: </strong> 돌격병에게 결정타를 가했을 때 부두 의식 중첩이 증가하지 않을 수 있던 문제를 수정했습니다.</li>\n<li><strong>스투코프:</strong> 역겨운 손길의 기술 설명의 오타를 수정했습니다.</li>\n<li><strong>스투코프:</strong> 이제 스멀거리는 팔을 사용하는 중에 정지, 공격 중지, 도발, 춤 명령을 내릴 수 없습니다.</li>\n<li><strong>스투코프:</strong> 스멀거리는 팔을 사용하면 FPS가 30까지 감소할 수 있던 문제를 수정했습니다.</li>\n<li><strong>스투코프:</strong> 공성 모드 중인 해머 상사에게 육중한 밀치기를 사용하면 기술이 취소되던 문제를 수정했습니다.</li>\n<li><strong>티란데:</strong> 여사냥꾼의 분노를 선택한 후 일반 공격이 적 용병들에게 방사 피해를 주지 않던 문제를 수정했습니다.</li>\n<li><strong>티란데:</strong> 파수가 파수꾼 특성을 선택하기 전에 너비가 증가하던 문제를 수정했습니다. </li>\n</ul>\n<p><img alt=\"\" class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/g6/G6G0N80EOC941426801305139.png\"/></p>\n<p><img alt=\"InvisibleDividerLine_800x50.png\" class=\"no-border; no-shadow\" data-id=\"14509591\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/6VA2831Q81IU1403137406234.png\"/></p>\n<style type=\"text/css\">.article-container img { display: block; }\n.article-container p { display:inline; }\n</style>",
+   "items": [
+    {
+     "name": "디아블로",
+     "heroId": "Diablo",
+     "heroIds": [
+      "Diablo"
+     ],
+     "under": null,
+     "html": "<strong>디아블로:</strong> 공성 모드 중인 해머 상사에게 암흑의 돌진을 사용하면 디아블로가 해머 상사를 통과하던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "디아블로: 공성 모드 중인 해머 상사에게 암흑의 돌진을 사용하면 디아블로가 해머 상사를 통과하던 문제를 수정했습니다.",
+         "html": "<strong>디아블로:</strong> 공성 모드 중인 해머 상사에게 암흑의 돌진을 사용하면 디아블로가 해머 상사를 통과하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "말퓨리온",
+     "heroId": "Malfurion",
+     "heroIds": [
+      "Malfurion"
+     ],
+     "under": null,
+     "html": "<strong>말퓨리온:</strong> 달빛불꽃 반복 퀘스트를 완료하기 전에 용병과 괴물에게 추가 피해를 주던 문제를 수정했습니다.<strong>말퓨리온:</strong> 천공의 교감이 정상적으로 100의 마나를 소모합니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "말퓨리온: 달빛불꽃 반복 퀘스트를 완료하기 전에 용병과 괴물에게 추가 피해를 주던 문제를 수정했습니다.",
+         "html": "<strong>말퓨리온:</strong> 달빛불꽃 반복 퀘스트를 완료하기 전에 용병과 괴물에게 추가 피해를 주던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "말퓨리온: 천공의 교감이 정상적으로 100의 마나를 소모합니다.",
+         "html": "<strong>말퓨리온:</strong> 천공의 교감이 정상적으로 100의 마나를 소모합니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "나지보",
+     "heroId": "WitchDoctor",
+     "heroIds": [
+      "WitchDoctor"
+     ],
+     "under": null,
+     "html": "<strong>나지보: </strong> 돌격병에게 결정타를 가했을 때 부두 의식 중첩이 증가하지 않을 수 있던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "나지보: 돌격병에게 결정타를 가했을 때 부두 의식 중첩이 증가하지 않을 수 있던 문제를 수정했습니다.",
+         "html": "<strong>나지보: </strong> 돌격병에게 결정타를 가했을 때 부두 의식 중첩이 증가하지 않을 수 있던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "스투코프",
+     "heroId": "Stukov",
+     "heroIds": [
+      "Stukov"
+     ],
+     "under": null,
+     "html": "<strong>스투코프:</strong> 역겨운 손길의 기술 설명의 오타를 수정했습니다.<strong>스투코프:</strong> 이제 스멀거리는 팔을 사용하는 중에 정지, 공격 중지, 도발, 춤 명령을 내릴 수 없습니다.<strong>스투코프:</strong> 스멀거리는 팔을 사용하면 FPS가 30까지 감소할 수 있던 문제를 수정했습니다.<strong>스투코프:</strong> 공성 모드 중인 해머 상사에게 육중한 밀치기를 사용하면 기술이 취소되던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "스투코프: 역겨운 손길의 기술 설명의 오타를 수정했습니다.",
+         "html": "<strong>스투코프:</strong> 역겨운 손길의 기술 설명의 오타를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "스투코프: 이제 스멀거리는 팔을 사용하는 중에 정지, 공격 중지, 도발, 춤 명령을 내릴 수 없습니다.",
+         "html": "<strong>스투코프:</strong> 이제 스멀거리는 팔을 사용하는 중에 정지, 공격 중지, 도발, 춤 명령을 내릴 수 없습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "스투코프: 스멀거리는 팔을 사용하면 FPS가 30까지 감소할 수 있던 문제를 수정했습니다.",
+         "html": "<strong>스투코프:</strong> 스멀거리는 팔을 사용하면 FPS가 30까지 감소할 수 있던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "스투코프: 공성 모드 중인 해머 상사에게 육중한 밀치기를 사용하면 기술이 취소되던 문제를 수정했습니다.",
+         "html": "<strong>스투코프:</strong> 공성 모드 중인 해머 상사에게 육중한 밀치기를 사용하면 기술이 취소되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "티란데",
+     "heroId": "Tyrande",
+     "heroIds": [
+      "Tyrande"
+     ],
+     "under": null,
+     "html": "<strong>티란데:</strong> 여사냥꾼의 분노를 선택한 후 일반 공격이 적 용병들에게 방사 피해를 주지 않던 문제를 수정했습니다.<strong>티란데:</strong> 파수가 파수꾼 특성을 선택하기 전에 너비가 증가하던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "티란데: 여사냥꾼의 분노를 선택한 후 일반 공격이 적 용병들에게 방사 피해를 주지 않던 문제를 수정했습니다.",
+         "html": "<strong>티란데:</strong> 여사냥꾼의 분노를 선택한 후 일반 공격이 적 용병들에게 방사 피해를 주지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "티란데: 파수가 파수꾼 특성을 선택하기 전에 너비가 증가하던 문제를 수정했습니다.",
+         "html": "<strong>티란데:</strong> 파수가 파수꾼 특성을 선택하기 전에 너비가 증가하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "heroes": [
+  "Chen",
+  "Diablo",
+  "Genji",
+  "Greymane",
+  "Malfurion",
+  "Muradin",
+  "Necromancer",
+  "Rexxar",
+  "Stitches",
+  "Stukov",
+  "Tychus",
+  "Tyrande",
+  "Uther",
+  "WitchDoctor"
+ ],
+ "battlegrounds": [],
+ "newsId": "20931726"
+}

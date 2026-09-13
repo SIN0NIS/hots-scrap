@@ -1,0 +1,77 @@
+{
+ "date": "2017-10-26",
+ "kind": "hotfix",
+ "title": "히어로즈 오브 더 스톰 긴급 수정 패치 노트 — 2017년 10월 26일",
+ "source": "https://news.blizzard.com/ko-kr/article/21120247/2017-10-26",
+ "published": "2017-10-25T16:30:00Z",
+ "sections": [
+  {
+   "name": "머리말",
+   "key": "intro",
+   "html": "<p>히어로즈 오브 더 스톰의 새로운 패치가 적용되었습니다. 이 패치에서는 몇 가지 버그가 수정되었습니다.</p>"
+  },
+  {
+   "name": "버그 수정",
+   "key": "bugs",
+   "html": "<p><span class=\"pn-h\"><strong>인공지능</strong></span></p>\n<ul>\n<li><strong>튜토리얼: </strong>튜토리얼 임무에서 인공지능 영웅들이 특정 전장 목표를 무시하던 문제를 수정했습니다.</li>\n<li><strong>블랙하트 항만: </strong>중앙 공격로의 성채나 포탑을 공격하려 할 때 돌격병이나 소환수가 낄 수 있던 문제를 수정했습니다.</li>\n</ul>\n<p><span class=\"pn-h\"><strong>영웅, 기술, 특성</strong></span></p>\n<ul>\n<li><strong>D.Va:</strong> 러시 다운 특성을 선택한 후, 부스터를 사용한 직후에 적을 공격해도 부스터의 재사용 대기시간이 감소하던 문제를 수정했습니다.</li>\n<li><strong>정크랫:</strong> 충격 지뢰로 D.Va의 로봇을 이동할 수 없는 지형으로 밀쳐내면서 파괴하면 D.Va가 부활하기 전까지 전장에서 제외되던 문제를 수정했습니다.</li>\n</ul>\n<p><strong class=\"pn-h\">사용자 인터페이스</strong></p>\n<ul>\n<li><strong>장비:</strong> 이제 장비창에서 스킨을 변경해도 영웅 선택 화면에서 정상적으로 스킨이 나타납니다.</li>\n</ul>\n<p><img alt=\"\" class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/g6/G6G0N80EOC941426801305139.png\"/></p>\n<p><img alt=\"InvisibleDividerLine_800x50.png\" class=\"no-border; no-shadow\" data-id=\"14509591\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/6VA2831Q81IU1403137406234.png\"/></p>",
+   "items": [
+    {
+     "name": "D.Va",
+     "heroId": "DVa",
+     "heroIds": [
+      "DVa"
+     ],
+     "under": null,
+     "html": "<strong>D.Va:</strong> 러시 다운 특성을 선택한 후, 부스터를 사용한 직후에 적을 공격해도 부스터의 재사용 대기시간이 감소하던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "D.Va: 러시 다운 특성을 선택한 후, 부스터를 사용한 직후에 적을 공격해도 부스터의 재사용 대기시간이 감소하던 문제를 수정했습니다.",
+         "html": "<strong>D.Va:</strong> 러시 다운 특성을 선택한 후, 부스터를 사용한 직후에 적을 공격해도 부스터의 재사용 대기시간이 감소하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "정크랫",
+     "heroId": "Junkrat",
+     "heroIds": [
+      "Junkrat"
+     ],
+     "under": null,
+     "html": "<strong>정크랫:</strong> 충격 지뢰로 D.Va의 로봇을 이동할 수 없는 지형으로 밀쳐내면서 파괴하면 D.Va가 부활하기 전까지 전장에서 제외되던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "정크랫: 충격 지뢰로 D.Va의 로봇을 이동할 수 없는 지형으로 밀쳐내면서 파괴하면 D.Va가 부활하기 전까지 전장에서 제외되던 문제를 수정했습니다.",
+         "html": "<strong>정크랫:</strong> 충격 지뢰로 D.Va의 로봇을 이동할 수 없는 지형으로 밀쳐내면서 파괴하면 D.Va가 부활하기 전까지 전장에서 제외되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "heroes": [
+  "DVa",
+  "Junkrat"
+ ],
+ "battlegrounds": [],
+ "newsId": "21120247"
+}

@@ -1,0 +1,3277 @@
+{
+ "date": "2021-05-13",
+ "kind": "ptr",
+ "title": "히어로즈 오브 더 스톰 공개 테스트 서버 패치 노트 - 2021년 5월 13일",
+ "source": "https://news.blizzard.com/ko-kr/article/23666983/2021-5-13",
+ "published": "2021-05-12T19:10:00Z",
+ "sections": [
+  {
+   "name": "머리말",
+   "key": "intro",
+   "html": "<p>히어로즈 오브 더 스톰의 다음 패치가 공개 테스트 서버에 적용되어 5월 18일 주간까지 이용할 수 있습니다. </p>"
+  },
+  {
+   "name": "일반",
+   "key": "general",
+   "html": "<p><strong class=\"pn-h\">경험치 구슬</strong></p>\n<ul>\n<li>이제 경험치 구슬이 6초 후에 사라지지 않습니다. 대신 크기가 작아지며 이후 39초 동안 원래 경험치의 25%만 제공합니다.</li>\n</ul>\n<blockquote><strong>개발자의 의견:</strong> 저희는 게임이 더욱 재밌어지도록 끊임없이 게임플레이를 변경하는 동시에, 플레이어들에게 기본적인 정보를 전달하려고 합니다. 이번 패치에서도 마찬가지입니다. 중대한 6초를 놓친 팀에게는 부분적으로나마 만회할 기회를 주고, 플레이어들이 공격로에서 경험치를 먹으면서 어느 지점에서 경험치를 놓치고 있는지를 보여줄 수 있도록 변경했습니다. 내부 테스트 과정에서도 만족스러웠던 변경 사항으로, 여러분의 피드백을 기다리겠습니다.</blockquote>\n<p><strong class=\"pn-h\">검색어 업데이트</strong></p>\n<blockquote><strong>개발자의 의견:</strong> 저희는 계속해서 플레이어 환경을 개선할 방법을 찾고 있습니다. 이번 업데이트로 플레이어가 폭풍 리그에서 원하는 사람을 더 쉽게 찾을 수 있을 것입니다. MOBA 장르에서 일반적으로 사용하는 용어를 많은 영웅에게 추가하였으므로, 플레이어가 투라인, 지속력, 탈출, 용병, 폭딜, 메이지, 기절, CC 등의 용어를 검색할 수 있습니다. 나열된 용어와 여러분이 생각나는 용어로 검색을 해보세요. 기대한 내용을 찾아낼 수도 있을 것입니다. 알파벳순으로 결과를 보고 싶다면 알파벳순 깃발을 활성화해야 한다는 걸 명심하세요.</blockquote>"
+  },
+  {
+   "name": "영웅 개편: 안두인",
+   "key": "rework",
+   "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">일반 공격</strong>\n<ul>\n<li>공격 속도가 20% 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">순간 치유 [Q]</strong>\n<ul>\n<li>재사용 대기시간이 4초에서 5초로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">천상의 별 [W]</strong>\n<ul>\n<li>재사용 대기시간이 9초에서 10초로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">신의의 도약 [고유 능력]</strong>\n<ul>\n<li>새로운 지속 효과 - 뒤따르는 은총\n\t\t<ul>\n<li>일반 공격으로 적 영웅을 공격할 때마다 안두인 근처의 생명력이 가장 낮은 아군의 생명력을 44 회복합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">공평한 축복 [Q]</strong>\n<ul>\n<li>16레벨에서 옮겨졌습니다.</li>\n<li>치유량 증가량이 20%에서 10%로 감소했습니다.</li>\n<li>재사용 대기시간 감소 효과가 50%에서 40%로 감소했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">신의 권능: 보호막 [W]</strong>\n<ul>\n<li>7레벨에서 옮겨졌습니다.</li>\n<li>추가된 기능: 바깥쪽으로 이동하는 동안 천상의 별 이동 경로에 있는 아군이 4초 동안 128 피해를 흡수하는 보호막을 획득합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">빛샘 [사용 효과]</strong>\n<ul>\n<li>16레벨에서 옮겨졌습니다.</li>\n<li>치유량이 75에서 50으로 감소했습니다.</li>\n<li>최대 충전 횟수가 10회에서 15회로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>4레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">도의의 영역 [W]</strong>\n<ul>\n<li>이제 전환점에서의 일반 공격 최대 대상 수 제한이 사라집니다.</li>\n<li>일반 공격력이 70%에서 100%로 증가했습니다.</li>\n<li>추가된 기능: 일반 공격 사거리가 1.1 증가합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">(신규) 번뜩이는 빛 [E]</strong>\n<ul>\n<li>일반 공격을 할 때마다 응징의 재사용 대기시간이 0.75초 감소합니다. 응징으로 이동 불가 상태가 된 영웅에게 일반 공격을 하면 추가 일반 공격을 합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">(신규) 꿰뚫는 빛 [E]</strong>\n<ul>\n<li>응징이 관통하여 추가 대상에 적중합니다.</li>\n<li>퀘스트: 한 번의 응징에 두 명의 영웅이 적중하면 기술 위력이 1만큼, 최대 10까지 영구히 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">구원의 기도 [사용 효과]</strong>\n<ul>\n<li>20레벨에서 옮겨졌습니다.</li>\n<li>재사용 대기시간이 30초에서 40초로 증가했습니다.</li>\n<li>치유량이 530에서 360으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">돌격하라! [고유 능력]</strong>\n<ul>\n<li>새로운 기능: 적 영웅에게 피해를 줄 때마다 이동 속도가 2.5%만큼, 뒤따르는 은총 [고유 능력]의 생명력 회복량이 6초 동안 5%만큼 증가합니다. 최대 8회 중첩됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">소생 [Q]</strong>\n<ul>\n<li>1레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능: 순간 치유가 5초에 걸쳐 130의 생명력을 추가로 회복시킵니다. 안두인이 일반 공격으로 적 영웅을 공격할 때마다 순간 치유의 지속 시간이 초기화됩니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">신성한 폭발 [W]</strong>\n<ul>\n<li>공격력이 105에서 135로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">신의의 문양 [고유 능력]</strong>\n<ul>\n<li>20레벨에서 옮겨졌습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">(신규) 내면의 열정 [R2]</strong>\n<ul>\n<li>빛폭탄 대상의 속도가 40% 증가하고 방어력이 3초 동안 50 증가합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">(신규) 책망 [E]</strong>\n<ul>\n<li>응징이 적을 0.75초 동안 기절시키고, 응징의 이동 불가 지속 시간이 0.5초 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>개발자의 의견:</strong> 안두인에게는 효과적인 특성이 많지만, 그 대부분이 후반 특성에 몰려 있었습니다. 이를 골고루 분배해 게임 초반에도 안두인으로 재미를 느낄 수 있도록 했습니다.</blockquote>",
+   "heroes": [
+    {
+     "name": "안두인",
+     "heroId": "Anduin",
+     "heroIds": [
+      "Anduin"
+     ],
+     "changes": [
+      {
+       "name": "일반 공격",
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "공격 속도가 20% 증가했습니다.",
+         "html": "공격 속도가 20% 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "순간 치유",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 4초에서 5초로 증가했습니다.",
+         "html": "재사용 대기시간이 4초에서 5초로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "천상의 별",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 9초에서 10초로 증가했습니다.",
+         "html": "재사용 대기시간이 9초에서 10초로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "신의의 도약",
+       "key": "고유 능력",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": []
+      },
+      {
+       "name": "새로운 지속 효과 - 뒤따르는 은총",
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "일반 공격으로 적 영웅을 공격할 때마다 안두인 근처의 생명력이 가장 낮은 아군의 생명력을 44 회복합니다.",
+         "html": "일반 공격으로 적 영웅을 공격할 때마다 안두인 근처의 생명력이 가장 낮은 아군의 생명력을 44 회복합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "공평한 축복",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "16레벨에서 옮겨졌습니다.",
+         "html": "16레벨에서 옮겨졌습니다.",
+         "added": false
+        },
+        {
+         "text": "치유량 증가량이 20%에서 10%로 감소했습니다.",
+         "html": "치유량 증가량이 20%에서 10%로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "재사용 대기시간 감소 효과가 50%에서 40%로 감소했습니다.",
+         "html": "재사용 대기시간 감소 효과가 50%에서 40%로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "신의 권능: 보호막",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "7레벨에서 옮겨졌습니다.",
+         "html": "7레벨에서 옮겨졌습니다.",
+         "added": false
+        },
+        {
+         "text": "추가된 기능: 바깥쪽으로 이동하는 동안 천상의 별 이동 경로에 있는 아군이 4초 동안 128 피해를 흡수하는 보호막을 획득합니다.",
+         "html": "추가된 기능: 바깥쪽으로 이동하는 동안 천상의 별 이동 경로에 있는 아군이 4초 동안 128 피해를 흡수하는 보호막을 획득합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "빛샘",
+       "key": "사용 효과",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "16레벨에서 옮겨졌습니다.",
+         "html": "16레벨에서 옮겨졌습니다.",
+         "added": false
+        },
+        {
+         "text": "치유량이 75에서 50으로 감소했습니다.",
+         "html": "치유량이 75에서 50으로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "최대 충전 횟수가 10회에서 15회로 증가했습니다.",
+         "html": "최대 충전 횟수가 10회에서 15회로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "도의의 영역",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "이제 전환점에서의 일반 공격 최대 대상 수 제한이 사라집니다.",
+         "html": "이제 전환점에서의 일반 공격 최대 대상 수 제한이 사라집니다.",
+         "added": false
+        },
+        {
+         "text": "일반 공격력이 70%에서 100%로 증가했습니다.",
+         "html": "일반 공격력이 70%에서 100%로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "추가된 기능: 일반 공격 사거리가 1.1 증가합니다.",
+         "html": "추가된 기능: 일반 공격 사거리가 1.1 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "(신규) 번뜩이는 빛",
+       "key": "E",
+       "new": true,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "일반 공격을 할 때마다 응징의 재사용 대기시간이 0.75초 감소합니다. 응징으로 이동 불가 상태가 된 영웅에게 일반 공격을 하면 추가 일반 공격을 합니다.",
+         "html": "일반 공격을 할 때마다 응징의 재사용 대기시간이 0.75초 감소합니다. 응징으로 이동 불가 상태가 된 영웅에게 일반 공격을 하면 추가 일반 공격을 합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "(신규) 꿰뚫는 빛",
+       "key": "E",
+       "new": true,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "응징이 관통하여 추가 대상에 적중합니다.",
+         "html": "응징이 관통하여 추가 대상에 적중합니다.",
+         "added": false
+        },
+        {
+         "text": "퀘스트: 한 번의 응징에 두 명의 영웅이 적중하면 기술 위력이 1만큼, 최대 10까지 영구히 증가합니다.",
+         "html": "퀘스트: 한 번의 응징에 두 명의 영웅이 적중하면 기술 위력이 1만큼, 최대 10까지 영구히 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "구원의 기도",
+       "key": "사용 효과",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "20레벨에서 옮겨졌습니다.",
+         "html": "20레벨에서 옮겨졌습니다.",
+         "added": false
+        },
+        {
+         "text": "재사용 대기시간이 30초에서 40초로 증가했습니다.",
+         "html": "재사용 대기시간이 30초에서 40초로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "치유량이 530에서 360으로 감소했습니다.",
+         "html": "치유량이 530에서 360으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "돌격하라!",
+       "key": "고유 능력",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "새로운 기능: 적 영웅에게 피해를 줄 때마다 이동 속도가 2.5%만큼, 뒤따르는 은총 [고유 능력]의 생명력 회복량이 6초 동안 5%만큼 증가합니다. 최대 8회 중첩됩니다.",
+         "html": "새로운 기능: 적 영웅에게 피해를 줄 때마다 이동 속도가 2.5%만큼, 뒤따르는 은총 [고유 능력]의 생명력 회복량이 6초 동안 5%만큼 증가합니다. 최대 8회 중첩됩니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "소생",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "1레벨에서 옮겨졌습니다.",
+         "html": "1레벨에서 옮겨졌습니다.",
+         "added": false
+        },
+        {
+         "text": "새로운 기능: 순간 치유가 5초에 걸쳐 130의 생명력을 추가로 회복시킵니다. 안두인이 일반 공격으로 적 영웅을 공격할 때마다 순간 치유의 지속 시간이 초기화됩니다.",
+         "html": "새로운 기능: 순간 치유가 5초에 걸쳐 130의 생명력을 추가로 회복시킵니다. 안두인이 일반 공격으로 적 영웅을 공격할 때마다 순간 치유의 지속 시간이 초기화됩니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "신성한 폭발",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "공격력이 105에서 135로 증가했습니다.",
+         "html": "공격력이 105에서 135로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "신의의 문양",
+       "key": "고유 능력",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "20레벨에서 옮겨졌습니다.",
+         "html": "20레벨에서 옮겨졌습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "(신규) 내면의 열정",
+       "key": "R2",
+       "new": true,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "빛폭탄 대상의 속도가 40% 증가하고 방어력이 3초 동안 50 증가합니다.",
+         "html": "빛폭탄 대상의 속도가 40% 증가하고 방어력이 3초 동안 50 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "(신규) 책망",
+       "key": "E",
+       "new": true,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "응징이 적을 0.75초 동안 기절시키고, 응징의 이동 불가 지속 시간이 0.5초 증가합니다.",
+         "html": "응징이 적을 0.75초 동안 기절시키고, 응징의 이동 불가 지속 시간이 0.5초 증가합니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">일반 공격</strong>\n<ul>\n<li>공격 속도가 20% 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">순간 치유 [Q]</strong>\n<ul>\n<li>재사용 대기시간이 4초에서 5초로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">천상의 별 [W]</strong>\n<ul>\n<li>재사용 대기시간이 9초에서 10초로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">신의의 도약 [고유 능력]</strong>\n<ul>\n<li>새로운 지속 효과 - 뒤따르는 은총\n\t\t<ul>\n<li>일반 공격으로 적 영웅을 공격할 때마다 안두인 근처의 생명력이 가장 낮은 아군의 생명력을 44 회복합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">공평한 축복 [Q]</strong>\n<ul>\n<li>16레벨에서 옮겨졌습니다.</li>\n<li>치유량 증가량이 20%에서 10%로 감소했습니다.</li>\n<li>재사용 대기시간 감소 효과가 50%에서 40%로 감소했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">신의 권능: 보호막 [W]</strong>\n<ul>\n<li>7레벨에서 옮겨졌습니다.</li>\n<li>추가된 기능: 바깥쪽으로 이동하는 동안 천상의 별 이동 경로에 있는 아군이 4초 동안 128 피해를 흡수하는 보호막을 획득합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">빛샘 [사용 효과]</strong>\n<ul>\n<li>16레벨에서 옮겨졌습니다.</li>\n<li>치유량이 75에서 50으로 감소했습니다.</li>\n<li>최대 충전 횟수가 10회에서 15회로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>4레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">도의의 영역 [W]</strong>\n<ul>\n<li>이제 전환점에서의 일반 공격 최대 대상 수 제한이 사라집니다.</li>\n<li>일반 공격력이 70%에서 100%로 증가했습니다.</li>\n<li>추가된 기능: 일반 공격 사거리가 1.1 증가합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">(신규) 번뜩이는 빛 [E]</strong>\n<ul>\n<li>일반 공격을 할 때마다 응징의 재사용 대기시간이 0.75초 감소합니다. 응징으로 이동 불가 상태가 된 영웅에게 일반 공격을 하면 추가 일반 공격을 합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">(신규) 꿰뚫는 빛 [E]</strong>\n<ul>\n<li>응징이 관통하여 추가 대상에 적중합니다.</li>\n<li>퀘스트: 한 번의 응징에 두 명의 영웅이 적중하면 기술 위력이 1만큼, 최대 10까지 영구히 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">구원의 기도 [사용 효과]</strong>\n<ul>\n<li>20레벨에서 옮겨졌습니다.</li>\n<li>재사용 대기시간이 30초에서 40초로 증가했습니다.</li>\n<li>치유량이 530에서 360으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">돌격하라! [고유 능력]</strong>\n<ul>\n<li>새로운 기능: 적 영웅에게 피해를 줄 때마다 이동 속도가 2.5%만큼, 뒤따르는 은총 [고유 능력]의 생명력 회복량이 6초 동안 5%만큼 증가합니다. 최대 8회 중첩됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">소생 [Q]</strong>\n<ul>\n<li>1레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능: 순간 치유가 5초에 걸쳐 130의 생명력을 추가로 회복시킵니다. 안두인이 일반 공격으로 적 영웅을 공격할 때마다 순간 치유의 지속 시간이 초기화됩니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">신성한 폭발 [W]</strong>\n<ul>\n<li>공격력이 105에서 135로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">신의의 문양 [고유 능력]</strong>\n<ul>\n<li>20레벨에서 옮겨졌습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">(신규) 내면의 열정 [R2]</strong>\n<ul>\n<li>빛폭탄 대상의 속도가 40% 증가하고 방어력이 3초 동안 50 증가합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">(신규) 책망 [E]</strong>\n<ul>\n<li>응징이 적을 0.75초 동안 기절시키고, 응징의 이동 불가 지속 시간이 0.5초 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>개발자의 의견:</strong> 안두인에게는 효과적인 특성이 많지만, 그 대부분이 후반 특성에 몰려 있었습니다. 이를 골고루 분배해 게임 초반에도 안두인으로 재미를 느낄 수 있도록 했습니다.</blockquote>"
+    }
+   ]
+  },
+  {
+   "name": "영웅 개편: 요한나",
+   "key": "rework",
+   "html": "<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">강화 갑옷 [지속 효과]</strong>\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">열성의 섬광 [E]</strong>\n<ul>\n<li>7레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능: 눈부신 방패가 2회 충전됩니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">희망의 율법 [사용 효과]</strong>\n<ul>\n<li>새로운 기능:\n\t\t\t<ul>\n<li>사용하면 5초에 걸쳐 최대 생명력의 20%를 회복합니다.</li>\n<li>퀘스트: 재생의 구슬을 10개 획득할 때마다 생명력 회복량이 최대 체력의 5%만큼 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">(신규) 신의 요새 [지속 효과]</strong>\n<ul>\n<li>빌려온 힘: 즉시 최대 생명력의 20%를 획득합니다. 사망할 때마다 획득한 추가 최대 생명력의 5%를 잃습니다.</li>\n<li>적 영웅에게 일반 공격을 할 때마다 2.5초 동안 물리 방어력이 8 증가하며 최대 40회 중첩됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>4레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">진압 [Q]</strong>\n<ul>\n<li>7레벨에서 옮겨졌습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">끝없는 응징 [W]</strong>\n<ul>\n<li>새로운 기능: 규탄이 적에게 적중하면 10초 동안 대상에 표식을 남깁니다. 다음 일반 공격이 적에게 적중하면 적의 표식이 제거되면서 규탄의 재사용 대기시간이 1초 감소하고, 10 마나를 획득하며, 돌격병이 사망합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">위치 사수 [D]</strong>\n<ul>\n<li>1레벨에서 옮겨졌습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">드러난 죄악 [Q]</strong>\n<ul>\n<li>새로운 기능: 징벌에 적중한 영웅이 받는 치유량이 2초 동안 25% 감소합니다. 적 영웅에게 일반 공격을 할 때마다 이 효과의 지속 시간이 갱신됩니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">신념 [W]</strong>\n<ul>\n<li>4레벨에서 옮겨졌습니다.</li>\n<li>규탄이 충전되는 동안 이동 속도 증가량이 25%에서 20%로 감소합니다.</li>\n<li>추가된 기능: 이동 속도가 10% 증가합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">(신규) 군마 질주 [D]</strong>\n<ul>\n<li>철갑 피부의 지속 시간이 1초 증가합니다. 사용하면 즉시 3초 동안 탈것에 탑니다. 이 기간에는 피해를 받아도 탈것에서 내리지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>10레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">천벌의 검 [R1]</strong>\n<ul>\n<li>공격력이 210에서 150으로 감소했습니다.</li>\n<li>더는 적중당한 적이 느려지지 않습니다.</li>\n<li>시전 사거리가 15에서 10으로 감소했습니다.</li>\n<li>추가된 기능: 공중에 있는 동안 아래에 있는 아군이 저지 불가 상태가 됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">축복받은 망치 [사용 효과]</strong>\n<ul>\n<li>망치의 공격력이 84에서 74로 감소했습니다.</li>\n<li>변경된 기능: 일반 기술로 적에게 피해를 줄 때마다 축복받은 망치의 재사용 대기시간이 3초 감소합니다.</li>\n<li>추가된 기능: 지속 효과: 적 영웅에게 세 번째 일반 공격이 적중할 때마다 망치를 내보냅니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">광신 [D]</strong>\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">압도적 존재감 [사용 효과]</strong>\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">(신규) 조여드는 진공 [W]</strong>\n<ul>\n<li>규탄에 적중당한 적 영웅의 공격력이 25% 감소하고 이동 속도가 2초 동안 25% 느려집니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">신성한 회생 [E]</strong>\n<ul>\n<li>새로운 기능: 눈부신 방패가 적 영웅에게 적중할 때마다 요한나 최대 생명력의 5% 생명력이 회복되며 재사용 대기시간이 1.5초 감소합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">축복받은 여세 [지속 효과]</strong>\n<ul>\n<li>7레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능: 일반 공격을 할 때마다 4초 동안 공격 속도가 10%(최대 40%) 증가하고 모든 기본 기술의 재사용 대기시간이 0.5초 감소합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">하늘의 분노 [R1]</strong>\n<ul>\n<li>신성한 빛을 적중시킨 적당 감소하는 재사용 대기시간이 3초에서 2초로 감소합니다.</li>\n<li>추가된 기능: 이제 신성한 빛이 아군에게도 적중하여 75의 생명력을 회복시킵니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>개발자의 의견:</strong> 요한나의 특성 트리를 심층 분석한 지 시간이 꽤나 지났습니다. 마침 요한나의 코스플레이 스킨이 곧 출시되는 참에 이와 같이 개편하게 되었습니다. 무엇보다 저희는 현재 새로운 빌려온 힘 스타일의 특성 유형을 시험하고 있으며, 이러한 부분에 대해 여러분의 피드백을 기대하고 있습니다.</blockquote>",
+   "heroes": [
+    {
+     "name": "요한나",
+     "heroId": "Crusader",
+     "heroIds": [
+      "Crusader"
+     ],
+     "changes": [
+      {
+       "name": "강화 갑옷",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "열성의 섬광",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "7레벨에서 옮겨졌습니다.",
+         "html": "7레벨에서 옮겨졌습니다.",
+         "added": false
+        },
+        {
+         "text": "새로운 기능: 눈부신 방패가 2회 충전됩니다.",
+         "html": "새로운 기능: 눈부신 방패가 2회 충전됩니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "희망의 율법",
+       "key": "사용 효과",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": []
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "사용하면 5초에 걸쳐 최대 생명력의 20%를 회복합니다.",
+         "html": "사용하면 5초에 걸쳐 최대 생명력의 20%를 회복합니다.",
+         "added": false
+        },
+        {
+         "text": "퀘스트: 재생의 구슬을 10개 획득할 때마다 생명력 회복량이 최대 체력의 5%만큼 증가합니다.",
+         "html": "퀘스트: 재생의 구슬을 10개 획득할 때마다 생명력 회복량이 최대 체력의 5%만큼 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "(신규) 신의 요새",
+       "key": "지속 효과",
+       "new": true,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "빌려온 힘: 즉시 최대 생명력의 20%를 획득합니다. 사망할 때마다 획득한 추가 최대 생명력의 5%를 잃습니다.",
+         "html": "빌려온 힘: 즉시 최대 생명력의 20%를 획득합니다. 사망할 때마다 획득한 추가 최대 생명력의 5%를 잃습니다.",
+         "added": false
+        },
+        {
+         "text": "적 영웅에게 일반 공격을 할 때마다 2.5초 동안 물리 방어력이 8 증가하며 최대 40회 중첩됩니다.",
+         "html": "적 영웅에게 일반 공격을 할 때마다 2.5초 동안 물리 방어력이 8 증가하며 최대 40회 중첩됩니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "진압",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "7레벨에서 옮겨졌습니다.",
+         "html": "7레벨에서 옮겨졌습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "끝없는 응징",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "새로운 기능: 규탄이 적에게 적중하면 10초 동안 대상에 표식을 남깁니다. 다음 일반 공격이 적에게 적중하면 적의 표식이 제거되면서 규탄의 재사용 대기시간이 1초 감소하고, 10 마나를 획득하며, 돌격병이 사망합니다.",
+         "html": "새로운 기능: 규탄이 적에게 적중하면 10초 동안 대상에 표식을 남깁니다. 다음 일반 공격이 적에게 적중하면 적의 표식이 제거되면서 규탄의 재사용 대기시간이 1초 감소하고, 10 마나를 획득하며, 돌격병이 사망합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "위치 사수",
+       "key": "D",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "1레벨에서 옮겨졌습니다.",
+         "html": "1레벨에서 옮겨졌습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "드러난 죄악",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "새로운 기능: 징벌에 적중한 영웅이 받는 치유량이 2초 동안 25% 감소합니다. 적 영웅에게 일반 공격을 할 때마다 이 효과의 지속 시간이 갱신됩니다.",
+         "html": "새로운 기능: 징벌에 적중한 영웅이 받는 치유량이 2초 동안 25% 감소합니다. 적 영웅에게 일반 공격을 할 때마다 이 효과의 지속 시간이 갱신됩니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "신념",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "4레벨에서 옮겨졌습니다.",
+         "html": "4레벨에서 옮겨졌습니다.",
+         "added": false
+        },
+        {
+         "text": "규탄이 충전되는 동안 이동 속도 증가량이 25%에서 20%로 감소합니다.",
+         "html": "규탄이 충전되는 동안 이동 속도 증가량이 25%에서 20%로 감소합니다.",
+         "added": false
+        },
+        {
+         "text": "추가된 기능: 이동 속도가 10% 증가합니다.",
+         "html": "추가된 기능: 이동 속도가 10% 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "(신규) 군마 질주",
+       "key": "D",
+       "new": true,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "철갑 피부의 지속 시간이 1초 증가합니다. 사용하면 즉시 3초 동안 탈것에 탑니다. 이 기간에는 피해를 받아도 탈것에서 내리지 않습니다.",
+         "html": "철갑 피부의 지속 시간이 1초 증가합니다. 사용하면 즉시 3초 동안 탈것에 탑니다. 이 기간에는 피해를 받아도 탈것에서 내리지 않습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "천벌의 검",
+       "key": "R1",
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "공격력이 210에서 150으로 감소했습니다.",
+         "html": "공격력이 210에서 150으로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "더는 적중당한 적이 느려지지 않습니다.",
+         "html": "더는 적중당한 적이 느려지지 않습니다.",
+         "added": false
+        },
+        {
+         "text": "시전 사거리가 15에서 10으로 감소했습니다.",
+         "html": "시전 사거리가 15에서 10으로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "추가된 기능: 공중에 있는 동안 아래에 있는 아군이 저지 불가 상태가 됩니다.",
+         "html": "추가된 기능: 공중에 있는 동안 아래에 있는 아군이 저지 불가 상태가 됩니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "축복받은 망치",
+       "key": "사용 효과",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "망치의 공격력이 84에서 74로 감소했습니다.",
+         "html": "망치의 공격력이 84에서 74로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "변경된 기능: 일반 기술로 적에게 피해를 줄 때마다 축복받은 망치의 재사용 대기시간이 3초 감소합니다.",
+         "html": "변경된 기능: 일반 기술로 적에게 피해를 줄 때마다 축복받은 망치의 재사용 대기시간이 3초 감소합니다.",
+         "added": false
+        },
+        {
+         "text": "추가된 기능: 지속 효과: 적 영웅에게 세 번째 일반 공격이 적중할 때마다 망치를 내보냅니다.",
+         "html": "추가된 기능: 지속 효과: 적 영웅에게 세 번째 일반 공격이 적중할 때마다 망치를 내보냅니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "광신",
+       "key": "D",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "압도적 존재감",
+       "key": "사용 효과",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "(신규) 조여드는 진공",
+       "key": "W",
+       "new": true,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "규탄에 적중당한 적 영웅의 공격력이 25% 감소하고 이동 속도가 2초 동안 25% 느려집니다.",
+         "html": "규탄에 적중당한 적 영웅의 공격력이 25% 감소하고 이동 속도가 2초 동안 25% 느려집니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "신성한 회생",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "새로운 기능: 눈부신 방패가 적 영웅에게 적중할 때마다 요한나 최대 생명력의 5% 생명력이 회복되며 재사용 대기시간이 1.5초 감소합니다.",
+         "html": "새로운 기능: 눈부신 방패가 적 영웅에게 적중할 때마다 요한나 최대 생명력의 5% 생명력이 회복되며 재사용 대기시간이 1.5초 감소합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "축복받은 여세",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "7레벨에서 옮겨졌습니다.",
+         "html": "7레벨에서 옮겨졌습니다.",
+         "added": false
+        },
+        {
+         "text": "새로운 기능: 일반 공격을 할 때마다 4초 동안 공격 속도가 10%(최대 40%) 증가하고 모든 기본 기술의 재사용 대기시간이 0.5초 감소합니다.",
+         "html": "새로운 기능: 일반 공격을 할 때마다 4초 동안 공격 속도가 10%(최대 40%) 증가하고 모든 기본 기술의 재사용 대기시간이 0.5초 감소합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "하늘의 분노",
+       "key": "R1",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "신성한 빛을 적중시킨 적당 감소하는 재사용 대기시간이 3초에서 2초로 감소합니다.",
+         "html": "신성한 빛을 적중시킨 적당 감소하는 재사용 대기시간이 3초에서 2초로 감소합니다.",
+         "added": false
+        },
+        {
+         "text": "추가된 기능: 이제 신성한 빛이 아군에게도 적중하여 75의 생명력을 회복시킵니다.",
+         "html": "추가된 기능: 이제 신성한 빛이 아군에게도 적중하여 75의 생명력을 회복시킵니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">강화 갑옷 [지속 효과]</strong>\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">열성의 섬광 [E]</strong>\n<ul>\n<li>7레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능: 눈부신 방패가 2회 충전됩니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">희망의 율법 [사용 효과]</strong>\n<ul>\n<li>새로운 기능:\n\t\t\t<ul>\n<li>사용하면 5초에 걸쳐 최대 생명력의 20%를 회복합니다.</li>\n<li>퀘스트: 재생의 구슬을 10개 획득할 때마다 생명력 회복량이 최대 체력의 5%만큼 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">(신규) 신의 요새 [지속 효과]</strong>\n<ul>\n<li>빌려온 힘: 즉시 최대 생명력의 20%를 획득합니다. 사망할 때마다 획득한 추가 최대 생명력의 5%를 잃습니다.</li>\n<li>적 영웅에게 일반 공격을 할 때마다 2.5초 동안 물리 방어력이 8 증가하며 최대 40회 중첩됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>4레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">진압 [Q]</strong>\n<ul>\n<li>7레벨에서 옮겨졌습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">끝없는 응징 [W]</strong>\n<ul>\n<li>새로운 기능: 규탄이 적에게 적중하면 10초 동안 대상에 표식을 남깁니다. 다음 일반 공격이 적에게 적중하면 적의 표식이 제거되면서 규탄의 재사용 대기시간이 1초 감소하고, 10 마나를 획득하며, 돌격병이 사망합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">위치 사수 [D]</strong>\n<ul>\n<li>1레벨에서 옮겨졌습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">드러난 죄악 [Q]</strong>\n<ul>\n<li>새로운 기능: 징벌에 적중한 영웅이 받는 치유량이 2초 동안 25% 감소합니다. 적 영웅에게 일반 공격을 할 때마다 이 효과의 지속 시간이 갱신됩니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">신념 [W]</strong>\n<ul>\n<li>4레벨에서 옮겨졌습니다.</li>\n<li>규탄이 충전되는 동안 이동 속도 증가량이 25%에서 20%로 감소합니다.</li>\n<li>추가된 기능: 이동 속도가 10% 증가합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">(신규) 군마 질주 [D]</strong>\n<ul>\n<li>철갑 피부의 지속 시간이 1초 증가합니다. 사용하면 즉시 3초 동안 탈것에 탑니다. 이 기간에는 피해를 받아도 탈것에서 내리지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>10레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">천벌의 검 [R1]</strong>\n<ul>\n<li>공격력이 210에서 150으로 감소했습니다.</li>\n<li>더는 적중당한 적이 느려지지 않습니다.</li>\n<li>시전 사거리가 15에서 10으로 감소했습니다.</li>\n<li>추가된 기능: 공중에 있는 동안 아래에 있는 아군이 저지 불가 상태가 됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">축복받은 망치 [사용 효과]</strong>\n<ul>\n<li>망치의 공격력이 84에서 74로 감소했습니다.</li>\n<li>변경된 기능: 일반 기술로 적에게 피해를 줄 때마다 축복받은 망치의 재사용 대기시간이 3초 감소합니다.</li>\n<li>추가된 기능: 지속 효과: 적 영웅에게 세 번째 일반 공격이 적중할 때마다 망치를 내보냅니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">광신 [D]</strong>\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">압도적 존재감 [사용 효과]</strong>\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">(신규) 조여드는 진공 [W]</strong>\n<ul>\n<li>규탄에 적중당한 적 영웅의 공격력이 25% 감소하고 이동 속도가 2초 동안 25% 느려집니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">신성한 회생 [E]</strong>\n<ul>\n<li>새로운 기능: 눈부신 방패가 적 영웅에게 적중할 때마다 요한나 최대 생명력의 5% 생명력이 회복되며 재사용 대기시간이 1.5초 감소합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">축복받은 여세 [지속 효과]</strong>\n<ul>\n<li>7레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능: 일반 공격을 할 때마다 4초 동안 공격 속도가 10%(최대 40%) 증가하고 모든 기본 기술의 재사용 대기시간이 0.5초 감소합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">하늘의 분노 [R1]</strong>\n<ul>\n<li>신성한 빛을 적중시킨 적당 감소하는 재사용 대기시간이 3초에서 2초로 감소합니다.</li>\n<li>추가된 기능: 이제 신성한 빛이 아군에게도 적중하여 75의 생명력을 회복시킵니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>개발자의 의견:</strong> 요한나의 특성 트리를 심층 분석한 지 시간이 꽤나 지났습니다. 마침 요한나의 코스플레이 스킨이 곧 출시되는 참에 이와 같이 개편하게 되었습니다. 무엇보다 저희는 현재 새로운 빌려온 힘 스타일의 특성 유형을 시험하고 있으며, 이러한 부분에 대해 여러분의 피드백을 기대하고 있습니다.</blockquote>"
+    }
+   ]
+  },
+  {
+   "name": "영웅 개편: 레이너",
+   "key": "rework",
+   "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">일반 공격</strong>\n<ul>\n<li>공격력이 101에서 92로 감소했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">천공 탄환 [Q]</strong>\n<ul>\n<li>재사용 대기시간이 10초에서 9초로 감소했습니다.</li>\n<li>마나 소모량이 65에서 60으로 감소했습니다.</li>\n<li>공격력이 220에서 190으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">회심의 일격 [Q]</strong>\n<ul>\n<li>새로운 기능:\n\t\t\t<ul>\n<li>뜨거운 맛을 보여주지에 적중당한 적들이 2.5초 동안 10% 느려집니다.</li>\n<li>천공 탄환이 기절, 감속 상태인 적 영웅에게 25%의 추가 피해를 줍니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">박멸자 [W]</strong>\n<ul>\n<li>새로운 기능:\n\t\t\t<ul>\n<li>돌격병과 괴물, 용병에 대한 일반 공격력이 50% 증가합니다. 격려가 활성화된 동안에는 이 효과가 125%로 증가합니다.</li>\n<li>지속 효과: 아군 돌격병과 용병에 대해서는 격려 효과가 사라지지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">정예 명사수 [고유 능력]</strong>\n<ul>\n<li>새로운 기능:\n\t\t\t<ul>\n<li>빌려온 힘: 뜨거운 맛을 보여주지의 공격력이 60%만큼 추가로 증가합니다. 사망할 때마다 획득한 추가 최대 생명력의 15%를 잃습니다.</li>\n<li>적 영웅 적중 시 부여되는 퀘스트 추가 공격력이 1%에서 0.75%으로 감소합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>4레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">베히모스 전투복 [지속 효과]</strong>\n<ul>\n<li>뜨거운 맛을 보여주지가 적 영웅에게 적중할 때마다 획득하는 추가 생명력이 5에서 8로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">묵직한 녀석 [Q]</strong>\n<ul>\n<li>새로운 기능: 천공 탄환의 감속 정도와 지속 시간이 75% 증가합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">촉진 가속화 [E]</strong>\n<ul>\n<li>격려가 활성화된 동안 감소하는 재사용 대기시간이 200%에서 300%로 증가했습니다.</li>\n<li>아드레날린 촉진의 마나 소모량 감소량이 25에서 30으로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">불안정한 혼합물 [고유 능력]</strong>\n<ul>\n<li>천공 탄환의 재사용 대기시간 감소량이 1.5초에서 1초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">쇠약의 탄환 [Q]</strong>\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">(신규) 줄을 맞춰라 [Q]</strong>\n<ul>\n<li>천공 탄환의 재사용 대기시간이 3초 감소합니다. 둘 이상의 적 영웅에게 적중하면, 재사용 대기시간이 추가로 3초 감소합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">이랴! [W]</strong>\n<ul>\n<li>기본 이동 속도 증가 효과가 8%에서 10%로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">조금만 더! [E/W]</strong>\n<ul>\n<li>13레벨에서 옮겨졌습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">재집결의 함성 [W]</strong>\n<ul>\n<li>13레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능:\n\t\t\t<ul>\n<li>격려의 공격 속도 증가 효과가 20% 증가합니다.</li>\n<li>지속 효과: 일반 공격을 12회 할 때마다 격려를 비용 없이 시전합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">약점을 포착했다 [지속 효과]</strong>\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">마무리 [지속 효과]</strong>\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">불굴의 다짐 [R1]</strong>\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">(신규) 해결사 등장 [R1]</strong>\n<ul>\n<li>뜨거운 맛을 보여주지의 주 대상이 적 영웅이면 히페리온의 재사용 대기시간이 5초 감소합니다.</li>\n<li>해당 영웅이 히페리온으로부터 받는 피해가 100% 증가합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">그늘날개 [R2]</strong>\n<ul>\n<li>추가된 기능: 밴시가 일반 공격으로 공격한 적 영웅의 공격력이 1초 동안 2 감소하며 최대 25까지 중첩됩니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">(신규) 특공대 나가신다 [E]</strong>\n<ul>\n<li>아드레날린 촉진을 사용하면 저지 불가 상태가 되고 생명력 회복 지속 시간이 2초 증가합니다.</li>\n<li>증가한 지속 시간은 생명력이 70%에 이르면 종료됩니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">(신규) 더 뜨거운 맛 [D]</strong>\n<ul>\n<li>일반 공격을 3회 할 때마다 뜨거운 맛을 보여주지가 활성화됩니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">(신규) 명령 수행 [지속 효과]</strong>\n<ul>\n<li>사망 타이머가 30초로 감소합니다. 사망하면 근처 적 영웅을 향해 히페리온을 시전합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>개발자의 의견:</strong> 짐 레이너는 이전에 이미 전반적으로 조정된 바 있지만, 재미있고 흥미진진하게 고칠 부분이 더 있었습니다. 직관적인 플레이 스타일을 유지하면서도 특성 트리, 특히 20레벨에 재미를 더해주고 싶었습니다.</blockquote>",
+   "heroes": [
+    {
+     "name": "레이너",
+     "heroId": "Raynor",
+     "heroIds": [
+      "Raynor"
+     ],
+     "changes": [
+      {
+       "name": "일반 공격",
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "공격력이 101에서 92로 감소했습니다.",
+         "html": "공격력이 101에서 92로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "천공 탄환",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 10초에서 9초로 감소했습니다.",
+         "html": "재사용 대기시간이 10초에서 9초로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "마나 소모량이 65에서 60으로 감소했습니다.",
+         "html": "마나 소모량이 65에서 60으로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "공격력이 220에서 190으로 감소했습니다.",
+         "html": "공격력이 220에서 190으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "회심의 일격",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": []
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "뜨거운 맛을 보여주지에 적중당한 적들이 2.5초 동안 10% 느려집니다.",
+         "html": "뜨거운 맛을 보여주지에 적중당한 적들이 2.5초 동안 10% 느려집니다.",
+         "added": false
+        },
+        {
+         "text": "천공 탄환이 기절, 감속 상태인 적 영웅에게 25%의 추가 피해를 줍니다.",
+         "html": "천공 탄환이 기절, 감속 상태인 적 영웅에게 25%의 추가 피해를 줍니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "박멸자",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": []
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "돌격병과 괴물, 용병에 대한 일반 공격력이 50% 증가합니다. 격려가 활성화된 동안에는 이 효과가 125%로 증가합니다.",
+         "html": "돌격병과 괴물, 용병에 대한 일반 공격력이 50% 증가합니다. 격려가 활성화된 동안에는 이 효과가 125%로 증가합니다.",
+         "added": false
+        },
+        {
+         "text": "지속 효과: 아군 돌격병과 용병에 대해서는 격려 효과가 사라지지 않습니다.",
+         "html": "지속 효과: 아군 돌격병과 용병에 대해서는 격려 효과가 사라지지 않습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "정예 명사수",
+       "key": "고유 능력",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": []
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "빌려온 힘: 뜨거운 맛을 보여주지의 공격력이 60%만큼 추가로 증가합니다. 사망할 때마다 획득한 추가 최대 생명력의 15%를 잃습니다.",
+         "html": "빌려온 힘: 뜨거운 맛을 보여주지의 공격력이 60%만큼 추가로 증가합니다. 사망할 때마다 획득한 추가 최대 생명력의 15%를 잃습니다.",
+         "added": false
+        },
+        {
+         "text": "적 영웅 적중 시 부여되는 퀘스트 추가 공격력이 1%에서 0.75%으로 감소합니다.",
+         "html": "적 영웅 적중 시 부여되는 퀘스트 추가 공격력이 1%에서 0.75%으로 감소합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "베히모스 전투복",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "뜨거운 맛을 보여주지가 적 영웅에게 적중할 때마다 획득하는 추가 생명력이 5에서 8로 증가했습니다.",
+         "html": "뜨거운 맛을 보여주지가 적 영웅에게 적중할 때마다 획득하는 추가 생명력이 5에서 8로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "묵직한 녀석",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "새로운 기능: 천공 탄환의 감속 정도와 지속 시간이 75% 증가합니다.",
+         "html": "새로운 기능: 천공 탄환의 감속 정도와 지속 시간이 75% 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "촉진 가속화",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "격려가 활성화된 동안 감소하는 재사용 대기시간이 200%에서 300%로 증가했습니다.",
+         "html": "격려가 활성화된 동안 감소하는 재사용 대기시간이 200%에서 300%로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "아드레날린 촉진의 마나 소모량 감소량이 25에서 30으로 증가했습니다.",
+         "html": "아드레날린 촉진의 마나 소모량 감소량이 25에서 30으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "불안정한 혼합물",
+       "key": "고유 능력",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "천공 탄환의 재사용 대기시간 감소량이 1.5초에서 1초로 감소했습니다.",
+         "html": "천공 탄환의 재사용 대기시간 감소량이 1.5초에서 1초로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "쇠약의 탄환",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "(신규) 줄을 맞춰라",
+       "key": "Q",
+       "new": true,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "천공 탄환의 재사용 대기시간이 3초 감소합니다. 둘 이상의 적 영웅에게 적중하면, 재사용 대기시간이 추가로 3초 감소합니다.",
+         "html": "천공 탄환의 재사용 대기시간이 3초 감소합니다. 둘 이상의 적 영웅에게 적중하면, 재사용 대기시간이 추가로 3초 감소합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "이랴!",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "기본 이동 속도 증가 효과가 8%에서 10%로 증가했습니다.",
+         "html": "기본 이동 속도 증가 효과가 8%에서 10%로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "조금만 더!",
+       "key": "E/W",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "13레벨에서 옮겨졌습니다.",
+         "html": "13레벨에서 옮겨졌습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "재집결의 함성",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "13레벨에서 옮겨졌습니다.",
+         "html": "13레벨에서 옮겨졌습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "격려의 공격 속도 증가 효과가 20% 증가합니다.",
+         "html": "격려의 공격 속도 증가 효과가 20% 증가합니다.",
+         "added": false
+        },
+        {
+         "text": "지속 효과: 일반 공격을 12회 할 때마다 격려를 비용 없이 시전합니다.",
+         "html": "지속 효과: 일반 공격을 12회 할 때마다 격려를 비용 없이 시전합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "약점을 포착했다",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "마무리",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "불굴의 다짐",
+       "key": "R1",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "(신규) 해결사 등장",
+       "key": "R1",
+       "new": true,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "뜨거운 맛을 보여주지의 주 대상이 적 영웅이면 히페리온의 재사용 대기시간이 5초 감소합니다.",
+         "html": "뜨거운 맛을 보여주지의 주 대상이 적 영웅이면 히페리온의 재사용 대기시간이 5초 감소합니다.",
+         "added": false
+        },
+        {
+         "text": "해당 영웅이 히페리온으로부터 받는 피해가 100% 증가합니다.",
+         "html": "해당 영웅이 히페리온으로부터 받는 피해가 100% 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "그늘날개",
+       "key": "R2",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "추가된 기능: 밴시가 일반 공격으로 공격한 적 영웅의 공격력이 1초 동안 2 감소하며 최대 25까지 중첩됩니다.",
+         "html": "추가된 기능: 밴시가 일반 공격으로 공격한 적 영웅의 공격력이 1초 동안 2 감소하며 최대 25까지 중첩됩니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "(신규) 특공대 나가신다",
+       "key": "E",
+       "new": true,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "아드레날린 촉진을 사용하면 저지 불가 상태가 되고 생명력 회복 지속 시간이 2초 증가합니다.",
+         "html": "아드레날린 촉진을 사용하면 저지 불가 상태가 되고 생명력 회복 지속 시간이 2초 증가합니다.",
+         "added": false
+        },
+        {
+         "text": "증가한 지속 시간은 생명력이 70%에 이르면 종료됩니다.",
+         "html": "증가한 지속 시간은 생명력이 70%에 이르면 종료됩니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "(신규) 더 뜨거운 맛",
+       "key": "D",
+       "new": true,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "일반 공격을 3회 할 때마다 뜨거운 맛을 보여주지가 활성화됩니다.",
+         "html": "일반 공격을 3회 할 때마다 뜨거운 맛을 보여주지가 활성화됩니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "(신규) 명령 수행",
+       "key": "지속 효과",
+       "new": true,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "사망 타이머가 30초로 감소합니다. 사망하면 근처 적 영웅을 향해 히페리온을 시전합니다.",
+         "html": "사망 타이머가 30초로 감소합니다. 사망하면 근처 적 영웅을 향해 히페리온을 시전합니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">일반 공격</strong>\n<ul>\n<li>공격력이 101에서 92로 감소했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">천공 탄환 [Q]</strong>\n<ul>\n<li>재사용 대기시간이 10초에서 9초로 감소했습니다.</li>\n<li>마나 소모량이 65에서 60으로 감소했습니다.</li>\n<li>공격력이 220에서 190으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">회심의 일격 [Q]</strong>\n<ul>\n<li>새로운 기능:\n\t\t\t<ul>\n<li>뜨거운 맛을 보여주지에 적중당한 적들이 2.5초 동안 10% 느려집니다.</li>\n<li>천공 탄환이 기절, 감속 상태인 적 영웅에게 25%의 추가 피해를 줍니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">박멸자 [W]</strong>\n<ul>\n<li>새로운 기능:\n\t\t\t<ul>\n<li>돌격병과 괴물, 용병에 대한 일반 공격력이 50% 증가합니다. 격려가 활성화된 동안에는 이 효과가 125%로 증가합니다.</li>\n<li>지속 효과: 아군 돌격병과 용병에 대해서는 격려 효과가 사라지지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">정예 명사수 [고유 능력]</strong>\n<ul>\n<li>새로운 기능:\n\t\t\t<ul>\n<li>빌려온 힘: 뜨거운 맛을 보여주지의 공격력이 60%만큼 추가로 증가합니다. 사망할 때마다 획득한 추가 최대 생명력의 15%를 잃습니다.</li>\n<li>적 영웅 적중 시 부여되는 퀘스트 추가 공격력이 1%에서 0.75%으로 감소합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>4레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">베히모스 전투복 [지속 효과]</strong>\n<ul>\n<li>뜨거운 맛을 보여주지가 적 영웅에게 적중할 때마다 획득하는 추가 생명력이 5에서 8로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">묵직한 녀석 [Q]</strong>\n<ul>\n<li>새로운 기능: 천공 탄환의 감속 정도와 지속 시간이 75% 증가합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">촉진 가속화 [E]</strong>\n<ul>\n<li>격려가 활성화된 동안 감소하는 재사용 대기시간이 200%에서 300%로 증가했습니다.</li>\n<li>아드레날린 촉진의 마나 소모량 감소량이 25에서 30으로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">불안정한 혼합물 [고유 능력]</strong>\n<ul>\n<li>천공 탄환의 재사용 대기시간 감소량이 1.5초에서 1초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">쇠약의 탄환 [Q]</strong>\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">(신규) 줄을 맞춰라 [Q]</strong>\n<ul>\n<li>천공 탄환의 재사용 대기시간이 3초 감소합니다. 둘 이상의 적 영웅에게 적중하면, 재사용 대기시간이 추가로 3초 감소합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">이랴! [W]</strong>\n<ul>\n<li>기본 이동 속도 증가 효과가 8%에서 10%로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">조금만 더! [E/W]</strong>\n<ul>\n<li>13레벨에서 옮겨졌습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">재집결의 함성 [W]</strong>\n<ul>\n<li>13레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능:\n\t\t\t<ul>\n<li>격려의 공격 속도 증가 효과가 20% 증가합니다.</li>\n<li>지속 효과: 일반 공격을 12회 할 때마다 격려를 비용 없이 시전합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">약점을 포착했다 [지속 효과]</strong>\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">마무리 [지속 효과]</strong>\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">불굴의 다짐 [R1]</strong>\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">(신규) 해결사 등장 [R1]</strong>\n<ul>\n<li>뜨거운 맛을 보여주지의 주 대상이 적 영웅이면 히페리온의 재사용 대기시간이 5초 감소합니다.</li>\n<li>해당 영웅이 히페리온으로부터 받는 피해가 100% 증가합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">그늘날개 [R2]</strong>\n<ul>\n<li>추가된 기능: 밴시가 일반 공격으로 공격한 적 영웅의 공격력이 1초 동안 2 감소하며 최대 25까지 중첩됩니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">(신규) 특공대 나가신다 [E]</strong>\n<ul>\n<li>아드레날린 촉진을 사용하면 저지 불가 상태가 되고 생명력 회복 지속 시간이 2초 증가합니다.</li>\n<li>증가한 지속 시간은 생명력이 70%에 이르면 종료됩니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">(신규) 더 뜨거운 맛 [D]</strong>\n<ul>\n<li>일반 공격을 3회 할 때마다 뜨거운 맛을 보여주지가 활성화됩니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">(신규) 명령 수행 [지속 효과]</strong>\n<ul>\n<li>사망 타이머가 30초로 감소합니다. 사망하면 근처 적 영웅을 향해 히페리온을 시전합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>개발자의 의견:</strong> 짐 레이너는 이전에 이미 전반적으로 조정된 바 있지만, 재미있고 흥미진진하게 고칠 부분이 더 있었습니다. 직관적인 플레이 스타일을 유지하면서도 특성 트리, 특히 20레벨에 재미를 더해주고 싶었습니다.</blockquote>"
+    }
+   ]
+  },
+  {
+   "name": "영웅 개편: 누더기",
+   "key": "rework",
+   "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">갈고리 [Q]</strong>\n<ul>\n<li>추가된 기능: 13레벨이 되면 갈고리 사거리가 40% 증가합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">지면 강타 [W]</strong>\n<ul>\n<li>재사용 대기시간이 7초에서 8초로 증가했습니다.</li>\n<li>안쪽 범위 내 감속 효과 지속 시간이 1.5초에서 2초로 증가했습니다.</li>\n<li>더는 돌격병, 용병, 괴물에게 추가 피해를 주지 않습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">유독 가스 [고유 능력/지속 효과]</strong>\n<ul>\n<li>새로운 기능:\n\t\t<ul>\n<li>일반 공격에 적중된 적이나 지면 강타의 안쪽 범위 내에 있는 적이 유독 가스에 중독되면 3초에 걸쳐 27의 피해를 받습니다. 돌격병과 용병, 괴물에게는 150%의 추가 피해를 줍니다.</li>\n</ul>\n</li>\n<li>새로운 사용 효과 기능 - <strong>휘청이는 괴물</strong><strong>:</strong>\n<ul>\n<li>사용 시 매초 주위 적들에게 유독 가스를 퍼뜨리며 누더기의 이동 속도가 5초 동안 110% 미만으로 감소하지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">짜깁기 [W]</strong>\n<ul>\n<li>새로운 기능:\n\t\t\t<ul>\n<li>유독 가스에 중독된 적 하나당 방어력이 3 증가하며, 휘청이는 괴물 사용 시 방어력 증가량이 두 배가 됩니다. 최대 8회 중첩됩니다.</li>\n<li>지속 효과: 받는 치유량이 15% 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">음미 [E]</strong>\n<ul>\n<li>새로운 기능:\n\t\t\t<ul>\n<li>퀘스트: 뜯어먹기로 적 영웅을 적중시키면 누더기의 생명력 재생량이 1.5만큼, 유독 가스의 공격력이 2%만큼 증가하며, 최대 100회 중첩됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">끝없는 허기 [지속 효과]</strong>\n<ul>\n<li>새로운 기능:\n\t\t\t<ul>\n<li>지속 효과: 이동 속도가 5% 증가합니다.</li>\n<li>퀘스트: 재생의 구슬을 획득할 때마다 누더기의 최대 생명력이 30 증가합니다.</li>\n<li>보상: 재생의 구슬을 20개 획득할 때마다 누더기의 이동 속도가 추가로 5% 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>4레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">놀자! [W]</strong>\n<ul>\n<li>새로운 기능: 일반 공격 시 지면 강타의 재사용 대기시간이 0.75초 감소하고 5의 마나를 회복합니다. 지면 강타의 안쪽 범위에서 적 영웅을 적중시키면 지면 강타의 재사용 대기시간이 1초 감소합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">고기 다지기 [지속 효과]</strong>\n<ul>\n<li>4레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능: 영웅에게 일반 공격이 적중하면 대상 영웅이 2.5초 동안 25% 느려지고 누더기가 최대 생명력의 2%를 회복합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">(신규) 유독 식칼 [고유 능력]</strong>\n<ul>\n<li>일반 공격이 적중하면 대상이 유독 가스 중독으로 받는 피해가 35% 증가하고 주변에 유독 가스를 퍼뜨립니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">시체먹기 [지속 효과]</strong>\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">톱니 갈고리 [Q]</strong>\n<ul>\n<li>4레벨에서 옮겨졌습니다.</li>\n<li>재사용 대기시간 감소량이 3초에서 5초로 증가했습니다.</li>\n<li>추가된 기능: 갈고리가 적 영웅에게 적중하면 마나 또한 35 회복됩니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">한 점 더 [E]</strong>\n<ul>\n<li>20레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능:\n\t\t\t<ul>\n<li>뜯어먹기 충전 횟수가 1회 증가하며, 첫 번째 사용 후 두 번째 사용까지 6초의 재사용 대기시간이 발생합니다.</li>\n<li>빌려온 힘: 뜯어먹기 사용 후 누더기 생명력이 최대이면, 10초 동안 최대 생명력의 15%에 이르는 보호막을 획득합니다. 사망할 때마다 보호막이 3% 감소합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">(신규) 부패 [고유 능력]</strong>\n<ul>\n<li>휘청이는 괴물이 활성화된 동안 유독 가스에 중독된 적이 받는 생명력 회복량이 30% 감소됩니다.</li>\n<li>지속 효과: 유독 가스로 준 피해의 60%만큼 생명력을 회복합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">낚시 갈고리 [Q]</strong>\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">(신규) 압박 [W/고유 능력]</strong>\n<ul>\n<li>지면 강타의 공격력이 25 증가합니다.</li>\n<li>퀘스트: 적 영웅이 유독 가스에 6회 피해를 받을 때마다 지면 강타의 공격력이 최대 75까지 영구적으로 1씩 증가합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">썩둑 썩둑 [고유 능력]</strong>\n<ul>\n<li>4레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능: 갈고리에 적 영웅이 적중하거나 휘청이는 괴물을 사용하면 5초 동안 공격 속도가 50% 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">유독성 가르기 [W]</strong>\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">분쇄 [W]</strong>\n<ul>\n<li>13레벨에서 옮겨졌습니다.</li>\n<li>추가된 기능: 지면 강타에 적중당한 적 영웅의 방어력이 4초 동안 10 감소합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">소화액 [E]</strong>\n<ul>\n<li>추가된 기능: 5초에 걸쳐 140의 추가 피해를 줍니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">불타는 가스 [지속 효과]</strong>\n<ul>\n<li>'Flare Up'으로 이름이 변경되었습니다.</li>\n<li>추가된 기능: 휘청이는 괴물을 사용하면 공격력도 150% 증가합니다.</li>\n<li>추가 공격력 효과의 지속 시간이 8초에서 4초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">끈적한 쓸개즙 [R1]</strong>\n<ul>\n<li><strong>삭제되었습니다.</strong></li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">휘청이는 괴물 [사용 효과]</strong>\n<ul>\n<li><strong>삭제되었습니다.</strong></li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">(신규) 장의사의 선물 [R1]</strong>\n<ul>\n<li>적 영웅에 대한 썩은 쓸개즙 공격력이 100% 증가합니다.</li>\n<li>퀘스트: 적 영웅에게 썩은 쓸개즙으로 피해를 줄 때마다 누더기의 다음 사망 타이머가 2%만큼, 최대 80%까지 감소합니다. 사망 시 감소 효과의 절반이 사라집니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">(신규) 갈고리 제왕 [Q]</strong>\n<ul>\n<li>갈고리의 재사용 대기시간이 5초 감소합니다. 갈고리에 적중당한 적 영웅이 받는 생명력 회복량이 2초 동안 100% 감소합니다. 갈고리에 적중당한 아군 영웅은 2초 동안 불사 상태가 됩니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">(신규) 가스주머니 [고유 능력]</strong>\n<ul>\n<li>휘청이는 괴물을 사용하면 3초 동안 저지 불가 상태가 됩니다.</li>\n<li>지속 효과: 휘청이는 괴물의 재사용 대기시간이 20초 감소합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>개발자의 의견:</strong> 모두가 사랑하는 덩치 큰 친구가 그 어느 때보다 굶주려서 돌아왔습니다! 최고의 덩치가 전투 상황과 비전투 상황에서 더 일관성 있는 모습을 보여줄 수 있도록 휘청이는 괴물이라는 새로운 기본 능력을 주었습니다. 이 기술에 수많은 새 특성과 변경된 특성이 결합하여 누더기는 훨씬 위험한 존재가 될 것입니다. 또한, 13레벨에 이전 낚시 갈고리의 혜택도 적용하기로 했습니다. 이 특성은 너무 재미있고 효과적이라 다른 합리적인 대안을 설계하는 것이 불가능할 정도였습니다. 이러한 모든 변경으로 인해 오랫동안 사랑받지 못한 영웅에게 새로운 언데드의 기운이 충만해지기를 바랍니다.</blockquote>",
+   "heroes": [
+    {
+     "name": "누더기",
+     "heroId": "Stitches",
+     "heroIds": [
+      "Stitches"
+     ],
+     "changes": [
+      {
+       "name": "갈고리",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "추가된 기능: 13레벨이 되면 갈고리 사거리가 40% 증가합니다.",
+         "html": "추가된 기능: 13레벨이 되면 갈고리 사거리가 40% 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "지면 강타",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 7초에서 8초로 증가했습니다.",
+         "html": "재사용 대기시간이 7초에서 8초로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "안쪽 범위 내 감속 효과 지속 시간이 1.5초에서 2초로 증가했습니다.",
+         "html": "안쪽 범위 내 감속 효과 지속 시간이 1.5초에서 2초로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "더는 돌격병, 용병, 괴물에게 추가 피해를 주지 않습니다.",
+         "html": "더는 돌격병, 용병, 괴물에게 추가 피해를 주지 않습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "유독 가스",
+       "key": "고유 능력/지속 효과",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": []
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "일반 공격에 적중된 적이나 지면 강타의 안쪽 범위 내에 있는 적이 유독 가스에 중독되면 3초에 걸쳐 27의 피해를 받습니다. 돌격병과 용병, 괴물에게는 150%의 추가 피해를 줍니다.",
+         "html": "일반 공격에 적중된 적이나 지면 강타의 안쪽 범위 내에 있는 적이 유독 가스에 중독되면 3초에 걸쳐 27의 피해를 받습니다. 돌격병과 용병, 괴물에게는 150%의 추가 피해를 줍니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 사용 효과 기능 - 휘청이는 괴물",
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "사용 시 매초 주위 적들에게 유독 가스를 퍼뜨리며 누더기의 이동 속도가 5초 동안 110% 미만으로 감소하지 않습니다.",
+         "html": "사용 시 매초 주위 적들에게 유독 가스를 퍼뜨리며 누더기의 이동 속도가 5초 동안 110% 미만으로 감소하지 않습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "짜깁기",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": []
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "유독 가스에 중독된 적 하나당 방어력이 3 증가하며, 휘청이는 괴물 사용 시 방어력 증가량이 두 배가 됩니다. 최대 8회 중첩됩니다.",
+         "html": "유독 가스에 중독된 적 하나당 방어력이 3 증가하며, 휘청이는 괴물 사용 시 방어력 증가량이 두 배가 됩니다. 최대 8회 중첩됩니다.",
+         "added": false
+        },
+        {
+         "text": "지속 효과: 받는 치유량이 15% 증가합니다.",
+         "html": "지속 효과: 받는 치유량이 15% 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "음미",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": []
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "퀘스트: 뜯어먹기로 적 영웅을 적중시키면 누더기의 생명력 재생량이 1.5만큼, 유독 가스의 공격력이 2%만큼 증가하며, 최대 100회 중첩됩니다.",
+         "html": "퀘스트: 뜯어먹기로 적 영웅을 적중시키면 누더기의 생명력 재생량이 1.5만큼, 유독 가스의 공격력이 2%만큼 증가하며, 최대 100회 중첩됩니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "끝없는 허기",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": []
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "지속 효과: 이동 속도가 5% 증가합니다.",
+         "html": "지속 효과: 이동 속도가 5% 증가합니다.",
+         "added": false
+        },
+        {
+         "text": "퀘스트: 재생의 구슬을 획득할 때마다 누더기의 최대 생명력이 30 증가합니다.",
+         "html": "퀘스트: 재생의 구슬을 획득할 때마다 누더기의 최대 생명력이 30 증가합니다.",
+         "added": false
+        },
+        {
+         "text": "보상: 재생의 구슬을 20개 획득할 때마다 누더기의 이동 속도가 추가로 5% 증가합니다.",
+         "html": "보상: 재생의 구슬을 20개 획득할 때마다 누더기의 이동 속도가 추가로 5% 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "놀자!",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "새로운 기능: 일반 공격 시 지면 강타의 재사용 대기시간이 0.75초 감소하고 5의 마나를 회복합니다. 지면 강타의 안쪽 범위에서 적 영웅을 적중시키면 지면 강타의 재사용 대기시간이 1초 감소합니다.",
+         "html": "새로운 기능: 일반 공격 시 지면 강타의 재사용 대기시간이 0.75초 감소하고 5의 마나를 회복합니다. 지면 강타의 안쪽 범위에서 적 영웅을 적중시키면 지면 강타의 재사용 대기시간이 1초 감소합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "고기 다지기",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "4레벨에서 옮겨졌습니다.",
+         "html": "4레벨에서 옮겨졌습니다.",
+         "added": false
+        },
+        {
+         "text": "새로운 기능: 영웅에게 일반 공격이 적중하면 대상 영웅이 2.5초 동안 25% 느려지고 누더기가 최대 생명력의 2%를 회복합니다.",
+         "html": "새로운 기능: 영웅에게 일반 공격이 적중하면 대상 영웅이 2.5초 동안 25% 느려지고 누더기가 최대 생명력의 2%를 회복합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "(신규) 유독 식칼",
+       "key": "고유 능력",
+       "new": true,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "일반 공격이 적중하면 대상이 유독 가스 중독으로 받는 피해가 35% 증가하고 주변에 유독 가스를 퍼뜨립니다.",
+         "html": "일반 공격이 적중하면 대상이 유독 가스 중독으로 받는 피해가 35% 증가하고 주변에 유독 가스를 퍼뜨립니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "시체먹기",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "톱니 갈고리",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "4레벨에서 옮겨졌습니다.",
+         "html": "4레벨에서 옮겨졌습니다.",
+         "added": false
+        },
+        {
+         "text": "재사용 대기시간 감소량이 3초에서 5초로 증가했습니다.",
+         "html": "재사용 대기시간 감소량이 3초에서 5초로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "추가된 기능: 갈고리가 적 영웅에게 적중하면 마나 또한 35 회복됩니다.",
+         "html": "추가된 기능: 갈고리가 적 영웅에게 적중하면 마나 또한 35 회복됩니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "한 점 더",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "20레벨에서 옮겨졌습니다.",
+         "html": "20레벨에서 옮겨졌습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "뜯어먹기 충전 횟수가 1회 증가하며, 첫 번째 사용 후 두 번째 사용까지 6초의 재사용 대기시간이 발생합니다.",
+         "html": "뜯어먹기 충전 횟수가 1회 증가하며, 첫 번째 사용 후 두 번째 사용까지 6초의 재사용 대기시간이 발생합니다.",
+         "added": false
+        },
+        {
+         "text": "빌려온 힘: 뜯어먹기 사용 후 누더기 생명력이 최대이면, 10초 동안 최대 생명력의 15%에 이르는 보호막을 획득합니다. 사망할 때마다 보호막이 3% 감소합니다.",
+         "html": "빌려온 힘: 뜯어먹기 사용 후 누더기 생명력이 최대이면, 10초 동안 최대 생명력의 15%에 이르는 보호막을 획득합니다. 사망할 때마다 보호막이 3% 감소합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "(신규) 부패",
+       "key": "고유 능력",
+       "new": true,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "휘청이는 괴물이 활성화된 동안 유독 가스에 중독된 적이 받는 생명력 회복량이 30% 감소됩니다.",
+         "html": "휘청이는 괴물이 활성화된 동안 유독 가스에 중독된 적이 받는 생명력 회복량이 30% 감소됩니다.",
+         "added": false
+        },
+        {
+         "text": "지속 효과: 유독 가스로 준 피해의 60%만큼 생명력을 회복합니다.",
+         "html": "지속 효과: 유독 가스로 준 피해의 60%만큼 생명력을 회복합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "낚시 갈고리",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "(신규) 압박",
+       "key": "W/고유 능력",
+       "new": true,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "지면 강타의 공격력이 25 증가합니다.",
+         "html": "지면 강타의 공격력이 25 증가합니다.",
+         "added": false
+        },
+        {
+         "text": "퀘스트: 적 영웅이 유독 가스에 6회 피해를 받을 때마다 지면 강타의 공격력이 최대 75까지 영구적으로 1씩 증가합니다.",
+         "html": "퀘스트: 적 영웅이 유독 가스에 6회 피해를 받을 때마다 지면 강타의 공격력이 최대 75까지 영구적으로 1씩 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "썩둑 썩둑",
+       "key": "고유 능력",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "4레벨에서 옮겨졌습니다.",
+         "html": "4레벨에서 옮겨졌습니다.",
+         "added": false
+        },
+        {
+         "text": "새로운 기능: 갈고리에 적 영웅이 적중하거나 휘청이는 괴물을 사용하면 5초 동안 공격 속도가 50% 증가합니다.",
+         "html": "새로운 기능: 갈고리에 적 영웅이 적중하거나 휘청이는 괴물을 사용하면 5초 동안 공격 속도가 50% 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "유독성 가르기",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "분쇄",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "13레벨에서 옮겨졌습니다.",
+         "html": "13레벨에서 옮겨졌습니다.",
+         "added": false
+        },
+        {
+         "text": "추가된 기능: 지면 강타에 적중당한 적 영웅의 방어력이 4초 동안 10 감소합니다.",
+         "html": "추가된 기능: 지면 강타에 적중당한 적 영웅의 방어력이 4초 동안 10 감소합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "소화액",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "추가된 기능: 5초에 걸쳐 140의 추가 피해를 줍니다.",
+         "html": "추가된 기능: 5초에 걸쳐 140의 추가 피해를 줍니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "불타는 가스",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "'Flare Up'으로 이름이 변경되었습니다.",
+         "html": "'Flare Up'으로 이름이 변경되었습니다.",
+         "added": false
+        },
+        {
+         "text": "추가된 기능: 휘청이는 괴물을 사용하면 공격력도 150% 증가합니다.",
+         "html": "추가된 기능: 휘청이는 괴물을 사용하면 공격력도 150% 증가합니다.",
+         "added": false
+        },
+        {
+         "text": "추가 공격력 효과의 지속 시간이 8초에서 4초로 감소했습니다.",
+         "html": "추가 공격력 효과의 지속 시간이 8초에서 4초로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "끈적한 쓸개즙",
+       "key": "R1",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "<strong>삭제되었습니다.</strong>",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "휘청이는 괴물",
+       "key": "사용 효과",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "<strong>삭제되었습니다.</strong>",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "(신규) 장의사의 선물",
+       "key": "R1",
+       "new": true,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "적 영웅에 대한 썩은 쓸개즙 공격력이 100% 증가합니다.",
+         "html": "적 영웅에 대한 썩은 쓸개즙 공격력이 100% 증가합니다.",
+         "added": false
+        },
+        {
+         "text": "퀘스트: 적 영웅에게 썩은 쓸개즙으로 피해를 줄 때마다 누더기의 다음 사망 타이머가 2%만큼, 최대 80%까지 감소합니다. 사망 시 감소 효과의 절반이 사라집니다.",
+         "html": "퀘스트: 적 영웅에게 썩은 쓸개즙으로 피해를 줄 때마다 누더기의 다음 사망 타이머가 2%만큼, 최대 80%까지 감소합니다. 사망 시 감소 효과의 절반이 사라집니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "(신규) 갈고리 제왕",
+       "key": "Q",
+       "new": true,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "갈고리의 재사용 대기시간이 5초 감소합니다. 갈고리에 적중당한 적 영웅이 받는 생명력 회복량이 2초 동안 100% 감소합니다. 갈고리에 적중당한 아군 영웅은 2초 동안 불사 상태가 됩니다.",
+         "html": "갈고리의 재사용 대기시간이 5초 감소합니다. 갈고리에 적중당한 적 영웅이 받는 생명력 회복량이 2초 동안 100% 감소합니다. 갈고리에 적중당한 아군 영웅은 2초 동안 불사 상태가 됩니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "(신규) 가스주머니",
+       "key": "고유 능력",
+       "new": true,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "휘청이는 괴물을 사용하면 3초 동안 저지 불가 상태가 됩니다.",
+         "html": "휘청이는 괴물을 사용하면 3초 동안 저지 불가 상태가 됩니다.",
+         "added": false
+        },
+        {
+         "text": "지속 효과: 휘청이는 괴물의 재사용 대기시간이 20초 감소합니다.",
+         "html": "지속 효과: 휘청이는 괴물의 재사용 대기시간이 20초 감소합니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">갈고리 [Q]</strong>\n<ul>\n<li>추가된 기능: 13레벨이 되면 갈고리 사거리가 40% 증가합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">지면 강타 [W]</strong>\n<ul>\n<li>재사용 대기시간이 7초에서 8초로 증가했습니다.</li>\n<li>안쪽 범위 내 감속 효과 지속 시간이 1.5초에서 2초로 증가했습니다.</li>\n<li>더는 돌격병, 용병, 괴물에게 추가 피해를 주지 않습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">유독 가스 [고유 능력/지속 효과]</strong>\n<ul>\n<li>새로운 기능:\n\t\t<ul>\n<li>일반 공격에 적중된 적이나 지면 강타의 안쪽 범위 내에 있는 적이 유독 가스에 중독되면 3초에 걸쳐 27의 피해를 받습니다. 돌격병과 용병, 괴물에게는 150%의 추가 피해를 줍니다.</li>\n</ul>\n</li>\n<li>새로운 사용 효과 기능 - <strong>휘청이는 괴물</strong><strong>:</strong>\n<ul>\n<li>사용 시 매초 주위 적들에게 유독 가스를 퍼뜨리며 누더기의 이동 속도가 5초 동안 110% 미만으로 감소하지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">짜깁기 [W]</strong>\n<ul>\n<li>새로운 기능:\n\t\t\t<ul>\n<li>유독 가스에 중독된 적 하나당 방어력이 3 증가하며, 휘청이는 괴물 사용 시 방어력 증가량이 두 배가 됩니다. 최대 8회 중첩됩니다.</li>\n<li>지속 효과: 받는 치유량이 15% 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">음미 [E]</strong>\n<ul>\n<li>새로운 기능:\n\t\t\t<ul>\n<li>퀘스트: 뜯어먹기로 적 영웅을 적중시키면 누더기의 생명력 재생량이 1.5만큼, 유독 가스의 공격력이 2%만큼 증가하며, 최대 100회 중첩됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">끝없는 허기 [지속 효과]</strong>\n<ul>\n<li>새로운 기능:\n\t\t\t<ul>\n<li>지속 효과: 이동 속도가 5% 증가합니다.</li>\n<li>퀘스트: 재생의 구슬을 획득할 때마다 누더기의 최대 생명력이 30 증가합니다.</li>\n<li>보상: 재생의 구슬을 20개 획득할 때마다 누더기의 이동 속도가 추가로 5% 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>4레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">놀자! [W]</strong>\n<ul>\n<li>새로운 기능: 일반 공격 시 지면 강타의 재사용 대기시간이 0.75초 감소하고 5의 마나를 회복합니다. 지면 강타의 안쪽 범위에서 적 영웅을 적중시키면 지면 강타의 재사용 대기시간이 1초 감소합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">고기 다지기 [지속 효과]</strong>\n<ul>\n<li>4레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능: 영웅에게 일반 공격이 적중하면 대상 영웅이 2.5초 동안 25% 느려지고 누더기가 최대 생명력의 2%를 회복합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">(신규) 유독 식칼 [고유 능력]</strong>\n<ul>\n<li>일반 공격이 적중하면 대상이 유독 가스 중독으로 받는 피해가 35% 증가하고 주변에 유독 가스를 퍼뜨립니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">시체먹기 [지속 효과]</strong>\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">톱니 갈고리 [Q]</strong>\n<ul>\n<li>4레벨에서 옮겨졌습니다.</li>\n<li>재사용 대기시간 감소량이 3초에서 5초로 증가했습니다.</li>\n<li>추가된 기능: 갈고리가 적 영웅에게 적중하면 마나 또한 35 회복됩니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">한 점 더 [E]</strong>\n<ul>\n<li>20레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능:\n\t\t\t<ul>\n<li>뜯어먹기 충전 횟수가 1회 증가하며, 첫 번째 사용 후 두 번째 사용까지 6초의 재사용 대기시간이 발생합니다.</li>\n<li>빌려온 힘: 뜯어먹기 사용 후 누더기 생명력이 최대이면, 10초 동안 최대 생명력의 15%에 이르는 보호막을 획득합니다. 사망할 때마다 보호막이 3% 감소합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">(신규) 부패 [고유 능력]</strong>\n<ul>\n<li>휘청이는 괴물이 활성화된 동안 유독 가스에 중독된 적이 받는 생명력 회복량이 30% 감소됩니다.</li>\n<li>지속 효과: 유독 가스로 준 피해의 60%만큼 생명력을 회복합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">낚시 갈고리 [Q]</strong>\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">(신규) 압박 [W/고유 능력]</strong>\n<ul>\n<li>지면 강타의 공격력이 25 증가합니다.</li>\n<li>퀘스트: 적 영웅이 유독 가스에 6회 피해를 받을 때마다 지면 강타의 공격력이 최대 75까지 영구적으로 1씩 증가합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">썩둑 썩둑 [고유 능력]</strong>\n<ul>\n<li>4레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능: 갈고리에 적 영웅이 적중하거나 휘청이는 괴물을 사용하면 5초 동안 공격 속도가 50% 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">유독성 가르기 [W]</strong>\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">분쇄 [W]</strong>\n<ul>\n<li>13레벨에서 옮겨졌습니다.</li>\n<li>추가된 기능: 지면 강타에 적중당한 적 영웅의 방어력이 4초 동안 10 감소합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">소화액 [E]</strong>\n<ul>\n<li>추가된 기능: 5초에 걸쳐 140의 추가 피해를 줍니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">불타는 가스 [지속 효과]</strong>\n<ul>\n<li>'Flare Up'으로 이름이 변경되었습니다.</li>\n<li>추가된 기능: 휘청이는 괴물을 사용하면 공격력도 150% 증가합니다.</li>\n<li>추가 공격력 효과의 지속 시간이 8초에서 4초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">끈적한 쓸개즙 [R1]</strong>\n<ul>\n<li><strong>삭제되었습니다.</strong></li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">휘청이는 괴물 [사용 효과]</strong>\n<ul>\n<li><strong>삭제되었습니다.</strong></li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">(신규) 장의사의 선물 [R1]</strong>\n<ul>\n<li>적 영웅에 대한 썩은 쓸개즙 공격력이 100% 증가합니다.</li>\n<li>퀘스트: 적 영웅에게 썩은 쓸개즙으로 피해를 줄 때마다 누더기의 다음 사망 타이머가 2%만큼, 최대 80%까지 감소합니다. 사망 시 감소 효과의 절반이 사라집니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">(신규) 갈고리 제왕 [Q]</strong>\n<ul>\n<li>갈고리의 재사용 대기시간이 5초 감소합니다. 갈고리에 적중당한 적 영웅이 받는 생명력 회복량이 2초 동안 100% 감소합니다. 갈고리에 적중당한 아군 영웅은 2초 동안 불사 상태가 됩니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">(신규) 가스주머니 [고유 능력]</strong>\n<ul>\n<li>휘청이는 괴물을 사용하면 3초 동안 저지 불가 상태가 됩니다.</li>\n<li>지속 효과: 휘청이는 괴물의 재사용 대기시간이 20초 감소합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>개발자의 의견:</strong> 모두가 사랑하는 덩치 큰 친구가 그 어느 때보다 굶주려서 돌아왔습니다! 최고의 덩치가 전투 상황과 비전투 상황에서 더 일관성 있는 모습을 보여줄 수 있도록 휘청이는 괴물이라는 새로운 기본 능력을 주었습니다. 이 기술에 수많은 새 특성과 변경된 특성이 결합하여 누더기는 훨씬 위험한 존재가 될 것입니다. 또한, 13레벨에 이전 낚시 갈고리의 혜택도 적용하기로 했습니다. 이 특성은 너무 재미있고 효과적이라 다른 합리적인 대안을 설계하는 것이 불가능할 정도였습니다. 이러한 모든 변경으로 인해 오랫동안 사랑받지 못한 영웅에게 새로운 언데드의 기운이 충만해지기를 바랍니다.</blockquote>"
+    }
+   ]
+  },
+  {
+   "name": "영웅 개편: 발라",
+   "key": "rework",
+   "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">일반 공격</strong>\n<ul>\n<li>공격력이 75에서 70으로 감소했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">다발 사격 [W]</strong>\n<ul>\n<li>공격력이 172에서 165로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">쇠못 덫 [E]</strong>\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">관통 화살 [Q]</strong>\n<ul>\n<li>4레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능:\n\t\t\t<ul>\n<li>굶주린 화살의 공격력 증가량이 1 증가합니다.</li>\n<li>퀘스트: 굶주린 화살의 첫 번째 공격에 적 영웅이 적중하면 첫 번째 공격의 공격력이 영구적으로 6 증가하고 40의 마나를 돌려받습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">(신규) 자율 사격 [W]</strong>\n<ul>\n<li>다발 사격에 적중한 적 영웅 하나당 2의 증오를 획득합니다.</li>\n<li>퀘스트: 적 영웅에게 다발 사격이 적중할 때마다 다발 사격 공격력이 영구적으로 4 증가합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">사냥꾼의 신조 [고유 능력]</strong>\n<ul>\n<li>4레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능:\n\t\t\t<ul>\n<li>빌려온 힘: 공격 속도가 20% 증가합니다. 사망할 때마다 획득한 추가 최대 생명력의 5%를 잃습니다.</li>\n<li>퀘스트: 적 영웅에게 일반 공격이 50회 적중할 때마다 증오 중첩당 공격력이 1%만큼, 최대 5%까지 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>4레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">연발 화살 [Q/E]</strong>\n<ul>\n<li>7레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능: 이제 도약이 마나를 소모하지 않습니다. 도약을 사용하는 즉시 굶주린 화살의 재사용 대기시간이 초기화됩니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">무기고 [W]</strong>\n<ul>\n<li>새로운 기능: 다발 사격의 사거리가 20% 증가합니다. 적 영웅에게 적중 시 추가 피해를 주고 발라의 마나를 25 회복시켜주는 수류탄 3개를 발사합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">저승사자 [E]</strong>\n<ul>\n<li>추가된 기능: 도약의 재사용 대기시간이 5초 감소합니다. 도약의 공격력 증가량이 50%에서 150%로 증가합니다. 대상이 1.5초 안에 사망하면, 50 마나를 돌려받고 도약의 재사용 대기시간이 초기화됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">괴물 사냥꾼 [Q]</strong>\n<ul>\n<li>1레벨에서 옮겨졌습니다.</li>\n<li>더는 굶주린 화살의 마나 소모량을 감소시키지 않습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">냉기 사격 [Q/W]</strong>\n<ul>\n<li>16레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능: 다발 사격에 적중된 적이 2.5초 동안 20% 느려집니다. 느려진 적에 대한 굶주린 화살의 공격력이 25% 증가합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">맹렬한 추격 [고유 능력]</strong>\n<ul>\n<li>1레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능: 이동 속도 증가 효과가 증오 중첩당 2.5%로 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">착취 화살 [Q]</strong>\n<ul>\n<li>'착취 화살'로 이름이 변경되었습니다.</li>\n<li>새로운 기능:\n\t\t\t<ul>\n<li>굶주린 화살이 적 영웅에게 적중할 때마다 발라가 최대 생명력의 4%를 회복합니다.</li>\n<li>굶주린 화살이 적 영웅에게 적중할 때마다 발라의 생명력이 최대 생명력의 2%만큼 회복됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">절제 연마 [고유 능력]</strong>\n<ul>\n<li>새로운 기능: 일반 공격으로 준 피해의 10%만큼 생명력을 회복합니다. 이 효과는 증오 중첩당 추가로 2%만큼 증가합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">어스름 [사용 효과]</strong>\n<ul>\n<li>추가된 기능: 증오 중첩당 매초 2.5의 생명력을 회복합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">처벌 [W]</strong>\n<ul>\n<li>7레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능: 증오가 최대일 때 다발 사격 재사용 대기시간이 50% 빨리 초기화됩니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">끓어오르는 증오</strong>\n<ul>\n<li>새로운 기능: 증오가 최대일 때 모든 공격력이 10% 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">죽음 착취 [R1]</strong>\n<ul>\n<li>새로운 기능:\n\t\t\t<ul>\n<li>난사가 적 영웅에게 적중할 때마다 난사의 지속 시간이 0.125초만큼 증가합니다.</li>\n<li>지속 효과: 난사 중 34의 피해를 주고, <u>준</u> 피해의 25%만큼 생명력을 회복시키는 관통 화살을 발사합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">복수의 폭풍 [R2]</strong>\n<ul>\n<li>새로운 기능:\n\t\t\t<ul>\n<li>적 영웅에게 일반 공격을 할 때마다 복수의 비의 충전 대기시간이 5초 감소합니다.</li>\n<li>지속 효과: 증오 중첩당 공격 속도가 2% 증가합니다. 증오가 최대일 때, 공격 속도가 추가로 30% 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">천리살 화살통 [고유 능력]</strong>\n<ul>\n<li>새로운 기능: 일반 공격 사거리가 20% 증가합니다. 증오가 최대일 때 이 효과가 추가로 30% 증가합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">(신규) 곡예 [E]</strong>\n<ul>\n<li>도약 충전 횟수가 추가로 2회 증가합니다. 도약 시 3개의 쇠못 덫을 떨어뜨립니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>개발자의 의견:</strong> 우리의 토박이 악마 사냥꾼은 게임에서 가장 특성 트리가 다양한 영웅 중 한 명입니다. 따라서, 이번 변경의 주목적은 약간의 교차 시너지를 주고 일부 발라의 단조로운 특성 디자인을 돋보이게 하는 것이었습니다. 다른 개편과 마찬가지로 새로운 빌려온 힘 특성을 시험할 테니, 의견을 보내주세요!</blockquote>",
+   "heroes": [
+    {
+     "name": "발라",
+     "heroId": "DemonHunter",
+     "heroIds": [
+      "DemonHunter"
+     ],
+     "changes": [
+      {
+       "name": "일반 공격",
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "공격력이 75에서 70으로 감소했습니다.",
+         "html": "공격력이 75에서 70으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "다발 사격",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "공격력이 172에서 165로 감소했습니다.",
+         "html": "공격력이 172에서 165로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "쇠못 덫",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "관통 화살",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "4레벨에서 옮겨졌습니다.",
+         "html": "4레벨에서 옮겨졌습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "굶주린 화살의 공격력 증가량이 1 증가합니다.",
+         "html": "굶주린 화살의 공격력 증가량이 1 증가합니다.",
+         "added": false
+        },
+        {
+         "text": "퀘스트: 굶주린 화살의 첫 번째 공격에 적 영웅이 적중하면 첫 번째 공격의 공격력이 영구적으로 6 증가하고 40의 마나를 돌려받습니다.",
+         "html": "퀘스트: 굶주린 화살의 첫 번째 공격에 적 영웅이 적중하면 첫 번째 공격의 공격력이 영구적으로 6 증가하고 40의 마나를 돌려받습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "(신규) 자율 사격",
+       "key": "W",
+       "new": true,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "다발 사격에 적중한 적 영웅 하나당 2의 증오를 획득합니다.",
+         "html": "다발 사격에 적중한 적 영웅 하나당 2의 증오를 획득합니다.",
+         "added": false
+        },
+        {
+         "text": "퀘스트: 적 영웅에게 다발 사격이 적중할 때마다 다발 사격 공격력이 영구적으로 4 증가합니다.",
+         "html": "퀘스트: 적 영웅에게 다발 사격이 적중할 때마다 다발 사격 공격력이 영구적으로 4 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "사냥꾼의 신조",
+       "key": "고유 능력",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "4레벨에서 옮겨졌습니다.",
+         "html": "4레벨에서 옮겨졌습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "빌려온 힘: 공격 속도가 20% 증가합니다. 사망할 때마다 획득한 추가 최대 생명력의 5%를 잃습니다.",
+         "html": "빌려온 힘: 공격 속도가 20% 증가합니다. 사망할 때마다 획득한 추가 최대 생명력의 5%를 잃습니다.",
+         "added": false
+        },
+        {
+         "text": "퀘스트: 적 영웅에게 일반 공격이 50회 적중할 때마다 증오 중첩당 공격력이 1%만큼, 최대 5%까지 증가합니다.",
+         "html": "퀘스트: 적 영웅에게 일반 공격이 50회 적중할 때마다 증오 중첩당 공격력이 1%만큼, 최대 5%까지 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "연발 화살",
+       "key": "Q/E",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "7레벨에서 옮겨졌습니다.",
+         "html": "7레벨에서 옮겨졌습니다.",
+         "added": false
+        },
+        {
+         "text": "새로운 기능: 이제 도약이 마나를 소모하지 않습니다. 도약을 사용하는 즉시 굶주린 화살의 재사용 대기시간이 초기화됩니다.",
+         "html": "새로운 기능: 이제 도약이 마나를 소모하지 않습니다. 도약을 사용하는 즉시 굶주린 화살의 재사용 대기시간이 초기화됩니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "무기고",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "새로운 기능: 다발 사격의 사거리가 20% 증가합니다. 적 영웅에게 적중 시 추가 피해를 주고 발라의 마나를 25 회복시켜주는 수류탄 3개를 발사합니다.",
+         "html": "새로운 기능: 다발 사격의 사거리가 20% 증가합니다. 적 영웅에게 적중 시 추가 피해를 주고 발라의 마나를 25 회복시켜주는 수류탄 3개를 발사합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "저승사자",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "추가된 기능: 도약의 재사용 대기시간이 5초 감소합니다. 도약의 공격력 증가량이 50%에서 150%로 증가합니다. 대상이 1.5초 안에 사망하면, 50 마나를 돌려받고 도약의 재사용 대기시간이 초기화됩니다.",
+         "html": "추가된 기능: 도약의 재사용 대기시간이 5초 감소합니다. 도약의 공격력 증가량이 50%에서 150%로 증가합니다. 대상이 1.5초 안에 사망하면, 50 마나를 돌려받고 도약의 재사용 대기시간이 초기화됩니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "괴물 사냥꾼",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "1레벨에서 옮겨졌습니다.",
+         "html": "1레벨에서 옮겨졌습니다.",
+         "added": false
+        },
+        {
+         "text": "더는 굶주린 화살의 마나 소모량을 감소시키지 않습니다.",
+         "html": "더는 굶주린 화살의 마나 소모량을 감소시키지 않습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "냉기 사격",
+       "key": "Q/W",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "16레벨에서 옮겨졌습니다.",
+         "html": "16레벨에서 옮겨졌습니다.",
+         "added": false
+        },
+        {
+         "text": "새로운 기능: 다발 사격에 적중된 적이 2.5초 동안 20% 느려집니다. 느려진 적에 대한 굶주린 화살의 공격력이 25% 증가합니다.",
+         "html": "새로운 기능: 다발 사격에 적중된 적이 2.5초 동안 20% 느려집니다. 느려진 적에 대한 굶주린 화살의 공격력이 25% 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "맹렬한 추격",
+       "key": "고유 능력",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "1레벨에서 옮겨졌습니다.",
+         "html": "1레벨에서 옮겨졌습니다.",
+         "added": false
+        },
+        {
+         "text": "새로운 기능: 이동 속도 증가 효과가 증오 중첩당 2.5%로 증가합니다.",
+         "html": "새로운 기능: 이동 속도 증가 효과가 증오 중첩당 2.5%로 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "착취 화살",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "'착취 화살'로 이름이 변경되었습니다.",
+         "html": "'착취 화살'로 이름이 변경되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "굶주린 화살이 적 영웅에게 적중할 때마다 발라가 최대 생명력의 4%를 회복합니다.",
+         "html": "굶주린 화살이 적 영웅에게 적중할 때마다 발라가 최대 생명력의 4%를 회복합니다.",
+         "added": false
+        },
+        {
+         "text": "굶주린 화살이 적 영웅에게 적중할 때마다 발라의 생명력이 최대 생명력의 2%만큼 회복됩니다.",
+         "html": "굶주린 화살이 적 영웅에게 적중할 때마다 발라의 생명력이 최대 생명력의 2%만큼 회복됩니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "절제 연마",
+       "key": "고유 능력",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "새로운 기능: 일반 공격으로 준 피해의 10%만큼 생명력을 회복합니다. 이 효과는 증오 중첩당 추가로 2%만큼 증가합니다.",
+         "html": "새로운 기능: 일반 공격으로 준 피해의 10%만큼 생명력을 회복합니다. 이 효과는 증오 중첩당 추가로 2%만큼 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "어스름",
+       "key": "사용 효과",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "추가된 기능: 증오 중첩당 매초 2.5의 생명력을 회복합니다.",
+         "html": "추가된 기능: 증오 중첩당 매초 2.5의 생명력을 회복합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "처벌",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "7레벨에서 옮겨졌습니다.",
+         "html": "7레벨에서 옮겨졌습니다.",
+         "added": false
+        },
+        {
+         "text": "새로운 기능: 증오가 최대일 때 다발 사격 재사용 대기시간이 50% 빨리 초기화됩니다.",
+         "html": "새로운 기능: 증오가 최대일 때 다발 사격 재사용 대기시간이 50% 빨리 초기화됩니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "끓어오르는 증오",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "새로운 기능: 증오가 최대일 때 모든 공격력이 10% 증가합니다.",
+         "html": "새로운 기능: 증오가 최대일 때 모든 공격력이 10% 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "죽음 착취",
+       "key": "R1",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": []
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "난사가 적 영웅에게 적중할 때마다 난사의 지속 시간이 0.125초만큼 증가합니다.",
+         "html": "난사가 적 영웅에게 적중할 때마다 난사의 지속 시간이 0.125초만큼 증가합니다.",
+         "added": false
+        },
+        {
+         "text": "지속 효과: 난사 중 34의 피해를 주고, 준 피해의 25%만큼 생명력을 회복시키는 관통 화살을 발사합니다.",
+         "html": "지속 효과: 난사 중 34의 피해를 주고, <u>준</u> 피해의 25%만큼 생명력을 회복시키는 관통 화살을 발사합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "복수의 폭풍",
+       "key": "R2",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": []
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "적 영웅에게 일반 공격을 할 때마다 복수의 비의 충전 대기시간이 5초 감소합니다.",
+         "html": "적 영웅에게 일반 공격을 할 때마다 복수의 비의 충전 대기시간이 5초 감소합니다.",
+         "added": false
+        },
+        {
+         "text": "지속 효과: 증오 중첩당 공격 속도가 2% 증가합니다. 증오가 최대일 때, 공격 속도가 추가로 30% 증가합니다.",
+         "html": "지속 효과: 증오 중첩당 공격 속도가 2% 증가합니다. 증오가 최대일 때, 공격 속도가 추가로 30% 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "천리살 화살통",
+       "key": "고유 능력",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "새로운 기능: 일반 공격 사거리가 20% 증가합니다. 증오가 최대일 때 이 효과가 추가로 30% 증가합니다.",
+         "html": "새로운 기능: 일반 공격 사거리가 20% 증가합니다. 증오가 최대일 때 이 효과가 추가로 30% 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "(신규) 곡예",
+       "key": "E",
+       "new": true,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "도약 충전 횟수가 추가로 2회 증가합니다. 도약 시 3개의 쇠못 덫을 떨어뜨립니다.",
+         "html": "도약 충전 횟수가 추가로 2회 증가합니다. 도약 시 3개의 쇠못 덫을 떨어뜨립니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">일반 공격</strong>\n<ul>\n<li>공격력이 75에서 70으로 감소했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">다발 사격 [W]</strong>\n<ul>\n<li>공격력이 172에서 165로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">쇠못 덫 [E]</strong>\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">관통 화살 [Q]</strong>\n<ul>\n<li>4레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능:\n\t\t\t<ul>\n<li>굶주린 화살의 공격력 증가량이 1 증가합니다.</li>\n<li>퀘스트: 굶주린 화살의 첫 번째 공격에 적 영웅이 적중하면 첫 번째 공격의 공격력이 영구적으로 6 증가하고 40의 마나를 돌려받습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">(신규) 자율 사격 [W]</strong>\n<ul>\n<li>다발 사격에 적중한 적 영웅 하나당 2의 증오를 획득합니다.</li>\n<li>퀘스트: 적 영웅에게 다발 사격이 적중할 때마다 다발 사격 공격력이 영구적으로 4 증가합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">사냥꾼의 신조 [고유 능력]</strong>\n<ul>\n<li>4레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능:\n\t\t\t<ul>\n<li>빌려온 힘: 공격 속도가 20% 증가합니다. 사망할 때마다 획득한 추가 최대 생명력의 5%를 잃습니다.</li>\n<li>퀘스트: 적 영웅에게 일반 공격이 50회 적중할 때마다 증오 중첩당 공격력이 1%만큼, 최대 5%까지 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>4레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">연발 화살 [Q/E]</strong>\n<ul>\n<li>7레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능: 이제 도약이 마나를 소모하지 않습니다. 도약을 사용하는 즉시 굶주린 화살의 재사용 대기시간이 초기화됩니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">무기고 [W]</strong>\n<ul>\n<li>새로운 기능: 다발 사격의 사거리가 20% 증가합니다. 적 영웅에게 적중 시 추가 피해를 주고 발라의 마나를 25 회복시켜주는 수류탄 3개를 발사합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">저승사자 [E]</strong>\n<ul>\n<li>추가된 기능: 도약의 재사용 대기시간이 5초 감소합니다. 도약의 공격력 증가량이 50%에서 150%로 증가합니다. 대상이 1.5초 안에 사망하면, 50 마나를 돌려받고 도약의 재사용 대기시간이 초기화됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">괴물 사냥꾼 [Q]</strong>\n<ul>\n<li>1레벨에서 옮겨졌습니다.</li>\n<li>더는 굶주린 화살의 마나 소모량을 감소시키지 않습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">냉기 사격 [Q/W]</strong>\n<ul>\n<li>16레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능: 다발 사격에 적중된 적이 2.5초 동안 20% 느려집니다. 느려진 적에 대한 굶주린 화살의 공격력이 25% 증가합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">맹렬한 추격 [고유 능력]</strong>\n<ul>\n<li>1레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능: 이동 속도 증가 효과가 증오 중첩당 2.5%로 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">착취 화살 [Q]</strong>\n<ul>\n<li>'착취 화살'로 이름이 변경되었습니다.</li>\n<li>새로운 기능:\n\t\t\t<ul>\n<li>굶주린 화살이 적 영웅에게 적중할 때마다 발라가 최대 생명력의 4%를 회복합니다.</li>\n<li>굶주린 화살이 적 영웅에게 적중할 때마다 발라의 생명력이 최대 생명력의 2%만큼 회복됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">절제 연마 [고유 능력]</strong>\n<ul>\n<li>새로운 기능: 일반 공격으로 준 피해의 10%만큼 생명력을 회복합니다. 이 효과는 증오 중첩당 추가로 2%만큼 증가합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">어스름 [사용 효과]</strong>\n<ul>\n<li>추가된 기능: 증오 중첩당 매초 2.5의 생명력을 회복합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">처벌 [W]</strong>\n<ul>\n<li>7레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능: 증오가 최대일 때 다발 사격 재사용 대기시간이 50% 빨리 초기화됩니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">끓어오르는 증오</strong>\n<ul>\n<li>새로운 기능: 증오가 최대일 때 모든 공격력이 10% 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">죽음 착취 [R1]</strong>\n<ul>\n<li>새로운 기능:\n\t\t\t<ul>\n<li>난사가 적 영웅에게 적중할 때마다 난사의 지속 시간이 0.125초만큼 증가합니다.</li>\n<li>지속 효과: 난사 중 34의 피해를 주고, <u>준</u> 피해의 25%만큼 생명력을 회복시키는 관통 화살을 발사합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">복수의 폭풍 [R2]</strong>\n<ul>\n<li>새로운 기능:\n\t\t\t<ul>\n<li>적 영웅에게 일반 공격을 할 때마다 복수의 비의 충전 대기시간이 5초 감소합니다.</li>\n<li>지속 효과: 증오 중첩당 공격 속도가 2% 증가합니다. 증오가 최대일 때, 공격 속도가 추가로 30% 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">천리살 화살통 [고유 능력]</strong>\n<ul>\n<li>새로운 기능: 일반 공격 사거리가 20% 증가합니다. 증오가 최대일 때 이 효과가 추가로 30% 증가합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">(신규) 곡예 [E]</strong>\n<ul>\n<li>도약 충전 횟수가 추가로 2회 증가합니다. 도약 시 3개의 쇠못 덫을 떨어뜨립니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>개발자의 의견:</strong> 우리의 토박이 악마 사냥꾼은 게임에서 가장 특성 트리가 다양한 영웅 중 한 명입니다. 따라서, 이번 변경의 주목적은 약간의 교차 시너지를 주고 일부 발라의 단조로운 특성 디자인을 돋보이게 하는 것이었습니다. 다른 개편과 마찬가지로 새로운 빌려온 힘 특성을 시험할 테니, 의견을 보내주세요!</blockquote>"
+    }
+   ]
+  },
+  {
+   "name": "영웅",
+   "key": "heroes",
+   "html": "<h4>메이</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li>생명력이 2675에서 2625로 감소했습니다.</li>\n<li>생명력 재생량이 5.5742에서 5.5703으로 감소했습니다.</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">얼음 폭풍 [W]</strong>\n<ul>\n<li>주기적인 피해가 45에서 42로 감소했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">열 전달 [지속 효과]</strong>\n<ul>\n<li>생명력 회복량이 18에서 16.5로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>4레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">한랭 전선 [E]</strong>\n<ul>\n<li>지속 효과인 재사용 대기시간 감소량이 4초에서 3초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>10레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">빙벽 [R2]</strong>\n<ul>\n<li>재사용 대기시간이 50초에서 60초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>개발자의 의견:</strong> 메이는 여전히 모든 수준에서 다소 강한 편이므로 마법의 너프 지팡이를 살짝 휘둘렀습니다.</blockquote>\n<h4>D.Va</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li>메카의 생명력이 2150에서 2100으로 감소했습니다.</li>\n<li>메카의 기본 생명력 재생량이 4.48에서 4.38로 감소했습니다.</li>\n<li><strong class=\"pn-name\">융합포 [고유 능력]</strong>\n<ul>\n<li>가까이 있는 적에 대한 공격력 증가량이 50%에서 40%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">풀 메탈 [고유 능력]</strong>\n<ul>\n<li>융합포 치유량이 20%에서 16%로 감소했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">액랭 [사용 효과]</strong>\n<ul>\n<li>치유의 샘 지속 시간 증가량이 25%에서 35%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>4레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">러시 다운 [Q]</strong>\n<ul>\n<li>영웅이 아닌 적에 대한 공격력 증가량이 70%에서 50%로 감소했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">급속 재가동 [W]</strong>\n<ul>\n<li>회복 감소량이 30%에서 35%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">핵융합 발전기 [W]</strong>\n<ul>\n<li>융합포 추가 공격력이 75%에서 100%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>10레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">마이크로 미사일 [R2]</strong>\n<ul>\n<li>감속 효과가 35%에서 30%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">대상 포착! [W]</strong>\n<ul>\n<li>효과 적용에 필요한 시간이 1.25초에서 1초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">깡충깡충 [R1]</strong>\n<ul>\n<li>추가된 기능: 토끼뜀 지속 시간이 4초 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>개발자의 의견:</strong> D.Va의 메카는 아직도 의도했던 것보다 강력해서 D.Va는 자폭과 조종사 모드를 차치하더라도 다른 영웅에 비해 우위를 점할 수 있었습니다. 또한 선택률이 낮았던 몇몇 특성이 더욱 매력적인 특성이 되도록 변경했습니다.</blockquote>\n<h4>들창코</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">들창 폭풍 [E]</strong>\n<ul>\n<li>반경이 2.75에서 2.625로 감소했습니다.</li>\n<li>공격력이 32에서 44로 증가했습니다.</li>\n<li>광기당 추가 공격력이 1%에서 0.5%로 감소했습니다.</li>\n<li>변경된 기능: 광기 추가 공격력이 이제 영웅 대상으로만 적용됩니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">맹수의 사냥법 [사용 효과]</strong>\n<ul>\n<li>초당 생명력 회복량이 9에서 8로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>4레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">야만적인 힘 [Q/D]</strong>\n<ul>\n<li>노획물 더미 추가 사거리가 15%에서 20%로 증가했습니다.</li>\n<li>최대 추가 공격력이 125에서 150으로 증가했습니다.</li>\n<li>추가된 기능: 노획물 더미 공격력이 50% 증가합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">위협 범위 [E]</strong>\n<ul>\n<li>추가 사거리가 25%에서20%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">주먹찜질 [E]</strong>\n<ul>\n<li>기술 위력 감소 효과의 지속 시간이 3초에서 2초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">제어 불가 [사용 효과]</strong>\n<ul>\n<li>효과가 사라지는 속도가 50% 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>개발자의 의견:</strong> 들창코는 저희가 건강한 균형이라고 느끼는 지점에 근접했지만, 들창 폭풍의 PvE 효과 때문에 여전히 다른 투사보다 강력합니다. 들창코의 기본 공격력을 강화하고 광기 추가 효과를 PvP 방향으로 집중시키는 것이 이 문제에 도움이 되리라 생각합니다.</blockquote>\n<h4>소냐</h4>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">성난 일격 [W]</strong>\n<ul>\n<li>공격력 증가량이 50%에서 40%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>4레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">갈라진 대지 [W]</strong>\n<ul>\n<li>변경된 기능: 대지 강타의 방사 피해가 250% 증가합니다. 대지 강타 대상이 영웅이면 방사 피해가 250% 추가로 증가하며, 대상이 영웅이 아니면 대지 강타 방사 피해 사거리가 66% 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">육중한 강타 [W]</strong>\n<ul>\n<li>준 피해에 비례해 회복하는생명력이 100%에서 60%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>개발자의 의견:</strong> 소냐의 위력은 지나치게 강했으므로 상당히 약화시켰습니다. 대상에 따라 기존의 이점을 분리하여 갈라진 대지를 약간 다르게 만들려고 합니다. 이번 변경을 통해 단순히 추가 효과 수치를 줄이는 것보다 흥미로운 결과가 나오기를 기대하고 있습니다.</blockquote>\n<h4>길 잃은 바이킹</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">밸로그</strong>\n<ul>\n<li>생명력이 1180에서 1130으로 감소했습니다.</li>\n<li>생명력 재생량이 2.46에서 2.35로 감소했습니다.</li>\n<li>일반 공격력이 78에서 75로 감소했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">에릭</strong>\n<ul>\n<li>기본 생명력이 840에서 804로 감소했습니다.</li>\n<li>생명력 재생량이 1.75에서 1.67로 감소했습니다.</li>\n<li>일반 공격력이 65에서 62로 감소했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">올라프</strong>\n<ul>\n<li>생명력이 1540에서 1482로 감소했습니다.</li>\n<li>생명력 재생량이 3.21에서 3.08로 감소했습니다.</li>\n<li>일반 공격력이 57에서 54로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>4레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">파괴 공작! [지속 효과]</strong>\n<ul>\n<li>지속 피해 기간이 5초에서 3초로 감소했습니다.</li>\n<li>초당 피해가 50에서 75로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">바이킹의 힘! [Q]</strong>\n<ul>\n<li>기본 보호막이 130에서 140으로 증가했습니다.</li>\n<li>살아 있는 바이킹당 얻는 추가 보호막이 65에서 84로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>10레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">바이킹의 습격! [R2]</strong>\n<ul>\n<li>초당 피해가 112에서 128로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">참으면 손해 [지속 효과]</strong>\n<ul>\n<li>재사용 대기시간 감소량이 0.25초에서 0.31초로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">64 KB 마라톤 [Z]</strong>\n<ul>\n<li>변경된 기능: 추가 이동 속도가 더는 서서히 감소하지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">라그나로크가 간다! [R1]</strong>\n<ul>\n<li>추가된 기능: 바이킹의 습격!의 재사용 대기시간이 30초 감소합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>개발자의 의견:</strong> 저희는 이전에 경험치 구슬 조정을 지원하기 위해 길 잃은 바이킹의 기본 능력치를 상당히 강화한 바 있습니다. 길 잃은 바이킹 플레이어가 훌륭하게 여기 적응했기에, 해당 강화 효과를 절반으로 줄이면서 몇 가지 보다 약한 특성을 보조하려 합니다.</blockquote>\n<h4>루시우</h4>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">파티 믹스 [W]</strong>\n<ul>\n<li>새로운 기능:\n\t\t\t<ul>\n<li>퀘스트: 분위기 전환! 음악을 주위 아군에게 들려줍니다.</li>\n<li>보상: 음악을 들려준 시간이 1분이 될 때마다 루시우의 최대 마나가 2%만큼 증가합니다. 총 8분을 들려주면 분위기 전환! 범위가 20%만큼 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">휴대용 라디오 [사용 효과]</strong>\n<ul>\n<li>시전 사거리가 100% 증가했습니다(5에서 10 그리드로).</li>\n<li>생명력이 350에서 600으로 증가했습니다.</li>\n<li>추가된 기능: 휴대용 라디오에 영향받은 아군의 방어력이 5 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>10레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">하이파이브 [R2]</strong>\n<ul>\n<li>자가 치유량이 125에서 80으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">부드럽게! [Z]</strong>\n<ul>\n<li>방어력 증가량이 20에서 15로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">볼륨 최대로! [E]</strong>\n<ul>\n<li>새로운 기능: 볼륨을 높여라의 지속 시간이 1초 증가합니다. 볼륨을 높여라!를 사용하는 동안 소리 파동이나 길을 비켜라에 적 영웅이 적중할 때마다 지속 시간이 추가로 3초만큼 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">따귀파이브 [R2]</strong>\n<ul>\n<li>공격력이 225에서 160으로 감소했습니다.</li>\n<li>마나 소모량과 재사용 대기시간 감소 효과가 50%에서 30%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>개발자의 의견:</strong> 루시우는 숙련된 플레이어가 다룰 때 아주 강력한 영웅이 되었습니다. 하이파이브가 경쟁력 있는 특성이 된 점이 만족스러워 이번에는 단순히 루시우의 자체 생존력을 높이는 데 초점을 두었습니다. 아직도 선택률이 저조한 휴대용 라디오가 플레이어들의 선택을 받을 수 있도록 노력 중입니다.</blockquote>\n<h4>우서</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">헌신 [고유 능력]</strong>\n<ul>\n<li>변경된 기능: 2초 동안 우서의 일반 기술로 치유한 아군 방어력이 25, 우서의 방어력이 15 증가합니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>16레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">빛의 봉화 [Q]</strong>\n<ul>\n<li>자가 치유량이 100%에서 125%로 증가했습니다.</li>\n<li>생명력이 낮을 때의 자가 치유량이 200%에서 250%로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">티르의 해방 [W]</strong>\n<ul>\n<li>최대 중첩 수가 4에서 7로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">신의 가호 [고유 능력]</strong>\n<ul>\n<li>추가된 기능: 아군 영웅과 우서 모두에게 헌신의 방어력 효과가 50으로 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>개발자의 의견:</strong> 우서가 최전선에서 활약할 수 있는 것이 나쁜 일은 아니지만, 지나치게 제약이 없다고 판단했습니다. 이번 패치가 적용되면 우서는 위험에 뛰어들기가 다소 부담스러워질 겁니다.</blockquote>\n<h4>아즈모단</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">파멸의 구슬 [Q]</strong>\n<ul>\n<li>레벨에 따른 공격력이 2.5%에서 4%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">탐욕 [Q]</strong>\n<ul>\n<li>영웅이 아닌 적에 대한 공격력 증가량이 20%에서 15%로 감소했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">폭식 [Q]</strong>\n<ul>\n<li>영웅 적중으로 획득하는 파멸이 3에서 4로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">파괴의 대가 [E]</strong>\n<ul>\n<li>영웅 적중으로 획득하는 파멸이 4에서 2로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>10레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">악마의 침공 [R1]</strong>\n<ul>\n<li>사거리가 20에서 13.5로 감소했습니다.</li>\n<li>악마 보병의 일반 공격력이 42에서 39로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">지옥의 균열 [E]</strong>\n<ul>\n<li>악마 전사 공격력 증가량이 100%에서 75%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">공성파괴자 [R1]</strong>\n<ul>\n<li>공격력 증가량이 50%에서 40%로 감소했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">교만 [Q]</strong>\n<ul>\n<li>공격력 증가량이 100에서 125로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>개발자의 의견:</strong> 아즈모단의 PvE 중심 특성은 저희가 바라는 실행 난이도에 비해 조금 강력합니다. 따라서, 전반적으로 위력을 조금 약화하고 악마의 침공 시전 사거리를 크게 줄였습니다. 또한, 아즈모단의 Q 빌드가 대부분의 레벨에서 약했기에 레벨에 따른 파멸의 구슬 공격력을 표준화하고 있습니다.</blockquote>\n<h4>폴스타트</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">피뢰침 [W]</strong>\n<ul>\n<li>피뢰침의 범위 내 대상 확인 간격이 1초에서 0.25초로 감소합니다.</li>\n<li>피뢰침에 이제 사용자 지정 사거리 표시가 사용됩니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">폭풍 축적 [Q]</strong>\n<ul>\n<li>부메랑 망치 공격력 증가량이 중첩당 0.2%에서 0.4%로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">불명예스러운 방출 [W]</strong>\n<ul>\n<li>피뢰침 재사용 대기시간 감소량이 3초에서 2초로 감소했습니다.</li>\n<li>중첩당 피뢰침 공격력 증가량이 1%에서 0.75%로 감소했으며, 최대 증가량은 75% 그대로 유지됩니다.</li>\n<li>변경된 기능: 이제 퀘스트를 완료해야 영웅 처치 시 재사용 대기시간이 초기화 효과가 적용됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">낙뢰 [W]</strong>\n<ul>\n<li>중첩당 공격력 증가량이 20%에서 25%로 증가했습니다.</li>\n<li>변경된 기능: 낙뢰의 공격력 증가 효과가 더는 다른 피뢰침 증가 효과에 영향을 주지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>개발자의 의견:</strong> 지난번의 폴스타트 패치가 시공의 폭풍에 충격을 안겼습니다. 유감스럽게도 그 일부는 버그 때문이었죠. 폴스타트를 더 안정적으로 조정했으며, 개편을 마친 폴스타트가 다음 비행을 준비합니다.</blockquote>\n<h4>정크랫</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">폭탄 발사기 [Q]</strong>\n<ul>\n<li>공격력이 118에서 124로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">심지는 길게[Q]</strong>\n<ul>\n<li>피해 증가량이 80%에서 120%로 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">큼직한 덫 [E]</strong>\n<ul>\n<li>추가된 기능: 강철 덫이 영웅에게만 적중됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>10레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">로켓 자폭 [R2]</strong>\n<ul>\n<li>공격력이 890에서 935로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>개발자의 의견:</strong> 정크랫이 뭔가를 날리는 모습을 본 지도 1분이 지났네요. 다시 시작합시다!</blockquote>\n<h4>태사다르</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">전격파 [Q]</strong>\n<ul>\n<li>정신 집중 지속 시간이 0.75초에서 0.6875초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>4레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">전기 유도 [Q]</strong>\n<ul>\n<li>변경된 기능: 태사다르의 이동 속도가 10% 증가합니다. 전격파를 시전하면 이 효과가 3초 동안 30%로 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">광선 정렬 [Q]</strong>\n<ul>\n<li>마나 소모량 감소량이 10에서 15로 감소했습니다.</li>\n<li>추가된 기능: 공명 광선이 완전히 충전된 동안 전격파의 감속 지속 시간이 4초로 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">그림자 걸음 [사용 효과]</strong>\n<ul>\n<li>방어력 증가량이 25에서 35로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>개발자의 의견:</strong> 태사다르의 Q 빌드는 높은 레벨에서 약합니다. 따라서 그 부분을 조금 강화하고 있습니다. 정신 집중 시간이 감소해도 광선이 발사되기까지 걸리는 시간은 변하지 않으며, 태사다르가 더 빨리 행동하게 되는 것뿐입니다.</blockquote>",
+   "heroes": [
+    {
+     "name": "메이",
+     "heroId": "MeiOW",
+     "heroIds": [
+      "MeiOW"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "생명력이 2675에서 2625로 감소했습니다.",
+         "html": "생명력이 2675에서 2625로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "생명력 재생량이 5.5742에서 5.5703으로 감소했습니다.",
+         "html": "생명력 재생량이 5.5742에서 5.5703으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "얼음 폭풍",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "주기적인 피해가 45에서 42로 감소했습니다.",
+         "html": "주기적인 피해가 45에서 42로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "열 전달",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "생명력 회복량이 18에서 16.5로 감소했습니다.",
+         "html": "생명력 회복량이 18에서 16.5로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "한랭 전선",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "지속 효과인 재사용 대기시간 감소량이 4초에서 3초로 감소했습니다.",
+         "html": "지속 효과인 재사용 대기시간 감소량이 4초에서 3초로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "빙벽",
+       "key": "R2",
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 50초에서 60초로 증가했습니다.",
+         "html": "재사용 대기시간이 50초에서 60초로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li>생명력이 2675에서 2625로 감소했습니다.</li>\n<li>생명력 재생량이 5.5742에서 5.5703으로 감소했습니다.</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">얼음 폭풍 [W]</strong>\n<ul>\n<li>주기적인 피해가 45에서 42로 감소했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">열 전달 [지속 효과]</strong>\n<ul>\n<li>생명력 회복량이 18에서 16.5로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>4레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">한랭 전선 [E]</strong>\n<ul>\n<li>지속 효과인 재사용 대기시간 감소량이 4초에서 3초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>10레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">빙벽 [R2]</strong>\n<ul>\n<li>재사용 대기시간이 50초에서 60초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>개발자의 의견:</strong> 메이는 여전히 모든 수준에서 다소 강한 편이므로 마법의 너프 지팡이를 살짝 휘둘렀습니다.</blockquote>"
+    },
+    {
+     "name": "D.Va",
+     "heroId": "DVa",
+     "heroIds": [
+      "DVa"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "메카의 생명력이 2150에서 2100으로 감소했습니다.",
+         "html": "메카의 생명력이 2150에서 2100으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "메카의 기본 생명력 재생량이 4.48에서 4.38로 감소했습니다.",
+         "html": "메카의 기본 생명력 재생량이 4.48에서 4.38로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "융합포",
+       "key": "고유 능력",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "가까이 있는 적에 대한 공격력 증가량이 50%에서 40%로 감소했습니다.",
+         "html": "가까이 있는 적에 대한 공격력 증가량이 50%에서 40%로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "풀 메탈",
+       "key": "고유 능력",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "융합포 치유량이 20%에서 16%로 감소했습니다.",
+         "html": "융합포 치유량이 20%에서 16%로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "액랭",
+       "key": "사용 효과",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "치유의 샘 지속 시간 증가량이 25%에서 35%로 증가했습니다.",
+         "html": "치유의 샘 지속 시간 증가량이 25%에서 35%로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "러시 다운",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "영웅이 아닌 적에 대한 공격력 증가량이 70%에서 50%로 감소했습니다.",
+         "html": "영웅이 아닌 적에 대한 공격력 증가량이 70%에서 50%로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "급속 재가동",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "회복 감소량이 30%에서 35%로 증가했습니다.",
+         "html": "회복 감소량이 30%에서 35%로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "핵융합 발전기",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "융합포 추가 공격력이 75%에서 100%로 증가했습니다.",
+         "html": "융합포 추가 공격력이 75%에서 100%로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "마이크로 미사일",
+       "key": "R2",
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "감속 효과가 35%에서 30%로 감소했습니다.",
+         "html": "감속 효과가 35%에서 30%로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "대상 포착!",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "효과 적용에 필요한 시간이 1.25초에서 1초로 감소했습니다.",
+         "html": "효과 적용에 필요한 시간이 1.25초에서 1초로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "깡충깡충",
+       "key": "R1",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "추가된 기능: 토끼뜀 지속 시간이 4초 증가했습니다.",
+         "html": "추가된 기능: 토끼뜀 지속 시간이 4초 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li>메카의 생명력이 2150에서 2100으로 감소했습니다.</li>\n<li>메카의 기본 생명력 재생량이 4.48에서 4.38로 감소했습니다.</li>\n<li><strong class=\"pn-name\">융합포 [고유 능력]</strong>\n<ul>\n<li>가까이 있는 적에 대한 공격력 증가량이 50%에서 40%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">풀 메탈 [고유 능력]</strong>\n<ul>\n<li>융합포 치유량이 20%에서 16%로 감소했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">액랭 [사용 효과]</strong>\n<ul>\n<li>치유의 샘 지속 시간 증가량이 25%에서 35%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>4레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">러시 다운 [Q]</strong>\n<ul>\n<li>영웅이 아닌 적에 대한 공격력 증가량이 70%에서 50%로 감소했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">급속 재가동 [W]</strong>\n<ul>\n<li>회복 감소량이 30%에서 35%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">핵융합 발전기 [W]</strong>\n<ul>\n<li>융합포 추가 공격력이 75%에서 100%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>10레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">마이크로 미사일 [R2]</strong>\n<ul>\n<li>감속 효과가 35%에서 30%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">대상 포착! [W]</strong>\n<ul>\n<li>효과 적용에 필요한 시간이 1.25초에서 1초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">깡충깡충 [R1]</strong>\n<ul>\n<li>추가된 기능: 토끼뜀 지속 시간이 4초 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>개발자의 의견:</strong> D.Va의 메카는 아직도 의도했던 것보다 강력해서 D.Va는 자폭과 조종사 모드를 차치하더라도 다른 영웅에 비해 우위를 점할 수 있었습니다. 또한 선택률이 낮았던 몇몇 특성이 더욱 매력적인 특성이 되도록 변경했습니다.</blockquote>"
+    },
+    {
+     "name": "들창코",
+     "heroId": "Hogger",
+     "heroIds": [
+      "Hogger"
+     ],
+     "changes": [
+      {
+       "name": "들창 폭풍",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "반경이 2.75에서 2.625로 감소했습니다.",
+         "html": "반경이 2.75에서 2.625로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "공격력이 32에서 44로 증가했습니다.",
+         "html": "공격력이 32에서 44로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "광기당 추가 공격력이 1%에서 0.5%로 감소했습니다.",
+         "html": "광기당 추가 공격력이 1%에서 0.5%로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "변경된 기능: 광기 추가 공격력이 이제 영웅 대상으로만 적용됩니다.",
+         "html": "변경된 기능: 광기 추가 공격력이 이제 영웅 대상으로만 적용됩니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "맹수의 사냥법",
+       "key": "사용 효과",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "초당 생명력 회복량이 9에서 8로 감소했습니다.",
+         "html": "초당 생명력 회복량이 9에서 8로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "야만적인 힘",
+       "key": "Q/D",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "노획물 더미 추가 사거리가 15%에서 20%로 증가했습니다.",
+         "html": "노획물 더미 추가 사거리가 15%에서 20%로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "최대 추가 공격력이 125에서 150으로 증가했습니다.",
+         "html": "최대 추가 공격력이 125에서 150으로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "추가된 기능: 노획물 더미 공격력이 50% 증가합니다.",
+         "html": "추가된 기능: 노획물 더미 공격력이 50% 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "위협 범위",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "추가 사거리가 25%에서20%로 감소했습니다.",
+         "html": "추가 사거리가 25%에서20%로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "주먹찜질",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "기술 위력 감소 효과의 지속 시간이 3초에서 2초로 감소했습니다.",
+         "html": "기술 위력 감소 효과의 지속 시간이 3초에서 2초로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "제어 불가",
+       "key": "사용 효과",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "효과가 사라지는 속도가 50% 증가했습니다.",
+         "html": "효과가 사라지는 속도가 50% 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">들창 폭풍 [E]</strong>\n<ul>\n<li>반경이 2.75에서 2.625로 감소했습니다.</li>\n<li>공격력이 32에서 44로 증가했습니다.</li>\n<li>광기당 추가 공격력이 1%에서 0.5%로 감소했습니다.</li>\n<li>변경된 기능: 광기 추가 공격력이 이제 영웅 대상으로만 적용됩니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">맹수의 사냥법 [사용 효과]</strong>\n<ul>\n<li>초당 생명력 회복량이 9에서 8로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>4레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">야만적인 힘 [Q/D]</strong>\n<ul>\n<li>노획물 더미 추가 사거리가 15%에서 20%로 증가했습니다.</li>\n<li>최대 추가 공격력이 125에서 150으로 증가했습니다.</li>\n<li>추가된 기능: 노획물 더미 공격력이 50% 증가합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">위협 범위 [E]</strong>\n<ul>\n<li>추가 사거리가 25%에서20%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">주먹찜질 [E]</strong>\n<ul>\n<li>기술 위력 감소 효과의 지속 시간이 3초에서 2초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">제어 불가 [사용 효과]</strong>\n<ul>\n<li>효과가 사라지는 속도가 50% 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>개발자의 의견:</strong> 들창코는 저희가 건강한 균형이라고 느끼는 지점에 근접했지만, 들창 폭풍의 PvE 효과 때문에 여전히 다른 투사보다 강력합니다. 들창코의 기본 공격력을 강화하고 광기 추가 효과를 PvP 방향으로 집중시키는 것이 이 문제에 도움이 되리라 생각합니다.</blockquote>"
+    },
+    {
+     "name": "소냐",
+     "heroId": "Barbarian",
+     "heroIds": [
+      "Barbarian"
+     ],
+     "changes": [
+      {
+       "name": "성난 일격",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "공격력 증가량이 50%에서 40%로 감소했습니다.",
+         "html": "공격력 증가량이 50%에서 40%로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "갈라진 대지",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "변경된 기능: 대지 강타의 방사 피해가 250% 증가합니다. 대지 강타 대상이 영웅이면 방사 피해가 250% 추가로 증가하며, 대상이 영웅이 아니면 대지 강타 방사 피해 사거리가 66% 증가합니다.",
+         "html": "변경된 기능: 대지 강타의 방사 피해가 250% 증가합니다. 대지 강타 대상이 영웅이면 방사 피해가 250% 추가로 증가하며, 대상이 영웅이 아니면 대지 강타 방사 피해 사거리가 66% 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "육중한 강타",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "준 피해에 비례해 회복하는생명력이 100%에서 60%로 감소했습니다.",
+         "html": "준 피해에 비례해 회복하는생명력이 100%에서 60%로 감소했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">성난 일격 [W]</strong>\n<ul>\n<li>공격력 증가량이 50%에서 40%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>4레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">갈라진 대지 [W]</strong>\n<ul>\n<li>변경된 기능: 대지 강타의 방사 피해가 250% 증가합니다. 대지 강타 대상이 영웅이면 방사 피해가 250% 추가로 증가하며, 대상이 영웅이 아니면 대지 강타 방사 피해 사거리가 66% 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">육중한 강타 [W]</strong>\n<ul>\n<li>준 피해에 비례해 회복하는생명력이 100%에서 60%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>개발자의 의견:</strong> 소냐의 위력은 지나치게 강했으므로 상당히 약화시켰습니다. 대상에 따라 기존의 이점을 분리하여 갈라진 대지를 약간 다르게 만들려고 합니다. 이번 변경을 통해 단순히 추가 효과 수치를 줄이는 것보다 흥미로운 결과가 나오기를 기대하고 있습니다.</blockquote>"
+    },
+    {
+     "name": "길 잃은 바이킹",
+     "heroId": "LostVikings",
+     "heroIds": [
+      "LostVikings"
+     ],
+     "changes": [
+      {
+       "name": "밸로그",
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "생명력이 1180에서 1130으로 감소했습니다.",
+         "html": "생명력이 1180에서 1130으로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "생명력 재생량이 2.46에서 2.35로 감소했습니다.",
+         "html": "생명력 재생량이 2.46에서 2.35로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "일반 공격력이 78에서 75로 감소했습니다.",
+         "html": "일반 공격력이 78에서 75로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "에릭",
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "기본 생명력이 840에서 804로 감소했습니다.",
+         "html": "기본 생명력이 840에서 804로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "생명력 재생량이 1.75에서 1.67로 감소했습니다.",
+         "html": "생명력 재생량이 1.75에서 1.67로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "일반 공격력이 65에서 62로 감소했습니다.",
+         "html": "일반 공격력이 65에서 62로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "올라프",
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "생명력이 1540에서 1482로 감소했습니다.",
+         "html": "생명력이 1540에서 1482로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "생명력 재생량이 3.21에서 3.08로 감소했습니다.",
+         "html": "생명력 재생량이 3.21에서 3.08로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "일반 공격력이 57에서 54로 감소했습니다.",
+         "html": "일반 공격력이 57에서 54로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "파괴 공작!",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "지속 피해 기간이 5초에서 3초로 감소했습니다.",
+         "html": "지속 피해 기간이 5초에서 3초로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "초당 피해가 50에서 75로 증가했습니다.",
+         "html": "초당 피해가 50에서 75로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "바이킹의 힘!",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "기본 보호막이 130에서 140으로 증가했습니다.",
+         "html": "기본 보호막이 130에서 140으로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "살아 있는 바이킹당 얻는 추가 보호막이 65에서 84로 증가했습니다.",
+         "html": "살아 있는 바이킹당 얻는 추가 보호막이 65에서 84로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "바이킹의 습격!",
+       "key": "R2",
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "초당 피해가 112에서 128로 증가했습니다.",
+         "html": "초당 피해가 112에서 128로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "참으면 손해",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "재사용 대기시간 감소량이 0.25초에서 0.31초로 증가했습니다.",
+         "html": "재사용 대기시간 감소량이 0.25초에서 0.31초로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "64 KB 마라톤",
+       "key": "Z",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "변경된 기능: 추가 이동 속도가 더는 서서히 감소하지 않습니다.",
+         "html": "변경된 기능: 추가 이동 속도가 더는 서서히 감소하지 않습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "라그나로크가 간다!",
+       "key": "R1",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "추가된 기능: 바이킹의 습격!의 재사용 대기시간이 30초 감소합니다.",
+         "html": "추가된 기능: 바이킹의 습격!의 재사용 대기시간이 30초 감소합니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">밸로그</strong>\n<ul>\n<li>생명력이 1180에서 1130으로 감소했습니다.</li>\n<li>생명력 재생량이 2.46에서 2.35로 감소했습니다.</li>\n<li>일반 공격력이 78에서 75로 감소했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">에릭</strong>\n<ul>\n<li>기본 생명력이 840에서 804로 감소했습니다.</li>\n<li>생명력 재생량이 1.75에서 1.67로 감소했습니다.</li>\n<li>일반 공격력이 65에서 62로 감소했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">올라프</strong>\n<ul>\n<li>생명력이 1540에서 1482로 감소했습니다.</li>\n<li>생명력 재생량이 3.21에서 3.08로 감소했습니다.</li>\n<li>일반 공격력이 57에서 54로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>4레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">파괴 공작! [지속 효과]</strong>\n<ul>\n<li>지속 피해 기간이 5초에서 3초로 감소했습니다.</li>\n<li>초당 피해가 50에서 75로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">바이킹의 힘! [Q]</strong>\n<ul>\n<li>기본 보호막이 130에서 140으로 증가했습니다.</li>\n<li>살아 있는 바이킹당 얻는 추가 보호막이 65에서 84로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>10레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">바이킹의 습격! [R2]</strong>\n<ul>\n<li>초당 피해가 112에서 128로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">참으면 손해 [지속 효과]</strong>\n<ul>\n<li>재사용 대기시간 감소량이 0.25초에서 0.31초로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">64 KB 마라톤 [Z]</strong>\n<ul>\n<li>변경된 기능: 추가 이동 속도가 더는 서서히 감소하지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">라그나로크가 간다! [R1]</strong>\n<ul>\n<li>추가된 기능: 바이킹의 습격!의 재사용 대기시간이 30초 감소합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>개발자의 의견:</strong> 저희는 이전에 경험치 구슬 조정을 지원하기 위해 길 잃은 바이킹의 기본 능력치를 상당히 강화한 바 있습니다. 길 잃은 바이킹 플레이어가 훌륭하게 여기 적응했기에, 해당 강화 효과를 절반으로 줄이면서 몇 가지 보다 약한 특성을 보조하려 합니다.</blockquote>"
+    },
+    {
+     "name": "루시우",
+     "heroId": "Lucio",
+     "heroIds": [
+      "Lucio"
+     ],
+     "changes": [
+      {
+       "name": "파티 믹스",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": []
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "퀘스트: 분위기 전환! 음악을 주위 아군에게 들려줍니다.",
+         "html": "퀘스트: 분위기 전환! 음악을 주위 아군에게 들려줍니다.",
+         "added": false
+        },
+        {
+         "text": "보상: 음악을 들려준 시간이 1분이 될 때마다 루시우의 최대 마나가 2%만큼 증가합니다. 총 8분을 들려주면 분위기 전환! 범위가 20%만큼 증가합니다.",
+         "html": "보상: 음악을 들려준 시간이 1분이 될 때마다 루시우의 최대 마나가 2%만큼 증가합니다. 총 8분을 들려주면 분위기 전환! 범위가 20%만큼 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "휴대용 라디오",
+       "key": "사용 효과",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "시전 사거리가 100% 증가했습니다(5에서 10 그리드로).",
+         "html": "시전 사거리가 100% 증가했습니다(5에서 10 그리드로).",
+         "added": false
+        },
+        {
+         "text": "생명력이 350에서 600으로 증가했습니다.",
+         "html": "생명력이 350에서 600으로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "추가된 기능: 휴대용 라디오에 영향받은 아군의 방어력이 5 증가합니다.",
+         "html": "추가된 기능: 휴대용 라디오에 영향받은 아군의 방어력이 5 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "하이파이브",
+       "key": "R2",
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "자가 치유량이 125에서 80으로 감소했습니다.",
+         "html": "자가 치유량이 125에서 80으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "부드럽게!",
+       "key": "Z",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "방어력 증가량이 20에서 15로 감소했습니다.",
+         "html": "방어력 증가량이 20에서 15로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "볼륨 최대로!",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "새로운 기능: 볼륨을 높여라의 지속 시간이 1초 증가합니다. 볼륨을 높여라!를 사용하는 동안 소리 파동이나 길을 비켜라에 적 영웅이 적중할 때마다 지속 시간이 추가로 3초만큼 증가합니다.",
+         "html": "새로운 기능: 볼륨을 높여라의 지속 시간이 1초 증가합니다. 볼륨을 높여라!를 사용하는 동안 소리 파동이나 길을 비켜라에 적 영웅이 적중할 때마다 지속 시간이 추가로 3초만큼 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "따귀파이브",
+       "key": "R2",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "공격력이 225에서 160으로 감소했습니다.",
+         "html": "공격력이 225에서 160으로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "마나 소모량과 재사용 대기시간 감소 효과가 50%에서 30%로 감소했습니다.",
+         "html": "마나 소모량과 재사용 대기시간 감소 효과가 50%에서 30%로 감소했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">파티 믹스 [W]</strong>\n<ul>\n<li>새로운 기능:\n\t\t\t<ul>\n<li>퀘스트: 분위기 전환! 음악을 주위 아군에게 들려줍니다.</li>\n<li>보상: 음악을 들려준 시간이 1분이 될 때마다 루시우의 최대 마나가 2%만큼 증가합니다. 총 8분을 들려주면 분위기 전환! 범위가 20%만큼 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">휴대용 라디오 [사용 효과]</strong>\n<ul>\n<li>시전 사거리가 100% 증가했습니다(5에서 10 그리드로).</li>\n<li>생명력이 350에서 600으로 증가했습니다.</li>\n<li>추가된 기능: 휴대용 라디오에 영향받은 아군의 방어력이 5 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>10레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">하이파이브 [R2]</strong>\n<ul>\n<li>자가 치유량이 125에서 80으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">부드럽게! [Z]</strong>\n<ul>\n<li>방어력 증가량이 20에서 15로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">볼륨 최대로! [E]</strong>\n<ul>\n<li>새로운 기능: 볼륨을 높여라의 지속 시간이 1초 증가합니다. 볼륨을 높여라!를 사용하는 동안 소리 파동이나 길을 비켜라에 적 영웅이 적중할 때마다 지속 시간이 추가로 3초만큼 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">따귀파이브 [R2]</strong>\n<ul>\n<li>공격력이 225에서 160으로 감소했습니다.</li>\n<li>마나 소모량과 재사용 대기시간 감소 효과가 50%에서 30%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>개발자의 의견:</strong> 루시우는 숙련된 플레이어가 다룰 때 아주 강력한 영웅이 되었습니다. 하이파이브가 경쟁력 있는 특성이 된 점이 만족스러워 이번에는 단순히 루시우의 자체 생존력을 높이는 데 초점을 두었습니다. 아직도 선택률이 저조한 휴대용 라디오가 플레이어들의 선택을 받을 수 있도록 노력 중입니다.</blockquote>"
+    },
+    {
+     "name": "우서",
+     "heroId": "Uther",
+     "heroIds": [
+      "Uther"
+     ],
+     "changes": [
+      {
+       "name": "헌신",
+       "key": "고유 능력",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "변경된 기능: 2초 동안 우서의 일반 기술로 치유한 아군 방어력이 25, 우서의 방어력이 15 증가합니다.",
+         "html": "변경된 기능: 2초 동안 우서의 일반 기술로 치유한 아군 방어력이 25, 우서의 방어력이 15 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "빛의 봉화",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "자가 치유량이 100%에서 125%로 증가했습니다.",
+         "html": "자가 치유량이 100%에서 125%로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "생명력이 낮을 때의 자가 치유량이 200%에서 250%로 증가했습니다.",
+         "html": "생명력이 낮을 때의 자가 치유량이 200%에서 250%로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "티르의 해방",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "최대 중첩 수가 4에서 7로 증가했습니다.",
+         "html": "최대 중첩 수가 4에서 7로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "신의 가호",
+       "key": "고유 능력",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "추가된 기능: 아군 영웅과 우서 모두에게 헌신의 방어력 효과가 50으로 증가합니다.",
+         "html": "추가된 기능: 아군 영웅과 우서 모두에게 헌신의 방어력 효과가 50으로 증가합니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">헌신 [고유 능력]</strong>\n<ul>\n<li>변경된 기능: 2초 동안 우서의 일반 기술로 치유한 아군 방어력이 25, 우서의 방어력이 15 증가합니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>16레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">빛의 봉화 [Q]</strong>\n<ul>\n<li>자가 치유량이 100%에서 125%로 증가했습니다.</li>\n<li>생명력이 낮을 때의 자가 치유량이 200%에서 250%로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">티르의 해방 [W]</strong>\n<ul>\n<li>최대 중첩 수가 4에서 7로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">신의 가호 [고유 능력]</strong>\n<ul>\n<li>추가된 기능: 아군 영웅과 우서 모두에게 헌신의 방어력 효과가 50으로 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>개발자의 의견:</strong> 우서가 최전선에서 활약할 수 있는 것이 나쁜 일은 아니지만, 지나치게 제약이 없다고 판단했습니다. 이번 패치가 적용되면 우서는 위험에 뛰어들기가 다소 부담스러워질 겁니다.</blockquote>"
+    },
+    {
+     "name": "아즈모단",
+     "heroId": "Azmodan",
+     "heroIds": [
+      "Azmodan"
+     ],
+     "changes": [
+      {
+       "name": "파멸의 구슬",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "레벨에 따른 공격력이 2.5%에서 4%로 증가했습니다.",
+         "html": "레벨에 따른 공격력이 2.5%에서 4%로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "탐욕",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "영웅이 아닌 적에 대한 공격력 증가량이 20%에서 15%로 감소했습니다.",
+         "html": "영웅이 아닌 적에 대한 공격력 증가량이 20%에서 15%로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "폭식",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "영웅 적중으로 획득하는 파멸이 3에서 4로 증가했습니다.",
+         "html": "영웅 적중으로 획득하는 파멸이 3에서 4로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "파괴의 대가",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "영웅 적중으로 획득하는 파멸이 4에서 2로 감소했습니다.",
+         "html": "영웅 적중으로 획득하는 파멸이 4에서 2로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "악마의 침공",
+       "key": "R1",
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "사거리가 20에서 13.5로 감소했습니다.",
+         "html": "사거리가 20에서 13.5로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "악마 보병의 일반 공격력이 42에서 39로 감소했습니다.",
+         "html": "악마 보병의 일반 공격력이 42에서 39로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "지옥의 균열",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "악마 전사 공격력 증가량이 100%에서 75%로 감소했습니다.",
+         "html": "악마 전사 공격력 증가량이 100%에서 75%로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "공성파괴자",
+       "key": "R1",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "공격력 증가량이 50%에서 40%로 감소했습니다.",
+         "html": "공격력 증가량이 50%에서 40%로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "교만",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "공격력 증가량이 100에서 125로 증가했습니다.",
+         "html": "공격력 증가량이 100에서 125로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">파멸의 구슬 [Q]</strong>\n<ul>\n<li>레벨에 따른 공격력이 2.5%에서 4%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">탐욕 [Q]</strong>\n<ul>\n<li>영웅이 아닌 적에 대한 공격력 증가량이 20%에서 15%로 감소했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">폭식 [Q]</strong>\n<ul>\n<li>영웅 적중으로 획득하는 파멸이 3에서 4로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">파괴의 대가 [E]</strong>\n<ul>\n<li>영웅 적중으로 획득하는 파멸이 4에서 2로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>10레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">악마의 침공 [R1]</strong>\n<ul>\n<li>사거리가 20에서 13.5로 감소했습니다.</li>\n<li>악마 보병의 일반 공격력이 42에서 39로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">지옥의 균열 [E]</strong>\n<ul>\n<li>악마 전사 공격력 증가량이 100%에서 75%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">공성파괴자 [R1]</strong>\n<ul>\n<li>공격력 증가량이 50%에서 40%로 감소했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">교만 [Q]</strong>\n<ul>\n<li>공격력 증가량이 100에서 125로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>개발자의 의견:</strong> 아즈모단의 PvE 중심 특성은 저희가 바라는 실행 난이도에 비해 조금 강력합니다. 따라서, 전반적으로 위력을 조금 약화하고 악마의 침공 시전 사거리를 크게 줄였습니다. 또한, 아즈모단의 Q 빌드가 대부분의 레벨에서 약했기에 레벨에 따른 파멸의 구슬 공격력을 표준화하고 있습니다.</blockquote>"
+    },
+    {
+     "name": "폴스타트",
+     "heroId": "Falstad",
+     "heroIds": [
+      "Falstad"
+     ],
+     "changes": [
+      {
+       "name": "피뢰침",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "피뢰침의 범위 내 대상 확인 간격이 1초에서 0.25초로 감소합니다.",
+         "html": "피뢰침의 범위 내 대상 확인 간격이 1초에서 0.25초로 감소합니다.",
+         "added": false
+        },
+        {
+         "text": "피뢰침에 이제 사용자 지정 사거리 표시가 사용됩니다.",
+         "html": "피뢰침에 이제 사용자 지정 사거리 표시가 사용됩니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "폭풍 축적",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "부메랑 망치 공격력 증가량이 중첩당 0.2%에서 0.4%로 증가했습니다.",
+         "html": "부메랑 망치 공격력 증가량이 중첩당 0.2%에서 0.4%로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "불명예스러운 방출",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "피뢰침 재사용 대기시간 감소량이 3초에서 2초로 감소했습니다.",
+         "html": "피뢰침 재사용 대기시간 감소량이 3초에서 2초로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "중첩당 피뢰침 공격력 증가량이 1%에서 0.75%로 감소했으며, 최대 증가량은 75% 그대로 유지됩니다.",
+         "html": "중첩당 피뢰침 공격력 증가량이 1%에서 0.75%로 감소했으며, 최대 증가량은 75% 그대로 유지됩니다.",
+         "added": false
+        },
+        {
+         "text": "변경된 기능: 이제 퀘스트를 완료해야 영웅 처치 시 재사용 대기시간이 초기화 효과가 적용됩니다.",
+         "html": "변경된 기능: 이제 퀘스트를 완료해야 영웅 처치 시 재사용 대기시간이 초기화 효과가 적용됩니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "낙뢰",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "중첩당 공격력 증가량이 20%에서 25%로 증가했습니다.",
+         "html": "중첩당 공격력 증가량이 20%에서 25%로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "변경된 기능: 낙뢰의 공격력 증가 효과가 더는 다른 피뢰침 증가 효과에 영향을 주지 않습니다.",
+         "html": "변경된 기능: 낙뢰의 공격력 증가 효과가 더는 다른 피뢰침 증가 효과에 영향을 주지 않습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">피뢰침 [W]</strong>\n<ul>\n<li>피뢰침의 범위 내 대상 확인 간격이 1초에서 0.25초로 감소합니다.</li>\n<li>피뢰침에 이제 사용자 지정 사거리 표시가 사용됩니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">폭풍 축적 [Q]</strong>\n<ul>\n<li>부메랑 망치 공격력 증가량이 중첩당 0.2%에서 0.4%로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">불명예스러운 방출 [W]</strong>\n<ul>\n<li>피뢰침 재사용 대기시간 감소량이 3초에서 2초로 감소했습니다.</li>\n<li>중첩당 피뢰침 공격력 증가량이 1%에서 0.75%로 감소했으며, 최대 증가량은 75% 그대로 유지됩니다.</li>\n<li>변경된 기능: 이제 퀘스트를 완료해야 영웅 처치 시 재사용 대기시간이 초기화 효과가 적용됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">낙뢰 [W]</strong>\n<ul>\n<li>중첩당 공격력 증가량이 20%에서 25%로 증가했습니다.</li>\n<li>변경된 기능: 낙뢰의 공격력 증가 효과가 더는 다른 피뢰침 증가 효과에 영향을 주지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>개발자의 의견:</strong> 지난번의 폴스타트 패치가 시공의 폭풍에 충격을 안겼습니다. 유감스럽게도 그 일부는 버그 때문이었죠. 폴스타트를 더 안정적으로 조정했으며, 개편을 마친 폴스타트가 다음 비행을 준비합니다.</blockquote>"
+    },
+    {
+     "name": "정크랫",
+     "heroId": "Junkrat",
+     "heroIds": [
+      "Junkrat"
+     ],
+     "changes": [
+      {
+       "name": "폭탄 발사기",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "공격력이 118에서 124로 증가했습니다.",
+         "html": "공격력이 118에서 124로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "심지는 길게",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "피해 증가량이 80%에서 120%로 증가합니다.",
+         "html": "피해 증가량이 80%에서 120%로 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "큼직한 덫",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "추가된 기능: 강철 덫이 영웅에게만 적중됩니다.",
+         "html": "추가된 기능: 강철 덫이 영웅에게만 적중됩니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "로켓 자폭",
+       "key": "R2",
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "공격력이 890에서 935로 증가했습니다.",
+         "html": "공격력이 890에서 935로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">폭탄 발사기 [Q]</strong>\n<ul>\n<li>공격력이 118에서 124로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">심지는 길게[Q]</strong>\n<ul>\n<li>피해 증가량이 80%에서 120%로 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">큼직한 덫 [E]</strong>\n<ul>\n<li>추가된 기능: 강철 덫이 영웅에게만 적중됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>10레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">로켓 자폭 [R2]</strong>\n<ul>\n<li>공격력이 890에서 935로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>개발자의 의견:</strong> 정크랫이 뭔가를 날리는 모습을 본 지도 1분이 지났네요. 다시 시작합시다!</blockquote>"
+    },
+    {
+     "name": "태사다르",
+     "heroId": "Tassadar",
+     "heroIds": [
+      "Tassadar"
+     ],
+     "changes": [
+      {
+       "name": "전격파",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "정신 집중 지속 시간이 0.75초에서 0.6875초로 감소했습니다.",
+         "html": "정신 집중 지속 시간이 0.75초에서 0.6875초로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "전기 유도",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "변경된 기능: 태사다르의 이동 속도가 10% 증가합니다. 전격파를 시전하면 이 효과가 3초 동안 30%로 증가합니다.",
+         "html": "변경된 기능: 태사다르의 이동 속도가 10% 증가합니다. 전격파를 시전하면 이 효과가 3초 동안 30%로 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "광선 정렬",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "마나 소모량 감소량이 10에서 15로 감소했습니다.",
+         "html": "마나 소모량 감소량이 10에서 15로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "추가된 기능: 공명 광선이 완전히 충전된 동안 전격파의 감속 지속 시간이 4초로 증가합니다.",
+         "html": "추가된 기능: 공명 광선이 완전히 충전된 동안 전격파의 감속 지속 시간이 4초로 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "그림자 걸음",
+       "key": "사용 효과",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "방어력 증가량이 25에서 35로 증가했습니다.",
+         "html": "방어력 증가량이 25에서 35로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">전격파 [Q]</strong>\n<ul>\n<li>정신 집중 지속 시간이 0.75초에서 0.6875초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>4레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">전기 유도 [Q]</strong>\n<ul>\n<li>변경된 기능: 태사다르의 이동 속도가 10% 증가합니다. 전격파를 시전하면 이 효과가 3초 동안 30%로 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">광선 정렬 [Q]</strong>\n<ul>\n<li>마나 소모량 감소량이 10에서 15로 감소했습니다.</li>\n<li>추가된 기능: 공명 광선이 완전히 충전된 동안 전격파의 감속 지속 시간이 4초로 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">그림자 걸음 [사용 효과]</strong>\n<ul>\n<li>방어력 증가량이 25에서 35로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>개발자의 의견:</strong> 태사다르의 Q 빌드는 높은 레벨에서 약합니다. 따라서 그 부분을 조금 강화하고 있습니다. 정신 집중 시간이 감소해도 광선이 발사되기까지 걸리는 시간은 변하지 않으며, 태사다르가 더 빨리 행동하게 되는 것뿐입니다.</blockquote>"
+    }
+   ]
+  },
+  {
+   "name": "버그 수정",
+   "key": "bugs",
+   "html": "<p><span class=\"pn-h\"><strong>전장</strong></span></p>\n<ul>\n<li>등급전에 핵탄두 격전지를 추가했습니다.</li>\n<li>등급전에서 볼스카야 공장을 제거했습니다.</li>\n</ul>\n<p><span class=\"pn-h\"><strong>영웅</strong></span></p>\n<ul>\n<li><strong class=\"pn-name\">정예 타우렌 족장</strong>\n<ul>\n<li>더 이상 크라우드 서핑으로 인해 파워 슬라이드 후 대기 중인 기술이 애니메이션 없이 시전되지 않습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">렉사르</strong>\n<ul>\n<li>미샤, 돌진!과 미샤, 집중해!를 동시에 시전해도 더 이상 기술이 취소되지 않습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">우서</strong>\n<ul>\n<li>더 이상 티르의 해방으로 인해 우서의 성스러운 빛 자가 치유량이 증가되지 않습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong><img alt=\"\" class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/g6/G6G0N80EOC941426801305139.png\"/></strong></p>",
+   "items": [
+    {
+     "name": "정예 타우렌 족장",
+     "heroId": "L90ETC",
+     "heroIds": [
+      "L90ETC"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">정예 타우렌 족장</strong>\n<ul>\n<li>더 이상 크라우드 서핑으로 인해 파워 슬라이드 후 대기 중인 기술이 애니메이션 없이 시전되지 않습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "더 이상 크라우드 서핑으로 인해 파워 슬라이드 후 대기 중인 기술이 애니메이션 없이 시전되지 않습니다.",
+         "html": "더 이상 크라우드 서핑으로 인해 파워 슬라이드 후 대기 중인 기술이 애니메이션 없이 시전되지 않습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "렉사르",
+     "heroId": "Rexxar",
+     "heroIds": [
+      "Rexxar"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">렉사르</strong>\n<ul>\n<li>미샤, 돌진!과 미샤, 집중해!를 동시에 시전해도 더 이상 기술이 취소되지 않습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "미샤, 돌진!과 미샤, 집중해!를 동시에 시전해도 더 이상 기술이 취소되지 않습니다.",
+         "html": "미샤, 돌진!과 미샤, 집중해!를 동시에 시전해도 더 이상 기술이 취소되지 않습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "우서",
+     "heroId": "Uther",
+     "heroIds": [
+      "Uther"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">우서</strong>\n<ul>\n<li>더 이상 티르의 해방으로 인해 우서의 성스러운 빛 자가 치유량이 증가되지 않습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "더 이상 티르의 해방으로 인해 우서의 성스러운 빛 자가 치유량이 증가되지 않습니다.",
+         "html": "더 이상 티르의 해방으로 인해 우서의 성스러운 빛 자가 치유량이 증가되지 않습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "heroes": [
+  "Anduin",
+  "Azmodan",
+  "Barbarian",
+  "Crusader",
+  "DVa",
+  "DemonHunter",
+  "Falstad",
+  "Hogger",
+  "Junkrat",
+  "L90ETC",
+  "LostVikings",
+  "Lucio",
+  "MeiOW",
+  "Raynor",
+  "Rexxar",
+  "Stitches",
+  "Tassadar",
+  "Uther"
+ ],
+ "battlegrounds": [],
+ "newsId": "23666983"
+}

@@ -1,0 +1,1882 @@
+{
+ "date": "2024-01-17",
+ "kind": "ptr",
+ "title": "Heroes of the Storm PTR Patch Notes - January 17, 2024",
+ "source": "https://news.blizzard.com/en-us/article/24056177/heroes-of-the-storm-ptr-patch-notes-january-17-2024",
+ "published": "2024-01-17T18:00:00Z",
+ "sections": [
+  {
+   "name": "머리말",
+   "key": "intro",
+   "html": "<p>Our next Heroes of the Storm patch has just hit the Public Test Realm and will be available for playtesting. We would like to take a moment to thank the community for providing insight and feedback for these changes. As always, if you encounter any bugs during your PTR play sessions, please stop by the <a href=\"https://us.forums.blizzard.com/en/heroes/c/ptr-bug-report\" target=\"_blank\">PTR Bug Report forum</a> to let us know about your experiences.</p>",
+   "nameKo": "머리말"
+  },
+  {
+   "name": "General",
+   "key": "general",
+   "html": "<ul>\n<li>Added XP given to enemy display.</li>\n</ul>",
+   "nameKo": "일반"
+  },
+  {
+   "name": "Balance Update",
+   "key": "balance",
+   "html": "<p><span class=\"pn-h\"><strong>Heroes</strong></span></p>\n<ul>\n<li><strong class=\"pn-name\">Li Li</strong>\n<ul>\n<li>Jug of 1,000 Cups healing increased from 66 to 80.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Medivh</strong>\n<ul>\n<li>Mage Armor duration increased from 4 seconds to 6 seconds.</li>\n<li>Mage Armor increased from 30 to 50 Armor.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Nova</strong>\n<ul>\n<li>Advanced Cloaking bonus mana regen increased from 3 to 6.</li>\n<li>Anti-Armor Shells duration increased from 3 seconds to 5 seconds.</li>\n</ul>\n</li>\n</ul>",
+   "items": [
+    {
+     "name": "Li Li",
+     "heroId": "LiLi",
+     "heroIds": [
+      "LiLi"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Li Li</strong>\n<ul>\n<li>Jug of 1,000 Cups healing increased from 66 to 80.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Jug of 1,000 Cups healing increased from 66 to 80.",
+         "html": "Jug of 1,000 Cups healing increased from 66 to 80.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Medivh",
+     "heroId": "Medivh",
+     "heroIds": [
+      "Medivh"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Medivh</strong>\n<ul>\n<li>Mage Armor duration increased from 4 seconds to 6 seconds.</li>\n<li>Mage Armor increased from 30 to 50 Armor.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Mage Armor duration increased from 4 seconds to 6 seconds.",
+         "html": "Mage Armor duration increased from 4 seconds to 6 seconds.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Mage Armor increased from 30 to 50 Armor.",
+         "html": "Mage Armor increased from 30 to 50 Armor.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Nova",
+     "heroId": "Nova",
+     "heroIds": [
+      "Nova"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Nova</strong>\n<ul>\n<li>Advanced Cloaking bonus mana regen increased from 3 to 6.</li>\n<li>Anti-Armor Shells duration increased from 3 seconds to 5 seconds.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Advanced Cloaking bonus mana regen increased from 3 to 6.",
+         "html": "Advanced Cloaking bonus mana regen increased from 3 to 6.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Anti-Armor Shells duration increased from 3 seconds to 5 seconds.",
+         "html": "Anti-Armor Shells duration increased from 3 seconds to 5 seconds.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "nameKo": "밸런스 업데이트"
+  },
+  {
+   "name": "Bug Fixes",
+   "key": "bugs",
+   "html": "<p><span class=\"pn-h\"><strong>General</strong></span></p>\n<ul>\n<li>Fixed an anchor offset on Hero Select display.</li>\n<li>Fixed an issue that caused Shielding to not be displayed correctly in the Death Recap.</li>\n<li>Fixed an issue that caused Hellbats and Gnolls to reduce the Armor of enemies before damage was dealt.</li>\n<li>Fixed an issue that caused Heroes that use non-standard attack abilities to display the incorrect confirmation visuals.</li>\n<li>Fixed an issue that caused place of death to reveal into nearby shrubs.</li>\n<li>Fixed an issue that caused player-located cooldowns to continue refreshing after a Core is destroyed.</li>\n<li>Fixed an issue that caused Sapper Mercenaries' area warning indicator to persist after the attack has landed.</li>\n<li>Fixed an issue that caused the event count in the Death Recap to update for all players when a new death recap is created for any player.</li>\n</ul>\n<p><span class=\"pn-h\"><strong>Maps</strong></span></p>\n<ul>\n<li><strong class=\"pn-name\">Blackheart's Bay</strong>\n<ul>\n<li>Chests now feature a warning indicator for the coin land location.</li>\n</ul>\n</li>\n</ul>\n<p><span class=\"pn-h\"><strong>Heroes</strong></span></p>\n<ul>\n<li><strong class=\"pn-name\">Abathur</strong>\n<ul>\n<li>Evolve Monstrosity Stacks are now a Heroic Quest.</li>\n<li>Toxic Nest is no longer triggered by Invulnerable enemies.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Alarak</strong>\n<ul>\n<li>Fixed an issue that caused Last Laugh to heal when they have been granted Spell leech. (Example: Nano Infusion from Ana)</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Anduin</strong>\n<ul>\n<li>Fixed an issue that caused Piercing Light to treat the first hit as the second.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Anubarak</strong>\n<ul>\n<li>Anubarak's Burning Beetle damage is now affected by all forms of damage modification.</li>\n<li>No longer able to use Locust Swarm while riding on the Toy Train.</li>\n<li>Updating cancel animations of Hardened Shields to be like similar visuals.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Artanis</strong>\n<ul>\n<li>Fixed an issue that caused Target Purified to deal double damage.</li>\n<li>Fixed an issue that caused Titan Killer being capable of damaging Invulnerable targets when activated from Twin Blades.</li>\n<li>Updated visuals of Spell Armor.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Arthas</strong>\n<ul>\n<li>Legion of Northrend's bonus healing is now additive.</li>\n<li>Rime now has a Block visual.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Azmodan</strong>\n<ul>\n<li>Bombardment will no longer attack inactive Mercenaries unless the attack is against an inactive Mercenary.</li>\n<li>Fixed Globe of Annihilation no longer stacking off of Possessed minions.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Brightwing</strong>\n<ul>\n<li>Fixed an issue that caused Phase Shift to activate on the previous target.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Butcher</strong>\n<ul>\n<li>Fixed an issue that caused Butcher's Fresh Meat spawning meat off of Possessed minions.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Cassia</strong>\n<ul>\n<li>Updating cancel animations of Hardened Shields to be like similar visuals.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Chen</strong>\n<ul>\n<li>Fixed an issue that caused Stagger to heal when they have been granted Spell leech. (Example: Nano Infusion from Ana)</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">ChoGall</strong>\n<ul>\n<li>Fixed an issue that caused Enraged Regeneration to display incorrectly in the Death Recap.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Deathwing</strong>\n<ul>\n<li>Added Bellowing Roar Camera Lock.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Deckard</strong>\n<ul>\n<li>Fixed an issue that caused Ancient Blessings damage to not scale on targets if they level up while it is active.</li>\n<li>Included Potion to search text for Deckard.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Dehaka</strong>\n<ul>\n<li>Updated visuals of Spell Armor.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">D.Va</strong>\n<ul>\n<li>Fixed an issue that caused Liquid Cooling to reset the fountain in ARAM incorrectly.</li>\n<li>Pilot Mode can now see the Self-Destruct charge.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">E.T.C.</strong>\n<ul>\n<li>Crowd Surfer now displays floating text for mana refund.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Falstad</strong>\n<ul>\n<li>Fixed an issue that caused Falstad's Flight warning indicator to no longer display after selecting Epic Mount.</li>\n<li>Fixed an issue that caused Sustained Winds to damage invulnerable targets.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Gazlowe</strong>\n<ul>\n<li>Fixed an issue that caused Xplodium Bomb to not be affected by allied cooldown reduction.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Genji</strong>\n<ul>\n<li>Fixed an issue that caused Strike at the Heart to not display a damage preview.</li>\n<li>Swift Strike now displays floating text for mana refund.</li>\n<li>Updated visuals of Spell Armor.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Hanzo</strong>\n<ul>\n<li>Ignore All Distractions will now display MISSED! text in the case of Blinds.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Hogger</strong>\n<ul>\n<li>Fixed an issue that caused Hogger's Hogg Wild visual to be visible when Hogger is visible.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Imperius</strong>\n<ul>\n<li>Fixed an issue that caused Brightwing and Falstad to be at the incorrect height after Celestial Charge Stuns them and a least one other Hero.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Junkrat</strong>\n<ul>\n<li>Fixed an issued that caused Chattering Teeth to apply to Arming Steel Traps when selected.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Kerrigan</strong>\n<ul>\n<li>Fixed an issue that caused Sharpened Blades to stack off of Possessed minions.</li>\n<li>Included Infested to search text for Kerrigan.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Leoric</strong>\n<ul>\n<li>Skeletal Swing mana refund now displays as a crit.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Li-Ming</strong>\n<ul>\n<li>Fixed an issue if Seeker is slected while Magic Missiles are in flight while Force Armor was selected.</li>\n<li>Fixed an issue that caused Force Armor to grant multiple stacks from the same Magic Missiles cast.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Lucio</strong>\n<ul>\n<li>Fixed an issue that caused Sound Barrier shields to not decay if Bossa Nova was slected while the target was shielded.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Lunara</strong>\n<ul>\n<li>Splintered Spear will no longer attack inactive Mercenaries unless the triggering attack is against an inactive Mercenary.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Maiev</strong>\n<ul>\n<li>Naisha's Memento first bounce can now bounce to inactive Mercenaries if the triggering attack is against an inactive Mercenary.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Mal'Ganis</strong>\n<ul>\n<li>Included Vampire to search text for Mal'Ganis.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Medivh</strong>\n<ul>\n<li>Medivh's Portal is now an invalid target for allied abilities. (Example: Brightwing's Blink Heal)</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Mei</strong>\n<ul>\n<li>Fixed an issue where The Big One was not gaining the full benefit of Slushball.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Mephisto</strong>\n<ul>\n<li>Fixed an issue that caused Unspeakable Horror being temporarily disabled when the target is knocked back.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Murky</strong>\n<ul>\n<li>Egg Hunt Egg is no longer killed in one hit by Structures.</li>\n<li>Fixed an issue that caused Fishy Deal to stack off of Possessed minions.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Nazeebo</strong>\n<ul>\n<li>Fixed an issue that caused Voodoo Ritual to stack off of Possessed minions.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Nova</strong>\n<ul>\n<li>Fixed an issue that caused Holo Decoy's health bars to display incorrectly after losing Protected.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Orphea</strong>\n<ul>\n<li>Fixed an issue that caused Ravenous Hunger to stack off of Possessed minions.</li>\n<li>Fixed an issue that caused Shadow Waltz to refund mana multiple times per cast.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Probius</strong>\n<ul>\n<li>Fixed an issue that caused Spawning Minerals off of Possessed minions.</li>\n<li>Included Builder to search text for Probius.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Qhira</strong>\n<ul>\n<li>Updated visuals of Spell Armor.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Ragnaros</strong>\n<ul>\n<li>Fixed an issue that caused Sulfuras Hungers to stack off of Possessed minions.</li>\n<li>Updated visuals of Spell Armor.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Rehgar</strong>\n<ul>\n<li>Improved Death Recap for Hunger of the Wolf.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Samuro</strong>\n<ul>\n<li>Mirage now functions like other Spell Armor Blocks.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Stitches</strong>\n<ul>\n<li>Fixed an issue that caused Putrefaction to display floating text multiple times at once.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Stukov</strong>\n<ul>\n<li>Fixed an issue that caused Weighted Pustule to not display a damage preview.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Sylvanas</strong>\n<ul>\n<li>Fixed an issue that caused Withering Fire to display incorrectly.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Tassadar</strong>\n<ul>\n<li>Fixed an issue where Twilight Archon could use Toy Train.</li>\n<li>Khaydarin Amulet will cancel itself if the target is an inactive Mercenary.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Thrall</strong>\n<ul>\n<li>Fixed an issue that caused Echo of the Elements activating off of Possessed Minions and Hallucinations.</li>\n<li>Fixed an issue that caused Rolling Thunder to not activate from Tempest Fury's attacks.</li>\n<li>Fixed an issue that caused Wolf Pack to reset Feral Spirit on talent reset incorrectly.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">The Lost Vikings</strong>\n<ul>\n<li>Fixed an issue that caused Nordic Attack Squad to be able to damage invulnerable targets.</li>\n<li>Fixed an issue where there health was not set to full on death.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Tracer</strong>\n<ul>\n<li>Ricochet can now bounce to inactive Mercenaries if the attack is against an inactive Mercenary.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Whitemane</strong>\n<ul>\n<li>Included Chapeau to search text for Whitemane.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Zagara</strong>\n<ul>\n<li>Medusa Blades will no longer attack inactive Mercenaries unless the triggering attack is against an inactive Mercenary.</li>\n<li>Mutalisk first bounce can now bounce to inactive Mercenaries if the attack is against an inactive Mercenary.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Zarya</strong>\n<ul>\n<li>Fixed an issue that caused Basic Attacks not being affected properly by attack speed modifiers.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Zeratul</strong>\n<ul>\n<li>Fixed an issue that caused Might of the Nerazim abilities to heal for more damage than intended with Shadow Mending.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Zul'jin</strong>\n<ul>\n<li>A Surprise For Ya! can now bounce to inactive Mercenaries if the attack is against an inactive Mercenary.</li>\n</ul>\n</li>\n</ul>\n<p><strong><a href=\"https://us.forums.blizzard.com/en/heroes/\" target=\"_blank\">Click here to discuss this post with other players in the official Heroes of the Storm forums</a>.</strong></p>\n<p><strong><img alt=\"\" class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/g6/G6G0N80EOC941426801305139.png\"/></strong></p>",
+   "items": [
+    {
+     "name": "Blackheart's Bay",
+     "battleground": "blackheart_s_bay",
+     "html": "<strong class=\"pn-name\">Blackheart's Bay</strong>\n<ul>\n<li>Chests now feature a warning indicator for the coin land location.</li>\n</ul>",
+     "under": null
+    },
+    {
+     "name": "Abathur",
+     "heroId": "Abathur",
+     "heroIds": [
+      "Abathur"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Abathur</strong>\n<ul>\n<li>Evolve Monstrosity Stacks are now a Heroic Quest.</li>\n<li>Toxic Nest is no longer triggered by Invulnerable enemies.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Evolve Monstrosity Stacks are now a Heroic Quest.",
+         "html": "Evolve Monstrosity Stacks are now a Heroic Quest.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Toxic Nest is no longer triggered by Invulnerable enemies.",
+         "html": "Toxic Nest is no longer triggered by Invulnerable enemies.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Alarak",
+     "heroId": "Alarak",
+     "heroIds": [
+      "Alarak"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Alarak</strong>\n<ul>\n<li>Fixed an issue that caused Last Laugh to heal when they have been granted Spell leech. (Example: Nano Infusion from Ana)</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Last Laugh to heal when they have been granted Spell leech. (Example: Nano Infusion from Ana)",
+         "html": "Fixed an issue that caused Last Laugh to heal when they have been granted Spell leech. (Example: Nano Infusion from Ana)",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Anduin",
+     "heroId": "Anduin",
+     "heroIds": [
+      "Anduin"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Anduin</strong>\n<ul>\n<li>Fixed an issue that caused Piercing Light to treat the first hit as the second.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Piercing Light to treat the first hit as the second.",
+         "html": "Fixed an issue that caused Piercing Light to treat the first hit as the second.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Anubarak",
+     "heroId": "Anubarak",
+     "heroIds": [
+      "Anubarak"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Anubarak</strong>\n<ul>\n<li>Anubarak's Burning Beetle damage is now affected by all forms of damage modification.</li>\n<li>No longer able to use Locust Swarm while riding on the Toy Train.</li>\n<li>Updating cancel animations of Hardened Shields to be like similar visuals.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Anubarak's Burning Beetle damage is now affected by all forms of damage modification.",
+         "html": "Anubarak's Burning Beetle damage is now affected by all forms of damage modification.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "No longer able to use Locust Swarm while riding on the Toy Train.",
+         "html": "No longer able to use Locust Swarm while riding on the Toy Train.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Updating cancel animations of Hardened Shields to be like similar visuals.",
+         "html": "Updating cancel animations of Hardened Shields to be like similar visuals.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Artanis",
+     "heroId": "Artanis",
+     "heroIds": [
+      "Artanis"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Artanis</strong>\n<ul>\n<li>Fixed an issue that caused Target Purified to deal double damage.</li>\n<li>Fixed an issue that caused Titan Killer being capable of damaging Invulnerable targets when activated from Twin Blades.</li>\n<li>Updated visuals of Spell Armor.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Target Purified to deal double damage.",
+         "html": "Fixed an issue that caused Target Purified to deal double damage.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Titan Killer being capable of damaging Invulnerable targets when activated from Twin Blades.",
+         "html": "Fixed an issue that caused Titan Killer being capable of damaging Invulnerable targets when activated from Twin Blades.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Updated visuals of Spell Armor.",
+         "html": "Updated visuals of Spell Armor.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Arthas",
+     "heroId": "Arthas",
+     "heroIds": [
+      "Arthas"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Arthas</strong>\n<ul>\n<li>Legion of Northrend's bonus healing is now additive.</li>\n<li>Rime now has a Block visual.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Legion of Northrend's bonus healing is now additive.",
+         "html": "Legion of Northrend's bonus healing is now additive.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Rime now has a Block visual.",
+         "html": "Rime now has a Block visual.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Azmodan",
+     "heroId": "Azmodan",
+     "heroIds": [
+      "Azmodan"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Azmodan</strong>\n<ul>\n<li>Bombardment will no longer attack inactive Mercenaries unless the attack is against an inactive Mercenary.</li>\n<li>Fixed Globe of Annihilation no longer stacking off of Possessed minions.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Bombardment will no longer attack inactive Mercenaries unless the attack is against an inactive Mercenary.",
+         "html": "Bombardment will no longer attack inactive Mercenaries unless the attack is against an inactive Mercenary.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed Globe of Annihilation no longer stacking off of Possessed minions.",
+         "html": "Fixed Globe of Annihilation no longer stacking off of Possessed minions.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Brightwing",
+     "heroId": "FaerieDragon",
+     "heroIds": [
+      "FaerieDragon"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Brightwing</strong>\n<ul>\n<li>Fixed an issue that caused Phase Shift to activate on the previous target.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Phase Shift to activate on the previous target.",
+         "html": "Fixed an issue that caused Phase Shift to activate on the previous target.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Cassia",
+     "heroId": "Amazon",
+     "heroIds": [
+      "Amazon"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Cassia</strong>\n<ul>\n<li>Updating cancel animations of Hardened Shields to be like similar visuals.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Updating cancel animations of Hardened Shields to be like similar visuals.",
+         "html": "Updating cancel animations of Hardened Shields to be like similar visuals.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Chen",
+     "heroId": "Chen",
+     "heroIds": [
+      "Chen"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Chen</strong>\n<ul>\n<li>Fixed an issue that caused Stagger to heal when they have been granted Spell leech. (Example: Nano Infusion from Ana)</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Stagger to heal when they have been granted Spell leech. (Example: Nano Infusion from Ana)",
+         "html": "Fixed an issue that caused Stagger to heal when they have been granted Spell leech. (Example: Nano Infusion from Ana)",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "ChoGall",
+     "heroId": "Cho",
+     "heroIds": [
+      "Cho",
+      "Gall"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">ChoGall</strong>\n<ul>\n<li>Fixed an issue that caused Enraged Regeneration to display incorrectly in the Death Recap.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Enraged Regeneration to display incorrectly in the Death Recap.",
+         "html": "Fixed an issue that caused Enraged Regeneration to display incorrectly in the Death Recap.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Deathwing",
+     "heroId": "Deathwing",
+     "heroIds": [
+      "Deathwing"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Deathwing</strong>\n<ul>\n<li>Added Bellowing Roar Camera Lock.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Added Bellowing Roar Camera Lock.",
+         "html": "Added Bellowing Roar Camera Lock.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Deckard",
+     "heroId": "Deckard",
+     "heroIds": [
+      "Deckard"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Deckard</strong>\n<ul>\n<li>Fixed an issue that caused Ancient Blessings damage to not scale on targets if they level up while it is active.</li>\n<li>Included Potion to search text for Deckard.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Ancient Blessings damage to not scale on targets if they level up while it is active.",
+         "html": "Fixed an issue that caused Ancient Blessings damage to not scale on targets if they level up while it is active.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Included Potion to search text for Deckard.",
+         "html": "Included Potion to search text for Deckard.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Dehaka",
+     "heroId": "Dehaka",
+     "heroIds": [
+      "Dehaka"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Dehaka</strong>\n<ul>\n<li>Updated visuals of Spell Armor.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Updated visuals of Spell Armor.",
+         "html": "Updated visuals of Spell Armor.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "D.Va",
+     "heroId": "DVa",
+     "heroIds": [
+      "DVa"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">D.Va</strong>\n<ul>\n<li>Fixed an issue that caused Liquid Cooling to reset the fountain in ARAM incorrectly.</li>\n<li>Pilot Mode can now see the Self-Destruct charge.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Liquid Cooling to reset the fountain in ARAM incorrectly.",
+         "html": "Fixed an issue that caused Liquid Cooling to reset the fountain in ARAM incorrectly.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Pilot Mode can now see the Self-Destruct charge.",
+         "html": "Pilot Mode can now see the Self-Destruct charge.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "E.T.C.",
+     "heroId": "L90ETC",
+     "heroIds": [
+      "L90ETC"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">E.T.C.</strong>\n<ul>\n<li>Crowd Surfer now displays floating text for mana refund.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Crowd Surfer now displays floating text for mana refund.",
+         "html": "Crowd Surfer now displays floating text for mana refund.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Falstad",
+     "heroId": "Falstad",
+     "heroIds": [
+      "Falstad"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Falstad</strong>\n<ul>\n<li>Fixed an issue that caused Falstad's Flight warning indicator to no longer display after selecting Epic Mount.</li>\n<li>Fixed an issue that caused Sustained Winds to damage invulnerable targets.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Falstad's Flight warning indicator to no longer display after selecting Epic Mount.",
+         "html": "Fixed an issue that caused Falstad's Flight warning indicator to no longer display after selecting Epic Mount.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Sustained Winds to damage invulnerable targets.",
+         "html": "Fixed an issue that caused Sustained Winds to damage invulnerable targets.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Gazlowe",
+     "heroId": "Tinker",
+     "heroIds": [
+      "Tinker"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Gazlowe</strong>\n<ul>\n<li>Fixed an issue that caused Xplodium Bomb to not be affected by allied cooldown reduction.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Xplodium Bomb to not be affected by allied cooldown reduction.",
+         "html": "Fixed an issue that caused Xplodium Bomb to not be affected by allied cooldown reduction.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Genji",
+     "heroId": "Genji",
+     "heroIds": [
+      "Genji"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Genji</strong>\n<ul>\n<li>Fixed an issue that caused Strike at the Heart to not display a damage preview.</li>\n<li>Swift Strike now displays floating text for mana refund.</li>\n<li>Updated visuals of Spell Armor.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Strike at the Heart to not display a damage preview.",
+         "html": "Fixed an issue that caused Strike at the Heart to not display a damage preview.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Swift Strike now displays floating text for mana refund.",
+         "html": "Swift Strike now displays floating text for mana refund.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Updated visuals of Spell Armor.",
+         "html": "Updated visuals of Spell Armor.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Hanzo",
+     "heroId": "Hanzo",
+     "heroIds": [
+      "Hanzo"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Hanzo</strong>\n<ul>\n<li>Ignore All Distractions will now display MISSED! text in the case of Blinds.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Ignore All Distractions will now display MISSED! text in the case of Blinds.",
+         "html": "Ignore All Distractions will now display MISSED! text in the case of Blinds.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Hogger",
+     "heroId": "Hogger",
+     "heroIds": [
+      "Hogger"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Hogger</strong>\n<ul>\n<li>Fixed an issue that caused Hogger's Hogg Wild visual to be visible when Hogger is visible.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Hogger's Hogg Wild visual to be visible when Hogger is visible.",
+         "html": "Fixed an issue that caused Hogger's Hogg Wild visual to be visible when Hogger is visible.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Imperius",
+     "heroId": "Imperius",
+     "heroIds": [
+      "Imperius"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Imperius</strong>\n<ul>\n<li>Fixed an issue that caused Brightwing and Falstad to be at the incorrect height after Celestial Charge Stuns them and a least one other Hero.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Brightwing and Falstad to be at the incorrect height after Celestial Charge Stuns them and a least one other Hero.",
+         "html": "Fixed an issue that caused Brightwing and Falstad to be at the incorrect height after Celestial Charge Stuns them and a least one other Hero.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Junkrat",
+     "heroId": "Junkrat",
+     "heroIds": [
+      "Junkrat"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Junkrat</strong>\n<ul>\n<li>Fixed an issued that caused Chattering Teeth to apply to Arming Steel Traps when selected.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issued that caused Chattering Teeth to apply to Arming Steel Traps when selected.",
+         "html": "Fixed an issued that caused Chattering Teeth to apply to Arming Steel Traps when selected.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Kerrigan",
+     "heroId": "Kerrigan",
+     "heroIds": [
+      "Kerrigan"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Kerrigan</strong>\n<ul>\n<li>Fixed an issue that caused Sharpened Blades to stack off of Possessed minions.</li>\n<li>Included Infested to search text for Kerrigan.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Sharpened Blades to stack off of Possessed minions.",
+         "html": "Fixed an issue that caused Sharpened Blades to stack off of Possessed minions.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Included Infested to search text for Kerrigan.",
+         "html": "Included Infested to search text for Kerrigan.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Leoric",
+     "heroId": "Leoric",
+     "heroIds": [
+      "Leoric"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Leoric</strong>\n<ul>\n<li>Skeletal Swing mana refund now displays as a crit.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Skeletal Swing mana refund now displays as a crit.",
+         "html": "Skeletal Swing mana refund now displays as a crit.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Li-Ming",
+     "heroId": "Wizard",
+     "heroIds": [
+      "Wizard"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Li-Ming</strong>\n<ul>\n<li>Fixed an issue if Seeker is slected while Magic Missiles are in flight while Force Armor was selected.</li>\n<li>Fixed an issue that caused Force Armor to grant multiple stacks from the same Magic Missiles cast.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue if Seeker is slected while Magic Missiles are in flight while Force Armor was selected.",
+         "html": "Fixed an issue if Seeker is slected while Magic Missiles are in flight while Force Armor was selected.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Force Armor to grant multiple stacks from the same Magic Missiles cast.",
+         "html": "Fixed an issue that caused Force Armor to grant multiple stacks from the same Magic Missiles cast.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Lucio",
+     "heroId": "Lucio",
+     "heroIds": [
+      "Lucio"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Lucio</strong>\n<ul>\n<li>Fixed an issue that caused Sound Barrier shields to not decay if Bossa Nova was slected while the target was shielded.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Sound Barrier shields to not decay if Bossa Nova was slected while the target was shielded.",
+         "html": "Fixed an issue that caused Sound Barrier shields to not decay if Bossa Nova was slected while the target was shielded.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Lunara",
+     "heroId": "Dryad",
+     "heroIds": [
+      "Dryad"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Lunara</strong>\n<ul>\n<li>Splintered Spear will no longer attack inactive Mercenaries unless the triggering attack is against an inactive Mercenary.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Splintered Spear will no longer attack inactive Mercenaries unless the triggering attack is against an inactive Mercenary.",
+         "html": "Splintered Spear will no longer attack inactive Mercenaries unless the triggering attack is against an inactive Mercenary.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Maiev",
+     "heroId": "Maiev",
+     "heroIds": [
+      "Maiev"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Maiev</strong>\n<ul>\n<li>Naisha's Memento first bounce can now bounce to inactive Mercenaries if the triggering attack is against an inactive Mercenary.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Naisha's Memento first bounce can now bounce to inactive Mercenaries if the triggering attack is against an inactive Mercenary.",
+         "html": "Naisha's Memento first bounce can now bounce to inactive Mercenaries if the triggering attack is against an inactive Mercenary.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Mal'Ganis",
+     "heroId": "MalGanis",
+     "heroIds": [
+      "MalGanis"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Mal'Ganis</strong>\n<ul>\n<li>Included Vampire to search text for Mal'Ganis.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Included Vampire to search text for Mal'Ganis.",
+         "html": "Included Vampire to search text for Mal'Ganis.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Medivh",
+     "heroId": "Medivh",
+     "heroIds": [
+      "Medivh"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Medivh</strong>\n<ul>\n<li>Medivh's Portal is now an invalid target for allied abilities. (Example: Brightwing's Blink Heal)</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Medivh's Portal is now an invalid target for allied abilities. (Example: Brightwing's Blink Heal)",
+         "html": "Medivh's Portal is now an invalid target for allied abilities. (Example: Brightwing's Blink Heal)",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Mei",
+     "heroId": "Mei",
+     "heroIds": [
+      "Mei"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Mei</strong>\n<ul>\n<li>Fixed an issue where The Big One was not gaining the full benefit of Slushball.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue where The Big One was not gaining the full benefit of Slushball.",
+         "html": "Fixed an issue where The Big One was not gaining the full benefit of Slushball.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Mephisto",
+     "heroId": "Mephisto",
+     "heroIds": [
+      "Mephisto"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Mephisto</strong>\n<ul>\n<li>Fixed an issue that caused Unspeakable Horror being temporarily disabled when the target is knocked back.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Unspeakable Horror being temporarily disabled when the target is knocked back.",
+         "html": "Fixed an issue that caused Unspeakable Horror being temporarily disabled when the target is knocked back.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Murky",
+     "heroId": "Murky",
+     "heroIds": [
+      "Murky"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Murky</strong>\n<ul>\n<li>Egg Hunt Egg is no longer killed in one hit by Structures.</li>\n<li>Fixed an issue that caused Fishy Deal to stack off of Possessed minions.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Egg Hunt Egg is no longer killed in one hit by Structures.",
+         "html": "Egg Hunt Egg is no longer killed in one hit by Structures.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Fishy Deal to stack off of Possessed minions.",
+         "html": "Fixed an issue that caused Fishy Deal to stack off of Possessed minions.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Nazeebo",
+     "heroId": "WitchDoctor",
+     "heroIds": [
+      "WitchDoctor"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Nazeebo</strong>\n<ul>\n<li>Fixed an issue that caused Voodoo Ritual to stack off of Possessed minions.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Voodoo Ritual to stack off of Possessed minions.",
+         "html": "Fixed an issue that caused Voodoo Ritual to stack off of Possessed minions.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Nova",
+     "heroId": "Nova",
+     "heroIds": [
+      "Nova"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Nova</strong>\n<ul>\n<li>Fixed an issue that caused Holo Decoy's health bars to display incorrectly after losing Protected.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Holo Decoy's health bars to display incorrectly after losing Protected.",
+         "html": "Fixed an issue that caused Holo Decoy's health bars to display incorrectly after losing Protected.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Orphea",
+     "heroId": "Orphea",
+     "heroIds": [
+      "Orphea"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Orphea</strong>\n<ul>\n<li>Fixed an issue that caused Ravenous Hunger to stack off of Possessed minions.</li>\n<li>Fixed an issue that caused Shadow Waltz to refund mana multiple times per cast.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Ravenous Hunger to stack off of Possessed minions.",
+         "html": "Fixed an issue that caused Ravenous Hunger to stack off of Possessed minions.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Shadow Waltz to refund mana multiple times per cast.",
+         "html": "Fixed an issue that caused Shadow Waltz to refund mana multiple times per cast.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Probius",
+     "heroId": "Probius",
+     "heroIds": [
+      "Probius"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Probius</strong>\n<ul>\n<li>Fixed an issue that caused Spawning Minerals off of Possessed minions.</li>\n<li>Included Builder to search text for Probius.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Spawning Minerals off of Possessed minions.",
+         "html": "Fixed an issue that caused Spawning Minerals off of Possessed minions.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Included Builder to search text for Probius.",
+         "html": "Included Builder to search text for Probius.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Qhira",
+     "heroId": "Qhira",
+     "heroIds": [
+      "Qhira"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Qhira</strong>\n<ul>\n<li>Updated visuals of Spell Armor.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Updated visuals of Spell Armor.",
+         "html": "Updated visuals of Spell Armor.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Ragnaros",
+     "heroId": "Ragnaros",
+     "heroIds": [
+      "Ragnaros"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Ragnaros</strong>\n<ul>\n<li>Fixed an issue that caused Sulfuras Hungers to stack off of Possessed minions.</li>\n<li>Updated visuals of Spell Armor.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Sulfuras Hungers to stack off of Possessed minions.",
+         "html": "Fixed an issue that caused Sulfuras Hungers to stack off of Possessed minions.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Updated visuals of Spell Armor.",
+         "html": "Updated visuals of Spell Armor.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Rehgar",
+     "heroId": "Rehgar",
+     "heroIds": [
+      "Rehgar"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Rehgar</strong>\n<ul>\n<li>Improved Death Recap for Hunger of the Wolf.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Improved Death Recap for Hunger of the Wolf.",
+         "html": "Improved Death Recap for Hunger of the Wolf.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Samuro",
+     "heroId": "Samuro",
+     "heroIds": [
+      "Samuro"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Samuro</strong>\n<ul>\n<li>Mirage now functions like other Spell Armor Blocks.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Mirage now functions like other Spell Armor Blocks.",
+         "html": "Mirage now functions like other Spell Armor Blocks.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Stitches",
+     "heroId": "Stitches",
+     "heroIds": [
+      "Stitches"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Stitches</strong>\n<ul>\n<li>Fixed an issue that caused Putrefaction to display floating text multiple times at once.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Putrefaction to display floating text multiple times at once.",
+         "html": "Fixed an issue that caused Putrefaction to display floating text multiple times at once.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Stukov",
+     "heroId": "Stukov",
+     "heroIds": [
+      "Stukov"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Stukov</strong>\n<ul>\n<li>Fixed an issue that caused Weighted Pustule to not display a damage preview.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Weighted Pustule to not display a damage preview.",
+         "html": "Fixed an issue that caused Weighted Pustule to not display a damage preview.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Sylvanas",
+     "heroId": "Sylvanas",
+     "heroIds": [
+      "Sylvanas"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Sylvanas</strong>\n<ul>\n<li>Fixed an issue that caused Withering Fire to display incorrectly.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Withering Fire to display incorrectly.",
+         "html": "Fixed an issue that caused Withering Fire to display incorrectly.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Tassadar",
+     "heroId": "Tassadar",
+     "heroIds": [
+      "Tassadar"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Tassadar</strong>\n<ul>\n<li>Fixed an issue where Twilight Archon could use Toy Train.</li>\n<li>Khaydarin Amulet will cancel itself if the target is an inactive Mercenary.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue where Twilight Archon could use Toy Train.",
+         "html": "Fixed an issue where Twilight Archon could use Toy Train.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Khaydarin Amulet will cancel itself if the target is an inactive Mercenary.",
+         "html": "Khaydarin Amulet will cancel itself if the target is an inactive Mercenary.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Thrall",
+     "heroId": "Thrall",
+     "heroIds": [
+      "Thrall"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Thrall</strong>\n<ul>\n<li>Fixed an issue that caused Echo of the Elements activating off of Possessed Minions and Hallucinations.</li>\n<li>Fixed an issue that caused Rolling Thunder to not activate from Tempest Fury's attacks.</li>\n<li>Fixed an issue that caused Wolf Pack to reset Feral Spirit on talent reset incorrectly.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Echo of the Elements activating off of Possessed Minions and Hallucinations.",
+         "html": "Fixed an issue that caused Echo of the Elements activating off of Possessed Minions and Hallucinations.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Rolling Thunder to not activate from Tempest Fury's attacks.",
+         "html": "Fixed an issue that caused Rolling Thunder to not activate from Tempest Fury's attacks.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Wolf Pack to reset Feral Spirit on talent reset incorrectly.",
+         "html": "Fixed an issue that caused Wolf Pack to reset Feral Spirit on talent reset incorrectly.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "The Lost Vikings",
+     "heroId": "LostVikings",
+     "heroIds": [
+      "LostVikings"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">The Lost Vikings</strong>\n<ul>\n<li>Fixed an issue that caused Nordic Attack Squad to be able to damage invulnerable targets.</li>\n<li>Fixed an issue where there health was not set to full on death.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Nordic Attack Squad to be able to damage invulnerable targets.",
+         "html": "Fixed an issue that caused Nordic Attack Squad to be able to damage invulnerable targets.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue where there health was not set to full on death.",
+         "html": "Fixed an issue where there health was not set to full on death.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Tracer",
+     "heroId": "Tracer",
+     "heroIds": [
+      "Tracer"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Tracer</strong>\n<ul>\n<li>Ricochet can now bounce to inactive Mercenaries if the attack is against an inactive Mercenary.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Ricochet can now bounce to inactive Mercenaries if the attack is against an inactive Mercenary.",
+         "html": "Ricochet can now bounce to inactive Mercenaries if the attack is against an inactive Mercenary.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Whitemane",
+     "heroId": "Whitemane",
+     "heroIds": [
+      "Whitemane"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Whitemane</strong>\n<ul>\n<li>Included Chapeau to search text for Whitemane.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Included Chapeau to search text for Whitemane.",
+         "html": "Included Chapeau to search text for Whitemane.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Zagara",
+     "heroId": "Zagara",
+     "heroIds": [
+      "Zagara"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Zagara</strong>\n<ul>\n<li>Medusa Blades will no longer attack inactive Mercenaries unless the triggering attack is against an inactive Mercenary.</li>\n<li>Mutalisk first bounce can now bounce to inactive Mercenaries if the attack is against an inactive Mercenary.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Medusa Blades will no longer attack inactive Mercenaries unless the triggering attack is against an inactive Mercenary.",
+         "html": "Medusa Blades will no longer attack inactive Mercenaries unless the triggering attack is against an inactive Mercenary.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Mutalisk first bounce can now bounce to inactive Mercenaries if the attack is against an inactive Mercenary.",
+         "html": "Mutalisk first bounce can now bounce to inactive Mercenaries if the attack is against an inactive Mercenary.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Zarya",
+     "heroId": "Zarya",
+     "heroIds": [
+      "Zarya"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Zarya</strong>\n<ul>\n<li>Fixed an issue that caused Basic Attacks not being affected properly by attack speed modifiers.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Basic Attacks not being affected properly by attack speed modifiers.",
+         "html": "Fixed an issue that caused Basic Attacks not being affected properly by attack speed modifiers.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Zeratul",
+     "heroId": "Zeratul",
+     "heroIds": [
+      "Zeratul"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Zeratul</strong>\n<ul>\n<li>Fixed an issue that caused Might of the Nerazim abilities to heal for more damage than intended with Shadow Mending.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Might of the Nerazim abilities to heal for more damage than intended with Shadow Mending.",
+         "html": "Fixed an issue that caused Might of the Nerazim abilities to heal for more damage than intended with Shadow Mending.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Zul'jin",
+     "heroId": "Zuljin",
+     "heroIds": [
+      "Zuljin"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Zul'jin</strong>\n<ul>\n<li>A Surprise For Ya! can now bounce to inactive Mercenaries if the attack is against an inactive Mercenary.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "A Surprise For Ya! can now bounce to inactive Mercenaries if the attack is against an inactive Mercenary.",
+         "html": "A Surprise For Ya! can now bounce to inactive Mercenaries if the attack is against an inactive Mercenary.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "nameKo": "버그 수정"
+  }
+ ],
+ "heroes": [
+  "Abathur",
+  "Alarak",
+  "Amazon",
+  "Anduin",
+  "Anubarak",
+  "Artanis",
+  "Arthas",
+  "Azmodan",
+  "Chen",
+  "Cho",
+  "DVa",
+  "Deathwing",
+  "Deckard",
+  "Dehaka",
+  "Dryad",
+  "FaerieDragon",
+  "Falstad",
+  "Gall",
+  "Genji",
+  "Hanzo",
+  "Hogger",
+  "Imperius",
+  "Junkrat",
+  "Kerrigan",
+  "L90ETC",
+  "Leoric",
+  "LiLi",
+  "LostVikings",
+  "Lucio",
+  "Maiev",
+  "MalGanis",
+  "Medivh",
+  "Mei",
+  "Mephisto",
+  "Murky",
+  "Nova",
+  "Orphea",
+  "Probius",
+  "Qhira",
+  "Ragnaros",
+  "Rehgar",
+  "Samuro",
+  "Stitches",
+  "Stukov",
+  "Sylvanas",
+  "Tassadar",
+  "Thrall",
+  "Tinker",
+  "Tracer",
+  "Whitemane",
+  "WitchDoctor",
+  "Wizard",
+  "Zagara",
+  "Zarya",
+  "Zeratul",
+  "Zuljin"
+ ],
+ "battlegrounds": [
+  "blackheart_s_bay"
+ ],
+ "lang": "en",
+ "newsId": "24056177"
+}

@@ -1,0 +1,65 @@
+{
+ "date": "2019-08-15",
+ "kind": "hotfix",
+ "title": "히어로즈 오브 더 스톰 긴급 수정 패치 노트 - 2019년 8월 15일",
+ "source": "https://news.blizzard.com/ko-kr/article/23096767/2019-8-15",
+ "published": "2019-08-14T23:13:58Z",
+ "sections": [
+  {
+   "name": "머리말",
+   "key": "intro",
+   "html": "<p>히어로즈 오브 더 스톰의 새로운 패치가 적용되었습니다. 이 패치에서는 버그가 수정되었습니다. 아래에서 자세한 정보를 알아보세요.</p>"
+  },
+  {
+   "name": "버그 수정",
+   "key": "bugs",
+   "html": "<p><strong class=\"pn-h\">영웅</strong></p>\n<ul>\n<li><strong>키히라</strong>\n<ul>\n<li>치명상 특성을 이용한 피의 분노가 더는 5중첩 미만의 적에게 추가 피해를 주지 않습니다.</li>\n<li>피의 분노 기술을 사용했을 때 치명상 특성이 더는 추가 피해를 주지 않습니다.</li>\n</ul>\n</li>\n</ul>\n<p><span class=\"pn-h\"><strong>사용자 인터페이스</strong></span></p>\n<ul>\n<li>등급전: 경기 후 점수 하락/상승 애니메이션이 정상적으로 재생되지 않던 문제를 수정했습니다.</li>\n<li>프로필에 시즌 이름이 정상적으로 표시되지 않던 문제를 수정했습니다.</li>\n<li>시공석을 구매할 때 결제창이 정상적으로 로딩되지 않던 문제를 수정했습니다.</li>\n<li>한 게임으로 영웅 레벨업과 퀘스트를 동시에 완료했을 때 전리품 상자를 두 개 획득한 것처럼 표시되던 문제를 수정했습니다.</li>\n</ul>\n<p><img alt=\"\" class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/g6/G6G0N80EOC941426801305139.png\"/></p>\n<p><img alt=\"InvisibleDividerLine_800x50.png\" class=\"no-border; no-shadow\" data-id=\"14509591\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/6VA2831Q81IU1403137406234.png\"/></p>",
+   "items": [
+    {
+     "name": "키히라",
+     "heroId": "NexusHunter",
+     "heroIds": [
+      "NexusHunter"
+     ],
+     "under": null,
+     "html": "<strong>키히라</strong>\n<ul>\n<li>치명상 특성을 이용한 피의 분노가 더는 5중첩 미만의 적에게 추가 피해를 주지 않습니다.</li>\n<li>피의 분노 기술을 사용했을 때 치명상 특성이 더는 추가 피해를 주지 않습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "치명상 특성을 이용한 피의 분노가 더는 5중첩 미만의 적에게 추가 피해를 주지 않습니다.",
+         "html": "치명상 특성을 이용한 피의 분노가 더는 5중첩 미만의 적에게 추가 피해를 주지 않습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "피의 분노 기술을 사용했을 때 치명상 특성이 더는 추가 피해를 주지 않습니다.",
+         "html": "피의 분노 기술을 사용했을 때 치명상 특성이 더는 추가 피해를 주지 않습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "heroes": [
+  "NexusHunter"
+ ],
+ "battlegrounds": [],
+ "newsId": "23096767"
+}

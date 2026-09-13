@@ -1,0 +1,2992 @@
+{
+ "date": "2025-09-02",
+ "kind": "ptr",
+ "title": "히어로즈 오브 더 스톰 공개 테스트 서버 패치 노트 - 2025년 9월 2일",
+ "source": "https://news.blizzard.com/en-us/article/24232472/heroes-of-the-storm-ptr-patch-notes-september-2-2025",
+ "published": "2025-09-02T17:03:00Z",
+ "sections": [
+  {
+   "name": "머리말",
+   "key": "intro",
+   "html": "<p>다음 히어로즈 오브 더 스톰 패치가 공개 테스트 서버(PTR)에 적용되어 테스트 플레이가 가능합니다. 언제나 그렇듯, PTR에서 플레이하는 동안 버그를 발견하셨다면 <a href=\"https://us.forums.blizzard.com/en/heroes/c/ptr-bug-report\" target=\"_blank\">PTR 버그 신고 포럼</a>에 방문하여 경험하신 내용을 알려주시기 바랍니다.</p>",
+   "nameEn": "머리말"
+  },
+  {
+   "name": "일반",
+   "key": "general",
+   "html": "<ul>\n<li>이제 일반 공격, 가르기 공격, 광역 공격이 다양한 상황에서 모든 영웅에게 보다 일관되게 작동합니다. 영웅의 균형에 영향을 줄 수 있는 변경 사항은 균형 조정 항목에 기재됩니다.</li>\n<li>첫 화면 및 시작 음악이 업데이트되었습니다.</li>\n</ul>",
+   "nameEn": "General"
+  },
+  {
+   "name": "전장 업데이트",
+   "key": "map_updates",
+   "html": "<ul>\n<li><strong>일반</strong><ul>\n<li>이제 요새, 성채, 핵이 자신의 반경 내에서 피해를 입은 아군 영웅에게 4초 동안 방어력을 50 부여합니다. 이 효과의 재사용 대기시간은 4초이며, 구조물당 영웅 1명에게만 부여할 수 있습니다. 이 방어력이 적용되는 동안 해당 대상을 공격하는 적 영웅은 20% 감속합니다.</li>\n<li>요새, 성채, 핵이 아군 영웅이 공격받을 때 더 이상 적 영웅을 우선 공격하지 않습니다.</li>\n<li>이제 용병 캠프가 전투 시작 30초 후에 생성됩니다(기존 60초에서 감소).</li>\n<li>이제 작은 경험치 구슬은 반경 15 이내에 아군 영웅이 없을 경우 사라집니다.</li>\n<li>구조물의 생명력이 12.5% 증가했습니다.</li>\n<li>영웅이 일반 공격으로 적 구조물을 공격하면 해당 건물 근처의 돌격병이 격려를 받아 3초 동안 공격 속도가 35%, 이동 속도가 35% 증가합니다. 이 효과는 환영이나 소환물에는 적용되지 않습니다.</li>\n<li>이제 돌격병이 정확히 MM:00과 MM:30에 생성됩니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">블랙하트 항만</strong><ul>\n<li>이제 포격이 성채와 핵에게 20% 감소한 피해를 입힙니다.</li>\n<li>주화를 바치는 시전 시간이 7초에서 5초로 감소했습니다.</li>\n<li>이제 보물 상자 위치가 3곳이 되었습니다. 첫 번째 단계에는 위쪽 공격로에 첫 번째 상자가 생성되고, 이후 세 단계 동안에는 상자가 2개씩 생성되며, 그 이후로는 매 단계마다 상자 3개가 모두 생성됩니다.</li>\n<li>이제 블랙하트 근처에 시야 탑이 생깁니다.</li>\n<li>이제 사망 시 보유한 주화의 절반만 떨어뜨립니다(소수점 이하 내림).</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">하나무라</strong><ul>\n<li>수송물의 피해량이 12.5% 증가했습니다.</li>\n<li>이제 수송물의 이동 속도가 25% 빨라집니다.</li>\n<li>사무라이 공격로 공성 유닛의 생명력이 12.5% 감소했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">불지옥 신단</strong><ul>\n<li>이제 징벌자가 더 이상 관문을 뛰어넘지 않습니다.</li>\n<li>해골 돌격병의 피해량이 25% 감소했습니다.</li>\n<li>해골 돌격병의 생명력이 400에서 300으로 감소했습니다.</li>\n<li>해골 돌격병의 이동 속도가 3에서 3.5로 증가했습니다.</li>\n<li>이제 해골 돌격병이 마법 방어력 20을 보유합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">하늘 사원</strong><ul>\n<li>수호자의 강력한 휘두르기 밀쳐내기 지속시간이 0.5초에서 0.375초로 감소했습니다.</li>\n<li>이제 수호자의 강력한 휘두르기 밀쳐내기가 다른 밀쳐내기 효과에 의해 중단됩니다.</li>\n<li>수호자의 강력한 휘두르기 밀쳐내기 속도가 이전 밀쳐내기 거리와 같아지도록 증가했습니다.</li>\n<li>이제 수호자의 강력한 휘두르기가 진행 중인 모든 밀쳐내기 효과를 중단시킵니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">핵탄두 격전지</strong><ul>\n<li>핵폭탄의 피해량이 1000 + 대상 최대 생명력의 12.5%로 변경되었습니다(이전에는 2300의 피해).</li>\n<li>이제 핵폭탄이 구조물을 작열시켜 12초 동안 초당 생명력의 0.8%에 해당하는 피해를 입힙니다. 해당 건물을 공격하면 지속시간이 최대 8초까지 갱신됩니다.</li>\n<li>이제 핵폭탄을 발사하는 데 2.5초가 걸립니다(1.5초에서 증가).</li>\n<li>이제 생성되는 핵폭탄의 수가 줄어듭니다.</li>\n</ul>\n</li>\n</ul>",
+   "items": [
+    {
+     "name": "블랙하트 항만",
+     "battleground": "blackheart_s_bay",
+     "html": "<strong class=\"pn-h\">블랙하트 항만</strong>\n<ul>\n<li>이제 포격이 성채와 핵에게 20% 감소한 피해를 입힙니다.</li>\n<li>주화를 바치는 시전 시간이 7초에서 5초로 감소했습니다.</li>\n<li>이제 보물 상자 위치가 3곳이 되었습니다. 첫 번째 단계에는 위쪽 공격로에 첫 번째 상자가 생성되고, 이후 세 단계 동안에는 상자가 2개씩 생성되며, 그 이후로는 매 단계마다 상자 3개가 모두 생성됩니다.</li>\n<li>이제 블랙하트 근처에 시야 탑이 생깁니다.</li>\n<li>이제 사망 시 보유한 주화의 절반만 떨어뜨립니다(소수점 이하 내림).</li>\n</ul>",
+     "under": null,
+     "nameEn": "Blackheart's Bay"
+    },
+    {
+     "name": "하나무라",
+     "battleground": "hanamura_temple",
+     "html": "<strong class=\"pn-h\">하나무라</strong>\n<ul>\n<li>수송물의 피해량이 12.5% 증가했습니다.</li>\n<li>이제 수송물의 이동 속도가 25% 빨라집니다.</li>\n<li>사무라이 공격로 공성 유닛의 생명력이 12.5% 감소했습니다.</li>\n</ul>",
+     "under": null,
+     "nameEn": "Hanamura"
+    },
+    {
+     "name": "불지옥 신단",
+     "battleground": "infernal_shrines",
+     "html": "<strong class=\"pn-h\">불지옥 신단</strong>\n<ul>\n<li>이제 징벌자가 더 이상 관문을 뛰어넘지 않습니다.</li>\n<li>해골 돌격병의 피해량이 25% 감소했습니다.</li>\n<li>해골 돌격병의 생명력이 400에서 300으로 감소했습니다.</li>\n<li>해골 돌격병의 이동 속도가 3에서 3.5로 증가했습니다.</li>\n<li>이제 해골 돌격병이 마법 방어력 20을 보유합니다.</li>\n</ul>",
+     "under": null,
+     "nameEn": "Infernal Shrines"
+    },
+    {
+     "name": "하늘 사원",
+     "battleground": "sky_temple",
+     "html": "<strong class=\"pn-h\">하늘 사원</strong>\n<ul>\n<li>수호자의 강력한 휘두르기 밀쳐내기 지속시간이 0.5초에서 0.375초로 감소했습니다.</li>\n<li>이제 수호자의 강력한 휘두르기 밀쳐내기가 다른 밀쳐내기 효과에 의해 중단됩니다.</li>\n<li>수호자의 강력한 휘두르기 밀쳐내기 속도가 이전 밀쳐내기 거리와 같아지도록 증가했습니다.</li>\n<li>이제 수호자의 강력한 휘두르기가 진행 중인 모든 밀쳐내기 효과를 중단시킵니다.</li>\n</ul>",
+     "under": null,
+     "nameEn": "Sky Temple"
+    },
+    {
+     "name": "핵탄두 격전지",
+     "battleground": "warhead_junction",
+     "html": "<strong class=\"pn-h\">핵탄두 격전지</strong>\n<ul>\n<li>핵폭탄의 피해량이 1000 + 대상 최대 생명력의 12.5%로 변경되었습니다(이전에는 2300의 피해).</li>\n<li>이제 핵폭탄이 구조물을 작열시켜 12초 동안 초당 생명력의 0.8%에 해당하는 피해를 입힙니다. 해당 건물을 공격하면 지속시간이 최대 8초까지 갱신됩니다.</li>\n<li>이제 핵폭탄을 발사하는 데 2.5초가 걸립니다(1.5초에서 증가).</li>\n<li>이제 생성되는 핵폭탄의 수가 줄어듭니다.</li>\n</ul>",
+     "under": null,
+     "nameEn": "Warhead Junction"
+    }
+   ],
+   "nameEn": "Map Updates"
+  },
+  {
+   "name": "밸런스 업데이트",
+   "key": "balance",
+   "html": "<h3><strong>영웅</strong></h3>\n<h4>데하카</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">수풀추적자 [D]</strong><ul>\n<li>재사용 대기시간이 75초에서 240초로 증가했습니다.</li>\n<li>재생의 구슬을 획득하면 재사용 대기시간이 50초 감소합니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">최상위 포식자</strong><ul>\n<li>재사용 대기시간 감소량이 50초에서 190초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>일리단</h4>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">불타는 낙인</strong><ul>\n<li>이제 마지막으로 공격한 영웅과 다른 영웅을 공격하면 이전에 공격하던 영웅에 대한 진행 상황이 초기화됩니다.</li>\n<li>이제 실명과 회피로 인해 진행도가 전혀 증가하지 않습니다.</li>\n<li>대상이 정지 상태가 되거나 무적을 얻으면 진행도를 잃습니다.</li>\n<li>이제 중첩이 300초 동안 지속됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>캘타스</h4>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">환생</strong><ul>\n<li>이제 충전 횟수가 3회입니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>도살자</h4>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">잔혹한 일격</strong><ul>\n<li>이제 실명 상태에서 공격하거나 회피 중인 적을 공격하면 중첩을 잃습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>길 잃은 바이킹</h4>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">바이킹 함선 습격</strong><ul>\n<li>이동 속도 감소 효과가 더 이상 해적선 습격의 초기 속도를 감소시키지 않으며, 이제 해적선 습격의 이동 속도를 25% 감소시킵니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>스랄</h4>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">정령의 맹공</strong><ul>\n<li><b>신규:</b> 기본 기술이나 궁극기를 사용한 후 4초 이내에 사용하는 스랄의 다음 일반 공격이 45% 증가한 피해를 입힙니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">후속 타격</strong><ul>\n<li>특성이 삭제되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>우서</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">성스러운 빛 [Q]</strong><ul>\n<li>사거리가 7.75에서 8로 증가했습니다.</li>\n<li>더 이상 신성 충격을 선택해도 사거리가 8.75로 증가하지 않습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">신성 충격</strong><ul>\n<li>더 이상 재사용 대기시간이나 마나 소모량 감소 효과를 부여하지 않으며, 대신 마나 소모량이 줄어들고 재사용 대기시간이 감소합니다.</li>\n<li>이제 별도의 사용 버튼이 생겼습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>발리라</h4>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">난도질</strong><ul>\n<li><b>개편:</b> 공격 속도를 400% 증가시키며, 3회 공격하거나 3초가 지나면 효과가 사라집니다. 세 번째 공격 이후 다음 공격의 대기시간은 감소하지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>바리안</h4>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">전쟁인도자</strong><ul>\n<li>전쟁인도자의 마나 소모량 감소량이 22.5에서 20으로 감소했습니다.</li>\n<li>마나 소모량 감소량이 22.5에서 20으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">사기의 외침</strong><ul>\n<li>재사용 대기시간 감소량이 2.5%에서 5%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+   "heroes": [
+    {
+     "name": "데하카",
+     "heroId": "Dehaka",
+     "heroIds": [
+      "Dehaka"
+     ],
+     "changes": [
+      {
+       "name": "수풀추적자",
+       "key": "D",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 75초에서 240초로 증가했습니다.",
+         "html": "재사용 대기시간이 75초에서 240초로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "재생의 구슬을 획득하면 재사용 대기시간이 50초 감소합니다.",
+         "html": "재생의 구슬을 획득하면 재사용 대기시간이 50초 감소합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Brushstalker"
+      },
+      {
+       "name": "최상위 포식자",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "재사용 대기시간 감소량이 50초에서 190초로 증가했습니다.",
+         "html": "재사용 대기시간 감소량이 50초에서 190초로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Apex Predator"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">수풀추적자 [D]</strong><ul>\n<li>재사용 대기시간이 75초에서 240초로 증가했습니다.</li>\n<li>재생의 구슬을 획득하면 재사용 대기시간이 50초 감소합니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">최상위 포식자</strong><ul>\n<li>재사용 대기시간 감소량이 50초에서 190초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Dehaka"
+    },
+    {
+     "name": "일리단",
+     "heroId": "Illidan",
+     "heroIds": [
+      "Illidan"
+     ],
+     "changes": [
+      {
+       "name": "불타는 낙인",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "이제 마지막으로 공격한 영웅과 다른 영웅을 공격하면 이전에 공격하던 영웅에 대한 진행 상황이 초기화됩니다.",
+         "html": "이제 마지막으로 공격한 영웅과 다른 영웅을 공격하면 이전에 공격하던 영웅에 대한 진행 상황이 초기화됩니다.",
+         "added": false
+        },
+        {
+         "text": "이제 실명과 회피로 인해 진행도가 전혀 증가하지 않습니다.",
+         "html": "이제 실명과 회피로 인해 진행도가 전혀 증가하지 않습니다.",
+         "added": false
+        },
+        {
+         "text": "대상이 정지 상태가 되거나 무적을 얻으면 진행도를 잃습니다.",
+         "html": "대상이 정지 상태가 되거나 무적을 얻으면 진행도를 잃습니다.",
+         "added": false
+        },
+        {
+         "text": "이제 중첩이 300초 동안 지속됩니다.",
+         "html": "이제 중첩이 300초 동안 지속됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Fiery Brand"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">불타는 낙인</strong><ul>\n<li>이제 마지막으로 공격한 영웅과 다른 영웅을 공격하면 이전에 공격하던 영웅에 대한 진행 상황이 초기화됩니다.</li>\n<li>이제 실명과 회피로 인해 진행도가 전혀 증가하지 않습니다.</li>\n<li>대상이 정지 상태가 되거나 무적을 얻으면 진행도를 잃습니다.</li>\n<li>이제 중첩이 300초 동안 지속됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Illidan"
+    },
+    {
+     "name": "캘타스",
+     "heroId": "Kaelthas",
+     "heroIds": [
+      "Kaelthas"
+     ],
+     "changes": [
+      {
+       "name": "환생",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "이제 충전 횟수가 3회입니다.",
+         "html": "이제 충전 횟수가 3회입니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Rebirth"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">환생</strong><ul>\n<li>이제 충전 횟수가 3회입니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Kael'thas"
+    },
+    {
+     "name": "도살자",
+     "heroId": "Butcher",
+     "heroIds": [
+      "Butcher"
+     ],
+     "changes": [
+      {
+       "name": "잔혹한 일격",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "이제 실명 상태에서 공격하거나 회피 중인 적을 공격하면 중첩을 잃습니다.",
+         "html": "이제 실명 상태에서 공격하거나 회피 중인 적을 공격하면 중첩을 잃습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Brutal Strike"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">잔혹한 일격</strong><ul>\n<li>이제 실명 상태에서 공격하거나 회피 중인 적을 공격하면 중첩을 잃습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "The Butcher"
+    },
+    {
+     "name": "길 잃은 바이킹",
+     "heroId": "LostVikings",
+     "heroIds": [
+      "LostVikings"
+     ],
+     "changes": [
+      {
+       "name": "바이킹 함선 습격",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "이동 속도 감소 효과가 더 이상 해적선 습격의 초기 속도를 감소시키지 않으며, 이제 해적선 습격의 이동 속도를 25% 감소시킵니다.",
+         "html": "이동 속도 감소 효과가 더 이상 해적선 습격의 초기 속도를 감소시키지 않으며, 이제 해적선 습격의 이동 속도를 25% 감소시킵니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Longboat Raid"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">바이킹 함선 습격</strong><ul>\n<li>이동 속도 감소 효과가 더 이상 해적선 습격의 초기 속도를 감소시키지 않으며, 이제 해적선 습격의 이동 속도를 25% 감소시킵니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "The Lost Vikings"
+    },
+    {
+     "name": "스랄",
+     "heroId": "Thrall",
+     "heroIds": [
+      "Thrall"
+     ],
+     "changes": [
+      {
+       "name": "정령의 맹공",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "신규: 기본 기술이나 궁극기를 사용한 후 4초 이내에 사용하는 스랄의 다음 일반 공격이 45% 증가한 피해를 입힙니다.",
+         "html": "<b>신규:</b> 기본 기술이나 궁극기를 사용한 후 4초 이내에 사용하는 스랄의 다음 일반 공격이 45% 증가한 피해를 입힙니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Elemental Assault"
+      },
+      {
+       "name": "마무리 일격",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "특성이 삭제되었습니다.",
+         "html": "특성이 삭제되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Follow Through"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">정령의 맹공</strong><ul>\n<li><b>신규:</b> 기본 기술이나 궁극기를 사용한 후 4초 이내에 사용하는 스랄의 다음 일반 공격이 45% 증가한 피해를 입힙니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">후속 타격</strong><ul>\n<li>특성이 삭제되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Thrall"
+    },
+    {
+     "name": "우서",
+     "heroId": "Uther",
+     "heroIds": [
+      "Uther"
+     ],
+     "changes": [
+      {
+       "name": "성스러운 빛",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "사거리가 7.75에서 8로 증가했습니다.",
+         "html": "사거리가 7.75에서 8로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "더 이상 신성 충격을 선택해도 사거리가 8.75로 증가하지 않습니다.",
+         "html": "더 이상 신성 충격을 선택해도 사거리가 8.75로 증가하지 않습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Holy Light"
+      },
+      {
+       "name": "신성 충격",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "더 이상 재사용 대기시간이나 마나 소모량 감소 효과를 부여하지 않으며, 대신 마나 소모량이 줄어들고 재사용 대기시간이 감소합니다.",
+         "html": "더 이상 재사용 대기시간이나 마나 소모량 감소 효과를 부여하지 않으며, 대신 마나 소모량이 줄어들고 재사용 대기시간이 감소합니다.",
+         "added": false
+        },
+        {
+         "text": "이제 별도의 사용 버튼이 생겼습니다.",
+         "html": "이제 별도의 사용 버튼이 생겼습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Holy Shock"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">성스러운 빛 [Q]</strong><ul>\n<li>사거리가 7.75에서 8로 증가했습니다.</li>\n<li>더 이상 신성 충격을 선택해도 사거리가 8.75로 증가하지 않습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">신성 충격</strong><ul>\n<li>더 이상 재사용 대기시간이나 마나 소모량 감소 효과를 부여하지 않으며, 대신 마나 소모량이 줄어들고 재사용 대기시간이 감소합니다.</li>\n<li>이제 별도의 사용 버튼이 생겼습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Uther"
+    },
+    {
+     "name": "발리라",
+     "heroId": "Valeera",
+     "heroIds": [
+      "Valeera"
+     ],
+     "changes": [
+      {
+       "name": "난도질",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "개편: 공격 속도를 400% 증가시키며, 3회 공격하거나 3초가 지나면 효과가 사라집니다. 세 번째 공격 이후 다음 공격의 대기시간은 감소하지 않습니다.",
+         "html": "<b>개편:</b> 공격 속도를 400% 증가시키며, 3회 공격하거나 3초가 지나면 효과가 사라집니다. 세 번째 공격 이후 다음 공격의 대기시간은 감소하지 않습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Slice and Dice"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">난도질</strong><ul>\n<li><b>개편:</b> 공격 속도를 400% 증가시키며, 3회 공격하거나 3초가 지나면 효과가 사라집니다. 세 번째 공격 이후 다음 공격의 대기시간은 감소하지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Valeera"
+    },
+    {
+     "name": "바리안",
+     "heroId": "Varian",
+     "heroIds": [
+      "Varian"
+     ],
+     "changes": [
+      {
+       "name": "전쟁인도자",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "전쟁인도자의 마나 소모량 감소량이 22.5에서 20으로 감소했습니다.",
+         "html": "전쟁인도자의 마나 소모량 감소량이 22.5에서 20으로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "마나 소모량 감소량이 22.5에서 20으로 감소했습니다.",
+         "html": "마나 소모량 감소량이 22.5에서 20으로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Warbringer"
+      },
+      {
+       "name": "사기의 외침",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "재사용 대기시간 감소량이 2.5%에서 5%로 증가했습니다.",
+         "html": "재사용 대기시간 감소량이 2.5%에서 5%로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Demoralizing Shout"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">전쟁인도자</strong><ul>\n<li>전쟁인도자의 마나 소모량 감소량이 22.5에서 20으로 감소했습니다.</li>\n<li>마나 소모량 감소량이 22.5에서 20으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">사기의 외침</strong><ul>\n<li>재사용 대기시간 감소량이 2.5%에서 5%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Varian"
+    }
+   ],
+   "nameEn": "Balance Update"
+  },
+  {
+   "name": "버그 수정",
+   "key": "bugs",
+   "html": "<h3><strong>전장</strong></h3>\n<ul>\n<li><strong class=\"pn-h\">하늘 사원</strong><ul>\n<li>이동 불가 효과가 수호자의 강력한 휘두르기 밀쳐내기를 막던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n<h3><strong>영웅</strong></h3>\n<ul>\n<li><strong class=\"pn-h\">알라라크</strong><ul>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">우월한 일격</strong><ul>\n<li>우월한 일격을 선택한 후 침묵 상태의 영웅을 공격할 때 일반 공격이 잘못 표시되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">아르타니스</strong><ul>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">보호막 쇄도</strong><ul>\n<li>효과 표시줄의 도움말이 갱신되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">최후의 베기</strong><ul>\n<li>효과 표시줄이 남은 지속시간을 표시하도록 갱신되었습니다.</li>\n<li>이제 실명 상태에서 공격해도 효과가 소모됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">거인 학살자</strong><ul>\n<li>이제 추가 피해가 주 일반 공격 피해보다 먼저 적용됩니다. 이 피해로 대상이 사망해도 관련된 다른 효과는 모두 발동합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">아서스</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">서리한이 굶주렸다 [D]</strong><ul>\n<li>적중 시각 효과와 음향 효과가 아서스에게 생성되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">아즈모단</strong><ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">탐욕</strong><ul>\n<li>죄악의 물결로 강화된 파멸의 구슬이 영웅이 아닌 대상에게 의도한 것보다 많은 피해를 입히던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">파멸의 종자</strong><ul>\n<li>적중 시각 효과와 음향 효과가 아즈모단에게 생성되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">완전한 파멸</strong><ul>\n<li>이제 사망 정보에 완전한 파멸로 표시됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">오만</strong><ul>\n<li>이제 퀘스트로 표시됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">빛나래</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">위상 이동 [Z]</strong><ul>\n<li>이제 대상이 변이 상태여도 시전 표시기가 숨겨지지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">요정의 추진력</strong><ul>\n<li>이제 이동 속도 증가 효과가 단계별로 줄어드는 대신 지속시간 동안 서서히 감소합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">카시아</strong><ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">번개의 일격</strong><ul>\n<li>공격 속도가 증가할 때 번개의 일격이 연속으로 여러 번 발동하던 문제를 수정했습니다.</li>\n<li>이제 다음에 적중하는 일반 공격이 아니라 다음에 발사되는 일반 공격에 적용됩니다.</li>\n<li>이제 진행 중인 동안 효과 표시줄에 표시됩니다.</li>\n<li>이제 미사일이 적중한 후가 아니라 카시아가 일반 공격을 발사할 때 진행도가 증가합니다.</li>\n<li>이제 진행 상황이 효과 표시줄에 표시됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">진압</strong><ul>\n<li>이제 추가 피해가 주 일반 공격 피해보다 먼저 적용됩니다. 이 피해로 대상이 사망해도 관련된 효과는 모두 발동합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">첸</strong><ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">폭풍, 대지, 불</strong><ul>\n<li>이제 대지의 공격 감속 효과가 실명과 회피에 의해 차단됩니다.</li>\n<li>이제 주 대상이 회피 중이면 대지의 광역 공격이 적용되지 않습니다.</li>\n<li>이제 폭풍과 불의 공격이 기술 피해 증가 효과가 아니라 적용 가능한 물리 피해 증가 효과를 받았을 때 치명타로 표시됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">초갈</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">밀치기 [Z]</strong><ul>\n<li>초가 이동 불가 상태일 때 밀치기가 초를 밀어내지 못하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">단련된 가죽</strong><ul>\n<li>밀치기를 비롯한 밀쳐내기 효과가 이 특성의 효과를 일시적으로 비활성화하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">활활 타올라라</strong><ul>\n<li>이제 비활성 상태인 용병 근처의 대상이 적중되어도 해당 용병은 적중되지 않습니다.</li>\n<li>이제 주 대상이 비활성 상태인 용병이 아닌 한 비활성 상태인 용병은 적중되지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">크로미</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">모래 강타 [Q]</strong><ul>\n<li>이제 모래 메아리의 일반 공격에 적중된 대상에게 모래 메아리가 드러납니다.</li>\n<li>이제 모래 메아리가 모습이 보이지 않는 상태에서 일반 공격이나 모래 강타로 피해를 입히면 모습이 드러납니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">모래의 매듭</strong><ul>\n<li>이제 모래 메아리가 모습이 보이지 않는 상태에서 일반 공격이나 모래 강타로 피해를 입히면 모습이 드러납니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">데스윙</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">용의 비상 [Z]</strong><ul>\n<li>데스윙이 일반 공격으로 다른 데스윙을 적중시킬 때 용의 비상의 시전 동작이 중단되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">죽음의 낙하</strong><ul>\n<li>이제 방어력 감소 효과가 다시 적용되면 지속시간이 초기화됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">불과 격노</strong><ul>\n<li>감속 상태의 영웅을 공격할 때 일반 공격의 적중 시각 효과가 데스윙에게 표시되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">디바</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">자폭 [E]</strong><ul>\n<li>이제 일반 공격으로 얻는 충전량이 모든 대상이 적중된 후에 적용됩니다.</li>\n<li>자폭의 밀쳐내기가 올바르게 적용되지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">핵폭발</strong><ul>\n<li>이제 일반 공격의 추가 영역에 있는 대상을 적중시켜 얻는 자폭 충전량이 모든 대상이 적중된 후에 적용됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">정예 타우렌 족장</strong><ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">기타 히어로</strong><ul>\n<li>이제 정예 타우렌 족장이 실명 상태이거나, 대상이 회피 중이거나, 정예 타우렌 족장의 생명력이 최대치일 때는 치유 시각 효과가 나타나지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">폴스타트</strong><ul>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">지속되는 바람</strong><ul>\n<li>이제 추가 피해량이 기본 일반 공격 피해량보다 먼저 적용됩니다. 이로 인해 대상이 죽더라도 다른 모든 효과는 그대로 발동합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">피닉스</strong><ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">광자 집중</strong><ul>\n<li>이제 적중하는 다음 일반 공격이 아니라, 발사되는 다음 일반 공격에 적용됩니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">기동타격</strong><ul>\n<li>이제 적중하는 다음 일반 공격이 아니라, 발사되는 다음 일반 공격에 적용됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">에너지 억제</strong><ul>\n<li>이제 위상 폭탄을 발사할 때 재사용 대기시간이 적용됩니다.</li>\n<li>이제 적중하는 다음 일반 공격이 아니라, 발사되는 다음 일반 공격에 적용됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">가즈로</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">잘나가! 포탑 [Q]</strong><ul>\n<li>가즈로에게 적용된 방어 매트릭스가 포탑의 피해량을 감소시키지 않던 문제를 수정했습니다.</li>\n<li>최종 진화물로 복제된 가즈로가 설치한 잘나가! 포탑이 증가한 피해량을 얻지 못하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">긍정적인 강화</strong><ul>\n<li>잘나가! 포탑이 대상을 적중시켰을 때가 아니라 공격했을 때 추가 효과가 적용되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">아크 반응로</strong><ul>\n<li>가즈로에게 적용된 방어 매트릭스가 피해량을 변화시키지 않던 문제를 수정했습니다.</li>\n<li>소형 잘나가! 포탑이 올바른 위치로 발사하지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">레이저 발사!</strong><ul>\n<li>전장의 안개 속에서도 경고 표시기가 보이던 문제를 수정했습니다.</li>\n<li>가즈로에게 적용된 방어 매트릭스가 피해량을 변화시키지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">오버클록</strong><ul>\n<li>이제 추가 피해량이 기본 일반 공격 피해량보다 먼저 적용됩니다. 이로 인해 대상이 죽더라도 다른 모든 효과는 그대로 발동합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">그레이메인</strong><ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">숨통을 노려라</strong><ul>\n<li>그레이메인이 다른 그레이메인을 대상으로 지정할 때 숨통을 노려라의 시전 동작이 대상에게 재생되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">우두머리 사냥꾼</strong><ul>\n<li>이제 추가 피해량이 기본 일반 공격 피해량보다 먼저 적용됩니다. 이로 인해 대상이 죽더라도 다른 모든 효과는 그대로 발동합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">사냥꾼의 산탄총</strong><ul>\n<li>이제 실명 상태에서도 발동합니다.</li>\n<li>이제 백전노장을 제외하고 주 대상에게 적용된 모든 효과가 완료된 후에 대상을 탐색합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">송곳니와 발톱</strong><ul>\n<li>이제 백전노장을 제외하고 주 대상에게 적용된 모든 효과가 완료된 후에 대상을 탐색합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">일리단</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">습격 [Q]</strong><ul>\n<li>일리단이 다른 일리단을 대상으로 지정할 때 습격의 음향 효과와 시각 효과가 두 번 재생되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">불타는 낙인</strong><ul>\n<li>이제 추가 피해량이 기본 일반 공격 피해량보다 먼저 적용됩니다. 이로 인해 대상이 죽더라도 다른 모든 효과는 그대로 발동합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">임페리우스</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">용기의 낙인 [Q]</strong><ul>\n<li>대상이 무적이나 정지 상태가 되거나 사망했을 때 용기의 낙인이 소모되어 얻는 효과가 부여되던 문제를 수정했습니다.</li>\n<li>낙인이 찍힌 대상이 정지 상태가 되거나 무적을 얻거나 사망했을 때 용기의 낙인이 임페리우스를 치유하던 문제를 수정했습니다.</li>\n<li>이제 임페리우스가 실명 상태이거나 대상이 회피 중이면 용기의 낙인이 소모되지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">부정한 자를 불태워라</strong><ul>\n<li>이제 추가 피해량이 기본 일반 공격 피해량보다 먼저 적용됩니다. 이로 인해 대상이 죽더라도 다른 모든 효과는 그대로 발동합니다.</li>\n<li>이제 사망 정보에 부정한 자를 불태워라로 표시됩니다.</li>\n<li>이제 실명이 용기의 낙인을 소모하지 않으므로, 해당 효과로 인해 이 효과가 발동하지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">분노의 섬광</strong><ul>\n<li>이제 추가 대상 탐색이 주 대상에게 모든 효과가 적용된 후에 이루어집니다.</li>\n<li>이제 실명이 용기의 낙인을 소모하지 않으므로, 해당 효과로 인해 이 효과가 발동하지 않습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">신성한 백열</strong><ul>\n<li>더 이상 실명이나 회피에 의해 차단되지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">신성한 분노</strong><ul>\n<li>낙인이 찍힌 대상이 정지 상태가 되거나 무적이 되거나 처치될 때 용기의 낙인이 재사용 대기시간을 감소시키던 문제를 수정했습니다.</li>\n<li>이제 실명이 용기의 낙인을 소모하지 않으므로, 해당 효과로 인해 이 효과가 발동하지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">무자비한 강림</strong><ul>\n<li>낙인이 찍힌 대상이 정지 상태가 되거나 무적이 되거나 처치될 때 용기의 낙인이 재사용 대기시간을 감소시키던 문제를 수정했습니다.</li>\n<li>이제 실명이 용기의 낙인을 소모하지 않으므로, 해당 효과로 인해 이 효과가 발동하지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">제이나</strong><ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">물의 정령</strong><ul>\n<li>물의 정령의 일반 공격 광역 피해가 회피 중인 대상에게 적중하던 문제를 수정했습니다.</li>\n<li>이제 물의 정령의 일반 공격 광역 피해가 적중한 대상을 드러내지 않습니다.</li>\n<li>이제 물의 정령의 일반 공격 광역 피해가 해당 지역을 드러냅니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">요한나</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">규탄 [W]</strong><ul>\n<li>규탄이 정지 불가 상태의 대상을 끌어당기던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">정크랫</strong><ul>\n<li><strong>기본</strong><ul>\n<li>이제 실명 상태에서도 일반 공격의 광역 피해가 적용되지만, 회피 중인 대상에게는 여전히 적용되지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">캘타스</strong><ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">불사조</strong><ul>\n<li>이제 캘타스가 방어 매트릭스의 영향을 받고 있으면 공격력도 방어 매트릭스의 영향을 받습니다.</li>\n<li>이제 광역 공격이 적중한 대상을 드러내지 않습니다.</li>\n<li>이제 광역 공격이 적중한 지역을 드러냅니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">켈투자드</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">켈투자드의 사슬 [E]</strong><ul>\n<li>이제 사슬이 연결되면 두 대상이 모두 드러납니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">망자가 돌아왔다</strong><ul>\n<li>그림자가 피해를 입힐 때 드러나지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">케리건</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">강습 [Q]</strong><ul>\n<li>케리건이 가까운 거리에서 다른 케리건을 대상으로 지정할 때 강습의 시전 동작이 대상에게 재생되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">카라짐</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">찬란한 질주 [Q]</strong><ul>\n<li>다른 카라짐에게 찬란한 질주를 시전할 때 잘못 표시되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">철권</strong><ul>\n<li>효과를 발동시킨 공격이 올바른 적중 음향 효과를 재생하지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">리밍</strong><ul>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">마력 작렬</strong><ul>\n<li>이제 탈 라샤의 덕목의 효과가 곱연산이 아닌 합연산으로 적용됩니다.</li>\n<li>이제 일반 공격이 피해를 입히기 전에 피해를 입힙니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">집중탄</strong><ul>\n<li>이제 사망 정보에 별도의 항목으로 표시됩니다.</li>\n<li>이제 사망 정보에 집중탄으로 표시됩니다.</li>\n<li>이제 세 번째 마법 화살이 피해를 입힌 후에 발동합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">탈 라샤의 덕목</strong><ul>\n<li>이제 탈 라샤의 덕목의 효과가 곱연산이 아닌 합연산으로 적용됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">루시우</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">분위기 전환! [W]</strong><ul>\n<li>이제 서로 다른 루시우의 분위기 전환! 효과가 함께 중첩됩니다.</li>\n<li>분위기 전환!의 반경 안에 영웅이 7명을 초과해 있을 때 영향을 받는 아군 표시가 올바르게 나타나지 않던 문제를 수정했습니다.</li>\n<li>이제 분위기 전환!의 영향을 받는 아군 표시에 휴대용 라디오의 분위기 전환! 반경 안에 있는 대상도 포함됩니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">소리 파동 [Q]</strong><ul>\n<li>소리 파동이 정지 불가 상태의 대상을 밀어내던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">파티 믹스</strong><ul>\n<li>치유 강화와 속도 강화를 전환할 때 지속시간 표시가 부정확해지던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">모두 함께</strong><ul>\n<li>휴대용 라디오의 분위기 전환! 반경 안에 있는 아군이 이동 속도를 얻지 못하던 문제를 수정했습니다.</li>\n<li>게임에 여러 명의 루시우가 있을 때 이동 속도 증가 효과가 일관되게 작동하지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">하우스 파티</strong><ul>\n<li>휴대용 라디오의 분위기 전환! 반경 안에 있는 아군이 추가 치유량을 얻지 못하던 문제를 수정했습니다.</li>\n<li>게임에 여러 명의 루시우가 있을 때 추가 치유량이 일관되게 작동하지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">불사의 명곡</strong><ul>\n<li>이제 휴대용 라디오의 분위기 전환! 반경 안에 있는 아군에게도 효과를 부여합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">루나라</strong><ul>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">자연의 활력</strong><ul>\n<li>네 번째 일반 공격이 적중 효과를 표시하지 않던 문제를 수정했습니다.</li>\n<li>이제 다음에 적중하는 일반 공격 4회가 아니라 다음에 발사되는 일반 공격 4회에 적용됩니다.</li>\n<li>이제 다음에 적중하는 공격이 아니라 다음에 발사되는 공격에 적용됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">나지보</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">시체 거미 [Q]</strong><ul>\n<li>방어 매트릭스가 시체 거미의 피해량을 감소시키지 않던 문제를 수정했습니다.</li>\n<li>최종 진화물로 복제된 나지보가 시체 거미에게 기술 위력 증가 효과를 부여하지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">좀비 벽 [W]</strong><ul>\n<li>방어 매트릭스가 좀비 벽의 피해량을 감소시키지 않던 문제를 수정했습니다.</li>\n<li>최종 진화물로 복제된 나지보가 좀비 벽에 기술 위력 증가 효과를 부여하지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">망자의 돌진</strong><ul>\n<li>이제 특성을 선택하면 이미 존재하는 좀비 벽의 좀비의 피해량도 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">덩치</strong><ul>\n<li>방어 매트릭스가 덩치의 피해량을 감소시키지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">오르피아</strong><ul>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">물고 빠지기</strong><ul>\n<li>오르피아가 이동 불가 상태일 때 물고 빠지기가 오르피아를 이동시키지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">혼돈의 격류</strong><ul>\n<li>오르피아가 넘치는 혼돈 3중첩 상태로 사망하면 넘치는 혼돈이 3중첩 미만일 때도 추가 피해 효과가 부여되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">압도의 아귀</strong><ul>\n<li>압도의 아귀의 끌어당기기가 올바르게 적용되지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">레이너</strong><ul>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">불안정한 혼합물</strong><ul>\n<li>이제 여러 영웅이 적중했을 때 회복되는 마나가 하나로 합산되어 적용됩니다.</li>\n<li>이제 마나 회복이 적중한 영웅마다 마나를 10씩 회복하는 대신 한 번에 모두 회복합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">레가르</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">늑대 정령 [Z]</strong><ul>\n<li>레가르를 대상으로 한 늑대 정령의 돌진 공격이 대상이 된 레가르에게 공격 동작을 재생시키던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">늑대의 굶주림</strong><ul>\n<li>실명과 회피가 이 효과의 발동을 막지 못하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">렉사르</strong><ul>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">광포한 야수</strong><ul>\n<li>이제 중첩이 5회 이상일 때 미샤, 돌진!이 치명타로 표시됩니다.</li>\n<li>이제 추가 피해량이 다음 미샤, 돌진!에 적용됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">사무로</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">전진하는 일격 [고유 능력 DQ]</strong><ul>\n<li>이제 실명과 회피가 발동을 막습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">해머 상사</strong><ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">매복</strong><ul>\n<li>이제 은폐가 활성화되기까지 남은 시간이 고유 능력 버튼 주위에 표시됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">펄스 지뢰 핵</strong><ul>\n<li>이제 첫 번째 피해가 사망 요약에 거미 지뢰로 표시됩니다.</li>\n<li>이제 여러 영웅이 적중했을 때 회복되는 마나가 하나로 합산되어 적용됩니다.</li>\n<li>이제 공성 모드 공격으로 회복하는 마나가 하나로 합산됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">유산탄 지뢰</strong><ul>\n<li>이제 다시 적용될 때 모든 방어력 감소 중첩의 지속시간이 초기화됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">소냐</strong><ul>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">육중한 강타</strong><ul>\n<li>이제 추가 피해량이 기본 일반 공격 피해량보다 먼저 적용됩니다. 이로 인해 대상이 죽더라도 다른 모든 효과는 그대로 발동합니다.</li>\n<li>이제 사망 요약에 육중한 강타로 표시됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">누더기</strong><ul>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">놀자!</strong><ul>\n<li>이제 여러 영웅이 적중했을 때 회복되는 마나가 하나로 합산되어 적용됩니다.</li>\n<li>지면 강타의 안쪽 범위로 영웅을 적중시켰을 때 회복되는 마나가 포함되도록 툴팁이 갱신되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">태사다르</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">공명 광선 [고유 능력]</strong><ul>\n<li>공명 광선이 첫 번째 피해 이후 피해를 입히기 전에 충전되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">아크 방전</strong><ul>\n<li>이제 일반 공격이 진행도를 부여할 때 다른 모든 효과보다 먼저 적용됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">집정관</strong><ul>\n<li>이제 광역 공격이 주 대상에게 적용되는 다른 모든 효과가 완료된 후에 발생합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">도살자</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">도살자의 낙인 [W]</strong><ul>\n<li>도살자의 일반 공격 적중 시각 효과가 낙인이 찍힌 대상에게 올바르게 변경되지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">잔혹한 일격</strong><ul>\n<li>이제 실명 상태이거나 회피 중인 적을 상대할 때도 소모됩니다.</li>\n<li>이제 효과 표시줄에 표시됩니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">맹렬한 돌진</strong><ul>\n<li>이제 사망 요약에 맹렬한 돌진으로 표시됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">길 잃은 바이킹</strong><ul>\n<li>이제 폭발성 공격으로 강화된 밸로그의 일반 공격 피해량이 다른 피해량 보정 효과의 영향을 올바르게 받습니다.</li>\n<li>올라프의 돌진 공격이 바이킹 공격단이나 참으면 손해의 효과를 받지 못하던 문제를 수정했습니다.</li>\n<li><strong class=\"pn-name\">올라프</strong><ul>\n<li>돌진이 바이킹 공격단의 추가 효과를 부여하지 않던 문제를 수정했습니다.</li>\n<li>올라프의 위치 근처에 있는 적을 대상으로 지정했을 때 돌진이 재사용 대기시간에 들어가던 문제를 수정했습니다.</li>\n<li>돌진이 참으면 손해의 추가 효과를 부여하지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">에릭</strong><ul>\n<li>이동 속도 증가가 더 이상 에릭의 기본 속도를 증가시키지 않으며, 이제 에릭에게 이동 속도를 15% 부여하고 다른 효과와 중첩됩니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">밸로그</strong><ul>\n<li>광역 피해가 참으면 손해의 추가 효과를 부여하지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">폭발성 공격</strong><ul>\n<li>이제 추가 피해량이 곱연산으로 적용됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">바이킹 공격단</strong><ul>\n<li>이제 추가 피해량이 기본 일반 공격 피해량보다 먼저 적용됩니다. 이로 인해 대상이 죽더라도 다른 모든 효과는 그대로 발동합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">스랄</strong><ul>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">광풍</strong><ul>\n<li>이제 질풍의 최초 세 번째 공격에 적중 시각 효과가 나타납니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">트레이서</strong><ul>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">집중 사격</strong><ul>\n<li>더 이상 실명 상태이거나 회피 중인 대상을 상대할 때는 진행도가 오르지 않습니다.</li>\n<li>이제 현재 공격 대상에게 적중한 횟수와 적중 기록이 초기화되기까지 남은 시간이 효과 표시줄에 표시됩니다.</li>\n<li>이제 피해를 입힌 후가 아니라 피해를 입히기 전에 진행도가 오릅니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">티리엘</strong><ul>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">법과 질서</strong><ul>\n<li>이제 효과 표시줄에 표시됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">티란데</strong><ul>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">치유의 징표</strong><ul>\n<li>이제 사망 요약에 치유의 징표로 표시됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">우서</strong><ul>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">고대 왕의 수호자</strong><ul>\n<li>이제 헌신의 방어력 지속시간을 추가로 부여하는 특성의 영향을 받아 지속시간이 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">축복의 기도</strong><ul>\n<li>축복의 기도가 활성화된 동안 사용한 기술이 우서에게 마나를 부여하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">발라</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">도약 [E]</strong><ul>\n<li>이제 추가 피해량이 다음에 발사되는 일반 공격에 적용됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">복수의 비</strong><ul>\n<li>시전 시각 효과가 올바르게 표시되지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">바리안</strong><ul>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">분노의 쌍검</strong><ul>\n<li>분노의 쌍검이 잘못된 재사용 대기시간 감소 수치를 표시하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">얼라이언스의 영광</strong><ul>\n<li>얼라이언스에 영광을 선택한 후 잘못된 재사용 대기시간 감소 수치가 표시되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">화이트메인</strong><ul>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">성스러운 지팡이</strong><ul>\n<li>이제 화이트메인이 실명 상태이거나 대상이 회피 중일 때 표식이 제거되지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">자가라</strong><ul>\n<li>이제 소환물이 방어 매트릭스와 최종 진화물의 피해량 보정 효과의 영향을 받습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">자리야</strong><ul>\n<li>이제 자리야의 일반 공격이 주 대상에게 적중하는 사이에 광역 범위로 들어온 대상이 즉시 피해를 입지 않습니다.</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">고도 화상</strong><ul>\n<li>이제 표식이 찍힌 영웅 여럿을 적중시켰을 때 획득하는 에너지가 하나로 합산됩니다.</li>\n<li>이제 주 대상과 모든 광역 공격 대상이 적중된 후에 에너지를 획득하여, 고도 화상이 자리야에게 에너지를 부여할 때 모든 대상이 동일한 피해를 입습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">줄진</strong><ul>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">깜짝 선물!</strong><ul>\n<li>이제 발사된 공격이 광전사가 활성화된 상태에서 이루어졌다면 광전사 활성화 효과를 함께 받습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<p><strong><a href=\"https://us.forums.blizzard.com/en/heroes/\" target=\"_blank\">공식 히어로즈 오브 더 스톰 포럼에서 다른 플레이어들과 이 글에 대해 이야기를 나누려면 여기를 클릭하십시오</a>.</strong></p>\n<p><strong><img alt=\"\" class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/g6/G6G0N80EOC941426801305139.png\"/></strong></p>",
+   "items": [
+    {
+     "name": "하늘 사원",
+     "battleground": "sky_temple",
+     "html": "<strong class=\"pn-h\">하늘 사원</strong>\n<ul>\n<li>이동 불가 효과가 수호자의 강력한 휘두르기 밀쳐내기를 막던 문제를 수정했습니다.</li>\n</ul>",
+     "under": "Map",
+     "nameEn": "Sky Temple"
+    },
+    {
+     "name": "알라라크",
+     "heroId": "Alarak",
+     "heroIds": [
+      "Alarak"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">알라라크</strong>\n<ul>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">우월한 일격</strong><ul>\n<li>우월한 일격을 선택한 후 침묵 상태의 영웅을 공격할 때 일반 공격이 잘못 표시되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "우월한 일격",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "우월한 일격을 선택한 후 침묵 상태의 영웅을 공격할 때 일반 공격이 잘못 표시되던 문제를 수정했습니다.",
+         "html": "우월한 일격을 선택한 후 침묵 상태의 영웅을 공격할 때 일반 공격이 잘못 표시되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Mocking Strikes"
+      }
+     ],
+     "nameEn": "Alarak"
+    },
+    {
+     "name": "아르타니스",
+     "heroId": "Artanis",
+     "heroIds": [
+      "Artanis"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">아르타니스</strong>\n<ul>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">보호막 쇄도</strong><ul>\n<li>효과 표시줄의 도움말이 갱신되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">최후의 베기</strong><ul>\n<li>효과 표시줄이 남은 지속시간을 표시하도록 갱신되었습니다.</li>\n<li>이제 실명 상태에서 공격해도 효과가 소모됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">거인 학살자</strong><ul>\n<li>이제 추가 피해가 주 일반 공격 피해보다 먼저 적용됩니다. 이 피해로 대상이 사망해도 관련된 다른 효과는 모두 발동합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "보호막 쇄도",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "효과 표시줄의 도움말이 갱신되었습니다.",
+         "html": "효과 표시줄의 도움말이 갱신되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Shield Surge"
+      },
+      {
+       "name": "최후의 베기",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "효과 표시줄이 남은 지속시간을 표시하도록 갱신되었습니다.",
+         "html": "효과 표시줄이 남은 지속시간을 표시하도록 갱신되었습니다.",
+         "added": false
+        },
+        {
+         "text": "이제 실명 상태에서 공격해도 효과가 소모됩니다.",
+         "html": "이제 실명 상태에서 공격해도 효과가 소모됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Final Cut"
+      },
+      {
+       "name": "거인 학살자",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "이제 추가 피해가 주 일반 공격 피해보다 먼저 적용됩니다. 이 피해로 대상이 사망해도 관련된 다른 효과는 모두 발동합니다.",
+         "html": "이제 추가 피해가 주 일반 공격 피해보다 먼저 적용됩니다. 이 피해로 대상이 사망해도 관련된 다른 효과는 모두 발동합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Titan Killer"
+      }
+     ],
+     "nameEn": "Artanis"
+    },
+    {
+     "name": "아서스",
+     "heroId": "Arthas",
+     "heroIds": [
+      "Arthas"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">아서스</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">서리한이 굶주렸다 [D]</strong><ul>\n<li>적중 시각 효과와 음향 효과가 아서스에게 생성되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "서리한이 굶주렸다",
+       "key": "D",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "적중 시각 효과와 음향 효과가 아서스에게 생성되던 문제를 수정했습니다.",
+         "html": "적중 시각 효과와 음향 효과가 아서스에게 생성되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Frostmourne Hungers"
+      }
+     ],
+     "nameEn": "Arthas"
+    },
+    {
+     "name": "아즈모단",
+     "heroId": "Azmodan",
+     "heroIds": [
+      "Azmodan"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">아즈모단</strong>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">탐욕</strong><ul>\n<li>죄악의 물결로 강화된 파멸의 구슬이 영웅이 아닌 대상에게 의도한 것보다 많은 피해를 입히던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">파멸의 종자</strong><ul>\n<li>적중 시각 효과와 음향 효과가 아즈모단에게 생성되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">완전한 파멸</strong><ul>\n<li>이제 사망 정보에 완전한 파멸로 표시됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">오만</strong><ul>\n<li>이제 퀘스트로 표시됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "탐욕",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "죄악의 물결로 강화된 파멸의 구슬이 영웅이 아닌 대상에게 의도한 것보다 많은 피해를 입히던 문제를 수정했습니다.",
+         "html": "죄악의 물결로 강화된 파멸의 구슬이 영웅이 아닌 대상에게 의도한 것보다 많은 피해를 입히던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Greed"
+      },
+      {
+       "name": "파멸의 종자",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "적중 시각 효과와 음향 효과가 아즈모단에게 생성되던 문제를 수정했습니다.",
+         "html": "적중 시각 효과와 음향 효과가 아즈모단에게 생성되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Battleborn"
+      },
+      {
+       "name": "완전한 파멸",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "이제 사망 정보에 완전한 파멸로 표시됩니다.",
+         "html": "이제 사망 정보에 완전한 파멸로 표시됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Total Annihilation"
+      },
+      {
+       "name": "긍지",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "이제 퀘스트로 표시됩니다.",
+         "html": "이제 퀘스트로 표시됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Pride"
+      }
+     ],
+     "nameEn": "Azmodan"
+    },
+    {
+     "name": "빛나래",
+     "heroId": "FaerieDragon",
+     "heroIds": [
+      "FaerieDragon"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">빛나래</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">위상 이동 [Z]</strong><ul>\n<li>이제 대상이 변이 상태여도 시전 표시기가 숨겨지지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">요정의 추진력</strong><ul>\n<li>이제 이동 속도 증가 효과가 단계별로 줄어드는 대신 지속시간 동안 서서히 감소합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "위상 이동",
+       "key": "Z",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "이제 대상이 변이 상태여도 시전 표시기가 숨겨지지 않습니다.",
+         "html": "이제 대상이 변이 상태여도 시전 표시기가 숨겨지지 않습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Phase Shift"
+      },
+      {
+       "name": "요정의 추진력",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "이제 이동 속도 증가 효과가 단계별로 줄어드는 대신 지속시간 동안 서서히 감소합니다.",
+         "html": "이제 이동 속도 증가 효과가 단계별로 줄어드는 대신 지속시간 동안 서서히 감소합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Pixie Boost"
+      }
+     ],
+     "nameEn": "Brightwing"
+    },
+    {
+     "name": "카시아",
+     "heroId": "Amazon",
+     "heroIds": [
+      "Amazon"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">카시아</strong>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">번개의 일격</strong><ul>\n<li>공격 속도가 증가할 때 번개의 일격이 연속으로 여러 번 발동하던 문제를 수정했습니다.</li>\n<li>이제 다음에 적중하는 일반 공격이 아니라 다음에 발사되는 일반 공격에 적용됩니다.</li>\n<li>이제 진행 중인 동안 효과 표시줄에 표시됩니다.</li>\n<li>이제 미사일이 적중한 후가 아니라 카시아가 일반 공격을 발사할 때 진행도가 증가합니다.</li>\n<li>이제 진행 상황이 효과 표시줄에 표시됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">진압</strong><ul>\n<li>이제 추가 피해가 주 일반 공격 피해보다 먼저 적용됩니다. 이 피해로 대상이 사망해도 관련된 효과는 모두 발동합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "번개의 일격",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "공격 속도가 증가할 때 번개의 일격이 연속으로 여러 번 발동하던 문제를 수정했습니다.",
+         "html": "공격 속도가 증가할 때 번개의 일격이 연속으로 여러 번 발동하던 문제를 수정했습니다.",
+         "added": false
+        },
+        {
+         "text": "이제 다음에 적중하는 일반 공격이 아니라 다음에 발사되는 일반 공격에 적용됩니다.",
+         "html": "이제 다음에 적중하는 일반 공격이 아니라 다음에 발사되는 일반 공격에 적용됩니다.",
+         "added": false
+        },
+        {
+         "text": "이제 진행 중인 동안 효과 표시줄에 표시됩니다.",
+         "html": "이제 진행 중인 동안 효과 표시줄에 표시됩니다.",
+         "added": false
+        },
+        {
+         "text": "이제 미사일이 적중한 후가 아니라 카시아가 일반 공격을 발사할 때 진행도가 증가합니다.",
+         "html": "이제 미사일이 적중한 후가 아니라 카시아가 일반 공격을 발사할 때 진행도가 증가합니다.",
+         "added": false
+        },
+        {
+         "text": "이제 진행 상황이 효과 표시줄에 표시됩니다.",
+         "html": "이제 진행 상황이 효과 표시줄에 표시됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Charged Strikes"
+      },
+      {
+       "name": "진압",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "이제 추가 피해가 주 일반 공격 피해보다 먼저 적용됩니다. 이 피해로 대상이 사망해도 관련된 효과는 모두 발동합니다.",
+         "html": "이제 추가 피해가 주 일반 공격 피해보다 먼저 적용됩니다. 이 피해로 대상이 사망해도 관련된 효과는 모두 발동합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Martial Law"
+      }
+     ],
+     "nameEn": "Cassia"
+    },
+    {
+     "name": "첸",
+     "heroId": "Chen",
+     "heroIds": [
+      "Chen"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">첸</strong>\n<ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">폭풍, 대지, 불</strong><ul>\n<li>이제 대지의 공격 감속 효과가 실명과 회피에 의해 차단됩니다.</li>\n<li>이제 주 대상이 회피 중이면 대지의 광역 공격이 적용되지 않습니다.</li>\n<li>이제 폭풍과 불의 공격이 기술 피해 증가 효과가 아니라 적용 가능한 물리 피해 증가 효과를 받았을 때 치명타로 표시됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "폭풍, 대지, 불",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "이제 대지의 공격 감속 효과가 실명과 회피에 의해 차단됩니다.",
+         "html": "이제 대지의 공격 감속 효과가 실명과 회피에 의해 차단됩니다.",
+         "added": false
+        },
+        {
+         "text": "이제 주 대상이 회피 중이면 대지의 광역 공격이 적용되지 않습니다.",
+         "html": "이제 주 대상이 회피 중이면 대지의 광역 공격이 적용되지 않습니다.",
+         "added": false
+        },
+        {
+         "text": "이제 폭풍과 불의 공격이 기술 피해 증가 효과가 아니라 적용 가능한 물리 피해 증가 효과를 받았을 때 치명타로 표시됩니다.",
+         "html": "이제 폭풍과 불의 공격이 기술 피해 증가 효과가 아니라 적용 가능한 물리 피해 증가 효과를 받았을 때 치명타로 표시됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Storm, Earth, Fire"
+      }
+     ],
+     "nameEn": "Chen"
+    },
+    {
+     "name": "초갈",
+     "heroId": "Cho",
+     "heroIds": [
+      "Cho",
+      "Gall"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">초갈</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">밀치기 [Z]</strong><ul>\n<li>초가 이동 불가 상태일 때 밀치기가 초를 밀어내지 못하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">단련된 가죽</strong><ul>\n<li>밀치기를 비롯한 밀쳐내기 효과가 이 특성의 효과를 일시적으로 비활성화하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">활활 타올라라</strong><ul>\n<li>이제 비활성 상태인 용병 근처의 대상이 적중되어도 해당 용병은 적중되지 않습니다.</li>\n<li>이제 주 대상이 비활성 상태인 용병이 아닌 한 비활성 상태인 용병은 적중되지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "밀치기",
+       "key": "Z",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "초가 이동 불가 상태일 때 밀치기가 초를 밀어내지 못하던 문제를 수정했습니다.",
+         "html": "초가 이동 불가 상태일 때 밀치기가 초를 밀어내지 못하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Shove"
+      },
+      {
+       "name": "단련된 가죽",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "밀치기를 비롯한 밀쳐내기 효과가 이 특성의 효과를 일시적으로 비활성화하던 문제를 수정했습니다.",
+         "html": "밀치기를 비롯한 밀쳐내기 효과가 이 특성의 효과를 일시적으로 비활성화하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Calloused Hide"
+      },
+      {
+       "name": "활활 타올라라",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "이제 비활성 상태인 용병 근처의 대상이 적중되어도 해당 용병은 적중되지 않습니다.",
+         "html": "이제 비활성 상태인 용병 근처의 대상이 적중되어도 해당 용병은 적중되지 않습니다.",
+         "added": false
+        },
+        {
+         "text": "이제 주 대상이 비활성 상태인 용병이 아닌 한 비활성 상태인 용병은 적중되지 않습니다.",
+         "html": "이제 주 대상이 비활성 상태인 용병이 아닌 한 비활성 상태인 용병은 적중되지 않습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Fuel for the Flame"
+      }
+     ],
+     "nameEn": "Cho'gall"
+    },
+    {
+     "name": "크로미",
+     "heroId": "Chromie",
+     "heroIds": [
+      "Chromie"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">크로미</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">모래 강타 [Q]</strong><ul>\n<li>이제 모래 메아리의 일반 공격에 적중된 대상에게 모래 메아리가 드러납니다.</li>\n<li>이제 모래 메아리가 모습이 보이지 않는 상태에서 일반 공격이나 모래 강타로 피해를 입히면 모습이 드러납니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">모래의 매듭</strong><ul>\n<li>이제 모래 메아리가 모습이 보이지 않는 상태에서 일반 공격이나 모래 강타로 피해를 입히면 모습이 드러납니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "모래 강타",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "이제 모래 메아리의 일반 공격에 적중된 대상에게 모래 메아리가 드러납니다.",
+         "html": "이제 모래 메아리의 일반 공격에 적중된 대상에게 모래 메아리가 드러납니다.",
+         "added": false
+        },
+        {
+         "text": "이제 모래 메아리가 모습이 보이지 않는 상태에서 일반 공격이나 모래 강타로 피해를 입히면 모습이 드러납니다.",
+         "html": "이제 모래 메아리가 모습이 보이지 않는 상태에서 일반 공격이나 모래 강타로 피해를 입히면 모습이 드러납니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Sand Blast"
+      },
+      {
+       "name": "모래의 매듭",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "이제 모래 메아리가 모습이 보이지 않는 상태에서 일반 공격이나 모래 강타로 피해를 입히면 모습이 드러납니다.",
+         "html": "이제 모래 메아리가 모습이 보이지 않는 상태에서 일반 공격이나 모래 강타로 피해를 입히면 모습이 드러납니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Unravelling"
+      }
+     ],
+     "nameEn": "Chromie"
+    },
+    {
+     "name": "데스윙",
+     "heroId": "Deathwing",
+     "heroIds": [
+      "Deathwing"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">데스윙</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">용의 비상 [Z]</strong><ul>\n<li>데스윙이 일반 공격으로 다른 데스윙을 적중시킬 때 용의 비상의 시전 동작이 중단되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">죽음의 낙하</strong><ul>\n<li>이제 방어력 감소 효과가 다시 적용되면 지속시간이 초기화됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">불과 격노</strong><ul>\n<li>감속 상태의 영웅을 공격할 때 일반 공격의 적중 시각 효과가 데스윙에게 표시되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "용의 비상",
+       "key": "Z",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "데스윙이 일반 공격으로 다른 데스윙을 적중시킬 때 용의 비상의 시전 동작이 중단되던 문제를 수정했습니다.",
+         "html": "데스윙이 일반 공격으로 다른 데스윙을 적중시킬 때 용의 비상의 시전 동작이 중단되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Dragonflight"
+      },
+      {
+       "name": "죽음의 낙하",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "이제 방어력 감소 효과가 다시 적용되면 지속시간이 초기화됩니다.",
+         "html": "이제 방어력 감소 효과가 다시 적용되면 지속시간이 초기화됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Death Drop"
+      },
+      {
+       "name": "불과 격노",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "감속 상태의 영웅을 공격할 때 일반 공격의 적중 시각 효과가 데스윙에게 표시되던 문제를 수정했습니다.",
+         "html": "감속 상태의 영웅을 공격할 때 일반 공격의 적중 시각 효과가 데스윙에게 표시되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Fire and Fury"
+      }
+     ],
+     "nameEn": "Deathwing"
+    },
+    {
+     "name": "디바",
+     "heroId": "DVa",
+     "heroIds": [
+      "DVa"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">디바</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">자폭 [E]</strong><ul>\n<li>이제 일반 공격으로 얻는 충전량이 모든 대상이 적중된 후에 적용됩니다.</li>\n<li>자폭의 밀쳐내기가 올바르게 적용되지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">핵폭발</strong><ul>\n<li>이제 일반 공격의 추가 영역에 있는 대상을 적중시켜 얻는 자폭 충전량이 모든 대상이 적중된 후에 적용됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "자폭",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "이제 일반 공격으로 얻는 충전량이 모든 대상이 적중된 후에 적용됩니다.",
+         "html": "이제 일반 공격으로 얻는 충전량이 모든 대상이 적중된 후에 적용됩니다.",
+         "added": false
+        },
+        {
+         "text": "자폭의 밀쳐내기가 올바르게 적용되지 않던 문제를 수정했습니다.",
+         "html": "자폭의 밀쳐내기가 올바르게 적용되지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Self-Destruct"
+      },
+      {
+       "name": "핵폭발",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "이제 일반 공격의 추가 영역에 있는 대상을 적중시켜 얻는 자폭 충전량이 모든 대상이 적중된 후에 적용됩니다.",
+         "html": "이제 일반 공격의 추가 영역에 있는 대상을 적중시켜 얻는 자폭 충전량이 모든 대상이 적중된 후에 적용됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Nuclear Option"
+      }
+     ],
+     "nameEn": "D.Va"
+    },
+    {
+     "name": "정예 타우렌 족장",
+     "heroId": "L90ETC",
+     "heroIds": [
+      "L90ETC"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">정예 타우렌 족장</strong>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">기타 히어로</strong><ul>\n<li>이제 정예 타우렌 족장이 실명 상태이거나, 대상이 회피 중이거나, 정예 타우렌 족장의 생명력이 최대치일 때는 치유 시각 효과가 나타나지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "기타 히어로",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "이제 정예 타우렌 족장이 실명 상태이거나, 대상이 회피 중이거나, 정예 타우렌 족장의 생명력이 최대치일 때는 치유 시각 효과가 나타나지 않습니다.",
+         "html": "이제 정예 타우렌 족장이 실명 상태이거나, 대상이 회피 중이거나, 정예 타우렌 족장의 생명력이 최대치일 때는 치유 시각 효과가 나타나지 않습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Guitar Hero"
+      }
+     ],
+     "nameEn": "E.T.C."
+    },
+    {
+     "name": "폴스타트",
+     "heroId": "Falstad",
+     "heroIds": [
+      "Falstad"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">폴스타트</strong>\n<ul>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">지속되는 바람</strong><ul>\n<li>이제 추가 피해량이 기본 일반 공격 피해량보다 먼저 적용됩니다. 이로 인해 대상이 죽더라도 다른 모든 효과는 그대로 발동합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "지속되는 바람",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "이제 추가 피해량이 기본 일반 공격 피해량보다 먼저 적용됩니다. 이로 인해 대상이 죽더라도 다른 모든 효과는 그대로 발동합니다.",
+         "html": "이제 추가 피해량이 기본 일반 공격 피해량보다 먼저 적용됩니다. 이로 인해 대상이 죽더라도 다른 모든 효과는 그대로 발동합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Sustained Winds"
+      }
+     ],
+     "nameEn": "Falstad"
+    },
+    {
+     "name": "피닉스",
+     "heroId": "Fenix",
+     "heroIds": [
+      "Fenix"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">피닉스</strong>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">광자 집중</strong><ul>\n<li>이제 적중하는 다음 일반 공격이 아니라, 발사되는 다음 일반 공격에 적용됩니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">기동타격</strong><ul>\n<li>이제 적중하는 다음 일반 공격이 아니라, 발사되는 다음 일반 공격에 적용됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">에너지 억제</strong><ul>\n<li>이제 위상 폭탄을 발사할 때 재사용 대기시간이 적용됩니다.</li>\n<li>이제 적중하는 다음 일반 공격이 아니라, 발사되는 다음 일반 공격에 적용됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "광자 집중",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "이제 적중하는 다음 일반 공격이 아니라, 발사되는 다음 일반 공격에 적용됩니다.",
+         "html": "이제 적중하는 다음 일반 공격이 아니라, 발사되는 다음 일반 공격에 적용됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Arsenal Synergy"
+      },
+      {
+       "name": "기동타격",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "이제 적중하는 다음 일반 공격이 아니라, 발사되는 다음 일반 공격에 적용됩니다.",
+         "html": "이제 적중하는 다음 일반 공격이 아니라, 발사되는 다음 일반 공격에 적용됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Mobile Offense"
+      },
+      {
+       "name": "에너지 억제",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "이제 위상 폭탄을 발사할 때 재사용 대기시간이 적용됩니다.",
+         "html": "이제 위상 폭탄을 발사할 때 재사용 대기시간이 적용됩니다.",
+         "added": false
+        },
+        {
+         "text": "이제 적중하는 다음 일반 공격이 아니라, 발사되는 다음 일반 공격에 적용됩니다.",
+         "html": "이제 적중하는 다음 일반 공격이 아니라, 발사되는 다음 일반 공격에 적용됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Inhibiting Energy"
+      }
+     ],
+     "nameEn": "Fenix"
+    },
+    {
+     "name": "가즈로",
+     "heroId": "Tinker",
+     "heroIds": [
+      "Tinker"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">가즈로</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">잘나가! 포탑 [Q]</strong><ul>\n<li>가즈로에게 적용된 방어 매트릭스가 포탑의 피해량을 감소시키지 않던 문제를 수정했습니다.</li>\n<li>최종 진화물로 복제된 가즈로가 설치한 잘나가! 포탑이 증가한 피해량을 얻지 못하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">긍정적인 강화</strong><ul>\n<li>잘나가! 포탑이 대상을 적중시켰을 때가 아니라 공격했을 때 추가 효과가 적용되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">아크 반응로</strong><ul>\n<li>가즈로에게 적용된 방어 매트릭스가 피해량을 변화시키지 않던 문제를 수정했습니다.</li>\n<li>소형 잘나가! 포탑이 올바른 위치로 발사하지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">레이저 발사!</strong><ul>\n<li>전장의 안개 속에서도 경고 표시기가 보이던 문제를 수정했습니다.</li>\n<li>가즈로에게 적용된 방어 매트릭스가 피해량을 변화시키지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">오버클록</strong><ul>\n<li>이제 추가 피해량이 기본 일반 공격 피해량보다 먼저 적용됩니다. 이로 인해 대상이 죽더라도 다른 모든 효과는 그대로 발동합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "잘나가! 포탑",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "가즈로에게 적용된 방어 매트릭스가 포탑의 피해량을 감소시키지 않던 문제를 수정했습니다.",
+         "html": "가즈로에게 적용된 방어 매트릭스가 포탑의 피해량을 감소시키지 않던 문제를 수정했습니다.",
+         "added": false
+        },
+        {
+         "text": "최종 진화물로 복제된 가즈로가 설치한 잘나가! 포탑이 증가한 피해량을 얻지 못하던 문제를 수정했습니다.",
+         "html": "최종 진화물로 복제된 가즈로가 설치한 잘나가! 포탑이 증가한 피해량을 얻지 못하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Rock-It! Turret"
+      },
+      {
+       "name": "긍정적인 강화",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "잘나가! 포탑이 대상을 적중시켰을 때가 아니라 공격했을 때 추가 효과가 적용되던 문제를 수정했습니다.",
+         "html": "잘나가! 포탑이 대상을 적중시켰을 때가 아니라 공격했을 때 추가 효과가 적용되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Positive Reinforcement"
+      },
+      {
+       "name": "아크 반응로",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "가즈로에게 적용된 방어 매트릭스가 피해량을 변화시키지 않던 문제를 수정했습니다.",
+         "html": "가즈로에게 적용된 방어 매트릭스가 피해량을 변화시키지 않던 문제를 수정했습니다.",
+         "added": false
+        },
+        {
+         "text": "소형 잘나가! 포탑이 올바른 위치로 발사하지 않던 문제를 수정했습니다.",
+         "html": "소형 잘나가! 포탑이 올바른 위치로 발사하지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Ark Reaktor"
+      },
+      {
+       "name": "잘나가고 죽이는 레이저",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "전장의 안개 속에서도 경고 표시기가 보이던 문제를 수정했습니다.",
+         "html": "전장의 안개 속에서도 경고 표시기가 보이던 문제를 수정했습니다.",
+         "added": false
+        },
+        {
+         "text": "가즈로에게 적용된 방어 매트릭스가 피해량을 변화시키지 않던 문제를 수정했습니다.",
+         "html": "가즈로에게 적용된 방어 매트릭스가 피해량을 변화시키지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Firin' Mah Lazors"
+      },
+      {
+       "name": "오버클록",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "이제 추가 피해량이 기본 일반 공격 피해량보다 먼저 적용됩니다. 이로 인해 대상이 죽더라도 다른 모든 효과는 그대로 발동합니다.",
+         "html": "이제 추가 피해량이 기본 일반 공격 피해량보다 먼저 적용됩니다. 이로 인해 대상이 죽더라도 다른 모든 효과는 그대로 발동합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Overklock"
+      }
+     ],
+     "nameEn": "Gazlowe"
+    },
+    {
+     "name": "그레이메인",
+     "heroId": "Greymane",
+     "heroIds": [
+      "Greymane"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">그레이메인</strong>\n<ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">숨통을 노려라</strong><ul>\n<li>그레이메인이 다른 그레이메인을 대상으로 지정할 때 숨통을 노려라의 시전 동작이 대상에게 재생되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">우두머리 사냥꾼</strong><ul>\n<li>이제 추가 피해량이 기본 일반 공격 피해량보다 먼저 적용됩니다. 이로 인해 대상이 죽더라도 다른 모든 효과는 그대로 발동합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">사냥꾼의 산탄총</strong><ul>\n<li>이제 실명 상태에서도 발동합니다.</li>\n<li>이제 백전노장을 제외하고 주 대상에게 적용된 모든 효과가 완료된 후에 대상을 탐색합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">송곳니와 발톱</strong><ul>\n<li>이제 백전노장을 제외하고 주 대상에게 적용된 모든 효과가 완료된 후에 대상을 탐색합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "숨통을 노려라",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "그레이메인이 다른 그레이메인을 대상으로 지정할 때 숨통을 노려라의 시전 동작이 대상에게 재생되던 문제를 수정했습니다.",
+         "html": "그레이메인이 다른 그레이메인을 대상으로 지정할 때 숨통을 노려라의 시전 동작이 대상에게 재생되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Go for the Throat"
+      },
+      {
+       "name": "우두머리 사냥꾼",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "이제 추가 피해량이 기본 일반 공격 피해량보다 먼저 적용됩니다. 이로 인해 대상이 죽더라도 다른 모든 효과는 그대로 발동합니다.",
+         "html": "이제 추가 피해량이 기본 일반 공격 피해량보다 먼저 적용됩니다. 이로 인해 대상이 죽더라도 다른 모든 효과는 그대로 발동합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Alpha Killer"
+      },
+      {
+       "name": "사냥꾼의 산탄총",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "이제 실명 상태에서도 발동합니다.",
+         "html": "이제 실명 상태에서도 발동합니다.",
+         "added": false
+        },
+        {
+         "text": "이제 백전노장을 제외하고 주 대상에게 적용된 모든 효과가 완료된 후에 대상을 탐색합니다.",
+         "html": "이제 백전노장을 제외하고 주 대상에게 적용된 모든 효과가 완료된 후에 대상을 탐색합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Hunter's Blunderbuss"
+      },
+      {
+       "name": "송곳니와 발톱",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "이제 백전노장을 제외하고 주 대상에게 적용된 모든 효과가 완료된 후에 대상을 탐색합니다.",
+         "html": "이제 백전노장을 제외하고 주 대상에게 적용된 모든 효과가 완료된 후에 대상을 탐색합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Tooth and Claw"
+      }
+     ],
+     "nameEn": "Greymane"
+    },
+    {
+     "name": "일리단",
+     "heroId": "Illidan",
+     "heroIds": [
+      "Illidan"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">일리단</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">습격 [Q]</strong><ul>\n<li>일리단이 다른 일리단을 대상으로 지정할 때 습격의 음향 효과와 시각 효과가 두 번 재생되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">불타는 낙인</strong><ul>\n<li>이제 추가 피해량이 기본 일반 공격 피해량보다 먼저 적용됩니다. 이로 인해 대상이 죽더라도 다른 모든 효과는 그대로 발동합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "습격",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "일리단이 다른 일리단을 대상으로 지정할 때 습격의 음향 효과와 시각 효과가 두 번 재생되던 문제를 수정했습니다.",
+         "html": "일리단이 다른 일리단을 대상으로 지정할 때 습격의 음향 효과와 시각 효과가 두 번 재생되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Dive"
+      },
+      {
+       "name": "불타는 낙인",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "이제 추가 피해량이 기본 일반 공격 피해량보다 먼저 적용됩니다. 이로 인해 대상이 죽더라도 다른 모든 효과는 그대로 발동합니다.",
+         "html": "이제 추가 피해량이 기본 일반 공격 피해량보다 먼저 적용됩니다. 이로 인해 대상이 죽더라도 다른 모든 효과는 그대로 발동합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Fiery Brand"
+      }
+     ],
+     "nameEn": "Illidan"
+    },
+    {
+     "name": "임페리우스",
+     "heroId": "Imperius",
+     "heroIds": [
+      "Imperius"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">임페리우스</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">용기의 낙인 [Q]</strong><ul>\n<li>대상이 무적이나 정지 상태가 되거나 사망했을 때 용기의 낙인이 소모되어 얻는 효과가 부여되던 문제를 수정했습니다.</li>\n<li>낙인이 찍힌 대상이 정지 상태가 되거나 무적을 얻거나 사망했을 때 용기의 낙인이 임페리우스를 치유하던 문제를 수정했습니다.</li>\n<li>이제 임페리우스가 실명 상태이거나 대상이 회피 중이면 용기의 낙인이 소모되지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">부정한 자를 불태워라</strong><ul>\n<li>이제 추가 피해량이 기본 일반 공격 피해량보다 먼저 적용됩니다. 이로 인해 대상이 죽더라도 다른 모든 효과는 그대로 발동합니다.</li>\n<li>이제 사망 정보에 부정한 자를 불태워라로 표시됩니다.</li>\n<li>이제 실명이 용기의 낙인을 소모하지 않으므로, 해당 효과로 인해 이 효과가 발동하지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">분노의 섬광</strong><ul>\n<li>이제 추가 대상 탐색이 주 대상에게 모든 효과가 적용된 후에 이루어집니다.</li>\n<li>이제 실명이 용기의 낙인을 소모하지 않으므로, 해당 효과로 인해 이 효과가 발동하지 않습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">신성한 백열</strong><ul>\n<li>더 이상 실명이나 회피에 의해 차단되지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">신성한 분노</strong><ul>\n<li>낙인이 찍힌 대상이 정지 상태가 되거나 무적이 되거나 처치될 때 용기의 낙인이 재사용 대기시간을 감소시키던 문제를 수정했습니다.</li>\n<li>이제 실명이 용기의 낙인을 소모하지 않으므로, 해당 효과로 인해 이 효과가 발동하지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">무자비한 강림</strong><ul>\n<li>낙인이 찍힌 대상이 정지 상태가 되거나 무적이 되거나 처치될 때 용기의 낙인이 재사용 대기시간을 감소시키던 문제를 수정했습니다.</li>\n<li>이제 실명이 용기의 낙인을 소모하지 않으므로, 해당 효과로 인해 이 효과가 발동하지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "용기의 낙인",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "대상이 무적이나 정지 상태가 되거나 사망했을 때 용기의 낙인이 소모되어 얻는 효과가 부여되던 문제를 수정했습니다.",
+         "html": "대상이 무적이나 정지 상태가 되거나 사망했을 때 용기의 낙인이 소모되어 얻는 효과가 부여되던 문제를 수정했습니다.",
+         "added": false
+        },
+        {
+         "text": "낙인이 찍힌 대상이 정지 상태가 되거나 무적을 얻거나 사망했을 때 용기의 낙인이 임페리우스를 치유하던 문제를 수정했습니다.",
+         "html": "낙인이 찍힌 대상이 정지 상태가 되거나 무적을 얻거나 사망했을 때 용기의 낙인이 임페리우스를 치유하던 문제를 수정했습니다.",
+         "added": false
+        },
+        {
+         "text": "이제 임페리우스가 실명 상태이거나 대상이 회피 중이면 용기의 낙인이 소모되지 않습니다.",
+         "html": "이제 임페리우스가 실명 상태이거나 대상이 회피 중이면 용기의 낙인이 소모되지 않습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Valorous Brand"
+      },
+      {
+       "name": "부정한 자를 불태워라",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "이제 추가 피해량이 기본 일반 공격 피해량보다 먼저 적용됩니다. 이로 인해 대상이 죽더라도 다른 모든 효과는 그대로 발동합니다.",
+         "html": "이제 추가 피해량이 기본 일반 공격 피해량보다 먼저 적용됩니다. 이로 인해 대상이 죽더라도 다른 모든 효과는 그대로 발동합니다.",
+         "added": false
+        },
+        {
+         "text": "이제 사망 정보에 부정한 자를 불태워라로 표시됩니다.",
+         "html": "이제 사망 정보에 부정한 자를 불태워라로 표시됩니다.",
+         "added": false
+        },
+        {
+         "text": "이제 실명이 용기의 낙인을 소모하지 않으므로, 해당 효과로 인해 이 효과가 발동하지 않습니다.",
+         "html": "이제 실명이 용기의 낙인을 소모하지 않으므로, 해당 효과로 인해 이 효과가 발동하지 않습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Burn the Impure"
+      },
+      {
+       "name": "분노의 섬광",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "이제 추가 대상 탐색이 주 대상에게 모든 효과가 적용된 후에 이루어집니다.",
+         "html": "이제 추가 대상 탐색이 주 대상에게 모든 효과가 적용된 후에 이루어집니다.",
+         "added": false
+        },
+        {
+         "text": "이제 실명이 용기의 낙인을 소모하지 않으므로, 해당 효과로 인해 이 효과가 발동하지 않습니다.",
+         "html": "이제 실명이 용기의 낙인을 소모하지 않으므로, 해당 효과로 인해 이 효과가 발동하지 않습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Flash of Anger"
+      },
+      {
+       "name": "신성한 백열",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "더 이상 실명이나 회피에 의해 차단되지 않습니다.",
+         "html": "더 이상 실명이나 회피에 의해 차단되지 않습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Holy Fervor"
+      },
+      {
+       "name": "신성한 분노",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "낙인이 찍힌 대상이 정지 상태가 되거나 무적이 되거나 처치될 때 용기의 낙인이 재사용 대기시간을 감소시키던 문제를 수정했습니다.",
+         "html": "낙인이 찍힌 대상이 정지 상태가 되거나 무적이 되거나 처치될 때 용기의 낙인이 재사용 대기시간을 감소시키던 문제를 수정했습니다.",
+         "added": false
+        },
+        {
+         "text": "이제 실명이 용기의 낙인을 소모하지 않으므로, 해당 효과로 인해 이 효과가 발동하지 않습니다.",
+         "html": "이제 실명이 용기의 낙인을 소모하지 않으므로, 해당 효과로 인해 이 효과가 발동하지 않습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Divine Rage"
+      },
+      {
+       "name": "무자비한 강림",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "낙인이 찍힌 대상이 정지 상태가 되거나 무적이 되거나 처치될 때 용기의 낙인이 재사용 대기시간을 감소시키던 문제를 수정했습니다.",
+         "html": "낙인이 찍힌 대상이 정지 상태가 되거나 무적이 되거나 처치될 때 용기의 낙인이 재사용 대기시간을 감소시키던 문제를 수정했습니다.",
+         "added": false
+        },
+        {
+         "text": "이제 실명이 용기의 낙인을 소모하지 않으므로, 해당 효과로 인해 이 효과가 발동하지 않습니다.",
+         "html": "이제 실명이 용기의 낙인을 소모하지 않으므로, 해당 효과로 인해 이 효과가 발동하지 않습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Unrelenting Descent"
+      }
+     ],
+     "nameEn": "Imperius"
+    },
+    {
+     "name": "제이나",
+     "heroId": "Jaina",
+     "heroIds": [
+      "Jaina"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">제이나</strong>\n<ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">물의 정령</strong><ul>\n<li>물의 정령의 일반 공격 광역 피해가 회피 중인 대상에게 적중하던 문제를 수정했습니다.</li>\n<li>이제 물의 정령의 일반 공격 광역 피해가 적중한 대상을 드러내지 않습니다.</li>\n<li>이제 물의 정령의 일반 공격 광역 피해가 해당 지역을 드러냅니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "물의 정령",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "물의 정령의 일반 공격 광역 피해가 회피 중인 대상에게 적중하던 문제를 수정했습니다.",
+         "html": "물의 정령의 일반 공격 광역 피해가 회피 중인 대상에게 적중하던 문제를 수정했습니다.",
+         "added": false
+        },
+        {
+         "text": "이제 물의 정령의 일반 공격 광역 피해가 적중한 대상을 드러내지 않습니다.",
+         "html": "이제 물의 정령의 일반 공격 광역 피해가 적중한 대상을 드러내지 않습니다.",
+         "added": false
+        },
+        {
+         "text": "이제 물의 정령의 일반 공격 광역 피해가 해당 지역을 드러냅니다.",
+         "html": "이제 물의 정령의 일반 공격 광역 피해가 해당 지역을 드러냅니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Water Elemental"
+      }
+     ],
+     "nameEn": "Jaina"
+    },
+    {
+     "name": "요한나",
+     "heroId": "Crusader",
+     "heroIds": [
+      "Crusader"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">요한나</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">규탄 [W]</strong><ul>\n<li>규탄이 정지 불가 상태의 대상을 끌어당기던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "규탄",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "규탄이 정지 불가 상태의 대상을 끌어당기던 문제를 수정했습니다.",
+         "html": "규탄이 정지 불가 상태의 대상을 끌어당기던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Condemn"
+      }
+     ],
+     "nameEn": "Johanna"
+    },
+    {
+     "name": "정크랫",
+     "heroId": "Junkrat",
+     "heroIds": [
+      "Junkrat"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">정크랫</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li>이제 실명 상태에서도 일반 공격의 광역 피해가 적용되지만, 회피 중인 대상에게는 여전히 적용되지 않습니다.</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "이제 실명 상태에서도 일반 공격의 광역 피해가 적용되지만, 회피 중인 대상에게는 여전히 적용되지 않습니다.",
+         "html": "이제 실명 상태에서도 일반 공격의 광역 피해가 적용되지만, 회피 중인 대상에게는 여전히 적용되지 않습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "Junkrat"
+    },
+    {
+     "name": "캘타스",
+     "heroId": "Kaelthas",
+     "heroIds": [
+      "Kaelthas"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">캘타스</strong>\n<ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">불사조</strong><ul>\n<li>이제 캘타스가 방어 매트릭스의 영향을 받고 있으면 공격력도 방어 매트릭스의 영향을 받습니다.</li>\n<li>이제 광역 공격이 적중한 대상을 드러내지 않습니다.</li>\n<li>이제 광역 공격이 적중한 지역을 드러냅니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "불사조",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "이제 캘타스가 방어 매트릭스의 영향을 받고 있으면 공격력도 방어 매트릭스의 영향을 받습니다.",
+         "html": "이제 캘타스가 방어 매트릭스의 영향을 받고 있으면 공격력도 방어 매트릭스의 영향을 받습니다.",
+         "added": false
+        },
+        {
+         "text": "이제 광역 공격이 적중한 대상을 드러내지 않습니다.",
+         "html": "이제 광역 공격이 적중한 대상을 드러내지 않습니다.",
+         "added": false
+        },
+        {
+         "text": "이제 광역 공격이 적중한 지역을 드러냅니다.",
+         "html": "이제 광역 공격이 적중한 지역을 드러냅니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Phoenix"
+      }
+     ],
+     "nameEn": "Kael'thas"
+    },
+    {
+     "name": "켈투자드",
+     "heroId": "KelThuzad",
+     "heroIds": [
+      "KelThuzad"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">켈투자드</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">켈투자드의 사슬 [E]</strong><ul>\n<li>이제 사슬이 연결되면 두 대상이 모두 드러납니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">망자가 돌아왔다</strong><ul>\n<li>그림자가 피해를 입힐 때 드러나지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "켈투자드의 사슬",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "이제 사슬이 연결되면 두 대상이 모두 드러납니다.",
+         "html": "이제 사슬이 연결되면 두 대상이 모두 드러납니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Chains of Kel'Thuzad"
+      },
+      {
+       "name": "망자가 돌아왔다",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "그림자가 피해를 입힐 때 드러나지 않던 문제를 수정했습니다.",
+         "html": "그림자가 피해를 입힐 때 드러나지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "The Damned Return"
+      }
+     ],
+     "nameEn": "Kel'Thuzad"
+    },
+    {
+     "name": "케리건",
+     "heroId": "Kerrigan",
+     "heroIds": [
+      "Kerrigan"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">케리건</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">강습 [Q]</strong><ul>\n<li>케리건이 가까운 거리에서 다른 케리건을 대상으로 지정할 때 강습의 시전 동작이 대상에게 재생되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "강습",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "케리건이 가까운 거리에서 다른 케리건을 대상으로 지정할 때 강습의 시전 동작이 대상에게 재생되던 문제를 수정했습니다.",
+         "html": "케리건이 가까운 거리에서 다른 케리건을 대상으로 지정할 때 강습의 시전 동작이 대상에게 재생되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Ravage"
+      }
+     ],
+     "nameEn": "Kerrigan"
+    },
+    {
+     "name": "카라짐",
+     "heroId": "Monk",
+     "heroIds": [
+      "Monk"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">카라짐</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">찬란한 질주 [Q]</strong><ul>\n<li>다른 카라짐에게 찬란한 질주를 시전할 때 잘못 표시되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">철권</strong><ul>\n<li>효과를 발동시킨 공격이 올바른 적중 음향 효과를 재생하지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "찬란한 질주",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "다른 카라짐에게 찬란한 질주를 시전할 때 잘못 표시되던 문제를 수정했습니다.",
+         "html": "다른 카라짐에게 찬란한 질주를 시전할 때 잘못 표시되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Radiant Dash"
+      },
+      {
+       "name": "철권",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "효과를 발동시킨 공격이 올바른 적중 음향 효과를 재생하지 않던 문제를 수정했습니다.",
+         "html": "효과를 발동시킨 공격이 올바른 적중 음향 효과를 재생하지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Iron Fists"
+      }
+     ],
+     "nameEn": "Kharazim"
+    },
+    {
+     "name": "리밍",
+     "heroId": "Wizard",
+     "heroIds": [
+      "Wizard"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">리밍</strong>\n<ul>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">마력 작렬</strong><ul>\n<li>이제 탈 라샤의 덕목의 효과가 곱연산이 아닌 합연산으로 적용됩니다.</li>\n<li>이제 일반 공격이 피해를 입히기 전에 피해를 입힙니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">집중탄</strong><ul>\n<li>이제 사망 정보에 별도의 항목으로 표시됩니다.</li>\n<li>이제 사망 정보에 집중탄으로 표시됩니다.</li>\n<li>이제 세 번째 마법 화살이 피해를 입힌 후에 발동합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">탈 라샤의 덕목</strong><ul>\n<li>이제 탈 라샤의 덕목의 효과가 곱연산이 아닌 합연산으로 적용됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "마력 작렬",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "이제 탈 라샤의 덕목의 효과가 곱연산이 아닌 합연산으로 적용됩니다.",
+         "html": "이제 탈 라샤의 덕목의 효과가 곱연산이 아닌 합연산으로 적용됩니다.",
+         "added": false
+        },
+        {
+         "text": "이제 일반 공격이 피해를 입히기 전에 피해를 입힙니다.",
+         "html": "이제 일반 공격이 피해를 입히기 전에 피해를 입힙니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Charged Blast"
+      },
+      {
+       "name": "집중탄",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "이제 사망 정보에 별도의 항목으로 표시됩니다.",
+         "html": "이제 사망 정보에 별도의 항목으로 표시됩니다.",
+         "added": false
+        },
+        {
+         "text": "이제 사망 정보에 집중탄으로 표시됩니다.",
+         "html": "이제 사망 정보에 집중탄으로 표시됩니다.",
+         "added": false
+        },
+        {
+         "text": "이제 세 번째 마법 화살이 피해를 입힌 후에 발동합니다.",
+         "html": "이제 세 번째 마법 화살이 피해를 입힌 후에 발동합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Seeker"
+      },
+      {
+       "name": "탈 라샤의 덕목",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "이제 탈 라샤의 덕목의 효과가 곱연산이 아닌 합연산으로 적용됩니다.",
+         "html": "이제 탈 라샤의 덕목의 효과가 곱연산이 아닌 합연산으로 적용됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Tal Rasha's Elements"
+      }
+     ],
+     "nameEn": "Li-Ming"
+    },
+    {
+     "name": "루시우",
+     "heroId": "Lucio",
+     "heroIds": [
+      "Lucio"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">루시우</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">분위기 전환! [W]</strong><ul>\n<li>이제 서로 다른 루시우의 분위기 전환! 효과가 함께 중첩됩니다.</li>\n<li>분위기 전환!의 반경 안에 영웅이 7명을 초과해 있을 때 영향을 받는 아군 표시가 올바르게 나타나지 않던 문제를 수정했습니다.</li>\n<li>이제 분위기 전환!의 영향을 받는 아군 표시에 휴대용 라디오의 분위기 전환! 반경 안에 있는 대상도 포함됩니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">소리 파동 [Q]</strong><ul>\n<li>소리 파동이 정지 불가 상태의 대상을 밀어내던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">파티 믹스</strong><ul>\n<li>치유 강화와 속도 강화를 전환할 때 지속시간 표시가 부정확해지던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">모두 함께</strong><ul>\n<li>휴대용 라디오의 분위기 전환! 반경 안에 있는 아군이 이동 속도를 얻지 못하던 문제를 수정했습니다.</li>\n<li>게임에 여러 명의 루시우가 있을 때 이동 속도 증가 효과가 일관되게 작동하지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">하우스 파티</strong><ul>\n<li>휴대용 라디오의 분위기 전환! 반경 안에 있는 아군이 추가 치유량을 얻지 못하던 문제를 수정했습니다.</li>\n<li>게임에 여러 명의 루시우가 있을 때 추가 치유량이 일관되게 작동하지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">불사의 명곡</strong><ul>\n<li>이제 휴대용 라디오의 분위기 전환! 반경 안에 있는 아군에게도 효과를 부여합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "분위기 전환!",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "이제 서로 다른 루시우의 분위기 전환! 효과가 함께 중첩됩니다.",
+         "html": "이제 서로 다른 루시우의 분위기 전환! 효과가 함께 중첩됩니다.",
+         "added": false
+        },
+        {
+         "text": "분위기 전환!의 반경 안에 영웅이 7명을 초과해 있을 때 영향을 받는 아군 표시가 올바르게 나타나지 않던 문제를 수정했습니다.",
+         "html": "분위기 전환!의 반경 안에 영웅이 7명을 초과해 있을 때 영향을 받는 아군 표시가 올바르게 나타나지 않던 문제를 수정했습니다.",
+         "added": false
+        },
+        {
+         "text": "이제 분위기 전환!의 영향을 받는 아군 표시에 휴대용 라디오의 분위기 전환! 반경 안에 있는 대상도 포함됩니다.",
+         "html": "이제 분위기 전환!의 영향을 받는 아군 표시에 휴대용 라디오의 분위기 전환! 반경 안에 있는 대상도 포함됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Crossfade"
+      },
+      {
+       "name": "소리 파동",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "소리 파동이 정지 불가 상태의 대상을 밀어내던 문제를 수정했습니다.",
+         "html": "소리 파동이 정지 불가 상태의 대상을 밀어내던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Soundwave"
+      },
+      {
+       "name": "파티 믹스",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "치유 강화와 속도 강화를 전환할 때 지속시간 표시가 부정확해지던 문제를 수정했습니다.",
+         "html": "치유 강화와 속도 강화를 전환할 때 지속시간 표시가 부정확해지던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Party Mix"
+      },
+      {
+       "name": "모두 함께",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "휴대용 라디오의 분위기 전환! 반경 안에 있는 아군이 이동 속도를 얻지 못하던 문제를 수정했습니다.",
+         "html": "휴대용 라디오의 분위기 전환! 반경 안에 있는 아군이 이동 속도를 얻지 못하던 문제를 수정했습니다.",
+         "added": false
+        },
+        {
+         "text": "게임에 여러 명의 루시우가 있을 때 이동 속도 증가 효과가 일관되게 작동하지 않던 문제를 수정했습니다.",
+         "html": "게임에 여러 명의 루시우가 있을 때 이동 속도 증가 효과가 일관되게 작동하지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "All Together"
+      },
+      {
+       "name": "하우스 파티",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "휴대용 라디오의 분위기 전환! 반경 안에 있는 아군이 추가 치유량을 얻지 못하던 문제를 수정했습니다.",
+         "html": "휴대용 라디오의 분위기 전환! 반경 안에 있는 아군이 추가 치유량을 얻지 못하던 문제를 수정했습니다.",
+         "added": false
+        },
+        {
+         "text": "게임에 여러 명의 루시우가 있을 때 추가 치유량이 일관되게 작동하지 않던 문제를 수정했습니다.",
+         "html": "게임에 여러 명의 루시우가 있을 때 추가 치유량이 일관되게 작동하지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "House Party"
+      },
+      {
+       "name": "불사의 명곡",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "이제 휴대용 라디오의 분위기 전환! 반경 안에 있는 아군에게도 효과를 부여합니다.",
+         "html": "이제 휴대용 라디오의 분위기 전환! 반경 안에 있는 아군에게도 효과를 부여합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Summer Anthem"
+      }
+     ],
+     "nameEn": "Lucio"
+    },
+    {
+     "name": "루나라",
+     "heroId": "Dryad",
+     "heroIds": [
+      "Dryad"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">루나라</strong>\n<ul>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">자연의 활력</strong><ul>\n<li>네 번째 일반 공격이 적중 효과를 표시하지 않던 문제를 수정했습니다.</li>\n<li>이제 다음에 적중하는 일반 공격 4회가 아니라 다음에 발사되는 일반 공격 4회에 적용됩니다.</li>\n<li>이제 다음에 적중하는 공격이 아니라 다음에 발사되는 공격에 적용됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "자연의 활력",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "네 번째 일반 공격이 적중 효과를 표시하지 않던 문제를 수정했습니다.",
+         "html": "네 번째 일반 공격이 적중 효과를 표시하지 않던 문제를 수정했습니다.",
+         "added": false
+        },
+        {
+         "text": "이제 다음에 적중하는 일반 공격 4회가 아니라 다음에 발사되는 일반 공격 4회에 적용됩니다.",
+         "html": "이제 다음에 적중하는 일반 공격 4회가 아니라 다음에 발사되는 일반 공격 4회에 적용됩니다.",
+         "added": false
+        },
+        {
+         "text": "이제 다음에 적중하는 공격이 아니라 다음에 발사되는 공격에 적용됩니다.",
+         "html": "이제 다음에 적중하는 공격이 아니라 다음에 발사되는 공격에 적용됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Wild Vigor"
+      }
+     ],
+     "nameEn": "Lunara"
+    },
+    {
+     "name": "나지보",
+     "heroId": "WitchDoctor",
+     "heroIds": [
+      "WitchDoctor"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">나지보</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">시체 거미 [Q]</strong><ul>\n<li>방어 매트릭스가 시체 거미의 피해량을 감소시키지 않던 문제를 수정했습니다.</li>\n<li>최종 진화물로 복제된 나지보가 시체 거미에게 기술 위력 증가 효과를 부여하지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">좀비 벽 [W]</strong><ul>\n<li>방어 매트릭스가 좀비 벽의 피해량을 감소시키지 않던 문제를 수정했습니다.</li>\n<li>최종 진화물로 복제된 나지보가 좀비 벽에 기술 위력 증가 효과를 부여하지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">망자의 돌진</strong><ul>\n<li>이제 특성을 선택하면 이미 존재하는 좀비 벽의 좀비의 피해량도 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">덩치</strong><ul>\n<li>방어 매트릭스가 덩치의 피해량을 감소시키지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "시체 거미",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "방어 매트릭스가 시체 거미의 피해량을 감소시키지 않던 문제를 수정했습니다.",
+         "html": "방어 매트릭스가 시체 거미의 피해량을 감소시키지 않던 문제를 수정했습니다.",
+         "added": false
+        },
+        {
+         "text": "최종 진화물로 복제된 나지보가 시체 거미에게 기술 위력 증가 효과를 부여하지 않던 문제를 수정했습니다.",
+         "html": "최종 진화물로 복제된 나지보가 시체 거미에게 기술 위력 증가 효과를 부여하지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Corpse Spiders"
+      },
+      {
+       "name": "좀비 벽",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "방어 매트릭스가 좀비 벽의 피해량을 감소시키지 않던 문제를 수정했습니다.",
+         "html": "방어 매트릭스가 좀비 벽의 피해량을 감소시키지 않던 문제를 수정했습니다.",
+         "added": false
+        },
+        {
+         "text": "최종 진화물로 복제된 나지보가 좀비 벽에 기술 위력 증가 효과를 부여하지 않던 문제를 수정했습니다.",
+         "html": "최종 진화물로 복제된 나지보가 좀비 벽에 기술 위력 증가 효과를 부여하지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Zombie Wall"
+      },
+      {
+       "name": "망자의 돌진",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "이제 특성을 선택하면 이미 존재하는 좀비 벽의 좀비의 피해량도 증가합니다.",
+         "html": "이제 특성을 선택하면 이미 존재하는 좀비 벽의 좀비의 피해량도 증가합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Dead Rush"
+      },
+      {
+       "name": "덩치",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "방어 매트릭스가 덩치의 피해량을 감소시키지 않던 문제를 수정했습니다.",
+         "html": "방어 매트릭스가 덩치의 피해량을 감소시키지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Gargantuan"
+      }
+     ],
+     "nameEn": "Nazeebo"
+    },
+    {
+     "name": "오르피아",
+     "heroId": "Orphea",
+     "heroIds": [
+      "Orphea"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">오르피아</strong>\n<ul>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">물고 빠지기</strong><ul>\n<li>오르피아가 이동 불가 상태일 때 물고 빠지기가 오르피아를 이동시키지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">혼돈의 격류</strong><ul>\n<li>오르피아가 넘치는 혼돈 3중첩 상태로 사망하면 넘치는 혼돈이 3중첩 미만일 때도 추가 피해 효과가 부여되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">압도의 아귀</strong><ul>\n<li>압도의 아귀의 끌어당기기가 올바르게 적용되지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "물고 빠지기",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "오르피아가 이동 불가 상태일 때 물고 빠지기가 오르피아를 이동시키지 않던 문제를 수정했습니다.",
+         "html": "오르피아가 이동 불가 상태일 때 물고 빠지기가 오르피아를 이동시키지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Backbiter"
+      },
+      {
+       "name": "혼돈의 격류",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "오르피아가 넘치는 혼돈 3중첩 상태로 사망하면 넘치는 혼돈이 3중첩 미만일 때도 추가 피해 효과가 부여되던 문제를 수정했습니다.",
+         "html": "오르피아가 넘치는 혼돈 3중첩 상태로 사망하면 넘치는 혼돈이 3중첩 미만일 때도 추가 피해 효과가 부여되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Chaotic Assault"
+      },
+      {
+       "name": "압도의 아귀",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "압도의 아귀의 끌어당기기가 올바르게 적용되지 않던 문제를 수정했습니다.",
+         "html": "압도의 아귀의 끌어당기기가 올바르게 적용되지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Crushing Jaws"
+      }
+     ],
+     "nameEn": "Orphea"
+    },
+    {
+     "name": "레이너",
+     "heroId": "Raynor",
+     "heroIds": [
+      "Raynor"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">레이너</strong>\n<ul>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">불안정한 혼합물</strong><ul>\n<li>이제 여러 영웅이 적중했을 때 회복되는 마나가 하나로 합산되어 적용됩니다.</li>\n<li>이제 마나 회복이 적중한 영웅마다 마나를 10씩 회복하는 대신 한 번에 모두 회복합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "불안정한 혼합물",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "이제 여러 영웅이 적중했을 때 회복되는 마나가 하나로 합산되어 적용됩니다.",
+         "html": "이제 여러 영웅이 적중했을 때 회복되는 마나가 하나로 합산되어 적용됩니다.",
+         "added": false
+        },
+        {
+         "text": "이제 마나 회복이 적중한 영웅마다 마나를 10씩 회복하는 대신 한 번에 모두 회복합니다.",
+         "html": "이제 마나 회복이 적중한 영웅마다 마나를 10씩 회복하는 대신 한 번에 모두 회복합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Unstable Compound"
+      }
+     ],
+     "nameEn": "Raynor"
+    },
+    {
+     "name": "레가르",
+     "heroId": "Rehgar",
+     "heroIds": [
+      "Rehgar"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">레가르</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">늑대 정령 [Z]</strong><ul>\n<li>레가르를 대상으로 한 늑대 정령의 돌진 공격이 대상이 된 레가르에게 공격 동작을 재생시키던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">늑대의 굶주림</strong><ul>\n<li>실명과 회피가 이 효과의 발동을 막지 못하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "늑대 정령",
+       "key": "Z",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "레가르를 대상으로 한 늑대 정령의 돌진 공격이 대상이 된 레가르에게 공격 동작을 재생시키던 문제를 수정했습니다.",
+         "html": "레가르를 대상으로 한 늑대 정령의 돌진 공격이 대상이 된 레가르에게 공격 동작을 재생시키던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Ghost Wolf"
+      },
+      {
+       "name": "늑대의 굶주림",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "실명과 회피가 이 효과의 발동을 막지 못하던 문제를 수정했습니다.",
+         "html": "실명과 회피가 이 효과의 발동을 막지 못하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Hunger of the Wolf"
+      }
+     ],
+     "nameEn": "Rehgar"
+    },
+    {
+     "name": "렉사르",
+     "heroId": "Rexxar",
+     "heroIds": [
+      "Rexxar"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">렉사르</strong>\n<ul>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">광포한 야수</strong><ul>\n<li>이제 중첩이 5회 이상일 때 미샤, 돌진!이 치명타로 표시됩니다.</li>\n<li>이제 추가 피해량이 다음 미샤, 돌진!에 적용됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "광포한 야수",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "이제 중첩이 5회 이상일 때 미샤, 돌진!이 치명타로 표시됩니다.",
+         "html": "이제 중첩이 5회 이상일 때 미샤, 돌진!이 치명타로 표시됩니다.",
+         "added": false
+        },
+        {
+         "text": "이제 추가 피해량이 다음 미샤, 돌진!에 적용됩니다.",
+         "html": "이제 추가 피해량이 다음 미샤, 돌진!에 적용됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Dire Beast"
+      }
+     ],
+     "nameEn": "Rexxar"
+    },
+    {
+     "name": "사무로",
+     "heroId": "Samuro",
+     "heroIds": [
+      "Samuro"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">사무로</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">전진하는 일격 [고유 능력 DQ]</strong><ul>\n<li>이제 실명과 회피가 발동을 막습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "전진하는 일격",
+       "key": "Trait DQ",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "이제 실명과 회피가 발동을 막습니다.",
+         "html": "이제 실명과 회피가 발동을 막습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Advancing Strikes"
+      }
+     ],
+     "nameEn": "Samuro"
+    },
+    {
+     "name": "해머 상사",
+     "heroId": "SgtHammer",
+     "heroIds": [
+      "SgtHammer"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">해머 상사</strong>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">매복</strong><ul>\n<li>이제 은폐가 활성화되기까지 남은 시간이 고유 능력 버튼 주위에 표시됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">펄스 지뢰 핵</strong><ul>\n<li>이제 첫 번째 피해가 사망 요약에 거미 지뢰로 표시됩니다.</li>\n<li>이제 여러 영웅이 적중했을 때 회복되는 마나가 하나로 합산되어 적용됩니다.</li>\n<li>이제 공성 모드 공격으로 회복하는 마나가 하나로 합산됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">유산탄 지뢰</strong><ul>\n<li>이제 다시 적용될 때 모든 방어력 감소 중첩의 지속시간이 초기화됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "기습 포격",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "이제 은폐가 활성화되기까지 남은 시간이 고유 능력 버튼 주위에 표시됩니다.",
+         "html": "이제 은폐가 활성화되기까지 남은 시간이 고유 능력 버튼 주위에 표시됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Ambush"
+      },
+      {
+       "name": "펄스 지뢰 핵",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "이제 첫 번째 피해가 사망 요약에 거미 지뢰로 표시됩니다.",
+         "html": "이제 첫 번째 피해가 사망 요약에 거미 지뢰로 표시됩니다.",
+         "added": false
+        },
+        {
+         "text": "이제 여러 영웅이 적중했을 때 회복되는 마나가 하나로 합산되어 적용됩니다.",
+         "html": "이제 여러 영웅이 적중했을 때 회복되는 마나가 하나로 합산되어 적용됩니다.",
+         "added": false
+        },
+        {
+         "text": "이제 공성 모드 공격으로 회복하는 마나가 하나로 합산됩니다.",
+         "html": "이제 공성 모드 공격으로 회복하는 마나가 하나로 합산됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Pulse Detonation Core"
+      },
+      {
+       "name": "유산탄 지뢰",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "이제 다시 적용될 때 모든 방어력 감소 중첩의 지속시간이 초기화됩니다.",
+         "html": "이제 다시 적용될 때 모든 방어력 감소 중첩의 지속시간이 초기화됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Shrapnel Mines"
+      }
+     ],
+     "nameEn": "Sgt. Hammer"
+    },
+    {
+     "name": "소냐",
+     "heroId": "Barbarian",
+     "heroIds": [
+      "Barbarian"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">소냐</strong>\n<ul>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">육중한 강타</strong><ul>\n<li>이제 추가 피해량이 기본 일반 공격 피해량보다 먼저 적용됩니다. 이로 인해 대상이 죽더라도 다른 모든 효과는 그대로 발동합니다.</li>\n<li>이제 사망 요약에 육중한 강타로 표시됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "육중한 강타",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "이제 추가 피해량이 기본 일반 공격 피해량보다 먼저 적용됩니다. 이로 인해 대상이 죽더라도 다른 모든 효과는 그대로 발동합니다.",
+         "html": "이제 추가 피해량이 기본 일반 공격 피해량보다 먼저 적용됩니다. 이로 인해 대상이 죽더라도 다른 모든 효과는 그대로 발동합니다.",
+         "added": false
+        },
+        {
+         "text": "이제 사망 요약에 육중한 강타로 표시됩니다.",
+         "html": "이제 사망 요약에 육중한 강타로 표시됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Giant Slammer"
+      }
+     ],
+     "nameEn": "Sonya"
+    },
+    {
+     "name": "누더기",
+     "heroId": "Stitches",
+     "heroIds": [
+      "Stitches"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">누더기</strong>\n<ul>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">놀자!</strong><ul>\n<li>이제 여러 영웅이 적중했을 때 회복되는 마나가 하나로 합산되어 적용됩니다.</li>\n<li>지면 강타의 안쪽 범위로 영웅을 적중시켰을 때 회복되는 마나가 포함되도록 툴팁이 갱신되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "놀자!",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "이제 여러 영웅이 적중했을 때 회복되는 마나가 하나로 합산되어 적용됩니다.",
+         "html": "이제 여러 영웅이 적중했을 때 회복되는 마나가 하나로 합산되어 적용됩니다.",
+         "added": false
+        },
+        {
+         "text": "지면 강타의 안쪽 범위로 영웅을 적중시켰을 때 회복되는 마나가 포함되도록 툴팁이 갱신되었습니다.",
+         "html": "지면 강타의 안쪽 범위로 영웅을 적중시켰을 때 회복되는 마나가 포함되도록 툴팁이 갱신되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Playtime!"
+      }
+     ],
+     "nameEn": "Stitches"
+    },
+    {
+     "name": "태사다르",
+     "heroId": "Tassadar",
+     "heroIds": [
+      "Tassadar"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">태사다르</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">공명 광선 [고유 능력]</strong><ul>\n<li>공명 광선이 첫 번째 피해 이후 피해를 입히기 전에 충전되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">아크 방전</strong><ul>\n<li>이제 일반 공격이 진행도를 부여할 때 다른 모든 효과보다 먼저 적용됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">집정관</strong><ul>\n<li>이제 광역 공격이 주 대상에게 적용되는 다른 모든 효과가 완료된 후에 발생합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "공명 광선",
+       "key": "Trait",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "공명 광선이 첫 번째 피해 이후 피해를 입히기 전에 충전되던 문제를 수정했습니다.",
+         "html": "공명 광선이 첫 번째 피해 이후 피해를 입히기 전에 충전되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Resonance Beam"
+      },
+      {
+       "name": "아크 방전",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "이제 일반 공격이 진행도를 부여할 때 다른 모든 효과보다 먼저 적용됩니다.",
+         "html": "이제 일반 공격이 진행도를 부여할 때 다른 모든 효과보다 먼저 적용됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Arc Discharge"
+      },
+      {
+       "name": "집정관",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "이제 광역 공격이 주 대상에게 적용되는 다른 모든 효과가 완료된 후에 발생합니다.",
+         "html": "이제 광역 공격이 주 대상에게 적용되는 다른 모든 효과가 완료된 후에 발생합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Archon"
+      }
+     ],
+     "nameEn": "Tassadar"
+    },
+    {
+     "name": "도살자",
+     "heroId": "Butcher",
+     "heroIds": [
+      "Butcher"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">도살자</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">도살자의 낙인 [W]</strong><ul>\n<li>도살자의 일반 공격 적중 시각 효과가 낙인이 찍힌 대상에게 올바르게 변경되지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">잔혹한 일격</strong><ul>\n<li>이제 실명 상태이거나 회피 중인 적을 상대할 때도 소모됩니다.</li>\n<li>이제 효과 표시줄에 표시됩니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">맹렬한 돌진</strong><ul>\n<li>이제 사망 요약에 맹렬한 돌진으로 표시됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "도살자의 낙인",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "도살자의 일반 공격 적중 시각 효과가 낙인이 찍힌 대상에게 올바르게 변경되지 않던 문제를 수정했습니다.",
+         "html": "도살자의 일반 공격 적중 시각 효과가 낙인이 찍힌 대상에게 올바르게 변경되지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Butcher's Brand"
+      },
+      {
+       "name": "잔혹한 일격",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "이제 실명 상태이거나 회피 중인 적을 상대할 때도 소모됩니다.",
+         "html": "이제 실명 상태이거나 회피 중인 적을 상대할 때도 소모됩니다.",
+         "added": false
+        },
+        {
+         "text": "이제 효과 표시줄에 표시됩니다.",
+         "html": "이제 효과 표시줄에 표시됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Brutal Strike"
+      },
+      {
+       "name": "흉포한 돌진",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "이제 사망 요약에 맹렬한 돌진으로 표시됩니다.",
+         "html": "이제 사망 요약에 맹렬한 돌진으로 표시됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Savage Charge"
+      }
+     ],
+     "nameEn": "The Butcher"
+    },
+    {
+     "name": "길 잃은 바이킹",
+     "heroId": "LostVikings",
+     "heroIds": [
+      "LostVikings"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">길 잃은 바이킹</strong>\n<ul>\n<li>이제 폭발성 공격으로 강화된 밸로그의 일반 공격 피해량이 다른 피해량 보정 효과의 영향을 올바르게 받습니다.</li>\n<li>올라프의 돌진 공격이 바이킹 공격단이나 참으면 손해의 효과를 받지 못하던 문제를 수정했습니다.</li>\n<li><strong class=\"pn-name\">올라프</strong><ul>\n<li>돌진이 바이킹 공격단의 추가 효과를 부여하지 않던 문제를 수정했습니다.</li>\n<li>올라프의 위치 근처에 있는 적을 대상으로 지정했을 때 돌진이 재사용 대기시간에 들어가던 문제를 수정했습니다.</li>\n<li>돌진이 참으면 손해의 추가 효과를 부여하지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">에릭</strong><ul>\n<li>이동 속도 증가가 더 이상 에릭의 기본 속도를 증가시키지 않으며, 이제 에릭에게 이동 속도를 15% 부여하고 다른 효과와 중첩됩니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">밸로그</strong><ul>\n<li>광역 피해가 참으면 손해의 추가 효과를 부여하지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">폭발성 공격</strong><ul>\n<li>이제 추가 피해량이 곱연산으로 적용됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">바이킹 공격단</strong><ul>\n<li>이제 추가 피해량이 기본 일반 공격 피해량보다 먼저 적용됩니다. 이로 인해 대상이 죽더라도 다른 모든 효과는 그대로 발동합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "이제 폭발성 공격으로 강화된 밸로그의 일반 공격 피해량이 다른 피해량 보정 효과의 영향을 올바르게 받습니다.",
+         "html": "이제 폭발성 공격으로 강화된 밸로그의 일반 공격 피해량이 다른 피해량 보정 효과의 영향을 올바르게 받습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "올라프의 돌진 공격이 바이킹 공격단이나 참으면 손해의 효과를 받지 못하던 문제를 수정했습니다.",
+         "html": "올라프의 돌진 공격이 바이킹 공격단이나 참으면 손해의 효과를 받지 못하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "올라프",
+       "key": null,
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "돌진이 바이킹 공격단의 추가 효과를 부여하지 않던 문제를 수정했습니다.",
+         "html": "돌진이 바이킹 공격단의 추가 효과를 부여하지 않던 문제를 수정했습니다.",
+         "added": false
+        },
+        {
+         "text": "올라프의 위치 근처에 있는 적을 대상으로 지정했을 때 돌진이 재사용 대기시간에 들어가던 문제를 수정했습니다.",
+         "html": "올라프의 위치 근처에 있는 적을 대상으로 지정했을 때 돌진이 재사용 대기시간에 들어가던 문제를 수정했습니다.",
+         "added": false
+        },
+        {
+         "text": "돌진이 참으면 손해의 추가 효과를 부여하지 않던 문제를 수정했습니다.",
+         "html": "돌진이 참으면 손해의 추가 효과를 부여하지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Olaf"
+      },
+      {
+       "name": "에릭",
+       "key": null,
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "이동 속도 증가가 더 이상 에릭의 기본 속도를 증가시키지 않으며, 이제 에릭에게 이동 속도를 15% 부여하고 다른 효과와 중첩됩니다.",
+         "html": "이동 속도 증가가 더 이상 에릭의 기본 속도를 증가시키지 않으며, 이제 에릭에게 이동 속도를 15% 부여하고 다른 효과와 중첩됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Erik"
+      },
+      {
+       "name": "밸로그",
+       "key": null,
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "광역 피해가 참으면 손해의 추가 효과를 부여하지 않던 문제를 수정했습니다.",
+         "html": "광역 피해가 참으면 손해의 추가 효과를 부여하지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Baleog"
+      },
+      {
+       "name": "폭발성 공격",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "이제 추가 피해량이 곱연산으로 적용됩니다.",
+         "html": "이제 추가 피해량이 곱연산으로 적용됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Explosive Attacks"
+      },
+      {
+       "name": "바이킹 공격단",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "이제 추가 피해량이 기본 일반 공격 피해량보다 먼저 적용됩니다. 이로 인해 대상이 죽더라도 다른 모든 효과는 그대로 발동합니다.",
+         "html": "이제 추가 피해량이 기본 일반 공격 피해량보다 먼저 적용됩니다. 이로 인해 대상이 죽더라도 다른 모든 효과는 그대로 발동합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Nordic Attack Squad"
+      }
+     ],
+     "nameEn": "The Lost Vikings"
+    },
+    {
+     "name": "스랄",
+     "heroId": "Thrall",
+     "heroIds": [
+      "Thrall"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">스랄</strong>\n<ul>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">광풍</strong><ul>\n<li>이제 질풍의 최초 세 번째 공격에 적중 시각 효과가 나타납니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "광풍",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "이제 질풍의 최초 세 번째 공격에 적중 시각 효과가 나타납니다.",
+         "html": "이제 질풍의 최초 세 번째 공격에 적중 시각 효과가 나타납니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Tempest Fury"
+      }
+     ],
+     "nameEn": "Thrall"
+    },
+    {
+     "name": "트레이서",
+     "heroId": "Tracer",
+     "heroIds": [
+      "Tracer"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">트레이서</strong>\n<ul>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">집중 사격</strong><ul>\n<li>더 이상 실명 상태이거나 회피 중인 대상을 상대할 때는 진행도가 오르지 않습니다.</li>\n<li>이제 현재 공격 대상에게 적중한 횟수와 적중 기록이 초기화되기까지 남은 시간이 효과 표시줄에 표시됩니다.</li>\n<li>이제 피해를 입힌 후가 아니라 피해를 입히기 전에 진행도가 오릅니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "집중 사격",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "더 이상 실명 상태이거나 회피 중인 대상을 상대할 때는 진행도가 오르지 않습니다.",
+         "html": "더 이상 실명 상태이거나 회피 중인 대상을 상대할 때는 진행도가 오르지 않습니다.",
+         "added": false
+        },
+        {
+         "text": "이제 현재 공격 대상에게 적중한 횟수와 적중 기록이 초기화되기까지 남은 시간이 효과 표시줄에 표시됩니다.",
+         "html": "이제 현재 공격 대상에게 적중한 횟수와 적중 기록이 초기화되기까지 남은 시간이 효과 표시줄에 표시됩니다.",
+         "added": false
+        },
+        {
+         "text": "이제 피해를 입힌 후가 아니라 피해를 입히기 전에 진행도가 오릅니다.",
+         "html": "이제 피해를 입힌 후가 아니라 피해를 입히기 전에 진행도가 오릅니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Focus Fire"
+      }
+     ],
+     "nameEn": "Tracer"
+    },
+    {
+     "name": "티리엘",
+     "heroId": "Tyrael",
+     "heroIds": [
+      "Tyrael"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">티리엘</strong>\n<ul>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">법과 질서</strong><ul>\n<li>이제 효과 표시줄에 표시됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "법과 질서",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "이제 효과 표시줄에 표시됩니다.",
+         "html": "이제 효과 표시줄에 표시됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Law and Order"
+      }
+     ],
+     "nameEn": "Tyrael"
+    },
+    {
+     "name": "티란데",
+     "heroId": "Tyrande",
+     "heroIds": [
+      "Tyrande"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">티란데</strong>\n<ul>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">치유의 징표</strong><ul>\n<li>이제 사망 요약에 치유의 징표로 표시됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "치유의 징표",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "이제 사망 요약에 치유의 징표로 표시됩니다.",
+         "html": "이제 사망 요약에 치유의 징표로 표시됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Mark of Mending"
+      }
+     ],
+     "nameEn": "Tyrande"
+    },
+    {
+     "name": "우서",
+     "heroId": "Uther",
+     "heroIds": [
+      "Uther"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">우서</strong>\n<ul>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">고대 왕의 수호자</strong><ul>\n<li>이제 헌신의 방어력 지속시간을 추가로 부여하는 특성의 영향을 받아 지속시간이 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">축복의 기도</strong><ul>\n<li>축복의 기도가 활성화된 동안 사용한 기술이 우서에게 마나를 부여하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "고대 왕의 수호자",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "이제 헌신의 방어력 지속시간을 추가로 부여하는 특성의 영향을 받아 지속시간이 증가합니다.",
+         "html": "이제 헌신의 방어력 지속시간을 추가로 부여하는 특성의 영향을 받아 지속시간이 증가합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Guardian of Ancient Kings"
+      },
+      {
+       "name": "축복의 기도",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "축복의 기도가 활성화된 동안 사용한 기술이 우서에게 마나를 부여하던 문제를 수정했습니다.",
+         "html": "축복의 기도가 활성화된 동안 사용한 기술이 우서에게 마나를 부여하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Benediction"
+      }
+     ],
+     "nameEn": "Uther"
+    },
+    {
+     "name": "발라",
+     "heroId": "DemonHunter",
+     "heroIds": [
+      "DemonHunter"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">발라</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">도약 [E]</strong><ul>\n<li>이제 추가 피해량이 다음에 발사되는 일반 공격에 적용됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">복수의 비</strong><ul>\n<li>시전 시각 효과가 올바르게 표시되지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "도약",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "이제 추가 피해량이 다음에 발사되는 일반 공격에 적용됩니다.",
+         "html": "이제 추가 피해량이 다음에 발사되는 일반 공격에 적용됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Vault"
+      },
+      {
+       "name": "복수의 비",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "시전 시각 효과가 올바르게 표시되지 않던 문제를 수정했습니다.",
+         "html": "시전 시각 효과가 올바르게 표시되지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Rain of Vengeance"
+      }
+     ],
+     "nameEn": "Valla"
+    },
+    {
+     "name": "바리안",
+     "heroId": "Varian",
+     "heroIds": [
+      "Varian"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">바리안</strong>\n<ul>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">분노의 쌍검</strong><ul>\n<li>분노의 쌍검이 잘못된 재사용 대기시간 감소 수치를 표시하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">얼라이언스의 영광</strong><ul>\n<li>얼라이언스에 영광을 선택한 후 잘못된 재사용 대기시간 감소 수치가 표시되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "분노의 쌍검",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "분노의 쌍검이 잘못된 재사용 대기시간 감소 수치를 표시하던 문제를 수정했습니다.",
+         "html": "분노의 쌍검이 잘못된 재사용 대기시간 감소 수치를 표시하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Twin Blades of Fury"
+      },
+      {
+       "name": "얼라이언스의 영광",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "얼라이언스에 영광을 선택한 후 잘못된 재사용 대기시간 감소 수치가 표시되던 문제를 수정했습니다.",
+         "html": "얼라이언스에 영광을 선택한 후 잘못된 재사용 대기시간 감소 수치가 표시되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Glory of the Alliance"
+      }
+     ],
+     "nameEn": "Varian"
+    },
+    {
+     "name": "화이트메인",
+     "heroId": "Whitemane",
+     "heroIds": [
+      "Whitemane"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">화이트메인</strong>\n<ul>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">성스러운 지팡이</strong><ul>\n<li>이제 화이트메인이 실명 상태이거나 대상이 회피 중일 때 표식이 제거되지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "성스러운 지팡이",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "이제 화이트메인이 실명 상태이거나 대상이 회피 중일 때 표식이 제거되지 않습니다.",
+         "html": "이제 화이트메인이 실명 상태이거나 대상이 회피 중일 때 표식이 제거되지 않습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Saintly Greatstaff"
+      }
+     ],
+     "nameEn": "Whitemane"
+    },
+    {
+     "name": "자가라",
+     "heroId": "Zagara",
+     "heroIds": [
+      "Zagara"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">자가라</strong>\n<ul>\n<li>이제 소환물이 방어 매트릭스와 최종 진화물의 피해량 보정 효과의 영향을 받습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "이제 소환물이 방어 매트릭스와 최종 진화물의 피해량 보정 효과의 영향을 받습니다.",
+         "html": "이제 소환물이 방어 매트릭스와 최종 진화물의 피해량 보정 효과의 영향을 받습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "Zagara"
+    },
+    {
+     "name": "자리야",
+     "heroId": "Zarya",
+     "heroIds": [
+      "Zarya"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">자리야</strong>\n<ul>\n<li>이제 자리야의 일반 공격이 주 대상에게 적중하는 사이에 광역 범위로 들어온 대상이 즉시 피해를 입지 않습니다.</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">고도 화상</strong><ul>\n<li>이제 표식이 찍힌 영웅 여럿을 적중시켰을 때 획득하는 에너지가 하나로 합산됩니다.</li>\n<li>이제 주 대상과 모든 광역 공격 대상이 적중된 후에 에너지를 획득하여, 고도 화상이 자리야에게 에너지를 부여할 때 모든 대상이 동일한 피해를 입습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "이제 자리야의 일반 공격이 주 대상에게 적중하는 사이에 광역 범위로 들어온 대상이 즉시 피해를 입지 않습니다.",
+         "html": "이제 자리야의 일반 공격이 주 대상에게 적중하는 사이에 광역 범위로 들어온 대상이 즉시 피해를 입지 않습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "고도 화상",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "이제 표식이 찍힌 영웅 여럿을 적중시켰을 때 획득하는 에너지가 하나로 합산됩니다.",
+         "html": "이제 표식이 찍힌 영웅 여럿을 적중시켰을 때 획득하는 에너지가 하나로 합산됩니다.",
+         "added": false
+        },
+        {
+         "text": "이제 주 대상과 모든 광역 공격 대상이 적중된 후에 에너지를 획득하여, 고도 화상이 자리야에게 에너지를 부여할 때 모든 대상이 동일한 피해를 입습니다.",
+         "html": "이제 주 대상과 모든 광역 공격 대상이 적중된 후에 에너지를 획득하여, 고도 화상이 자리야에게 에너지를 부여할 때 모든 대상이 동일한 피해를 입습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Deep Burn"
+      }
+     ],
+     "nameEn": "Zarya"
+    },
+    {
+     "name": "줄진",
+     "heroId": "Zuljin",
+     "heroIds": [
+      "Zuljin"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">줄진</strong>\n<ul>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">깜짝 선물!</strong><ul>\n<li>이제 발사된 공격이 광전사가 활성화된 상태에서 이루어졌다면 광전사 활성화 효과를 함께 받습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "깜짝 선물!",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "이제 발사된 공격이 광전사가 활성화된 상태에서 이루어졌다면 광전사 활성화 효과를 함께 받습니다.",
+         "html": "이제 발사된 공격이 광전사가 활성화된 상태에서 이루어졌다면 광전사 활성화 효과를 함께 받습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "A Surprise For Ya!"
+      }
+     ],
+     "nameEn": "Zul'jin"
+    }
+   ],
+   "nameEn": "Bug Fixes"
+  }
+ ],
+ "heroes": [
+  "Alarak",
+  "Amazon",
+  "Artanis",
+  "Arthas",
+  "Azmodan",
+  "Barbarian",
+  "Butcher",
+  "Chen",
+  "Cho",
+  "Chromie",
+  "Crusader",
+  "DVa",
+  "Deathwing",
+  "Dehaka",
+  "DemonHunter",
+  "Dryad",
+  "FaerieDragon",
+  "Falstad",
+  "Fenix",
+  "Gall",
+  "Greymane",
+  "Illidan",
+  "Imperius",
+  "Jaina",
+  "Junkrat",
+  "Kaelthas",
+  "KelThuzad",
+  "Kerrigan",
+  "L90ETC",
+  "LostVikings",
+  "Lucio",
+  "Monk",
+  "Orphea",
+  "Raynor",
+  "Rehgar",
+  "Rexxar",
+  "Samuro",
+  "SgtHammer",
+  "Stitches",
+  "Tassadar",
+  "Thrall",
+  "Tinker",
+  "Tracer",
+  "Tyrael",
+  "Tyrande",
+  "Uther",
+  "Valeera",
+  "Varian",
+  "Whitemane",
+  "WitchDoctor",
+  "Wizard",
+  "Zagara",
+  "Zarya",
+  "Zuljin"
+ ],
+ "battlegrounds": [
+  "blackheart_s_bay",
+  "hanamura_temple",
+  "infernal_shrines",
+  "sky_temple",
+  "warhead_junction"
+ ],
+ "lang": "ko",
+ "newsId": "24232472",
+ "titleEn": "Heroes of the Storm PTR Patch Notes - September 2, 2025",
+ "translated": {
+  "by": "Claude (claude-opus-5)",
+  "at": "2026-09-14",
+  "source": "https://news.blizzard.com/en-us/article/24232472/heroes-of-the-storm-ptr-patch-notes-september-2-2025",
+  "glossary": "HeroesToolChest 공식 게임 텍스트(enus↔kokr) 대조",
+  "untranslated": 0
+ }
+}

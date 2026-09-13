@@ -1,0 +1,171 @@
+{
+ "date": "2016-11-21",
+ "kind": "hotfix",
+ "title": "히어로즈 오브 더 스톰 긴급 패치 노트 – 2016년 11월 21일",
+ "source": "https://news.blizzard.com/en-us/article/20379409/heroes-of-the-storm-hotfix-patch-notes-november-21-2016",
+ "published": "2016-11-22T17:35:00Z",
+ "sections": [
+  {
+   "name": "머리말",
+   "key": "intro",
+   "html": "<p>몇 가지 버그를 수정하기 위한 새로운 히어로즈 오브 더 스톰 패치가 적용되었습니다. 아래에서 패치 노트를 확인해 보세요.</p>\n<p><img alt=\"divider_sml.png\" data-id=\"19954488\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/AHESEMNR6BPO1446678694683.png\"/></p>",
+   "nameEn": "머리말"
+  },
+  {
+   "name": "버그 수정",
+   "key": "bugs",
+   "html": "<p><span class=\"pn-name\"><strong>일반</strong></span></p>\n<ul>\n<li>사용자 지정 게임을 종료한 후 게임 클라이언트가 작동을 멈출 수 있던 문제를 수정했습니다.</li>\n</ul>\n<p><span class=\"pn-name\"><strong>전장</strong></span></p>\n<ul>\n<li><strong>돌격병:</strong> 이제 투석기의 미니맵 아이콘이 팀 색상으로 표시됩니다.</li>\n</ul>\n<p><span class=\"pn-name\"><strong>영웅, 기술 및 특성</strong></span></p>\n<ul>\n<li><strong>아바투르:</strong> 공생체가 종료될 때마다 독성 둥지의 재사용 대기시간이 초기화되던 문제를 수정했습니다.</li>\n<li><strong>알라라크:</strong> 이제 재흡수 특성이 적용된 메디브의 의지 투영이 종료되어도 최후의 웃음을 사용해 잃은 생명력이 회복되지 않습니다.</li>\n<li><strong>메디브:</strong> 핵탄두 격전지에서 메디브가 까마귀 형상인 동안 기술을 시전할 수 있던 문제를 수정했습니다.</li>\n<li><strong>사무로:</strong> 이제 환영의 대가를 배워도 환영 복제로 생성된 환영이 핵탄두 격전지에서 핵을 발사할 수 없습니다.</li>\n<li><strong>제라툴:</strong> 이제 어둠 속의 추적자 특성으로 제라툴이 의도하지 않은 지형이나 구조물 안으로 점멸할 수 없습니다.</li>\n</ul>\n<p><img alt=\"divider_sml.png\" data-id=\"19954488\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/AHESEMNR6BPO1446678694683.png\"/></p>\n<p>또한 지난주에는 시공의 폭풍 도전, 바리안, 다양한 밸런스 조정 등을 히어로즈 오브 더 스톰에 추가하는 대규모 패치가 적용되었습니다. <a href=\"http://us.battle.net/heroes/en/blog/20372990\" target=\"_blank\">여기를 클릭하여 해당 패치 노트를 확인</a>하시고 최근 시공의 폭풍에 적용된 모든 변경 사항을 살펴보시기 바랍니다.</p>\n<p><img alt=\"\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/g6/G6G0N80EOC941426801305139.png\"/></p>\n<p><img alt=\"InvisibleDividerLine_800x50.png\" data-id=\"14509591\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/6VA2831Q81IU1403137406234.png\"/></p>",
+   "items": [
+    {
+     "name": "아바투르",
+     "heroId": "Abathur",
+     "heroIds": [
+      "Abathur"
+     ],
+     "under": null,
+     "html": "<strong>아바투르:</strong> Fixed an issue that caused the cooldown for Toxic Nest to be reset whenever Symbiote expired.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "아바투르: 공생체가 종료될 때마다 독성 둥지의 재사용 대기시간이 초기화되던 문제를 수정했습니다.",
+         "html": "<strong>아바투르:</strong> 공생체가 종료될 때마다 독성 둥지의 재사용 대기시간이 초기화되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "Abathur"
+    },
+    {
+     "name": "알라라크",
+     "heroId": "Alarak",
+     "heroIds": [
+      "Alarak"
+     ],
+     "under": null,
+     "html": "<strong>알라라크:</strong> Health lost due to activating Last Laugh will no longer be restored when Medivh’s Force of Will with the Reabsorption Talent expires.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "알라라크: 이제 재흡수 특성이 적용된 메디브의 의지 투영이 종료되어도 최후의 웃음을 사용해 잃은 생명력이 회복되지 않습니다.",
+         "html": "<strong>알라라크:</strong> 이제 재흡수 특성이 적용된 메디브의 의지 투영이 종료되어도 최후의 웃음을 사용해 잃은 생명력이 회복되지 않습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "Alarak"
+    },
+    {
+     "name": "메디브",
+     "heroId": "Medivh",
+     "heroIds": [
+      "Medivh"
+     ],
+     "under": null,
+     "html": "<strong>메디브:</strong> Fixed an issue that could enable Medivh to cast Abilities while in Raven Form on Warhead Junction.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "메디브: 핵탄두 격전지에서 메디브가 까마귀 형상인 동안 기술을 시전할 수 있던 문제를 수정했습니다.",
+         "html": "<strong>메디브:</strong> 핵탄두 격전지에서 메디브가 까마귀 형상인 동안 기술을 시전할 수 있던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "Medivh"
+    },
+    {
+     "name": "사무로",
+     "heroId": "Samuro",
+     "heroIds": [
+      "Samuro"
+     ],
+     "under": null,
+     "html": "<strong>사무로:</strong> Mirror Images can no longer launch Nukes on Warhead Junction after learning Illusion Master.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "사무로: 이제 환영의 대가를 배워도 환영 복제로 생성된 환영이 핵탄두 격전지에서 핵을 발사할 수 없습니다.",
+         "html": "<strong>사무로:</strong> 이제 환영의 대가를 배워도 환영 복제로 생성된 환영이 핵탄두 격전지에서 핵을 발사할 수 없습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "Samuro"
+    },
+    {
+     "name": "제라툴",
+     "heroId": "Zeratul",
+     "heroIds": [
+      "Zeratul"
+     ],
+     "under": null,
+     "html": "<strong>제라툴:</strong> The Seeker in the Dark Talent will no longer allow Zeratul to Blink to unintended areas of terrain or inside of Structures.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "제라툴: 이제 어둠 속의 추적자 특성으로 제라툴이 의도하지 않은 지형이나 구조물 안으로 점멸할 수 없습니다.",
+         "html": "<strong>제라툴:</strong> 이제 어둠 속의 추적자 특성으로 제라툴이 의도하지 않은 지형이나 구조물 안으로 점멸할 수 없습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "Zeratul"
+    }
+   ],
+   "nameEn": "Bug Fixes"
+  }
+ ],
+ "heroes": [
+  "Abathur",
+  "Alarak",
+  "Medivh",
+  "Samuro",
+  "Zeratul"
+ ],
+ "battlegrounds": [],
+ "lang": "ko",
+ "newsId": "20379409",
+ "titleEn": "Heroes of the Storm Hotfix Patch Notes – November 21, 2016",
+ "translated": {
+  "by": "Claude (claude-opus-5)",
+  "at": "2026-09-14",
+  "source": "https://news.blizzard.com/en-us/article/20379409/heroes-of-the-storm-hotfix-patch-notes-november-21-2016",
+  "glossary": "HeroesToolChest 공식 게임 텍스트(enus↔kokr) 대조",
+  "untranslated": 5
+ }
+}

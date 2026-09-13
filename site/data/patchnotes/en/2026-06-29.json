@@ -1,0 +1,2069 @@
+{
+ "date": "2026-06-29",
+ "kind": "ptr",
+ "title": "Heroes of the Storm PTR Patch Notes - June 29, 2026",
+ "source": "https://news.blizzard.com/en-us/article/24287550/heroes-of-the-storm-ptr-patch-notes-june-29-2026",
+ "published": "2026-06-29T17:13:56Z",
+ "sections": [
+  {
+   "name": "머리말",
+   "key": "intro",
+   "html": "<p>Our next Heroes of the Storm patch has just hit the Public Test Realm and will be available for playtesting. As always, if you encounter any bugs during your PTR play sessions, please stop by the <a href=\"https://us.forums.blizzard.com/en/heroes/c/ptr-bug-report\" target=\"_blank\">PTR Bug Report forum</a> to let us know about your experiences.</p>",
+   "nameKo": "머리말"
+  },
+  {
+   "name": "General",
+   "key": "general",
+   "html": "<ul>\n<li>Players can now party with unplaced players in Storm League.</li>\n<li>Haunted Mines has been added to Ranked.</li>\n</ul>",
+   "nameKo": "일반"
+  },
+  {
+   "name": "Map Updates",
+   "key": "map_updates",
+   "html": "<ul>\n<li><strong class=\"pn-h\">Hanamura</strong>\n<ul>\n<li>Additional brush has been added in several locations.</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Warhead Junction</strong>\n<ul>\n<li>Warhead's channel penalty on interrupt reduced from 10 to 5 seconds.</li>\n</ul>\n</li>\n</ul>",
+   "items": [
+    {
+     "name": "Hanamura",
+     "battleground": "hanamura_temple",
+     "html": "<strong class=\"pn-h\">Hanamura</strong>\n<ul>\n<li>Additional brush has been added in several locations.</li>\n</ul>",
+     "under": null
+    },
+    {
+     "name": "Warhead Junction",
+     "battleground": "warhead_junction",
+     "html": "<strong class=\"pn-h\">Warhead Junction</strong>\n<ul>\n<li>Warhead's channel penalty on interrupt reduced from 10 to 5 seconds.</li>\n</ul>",
+     "under": null
+    }
+   ],
+   "nameKo": "전장 업데이트"
+  },
+  {
+   "name": "Balance Update",
+   "key": "balance",
+   "html": "<h3><strong>Heroes</strong></h3>\n<h4>Abathur</h4>\n<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Spawn Locust [D]</strong>\n<ul>\n<li>Health reduced from 350 to 225.</li>\n<li>Locusts now heal for 20% of the damage they deal, and heal for 20% of their maximum Health when a nearby Minion dies.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Envenomed Nests</strong>\n<ul>\n<li>Armor reduction increased from 10 to 15.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Locust Brood</strong>\n<ul>\n<li>Moved from Level 16 to Level 1.</li>\n<li>Cooldown increased from 45 to 75 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">(New) Slapathur</strong>\n<ul>\n<li>Abathur's Basic Attacks now Stun non-Heroes and deal 500% additional damage.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Evolve Monstrosity</strong>\n<ul>\n<li>Now displays as a Quest.</li>\n<li>Abathur now has a Monstrosity unit frame, for tracking Health and stacks of the unit.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Survival Intincts</strong>\n<ul>\n<li>Moved from Level 1 to Level 16.</li>\n<li>Health bonus increased from 100% to 200%.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>Alexstrasza</h4>\n<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Dragonqueen [D]</strong>\n<ul>\n<li>Cooldown now starts after Dragonqueen has expired.</li>\n<li>Cooldown reduced from 150 to 130 seconds.</li>\n<li>Talents that affect Gift of Life also apply to Breath of Life.</li>\n<li>Talents that affect Abundance also apply to Preservation.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Breath of Life [Dragonqueen Q]</strong>\n<ul>\n<li>Healing reduced from 20% to 15%.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Preservation [Dragonqueen W]</strong>\n<ul>\n<li>Healing reduced from 30% to 25%.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Live and Let Live</strong>\n<ul>\n<li>Now also provides 25% recharge rate for Breath of Life.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Flames of Fury</strong>\n<ul>\n<li><strong>NEW MYTHIC REWARD:</strong> Hit an additional 40 Heroes without dying to cause Dragonqueen's duration to be refreshed when damaging an enemy Hero.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Life Blossom</strong>\n<ul>\n<li>Now makes Breath of Life remove Slows and Roots.</li>\n<li>Transforming into Dragonqueen will no longer remove the collected Lifeblossom.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Draconic Dicipline</strong>\n<ul>\n<li>No longer affect's Dragonqueen's duration.</li>\n<li>For each allied Hero healed with Dragonqueen's Basic Attacks, reduce the cooldown of Preservation by 1.25 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">On Ruby Wings</strong>\n<ul>\n<li>Rework: If at least 3 Heroes are in an area hit by a Fireball, that Fireball charge is not consumed.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Ancient Flame</strong>\n<ul>\n<li>Does not provide Quest stacks while active.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>Blaze</h4>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Adrenaline Stim</strong>\n<ul>\n<li>Active Attack Speed bonus reduced from 100% to 85%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Bunker Drop</strong>\n<ul>\n<li>Cooldown increased from 80 to 85 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>Cho</h4>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Calloused Hide</strong>\n<ul>\n<li>Health threshold required to trigger reduced from 60% to 40%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Firestarter</strong>\n<ul>\n<li>Cooldown reduction per Basic Attack increased from 1 to 1.5 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>Gall</h4>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Rising Dread</strong>\n<ul>\n<li>Bonus per bounce reduced from 25% to 20%.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Bomb's Away</strong>\n<ul>\n<li>No longer has a cap on stacks.</li>\n<li>Damage bonus per stack lowered from 5 to 4.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Double Trouble</strong>\n<ul>\n<li>Shadowflame's cooldown reduction from Quest Reward increased from 0.5 to 1 second.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Leaden Orb</strong>\n<ul>\n<li>Stun duration reduced from 0.75 seconds to 0.6 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>Chromie</h4>\n<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Dragon's Breath [W]</strong>\n<ul>\n<li>Now shows a radius preview to enemies.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Time Trap [E]</strong>\n<ul>\n<li>Health reduced from 400 to 250.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Once Again The First Time</strong>\n<ul>\n<li>Quest requirement reduced from 40 to 20 stacks.</li>\n<li>Quest must now be completed without dying.</li>\n</ul>\n</li>\n</ul>\n<ul>\n<li><strong class=\"pn-name\">Deep Breathing</strong>\n<ul>\n<li>Damage per stack reduced from 1% to 0.5%.</li>\n<li>No longer has a cap on stacks.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<ul>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Chronic Conditions</strong>\n<ul>\n<li>Now also causes Time Trap to activate automatically upon touching an enemy Hero.</li>\n<li>Slow reduced from 30% to 20%.</li>\n<li>Movement Speed bonus reduced from 30% to 20%.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<ul>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Here and There</strong>\n<ul>\n<li>Range increased from 20 to 40.</li>\n<li>Snap targetting is now used. The Echo nearest the player's target position will be used.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>Diablo</h4>\n<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Shadow Charge</strong>\n<ul>\n<li>Damage increased from 40 plus 130 with a collision, to 45 plus 140 with a collision.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Fire Stomp</strong>\n<ul>\n<li>Damage decreased from 12 on expansion and 36 on return to 11 on expansion and 34 on return.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Overpower</strong>\n<ul>\n<li>Damage increased from 73 to 80.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Diabolical Momentum</strong>\n<ul>\n<li>Cooldown reduction per Basic Attack increased from 1.5 to 2 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Dying Breath</strong>\n<ul>\n<li>Cooldown reduction per Hero hit increased from 25 to 30 seconds.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Lord of Terror</strong>\n<ul>\n<li>Health stolen increased from 10% to 12% maximum Health.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>Genji</h4>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Swift as the Wind</strong>\n<ul>\n<li>Movement Speed bonus increased from 30% to 40%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Strike at the Heart</strong>\n<ul>\n<li>Damage increased from 134 to 142.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Perfect Defense</strong>\n<ul>\n<li>Cooldown reduction per hit increased from 2 to 2.5 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Flow Like Water</strong>\n<ul>\n<li>Cooldown reduction per hit increased from 3 to 4 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Final Cut</strong>\n<ul>\n<li>Damage reduced from 125 to 115.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>Johanna</h4>\n<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Shield Glare [E]</strong>\n<ul>\n<li>Cooldown increased from 12 to 13 seconds.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Blessed Shield</strong>\n<ul>\n<li>Cooldown increased from 60 to 65 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>Mal'Ganis</h4>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Will of Tichondrius</strong>\n<ul>\n<li>Stun's duration increase reduced from 0.5 to 0.25 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Blind as a Bat</strong>\n<ul>\n<li>There is now a 0.2 second reactivation delay upon finishing 3 swipes of Fel Claws. This matches the time between other swipes.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>Qhira</h4>\n<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Revolving Sweep [Q]</strong>\n<ul>\n<li>Once attached, Revolving Sweep can no longer be detached by the target becoming Unstoppable.</li>\n</ul>\n</li>\n</ul>\n<ul>\n<li><strong class=\"pn-name\">Blood Rage [W]</strong>\n<ul>\n<li><strong>NEW BASELINE QUEST:</strong> Deal damage to enemy Heroes with Blood Rage's bleed to permanently increase its damage by 0.5% per stack.</li>\n<li>Blood Rage's bleed damage reduced from 11 to 8.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Fatal Wounds</strong>\n<ul>\n<li>Damage bonus against low Health targets increased from 30% to 50%.</li>\n<li>Quest removed.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>Ragnaros</h4>\n<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Blast Wave [W]</strong>\n<ul>\n<li>Damage increased from 104 to 120.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Molten Core [D]</strong>\n<ul>\n<li>Cooldown increased from 120 to 180 seconds.</li>\n<li>Health increased from 3996 to 5000.</li>\n<li>Duration increased from 18 to 23 seconds.</li>\n<li>Ragnaros is now Stunned for 1 second upon exiting.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Meteor Swing [Molten Core Q]</strong>\n<ul>\n<li>Damage increased from 161 to 250.</li>\n<li>No longer deals increased damage to Minions.</li>\n<li>Cooldown increased from 6 seconds to 9 seconds.</li>\n<li>Now also knocks enemies back.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Meteor Shower [Molten Core W]</strong>\n<ul>\n<li>Damage increased from 151 to 200.</li>\n<li>Cooldown increased from 2.5 to 6 seconds.</li>\n<li>Area of effect increased by 66%.</li>\n<li>Delay between hits significantly increased.</li>\n<li>No longer deals increased damage to Minions.</li>\n<li>Slow increased from 25% to 35%.</li>\n<li>Range reduced from 35 to 20, but now it extends up to 35 over time.</li>\n<li>Now deals 75% reduced damage to Structures.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Explosive Rune [Molten Core E]</strong>\n<ul>\n<li>Cooldown decreased from 4 to 2.5 seconds.</li>\n<li>Now applies a DOT that deals 88 damage per second for 5 seconds to impacted targets. No longer deals instant damage.</li>\n<li>Range reduced from 35 to 20, but now it extends up to 35 over time.</li>\n<li>No longer deals increased damage to Minions.</li>\n<li>Now deals 75% reduced damage to Structures.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Engulfing Flame</strong>\n<ul>\n<li>Damage bonus reduced from 75% to 50%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Sulfuras Smash</strong>\n<ul>\n<li><strong>NEW MYTHIC QUEST:</strong> Hit 8 enemy Heroes with the center of Sulfuras Smash. Mythic Reward: Sulfuras Smash gains an extra charge.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Lava Surge</strong>\n<ul>\n<li>No longer reduces the cooldown of Lava Wave by 30 seconds.</li>\n<li>Now also gives +200% Movement Speed to allied Minions and Mercenaries in its path.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Heroic Difficulty</strong>\n<ul>\n<li><strong>NEW FUNCTIONALITY:</strong> Decrease the cooldown of Molten Core by 110 seconds when used on a dead Fort or Keep. In addition, the starting range of abilities in Molten Core are increased by 100% and will continue to grow.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>Whitemane</h4>\n<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Searing Lash [E]</strong>\n<ul>\n<li><strong>NEW QUEST:</strong> Hit Heroes with Searing Lash to increase Whitemane's maximum Health by 3 and Mana by 2.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Pity the Frail</strong>\n<ul>\n<li>Cooldown reduction per hit reduced from 1.5 to 1 second.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Inquisitor's Prayer</strong>\n<ul>\n<li><strong>REWORK:</strong> For each Hero hit by Searing Lash, restore 25 Mana. Passive: Zeal's duration is increased by 2 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Intercession</strong>\n<ul>\n<li>Cooldown increased 45 to 60 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Scarlet Wrath</strong>\n<ul>\n<li>Mana restore increased from 0.5% to 1%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Guiding Light</strong>\n<ul>\n<li>Now also increases the Spell Power gained from Zeal's activation by 15%.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>Yrel</h4>\n<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Righteous Hammer [Q]</strong>\n<ul>\n<li>Heal increased from 320 to 370.</li>\n<li>Damage increased from 140 to 160.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Righteous Hammer [W]</strong>\n<ul>\n<li>Stun duration increased from 0.75 1 second.</li>\n<li>Damage increased from 125 to 140.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Avenging Wrath [E]</strong>\n<ul>\n<li>Slow increased from 50% to 60%.</li>\n<li>Damage increased from 225 to 260.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Divine Purpose [D]</strong>\n<ul>\n<li>Cooldown increased to from 8 to 16 seconds.</li>\n<li>Cooldown is now reduced by 8 seconds whenever Yrel's Basic Abilities are interrupted.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Hand of Freedom</strong>\n<ul>\n<li>Cooldown increased from 30 to 40 seconds.</li>\n<li>Movement Speed bonus reduced from 30% to 25%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Seraphim</strong>\n<ul>\n<li>Cooldown increased from 10 to 20 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+   "heroes": [
+    {
+     "name": "Abathur",
+     "heroId": "Abathur",
+     "heroIds": [
+      "Abathur"
+     ],
+     "changes": [
+      {
+       "name": "Spawn Locust",
+       "key": "D",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Health reduced from 350 to 225.",
+         "html": "Health reduced from 350 to 225.",
+         "added": false
+        },
+        {
+         "text": "Locusts now heal for 20% of the damage they deal, and heal for 20% of their maximum Health when a nearby Minion dies.",
+         "html": "Locusts now heal for 20% of the damage they deal, and heal for 20% of their maximum Health when a nearby Minion dies.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Envenomed Nests",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Armor reduction increased from 10 to 15.",
+         "html": "Armor reduction increased from 10 to 15.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Locust Brood",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Moved from Level 16 to Level 1.",
+         "html": "Moved from Level 16 to Level 1.",
+         "added": false
+        },
+        {
+         "text": "Cooldown increased from 45 to 75 seconds.",
+         "html": "Cooldown increased from 45 to 75 seconds.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "(New) Slapathur",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "Abathur's Basic Attacks now Stun non-Heroes and deal 500% additional damage.",
+         "html": "Abathur's Basic Attacks now Stun non-Heroes and deal 500% additional damage.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Evolve Monstrosity",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "Now displays as a Quest.",
+         "html": "Now displays as a Quest.",
+         "added": false
+        },
+        {
+         "text": "Abathur now has a Monstrosity unit frame, for tracking Health and stacks of the unit.",
+         "html": "Abathur now has a Monstrosity unit frame, for tracking Health and stacks of the unit.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Survival Intincts",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "Moved from Level 1 to Level 16.",
+         "html": "Moved from Level 1 to Level 16.",
+         "added": false
+        },
+        {
+         "text": "Health bonus increased from 100% to 200%.",
+         "html": "Health bonus increased from 100% to 200%.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Spawn Locust [D]</strong>\n<ul>\n<li>Health reduced from 350 to 225.</li>\n<li>Locusts now heal for 20% of the damage they deal, and heal for 20% of their maximum Health when a nearby Minion dies.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Envenomed Nests</strong>\n<ul>\n<li>Armor reduction increased from 10 to 15.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Locust Brood</strong>\n<ul>\n<li>Moved from Level 16 to Level 1.</li>\n<li>Cooldown increased from 45 to 75 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">(New) Slapathur</strong>\n<ul>\n<li>Abathur's Basic Attacks now Stun non-Heroes and deal 500% additional damage.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Evolve Monstrosity</strong>\n<ul>\n<li>Now displays as a Quest.</li>\n<li>Abathur now has a Monstrosity unit frame, for tracking Health and stacks of the unit.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Survival Intincts</strong>\n<ul>\n<li>Moved from Level 1 to Level 16.</li>\n<li>Health bonus increased from 100% to 200%.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Alexstrasza",
+     "heroId": "Alexstrasza",
+     "heroIds": [
+      "Alexstrasza"
+     ],
+     "changes": [
+      {
+       "name": "Dragonqueen",
+       "key": "D",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Cooldown now starts after Dragonqueen has expired.",
+         "html": "Cooldown now starts after Dragonqueen has expired.",
+         "added": false
+        },
+        {
+         "text": "Cooldown reduced from 150 to 130 seconds.",
+         "html": "Cooldown reduced from 150 to 130 seconds.",
+         "added": false
+        },
+        {
+         "text": "Talents that affect Gift of Life also apply to Breath of Life.",
+         "html": "Talents that affect Gift of Life also apply to Breath of Life.",
+         "added": false
+        },
+        {
+         "text": "Talents that affect Abundance also apply to Preservation.",
+         "html": "Talents that affect Abundance also apply to Preservation.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Breath of Life",
+       "key": "Dragonqueen Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Healing reduced from 20% to 15%.",
+         "html": "Healing reduced from 20% to 15%.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Preservation",
+       "key": "Dragonqueen W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Healing reduced from 30% to 25%.",
+         "html": "Healing reduced from 30% to 25%.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Live and Let Live",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Now also provides 25% recharge rate for Breath of Life.",
+         "html": "Now also provides 25% recharge rate for Breath of Life.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Flames of Fury",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "NEW MYTHIC REWARD: Hit an additional 40 Heroes without dying to cause Dragonqueen's duration to be refreshed when damaging an enemy Hero.",
+         "html": "<strong>NEW MYTHIC REWARD:</strong> Hit an additional 40 Heroes without dying to cause Dragonqueen's duration to be refreshed when damaging an enemy Hero.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Life Blossom",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "Now makes Breath of Life remove Slows and Roots.",
+         "html": "Now makes Breath of Life remove Slows and Roots.",
+         "added": false
+        },
+        {
+         "text": "Transforming into Dragonqueen will no longer remove the collected Lifeblossom.",
+         "html": "Transforming into Dragonqueen will no longer remove the collected Lifeblossom.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Draconic Dicipline",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "No longer affect's Dragonqueen's duration.",
+         "html": "No longer affect's Dragonqueen's duration.",
+         "added": false
+        },
+        {
+         "text": "For each allied Hero healed with Dragonqueen's Basic Attacks, reduce the cooldown of Preservation by 1.25 seconds.",
+         "html": "For each allied Hero healed with Dragonqueen's Basic Attacks, reduce the cooldown of Preservation by 1.25 seconds.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "On Ruby Wings",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "Rework: If at least 3 Heroes are in an area hit by a Fireball, that Fireball charge is not consumed.",
+         "html": "Rework: If at least 3 Heroes are in an area hit by a Fireball, that Fireball charge is not consumed.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Ancient Flame",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "Does not provide Quest stacks while active.",
+         "html": "Does not provide Quest stacks while active.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Dragonqueen [D]</strong>\n<ul>\n<li>Cooldown now starts after Dragonqueen has expired.</li>\n<li>Cooldown reduced from 150 to 130 seconds.</li>\n<li>Talents that affect Gift of Life also apply to Breath of Life.</li>\n<li>Talents that affect Abundance also apply to Preservation.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Breath of Life [Dragonqueen Q]</strong>\n<ul>\n<li>Healing reduced from 20% to 15%.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Preservation [Dragonqueen W]</strong>\n<ul>\n<li>Healing reduced from 30% to 25%.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Live and Let Live</strong>\n<ul>\n<li>Now also provides 25% recharge rate for Breath of Life.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Flames of Fury</strong>\n<ul>\n<li><strong>NEW MYTHIC REWARD:</strong> Hit an additional 40 Heroes without dying to cause Dragonqueen's duration to be refreshed when damaging an enemy Hero.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Life Blossom</strong>\n<ul>\n<li>Now makes Breath of Life remove Slows and Roots.</li>\n<li>Transforming into Dragonqueen will no longer remove the collected Lifeblossom.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Draconic Dicipline</strong>\n<ul>\n<li>No longer affect's Dragonqueen's duration.</li>\n<li>For each allied Hero healed with Dragonqueen's Basic Attacks, reduce the cooldown of Preservation by 1.25 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">On Ruby Wings</strong>\n<ul>\n<li>Rework: If at least 3 Heroes are in an area hit by a Fireball, that Fireball charge is not consumed.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Ancient Flame</strong>\n<ul>\n<li>Does not provide Quest stacks while active.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Blaze",
+     "heroId": "Firebat",
+     "heroIds": [
+      "Firebat"
+     ],
+     "changes": [
+      {
+       "name": "Adrenaline Stim",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Active Attack Speed bonus reduced from 100% to 85%.",
+         "html": "Active Attack Speed bonus reduced from 100% to 85%.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Bunker Drop",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "Cooldown increased from 80 to 85 seconds.",
+         "html": "Cooldown increased from 80 to 85 seconds.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Adrenaline Stim</strong>\n<ul>\n<li>Active Attack Speed bonus reduced from 100% to 85%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Bunker Drop</strong>\n<ul>\n<li>Cooldown increased from 80 to 85 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Cho",
+     "heroId": "Cho",
+     "heroIds": [
+      "Cho"
+     ],
+     "changes": [
+      {
+       "name": "Calloused Hide",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "Health threshold required to trigger reduced from 60% to 40%.",
+         "html": "Health threshold required to trigger reduced from 60% to 40%.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Firestarter",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "Cooldown reduction per Basic Attack increased from 1 to 1.5 seconds.",
+         "html": "Cooldown reduction per Basic Attack increased from 1 to 1.5 seconds.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Calloused Hide</strong>\n<ul>\n<li>Health threshold required to trigger reduced from 60% to 40%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Firestarter</strong>\n<ul>\n<li>Cooldown reduction per Basic Attack increased from 1 to 1.5 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Gall",
+     "heroId": "Gall",
+     "heroIds": [
+      "Gall"
+     ],
+     "changes": [
+      {
+       "name": "Rising Dread",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "Bonus per bounce reduced from 25% to 20%.",
+         "html": "Bonus per bounce reduced from 25% to 20%.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Bomb's Away",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "No longer has a cap on stacks.",
+         "html": "No longer has a cap on stacks.",
+         "added": false
+        },
+        {
+         "text": "Damage bonus per stack lowered from 5 to 4.",
+         "html": "Damage bonus per stack lowered from 5 to 4.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Double Trouble",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "Shadowflame's cooldown reduction from Quest Reward increased from 0.5 to 1 second.",
+         "html": "Shadowflame's cooldown reduction from Quest Reward increased from 0.5 to 1 second.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Leaden Orb",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "Stun duration reduced from 0.75 seconds to 0.6 seconds.",
+         "html": "Stun duration reduced from 0.75 seconds to 0.6 seconds.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Rising Dread</strong>\n<ul>\n<li>Bonus per bounce reduced from 25% to 20%.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Bomb's Away</strong>\n<ul>\n<li>No longer has a cap on stacks.</li>\n<li>Damage bonus per stack lowered from 5 to 4.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Double Trouble</strong>\n<ul>\n<li>Shadowflame's cooldown reduction from Quest Reward increased from 0.5 to 1 second.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Leaden Orb</strong>\n<ul>\n<li>Stun duration reduced from 0.75 seconds to 0.6 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Chromie",
+     "heroId": "Chromie",
+     "heroIds": [
+      "Chromie"
+     ],
+     "changes": [
+      {
+       "name": "Dragon's Breath",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Now shows a radius preview to enemies.",
+         "html": "Now shows a radius preview to enemies.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Time Trap",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Health reduced from 400 to 250.",
+         "html": "Health reduced from 400 to 250.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Once Again The First Time",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Quest requirement reduced from 40 to 20 stacks.",
+         "html": "Quest requirement reduced from 40 to 20 stacks.",
+         "added": false
+        },
+        {
+         "text": "Quest must now be completed without dying.",
+         "html": "Quest must now be completed without dying.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Deep Breathing",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Damage per stack reduced from 1% to 0.5%.",
+         "html": "Damage per stack reduced from 1% to 0.5%.",
+         "added": false
+        },
+        {
+         "text": "No longer has a cap on stacks.",
+         "html": "No longer has a cap on stacks.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Chronic Conditions",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "Now also causes Time Trap to activate automatically upon touching an enemy Hero.",
+         "html": "Now also causes Time Trap to activate automatically upon touching an enemy Hero.",
+         "added": false
+        },
+        {
+         "text": "Slow reduced from 30% to 20%.",
+         "html": "Slow reduced from 30% to 20%.",
+         "added": false
+        },
+        {
+         "text": "Movement Speed bonus reduced from 30% to 20%.",
+         "html": "Movement Speed bonus reduced from 30% to 20%.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Here and There",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "Range increased from 20 to 40.",
+         "html": "Range increased from 20 to 40.",
+         "added": false
+        },
+        {
+         "text": "Snap targetting is now used. The Echo nearest the player's target position will be used.",
+         "html": "Snap targetting is now used. The Echo nearest the player's target position will be used.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Dragon's Breath [W]</strong>\n<ul>\n<li>Now shows a radius preview to enemies.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Time Trap [E]</strong>\n<ul>\n<li>Health reduced from 400 to 250.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Once Again The First Time</strong>\n<ul>\n<li>Quest requirement reduced from 40 to 20 stacks.</li>\n<li>Quest must now be completed without dying.</li>\n</ul>\n</li>\n</ul>\n<ul>\n<li><strong class=\"pn-name\">Deep Breathing</strong>\n<ul>\n<li>Damage per stack reduced from 1% to 0.5%.</li>\n<li>No longer has a cap on stacks.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<ul>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Chronic Conditions</strong>\n<ul>\n<li>Now also causes Time Trap to activate automatically upon touching an enemy Hero.</li>\n<li>Slow reduced from 30% to 20%.</li>\n<li>Movement Speed bonus reduced from 30% to 20%.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<ul>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Here and There</strong>\n<ul>\n<li>Range increased from 20 to 40.</li>\n<li>Snap targetting is now used. The Echo nearest the player's target position will be used.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Diablo",
+     "heroId": "Diablo",
+     "heroIds": [
+      "Diablo"
+     ],
+     "changes": [
+      {
+       "name": "Shadow Charge",
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Damage increased from 40 plus 130 with a collision, to 45 plus 140 with a collision.",
+         "html": "Damage increased from 40 plus 130 with a collision, to 45 plus 140 with a collision.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Fire Stomp",
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Damage decreased from 12 on expansion and 36 on return to 11 on expansion and 34 on return.",
+         "html": "Damage decreased from 12 on expansion and 36 on return to 11 on expansion and 34 on return.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Overpower",
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Damage increased from 73 to 80.",
+         "html": "Damage increased from 73 to 80.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Diabolical Momentum",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "Cooldown reduction per Basic Attack increased from 1.5 to 2 seconds.",
+         "html": "Cooldown reduction per Basic Attack increased from 1.5 to 2 seconds.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Dying Breath",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "Cooldown reduction per Hero hit increased from 25 to 30 seconds.",
+         "html": "Cooldown reduction per Hero hit increased from 25 to 30 seconds.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Lord of Terror",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "Health stolen increased from 10% to 12% maximum Health.",
+         "html": "Health stolen increased from 10% to 12% maximum Health.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Shadow Charge</strong>\n<ul>\n<li>Damage increased from 40 plus 130 with a collision, to 45 plus 140 with a collision.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Fire Stomp</strong>\n<ul>\n<li>Damage decreased from 12 on expansion and 36 on return to 11 on expansion and 34 on return.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Overpower</strong>\n<ul>\n<li>Damage increased from 73 to 80.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Diabolical Momentum</strong>\n<ul>\n<li>Cooldown reduction per Basic Attack increased from 1.5 to 2 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Dying Breath</strong>\n<ul>\n<li>Cooldown reduction per Hero hit increased from 25 to 30 seconds.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Lord of Terror</strong>\n<ul>\n<li>Health stolen increased from 10% to 12% maximum Health.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Genji",
+     "heroId": "Genji",
+     "heroIds": [
+      "Genji"
+     ],
+     "changes": [
+      {
+       "name": "Swift as the Wind",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Movement Speed bonus increased from 30% to 40%.",
+         "html": "Movement Speed bonus increased from 30% to 40%.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Strike at the Heart",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "Damage increased from 134 to 142.",
+         "html": "Damage increased from 134 to 142.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Perfect Defense",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "Cooldown reduction per hit increased from 2 to 2.5 seconds.",
+         "html": "Cooldown reduction per hit increased from 2 to 2.5 seconds.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Flow Like Water",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "Cooldown reduction per hit increased from 3 to 4 seconds.",
+         "html": "Cooldown reduction per hit increased from 3 to 4 seconds.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Final Cut",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "Damage reduced from 125 to 115.",
+         "html": "Damage reduced from 125 to 115.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Swift as the Wind</strong>\n<ul>\n<li>Movement Speed bonus increased from 30% to 40%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Strike at the Heart</strong>\n<ul>\n<li>Damage increased from 134 to 142.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Perfect Defense</strong>\n<ul>\n<li>Cooldown reduction per hit increased from 2 to 2.5 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Flow Like Water</strong>\n<ul>\n<li>Cooldown reduction per hit increased from 3 to 4 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Final Cut</strong>\n<ul>\n<li>Damage reduced from 125 to 115.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Johanna",
+     "heroId": "Crusader",
+     "heroIds": [
+      "Crusader"
+     ],
+     "changes": [
+      {
+       "name": "Shield Glare",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Cooldown increased from 12 to 13 seconds.",
+         "html": "Cooldown increased from 12 to 13 seconds.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Blessed Shield",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "Cooldown increased from 60 to 65 seconds.",
+         "html": "Cooldown increased from 60 to 65 seconds.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Shield Glare [E]</strong>\n<ul>\n<li>Cooldown increased from 12 to 13 seconds.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Blessed Shield</strong>\n<ul>\n<li>Cooldown increased from 60 to 65 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Mal'Ganis",
+     "heroId": "MalGanis",
+     "heroIds": [
+      "MalGanis"
+     ],
+     "changes": [
+      {
+       "name": "Will of Tichondrius",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Stun's duration increase reduced from 0.5 to 0.25 seconds.",
+         "html": "Stun's duration increase reduced from 0.5 to 0.25 seconds.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Blind as a Bat",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "There is now a 0.2 second reactivation delay upon finishing 3 swipes of Fel Claws. This matches the time between other swipes.",
+         "html": "There is now a 0.2 second reactivation delay upon finishing 3 swipes of Fel Claws. This matches the time between other swipes.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Will of Tichondrius</strong>\n<ul>\n<li>Stun's duration increase reduced from 0.5 to 0.25 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Blind as a Bat</strong>\n<ul>\n<li>There is now a 0.2 second reactivation delay upon finishing 3 swipes of Fel Claws. This matches the time between other swipes.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Qhira",
+     "heroId": "Qhira",
+     "heroIds": [
+      "Qhira"
+     ],
+     "changes": [
+      {
+       "name": "Revolving Sweep",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Once attached, Revolving Sweep can no longer be detached by the target becoming Unstoppable.",
+         "html": "Once attached, Revolving Sweep can no longer be detached by the target becoming Unstoppable.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Blood Rage",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "NEW BASELINE QUEST: Deal damage to enemy Heroes with Blood Rage's bleed to permanently increase its damage by 0.5% per stack.",
+         "html": "<strong>NEW BASELINE QUEST:</strong> Deal damage to enemy Heroes with Blood Rage's bleed to permanently increase its damage by 0.5% per stack.",
+         "added": false
+        },
+        {
+         "text": "Blood Rage's bleed damage reduced from 11 to 8.",
+         "html": "Blood Rage's bleed damage reduced from 11 to 8.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Fatal Wounds",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Damage bonus against low Health targets increased from 30% to 50%.",
+         "html": "Damage bonus against low Health targets increased from 30% to 50%.",
+         "added": false
+        },
+        {
+         "text": "Quest removed.",
+         "html": "Quest removed.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Revolving Sweep [Q]</strong>\n<ul>\n<li>Once attached, Revolving Sweep can no longer be detached by the target becoming Unstoppable.</li>\n</ul>\n</li>\n</ul>\n<ul>\n<li><strong class=\"pn-name\">Blood Rage [W]</strong>\n<ul>\n<li><strong>NEW BASELINE QUEST:</strong> Deal damage to enemy Heroes with Blood Rage's bleed to permanently increase its damage by 0.5% per stack.</li>\n<li>Blood Rage's bleed damage reduced from 11 to 8.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Fatal Wounds</strong>\n<ul>\n<li>Damage bonus against low Health targets increased from 30% to 50%.</li>\n<li>Quest removed.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Ragnaros",
+     "heroId": "Ragnaros",
+     "heroIds": [
+      "Ragnaros"
+     ],
+     "changes": [
+      {
+       "name": "Blast Wave",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Damage increased from 104 to 120.",
+         "html": "Damage increased from 104 to 120.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Molten Core",
+       "key": "D",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Cooldown increased from 120 to 180 seconds.",
+         "html": "Cooldown increased from 120 to 180 seconds.",
+         "added": false
+        },
+        {
+         "text": "Health increased from 3996 to 5000.",
+         "html": "Health increased from 3996 to 5000.",
+         "added": false
+        },
+        {
+         "text": "Duration increased from 18 to 23 seconds.",
+         "html": "Duration increased from 18 to 23 seconds.",
+         "added": false
+        },
+        {
+         "text": "Ragnaros is now Stunned for 1 second upon exiting.",
+         "html": "Ragnaros is now Stunned for 1 second upon exiting.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Meteor Swing",
+       "key": "Molten Core Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Damage increased from 161 to 250.",
+         "html": "Damage increased from 161 to 250.",
+         "added": false
+        },
+        {
+         "text": "No longer deals increased damage to Minions.",
+         "html": "No longer deals increased damage to Minions.",
+         "added": false
+        },
+        {
+         "text": "Cooldown increased from 6 seconds to 9 seconds.",
+         "html": "Cooldown increased from 6 seconds to 9 seconds.",
+         "added": false
+        },
+        {
+         "text": "Now also knocks enemies back.",
+         "html": "Now also knocks enemies back.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Meteor Shower",
+       "key": "Molten Core W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Damage increased from 151 to 200.",
+         "html": "Damage increased from 151 to 200.",
+         "added": false
+        },
+        {
+         "text": "Cooldown increased from 2.5 to 6 seconds.",
+         "html": "Cooldown increased from 2.5 to 6 seconds.",
+         "added": false
+        },
+        {
+         "text": "Area of effect increased by 66%.",
+         "html": "Area of effect increased by 66%.",
+         "added": false
+        },
+        {
+         "text": "Delay between hits significantly increased.",
+         "html": "Delay between hits significantly increased.",
+         "added": false
+        },
+        {
+         "text": "No longer deals increased damage to Minions.",
+         "html": "No longer deals increased damage to Minions.",
+         "added": false
+        },
+        {
+         "text": "Slow increased from 25% to 35%.",
+         "html": "Slow increased from 25% to 35%.",
+         "added": false
+        },
+        {
+         "text": "Range reduced from 35 to 20, but now it extends up to 35 over time.",
+         "html": "Range reduced from 35 to 20, but now it extends up to 35 over time.",
+         "added": false
+        },
+        {
+         "text": "Now deals 75% reduced damage to Structures.",
+         "html": "Now deals 75% reduced damage to Structures.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Explosive Rune",
+       "key": "Molten Core E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Cooldown decreased from 4 to 2.5 seconds.",
+         "html": "Cooldown decreased from 4 to 2.5 seconds.",
+         "added": false
+        },
+        {
+         "text": "Now applies a DOT that deals 88 damage per second for 5 seconds to impacted targets. No longer deals instant damage.",
+         "html": "Now applies a DOT that deals 88 damage per second for 5 seconds to impacted targets. No longer deals instant damage.",
+         "added": false
+        },
+        {
+         "text": "Range reduced from 35 to 20, but now it extends up to 35 over time.",
+         "html": "Range reduced from 35 to 20, but now it extends up to 35 over time.",
+         "added": false
+        },
+        {
+         "text": "No longer deals increased damage to Minions.",
+         "html": "No longer deals increased damage to Minions.",
+         "added": false
+        },
+        {
+         "text": "Now deals 75% reduced damage to Structures.",
+         "html": "Now deals 75% reduced damage to Structures.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Engulfing Flame",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Damage bonus reduced from 75% to 50%.",
+         "html": "Damage bonus reduced from 75% to 50%.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Sulfuras Smash",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "NEW MYTHIC QUEST: Hit 8 enemy Heroes with the center of Sulfuras Smash. Mythic Reward: Sulfuras Smash gains an extra charge.",
+         "html": "<strong>NEW MYTHIC QUEST:</strong> Hit 8 enemy Heroes with the center of Sulfuras Smash. Mythic Reward: Sulfuras Smash gains an extra charge.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Lava Surge",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "No longer reduces the cooldown of Lava Wave by 30 seconds.",
+         "html": "No longer reduces the cooldown of Lava Wave by 30 seconds.",
+         "added": false
+        },
+        {
+         "text": "Now also gives +200% Movement Speed to allied Minions and Mercenaries in its path.",
+         "html": "Now also gives +200% Movement Speed to allied Minions and Mercenaries in its path.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Heroic Difficulty",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "NEW FUNCTIONALITY: Decrease the cooldown of Molten Core by 110 seconds when used on a dead Fort or Keep. In addition, the starting range of abilities in Molten Core are increased by 100% and will continue to grow.",
+         "html": "<strong>NEW FUNCTIONALITY:</strong> Decrease the cooldown of Molten Core by 110 seconds when used on a dead Fort or Keep. In addition, the starting range of abilities in Molten Core are increased by 100% and will continue to grow.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Blast Wave [W]</strong>\n<ul>\n<li>Damage increased from 104 to 120.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Molten Core [D]</strong>\n<ul>\n<li>Cooldown increased from 120 to 180 seconds.</li>\n<li>Health increased from 3996 to 5000.</li>\n<li>Duration increased from 18 to 23 seconds.</li>\n<li>Ragnaros is now Stunned for 1 second upon exiting.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Meteor Swing [Molten Core Q]</strong>\n<ul>\n<li>Damage increased from 161 to 250.</li>\n<li>No longer deals increased damage to Minions.</li>\n<li>Cooldown increased from 6 seconds to 9 seconds.</li>\n<li>Now also knocks enemies back.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Meteor Shower [Molten Core W]</strong>\n<ul>\n<li>Damage increased from 151 to 200.</li>\n<li>Cooldown increased from 2.5 to 6 seconds.</li>\n<li>Area of effect increased by 66%.</li>\n<li>Delay between hits significantly increased.</li>\n<li>No longer deals increased damage to Minions.</li>\n<li>Slow increased from 25% to 35%.</li>\n<li>Range reduced from 35 to 20, but now it extends up to 35 over time.</li>\n<li>Now deals 75% reduced damage to Structures.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Explosive Rune [Molten Core E]</strong>\n<ul>\n<li>Cooldown decreased from 4 to 2.5 seconds.</li>\n<li>Now applies a DOT that deals 88 damage per second for 5 seconds to impacted targets. No longer deals instant damage.</li>\n<li>Range reduced from 35 to 20, but now it extends up to 35 over time.</li>\n<li>No longer deals increased damage to Minions.</li>\n<li>Now deals 75% reduced damage to Structures.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Engulfing Flame</strong>\n<ul>\n<li>Damage bonus reduced from 75% to 50%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Sulfuras Smash</strong>\n<ul>\n<li><strong>NEW MYTHIC QUEST:</strong> Hit 8 enemy Heroes with the center of Sulfuras Smash. Mythic Reward: Sulfuras Smash gains an extra charge.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Lava Surge</strong>\n<ul>\n<li>No longer reduces the cooldown of Lava Wave by 30 seconds.</li>\n<li>Now also gives +200% Movement Speed to allied Minions and Mercenaries in its path.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Heroic Difficulty</strong>\n<ul>\n<li><strong>NEW FUNCTIONALITY:</strong> Decrease the cooldown of Molten Core by 110 seconds when used on a dead Fort or Keep. In addition, the starting range of abilities in Molten Core are increased by 100% and will continue to grow.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Whitemane",
+     "heroId": "Whitemane",
+     "heroIds": [
+      "Whitemane"
+     ],
+     "changes": [
+      {
+       "name": "Searing Lash",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "NEW QUEST: Hit Heroes with Searing Lash to increase Whitemane's maximum Health by 3 and Mana by 2.",
+         "html": "<strong>NEW QUEST:</strong> Hit Heroes with Searing Lash to increase Whitemane's maximum Health by 3 and Mana by 2.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Pity the Frail",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Cooldown reduction per hit reduced from 1.5 to 1 second.",
+         "html": "Cooldown reduction per hit reduced from 1.5 to 1 second.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Inquisitor's Prayer",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "REWORK: For each Hero hit by Searing Lash, restore 25 Mana. Passive: Zeal's duration is increased by 2 seconds.",
+         "html": "<strong>REWORK:</strong> For each Hero hit by Searing Lash, restore 25 Mana. Passive: Zeal's duration is increased by 2 seconds.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Intercession",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "Cooldown increased 45 to 60 seconds.",
+         "html": "Cooldown increased 45 to 60 seconds.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Scarlet Wrath",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "Mana restore increased from 0.5% to 1%.",
+         "html": "Mana restore increased from 0.5% to 1%.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Guiding Light",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "Now also increases the Spell Power gained from Zeal's activation by 15%.",
+         "html": "Now also increases the Spell Power gained from Zeal's activation by 15%.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Searing Lash [E]</strong>\n<ul>\n<li><strong>NEW QUEST:</strong> Hit Heroes with Searing Lash to increase Whitemane's maximum Health by 3 and Mana by 2.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Pity the Frail</strong>\n<ul>\n<li>Cooldown reduction per hit reduced from 1.5 to 1 second.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Inquisitor's Prayer</strong>\n<ul>\n<li><strong>REWORK:</strong> For each Hero hit by Searing Lash, restore 25 Mana. Passive: Zeal's duration is increased by 2 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Intercession</strong>\n<ul>\n<li>Cooldown increased 45 to 60 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Scarlet Wrath</strong>\n<ul>\n<li>Mana restore increased from 0.5% to 1%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Guiding Light</strong>\n<ul>\n<li>Now also increases the Spell Power gained from Zeal's activation by 15%.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Yrel",
+     "heroId": "Yrel",
+     "heroIds": [
+      "Yrel"
+     ],
+     "changes": [
+      {
+       "name": "Righteous Hammer",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Heal increased from 320 to 370.",
+         "html": "Heal increased from 320 to 370.",
+         "added": false
+        },
+        {
+         "text": "Damage increased from 140 to 160.",
+         "html": "Damage increased from 140 to 160.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Righteous Hammer",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Stun duration increased from 0.75 1 second.",
+         "html": "Stun duration increased from 0.75 1 second.",
+         "added": false
+        },
+        {
+         "text": "Damage increased from 125 to 140.",
+         "html": "Damage increased from 125 to 140.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Avenging Wrath",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Slow increased from 50% to 60%.",
+         "html": "Slow increased from 50% to 60%.",
+         "added": false
+        },
+        {
+         "text": "Damage increased from 225 to 260.",
+         "html": "Damage increased from 225 to 260.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Divine Purpose",
+       "key": "D",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Cooldown increased to from 8 to 16 seconds.",
+         "html": "Cooldown increased to from 8 to 16 seconds.",
+         "added": false
+        },
+        {
+         "text": "Cooldown is now reduced by 8 seconds whenever Yrel's Basic Abilities are interrupted.",
+         "html": "Cooldown is now reduced by 8 seconds whenever Yrel's Basic Abilities are interrupted.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Hand of Freedom",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "Cooldown increased from 30 to 40 seconds.",
+         "html": "Cooldown increased from 30 to 40 seconds.",
+         "added": false
+        },
+        {
+         "text": "Movement Speed bonus reduced from 30% to 25%.",
+         "html": "Movement Speed bonus reduced from 30% to 25%.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Seraphim",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "Cooldown increased from 10 to 20 seconds.",
+         "html": "Cooldown increased from 10 to 20 seconds.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Righteous Hammer [Q]</strong>\n<ul>\n<li>Heal increased from 320 to 370.</li>\n<li>Damage increased from 140 to 160.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Righteous Hammer [W]</strong>\n<ul>\n<li>Stun duration increased from 0.75 1 second.</li>\n<li>Damage increased from 125 to 140.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Avenging Wrath [E]</strong>\n<ul>\n<li>Slow increased from 50% to 60%.</li>\n<li>Damage increased from 225 to 260.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Divine Purpose [D]</strong>\n<ul>\n<li>Cooldown increased to from 8 to 16 seconds.</li>\n<li>Cooldown is now reduced by 8 seconds whenever Yrel's Basic Abilities are interrupted.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Hand of Freedom</strong>\n<ul>\n<li>Cooldown increased from 30 to 40 seconds.</li>\n<li>Movement Speed bonus reduced from 30% to 25%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Seraphim</strong>\n<ul>\n<li>Cooldown increased from 10 to 20 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    }
+   ],
+   "nameKo": "밸런스 업데이트"
+  },
+  {
+   "name": "Bug Fixes",
+   "key": "bugs",
+   "html": "<h3><strong>General</strong></h3>\n<ul>\n<li>Attack beams from Forts, Keeps, and the Core will now be more visible when attacking Heroes.</li>\n</ul>\n<h3><strong>Maps</strong></h3>\n<ul>\n<li><strong class=\"pn-h\">Haunted Mines</strong>\n<ul>\n<li>Fixed an issue where the player would not auto-mount when using the Hearthstone from inside the mines.</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Warhead Junction</strong>\n<ul>\n<li>Fixed an issue that caused Heroes to not be revealed while launching a Warhead.</li>\n<li>Fixed an issue that caused the Warhead's channel beam to persist when interrupted.</li>\n</ul>\n</li>\n</ul>\n<h3><strong>Heroes</strong></h3>\n<ul>\n<li><strong class=\"pn-h\">Ana</strong>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Eye of Horus</strong>\n<ul>\n<li>No longer reveals in a global line when hitting a Structure.</li>\n<li>Removed a minor delay when dealing damage to enemy Heroes.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Anub'arak</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Scarab Host [Trait]</strong>\n<ul>\n<li>Fixed an issue that caused Beetles created by Ultimate Evolution clones of Anub'arak to not gain Spell Power bonuses.</li>\n<li>Fixed an issue that caused Anub'arak's Beetles to not have their damage reduced by D.Va's Defense Matrix.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Leeching Scarabs</strong>\n<ul>\n<li>Fixed an issue that caused the healing done by Leeching Scarabs to not be affected by damage modifiers.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Arthas</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Howling Blast [W]</strong>\n<ul>\n<li>Fixed an issue where the visuals of Howling Blast didn't match the area hit.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Army of the Dead</strong>\n<ul>\n<li>Fixed an issue that caused Arthas's Ghouls to not have their damage reduced by D.Va's Defense Matrix.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Deathwing</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Cataclysm [R]</strong>\n<ul>\n<li>Deathwing will no longer be teleported to where Cataclysm is targeted if he is killed during Cataclysm.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Deckard</strong>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Lorenado</strong>\n<ul>\n<li>Fixed an issue that caused Lorenado to not deal damage to Unstoppable enemies.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Hogger</strong>\n<ul>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">No Control</strong>\n<ul>\n<li>Fixed an issue that caused No Control to target enemies that are not visible.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Jaina</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Frostbolt [Q]</strong>\n<ul>\n<li>Fixed an issue that caused Frosbolt's range indicator and actual range to not match.</li>\n<li>Fixed an issue that caused Frosbot used by Ultimate Evolution clones of Jaina to not gain Spell Power bonuses.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Blizzard [W]</strong>\n<ul>\n<li>Fixed an issue that caused Blizzard used by Ultimate Evolution clones of Jaina to not gain Spell Power bonuses.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Cone of Cold [E]</strong>\n<ul>\n<li>Fixed an issue that caused Cone of Cold used by Ultimate Evolution clones of Jaina to not gain Spell Power bonuses.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Summon Water Elemental</strong>\n<ul>\n<li>Water Elemental's Basic Attacks damage now inherits all damage modifiers placed on Jaina.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Wintermute</strong>\n<ul>\n<li>Fixed an issue that caused Water Elemental's Wintermute effects to deal more damage than intended to Chilled targets.</li>\n<li>Wintermute's Blizzard damage now inherits all damage modifiers placed on Jaina.</li>\n<li>Wintermute's Cone of Cold damage now inherits all damage modifiers placed on Jaina.</li>\n<li>Wintermute's Cone of Cold now initiates its Cone of Cold cast at the same time Jaina initiates her cast and will be interrupted if it or Jaina is interrupted.</li>\n<li>Wintermute's Frostbolt damage now inherits all damage modifiers placed on Jaina.</li>\n<li>Wintermute's Frostbolt now initiates its Frostbolt cast at the same time Jaina initiates her cast and will be interrupted if it or Jaina is interrupted.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Kerrigan</strong>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Summon Ultralisk</strong>\n<ul>\n<li>Fixed an issue that caused Kerrigan's Ultralisk to not have its damage reduced by D.Va's Defense Matrix.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Leoric</strong>\n<ul>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Royal Focus</strong>\n<ul>\n<li>Now displays the remaining duration around the Skeletal Swing's button.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Malfurion</strong>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Vengeful Roots</strong>\n<ul>\n<li>Fixed an issue that caused Malfurion's Treant to not have its damage reduced by D.Va's Defense Matrix.</li>\n<li>Treant's damage will now display as Vengeful Roots in the Death Recap.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Medivh</strong>\n<ul>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Raven Familiar</strong>\n<ul>\n<li>Fixed an issue that caused Medivh's Raven Familiar created by Ultimate Evolution clones of Medivh to not gain Spell Power bonuses.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Guardian of Tirisfal</strong>\n<ul>\n<li>Fixed an issue that caused targets near the edge of Arcane Rift's range with Guardian of Tirisfal to not be hit.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Nazeebo</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Voodoo Ritual [Trait]</strong>\n<ul>\n<li>Quest progress indicators will now show around the killed enemy Minion.</li>\n<li>Quest progress will now be gained in instances where a second Nazeebo damages the target and the target dies within 6 seconds of the first Nazeebo applying Voodoo Ritual.</li>\n<li>Fixed an issue that caused stacks of Voodoo Ritual gained prior to selecting Thing of the Deep to not be granted to Thing of the Deep.</li>\n<li>Fixed an issue that caused Vodoo Ritual's tooltip to display the incorrrect total damage value.</li>\n<li>Fixed an issue that caused Vile Infection's tooltip to display the incorrrect total damage value.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Thing of the Deep</strong>\n<ul>\n<li>No longer causes Voodoo Ritual to display two Quest indicators.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Blood Ritual</strong>\n<ul>\n<li>Fixed an issue that caused Blood Ritual to not grant Health or Mana when the target affected by Voodoo Ritual timed out due to their Health passively being reduced.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Nova</strong>\n<ul>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Fast Reload</strong>\n<ul>\n<li>Fixed an issue that caused Fast Reload to trigger when a Triple Tap target dies before it hits them.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Probius</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Photon Cannon [E]</strong>\n<ul>\n<li>Fixed an issue that caused Probius's Photon Cannons to not have their damage reduced by D.Va's Defense Matrix.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Gathering Minerals</strong>\n<ul>\n<li>Now also empowers any Photon Cannon already on the battlefield upon Quest completion.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Tychus</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Overkill [Q]</strong>\n<ul>\n<li>Fixed an issue that caused Overkill to reveal unintended areas.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Xul</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Raise Skeleton [Trait]</strong>\n<ul>\n<li>Fixed an issue that caused Xul's Skeletal Warriors to not have their damage reduced by D.Va's Defense Matrix.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Skeletal Mages</strong>\n<ul>\n<li>Fixed an issue that caused Xul's Skeletal Mages to not have their damage reduced by D.Va's Defense Matrix.</li>\n<li>Fixed an issue that caused Xul's Skeletal Mages to not apply their Slow in an aura while Blinded or against Evading Heroes.</li>\n<li>Fixed an issue that caused Xul's Skeletal Mages to not apply their Slow with their attacks against Heroes with Heroic Attack only Evasion effects.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Weaken</strong>\n<ul>\n<li>Fixed an issue that caused Xul's Skeletal Warriors to not apply Weaken's damage reduction while Xul is Blinded or against Heroes with Heroic Attack only Evasion effects.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Zagara</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Infested Drop [E]</strong>\n<ul>\n<li>Fixed an issue that caused Roaches created by Ultimate Evolution clones of Zagara to not gain Spell Power bonuses.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<p><strong><a href=\"https://us.forums.blizzard.com/en/heroes/\" target=\"_blank\">Click here to discuss this post with other players in the official Heroes of the Storm forums</a>.</strong></p>\n<p><strong><img alt=\"\" class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/g6/G6G0N80EOC941426801305139.png\"/></strong></p>",
+   "items": [
+    {
+     "name": "Haunted Mines",
+     "battleground": "haunted_mines",
+     "html": "<strong class=\"pn-h\">Haunted Mines</strong>\n<ul>\n<li>Fixed an issue where the player would not auto-mount when using the Hearthstone from inside the mines.</li>\n</ul>",
+     "under": "Maps"
+    },
+    {
+     "name": "Warhead Junction",
+     "battleground": "warhead_junction",
+     "html": "<strong class=\"pn-h\">Warhead Junction</strong>\n<ul>\n<li>Fixed an issue that caused Heroes to not be revealed while launching a Warhead.</li>\n<li>Fixed an issue that caused the Warhead's channel beam to persist when interrupted.</li>\n</ul>",
+     "under": "Maps"
+    },
+    {
+     "name": "Ana",
+     "heroId": "Ana",
+     "heroIds": [
+      "Ana"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Ana</strong>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Eye of Horus</strong>\n<ul>\n<li>No longer reveals in a global line when hitting a Structure.</li>\n<li>Removed a minor delay when dealing damage to enemy Heroes.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Eye of Horus",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "No longer reveals in a global line when hitting a Structure.",
+         "html": "No longer reveals in a global line when hitting a Structure.",
+         "added": false
+        },
+        {
+         "text": "Removed a minor delay when dealing damage to enemy Heroes.",
+         "html": "Removed a minor delay when dealing damage to enemy Heroes.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Anub'arak",
+     "heroId": "Anubarak",
+     "heroIds": [
+      "Anubarak"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Anub'arak</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Scarab Host [Trait]</strong>\n<ul>\n<li>Fixed an issue that caused Beetles created by Ultimate Evolution clones of Anub'arak to not gain Spell Power bonuses.</li>\n<li>Fixed an issue that caused Anub'arak's Beetles to not have their damage reduced by D.Va's Defense Matrix.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Leeching Scarabs</strong>\n<ul>\n<li>Fixed an issue that caused the healing done by Leeching Scarabs to not be affected by damage modifiers.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Scarab Host",
+       "key": "Trait",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Beetles created by Ultimate Evolution clones of Anub'arak to not gain Spell Power bonuses.",
+         "html": "Fixed an issue that caused Beetles created by Ultimate Evolution clones of Anub'arak to not gain Spell Power bonuses.",
+         "added": false
+        },
+        {
+         "text": "Fixed an issue that caused Anub'arak's Beetles to not have their damage reduced by D.Va's Defense Matrix.",
+         "html": "Fixed an issue that caused Anub'arak's Beetles to not have their damage reduced by D.Va's Defense Matrix.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Leeching Scarabs",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused the healing done by Leeching Scarabs to not be affected by damage modifiers.",
+         "html": "Fixed an issue that caused the healing done by Leeching Scarabs to not be affected by damage modifiers.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Arthas",
+     "heroId": "Arthas",
+     "heroIds": [
+      "Arthas"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Arthas</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Howling Blast [W]</strong>\n<ul>\n<li>Fixed an issue where the visuals of Howling Blast didn't match the area hit.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Army of the Dead</strong>\n<ul>\n<li>Fixed an issue that caused Arthas's Ghouls to not have their damage reduced by D.Va's Defense Matrix.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Howling Blast",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue where the visuals of Howling Blast didn't match the area hit.",
+         "html": "Fixed an issue where the visuals of Howling Blast didn't match the area hit.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Army of the Dead",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Arthas's Ghouls to not have their damage reduced by D.Va's Defense Matrix.",
+         "html": "Fixed an issue that caused Arthas's Ghouls to not have their damage reduced by D.Va's Defense Matrix.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Deathwing",
+     "heroId": "Deathwing",
+     "heroIds": [
+      "Deathwing"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Deathwing</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Cataclysm [R]</strong>\n<ul>\n<li>Deathwing will no longer be teleported to where Cataclysm is targeted if he is killed during Cataclysm.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Cataclysm",
+       "key": "R",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Deathwing will no longer be teleported to where Cataclysm is targeted if he is killed during Cataclysm.",
+         "html": "Deathwing will no longer be teleported to where Cataclysm is targeted if he is killed during Cataclysm.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Deckard",
+     "heroId": "Deckard",
+     "heroIds": [
+      "Deckard"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Deckard</strong>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Lorenado</strong>\n<ul>\n<li>Fixed an issue that caused Lorenado to not deal damage to Unstoppable enemies.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Lorenado",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Lorenado to not deal damage to Unstoppable enemies.",
+         "html": "Fixed an issue that caused Lorenado to not deal damage to Unstoppable enemies.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Hogger",
+     "heroId": "Hogger",
+     "heroIds": [
+      "Hogger"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Hogger</strong>\n<ul>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">No Control</strong>\n<ul>\n<li>Fixed an issue that caused No Control to target enemies that are not visible.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "No Control",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused No Control to target enemies that are not visible.",
+         "html": "Fixed an issue that caused No Control to target enemies that are not visible.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Jaina",
+     "heroId": "Jaina",
+     "heroIds": [
+      "Jaina"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Jaina</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Frostbolt [Q]</strong>\n<ul>\n<li>Fixed an issue that caused Frosbolt's range indicator and actual range to not match.</li>\n<li>Fixed an issue that caused Frosbot used by Ultimate Evolution clones of Jaina to not gain Spell Power bonuses.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Blizzard [W]</strong>\n<ul>\n<li>Fixed an issue that caused Blizzard used by Ultimate Evolution clones of Jaina to not gain Spell Power bonuses.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Cone of Cold [E]</strong>\n<ul>\n<li>Fixed an issue that caused Cone of Cold used by Ultimate Evolution clones of Jaina to not gain Spell Power bonuses.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Summon Water Elemental</strong>\n<ul>\n<li>Water Elemental's Basic Attacks damage now inherits all damage modifiers placed on Jaina.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Wintermute</strong>\n<ul>\n<li>Fixed an issue that caused Water Elemental's Wintermute effects to deal more damage than intended to Chilled targets.</li>\n<li>Wintermute's Blizzard damage now inherits all damage modifiers placed on Jaina.</li>\n<li>Wintermute's Cone of Cold damage now inherits all damage modifiers placed on Jaina.</li>\n<li>Wintermute's Cone of Cold now initiates its Cone of Cold cast at the same time Jaina initiates her cast and will be interrupted if it or Jaina is interrupted.</li>\n<li>Wintermute's Frostbolt damage now inherits all damage modifiers placed on Jaina.</li>\n<li>Wintermute's Frostbolt now initiates its Frostbolt cast at the same time Jaina initiates her cast and will be interrupted if it or Jaina is interrupted.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Frostbolt",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Frosbolt's range indicator and actual range to not match.",
+         "html": "Fixed an issue that caused Frosbolt's range indicator and actual range to not match.",
+         "added": false
+        },
+        {
+         "text": "Fixed an issue that caused Frosbot used by Ultimate Evolution clones of Jaina to not gain Spell Power bonuses.",
+         "html": "Fixed an issue that caused Frosbot used by Ultimate Evolution clones of Jaina to not gain Spell Power bonuses.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Blizzard",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Blizzard used by Ultimate Evolution clones of Jaina to not gain Spell Power bonuses.",
+         "html": "Fixed an issue that caused Blizzard used by Ultimate Evolution clones of Jaina to not gain Spell Power bonuses.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Cone of Cold",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Cone of Cold used by Ultimate Evolution clones of Jaina to not gain Spell Power bonuses.",
+         "html": "Fixed an issue that caused Cone of Cold used by Ultimate Evolution clones of Jaina to not gain Spell Power bonuses.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Summon Water Elemental",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "Water Elemental's Basic Attacks damage now inherits all damage modifiers placed on Jaina.",
+         "html": "Water Elemental's Basic Attacks damage now inherits all damage modifiers placed on Jaina.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Wintermute",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Water Elemental's Wintermute effects to deal more damage than intended to Chilled targets.",
+         "html": "Fixed an issue that caused Water Elemental's Wintermute effects to deal more damage than intended to Chilled targets.",
+         "added": false
+        },
+        {
+         "text": "Wintermute's Blizzard damage now inherits all damage modifiers placed on Jaina.",
+         "html": "Wintermute's Blizzard damage now inherits all damage modifiers placed on Jaina.",
+         "added": false
+        },
+        {
+         "text": "Wintermute's Cone of Cold damage now inherits all damage modifiers placed on Jaina.",
+         "html": "Wintermute's Cone of Cold damage now inherits all damage modifiers placed on Jaina.",
+         "added": false
+        },
+        {
+         "text": "Wintermute's Cone of Cold now initiates its Cone of Cold cast at the same time Jaina initiates her cast and will be interrupted if it or Jaina is interrupted.",
+         "html": "Wintermute's Cone of Cold now initiates its Cone of Cold cast at the same time Jaina initiates her cast and will be interrupted if it or Jaina is interrupted.",
+         "added": false
+        },
+        {
+         "text": "Wintermute's Frostbolt damage now inherits all damage modifiers placed on Jaina.",
+         "html": "Wintermute's Frostbolt damage now inherits all damage modifiers placed on Jaina.",
+         "added": false
+        },
+        {
+         "text": "Wintermute's Frostbolt now initiates its Frostbolt cast at the same time Jaina initiates her cast and will be interrupted if it or Jaina is interrupted.",
+         "html": "Wintermute's Frostbolt now initiates its Frostbolt cast at the same time Jaina initiates her cast and will be interrupted if it or Jaina is interrupted.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Kerrigan",
+     "heroId": "Kerrigan",
+     "heroIds": [
+      "Kerrigan"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Kerrigan</strong>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Summon Ultralisk</strong>\n<ul>\n<li>Fixed an issue that caused Kerrigan's Ultralisk to not have its damage reduced by D.Va's Defense Matrix.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Summon Ultralisk",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Kerrigan's Ultralisk to not have its damage reduced by D.Va's Defense Matrix.",
+         "html": "Fixed an issue that caused Kerrigan's Ultralisk to not have its damage reduced by D.Va's Defense Matrix.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Leoric",
+     "heroId": "Leoric",
+     "heroIds": [
+      "Leoric"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Leoric</strong>\n<ul>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Royal Focus</strong>\n<ul>\n<li>Now displays the remaining duration around the Skeletal Swing's button.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Royal Focus",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "Now displays the remaining duration around the Skeletal Swing's button.",
+         "html": "Now displays the remaining duration around the Skeletal Swing's button.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Malfurion",
+     "heroId": "Malfurion",
+     "heroIds": [
+      "Malfurion"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Malfurion</strong>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Vengeful Roots</strong>\n<ul>\n<li>Fixed an issue that caused Malfurion's Treant to not have its damage reduced by D.Va's Defense Matrix.</li>\n<li>Treant's damage will now display as Vengeful Roots in the Death Recap.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Vengeful Roots",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Malfurion's Treant to not have its damage reduced by D.Va's Defense Matrix.",
+         "html": "Fixed an issue that caused Malfurion's Treant to not have its damage reduced by D.Va's Defense Matrix.",
+         "added": false
+        },
+        {
+         "text": "Treant's damage will now display as Vengeful Roots in the Death Recap.",
+         "html": "Treant's damage will now display as Vengeful Roots in the Death Recap.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Medivh",
+     "heroId": "Medivh",
+     "heroIds": [
+      "Medivh"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Medivh</strong>\n<ul>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Raven Familiar</strong>\n<ul>\n<li>Fixed an issue that caused Medivh's Raven Familiar created by Ultimate Evolution clones of Medivh to not gain Spell Power bonuses.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Guardian of Tirisfal</strong>\n<ul>\n<li>Fixed an issue that caused targets near the edge of Arcane Rift's range with Guardian of Tirisfal to not be hit.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Raven Familiar",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Medivh's Raven Familiar created by Ultimate Evolution clones of Medivh to not gain Spell Power bonuses.",
+         "html": "Fixed an issue that caused Medivh's Raven Familiar created by Ultimate Evolution clones of Medivh to not gain Spell Power bonuses.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Guardian of Tirisfal",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused targets near the edge of Arcane Rift's range with Guardian of Tirisfal to not be hit.",
+         "html": "Fixed an issue that caused targets near the edge of Arcane Rift's range with Guardian of Tirisfal to not be hit.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Nazeebo",
+     "heroId": "WitchDoctor",
+     "heroIds": [
+      "WitchDoctor"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Nazeebo</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Voodoo Ritual [Trait]</strong>\n<ul>\n<li>Quest progress indicators will now show around the killed enemy Minion.</li>\n<li>Quest progress will now be gained in instances where a second Nazeebo damages the target and the target dies within 6 seconds of the first Nazeebo applying Voodoo Ritual.</li>\n<li>Fixed an issue that caused stacks of Voodoo Ritual gained prior to selecting Thing of the Deep to not be granted to Thing of the Deep.</li>\n<li>Fixed an issue that caused Vodoo Ritual's tooltip to display the incorrrect total damage value.</li>\n<li>Fixed an issue that caused Vile Infection's tooltip to display the incorrrect total damage value.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Thing of the Deep</strong>\n<ul>\n<li>No longer causes Voodoo Ritual to display two Quest indicators.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Blood Ritual</strong>\n<ul>\n<li>Fixed an issue that caused Blood Ritual to not grant Health or Mana when the target affected by Voodoo Ritual timed out due to their Health passively being reduced.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Voodoo Ritual",
+       "key": "Trait",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Quest progress indicators will now show around the killed enemy Minion.",
+         "html": "Quest progress indicators will now show around the killed enemy Minion.",
+         "added": false
+        },
+        {
+         "text": "Quest progress will now be gained in instances where a second Nazeebo damages the target and the target dies within 6 seconds of the first Nazeebo applying Voodoo Ritual.",
+         "html": "Quest progress will now be gained in instances where a second Nazeebo damages the target and the target dies within 6 seconds of the first Nazeebo applying Voodoo Ritual.",
+         "added": false
+        },
+        {
+         "text": "Fixed an issue that caused stacks of Voodoo Ritual gained prior to selecting Thing of the Deep to not be granted to Thing of the Deep.",
+         "html": "Fixed an issue that caused stacks of Voodoo Ritual gained prior to selecting Thing of the Deep to not be granted to Thing of the Deep.",
+         "added": false
+        },
+        {
+         "text": "Fixed an issue that caused Vodoo Ritual's tooltip to display the incorrrect total damage value.",
+         "html": "Fixed an issue that caused Vodoo Ritual's tooltip to display the incorrrect total damage value.",
+         "added": false
+        },
+        {
+         "text": "Fixed an issue that caused Vile Infection's tooltip to display the incorrrect total damage value.",
+         "html": "Fixed an issue that caused Vile Infection's tooltip to display the incorrrect total damage value.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Thing of the Deep",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "No longer causes Voodoo Ritual to display two Quest indicators.",
+         "html": "No longer causes Voodoo Ritual to display two Quest indicators.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Blood Ritual",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Blood Ritual to not grant Health or Mana when the target affected by Voodoo Ritual timed out due to their Health passively being reduced.",
+         "html": "Fixed an issue that caused Blood Ritual to not grant Health or Mana when the target affected by Voodoo Ritual timed out due to their Health passively being reduced.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Nova",
+     "heroId": "Nova",
+     "heroIds": [
+      "Nova"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Nova</strong>\n<ul>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Fast Reload</strong>\n<ul>\n<li>Fixed an issue that caused Fast Reload to trigger when a Triple Tap target dies before it hits them.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Fast Reload",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Fast Reload to trigger when a Triple Tap target dies before it hits them.",
+         "html": "Fixed an issue that caused Fast Reload to trigger when a Triple Tap target dies before it hits them.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Probius",
+     "heroId": "Probius",
+     "heroIds": [
+      "Probius"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Probius</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Photon Cannon [E]</strong>\n<ul>\n<li>Fixed an issue that caused Probius's Photon Cannons to not have their damage reduced by D.Va's Defense Matrix.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Gathering Minerals</strong>\n<ul>\n<li>Now also empowers any Photon Cannon already on the battlefield upon Quest completion.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Photon Cannon",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Probius's Photon Cannons to not have their damage reduced by D.Va's Defense Matrix.",
+         "html": "Fixed an issue that caused Probius's Photon Cannons to not have their damage reduced by D.Va's Defense Matrix.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Gathering Minerals",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Now also empowers any Photon Cannon already on the battlefield upon Quest completion.",
+         "html": "Now also empowers any Photon Cannon already on the battlefield upon Quest completion.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Tychus",
+     "heroId": "Tychus",
+     "heroIds": [
+      "Tychus"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Tychus</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Overkill [Q]</strong>\n<ul>\n<li>Fixed an issue that caused Overkill to reveal unintended areas.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Overkill",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Overkill to reveal unintended areas.",
+         "html": "Fixed an issue that caused Overkill to reveal unintended areas.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Xul",
+     "heroId": "Necromancer",
+     "heroIds": [
+      "Necromancer"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Xul</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Raise Skeleton [Trait]</strong>\n<ul>\n<li>Fixed an issue that caused Xul's Skeletal Warriors to not have their damage reduced by D.Va's Defense Matrix.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Skeletal Mages</strong>\n<ul>\n<li>Fixed an issue that caused Xul's Skeletal Mages to not have their damage reduced by D.Va's Defense Matrix.</li>\n<li>Fixed an issue that caused Xul's Skeletal Mages to not apply their Slow in an aura while Blinded or against Evading Heroes.</li>\n<li>Fixed an issue that caused Xul's Skeletal Mages to not apply their Slow with their attacks against Heroes with Heroic Attack only Evasion effects.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Weaken</strong>\n<ul>\n<li>Fixed an issue that caused Xul's Skeletal Warriors to not apply Weaken's damage reduction while Xul is Blinded or against Heroes with Heroic Attack only Evasion effects.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Raise Skeleton",
+       "key": "Trait",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Xul's Skeletal Warriors to not have their damage reduced by D.Va's Defense Matrix.",
+         "html": "Fixed an issue that caused Xul's Skeletal Warriors to not have their damage reduced by D.Va's Defense Matrix.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Skeletal Mages",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Xul's Skeletal Mages to not have their damage reduced by D.Va's Defense Matrix.",
+         "html": "Fixed an issue that caused Xul's Skeletal Mages to not have their damage reduced by D.Va's Defense Matrix.",
+         "added": false
+        },
+        {
+         "text": "Fixed an issue that caused Xul's Skeletal Mages to not apply their Slow in an aura while Blinded or against Evading Heroes.",
+         "html": "Fixed an issue that caused Xul's Skeletal Mages to not apply their Slow in an aura while Blinded or against Evading Heroes.",
+         "added": false
+        },
+        {
+         "text": "Fixed an issue that caused Xul's Skeletal Mages to not apply their Slow with their attacks against Heroes with Heroic Attack only Evasion effects.",
+         "html": "Fixed an issue that caused Xul's Skeletal Mages to not apply their Slow with their attacks against Heroes with Heroic Attack only Evasion effects.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Weaken",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Xul's Skeletal Warriors to not apply Weaken's damage reduction while Xul is Blinded or against Heroes with Heroic Attack only Evasion effects.",
+         "html": "Fixed an issue that caused Xul's Skeletal Warriors to not apply Weaken's damage reduction while Xul is Blinded or against Heroes with Heroic Attack only Evasion effects.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Zagara",
+     "heroId": "Zagara",
+     "heroIds": [
+      "Zagara"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Zagara</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Infested Drop [E]</strong>\n<ul>\n<li>Fixed an issue that caused Roaches created by Ultimate Evolution clones of Zagara to not gain Spell Power bonuses.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Infested Drop",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Roaches created by Ultimate Evolution clones of Zagara to not gain Spell Power bonuses.",
+         "html": "Fixed an issue that caused Roaches created by Ultimate Evolution clones of Zagara to not gain Spell Power bonuses.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "nameKo": "버그 수정"
+  }
+ ],
+ "heroes": [
+  "Abathur",
+  "Alexstrasza",
+  "Ana",
+  "Anubarak",
+  "Arthas",
+  "Cho",
+  "Chromie",
+  "Crusader",
+  "Deathwing",
+  "Deckard",
+  "Diablo",
+  "Firebat",
+  "Gall",
+  "Genji",
+  "Hogger",
+  "Jaina",
+  "Kerrigan",
+  "Leoric",
+  "MalGanis",
+  "Malfurion",
+  "Medivh",
+  "Necromancer",
+  "Nova",
+  "Probius",
+  "Qhira",
+  "Ragnaros",
+  "Tychus",
+  "Whitemane",
+  "WitchDoctor",
+  "Yrel",
+  "Zagara"
+ ],
+ "battlegrounds": [
+  "hanamura_temple",
+  "haunted_mines",
+  "warhead_junction"
+ ],
+ "lang": "en",
+ "newsId": "24287550"
+}

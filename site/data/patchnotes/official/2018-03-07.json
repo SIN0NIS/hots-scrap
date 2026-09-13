@@ -1,0 +1,2297 @@
+{
+ "date": "2018-03-07",
+ "kind": "patch",
+ "title": "히어로즈 오브 더 스톰 패치 노트 – 2018년 3월 7일",
+ "source": "https://news.blizzard.com/ko-kr/article/21594628/2018-3-7",
+ "published": "2018-03-06T20:00:00Z",
+ "sections": [
+  {
+   "name": "머리말",
+   "key": "intro",
+   "html": "<p>히어로즈 오브 더 스톰의 새로운 패치가 적용되었습니다. 이 패치에서는 소냐와 메디브가 개편되었고 폭풍 특공대 스킨이 추가되었습니다!</p>\n<p><strong class=\"pn-new\">참고: 주황색 텍스트는 패치 노트에 추가된 텍스트입니다.</strong></p>"
+  },
+  {
+   "name": "머리말",
+   "key": "intro",
+   "html": "<figure class=\"pull-right\">\n<img src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/UJ07P5TG9OET1519261751786.jpg\"/>\n</figure>"
+  },
+  {
+   "name": "아트",
+   "key": "art",
+   "html": "<p><span class=\"pn-h\"><strong>영웅, 기술, 특성</strong></span></p>\n<ul>\n<li><strong>노바:</strong> 정밀 타격이 시각적으로 개선되었습니다.</li>\n<li><strong>해머 상사:</strong> 고유한 귀환 애니메이션이 추가되었습니다.</li>\n<li><strong>스랄:</strong> 천둥폭풍 특성을 선택하면 생명력 막대 밑에 최근에 연쇄 번개로 공격한 적을 확인할 수 있는 사용자 인터페이스가 추가되었습니다.</li>\n</ul>",
+   "items": [
+    {
+     "name": "노바",
+     "heroId": "Nova",
+     "heroIds": [
+      "Nova"
+     ],
+     "under": null,
+     "html": "<strong>노바:</strong> 정밀 타격이 시각적으로 개선되었습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "노바: 정밀 타격이 시각적으로 개선되었습니다.",
+         "html": "<strong>노바:</strong> 정밀 타격이 시각적으로 개선되었습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "해머 상사",
+     "heroId": "SgtHammer",
+     "heroIds": [
+      "SgtHammer"
+     ],
+     "under": null,
+     "html": "<strong>해머 상사:</strong> 고유한 귀환 애니메이션이 추가되었습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "해머 상사: 고유한 귀환 애니메이션이 추가되었습니다.",
+         "html": "<strong>해머 상사:</strong> 고유한 귀환 애니메이션이 추가되었습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "스랄",
+     "heroId": "Thrall",
+     "heroIds": [
+      "Thrall"
+     ],
+     "under": null,
+     "html": "<strong>스랄:</strong> 천둥폭풍 특성을 선택하면 생명력 막대 밑에 최근에 연쇄 번개로 공격한 적을 확인할 수 있는 사용자 인터페이스가 추가되었습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "스랄: 천둥폭풍 특성을 선택하면 생명력 막대 밑에 최근에 연쇄 번개로 공격한 적을 확인할 수 있는 사용자 인터페이스가 추가되었습니다.",
+         "html": "<strong>스랄:</strong> 천둥폭풍 특성을 선택하면 생명력 막대 밑에 최근에 연쇄 번개로 공격한 적을 확인할 수 있는 사용자 인터페이스가 추가되었습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "디자인",
+   "key": "디자인",
+   "html": "<p><span class=\"pn-h\"><strong>고유 능력 퀘스트</strong></span></p>\n<ul>\n<li>다음 영웅들의 고유 능력들이 반복 퀘스트로 분류되었습니다.\n<ul>\n<li><span class=\"pn-name\"><strong>알라라크: 가학성</strong></span>\n<ul>\n<li>적 영웅을 처치하면 퀘스트 진행 시각 및 음향 효과가 출력됩니다.</li>\n<li>알라라크의 가학성 퀘스트를 게임 내 점수 화면(단축키: TAB)에서 확인할 수 있습니다. </li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>디아블로: 검은 영혼석</strong></span>\n<ul>\n<li>영혼을 획득하면 퀘스트 진행 시각 및 음향 효과가 출력됩니다.</li>\n<li>퀘스트를 완료하면 다른 퀘스트처럼 화면 좌측에 알림이 표시됩니다.</li>\n<li>디아블로의 검은 영혼석 퀘스트를 게임 내 점수 화면(단축키: TAB)에서 확인할 수 있습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+  },
+  {
+   "name": "영웅",
+   "key": "heroes",
+   "html": "<table class=\"table table-condensed\">\n<tbody>\n<tr>\n<th></th>\n<th></th>\n<th></th>\n</tr>\n<tr>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n</tbody>\n</table>"
+  },
+  {
+   "name": "전문가",
+   "key": "role_specialist",
+   "html": "<h4>메디브</h4>\n<p><img class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/6WFFUF574HLT1463704053340.png\"/></p>\n메디브는 이번 패치에 대대적인 업데이트가 있었습니다. 자세한 변경 사항은 아래와 <a href=\"https://kr.battle.net/heroes/blog/21508381\" target=\"_blank\">소냐와 메디브 게임 플레이 업데이트 게시글</a>에서 확인하세요.\n<p><strong class=\"pn-h\">능력치</strong></p>\n<ul>\n<li>레벨당 증가하는 생명력이 4%에서 4.5%로 증가했습니다.</li>\n<li>레벨당 증가하는 생명력 재생량이 4%에서 4.5%로 증가했습니다.</li>\n</ul>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>비전 균열 [Q]</strong></span>\n<ul>\n<li>공격력이 200에서 170으로 감소했습니다.</li>\n<li>추가된 기능:\n<ul>\n<li><strong>퀘스트:</strong> 죽지 않고 적 영웅에게 비전 균열을 40회 적중시켜야 합니다.</li>\n<li><strong>보상:</strong> 비전 균열의 공격력이 영구히 75 증가하고 적 영웅에게 적중했을 때 재사용 대기시간이 추가로 1초 감소합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>의지 투영 [W]</strong></span>\n<ul>\n<li>재사용 대기시간이 5초에서 8초로 증가했습니다.</li>\n<li>마나 소모량이 50에서 60으로 증가했습니다.</li>\n<li>지속 시간이 만료되면 흡수한 피해의 20%만큼 대상의 생명력이 회복됩니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>차원문 [E]</strong></span>\n<ul>\n<li>재사용 대기시간이 20초에서 16초로 감소했습니다.</li>\n<li>마나 소모량이 75에서 65로 감소했습니다.  </li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>기민함의 바람 [Z]\n<ul>\n<li>13레벨에서 옮겨졌습니다.</li>\n</ul>\n</li>\n<li>차원문 특화 (사용 효과)\n<ul>\n<li>추가된 기능:\n<ul>\n<li>까마귀 형상 중에도 차원문을 시전할 수 있습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>까마귀의 지능 (Z)\n<ul>\n<li>추가된 기능:\n<ul>\n<li>까마귀 형상일 때 생명력 재생량이 75% 증가합니다.</li>\n</ul>\n</li>\n<li>추가 마나 재생량이 100%에서 75%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>드넓은 시야 (고유 능력)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>마법사 갑옷 [E]\n<ul>\n<li>새로운 기능:\n<ul>\n<li>차원문을 처음 사용하는 아군의 방어력이 4초 동안 25 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>까마귀 전령 [E]\n<ul>\n<li>7레벨에서 옮겨졌습니다.</li>\n<li>추가된 기능:\n<ul>\n<li>까마귀 전령의 공격이 적을 2.5초 동안 30% 느려지게 합니다.</li>\n<li>까마귀 전령이 아군이 차원문을 사용할 때마다 머뭅니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>현시의 가루 (사용 효과)\n<ul>\n<li>변경된 기능:\n<ul>\n<li>까마귀 형상일 때의 시야가 영구히 25% 증가합니다.</li>\n<li>사용하면 시야가 5초 동안 급격히 증가하고 주위 적 영웅들을 8초 동안 드러냅니다. 까마귀 형상 중에도 사용할 수 있습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>7레벨</strong></span>\n<ul>\n<li>대가의 솜씨 [Q]\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>신비한 폭발 [W]\n<ul>\n<li>새로운 기능:\n<ul>\n<li>의지 투영이 만료될 때 주위 적들에게 90의 피해를 줍니다. 흡수한 피해의 100%만큼 추가로 피해를 줍니다. 추가 피해량의 최대치는 365입니다.</li>\n</ul>\n</li>\n<li>폭발 반경이 3에서 3.5로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 신비한 공세 [Q]</strong>\n<ul>\n<li>비전 균열이 적 영웅에게 적중하면 6초 이내의 다음 일반 공격의 공격력이 40%의 추가 피해를 주고 준 피해의 40%만큼 생명력을 회복합니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 마력 투영 [W]</strong>\n<ul>\n<li>한 번의 의지 투영으로 268 이상의 피해를 흡수하면 기술 위력이 12초 동안 20% 증가합니다. 최대 2회 중첩됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>13레벨</strong></span>\n<ul>\n<li>촉진 [Q]\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>천체 투영 [E]\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>수호의 원 [W]\n<ul>\n<li>16레벨에서 옮겨졌습니다.</li>\n<li>이제 특성이 적용된 의지 투영이 적용됩니다.</li>\n<li>반경이 2.5에서 3으로 증가했습니다.</li>\n</ul>\n</li>\n<li>굳건한 의지 [W]\n<ul>\n<li>16레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>의지 투영으로 268 이상의 피해를 흡수하면 재사용 대기시간이 3초 감소합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>재흡수 [W]\n<ul>\n<li>16레벨에서 옮겨졌습니다.</li>\n<li>의지 투영의 치유량이 흡수량의 50%로 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>16레벨</strong></span>\n<ul>\n<li>비전 충전물 [Q]\n<ul>\n<li>7레벨에서 옮겨졌습니다.</li>\n<li>공격력 증가량이 30%에서 15%로 감소했습니다.</li>\n</ul>\n</li>\n<li>안정적인 차원문 [W]\n<ul>\n<li>1레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>차원문의 재사용 대기시간이 25% 감소하고 지속 시간이 50% 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 시간 변형 (지속 효과)</strong>\n<ul>\n<li>일반 공격을 할 때마다 궁극기의 재사용 대기시간이 1초 감소합니다. 비전 균열이 적 영웅에게 적중할 때마다 궁극기의 재사용 대기시간이 3초 감소합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>20레벨</strong></span>\n<ul>\n<li>투명화(사용 효과)의 명칭이 투명화의 가루(사용 효과)로 변경되었습니다.\n<ul>\n<li>더는 마나를 소모하지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<table class=\"table table-condensed\">\n<tbody>\n<tr>\n<th><strong>레벨 (특성 단계)</strong></th>\n<th colspan=\"4\"><strong>메디브의 특성</strong></th>\n</tr>\n<tr>\n<td><strong>1 (1)</strong></td>\n<td><u>기민함의 바람 [Z]</u></td>\n<td>까마귀의 지능 [Z]</td>\n<td>차원문 특화 (사용 효과)</td>\n<td>—</td>\n<td>—</td>\n</tr>\n<tr>\n<td><strong>4 (2)</strong></td>\n<td>마법사 갑옷 [E]</td>\n<td><u>까마귀 전령 [E]</u></td>\n<td>현시의 가루 (사용 효과)</td>\n<td>—</td>\n<td>—</td>\n</tr>\n<tr>\n<td><strong>7 (3)</strong></td>\n<td><em>신비한 공세 [Q]</em></td>\n<td>신비한 폭발 [W]</td>\n<td><em>마력 투영 [W]</em></td>\n<td>—</td>\n<td>—</td>\n</tr>\n<tr>\n<td><strong>10 (4)</strong></td>\n<td>변이 폭탄 [R]</td>\n<td>봉인의 지맥 [R]</td>\n<td>—</td>\n<td>—</td>\n<td>—</td>\n</tr>\n<tr>\n<td><strong>13 (5)</strong></td>\n<td><u>수호의 원 [W]</u></td>\n<td><u>굳건한 의지 [W]</u></td>\n<td><u>재흡수 [W]</u></td>\n<td>—</td>\n<td>—</td>\n</tr>\n<tr>\n<td><strong>16 (6)</strong></td>\n<td><u>비전 충전물 [Q]</u></td>\n<td><em>시간 변형 [Q]</em></td>\n<td><u>안정적인 차원문 [E]</u></td>\n<td>—</td>\n<td>—</td>\n</tr>\n<tr>\n<td><strong>20 (7)</strong></td>\n<td>변이 폭탄의 문양 [R]</td>\n<td>메디브의 속임수 [R]</td>\n<td>티리스팔의 수호자 [Q]</td>\n<td>신비한 총명함 (사용 효과)</td>\n<td>투명화의 가루 (사용 효과)</td>\n</tr>\n</tbody>\n</table>\n<ul>\n<li>(!)는 퀘스트 특성입니다.</li>\n<li><em>이탤릭체</em>는 <em>새로운</em> 특성입니다.</li>\n<li><u>밑줄</u>친 특성은 <u>옮겨진</u> 특성입니다.</li>\n</ul>",
+   "heroes": [
+    {
+     "name": "메디브",
+     "heroId": "Medivh",
+     "heroIds": [
+      "Medivh"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "레벨당 증가하는 생명력이 4%에서 4.5%로 증가했습니다.",
+         "html": "레벨당 증가하는 생명력이 4%에서 4.5%로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "레벨당 증가하는 생명력 재생량이 4%에서 4.5%로 증가했습니다.",
+         "html": "레벨당 증가하는 생명력 재생량이 4%에서 4.5%로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "비전 균열",
+       "key": "Q",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "공격력이 200에서 170으로 감소했습니다.",
+         "html": "공격력이 200에서 170으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "추가된 기능",
+       "key": null,
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "퀘스트: 죽지 않고 적 영웅에게 비전 균열을 40회 적중시켜야 합니다.",
+         "html": "<strong>퀘스트:</strong> 죽지 않고 적 영웅에게 비전 균열을 40회 적중시켜야 합니다.",
+         "added": false
+        },
+        {
+         "text": "보상: 비전 균열의 공격력이 영구히 75 증가하고 적 영웅에게 적중했을 때 재사용 대기시간이 추가로 1초 감소합니다.",
+         "html": "<strong>보상:</strong> 비전 균열의 공격력이 영구히 75 증가하고 적 영웅에게 적중했을 때 재사용 대기시간이 추가로 1초 감소합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "의지 투영",
+       "key": "W",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 5초에서 8초로 증가했습니다.",
+         "html": "재사용 대기시간이 5초에서 8초로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "마나 소모량이 50에서 60으로 증가했습니다.",
+         "html": "마나 소모량이 50에서 60으로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "지속 시간이 만료되면 흡수한 피해의 20%만큼 대상의 생명력이 회복됩니다.",
+         "html": "지속 시간이 만료되면 흡수한 피해의 20%만큼 대상의 생명력이 회복됩니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "차원문",
+       "key": "E",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 20초에서 16초로 감소했습니다.",
+         "html": "재사용 대기시간이 20초에서 16초로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "마나 소모량이 75에서 65로 감소했습니다.",
+         "html": "마나 소모량이 75에서 65로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "기민함의 바람",
+       "key": "Z",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "13레벨에서 옮겨졌습니다.",
+         "html": "13레벨에서 옮겨졌습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "차원문 특화",
+       "key": "사용 효과",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": []
+      },
+      {
+       "name": "추가된 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "까마귀 형상 중에도 차원문을 시전할 수 있습니다.",
+         "html": "까마귀 형상 중에도 차원문을 시전할 수 있습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "까마귀의 지능",
+       "key": "Z",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "추가 마나 재생량이 100%에서 75%로 감소했습니다.",
+         "html": "추가 마나 재생량이 100%에서 75%로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "추가된 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "까마귀 형상일 때 생명력 재생량이 75% 증가합니다.",
+         "html": "까마귀 형상일 때 생명력 재생량이 75% 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "드넓은 시야",
+       "key": "고유 능력",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "마법사 갑옷",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": []
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "차원문을 처음 사용하는 아군의 방어력이 4초 동안 25 증가합니다.",
+         "html": "차원문을 처음 사용하는 아군의 방어력이 4초 동안 25 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "까마귀 전령",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "7레벨에서 옮겨졌습니다.",
+         "html": "7레벨에서 옮겨졌습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "추가된 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "까마귀 전령의 공격이 적을 2.5초 동안 30% 느려지게 합니다.",
+         "html": "까마귀 전령의 공격이 적을 2.5초 동안 30% 느려지게 합니다.",
+         "added": false
+        },
+        {
+         "text": "까마귀 전령이 아군이 차원문을 사용할 때마다 머뭅니다.",
+         "html": "까마귀 전령이 아군이 차원문을 사용할 때마다 머뭅니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "현시의 가루",
+       "key": "사용 효과",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": []
+      },
+      {
+       "name": "변경된 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "까마귀 형상일 때의 시야가 영구히 25% 증가합니다.",
+         "html": "까마귀 형상일 때의 시야가 영구히 25% 증가합니다.",
+         "added": false
+        },
+        {
+         "text": "사용하면 시야가 5초 동안 급격히 증가하고 주위 적 영웅들을 8초 동안 드러냅니다. 까마귀 형상 중에도 사용할 수 있습니다.",
+         "html": "사용하면 시야가 5초 동안 급격히 증가하고 주위 적 영웅들을 8초 동안 드러냅니다. 까마귀 형상 중에도 사용할 수 있습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "대가의 솜씨",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "신비한 폭발",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "폭발 반경이 3에서 3.5로 증가했습니다.",
+         "html": "폭발 반경이 3에서 3.5로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "의지 투영이 만료될 때 주위 적들에게 90의 피해를 줍니다. 흡수한 피해의 100%만큼 추가로 피해를 줍니다. 추가 피해량의 최대치는 365입니다.",
+         "html": "의지 투영이 만료될 때 주위 적들에게 90의 피해를 줍니다. 흡수한 피해의 100%만큼 추가로 피해를 줍니다. 추가 피해량의 최대치는 365입니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 특성: 신비한 공세",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "비전 균열이 적 영웅에게 적중하면 6초 이내의 다음 일반 공격의 공격력이 40%의 추가 피해를 주고 준 피해의 40%만큼 생명력을 회복합니다.",
+         "html": "비전 균열이 적 영웅에게 적중하면 6초 이내의 다음 일반 공격의 공격력이 40%의 추가 피해를 주고 준 피해의 40%만큼 생명력을 회복합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 특성: 마력 투영",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "한 번의 의지 투영으로 268 이상의 피해를 흡수하면 기술 위력이 12초 동안 20% 증가합니다. 최대 2회 중첩됩니다.",
+         "html": "한 번의 의지 투영으로 268 이상의 피해를 흡수하면 기술 위력이 12초 동안 20% 증가합니다. 최대 2회 중첩됩니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "촉진",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "천체 투영",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "수호의 원",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "16레벨에서 옮겨졌습니다.",
+         "html": "16레벨에서 옮겨졌습니다.",
+         "added": false
+        },
+        {
+         "text": "이제 특성이 적용된 의지 투영이 적용됩니다.",
+         "html": "이제 특성이 적용된 의지 투영이 적용됩니다.",
+         "added": false
+        },
+        {
+         "text": "반경이 2.5에서 3으로 증가했습니다.",
+         "html": "반경이 2.5에서 3으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "굳건한 의지",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "16레벨에서 옮겨졌습니다.",
+         "html": "16레벨에서 옮겨졌습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "의지 투영으로 268 이상의 피해를 흡수하면 재사용 대기시간이 3초 감소합니다.",
+         "html": "의지 투영으로 268 이상의 피해를 흡수하면 재사용 대기시간이 3초 감소합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "재흡수",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "16레벨에서 옮겨졌습니다.",
+         "html": "16레벨에서 옮겨졌습니다.",
+         "added": false
+        },
+        {
+         "text": "의지 투영의 치유량이 흡수량의 50%로 증가합니다.",
+         "html": "의지 투영의 치유량이 흡수량의 50%로 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "비전 충전물",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "7레벨에서 옮겨졌습니다.",
+         "html": "7레벨에서 옮겨졌습니다.",
+         "added": false
+        },
+        {
+         "text": "공격력 증가량이 30%에서 15%로 감소했습니다.",
+         "html": "공격력 증가량이 30%에서 15%로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "안정적인 차원문",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "1레벨에서 옮겨졌습니다.",
+         "html": "1레벨에서 옮겨졌습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "차원문의 재사용 대기시간이 25% 감소하고 지속 시간이 50% 증가합니다.",
+         "html": "차원문의 재사용 대기시간이 25% 감소하고 지속 시간이 50% 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 특성: 시간 변형",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "일반 공격을 할 때마다 궁극기의 재사용 대기시간이 1초 감소합니다. 비전 균열이 적 영웅에게 적중할 때마다 궁극기의 재사용 대기시간이 3초 감소합니다.",
+         "html": "일반 공격을 할 때마다 궁극기의 재사용 대기시간이 1초 감소합니다. 비전 균열이 적 영웅에게 적중할 때마다 궁극기의 재사용 대기시간이 3초 감소합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "투명화(사용 효과)의 명칭이 투명화의 가루(사용 효과)로 변경되었습니다.",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "더는 마나를 소모하지 않습니다.",
+         "html": "더는 마나를 소모하지 않습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": null,
+       "lines": [
+        {
+         "text": "(!)는 퀘스트 특성입니다.",
+         "html": "(!)는 퀘스트 특성입니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": null,
+       "lines": [
+        {
+         "text": "이탤릭체 는 새로운 특성입니다.",
+         "html": "<em>이탤릭체</em>는 <em>새로운</em> 특성입니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": null,
+       "lines": [
+        {
+         "text": "밑줄 친 특성은 옮겨진 특성입니다.",
+         "html": "<u>밑줄</u>친 특성은 <u>옮겨진</u> 특성입니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/6WFFUF574HLT1463704053340.png\"/></p>\n메디브는 이번 패치에 대대적인 업데이트가 있었습니다. 자세한 변경 사항은 아래와 <a href=\"https://kr.battle.net/heroes/blog/21508381\" target=\"_blank\">소냐와 메디브 게임 플레이 업데이트 게시글</a>에서 확인하세요.\n<p><strong class=\"pn-h\">능력치</strong></p>\n<ul>\n<li>레벨당 증가하는 생명력이 4%에서 4.5%로 증가했습니다.</li>\n<li>레벨당 증가하는 생명력 재생량이 4%에서 4.5%로 증가했습니다.</li>\n</ul>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>비전 균열 [Q]</strong></span>\n<ul>\n<li>공격력이 200에서 170으로 감소했습니다.</li>\n<li>추가된 기능:\n<ul>\n<li><strong>퀘스트:</strong> 죽지 않고 적 영웅에게 비전 균열을 40회 적중시켜야 합니다.</li>\n<li><strong>보상:</strong> 비전 균열의 공격력이 영구히 75 증가하고 적 영웅에게 적중했을 때 재사용 대기시간이 추가로 1초 감소합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>의지 투영 [W]</strong></span>\n<ul>\n<li>재사용 대기시간이 5초에서 8초로 증가했습니다.</li>\n<li>마나 소모량이 50에서 60으로 증가했습니다.</li>\n<li>지속 시간이 만료되면 흡수한 피해의 20%만큼 대상의 생명력이 회복됩니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>차원문 [E]</strong></span>\n<ul>\n<li>재사용 대기시간이 20초에서 16초로 감소했습니다.</li>\n<li>마나 소모량이 75에서 65로 감소했습니다.  </li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>기민함의 바람 [Z]\n<ul>\n<li>13레벨에서 옮겨졌습니다.</li>\n</ul>\n</li>\n<li>차원문 특화 (사용 효과)\n<ul>\n<li>추가된 기능:\n<ul>\n<li>까마귀 형상 중에도 차원문을 시전할 수 있습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>까마귀의 지능 (Z)\n<ul>\n<li>추가된 기능:\n<ul>\n<li>까마귀 형상일 때 생명력 재생량이 75% 증가합니다.</li>\n</ul>\n</li>\n<li>추가 마나 재생량이 100%에서 75%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>드넓은 시야 (고유 능력)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>마법사 갑옷 [E]\n<ul>\n<li>새로운 기능:\n<ul>\n<li>차원문을 처음 사용하는 아군의 방어력이 4초 동안 25 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>까마귀 전령 [E]\n<ul>\n<li>7레벨에서 옮겨졌습니다.</li>\n<li>추가된 기능:\n<ul>\n<li>까마귀 전령의 공격이 적을 2.5초 동안 30% 느려지게 합니다.</li>\n<li>까마귀 전령이 아군이 차원문을 사용할 때마다 머뭅니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>현시의 가루 (사용 효과)\n<ul>\n<li>변경된 기능:\n<ul>\n<li>까마귀 형상일 때의 시야가 영구히 25% 증가합니다.</li>\n<li>사용하면 시야가 5초 동안 급격히 증가하고 주위 적 영웅들을 8초 동안 드러냅니다. 까마귀 형상 중에도 사용할 수 있습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>7레벨</strong></span>\n<ul>\n<li>대가의 솜씨 [Q]\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>신비한 폭발 [W]\n<ul>\n<li>새로운 기능:\n<ul>\n<li>의지 투영이 만료될 때 주위 적들에게 90의 피해를 줍니다. 흡수한 피해의 100%만큼 추가로 피해를 줍니다. 추가 피해량의 최대치는 365입니다.</li>\n</ul>\n</li>\n<li>폭발 반경이 3에서 3.5로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 신비한 공세 [Q]</strong>\n<ul>\n<li>비전 균열이 적 영웅에게 적중하면 6초 이내의 다음 일반 공격의 공격력이 40%의 추가 피해를 주고 준 피해의 40%만큼 생명력을 회복합니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 마력 투영 [W]</strong>\n<ul>\n<li>한 번의 의지 투영으로 268 이상의 피해를 흡수하면 기술 위력이 12초 동안 20% 증가합니다. 최대 2회 중첩됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>13레벨</strong></span>\n<ul>\n<li>촉진 [Q]\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>천체 투영 [E]\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>수호의 원 [W]\n<ul>\n<li>16레벨에서 옮겨졌습니다.</li>\n<li>이제 특성이 적용된 의지 투영이 적용됩니다.</li>\n<li>반경이 2.5에서 3으로 증가했습니다.</li>\n</ul>\n</li>\n<li>굳건한 의지 [W]\n<ul>\n<li>16레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>의지 투영으로 268 이상의 피해를 흡수하면 재사용 대기시간이 3초 감소합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>재흡수 [W]\n<ul>\n<li>16레벨에서 옮겨졌습니다.</li>\n<li>의지 투영의 치유량이 흡수량의 50%로 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>16레벨</strong></span>\n<ul>\n<li>비전 충전물 [Q]\n<ul>\n<li>7레벨에서 옮겨졌습니다.</li>\n<li>공격력 증가량이 30%에서 15%로 감소했습니다.</li>\n</ul>\n</li>\n<li>안정적인 차원문 [W]\n<ul>\n<li>1레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>차원문의 재사용 대기시간이 25% 감소하고 지속 시간이 50% 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 시간 변형 (지속 효과)</strong>\n<ul>\n<li>일반 공격을 할 때마다 궁극기의 재사용 대기시간이 1초 감소합니다. 비전 균열이 적 영웅에게 적중할 때마다 궁극기의 재사용 대기시간이 3초 감소합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>20레벨</strong></span>\n<ul>\n<li>투명화(사용 효과)의 명칭이 투명화의 가루(사용 효과)로 변경되었습니다.\n<ul>\n<li>더는 마나를 소모하지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<table class=\"table table-condensed\">\n<tbody>\n<tr>\n<th><strong>레벨 (특성 단계)</strong></th>\n<th colspan=\"4\"><strong>메디브의 특성</strong></th>\n</tr>\n<tr>\n<td><strong>1 (1)</strong></td>\n<td><u>기민함의 바람 [Z]</u></td>\n<td>까마귀의 지능 [Z]</td>\n<td>차원문 특화 (사용 효과)</td>\n<td>—</td>\n<td>—</td>\n</tr>\n<tr>\n<td><strong>4 (2)</strong></td>\n<td>마법사 갑옷 [E]</td>\n<td><u>까마귀 전령 [E]</u></td>\n<td>현시의 가루 (사용 효과)</td>\n<td>—</td>\n<td>—</td>\n</tr>\n<tr>\n<td><strong>7 (3)</strong></td>\n<td><em>신비한 공세 [Q]</em></td>\n<td>신비한 폭발 [W]</td>\n<td><em>마력 투영 [W]</em></td>\n<td>—</td>\n<td>—</td>\n</tr>\n<tr>\n<td><strong>10 (4)</strong></td>\n<td>변이 폭탄 [R]</td>\n<td>봉인의 지맥 [R]</td>\n<td>—</td>\n<td>—</td>\n<td>—</td>\n</tr>\n<tr>\n<td><strong>13 (5)</strong></td>\n<td><u>수호의 원 [W]</u></td>\n<td><u>굳건한 의지 [W]</u></td>\n<td><u>재흡수 [W]</u></td>\n<td>—</td>\n<td>—</td>\n</tr>\n<tr>\n<td><strong>16 (6)</strong></td>\n<td><u>비전 충전물 [Q]</u></td>\n<td><em>시간 변형 [Q]</em></td>\n<td><u>안정적인 차원문 [E]</u></td>\n<td>—</td>\n<td>—</td>\n</tr>\n<tr>\n<td><strong>20 (7)</strong></td>\n<td>변이 폭탄의 문양 [R]</td>\n<td>메디브의 속임수 [R]</td>\n<td>티리스팔의 수호자 [Q]</td>\n<td>신비한 총명함 (사용 효과)</td>\n<td>투명화의 가루 (사용 효과)</td>\n</tr>\n</tbody>\n</table>\n<ul>\n<li>(!)는 퀘스트 특성입니다.</li>\n<li><em>이탤릭체</em>는 <em>새로운</em> 특성입니다.</li>\n<li><u>밑줄</u>친 특성은 <u>옮겨진</u> 특성입니다.</li>\n</ul>"
+    }
+   ]
+  },
+  {
+   "name": "지원가",
+   "key": "role_support",
+   "html": "<h4>아나</h4>\n<p><img class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/E4NO4D2W1A101505345334072.png\"/></p>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>때까치 (고유 능력)</strong></span>\n<ul>\n<li>추가된 기능:\n<ul>\n<li>때까치로 영웅에게 준 피해의 50%만큼 생명력을 회복합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>치유탄 [Q]</strong></span>\n<ul>\n<li>치유량이 237에서 215로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>생체 수류탄 [W]</strong></span>\n<ul>\n<li>변경된 기능:\n<ul>\n<li>아나의 치유로 받는 치유량만 증가시킵니다.</li>\n<li>받는 치유량 증가 효과의 지속 시간이 3초에서 4초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>나노 강화제 [R]</strong></span>\n<ul>\n<li>재사용 대기시간이 50초에서 60초로 증가했습니다.</li>\n<li>마나 소모량이 40에서 60으로 증가했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>호루스의 눈 [R]</strong></span>\n<ul>\n<li>스스로 취소하면 10초의 재사용 대기시간이 발생하지 않습니다.</li>\n<li>재사용 대기시간이 60초에서 45초로 감소했습니다.</li>\n<li>마나 소모량이 75에서 45로 감소했습니다.</li>\n<li>탄환의 수가 8에서 6으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>투여량 조절 [W]\n<ul>\n<li>기본 기능 추가</li>\n<li>생체 수류탄의 받는 치유량 증가 효과가 모든 치유 효과에 적용됩니다.</li>\n</ul>\n</li>\n<li>관통 다트 [E]\n<ul>\n<li>첫 번째 퀘스트 보상\n<ul>\n<li>사거리 증가량이 50%에서 25%로 감소했습니다.</li>\n</ul>\n</li>\n<li>두 번째 퀘스트 보상\n<ul>\n<li>사거리 증가량이 50%에서 25%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>휴대용 탄창 상자 (지속 효과)\n<ul>\n<li>첫 번째 퀘스트 보상\n<ul>\n<li>새로운 기능\n<ul>\n<li>영웅이 아닌 대상에게 때까치로 피해를 줘도 생명력을 회복합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>정조준 (고유 능력)\n<ul>\n<li>사용 효과의 재사용 대기시간이 10초에서 3초로 감소했습니다.</li>\n</ul>\n</li>\n<li>공습 수류탄 [W]\n<ul>\n<li>낙하 시간이 4초에서 3초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>7레벨</strong></span>\n<ul>\n<li>쇠약의 다트 (사용 효과)\n<ul>\n<li>재사용 대기시간이 45초에서 20초로 감소했습니다.</li>\n</ul>\n</li>\n<li>정신 마취 독극물 (고유 능력)\n<ul>\n<li>기술 위력 감소량이 중첩당 15%에서 10%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><span class=\"pn-new\"><strong>개발자의 코멘트:</strong> 현재 아나의 승률은 50% 이상이며 다른 지원가들에 비해 양호한 수준이지만, 단일 지원가 조합에서 지나치게 무력해질 수 있는 부분을 보완하려 합니다. 때까치로 생명력을 회복할 수 있는 기능 외에도 여러 특성들 또한 손보기로 했죠. 비정상적인 승률을 가진 특성은 없지만 선택률에서 다른 특성들을 압도하고 있는 특성은 분명 있었습니다. 이런 문제점들을 해결하고 아나 플레이어들이 전략적으로 더욱 다양한 선택을 할 수 있길 바랍니다. 내부 테스트에서는 이번 변화가 아주 긍정적이었으며 여러분들이 이에 대해 어떻게 생각할지 기대가 됩니다.</span></blockquote>",
+   "heroes": [
+    {
+     "name": "아나",
+     "heroId": "Ana",
+     "heroIds": [
+      "Ana"
+     ],
+     "changes": [
+      {
+       "name": "때까치",
+       "key": "고유 능력",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": []
+      },
+      {
+       "name": "추가된 기능",
+       "key": null,
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "때까치로 영웅에게 준 피해의 50%만큼 생명력을 회복합니다.",
+         "html": "때까치로 영웅에게 준 피해의 50%만큼 생명력을 회복합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "치유탄",
+       "key": "Q",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "치유량이 237에서 215로 감소했습니다.",
+         "html": "치유량이 237에서 215로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "생체 수류탄",
+       "key": "W",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": []
+      },
+      {
+       "name": "변경된 기능",
+       "key": null,
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "아나의 치유로 받는 치유량만 증가시킵니다.",
+         "html": "아나의 치유로 받는 치유량만 증가시킵니다.",
+         "added": false
+        },
+        {
+         "text": "받는 치유량 증가 효과의 지속 시간이 3초에서 4초로 증가했습니다.",
+         "html": "받는 치유량 증가 효과의 지속 시간이 3초에서 4초로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "나노 강화제",
+       "key": "R",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 50초에서 60초로 증가했습니다.",
+         "html": "재사용 대기시간이 50초에서 60초로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "마나 소모량이 40에서 60으로 증가했습니다.",
+         "html": "마나 소모량이 40에서 60으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "호루스의 눈",
+       "key": "R",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "스스로 취소하면 10초의 재사용 대기시간이 발생하지 않습니다.",
+         "html": "스스로 취소하면 10초의 재사용 대기시간이 발생하지 않습니다.",
+         "added": false
+        },
+        {
+         "text": "재사용 대기시간이 60초에서 45초로 감소했습니다.",
+         "html": "재사용 대기시간이 60초에서 45초로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "마나 소모량이 75에서 45로 감소했습니다.",
+         "html": "마나 소모량이 75에서 45로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "탄환의 수가 8에서 6으로 감소했습니다.",
+         "html": "탄환의 수가 8에서 6으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "투여량 조절",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "기본 기능 추가",
+         "html": "기본 기능 추가",
+         "added": false
+        },
+        {
+         "text": "생체 수류탄의 받는 치유량 증가 효과가 모든 치유 효과에 적용됩니다.",
+         "html": "생체 수류탄의 받는 치유량 증가 효과가 모든 치유 효과에 적용됩니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "관통 다트",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": []
+      },
+      {
+       "name": "첫 번째 퀘스트 보상",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "사거리 증가량이 50%에서 25%로 감소했습니다.",
+         "html": "사거리 증가량이 50%에서 25%로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "두 번째 퀘스트 보상",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "사거리 증가량이 50%에서 25%로 감소했습니다.",
+         "html": "사거리 증가량이 50%에서 25%로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "휴대용 탄창 상자",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": []
+      },
+      {
+       "name": "첫 번째 퀘스트 보상",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": []
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "영웅이 아닌 대상에게 때까치로 피해를 줘도 생명력을 회복합니다.",
+         "html": "영웅이 아닌 대상에게 때까치로 피해를 줘도 생명력을 회복합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "정조준",
+       "key": "고유 능력",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "사용 효과의 재사용 대기시간이 10초에서 3초로 감소했습니다.",
+         "html": "사용 효과의 재사용 대기시간이 10초에서 3초로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "공습 수류탄",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "낙하 시간이 4초에서 3초로 감소했습니다.",
+         "html": "낙하 시간이 4초에서 3초로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "쇠약의 다트",
+       "key": "사용 효과",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 45초에서 20초로 감소했습니다.",
+         "html": "재사용 대기시간이 45초에서 20초로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "정신 마취 독극물",
+       "key": "고유 능력",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "기술 위력 감소량이 중첩당 15%에서 10%로 감소했습니다.",
+         "html": "기술 위력 감소량이 중첩당 15%에서 10%로 감소했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/E4NO4D2W1A101505345334072.png\"/></p>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>때까치 (고유 능력)</strong></span>\n<ul>\n<li>추가된 기능:\n<ul>\n<li>때까치로 영웅에게 준 피해의 50%만큼 생명력을 회복합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>치유탄 [Q]</strong></span>\n<ul>\n<li>치유량이 237에서 215로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>생체 수류탄 [W]</strong></span>\n<ul>\n<li>변경된 기능:\n<ul>\n<li>아나의 치유로 받는 치유량만 증가시킵니다.</li>\n<li>받는 치유량 증가 효과의 지속 시간이 3초에서 4초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>나노 강화제 [R]</strong></span>\n<ul>\n<li>재사용 대기시간이 50초에서 60초로 증가했습니다.</li>\n<li>마나 소모량이 40에서 60으로 증가했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>호루스의 눈 [R]</strong></span>\n<ul>\n<li>스스로 취소하면 10초의 재사용 대기시간이 발생하지 않습니다.</li>\n<li>재사용 대기시간이 60초에서 45초로 감소했습니다.</li>\n<li>마나 소모량이 75에서 45로 감소했습니다.</li>\n<li>탄환의 수가 8에서 6으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>투여량 조절 [W]\n<ul>\n<li>기본 기능 추가</li>\n<li>생체 수류탄의 받는 치유량 증가 효과가 모든 치유 효과에 적용됩니다.</li>\n</ul>\n</li>\n<li>관통 다트 [E]\n<ul>\n<li>첫 번째 퀘스트 보상\n<ul>\n<li>사거리 증가량이 50%에서 25%로 감소했습니다.</li>\n</ul>\n</li>\n<li>두 번째 퀘스트 보상\n<ul>\n<li>사거리 증가량이 50%에서 25%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>휴대용 탄창 상자 (지속 효과)\n<ul>\n<li>첫 번째 퀘스트 보상\n<ul>\n<li>새로운 기능\n<ul>\n<li>영웅이 아닌 대상에게 때까치로 피해를 줘도 생명력을 회복합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>정조준 (고유 능력)\n<ul>\n<li>사용 효과의 재사용 대기시간이 10초에서 3초로 감소했습니다.</li>\n</ul>\n</li>\n<li>공습 수류탄 [W]\n<ul>\n<li>낙하 시간이 4초에서 3초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>7레벨</strong></span>\n<ul>\n<li>쇠약의 다트 (사용 효과)\n<ul>\n<li>재사용 대기시간이 45초에서 20초로 감소했습니다.</li>\n</ul>\n</li>\n<li>정신 마취 독극물 (고유 능력)\n<ul>\n<li>기술 위력 감소량이 중첩당 15%에서 10%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><span class=\"pn-new\"><strong>개발자의 코멘트:</strong> 현재 아나의 승률은 50% 이상이며 다른 지원가들에 비해 양호한 수준이지만, 단일 지원가 조합에서 지나치게 무력해질 수 있는 부분을 보완하려 합니다. 때까치로 생명력을 회복할 수 있는 기능 외에도 여러 특성들 또한 손보기로 했죠. 비정상적인 승률을 가진 특성은 없지만 선택률에서 다른 특성들을 압도하고 있는 특성은 분명 있었습니다. 이런 문제점들을 해결하고 아나 플레이어들이 전략적으로 더욱 다양한 선택을 할 수 있길 바랍니다. 내부 테스트에서는 이번 변화가 아주 긍정적이었으며 여러분들이 이에 대해 어떻게 생각할지 기대가 됩니다.</span></blockquote>"
+    }
+   ]
+  },
+  {
+   "name": "전사",
+   "key": "role_tank",
+   "html": "<h4>소냐</h4>\n<p><img class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/kt/KTJ5G6MTBWXD1494449265980.png\"/></p>\n소냐는 이번 패치에 대대적인 업데이트가 있었습니다. 자세한 변경 사항은 아래와 <a href=\"https://kr.battle.net/heroes/blog/21508381\" target=\"_blank\">소냐와 메디브 게임 플레이 업데이트 게시글</a>에서 확인하세요.\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>막기 (지속 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>성난 일격 [W]\n<ul>\n<li>16레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능\n<ul>\n<li>대지 강타를 4번 사용할 때마다 주 대상에게 40%의 추가 피해를 주고 분노를 소모하지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 철갑못 (지속 효과)</strong>\n<ul>\n<li>12초마다 물리 방어력이 75 증가하여 다음 영웅 일반 공격으로 받는 피해가 75% 감소합니다. 최대 3회 충전됩니다. 분노의 이동 속도 증가 효과가 활성화된 동안 재사용 대기시간이 200% 더 빨리 감소합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>집중 공격 (지속 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>갈라진 대지 [W]\n<ul>\n<li>새로운 기능:\n<ul>\n<li>대지 강타의 방사 피해 효과의 범위가 66% 증가하고 방사 피해가 주 대상에게 주는 피해의 75%로 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>용병의 왕 (지속 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 전투 격노 (사용 효과)</strong>\n<ul>\n<li>돌격병에게 주는 피해가 영구히 25% 증가합니다.</li>\n<li>사용하면 최대 생명력의 10%를 회복합니다. 재사용 대기시간은 30초입니다. 최대 3회 충전됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>7레벨</strong></span>\n<ul>\n<li>후속타 (지속 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>짐승같은 회복력 (사용 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>분노 공급 (고유 능력)\n<ul>\n<li>1레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>사용하면 50의 분노를 생성합니다. 재사용 대기시간은 40초입니다.</li>\n<li>대지 강타를 사용하면 다음 일반 공격이 40%의 추가 피해를 줍니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>13레벨</strong></span>\n<ul>\n<li>여진 [W]\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>기술 보호막 (지속 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>도주 불가 (고유 능력)\n<ul>\n<li>16레벨에서 옮겨졌습니다.</li>\n<li>이동 속도 증가량이 25%에서 20%로 감소했습니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 무자비 [E]</strong>\n<ul>\n<li>소용돌이가 생명력이 33% 미만인 적 영웅에게 초당 50의 추가 피해를 줍니다. 회복량은 증가하지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>16레벨</strong></span>\n<ul>\n<li>압도적 존재감 (사용 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 육중한 강타 [W]</strong>\n<ul>\n<li>대지 강타가 대상 적 영웅의 최대 생명력의 2%만큼 추가 피해를 줍니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 광란 (지속 효과)</strong>\n<ul>\n<li>일반 공격력이 25% 증가합니다.</li>\n<li>일반 공격을 할 때마다 고대의 작살의 재사용 대기시간이 0.75초 감소합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>20레벨</strong></span>\n<ul>\n<li>끓어오르는 분노 [R]\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>시공의 칼날 (지속 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>고통 감내 (사용 효과)\n<ul>\n<li>방어력 증가량이 75에서 60으로 감소했습니다.</li>\n</ul>\n</li>\n<li>개량 작살 [Q]\n<ul>\n<li>7레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>고대의 작살의 사거리가 50% 증가합니다.</li>\n<li>고대의 작살이 적 영웅에게 적중하면 방어력이 4초 동안 25 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 당당한 거인 [R]</strong>\n<ul>\n<li>광전사의 진노 사용시 최대 생명력이 10% 증가하고, 광전사의 진노가 활성화된 동안 당당한 거인 기술을 사용할 수 있습니다.</li>\n<li>당당한 거인 기술을 사용하면 2초 동안 저지 불가 상태가 됩니다. 재사용 대기시간은 30초입니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<table class=\"table table-condensed\">\n<tbody>\n<tr>\n<th><strong>레벨 (특성 단계)</strong></th>\n<th colspan=\"4\"><strong>소냐의 특성</strong></th>\n</tr>\n<tr>\n<td><strong>1 (1)</strong></td>\n<td><u>성난 일격 [W]</u></td>\n<td>전사의 얼굴무늬 (지속 효과)</td>\n<td><em>철갑못 (지속 효과)</em></td>\n<td>—</td>\n</tr>\n<tr>\n<td><strong>4 (2)</strong></td>\n<td>갈라진 대지 [W]</td>\n<td>싹쓸바람 [E]</td>\n<td><em>전투 격노 (사용 효과)</em></td>\n<td>—</td>\n</tr>\n<tr>\n<td><strong>7 (3)</strong></td>\n<td>독 작살 [Q]</td>\n<td>활력의 소용돌이 (E)</td>\n<td><u>분노 공급 (고유 능력)</u></td>\n<td>—</td>\n</tr>\n<tr>\n<td><strong>10 (4)</strong></td>\n<td>도약 강타 (R)</td>\n<td>광전사의 진노 (R)</td>\n<td>—</td>\n<td>—</td>\n</tr>\n<tr>\n<td><strong>13 (5)</strong></td>\n<td>신통한 작살 [Q]</td>\n<td><em>무자비 [E]</em></td>\n<td><u>도주 불가 (고유 능력)</u></td>\n<td>—</td>\n</tr>\n<tr>\n<td><strong>16 (6)</strong></td>\n<td><em>육중한 강타 [W]</em></td>\n<td><em>광란 (지속 효과)</em></td>\n<td>강철 신경 (사용 효과)</td>\n<td>—</td>\n</tr>\n<tr>\n<td><strong>20 (7)</strong></td>\n<td>아리앗 분화구 [R]</td>\n<td><em>당당한 거인 [R]</em></td>\n<td><u>개량 작살 [Q]</u></td>\n<td>고통 감내 (사용 효과)</td>\n</tr>\n</tbody>\n</table>\n<ul>\n<li>(!)는 퀘스트 특성입니다.</li>\n<li><em>이탤릭체</em>는 <em>새로운</em> 특성입니다.</li>\n<li><u>밑줄</u>친 특성은 <u>옮겨진</u> 특성입니다.</li>\n</ul>",
+   "heroes": [
+    {
+     "name": "소냐",
+     "heroId": "Barbarian",
+     "heroIds": [
+      "Barbarian"
+     ],
+     "changes": [
+      {
+       "name": "막기",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "성난 일격",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "16레벨에서 옮겨졌습니다.",
+         "html": "16레벨에서 옮겨졌습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "대지 강타를 4번 사용할 때마다 주 대상에게 40%의 추가 피해를 주고 분노를 소모하지 않습니다.",
+         "html": "대지 강타를 4번 사용할 때마다 주 대상에게 40%의 추가 피해를 주고 분노를 소모하지 않습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 특성: 철갑못",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "12초마다 물리 방어력이 75 증가하여 다음 영웅 일반 공격으로 받는 피해가 75% 감소합니다. 최대 3회 충전됩니다. 분노의 이동 속도 증가 효과가 활성화된 동안 재사용 대기시간이 200% 더 빨리 감소합니다.",
+         "html": "12초마다 물리 방어력이 75 증가하여 다음 영웅 일반 공격으로 받는 피해가 75% 감소합니다. 최대 3회 충전됩니다. 분노의 이동 속도 증가 효과가 활성화된 동안 재사용 대기시간이 200% 더 빨리 감소합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "집중 공격",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "갈라진 대지",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": []
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "대지 강타의 방사 피해 효과의 범위가 66% 증가하고 방사 피해가 주 대상에게 주는 피해의 75%로 증가합니다.",
+         "html": "대지 강타의 방사 피해 효과의 범위가 66% 증가하고 방사 피해가 주 대상에게 주는 피해의 75%로 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "용병의 왕",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 특성: 전투 격노",
+       "key": "사용 효과",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "돌격병에게 주는 피해가 영구히 25% 증가합니다.",
+         "html": "돌격병에게 주는 피해가 영구히 25% 증가합니다.",
+         "added": false
+        },
+        {
+         "text": "사용하면 최대 생명력의 10%를 회복합니다. 재사용 대기시간은 30초입니다. 최대 3회 충전됩니다.",
+         "html": "사용하면 최대 생명력의 10%를 회복합니다. 재사용 대기시간은 30초입니다. 최대 3회 충전됩니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "후속타",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "짐승같은 회복력",
+       "key": "사용 효과",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "분노 공급",
+       "key": "고유 능력",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "1레벨에서 옮겨졌습니다.",
+         "html": "1레벨에서 옮겨졌습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "사용하면 50의 분노를 생성합니다. 재사용 대기시간은 40초입니다.",
+         "html": "사용하면 50의 분노를 생성합니다. 재사용 대기시간은 40초입니다.",
+         "added": false
+        },
+        {
+         "text": "대지 강타를 사용하면 다음 일반 공격이 40%의 추가 피해를 줍니다.",
+         "html": "대지 강타를 사용하면 다음 일반 공격이 40%의 추가 피해를 줍니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "여진",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "기술 보호막",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "도주 불가",
+       "key": "고유 능력",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "16레벨에서 옮겨졌습니다.",
+         "html": "16레벨에서 옮겨졌습니다.",
+         "added": false
+        },
+        {
+         "text": "이동 속도 증가량이 25%에서 20%로 감소했습니다.",
+         "html": "이동 속도 증가량이 25%에서 20%로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 특성: 무자비",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "소용돌이가 생명력이 33% 미만인 적 영웅에게 초당 50의 추가 피해를 줍니다. 회복량은 증가하지 않습니다.",
+         "html": "소용돌이가 생명력이 33% 미만인 적 영웅에게 초당 50의 추가 피해를 줍니다. 회복량은 증가하지 않습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "압도적 존재감",
+       "key": "사용 효과",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 특성: 육중한 강타",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "대지 강타가 대상 적 영웅의 최대 생명력의 2%만큼 추가 피해를 줍니다.",
+         "html": "대지 강타가 대상 적 영웅의 최대 생명력의 2%만큼 추가 피해를 줍니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 특성: 광란",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "일반 공격력이 25% 증가합니다.",
+         "html": "일반 공격력이 25% 증가합니다.",
+         "added": false
+        },
+        {
+         "text": "일반 공격을 할 때마다 고대의 작살의 재사용 대기시간이 0.75초 감소합니다.",
+         "html": "일반 공격을 할 때마다 고대의 작살의 재사용 대기시간이 0.75초 감소합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "끓어오르는 분노",
+       "key": "R",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "시공의 칼날",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "고통 감내",
+       "key": "사용 효과",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "방어력 증가량이 75에서 60으로 감소했습니다.",
+         "html": "방어력 증가량이 75에서 60으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "개량 작살",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "7레벨에서 옮겨졌습니다.",
+         "html": "7레벨에서 옮겨졌습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "고대의 작살의 사거리가 50% 증가합니다.",
+         "html": "고대의 작살의 사거리가 50% 증가합니다.",
+         "added": false
+        },
+        {
+         "text": "고대의 작살이 적 영웅에게 적중하면 방어력이 4초 동안 25 증가합니다.",
+         "html": "고대의 작살이 적 영웅에게 적중하면 방어력이 4초 동안 25 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 특성: 당당한 거인",
+       "key": "R",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "광전사의 진노 사용시 최대 생명력이 10% 증가하고, 광전사의 진노가 활성화된 동안 당당한 거인 기술을 사용할 수 있습니다.",
+         "html": "광전사의 진노 사용시 최대 생명력이 10% 증가하고, 광전사의 진노가 활성화된 동안 당당한 거인 기술을 사용할 수 있습니다.",
+         "added": false
+        },
+        {
+         "text": "당당한 거인 기술을 사용하면 2초 동안 저지 불가 상태가 됩니다. 재사용 대기시간은 30초입니다.",
+         "html": "당당한 거인 기술을 사용하면 2초 동안 저지 불가 상태가 됩니다. 재사용 대기시간은 30초입니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": null,
+       "lines": [
+        {
+         "text": "(!)는 퀘스트 특성입니다.",
+         "html": "(!)는 퀘스트 특성입니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": null,
+       "lines": [
+        {
+         "text": "이탤릭체 는 새로운 특성입니다.",
+         "html": "<em>이탤릭체</em>는 <em>새로운</em> 특성입니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": null,
+       "lines": [
+        {
+         "text": "밑줄 친 특성은 옮겨진 특성입니다.",
+         "html": "<u>밑줄</u>친 특성은 <u>옮겨진</u> 특성입니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/kt/KTJ5G6MTBWXD1494449265980.png\"/></p>\n소냐는 이번 패치에 대대적인 업데이트가 있었습니다. 자세한 변경 사항은 아래와 <a href=\"https://kr.battle.net/heroes/blog/21508381\" target=\"_blank\">소냐와 메디브 게임 플레이 업데이트 게시글</a>에서 확인하세요.\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>막기 (지속 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>성난 일격 [W]\n<ul>\n<li>16레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능\n<ul>\n<li>대지 강타를 4번 사용할 때마다 주 대상에게 40%의 추가 피해를 주고 분노를 소모하지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 철갑못 (지속 효과)</strong>\n<ul>\n<li>12초마다 물리 방어력이 75 증가하여 다음 영웅 일반 공격으로 받는 피해가 75% 감소합니다. 최대 3회 충전됩니다. 분노의 이동 속도 증가 효과가 활성화된 동안 재사용 대기시간이 200% 더 빨리 감소합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>집중 공격 (지속 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>갈라진 대지 [W]\n<ul>\n<li>새로운 기능:\n<ul>\n<li>대지 강타의 방사 피해 효과의 범위가 66% 증가하고 방사 피해가 주 대상에게 주는 피해의 75%로 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>용병의 왕 (지속 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 전투 격노 (사용 효과)</strong>\n<ul>\n<li>돌격병에게 주는 피해가 영구히 25% 증가합니다.</li>\n<li>사용하면 최대 생명력의 10%를 회복합니다. 재사용 대기시간은 30초입니다. 최대 3회 충전됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>7레벨</strong></span>\n<ul>\n<li>후속타 (지속 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>짐승같은 회복력 (사용 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>분노 공급 (고유 능력)\n<ul>\n<li>1레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>사용하면 50의 분노를 생성합니다. 재사용 대기시간은 40초입니다.</li>\n<li>대지 강타를 사용하면 다음 일반 공격이 40%의 추가 피해를 줍니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>13레벨</strong></span>\n<ul>\n<li>여진 [W]\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>기술 보호막 (지속 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>도주 불가 (고유 능력)\n<ul>\n<li>16레벨에서 옮겨졌습니다.</li>\n<li>이동 속도 증가량이 25%에서 20%로 감소했습니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 무자비 [E]</strong>\n<ul>\n<li>소용돌이가 생명력이 33% 미만인 적 영웅에게 초당 50의 추가 피해를 줍니다. 회복량은 증가하지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>16레벨</strong></span>\n<ul>\n<li>압도적 존재감 (사용 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 육중한 강타 [W]</strong>\n<ul>\n<li>대지 강타가 대상 적 영웅의 최대 생명력의 2%만큼 추가 피해를 줍니다.</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 광란 (지속 효과)</strong>\n<ul>\n<li>일반 공격력이 25% 증가합니다.</li>\n<li>일반 공격을 할 때마다 고대의 작살의 재사용 대기시간이 0.75초 감소합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>20레벨</strong></span>\n<ul>\n<li>끓어오르는 분노 [R]\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>시공의 칼날 (지속 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>고통 감내 (사용 효과)\n<ul>\n<li>방어력 증가량이 75에서 60으로 감소했습니다.</li>\n</ul>\n</li>\n<li>개량 작살 [Q]\n<ul>\n<li>7레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>고대의 작살의 사거리가 50% 증가합니다.</li>\n<li>고대의 작살이 적 영웅에게 적중하면 방어력이 4초 동안 25 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>새로운 특성: 당당한 거인 [R]</strong>\n<ul>\n<li>광전사의 진노 사용시 최대 생명력이 10% 증가하고, 광전사의 진노가 활성화된 동안 당당한 거인 기술을 사용할 수 있습니다.</li>\n<li>당당한 거인 기술을 사용하면 2초 동안 저지 불가 상태가 됩니다. 재사용 대기시간은 30초입니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<table class=\"table table-condensed\">\n<tbody>\n<tr>\n<th><strong>레벨 (특성 단계)</strong></th>\n<th colspan=\"4\"><strong>소냐의 특성</strong></th>\n</tr>\n<tr>\n<td><strong>1 (1)</strong></td>\n<td><u>성난 일격 [W]</u></td>\n<td>전사의 얼굴무늬 (지속 효과)</td>\n<td><em>철갑못 (지속 효과)</em></td>\n<td>—</td>\n</tr>\n<tr>\n<td><strong>4 (2)</strong></td>\n<td>갈라진 대지 [W]</td>\n<td>싹쓸바람 [E]</td>\n<td><em>전투 격노 (사용 효과)</em></td>\n<td>—</td>\n</tr>\n<tr>\n<td><strong>7 (3)</strong></td>\n<td>독 작살 [Q]</td>\n<td>활력의 소용돌이 (E)</td>\n<td><u>분노 공급 (고유 능력)</u></td>\n<td>—</td>\n</tr>\n<tr>\n<td><strong>10 (4)</strong></td>\n<td>도약 강타 (R)</td>\n<td>광전사의 진노 (R)</td>\n<td>—</td>\n<td>—</td>\n</tr>\n<tr>\n<td><strong>13 (5)</strong></td>\n<td>신통한 작살 [Q]</td>\n<td><em>무자비 [E]</em></td>\n<td><u>도주 불가 (고유 능력)</u></td>\n<td>—</td>\n</tr>\n<tr>\n<td><strong>16 (6)</strong></td>\n<td><em>육중한 강타 [W]</em></td>\n<td><em>광란 (지속 효과)</em></td>\n<td>강철 신경 (사용 효과)</td>\n<td>—</td>\n</tr>\n<tr>\n<td><strong>20 (7)</strong></td>\n<td>아리앗 분화구 [R]</td>\n<td><em>당당한 거인 [R]</em></td>\n<td><u>개량 작살 [Q]</u></td>\n<td>고통 감내 (사용 효과)</td>\n</tr>\n</tbody>\n</table>\n<ul>\n<li>(!)는 퀘스트 특성입니다.</li>\n<li><em>이탤릭체</em>는 <em>새로운</em> 특성입니다.</li>\n<li><u>밑줄</u>친 특성은 <u>옮겨진</u> 특성입니다.</li>\n</ul>"
+    }
+   ]
+  },
+  {
+   "name": "수집품",
+   "key": "collection",
+   "html": "<p><span class=\"pn-h\"><strong>새로운 묶음 상품</strong></span></p>\n<ul>\n<li>다음 묶음 상품을 한정된 기간 동안 구매하실 수 있습니다!\n<ul>\n<li>폭풍 특공대 묶음 상품</li>\n<li>훈련교관 요한나 영웅 묶음 상품</li>\n<li>구조대원 모랄레스 영웅 묶음 상품</li>\n<li>감시견 그레이메인 영웅 묶음 상품</li>\n<li>새로워진 메디브 묶음 상품</li>\n<li>새로워진 소냐 묶음 상품</li>\n</ul>\n</li>\n</ul>\n<p><span class=\"pn-h\"><strong>새로운 스킨</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>그레이메인</strong></span>\n<ul>\n<li>감시견 그레이메인</li>\n<li>극지 감시견 그레이메인</li>\n<li>사막 감시견 그레이메인</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>요한나</strong></span>\n<ul>\n<li>훈련교관 요한나</li>\n<li>극지 훈련교관 요한나</li>\n<li>자경단 훈련교관 요한나</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>모랄레스 중위</strong></span>\n<ul>\n<li>구조대원 모랄레스</li>\n<li>비밀 임무 구조대원 모랄레스</li>\n<li>선홍빛 구조대원 모랄레스</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>아즈모단</strong></span>\n<ul>\n<li>경쟁심의 아즈모덩크</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>루시우</strong></span>\n<ul>\n<li>적색 루시우</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>메디브</strong></span>\n<ul>\n<li>어둠의 메디브</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>소냐</strong></span>\n<ul>\n<li>천사 소냐</li>\n</ul>\n</li>\n</ul>\n<p><span class=\"pn-h\"><strong>새로운 탈것</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>폭풍 특공대 강습차량</strong></span>\n<ul>\n<li>최첨단 폭풍 특공대 강습차량</li>\n<li>과충전된 폭풍 특공대 강습차량</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>행운의 돼지 저금통</strong></span>\n<ul>\n<li>행운의 돼지 저금통 탈것은 7,000골드로 구매할 수 있습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>등급전 시즌 탈것 보상</strong></span>\n<ul>\n<li>영웅 리그에서 플래티넘에 도달하거나 팀 리그에서 브론즈에 도달한 플레이어들에게 다음 탈것들이 보상으로 주어졌습니다.\n<ul>\n<li>불꽃 멧돼지</li>\n<li>하늘빛 불꽃 멧돼지</li>\n<li>신록의 불꽃 멧돼지</li>\n</ul>\n</li>\n<li>영웅 리그 또는 팀 리그에서 마스터에 도달한 플레이어들에게 다음 탈것들이 보상으로 주어졌습니다.\n<ul>\n<li>영예로운 불꽃 멧돼지</li>\n<li>영예로운 하늘빛 불꽃 멧돼지</li>\n<li>영예로운 신록의 불꽃 멧돼지</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+   "items": [
+    {
+     "name": "그레이메인",
+     "heroId": "Greymane",
+     "heroIds": [
+      "Greymane"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>그레이메인</strong></span>\n<ul>\n<li>감시견 그레이메인</li>\n<li>극지 감시견 그레이메인</li>\n<li>사막 감시견 그레이메인</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "감시견 그레이메인",
+         "html": "감시견 그레이메인",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "극지 감시견 그레이메인",
+         "html": "극지 감시견 그레이메인",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "사막 감시견 그레이메인",
+         "html": "사막 감시견 그레이메인",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "요한나",
+     "heroId": "Crusader",
+     "heroIds": [
+      "Crusader"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>요한나</strong></span>\n<ul>\n<li>훈련교관 요한나</li>\n<li>극지 훈련교관 요한나</li>\n<li>자경단 훈련교관 요한나</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "훈련교관 요한나",
+         "html": "훈련교관 요한나",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "극지 훈련교관 요한나",
+         "html": "극지 훈련교관 요한나",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "자경단 훈련교관 요한나",
+         "html": "자경단 훈련교관 요한나",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "모랄레스 중위",
+     "heroId": "Medic",
+     "heroIds": [
+      "Medic"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>모랄레스 중위</strong></span>\n<ul>\n<li>구조대원 모랄레스</li>\n<li>비밀 임무 구조대원 모랄레스</li>\n<li>선홍빛 구조대원 모랄레스</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "구조대원 모랄레스",
+         "html": "구조대원 모랄레스",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "비밀 임무 구조대원 모랄레스",
+         "html": "비밀 임무 구조대원 모랄레스",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "선홍빛 구조대원 모랄레스",
+         "html": "선홍빛 구조대원 모랄레스",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "아즈모단",
+     "heroId": "Azmodan",
+     "heroIds": [
+      "Azmodan"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>아즈모단</strong></span>\n<ul>\n<li>경쟁심의 아즈모덩크</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "경쟁심의 아즈모덩크",
+         "html": "경쟁심의 아즈모덩크",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "루시우",
+     "heroId": "Lucio",
+     "heroIds": [
+      "Lucio"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>루시우</strong></span>\n<ul>\n<li>적색 루시우</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "적색 루시우",
+         "html": "적색 루시우",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "메디브",
+     "heroId": "Medivh",
+     "heroIds": [
+      "Medivh"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>메디브</strong></span>\n<ul>\n<li>어둠의 메디브</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "어둠의 메디브",
+         "html": "어둠의 메디브",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "소냐",
+     "heroId": "Barbarian",
+     "heroIds": [
+      "Barbarian"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>소냐</strong></span>\n<ul>\n<li>천사 소냐</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "천사 소냐",
+         "html": "천사 소냐",
+         "added": false
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "버그 수정",
+   "key": "bugs",
+   "html": "<p><span class=\"pn-h\"><strong>일반</strong></span></p>\n<ul>\n<li>게임의 여러 부분에 걸쳐 몇몇 오타와 설명 오류가 수정되었습니다.</li>\n</ul>\n<p><span class=\"pn-h\"><strong>아트</strong></span></p>\n<ul>\n<li><strong>아바투르:</strong> 제노공학 아바투르의 모델에 있던 불필요한 작은 구멍들을 수정했습니다.</li>\n<li><strong>블레이즈:</strong> 접착성 석유와 기름 분출의 아이콘 색깔이 다른 색깔을 사용하여 더욱 쉽게 구분할 수 있습니다. </li>\n<li><strong>그레이메인:</strong> 승리 애니메이션 동안 그레이메인의 생명력 막대가 움직이던 문제를 수정했습니다.</li>\n<li><strong>그레이메인:</strong> 울프 박사와 슈타인 스킨의 내면의 야성 시각 효과가 그레이메인이 귀환할 때 어긋나던 문제를 수정했습니다.</li>\n<li><strong>해머 상사:</strong> 이제 신소재 강철 장갑의 시각 효과가 공성 모드 중인 해머 상사의 모델과 일치합니다.</li>\n<li><strong>태사다르 :</strong> 하늘 사원에서 메카 태사다르가 탈것으로 변신하면 화면에 깜박이는 시각 효과가 나오던 문제를 수정했습니다.</li>\n<li><strong>발리라:</strong> 신경 마취 독과 상처 감염 독을 사용한 후 특정 탈것을 타면 발리라의 칼이 비정상적으로 깜박이던 문제를 수정했습니다.</li>\n</ul>\n<p><span class=\"pn-h\"><strong>전장</strong></span></p>\n<ul>\n<li><strong>마법 전쟁 (난투):</strong> 이제 캘타스가 신록의 구슬의 재사용 대기시간이 완료되자마자 신록의 구슬을 다시 사용할 수 있습니다.</li>\n<li><strong>용병:</strong> 특정 상황에서 중립 용병이 같은 위치에 두 번 생성될 수 있던 문제를 수정했습니다.</li>\n<li><strong>체험하기:</strong> 이제 해골사냥꾼 특성을 선택한 줄진이 길 잃은 바이킹을 처치했을 때 퀘스트가 정상적으로 진행됩니다.</li>\n</ul>\n<p><span class=\"pn-h\"><strong>영웅, 기술, 특성</strong></span></p>\n<ul>\n<li><strong>빛나래: </strong>아눕아락의 고치, 모랄레스 중위의 의료선, 누더기의 잡아먹기, 자가라의 게걸 아귀 등에 갇혀 있는 아군을 위안의 안개로 치유할 수 있던 문제를 수정했습니다.</li>\n<li><strong>빛나래:</strong> 정지 상태인 아군에게 위상 이동을 사용할 수 있던 문제를 수정했습니다.</li>\n<li><strong>D.Va:</strong> 피융! 피융! 피융! 특성을 선택한 후 공격력 또는 기술 위력 감소 효과를 받으면 딱콩!이 피해를 주지 않던 문제를 수정했습니다. </li>\n<li><strong>갈:</strong> 연발 어둠의 화살의 범위 표시기가 전장의 안개 속에서 보이던 문제를 수정했습니다.</li>\n<li><strong>일반:</strong> 일부 기술들이 폭풍의 전장 내에 있는 적들에게 영향을 주던 문제를 수정했습니다.\n<ul>\n<li>알라라크 – 염동력 [W]</li>\n<li>빛나래 – 에메랄드 바람 [R]</li>\n<li>데하카 – 끌기 [Q]</li>\n<li>메디브 – 봉인의 지맥 [R]</li>\n<li>누더기 – 갈고리 [Q]</li>\n</ul>\n</li>\n<li><span class=\"pn-new\"><strong>한조:</strong> 빠른 시전을 끈 상태에서 폭풍활을 사용한 후 우클릭을 누른 채로 이동 명령을 내릴 수 없던 문제를 수정했습니다.</span>\n<ul>\n<li><span class=\"pn-new\">폭풍활을 충전하는 동안 우클릭을 누른 채로 이동 명령을 내릴 수 없는 문제를 해결하기 위한 작업이 진행 중입니다. 이 문제에 대해서는 버그 제보 게시판의 <a href=\"https://kr.battle.net/forums/ko/heroes/topic/3647644801\" target=\"_blank\">알려진 오류 목록</a>을 통해 추가로 업데이트드릴 예정입니다.</span></li>\n</ul>\n</li>\n<li><strong>한조:</strong> 정지 또는 위치 사수 명령을 내리면 한조의 이동이 중지되며 폭풍활을 정상적으로 취소합니다.</li>\n<li><strong>한조:</strong> 용의 화살을 사용한 직후에 폭풍활을 사용하면 폭풍활을 준비하는 상태로 모델이 고정되던 문제를 수정했습니다.</li>\n<li><strong>한조:</strong> 폭풍의 전당에 들어서기 직전인 적 영웅에게 음파 화살이 적중하면 음파 화살이 비정상적인 시각 효과를 내던 문제를 수정했습니다.</li>\n<li><strong>나지보:</strong> 죽음의 광산에서 덩치가 소환되는 중에 광신 입구나 출구를 사용하면 덩치를 조종할 수 없던 문제를 수정했습니다.</li>\n<li><strong>레이너:</strong> 레오릭 또는 우서를 처치하면 비장의 카드 특성이 두 번 발동되던 문제를 수정했습니다.</li>\n<li><strong>렉사르:</strong> 미샤가 죽은 동안 정원 공포에 탑승하면 미샤가 부활한 후에 명령을 내릴 수 없던 문제를 수정했습니다.</li>\n<li><span class=\"pn-new\"><strong><s>사무로:</s></strong><s> 더는 아군 폭풍의 전장에 있는 환영과 위치를 바꿀 수 없습니다.</s></span>\n<ul>\n<li><span class=\"pn-new\">논의 후에 이를 전략으로 사용할 수 있다는 결론을 내려 변화를 되돌리기로 결정했습니다.</span></li>\n</ul>\n</li>\n<li><strong>사무로:</strong> 환영 또한 사무로의 레벨이 오르거나 퀘스트를 완료했을 때 동일한 시각 효과를 냅니다.</li>\n<li><strong>해머</strong> <strong>상사: </strong>이제 전차 모드로 돌아가는 중에 내린 명령을 정상적으로 수행합니다.</li>\n<li><strong>태사다르:</strong> 분광 연결체 특성을 선택한 후 집정관으로 변신했을 때의 일반 공격이 부가 대상에게 광역 피해를 두 번 주던 문제를 수정했습니다.</li>\n<li><strong>태사다르:</strong> 기사단의 의지 퀘스트를 완료하고 황혼의 집정관 특성을 선택하면 황혼의 집정관 상태일 때 태사다르의 첫 번째 일반 공격의 사거리가 길어지던 문제를 수정했습니다.</li>\n<li><span class=\"pn-new\"><strong>트레이서:</strong> 이제 펄스건 난사 특성이 근접 공격의 반경을 올바르게 40%만큼 증가시킵니다.</span></li>\n<li><strong>티리엘:</strong> 이제 엘드루인으로 순간이동한 후 추가 방어력의 지속 시간이 상태 막대에 정상적으로 표시됩니다.</li>\n<li><strong>티란데:</strong> 다르나서스 궁술 특성의 상태 막대 아이콘이 지속 시간과 함께 중첩 수 또한 표시합니다.</li>\n<li><strong>자가라:</strong> 게걸 아귀의 중앙에서 먹힌 영웅들이 게걸 아귀가 종료되기 전에 탈출 지점이 미리 표시되던 문제를 수정했습니다.</li>\n</ul>\n<p><span class=\"pn-h\"><strong>소리</strong></span></p>\n<ul>\n<li><strong>아나:</strong> 플레이어의 카메라가 아나의 위치에서 일정 거리 이상 떨어지면 쇠약의 다트의 사용 음향이 더는 들리지 않습니다.</li>\n<li><strong>폴스타트:</strong> 전장의 안개 내에서 사용된 피뢰침의 음향 효과가 들리던 문제를 수정했습니다.</li>\n<li><strong>그레이메인:</strong> 전장의 안개 내에 있는 대상에게 길니안 독주가 적중해도 음향 효과가 정상적으로 출력됩니다.</li>\n</ul>\n<p><span class=\"pn-h\"><strong>사용자 인터페이스</strong></span></p>\n<ul>\n<li><span class=\"pn-new\"><strong>선발전:</strong> 선발전 대기실에서 음성 음량을 조절하면 우클릭 메뉴에서 팀원들의 프로필을 볼 수 없던 문제를 수정했습니다.</span></li>\n<li><strong>미니맵: </strong>셰이더가 중간으로 설정되어 있을 때 미니맵의 신호 아이콘이 흐릿하게 보이던 문제를 수정했습니다.</li>\n<li><strong>점수 화면:</strong> 게임 내 점수 화면에서 D.Va의 충돌의 정석 퀘스트 진행 상황을 정상적으로 확인할 수 있습니다.</li>\n</ul>\n<p><img alt=\"\" class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/g6/G6G0N80EOC941426801305139.png\"/></p>\n<p><img alt=\"InvisibleDividerLine_800x50.png\" class=\"no-border; no-shadow\" data-id=\"14509591\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/6VA2831Q81IU1403137406234.png\"/></p>",
+   "items": [
+    {
+     "name": "아바투르",
+     "heroId": "Abathur",
+     "heroIds": [
+      "Abathur"
+     ],
+     "under": null,
+     "html": "<strong>아바투르:</strong> 제노공학 아바투르의 모델에 있던 불필요한 작은 구멍들을 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "아바투르: 제노공학 아바투르의 모델에 있던 불필요한 작은 구멍들을 수정했습니다.",
+         "html": "<strong>아바투르:</strong> 제노공학 아바투르의 모델에 있던 불필요한 작은 구멍들을 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "블레이즈",
+     "heroId": "Firebat",
+     "heroIds": [
+      "Firebat"
+     ],
+     "under": null,
+     "html": "<strong>블레이즈:</strong> 접착성 석유와 기름 분출의 아이콘 색깔이 다른 색깔을 사용하여 더욱 쉽게 구분할 수 있습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "블레이즈: 접착성 석유와 기름 분출의 아이콘 색깔이 다른 색깔을 사용하여 더욱 쉽게 구분할 수 있습니다.",
+         "html": "<strong>블레이즈:</strong> 접착성 석유와 기름 분출의 아이콘 색깔이 다른 색깔을 사용하여 더욱 쉽게 구분할 수 있습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "그레이메인",
+     "heroId": "Greymane",
+     "heroIds": [
+      "Greymane"
+     ],
+     "under": null,
+     "html": "<strong>그레이메인:</strong> 승리 애니메이션 동안 그레이메인의 생명력 막대가 움직이던 문제를 수정했습니다.<strong>그레이메인:</strong> 울프 박사와 슈타인 스킨의 내면의 야성 시각 효과가 그레이메인이 귀환할 때 어긋나던 문제를 수정했습니다.<strong>그레이메인:</strong> 전장의 안개 내에 있는 대상에게 길니안 독주가 적중해도 음향 효과가 정상적으로 출력됩니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "그레이메인: 승리 애니메이션 동안 그레이메인의 생명력 막대가 움직이던 문제를 수정했습니다.",
+         "html": "<strong>그레이메인:</strong> 승리 애니메이션 동안 그레이메인의 생명력 막대가 움직이던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "그레이메인: 울프 박사와 슈타인 스킨의 내면의 야성 시각 효과가 그레이메인이 귀환할 때 어긋나던 문제를 수정했습니다.",
+         "html": "<strong>그레이메인:</strong> 울프 박사와 슈타인 스킨의 내면의 야성 시각 효과가 그레이메인이 귀환할 때 어긋나던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "그레이메인: 전장의 안개 내에 있는 대상에게 길니안 독주가 적중해도 음향 효과가 정상적으로 출력됩니다.",
+         "html": "<strong>그레이메인:</strong> 전장의 안개 내에 있는 대상에게 길니안 독주가 적중해도 음향 효과가 정상적으로 출력됩니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "해머 상사",
+     "heroId": "SgtHammer",
+     "heroIds": [
+      "SgtHammer"
+     ],
+     "under": null,
+     "html": "<strong>해머 상사:</strong> 이제 신소재 강철 장갑의 시각 효과가 공성 모드 중인 해머 상사의 모델과 일치합니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "해머 상사: 이제 신소재 강철 장갑의 시각 효과가 공성 모드 중인 해머 상사의 모델과 일치합니다.",
+         "html": "<strong>해머 상사:</strong> 이제 신소재 강철 장갑의 시각 효과가 공성 모드 중인 해머 상사의 모델과 일치합니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "태사다르",
+     "heroId": "Tassadar",
+     "heroIds": [
+      "Tassadar"
+     ],
+     "under": null,
+     "html": "<strong>태사다르 :</strong> 하늘 사원에서 메카 태사다르가 탈것으로 변신하면 화면에 깜박이는 시각 효과가 나오던 문제를 수정했습니다.<strong>태사다르:</strong> 분광 연결체 특성을 선택한 후 집정관으로 변신했을 때의 일반 공격이 부가 대상에게 광역 피해를 두 번 주던 문제를 수정했습니다.<strong>태사다르:</strong> 기사단의 의지 퀘스트를 완료하고 황혼의 집정관 특성을 선택하면 황혼의 집정관 상태일 때 태사다르의 첫 번째 일반 공격의 사거리가 길어지던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "태사다르 : 하늘 사원에서 메카 태사다르가 탈것으로 변신하면 화면에 깜박이는 시각 효과가 나오던 문제를 수정했습니다.",
+         "html": "<strong>태사다르 :</strong> 하늘 사원에서 메카 태사다르가 탈것으로 변신하면 화면에 깜박이는 시각 효과가 나오던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "태사다르: 분광 연결체 특성을 선택한 후 집정관으로 변신했을 때의 일반 공격이 부가 대상에게 광역 피해를 두 번 주던 문제를 수정했습니다.",
+         "html": "<strong>태사다르:</strong> 분광 연결체 특성을 선택한 후 집정관으로 변신했을 때의 일반 공격이 부가 대상에게 광역 피해를 두 번 주던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "태사다르: 기사단의 의지 퀘스트를 완료하고 황혼의 집정관 특성을 선택하면 황혼의 집정관 상태일 때 태사다르의 첫 번째 일반 공격의 사거리가 길어지던 문제를 수정했습니다.",
+         "html": "<strong>태사다르:</strong> 기사단의 의지 퀘스트를 완료하고 황혼의 집정관 특성을 선택하면 황혼의 집정관 상태일 때 태사다르의 첫 번째 일반 공격의 사거리가 길어지던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "발리라",
+     "heroId": "Valeera",
+     "heroIds": [
+      "Valeera"
+     ],
+     "under": null,
+     "html": "<strong>발리라:</strong> 신경 마취 독과 상처 감염 독을 사용한 후 특정 탈것을 타면 발리라의 칼이 비정상적으로 깜박이던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "발리라: 신경 마취 독과 상처 감염 독을 사용한 후 특정 탈것을 타면 발리라의 칼이 비정상적으로 깜박이던 문제를 수정했습니다.",
+         "html": "<strong>발리라:</strong> 신경 마취 독과 상처 감염 독을 사용한 후 특정 탈것을 타면 발리라의 칼이 비정상적으로 깜박이던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "빛나래",
+     "heroId": "FaerieDragon",
+     "heroIds": [
+      "FaerieDragon"
+     ],
+     "under": null,
+     "html": "<strong>빛나래: </strong>아눕아락의 고치, 모랄레스 중위의 의료선, 누더기의 잡아먹기, 자가라의 게걸 아귀 등에 갇혀 있는 아군을 위안의 안개로 치유할 수 있던 문제를 수정했습니다.<strong>빛나래:</strong> 정지 상태인 아군에게 위상 이동을 사용할 수 있던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "빛나래: 아눕아락의 고치, 모랄레스 중위의 의료선, 누더기의 잡아먹기, 자가라의 게걸 아귀 등에 갇혀 있는 아군을 위안의 안개로 치유할 수 있던 문제를 수정했습니다.",
+         "html": "<strong>빛나래: </strong>아눕아락의 고치, 모랄레스 중위의 의료선, 누더기의 잡아먹기, 자가라의 게걸 아귀 등에 갇혀 있는 아군을 위안의 안개로 치유할 수 있던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "빛나래: 정지 상태인 아군에게 위상 이동을 사용할 수 있던 문제를 수정했습니다.",
+         "html": "<strong>빛나래:</strong> 정지 상태인 아군에게 위상 이동을 사용할 수 있던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "D.Va",
+     "heroId": "DVa",
+     "heroIds": [
+      "DVa"
+     ],
+     "under": null,
+     "html": "<strong>D.Va:</strong> 피융! 피융! 피융! 특성을 선택한 후 공격력 또는 기술 위력 감소 효과를 받으면 딱콩!이 피해를 주지 않던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "D.Va: 피융! 피융! 피융! 특성을 선택한 후 공격력 또는 기술 위력 감소 효과를 받으면 딱콩!이 피해를 주지 않던 문제를 수정했습니다.",
+         "html": "<strong>D.Va:</strong> 피융! 피융! 피융! 특성을 선택한 후 공격력 또는 기술 위력 감소 효과를 받으면 딱콩!이 피해를 주지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "갈",
+     "heroId": "Gall",
+     "heroIds": [
+      "Gall"
+     ],
+     "under": null,
+     "html": "<strong>갈:</strong> 연발 어둠의 화살의 범위 표시기가 전장의 안개 속에서 보이던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "갈: 연발 어둠의 화살의 범위 표시기가 전장의 안개 속에서 보이던 문제를 수정했습니다.",
+         "html": "<strong>갈:</strong> 연발 어둠의 화살의 범위 표시기가 전장의 안개 속에서 보이던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "한조",
+     "heroId": "Hanzo",
+     "heroIds": [
+      "Hanzo"
+     ],
+     "under": null,
+     "html": "<strong>한조:</strong> 정지 또는 위치 사수 명령을 내리면 한조의 이동이 중지되며 폭풍활을 정상적으로 취소합니다.<strong>한조:</strong> 용의 화살을 사용한 직후에 폭풍활을 사용하면 폭풍활을 준비하는 상태로 모델이 고정되던 문제를 수정했습니다.<strong>한조:</strong> 폭풍의 전당에 들어서기 직전인 적 영웅에게 음파 화살이 적중하면 음파 화살이 비정상적인 시각 효과를 내던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "한조: 정지 또는 위치 사수 명령을 내리면 한조의 이동이 중지되며 폭풍활을 정상적으로 취소합니다.",
+         "html": "<strong>한조:</strong> 정지 또는 위치 사수 명령을 내리면 한조의 이동이 중지되며 폭풍활을 정상적으로 취소합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "한조: 용의 화살을 사용한 직후에 폭풍활을 사용하면 폭풍활을 준비하는 상태로 모델이 고정되던 문제를 수정했습니다.",
+         "html": "<strong>한조:</strong> 용의 화살을 사용한 직후에 폭풍활을 사용하면 폭풍활을 준비하는 상태로 모델이 고정되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "한조: 폭풍의 전당에 들어서기 직전인 적 영웅에게 음파 화살이 적중하면 음파 화살이 비정상적인 시각 효과를 내던 문제를 수정했습니다.",
+         "html": "<strong>한조:</strong> 폭풍의 전당에 들어서기 직전인 적 영웅에게 음파 화살이 적중하면 음파 화살이 비정상적인 시각 효과를 내던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "나지보",
+     "heroId": "WitchDoctor",
+     "heroIds": [
+      "WitchDoctor"
+     ],
+     "under": null,
+     "html": "<strong>나지보:</strong> 죽음의 광산에서 덩치가 소환되는 중에 광신 입구나 출구를 사용하면 덩치를 조종할 수 없던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "나지보: 죽음의 광산에서 덩치가 소환되는 중에 광신 입구나 출구를 사용하면 덩치를 조종할 수 없던 문제를 수정했습니다.",
+         "html": "<strong>나지보:</strong> 죽음의 광산에서 덩치가 소환되는 중에 광신 입구나 출구를 사용하면 덩치를 조종할 수 없던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "레이너",
+     "heroId": "Raynor",
+     "heroIds": [
+      "Raynor"
+     ],
+     "under": null,
+     "html": "<strong>레이너:</strong> 레오릭 또는 우서를 처치하면 비장의 카드 특성이 두 번 발동되던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "레이너: 레오릭 또는 우서를 처치하면 비장의 카드 특성이 두 번 발동되던 문제를 수정했습니다.",
+         "html": "<strong>레이너:</strong> 레오릭 또는 우서를 처치하면 비장의 카드 특성이 두 번 발동되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "렉사르",
+     "heroId": "Rexxar",
+     "heroIds": [
+      "Rexxar"
+     ],
+     "under": null,
+     "html": "<strong>렉사르:</strong> 미샤가 죽은 동안 정원 공포에 탑승하면 미샤가 부활한 후에 명령을 내릴 수 없던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "렉사르: 미샤가 죽은 동안 정원 공포에 탑승하면 미샤가 부활한 후에 명령을 내릴 수 없던 문제를 수정했습니다.",
+         "html": "<strong>렉사르:</strong> 미샤가 죽은 동안 정원 공포에 탑승하면 미샤가 부활한 후에 명령을 내릴 수 없던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "사무로",
+     "heroId": "Samuro",
+     "heroIds": [
+      "Samuro"
+     ],
+     "under": null,
+     "html": "<strong>사무로:</strong> 환영 또한 사무로의 레벨이 오르거나 퀘스트를 완료했을 때 동일한 시각 효과를 냅니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "사무로: 환영 또한 사무로의 레벨이 오르거나 퀘스트를 완료했을 때 동일한 시각 효과를 냅니다.",
+         "html": "<strong>사무로:</strong> 환영 또한 사무로의 레벨이 오르거나 퀘스트를 완료했을 때 동일한 시각 효과를 냅니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "트레이서",
+     "heroId": "Tracer",
+     "heroIds": [
+      "Tracer"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-new\"><strong>트레이서:</strong> 이제 펄스건 난사 특성이 근접 공격의 반경을 올바르게 40%만큼 증가시킵니다.</span>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "트레이서: 이제 펄스건 난사 특성이 근접 공격의 반경을 올바르게 40%만큼 증가시킵니다.",
+         "html": "<span class=\"pn-new\"><strong>트레이서:</strong> 이제 펄스건 난사 특성이 근접 공격의 반경을 올바르게 40%만큼 증가시킵니다.</span>",
+         "added": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "티리엘",
+     "heroId": "Tyrael",
+     "heroIds": [
+      "Tyrael"
+     ],
+     "under": null,
+     "html": "<strong>티리엘:</strong> 이제 엘드루인으로 순간이동한 후 추가 방어력의 지속 시간이 상태 막대에 정상적으로 표시됩니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "티리엘: 이제 엘드루인으로 순간이동한 후 추가 방어력의 지속 시간이 상태 막대에 정상적으로 표시됩니다.",
+         "html": "<strong>티리엘:</strong> 이제 엘드루인으로 순간이동한 후 추가 방어력의 지속 시간이 상태 막대에 정상적으로 표시됩니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "티란데",
+     "heroId": "Tyrande",
+     "heroIds": [
+      "Tyrande"
+     ],
+     "under": null,
+     "html": "<strong>티란데:</strong> 다르나서스 궁술 특성의 상태 막대 아이콘이 지속 시간과 함께 중첩 수 또한 표시합니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "티란데: 다르나서스 궁술 특성의 상태 막대 아이콘이 지속 시간과 함께 중첩 수 또한 표시합니다.",
+         "html": "<strong>티란데:</strong> 다르나서스 궁술 특성의 상태 막대 아이콘이 지속 시간과 함께 중첩 수 또한 표시합니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "자가라",
+     "heroId": "Zagara",
+     "heroIds": [
+      "Zagara"
+     ],
+     "under": null,
+     "html": "<strong>자가라:</strong> 게걸 아귀의 중앙에서 먹힌 영웅들이 게걸 아귀가 종료되기 전에 탈출 지점이 미리 표시되던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "자가라: 게걸 아귀의 중앙에서 먹힌 영웅들이 게걸 아귀가 종료되기 전에 탈출 지점이 미리 표시되던 문제를 수정했습니다.",
+         "html": "<strong>자가라:</strong> 게걸 아귀의 중앙에서 먹힌 영웅들이 게걸 아귀가 종료되기 전에 탈출 지점이 미리 표시되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "아나",
+     "heroId": "Ana",
+     "heroIds": [
+      "Ana"
+     ],
+     "under": null,
+     "html": "<strong>아나:</strong> 플레이어의 카메라가 아나의 위치에서 일정 거리 이상 떨어지면 쇠약의 다트의 사용 음향이 더는 들리지 않습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "아나: 플레이어의 카메라가 아나의 위치에서 일정 거리 이상 떨어지면 쇠약의 다트의 사용 음향이 더는 들리지 않습니다.",
+         "html": "<strong>아나:</strong> 플레이어의 카메라가 아나의 위치에서 일정 거리 이상 떨어지면 쇠약의 다트의 사용 음향이 더는 들리지 않습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "폴스타트",
+     "heroId": "Falstad",
+     "heroIds": [
+      "Falstad"
+     ],
+     "under": null,
+     "html": "<strong>폴스타트:</strong> 전장의 안개 내에서 사용된 피뢰침의 음향 효과가 들리던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "폴스타트: 전장의 안개 내에서 사용된 피뢰침의 음향 효과가 들리던 문제를 수정했습니다.",
+         "html": "<strong>폴스타트:</strong> 전장의 안개 내에서 사용된 피뢰침의 음향 효과가 들리던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "heroes": [
+  "Abathur",
+  "Ana",
+  "Azmodan",
+  "Barbarian",
+  "Crusader",
+  "DVa",
+  "FaerieDragon",
+  "Falstad",
+  "Firebat",
+  "Gall",
+  "Greymane",
+  "Hanzo",
+  "Lucio",
+  "Medic",
+  "Medivh",
+  "Nova",
+  "Raynor",
+  "Rexxar",
+  "Samuro",
+  "SgtHammer",
+  "Tassadar",
+  "Thrall",
+  "Tracer",
+  "Tyrael",
+  "Tyrande",
+  "Valeera",
+  "WitchDoctor",
+  "Zagara"
+ ],
+ "battlegrounds": [],
+ "newsId": "21594628"
+}

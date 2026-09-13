@@ -1,0 +1,4979 @@
+{
+ "date": "2024-04-16",
+ "kind": "ptr",
+ "title": "히어로즈 오브 더 스톰 공개 테스트 서버 패치 노트 - 2024년 4월 16일",
+ "source": "https://news.blizzard.com/en-us/article/24077220/heroes-of-the-storm-ptr-patch-notes-april-16-2024",
+ "published": "2024-04-16T17:02:37Z",
+ "sections": [
+  {
+   "name": "머리말",
+   "key": "intro",
+   "html": "<p>다음 히어로즈 오브 더 스톰 패치가 공개 테스트 서버(PTR)에 적용되어 테스트 플레이가 가능합니다. 언제나 그렇듯, PTR에서 플레이하는 동안 버그를 발견하셨다면 <a href=\"https://us.forums.blizzard.com/en/heroes/c/ptr-bug-report\" target=\"_blank\">PTR 버그 신고 포럼</a>에 방문하여 경험하신 내용을 알려주시기 바랍니다.</p>",
+   "nameEn": "머리말"
+  },
+  {
+   "name": "무작위 영웅 대전",
+   "key": "aram",
+   "html": "<p><span class=\"pn-h\"><strong>일반</strong></span></p>\n<ul>\n<li>바리안이 이제 전사로 분류됩니다.</li>\n</ul>\n<p><span class=\"pn-h\"><strong>동일 영웅 모드</strong></span></p>\n<ul>\n<li>아르타니스가 추가되었습니다.</li>\n<li>들창코가 추가되었습니다.</li>\n<li>레오릭이 추가되었습니다. (레오릭은 일반 모드에서는 여전히 비활성화되어 있습니다).</li>\n<li>화이트메인이 추가되었습니다.</li>\n<li>자리야가 추가되었습니다.</li>\n<li>노바가 삭제되었습니다.</li>\n<li>프로비우스가 삭제되었습니다.</li>\n</ul>",
+   "nameEn": "ARAM"
+  },
+  {
+   "name": "밸런스 업데이트",
+   "key": "balance_updates",
+   "html": "<h3><strong>영웅</strong></h3>\n<h4>아서스</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li>생명력 재생이 5.957에서 6.375로 증가했습니다.</li>\n<li>최대 생명력이 2860에서 2980으로 증가했습니다.</li>\n<li><strong class=\"pn-name\">죽음의 고리 [Q]</strong><ul>\n<li>치유량이 262에서 285로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">서리 폭풍 [E]</strong><ul>\n<li>초당 마나 소모량이 13에서 11로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">매서운 추위 [E]</strong><ul>\n<li>이제 피해량 증가가 합연산으로 적용됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">죽음의 포옹 [Q]</strong><ul>\n<li>이제 죽음의 고리의 피해량에 합연산으로 추가 효과를 부여합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>들창코</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li>분노 감소 속도가 초당 10에서 초당 13으로 증가했습니다.</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">맹수의 사냥법 [사용 효과]</strong><ul>\n<li>이제 맹수의 사냥법을 사용하면 즉시 분노 감소가 중단됩니다.</li>\n<li>재사용 대기시간이 40초에서 45초로 증가했습니다.</li>\n<li>초당 치유량이 8에서 7로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">야만적인 힘 [Q]</strong><ul>\n<li>적 영웅이 지형에 부딪혔을 때의 추가 피해량이 8에서 6으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">먼지 돌풍 [E]</strong><ul>\n<li>지속시간이 3초에서 4초로 증가했습니다.</li>\n<li>분노가 50 미만일 때의 방어력이 20에서 25로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">주먹찜질 [E]</strong><ul>\n<li>기술 강화 감소량이 50%에서 30%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>정크랫</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">강철 덫 [E]</strong><ul>\n<li>재사용 대기시간이 12초에서 15초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">심지는 길게 [Q]</strong><ul>\n<li>추가 피해량이 120%에서 100%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">치사한 술수 [D]</strong><ul>\n<li>재사용 대기시간이 12초에서 20초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>레가르</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">일반 공격</strong><ul>\n<li>피해량이 115에서 110으로 감소했습니다.</li>\n<li>늑대 정령의 일반 공격 추가 효과가 75%에서 60%로 감소했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">번개 보호막 [W]</strong><ul>\n<li>적을 적중할 때마다 회복하는 마나가 2에서 1로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">폭풍소환사 [W]</strong><ul>\n<li>최대 중첩이 300에서 200으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">피바람 [D]</strong><ul>\n<li>마나 회복량이 최대 마나의 5%에서 최대 마나의 4%로 감소했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">흔들리지 않는 토템 [E]</strong><ul>\n<li>공격 속도 감소량이 25%에서 15%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">결박 토템 [E]</strong><ul>\n<li>피해량이 115에서 90으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>이렐</h4>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">마라아드의 통찰력 [지속 효과]</strong><ul>\n<li>치유량이 140에서 160으로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">빛의 아이기스 [E]</strong><ul>\n<li>추가 방어력이 30에서 50으로 증가했습니다.</li>\n<li>지속시간이 4초에서 6초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">신성한 대지 [R2]</strong><ul>\n<li>재사용 대기시간이 40초에서 25초로 감소했습니다.</li>\n<li>마나 소모량이 삭제되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">기사단의 선고 [W]</strong><ul>\n<li>방어력 감소량이 20에서 15로 감소했습니다.</li>\n<li>비례 피해량이 7%에서 6%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+   "heroes": [
+    {
+     "name": "아서스",
+     "heroId": "Arthas",
+     "heroIds": [
+      "Arthas"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "생명력 재생이 5.957에서 6.375로 증가했습니다.",
+         "html": "생명력 재생이 5.957에서 6.375로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "최대 생명력이 2860에서 2980으로 증가했습니다.",
+         "html": "최대 생명력이 2860에서 2980으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "죽음의 고리",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "치유량이 262에서 285로 증가했습니다.",
+         "html": "치유량이 262에서 285로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Death Coil"
+      },
+      {
+       "name": "서리 폭풍",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "초당 마나 소모량이 13에서 11로 감소했습니다.",
+         "html": "초당 마나 소모량이 13에서 11로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Frozen Tempest"
+      },
+      {
+       "name": "매서운 추위",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "이제 피해량 증가가 합연산으로 적용됩니다.",
+         "html": "이제 피해량 증가가 합연산으로 적용됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Biting Cold"
+      },
+      {
+       "name": "죽음의 포옹",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "이제 죽음의 고리의 피해량에 합연산으로 추가 효과를 부여합니다.",
+         "html": "이제 죽음의 고리의 피해량에 합연산으로 추가 효과를 부여합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Embrace Death"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li>생명력 재생이 5.957에서 6.375로 증가했습니다.</li>\n<li>최대 생명력이 2860에서 2980으로 증가했습니다.</li>\n<li><strong class=\"pn-name\">죽음의 고리 [Q]</strong><ul>\n<li>치유량이 262에서 285로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">서리 폭풍 [E]</strong><ul>\n<li>초당 마나 소모량이 13에서 11로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">매서운 추위 [E]</strong><ul>\n<li>이제 피해량 증가가 합연산으로 적용됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">죽음의 포옹 [Q]</strong><ul>\n<li>이제 죽음의 고리의 피해량에 합연산으로 추가 효과를 부여합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Arthas"
+    },
+    {
+     "name": "들창코",
+     "heroId": "Hogger",
+     "heroIds": [
+      "Hogger"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "분노 감소 속도가 초당 10에서 초당 13으로 증가했습니다.",
+         "html": "분노 감소 속도가 초당 10에서 초당 13으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "맹수의 사냥법",
+       "key": "Active",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "이제 맹수의 사냥법을 사용하면 즉시 분노 감소가 중단됩니다.",
+         "html": "이제 맹수의 사냥법을 사용하면 즉시 분노 감소가 중단됩니다.",
+         "added": false
+        },
+        {
+         "text": "재사용 대기시간이 40초에서 45초로 증가했습니다.",
+         "html": "재사용 대기시간이 40초에서 45초로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "초당 치유량이 8에서 7로 감소했습니다.",
+         "html": "초당 치유량이 8에서 7로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "On the Prowl"
+      },
+      {
+       "name": "야만적인 힘",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "적 영웅이 지형에 부딪혔을 때의 추가 피해량이 8에서 6으로 감소했습니다.",
+         "html": "적 영웅이 지형에 부딪혔을 때의 추가 피해량이 8에서 6으로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Brute Force"
+      },
+      {
+       "name": "먼지 돌풍",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "지속시간이 3초에서 4초로 증가했습니다.",
+         "html": "지속시간이 3초에서 4초로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "분노가 50 미만일 때의 방어력이 20에서 25로 증가했습니다.",
+         "html": "분노가 50 미만일 때의 방어력이 20에서 25로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Dust Devil"
+      },
+      {
+       "name": "주먹찜질",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "기술 강화 감소량이 50%에서 30%로 감소했습니다.",
+         "html": "기술 강화 감소량이 50%에서 30%로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Pummel"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li>분노 감소 속도가 초당 10에서 초당 13으로 증가했습니다.</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">맹수의 사냥법 [사용 효과]</strong><ul>\n<li>이제 맹수의 사냥법을 사용하면 즉시 분노 감소가 중단됩니다.</li>\n<li>재사용 대기시간이 40초에서 45초로 증가했습니다.</li>\n<li>초당 치유량이 8에서 7로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">야만적인 힘 [Q]</strong><ul>\n<li>적 영웅이 지형에 부딪혔을 때의 추가 피해량이 8에서 6으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">먼지 돌풍 [E]</strong><ul>\n<li>지속시간이 3초에서 4초로 증가했습니다.</li>\n<li>분노가 50 미만일 때의 방어력이 20에서 25로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">주먹찜질 [E]</strong><ul>\n<li>기술 강화 감소량이 50%에서 30%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Hogger"
+    },
+    {
+     "name": "정크랫",
+     "heroId": "Junkrat",
+     "heroIds": [
+      "Junkrat"
+     ],
+     "changes": [
+      {
+       "name": "강철 덫",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 12초에서 15초로 증가했습니다.",
+         "html": "재사용 대기시간이 12초에서 15초로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Steel Trap"
+      },
+      {
+       "name": "심지는 길게",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "추가 피해량이 120%에서 100%로 감소했습니다.",
+         "html": "추가 피해량이 120%에서 100%로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Extra-Wound Timers"
+      },
+      {
+       "name": "치사한 술수",
+       "key": "D",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 12초에서 20초로 증가했습니다.",
+         "html": "재사용 대기시간이 12초에서 20초로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Dirty Trickster"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">강철 덫 [E]</strong><ul>\n<li>재사용 대기시간이 12초에서 15초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">심지는 길게 [Q]</strong><ul>\n<li>추가 피해량이 120%에서 100%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">치사한 술수 [D]</strong><ul>\n<li>재사용 대기시간이 12초에서 20초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Junkrat"
+    },
+    {
+     "name": "레가르",
+     "heroId": "Rehgar",
+     "heroIds": [
+      "Rehgar"
+     ],
+     "changes": [
+      {
+       "name": "일반 공격",
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "피해량이 115에서 110으로 감소했습니다.",
+         "html": "피해량이 115에서 110으로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "늑대 정령의 일반 공격 추가 효과가 75%에서 60%로 감소했습니다.",
+         "html": "늑대 정령의 일반 공격 추가 효과가 75%에서 60%로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Basic Attack"
+      },
+      {
+       "name": "번개 보호막",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "적을 적중할 때마다 회복하는 마나가 2에서 1로 감소했습니다.",
+         "html": "적을 적중할 때마다 회복하는 마나가 2에서 1로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Lightning Shield"
+      },
+      {
+       "name": "폭풍소환사",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "최대 중첩이 300에서 200으로 감소했습니다.",
+         "html": "최대 중첩이 300에서 200으로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Stormcaller"
+      },
+      {
+       "name": "피바람",
+       "key": "D",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "마나 회복량이 최대 마나의 5%에서 최대 마나의 4%로 감소했습니다.",
+         "html": "마나 회복량이 최대 마나의 5%에서 최대 마나의 4%로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Blood and Thunder"
+      },
+      {
+       "name": "흔들리지 않는 토템",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "공격 속도 감소량이 25%에서 15%로 감소했습니다.",
+         "html": "공격 속도 감소량이 25%에서 15%로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Grounded Totem"
+      },
+      {
+       "name": "결박 토템",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "피해량이 115에서 90으로 감소했습니다.",
+         "html": "피해량이 115에서 90으로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Earthgrasp Totem"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">일반 공격</strong><ul>\n<li>피해량이 115에서 110으로 감소했습니다.</li>\n<li>늑대 정령의 일반 공격 추가 효과가 75%에서 60%로 감소했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">번개 보호막 [W]</strong><ul>\n<li>적을 적중할 때마다 회복하는 마나가 2에서 1로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">폭풍소환사 [W]</strong><ul>\n<li>최대 중첩이 300에서 200으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">피바람 [D]</strong><ul>\n<li>마나 회복량이 최대 마나의 5%에서 최대 마나의 4%로 감소했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">흔들리지 않는 토템 [E]</strong><ul>\n<li>공격 속도 감소량이 25%에서 15%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">결박 토템 [E]</strong><ul>\n<li>피해량이 115에서 90으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Rehgar"
+    },
+    {
+     "name": "이렐",
+     "heroId": "Yrel",
+     "heroIds": [
+      "Yrel"
+     ],
+     "changes": [
+      {
+       "name": "마라아드의 통찰력",
+       "key": "Passive",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "치유량이 140에서 160으로 증가했습니다.",
+         "html": "치유량이 140에서 160으로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Maraad's Insight"
+      },
+      {
+       "name": "빛의 아이기스",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "추가 방어력이 30에서 50으로 증가했습니다.",
+         "html": "추가 방어력이 30에서 50으로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "지속시간이 4초에서 6초로 증가했습니다.",
+         "html": "지속시간이 4초에서 6초로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Aegis of Light"
+      },
+      {
+       "name": "신성한 대지",
+       "key": "R2",
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 40초에서 25초로 감소했습니다.",
+         "html": "재사용 대기시간이 40초에서 25초로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "마나 소모량이 삭제되었습니다.",
+         "html": "마나 소모량이 삭제되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Sacred Ground"
+      },
+      {
+       "name": "기사단의 선고",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "방어력 감소량이 20에서 15로 감소했습니다.",
+         "html": "방어력 감소량이 20에서 15로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "비례 피해량이 7%에서 6%로 감소했습니다.",
+         "html": "비례 피해량이 7%에서 6%로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Templar's Verdict"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">마라아드의 통찰력 [지속 효과]</strong><ul>\n<li>치유량이 140에서 160으로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">빛의 아이기스 [E]</strong><ul>\n<li>추가 방어력이 30에서 50으로 증가했습니다.</li>\n<li>지속시간이 4초에서 6초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">신성한 대지 [R2]</strong><ul>\n<li>재사용 대기시간이 40초에서 25초로 감소했습니다.</li>\n<li>마나 소모량이 삭제되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">기사단의 선고 [W]</strong><ul>\n<li>방어력 감소량이 20에서 15로 감소했습니다.</li>\n<li>비례 피해량이 7%에서 6%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Yrel"
+    }
+   ],
+   "nameEn": "Balance Updates"
+  },
+  {
+   "name": "영웅 업데이트",
+   "key": "hero_updates",
+   "html": "<h4>알라라크</h4>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">잔혹한 여세 [지속 효과]</strong><ul>\n<li>생명력 기준치 표시기가 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">치명적인 돌진 [R1]</strong><ul>\n<li>시전 및 정신 집중 표시줄이 추가되었습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">반격 [R2]</strong><ul>\n<li>시전 및 정신 집중 표시줄이 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>아나</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">빠른 시전 설정</strong><ul>\n<li>신속한 재장전이 치유탄과 빠른 시전 설정을 공유합니다.</li>\n<li>호루스의 눈 취소가 삭제되었습니다.</li>\n</ul>\n</li>\n</ul>\n<h4>안두인</h4>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">빛샘 [사용 효과]</strong><ul>\n<li>남은 사용 횟수를 나타내는 버튼 표시가 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">소생 [Q]</strong><ul>\n<li>지속시간 표시기가 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>아르타니스</h4>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">보호막 쇄도 [D]</strong><ul>\n<li>효과 표시줄에 추가되었습니다.</li>\n<li>이제 25% 미만일 때 고유 능력이 강조 표시됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">최후의 베기 [지속 효과]</strong><ul>\n<li>기술의 조건부 효과가 효과 표시줄에 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>아서스</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">빠른 시전 설정</strong><ul>\n<li>구울 희생이 삭제되었습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">얼음 발톱 [E]</strong><ul>\n<li>효과 표시줄에 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>아우리엘</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">빠른 시전 설정</strong><ul>\n<li>자신에게 시전하는 부활이 삭제되었습니다.</li>\n</ul>\n</li>\n</ul>\n<h4>블레이즈</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">빠른 시전 설정</strong><ul>\n<li>벙커의 기술이 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">아드레날린 전투 자극제 [사용 효과]</strong><ul>\n<li>생명력 기준치 표시기가 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>크로미</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">빠른 시전 설정</strong><ul>\n<li>감속의 모래 취소가 삭제되었습니다.</li>\n<li>시간의 덫 폭발이 삭제되었습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>14레벨</strong><ul>\n<li><strong class=\"pn-name\">양자 급가속 [사용]</strong><ul>\n<li>지속시간 표시기가 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">청동용군단의 축복 [지속 효과]</strong><ul>\n<li>지속시간 표시기가 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>데스윙</h4>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">열기의 파도 [W]</strong><ul>\n<li>효과 표시줄에 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>데커드</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">빠른 시전 설정</strong><ul>\n<li>잠시 내 말 좀 들어보게나 취소가 삭제되었습니다.</li>\n</ul>\n</li>\n</ul>\n<h4>데하카</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">빠른 시전 설정</strong><ul>\n<li>잠복 취소가 삭제되었습니다.</li>\n</ul>\n</li>\n</ul>\n<h4>디바</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">빠른 시전 설정</strong><ul>\n<li>이제 D.Va 메카의 공격이 다른 공격의 빠른 시전 설정을 공유합니다.</li>\n<li>방어 매트릭스 취소가 삭제되었습니다.</li>\n<li>이제 방어 매트릭스 대상 변경이 방어 매트릭스의 빠른 시전 설정을 물려받습니다.</li>\n</ul>\n</li>\n</ul>\n<h4>정예 타우렌 족장</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">빠른 시전 설정</strong><ul>\n<li>록스타가 삭제되었습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">기타 솔로 [E]</strong><ul>\n<li>지속시간 표시기가 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n<h4>갈</h4>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">날뛰는 오우거 [D]</strong><ul>\n<li>효과 표시줄에 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>가로쉬</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">빠른 시전 설정</strong><ul>\n<li>방어력 상승이 삭제되었습니다.</li>\n<li>노련한 병사가 삭제되었습니다.</li>\n</ul>\n</li>\n</ul>\n<h4>굴단</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">빠른 시전 설정</strong><ul>\n<li>중복된 생명력 전환과 생명력 흡수 취소가 삭제되었습니다.</li>\n</ul>\n</li>\n</ul>\n<h4>한조</h4>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">발 빠른 추적자 [Q]</strong><ul>\n<li>효과 표시줄에 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>들창코</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">빠른 시전 설정</strong><ul>\n<li>취소 기술이 삭제되었습니다.</li>\n</ul>\n</li>\n</ul>\n<h4>요한나</h4>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">신성한 격노 [지속 효과]</strong><ul>\n<li>효과 표시줄에 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>정크랫</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">빠른 시전 설정</strong><ul>\n<li>지뢰 폭발이 삭제되었습니다.</li>\n<li>죽이는 타이어 기술이 삭제되었습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">폭탄 발사기 [Q]</strong><ul>\n<li>심지는 길게로 강화된 수류탄에 붉은색/푸른색으로 깜박이는 표시가 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">죽이는 타이어 [R1]</strong><ul>\n<li>최대 피해량이 적용되는 사거리 표시가 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>리밍</h4>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">파열 [R1]</strong><ul>\n<li>이제 정지 또는 공격 중지를 눌러 취소할 수 있습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>루시우</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">빠른 시전 설정</strong><ul>\n<li>이제 공격이 다른 공격의 빠른 시전 설정을 공유합니다.</li>\n</ul>\n</li>\n</ul>\n<h4>루나라</h4>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">폴짝 폴짝 [Z]</strong><ul>\n<li>이제 활성화된 동안 효과 표시줄에 표시됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">갈래창 [Q]</strong><ul>\n<li>효과 표시줄에 추가되었습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">자연의 활력 [W]</strong><ul>\n<li>효과 표시줄에 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">무한한 포자 [W]</strong><ul>\n<li>이제 사용 시 재사용 대기시간이 감소하는 경우 마비 포자 버튼이 깜박입니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">개화 촉진 [Q]</strong><ul>\n<li>이제 재사용 대기시간이 더 빠르게 감소하는 동안 치명적인 꽃 버튼이 빛납니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">활력의 포자 [W]</strong><ul>\n<li>효과 표시줄에 추가되었습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">별나무 창 [W]</strong><ul>\n<li>효과 표시줄에 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>말가니스</h4>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">추적하는 박쥐떼 [R1]</strong><ul>\n<li>사거리 표시가 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>말퓨리온</h4>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">이세라의 선물 [Q]</strong><ul>\n<li>생명력 표시기가 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">달빛 세례 [W]</strong><ul>\n<li>효과 표시줄에 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>메디브</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">차원문 [E]</strong><ul>\n<li>버튼에 남은 지속시간이 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n<h4>무라딘</h4>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">극기의 바람 [D]</strong><ul>\n<li>생명력 기준치 표시기가 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>머키</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">빠른 시전 설정</strong><ul>\n<li>멀록 대행진 취소가 삭제되었습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">물고기의 눈 [D]</strong><ul>\n<li>부활 알을 놓은 뒤 물고기의 눈의 사거리 표시가 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>오르피아</h4>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">도사리는 공포 [사용 효과]</strong><ul>\n<li>발동 시간 표시가 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>키히라</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li>이제 효과 표시줄에서 특성이 티어 순서대로 정렬됩니다.</li>\n<li><strong class=\"pn-name\">피의 분노 [W]</strong><ul>\n<li>피의 분노의 치유량을 나타내는 UI 표시가 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">사슬톱날 [Q]</strong><ul>\n<li>효과 표시줄에 추가되었습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">사냥감 [지속 효과]</strong><ul>\n<li>효과 표시줄에 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>라그나로스</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">빠른 시전 설정</strong><ul>\n<li>이제 화산 심장부의 설퍼라스 강타가 라그나로스의 설퍼라스 강타와 빠른 시전 설정을 공유합니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">땅속 숨기 [사용 효과]</strong><ul>\n<li>치유량 미리 보기가 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>사무로</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li>죽음의 춤에 사운드 표시가 추가되었습니다.</li>\n<li><strong class=\"pn-name\">빠른 시전 설정</strong><ul>\n<li>칼날폭풍 취소가 삭제되었습니다.</li>\n<li>중복된 치명타가 삭제되었습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">환영 이동술 [고유 능력]</strong><ul>\n<li>활성화된 환영 복제가 없는 동안에는 사용할 수 없습니다.</li>\n<li>이제 활성화된 환영 복제가 하나뿐일 때는 대상 지정이 사라집니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">환영 복제 [Q]</strong><ul>\n<li>대상 지정에 안내 표시가 추가되었습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">바람 걸음 [E]</strong><ul>\n<li>지속 치유량 미리 보기가 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">비껴내기 [D]</strong><ul>\n<li>활성화된 동안 남은 지속시간이 표시되도록 변경되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">쾌도난마 [D]</strong><ul>\n<li>효과 표시줄에 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>누더기</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">휘청이는 괴물 [고유 능력]</strong><ul>\n<li>지속시간 표시기가 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n<h4>스투코프</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">빠른 시전 설정</strong><ul>\n<li>스멀거리는 팔 취소가 삭제되었습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">반작용 탄도포자 [W]</strong><ul>\n<li>생명력 표시기가 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>도살자</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">빠른 시전 설정</strong><ul>\n<li>신선한 고기가 삭제되었습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">도살자의 낙인 [W]</strong><ul>\n<li>버튼에 지속시간 표시가 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">격분 [지속 효과]</strong><ul>\n<li>생명력 표시기가 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>길 잃은 바이킹</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">감속 돌진 [올라프]</strong><ul>\n<li>이제 잃어버린 바이킹의 영웅 상태 표시에서 방패 주위에 재사용 대기시간이 원형 표시로 나타납니다.</li>\n</ul>\n</li>\n</ul>\n<h4>트레이서</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">빠른 시전 설정</strong><ul>\n<li>이제 공격이 다른 공격의 빠른 시전 설정을 공유합니다.</li>\n<li>완벽한 장전이 삭제되었습니다.</li>\n<li>포화가 활성화된 동안의 달려 쏴가 달려 쏴와 빠른 시전 설정을 공유합니다.</li>\n</ul>\n</li>\n</ul>\n<h4>티란데</h4>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">다르나서스 궁술 [지속 효과]</strong><ul>\n<li>지속시간 표시기가 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>우서</h4>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">성스러운 불꽃 [지속 효과]</strong><ul>\n<li>효과 표시줄에 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">빛의 봉화 [Q]</strong><ul>\n<li>생명력 기준치 표시기가 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>발리라</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">빠른 시전 설정</strong><ul>\n<li>소멸 취소가 삭제되었습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">연막탄 [R1]</strong><ul>\n<li>이제 버튼에 지속시간 표시가 나타납니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>바리안</h4>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">재기의 바람 [지속 효과]</strong><ul>\n<li>생명력 기준치 표시기가 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>화이트메인</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">빠른 시전 설정</strong><ul>\n<li>심문 취소가 삭제되었습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">열의 [고유 능력]</strong><ul>\n<li>이제 활성화된 동안 지속시간 표시가 나타납니다.</li>\n</ul>\n</li>\n</ul>\n<h4>줄</h4>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">신속한 수확 [W]</strong><ul>\n<li>효과 표시줄에 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>제라툴</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">빠른 시전 설정</strong><ul>\n<li>어둠 속의 추적자가 삭제되었습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">사이오닉 칼날 [지속 효과]</strong><ul>\n<li>효과 표시줄에 중첩 횟수가 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>줄진</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">빠른 시전 설정</strong><ul>\n<li>중복된 광전사 취소가 삭제되었습니다.</li>\n<li>중복된 재생이 삭제되었습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">무모함 [지속 효과]</strong><ul>\n<li>생명력 기준치 표시가 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+   "heroes": [
+    {
+     "name": "알라라크",
+     "heroId": "Alarak",
+     "heroIds": [
+      "Alarak"
+     ],
+     "changes": [
+      {
+       "name": "잔혹한 여세",
+       "key": "Passive",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "생명력 기준치 표시기가 추가되었습니다.",
+         "html": "생명력 기준치 표시기가 추가되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Ruthless Momentum"
+      },
+      {
+       "name": "치명적인 돌진",
+       "key": "R1",
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "시전 및 정신 집중 표시줄이 추가되었습니다.",
+         "html": "시전 및 정신 집중 표시줄이 추가되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Deadly Charge"
+      },
+      {
+       "name": "반격",
+       "key": "R2",
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "시전 및 정신 집중 표시줄이 추가되었습니다.",
+         "html": "시전 및 정신 집중 표시줄이 추가되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Counter-Strike"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">잔혹한 여세 [지속 효과]</strong><ul>\n<li>생명력 기준치 표시기가 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">치명적인 돌진 [R1]</strong><ul>\n<li>시전 및 정신 집중 표시줄이 추가되었습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">반격 [R2]</strong><ul>\n<li>시전 및 정신 집중 표시줄이 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Alarak"
+    },
+    {
+     "name": "아나",
+     "heroId": "Ana",
+     "heroIds": [
+      "Ana"
+     ],
+     "changes": [
+      {
+       "name": "빠른 시전 설정",
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "신속한 재장전이 치유탄과 빠른 시전 설정을 공유합니다.",
+         "html": "신속한 재장전이 치유탄과 빠른 시전 설정을 공유합니다.",
+         "added": false
+        },
+        {
+         "text": "호루스의 눈 취소가 삭제되었습니다.",
+         "html": "호루스의 눈 취소가 삭제되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Quickcast Settings"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">빠른 시전 설정</strong><ul>\n<li>신속한 재장전이 치유탄과 빠른 시전 설정을 공유합니다.</li>\n<li>호루스의 눈 취소가 삭제되었습니다.</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Ana"
+    },
+    {
+     "name": "안두인",
+     "heroId": "Anduin",
+     "heroIds": [
+      "Anduin"
+     ],
+     "changes": [
+      {
+       "name": "빛샘",
+       "key": "Active",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "남은 사용 횟수를 나타내는 버튼 표시가 추가되었습니다.",
+         "html": "남은 사용 횟수를 나타내는 버튼 표시가 추가되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Lightwell"
+      },
+      {
+       "name": "소생",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "지속시간 표시기가 추가되었습니다.",
+         "html": "지속시간 표시기가 추가되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Renew"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">빛샘 [사용 효과]</strong><ul>\n<li>남은 사용 횟수를 나타내는 버튼 표시가 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">소생 [Q]</strong><ul>\n<li>지속시간 표시기가 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Anduin"
+    },
+    {
+     "name": "아르타니스",
+     "heroId": "Artanis",
+     "heroIds": [
+      "Artanis"
+     ],
+     "changes": [
+      {
+       "name": "보호막 쇄도",
+       "key": "D",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "효과 표시줄에 추가되었습니다.",
+         "html": "효과 표시줄에 추가되었습니다.",
+         "added": false
+        },
+        {
+         "text": "이제 25% 미만일 때 고유 능력이 강조 표시됩니다.",
+         "html": "이제 25% 미만일 때 고유 능력이 강조 표시됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Shield Surge"
+      },
+      {
+       "name": "최후의 베기",
+       "key": "Passive",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "기술의 조건부 효과가 효과 표시줄에 추가되었습니다.",
+         "html": "기술의 조건부 효과가 효과 표시줄에 추가되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Final Cut"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">보호막 쇄도 [D]</strong><ul>\n<li>효과 표시줄에 추가되었습니다.</li>\n<li>이제 25% 미만일 때 고유 능력이 강조 표시됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">최후의 베기 [지속 효과]</strong><ul>\n<li>기술의 조건부 효과가 효과 표시줄에 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Artanis"
+    },
+    {
+     "name": "아서스",
+     "heroId": "Arthas",
+     "heroIds": [
+      "Arthas"
+     ],
+     "changes": [
+      {
+       "name": "빠른 시전 설정",
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "구울 희생이 삭제되었습니다.",
+         "html": "구울 희생이 삭제되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Quickcast Settings"
+      },
+      {
+       "name": "얼음 발톱",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "효과 표시줄에 추가되었습니다.",
+         "html": "효과 표시줄에 추가되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Icy Talons"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">빠른 시전 설정</strong><ul>\n<li>구울 희생이 삭제되었습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">얼음 발톱 [E]</strong><ul>\n<li>효과 표시줄에 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Arthas"
+    },
+    {
+     "name": "아우리엘",
+     "heroId": "Auriel",
+     "heroIds": [
+      "Auriel"
+     ],
+     "changes": [
+      {
+       "name": "빠른 시전 설정",
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "자신에게 시전하는 부활이 삭제되었습니다.",
+         "html": "자신에게 시전하는 부활이 삭제되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Quickcast Settings"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">빠른 시전 설정</strong><ul>\n<li>자신에게 시전하는 부활이 삭제되었습니다.</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Auriel"
+    },
+    {
+     "name": "블레이즈",
+     "heroId": "Firebat",
+     "heroIds": [
+      "Firebat"
+     ],
+     "changes": [
+      {
+       "name": "빠른 시전 설정",
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "벙커의 기술이 추가되었습니다.",
+         "html": "벙커의 기술이 추가되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Quickcast Settings"
+      },
+      {
+       "name": "아드레날린 전투 자극제",
+       "key": "Active",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "생명력 기준치 표시기가 추가되었습니다.",
+         "html": "생명력 기준치 표시기가 추가되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Adrenaline Stimpack"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">빠른 시전 설정</strong><ul>\n<li>벙커의 기술이 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">아드레날린 전투 자극제 [사용 효과]</strong><ul>\n<li>생명력 기준치 표시기가 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Blaze"
+    },
+    {
+     "name": "크로미",
+     "heroId": "Chromie",
+     "heroIds": [
+      "Chromie"
+     ],
+     "changes": [
+      {
+       "name": "빠른 시전 설정",
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "감속의 모래 취소가 삭제되었습니다.",
+         "html": "감속의 모래 취소가 삭제되었습니다.",
+         "added": false
+        },
+        {
+         "text": "시간의 덫 폭발이 삭제되었습니다.",
+         "html": "시간의 덫 폭발이 삭제되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Quickcast Settings"
+      },
+      {
+       "name": "양자 급가속",
+       "key": "Active",
+       "new": false,
+       "group": "talent",
+       "level": 14,
+       "lines": [
+        {
+         "text": "지속시간 표시기가 추가되었습니다.",
+         "html": "지속시간 표시기가 추가되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Quantum Overdrive"
+      },
+      {
+       "name": "청동용군단의 축복",
+       "key": "Passive",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "지속시간 표시기가 추가되었습니다.",
+         "html": "지속시간 표시기가 추가되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Blessing of the Bronze"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">빠른 시전 설정</strong><ul>\n<li>감속의 모래 취소가 삭제되었습니다.</li>\n<li>시간의 덫 폭발이 삭제되었습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>14레벨</strong><ul>\n<li><strong class=\"pn-name\">양자 급가속 [사용]</strong><ul>\n<li>지속시간 표시기가 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">청동용군단의 축복 [지속 효과]</strong><ul>\n<li>지속시간 표시기가 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Chromie"
+    },
+    {
+     "name": "데스윙",
+     "heroId": "Deathwing",
+     "heroIds": [
+      "Deathwing"
+     ],
+     "changes": [
+      {
+       "name": "열기의 파도",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "효과 표시줄에 추가되었습니다.",
+         "html": "효과 표시줄에 추가되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Heat Wave"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">열기의 파도 [W]</strong><ul>\n<li>효과 표시줄에 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Deathwing"
+    },
+    {
+     "name": "데커드",
+     "heroId": "Deckard",
+     "heroIds": [
+      "Deckard"
+     ],
+     "changes": [
+      {
+       "name": "빠른 시전 설정",
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "잠시 내 말 좀 들어보게나 취소가 삭제되었습니다.",
+         "html": "잠시 내 말 좀 들어보게나 취소가 삭제되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Quickcast Settings"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">빠른 시전 설정</strong><ul>\n<li>잠시 내 말 좀 들어보게나 취소가 삭제되었습니다.</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Deckard"
+    },
+    {
+     "name": "데하카",
+     "heroId": "Dehaka",
+     "heroIds": [
+      "Dehaka"
+     ],
+     "changes": [
+      {
+       "name": "빠른 시전 설정",
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "잠복 취소가 삭제되었습니다.",
+         "html": "잠복 취소가 삭제되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Quickcast Settings"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">빠른 시전 설정</strong><ul>\n<li>잠복 취소가 삭제되었습니다.</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Dehaka"
+    },
+    {
+     "name": "디바",
+     "heroId": "DVa",
+     "heroIds": [
+      "DVa"
+     ],
+     "changes": [
+      {
+       "name": "빠른 시전 설정",
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "이제 D.Va 메카의 공격이 다른 공격의 빠른 시전 설정을 공유합니다.",
+         "html": "이제 D.Va 메카의 공격이 다른 공격의 빠른 시전 설정을 공유합니다.",
+         "added": false
+        },
+        {
+         "text": "방어 매트릭스 취소가 삭제되었습니다.",
+         "html": "방어 매트릭스 취소가 삭제되었습니다.",
+         "added": false
+        },
+        {
+         "text": "이제 방어 매트릭스 대상 변경이 방어 매트릭스의 빠른 시전 설정을 물려받습니다.",
+         "html": "이제 방어 매트릭스 대상 변경이 방어 매트릭스의 빠른 시전 설정을 물려받습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Quickcast Settings"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">빠른 시전 설정</strong><ul>\n<li>이제 D.Va 메카의 공격이 다른 공격의 빠른 시전 설정을 공유합니다.</li>\n<li>방어 매트릭스 취소가 삭제되었습니다.</li>\n<li>이제 방어 매트릭스 대상 변경이 방어 매트릭스의 빠른 시전 설정을 물려받습니다.</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "D.Va"
+    },
+    {
+     "name": "정예 타우렌 족장",
+     "heroId": "L90ETC",
+     "heroIds": [
+      "L90ETC"
+     ],
+     "changes": [
+      {
+       "name": "빠른 시전 설정",
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "록스타가 삭제되었습니다.",
+         "html": "록스타가 삭제되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Quickcast Settings"
+      },
+      {
+       "name": "기타 솔로",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "지속시간 표시기가 추가되었습니다.",
+         "html": "지속시간 표시기가 추가되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Guitar Solo"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">빠른 시전 설정</strong><ul>\n<li>록스타가 삭제되었습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">기타 솔로 [E]</strong><ul>\n<li>지속시간 표시기가 추가되었습니다.</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "E.T.C."
+    },
+    {
+     "name": "갈",
+     "heroId": "Gall",
+     "heroIds": [
+      "Gall"
+     ],
+     "changes": [
+      {
+       "name": "날뛰는 오우거",
+       "key": "D",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "효과 표시줄에 추가되었습니다.",
+         "html": "효과 표시줄에 추가되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Ogre Rampage"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">날뛰는 오우거 [D]</strong><ul>\n<li>효과 표시줄에 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Gall"
+    },
+    {
+     "name": "가로쉬",
+     "heroId": "Garrosh",
+     "heroIds": [
+      "Garrosh"
+     ],
+     "changes": [
+      {
+       "name": "빠른 시전 설정",
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "방어력 상승이 삭제되었습니다.",
+         "html": "방어력 상승이 삭제되었습니다.",
+         "added": false
+        },
+        {
+         "text": "노련한 병사가 삭제되었습니다.",
+         "html": "노련한 병사가 삭제되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Quickcast Settings"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">빠른 시전 설정</strong><ul>\n<li>방어력 상승이 삭제되었습니다.</li>\n<li>노련한 병사가 삭제되었습니다.</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Garrosh"
+    },
+    {
+     "name": "굴단",
+     "heroId": "Guldan",
+     "heroIds": [
+      "Guldan"
+     ],
+     "changes": [
+      {
+       "name": "빠른 시전 설정",
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "중복된 생명력 전환과 생명력 흡수 취소가 삭제되었습니다.",
+         "html": "중복된 생명력 전환과 생명력 흡수 취소가 삭제되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Quickcast Settings"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">빠른 시전 설정</strong><ul>\n<li>중복된 생명력 전환과 생명력 흡수 취소가 삭제되었습니다.</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Gul'dan"
+    },
+    {
+     "name": "한조",
+     "heroId": "Hanzo",
+     "heroIds": [
+      "Hanzo"
+     ],
+     "changes": [
+      {
+       "name": "발 빠른 추적자",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "효과 표시줄에 추가되었습니다.",
+         "html": "효과 표시줄에 추가되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Fleet of Foot"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">발 빠른 추적자 [Q]</strong><ul>\n<li>효과 표시줄에 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Hanzo"
+    },
+    {
+     "name": "들창코",
+     "heroId": "Hogger",
+     "heroIds": [
+      "Hogger"
+     ],
+     "changes": [
+      {
+       "name": "빠른 시전 설정",
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "취소 기술이 삭제되었습니다.",
+         "html": "취소 기술이 삭제되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Quickcast Settings"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">빠른 시전 설정</strong><ul>\n<li>취소 기술이 삭제되었습니다.</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Hogger"
+    },
+    {
+     "name": "요한나",
+     "heroId": "Crusader",
+     "heroIds": [
+      "Crusader"
+     ],
+     "changes": [
+      {
+       "name": "신성한 격노",
+       "key": "Passive",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "효과 표시줄에 추가되었습니다.",
+         "html": "효과 표시줄에 추가되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Holy Fury"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">신성한 격노 [지속 효과]</strong><ul>\n<li>효과 표시줄에 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Johanna"
+    },
+    {
+     "name": "정크랫",
+     "heroId": "Junkrat",
+     "heroIds": [
+      "Junkrat"
+     ],
+     "changes": [
+      {
+       "name": "빠른 시전 설정",
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "지뢰 폭발이 삭제되었습니다.",
+         "html": "지뢰 폭발이 삭제되었습니다.",
+         "added": false
+        },
+        {
+         "text": "죽이는 타이어 기술이 삭제되었습니다.",
+         "html": "죽이는 타이어 기술이 삭제되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Quickcast Settings"
+      },
+      {
+       "name": "폭탄 발사기",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "심지는 길게로 강화된 수류탄에 붉은색/푸른색으로 깜박이는 표시가 추가되었습니다.",
+         "html": "심지는 길게로 강화된 수류탄에 붉은색/푸른색으로 깜박이는 표시가 추가되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Frag Launcher"
+      },
+      {
+       "name": "죽이는 타이어",
+       "key": "R1",
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "최대 피해량이 적용되는 사거리 표시가 추가되었습니다.",
+         "html": "최대 피해량이 적용되는 사거리 표시가 추가되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "RIP-Tire"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">빠른 시전 설정</strong><ul>\n<li>지뢰 폭발이 삭제되었습니다.</li>\n<li>죽이는 타이어 기술이 삭제되었습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">폭탄 발사기 [Q]</strong><ul>\n<li>심지는 길게로 강화된 수류탄에 붉은색/푸른색으로 깜박이는 표시가 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">죽이는 타이어 [R1]</strong><ul>\n<li>최대 피해량이 적용되는 사거리 표시가 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Junkrat"
+    },
+    {
+     "name": "리밍",
+     "heroId": "Wizard",
+     "heroIds": [
+      "Wizard"
+     ],
+     "changes": [
+      {
+       "name": "파열",
+       "key": "R1",
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "이제 정지 또는 공격 중지를 눌러 취소할 수 있습니다.",
+         "html": "이제 정지 또는 공격 중지를 눌러 취소할 수 있습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Disintegrate"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">파열 [R1]</strong><ul>\n<li>이제 정지 또는 공격 중지를 눌러 취소할 수 있습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Li-Ming"
+    },
+    {
+     "name": "루시우",
+     "heroId": "Lucio",
+     "heroIds": [
+      "Lucio"
+     ],
+     "changes": [
+      {
+       "name": "빠른 시전 설정",
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "이제 공격이 다른 공격의 빠른 시전 설정을 공유합니다.",
+         "html": "이제 공격이 다른 공격의 빠른 시전 설정을 공유합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Quickcast Settings"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">빠른 시전 설정</strong><ul>\n<li>이제 공격이 다른 공격의 빠른 시전 설정을 공유합니다.</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Lucio"
+    },
+    {
+     "name": "루나라",
+     "heroId": "Dryad",
+     "heroIds": [
+      "Dryad"
+     ],
+     "changes": [
+      {
+       "name": "폴짝 폴짝",
+       "key": "Z",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "이제 활성화된 동안 효과 표시줄에 표시됩니다.",
+         "html": "이제 활성화된 동안 효과 표시줄에 표시됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Hippity Hop"
+      },
+      {
+       "name": "갈래창",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "효과 표시줄에 추가되었습니다.",
+         "html": "효과 표시줄에 추가되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Splintered Spear"
+      },
+      {
+       "name": "자연의 활력",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "효과 표시줄에 추가되었습니다.",
+         "html": "효과 표시줄에 추가되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Wild Vigor"
+      },
+      {
+       "name": "무한한 포자",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "이제 사용 시 재사용 대기시간이 감소하는 경우 마비 포자 버튼이 깜박입니다.",
+         "html": "이제 사용 시 재사용 대기시간이 감소하는 경우 마비 포자 버튼이 깜박입니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Endless Spores"
+      },
+      {
+       "name": "개화 촉진",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "이제 재사용 대기시간이 더 빠르게 감소하는 동안 치명적인 꽃 버튼이 빛납니다.",
+         "html": "이제 재사용 대기시간이 더 빠르게 감소하는 동안 치명적인 꽃 버튼이 빛납니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Accelerated Contamination"
+      },
+      {
+       "name": "활력의 포자",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "효과 표시줄에 추가되었습니다.",
+         "html": "효과 표시줄에 추가되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Invigorating Spores"
+      },
+      {
+       "name": "별나무 창",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "효과 표시줄에 추가되었습니다.",
+         "html": "효과 표시줄에 추가되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Star Wood Spear"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">폴짝 폴짝 [Z]</strong><ul>\n<li>이제 활성화된 동안 효과 표시줄에 표시됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">갈래창 [Q]</strong><ul>\n<li>효과 표시줄에 추가되었습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">자연의 활력 [W]</strong><ul>\n<li>효과 표시줄에 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">무한한 포자 [W]</strong><ul>\n<li>이제 사용 시 재사용 대기시간이 감소하는 경우 마비 포자 버튼이 깜박입니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">개화 촉진 [Q]</strong><ul>\n<li>이제 재사용 대기시간이 더 빠르게 감소하는 동안 치명적인 꽃 버튼이 빛납니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">활력의 포자 [W]</strong><ul>\n<li>효과 표시줄에 추가되었습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">별나무 창 [W]</strong><ul>\n<li>효과 표시줄에 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Lunara"
+    },
+    {
+     "name": "말가니스",
+     "heroId": "MalGanis",
+     "heroIds": [
+      "MalGanis"
+     ],
+     "changes": [
+      {
+       "name": "추적하는 박쥐떼",
+       "key": "R1",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "사거리 표시가 추가되었습니다.",
+         "html": "사거리 표시가 추가되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Seeker Swarm"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">추적하는 박쥐떼 [R1]</strong><ul>\n<li>사거리 표시가 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Mal'Ganis"
+    },
+    {
+     "name": "말퓨리온",
+     "heroId": "Malfurion",
+     "heroIds": [
+      "Malfurion"
+     ],
+     "changes": [
+      {
+       "name": "이세라의 선물",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "생명력 표시기가 추가되었습니다.",
+         "html": "생명력 표시기가 추가되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Ysera's Gift"
+      },
+      {
+       "name": "달빛 세례",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "효과 표시줄에 추가되었습니다.",
+         "html": "효과 표시줄에 추가되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Lunar Shower"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">이세라의 선물 [Q]</strong><ul>\n<li>생명력 표시기가 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">달빛 세례 [W]</strong><ul>\n<li>효과 표시줄에 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Malfurion"
+    },
+    {
+     "name": "메디브",
+     "heroId": "Medivh",
+     "heroIds": [
+      "Medivh"
+     ],
+     "changes": [
+      {
+       "name": "차원문",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "버튼에 남은 지속시간이 추가되었습니다.",
+         "html": "버튼에 남은 지속시간이 추가되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Portal"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">차원문 [E]</strong><ul>\n<li>버튼에 남은 지속시간이 추가되었습니다.</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Medivh"
+    },
+    {
+     "name": "무라딘",
+     "heroId": "Muradin",
+     "heroIds": [
+      "Muradin"
+     ],
+     "changes": [
+      {
+       "name": "극기의 바람",
+       "key": "D",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "생명력 기준치 표시기가 추가되었습니다.",
+         "html": "생명력 기준치 표시기가 추가되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Third Wind"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">극기의 바람 [D]</strong><ul>\n<li>생명력 기준치 표시기가 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Muradin"
+    },
+    {
+     "name": "머키",
+     "heroId": "Murky",
+     "heroIds": [
+      "Murky"
+     ],
+     "changes": [
+      {
+       "name": "빠른 시전 설정",
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "멀록 대행진 취소가 삭제되었습니다.",
+         "html": "멀록 대행진 취소가 삭제되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Quickcast Settings"
+      },
+      {
+       "name": "물고기의 눈",
+       "key": "D",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "부활 알을 놓은 뒤 물고기의 눈의 사거리 표시가 추가되었습니다.",
+         "html": "부활 알을 놓은 뒤 물고기의 눈의 사거리 표시가 추가되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Fish Eye"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">빠른 시전 설정</strong><ul>\n<li>멀록 대행진 취소가 삭제되었습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">물고기의 눈 [D]</strong><ul>\n<li>부활 알을 놓은 뒤 물고기의 눈의 사거리 표시가 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Murky"
+    },
+    {
+     "name": "오르피아",
+     "heroId": "Orphea",
+     "heroIds": [
+      "Orphea"
+     ],
+     "changes": [
+      {
+       "name": "도사리는 공포",
+       "key": "Active",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "발동 시간 표시가 추가되었습니다.",
+         "html": "발동 시간 표시가 추가되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Lurking Terror"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">도사리는 공포 [사용 효과]</strong><ul>\n<li>발동 시간 표시가 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Orphea"
+    },
+    {
+     "name": "키히라",
+     "heroId": "Qhira",
+     "heroIds": [
+      "Qhira"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "이제 효과 표시줄에서 특성이 티어 순서대로 정렬됩니다.",
+         "html": "이제 효과 표시줄에서 특성이 티어 순서대로 정렬됩니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "피의 분노",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "피의 분노의 치유량을 나타내는 UI 표시가 추가되었습니다.",
+         "html": "피의 분노의 치유량을 나타내는 UI 표시가 추가되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Blood Rage"
+      },
+      {
+       "name": "사슬톱날",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "효과 표시줄에 추가되었습니다.",
+         "html": "효과 표시줄에 추가되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Chainsaw"
+      },
+      {
+       "name": "사냥감",
+       "key": "Passive",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "효과 표시줄에 추가되었습니다.",
+         "html": "효과 표시줄에 추가되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "The Hunted"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li>이제 효과 표시줄에서 특성이 티어 순서대로 정렬됩니다.</li>\n<li><strong class=\"pn-name\">피의 분노 [W]</strong><ul>\n<li>피의 분노의 치유량을 나타내는 UI 표시가 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">사슬톱날 [Q]</strong><ul>\n<li>효과 표시줄에 추가되었습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">사냥감 [지속 효과]</strong><ul>\n<li>효과 표시줄에 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Qhira"
+    },
+    {
+     "name": "라그나로스",
+     "heroId": "Ragnaros",
+     "heroIds": [
+      "Ragnaros"
+     ],
+     "changes": [
+      {
+       "name": "빠른 시전 설정",
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "이제 화산 심장부의 설퍼라스 강타가 라그나로스의 설퍼라스 강타와 빠른 시전 설정을 공유합니다.",
+         "html": "이제 화산 심장부의 설퍼라스 강타가 라그나로스의 설퍼라스 강타와 빠른 시전 설정을 공유합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Quickcast Settings"
+      },
+      {
+       "name": "땅속 숨기",
+       "key": "Active",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "치유량 미리 보기가 추가되었습니다.",
+         "html": "치유량 미리 보기가 추가되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Submerge"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">빠른 시전 설정</strong><ul>\n<li>이제 화산 심장부의 설퍼라스 강타가 라그나로스의 설퍼라스 강타와 빠른 시전 설정을 공유합니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">땅속 숨기 [사용 효과]</strong><ul>\n<li>치유량 미리 보기가 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Ragnaros"
+    },
+    {
+     "name": "사무로",
+     "heroId": "Samuro",
+     "heroIds": [
+      "Samuro"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "죽음의 춤에 사운드 표시가 추가되었습니다.",
+         "html": "죽음의 춤에 사운드 표시가 추가되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "빠른 시전 설정",
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "칼날폭풍 취소가 삭제되었습니다.",
+         "html": "칼날폭풍 취소가 삭제되었습니다.",
+         "added": false
+        },
+        {
+         "text": "중복된 치명타가 삭제되었습니다.",
+         "html": "중복된 치명타가 삭제되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Quickcast Settings"
+      },
+      {
+       "name": "환영 이동술",
+       "key": "Trait",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "활성화된 환영 복제가 없는 동안에는 사용할 수 없습니다.",
+         "html": "활성화된 환영 복제가 없는 동안에는 사용할 수 없습니다.",
+         "added": false
+        },
+        {
+         "text": "이제 활성화된 환영 복제가 하나뿐일 때는 대상 지정이 사라집니다.",
+         "html": "이제 활성화된 환영 복제가 하나뿐일 때는 대상 지정이 사라집니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Image Transmission"
+      },
+      {
+       "name": "환영 복제",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "대상 지정에 안내 표시가 추가되었습니다.",
+         "html": "대상 지정에 안내 표시가 추가되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Mirror Image"
+      },
+      {
+       "name": "바람 걸음",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "지속 치유량 미리 보기가 추가되었습니다.",
+         "html": "지속 치유량 미리 보기가 추가되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Wind Walk"
+      },
+      {
+       "name": "비껴내기",
+       "key": "D",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "활성화된 동안 남은 지속시간이 표시되도록 변경되었습니다.",
+         "html": "활성화된 동안 남은 지속시간이 표시되도록 변경되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Deflection"
+      },
+      {
+       "name": "쾌도난마",
+       "key": "D",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "효과 표시줄에 추가되었습니다.",
+         "html": "효과 표시줄에 추가되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Press the Attack"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li>죽음의 춤에 사운드 표시가 추가되었습니다.</li>\n<li><strong class=\"pn-name\">빠른 시전 설정</strong><ul>\n<li>칼날폭풍 취소가 삭제되었습니다.</li>\n<li>중복된 치명타가 삭제되었습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">환영 이동술 [고유 능력]</strong><ul>\n<li>활성화된 환영 복제가 없는 동안에는 사용할 수 없습니다.</li>\n<li>이제 활성화된 환영 복제가 하나뿐일 때는 대상 지정이 사라집니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">환영 복제 [Q]</strong><ul>\n<li>대상 지정에 안내 표시가 추가되었습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">바람 걸음 [E]</strong><ul>\n<li>지속 치유량 미리 보기가 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">비껴내기 [D]</strong><ul>\n<li>활성화된 동안 남은 지속시간이 표시되도록 변경되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">쾌도난마 [D]</strong><ul>\n<li>효과 표시줄에 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Samuro"
+    },
+    {
+     "name": "누더기",
+     "heroId": "Stitches",
+     "heroIds": [
+      "Stitches"
+     ],
+     "changes": [
+      {
+       "name": "휘청이는 괴물",
+       "key": "Trait",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "지속시간 표시기가 추가되었습니다.",
+         "html": "지속시간 표시기가 추가되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Shambling Horror"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">휘청이는 괴물 [고유 능력]</strong><ul>\n<li>지속시간 표시기가 추가되었습니다.</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Stitches"
+    },
+    {
+     "name": "스투코프",
+     "heroId": "Stukov",
+     "heroIds": [
+      "Stukov"
+     ],
+     "changes": [
+      {
+       "name": "빠른 시전 설정",
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "스멀거리는 팔 취소가 삭제되었습니다.",
+         "html": "스멀거리는 팔 취소가 삭제되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Quickcast Settings"
+      },
+      {
+       "name": "반작용 탄도포자",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "생명력 표시기가 추가되었습니다.",
+         "html": "생명력 표시기가 추가되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Reactive Ballistospores"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">빠른 시전 설정</strong><ul>\n<li>스멀거리는 팔 취소가 삭제되었습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">반작용 탄도포자 [W]</strong><ul>\n<li>생명력 표시기가 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Stukov"
+    },
+    {
+     "name": "도살자",
+     "heroId": "Butcher",
+     "heroIds": [
+      "Butcher"
+     ],
+     "changes": [
+      {
+       "name": "빠른 시전 설정",
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "신선한 고기가 삭제되었습니다.",
+         "html": "신선한 고기가 삭제되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Quickcast Settings"
+      },
+      {
+       "name": "도살자의 낙인",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "버튼에 지속시간 표시가 추가되었습니다.",
+         "html": "버튼에 지속시간 표시가 추가되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Butcher's Brand"
+      },
+      {
+       "name": "격분",
+       "key": "Passive",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "생명력 표시기가 추가되었습니다.",
+         "html": "생명력 표시기가 추가되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Enraged"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">빠른 시전 설정</strong><ul>\n<li>신선한 고기가 삭제되었습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">도살자의 낙인 [W]</strong><ul>\n<li>버튼에 지속시간 표시가 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">격분 [지속 효과]</strong><ul>\n<li>생명력 표시기가 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "The Butcher"
+    },
+    {
+     "name": "길 잃은 바이킹",
+     "heroId": "LostVikings",
+     "heroIds": [
+      "LostVikings"
+     ],
+     "changes": [
+      {
+       "name": "감속 돌진",
+       "key": "Olaf",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "이제 잃어버린 바이킹의 영웅 상태 표시에서 방패 주위에 재사용 대기시간이 원형 표시로 나타납니다.",
+         "html": "이제 잃어버린 바이킹의 영웅 상태 표시에서 방패 주위에 재사용 대기시간이 원형 표시로 나타납니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Slowing Charge"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">감속 돌진 [올라프]</strong><ul>\n<li>이제 잃어버린 바이킹의 영웅 상태 표시에서 방패 주위에 재사용 대기시간이 원형 표시로 나타납니다.</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "The Lost Vikings"
+    },
+    {
+     "name": "트레이서",
+     "heroId": "Tracer",
+     "heroIds": [
+      "Tracer"
+     ],
+     "changes": [
+      {
+       "name": "빠른 시전 설정",
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "이제 공격이 다른 공격의 빠른 시전 설정을 공유합니다.",
+         "html": "이제 공격이 다른 공격의 빠른 시전 설정을 공유합니다.",
+         "added": false
+        },
+        {
+         "text": "완벽한 장전이 삭제되었습니다.",
+         "html": "완벽한 장전이 삭제되었습니다.",
+         "added": false
+        },
+        {
+         "text": "포화가 활성화된 동안의 달려 쏴가 달려 쏴와 빠른 시전 설정을 공유합니다.",
+         "html": "포화가 활성화된 동안의 달려 쏴가 달려 쏴와 빠른 시전 설정을 공유합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Quickcast Settings"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">빠른 시전 설정</strong><ul>\n<li>이제 공격이 다른 공격의 빠른 시전 설정을 공유합니다.</li>\n<li>완벽한 장전이 삭제되었습니다.</li>\n<li>포화가 활성화된 동안의 달려 쏴가 달려 쏴와 빠른 시전 설정을 공유합니다.</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Tracer"
+    },
+    {
+     "name": "티란데",
+     "heroId": "Tyrande",
+     "heroIds": [
+      "Tyrande"
+     ],
+     "changes": [
+      {
+       "name": "다르나서스 궁술",
+       "key": "Passive",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "지속시간 표시기가 추가되었습니다.",
+         "html": "지속시간 표시기가 추가되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Darnassian Archery"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">다르나서스 궁술 [지속 효과]</strong><ul>\n<li>지속시간 표시기가 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Tyrande"
+    },
+    {
+     "name": "우서",
+     "heroId": "Uther",
+     "heroIds": [
+      "Uther"
+     ],
+     "changes": [
+      {
+       "name": "성스러운 불꽃",
+       "key": "Passive",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "효과 표시줄에 추가되었습니다.",
+         "html": "효과 표시줄에 추가되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Holy Fire"
+      },
+      {
+       "name": "빛의 봉화",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "생명력 기준치 표시기가 추가되었습니다.",
+         "html": "생명력 기준치 표시기가 추가되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Beacon of Light"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">성스러운 불꽃 [지속 효과]</strong><ul>\n<li>효과 표시줄에 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">빛의 봉화 [Q]</strong><ul>\n<li>생명력 기준치 표시기가 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Uther"
+    },
+    {
+     "name": "발리라",
+     "heroId": "Valeera",
+     "heroIds": [
+      "Valeera"
+     ],
+     "changes": [
+      {
+       "name": "빠른 시전 설정",
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "소멸 취소가 삭제되었습니다.",
+         "html": "소멸 취소가 삭제되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Quickcast Settings"
+      },
+      {
+       "name": "연막탄",
+       "key": "R1",
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "이제 버튼에 지속시간 표시가 나타납니다.",
+         "html": "이제 버튼에 지속시간 표시가 나타납니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Smoke Bomb"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">빠른 시전 설정</strong><ul>\n<li>소멸 취소가 삭제되었습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">연막탄 [R1]</strong><ul>\n<li>이제 버튼에 지속시간 표시가 나타납니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Valeera"
+    },
+    {
+     "name": "바리안",
+     "heroId": "Varian",
+     "heroIds": [
+      "Varian"
+     ],
+     "changes": [
+      {
+       "name": "재기의 바람",
+       "key": "Passive",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "생명력 기준치 표시기가 추가되었습니다.",
+         "html": "생명력 기준치 표시기가 추가되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Second Wind"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">재기의 바람 [지속 효과]</strong><ul>\n<li>생명력 기준치 표시기가 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Varian"
+    },
+    {
+     "name": "화이트메인",
+     "heroId": "Whitemane",
+     "heroIds": [
+      "Whitemane"
+     ],
+     "changes": [
+      {
+       "name": "빠른 시전 설정",
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "심문 취소가 삭제되었습니다.",
+         "html": "심문 취소가 삭제되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Quickcast Settings"
+      },
+      {
+       "name": "열의",
+       "key": "Trait",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "이제 활성화된 동안 지속시간 표시가 나타납니다.",
+         "html": "이제 활성화된 동안 지속시간 표시가 나타납니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Zeal"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">빠른 시전 설정</strong><ul>\n<li>심문 취소가 삭제되었습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">열의 [고유 능력]</strong><ul>\n<li>이제 활성화된 동안 지속시간 표시가 나타납니다.</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Whitemane"
+    },
+    {
+     "name": "줄",
+     "heroId": "Necromancer",
+     "heroIds": [
+      "Necromancer"
+     ],
+     "changes": [
+      {
+       "name": "신속한 수확",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "효과 표시줄에 추가되었습니다.",
+         "html": "효과 표시줄에 추가되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Rapid Harvest"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">신속한 수확 [W]</strong><ul>\n<li>효과 표시줄에 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Xul"
+    },
+    {
+     "name": "제라툴",
+     "heroId": "Zeratul",
+     "heroIds": [
+      "Zeratul"
+     ],
+     "changes": [
+      {
+       "name": "빠른 시전 설정",
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "어둠 속의 추적자가 삭제되었습니다.",
+         "html": "어둠 속의 추적자가 삭제되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Quickcast Settings"
+      },
+      {
+       "name": "사이오닉 칼날",
+       "key": "Passive",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "효과 표시줄에 중첩 횟수가 추가되었습니다.",
+         "html": "효과 표시줄에 중첩 횟수가 추가되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Psionic Strength"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">빠른 시전 설정</strong><ul>\n<li>어둠 속의 추적자가 삭제되었습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">사이오닉 칼날 [지속 효과]</strong><ul>\n<li>효과 표시줄에 중첩 횟수가 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Zeratul"
+    },
+    {
+     "name": "줄진",
+     "heroId": "Zuljin",
+     "heroIds": [
+      "Zuljin"
+     ],
+     "changes": [
+      {
+       "name": "빠른 시전 설정",
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "중복된 광전사 취소가 삭제되었습니다.",
+         "html": "중복된 광전사 취소가 삭제되었습니다.",
+         "added": false
+        },
+        {
+         "text": "중복된 재생이 삭제되었습니다.",
+         "html": "중복된 재생이 삭제되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Quickcast Settings"
+      },
+      {
+       "name": "무모함",
+       "key": "Passive",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "생명력 기준치 표시가 추가되었습니다.",
+         "html": "생명력 기준치 표시가 추가되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Recklessness"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">빠른 시전 설정</strong><ul>\n<li>중복된 광전사 취소가 삭제되었습니다.</li>\n<li>중복된 재생이 삭제되었습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">무모함 [지속 효과]</strong><ul>\n<li>생명력 기준치 표시가 추가되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Zul'jin"
+    }
+   ],
+   "nameEn": "Hero Updates"
+  },
+  {
+   "name": "버그 수정",
+   "key": "bugs",
+   "html": "<h3><strong>일반</strong></h3>\n<ul>\n<li>사망 요약에 경험치 수치가 추가되었습니다.</li>\n<li>지역을 지정하는 기술이 컨베이어 벨트에 의해 취소되던 문제를 수정했습니다.</li>\n<li>영웅 선택 화면에서 특성 설명이 잘려서 표시되던 문제를 수정했습니다.</li>\n<li>퀘스트 특성이 퀘스트를 발동시킨 적이 시야 밖에 있을 경우 시전자의 위치에 퀘스트 진행 상황을 표시하도록 변경되었습니다.</li>\n<li>첫 화면 및 시작 음악이 업데이트되었습니다.</li>\n<li>시간 정지가 생명력 표시줄에서 다른 모든 효과보다 위에 표시되도록 변경되었습니다.</li>\n<li>일부 막기 특성의 표시 오류를 수정했습니다.</li>\n<li>일반적이지 않은 높이를 가진 영웅으로 인해 대상을 향하는 효과가 잘못된 위치를 바라보던 문제를 수정했습니다.</li>\n</ul>\n<h3><strong>전장</strong></h3>\n<ul>\n<li><strong class=\"pn-h\">블랙하트 항만</strong><ul>\n<li>주화 경고 표시의 색상이 일관되게 적용되도록 변경되었습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">저주받은 골짜기</strong><ul>\n<li>저주받은 골짜기에서 도움 요청 기술 경고가 잘못 표시되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">핵탄두 격전지</strong><ul>\n<li>이제 하수구가 전장의 안개에 가려져 있을 때에도 클릭할 수 있습니다.</li>\n<li>이제 탄두가 물리 효과가 적용되는 사물과 상호작용합니다.</li>\n</ul>\n</li>\n</ul>\n<h3><strong>영웅</strong></h3>\n<ul>\n<li><strong class=\"pn-h\">아바투르</strong><ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">최종 진화물 [R1]</strong><ul>\n<li>더 이상 퀘스트 진행 시각 효과가 나타나지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">불안정한 변이 [R]</strong><ul>\n<li>이제 사망 요약에 빈 아이콘이 표시되지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">알라라크</strong><ul>\n<li><strong class=\"pn-name\">염동력 [W]</strong><ul>\n<li>염동력이 전장 오브젝트와 상호 작용하지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">알렉스트라자</strong><ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">정화의 불꽃 [R2]</strong><ul>\n<li>정화의 불꽃이 잘못된 위치에 시전되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">안두인</strong><ul>\n<li>다시 검을 높이 치켜들 수 있게 되었습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">아눕아락</strong><ul>\n<li>AI가 착취의 무리를 사용하지 않던 문제를 수정했습니다.</li>\n<li>아눕아락의 기술이 전장 오브젝트와 상호 작용하지 않던 문제를 수정했습니다.</li>\n<li><strong class=\"pn-name\">잠복 돌진 [E]</strong><ul>\n<li>분출 위치 표시의 가시성이 개선되었습니다.</li>\n</ul>\n</li>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">고치 [R2]</strong><ul>\n<li>고치가 대상에 부착된 요소를 제대로 숨기지 못하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">아르타니스</strong><ul>\n<li>아르타니스의 일부 기술이 전장 오브젝트와 상호 작용하지 않던 문제를 수정했습니다.</li>\n<li>아서스의 기술이 전장 오브젝트와 상호 작용하지 않던 문제를 수정했습니다.</li>\n<li><strong class=\"pn-name\">위상 분광기 [E]</strong><ul>\n<li>대상이 시간 정지 상태가 된 후 위상 분광기가 구조물을 제대로 감지하지 못하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">아우리엘</strong><ul>\n<li><strong class=\"pn-name\">억류의 일격 [E]</strong><ul>\n<li>이제 지형 충돌이 항상 치명타로 표시됩니다.</li>\n</ul>\n</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">감정 이입 [D]</strong><ul>\n<li>아군이 자신에게 피해를 입혔을 때 감정 이입이 희망을 부여하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">꿰뚫는 채찍 [E]</strong><ul>\n<li>꿰뚫는 채찍이 억류의 일격으로 여러 영웅을 적중하지 못하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">아즈모단</strong><ul>\n<li>아즈모단의 기술이 전장 오브젝트 및 물리 오브젝트와 상호 작용하지 않던 문제를 수정했습니다.</li>\n<li><strong class=\"pn-name\">악마 전사 소환 [W]</strong><ul>\n<li>악마 전사가 소환되는 순간 처치되면 불타는 시각 효과가 영구적으로 남던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">분노 [Q]</strong><ul>\n<li>분노가 분노 표식의 피해량을 증가시키던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">포격 [Q]</strong><ul>\n<li>포격이 분노 표식의 피해량을 증가시키던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">빛나래</strong><ul>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">불안정한 기형 [W]</strong><ul>\n<li>불안정한 기형이 시각 효과를 영구적으로 남기던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">에메랄드 바람 [R2]</strong><ul>\n<li>에메랄드 바람이 전장 오브젝트와 상호 작용하지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">비밀 친구 [R1]</strong><ul>\n<li>이제 사망 요약에 빈 아이콘이 표시되지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">카시아</strong><ul>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">번뜩이는 빛 [D]</strong><ul>\n<li>번뜩이는 빛이 전장 오브젝트를 파괴하지 못하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">전쟁 여행자 [D]</strong><ul>\n<li>이제 즉시 탑승의 반응 속도가 향상되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">첸</strong><ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">술통 구르기 [R1]</strong><ul>\n<li>다른 첸의 술통 구르기가 종료되면 술통 구르기가 마우스 커서를 대상으로 지정하지 않던 문제를 수정했습니다.</li>\n<li>이제 마우스 커서의 위치가 변경될 때만 커서를 대상으로 지정하는 대신, 항상 능동적으로 마우스 커서를 대상으로 지정합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">폭풍, 대지, 불 [R2]</strong><ul>\n<li>이제 대지의 피해량이 물리 피해로 적용됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">초갈</strong><ul>\n<li>갈의 피해량이 초의 강화 효과를 모두 적용받지 못하던 문제를 수정했습니다.</li>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">커져가는 공포 [W]</strong><ul>\n<li>더 이상 공포의 보주의 세 번째 도약이 치명타로 표시되지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">이중고 [Q]</strong><ul>\n<li>이중고의 퀘스트 완료 효과가 황혼의 광란과 중첩되지 않던 문제를 수정했습니다.</li>\n<li>황혼의 광란이 종료된 후 갈이 이중고의 퀘스트 완료 효과를 잃던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">크로미</strong><ul>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">청동 발톱 [Q]</strong><ul>\n<li>크로미가 사망한 후에도 청동 발톱의 시각 효과가 남아 있던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>11레벨</strong><ul>\n<li><strong class=\"pn-name\">여기저기 [사용 효과]</strong><ul>\n<li>더 이상 사용 시 탈것에서 내리거나 은신이 해제되지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">양자 급가속 [사용]</strong><ul>\n<li>사망한 후에도 양자 급가속의 시각 효과가 남아 있던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">데스윙</strong><ul>\n<li>용의 비상이 활성화된 동안 데스윙이 파티 창에서 핑 대상으로 지정될 수 있던 문제를 수정했습니다.</li>\n<li>착지 대상이 유효하지 않게 되면 데스윙이 비정상적인 상태가 되던 문제를 수정했습니다.</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">죽음의 낙하 [Z]</strong><ul>\n<li>죽음의 낙하가 모든 형태의 기술 방어력을 감소시키지 못하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">데커드</strong><ul>\n<li>데커드가 이동 제약 없이 춤을 출 수 있던 문제를 수정했습니다.</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">고대의 축복 [D]</strong><ul>\n<li>아군 기술에 면역인 적 영웅에게 피해를 입혔을 때 고대의 축복이 공격자를 치유하지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">저리 꺼져라! [R2]</strong><ul>\n<li>고서 회오리가 영웅이 아닌 대상을 적중했을 때 재사용 대기시간 감소가 적용되지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">디아블로</strong><ul>\n<li><strong class=\"pn-name\">암흑의 돌진 [Q]</strong><ul>\n<li>이제 지형 충돌이 항상 치명타로 표시됩니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">화염 발구르기 [W]</strong><ul>\n<li>이제 피해량 표시가 하나로 합쳐집니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">디바</strong><ul>\n<li>D.Va의 일부 기술이 전장 오브젝트 및 물리 오브젝트와 상호 작용하지 않던 문제를 수정했습니다.</li>\n<li><strong class=\"pn-name\">자폭 [E]</strong><ul>\n<li>자폭을 시전할 때 D.Va의 메카가 이동 불가 상태였다면 계속 이동하던 문제를 수정했습니다.</li>\n<li>자폭이 완전히 충전되었을 때 깜박이는 애니메이션이 나타나지 않던 문제를 수정했습니다.</li>\n<li>사거리 4를 넘어서면 피해량이 감소하기 시작합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">딱콩! [R]</strong><ul>\n<li>딱콩!이 무적 상태의 적을 적중하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">용해식 장갑 [D]</strong><ul>\n<li>이제 D.Va의 보호막에 입힌 피해량도 포함됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">피닉스</strong><ul>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">감쇠장 [D]</strong><ul>\n<li>감쇠장이 모든 출처의 피해에 대해 기술 방어력을 부여하지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">가로쉬</strong><ul>\n<li><strong class=\"pn-name\">참전 [1]</strong><ul>\n<li>빠른 시전 메뉴에서 참전이 록타르 오가르!로 표시되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">록타르 오가르! [1]</strong><ul>\n<li>이제 지속 효과가 아닌 사용 효과 강화로 표시됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">겐지</strong><ul>\n<li><strong class=\"pn-name\">질풍참 [E]</strong><ul>\n<li>버튼에 표시되는 질풍참 환급 시간 표시의 색상을 조정했습니다.</li>\n<li>질풍참의 마나 환급이 처치된 적 플레이어에게 표시되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">심장을 노려라 [E]</strong><ul>\n<li>겐지의 심장을 노려라 설명 문구 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">시마다의 길 [E]</strong><ul>\n<li>이제 중첩이 10 이상일 때만 겐지의 공격이 치명타로 표시됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">최후의 베기 [E]</strong><ul>\n<li>최후의 베기의 피해량이 피해량 증폭 효과의 영향을 받지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">굴단</strong><ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">혼돈의 힘 [W]</strong><ul>\n<li>무작위 영웅 대전에서 혼돈의 힘이 재생의 구슬의 치유량을 올바른 수치만큼 증가시키지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">생명석 [사용 효과]</strong><ul>\n<li>더 이상 굴단의 탈것과 은신을 해제하지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">파괴적인 고통 [E]</strong><ul>\n<li>이제 세 번째 타격의 피해량이 치명타로 표시됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">한조</strong><ul>\n<li>특정 기술과 함께 사용할 때 무기가 여러 번 발사되던 문제를 수정했습니다.</li>\n<li><strong class=\"pn-name\">갈래 화살 [W]</strong><ul>\n<li>이제 피해량 표시가 하나로 합쳐집니다.</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">거인 사냥 [지속 효과]</strong><ul>\n<li>이제 갈래 화살의 추가 피해량이 피해량 표시 문구에 합산되어 표시됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">들창코</strong><ul>\n<li>분노가 영웅 정보 페이지에 추가되었습니다.</li>\n<li><strong class=\"pn-name\">거센 일격 [Q]</strong><ul>\n<li>거센 일격이 전장 오브젝트와 상호작용하지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">초보자용 다이너마이트 [W]</strong><ul>\n<li>직접 적중한 피해량이 항상 치명타로 표시됩니다.</li>\n</ul>\n</li>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">야만적인 힘 [Q]</strong><ul>\n<li>더 이상 노획물 더미가 치명타로 표시되지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">임페리우스</strong><ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">천사의 무구 [R1]</strong><ul>\n<li>천상의 군단장의 피해량 표시 문구와 합산되어 표시됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">정크랫</strong><ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">죽이는 타이어 [R1]</strong><ul>\n<li>사거리 1.5를 넘어서면 피해량이 감소하기 시작합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">레오릭</strong><ul>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">영혼의 그릇 [W]</strong><ul>\n<li>이제 치명타로 표시됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">리 리</strong><ul>\n<li><strong class=\"pn-name\">빠른 발 [고유 능력]</strong><ul>\n<li>지속시간 표시의 색상을 조정했습니다.</li>\n</ul>\n</li>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">1,000잔 돌리기 [R1]</strong><ul>\n<li>정지 상태일 때 1,000잔 돌리기의 재사용 대기시간이 증가하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">강풍 [E]</strong><ul>\n<li>강풍이 실명의 바람의 지속시간을 제대로 증가시키지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">모랄레스 중위</strong><ul>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">환자를 대하는 태도 [E]</strong><ul>\n<li>이제 발동 시 추가 효과가 치명타로 표시됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">루나라</strong><ul>\n<li><strong class=\"pn-name\">자연의 독소 [고유 능력]</strong><ul>\n<li>이제 다른 치유 효과와 유사하게 작동합니다.</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">마법 해제 [사용 효과]</strong><ul>\n<li>마법 해제가 침묵, 공포, 도발의 지속시간을 감소시키지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">마이에브</strong><ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">정의의 구속 [W]</strong><ul>\n<li>더 이상 그림자 목줄을 사용할 때 공격이 치명타로 표시되지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">칼춤 [Q]</strong><ul>\n<li>칼춤이 복수심의 칼날 중첩을 부여하지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">속박의 원반 [R1]</strong><ul>\n<li>시간 정지 상태에서 나타나던 침묵 표시가 삭제되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">말가니스</strong><ul>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">핏빛 약진 [D]</strong><ul>\n<li>핏빛 약진이 치유의 샘과 재생의 구슬로 발동되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">말티엘</strong><ul>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">지혜의 장막 [사용 효과]</strong><ul>\n<li>지혜의 장막이 모든 출처의 피해에 대해 기술 방어력을 부여하지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">죽음의 천사 [R2]</strong><ul>\n<li>죽음의 천사가 주문력 증폭 효과의 영향을 받던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">메이</strong><ul>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">눈덩이 폭포 [R1]</strong><ul>\n<li>눈덩이 폭포로 발동된 설맹의 실명 지속시간이 특성을 배우지 않은 설맹보다 짧던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">나지보</strong><ul>\n<li><strong class=\"pn-name\">좀비 벽 [W]</strong><ul>\n<li>좀비가 생성될 때 좀비 벽 안쪽을 바라보도록 변경되었습니다.</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">파멸의 혼령 [R2]</strong><ul>\n<li>파멸의 혼령의 치유량 감소 수치가 여러 번 표시되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">노바</strong><ul>\n<li><strong class=\"pn-name\">홀로그램 분신 [E]</strong><ul>\n<li>이제 대기 상태일 때 수집되지 않은 경험치 구슬을 향해 이동합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">오르피아</strong><ul>\n<li>특정 기술과 함께 사용할 때 무기가 여러 번 발사되던 문제를 수정했습니다.</li>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">혼돈의 격류 [고유 능력]</strong><ul>\n<li>오르피아의 혼돈 중첩이 3일 때 혼돈의 격류가 적용되지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">스며드는 독기 [고유 능력]</strong><ul>\n<li>스며드는 독기가 사망한 영웅을 타격하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">기괴한 전도 [고유 능력]</strong><ul>\n<li>사망 후에도 기괴한 전도의 시각 효과가 남아 있던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">프로비우스</strong><ul>\n<li><strong class=\"pn-name\">분열파 [Q]</strong><ul>\n<li>분열파가 이전 분열파에 맞은 대상을 다시 타격하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">광자 방벽 [D]</strong><ul>\n<li>프로비우스가 사망한 상태에서도 광자 방벽이 표시되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">수정탑 과충전 [R1]</strong><ul>\n<li>수정탑 과충전이 수정탑에 무적을 제대로 부여하지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">키히라</strong><ul>\n<li><strong class=\"pn-name\">고정 갈고리 [고유 능력]</strong><ul>\n<li>고정 갈고리의 조준선과 지형 표시가 시전 거리와 일치하도록 조정했습니다.</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">사냥감 [지속 효과]</strong><ul>\n<li>영웅이 아닌 대상을 타격했을 때 사냥감의 중첩이 사라지던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">레이너</strong><ul>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">더 뜨거운 맛 [고유 능력]</strong><ul>\n<li>중첩이 0인 상태에서 선택하면 더 뜨거운 맛이 제대로 적용되지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">레가르</strong><ul>\n<li>죽음의 순간에 동일한 항목이 중복해서 표시되던 문제를 수정했습니다.</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">샘솟는 물살 [E]</strong><ul>\n<li>치유가 발생할 때 샘솟는 물살의 광선이 나타나지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">렉사르</strong><ul>\n<li>렉사르와 미샤가 치유의 샘 치유 효과를 서로 공유하지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">사무로</strong><ul>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">바람과 하나되어 [E]</strong><ul>\n<li>바람 걸음이 활성화된 동안 바람과 하나되어의 지속시간이 표시되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">분쇄의 칼날 [W]</strong><ul>\n<li>분쇄의 칼날이 효과 표시줄의 잘못된 위치에 표시되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">해머 상사</strong><ul>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">거인 사냥꾼 [지속 효과]</strong><ul>\n<li>거인 사냥꾼이 무적 상태의 대상에게 피해를 입히던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">소냐</strong><ul>\n<li><strong class=\"pn-name\">분노 [고유 능력]</strong><ul>\n<li>버튼에 표시되는 남은 지속시간의 색상을 조정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">누더기</strong><ul>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">소화액 [E]</strong><ul>\n<li>소화액이 피해량 미리 보기를 표시하지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">스투코프</strong><ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">역겨운 손길 [W]</strong><ul>\n<li>이제 역겨운 손길의 원거리 공격이 사망 요약에 빈 아이콘으로 표시되지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">태사다르</strong><ul>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">사이오닉 메아리 [W]</strong><ul>\n<li>전격파 버튼에 표시되는 사이오닉 메아리 표시의 색상을 조정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">도살자</strong><ul>\n<li>도살자의 돌진이 너무 일찍 취소되던 문제를 수정했습니다.</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">가로날도끼 [지속 효과]</strong><ul>\n<li>이제 실명 상태에서도 발동할 수 있습니다.</li>\n<li>이제 가르기로 함께 타격한 대상이 도살자의 낙인에 걸려 있으면 생명력을 회복합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">지옥의 불길 [R1]</strong><ul>\n<li>이제 사망 요약에 빈 아이콘이 표시되지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">스랄</strong><ul>\n<li><strong class=\"pn-name\">야수 정령 [E]</strong><ul>\n<li>야수 정령이 무적 상태의 영웅이 아닌 대상을 타격하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">서리늑대의 은총 [D]</strong><ul>\n<li>더 이상 스랄의 탈것을 해제하지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">트레이서</strong><ul>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">B형 폭발물 [R]</strong><ul>\n<li>B형 폭발물의 외곽 반경이 양자 폭발의 효과를 받지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">티란데</strong><ul>\n<li><strong class=\"pn-name\">파수 [E]</strong><ul>\n<li>파수가 잘못 관통하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">우서</strong><ul>\n<li><strong class=\"pn-name\">신성한 광휘 [W]</strong><ul>\n<li>우서가 주문력 증가 효과를 받고 있을 때 치명타로 표시됩니다.</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">빛의 봉화 [Q]</strong><ul>\n<li>생명력이 50% 미만일 때만 성스러운 빛이 치명타로 표시됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">발리라</strong><ul>\n<li>이제 깊은 그림자의 지속시간 표시가 줄어들지 않고 차오릅니다.</li>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">상처 감염 독 [사용 효과]</strong><ul>\n<li>상처 감염 독의 수치가 여러 번 표시되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">발라</strong><ul>\n<li><strong class=\"pn-name\">다발 사격 [W]</strong><ul>\n<li>발라와 같은 위치에 있는 적을 타격했을 때 다발 사격의 모든 적중 효과가 적용되지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">어스름 [사용 효과]</strong><ul>\n<li>이제 사망 요약에 빈 아이콘이 표시되지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">바리안</strong><ul>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">필사의 일격 [D]</strong><ul>\n<li>필사의 일격의 수치가 여러 번 표시되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">화이트메인</strong><ul>\n<li><strong class=\"pn-name\">열의 [고유 능력]</strong><ul>\n<li>사망 후에도 열의의 사용 효과 시각 효과가 남아 있던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">이글거리는 채찍 [E]</strong><ul>\n<li>두 번째 타격이 항상 치명타로 표시됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">줄</strong><ul>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">치명적인 상처 [Q]</strong><ul>\n<li>치명적인 상처의 수치가 여러 번 표시되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">이렐</strong><ul>\n<li>기술로 인해 모든 플레이어에게 적이 강조 표시되던 문제를 수정했습니다.</li>\n<li><strong class=\"pn-name\">응징의 격노 [E]</strong><ul>\n<li>응징의 격노의 시각 효과가 잘못 표시되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">헌신적인 수호자 [R1]</strong><ul>\n<li>이렐이 받을 피해를 막았을 때 이렐의 자가 치유량이 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">자리야</strong><ul>\n<li>주 대상이 해당 공격으로 사망할 경우 일반 공격이 가르기 범위 안의 적에게 피해를 입히지 않던 문제를 수정했습니다.</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">고도 화상 [Q]</strong><ul>\n<li>고도 화상이 잘못된 수치를 표시하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">줄진</strong><ul>\n<li>죽음의 순간에 동일한 항목이 중복해서 표시되던 문제를 수정했습니다.</li>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">무모함 [지속 효과]</strong><ul>\n<li>효과 표시줄에서의 위치를 조정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<p><strong><a href=\"https://us.forums.blizzard.com/en/heroes/\" target=\"_blank\">공식 히어로즈 오브 더 스톰 포럼에서 다른 플레이어들과 이 글에 대해 이야기를 나누려면 여기를 클릭하십시오</a>.</strong></p>\n<p><strong><img alt=\"\" class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/g6/G6G0N80EOC941426801305139.png\"/></strong></p>",
+   "items": [
+    {
+     "name": "블랙하트 항만",
+     "battleground": "blackheart_s_bay",
+     "html": "<strong class=\"pn-h\">블랙하트 항만</strong>\n<ul>\n<li>주화 경고 표시의 색상이 일관되게 적용되도록 변경되었습니다.</li>\n</ul>",
+     "under": "Maps",
+     "nameEn": "Blackheart's Bay"
+    },
+    {
+     "name": "저주받은 골짜기",
+     "battleground": "cursed_hollow",
+     "html": "<strong class=\"pn-h\">저주받은 골짜기</strong>\n<ul>\n<li>저주받은 골짜기에서 도움 요청 기술 경고가 잘못 표시되던 문제를 수정했습니다.</li>\n</ul>",
+     "under": "Maps",
+     "nameEn": "Cursed Hollow"
+    },
+    {
+     "name": "핵탄두 격전지",
+     "battleground": "warhead_junction",
+     "html": "<strong class=\"pn-h\">핵탄두 격전지</strong>\n<ul>\n<li>이제 하수구가 전장의 안개에 가려져 있을 때에도 클릭할 수 있습니다.</li>\n<li>이제 탄두가 물리 효과가 적용되는 사물과 상호작용합니다.</li>\n</ul>",
+     "under": "Maps",
+     "nameEn": "Warhead Junction"
+    },
+    {
+     "name": "아바투르",
+     "heroId": "Abathur",
+     "heroIds": [
+      "Abathur"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">아바투르</strong>\n<ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">최종 진화물 [R1]</strong><ul>\n<li>더 이상 퀘스트 진행 시각 효과가 나타나지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">불안정한 변이 [R]</strong><ul>\n<li>이제 사망 요약에 빈 아이콘이 표시되지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "최종 진화물",
+       "key": "R1",
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "더 이상 퀘스트 진행 시각 효과가 나타나지 않습니다.",
+         "html": "더 이상 퀘스트 진행 시각 효과가 나타나지 않습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Ultimate Evolution"
+      },
+      {
+       "name": "불안정한 변이",
+       "key": "R",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "이제 사망 요약에 빈 아이콘이 표시되지 않습니다.",
+         "html": "이제 사망 요약에 빈 아이콘이 표시되지 않습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Volatile Mutation"
+      }
+     ],
+     "nameEn": "Abathur"
+    },
+    {
+     "name": "알라라크",
+     "heroId": "Alarak",
+     "heroIds": [
+      "Alarak"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">알라라크</strong>\n<ul>\n<li><strong class=\"pn-name\">염동력 [W]</strong><ul>\n<li>염동력이 전장 오브젝트와 상호 작용하지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "염동력",
+       "key": "W",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "염동력이 전장 오브젝트와 상호 작용하지 않던 문제를 수정했습니다.",
+         "html": "염동력이 전장 오브젝트와 상호 작용하지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Telekinesis"
+      }
+     ],
+     "nameEn": "Alarak"
+    },
+    {
+     "name": "알렉스트라자",
+     "heroId": "Alexstrasza",
+     "heroIds": [
+      "Alexstrasza"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">알렉스트라자</strong>\n<ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">정화의 불꽃 [R2]</strong><ul>\n<li>정화의 불꽃이 잘못된 위치에 시전되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "정화의 불꽃",
+       "key": "R2",
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "정화의 불꽃이 잘못된 위치에 시전되던 문제를 수정했습니다.",
+         "html": "정화의 불꽃이 잘못된 위치에 시전되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Cleansing Flame"
+      }
+     ],
+     "nameEn": "Alexstrasza"
+    },
+    {
+     "name": "안두인",
+     "heroId": "Anduin",
+     "heroIds": [
+      "Anduin"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">안두인</strong>\n<ul>\n<li>다시 검을 높이 치켜들 수 있게 되었습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "다시 검을 높이 치켜들 수 있게 되었습니다.",
+         "html": "다시 검을 높이 치켜들 수 있게 되었습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "Anduin"
+    },
+    {
+     "name": "아눕아락",
+     "heroId": "Anubarak",
+     "heroIds": [
+      "Anubarak"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">아눕아락</strong>\n<ul>\n<li>AI가 착취의 무리를 사용하지 않던 문제를 수정했습니다.</li>\n<li>아눕아락의 기술이 전장 오브젝트와 상호 작용하지 않던 문제를 수정했습니다.</li>\n<li><strong class=\"pn-name\">잠복 돌진 [E]</strong><ul>\n<li>분출 위치 표시의 가시성이 개선되었습니다.</li>\n</ul>\n</li>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">고치 [R2]</strong><ul>\n<li>고치가 대상에 부착된 요소를 제대로 숨기지 못하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "AI가 착취의 무리를 사용하지 않던 문제를 수정했습니다.",
+         "html": "AI가 착취의 무리를 사용하지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "아눕아락의 기술이 전장 오브젝트와 상호 작용하지 않던 문제를 수정했습니다.",
+         "html": "아눕아락의 기술이 전장 오브젝트와 상호 작용하지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "잠복 돌진",
+       "key": "E",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "분출 위치 표시의 가시성이 개선되었습니다.",
+         "html": "분출 위치 표시의 가시성이 개선되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Burrow Charge"
+      },
+      {
+       "name": "고치",
+       "key": "R2",
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "고치가 대상에 부착된 요소를 제대로 숨기지 못하던 문제를 수정했습니다.",
+         "html": "고치가 대상에 부착된 요소를 제대로 숨기지 못하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Cocoon"
+      }
+     ],
+     "nameEn": "Anubarak"
+    },
+    {
+     "name": "아르타니스",
+     "heroId": "Artanis",
+     "heroIds": [
+      "Artanis"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">아르타니스</strong>\n<ul>\n<li>아르타니스의 일부 기술이 전장 오브젝트와 상호 작용하지 않던 문제를 수정했습니다.</li>\n<li>아서스의 기술이 전장 오브젝트와 상호 작용하지 않던 문제를 수정했습니다.</li>\n<li><strong class=\"pn-name\">위상 분광기 [E]</strong><ul>\n<li>대상이 시간 정지 상태가 된 후 위상 분광기가 구조물을 제대로 감지하지 못하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "아르타니스의 일부 기술이 전장 오브젝트와 상호 작용하지 않던 문제를 수정했습니다.",
+         "html": "아르타니스의 일부 기술이 전장 오브젝트와 상호 작용하지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "아서스의 기술이 전장 오브젝트와 상호 작용하지 않던 문제를 수정했습니다.",
+         "html": "아서스의 기술이 전장 오브젝트와 상호 작용하지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "위상 분광기",
+       "key": "E",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "대상이 시간 정지 상태가 된 후 위상 분광기가 구조물을 제대로 감지하지 못하던 문제를 수정했습니다.",
+         "html": "대상이 시간 정지 상태가 된 후 위상 분광기가 구조물을 제대로 감지하지 못하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Phase Prism"
+      }
+     ],
+     "nameEn": "Artanis"
+    },
+    {
+     "name": "아우리엘",
+     "heroId": "Auriel",
+     "heroIds": [
+      "Auriel"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">아우리엘</strong>\n<ul>\n<li><strong class=\"pn-name\">억류의 일격 [E]</strong><ul>\n<li>이제 지형 충돌이 항상 치명타로 표시됩니다.</li>\n</ul>\n</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">감정 이입 [D]</strong><ul>\n<li>아군이 자신에게 피해를 입혔을 때 감정 이입이 희망을 부여하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">꿰뚫는 채찍 [E]</strong><ul>\n<li>꿰뚫는 채찍이 억류의 일격으로 여러 영웅을 적중하지 못하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "억류의 일격",
+       "key": "E",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "이제 지형 충돌이 항상 치명타로 표시됩니다.",
+         "html": "이제 지형 충돌이 항상 치명타로 표시됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Detainment Strike"
+      },
+      {
+       "name": "감정 이입",
+       "key": "D",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "아군이 자신에게 피해를 입혔을 때 감정 이입이 희망을 부여하던 문제를 수정했습니다.",
+         "html": "아군이 자신에게 피해를 입혔을 때 감정 이입이 희망을 부여하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Empathic Link"
+      },
+      {
+       "name": "꿰뚫는 채찍",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "꿰뚫는 채찍이 억류의 일격으로 여러 영웅을 적중하지 못하던 문제를 수정했습니다.",
+         "html": "꿰뚫는 채찍이 억류의 일격으로 여러 영웅을 적중하지 못하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Piercing Lash"
+      }
+     ],
+     "nameEn": "Auriel"
+    },
+    {
+     "name": "아즈모단",
+     "heroId": "Azmodan",
+     "heroIds": [
+      "Azmodan"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">아즈모단</strong>\n<ul>\n<li>아즈모단의 기술이 전장 오브젝트 및 물리 오브젝트와 상호 작용하지 않던 문제를 수정했습니다.</li>\n<li><strong class=\"pn-name\">악마 전사 소환 [W]</strong><ul>\n<li>악마 전사가 소환되는 순간 처치되면 불타는 시각 효과가 영구적으로 남던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">분노 [Q]</strong><ul>\n<li>분노가 분노 표식의 피해량을 증가시키던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">포격 [Q]</strong><ul>\n<li>포격이 분노 표식의 피해량을 증가시키던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "아즈모단의 기술이 전장 오브젝트 및 물리 오브젝트와 상호 작용하지 않던 문제를 수정했습니다.",
+         "html": "아즈모단의 기술이 전장 오브젝트 및 물리 오브젝트와 상호 작용하지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "악마 전사 소환",
+       "key": "W",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "악마 전사가 소환되는 순간 처치되면 불타는 시각 효과가 영구적으로 남던 문제를 수정했습니다.",
+         "html": "악마 전사가 소환되는 순간 처치되면 불타는 시각 효과가 영구적으로 남던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Summon Demon Warrior"
+      },
+      {
+       "name": "분노",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "분노가 분노 표식의 피해량을 증가시키던 문제를 수정했습니다.",
+         "html": "분노가 분노 표식의 피해량을 증가시키던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Wrath"
+      },
+      {
+       "name": "포격",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "포격이 분노 표식의 피해량을 증가시키던 문제를 수정했습니다.",
+         "html": "포격이 분노 표식의 피해량을 증가시키던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Bombardment"
+      }
+     ],
+     "nameEn": "Azmodan"
+    },
+    {
+     "name": "빛나래",
+     "heroId": "FaerieDragon",
+     "heroIds": [
+      "FaerieDragon"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">빛나래</strong>\n<ul>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">불안정한 기형 [W]</strong><ul>\n<li>불안정한 기형이 시각 효과를 영구적으로 남기던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">에메랄드 바람 [R2]</strong><ul>\n<li>에메랄드 바람이 전장 오브젝트와 상호 작용하지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">비밀 친구 [R1]</strong><ul>\n<li>이제 사망 요약에 빈 아이콘이 표시되지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "불안정한 기형",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "불안정한 기형이 시각 효과를 영구적으로 남기던 문제를 수정했습니다.",
+         "html": "불안정한 기형이 시각 효과를 영구적으로 남기던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Unstable Anomaly"
+      },
+      {
+       "name": "에메랄드 바람",
+       "key": "R2",
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "에메랄드 바람이 전장 오브젝트와 상호 작용하지 않던 문제를 수정했습니다.",
+         "html": "에메랄드 바람이 전장 오브젝트와 상호 작용하지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Emerald Wind"
+      },
+      {
+       "name": "비밀 친구",
+       "key": "R1",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "이제 사망 요약에 빈 아이콘이 표시되지 않습니다.",
+         "html": "이제 사망 요약에 빈 아이콘이 표시되지 않습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Invisible Friends"
+      }
+     ],
+     "nameEn": "Brightwing"
+    },
+    {
+     "name": "카시아",
+     "heroId": "Amazon",
+     "heroIds": [
+      "Amazon"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">카시아</strong>\n<ul>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">번뜩이는 빛 [D]</strong><ul>\n<li>번뜩이는 빛이 전장 오브젝트를 파괴하지 못하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">전쟁 여행자 [D]</strong><ul>\n<li>이제 즉시 탑승의 반응 속도가 향상되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "번뜩이는 빛",
+       "key": "D",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "번뜩이는 빛이 전장 오브젝트를 파괴하지 못하던 문제를 수정했습니다.",
+         "html": "번뜩이는 빛이 전장 오브젝트를 파괴하지 못하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Surge of Light"
+      },
+      {
+       "name": "전쟁 여행자",
+       "key": "D",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "이제 즉시 탑승의 반응 속도가 향상되었습니다.",
+         "html": "이제 즉시 탑승의 반응 속도가 향상되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "War Traveler"
+      }
+     ],
+     "nameEn": "Cassia"
+    },
+    {
+     "name": "첸",
+     "heroId": "Chen",
+     "heroIds": [
+      "Chen"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">첸</strong>\n<ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">술통 구르기 [R1]</strong><ul>\n<li>다른 첸의 술통 구르기가 종료되면 술통 구르기가 마우스 커서를 대상으로 지정하지 않던 문제를 수정했습니다.</li>\n<li>이제 마우스 커서의 위치가 변경될 때만 커서를 대상으로 지정하는 대신, 항상 능동적으로 마우스 커서를 대상으로 지정합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">폭풍, 대지, 불 [R2]</strong><ul>\n<li>이제 대지의 피해량이 물리 피해로 적용됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "술통 구르기",
+       "key": "R1",
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "다른 첸의 술통 구르기가 종료되면 술통 구르기가 마우스 커서를 대상으로 지정하지 않던 문제를 수정했습니다.",
+         "html": "다른 첸의 술통 구르기가 종료되면 술통 구르기가 마우스 커서를 대상으로 지정하지 않던 문제를 수정했습니다.",
+         "added": false
+        },
+        {
+         "text": "이제 마우스 커서의 위치가 변경될 때만 커서를 대상으로 지정하는 대신, 항상 능동적으로 마우스 커서를 대상으로 지정합니다.",
+         "html": "이제 마우스 커서의 위치가 변경될 때만 커서를 대상으로 지정하는 대신, 항상 능동적으로 마우스 커서를 대상으로 지정합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Wandering Keg"
+      },
+      {
+       "name": "폭풍, 대지, 불",
+       "key": "R2",
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "이제 대지의 피해량이 물리 피해로 적용됩니다.",
+         "html": "이제 대지의 피해량이 물리 피해로 적용됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Storm, Earth, Fire"
+      }
+     ],
+     "nameEn": "Chen"
+    },
+    {
+     "name": "초갈",
+     "heroId": "Cho",
+     "heroIds": [
+      "Cho",
+      "Gall"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">초갈</strong>\n<ul>\n<li>갈의 피해량이 초의 강화 효과를 모두 적용받지 못하던 문제를 수정했습니다.</li>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">커져가는 공포 [W]</strong><ul>\n<li>더 이상 공포의 보주의 세 번째 도약이 치명타로 표시되지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">이중고 [Q]</strong><ul>\n<li>이중고의 퀘스트 완료 효과가 황혼의 광란과 중첩되지 않던 문제를 수정했습니다.</li>\n<li>황혼의 광란이 종료된 후 갈이 이중고의 퀘스트 완료 효과를 잃던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "갈의 피해량이 초의 강화 효과를 모두 적용받지 못하던 문제를 수정했습니다.",
+         "html": "갈의 피해량이 초의 강화 효과를 모두 적용받지 못하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "커져가는 공포",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "더 이상 공포의 보주의 세 번째 도약이 치명타로 표시되지 않습니다.",
+         "html": "더 이상 공포의 보주의 세 번째 도약이 치명타로 표시되지 않습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Rising Dread"
+      },
+      {
+       "name": "이중고",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "이중고의 퀘스트 완료 효과가 황혼의 광란과 중첩되지 않던 문제를 수정했습니다.",
+         "html": "이중고의 퀘스트 완료 효과가 황혼의 광란과 중첩되지 않던 문제를 수정했습니다.",
+         "added": false
+        },
+        {
+         "text": "황혼의 광란이 종료된 후 갈이 이중고의 퀘스트 완료 효과를 잃던 문제를 수정했습니다.",
+         "html": "황혼의 광란이 종료된 후 갈이 이중고의 퀘스트 완료 효과를 잃던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Double Trouble"
+      }
+     ],
+     "nameEn": "ChoGall"
+    },
+    {
+     "name": "크로미",
+     "heroId": "Chromie",
+     "heroIds": [
+      "Chromie"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">크로미</strong>\n<ul>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">청동 발톱 [Q]</strong><ul>\n<li>크로미가 사망한 후에도 청동 발톱의 시각 효과가 남아 있던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>11레벨</strong><ul>\n<li><strong class=\"pn-name\">여기저기 [사용 효과]</strong><ul>\n<li>더 이상 사용 시 탈것에서 내리거나 은신이 해제되지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">양자 급가속 [사용]</strong><ul>\n<li>사망한 후에도 양자 급가속의 시각 효과가 남아 있던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "청동 발톱",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "크로미가 사망한 후에도 청동 발톱의 시각 효과가 남아 있던 문제를 수정했습니다.",
+         "html": "크로미가 사망한 후에도 청동 발톱의 시각 효과가 남아 있던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Bronze Talons"
+      },
+      {
+       "name": "여기저기",
+       "key": "Active",
+       "new": false,
+       "group": "talent",
+       "level": 11,
+       "lines": [
+        {
+         "text": "더 이상 사용 시 탈것에서 내리거나 은신이 해제되지 않습니다.",
+         "html": "더 이상 사용 시 탈것에서 내리거나 은신이 해제되지 않습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Here and There"
+      },
+      {
+       "name": "양자 급가속",
+       "key": "Active",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "사망한 후에도 양자 급가속의 시각 효과가 남아 있던 문제를 수정했습니다.",
+         "html": "사망한 후에도 양자 급가속의 시각 효과가 남아 있던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Quantum Overdrive"
+      }
+     ],
+     "nameEn": "Chromie"
+    },
+    {
+     "name": "데스윙",
+     "heroId": "Deathwing",
+     "heroIds": [
+      "Deathwing"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">데스윙</strong>\n<ul>\n<li>용의 비상이 활성화된 동안 데스윙이 파티 창에서 핑 대상으로 지정될 수 있던 문제를 수정했습니다.</li>\n<li>착지 대상이 유효하지 않게 되면 데스윙이 비정상적인 상태가 되던 문제를 수정했습니다.</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">죽음의 낙하 [Z]</strong><ul>\n<li>죽음의 낙하가 모든 형태의 기술 방어력을 감소시키지 못하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "용의 비상이 활성화된 동안 데스윙이 파티 창에서 핑 대상으로 지정될 수 있던 문제를 수정했습니다.",
+         "html": "용의 비상이 활성화된 동안 데스윙이 파티 창에서 핑 대상으로 지정될 수 있던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "착지 대상이 유효하지 않게 되면 데스윙이 비정상적인 상태가 되던 문제를 수정했습니다.",
+         "html": "착지 대상이 유효하지 않게 되면 데스윙이 비정상적인 상태가 되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "죽음의 낙하",
+       "key": "Z",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "죽음의 낙하가 모든 형태의 기술 방어력을 감소시키지 못하던 문제를 수정했습니다.",
+         "html": "죽음의 낙하가 모든 형태의 기술 방어력을 감소시키지 못하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Death Drop"
+      }
+     ],
+     "nameEn": "Deathwing"
+    },
+    {
+     "name": "데커드",
+     "heroId": "Deckard",
+     "heroIds": [
+      "Deckard"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">데커드</strong>\n<ul>\n<li>데커드가 이동 제약 없이 춤을 출 수 있던 문제를 수정했습니다.</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">고대의 축복 [D]</strong><ul>\n<li>아군 기술에 면역인 적 영웅에게 피해를 입혔을 때 고대의 축복이 공격자를 치유하지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">저리 꺼져라! [R2]</strong><ul>\n<li>고서 회오리가 영웅이 아닌 대상을 적중했을 때 재사용 대기시간 감소가 적용되지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "데커드가 이동 제약 없이 춤을 출 수 있던 문제를 수정했습니다.",
+         "html": "데커드가 이동 제약 없이 춤을 출 수 있던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "고대의 축복",
+       "key": "D",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "아군 기술에 면역인 적 영웅에게 피해를 입혔을 때 고대의 축복이 공격자를 치유하지 않던 문제를 수정했습니다.",
+         "html": "아군 기술에 면역인 적 영웅에게 피해를 입혔을 때 고대의 축복이 공격자를 치유하지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Ancient Blessings"
+      },
+      {
+       "name": "저리 꺼져라!",
+       "key": "R2",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "고서 회오리가 영웅이 아닌 대상을 적중했을 때 재사용 대기시간 감소가 적용되지 않던 문제를 수정했습니다.",
+         "html": "고서 회오리가 영웅이 아닌 대상을 적중했을 때 재사용 대기시간 감소가 적용되지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Morenados!"
+      }
+     ],
+     "nameEn": "Deckard"
+    },
+    {
+     "name": "디아블로",
+     "heroId": "Diablo",
+     "heroIds": [
+      "Diablo"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">디아블로</strong>\n<ul>\n<li><strong class=\"pn-name\">암흑의 돌진 [Q]</strong><ul>\n<li>이제 지형 충돌이 항상 치명타로 표시됩니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">화염 발구르기 [W]</strong><ul>\n<li>이제 피해량 표시가 하나로 합쳐집니다.</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "암흑의 돌진",
+       "key": "Q",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "이제 지형 충돌이 항상 치명타로 표시됩니다.",
+         "html": "이제 지형 충돌이 항상 치명타로 표시됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Shadow Charge"
+      },
+      {
+       "name": "화염 발구르기",
+       "key": "W",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "이제 피해량 표시가 하나로 합쳐집니다.",
+         "html": "이제 피해량 표시가 하나로 합쳐집니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Fire Stomp"
+      }
+     ],
+     "nameEn": "Diablo"
+    },
+    {
+     "name": "디바",
+     "heroId": "DVa",
+     "heroIds": [
+      "DVa"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">디바</strong>\n<ul>\n<li>D.Va의 일부 기술이 전장 오브젝트 및 물리 오브젝트와 상호 작용하지 않던 문제를 수정했습니다.</li>\n<li><strong class=\"pn-name\">자폭 [E]</strong><ul>\n<li>자폭을 시전할 때 D.Va의 메카가 이동 불가 상태였다면 계속 이동하던 문제를 수정했습니다.</li>\n<li>자폭이 완전히 충전되었을 때 깜박이는 애니메이션이 나타나지 않던 문제를 수정했습니다.</li>\n<li>사거리 4를 넘어서면 피해량이 감소하기 시작합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">딱콩! [R]</strong><ul>\n<li>딱콩!이 무적 상태의 적을 적중하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">용해식 장갑 [D]</strong><ul>\n<li>이제 D.Va의 보호막에 입힌 피해량도 포함됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "D.Va의 일부 기술이 전장 오브젝트 및 물리 오브젝트와 상호 작용하지 않던 문제를 수정했습니다.",
+         "html": "D.Va의 일부 기술이 전장 오브젝트 및 물리 오브젝트와 상호 작용하지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "자폭",
+       "key": "E",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "자폭을 시전할 때 D.Va의 메카가 이동 불가 상태였다면 계속 이동하던 문제를 수정했습니다.",
+         "html": "자폭을 시전할 때 D.Va의 메카가 이동 불가 상태였다면 계속 이동하던 문제를 수정했습니다.",
+         "added": false
+        },
+        {
+         "text": "자폭이 완전히 충전되었을 때 깜박이는 애니메이션이 나타나지 않던 문제를 수정했습니다.",
+         "html": "자폭이 완전히 충전되었을 때 깜박이는 애니메이션이 나타나지 않던 문제를 수정했습니다.",
+         "added": false
+        },
+        {
+         "text": "사거리 4를 넘어서면 피해량이 감소하기 시작합니다.",
+         "html": "사거리 4를 넘어서면 피해량이 감소하기 시작합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Self-Destruct"
+      },
+      {
+       "name": "딱콩!",
+       "key": "R",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "딱콩!이 무적 상태의 적을 적중하던 문제를 수정했습니다.",
+         "html": "딱콩!이 무적 상태의 적을 적중하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Big Shot"
+      },
+      {
+       "name": "용해식 장갑",
+       "key": "D",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "이제 D.Va의 보호막에 입힌 피해량도 포함됩니다.",
+         "html": "이제 D.Va의 보호막에 입힌 피해량도 포함됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Ablative Armor"
+      }
+     ],
+     "nameEn": "D.Va"
+    },
+    {
+     "name": "피닉스",
+     "heroId": "Fenix",
+     "heroIds": [
+      "Fenix"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">피닉스</strong>\n<ul>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">감쇠장 [D]</strong><ul>\n<li>감쇠장이 모든 출처의 피해에 대해 기술 방어력을 부여하지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "감쇠장",
+       "key": "D",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "감쇠장이 모든 출처의 피해에 대해 기술 방어력을 부여하지 않던 문제를 수정했습니다.",
+         "html": "감쇠장이 모든 출처의 피해에 대해 기술 방어력을 부여하지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Dampening Field"
+      }
+     ],
+     "nameEn": "Fenix"
+    },
+    {
+     "name": "가로쉬",
+     "heroId": "Garrosh",
+     "heroIds": [
+      "Garrosh"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">가로쉬</strong>\n<ul>\n<li><strong class=\"pn-name\">참전 [1]</strong><ul>\n<li>빠른 시전 메뉴에서 참전이 록타르 오가르!로 표시되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">록타르 오가르! [1]</strong><ul>\n<li>이제 지속 효과가 아닌 사용 효과 강화로 표시됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "참전",
+       "key": "1",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "빠른 시전 메뉴에서 참전이 록타르 오가르!로 표시되던 문제를 수정했습니다.",
+         "html": "빠른 시전 메뉴에서 참전이 록타르 오가르!로 표시되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Into the Fray"
+      },
+      {
+       "name": "록타르 오가르!",
+       "key": "1",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "이제 지속 효과가 아닌 사용 효과 강화로 표시됩니다.",
+         "html": "이제 지속 효과가 아닌 사용 효과 강화로 표시됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Lok-tar Ogar!"
+      }
+     ],
+     "nameEn": "Garrosh"
+    },
+    {
+     "name": "겐지",
+     "heroId": "Genji",
+     "heroIds": [
+      "Genji"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">겐지</strong>\n<ul>\n<li><strong class=\"pn-name\">질풍참 [E]</strong><ul>\n<li>버튼에 표시되는 질풍참 환급 시간 표시의 색상을 조정했습니다.</li>\n<li>질풍참의 마나 환급이 처치된 적 플레이어에게 표시되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">심장을 노려라 [E]</strong><ul>\n<li>겐지의 심장을 노려라 설명 문구 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">시마다의 길 [E]</strong><ul>\n<li>이제 중첩이 10 이상일 때만 겐지의 공격이 치명타로 표시됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">최후의 베기 [E]</strong><ul>\n<li>최후의 베기의 피해량이 피해량 증폭 효과의 영향을 받지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "질풍참",
+       "key": "E",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "버튼에 표시되는 질풍참 환급 시간 표시의 색상을 조정했습니다.",
+         "html": "버튼에 표시되는 질풍참 환급 시간 표시의 색상을 조정했습니다.",
+         "added": false
+        },
+        {
+         "text": "질풍참의 마나 환급이 처치된 적 플레이어에게 표시되던 문제를 수정했습니다.",
+         "html": "질풍참의 마나 환급이 처치된 적 플레이어에게 표시되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Swift Strike"
+      },
+      {
+       "name": "심장을 노려라",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "겐지의 심장을 노려라 설명 문구 문제를 수정했습니다.",
+         "html": "겐지의 심장을 노려라 설명 문구 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Strike At The Heart"
+      },
+      {
+       "name": "시마다의 길",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "이제 중첩이 10 이상일 때만 겐지의 공격이 치명타로 표시됩니다.",
+         "html": "이제 중첩이 10 이상일 때만 겐지의 공격이 치명타로 표시됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Way of The Shimada"
+      },
+      {
+       "name": "분신참",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "최후의 베기의 피해량이 피해량 증폭 효과의 영향을 받지 않던 문제를 수정했습니다.",
+         "html": "최후의 베기의 피해량이 피해량 증폭 효과의 영향을 받지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Final Cut"
+      }
+     ],
+     "nameEn": "Genji"
+    },
+    {
+     "name": "굴단",
+     "heroId": "Guldan",
+     "heroIds": [
+      "Guldan"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">굴단</strong>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">혼돈의 힘 [W]</strong><ul>\n<li>무작위 영웅 대전에서 혼돈의 힘이 재생의 구슬의 치유량을 올바른 수치만큼 증가시키지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">생명석 [사용 효과]</strong><ul>\n<li>더 이상 굴단의 탈것과 은신을 해제하지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">파괴적인 고통 [E]</strong><ul>\n<li>이제 세 번째 타격의 피해량이 치명타로 표시됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "혼돈의 힘",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "무작위 영웅 대전에서 혼돈의 힘이 재생의 구슬의 치유량을 올바른 수치만큼 증가시키지 않던 문제를 수정했습니다.",
+         "html": "무작위 영웅 대전에서 혼돈의 힘이 재생의 구슬의 치유량을 올바른 수치만큼 증가시키지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Chaotic Energy"
+      },
+      {
+       "name": "생명석",
+       "key": "Active",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "더 이상 굴단의 탈것과 은신을 해제하지 않습니다.",
+         "html": "더 이상 굴단의 탈것과 은신을 해제하지 않습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Healthstone"
+      },
+      {
+       "name": "파괴적인 고통",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "이제 세 번째 타격의 피해량이 치명타로 표시됩니다.",
+         "html": "이제 세 번째 타격의 피해량이 치명타로 표시됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Ruinous Affliction"
+      }
+     ],
+     "nameEn": "Gul'dan"
+    },
+    {
+     "name": "한조",
+     "heroId": "Hanzo",
+     "heroIds": [
+      "Hanzo"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">한조</strong>\n<ul>\n<li>특정 기술과 함께 사용할 때 무기가 여러 번 발사되던 문제를 수정했습니다.</li>\n<li><strong class=\"pn-name\">갈래 화살 [W]</strong><ul>\n<li>이제 피해량 표시가 하나로 합쳐집니다.</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">거인 사냥 [지속 효과]</strong><ul>\n<li>이제 갈래 화살의 추가 피해량이 피해량 표시 문구에 합산되어 표시됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "특정 기술과 함께 사용할 때 무기가 여러 번 발사되던 문제를 수정했습니다.",
+         "html": "특정 기술과 함께 사용할 때 무기가 여러 번 발사되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "갈래 화살",
+       "key": "W",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "이제 피해량 표시가 하나로 합쳐집니다.",
+         "html": "이제 피해량 표시가 하나로 합쳐집니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Scatter Arrow"
+      },
+      {
+       "name": "거인 사냥",
+       "key": "Passive",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "이제 갈래 화살의 추가 피해량이 피해량 표시 문구에 합산되어 표시됩니다.",
+         "html": "이제 갈래 화살의 추가 피해량이 피해량 표시 문구에 합산되어 표시됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Giant Slayer"
+      }
+     ],
+     "nameEn": "Hanzo"
+    },
+    {
+     "name": "들창코",
+     "heroId": "Hogger",
+     "heroIds": [
+      "Hogger"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">들창코</strong>\n<ul>\n<li>분노가 영웅 정보 페이지에 추가되었습니다.</li>\n<li><strong class=\"pn-name\">거센 일격 [Q]</strong><ul>\n<li>거센 일격이 전장 오브젝트와 상호작용하지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">초보자용 다이너마이트 [W]</strong><ul>\n<li>직접 적중한 피해량이 항상 치명타로 표시됩니다.</li>\n</ul>\n</li>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">야만적인 힘 [Q]</strong><ul>\n<li>더 이상 노획물 더미가 치명타로 표시되지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "분노가 영웅 정보 페이지에 추가되었습니다.",
+         "html": "분노가 영웅 정보 페이지에 추가되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "거센 일격",
+       "key": "Q",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "거센 일격이 전장 오브젝트와 상호작용하지 않던 문제를 수정했습니다.",
+         "html": "거센 일격이 전장 오브젝트와 상호작용하지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Staggering Blows"
+      },
+      {
+       "name": "초보자용 다이너마이트",
+       "key": "W",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "직접 적중한 피해량이 항상 치명타로 표시됩니다.",
+         "html": "직접 적중한 피해량이 항상 치명타로 표시됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Ez-Thro Dynamite"
+      },
+      {
+       "name": "야만적인 힘",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "더 이상 노획물 더미가 치명타로 표시되지 않습니다.",
+         "html": "더 이상 노획물 더미가 치명타로 표시되지 않습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Brute Force"
+      }
+     ],
+     "nameEn": "Hogger"
+    },
+    {
+     "name": "임페리우스",
+     "heroId": "Imperius",
+     "heroIds": [
+      "Imperius"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">임페리우스</strong>\n<ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">천사의 무구 [R1]</strong><ul>\n<li>천상의 군단장의 피해량 표시 문구와 합산되어 표시됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "천사의 무구",
+       "key": "R1",
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "천상의 군단장의 피해량 표시 문구와 합산되어 표시됩니다.",
+         "html": "천상의 군단장의 피해량 표시 문구와 합산되어 표시됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Angelic Armaments"
+      }
+     ],
+     "nameEn": "Imperius"
+    },
+    {
+     "name": "정크랫",
+     "heroId": "Junkrat",
+     "heroIds": [
+      "Junkrat"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">정크랫</strong>\n<ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">죽이는 타이어 [R1]</strong><ul>\n<li>사거리 1.5를 넘어서면 피해량이 감소하기 시작합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "죽이는 타이어",
+       "key": "R1",
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "사거리 1.5를 넘어서면 피해량이 감소하기 시작합니다.",
+         "html": "사거리 1.5를 넘어서면 피해량이 감소하기 시작합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "RIP-Tire"
+      }
+     ],
+     "nameEn": "Junkrat"
+    },
+    {
+     "name": "레오릭",
+     "heroId": "Leoric",
+     "heroIds": [
+      "Leoric"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">레오릭</strong>\n<ul>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">영혼의 그릇 [W]</strong><ul>\n<li>이제 치명타로 표시됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "영혼의 그릇",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "이제 치명타로 표시됩니다.",
+         "html": "이제 치명타로 표시됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Willing Vessel"
+      }
+     ],
+     "nameEn": "Leoric"
+    },
+    {
+     "name": "리 리",
+     "heroId": "LiLi",
+     "heroIds": [
+      "LiLi"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">리 리</strong>\n<ul>\n<li><strong class=\"pn-name\">빠른 발 [고유 능력]</strong><ul>\n<li>지속시간 표시의 색상을 조정했습니다.</li>\n</ul>\n</li>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">1,000잔 돌리기 [R1]</strong><ul>\n<li>정지 상태일 때 1,000잔 돌리기의 재사용 대기시간이 증가하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">강풍 [E]</strong><ul>\n<li>강풍이 실명의 바람의 지속시간을 제대로 증가시키지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "빠른 발",
+       "key": "Trait",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "지속시간 표시의 색상을 조정했습니다.",
+         "html": "지속시간 표시의 색상을 조정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Fast Feet"
+      },
+      {
+       "name": "1,000잔 돌리기",
+       "key": "R1",
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "정지 상태일 때 1,000잔 돌리기의 재사용 대기시간이 증가하던 문제를 수정했습니다.",
+         "html": "정지 상태일 때 1,000잔 돌리기의 재사용 대기시간이 증가하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Jug of 1,000 Cups"
+      },
+      {
+       "name": "강풍",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "강풍이 실명의 바람의 지속시간을 제대로 증가시키지 않던 문제를 수정했습니다.",
+         "html": "강풍이 실명의 바람의 지속시간을 제대로 증가시키지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Gale Force"
+      }
+     ],
+     "nameEn": "Li Li"
+    },
+    {
+     "name": "모랄레스 중위",
+     "heroId": "Medic",
+     "heroIds": [
+      "Medic"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">모랄레스 중위</strong>\n<ul>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">환자를 대하는 태도 [E]</strong><ul>\n<li>이제 발동 시 추가 효과가 치명타로 표시됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "환자를 대하는 태도",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "이제 발동 시 추가 효과가 치명타로 표시됩니다.",
+         "html": "이제 발동 시 추가 효과가 치명타로 표시됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Bedside Manner"
+      }
+     ],
+     "nameEn": "Lt. Morales"
+    },
+    {
+     "name": "루나라",
+     "heroId": "Dryad",
+     "heroIds": [
+      "Dryad"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">루나라</strong>\n<ul>\n<li><strong class=\"pn-name\">자연의 독소 [고유 능력]</strong><ul>\n<li>이제 다른 치유 효과와 유사하게 작동합니다.</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">마법 해제 [사용 효과]</strong><ul>\n<li>마법 해제가 침묵, 공포, 도발의 지속시간을 감소시키지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "자연의 독소",
+       "key": "Trait",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "이제 다른 치유 효과와 유사하게 작동합니다.",
+         "html": "이제 다른 치유 효과와 유사하게 작동합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Nature's Toxin"
+      },
+      {
+       "name": "마법 해제",
+       "key": "Active",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "마법 해제가 침묵, 공포, 도발의 지속시간을 감소시키지 않던 문제를 수정했습니다.",
+         "html": "마법 해제가 침묵, 공포, 도발의 지속시간을 감소시키지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Abolish Magic"
+      }
+     ],
+     "nameEn": "Lunara"
+    },
+    {
+     "name": "마이에브",
+     "heroId": "Maiev",
+     "heroIds": [
+      "Maiev"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">마이에브</strong>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">정의의 구속 [W]</strong><ul>\n<li>더 이상 그림자 목줄을 사용할 때 공격이 치명타로 표시되지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">칼춤 [Q]</strong><ul>\n<li>칼춤이 복수심의 칼날 중첩을 부여하지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">속박의 원반 [R1]</strong><ul>\n<li>시간 정지 상태에서 나타나던 침묵 표시가 삭제되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "정의의 구속",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "더 이상 그림자 목줄을 사용할 때 공격이 치명타로 표시되지 않습니다.",
+         "html": "더 이상 그림자 목줄을 사용할 때 공격이 치명타로 표시되지 않습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Bonds of Justice"
+      },
+      {
+       "name": "칼춤",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "칼춤이 복수심의 칼날 중첩을 부여하지 않던 문제를 수정했습니다.",
+         "html": "칼춤이 복수심의 칼날 중첩을 부여하지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Blade Dance"
+      },
+      {
+       "name": "속박의 원반",
+       "key": "R1",
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "시간 정지 상태에서 나타나던 침묵 표시가 삭제되었습니다.",
+         "html": "시간 정지 상태에서 나타나던 침묵 표시가 삭제되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Containment Disc"
+      }
+     ],
+     "nameEn": "Maiev"
+    },
+    {
+     "name": "말가니스",
+     "heroId": "MalGanis",
+     "heroIds": [
+      "MalGanis"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">말가니스</strong>\n<ul>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">핏빛 약진 [D]</strong><ul>\n<li>핏빛 약진이 치유의 샘과 재생의 구슬로 발동되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "핏빛 약진",
+       "key": "D",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "핏빛 약진이 치유의 샘과 재생의 구슬로 발동되던 문제를 수정했습니다.",
+         "html": "핏빛 약진이 치유의 샘과 재생의 구슬로 발동되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Blood Rush"
+      }
+     ],
+     "nameEn": "Mal'Ganis"
+    },
+    {
+     "name": "말티엘",
+     "heroId": "Malthael",
+     "heroIds": [
+      "Malthael"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">말티엘</strong>\n<ul>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">지혜의 장막 [사용 효과]</strong><ul>\n<li>지혜의 장막이 모든 출처의 피해에 대해 기술 방어력을 부여하지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">죽음의 천사 [R2]</strong><ul>\n<li>죽음의 천사가 주문력 증폭 효과의 영향을 받던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "지혜의 장막",
+       "key": "Active",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "지혜의 장막이 모든 출처의 피해에 대해 기술 방어력을 부여하지 않던 문제를 수정했습니다.",
+         "html": "지혜의 장막이 모든 출처의 피해에 대해 기술 방어력을 부여하지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Shroud of Wisdom"
+      },
+      {
+       "name": "죽음의 천사",
+       "key": "R2",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "죽음의 천사가 주문력 증폭 효과의 영향을 받던 문제를 수정했습니다.",
+         "html": "죽음의 천사가 주문력 증폭 효과의 영향을 받던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Angel of Death"
+      }
+     ],
+     "nameEn": "Malthael"
+    },
+    {
+     "name": "메이",
+     "heroId": "Mei",
+     "heroIds": [
+      "Mei"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">메이</strong>\n<ul>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">눈덩이 폭포 [R1]</strong><ul>\n<li>눈덩이 폭포로 발동된 설맹의 실명 지속시간이 특성을 배우지 않은 설맹보다 짧던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "눈덩이 폭포",
+       "key": "R1",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "눈덩이 폭포로 발동된 설맹의 실명 지속시간이 특성을 배우지 않은 설맹보다 짧던 문제를 수정했습니다.",
+         "html": "눈덩이 폭포로 발동된 설맹의 실명 지속시간이 특성을 배우지 않은 설맹보다 짧던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Cascade"
+      }
+     ],
+     "nameEn": "Mei"
+    },
+    {
+     "name": "나지보",
+     "heroId": "WitchDoctor",
+     "heroIds": [
+      "WitchDoctor"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">나지보</strong>\n<ul>\n<li><strong class=\"pn-name\">좀비 벽 [W]</strong><ul>\n<li>좀비가 생성될 때 좀비 벽 안쪽을 바라보도록 변경되었습니다.</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">파멸의 혼령 [R2]</strong><ul>\n<li>파멸의 혼령의 치유량 감소 수치가 여러 번 표시되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "좀비 벽",
+       "key": "W",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "좀비가 생성될 때 좀비 벽 안쪽을 바라보도록 변경되었습니다.",
+         "html": "좀비가 생성될 때 좀비 벽 안쪽을 바라보도록 변경되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Zombie Wall"
+      },
+      {
+       "name": "파멸의 혼령",
+       "key": "R2",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "파멸의 혼령의 치유량 감소 수치가 여러 번 표시되던 문제를 수정했습니다.",
+         "html": "파멸의 혼령의 치유량 감소 수치가 여러 번 표시되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Annihilating Spirits"
+      }
+     ],
+     "nameEn": "Nazeebo"
+    },
+    {
+     "name": "노바",
+     "heroId": "Nova",
+     "heroIds": [
+      "Nova"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">노바</strong>\n<ul>\n<li><strong class=\"pn-name\">홀로그램 분신 [E]</strong><ul>\n<li>이제 대기 상태일 때 수집되지 않은 경험치 구슬을 향해 이동합니다.</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "홀로그램 분신",
+       "key": "E",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "이제 대기 상태일 때 수집되지 않은 경험치 구슬을 향해 이동합니다.",
+         "html": "이제 대기 상태일 때 수집되지 않은 경험치 구슬을 향해 이동합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Holo Decoys"
+      }
+     ],
+     "nameEn": "Nova"
+    },
+    {
+     "name": "오르피아",
+     "heroId": "Orphea",
+     "heroIds": [
+      "Orphea"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">오르피아</strong>\n<ul>\n<li>특정 기술과 함께 사용할 때 무기가 여러 번 발사되던 문제를 수정했습니다.</li>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">혼돈의 격류 [고유 능력]</strong><ul>\n<li>오르피아의 혼돈 중첩이 3일 때 혼돈의 격류가 적용되지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">스며드는 독기 [고유 능력]</strong><ul>\n<li>스며드는 독기가 사망한 영웅을 타격하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">기괴한 전도 [고유 능력]</strong><ul>\n<li>사망 후에도 기괴한 전도의 시각 효과가 남아 있던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "특정 기술과 함께 사용할 때 무기가 여러 번 발사되던 문제를 수정했습니다.",
+         "html": "특정 기술과 함께 사용할 때 무기가 여러 번 발사되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "혼돈의 격류",
+       "key": "Trait",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "오르피아의 혼돈 중첩이 3일 때 혼돈의 격류가 적용되지 않던 문제를 수정했습니다.",
+         "html": "오르피아의 혼돈 중첩이 3일 때 혼돈의 격류가 적용되지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Chaotic Assault"
+      },
+      {
+       "name": "스며드는 독기",
+       "key": "Trait",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "스며드는 독기가 사망한 영웅을 타격하던 문제를 수정했습니다.",
+         "html": "스며드는 독기가 사망한 영웅을 타격하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Invasive Miasma"
+      },
+      {
+       "name": "기괴한 전도",
+       "key": "Trait",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "사망 후에도 기괴한 전도의 시각 효과가 남아 있던 문제를 수정했습니다.",
+         "html": "사망 후에도 기괴한 전도의 시각 효과가 남아 있던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Eldritch Conduit"
+      }
+     ],
+     "nameEn": "Orphea"
+    },
+    {
+     "name": "프로비우스",
+     "heroId": "Probius",
+     "heroIds": [
+      "Probius"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">프로비우스</strong>\n<ul>\n<li><strong class=\"pn-name\">분열파 [Q]</strong><ul>\n<li>분열파가 이전 분열파에 맞은 대상을 다시 타격하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">광자 방벽 [D]</strong><ul>\n<li>프로비우스가 사망한 상태에서도 광자 방벽이 표시되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">수정탑 과충전 [R1]</strong><ul>\n<li>수정탑 과충전이 수정탑에 무적을 제대로 부여하지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "분열파",
+       "key": "Q",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "분열파가 이전 분열파에 맞은 대상을 다시 타격하던 문제를 수정했습니다.",
+         "html": "분열파가 이전 분열파에 맞은 대상을 다시 타격하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Disruption Pulse"
+      },
+      {
+       "name": "광자 방벽",
+       "key": "D",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "프로비우스가 사망한 상태에서도 광자 방벽이 표시되던 문제를 수정했습니다.",
+         "html": "프로비우스가 사망한 상태에서도 광자 방벽이 표시되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Photon Barrier"
+      },
+      {
+       "name": "수정탑 과충전",
+       "key": "R1",
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "수정탑 과충전이 수정탑에 무적을 제대로 부여하지 않던 문제를 수정했습니다.",
+         "html": "수정탑 과충전이 수정탑에 무적을 제대로 부여하지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Pylon Overcharge"
+      }
+     ],
+     "nameEn": "Probius"
+    },
+    {
+     "name": "키히라",
+     "heroId": "Qhira",
+     "heroIds": [
+      "Qhira"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">키히라</strong>\n<ul>\n<li><strong class=\"pn-name\">고정 갈고리 [고유 능력]</strong><ul>\n<li>고정 갈고리의 조준선과 지형 표시가 시전 거리와 일치하도록 조정했습니다.</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">사냥감 [지속 효과]</strong><ul>\n<li>영웅이 아닌 대상을 타격했을 때 사냥감의 중첩이 사라지던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "고정 갈고리",
+       "key": "Trait",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "고정 갈고리의 조준선과 지형 표시가 시전 거리와 일치하도록 조정했습니다.",
+         "html": "고정 갈고리의 조준선과 지형 표시가 시전 거리와 일치하도록 조정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Grappling Hook"
+      },
+      {
+       "name": "사냥감",
+       "key": "Passive",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "영웅이 아닌 대상을 타격했을 때 사냥감의 중첩이 사라지던 문제를 수정했습니다.",
+         "html": "영웅이 아닌 대상을 타격했을 때 사냥감의 중첩이 사라지던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "The Hunted"
+      }
+     ],
+     "nameEn": "Qhira"
+    },
+    {
+     "name": "레이너",
+     "heroId": "Raynor",
+     "heroIds": [
+      "Raynor"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">레이너</strong>\n<ul>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">더 뜨거운 맛 [고유 능력]</strong><ul>\n<li>중첩이 0인 상태에서 선택하면 더 뜨거운 맛이 제대로 적용되지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "더 뜨거운 맛",
+       "key": "Trait",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "중첩이 0인 상태에서 선택하면 더 뜨거운 맛이 제대로 적용되지 않던 문제를 수정했습니다.",
+         "html": "중첩이 0인 상태에서 선택하면 더 뜨거운 맛이 제대로 적용되지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Sergeant Pepper"
+      }
+     ],
+     "nameEn": "Raynor"
+    },
+    {
+     "name": "레가르",
+     "heroId": "Rehgar",
+     "heroIds": [
+      "Rehgar"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">레가르</strong>\n<ul>\n<li>죽음의 순간에 동일한 항목이 중복해서 표시되던 문제를 수정했습니다.</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">샘솟는 물살 [E]</strong><ul>\n<li>치유가 발생할 때 샘솟는 물살의 광선이 나타나지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "죽음의 순간에 동일한 항목이 중복해서 표시되던 문제를 수정했습니다.",
+         "html": "죽음의 순간에 동일한 항목이 중복해서 표시되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "샘솟는 물살",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "치유가 발생할 때 샘솟는 물살의 광선이 나타나지 않던 문제를 수정했습니다.",
+         "html": "치유가 발생할 때 샘솟는 물살의 광선이 나타나지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Wellspring"
+      }
+     ],
+     "nameEn": "Rehgar"
+    },
+    {
+     "name": "렉사르",
+     "heroId": "Rexxar",
+     "heroIds": [
+      "Rexxar"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">렉사르</strong>\n<ul>\n<li>렉사르와 미샤가 치유의 샘 치유 효과를 서로 공유하지 않던 문제를 수정했습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "렉사르와 미샤가 치유의 샘 치유 효과를 서로 공유하지 않던 문제를 수정했습니다.",
+         "html": "렉사르와 미샤가 치유의 샘 치유 효과를 서로 공유하지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "nameEn": "Rexxar"
+    },
+    {
+     "name": "사무로",
+     "heroId": "Samuro",
+     "heroIds": [
+      "Samuro"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">사무로</strong>\n<ul>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">바람과 하나되어 [E]</strong><ul>\n<li>바람 걸음이 활성화된 동안 바람과 하나되어의 지속시간이 표시되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">분쇄의 칼날 [W]</strong><ul>\n<li>분쇄의 칼날이 효과 표시줄의 잘못된 위치에 표시되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "바람과 하나되어",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "바람 걸음이 활성화된 동안 바람과 하나되어의 지속시간이 표시되던 문제를 수정했습니다.",
+         "html": "바람 걸음이 활성화된 동안 바람과 하나되어의 지속시간이 표시되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "One With The Wind"
+      },
+      {
+       "name": "분쇄의 칼날",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "분쇄의 칼날이 효과 표시줄의 잘못된 위치에 표시되던 문제를 수정했습니다.",
+         "html": "분쇄의 칼날이 효과 표시줄의 잘못된 위치에 표시되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Crushing Blows"
+      }
+     ],
+     "nameEn": "Samuro"
+    },
+    {
+     "name": "해머 상사",
+     "heroId": "SgtHammer",
+     "heroIds": [
+      "SgtHammer"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">해머 상사</strong>\n<ul>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">거인 사냥꾼 [지속 효과]</strong><ul>\n<li>거인 사냥꾼이 무적 상태의 대상에게 피해를 입히던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "거인 사냥꾼",
+       "key": "Passive",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "거인 사냥꾼이 무적 상태의 대상에게 피해를 입히던 문제를 수정했습니다.",
+         "html": "거인 사냥꾼이 무적 상태의 대상에게 피해를 입히던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Giant Killer"
+      }
+     ],
+     "nameEn": "Sgt. Hammer"
+    },
+    {
+     "name": "소냐",
+     "heroId": "Barbarian",
+     "heroIds": [
+      "Barbarian"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">소냐</strong>\n<ul>\n<li><strong class=\"pn-name\">분노 [고유 능력]</strong><ul>\n<li>버튼에 표시되는 남은 지속시간의 색상을 조정했습니다.</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "분노",
+       "key": "Trait",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "버튼에 표시되는 남은 지속시간의 색상을 조정했습니다.",
+         "html": "버튼에 표시되는 남은 지속시간의 색상을 조정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Fury"
+      }
+     ],
+     "nameEn": "Sonya"
+    },
+    {
+     "name": "누더기",
+     "heroId": "Stitches",
+     "heroIds": [
+      "Stitches"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">누더기</strong>\n<ul>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">소화액 [E]</strong><ul>\n<li>소화액이 피해량 미리 보기를 표시하지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "소화액",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "소화액이 피해량 미리 보기를 표시하지 않던 문제를 수정했습니다.",
+         "html": "소화액이 피해량 미리 보기를 표시하지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Digestive Juices"
+      }
+     ],
+     "nameEn": "Stitches"
+    },
+    {
+     "name": "스투코프",
+     "heroId": "Stukov",
+     "heroIds": [
+      "Stukov"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">스투코프</strong>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">역겨운 손길 [W]</strong><ul>\n<li>이제 역겨운 손길의 원거리 공격이 사망 요약에 빈 아이콘으로 표시되지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "역겨운 손길",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "이제 역겨운 손길의 원거리 공격이 사망 요약에 빈 아이콘으로 표시되지 않습니다.",
+         "html": "이제 역겨운 손길의 원거리 공격이 사망 요약에 빈 아이콘으로 표시되지 않습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Fetid Touch"
+      }
+     ],
+     "nameEn": "Stukov"
+    },
+    {
+     "name": "태사다르",
+     "heroId": "Tassadar",
+     "heroIds": [
+      "Tassadar"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">태사다르</strong>\n<ul>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">사이오닉 메아리 [W]</strong><ul>\n<li>전격파 버튼에 표시되는 사이오닉 메아리 표시의 색상을 조정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "사이오닉 메아리",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "전격파 버튼에 표시되는 사이오닉 메아리 표시의 색상을 조정했습니다.",
+         "html": "전격파 버튼에 표시되는 사이오닉 메아리 표시의 색상을 조정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Psionic Echo"
+      }
+     ],
+     "nameEn": "Tassadar"
+    },
+    {
+     "name": "도살자",
+     "heroId": "Butcher",
+     "heroIds": [
+      "Butcher"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">도살자</strong>\n<ul>\n<li>도살자의 돌진이 너무 일찍 취소되던 문제를 수정했습니다.</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">가로날도끼 [지속 효과]</strong><ul>\n<li>이제 실명 상태에서도 발동할 수 있습니다.</li>\n<li>이제 가르기로 함께 타격한 대상이 도살자의 낙인에 걸려 있으면 생명력을 회복합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">지옥의 불길 [R1]</strong><ul>\n<li>이제 사망 요약에 빈 아이콘이 표시되지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "도살자의 돌진이 너무 일찍 취소되던 문제를 수정했습니다.",
+         "html": "도살자의 돌진이 너무 일찍 취소되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "가로날도끼",
+       "key": "Passive",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "이제 실명 상태에서도 발동할 수 있습니다.",
+         "html": "이제 실명 상태에서도 발동할 수 있습니다.",
+         "added": false
+        },
+        {
+         "text": "이제 가르기로 함께 타격한 대상이 도살자의 낙인에 걸려 있으면 생명력을 회복합니다.",
+         "html": "이제 가르기로 함께 타격한 대상이 도살자의 낙인에 걸려 있으면 생명력을 회복합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Cleaver"
+      },
+      {
+       "name": "지옥의 불길",
+       "key": "R1",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "이제 사망 요약에 빈 아이콘이 표시되지 않습니다.",
+         "html": "이제 사망 요약에 빈 아이콘이 표시되지 않습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Fires of Hell"
+      }
+     ],
+     "nameEn": "The Butcher"
+    },
+    {
+     "name": "스랄",
+     "heroId": "Thrall",
+     "heroIds": [
+      "Thrall"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">스랄</strong>\n<ul>\n<li><strong class=\"pn-name\">야수 정령 [E]</strong><ul>\n<li>야수 정령이 무적 상태의 영웅이 아닌 대상을 타격하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">서리늑대의 은총 [D]</strong><ul>\n<li>더 이상 스랄의 탈것을 해제하지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "야수 정령",
+       "key": "E",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "야수 정령이 무적 상태의 영웅이 아닌 대상을 타격하던 문제를 수정했습니다.",
+         "html": "야수 정령이 무적 상태의 영웅이 아닌 대상을 타격하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Feral Spirit"
+      },
+      {
+       "name": "서리늑대의 은총",
+       "key": "D",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "더 이상 스랄의 탈것을 해제하지 않습니다.",
+         "html": "더 이상 스랄의 탈것을 해제하지 않습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Frostwolf's Grace"
+      }
+     ],
+     "nameEn": "Thrall"
+    },
+    {
+     "name": "트레이서",
+     "heroId": "Tracer",
+     "heroIds": [
+      "Tracer"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">트레이서</strong>\n<ul>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">B형 폭발물 [R]</strong><ul>\n<li>B형 폭발물의 외곽 반경이 양자 폭발의 효과를 받지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "B형 폭발물",
+       "key": "R",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "B형 폭발물의 외곽 반경이 양자 폭발의 효과를 받지 않던 문제를 수정했습니다.",
+         "html": "B형 폭발물의 외곽 반경이 양자 폭발의 효과를 받지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Composition B"
+      }
+     ],
+     "nameEn": "Tracer"
+    },
+    {
+     "name": "티란데",
+     "heroId": "Tyrande",
+     "heroIds": [
+      "Tyrande"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">티란데</strong>\n<ul>\n<li><strong class=\"pn-name\">파수 [E]</strong><ul>\n<li>파수가 잘못 관통하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "파수",
+       "key": "E",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "파수가 잘못 관통하던 문제를 수정했습니다.",
+         "html": "파수가 잘못 관통하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Sentinel"
+      }
+     ],
+     "nameEn": "Tyrande"
+    },
+    {
+     "name": "우서",
+     "heroId": "Uther",
+     "heroIds": [
+      "Uther"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">우서</strong>\n<ul>\n<li><strong class=\"pn-name\">신성한 광휘 [W]</strong><ul>\n<li>우서가 주문력 증가 효과를 받고 있을 때 치명타로 표시됩니다.</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">빛의 봉화 [Q]</strong><ul>\n<li>생명력이 50% 미만일 때만 성스러운 빛이 치명타로 표시됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "신성한 광휘",
+       "key": "W",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "우서가 주문력 증가 효과를 받고 있을 때 치명타로 표시됩니다.",
+         "html": "우서가 주문력 증가 효과를 받고 있을 때 치명타로 표시됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Holy Radiance"
+      },
+      {
+       "name": "빛의 봉화",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "생명력이 50% 미만일 때만 성스러운 빛이 치명타로 표시됩니다.",
+         "html": "생명력이 50% 미만일 때만 성스러운 빛이 치명타로 표시됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Beacon of Light"
+      }
+     ],
+     "nameEn": "Uther"
+    },
+    {
+     "name": "발리라",
+     "heroId": "Valeera",
+     "heroIds": [
+      "Valeera"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">발리라</strong>\n<ul>\n<li>이제 깊은 그림자의 지속시간 표시가 줄어들지 않고 차오릅니다.</li>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">상처 감염 독 [사용 효과]</strong><ul>\n<li>상처 감염 독의 수치가 여러 번 표시되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "이제 깊은 그림자의 지속시간 표시가 줄어들지 않고 차오릅니다.",
+         "html": "이제 깊은 그림자의 지속시간 표시가 줄어들지 않고 차오릅니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "상처 감염 독",
+       "key": "Active",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "상처 감염 독의 수치가 여러 번 표시되던 문제를 수정했습니다.",
+         "html": "상처 감염 독의 수치가 여러 번 표시되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Wound Poison"
+      }
+     ],
+     "nameEn": "Valeera"
+    },
+    {
+     "name": "발라",
+     "heroId": "DemonHunter",
+     "heroIds": [
+      "DemonHunter"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">발라</strong>\n<ul>\n<li><strong class=\"pn-name\">다발 사격 [W]</strong><ul>\n<li>발라와 같은 위치에 있는 적을 타격했을 때 다발 사격의 모든 적중 효과가 적용되지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">어스름 [사용 효과]</strong><ul>\n<li>이제 사망 요약에 빈 아이콘이 표시되지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "다발 사격",
+       "key": "W",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "발라와 같은 위치에 있는 적을 타격했을 때 다발 사격의 모든 적중 효과가 적용되지 않던 문제를 수정했습니다.",
+         "html": "발라와 같은 위치에 있는 적을 타격했을 때 다발 사격의 모든 적중 효과가 적용되지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Multishot"
+      },
+      {
+       "name": "어스름",
+       "key": "Active",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "이제 사망 요약에 빈 아이콘이 표시되지 않습니다.",
+         "html": "이제 사망 요약에 빈 아이콘이 표시되지 않습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Gloom"
+      }
+     ],
+     "nameEn": "Valla"
+    },
+    {
+     "name": "바리안",
+     "heroId": "Varian",
+     "heroIds": [
+      "Varian"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">바리안</strong>\n<ul>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">필사의 일격 [D]</strong><ul>\n<li>필사의 일격의 수치가 여러 번 표시되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "필사의 일격",
+       "key": "D",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "필사의 일격의 수치가 여러 번 표시되던 문제를 수정했습니다.",
+         "html": "필사의 일격의 수치가 여러 번 표시되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Mortal Strike"
+      }
+     ],
+     "nameEn": "Varian"
+    },
+    {
+     "name": "화이트메인",
+     "heroId": "Whitemane",
+     "heroIds": [
+      "Whitemane"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">화이트메인</strong>\n<ul>\n<li><strong class=\"pn-name\">열의 [고유 능력]</strong><ul>\n<li>사망 후에도 열의의 사용 효과 시각 효과가 남아 있던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">이글거리는 채찍 [E]</strong><ul>\n<li>두 번째 타격이 항상 치명타로 표시됩니다.</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "열의",
+       "key": "Trait",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "사망 후에도 열의의 사용 효과 시각 효과가 남아 있던 문제를 수정했습니다.",
+         "html": "사망 후에도 열의의 사용 효과 시각 효과가 남아 있던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Zeal"
+      },
+      {
+       "name": "이글거리는 채찍",
+       "key": "E",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "두 번째 타격이 항상 치명타로 표시됩니다.",
+         "html": "두 번째 타격이 항상 치명타로 표시됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Searing Lash"
+      }
+     ],
+     "nameEn": "Whitemane"
+    },
+    {
+     "name": "줄",
+     "heroId": "Necromancer",
+     "heroIds": [
+      "Necromancer"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">줄</strong>\n<ul>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">치명적인 상처 [Q]</strong><ul>\n<li>치명적인 상처의 수치가 여러 번 표시되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "치명적인 상처",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "치명적인 상처의 수치가 여러 번 표시되던 문제를 수정했습니다.",
+         "html": "치명적인 상처의 수치가 여러 번 표시되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Mortal Wounds"
+      }
+     ],
+     "nameEn": "Xul"
+    },
+    {
+     "name": "이렐",
+     "heroId": "Yrel",
+     "heroIds": [
+      "Yrel"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">이렐</strong>\n<ul>\n<li>기술로 인해 모든 플레이어에게 적이 강조 표시되던 문제를 수정했습니다.</li>\n<li><strong class=\"pn-name\">응징의 격노 [E]</strong><ul>\n<li>응징의 격노의 시각 효과가 잘못 표시되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">헌신적인 수호자 [R1]</strong><ul>\n<li>이렐이 받을 피해를 막았을 때 이렐의 자가 치유량이 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "기술로 인해 모든 플레이어에게 적이 강조 표시되던 문제를 수정했습니다.",
+         "html": "기술로 인해 모든 플레이어에게 적이 강조 표시되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "응징의 격노",
+       "key": "E",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "응징의 격노의 시각 효과가 잘못 표시되던 문제를 수정했습니다.",
+         "html": "응징의 격노의 시각 효과가 잘못 표시되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Avenging Wrath"
+      },
+      {
+       "name": "헌신적인 수호자",
+       "key": "R1",
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "이렐이 받을 피해를 막았을 때 이렐의 자가 치유량이 증가합니다.",
+         "html": "이렐이 받을 피해를 막았을 때 이렐의 자가 치유량이 증가합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Ardent Defender"
+      }
+     ],
+     "nameEn": "Yrel"
+    },
+    {
+     "name": "자리야",
+     "heroId": "Zarya",
+     "heroIds": [
+      "Zarya"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">자리야</strong>\n<ul>\n<li>주 대상이 해당 공격으로 사망할 경우 일반 공격이 가르기 범위 안의 적에게 피해를 입히지 않던 문제를 수정했습니다.</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">고도 화상 [Q]</strong><ul>\n<li>고도 화상이 잘못된 수치를 표시하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "주 대상이 해당 공격으로 사망할 경우 일반 공격이 가르기 범위 안의 적에게 피해를 입히지 않던 문제를 수정했습니다.",
+         "html": "주 대상이 해당 공격으로 사망할 경우 일반 공격이 가르기 범위 안의 적에게 피해를 입히지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "고도 화상",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "고도 화상이 잘못된 수치를 표시하던 문제를 수정했습니다.",
+         "html": "고도 화상이 잘못된 수치를 표시하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Deep Burn"
+      }
+     ],
+     "nameEn": "Zarya"
+    },
+    {
+     "name": "줄진",
+     "heroId": "Zuljin",
+     "heroIds": [
+      "Zuljin"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">줄진</strong>\n<ul>\n<li>죽음의 순간에 동일한 항목이 중복해서 표시되던 문제를 수정했습니다.</li>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">무모함 [지속 효과]</strong><ul>\n<li>효과 표시줄에서의 위치를 조정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "죽음의 순간에 동일한 항목이 중복해서 표시되던 문제를 수정했습니다.",
+         "html": "죽음의 순간에 동일한 항목이 중복해서 표시되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "무모함",
+       "key": "Passive",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "효과 표시줄에서의 위치를 조정했습니다.",
+         "html": "효과 표시줄에서의 위치를 조정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Recklessness"
+      }
+     ],
+     "nameEn": "Zul'jin"
+    }
+   ],
+   "nameEn": "Bug Fixes"
+  }
+ ],
+ "heroes": [
+  "Abathur",
+  "Alarak",
+  "Alexstrasza",
+  "Amazon",
+  "Ana",
+  "Anduin",
+  "Anubarak",
+  "Artanis",
+  "Arthas",
+  "Auriel",
+  "Azmodan",
+  "Barbarian",
+  "Butcher",
+  "Chen",
+  "Cho",
+  "Chromie",
+  "Crusader",
+  "DVa",
+  "Deathwing",
+  "Deckard",
+  "Dehaka",
+  "DemonHunter",
+  "Diablo",
+  "Dryad",
+  "FaerieDragon",
+  "Fenix",
+  "Firebat",
+  "Gall",
+  "Garrosh",
+  "Genji",
+  "Guldan",
+  "Hanzo",
+  "Hogger",
+  "Imperius",
+  "Junkrat",
+  "L90ETC",
+  "Leoric",
+  "LiLi",
+  "LostVikings",
+  "Lucio",
+  "Maiev",
+  "MalGanis",
+  "Malfurion",
+  "Malthael",
+  "Medic",
+  "Medivh",
+  "Mei",
+  "Muradin",
+  "Murky",
+  "Necromancer",
+  "Nova",
+  "Orphea",
+  "Probius",
+  "Qhira",
+  "Ragnaros",
+  "Raynor",
+  "Rehgar",
+  "Rexxar",
+  "Samuro",
+  "SgtHammer",
+  "Stitches",
+  "Stukov",
+  "Tassadar",
+  "Thrall",
+  "Tracer",
+  "Tyrande",
+  "Uther",
+  "Valeera",
+  "Varian",
+  "Whitemane",
+  "WitchDoctor",
+  "Wizard",
+  "Yrel",
+  "Zarya",
+  "Zeratul",
+  "Zuljin"
+ ],
+ "battlegrounds": [
+  "blackheart_s_bay",
+  "cursed_hollow",
+  "warhead_junction"
+ ],
+ "lang": "ko",
+ "newsId": "24077220",
+ "titleEn": "Heroes of the Storm PTR Patch Notes - April 16, 2024",
+ "translated": {
+  "by": "Claude (claude-opus-5)",
+  "at": "2026-09-14",
+  "source": "https://news.blizzard.com/en-us/article/24077220/heroes-of-the-storm-ptr-patch-notes-april-16-2024",
+  "glossary": "HeroesToolChest 공식 게임 텍스트(enus↔kokr) 대조",
+  "untranslated": 0
+ }
+}

@@ -1,0 +1,974 @@
+{
+ "date": "2025-02-21",
+ "kind": "ptr",
+ "title": "Heroes of the Storm PTR Patch Notes - February 21, 2025",
+ "source": "https://news.blizzard.com/en-us/article/24180740/heroes-of-the-storm-ptr-patch-notes-february-21-2025",
+ "published": "2025-02-21T18:33:00Z",
+ "sections": [
+  {
+   "name": "머리말",
+   "key": "intro",
+   "html": "<p>Our next Heroes of the Storm patch has just hit the Public Test Realm and will be available for playtesting. As always, if you encounter any bugs during your PTR play sessions, please stop by the <a href=\"https://us.forums.blizzard.com/en/heroes/c/ptr-bug-report\" target=\"_blank\">PTR Bug Report forum</a> to let us know about your experiences.</p>",
+   "nameKo": "머리말"
+  },
+  {
+   "name": "Balance Update",
+   "key": "balance",
+   "html": "<h3><strong>Heroes</strong></h3>\n<h4>Auriel</h4>\n<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Bestow Hope [Trait]</strong>\n<ul>\n<li>Decreased the amount of energy stored from 50% to 40% of damage to non-Heroes.</li>\n</ul>\n</li>\n</ul>\n<h4>Dehaka</h4>\n<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Dark Swarm [W]</strong>\n<ul>\n<li>Damage reduced from 52 to 48.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Hero Stalker</strong>\n<ul>\n<li>Essence gain is not increased when hitting more than 2 Heroes.</li>\n<li>Essence gain now requires Dark Swarm to hit 2 Heroes.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Lurker Strain</strong>\n<ul>\n<li>Cooldown reduction bonus reduced from 3 seconds to 2 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Feeding Frenzy</strong>\n<ul>\n<li>Rework: Cooldown reduction is now a Gambit bonus, starting from 1.5 second cooldown reduction. Each death lowers this by 0.25, up to 3 times.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Paralyzing Enzymes</strong>\n<ul>\n<li>Rework: Gambit removed. Now reduces Drag's target's healing received by 40% while Drag is active and for 2 seconds after.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Ferocious Stalker</strong>\n<ul>\n<li>Damage bonus reduced from 60% to 50%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Tunnelling Claws</strong>\n<ul>\n<li>Movement speed reduced from 125% to 120%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Contagion</strong>\n<ul>\n<li>Now also reduces the damage of Isolation by 60%.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>Kharazim</h4>\n<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li>Health increased from 2027 to 2080.</li>\n<li><strong class=\"pn-name\">Breath of Heaven [W]</strong>\n<ul>\n<li>Healing increased from 285 to 295.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Air Ally</strong>\n<ul>\n<li>Health increased from 200 to 300.</li>\n<li>Spell Power increased from 15% to 20%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Divine Palm</strong>\n<ul>\n<li>Duration increased from 3 to 4 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Sixth Sense</strong>\n<ul>\n<li>Sixth Sense now starts expiring after the Stun expires, instead of as soon as the Stun is applied.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Epiphany</strong>\n<ul>\n<li>Cooldown increased from 60 to 70.</li>\n<li>Mana restored increased from 33% to 70%.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>Lúcio</h4>\n<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Soundwave [Q]</strong>\n<ul>\n<li>Cooldown increased from 7 seconds to 8 seconds.</li>\n<li>Mana cost increased from 30 to 45.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Accelerando</strong>\n<ul>\n<li>Time to maximum increased from 4 seconds to 6 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">High Five</strong>\n<ul>\n<li>Cooldown increased from 20 to 25 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Heavy Casters</strong>\n<ul>\n<li>Now also prevents Push Off from hitting multiple targets.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Up the Frequency</strong>\n<ul>\n<li>Cooldown reduction reduced from 0.4 seconds to 0.3 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>Tyrael</h4>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Law and Order</strong>\n<ul>\n<li>Fixed an issue where maximum bonus was capped at 4 allied Heroes. The cap has been increased to 15.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>Whitemane</h4>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Inquisitor's Prayer</strong>\n<ul>\n<li>After Basic Attacking an enemy Hero 3 times, Whitemane also gains a stack of Inquisitor's Prayer.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Scarlet Wrath</strong>\n<ul>\n<li>Rework: Now also restores .5% Mana to all Zeal targets.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+   "heroes": [
+    {
+     "name": "Auriel",
+     "heroId": "Auriel",
+     "heroIds": [
+      "Auriel"
+     ],
+     "changes": [
+      {
+       "name": "Bestow Hope",
+       "key": "Trait",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Decreased the amount of energy stored from 50% to 40% of damage to non-Heroes.",
+         "html": "Decreased the amount of energy stored from 50% to 40% of damage to non-Heroes.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Bestow Hope [Trait]</strong>\n<ul>\n<li>Decreased the amount of energy stored from 50% to 40% of damage to non-Heroes.</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Dehaka",
+     "heroId": "Dehaka",
+     "heroIds": [
+      "Dehaka"
+     ],
+     "changes": [
+      {
+       "name": "Dark Swarm",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Damage reduced from 52 to 48.",
+         "html": "Damage reduced from 52 to 48.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Hero Stalker",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "Essence gain is not increased when hitting more than 2 Heroes.",
+         "html": "Essence gain is not increased when hitting more than 2 Heroes.",
+         "added": false
+        },
+        {
+         "text": "Essence gain now requires Dark Swarm to hit 2 Heroes.",
+         "html": "Essence gain now requires Dark Swarm to hit 2 Heroes.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Lurker Strain",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "Cooldown reduction bonus reduced from 3 seconds to 2 seconds.",
+         "html": "Cooldown reduction bonus reduced from 3 seconds to 2 seconds.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Feeding Frenzy",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "Rework: Cooldown reduction is now a Gambit bonus, starting from 1.5 second cooldown reduction. Each death lowers this by 0.25, up to 3 times.",
+         "html": "Rework: Cooldown reduction is now a Gambit bonus, starting from 1.5 second cooldown reduction. Each death lowers this by 0.25, up to 3 times.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Paralyzing Enzymes",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "Rework: Gambit removed. Now reduces Drag's target's healing received by 40% while Drag is active and for 2 seconds after.",
+         "html": "Rework: Gambit removed. Now reduces Drag's target's healing received by 40% while Drag is active and for 2 seconds after.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Ferocious Stalker",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "Damage bonus reduced from 60% to 50%.",
+         "html": "Damage bonus reduced from 60% to 50%.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Tunnelling Claws",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "Movement speed reduced from 125% to 120%.",
+         "html": "Movement speed reduced from 125% to 120%.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Contagion",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "Now also reduces the damage of Isolation by 60%.",
+         "html": "Now also reduces the damage of Isolation by 60%.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Dark Swarm [W]</strong>\n<ul>\n<li>Damage reduced from 52 to 48.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Hero Stalker</strong>\n<ul>\n<li>Essence gain is not increased when hitting more than 2 Heroes.</li>\n<li>Essence gain now requires Dark Swarm to hit 2 Heroes.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Lurker Strain</strong>\n<ul>\n<li>Cooldown reduction bonus reduced from 3 seconds to 2 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Feeding Frenzy</strong>\n<ul>\n<li>Rework: Cooldown reduction is now a Gambit bonus, starting from 1.5 second cooldown reduction. Each death lowers this by 0.25, up to 3 times.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Paralyzing Enzymes</strong>\n<ul>\n<li>Rework: Gambit removed. Now reduces Drag's target's healing received by 40% while Drag is active and for 2 seconds after.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Ferocious Stalker</strong>\n<ul>\n<li>Damage bonus reduced from 60% to 50%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Tunnelling Claws</strong>\n<ul>\n<li>Movement speed reduced from 125% to 120%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Contagion</strong>\n<ul>\n<li>Now also reduces the damage of Isolation by 60%.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Kharazim",
+     "heroId": "Monk",
+     "heroIds": [
+      "Monk"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Health increased from 2027 to 2080.",
+         "html": "Health increased from 2027 to 2080.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Breath of Heaven",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Healing increased from 285 to 295.",
+         "html": "Healing increased from 285 to 295.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Air Ally",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "Health increased from 200 to 300.",
+         "html": "Health increased from 200 to 300.",
+         "added": false
+        },
+        {
+         "text": "Spell Power increased from 15% to 20%.",
+         "html": "Spell Power increased from 15% to 20%.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Divine Palm",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "Duration increased from 3 to 4 seconds.",
+         "html": "Duration increased from 3 to 4 seconds.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Sixth Sense",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "Sixth Sense now starts expiring after the Stun expires, instead of as soon as the Stun is applied.",
+         "html": "Sixth Sense now starts expiring after the Stun expires, instead of as soon as the Stun is applied.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Epiphany",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "Cooldown increased from 60 to 70.",
+         "html": "Cooldown increased from 60 to 70.",
+         "added": false
+        },
+        {
+         "text": "Mana restored increased from 33% to 70%.",
+         "html": "Mana restored increased from 33% to 70%.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li>Health increased from 2027 to 2080.</li>\n<li><strong class=\"pn-name\">Breath of Heaven [W]</strong>\n<ul>\n<li>Healing increased from 285 to 295.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Air Ally</strong>\n<ul>\n<li>Health increased from 200 to 300.</li>\n<li>Spell Power increased from 15% to 20%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Divine Palm</strong>\n<ul>\n<li>Duration increased from 3 to 4 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Sixth Sense</strong>\n<ul>\n<li>Sixth Sense now starts expiring after the Stun expires, instead of as soon as the Stun is applied.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Epiphany</strong>\n<ul>\n<li>Cooldown increased from 60 to 70.</li>\n<li>Mana restored increased from 33% to 70%.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Lúcio",
+     "heroId": "Lucio",
+     "heroIds": [
+      "Lucio"
+     ],
+     "changes": [
+      {
+       "name": "Soundwave",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Cooldown increased from 7 seconds to 8 seconds.",
+         "html": "Cooldown increased from 7 seconds to 8 seconds.",
+         "added": false
+        },
+        {
+         "text": "Mana cost increased from 30 to 45.",
+         "html": "Mana cost increased from 30 to 45.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Accelerando",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Time to maximum increased from 4 seconds to 6 seconds.",
+         "html": "Time to maximum increased from 4 seconds to 6 seconds.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "High Five",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "Cooldown increased from 20 to 25 seconds.",
+         "html": "Cooldown increased from 20 to 25 seconds.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Heavy Casters",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "Now also prevents Push Off from hitting multiple targets.",
+         "html": "Now also prevents Push Off from hitting multiple targets.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Up the Frequency",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "Cooldown reduction reduced from 0.4 seconds to 0.3 seconds.",
+         "html": "Cooldown reduction reduced from 0.4 seconds to 0.3 seconds.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Soundwave [Q]</strong>\n<ul>\n<li>Cooldown increased from 7 seconds to 8 seconds.</li>\n<li>Mana cost increased from 30 to 45.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Accelerando</strong>\n<ul>\n<li>Time to maximum increased from 4 seconds to 6 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">High Five</strong>\n<ul>\n<li>Cooldown increased from 20 to 25 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Heavy Casters</strong>\n<ul>\n<li>Now also prevents Push Off from hitting multiple targets.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Up the Frequency</strong>\n<ul>\n<li>Cooldown reduction reduced from 0.4 seconds to 0.3 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Tyrael",
+     "heroId": "Tyrael",
+     "heroIds": [
+      "Tyrael"
+     ],
+     "changes": [
+      {
+       "name": "Law and Order",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "Fixed an issue where maximum bonus was capped at 4 allied Heroes. The cap has been increased to 15.",
+         "html": "Fixed an issue where maximum bonus was capped at 4 allied Heroes. The cap has been increased to 15.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Law and Order</strong>\n<ul>\n<li>Fixed an issue where maximum bonus was capped at 4 allied Heroes. The cap has been increased to 15.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Whitemane",
+     "heroId": "Whitemane",
+     "heroIds": [
+      "Whitemane"
+     ],
+     "changes": [
+      {
+       "name": "Inquisitor's Prayer",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "After Basic Attacking an enemy Hero 3 times, Whitemane also gains a stack of Inquisitor's Prayer.",
+         "html": "After Basic Attacking an enemy Hero 3 times, Whitemane also gains a stack of Inquisitor's Prayer.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Scarlet Wrath",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "Rework: Now also restores .5% Mana to all Zeal targets.",
+         "html": "Rework: Now also restores .5% Mana to all Zeal targets.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Inquisitor's Prayer</strong>\n<ul>\n<li>After Basic Attacking an enemy Hero 3 times, Whitemane also gains a stack of Inquisitor's Prayer.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Scarlet Wrath</strong>\n<ul>\n<li>Rework: Now also restores .5% Mana to all Zeal targets.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    }
+   ],
+   "nameKo": "밸런스 업데이트"
+  },
+  {
+   "name": "Bug Fixes",
+   "key": "bugs",
+   "html": "<h3><strong>General</strong></h3>\n<ul>\n<li>Fixed an issue that caused some effects to not display correctly on the Target Dummy in the Sandbox and Try Mode.</li>\n<li>Fixed an issue that caused some Movement Speed bonuses to display the incorrect value in the target info panel.</li>\n</ul>\n<h3><strong>Brawl</strong></h3>\n<ul>\n<li>Deathwing's Cataclysm no longer starts on Cooldown in Arena Mode.</li>\n</ul>\n<h3><strong>Map</strong></h3>\n<ul>\n<li><strong class=\"pn-h\">Braxis Holdout</strong>\n<ul>\n<li>Fixed an issue that caused Archangel's visual effects to register as a pingable object.</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Volskaya</strong>\n<ul>\n<li>Fixed an issue that caused the Triglav Protector's Shield Emitter Shields granted to allies to increase the Pilot's Self Healing score when absorbing damage.</li>\n</ul>\n</li>\n</ul>\n<h3><strong>Heroes</strong></h3>\n<ul>\n<li><strong class=\"pn-h\">Abathur</strong>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Ultimate Evolution</strong>\n<ul>\n<li>Clones of Kharazim that have selected Insight now treat the quest as completed.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Alarak</strong>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Counter-Strike</strong>\n<ul>\n<li>Now increases Alarak's Self Healing score for damage it absorbs.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Ana</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Aim Down Sights [Trait]</strong>\n<ul>\n<li>Fixed an issue that caused Aim Down Sight's Healing Dart bonus to last after Aim Down Sights has ended.</li>\n<li>Activating Aim Down Sights will now also Dismount Ana from the Toy Train.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Azmodan</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Summon Demon Warrior [W]</strong>\n<ul>\n<li>Fixed an issue that caused Azmodan's Demon Warrior's aura damage to not behave similar to other aura damage effects.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Brightwing</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Soothing Mist [Trait]</strong>\n<ul>\n<li>Fixed an issue that caused Smoothing Mist to activate around Brightwing when in Stasis.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Dehaka</strong>\n<ul>\n<li>Fixed an issue where Basic Attack's would potentially not consume evade stacks if attacking within .25 seconds of Drag ending.</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Jaina</strong>\n<ul>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Snowstorm</strong>\n<ul>\n<li>Fixed an issue that caused Snowstorm's bonus to not apply correctly.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Kael'thas</strong>\n<ul>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Sunfire Enchantment</strong>\n<ul>\n<li>Fixed an issue that caused an active Sunfire Enchantment Spell Power buff to be removed when Kael'thas is killed.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Kharazim</strong>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Divine Palm</strong>\n<ul>\n<li>Fixed an issue that caused Divine Palm's Stasis to remove Damage Over Time effects from Kharazim.</li>\n<li>Fixed an issue that caused Divine Palm to not remove negative effects that were applied alongside the triggering effect.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Leoric</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Drain Hope [W]</strong>\n<ul>\n<li>Fixed an issue that caused Stasis on Leoric or Drain Hope's target to not break Drain Hope.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Li Li</strong>\n<ul>\n<li>Fixed an issue that caused Water Serpent to move at a reduced speed.</li>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Surging Winds</strong>\n<ul>\n<li>Fixed an issue that caused an active Surging Winds buff to be removed when Li Li is killed.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Li-Ming</strong>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Power Hungry</strong>\n<ul>\n<li>Fixed an issue that caused an active Power Hungry buff to be removed when Li-Ming is killed.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Lunara</strong>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Leaping Strike</strong>\n<ul>\n<li>Fixed an issue that caused Leaping Strike to stall game logic.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Malthael</strong>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Fear The Reaper</strong>\n<ul>\n<li>Fixed an issue that caused Fear the Reaper's duration indicator to not be tied to the ability button.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">The Butcher</strong>\n<ul>\n<li>Fixed an issue that allowed The Butcher to disjoint while collecting Fresh Meat.</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">The Lost Vikings</strong>\n<ul>\n<li>Fixed an issue that caused Longboat to move at a reduced speed.</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Tychus</strong>\n<ul>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Focusing Diodes</strong>\n<ul>\n<li>Now grants an additive damage bonus.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Whitemane</strong>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Divine Reckoning</strong>\n<ul>\n<li>Updated Divine Reckoning's mana restoration based off of damage dealt to display only one instance of floating text.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">Zul'jin</strong>\n<ul>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Forest Medicine</strong>\n<ul>\n<li>Selecting Forest Medicine will no longer interrupt an ongoing Regeneration channel.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<p><strong><a href=\"https://us.forums.blizzard.com/en/heroes/\" target=\"_blank\">Click here to discuss this post with other players in the official Heroes of the Storm forums</a>.</strong></p>\n<p><strong><img alt=\"\" class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/g6/G6G0N80EOC941426801305139.png\"/></strong></p>",
+   "items": [
+    {
+     "name": "Braxis Holdout",
+     "battleground": "braxis_holdout",
+     "html": "<strong class=\"pn-h\">Braxis Holdout</strong>\n<ul>\n<li>Fixed an issue that caused Archangel's visual effects to register as a pingable object.</li>\n</ul>",
+     "under": "Map"
+    },
+    {
+     "name": "Volskaya",
+     "battleground": "volskaya_foundry",
+     "html": "<strong class=\"pn-h\">Volskaya</strong>\n<ul>\n<li>Fixed an issue that caused the Triglav Protector's Shield Emitter Shields granted to allies to increase the Pilot's Self Healing score when absorbing damage.</li>\n</ul>",
+     "under": "Map"
+    },
+    {
+     "name": "Abathur",
+     "heroId": "Abathur",
+     "heroIds": [
+      "Abathur"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Abathur</strong>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Ultimate Evolution</strong>\n<ul>\n<li>Clones of Kharazim that have selected Insight now treat the quest as completed.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Ultimate Evolution",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "Clones of Kharazim that have selected Insight now treat the quest as completed.",
+         "html": "Clones of Kharazim that have selected Insight now treat the quest as completed.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Alarak",
+     "heroId": "Alarak",
+     "heroIds": [
+      "Alarak"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Alarak</strong>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Counter-Strike</strong>\n<ul>\n<li>Now increases Alarak's Self Healing score for damage it absorbs.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Counter-Strike",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "Now increases Alarak's Self Healing score for damage it absorbs.",
+         "html": "Now increases Alarak's Self Healing score for damage it absorbs.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Ana",
+     "heroId": "Ana",
+     "heroIds": [
+      "Ana"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Ana</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Aim Down Sights [Trait]</strong>\n<ul>\n<li>Fixed an issue that caused Aim Down Sight's Healing Dart bonus to last after Aim Down Sights has ended.</li>\n<li>Activating Aim Down Sights will now also Dismount Ana from the Toy Train.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Aim Down Sights",
+       "key": "Trait",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Aim Down Sight's Healing Dart bonus to last after Aim Down Sights has ended.",
+         "html": "Fixed an issue that caused Aim Down Sight's Healing Dart bonus to last after Aim Down Sights has ended.",
+         "added": false
+        },
+        {
+         "text": "Activating Aim Down Sights will now also Dismount Ana from the Toy Train.",
+         "html": "Activating Aim Down Sights will now also Dismount Ana from the Toy Train.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Azmodan",
+     "heroId": "Azmodan",
+     "heroIds": [
+      "Azmodan"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Azmodan</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Summon Demon Warrior [W]</strong>\n<ul>\n<li>Fixed an issue that caused Azmodan's Demon Warrior's aura damage to not behave similar to other aura damage effects.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Summon Demon Warrior",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Azmodan's Demon Warrior's aura damage to not behave similar to other aura damage effects.",
+         "html": "Fixed an issue that caused Azmodan's Demon Warrior's aura damage to not behave similar to other aura damage effects.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Brightwing",
+     "heroId": "FaerieDragon",
+     "heroIds": [
+      "FaerieDragon"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Brightwing</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Soothing Mist [Trait]</strong>\n<ul>\n<li>Fixed an issue that caused Smoothing Mist to activate around Brightwing when in Stasis.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Soothing Mist",
+       "key": "Trait",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Smoothing Mist to activate around Brightwing when in Stasis.",
+         "html": "Fixed an issue that caused Smoothing Mist to activate around Brightwing when in Stasis.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Dehaka",
+     "heroId": "Dehaka",
+     "heroIds": [
+      "Dehaka"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Dehaka</strong>\n<ul>\n<li>Fixed an issue where Basic Attack's would potentially not consume evade stacks if attacking within .25 seconds of Drag ending.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue where Basic Attack's would potentially not consume evade stacks if attacking within .25 seconds of Drag ending.",
+         "html": "Fixed an issue where Basic Attack's would potentially not consume evade stacks if attacking within .25 seconds of Drag ending.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Jaina",
+     "heroId": "Jaina",
+     "heroIds": [
+      "Jaina"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Jaina</strong>\n<ul>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Snowstorm</strong>\n<ul>\n<li>Fixed an issue that caused Snowstorm's bonus to not apply correctly.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Snowstorm",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Snowstorm's bonus to not apply correctly.",
+         "html": "Fixed an issue that caused Snowstorm's bonus to not apply correctly.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Kael'thas",
+     "heroId": "Kaelthas",
+     "heroIds": [
+      "Kaelthas"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Kael'thas</strong>\n<ul>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Sunfire Enchantment</strong>\n<ul>\n<li>Fixed an issue that caused an active Sunfire Enchantment Spell Power buff to be removed when Kael'thas is killed.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Sunfire Enchantment",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused an active Sunfire Enchantment Spell Power buff to be removed when Kael'thas is killed.",
+         "html": "Fixed an issue that caused an active Sunfire Enchantment Spell Power buff to be removed when Kael'thas is killed.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Kharazim",
+     "heroId": "Monk",
+     "heroIds": [
+      "Monk"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Kharazim</strong>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Divine Palm</strong>\n<ul>\n<li>Fixed an issue that caused Divine Palm's Stasis to remove Damage Over Time effects from Kharazim.</li>\n<li>Fixed an issue that caused Divine Palm to not remove negative effects that were applied alongside the triggering effect.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Divine Palm",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Divine Palm's Stasis to remove Damage Over Time effects from Kharazim.",
+         "html": "Fixed an issue that caused Divine Palm's Stasis to remove Damage Over Time effects from Kharazim.",
+         "added": false
+        },
+        {
+         "text": "Fixed an issue that caused Divine Palm to not remove negative effects that were applied alongside the triggering effect.",
+         "html": "Fixed an issue that caused Divine Palm to not remove negative effects that were applied alongside the triggering effect.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Leoric",
+     "heroId": "Leoric",
+     "heroIds": [
+      "Leoric"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Leoric</strong>\n<ul>\n<li><strong>Base</strong>\n<ul>\n<li><strong class=\"pn-name\">Drain Hope [W]</strong>\n<ul>\n<li>Fixed an issue that caused Stasis on Leoric or Drain Hope's target to not break Drain Hope.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Drain Hope",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Stasis on Leoric or Drain Hope's target to not break Drain Hope.",
+         "html": "Fixed an issue that caused Stasis on Leoric or Drain Hope's target to not break Drain Hope.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Li Li",
+     "heroId": "LiLi",
+     "heroIds": [
+      "LiLi"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Li Li</strong>\n<ul>\n<li>Fixed an issue that caused Water Serpent to move at a reduced speed.</li>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Surging Winds</strong>\n<ul>\n<li>Fixed an issue that caused an active Surging Winds buff to be removed when Li Li is killed.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Water Serpent to move at a reduced speed.",
+         "html": "Fixed an issue that caused Water Serpent to move at a reduced speed.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Surging Winds",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused an active Surging Winds buff to be removed when Li Li is killed.",
+         "html": "Fixed an issue that caused an active Surging Winds buff to be removed when Li Li is killed.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Li-Ming",
+     "heroId": "Wizard",
+     "heroIds": [
+      "Wizard"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Li-Ming</strong>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Power Hungry</strong>\n<ul>\n<li>Fixed an issue that caused an active Power Hungry buff to be removed when Li-Ming is killed.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Power Hungry",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused an active Power Hungry buff to be removed when Li-Ming is killed.",
+         "html": "Fixed an issue that caused an active Power Hungry buff to be removed when Li-Ming is killed.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Lunara",
+     "heroId": "Dryad",
+     "heroIds": [
+      "Dryad"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Lunara</strong>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Leaping Strike</strong>\n<ul>\n<li>Fixed an issue that caused Leaping Strike to stall game logic.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Leaping Strike",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Leaping Strike to stall game logic.",
+         "html": "Fixed an issue that caused Leaping Strike to stall game logic.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Malthael",
+     "heroId": "Malthael",
+     "heroIds": [
+      "Malthael"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Malthael</strong>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Fear The Reaper</strong>\n<ul>\n<li>Fixed an issue that caused Fear the Reaper's duration indicator to not be tied to the ability button.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Fear The Reaper",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Fear the Reaper's duration indicator to not be tied to the ability button.",
+         "html": "Fixed an issue that caused Fear the Reaper's duration indicator to not be tied to the ability button.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "The Butcher",
+     "heroId": "Butcher",
+     "heroIds": [
+      "Butcher"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">The Butcher</strong>\n<ul>\n<li>Fixed an issue that allowed The Butcher to disjoint while collecting Fresh Meat.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that allowed The Butcher to disjoint while collecting Fresh Meat.",
+         "html": "Fixed an issue that allowed The Butcher to disjoint while collecting Fresh Meat.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "The Lost Vikings",
+     "heroId": "LostVikings",
+     "heroIds": [
+      "LostVikings"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">The Lost Vikings</strong>\n<ul>\n<li>Fixed an issue that caused Longboat to move at a reduced speed.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue that caused Longboat to move at a reduced speed.",
+         "html": "Fixed an issue that caused Longboat to move at a reduced speed.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Tychus",
+     "heroId": "Tychus",
+     "heroIds": [
+      "Tychus"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Tychus</strong>\n<ul>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Focusing Diodes</strong>\n<ul>\n<li>Now grants an additive damage bonus.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Focusing Diodes",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "Now grants an additive damage bonus.",
+         "html": "Now grants an additive damage bonus.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Whitemane",
+     "heroId": "Whitemane",
+     "heroIds": [
+      "Whitemane"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Whitemane</strong>\n<ul>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Divine Reckoning</strong>\n<ul>\n<li>Updated Divine Reckoning's mana restoration based off of damage dealt to display only one instance of floating text.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Divine Reckoning",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "Updated Divine Reckoning's mana restoration based off of damage dealt to display only one instance of floating text.",
+         "html": "Updated Divine Reckoning's mana restoration based off of damage dealt to display only one instance of floating text.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Zul'jin",
+     "heroId": "Zuljin",
+     "heroIds": [
+      "Zuljin"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">Zul'jin</strong>\n<ul>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Forest Medicine</strong>\n<ul>\n<li>Selecting Forest Medicine will no longer interrupt an ongoing Regeneration channel.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "Forest Medicine",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "Selecting Forest Medicine will no longer interrupt an ongoing Regeneration channel.",
+         "html": "Selecting Forest Medicine will no longer interrupt an ongoing Regeneration channel.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "nameKo": "버그 수정"
+  }
+ ],
+ "heroes": [
+  "Abathur",
+  "Alarak",
+  "Ana",
+  "Auriel",
+  "Azmodan",
+  "Butcher",
+  "Dehaka",
+  "Dryad",
+  "FaerieDragon",
+  "Jaina",
+  "Kaelthas",
+  "Leoric",
+  "LiLi",
+  "LostVikings",
+  "Lucio",
+  "Malthael",
+  "Monk",
+  "Tychus",
+  "Tyrael",
+  "Whitemane",
+  "Wizard",
+  "Zuljin"
+ ],
+ "battlegrounds": [
+  "braxis_holdout",
+  "volskaya_foundry"
+ ],
+ "lang": "en",
+ "newsId": "24180740"
+}

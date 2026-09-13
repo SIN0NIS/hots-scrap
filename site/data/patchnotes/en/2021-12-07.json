@@ -1,0 +1,1334 @@
+{
+ "date": "2021-12-07",
+ "kind": "live",
+ "title": "Heroes of the Storm Live Patch Notes - December 7, 2021",
+ "source": "https://news.blizzard.com/en-us/article/23754896/heroes-of-the-storm-live-patch-notes-december-7-2021",
+ "published": "2021-12-07T19:08:49Z",
+ "sections": [
+  {
+   "name": "머리말",
+   "key": "intro",
+   "html": "<p>Our next Heroes of the Storm patch is live! Read on for more information.</p>\n<p><strong class=\"pn-new\">NOTE: Orange text indicates a change between PTR and Live notes.</strong></p>",
+   "nameKo": "머리말"
+  },
+  {
+   "name": "General",
+   "key": "general",
+   "html": "<p><strong class=\"pn-h\">Building Changes</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Healing Wells</strong>\n<ul>\n<li>Additional Functionality: Healing Wells are now invulnerable, and are destroyed when their nearby Fort or Keep are destroyed. <strong class=\"pn-new\">Stand alone Healing Wells on Battlefield of Eternity and Braxis Holdout are destroyed when both Keeps are destroyed</strong>.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Forts</strong>\n<ul>\n<li>Health increased from 12900 to 15450.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Keeps</strong>\n<ul>\n<li>Health increased from 17000 to 20050.</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>Developer Comment:</strong> We're happy with how Healing Wells function in our ARAM game mode, so we're giving it a try everywhere. Additionally, Forts and Keeps now have additional health as they've absorbed the health of their nearby Healing Wells.</blockquote>",
+   "nameKo": "일반"
+  },
+  {
+   "name": "Heroes Rework: Rehgar",
+   "key": "heroes_rework_rehgar",
+   "html": "<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li>Attack Damage increased from 106 to 115.</li>\n<li>Attack speed reduced from 1.25 to 1.1.</li>\n<li><strong class=\"pn-name\">Lightning Shield [W]</strong>\n<ul>\n<li>Additional Functionality: Each enemy hit by Lightning Shield restores 2 Mana to Rehgar.</li>\n<li>Mana cost reduced from 60 to 50.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Earthbind Totem [E]</strong>\n<ul>\n<li>Totem Health increased from 217 to 326.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Trait</strong>\n<ul>\n<li>All Ghost Wolf information has been moved to the Z key.</li>\n<li><strong class=\"pn-name\">(New) Purge:</strong>\n<ul>\n<li>Activate to make an ally Unstoppable for .5 seconds or slow an enemy Hero by 80%, decaying over 2 seconds. Cannot be used on Self.</li>\n<li>Cooldown: <strong class=\"pn-new\">45</strong> Seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Stormcaller [W]</strong>\n<ul>\n<li>Moved from Level 4.</li>\n<li>New functionality: Increase Lightning Shield’s radius by 25%.</li>\n<li>Quest: Each time Lightning Shield hits an enemy Hero, permanently increase Rehgar’s Health by 2 and Mana by 1, to a maximum of 300 stacks.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Grounded Totem [E]</strong>\n<ul>\n<li>Moved from Level 7.</li>\n<li>No longer grants additional Earthbind Totem Health.</li>\n<li>Additional Functionality:\n\t\t\t<ul>\n<li>Heroes affected by Earthbind Totem also have their Spellpower reduced by <strong class=\"pn-new\">20%</strong>.</li>\n<li>Increases range of Earthbind Totem by 50%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Feral Heart [Z]</strong>\n<ul>\n<li>New Functionality:\n\t\t\t<ul>\n<li>Entering or Exiting Ghost Wolf form grants 20 Armor for 2 seconds.</li>\n<li>Increase Ghost Wolf’s Movement Speed bonus to 40% for the first second, then fade to 30%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Wolf Run [Z]</strong>\n<ul>\n<li>Removed.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Earthliving Enchant [Q]</strong>\n<ul>\n<li>Moved from Level 13.</li>\n<li>Healing increased from 45 to 50.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Electric Charge [W]</strong>\n<ul>\n<li>Moved from Level 1.</li>\n<li>New Functionality:\n\t\t\t<ul>\n<li>Lightning Shield heals its bearer for 20% of the damage dealt to enemy Heroes. This healing amount is doubled for Rehgar.</li>\n<li>While damaging an enemy, Lightning Shield increases its bearer’s Movement Speed by 10%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Healing Totem [E/Active]</strong>\n<ul>\n<li>Healing Totem health increased from 50 to 175.</li>\n<li>Healing Totem health now scales at 4% per Level.</li>\n<li>Healing Totem healing increased from 2% to <strong class=\"pn-new\">2.5%</strong> maximum Health/second.</li>\n<li>Healing Totem duration reduced from 10 to 7 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Cleanse [Active]</strong>\n<ul>\n<li>Removed.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Colossal Totem [E]</strong>\n<ul>\n<li>Moved from Level 1.</li>\n<li>No longer increases Earthbind Totem Range.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Blood and Thunder [Z]</strong>\n<ul>\n<li>Cooldown reduction reduced from 2 to 1.5 seconds.</li>\n<li>Additional Functionality: Ghost Wolf attacks restore 5% of Rehgar’s maximum Mana.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">(New) Purification [Trait D]</strong>\n<ul>\n<li>Removing a Slow, Stun, Root or Silence from an Ally heals them for 260 and refunds <strong class=\"pn-new\">40%</strong> of Purge’s cooldown.</li>\n<li>Using Purge on an enemy deals up to 330 damage to shields and reduces Healing received by 40% for 3 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Tidal Waves [Q]</strong>\n<ul>\n<li>Heroic target cooldown reduction increased from .75 seconds to 1 second.</li>\n<li>Mana cost reduction increased from 15 to 20.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Earth Shield [W]</strong>\n<ul>\n<li>Shield amount increased from 12 to 14% maximum health.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">(New) Wellspring [E]</strong>\n<ul>\n<li>Every 2 seconds, Earthbind Totem will cast an untalented Chain Heal at a nearby ally that heals for <strong class=\"pn-new\">35%</strong> of its normal value.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Rising Storm [W]</strong>\n<ul>\n<li>Changed Functionality:\n\t\t\t<ul>\n<li>No longer grants Rehgar an untalented Lightning Shield.</li>\n<li>Increase the duration of Lightning Shield by 3 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Earthgrasp Totem [E]</strong>\n<ul>\n<li>Additional Functionality: Earthbind Totem deals 145 damage when first placed.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Hunger of the Wolf [Z]</strong>\n<ul>\n<li>Damage and healing increased to 6%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Rewind [Active]</strong>\n<ul>\n<li>Removed.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Stormshield [Active]</strong>\n<ul>\n<li>Removed.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Elemental Conduit [Active]</strong>\n<ul>\n<li>Activate to gain Lightning Shield and grant all nearby allied Heroes a Shield for 10% of their maximum Health for 5 seconds.</li>\n<li>Each time this Lightning Shield hits an enemy Hero, grant nearby allies a Shield equal to 1.5% of their maximum Health.</li>\n<li>70 Second cooldown.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Pit Fighter [Passive]</strong>\n<ul>\n<li>Gain 10% Attack damage and <strong class=\"pn-new\">4%</strong> Spell Power for yourself and each nearby ally Hero, stacking up to 5 times. At 2 or more stacks, Purge’s cooldown refreshes 50% faster.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>Developer Comment:</strong> Its been a while since we've made any major changes to Rehgar and while his win rates are not worrisome, his identity as a flexible generalist healer has suffered as of late. With this rework, we're making a number of quality-of-life changes by baselining some of the talents that felt mandatory as well as introducing new talents to sharpen his build identities. Just to prove that old dogs <b>can</b> learn new tricks, we've also given Rehgar a new activated trait, Purge, which allows him to micro-cleanse an ally or momentarily snare a distant enemy.</blockquote>",
+   "nameKo": ""
+  },
+  {
+   "name": "Heroes",
+   "key": "heroes",
+   "html": "<h4>Auriel</h4>\n<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Sacred Sweep [Q]</strong>\n<ul>\n<li>Cast speed increased by 50%.</li>\n<li>Cast finish time increased from 0 to .0625 seconds.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Swift Sweep [Q]</strong>\n<ul>\n<li>Removed.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Heavy Burden [E]</strong>\n<ul>\n<li>Additional Functionality: Increase Detainment Strike’s Stun duration by .25 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Will of Heaven [D]</strong>\n<ul>\n<li>Additional Functionality: Increase Auriel’s Basic Attack damage by 10%.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Wrath of Heaven [D]</strong>\n<ul>\n<li>Additional Functionality: Enemy Heroes hit by the center area of Sacred Sweep or the terrain collision of Detainment Strike have their Spell Armor reduced by 10 for 3 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>Developer Comment:</strong> Auriel’s Q talents have fallen off in both popularity and win rates, so we’re baking in the Swift Sweep talent functionality to help the abilities’ overall efficacy. We’re also bumping up some other talents that aren’t performing well. Similar to Zarya, Auriel’s power dynamics can change dramatically with even small number tweaks, so we’re keeping these changes relatively light this time around.</blockquote>\n<h4>Brightwing</h4>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Hyper Shift [Z]</strong>\n<ul>\n<li>Maximum Health healing bonus decreased from 8% to 6%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Magic Spit [Passive]</strong>\n<ul>\n<li>Cooldown reduction reduced from 6 to 4 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Invisible Friends [R1]</strong>\n<ul>\n<li>Duration reduced from infinite to 9 seconds.</li>\n<li>Heal increased from 20 to 25.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>Developer Comment:</strong> Brightwing remains strong at all levels of play, and is also terrorizing her foes at higher levels. While this is a substantial nerf to Invisible Friends on paper, we feel Brightwing still has compelling reasons to take the talent.</blockquote>\n<h4>Dehaka</h4>\n<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Vitals</strong>\n<ul>\n<li>Health reduced from 2434 to 2385.</li>\n<li>Health regeneration reduced from 5.07 to 4.97.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Basic Attack</strong>\n<ul>\n<li>Damage reduced from 100 to 95.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Lurker Strain [E]</strong>\n<ul>\n<li>Burrow cooldown reduction reduced from 6 to 3 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Feeding Frenzy [Q]</strong>\n<ul>\n<li>Cooldown reduction reduced from 1.75 to 1.5 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>Developer Comment:</strong> Dehaka has been collecting essence very successfully after his last update increased his attack speed, so we’re reining him in a smidge.</blockquote>\n<h4>Falstad</h4>\n<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Tailwind [Trait]</strong>\n<ul>\n<li>Cooldown reduced from 6 to 5 seconds.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Dishonorable Discharge [W]</strong>\n<ul>\n<li>Lightning Rod damage bonus per stack increased from .75% to 1%, maximum bonus remains 75%.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>Developer Comment:</strong> Falstad has landed quite well after his recent tuning, and we think a mild buff to Dishonorable Discharge causes all his talent builds to pass with flying colors.</blockquote>\n<h4>Imperius</h4>\n<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Celestial Charge [Q]</strong>\n<ul>\n<li>Final damage increased from 70 to 80.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Blaze of Glory [W]</strong>\n<ul>\n<li>Damage increased from 185 to 205.</li>\n<li>Changed Functionality: Blaze of Glory deals additional damage with Valorous Brand marks, but no longer consumes them.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>Developer Comment:</strong> Celestial Charge needling enemies a bit more will help Imperius out, especially when taking Impaling Light. We’re happy with the gameplay of the Solarian’s Fire build, but we’d rather Imperius continue onward rather than go out in a Blaze of Glory.</blockquote>\n<h4>Jaina</h4>\n<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Improved Ice Block [1]</strong>\n<ul>\n<li>Damage to unlock reduced from 15,000 to 12,000.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Winter’s Reach [Q]</strong>\n<ul>\n<li>Additional Functionality: Increase the missile speed of Frostbolt by 30%.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>Developer Comment:</strong> In games where Jaina’s team falls behind, we think it’s harder than it should be to unlock Improved Ice Block, especially when Jaina is focused on clearing enemy Minion waves. This should even that out, as well as provide a boon for Jaina players that blast away their opponents. Blizzard and Cone of Cold talents are competing nicely, so we thought we’d provide some quality of life to a Frostbolt talent.</blockquote>\n<h4>Johanna</h4>\n<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Iron Skin [D]</strong>\n<ul>\n<li>Cooldown reduced from 25 to 22 seconds.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Divine Fortress [Passive]</strong>\n<ul>\n<li>Physical Armor per Basic Attack increased from 8 to 10.</li>\n<li>Duration increased from 2.5 to 4 seconds.</li>\n<li>Changed Functionality: Basic Attacks against any target grants Physical Armor.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Zealous Glare [E]</strong>\n<ul>\n<li>Additional Functionality: Shield Glare deals 125% additional damage.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Hold Your Ground [D]</strong>\n<ul>\n<li>Cooldown reduction reduced from 5 to 2 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Sins Exposed [Q]</strong>\n<ul>\n<li>Duration increased from 2 to 3 seconds.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Steed Charge [Active]</strong>\n<ul>\n<li>Bonus Iron Skin duration increased from 1 to 2 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Roar [Q]</strong>\n<ul>\n<li>Passive Punish damage bonus increased from 25% to 50%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Heaven’s Fury [R1]</strong>\n<ul>\n<li>Damaged reduced from 75 to 68.</li>\n<li>Healing reduced from 75 to 68.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>Developer Comment:</strong> Competing against strong Shield Glare talents, Divine Fortress’ Physical Armor wasn’t super appealing. We hope this change provides a comparable option for dealing with Physical damage while feeling and playing differently. While we’re here, we continue to drag part of Hold Your Ground’s benefit baseline in our endless journey to make the tier more competitive. Other than that, we have mild buffs for weak talents, and a whisper of a nerf to Heaven’s Fury.</blockquote>\n<h4>Junkrat</h4>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Big As [E]</strong>\n<ul>\n<li>Moved to Level 13.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Puckish Scamp [R2]</strong>\n<ul>\n<li>Additional Functionality: Reduce both Heroic cooldowns by 20 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>Developer Comment:</strong> Junkrat has caused more than enough mayhem for now – we believe that Big As was making Steel Traps an issue too frequently when combined with Gotta Trap ‘Em All! We think the decision between traps that demand a Hero’s intervention versus many traps is still interesting, but we’ll be keeping an eye on him.</blockquote>\n<h4>Lunara</h4>\n<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Nature’s Toxin [Trait]</strong>\n<ul>\n<li>Damage dealt reduced from 36 to 33.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Choking Pollen [Q]</strong>\n<ul>\n<li>Damage bonus against enemies with 3 stacks of Nature's Toxin decreased from 200% to 175%.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>Developer Comment:</strong> Lunara has hopped a little higher than we expected, so we’re diluting her poison.</blockquote>\n<h4>Probius</h4>\n<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Warp Rift [W]</strong>\n<ul>\n<li>Duration reduced from 9 to 3 seconds.</li>\n<li>Additional Functionality: Warp Rifts explode on expiration.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Photon Cannon [E]</strong>\n<ul>\n<li>Attack period reduced from 1 to 1.4.</li>\n<li>Additional Functionality:\n\t\t<ul>\n<li>No longer requires Pylons to be placed or be activated.</li>\n<li>While in a Pylon's Power Field, gain 40% attack speed over 4 seconds and reveal nearby enemies.</li>\n<li>Now prefers to acquire Heroic enemies.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Echo Pulse [Q]</strong>\n<ul>\n<li>Increased returning Disruption Pulse damage from 75% to 100%.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Gather Minerals [E]</strong>\n<ul>\n<li>Removed Functionality: Quest reward no longer reveals nearby enemies.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Particle Accelerator [Q]</strong>\n<ul>\n<li>New Functionality:\n\t\t\t<ul>\n<li>After hitting 4 Heroes with Disruption Pulse, the next Warp Rift detonated by Disruption Pulse fires 4 pulses for 71 damage.</li>\n<li>Reduce Disruption Pulse's cooldown by .5 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Rift Shock [W]</strong>\n<ul>\n<li>New Functionality: Exploding a Warp Rift within 1 second of its arming deals 90 damage over 3 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Pylon Overcharge [R1]</strong>\n<ul>\n<li>Duration reduced from 10 to 8 seconds.</li>\n<li>Changed Functionality: Can only target enemy Heroes.</li>\n<li>Additionality Functionality: Pylons are Invulnerable for the duration.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Shoot 'Em Up [Q]</strong>\n<ul>\n<li>New Functionality:\n\t\t\t<ul>\n<li>Disruption Pulse deals 2.5% of enemy Heroes maximum health as damage.</li>\n<li>Reduce Disruption Pulse's cooldown by .5 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>Developer Comment:</strong> Probius has always had high requirements for successfully utilizing his abilities. The theme of this update is to turn those requirements into benefits, making Probius more approachable while still rewarding mastery. While the baseline changes to Warp Rift and Photon Cannon affect the identity of these abilities, we hope long time Probius players are still able to punish enemy Heroes that underestimate our favorite Probe.</blockquote>\n<h4>Raynor</h4>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Ace In The Hole [Passive]</strong>\n<ul>\n<li>Damage bonus increased from 10% to 12%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Heavy Slugs [Q]</strong>\n<ul>\n<li>Duration bonus increased from 1.5 to 2 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Cavalry's Arrived [R1]</strong>\n<ul>\n<li>Mark duration increased from 2.5 to 6 seconds.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Dusk Wing [R2]</strong>\n<ul>\n<li>Armor reduction increased from 2.5 to 3.</li>\n<li>Maximum Armor reduction increased from 25 to 30.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>Developer Comment:</strong> Jimmy was never one to quit a fight.</blockquote>\n<h4>Stukov</h4>\n<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Vitals</strong>\n<ul>\n<li>Health reduced from 1850 to 1835.</li>\n<li>Health regeneration reduced from 3.85 to 3.82.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Bio-Kill Switch [Q]</strong>\n<ul>\n<li>Healing reduced from 450 to 435.</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>Developer Comment:</strong> Stukov’s level 1 talents have seen an influx of strength over the last couple months, and everything has a cost.</blockquote>\n<h4>Tyrande</h4>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Lunar Blaze [E]</strong>\n<ul>\n<li>Maximum bonus increased from 100% to 150%.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Trueshot Aura [Active]</strong>\n<ul>\n<li>Allied Attack Damage bonus increased from 30% to 40%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Mark of Mending [D]</strong>\n<ul>\n<li>Range increased from 6 to 8.5.</li>\n<li>Changed Functionality: Now looks to heal allies near the attacked target, rather than near Tyrande.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Harsh Moonlight [W]</strong>\n<ul>\n<li>Duration reduced from 4 to 3 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Empower [W]</strong>\n<ul>\n<li>Damage decreased from 7% to 6% to targets maximum health.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Eyes of the Huntress [R1]</strong>\n<ul>\n<li>Healing bonus increased from 50% to 75%.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Celestial Wrath [R2]</strong>\n<ul>\n<li>Slow increased from 40% to 60%.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>Developer Comment:</strong> Ranger causing Sentinel to hit two Heroes has become the dominant style for playing Tyrande, so we’re reducing the power of Harsh Moonlight and Empower and raising up her weaker talents.</blockquote>\n<h4>Zarya</h4>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Together We Are Strong [E]</strong>\n<ul>\n<li>Changed Functionality: Talent effects now last 3 seconds, instead of for the duration of the Shield.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Deep Burn [Q]</strong>\n<ul>\n<li>Energy gains increased from 1 to 2.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>Developer Comment:</strong> The last round of Zarya changes didn’t blow her overall power out of proportion, so we’re touching up a few more underperforming talents.</blockquote>",
+   "heroes": [
+    {
+     "name": "Auriel",
+     "heroId": "Auriel",
+     "heroIds": [
+      "Auriel"
+     ],
+     "changes": [
+      {
+       "name": "Sacred Sweep",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Cast speed increased by 50%.",
+         "html": "Cast speed increased by 50%.",
+         "added": false
+        },
+        {
+         "text": "Cast finish time increased from 0 to .0625 seconds.",
+         "html": "Cast finish time increased from 0 to .0625 seconds.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Swift Sweep",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Removed.",
+         "html": "Removed.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Heavy Burden",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "Additional Functionality: Increase Detainment Strike’s Stun duration by .25 seconds.",
+         "html": "Additional Functionality: Increase Detainment Strike’s Stun duration by .25 seconds.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Will of Heaven",
+       "key": "D",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "Additional Functionality: Increase Auriel’s Basic Attack damage by 10%.",
+         "html": "Additional Functionality: Increase Auriel’s Basic Attack damage by 10%.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Wrath of Heaven",
+       "key": "D",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "Additional Functionality: Enemy Heroes hit by the center area of Sacred Sweep or the terrain collision of Detainment Strike have their Spell Armor reduced by 10 for 3 seconds.",
+         "html": "Additional Functionality: Enemy Heroes hit by the center area of Sacred Sweep or the terrain collision of Detainment Strike have their Spell Armor reduced by 10 for 3 seconds.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Sacred Sweep [Q]</strong>\n<ul>\n<li>Cast speed increased by 50%.</li>\n<li>Cast finish time increased from 0 to .0625 seconds.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Swift Sweep [Q]</strong>\n<ul>\n<li>Removed.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Heavy Burden [E]</strong>\n<ul>\n<li>Additional Functionality: Increase Detainment Strike’s Stun duration by .25 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Will of Heaven [D]</strong>\n<ul>\n<li>Additional Functionality: Increase Auriel’s Basic Attack damage by 10%.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Wrath of Heaven [D]</strong>\n<ul>\n<li>Additional Functionality: Enemy Heroes hit by the center area of Sacred Sweep or the terrain collision of Detainment Strike have their Spell Armor reduced by 10 for 3 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>Developer Comment:</strong> Auriel’s Q talents have fallen off in both popularity and win rates, so we’re baking in the Swift Sweep talent functionality to help the abilities’ overall efficacy. We’re also bumping up some other talents that aren’t performing well. Similar to Zarya, Auriel’s power dynamics can change dramatically with even small number tweaks, so we’re keeping these changes relatively light this time around.</blockquote>"
+    },
+    {
+     "name": "Brightwing",
+     "heroId": "FaerieDragon",
+     "heroIds": [
+      "FaerieDragon"
+     ],
+     "changes": [
+      {
+       "name": "Hyper Shift",
+       "key": "Z",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Maximum Health healing bonus decreased from 8% to 6%.",
+         "html": "Maximum Health healing bonus decreased from 8% to 6%.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Magic Spit",
+       "key": "Passive",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "Cooldown reduction reduced from 6 to 4 seconds.",
+         "html": "Cooldown reduction reduced from 6 to 4 seconds.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Invisible Friends",
+       "key": "R1",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "Duration reduced from infinite to 9 seconds.",
+         "html": "Duration reduced from infinite to 9 seconds.",
+         "added": false
+        },
+        {
+         "text": "Heal increased from 20 to 25.",
+         "html": "Heal increased from 20 to 25.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Hyper Shift [Z]</strong>\n<ul>\n<li>Maximum Health healing bonus decreased from 8% to 6%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Magic Spit [Passive]</strong>\n<ul>\n<li>Cooldown reduction reduced from 6 to 4 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Invisible Friends [R1]</strong>\n<ul>\n<li>Duration reduced from infinite to 9 seconds.</li>\n<li>Heal increased from 20 to 25.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>Developer Comment:</strong> Brightwing remains strong at all levels of play, and is also terrorizing her foes at higher levels. While this is a substantial nerf to Invisible Friends on paper, we feel Brightwing still has compelling reasons to take the talent.</blockquote>"
+    },
+    {
+     "name": "Dehaka",
+     "heroId": "Dehaka",
+     "heroIds": [
+      "Dehaka"
+     ],
+     "changes": [
+      {
+       "name": "Vitals",
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Health reduced from 2434 to 2385.",
+         "html": "Health reduced from 2434 to 2385.",
+         "added": false
+        },
+        {
+         "text": "Health regeneration reduced from 5.07 to 4.97.",
+         "html": "Health regeneration reduced from 5.07 to 4.97.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Basic Attack",
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Damage reduced from 100 to 95.",
+         "html": "Damage reduced from 100 to 95.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Lurker Strain",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "Burrow cooldown reduction reduced from 6 to 3 seconds.",
+         "html": "Burrow cooldown reduction reduced from 6 to 3 seconds.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Feeding Frenzy",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "Cooldown reduction reduced from 1.75 to 1.5 seconds.",
+         "html": "Cooldown reduction reduced from 1.75 to 1.5 seconds.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Vitals</strong>\n<ul>\n<li>Health reduced from 2434 to 2385.</li>\n<li>Health regeneration reduced from 5.07 to 4.97.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Basic Attack</strong>\n<ul>\n<li>Damage reduced from 100 to 95.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Lurker Strain [E]</strong>\n<ul>\n<li>Burrow cooldown reduction reduced from 6 to 3 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Feeding Frenzy [Q]</strong>\n<ul>\n<li>Cooldown reduction reduced from 1.75 to 1.5 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>Developer Comment:</strong> Dehaka has been collecting essence very successfully after his last update increased his attack speed, so we’re reining him in a smidge.</blockquote>"
+    },
+    {
+     "name": "Falstad",
+     "heroId": "Falstad",
+     "heroIds": [
+      "Falstad"
+     ],
+     "changes": [
+      {
+       "name": "Tailwind",
+       "key": "Trait",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Cooldown reduced from 6 to 5 seconds.",
+         "html": "Cooldown reduced from 6 to 5 seconds.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Dishonorable Discharge",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Lightning Rod damage bonus per stack increased from .75% to 1%, maximum bonus remains 75%.",
+         "html": "Lightning Rod damage bonus per stack increased from .75% to 1%, maximum bonus remains 75%.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Tailwind [Trait]</strong>\n<ul>\n<li>Cooldown reduced from 6 to 5 seconds.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Dishonorable Discharge [W]</strong>\n<ul>\n<li>Lightning Rod damage bonus per stack increased from .75% to 1%, maximum bonus remains 75%.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>Developer Comment:</strong> Falstad has landed quite well after his recent tuning, and we think a mild buff to Dishonorable Discharge causes all his talent builds to pass with flying colors.</blockquote>"
+    },
+    {
+     "name": "Imperius",
+     "heroId": "Imperius",
+     "heroIds": [
+      "Imperius"
+     ],
+     "changes": [
+      {
+       "name": "Celestial Charge",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Final damage increased from 70 to 80.",
+         "html": "Final damage increased from 70 to 80.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Blaze of Glory",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "Damage increased from 185 to 205.",
+         "html": "Damage increased from 185 to 205.",
+         "added": false
+        },
+        {
+         "text": "Changed Functionality: Blaze of Glory deals additional damage with Valorous Brand marks, but no longer consumes them.",
+         "html": "Changed Functionality: Blaze of Glory deals additional damage with Valorous Brand marks, but no longer consumes them.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Celestial Charge [Q]</strong>\n<ul>\n<li>Final damage increased from 70 to 80.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Blaze of Glory [W]</strong>\n<ul>\n<li>Damage increased from 185 to 205.</li>\n<li>Changed Functionality: Blaze of Glory deals additional damage with Valorous Brand marks, but no longer consumes them.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>Developer Comment:</strong> Celestial Charge needling enemies a bit more will help Imperius out, especially when taking Impaling Light. We’re happy with the gameplay of the Solarian’s Fire build, but we’d rather Imperius continue onward rather than go out in a Blaze of Glory.</blockquote>"
+    },
+    {
+     "name": "Jaina",
+     "heroId": "Jaina",
+     "heroIds": [
+      "Jaina"
+     ],
+     "changes": [
+      {
+       "name": "Improved Ice Block",
+       "key": "1",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Damage to unlock reduced from 15,000 to 12,000.",
+         "html": "Damage to unlock reduced from 15,000 to 12,000.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Winter’s Reach",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Additional Functionality: Increase the missile speed of Frostbolt by 30%.",
+         "html": "Additional Functionality: Increase the missile speed of Frostbolt by 30%.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Improved Ice Block [1]</strong>\n<ul>\n<li>Damage to unlock reduced from 15,000 to 12,000.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Winter’s Reach [Q]</strong>\n<ul>\n<li>Additional Functionality: Increase the missile speed of Frostbolt by 30%.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>Developer Comment:</strong> In games where Jaina’s team falls behind, we think it’s harder than it should be to unlock Improved Ice Block, especially when Jaina is focused on clearing enemy Minion waves. This should even that out, as well as provide a boon for Jaina players that blast away their opponents. Blizzard and Cone of Cold talents are competing nicely, so we thought we’d provide some quality of life to a Frostbolt talent.</blockquote>"
+    },
+    {
+     "name": "Johanna",
+     "heroId": "Crusader",
+     "heroIds": [
+      "Crusader"
+     ],
+     "changes": [
+      {
+       "name": "Iron Skin",
+       "key": "D",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Cooldown reduced from 25 to 22 seconds.",
+         "html": "Cooldown reduced from 25 to 22 seconds.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Divine Fortress",
+       "key": "Passive",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Physical Armor per Basic Attack increased from 8 to 10.",
+         "html": "Physical Armor per Basic Attack increased from 8 to 10.",
+         "added": false
+        },
+        {
+         "text": "Duration increased from 2.5 to 4 seconds.",
+         "html": "Duration increased from 2.5 to 4 seconds.",
+         "added": false
+        },
+        {
+         "text": "Changed Functionality: Basic Attacks against any target grants Physical Armor.",
+         "html": "Changed Functionality: Basic Attacks against any target grants Physical Armor.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Zealous Glare",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Additional Functionality: Shield Glare deals 125% additional damage.",
+         "html": "Additional Functionality: Shield Glare deals 125% additional damage.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Hold Your Ground",
+       "key": "D",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "Cooldown reduction reduced from 5 to 2 seconds.",
+         "html": "Cooldown reduction reduced from 5 to 2 seconds.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Sins Exposed",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "Duration increased from 2 to 3 seconds.",
+         "html": "Duration increased from 2 to 3 seconds.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Steed Charge",
+       "key": "Active",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "Bonus Iron Skin duration increased from 1 to 2 seconds.",
+         "html": "Bonus Iron Skin duration increased from 1 to 2 seconds.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Roar",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "Passive Punish damage bonus increased from 25% to 50%.",
+         "html": "Passive Punish damage bonus increased from 25% to 50%.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Heaven’s Fury",
+       "key": "R1",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "Damaged reduced from 75 to 68.",
+         "html": "Damaged reduced from 75 to 68.",
+         "added": false
+        },
+        {
+         "text": "Healing reduced from 75 to 68.",
+         "html": "Healing reduced from 75 to 68.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Iron Skin [D]</strong>\n<ul>\n<li>Cooldown reduced from 25 to 22 seconds.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Divine Fortress [Passive]</strong>\n<ul>\n<li>Physical Armor per Basic Attack increased from 8 to 10.</li>\n<li>Duration increased from 2.5 to 4 seconds.</li>\n<li>Changed Functionality: Basic Attacks against any target grants Physical Armor.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Zealous Glare [E]</strong>\n<ul>\n<li>Additional Functionality: Shield Glare deals 125% additional damage.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Hold Your Ground [D]</strong>\n<ul>\n<li>Cooldown reduction reduced from 5 to 2 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Sins Exposed [Q]</strong>\n<ul>\n<li>Duration increased from 2 to 3 seconds.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Steed Charge [Active]</strong>\n<ul>\n<li>Bonus Iron Skin duration increased from 1 to 2 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Roar [Q]</strong>\n<ul>\n<li>Passive Punish damage bonus increased from 25% to 50%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Heaven’s Fury [R1]</strong>\n<ul>\n<li>Damaged reduced from 75 to 68.</li>\n<li>Healing reduced from 75 to 68.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>Developer Comment:</strong> Competing against strong Shield Glare talents, Divine Fortress’ Physical Armor wasn’t super appealing. We hope this change provides a comparable option for dealing with Physical damage while feeling and playing differently. While we’re here, we continue to drag part of Hold Your Ground’s benefit baseline in our endless journey to make the tier more competitive. Other than that, we have mild buffs for weak talents, and a whisper of a nerf to Heaven’s Fury.</blockquote>"
+    },
+    {
+     "name": "Junkrat",
+     "heroId": "Junkrat",
+     "heroIds": [
+      "Junkrat"
+     ],
+     "changes": [
+      {
+       "name": "Big As",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "Moved to Level 13.",
+         "html": "Moved to Level 13.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Puckish Scamp",
+       "key": "R2",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "Additional Functionality: Reduce both Heroic cooldowns by 20 seconds.",
+         "html": "Additional Functionality: Reduce both Heroic cooldowns by 20 seconds.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Big As [E]</strong>\n<ul>\n<li>Moved to Level 13.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Puckish Scamp [R2]</strong>\n<ul>\n<li>Additional Functionality: Reduce both Heroic cooldowns by 20 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>Developer Comment:</strong> Junkrat has caused more than enough mayhem for now – we believe that Big As was making Steel Traps an issue too frequently when combined with Gotta Trap ‘Em All! We think the decision between traps that demand a Hero’s intervention versus many traps is still interesting, but we’ll be keeping an eye on him.</blockquote>"
+    },
+    {
+     "name": "Lunara",
+     "heroId": "Dryad",
+     "heroIds": [
+      "Dryad"
+     ],
+     "changes": [
+      {
+       "name": "Nature’s Toxin",
+       "key": "Trait",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Damage dealt reduced from 36 to 33.",
+         "html": "Damage dealt reduced from 36 to 33.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Choking Pollen",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "Damage bonus against enemies with 3 stacks of Nature's Toxin decreased from 200% to 175%.",
+         "html": "Damage bonus against enemies with 3 stacks of Nature's Toxin decreased from 200% to 175%.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Nature’s Toxin [Trait]</strong>\n<ul>\n<li>Damage dealt reduced from 36 to 33.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Choking Pollen [Q]</strong>\n<ul>\n<li>Damage bonus against enemies with 3 stacks of Nature's Toxin decreased from 200% to 175%.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>Developer Comment:</strong> Lunara has hopped a little higher than we expected, so we’re diluting her poison.</blockquote>"
+    },
+    {
+     "name": "Probius",
+     "heroId": "Probius",
+     "heroIds": [
+      "Probius"
+     ],
+     "changes": [
+      {
+       "name": "Warp Rift",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Duration reduced from 9 to 3 seconds.",
+         "html": "Duration reduced from 9 to 3 seconds.",
+         "added": false
+        },
+        {
+         "text": "Additional Functionality: Warp Rifts explode on expiration.",
+         "html": "Additional Functionality: Warp Rifts explode on expiration.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Photon Cannon",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Attack period reduced from 1 to 1.4.",
+         "html": "Attack period reduced from 1 to 1.4.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Additional Functionality",
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "No longer requires Pylons to be placed or be activated.",
+         "html": "No longer requires Pylons to be placed or be activated.",
+         "added": false
+        },
+        {
+         "text": "While in a Pylon's Power Field, gain 40% attack speed over 4 seconds and reveal nearby enemies.",
+         "html": "While in a Pylon's Power Field, gain 40% attack speed over 4 seconds and reveal nearby enemies.",
+         "added": false
+        },
+        {
+         "text": "Now prefers to acquire Heroic enemies.",
+         "html": "Now prefers to acquire Heroic enemies.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Echo Pulse",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Increased returning Disruption Pulse damage from 75% to 100%.",
+         "html": "Increased returning Disruption Pulse damage from 75% to 100%.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Gather Minerals",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Removed Functionality: Quest reward no longer reveals nearby enemies.",
+         "html": "Removed Functionality: Quest reward no longer reveals nearby enemies.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Particle Accelerator",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": []
+      },
+      {
+       "name": "New Functionality",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "After hitting 4 Heroes with Disruption Pulse, the next Warp Rift detonated by Disruption Pulse fires 4 pulses for 71 damage.",
+         "html": "After hitting 4 Heroes with Disruption Pulse, the next Warp Rift detonated by Disruption Pulse fires 4 pulses for 71 damage.",
+         "added": false
+        },
+        {
+         "text": "Reduce Disruption Pulse's cooldown by .5 seconds.",
+         "html": "Reduce Disruption Pulse's cooldown by .5 seconds.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Rift Shock",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "New Functionality: Exploding a Warp Rift within 1 second of its arming deals 90 damage over 3 seconds.",
+         "html": "New Functionality: Exploding a Warp Rift within 1 second of its arming deals 90 damage over 3 seconds.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Pylon Overcharge",
+       "key": "R1",
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "Duration reduced from 10 to 8 seconds.",
+         "html": "Duration reduced from 10 to 8 seconds.",
+         "added": false
+        },
+        {
+         "text": "Changed Functionality: Can only target enemy Heroes.",
+         "html": "Changed Functionality: Can only target enemy Heroes.",
+         "added": false
+        },
+        {
+         "text": "Additionality Functionality: Pylons are Invulnerable for the duration.",
+         "html": "Additionality Functionality: Pylons are Invulnerable for the duration.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Shoot 'Em Up",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": []
+      },
+      {
+       "name": "New Functionality",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "Disruption Pulse deals 2.5% of enemy Heroes maximum health as damage.",
+         "html": "Disruption Pulse deals 2.5% of enemy Heroes maximum health as damage.",
+         "added": false
+        },
+        {
+         "text": "Reduce Disruption Pulse's cooldown by .5 seconds.",
+         "html": "Reduce Disruption Pulse's cooldown by .5 seconds.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Warp Rift [W]</strong>\n<ul>\n<li>Duration reduced from 9 to 3 seconds.</li>\n<li>Additional Functionality: Warp Rifts explode on expiration.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Photon Cannon [E]</strong>\n<ul>\n<li>Attack period reduced from 1 to 1.4.</li>\n<li>Additional Functionality:\n\t\t<ul>\n<li>No longer requires Pylons to be placed or be activated.</li>\n<li>While in a Pylon's Power Field, gain 40% attack speed over 4 seconds and reveal nearby enemies.</li>\n<li>Now prefers to acquire Heroic enemies.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Echo Pulse [Q]</strong>\n<ul>\n<li>Increased returning Disruption Pulse damage from 75% to 100%.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Gather Minerals [E]</strong>\n<ul>\n<li>Removed Functionality: Quest reward no longer reveals nearby enemies.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Particle Accelerator [Q]</strong>\n<ul>\n<li>New Functionality:\n\t\t\t<ul>\n<li>After hitting 4 Heroes with Disruption Pulse, the next Warp Rift detonated by Disruption Pulse fires 4 pulses for 71 damage.</li>\n<li>Reduce Disruption Pulse's cooldown by .5 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Rift Shock [W]</strong>\n<ul>\n<li>New Functionality: Exploding a Warp Rift within 1 second of its arming deals 90 damage over 3 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Pylon Overcharge [R1]</strong>\n<ul>\n<li>Duration reduced from 10 to 8 seconds.</li>\n<li>Changed Functionality: Can only target enemy Heroes.</li>\n<li>Additionality Functionality: Pylons are Invulnerable for the duration.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Shoot 'Em Up [Q]</strong>\n<ul>\n<li>New Functionality:\n\t\t\t<ul>\n<li>Disruption Pulse deals 2.5% of enemy Heroes maximum health as damage.</li>\n<li>Reduce Disruption Pulse's cooldown by .5 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>Developer Comment:</strong> Probius has always had high requirements for successfully utilizing his abilities. The theme of this update is to turn those requirements into benefits, making Probius more approachable while still rewarding mastery. While the baseline changes to Warp Rift and Photon Cannon affect the identity of these abilities, we hope long time Probius players are still able to punish enemy Heroes that underestimate our favorite Probe.</blockquote>"
+    },
+    {
+     "name": "Raynor",
+     "heroId": "Raynor",
+     "heroIds": [
+      "Raynor"
+     ],
+     "changes": [
+      {
+       "name": "Ace In The Hole",
+       "key": "Passive",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Damage bonus increased from 10% to 12%.",
+         "html": "Damage bonus increased from 10% to 12%.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Heavy Slugs",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "Duration bonus increased from 1.5 to 2 seconds.",
+         "html": "Duration bonus increased from 1.5 to 2 seconds.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Cavalry's Arrived",
+       "key": "R1",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "Mark duration increased from 2.5 to 6 seconds.",
+         "html": "Mark duration increased from 2.5 to 6 seconds.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Dusk Wing",
+       "key": "R2",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "Armor reduction increased from 2.5 to 3.",
+         "html": "Armor reduction increased from 2.5 to 3.",
+         "added": false
+        },
+        {
+         "text": "Maximum Armor reduction increased from 25 to 30.",
+         "html": "Maximum Armor reduction increased from 25 to 30.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Ace In The Hole [Passive]</strong>\n<ul>\n<li>Damage bonus increased from 10% to 12%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Heavy Slugs [Q]</strong>\n<ul>\n<li>Duration bonus increased from 1.5 to 2 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Cavalry's Arrived [R1]</strong>\n<ul>\n<li>Mark duration increased from 2.5 to 6 seconds.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Dusk Wing [R2]</strong>\n<ul>\n<li>Armor reduction increased from 2.5 to 3.</li>\n<li>Maximum Armor reduction increased from 25 to 30.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>Developer Comment:</strong> Jimmy was never one to quit a fight.</blockquote>"
+    },
+    {
+     "name": "Stukov",
+     "heroId": "Stukov",
+     "heroIds": [
+      "Stukov"
+     ],
+     "changes": [
+      {
+       "name": "Vitals",
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Health reduced from 1850 to 1835.",
+         "html": "Health reduced from 1850 to 1835.",
+         "added": false
+        },
+        {
+         "text": "Health regeneration reduced from 3.85 to 3.82.",
+         "html": "Health regeneration reduced from 3.85 to 3.82.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Bio-Kill Switch",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Healing reduced from 450 to 435.",
+         "html": "Healing reduced from 450 to 435.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Vitals</strong>\n<ul>\n<li>Health reduced from 1850 to 1835.</li>\n<li>Health regeneration reduced from 3.85 to 3.82.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Bio-Kill Switch [Q]</strong>\n<ul>\n<li>Healing reduced from 450 to 435.</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>Developer Comment:</strong> Stukov’s level 1 talents have seen an influx of strength over the last couple months, and everything has a cost.</blockquote>"
+    },
+    {
+     "name": "Tyrande",
+     "heroId": "Tyrande",
+     "heroIds": [
+      "Tyrande"
+     ],
+     "changes": [
+      {
+       "name": "Lunar Blaze",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Maximum bonus increased from 100% to 150%.",
+         "html": "Maximum bonus increased from 100% to 150%.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Trueshot Aura",
+       "key": "Active",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Allied Attack Damage bonus increased from 30% to 40%.",
+         "html": "Allied Attack Damage bonus increased from 30% to 40%.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Mark of Mending",
+       "key": "D",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "Range increased from 6 to 8.5.",
+         "html": "Range increased from 6 to 8.5.",
+         "added": false
+        },
+        {
+         "text": "Changed Functionality: Now looks to heal allies near the attacked target, rather than near Tyrande.",
+         "html": "Changed Functionality: Now looks to heal allies near the attacked target, rather than near Tyrande.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Harsh Moonlight",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "Duration reduced from 4 to 3 seconds.",
+         "html": "Duration reduced from 4 to 3 seconds.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Empower",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "Damage decreased from 7% to 6% to targets maximum health.",
+         "html": "Damage decreased from 7% to 6% to targets maximum health.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Eyes of the Huntress",
+       "key": "R1",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "Healing bonus increased from 50% to 75%.",
+         "html": "Healing bonus increased from 50% to 75%.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Celestial Wrath",
+       "key": "R2",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "Slow increased from 40% to 60%.",
+         "html": "Slow increased from 40% to 60%.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Lunar Blaze [E]</strong>\n<ul>\n<li>Maximum bonus increased from 100% to 150%.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Trueshot Aura [Active]</strong>\n<ul>\n<li>Allied Attack Damage bonus increased from 30% to 40%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Mark of Mending [D]</strong>\n<ul>\n<li>Range increased from 6 to 8.5.</li>\n<li>Changed Functionality: Now looks to heal allies near the attacked target, rather than near Tyrande.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Harsh Moonlight [W]</strong>\n<ul>\n<li>Duration reduced from 4 to 3 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Empower [W]</strong>\n<ul>\n<li>Damage decreased from 7% to 6% to targets maximum health.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Eyes of the Huntress [R1]</strong>\n<ul>\n<li>Healing bonus increased from 50% to 75%.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Celestial Wrath [R2]</strong>\n<ul>\n<li>Slow increased from 40% to 60%.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>Developer Comment:</strong> Ranger causing Sentinel to hit two Heroes has become the dominant style for playing Tyrande, so we’re reducing the power of Harsh Moonlight and Empower and raising up her weaker talents.</blockquote>"
+    },
+    {
+     "name": "Zarya",
+     "heroId": "Zarya",
+     "heroIds": [
+      "Zarya"
+     ],
+     "changes": [
+      {
+       "name": "Together We Are Strong",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Changed Functionality: Talent effects now last 3 seconds, instead of for the duration of the Shield.",
+         "html": "Changed Functionality: Talent effects now last 3 seconds, instead of for the duration of the Shield.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Deep Burn",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "Energy gains increased from 1 to 2.",
+         "html": "Energy gains increased from 1 to 2.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Together We Are Strong [E]</strong>\n<ul>\n<li>Changed Functionality: Talent effects now last 3 seconds, instead of for the duration of the Shield.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Deep Burn [Q]</strong>\n<ul>\n<li>Energy gains increased from 1 to 2.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>Developer Comment:</strong> The last round of Zarya changes didn’t blow her overall power out of proportion, so we’re touching up a few more underperforming talents.</blockquote>"
+    }
+   ],
+   "nameKo": "영웅"
+  },
+  {
+   "name": "Bug Fixes",
+   "key": "bugs",
+   "html": "<p><span class=\"pn-h\"><strong>Heroes</strong></span></p>\n<ul>\n<li><strong class=\"pn-name\">General</strong>\n<ul>\n<li>Resolved issues when the attacker is Blinded or the enemy is Evading with:\n\t\t<ul>\n<li>Uther's Hammer of the Lightbringer</li>\n<li>Valeera's Slice and Dice and Rupture</li>\n<li>Varian's Heroic Strike</li>\n<li>Whitemane's Saintly Greatstaff and Scarlet Wrath</li>\n<li>Zeratul's Master Warp-Blade, Psionic Strength, Shadow Hunter, and Unwavering Pressure</li>\n<li>Zul'jin's Grievous Throw , Eye of Zul'jin, and Let the Killing Begin</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Lunara</strong>\n<ul>\n<li>Accelerated Contamination can no longer grant CDR from dead Heroes.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Valla</strong>\n<ul>\n<li>Corrected Death Dealer damage bonus.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Varian</strong>\n<ul>\n<li>Corrected Varian’s Physical Damage against Shielded Heroes with Shattering Throw and Twin Blades.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Whitemane</strong>\n<ul>\n<li>Radiance no longer reduces Whitemane’s Armor.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Xul</strong>\n<ul>\n<li>Corpse Explosion damage is now ignored by the Call for Help.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Yrel</strong>\n<ul>\n<li>Bubble Hearth's cast is now interrupted by Stuns.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Zagara</strong>\n<ul>\n<li>Devouring Maw now more consistently displays captured Heroes.</li>\n<li>Corrected Medusa Blades’ damage to Monsters.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Zeratul</strong>\n<ul>\n<li>Shroud of Adun now contributes to Zeratul’s Self-Healing scoreboard stat.</li>\n<li>Shadow Stride now contributes to Zeratul’s Self-Healing scoreboard stat.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Zul’jin</strong>\n<ul>\n<li>Amani Rage can now have its cooldown announced to your team.</li>\n<li>Ensnare can now have its cooldown announced to your team.</li>\n</ul>\n</li>\n</ul>\n<p><strong><a href=\"https://us.forums.blizzard.com/en/heroes/\" target=\"_blank\">Click here to discuss this post with other players in the official Heroes of the Storm forums</a>.</strong></p>\n<p><strong><img alt=\"\" class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/g6/G6G0N80EOC941426801305139.png\"/></strong></p>",
+   "items": [
+    {
+     "name": "Lunara",
+     "heroId": "Dryad",
+     "heroIds": [
+      "Dryad"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Lunara</strong>\n<ul>\n<li>Accelerated Contamination can no longer grant CDR from dead Heroes.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Accelerated Contamination can no longer grant CDR from dead Heroes.",
+         "html": "Accelerated Contamination can no longer grant CDR from dead Heroes.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Valla",
+     "heroId": "DemonHunter",
+     "heroIds": [
+      "DemonHunter"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Valla</strong>\n<ul>\n<li>Corrected Death Dealer damage bonus.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Corrected Death Dealer damage bonus.",
+         "html": "Corrected Death Dealer damage bonus.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Varian",
+     "heroId": "Varian",
+     "heroIds": [
+      "Varian"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Varian</strong>\n<ul>\n<li>Corrected Varian’s Physical Damage against Shielded Heroes with Shattering Throw and Twin Blades.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Corrected Varian’s Physical Damage against Shielded Heroes with Shattering Throw and Twin Blades.",
+         "html": "Corrected Varian’s Physical Damage against Shielded Heroes with Shattering Throw and Twin Blades.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Whitemane",
+     "heroId": "Whitemane",
+     "heroIds": [
+      "Whitemane"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Whitemane</strong>\n<ul>\n<li>Radiance no longer reduces Whitemane’s Armor.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Radiance no longer reduces Whitemane’s Armor.",
+         "html": "Radiance no longer reduces Whitemane’s Armor.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Xul",
+     "heroId": "Necromancer",
+     "heroIds": [
+      "Necromancer"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Xul</strong>\n<ul>\n<li>Corpse Explosion damage is now ignored by the Call for Help.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Corpse Explosion damage is now ignored by the Call for Help.",
+         "html": "Corpse Explosion damage is now ignored by the Call for Help.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Yrel",
+     "heroId": "Yrel",
+     "heroIds": [
+      "Yrel"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Yrel</strong>\n<ul>\n<li>Bubble Hearth's cast is now interrupted by Stuns.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Bubble Hearth's cast is now interrupted by Stuns.",
+         "html": "Bubble Hearth's cast is now interrupted by Stuns.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Zagara",
+     "heroId": "Zagara",
+     "heroIds": [
+      "Zagara"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Zagara</strong>\n<ul>\n<li>Devouring Maw now more consistently displays captured Heroes.</li>\n<li>Corrected Medusa Blades’ damage to Monsters.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Devouring Maw now more consistently displays captured Heroes.",
+         "html": "Devouring Maw now more consistently displays captured Heroes.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Corrected Medusa Blades’ damage to Monsters.",
+         "html": "Corrected Medusa Blades’ damage to Monsters.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Zeratul",
+     "heroId": "Zeratul",
+     "heroIds": [
+      "Zeratul"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Zeratul</strong>\n<ul>\n<li>Shroud of Adun now contributes to Zeratul’s Self-Healing scoreboard stat.</li>\n<li>Shadow Stride now contributes to Zeratul’s Self-Healing scoreboard stat.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Shroud of Adun now contributes to Zeratul’s Self-Healing scoreboard stat.",
+         "html": "Shroud of Adun now contributes to Zeratul’s Self-Healing scoreboard stat.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Shadow Stride now contributes to Zeratul’s Self-Healing scoreboard stat.",
+         "html": "Shadow Stride now contributes to Zeratul’s Self-Healing scoreboard stat.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Zul’jin",
+     "heroId": "Zuljin",
+     "heroIds": [
+      "Zuljin"
+     ],
+     "under": null,
+     "html": "<strong class=\"pn-name\">Zul’jin</strong>\n<ul>\n<li>Amani Rage can now have its cooldown announced to your team.</li>\n<li>Ensnare can now have its cooldown announced to your team.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Amani Rage can now have its cooldown announced to your team.",
+         "html": "Amani Rage can now have its cooldown announced to your team.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Ensnare can now have its cooldown announced to your team.",
+         "html": "Ensnare can now have its cooldown announced to your team.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "nameKo": "버그 수정"
+  }
+ ],
+ "heroes": [
+  "Auriel",
+  "Crusader",
+  "Dehaka",
+  "DemonHunter",
+  "Dryad",
+  "FaerieDragon",
+  "Falstad",
+  "Imperius",
+  "Jaina",
+  "Junkrat",
+  "Necromancer",
+  "Probius",
+  "Raynor",
+  "Stukov",
+  "Tyrande",
+  "Varian",
+  "Whitemane",
+  "Yrel",
+  "Zagara",
+  "Zarya",
+  "Zeratul",
+  "Zuljin"
+ ],
+ "battlegrounds": [],
+ "lang": "en",
+ "newsId": "23754896"
+}

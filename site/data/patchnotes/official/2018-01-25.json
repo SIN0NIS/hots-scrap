@@ -1,0 +1,741 @@
+{
+ "date": "2018-01-25",
+ "kind": "patch",
+ "title": "히어로즈 오브 더 스톰 패치 노트 – 2018년 1월 25일",
+ "source": "https://news.blizzard.com/ko-kr/article/21464985/2018-1-25",
+ "published": "2018-01-24T17:55:00Z",
+ "sections": [
+  {
+   "name": "머리말",
+   "key": "intro",
+   "html": "<p>히어로즈 오브 더 스톰의 새로운 패치가 적용되었습니다. 이 패치에서는 밸런스에 몇 가지 변화가 이루어졌고 버그가 수정되었습니다.</p>"
+  },
+  {
+   "name": "이동",
+   "key": "이동",
+   "html": "<figure class=\"pull-right\"></figure>\n<ul>\n<li></li>\n<li></li>\n</ul>"
+  },
+  {
+   "name": "영웅",
+   "key": "heroes",
+   "html": "<table class=\"table table-condensed\">\n<tbody>\n<tr>\n<th></th>\n<th></th>\n<th></th>\n<th></th>\n</tr>\n<tr>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n</tbody>\n</table>"
+  },
+  {
+   "name": "암살자",
+   "key": "role_assassin",
+   "html": "<h4>한조</h4>\n<p><img alt=\"Divider_Hero_Hanzo_crop.png\" data-id=\"21199660\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/XTR79I1I9ND91510181901566.png\"/></p>\n<p><strong class=\"pn-h\">능력치</strong></p>\n<ul>\n<li>일반 공격력이 176에서 173으로 감소했습니다.</li>\n</ul>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>폭풍활 (Q)</strong></span>\n<ul>\n<li>공격력이 297에서 291로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>갈래 화살 (W)</strong></span>\n<ul>\n<li>튕긴 화살의 공격력이 90에서 88로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>7레벨</strong></span>\n<ul>\n<li>날카로운 화살촉 (W)\n<ul>\n<li>방어력 감소량이 5(최대 25)에서 4(최대 20)로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>발리라</h4>\n<p><img alt=\"Divider_Hero_Valeera_crop.png\" data-id=\"20492315\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/m0/M06HDH3O9FMZ1484862675915.png\"/></p>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>매복 (Q)</strong></span>\n<ul>\n<li>방어력 감소 효과의 지속 시간이 4초에서 5초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>강한 체력 (지속 효과)\n<ul>\n<li>추가 기력 재생량이 2에서 2.5로 증가했습니다.</li>\n</ul>\n</li>\n<li>전투 준비 (지속 효과)\n<ul>\n<li>물리 방어력 증가량이 60에서 75로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>가혹한 일격 (Q)\n<ul>\n<li>사악한 일격의 기력 소모량 감소량이 10에서 15로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>7레벨</strong></span>\n<ul>\n<li>절단 (Q)\n<ul>\n<li>공격력 증가량이 100%에서 125%로 증가했습니다.</li>\n</ul>\n</li>\n<li>치명적인 기교 (W)\n<ul>\n<li>영웅 적중 시 증가하는 공격력이 3(최대 60)에서 4(최대 80)로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>13레벨</strong></span>\n<ul>\n<li>실명 (W)\n<ul>\n<li>실명 효과의 지속 시간 증가량이 2초에서 2.5초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>20레벨</strong></span>\n<ul>\n<li>아드레날린 촉진 (R)\n<ul>\n<li>기력 재생량 증가량이 초당 30에서 40으로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+   "heroes": [
+    {
+     "name": "한조",
+     "heroId": "Hanzo",
+     "heroIds": [
+      "Hanzo"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "일반 공격력이 176에서 173으로 감소했습니다.",
+         "html": "일반 공격력이 176에서 173으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "폭풍활",
+       "key": "Q",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "공격력이 297에서 291로 감소했습니다.",
+         "html": "공격력이 297에서 291로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "갈래 화살",
+       "key": "W",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "튕긴 화살의 공격력이 90에서 88로 감소했습니다.",
+         "html": "튕긴 화살의 공격력이 90에서 88로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "날카로운 화살촉",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "방어력 감소량이 5(최대 25)에서 4(최대 20)로 감소했습니다.",
+         "html": "방어력 감소량이 5(최대 25)에서 4(최대 20)로 감소했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_Hanzo_crop.png\" data-id=\"21199660\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/XTR79I1I9ND91510181901566.png\"/></p>\n<p><strong class=\"pn-h\">능력치</strong></p>\n<ul>\n<li>일반 공격력이 176에서 173으로 감소했습니다.</li>\n</ul>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>폭풍활 (Q)</strong></span>\n<ul>\n<li>공격력이 297에서 291로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>갈래 화살 (W)</strong></span>\n<ul>\n<li>튕긴 화살의 공격력이 90에서 88로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>7레벨</strong></span>\n<ul>\n<li>날카로운 화살촉 (W)\n<ul>\n<li>방어력 감소량이 5(최대 25)에서 4(최대 20)로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "발리라",
+     "heroId": "Valeera",
+     "heroIds": [
+      "Valeera"
+     ],
+     "changes": [
+      {
+       "name": "매복",
+       "key": "Q",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "방어력 감소 효과의 지속 시간이 4초에서 5초로 증가했습니다.",
+         "html": "방어력 감소 효과의 지속 시간이 4초에서 5초로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "강한 체력",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "추가 기력 재생량이 2에서 2.5로 증가했습니다.",
+         "html": "추가 기력 재생량이 2에서 2.5로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "전투 준비",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "물리 방어력 증가량이 60에서 75로 증가했습니다.",
+         "html": "물리 방어력 증가량이 60에서 75로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "가혹한 일격",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "사악한 일격의 기력 소모량 감소량이 10에서 15로 증가했습니다.",
+         "html": "사악한 일격의 기력 소모량 감소량이 10에서 15로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "절단",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "공격력 증가량이 100%에서 125%로 증가했습니다.",
+         "html": "공격력 증가량이 100%에서 125%로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "치명적인 기교",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "영웅 적중 시 증가하는 공격력이 3(최대 60)에서 4(최대 80)로 증가했습니다.",
+         "html": "영웅 적중 시 증가하는 공격력이 3(최대 60)에서 4(최대 80)로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "실명",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "실명 효과의 지속 시간 증가량이 2초에서 2.5초로 증가했습니다.",
+         "html": "실명 효과의 지속 시간 증가량이 2초에서 2.5초로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "아드레날린 촉진",
+       "key": "R",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "기력 재생량 증가량이 초당 30에서 40으로 증가했습니다.",
+         "html": "기력 재생량 증가량이 초당 30에서 40으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_Valeera_crop.png\" data-id=\"20492315\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/m0/M06HDH3O9FMZ1484862675915.png\"/></p>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>매복 (Q)</strong></span>\n<ul>\n<li>방어력 감소 효과의 지속 시간이 4초에서 5초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>강한 체력 (지속 효과)\n<ul>\n<li>추가 기력 재생량이 2에서 2.5로 증가했습니다.</li>\n</ul>\n</li>\n<li>전투 준비 (지속 효과)\n<ul>\n<li>물리 방어력 증가량이 60에서 75로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>가혹한 일격 (Q)\n<ul>\n<li>사악한 일격의 기력 소모량 감소량이 10에서 15로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>7레벨</strong></span>\n<ul>\n<li>절단 (Q)\n<ul>\n<li>공격력 증가량이 100%에서 125%로 증가했습니다.</li>\n</ul>\n</li>\n<li>치명적인 기교 (W)\n<ul>\n<li>영웅 적중 시 증가하는 공격력이 3(최대 60)에서 4(최대 80)로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>13레벨</strong></span>\n<ul>\n<li>실명 (W)\n<ul>\n<li>실명 효과의 지속 시간 증가량이 2초에서 2.5초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>20레벨</strong></span>\n<ul>\n<li>아드레날린 촉진 (R)\n<ul>\n<li>기력 재생량 증가량이 초당 30에서 40으로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    }
+   ]
+  },
+  {
+   "name": "전문가",
+   "key": "role_specialist",
+   "html": "<h4>해머 상사</h4>\n<p><img alt=\"Divider_Hero_SgtHammer_Crop.png\" data-id=\"17042299\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/3448NN16TK6K1417483335280.png\"/></p>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>재생성 생체강철 (D)\n<ul>\n<li>치유량이 공성 모드일 때 일반 공격으로 준 피해의 15%에서 10%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>7레벨</strong></span>\n<ul>\n<li>사거리 확대 (D)\n<ul>\n<li>일반 공격의 사거리 증가량이 중첩당 1.1에서 1로 감소하여 최대 3 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>실바나스</h4>\n<p><img alt=\"Divider_Heroes_Sylvanas_Cropped.png\" data-id=\"19828416\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/I6HR01N9WF0Y1439221492511.png\"/></p>\n<p><span class=\"pn-h\"><strong>능력치</strong></span></p>\n<ul>\n<li>기본 생명력이 1456에서 1425로 감소했습니다.</li>\n<li>생명력 재생량이 3.04에서 2.97로 감소했습니다.</li>\n</ul>\n<p><span class=\"pn-h\"><strong>기술</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>어둠의 비수 (W)</strong></span>\n<ul>\n<li><span class=\"pn-new\">재사용 대기시간이 10초에서 11초로 증가했습니다.</span></li>\n</ul>\n</li>\n</ul>\n<p><span class=\"pn-h\"><strong>특성</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>잃어버린 영혼 (W)\n<ul>\n<li>전이된 적 영웅 하나당 감소하는 재사용 대기시간이 1.25초에서 1초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>줄</h4>\n<p><img alt=\"Divider_Hero_Xul_crop.png\" data-id=\"20059439\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/9o/9OYJKO9K415A1457120431885.png\"/></p>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-new\"><strong>4레벨</strong></span>\n<ul>\n<li><span class=\"pn-new\">사신의 낫 (Q)</span>\n<ul>\n<li><span class=\"pn-new\">적중한 적의 수에 따라 감소하는 재사용 대기시간이 0.75초에서 1초로 증가했습니다.</span></li>\n</ul>\n</li>\n<li><span class=\"pn-new\">간수 (E)</span>\n<ul>\n<li><span class=\"pn-new\">추가 공격 속도 및 이동 속도가 50%에서 40%로 감소했습니다.</span></li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-new\"><strong>7레벨</strong></span>\n<ul>\n<li><span class=\"pn-new\">활력 수확 (W)</span>\n<ul>\n<li><span class=\"pn-new\">회복하는 생명력이 적 영웅에게 준 피해의 60%에서 70%로 증가했습니다.</span></li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<ul>\n</ul>",
+   "heroes": [
+    {
+     "name": "해머 상사",
+     "heroId": "SgtHammer",
+     "heroIds": [
+      "SgtHammer"
+     ],
+     "changes": [
+      {
+       "name": "재생성 생체강철",
+       "key": "D",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "치유량이 공성 모드일 때 일반 공격으로 준 피해의 15%에서 10%로 감소했습니다.",
+         "html": "치유량이 공성 모드일 때 일반 공격으로 준 피해의 15%에서 10%로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "사거리 확대",
+       "key": "D",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "일반 공격의 사거리 증가량이 중첩당 1.1에서 1로 감소하여 최대 3 증가합니다.",
+         "html": "일반 공격의 사거리 증가량이 중첩당 1.1에서 1로 감소하여 최대 3 증가합니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_SgtHammer_Crop.png\" data-id=\"17042299\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/3448NN16TK6K1417483335280.png\"/></p>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>재생성 생체강철 (D)\n<ul>\n<li>치유량이 공성 모드일 때 일반 공격으로 준 피해의 15%에서 10%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>7레벨</strong></span>\n<ul>\n<li>사거리 확대 (D)\n<ul>\n<li>일반 공격의 사거리 증가량이 중첩당 1.1에서 1로 감소하여 최대 3 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "실바나스",
+     "heroId": "Sylvanas",
+     "heroIds": [
+      "Sylvanas"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "기본 생명력이 1456에서 1425로 감소했습니다.",
+         "html": "기본 생명력이 1456에서 1425로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "생명력 재생량이 3.04에서 2.97로 감소했습니다.",
+         "html": "생명력 재생량이 3.04에서 2.97로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "어둠의 비수",
+       "key": "W",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 10초에서 11초로 증가했습니다.",
+         "html": "<span class=\"pn-new\">재사용 대기시간이 10초에서 11초로 증가했습니다.</span>",
+         "added": true
+        }
+       ]
+      },
+      {
+       "name": "잃어버린 영혼",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "전이된 적 영웅 하나당 감소하는 재사용 대기시간이 1.25초에서 1초로 감소했습니다.",
+         "html": "전이된 적 영웅 하나당 감소하는 재사용 대기시간이 1.25초에서 1초로 감소했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Heroes_Sylvanas_Cropped.png\" data-id=\"19828416\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/I6HR01N9WF0Y1439221492511.png\"/></p>\n<p><span class=\"pn-h\"><strong>능력치</strong></span></p>\n<ul>\n<li>기본 생명력이 1456에서 1425로 감소했습니다.</li>\n<li>생명력 재생량이 3.04에서 2.97로 감소했습니다.</li>\n</ul>\n<p><span class=\"pn-h\"><strong>기술</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>어둠의 비수 (W)</strong></span>\n<ul>\n<li><span class=\"pn-new\">재사용 대기시간이 10초에서 11초로 증가했습니다.</span></li>\n</ul>\n</li>\n</ul>\n<p><span class=\"pn-h\"><strong>특성</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>잃어버린 영혼 (W)\n<ul>\n<li>전이된 적 영웅 하나당 감소하는 재사용 대기시간이 1.25초에서 1초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "줄",
+     "heroId": "Necromancer",
+     "heroIds": [
+      "Necromancer"
+     ],
+     "changes": [
+      {
+       "name": "사신의 낫",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "적중한 적의 수에 따라 감소하는 재사용 대기시간이 0.75초에서 1초로 증가했습니다.",
+         "html": "<span class=\"pn-new\">적중한 적의 수에 따라 감소하는 재사용 대기시간이 0.75초에서 1초로 증가했습니다.</span>",
+         "added": true
+        }
+       ]
+      },
+      {
+       "name": "간수",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "추가 공격 속도 및 이동 속도가 50%에서 40%로 감소했습니다.",
+         "html": "<span class=\"pn-new\">추가 공격 속도 및 이동 속도가 50%에서 40%로 감소했습니다.</span>",
+         "added": true
+        }
+       ]
+      },
+      {
+       "name": "활력 수확",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "회복하는 생명력이 적 영웅에게 준 피해의 60%에서 70%로 증가했습니다.",
+         "html": "<span class=\"pn-new\">회복하는 생명력이 적 영웅에게 준 피해의 60%에서 70%로 증가했습니다.</span>",
+         "added": true
+        }
+       ]
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_Xul_crop.png\" data-id=\"20059439\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/9o/9OYJKO9K415A1457120431885.png\"/></p>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-new\"><strong>4레벨</strong></span>\n<ul>\n<li><span class=\"pn-new\">사신의 낫 (Q)</span>\n<ul>\n<li><span class=\"pn-new\">적중한 적의 수에 따라 감소하는 재사용 대기시간이 0.75초에서 1초로 증가했습니다.</span></li>\n</ul>\n</li>\n<li><span class=\"pn-new\">간수 (E)</span>\n<ul>\n<li><span class=\"pn-new\">추가 공격 속도 및 이동 속도가 50%에서 40%로 감소했습니다.</span></li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-new\"><strong>7레벨</strong></span>\n<ul>\n<li><span class=\"pn-new\">활력 수확 (W)</span>\n<ul>\n<li><span class=\"pn-new\">회복하는 생명력이 적 영웅에게 준 피해의 60%에서 70%로 증가했습니다.</span></li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<ul>\n</ul>"
+    }
+   ]
+  },
+  {
+   "name": "지원가",
+   "key": "role_support",
+   "html": "<h4>빛나래</h4>\n<p><img alt=\"Divider_Hero_Brightwing_Crop.png\" data-id=\"17042280\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/PI2CATL8H1IZ1417483333975.png\"/></p>\n<p><strong class=\"pn-h\">능력치</strong></p>\n<ul>\n<li>기본 생명력이 1395에서 1450으로 증가했습니다.</li>\n<li>생명력 재생량이 2.91에서 3.02로 증가했습니다.</li>\n</ul>\n<h4>티란데</h4>\n<p><img alt=\"Divider_Hero_Tyrande_Crop.png\" data-id=\"17042307\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/L326XNRFITE41417483335724.png\"/></p>\n<p><strong class=\"pn-h\">능력치</strong></p>\n<ul>\n<li>일반 공격력이 80에서 82로 증가했습니다.</li>\n</ul>",
+   "heroes": [
+    {
+     "name": "빛나래",
+     "heroId": "FaerieDragon",
+     "heroIds": [
+      "FaerieDragon"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "기본 생명력이 1395에서 1450으로 증가했습니다.",
+         "html": "기본 생명력이 1395에서 1450으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "생명력 재생량이 2.91에서 3.02로 증가했습니다.",
+         "html": "생명력 재생량이 2.91에서 3.02로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_Brightwing_Crop.png\" data-id=\"17042280\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/PI2CATL8H1IZ1417483333975.png\"/></p>\n<p><strong class=\"pn-h\">능력치</strong></p>\n<ul>\n<li>기본 생명력이 1395에서 1450으로 증가했습니다.</li>\n<li>생명력 재생량이 2.91에서 3.02로 증가했습니다.</li>\n</ul>"
+    },
+    {
+     "name": "티란데",
+     "heroId": "Tyrande",
+     "heroIds": [
+      "Tyrande"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "일반 공격력이 80에서 82로 증가했습니다.",
+         "html": "일반 공격력이 80에서 82로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_Tyrande_Crop.png\" data-id=\"17042307\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/L326XNRFITE41417483335724.png\"/></p>\n<p><strong class=\"pn-h\">능력치</strong></p>\n<ul>\n<li>일반 공격력이 80에서 82로 증가했습니다.</li>\n</ul>"
+    }
+   ]
+  },
+  {
+   "name": "전사",
+   "key": "role_tank",
+   "html": "<h4>블레이즈</h4>\n<p><img alt=\"Divider_Hero_Blaze.png\" data-id=\"21368492\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/6CD8XHJELKVR1513881172085.png\"/></p>\n<p><span class=\"pn-h\"><strong>기술</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>벙커 투하 (R)</strong></span>\n<ul>\n<li>생명력이 1305에서 1435로 증가했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>연소 (R)</strong></span>\n<ul>\n<li>이제 연소를 시전한 후에 0.5초 동안은 연소를 취소할 수 없습니다. (이는 연소 시전한 후에 실수로 취소하는 일을 방지하기 위함입니다.)</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>불장난 (Q)\n<ul>\n<li>재사용 대기시간 감소량이 1.5초에서 2초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>7레벨</strong></span>\n<ul>\n<li>화염증폭기 (지속 효과)\n<ul>\n<li>추가 공격력이 50%에서 70%로 증가했습니다.</li>\n</ul>\n</li>\n<li>화염 포화 (Q)\n<ul>\n<li>공격력이 132에서 139로 증가했습니다.</li>\n</ul>\n</li>\n<li>노릇노릇하게 (W)\n<ul>\n<li>추가 피해량이 25%에서 20%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>13레벨</strong></span>\n<ul>\n<li>제압 방사 (Q)\n<ul>\n<li>기술 위력 감소량이 중첩당 15%에서 20%로 증가했습니다.</li>\n</ul>\n</li>\n<li>나노기계 점막 (W)\n<ul>\n<li><span class=\"pn-new\">공격 속도 감소 효과가 이제 점화된 기름에도 적용됩니다.</span></li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>16레벨</strong></span>\n<ul>\n<li>철인 장갑 (사용 효과)\n<ul>\n<li>보호막 획득량이 감소시킨 기술 피해의 100%에서 125%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<ul>\n</ul>\n<h4>소냐</h4>\n<p><img alt=\"Divider_Hero_Sonya.png\" data-id=\"20783186\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/kt/KTJ5G6MTBWXD1494449265980.png\"/></p>\n<p><font color=\"#9900ff\"><b>능력치</b></font></p>\n<ul>\n<li>일반 공격력이 88에서 84로 감소했습니다.</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>7레벨</strong></span>\n<ul>\n<li>독 작살 (Q)\n<ul>\n<li>추가 피해량이 125%에서 100%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>16레벨</strong></span>\n<ul>\n<li>강철 신경 (사용 효과)\n<ul>\n<li>지속 시간이 5초에서 3초로 감소했습니다.</li>\n<li>보호막 획득량이 최대 생명력의 30%에서 25%로 감소했습니다.</li>\n<li>재사용 대기시간이 70초에서 60초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+   "heroes": [
+    {
+     "name": "블레이즈",
+     "heroId": "Firebat",
+     "heroIds": [
+      "Firebat"
+     ],
+     "changes": [
+      {
+       "name": "벙커 투하",
+       "key": "R",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "생명력이 1305에서 1435로 증가했습니다.",
+         "html": "생명력이 1305에서 1435로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "연소",
+       "key": "R",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "이제 연소를 시전한 후에 0.5초 동안은 연소를 취소할 수 없습니다. (이는 연소 시전한 후에 실수로 취소하는 일을 방지하기 위함입니다.)",
+         "html": "이제 연소를 시전한 후에 0.5초 동안은 연소를 취소할 수 없습니다. (이는 연소 시전한 후에 실수로 취소하는 일을 방지하기 위함입니다.)",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "불장난",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "재사용 대기시간 감소량이 1.5초에서 2초로 증가했습니다.",
+         "html": "재사용 대기시간 감소량이 1.5초에서 2초로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "화염증폭기",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "추가 공격력이 50%에서 70%로 증가했습니다.",
+         "html": "추가 공격력이 50%에서 70%로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "화염 포화",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "공격력이 132에서 139로 증가했습니다.",
+         "html": "공격력이 132에서 139로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "노릇노릇하게",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "추가 피해량이 25%에서 20%로 감소했습니다.",
+         "html": "추가 피해량이 25%에서 20%로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "제압 방사",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "기술 위력 감소량이 중첩당 15%에서 20%로 증가했습니다.",
+         "html": "기술 위력 감소량이 중첩당 15%에서 20%로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "나노기계 점막",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "공격 속도 감소 효과가 이제 점화된 기름에도 적용됩니다.",
+         "html": "<span class=\"pn-new\">공격 속도 감소 효과가 이제 점화된 기름에도 적용됩니다.</span>",
+         "added": true
+        }
+       ]
+      },
+      {
+       "name": "철인 장갑",
+       "key": "사용 효과",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "보호막 획득량이 감소시킨 기술 피해의 100%에서 125%로 증가했습니다.",
+         "html": "보호막 획득량이 감소시킨 기술 피해의 100%에서 125%로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_Blaze.png\" data-id=\"21368492\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/6CD8XHJELKVR1513881172085.png\"/></p>\n<p><span class=\"pn-h\"><strong>기술</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>벙커 투하 (R)</strong></span>\n<ul>\n<li>생명력이 1305에서 1435로 증가했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>연소 (R)</strong></span>\n<ul>\n<li>이제 연소를 시전한 후에 0.5초 동안은 연소를 취소할 수 없습니다. (이는 연소 시전한 후에 실수로 취소하는 일을 방지하기 위함입니다.)</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>불장난 (Q)\n<ul>\n<li>재사용 대기시간 감소량이 1.5초에서 2초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>7레벨</strong></span>\n<ul>\n<li>화염증폭기 (지속 효과)\n<ul>\n<li>추가 공격력이 50%에서 70%로 증가했습니다.</li>\n</ul>\n</li>\n<li>화염 포화 (Q)\n<ul>\n<li>공격력이 132에서 139로 증가했습니다.</li>\n</ul>\n</li>\n<li>노릇노릇하게 (W)\n<ul>\n<li>추가 피해량이 25%에서 20%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>13레벨</strong></span>\n<ul>\n<li>제압 방사 (Q)\n<ul>\n<li>기술 위력 감소량이 중첩당 15%에서 20%로 증가했습니다.</li>\n</ul>\n</li>\n<li>나노기계 점막 (W)\n<ul>\n<li><span class=\"pn-new\">공격 속도 감소 효과가 이제 점화된 기름에도 적용됩니다.</span></li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>16레벨</strong></span>\n<ul>\n<li>철인 장갑 (사용 효과)\n<ul>\n<li>보호막 획득량이 감소시킨 기술 피해의 100%에서 125%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<ul>\n</ul>"
+    },
+    {
+     "name": "소냐",
+     "heroId": "Barbarian",
+     "heroIds": [
+      "Barbarian"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "일반 공격력이 88에서 84로 감소했습니다.",
+         "html": "일반 공격력이 88에서 84로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "독 작살",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "추가 피해량이 125%에서 100%로 감소했습니다.",
+         "html": "추가 피해량이 125%에서 100%로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "강철 신경",
+       "key": "사용 효과",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "지속 시간이 5초에서 3초로 감소했습니다.",
+         "html": "지속 시간이 5초에서 3초로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "보호막 획득량이 최대 생명력의 30%에서 25%로 감소했습니다.",
+         "html": "보호막 획득량이 최대 생명력의 30%에서 25%로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "재사용 대기시간이 70초에서 60초로 감소했습니다.",
+         "html": "재사용 대기시간이 70초에서 60초로 감소했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_Sonya.png\" data-id=\"20783186\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/kt/KTJ5G6MTBWXD1494449265980.png\"/></p>\n<p><font color=\"#9900ff\"><b>능력치</b></font></p>\n<ul>\n<li>일반 공격력이 88에서 84로 감소했습니다.</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>7레벨</strong></span>\n<ul>\n<li>독 작살 (Q)\n<ul>\n<li>추가 피해량이 125%에서 100%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>16레벨</strong></span>\n<ul>\n<li>강철 신경 (사용 효과)\n<ul>\n<li>지속 시간이 5초에서 3초로 감소했습니다.</li>\n<li>보호막 획득량이 최대 생명력의 30%에서 25%로 감소했습니다.</li>\n<li>재사용 대기시간이 70초에서 60초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    }
+   ]
+  },
+  {
+   "name": "버그 수정",
+   "key": "bugs",
+   "html": "<p><span class=\"pn-h\"><strong>일반</strong></span></p>\n<ul>\n<li>게임의 여러 부분에 걸쳐 오타와 설명 오류가 수정되었습니다.</li>\n<li><strong>한국어 클라이언트</strong>: 로딩 화면의 로고가 한국어 로고로 변경되었습니다.</li>\n</ul>\n<p><strong class=\"pn-h\">영웅, 기술, 특성</strong></p>\n<ul>\n<li><strong>블레이즈:</strong> 접착성 석유 특성을 선택하면 적 영웅들이 점화된 기름의 이동 속도 감소 효과를 받지 않을 수 있던 문제를 수정했습니다.</li>\n<li><strong>블레이즈:</strong> 전투 자극제와 방화광의 대사가 양팀 모두에게 들릴 수 있던 문제를 수정했습니다.</li>\n<li><strong>티리엘:</strong> 불타는 광륜 특성의 피해로 열렬한 재생이 중첩되지 않던 문제를 수정했습니다.</li>\n</ul>\n<p><img alt=\"\" class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/g6/G6G0N80EOC941426801305139.png\"/></p>\n<p><img alt=\"InvisibleDividerLine_800x50.png\" class=\"no-border; no-shadow\" data-id=\"14509591\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/6VA2831Q81IU1403137406234.png\"/></p>\n<style type=\"text/css\">.article-container img { display: block; }\n.article-container p { display:inline; }\n</style>",
+   "items": [
+    {
+     "name": "블레이즈",
+     "heroId": "Firebat",
+     "heroIds": [
+      "Firebat"
+     ],
+     "under": null,
+     "html": "<strong>블레이즈:</strong> 접착성 석유 특성을 선택하면 적 영웅들이 점화된 기름의 이동 속도 감소 효과를 받지 않을 수 있던 문제를 수정했습니다.<strong>블레이즈:</strong> 전투 자극제와 방화광의 대사가 양팀 모두에게 들릴 수 있던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "블레이즈: 접착성 석유 특성을 선택하면 적 영웅들이 점화된 기름의 이동 속도 감소 효과를 받지 않을 수 있던 문제를 수정했습니다.",
+         "html": "<strong>블레이즈:</strong> 접착성 석유 특성을 선택하면 적 영웅들이 점화된 기름의 이동 속도 감소 효과를 받지 않을 수 있던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "블레이즈: 전투 자극제와 방화광의 대사가 양팀 모두에게 들릴 수 있던 문제를 수정했습니다.",
+         "html": "<strong>블레이즈:</strong> 전투 자극제와 방화광의 대사가 양팀 모두에게 들릴 수 있던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "티리엘",
+     "heroId": "Tyrael",
+     "heroIds": [
+      "Tyrael"
+     ],
+     "under": null,
+     "html": "<strong>티리엘:</strong> 불타는 광륜 특성의 피해로 열렬한 재생이 중첩되지 않던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "티리엘: 불타는 광륜 특성의 피해로 열렬한 재생이 중첩되지 않던 문제를 수정했습니다.",
+         "html": "<strong>티리엘:</strong> 불타는 광륜 특성의 피해로 열렬한 재생이 중첩되지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "heroes": [
+  "Barbarian",
+  "FaerieDragon",
+  "Firebat",
+  "Hanzo",
+  "Necromancer",
+  "SgtHammer",
+  "Sylvanas",
+  "Tyrael",
+  "Tyrande",
+  "Valeera"
+ ],
+ "battlegrounds": [],
+ "newsId": "21464985"
+}

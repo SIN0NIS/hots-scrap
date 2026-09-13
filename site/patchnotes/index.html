@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>패치 기록 · HotS Scrap</title>
+<link rel="icon" type="image/svg+xml" href="../shared/favicon.svg">
+<link rel="stylesheet" href="../shared/scrap.css">
+<style>
+  /* scrap-theme: 공통 토큰(--scrap-*) 위에 이 앱만의 값 — 허브(index.html)와 같은 팔레트·폭·카드 양식 */
+  :root { --bg:var(--scrap-bg); --card:var(--scrap-card); --card2:var(--scrap-card2); --line:var(--scrap-line); --fg:var(--scrap-fg);
+          --dim:var(--scrap-dim); --blue:var(--scrap-blue); --blue-soft:var(--scrap-blue-soft); --gold:var(--scrap-gold); --gold-line:var(--scrap-gold-line);
+          --bg-glow:radial-gradient(1200px 500px at 50% -10%, #dbe7f7 0%, transparent 60%);
+          --new:#c2410c; --del:#b91c1c; --del-bg:#fee2e2; --ins:#15803d; --ins-bg:#dcfce7; --purple:#6d28d9; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg-glow:radial-gradient(1200px 500px at 50% -10%, #14294a 0%, transparent 60%); --new:#ffb070; --del:#ff9b9b; --del-bg:#4a1d1d; --ins:#8ee0a4; --ins-bg:#143d22; --purple:#c4a5ff; } }
+  :root[data-theme="dark"] { --bg-glow:radial-gradient(1200px 500px at 50% -10%, #14294a 0%, transparent 60%); --new:#ffb070; --del:#ff9b9b; --del-bg:#4a1d1d; --ins:#8ee0a4; --ins-bg:#143d22; --purple:#c4a5ff; }
+
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); background-image:var(--bg-glow); background-repeat:no-repeat; color:var(--fg);
+         font-family:"Malgun Gothic","맑은 고딕","Apple SD Gothic Neo","Noto Sans KR","Segoe UI",system-ui,-apple-system,sans-serif;
+         font-size:14px; line-height:1.55; min-height:100vh; }
+  /* 화살표·기호만 기호 글꼴로 (숫자·한글 서체는 그대로 두려고 범위를 좁힌다) */
+  @font-face { font-family:PnSym; src:local("Segoe UI Symbol"),local("Apple Symbols"),local("Noto Sans Symbols 2");
+               unicode-range:U+2190-21FF,U+2200-22FF,U+2500-259F,U+25A0-25FF,U+2600-26FF,U+2B00-2BFF; }
+  body { font-family:PnSym,"Malgun Gothic","맑은 고딕","Apple SD Gothic Neo","Noto Sans KR","Segoe UI",system-ui,-apple-system,sans-serif; }
+  h1 .en { font-size:13px; color:var(--dim); font-weight:400; letter-spacing:0; margin-left:10px; }
+  a { color:var(--blue); }
+  .wrap { max-width:880px; margin:0 auto; padding:28px 20px 60px; }
+  .head { display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:4px; }
+  h1 { margin:0; font-size:28px; letter-spacing:0.5px; } h1 .s { color:var(--gold); }
+  .sub { color:var(--dim); font-size:13px; margin:2px 0 14px; }
+  .nav { display:flex; gap:6px; margin:0 0 14px; flex-wrap:wrap; position:sticky; top:0; z-index:50; background:var(--bg); padding:8px 0; border-bottom:1px solid var(--line); }
+  #pn-back { position:fixed; left:12px; bottom:12px; z-index:99; text-decoration:none; font-size:13px; border-radius:99px; padding:9px 14px; background:var(--card); color:var(--fg); border:1px solid var(--line); box-shadow:0 2px 8px rgba(0,0,0,.25); }
+  body { padding-bottom:64px; }  /* 고정 버튼이 마지막 내용을 가리지 않게 */
+  @media (max-width:600px) { #pn-back { left:8px; bottom:8px; padding:7px 12px; font-size:12px; opacity:.95; } }
+  #pn-back:hover { border-color:var(--gold-line); color:var(--gold); }
+  /* 특성 변천도 */
+  .chart-wrap { overflow:auto; max-height:70vh; border:1px solid var(--line); border-radius:12px; background:var(--card); margin:0 0 6px; }
+  table.chart { border-collapse:separate; border-spacing:0; font-size:12px; }
+  .chart th, .chart td { border-bottom:1px solid var(--line); padding:3px 6px; white-space:nowrap; }
+  .chart thead th { position:sticky; top:0; background:var(--card2); z-index:2; }
+  .chart th.rowh { position:sticky; left:0; background:var(--card); z-index:1; text-align:left; font-weight:400; min-width:180px; max-width:240px; overflow:hidden; text-overflow:ellipsis; }
+  .chart thead th.rowh { z-index:3; background:var(--card2); }
+  .chart th.col { font-weight:400; color:var(--dim); font-size:11px; padding:6px 3px; }
+  .chart th.col span { display:inline-block; writing-mode:vertical-rl; transform:rotate(180deg); }
+  .chart th.col.ptr span { color:#8b5cf6; }
+  .chart td.c { text-align:center; min-width:28px; }
+  .chart .m { display:inline-block; width:20px; height:20px; line-height:20px; border-radius:4px; font-size:12px; font-weight:700; cursor:pointer; }
+  .m.add { background:var(--ins-bg); color:var(--ins); } .m.rm { background:var(--del-bg); color:var(--del); } .m.chg { background:var(--blue-soft); color:var(--blue); } .m.mv { background:rgba(139,92,246,.18); color:var(--purple); }
+  .chart tr.grp th { background:var(--card2); color:var(--gold); font-weight:700; position:sticky; left:0; }
+  .chart .rowh img { width:18px; height:18px; vertical-align:middle; margin-right:5px; border-radius:3px; background:var(--card2); }
+  .chart .rowh .lv { color:var(--dim); font-size:10px; margin-left:4px; }
+  .chart .rowh.gone { color:var(--dim); text-decoration:line-through; }
+  .legend { display:flex; gap:12px; font-size:12px; color:var(--dim); margin:0 0 16px; flex-wrap:wrap; align-items:center; }
+  /* 수치 그래프 */
+  .gsec { margin:6px 0 22px; }
+  .gcard { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:10px 14px; margin:0 0 10px; }
+  .gcard .gh { display:flex; align-items:center; gap:8px; flex-wrap:wrap; font-weight:700; }
+  .gcard .gh img { width:26px; height:26px; border-radius:5px; background:var(--card2); }
+  .gcard .gh .lv { font-size:11px; color:var(--dim); border:1px solid var(--line); border-radius:6px; padding:0 5px; font-weight:400; }
+  .gseg { margin:8px 0 2px; }
+  .gseg .sh { font-size:13px; color:var(--gold); font-weight:700; }
+  .gseg .sh .rng { color:var(--dim); font-weight:400; font-size:12px; margin-left:6px; }
+  .gseg details { font-size:12px; color:var(--dim); margin:2px 0 4px; } .gseg summary { cursor:pointer; }
+  .gseg details div { white-space:pre-wrap; color:var(--fg); margin-top:4px; }
+  .gline { display:grid; grid-template-columns:150px minmax(0,1fr); gap:8px; align-items:center; padding:6px 0; border-top:1px dashed var(--line); }
+  .gline .gl { font-size:12px; color:var(--dim); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .gline .gl b { display:block; color:var(--fg); font-weight:700; font-size:13px; }
+  .gline .gwrap { width:100%; overflow:hidden; }
+  .gline svg { display:block; max-width:100%; }
+  .gline .ln { fill:none; stroke:var(--blue); stroke-width:2; stroke-linejoin:round; }
+  .gline .ln.seg { stroke:var(--gold); }
+  .gline .dot { fill:var(--card); stroke:var(--blue); stroke-width:1.5; } .gline .dot.chg { fill:var(--blue); }
+  .gline .ln.seg + g .dot, .gline .seg .dot { stroke:var(--gold); } .gline .seg .dot.chg { fill:var(--gold); }
+  .gline .dot.chg.up, .gline .seg .dot.chg.up { fill:var(--upc); stroke:var(--upc); } .gline .dot.chg.dn, .gline .seg .dot.chg.dn { fill:var(--dnc); stroke:var(--dnc); }
+  .gline .ax { stroke:var(--line); stroke-width:1; } .gline .grid { stroke:var(--line); stroke-width:1; stroke-dasharray:2 3; opacity:.7; }
+  .gline .tk { font-size:10px; fill:var(--dim); } .gline .ty { font-size:10px; fill:var(--dim); }
+  .gline .vl { font-size:10px; fill:var(--fg); font-weight:700; paint-order:stroke; stroke:var(--card); stroke-width:3px; stroke-linejoin:round; }
+  .gsec { --upc:#2f81f7; --dnc:#e5484d; }          /* 기본: 상승 파랑, 하락 빨강 */
+  .gsec.kr { --upc:#e5484d; --dnc:#2f81f7; }       /* 주식식: 상승 빨강, 하락 파랑 */
+  .gsec.us { --upc:#16a34a; --dnc:#dc2626; }       /* 서양식: 상승 초록, 하락 빨강 */
+  :root[data-theme="dark"] .gsec { --upc:#5aa8ff; --dnc:#ff6b6b; } :root[data-theme="dark"] .gsec.kr { --upc:#ff6b6b; --dnc:#5aa8ff; } :root[data-theme="dark"] .gsec.us { --upc:#4ade80; --dnc:#ff6b6b; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .gsec { --upc:#5aa8ff; --dnc:#ff6b6b; } :root:not([data-theme="light"]) .gsec.kr { --upc:#ff6b6b; --dnc:#5aa8ff; } :root:not([data-theme="light"]) .gsec.us { --upc:#4ade80; --dnc:#ff6b6b; } }
+  .gline .ln.up { stroke:var(--upc); } .gline .ln.dn { stroke:var(--dnc); } .gline .ln.flat { stroke:var(--dim); opacity:.75; }
+  .gline .up { fill:var(--upc); } .gline .dn { fill:var(--dnc); }
+  .gline .jump { stroke-width:3; stroke-linecap:round; } .gline .jump.up { stroke:var(--upc); } .gline .jump.dn { stroke:var(--dnc); }
+  .gline .zero { stroke:var(--dim); stroke-width:1; stroke-dasharray:4 3; }
+  .gl .up { color:var(--upc); font-weight:700; } .gl .dn { color:var(--dnc); font-weight:700; }
+  .gline .gl .sum { white-space:normal; line-height:1.4; }
+  .gline .tk.rot { text-anchor:end; }
+  .gline .tk.cur { font-weight:700; fill:var(--gold); }
+  .chglist { grid-column:1 / -1; list-style:none; margin:2px 0 0; padding:0; font-size:12px; display:flex; flex-wrap:wrap; gap:4px 14px; color:var(--dim); }
+  .chglist li { display:inline-flex; gap:6px; align-items:baseline; white-space:nowrap; }
+  .chglist .d { color:var(--fg); font-variant-numeric:tabular-nums; } .chglist .v { font-size:11px; opacity:.8; }
+  .chglist .ar { color:var(--fg); }
+  .chglist li.more { cursor:pointer; text-decoration:underline dotted; }
+  .gline .hit { fill:transparent; }
+  .gline .hit:hover { fill:var(--blue-soft); opacity:.5; }
+  .gctl { display:flex; flex-wrap:wrap; gap:6px 14px; align-items:center; font-size:12px; color:var(--dim); background:var(--card2); border:1px solid var(--line); border-radius:10px; padding:8px 12px; margin:6px 0 10px; }
+  .gctl label { display:inline-flex; align-items:center; gap:4px; }
+  .gctl select, .gctl input[type=range] { font-family:inherit; font-size:12px; color:var(--fg); background:var(--card); border:1px solid var(--line); border-radius:6px; padding:2px 6px; }
+  .gctl input[type=range] { padding:0; width:110px; }
+  .gctl .seg-btns button { padding:3px 9px; font-size:12px; }
+  .gctl .rng-lbl { min-width:118px; color:var(--fg); }
+  .gnone { font-size:12px; color:var(--dim); margin:4px 0 14px; }
+  .gcat { margin:22px 0 8px; padding:6px 0 0; border-top:2px solid var(--gold-line); display:flex; align-items:baseline; gap:8px; flex-wrap:wrap; }
+  .gcat h4 { margin:0; font-size:15px; color:var(--gold); }
+  .gcat .c { font-size:12px; color:var(--dim); }
+  .tsum { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:12px 14px; margin:10px 0 16px; }
+  .tsum h4 { margin:0 0 8px; font-size:14px; }
+  .tsum .row { display:grid; grid-template-columns:104px 1fr; gap:6px 10px; padding:5px 0; border-top:1px dashed var(--line); font-size:13px; }
+  .tsum .row:first-of-type { border-top:none; }
+  .tsum .k { color:var(--dim); font-size:12px; }
+  .tsum .v { display:flex; flex-wrap:wrap; gap:4px 8px; }
+  .tsum .t { display:inline-flex; align-items:center; gap:4px; background:var(--card2); border:1px solid var(--line); border-radius:99px; padding:2px 9px; font-size:12px; }
+  .tsum .t img { width:16px; height:16px; border-radius:3px; }
+  .tsum .t .d { color:var(--dim); font-size:11px; }
+  .tsum .t.add { border-color:var(--ins); } .tsum .t.rm { border-color:var(--del); } .tsum .t.mv { border-color:var(--purple); }
+  .tsum .none { color:var(--dim); font-size:12px; }
+  @media (max-width:600px) { .tsum .row { grid-template-columns:1fr; } }
+  .gnone span { display:inline-block; margin:2px 6px 2px 0; }
+  @media (max-width:600px) { .gline { grid-template-columns:1fr; gap:2px; } }
+  .legend .m { cursor:default; }
+  .hist .ent:target .box { border-color:var(--gold-line); box-shadow:0 0 0 2px var(--gold-line); }
+  .hist .ent { scroll-margin-top:70px; }
+  .nav a { text-decoration:none; color:var(--dim); border:1px solid var(--line); background:var(--card); border-radius:99px; padding:6px 16px; font-size:13px; }
+  .nav a.on { color:var(--gold); border-color:var(--gold-line); font-weight:700; }
+  .nav a:hover { border-color:var(--gold-line); color:var(--gold); }
+  button, .btn { font-family:inherit; font-size:13px; cursor:pointer; border:1px solid var(--line); background:var(--card); color:var(--fg); border-radius:99px; padding:5px 12px; }
+  button:hover, .btn:hover { border-color:var(--gold-line); color:var(--gold); }
+  button.on { background:var(--blue); border-color:var(--blue); color:#fff; }
+  input[type=search] { font-family:inherit; font-size:14px; padding:9px 12px; border:1px solid var(--line); border-radius:8px; background:var(--card); color:var(--fg); width:100%; }
+  .filters { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:10px 0; }
+  .filters .grp { display:flex; flex-wrap:wrap; gap:6px; align-items:center; }
+  .filters .lbl { color:var(--dim); font-size:12px; margin-right:2px; }
+  .chip { display:inline-flex; align-items:center; gap:5px; border:1px solid var(--line); background:var(--card2); border-radius:99px; padding:3px 10px 3px 4px; font-size:13px; cursor:pointer; }
+  .chip img { width:22px; height:22px; border-radius:50%; object-fit:cover; }
+  .chip .x { color:var(--dim); margin-left:2px; }
+  .picker { position:relative; }
+  .picker .menu { position:absolute; top:110%; left:0; z-index:20; background:var(--card); border:1px solid var(--line); border-radius:10px; padding:8px; width:min(92vw,420px); max-height:340px; overflow:auto; box-shadow:0 8px 30px rgba(0,0,0,.18); }
+  .picker .menu input { margin-bottom:6px; }
+  .picker .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(96px,1fr)); gap:4px; }
+  .picker .grid button { border-radius:8px; padding:4px 6px; display:flex; align-items:center; gap:5px; font-size:12px; text-align:left; }
+  .picker .grid button img { width:20px; height:20px; border-radius:50%; object-fit:cover; flex:none; }
+  .stat { color:var(--dim); font-size:12px; margin:6px 0 10px; }
+
+  /* 카드 목록 — 허브의 앱 카드와 같은 톤 */
+  .list { display:flex; flex-direction:column; gap:8px; }
+  .row { display:block; background:var(--card); border:1px solid var(--line); border-radius:12px; padding:12px 14px; color:inherit; text-decoration:none; transition:border-color .15s, box-shadow .15s; }
+  .row:hover { border-color:var(--gold-line); box-shadow:0 4px 18px rgba(0,0,0,.08); }
+  .row .top { display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
+  .row .date { font-weight:700; font-variant-numeric:tabular-nums; }
+  .row .title { flex:1 1 300px; font-size:14px; }
+  .badge { font-size:11px; font-weight:700; border-radius:6px; padding:2px 7px; letter-spacing:.3px; color:#fff; background:var(--dim); white-space:nowrap; }
+  .badge.official { background:var(--gold); } .badge.data { background:#4b5563; } .badge.translated { background:#7c3aed; }
+  .trnote { display:flex; gap:10px; align-items:flex-start; background:var(--card2); border:1px solid var(--line); border-left:3px solid #7c3aed; border-radius:8px; padding:9px 12px; margin:0 0 12px; font-size:12px; color:var(--dim); line-height:1.6; }
+  .trnote b { color:var(--fg); }
+  .trnote .tag { flex:none; background:var(--purple); color:#fff; border-radius:5px; padding:1px 7px; font-size:11px; font-weight:700; }
+  .badge.live { background:#1758a8; } .badge.ptr { background:#6d28d9; }
+  .badge.sub { background:transparent; color:var(--dim); border:1px solid var(--line); }
+  .row .heroes { display:flex; flex-wrap:wrap; gap:3px; margin-top:8px; align-items:center; }
+  .row .heroes img, .pimg { width:26px; height:26px; border-radius:50%; object-fit:cover; border:1px solid var(--line); background:var(--card2); }
+  .row .heroes .more { color:var(--dim); font-size:12px; margin-left:4px; }
+  .row .meta { color:var(--dim); font-size:12px; margin-top:6px; display:flex; gap:12px; flex-wrap:wrap; }
+
+  /* 영웅·전장 격자 */
+  .grid-h { display:grid; grid-template-columns:repeat(auto-fill,minmax(120px,1fr)); gap:8px; }
+  .grid-h a { display:flex; align-items:center; gap:8px; background:var(--card); border:1px solid var(--line); border-radius:10px; padding:6px 8px; text-decoration:none; color:inherit; font-size:13px; }
+  .grid-h a:hover { border-color:var(--gold-line); }
+  .grid-h a img { width:30px; height:30px; border-radius:50%; object-fit:cover; flex:none; background:var(--card2); }
+  .grid-h a .n { color:var(--dim); font-size:11px; margin-left:auto; }
+  .role { margin:18px 0 8px; font-size:15px; font-weight:700; color:var(--gold); }
+
+  /* 상세 */
+  .back { display:inline-block; margin-bottom:10px; }
+  .tabs { display:flex; gap:6px; margin:14px 0 0; border-bottom:1px solid var(--line); }
+  .tabs button { border-radius:8px 8px 0 0; border-bottom:none; }
+  .tabs button.on { background:var(--card); color:var(--gold); border-color:var(--line); border-bottom:1px solid var(--card); margin-bottom:-1px; }
+  .tabs button[disabled] { opacity:.45; cursor:default; }
+  .panel { background:var(--card); border:1px solid var(--line); border-radius:0 12px 12px 12px; padding:16px 18px; }
+  .panel.solo { border-radius:12px; }
+  .jump { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:12px; }
+  .jump a { font-size:12px; border:1px solid var(--line); border-radius:99px; padding:3px 9px 3px 4px; text-decoration:none; color:var(--fg); background:var(--card2); display:inline-flex; align-items:center; gap:5px; }
+  .jump a img { width:20px; height:20px; border-radius:50%; object-fit:cover; }
+  .jump a.on { border-color:var(--gold-line); color:var(--gold); }
+  .official h2, .official h3 { border-left:4px solid var(--gold-line); padding-left:10px; margin:22px 0 8px; font-size:18px; }
+  .official h3 { font-size:16px; border-left-color:var(--line); }
+  .official h4 { margin:18px 0 6px; font-size:16px; color:var(--purple); }
+  .official ul { padding-left:20px; margin:4px 0; } .official li { margin:2px 0; }
+  .official img { max-width:100%; height:auto; border-radius:8px; }
+  .official blockquote { margin:8px 0; padding:8px 12px; background:var(--card2); border-left:3px solid var(--gold-line); border-radius:6px; font-size:13px; }
+  .official table { border-collapse:collapse; font-size:12px; } .official td, .official th { border:1px solid var(--line); padding:2px 6px; }
+  .official .pn-new { color:var(--new); } .official s { color:var(--del); }
+  .official .pn-h { color:var(--purple); font-weight:700; } .official .pn-name { color:var(--blue); font-weight:700; }
+  .hero-sec { border:1px solid var(--line); border-radius:10px; margin:10px 0; background:var(--card); }
+  .hero-sec > summary { cursor:pointer; padding:8px 12px; display:flex; align-items:center; gap:8px; font-weight:700; list-style:none; }
+  .hero-sec > summary::-webkit-details-marker { display:none; }
+  .hero-sec > summary img { width:28px; height:28px; border-radius:50%; object-fit:cover; }
+  .hero-sec > summary .n { color:var(--dim); font-weight:400; font-size:12px; margin-left:auto; }
+  .hero-sec .body { padding:4px 14px 12px; }
+  .chg { padding:6px 0; border-top:1px dashed var(--line); }
+  .chg:first-child { border-top:none; }
+  .chg .hd { display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+  .chg .hd .nm { font-weight:700; color:var(--blue); }
+  .chg .hd .lv { font-size:11px; color:var(--dim); border:1px solid var(--line); border-radius:6px; padding:0 5px; }
+  .chg .hd .tp { font-size:11px; padding:1px 6px; border-radius:6px; background:var(--card2); color:var(--dim); }
+  .chg .hd .tp.add { background:var(--ins-bg); color:var(--ins); } .chg .hd .tp.rm { background:var(--del-bg); color:var(--del); }
+  .chg .f { margin:3px 0 0 8px; font-size:13px; white-space:pre-wrap; }
+  .chg .f .k { color:var(--dim); font-size:12px; margin-right:6px; }
+  del { background:var(--del-bg); color:var(--del); text-decoration:line-through; border-radius:3px; padding:0 2px; }
+  ins { background:var(--ins-bg); color:var(--ins); text-decoration:none; border-radius:3px; padding:0 2px; }
+  .empty { color:var(--dim); padding:20px; text-align:center; }
+  .src { margin-top:16px; font-size:12px; color:var(--dim); border-top:1px solid var(--line); padding-top:10px; }
+  .credits { margin-top:30px; font-size:12px; color:var(--dim); line-height:1.7; border-top:1px solid var(--line); padding-top:12px; }
+  .credits h4 { margin:0 0 6px; font-size:12px; color:var(--fg); font-weight:700; }
+  .credits dl { margin:0; display:grid; grid-template-columns:max-content 1fr; gap:3px 10px; }
+  .credits dt { color:var(--fg); white-space:nowrap; }
+  .credits dd { margin:0; }
+  .credits .warn { margin-top:8px; padding-top:8px; border-top:1px dashed var(--line); }
+  @media (max-width:600px) { .credits dl { grid-template-columns:1fr; gap:0 0; } .credits dt { margin-top:6px; } }
+
+  /* 이력 페이지 */
+  .hist { border-left:2px solid var(--line); margin-left:10px; padding-left:16px; }
+  .hist .ent { position:relative; margin:0 0 18px; }
+  .hist .ent::before { content:''; position:absolute; left:-23px; top:8px; width:12px; height:12px; border-radius:50%; background:var(--gold-line); border:2px solid var(--bg); }
+  .hist .ent h3 { margin:0 0 6px; font-size:15px; display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+  .hist .ent h3 a { text-decoration:none; color:inherit; } .hist .ent h3 a:hover { color:var(--gold); }
+  .hist .ent .sec { font-size:12px; color:var(--dim); margin:8px 0 2px; }
+  .hist .ent .box { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:8px 14px; }
+  .hist .ent .box + .box { margin-top:8px; }
+  .hist .ent .box .lab { font-size:12px; color:var(--gold); font-weight:700; margin-bottom:4px; }
+  .hero-head { display:flex; align-items:center; gap:14px; margin:6px 0 14px; }
+  .hero-head img { width:64px; height:64px; border-radius:50%; object-fit:cover; border:2px solid var(--gold-line); }
+  .hero-head h2 { margin:0; font-size:24px; } .hero-head .d { color:var(--dim); font-size:13px; }
+  @media (max-width:600px) { .wrap { padding:16px 12px 50px; } .panel { padding:12px; } .row { padding:10px; } h1 { font-size:24px; } }
+</style>
+</head>
+<body>
+<div class="wrap" id="app"><div class="empty">불러오는 중…</div></div>
+<script src="../shared/scrap.js" defer></script>
+<script>
+(function () {
+  const DATA = '../data/patchnotes/';
+  const PORTRAIT = 'https://sin0nis.github.io/images/heroportraits/';
+  const KIND = { live: '라이브', balance: '밸런스', ptr: 'PTR', hotfix: '핫픽스', patch: '패치', data: '데이터' };
+  const ROLE = { Tank: '전사', Bruiser: '투사', Healer: '치유사', Support: '지원가', 'Melee Assassin': '근접 암살자', 'Ranged Assassin': '원거리 암살자' };
+  const ROLE_ORDER = ['Tank', 'Bruiser', 'Healer', 'Support', 'Melee Assassin', 'Ranged Assassin'];
+  const roleIdx = id => { const i = ROLE_ORDER.indexOf((HEROES[id] || {}).role); return i < 0 ? 99 : i; };
+  const sortHeroes = ids => [...ids].sort((a, b) => roleIdx(a) - roleIdx(b) || heroName(a).localeCompare(heroName(b), 'ko'));
+  const channelOf = r => (r.kind === 'ptr' || r.isPtr) ? 'ptr' : 'live';
+  const sourceOf = r => r.translated ? 'translated' : r.official ? 'official' : 'data';
+  const CH = { live: '라이브', ptr: '테스트 서버' }, SRC = { official: '공식 한글', translated: 'Claude 번역', data: '데이터' };
+  const badges = r => `<span class="badge ${sourceOf(r)}">${SRC[sourceOf(r)]}</span><span class="badge ${channelOf(r)}">${CH[channelOf(r)]}</span>${(r.kind === 'balance' || r.kind === 'hotfix') ? `<span class="badge sub">${KIND[r.kind]}</span>` : ''}`;
+  const app = document.getElementById('app');
+  let INDEX = null, HEROES = {}, BGS = {};
+  const cache = {};
+
+  const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const q = () => new URLSearchParams(location.search);
+  const heroName = id => (HEROES[id] || {}).name || id;
+  const heroImg = id => { const p = (HEROES[id] || {}).portrait; return p ? `<img src="${PORTRAIT}${p}" alt="" loading="lazy" onerror="this.style.visibility='hidden'">` : ''; };
+  const bgName = s => BGS[s] || s;
+  const markDiff = s => esc(s).replace(/\[\[-([\s\S]*?)-\]\]/g, '<del>$1</del>').replace(/\{\{\+([\s\S]*?)\+\}\}/g, '<ins>$1</ins>');
+  const patchKey = r => r.date + (r.build ? '&b=' + r.build : '');
+
+  async function getJSON(path) {
+    if (cache[path]) return cache[path];
+    const r = await fetch(DATA + path);
+    if (!r.ok) throw new Error(path + ' ' + r.status);
+    return (cache[path] = await r.json());
+  }
+  function go(params, push = true) {
+    const u = new URL(location.href); u.search = '';
+    Object.entries(params).forEach(([k, v]) => { if (v != null && v !== '' && !(Array.isArray(v) && !v.length)) u.searchParams.set(k, Array.isArray(v) ? v.join(',') : v); });
+    push ? history.pushState(null, '', u) : history.replaceState(null, '', u);
+    render();
+  }
+  window.addEventListener('popstate', render);
+
+  function headHTML(view) {
+    const tab = (k, label, href) => `<a href="${href}" class="${view === k ? 'on' : ''}">${label}</a>`;
+    return `<div class="head"><h1>패치 <span class="s">기록</span><span class="en">Patch Note History</span></h1></div>
+      <p class="sub">블리자드 <b>공식 한글</b> 패치 노트(2017년 1월~)를 그대로 싣고, 한국어판이 없는 회차는 영어 원문을 <b>Claude 가 번역</b>해 채웠습니다(2016년 9월~). 여기에 게임 파일에서 뽑은 <b>데이터 변경점</b>(2019년 10월~)을 함께 봅니다. 주소를 복사하면 그 화면 그대로 공유됩니다.</p>
+      <div class="nav">${tab('list', '패치 목록', '?')}${tab('heroes', '영웅별 이력', '?view=heroes')}${tab('bgs', '전장별 이력', '?view=bgs')}</div>`;
+  }
+
+  // ---------- 목록 ----------
+  function renderList() {
+    const p = q();
+    const ch = p.get('ch') || '', src = p.get('src') || '';
+    const heroes = (p.get('hero') || '').split(',').filter(Boolean);
+    const bgs = (p.get('bg') || '').split(',').filter(Boolean);
+    const text = (p.get('q') || '').trim();
+    let rows = INDEX;
+    if (ch) rows = rows.filter(r => channelOf(r) === ch);
+    if (src) rows = rows.filter(r => sourceOf(r) === src);
+    if (heroes.length) rows = rows.filter(r => heroes.every(h => r.heroes.includes(h)));
+    if (bgs.length) rows = rows.filter(r => bgs.every(b => r.battlegrounds.includes(b)));
+    if (text) rows = rows.filter(r => (r.title + ' ' + (r.version || '') + ' ' + r.heroes.map(heroName).join(' ')).includes(text));
+
+    const chBtns = ['', 'live', 'ptr'].map(k => `<button data-ch="${k}" class="${k === ch ? 'on' : ''}">${k ? CH[k] : '전체'}</button>`).join('');
+    const SRCLBL = { official: '공식 한글', translated: 'Claude 번역', data: '데이터' };
+    const srcBtns = ['', 'official', 'translated', 'data'].map(k => `<button data-src="${k}" class="${k === src ? 'on' : ''}">${k ? SRCLBL[k] : '전체'}</button>`).join('');
+    const heroChips = heroes.map(h => `<span class="chip" data-rm-hero="${h}">${heroImg(h)}${esc(heroName(h))}<span class="x">×</span></span>`).join('');
+    const bgChips = bgs.map(b => `<span class="chip" data-rm-bg="${b}">${esc(bgName(b))}<span class="x">×</span></span>`).join('');
+    const bgOpts = Object.keys(BGS).filter(b => !bgs.includes(b)).map(b => `<option value="${b}">${esc(bgName(b))}</option>`).join('');
+
+    app.innerHTML = headHTML('list') + `
+      <input type="search" id="q" placeholder="제목·버전·영웅 검색" value="${esc(text)}">
+      <div class="filters"><div class="grp"><span class="lbl">채널</span>${chBtns}</div><div class="grp"><span class="lbl">출처</span>${srcBtns}</div></div>
+      <div class="filters">
+        <div class="grp"><span class="lbl">영웅</span>${heroChips}<span class="picker"><button id="heroPick">+ 영웅</button><div class="menu" id="heroMenu" hidden></div></span></div>
+        <div class="grp"><span class="lbl">전장</span>${bgChips}<select id="bgPick" class="btn"><option value="">+ 전장</option>${bgOpts}</select></div>
+        ${(ch || src || heroes.length || bgs.length || text) ? '<button id="clear">필터 지우기</button>' : ''}
+      </div>
+      <div class="stat">${rows.length}건 / 전체 ${INDEX.length}건 · 공식 한글 ${INDEX.filter(r => r.official && !r.translated).length}건(2017년 1월~) · Claude 번역 ${INDEX.filter(r => r.translated).length}건(공식 한글판 없는 회차) · 데이터만 ${INDEX.filter(r => !r.official).length}건(게임 파일 비교)</div>
+      <div class="list">${rows.map(rowHTML).join('') || '<div class="empty">조건에 맞는 패치가 없습니다.</div>'}</div>
+      ${creditsHTML()}`;
+
+    app.querySelector('#q').addEventListener('change', e => go({ ...cur(), q: e.target.value }));
+    app.querySelectorAll('[data-ch]').forEach(b => b.onclick = () => go({ ...cur(), ch: b.dataset.ch }));
+    app.querySelectorAll('[data-src]').forEach(b => b.onclick = () => go({ ...cur(), src: b.dataset.src }));
+    app.querySelectorAll('[data-rm-hero]').forEach(c => c.onclick = () => go({ ...cur(), hero: heroes.filter(h => h !== c.dataset.rmHero) }));
+    app.querySelectorAll('[data-rm-bg]').forEach(c => c.onclick = () => go({ ...cur(), bg: bgs.filter(b => b !== c.dataset.rmBg) }));
+    app.querySelector('#bgPick').onchange = e => { if (e.target.value) go({ ...cur(), bg: bgs.concat(e.target.value) }); };
+    const clear = app.querySelector('#clear'); if (clear) clear.onclick = () => go({});
+    setupHeroPicker(heroes);
+  }
+  function cur() { const p = q(); return { ch: p.get('ch'), src: p.get('src'), hero: p.get('hero'), bg: p.get('bg'), q: p.get('q') }; }
+
+  function setupHeroPicker(selected) {
+    const btn = app.querySelector('#heroPick'), menu = app.querySelector('#heroMenu');
+    const ids = Object.keys(HEROES).filter(h => HEROES[h].portrait && !selected.includes(h)).sort((a, b) => heroName(a).localeCompare(heroName(b), 'ko'));
+    const draw = f => menu.innerHTML = `<input type="search" placeholder="영웅 이름" value="${esc(f)}"><div class="grid">${ids.filter(h => !f || heroName(h).includes(f) || h.toLowerCase().includes(f.toLowerCase())).map(h => `<button data-h="${h}">${heroImg(h)}${esc(heroName(h))}</button>`).join('')}</div>`;
+    btn.onclick = e => { e.stopPropagation(); menu.hidden = !menu.hidden; if (!menu.hidden) { draw(''); menu.querySelector('input').focus(); } };
+    menu.onclick = e => { e.stopPropagation(); const b = e.target.closest('[data-h]'); if (b) go({ ...cur(), hero: selected.concat(b.dataset.h) }); };
+    menu.oninput = e => { const v = e.target.value; draw(v); const i = menu.querySelector('input'); i.focus(); i.setSelectionRange(v.length, v.length); };
+    document.addEventListener('click', () => { menu.hidden = true; }, { once: true });
+  }
+
+  function rowHTML(r) {
+    const hs = sortHeroes(r.heroes).slice(0, 14).map(h => `<span title="${esc(heroName(h))}">${heroImg(h)}</span>`).join('');
+    const more = r.heroes.length > 14 ? `<span class="more">+${r.heroes.length - 14}</span>` : '';
+    const meta = [];
+    if (r.version) meta.push(`빌드 ${r.version}`);
+    if (r.summary) meta.push(`데이터 변경 영웅 ${r.summary.heroes} · 항목 ${r.summary.changes}`);
+    if (r.battlegrounds.length) meta.push('전장: ' + r.battlegrounds.map(bgName).join(', '));
+    if (!r.official) meta.push('공식 노트 없음 — 데이터에서만 확인된 변경');
+    if (r.translated) meta.push('한글 공식판 없음 — 영문 원문을 Claude 가 번역');
+    if (r.official && !r.diff) meta.push('데이터 diff 없음');
+    return `<a class="row" href="?v=${patchKey(r)}">
+      <div class="top"><span class="date">${r.date}</span>${badges(r)}<span class="title">${esc(r.title)}</span></div>
+      ${hs ? `<div class="heroes">${hs}${more}</div>` : ''}
+      <div class="meta">${meta.map(m => `<span>${esc(m)}</span>`).join('')}</div></a>`;
+  }
+
+  // ---------- 상세 ----------
+  async function renderDetail(date) {
+    const p = q();
+    const build = p.get('b');
+    const row = INDEX.find(r => r.date === date && (!build || String(r.build) === build)) || INDEX.find(r => r.date === date);
+    if (!row) { app.innerHTML = headHTML('list') + `<div class="empty">${esc(date)} 패치를 찾을 수 없습니다.</div>`; return; }
+    const tab = p.get('tab') || (row.official ? 'official' : 'data');
+    const focus = p.get('hero') || '';
+    let official = null, diff = null, enDoc = null;
+    try { if (row.official) official = await getJSON(row.official); } catch (e) { console.warn(e); }
+    try { if (row.diff) diff = await getJSON(row.diff); } catch (e) { console.warn(e); }
+    if (tab === 'en' && row.en) { try { enDoc = await getJSON(row.en); } catch (e) { console.warn(e); } }
+    const tabs = `<div class="tabs">
+      <button data-tab="official" class="${tab === 'official' ? 'on' : ''}" ${official ? '' : 'disabled'}>${row.translated ? '한국어 (Claude 번역)' : '공식 패치 노트'}</button>
+      <button data-tab="data" class="${tab === 'data' ? 'on' : ''}" ${diff ? '' : 'disabled'}>데이터 변경점${diff ? ` (${diff.summary.heroes}영웅 · ${diff.summary.changes})` : ''}</button>
+      ${row.en ? `<button data-tab="en" class="${tab === 'en' ? 'on' : ''}">영어 원문</button>` : ''}</div>`;
+    app.innerHTML = headHTML('list') + `<a id="pn-back" href="?${backParams()}">← 목록</a>
+      <h2 style="margin:4px 0;font-size:22px">${badges(row)} ${esc(row.title)}</h2>
+      <p class="sub">${row.date}${row.version ? ` · 빌드 ${row.version}` : ''}${row.buildDate && row.buildDate !== row.date ? ` (데이터 추출일 ${row.buildDate})` : ''}</p>
+      ${tabs}<div class="panel">${tab === 'en' ? officialHTML(enDoc, focus, row) : tab === 'official' ? officialHTML(official, focus, row) : dataHTML(diff, focus)}</div>${creditsHTML()}`;
+    app.querySelectorAll('[data-tab]').forEach(b => b.onclick = () => go({ v: date, b: build, tab: b.dataset.tab, hero: focus }));
+    app.querySelectorAll('[data-focus]').forEach(a => a.onclick = e => { e.preventDefault(); go({ v: date, b: build, tab, hero: a.dataset.focus === focus ? '' : a.dataset.focus }); });
+  }
+  function backParams() { try { return sessionStorage.getItem('patchnotes.list') || ''; } catch (e) { return ''; } }
+
+  function trNote(doc, row) {
+    if (!doc || doc.lang === 'en') return row && row.translated ? `<div class="trnote"><b class="tag">원문</b> <span>블리자드가 공개한 <b>영어 원문</b>입니다. 한국어는 위 탭에서 보세요.</span></div>` : '';
+    const t = doc.translated;
+    if (!t) return '';
+    const miss = t.untranslated ? ` 원문 그대로 남은 문장 ${t.untranslated}개가 있습니다.` : '';
+    return `<div class="trnote"><b class="tag">번역</b> <span><b>이 노트는 한국어 공식판이 없습니다.</b> 블리자드 영어 원문을 <b>${esc(t.by || 'Claude')}</b> 가 번역했습니다${t.at ? ` (${esc(t.at)})` : ''}. 공식 번역이 아니므로 표현이 다를 수 있습니다. 영웅·기술·특성 이름은 ${esc(t.glossary || '공식 게임 텍스트')}에 맞췄습니다.${miss} 원문은 위 <b>영어 원문</b> 탭과 아래 출처 링크에서 확인하세요.</span></div>`;
+  }
+  function officialHTML(doc, focus, row) {
+    if (!doc) return `<div class="empty">${row && row.en && q().get('tab') === 'en' ? '영어 원문을 불러오지 못했습니다. 아래 출처 링크에서 확인하세요.' : '이 회차는 글 형태의 패치 노트가 없습니다. 데이터 변경점 탭을 보세요.'}</div>`;
+    const heroIds = sortHeroes([...new Set(doc.sections.flatMap(s => (s.heroes || []).map(h => h.heroId).concat((s.items || []).map(i => i.heroId))).filter(Boolean))]);
+    const jump = heroIds.length ? `<div class="jump">${heroIds.map(h => `<a href="#" data-focus="${h}" class="${h === focus ? 'on' : ''}">${heroImg(h)}${esc(heroName(h))}</a>`).join('')}</div>` : '';
+    let body = '';
+    for (const s of doc.sections) {
+      if (focus) {
+        const hs = (s.heroes || []).filter(h => (h.heroIds || [h.heroId]).includes(focus));
+        const its = (s.items || []).filter(i => (i.heroIds || [i.heroId]).includes(focus));
+        if (!hs.length && !its.length) continue;
+        body += `<h2>${esc(s.name)}</h2>` + hs.map(h => `<h4>${esc(h.name)}</h4>${h.html}`).join('') + its.map(i => `<ul><li>${i.html}</li></ul>`).join('');
+      } else {
+        body += (s.key === 'intro' ? '' : `<h2>${esc(s.name)}</h2>`) + s.html;
+      }
+    }
+    const focusLink = focus ? `<p class="sub"><a href="?view=hero&id=${focus}">${esc(heroName(focus))} 전체 이력 보기 →</a></p>` : '';
+    return `${trNote(doc, row)}${jump}${focusLink}<div class="official">${body || '<div class="empty">이 영웅 항목이 없습니다.</div>'}</div>
+      <div class="src">출처: <a href="${esc(doc.source)}" target="_blank" rel="noopener">${esc(doc.titleEn || doc.title)}</a> — Blizzard Entertainment. 원문 전문은 링크에서 확인하세요.</div>`;
+  }
+
+  function dataHTML(d, focus) {
+    if (!d) return '<div class="empty">이 패치와 짝지어진 데이터 diff 가 없습니다.</div>';
+    const ids = sortHeroes(Object.keys(d.heroes));
+    const jump = `<div class="jump">${ids.map(h => `<a href="#" data-focus="${h}" class="${h === focus ? 'on' : ''}">${heroImg(h)}${esc(heroName(h))}</a>`).join('')}</div>`;
+    const shown = focus ? ids.filter(h => h === focus) : ids;
+    const secs = shown.map(h => {
+      const x = d.heroes[h];
+      const n = x.added ? '신규 영웅' : x.removed ? '제거' : `${x.changes.length}개 변경`;
+      return `<details class="hero-sec" ${focus || shown.length <= 6 ? 'open' : ''}><summary>${heroImg(h)}${esc(heroName(h))}<span class="n">${n}</span></summary><div class="body">${x.changes.map(changeHTML).join('') || '<div class="empty">—</div>'}</div></details>`;
+    }).join('');
+    const focusLink = focus ? `<p class="sub"><a href="?view=hero&id=${focus}">${esc(heroName(focus))} 전체 이력 보기 →</a></p>` : '';
+    return `<p class="sub">빌드 ${esc(d.from)} → ${esc(d.to)} 사이의 영웅 데이터 변화입니다. 괄호 안은 그 빌드가 게임 데이터 저장소에 올라온 날(${d.fromDate} → ${d.toDate})이라 패치 날짜와 며칠 다를 수 있습니다${d.toPtr ? '. 테스트 서버 빌드는 직전 라이브 빌드와 비교합니다' : ''}. 툴팁은 원문 마크업을 걷어낸 평문이며 <del>삭제</del> / <ins>추가</ins> 로 표시됩니다.</p>${jump}${focusLink}${secs || '<div class="empty">변경 없음</div>'}`;
+  }
+
+  const FIELD = { name: '이름', full: '설명', cooldown: '재사용 대기시간', energy: '자원', life: '생명력', quest: '퀘스트', level: '레벨' };
+  function changeHTML(c) {
+    const lv = c.level ? `<span class="lv">${c.level}레벨</span>` : '';
+    const abt = c.abilityType ? `<span class="lv">${esc(c.abilityType)}</span>` : '';
+    switch (c.type) {
+      case 'stat': return `<div class="chg"><div class="hd"><span class="nm">능력치</span><span class="tp">${esc(c.field)}</span></div><div class="f"><del>${esc(fmt(c.before))}</del> → <ins>${esc(fmt(c.after))}</ins></div></div>`;
+      case 'rename': return `<div class="chg"><div class="hd"><span class="nm">이름 변경</span></div><div class="f"><del>${esc(c.before)}</del> → <ins>${esc(c.after)}</ins></div></div>`;
+      case 'ability_added': case 'talent_added':
+        return `<div class="chg"><div class="hd"><span class="nm">${esc(c.name)}</span>${lv}${abt}<span class="tp add">신규 ${c.type.startsWith('talent') ? '특성' : '기술'}</span></div><div class="f">${esc(c.full || '')}</div></div>`;
+      case 'ability_removed': case 'talent_removed':
+        return `<div class="chg"><div class="hd"><span class="nm">${esc(c.name)}</span>${lv}${abt}<span class="tp rm">삭제된 ${c.type.startsWith('talent') ? '특성' : '기술'}</span></div></div>`;
+      default:
+        return `<div class="chg"><div class="hd"><span class="nm">${esc(c.name)}</span>${lv}${abt}<span class="tp">${c.type === 'talent' ? '특성' : '기술'}</span></div>
+          ${(c.changes || []).map(f => `<div class="f"><span class="k">${FIELD[f.field] || f.field}</span>${f.diff != null ? markDiff(f.diff) : `<del>${esc(fmt(f.before))}</del> → <ins>${esc(fmt(f.after))}</ins>`}</div>`).join('')}</div>`;
+    }
+  }
+  const STATWORD = { amount: '값', scale: '레벨당 증가율', regenRate: '재생', regenScale: '재생 증가율',
+                     range: '사거리', period: '공격 주기', damage: '공격력', damageScale: '공격력 증가율' };
+  function fmt(v) {
+    if (v == null) return '—';
+    if (Array.isArray(v)) return v.map(fmt).join(' / ');
+    if (typeof v === 'object') return Object.entries(v).map(([k, x]) => `${STATWORD[k] || k} ${x}`).join(', ');
+    return String(v);
+  }
+
+  // ---------- 영웅 격자 / 이력 ----------
+  function renderHeroes() {
+    const ids = Object.keys(HEROES).filter(h => HEROES[h].portrait);
+    const count = {};
+    INDEX.forEach(r => r.heroes.forEach(h => { count[h] = (count[h] || 0) + 1; }));
+    const byRole = {};
+    ids.forEach(h => { const r = ROLE[HEROES[h].role] || HEROES[h].role || '기타'; (byRole[r] = byRole[r] || []).push(h); });
+    const order = ['전사', '투사', '치유사', '지원가', '근접 암살자', '원거리 암살자'];
+    const roles = order.filter(r => byRole[r]).concat(Object.keys(byRole).filter(r => !order.includes(r)));
+    app.innerHTML = headHTML('heroes') + `<p class="sub">영웅을 고르면 그 영웅이 언급된 모든 패치(공식 노트 + 데이터 변경)를 시간순으로 봅니다.</p>` +
+      roles.map(r => `<div class="role">${esc(r)}</div><div class="grid-h">${byRole[r].sort((a, b) => heroName(a).localeCompare(heroName(b), 'ko')).map(h =>
+        `<a href="?view=hero&id=${h}">${heroImg(h)}<span>${esc(heroName(h))}</span><span class="n">${count[h] || 0}</span></a>`).join('')}</div>`).join('') + creditsHTML();
+  }
+
+  async function renderHero(id) {
+    let doc = null, series = null;
+    try { [doc, series] = await Promise.all([getJSON(`heroes/${id}.json`), getJSON(`series/${id}.json`).catch(() => null)]); } catch (e) {}
+    const entries = doc ? doc.entries : [];
+    const chart = seriesHTML(series);
+    const body = entries.map(e => {
+      const link = `?v=${e.date}${e.build ? '&b=' + e.build : ''}&hero=${id}`;
+      const tr = e.translated;
+      const off = (tr ? `<div class="trnote" style="margin:0 0 8px"><b class="tag">번역</b> <span>한국어 공식판이 없어 블리자드 영어 원문을 <b>${esc(tr.by || 'Claude')}</b> 가 번역한 내용입니다${tr.at ? ` (${esc(tr.at)})` : ''}. <a href="${link}&tab=en">영어 원문 보기</a></span></div>` : '')
+        + e.official.map(o => `<div class="box"><div class="lab">${tr ? 'Claude 번역' : '공식 한글 노트'} · ${esc(o.section)}</div><div class="official">${o.html}</div></div>`).join('');
+      const dat = e.data ? `<div class="box"><div class="lab">데이터 변경 (${esc(e.data.from)} → ${esc(e.data.to)})${e.data.added ? ' · 신규 영웅' : ''}${e.data.removed ? ' · 제거' : ''}</div>${e.data.changes.map(changeHTML).join('') || '<div class="empty">—</div>'}</div>` : '';
+      return `<div class="ent" id="e-${e.date}-${e.build || 0}"><h3><a href="${link}">${e.date}</a>${badges({ ...e, official: e.official.length ? 1 : null, translated: e.translated })}<span style="font-weight:400;font-size:13px;color:var(--dim)">${esc(e.version || '')}</span></h3>${off}${dat}</div>`;
+    }).join('');
+    app.innerHTML = headHTML('heroes') + `<a id="pn-back" href="?view=heroes">← 영웅 목록</a>
+      <div class="hero-head">${heroImg(id)}<div><h2>${esc(heroName(id))}</h2><div class="d">패치 ${entries.length}건 · 공식 노트 ${entries.filter(e => e.official.length).length}건 · 데이터 변경 ${entries.filter(e => e.data).length}건</div></div></div>
+      ${chart}<div class="hist">${body || '<div class="empty">기록이 없습니다.</div>'}</div>${creditsHTML()}`;
+    app.querySelectorAll('.chart .m[data-go]').forEach(m => m.onclick = () => { const t = document.getElementById(m.dataset.go); if (t) { t.scrollIntoView({ behavior: 'smooth', block: 'start' }); history.replaceState(null, '', '#' + m.dataset.go); } });
+    const rerender = () => {
+      const y = window.scrollY, sec = app.querySelector('.gsec'); if (!sec || !series) return;
+      const open = [...sec.querySelectorAll('details')].map(dt => dt.open), fid = document.activeElement && document.activeElement.id;
+      sec.outerHTML = seriesHTML(series);
+      const nsec = app.querySelector('.gsec');
+      [...nsec.querySelectorAll('details')].forEach((dt, i) => { if (open[i]) dt.open = true; });
+      bindGctl(rerender);
+      if (fid) { const el = nsec.querySelector('#' + fid); if (el) el.focus(); }
+      window.scrollTo(0, y);
+    };
+    bindGctl(rerender);
+    // 첫 렌더는 내용이 붙기 전(스크롤바 없음)에 폭을 재므로, 붙인 뒤 폭이 달라졌으면 한 번 더 그린다
+    const svg0 = app.querySelector('.gline svg');
+    if (svg0 && +svg0.getAttribute('width') !== chartWidth()) rerender();
+    clearTimeout(window.__pnResize);
+    let lastW = window.innerWidth;
+    window.onresize = () => { clearTimeout(window.__pnResize); window.__pnResize = setTimeout(() => { if (window.innerWidth !== lastW) { lastW = window.innerWidth; if (q().get('view') === 'hero') rerender(); } }, 200); };
+  }
+
+  // ---------- 수치 변화 그래프 ----------
+  // 설정: 기간(빌드 인덱스 범위) · x축 간격(날짜 비례/빌드 균등) · y축(자동/0부터) · 높이 · 점(변경점만/모든 빌드)
+  const GKEY = 'patchnotes.graph4';
+  const GDEF = { xmode: 'patch', dir: 'asc', y0: false, h: 90, dots: 'chg', from: '', to: '', val: 'abs', color: 'bl' };
+  let G = { ...GDEF };
+  try { G = { ...GDEF, ...(JSON.parse(localStorage.getItem(GKEY) || '{}')) }; } catch (e) {}
+  function saveG() { try { localStorage.setItem(GKEY, JSON.stringify(G)); } catch (e) {} }
+  function gctlHTML(B) {
+    const [fi, ti] = gRange(B);
+    const opts = sel => B.map((b, i) => `<option value="${i}" ${i === sel ? 'selected' : ''}>${b.date}</option>`).join('');
+    return `<div class="gctl">
+      <label>기간 <select id="g-from">${opts(fi)}</select> ~ <select id="g-to">${opts(ti)}</select></label>
+      <span class="seg-btns">가로축 <button data-g="xmode" data-v="patch" class="${G.xmode === 'patch' ? 'on' : ''}" title="값이 바뀐 패치만 한 칸씩">패치별</button><button data-g="xmode" data-v="time" class="${G.xmode === 'time' ? 'on' : ''}">날짜 비례</button><button data-g="xmode" data-v="even" class="${G.xmode === 'even' ? 'on' : ''}">빌드 균등</button></span>
+      <span class="seg-btns">방향 <button data-g="dir" data-v="asc" class="${G.dir === 'asc' ? 'on' : ''}">과거 → 최신</button><button data-g="dir" data-v="desc" class="${G.dir === 'desc' ? 'on' : ''}">최신 → 과거</button></span>
+      <span class="seg-btns">Y축 <button data-g="y0" data-v="0" class="${!G.y0 ? 'on' : ''}">값 범위</button><button data-g="y0" data-v="1" class="${G.y0 ? 'on' : ''}">0부터</button></span>
+      <label>높이 <input type="range" id="g-h" min="50" max="220" step="10" value="${G.h}"> <span id="g-hv">${G.h}</span>px</label>
+      <span class="seg-btns">점 <button data-g="dots" data-v="chg" class="${G.dots === 'chg' ? 'on' : ''}">변경점만</button><button data-g="dots" data-v="all" class="${G.dots === 'all' ? 'on' : ''}">모든 빌드</button></span>
+      <span class="seg-btns">값 <button data-g="val" data-v="abs" class="${G.val === 'abs' ? 'on' : ''}">절대값</button><button data-g="val" data-v="pct" class="${G.val === 'pct' ? 'on' : ''}">첫값 대비 %</button></span>
+      <span class="seg-btns">색 <button data-g="color" data-v="bl" class="${G.color === 'bl' ? 'on' : ''}">상승 파랑</button><button data-g="color" data-v="kr" class="${G.color === 'kr' ? 'on' : ''}">상승 빨강</button><button data-g="color" data-v="us" class="${G.color === 'us' ? 'on' : ''}">상승 초록</button></span>
+      <button id="g-reset">초기화</button></div>`;
+  }
+  function bindMore() {
+    app.querySelectorAll('.chglist [data-more]').forEach(m => m.onclick = () => { m.parentElement.querySelectorAll('[data-rest-item]').forEach(n => { n.hidden = false; }); m.remove(); });
+  }
+  function bindGctl(rerender) {
+    bindMore();
+    const root = app.querySelector('.gctl'); if (!root) return;
+    root.querySelectorAll('[data-g]').forEach(b => b.onclick = () => { const k = b.dataset.g, v = b.dataset.v; G[k] = k === 'y0' ? v === '1' : v; saveG(); rerender(); });
+    root.querySelector('#g-from').onchange = e => { G.from = e.target.value; if (G.to !== '' && +G.to < +G.from) G.to = G.from; saveG(); rerender(); };
+    root.querySelector('#g-to').onchange = e => { G.to = e.target.value; if (G.from !== '' && +G.from > +G.to) G.from = G.to; saveG(); rerender(); };
+    const h = root.querySelector('#g-h'); h.oninput = e => { G.h = +e.target.value; root.querySelector('#g-hv').textContent = G.h; }; h.onchange = () => { saveG(); rerender(); };
+    root.querySelector('#g-reset').onclick = () => { G = { ...GDEF }; saveG(); rerender(); };
+  }
+  function gRange(B) {
+    const fi = G.from === '' ? 0 : Math.max(0, Math.min(+G.from, B.length - 1));
+    const ti = G.to === '' ? B.length - 1 : Math.max(fi, Math.min(+G.to, B.length - 1));
+    return [fi, ti];
+  }
+  function chartWidth() {
+    const oneCol = matchMedia('(max-width:600px)').matches, cs = getComputedStyle(app);
+    const inner = (app.clientWidth || 600) - (parseFloat(cs.paddingLeft) || 0) - (parseFloat(cs.paddingRight) || 0);  // .wrap 안쪽 폭
+    const w = inner - 2 - 28 - (oneCol ? 0 : 158);  // 카드 테두리·패딩·(2열이면 라벨 열+간격)
+    return Math.max(oneCol ? 200 : 260, Math.min(760, w));
+  }
+  const fmtV = v => (Math.abs(v) >= 100 ? Math.round(v) : Math.round(v * 100) / 100).toString();
+  const fmtPct = v => (v > 0 ? '+' : '') + (Math.abs(v) >= 10 ? Math.round(v) : Math.round(v * 10) / 10) + '%';
+  const fmtD = v => (v > 0 ? '+' : v < 0 ? '-' : '') + fmtV(Math.abs(v));
+  // 변화 요약: "▲12 (+26%)" / "▼3 (−7%)"
+  const deltaTxt = (prev, v, noPct) => { const d = v - prev; if (!d) return ''; const a = d > 0 ? '▲' : '▼'; const pct = (prev && !noPct) ? ` (${fmtPct(d / Math.abs(prev) * 100)})` : ''; return `${a}${fmtV(Math.abs(d))}${pct}`; };
+  // series/<id>.json: 비-PTR 빌드마다 기술·특성의 재사용 대기시간·자원·툴팁 숫자. 설명 골격이 바뀌면 segment 가 갈라진다.
+  function changes(vals) { let prev = null, n = 0; for (const v of vals) { if (v == null) continue; if (prev != null && v !== prev) n++; prev = v; } return n; }
+  function firstLast(vals) { const a = vals.filter(v => v != null); return a.length ? [a[0], a[a.length - 1]] : [null, null]; }
+  function sparkSVG(builds, vals, offset, cls, itemLast, itemFirst) {
+    // vals[k] ↔ builds[offset+k]. 표시 범위 [fi, ti]. 계단선: 어떤 빌드의 값은 다음 열(패치)까지 유지.
+    // 가로축: 패치별 = 값이 바뀐 빌드(+시작·종료 시점·현재)만 열로 균등 배치 / 날짜 비례 / 빌드 균등. 방향 desc 면 최신이 왼쪽.
+    const [fi, ti] = gRange(builds);
+    const W = chartWidth(), H = G.h, T = 12;
+    const desc = G.dir === 'desc', pct = G.val === 'pct' && cls !== 'lvl', noPct = cls === 'lvl';
+    const val = i => { const k = i - offset; return (k >= 0 && k < vals.length) ? vals[k] : null; };
+    const segEnd = cls === 'seg' ? offset + vals.length - 1 : null;  // 판(segment) 시리즈의 마지막 빌드
+    let base = null;
+    for (let i = fi; i <= ti && base == null; i++) base = val(i);
+    const disp = v => !pct ? v : (base ? (v - base) / Math.abs(base) * 100 : v - base);
+    const fmtA = v => pct ? (base ? fmtPct(v) : 'Δ' + fmtD(v)) : fmtV(v);
+    // 열 결정
+    let cols = [];
+    if (G.xmode === 'patch') {
+      let prev = null;
+      for (let i = fi; i <= ti; i++) {
+        const v = val(i);
+        if (v == null) { if (prev != null) cols.push(i); prev = null; continue; }  // 종료(삭제·판 끝·공백) 시점 열
+        if (prev == null || v !== prev) cols.push(i);
+        prev = v;
+      }
+      if (!cols.length) cols = [fi];
+      if (cols[cols.length - 1] !== ti && val(ti) != null) cols.push(ti);  // 현재까지 유지 → '현재' 열
+    } else {
+      for (let i = fi; i <= ti; i++) cols.push(i);
+    }
+    // 여백: 끝값 라벨이 놓이는 쪽을 넓게, Y 눈금은 그 반대쪽. 패치별 눈금이 빽빽하면 회전 + 아래 여백
+    const many = G.xmode === 'patch' && cols.length > 1 && (W - 86) / (cols.length - 1) < 92;  // '현재 yy-mm-dd'(67px) + 이웃 라벨 반폭
+    const L = desc ? 50 : 36, R = desc ? 36 : 50, B = many ? 38 : 16, PW = W - L - R;
+    const tAt = i => Date.parse(builds[i].date);
+    let t0 = tAt(fi), t1 = tAt(ti);
+    for (let i = fi; i <= ti; i++) { const t = tAt(i); if (t < t0) t0 = t; if (t > t1) t1 = t; }
+    const mirror = x => desc ? W - R - (x - L) : x;
+    const pos = {};
+    cols.forEach((i, k) => {
+      let x;
+      if (G.xmode === 'time' && t1 !== t0) x = L + (tAt(i) - t0) / (t1 - t0) * PW;
+      else x = L + (cols.length <= 1 ? 0 : k / (cols.length - 1)) * PW;
+      pos[i] = mirror(Math.max(L, Math.min(W - R, x)));
+    });
+    const xOf = i => pos[i];
+    const edge = desc ? L : W - R;
+    const nextCol = i => { const k = cols.indexOf(i); return k >= 0 && k + 1 < cols.length ? cols[k + 1] : null; };
+    const xEnd = i => { const j = nextCol(i); return j == null ? edge : xOf(j); };
+    // 시리즈가 끊기는 이유: 판 끝(다음 판으로) / 항목 삭제 / 그 빌드에 값 없음(공백)
+    const endKind = nx => (segEnd != null && nx > segEnd) ? 'seg' : (itemLast != null && nx > itemLast) ? 'gone' : 'gap';
+    const MARK = { seg: ' →', gone: ' ×', gap: ' ...' };
+    // 실행 구간(연속 non-null) — 열만
+    const runs = []; let run = null;
+    cols.forEach(i => {
+      const v = val(i);
+      if (v == null) { run = null; return; }
+      if (!run) { run = []; runs.push(run); }
+      run.push([i, disp(v), v]);
+    });
+    const pts = runs.flat();
+    if (!pts.length) return { svg: `<div class="gwrap"><svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}"><text class="tk" x="${L}" y="${H / 2}">선택한 기간에 값 없음</text></svg></div>`, list: '' };
+    const ys = pts.map(p => p[1]); const rawLo = Math.min(...ys), rawHi = Math.max(...ys);
+    let lo = rawLo, hi = rawHi;
+    if (G.y0 || pct) { lo = Math.min(0, lo); hi = Math.max(0, hi); }
+    if (lo === hi) { const dd = Math.abs(lo) * 0.1 || 1; lo -= dd; hi += dd; }
+    const pad = (hi - lo) * 0.12;
+    const ylo = ((G.y0 || pct) && lo === 0) ? 0 : lo - pad, yhi = ((G.y0 || pct) && hi === 0) ? 0 : hi + pad;
+    const yOf = v => T + (1 - (v - ylo) / (yhi - ylo)) * (H - T - B);
+    const placed = [], labels = [];
+    const placeLabel = (px, py, txt, up) => {
+      const tw = txt.length * 6.2 + 2;
+      const cands = up ? [[px, py - 6, 'middle'], [px, py + 12, 'middle']] : [[px, py + 12, 'middle'], [px, py - 6, 'middle']];
+      cands.push([px + 6, py + 4, 'start'], [px - 6, py + 4, 'end'], [px, py - 17, 'middle'], [px, py + 23, 'middle']);
+      for (const [lx, ly, anchor] of cands) {
+        if (ly - 9 < 1 || ly > H - B - 1) continue;
+        const x0 = anchor === 'middle' ? lx - tw / 2 : anchor === 'start' ? lx : lx - tw, x1 = x0 + tw;
+        if (x0 < L - 2 || x1 > W - R + 2) continue;
+        if (placed.some(b => !(x1 < b.x0 || x0 > b.x1 || ly < b.y - 10 || ly > b.y + 10))) continue;
+        placed.push({ x0, x1, y: ly });
+        labels.push(`<text class="vl ${up ? 'up' : 'dn'}" x="${lx.toFixed(1)}" y="${ly.toFixed(1)}" text-anchor="${anchor}">${txt}</text>`);
+        return;
+      }
+    };
+    // 변경점 라벨: 절대값 모드 = ▲Δ (직전 대비 %), 첫값대비% 모드 = ▲Δ%p(직전 대비 퍼센트포인트), 첫값 0 이면 Δ만
+    const chgLabel = (prev, v, prevRaw, raw, up) => pct ? (base ? `${up ? '▲' : '▼'}${fmtPct(Math.abs(v - prev)).replace('+', '')}p` : deltaTxt(prevRaw, raw, true)) : deltaTxt(prevRaw, raw, noPct);
+    const segs = [], dots = [], hits = [], events = [];
+    const tip = (i, raw, prevRaw) => `${builds[i].date} (${builds[i].version}): ${raw}` + (prevRaw != null && raw !== prevRaw ? `  ${deltaTxt(prevRaw, raw, noPct)} vs 직전` : '') + (!noPct && base != null && raw !== base && base ? `  · 첫값 대비 ${fmtPct((raw - base) / Math.abs(base) * 100)}` : '');
+    runs.forEach((r, ri) => {
+      let prev = null, prevRaw = null, prevX = null, prevY = null;
+      r.forEach(([i, v, raw], k) => {
+        const px = xOf(i), py = yOf(v);
+        const isChg = prev != null && v !== prev, isEdge = k === 0 || k === r.length - 1, up = isChg && v > prev;
+        if (k > 0) segs.push(`<line class="ln ${isChg ? (up ? 'up' : 'dn') : 'flat'}" x1="${prevX.toFixed(1)}" y1="${prevY.toFixed(1)}" x2="${px.toFixed(1)}" y2="${py.toFixed(1)}"/>`);
+        if (G.dots === 'all' || isChg || isEdge) dots.push(`<circle class="dot ${isChg ? (up ? 'chg up' : 'chg dn') : ''}" cx="${px.toFixed(1)}" cy="${py.toFixed(1)}" r="${isChg ? 3.5 : 2.5}"><title>${tip(i, raw, prevRaw)}</title></circle>`);
+        if (isChg && i !== ti) placeLabel(px, py, chgLabel(prev, v, prevRaw, raw, up), up);
+        const x1 = xEnd(i), xa = Math.min(px, x1), xb = Math.max(px, x1);
+        hits.push(`<rect class="hit" x="${xa.toFixed(1)}" y="${T}" width="${Math.max(1, xb - xa).toFixed(1)}" height="${H - T - B}"><title>${tip(i, raw, prevRaw)}</title></rect>`);
+        events.push({ i, raw, prevRaw, kind: k === 0 ? 'start' : (isChg ? 'chg' : 'same'),
+                      startKind: k !== 0 ? '' : ri > 0 ? '재등장' : (i === fi && fi > 0) ? '기간 시작 시점 값' : (cls === 'seg' && offset > (itemFirst || 0)) ? '판 시작 (설명 재작성)' : '첫 기록' });
+        prev = v; prevRaw = raw; prevX = px; prevY = py;
+      });
+      const li = r[r.length - 1][0], ex = xEnd(li);
+      if (Math.abs(ex - prevX) > 0.5) segs.push(`<line class="ln flat" x1="${prevX.toFixed(1)}" y1="${prevY.toFixed(1)}" x2="${ex.toFixed(1)}" y2="${prevY.toFixed(1)}"/>`);  // 마지막 값 유지 구간
+      const nx = nextCol(li);
+      if (nx != null && val(nx) == null) events.push({ i: nx, raw: r[r.length - 1][2], kind: endKind(nx) });
+    });
+    // 가로 눈금
+    const ticks = [];
+    if (G.xmode === 'patch') {
+      cols.forEach((i, k) => {
+        const x = xOf(i), cur = i === ti && val(i) != null && k === cols.length - 1;
+        const lab = (cur && !many ? '현재 ' : '') + builds[i].date.slice(2);
+        const anchor = cols.length === 1 ? 'middle' : k === 0 ? (desc ? 'end' : 'start') : k === cols.length - 1 ? (desc ? 'start' : 'end') : 'middle';
+        ticks.push(`<line class="grid" x1="${x.toFixed(1)}" y1="${T}" x2="${x.toFixed(1)}" y2="${H - B}"/>` + (many
+          ? `<text class="tk rot ${cur ? 'cur' : ''}" transform="translate(${(x + 3).toFixed(1)},${H - B + 8}) rotate(-40)">${lab}</text>`
+          : `<text class="tk ${cur ? 'cur' : ''}" x="${x.toFixed(1)}" y="${H - 3}" text-anchor="${anchor}">${lab}</text>`));
+      });
+    } else if (G.xmode === 'time' && t1 !== t0) {
+      const y0 = new Date(t0).getUTCFullYear(), y1 = new Date(t1).getUTCFullYear();
+      for (let y = y0; y <= y1; y++) { const t = Date.UTC(y, 0, 1); if (t < t0 || t > t1) continue; const x = mirror(L + (t - t0) / (t1 - t0) * PW); ticks.push(`<line class="grid" x1="${x.toFixed(1)}" y1="${T}" x2="${x.toFixed(1)}" y2="${H - B}"/><text class="tk" x="${x.toFixed(1)}" y="${H - 3}" text-anchor="middle">${y}</text>`); }
+      if (!ticks.length) ticks.push(`<text class="tk" x="${L}" y="${H - 3}">${builds[desc ? ti : fi].date}</text><text class="tk" x="${W - R}" y="${H - 3}" text-anchor="end">${builds[desc ? fi : ti].date}</text>`);
+    } else {
+      let ly = null; for (let i = fi; i <= ti; i++) { const yr = builds[i].date.slice(0, 4); if (yr !== ly) { const x = xOf(i); ticks.push(`<line class="grid" x1="${x.toFixed(1)}" y1="${T}" x2="${x.toFixed(1)}" y2="${H - B}"/><text class="tk" x="${x.toFixed(1)}" y="${H - 3}" text-anchor="middle">${yr}</text>`); ly = yr; } }
+    }
+    // Y 눈금: 끝값 라벨 반대쪽 (asc: 왼쪽, desc: 오른쪽)
+    const yvals = [rawHi, rawLo].concat((G.y0 || pct) ? [0] : []).filter((v, k, a) => a.indexOf(v) === k);
+    const yt = yvals.map(v => `<line class="${v === 0 && pct ? 'zero' : 'grid'}" x1="${L}" y1="${yOf(v).toFixed(1)}" x2="${W - R}" y2="${yOf(v).toFixed(1)}"/><text class="ty" x="${desc ? W - R + 4 : L - 4}" y="${(yOf(v) + 3.5).toFixed(1)}" text-anchor="${desc ? 'start' : 'end'}">${fmtA(v)}</text>`).join('');
+    // 끝값 라벨: 마지막 선이 끝나는 곳 옆(desc: 왼쪽, asc: 오른쪽). 끊긴 이유 표시(▸ 다음 판 / ✕ 삭제 / ⋯ 공백)
+    const lastRun = runs[runs.length - 1], last = lastRun[lastRun.length - 1];
+    const lastChg = lastRun.length > 1 && last[1] !== lastRun[lastRun.length - 2][1];
+    const endX = xEnd(last[0]), nxl = nextCol(last[0]), gone = nxl != null && val(nxl) == null;
+    const mark = gone ? MARK[endKind(nxl)] : '';
+    const endLab = `<text class="vl ${lastChg ? (last[1] > lastRun[lastRun.length - 2][1] ? 'up' : 'dn') : ''}" x="${(desc ? endX - 5 : endX + 5).toFixed(1)}" y="${(yOf(last[1]) + 4).toFixed(1)}" text-anchor="${desc ? 'end' : 'start'}" style="${gone ? 'opacity:.7' : ''}">${fmtA(last[1])}${mark}</text>`;
+    const svg = `<div class="gwrap"><svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" class="${cls || ''}"><line class="ax" x1="${L}" y1="${H - B}" x2="${W - R}" y2="${H - B}"/>${ticks.join('')}${yt}${hits.join('')}${segs.join('')}<g class="${cls || ''}">${dots.join('')}</g>${labels.join('')}${endLab}</svg></div>`;
+    // 변경 목록(최신순): 지금 패치 → 바로 전 패치 → …
+    const items = events.filter(e => e.kind !== 'same').sort((a, b) => b.i - a.i).map(e => {
+      const b = builds[e.i], dv = `<span class="d">${b.date}</span><span class="v">${b.version}</span>`;
+      if (e.kind === 'start') return `<li>${dv}<span class="ar">${fmtV(e.raw)}</span><span>${e.startKind}</span></li>`;
+      if (e.kind === 'gone') return `<li>${dv}<span class="dn">× 삭제</span><span>(마지막 값 ${fmtV(e.raw)})</span></li>`;
+      if (e.kind === 'seg') return `<li>${dv}<span>→ 여기서 효과 설명이 바뀜</span></li>`;
+      if (e.kind === 'gap') return `<li>${dv}<span>... 이 빌드에 값 없음</span></li>`;
+      return `<li>${dv}<span class="ar">${fmtV(e.prevRaw)} → ${fmtV(e.raw)}</span><span class="${e.raw > e.prevRaw ? 'up' : 'dn'}">${deltaTxt(e.prevRaw, e.raw, noPct)}</span></li>`;
+    });
+    const MAXL = 6;
+    const hiddenRest = items.slice(MAXL).map(li => li.replace('<li>', '<li hidden data-rest-item>')).join('');
+    const list = items.length ? `<ul class="chglist">${items.slice(0, MAXL).join('')}${items.length > MAXL ? `<li class="more" data-more>+${items.length - MAXL}개 더</li>${hiddenRest}` : ''}</ul>` : '';
+    return { svg, list };
+  }
+  function glineHTML(label, sub, builds, vals, offset, cls, itemLast, itemFirst) {
+    const [fi, ti] = gRange(builds);
+    const inRange = vals.map((v, k) => (offset + k >= fi && offset + k <= ti) ? v : null);
+    const [f, l] = firstLast(inRange), n = changes(inRange);
+    const dt = f == null ? '' : deltaTxt(f, l, cls === 'lvl');
+    const sum = f == null ? '—' : `${fmtV(f)} → ${fmtV(l)}${dt ? ` <span class="${l > f ? 'up' : 'dn'}">${dt}</span>` : ''}<br>변경 ${n}회`;
+    const g = sparkSVG(builds, vals, offset, cls, itemLast, itemFirst);
+    return `<div class="gline"><div class="gl" title="${esc(sub || label)}"><b>${esc(label)}</b>${esc(sub || '')}<div class="sum">${sum}</div></div>${g.svg}${g.list}</div>`;
+  }
+  // 카드 하나(기술·특성)의 변화 요약: 수치·레벨·판(설명 재작성)·생겨난/사라진 시점
+  // 저장소가 처음 만들어질 때 같은 날짜로 몰아 올린 빌드들 — 이 구간에 처음 보이면 '원래 있던' 것이다
+  function seedEnd(B) {
+    let i = 0;
+    while (i + 1 < B.length && B[i + 1].date === B[0].date) i++;
+    return i;
+  }
+  const stamp = b => `${b.date} (${b.version})`;
+  function itemFacts(it, B) {
+    const segs = it.segments || [];
+    const slotN = segs.reduce((a, sg) => a + sg.slots.reduce((b, sl) => b + changes(sl.values), 0), 0);
+    const lvSeq = [];
+    (it.levels || []).forEach(v => { if (v != null && v !== lvSeq[lvSeq.length - 1]) lvSeq.push(v); });
+    const seed = seedEnd(B);
+    const added = it.first > seed, removed = it.last < B.length - 1;
+    const cdN = changes(it.cooldown), enN = changes(it.energy), lvN = changes(it.levels);
+    return {
+      cdN, enN, slotN, lvN, lvSeq, lvFrom: lvSeq[0], lvTo: lvSeq[lvSeq.length - 1],
+      rewrites: Math.max(0, segs.length - 1),
+      added, removed,
+      addedAt: added ? stamp(B[it.first]) : null,
+      removedAt: removed ? stamp(B[Math.min(it.last + 1, B.length - 1)]) : null,
+      tunes: slotN + cdN + enN,
+      quiet: !cdN && !enN && !slotN && segs.length < 2 && !lvN && !added && !removed,
+    };
+  }
+  function tchip(it, cls, note) {
+    const icon = it.icon ? `<img src="${ICON}${it.icon}" alt="" loading="lazy" onerror="this.style.visibility='hidden'">` : '';
+    return `<span class="t ${cls || ''}">${icon}${esc(it.name)}${note ? `<span class="d">${esc(note)}</span>` : ''}</span>`;
+  }
+  function talentSummary(sr) {
+    const B = sr.builds, T = sr.items.filter(i => i.kind === 'talent'), F = new Map(T.map(i => [i, itemFacts(i, B)]));
+    const added = T.filter(i => F.get(i).added), removed = T.filter(i => F.get(i).removed);
+    const moved = T.filter(i => F.get(i).lvN > 0), rewritten = T.filter(i => F.get(i).rewrites > 0);
+    const tuned = T.filter(i => { const f = F.get(i); return f.tunes && !f.rewrites; });
+    const row = (k, arr, cls, note) => `<div class="row"><div class="k">${k}</div><div class="v">${arr.length
+      ? arr.map(i => tchip(i, cls, note(F.get(i), i))).join('') : '<span class="none">없음</span>'}</div></div>`;
+    return `<div class="tsum"><h4>특성이 어떻게 바뀌었나 <span style="font-weight:400;font-size:12px;color:var(--dim)">${B[0].date} ~ ${B[B.length - 1].date} 사이 · 지금 이 영웅의 특성 ${T.length}개 기준</span></h4>
+      ${row('생긴 특성', added, 'add', f => f.addedAt)}
+      ${row('사라진 특성', removed, 'rm', f => f.removedAt)}
+      ${row('레벨 이동', moved, 'mv', f => f.lvSeq.join(' → ') + '레벨')}
+      ${row('효과가 바뀜', rewritten, '', f => `설명 고쳐 씀 ${f.rewrites}번`)}
+      ${row('수치만 조정', tuned, '', f => `${f.tunes}번`)}
+      <div class="row"><div class="k">그대로</div><div class="v"><span class="none">${T.filter(i => F.get(i).quiet).length}개는 처음 나온 뒤로 한 번도 바뀌지 않았습니다.</span></div></div></div>`;
+  }
+  function itemCard(it, B) {
+    const f = itemFacts(it, B), segs = it.segments;
+    if (f.quiet) return '';   // 한 번도 안 바뀐 것만 접는다 (신설·삭제는 카드로 남긴다)
+    const icon = it.icon ? `<img src="${ICON}${it.icon}" alt="" loading="lazy" onerror="this.style.visibility='hidden'">` : '';
+    const life = (f.added || f.removed) ? `<span class="lv">${B[it.first].date.slice(0, 7)} ~ ${f.removed ? B[it.last].date.slice(0, 7) : '현재'}</span>` : '';
+    let body = '';
+    if (f.lvN) body += glineHTML('특성 레벨', '', B, it.levels, 0, 'lvl', it.last, it.first);
+    if (f.cdN) body += glineHTML('재사용 대기시간(초)', '', B, it.cooldown, 0, '', it.last, it.first);
+    if (f.enN) body += glineHTML(it.energyLabel || '자원', '', B, it.energy, 0, '', it.last, it.first);
+    segs.forEach((sg, si) => {
+      const lines = sg.slots.filter(sl => changes(sl.values) > 0)
+        .map(sl => glineHTML(sl.label, '', B, sl.values, sg.from, 'seg', it.last, it.first)).join('');
+      const head = segs.length > 1 ? `<div class="sh">${esc(sg.name)} <span class="rng">${si + 1}번째 설명 · ${B[sg.from].date.slice(0, 7)} ~ ${B[sg.to].date.slice(0, 7)}</span></div>` : '';
+      const text = `<details><summary>설명 원문${segs.length > 1 ? ' (이때)' : ''}</summary><div>${esc(sg.textLast || sg.text)}</div></details>`;
+      body += `<div class="gseg">${head}${text}${lines || (segs.length > 1 ? '<div class="gnone">이때는 수치가 그대로였습니다</div>' : '')}</div>`;
+    });
+    const tags = [];
+    if (f.added) tags.push(`<span class="lv" style="color:var(--ins)">${f.addedAt} 생김</span>`);
+    if (f.removed) tags.push(`<span class="lv" style="color:var(--del)">${f.removedAt} 사라짐</span>`);
+    if (f.rewrites) tags.push(`<span class="lv">효과 바뀜 ${f.rewrites}번</span>`);
+    if (!body) body = `<div class="gnone">${f.added && f.removed ? '있는 동안 수치가 바뀐 적은 없습니다.' : f.added ? '생긴 뒤로 수치가 바뀐 적은 없습니다.' : '사라질 때까지 수치가 바뀐 적은 없습니다.'}</div>`;
+    return `<div class="gcard"><div class="gh">${icon}${esc(it.name)}<span class="lv">${it.kind === 'talent' ? it.level + '레벨' : esc(it.type)}</span>${life}${tags.join('')}</div>${body}</div>`;
+  }
+  function seriesHTML(sr) {
+    if (!sr) return '';
+    const B = sr.builds;
+    const STAT = { life: '최대 생명력', regen: '생명력 재생', damage: '일반 공격력', period: '공격 주기(초)', range: '사거리', speed: '이동 속도' };
+    let out = '';
+    // 1) 영웅 능력치
+    const st = Object.entries(sr.stats).filter(([k, v]) => changes(v) > 0);
+    out += `<div class="gcat"><h4>영웅 능력치</h4><span class="c">${st.length ? `${st.length}가지가 바뀜` : '바뀐 것 없음'}</span></div>`;
+    out += st.length ? `<div class="gcard">${st.map(([k, v]) => glineHTML(STAT[k] || k, '', B, v, 0)).join('')}</div>`
+                     : '<div class="gnone">공개된 빌드 사이에 능력치 변화가 없습니다.</div>';
+    // 2) 기본 기술
+    const ab = sr.items.filter(i => i.kind === 'ability');
+    const abCards = ab.map(i => itemCard(i, B)).filter(Boolean);
+    const abQuiet = ab.filter(i => itemFacts(i, B).quiet);
+    const abNow = ab.filter(i => i.last === B.length - 1), abPast = ab.length - abNow.length;
+    out += `<div class="gcat"><h4>기본 기술</h4><span class="c">지금 ${abNow.length}개${abPast ? ` · 예전에 있던 ${abPast}개` : ''} · 그중 ${abCards.length}개가 바뀜</span></div>`;
+    out += abCards.join('') || '<div class="gnone">기술 수치 변화가 없습니다.</div>';
+    if (abQuiet.length) out += `<div class="gnone">한 번도 안 바뀜: ${abQuiet.map(i => esc(i.name)).join(', ')}</div>`;
+    // 3) 레벨별 특성
+    const tl = sr.items.filter(i => i.kind === 'talent');
+    out += talentSummary(sr);
+    [1, 4, 7, 10, 13, 16, 20].forEach(lv => {
+      const g = tl.filter(i => i.level === lv);
+      if (!g.length) return;
+      const now = g.filter(i => i.last === B.length - 1), past = g.filter(i => i.last < B.length - 1);
+      const cards = g.map(i => itemCard(i, B)).filter(Boolean);
+      const quiet = g.filter(i => itemFacts(i, B).quiet);
+      out += `<div class="gcat"><h4>${lv}레벨 특성</h4><span class="c">지금 ${now.length}개${past.length ? ` · 예전에 있던 ${past.length}개` : ''} · 그중 ${cards.length}개가 바뀜</span></div>`;
+      out += cards.join('');
+      if (quiet.length) out += `<div class="gnone">한 번도 안 바뀜: ${quiet.map(i => esc(i.name)).join(', ')}</div>`;
+    });
+    const etc = tl.filter(i => ![1, 4, 7, 10, 13, 16, 20].includes(i.level));
+    if (etc.length) {
+      const cards = etc.map(i => itemCard(i, B)).filter(Boolean);
+      if (cards.length) out += `<div class="gcat"><h4>그 밖의 특성</h4><span class="c">${cards.length}개</span></div>` + cards.join('');
+    }
+    const upc = G.color === 'kr' ? '빨강' : G.color === 'us' ? '초록' : '파랑';
+    const dnc = G.color === 'us' ? '빨강' : G.color === 'kr' ? '파랑' : '빨강';
+    const ax = G.xmode === 'patch' ? '값이 바뀐 패치만 한 칸씩' : G.xmode === 'time' ? '날짜에 비례해' : '빌드마다 한 칸씩';
+    const dir = G.dir === 'asc' ? '왼쪽이 과거, 오른쪽이 최신' : '왼쪽이 최신, 오른쪽이 과거';
+    const val = G.val === 'pct' ? '세로축은 기간 첫값 대비 %' : '세로축은 실제 값';
+    return `<div class="gsec ${esc(G.color)}"><h3 style="margin:6px 0 4px;font-size:16px">수치가 어떻게 바뀌었나 <span style="font-weight:400;font-size:12px;color:var(--dim)">${B[0].date} ~ ${B[B.length - 1].date} 라이브 빌드 ${B.length}개 · 가로축은 ${ax}(${dir}) · ${val} · 오를 때 ${upc}, 내릴 때 ${dnc} · 선 끝의 × 는 사라진 시점, → 는 효과 설명이 바뀐 시점</span></h3>${gctlHTML(B)}${out}</div>`;
+  }
+
+  const FIELD = { name: '이름', full: '설명', cooldown: '재사용 대기시간', energy: '자원', life: '생명력', quest: '퀘스트', level: '레벨' };
+  function changeHTML(c) {
+    const lv = c.level ? `<span class="lv">${c.level}레벨</span>` : '';
+    const abt = c.abilityType ? `<span class="lv">${esc(c.abilityType)}</span>` : '';
+    switch (c.type) {
+      case 'stat': return `<div class="chg"><div class="hd"><span class="nm">능력치</span><span class="tp">${esc(c.field)}</span></div><div class="f"><del>${esc(fmt(c.before))}</del> → <ins>${esc(fmt(c.after))}</ins></div></div>`;
+      case 'rename': return `<div class="chg"><div class="hd"><span class="nm">이름 변경</span></div><div class="f"><del>${esc(c.before)}</del> → <ins>${esc(c.after)}</ins></div></div>`;
+      case 'ability_added': case 'talent_added':
+        return `<div class="chg"><div class="hd"><span class="nm">${esc(c.name)}</span>${lv}${abt}<span class="tp add">신규 ${c.type.startsWith('talent') ? '특성' : '기술'}</span></div><div class="f">${esc(c.full || '')}</div></div>`;
+      case 'ability_removed': case 'talent_removed':
+        return `<div class="chg"><div class="hd"><span class="nm">${esc(c.name)}</span>${lv}${abt}<span class="tp rm">삭제된 ${c.type.startsWith('talent') ? '특성' : '기술'}</span></div></div>`;
+      default:
+        return `<div class="chg"><div class="hd"><span class="nm">${esc(c.name)}</span>${lv}${abt}<span class="tp">${c.type === 'talent' ? '특성' : '기술'}</span></div>
+          ${(c.changes || []).map(f => `<div class="f"><span class="k">${FIELD[f.field] || f.field}</span>${f.diff != null ? markDiff(f.diff) : `<del>${esc(fmt(f.before))}</del> → <ins>${esc(fmt(f.after))}</ins>`}</div>`).join('')}</div>`;
+    }
+  }
+  function fmt(v) { if (v == null) return '—'; if (typeof v === 'object') return JSON.stringify(v).replace(/[{}"\[\]]/g, '').replace(/,/g, ', '); return String(v); }
+
+  // ---------- 영웅 격자 / 이력 ----------
+  function renderHeroes() {
+    const ids = Object.keys(HEROES).filter(h => HEROES[h].portrait);
+    const count = {};
+    INDEX.forEach(r => r.heroes.forEach(h => { count[h] = (count[h] || 0) + 1; }));
+    const byRole = {};
+    ids.forEach(h => { const r = ROLE[HEROES[h].role] || HEROES[h].role || '기타'; (byRole[r] = byRole[r] || []).push(h); });
+    const order = ['전사', '투사', '치유사', '지원가', '근접 암살자', '원거리 암살자'];
+    const roles = order.filter(r => byRole[r]).concat(Object.keys(byRole).filter(r => !order.includes(r)));
+    app.innerHTML = headHTML('heroes') + `<p class="sub">영웅을 고르면 그 영웅이 언급된 모든 패치(공식 노트 + 데이터 변경)를 시간순으로 봅니다.</p>` +
+      roles.map(r => `<div class="role">${esc(r)}</div><div class="grid-h">${byRole[r].sort((a, b) => heroName(a).localeCompare(heroName(b), 'ko')).map(h =>
+        `<a href="?view=hero&id=${h}">${heroImg(h)}<span>${esc(heroName(h))}</span><span class="n">${count[h] || 0}</span></a>`).join('')}</div>`).join('') + creditsHTML();
+  }
+
+  async function renderHero(id) {
+    let doc = null, series = null;
+    try { [doc, series] = await Promise.all([getJSON(`heroes/${id}.json`), getJSON(`series/${id}.json`).catch(() => null)]); } catch (e) {}
+    const entries = doc ? doc.entries : [];
+    const chart = seriesHTML(series);
+    const body = entries.map(e => {
+      const link = `?v=${e.date}${e.build ? '&b=' + e.build : ''}&hero=${id}`;
+      const tr = e.translated;
+      const off = (tr ? `<div class="trnote" style="margin:0 0 8px"><b class="tag">번역</b> <span>한국어 공식판이 없어 블리자드 영어 원문을 <b>${esc(tr.by || 'Claude')}</b> 가 번역한 내용입니다${tr.at ? ` (${esc(tr.at)})` : ''}. <a href="${link}&tab=en">영어 원문 보기</a></span></div>` : '')
+        + e.official.map(o => `<div class="box"><div class="lab">${tr ? 'Claude 번역' : '공식 한글 노트'} · ${esc(o.section)}</div><div class="official">${o.html}</div></div>`).join('');
+      const dat = e.data ? `<div class="box"><div class="lab">데이터 변경 (${esc(e.data.from)} → ${esc(e.data.to)})${e.data.added ? ' · 신규 영웅' : ''}${e.data.removed ? ' · 제거' : ''}</div>${e.data.changes.map(changeHTML).join('') || '<div class="empty">—</div>'}</div>` : '';
+      return `<div class="ent" id="e-${e.date}-${e.build || 0}"><h3><a href="${link}">${e.date}</a>${badges({ ...e, official: e.official.length ? 1 : null, translated: e.translated })}<span style="font-weight:400;font-size:13px;color:var(--dim)">${esc(e.version || '')}</span></h3>${off}${dat}</div>`;
+    }).join('');
+    app.innerHTML = headHTML('heroes') + `<a id="pn-back" href="?view=heroes">← 영웅 목록</a>
+      <div class="hero-head">${heroImg(id)}<div><h2>${esc(heroName(id))}</h2><div class="d">패치 ${entries.length}건 · 공식 노트 ${entries.filter(e => e.official.length).length}건 · 데이터 변경 ${entries.filter(e => e.data).length}건</div></div></div>
+      ${chart}<div class="hist">${body || '<div class="empty">기록이 없습니다.</div>'}</div>${creditsHTML()}`;
+    app.querySelectorAll('.chart .m[data-go]').forEach(m => m.onclick = () => { const t = document.getElementById(m.dataset.go); if (t) { t.scrollIntoView({ behavior: 'smooth', block: 'start' }); history.replaceState(null, '', '#' + m.dataset.go); } });
+    const rerender = () => {
+      const y = window.scrollY, sec = app.querySelector('.gsec'); if (!sec || !series) return;
+      const open = [...sec.querySelectorAll('details')].map(dt => dt.open), fid = document.activeElement && document.activeElement.id;
+      sec.outerHTML = seriesHTML(series);
+      const nsec = app.querySelector('.gsec');
+      [...nsec.querySelectorAll('details')].forEach((dt, i) => { if (open[i]) dt.open = true; });
+      bindGctl(rerender);
+      if (fid) { const el = nsec.querySelector('#' + fid); if (el) el.focus(); }
+      window.scrollTo(0, y);
+    };
+    bindGctl(rerender);
+    // 첫 렌더는 내용이 붙기 전(스크롤바 없음)에 폭을 재므로, 붙인 뒤 폭이 달라졌으면 한 번 더 그린다
+    const svg0 = app.querySelector('.gline svg');
+    if (svg0 && +svg0.getAttribute('width') !== chartWidth()) rerender();
+    clearTimeout(window.__pnResize);
+    let lastW = window.innerWidth;
+    window.onresize = () => { clearTimeout(window.__pnResize); window.__pnResize = setTimeout(() => { if (window.innerWidth !== lastW) { lastW = window.innerWidth; if (q().get('view') === 'hero') rerender(); } }, 200); };
+  }
+
+  // ---------- 수치 변화 그래프 ----------
+  // 설정: 기간(빌드 인덱스 범위) · x축 간격(날짜 비례/빌드 균등) · y축(자동/0부터) · 높이 · 점(변경점만/모든 빌드)
+  const GKEY = 'patchnotes.graph4';
+  const GDEF = { xmode: 'patch', dir: 'asc', y0: false, h: 90, dots: 'chg', from: '', to: '', val: 'abs', color: 'bl' };
+  let G = { ...GDEF };
+  try { G = { ...GDEF, ...(JSON.parse(localStorage.getItem(GKEY) || '{}')) }; } catch (e) {}
+  function saveG() { try { localStorage.setItem(GKEY, JSON.stringify(G)); } catch (e) {} }
+  function gctlHTML(B) {
+    const [fi, ti] = gRange(B);
+    const opts = sel => B.map((b, i) => `<option value="${i}" ${i === sel ? 'selected' : ''}>${b.date}</option>`).join('');
+    return `<div class="gctl">
+      <label>기간 <select id="g-from">${opts(fi)}</select> ~ <select id="g-to">${opts(ti)}</select></label>
+      <span class="seg-btns">가로축 <button data-g="xmode" data-v="patch" class="${G.xmode === 'patch' ? 'on' : ''}" title="값이 바뀐 패치만 한 칸씩">패치별</button><button data-g="xmode" data-v="time" class="${G.xmode === 'time' ? 'on' : ''}">날짜 비례</button><button data-g="xmode" data-v="even" class="${G.xmode === 'even' ? 'on' : ''}">빌드 균등</button></span>
+      <span class="seg-btns">방향 <button data-g="dir" data-v="asc" class="${G.dir === 'asc' ? 'on' : ''}">과거 → 최신</button><button data-g="dir" data-v="desc" class="${G.dir === 'desc' ? 'on' : ''}">최신 → 과거</button></span>
+      <span class="seg-btns">Y축 <button data-g="y0" data-v="0" class="${!G.y0 ? 'on' : ''}">값 범위</button><button data-g="y0" data-v="1" class="${G.y0 ? 'on' : ''}">0부터</button></span>
+      <label>높이 <input type="range" id="g-h" min="50" max="220" step="10" value="${G.h}"> <span id="g-hv">${G.h}</span>px</label>
+      <span class="seg-btns">점 <button data-g="dots" data-v="chg" class="${G.dots === 'chg' ? 'on' : ''}">변경점만</button><button data-g="dots" data-v="all" class="${G.dots === 'all' ? 'on' : ''}">모든 빌드</button></span>
+      <span class="seg-btns">값 <button data-g="val" data-v="abs" class="${G.val === 'abs' ? 'on' : ''}">절대값</button><button data-g="val" data-v="pct" class="${G.val === 'pct' ? 'on' : ''}">첫값 대비 %</button></span>
+      <span class="seg-btns">색 <button data-g="color" data-v="bl" class="${G.color === 'bl' ? 'on' : ''}">상승 파랑</button><button data-g="color" data-v="kr" class="${G.color === 'kr' ? 'on' : ''}">상승 빨강</button><button data-g="color" data-v="us" class="${G.color === 'us' ? 'on' : ''}">상승 초록</button></span>
+      <button id="g-reset">초기화</button></div>`;
+  }
+  function bindMore() {
+    app.querySelectorAll('.chglist [data-more]').forEach(m => m.onclick = () => { m.parentElement.querySelectorAll('[data-rest-item]').forEach(n => { n.hidden = false; }); m.remove(); });
+  }
+  function bindGctl(rerender) {
+    bindMore();
+    const root = app.querySelector('.gctl'); if (!root) return;
+    root.querySelectorAll('[data-g]').forEach(b => b.onclick = () => { const k = b.dataset.g, v = b.dataset.v; G[k] = k === 'y0' ? v === '1' : v; saveG(); rerender(); });
+    root.querySelector('#g-from').onchange = e => { G.from = e.target.value; if (G.to !== '' && +G.to < +G.from) G.to = G.from; saveG(); rerender(); };
+    root.querySelector('#g-to').onchange = e => { G.to = e.target.value; if (G.from !== '' && +G.from > +G.to) G.from = G.to; saveG(); rerender(); };
+    const h = root.querySelector('#g-h'); h.oninput = e => { G.h = +e.target.value; root.querySelector('#g-hv').textContent = G.h; }; h.onchange = () => { saveG(); rerender(); };
+    root.querySelector('#g-reset').onclick = () => { G = { ...GDEF }; saveG(); rerender(); };
+  }
+  function gRange(B) {
+    const fi = G.from === '' ? 0 : Math.max(0, Math.min(+G.from, B.length - 1));
+    const ti = G.to === '' ? B.length - 1 : Math.max(fi, Math.min(+G.to, B.length - 1));
+    return [fi, ti];
+  }
+  function chartWidth() {
+    const oneCol = matchMedia('(max-width:600px)').matches, cs = getComputedStyle(app);
+    const inner = (app.clientWidth || 600) - (parseFloat(cs.paddingLeft) || 0) - (parseFloat(cs.paddingRight) || 0);  // .wrap 안쪽 폭
+    const w = inner - 2 - 28 - (oneCol ? 0 : 158);  // 카드 테두리·패딩·(2열이면 라벨 열+간격)
+    return Math.max(oneCol ? 200 : 260, Math.min(760, w));
+  }
+  const fmtV = v => (Math.abs(v) >= 100 ? Math.round(v) : Math.round(v * 100) / 100).toString();
+  const fmtPct = v => (v > 0 ? '+' : '') + (Math.abs(v) >= 10 ? Math.round(v) : Math.round(v * 10) / 10) + '%';
+  const fmtD = v => (v > 0 ? '+' : v < 0 ? '−' : '') + fmtV(Math.abs(v));
+  // 변화 요약: "▲12 (+26%)" / "▼3 (−7%)"
+  const deltaTxt = (prev, v, noPct) => { const d = v - prev; if (!d) return ''; const a = d > 0 ? '▲' : '▼'; const pct = (prev && !noPct) ? ` (${fmtPct(d / Math.abs(prev) * 100)})` : ''; return `${a}${fmtV(Math.abs(d))}${pct}`; };
+  // series/<id>.json: 비-PTR 빌드마다 기술·특성의 재사용 대기시간·자원·툴팁 숫자. 설명 골격이 바뀌면 segment 가 갈라진다.
+  function changes(vals) { let prev = null, n = 0; for (const v of vals) { if (v == null) continue; if (prev != null && v !== prev) n++; prev = v; } return n; }
+  function firstLast(vals) { const a = vals.filter(v => v != null); return a.length ? [a[0], a[a.length - 1]] : [null, null]; }
+  function sparkSVG(builds, vals, offset, cls, itemLast, itemFirst) {
+    // vals[k] ↔ builds[offset+k]. 표시 범위 [fi, ti]. 계단선: 어떤 빌드의 값은 다음 열(패치)까지 유지.
+    // 가로축: 패치별 = 값이 바뀐 빌드(+시작·종료 시점·현재)만 열로 균등 배치 / 날짜 비례 / 빌드 균등. 방향 desc 면 최신이 왼쪽.
+    const [fi, ti] = gRange(builds);
+    const W = chartWidth(), H = G.h, T = 12;
+    const desc = G.dir === 'desc', pct = G.val === 'pct' && cls !== 'lvl', noPct = cls === 'lvl';
+    const val = i => { const k = i - offset; return (k >= 0 && k < vals.length) ? vals[k] : null; };
+    const segEnd = cls === 'seg' ? offset + vals.length - 1 : null;  // 판(segment) 시리즈의 마지막 빌드
+    let base = null;
+    for (let i = fi; i <= ti && base == null; i++) base = val(i);
+    const disp = v => !pct ? v : (base ? (v - base) / Math.abs(base) * 100 : v - base);
+    const fmtA = v => pct ? (base ? fmtPct(v) : 'Δ' + fmtD(v)) : fmtV(v);
+    // 열 결정
+    let cols = [];
+    if (G.xmode === 'patch') {
+      let prev = null;
+      for (let i = fi; i <= ti; i++) {
+        const v = val(i);
+        if (v == null) { if (prev != null) cols.push(i); prev = null; continue; }  // 종료(삭제·판 끝·공백) 시점 열
+        if (prev == null || v !== prev) cols.push(i);
+        prev = v;
+      }
+      if (!cols.length) cols = [fi];
+      if (cols[cols.length - 1] !== ti && val(ti) != null) cols.push(ti);  // 현재까지 유지 → '현재' 열
+    } else {
+      for (let i = fi; i <= ti; i++) cols.push(i);
+    }
+    // 여백: 끝값 라벨이 놓이는 쪽을 넓게, Y 눈금은 그 반대쪽. 패치별 눈금이 빽빽하면 회전 + 아래 여백
+    const many = G.xmode === 'patch' && cols.length > 1 && (W - 86) / (cols.length - 1) < 92;  // '현재 yy-mm-dd'(67px) + 이웃 라벨 반폭
+    const L = desc ? 50 : 36, R = desc ? 36 : 50, B = many ? 38 : 16, PW = W - L - R;
+    const tAt = i => Date.parse(builds[i].date);
+    let t0 = tAt(fi), t1 = tAt(ti);
+    for (let i = fi; i <= ti; i++) { const t = tAt(i); if (t < t0) t0 = t; if (t > t1) t1 = t; }
+    const mirror = x => desc ? W - R - (x - L) : x;
+    const pos = {};
+    cols.forEach((i, k) => {
+      let x;
+      if (G.xmode === 'time' && t1 !== t0) x = L + (tAt(i) - t0) / (t1 - t0) * PW;
+      else x = L + (cols.length <= 1 ? 0 : k / (cols.length - 1)) * PW;
+      pos[i] = mirror(Math.max(L, Math.min(W - R, x)));
+    });
+    const xOf = i => pos[i];
+    const edge = desc ? L : W - R;
+    const nextCol = i => { const k = cols.indexOf(i); return k >= 0 && k + 1 < cols.length ? cols[k + 1] : null; };
+    const xEnd = i => { const j = nextCol(i); return j == null ? edge : xOf(j); };
+    // 시리즈가 끊기는 이유: 판 끝(다음 판으로) / 항목 삭제 / 그 빌드에 값 없음(공백)
+    const endKind = nx => (segEnd != null && nx > segEnd) ? 'seg' : (itemLast != null && nx > itemLast) ? 'gone' : 'gap';
+    const MARK = { seg: ' →', gone: ' ×', gap: ' ...' };
+    // 실행 구간(연속 non-null) — 열만
+    const runs = []; let run = null;
+    cols.forEach(i => {
+      const v = val(i);
+      if (v == null) { run = null; return; }
+      if (!run) { run = []; runs.push(run); }
+      run.push([i, disp(v), v]);
+    });
+    const pts = runs.flat();
+    if (!pts.length) return { svg: `<div class="gwrap"><svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}"><text class="tk" x="${L}" y="${H / 2}">선택한 기간에 값 없음</text></svg></div>`, list: '' };
+    const ys = pts.map(p => p[1]); const rawLo = Math.min(...ys), rawHi = Math.max(...ys);
+    let lo = rawLo, hi = rawHi;
+    if (G.y0 || pct) { lo = Math.min(0, lo); hi = Math.max(0, hi); }
+    if (lo === hi) { const dd = Math.abs(lo) * 0.1 || 1; lo -= dd; hi += dd; }
+    const pad = (hi - lo) * 0.12;
+    const ylo = ((G.y0 || pct) && lo === 0) ? 0 : lo - pad, yhi = ((G.y0 || pct) && hi === 0) ? 0 : hi + pad;
+    const yOf = v => T + (1 - (v - ylo) / (yhi - ylo)) * (H - T - B);
+    const placed = [], labels = [];
+    const placeLabel = (px, py, txt, up) => {
+      const tw = txt.length * 6.2 + 2;
+      const cands = up ? [[px, py - 6, 'middle'], [px, py + 12, 'middle']] : [[px, py + 12, 'middle'], [px, py - 6, 'middle']];
+      cands.push([px + 6, py + 4, 'start'], [px - 6, py + 4, 'end'], [px, py - 17, 'middle'], [px, py + 23, 'middle']);
+      for (const [lx, ly, anchor] of cands) {
+        if (ly - 9 < 1 || ly > H - B - 1) continue;
+        const x0 = anchor === 'middle' ? lx - tw / 2 : anchor === 'start' ? lx : lx - tw, x1 = x0 + tw;
+        if (x0 < L - 2 || x1 > W - R + 2) continue;
+        if (placed.some(b => !(x1 < b.x0 || x0 > b.x1 || ly < b.y - 10 || ly > b.y + 10))) continue;
+        placed.push({ x0, x1, y: ly });
+        labels.push(`<text class="vl ${up ? 'up' : 'dn'}" x="${lx.toFixed(1)}" y="${ly.toFixed(1)}" text-anchor="${anchor}">${txt}</text>`);
+        return;
+      }
+    };
+    // 변경점 라벨: 절대값 모드 = ▲Δ (직전 대비 %), 첫값대비% 모드 = ▲Δ%p(직전 대비 퍼센트포인트), 첫값 0 이면 Δ만
+    const chgLabel = (prev, v, prevRaw, raw, up) => pct ? (base ? `${up ? '▲' : '▼'}${fmtPct(Math.abs(v - prev)).replace('+', '')}p` : deltaTxt(prevRaw, raw, true)) : deltaTxt(prevRaw, raw, noPct);
+    const segs = [], dots = [], hits = [], events = [];
+    const tip = (i, raw, prevRaw) => `${builds[i].date} (${builds[i].version}): ${raw}` + (prevRaw != null && raw !== prevRaw ? `  ${deltaTxt(prevRaw, raw, noPct)} vs 직전` : '') + (!noPct && base != null && raw !== base && base ? `  · 첫값 대비 ${fmtPct((raw - base) / Math.abs(base) * 100)}` : '');
+    runs.forEach((r, ri) => {
+      let prev = null, prevRaw = null, prevX = null, prevY = null;
+      r.forEach(([i, v, raw], k) => {
+        const px = xOf(i), py = yOf(v);
+        const isChg = prev != null && v !== prev, isEdge = k === 0 || k === r.length - 1, up = isChg && v > prev;
+        if (k > 0) segs.push(`<line class="ln ${isChg ? (up ? 'up' : 'dn') : 'flat'}" x1="${prevX.toFixed(1)}" y1="${prevY.toFixed(1)}" x2="${px.toFixed(1)}" y2="${py.toFixed(1)}"/>`);
+        if (G.dots === 'all' || isChg || isEdge) dots.push(`<circle class="dot ${isChg ? (up ? 'chg up' : 'chg dn') : ''}" cx="${px.toFixed(1)}" cy="${py.toFixed(1)}" r="${isChg ? 3.5 : 2.5}"><title>${tip(i, raw, prevRaw)}</title></circle>`);
+        if (isChg && i !== ti) placeLabel(px, py, chgLabel(prev, v, prevRaw, raw, up), up);
+        const x1 = xEnd(i), xa = Math.min(px, x1), xb = Math.max(px, x1);
+        hits.push(`<rect class="hit" x="${xa.toFixed(1)}" y="${T}" width="${Math.max(1, xb - xa).toFixed(1)}" height="${H - T - B}"><title>${tip(i, raw, prevRaw)}</title></rect>`);
+        events.push({ i, raw, prevRaw, kind: k === 0 ? 'start' : (isChg ? 'chg' : 'same'),
+                      startKind: k !== 0 ? '' : ri > 0 ? '재등장' : (i === fi && fi > 0) ? '기간 시작 시점 값' : (cls === 'seg' && offset > (itemFirst || 0)) ? '판 시작 (설명 재작성)' : '첫 기록' });
+        prev = v; prevRaw = raw; prevX = px; prevY = py;
+      });
+      const li = r[r.length - 1][0], ex = xEnd(li);
+      if (Math.abs(ex - prevX) > 0.5) segs.push(`<line class="ln flat" x1="${prevX.toFixed(1)}" y1="${prevY.toFixed(1)}" x2="${ex.toFixed(1)}" y2="${prevY.toFixed(1)}"/>`);  // 마지막 값 유지 구간
+      const nx = nextCol(li);
+      if (nx != null && val(nx) == null) events.push({ i: nx, raw: r[r.length - 1][2], kind: endKind(nx) });
+    });
+    // 가로 눈금
+    const ticks = [];
+    if (G.xmode === 'patch') {
+      cols.forEach((i, k) => {
+        const x = xOf(i), cur = i === ti && val(i) != null && k === cols.length - 1;
+        const lab = (cur && !many ? '현재 ' : '') + builds[i].date.slice(2);
+        const anchor = cols.length === 1 ? 'middle' : k === 0 ? (desc ? 'end' : 'start') : k === cols.length - 1 ? (desc ? 'start' : 'end') : 'middle';
+        ticks.push(`<line class="grid" x1="${x.toFixed(1)}" y1="${T}" x2="${x.toFixed(1)}" y2="${H - B}"/>` + (many
+          ? `<text class="tk rot ${cur ? 'cur' : ''}" transform="translate(${(x + 3).toFixed(1)},${H - B + 8}) rotate(-40)">${lab}</text>`
+          : `<text class="tk ${cur ? 'cur' : ''}" x="${x.toFixed(1)}" y="${H - 3}" text-anchor="${anchor}">${lab}</text>`));
+      });
+    } else if (G.xmode === 'time' && t1 !== t0) {
+      const y0 = new Date(t0).getUTCFullYear(), y1 = new Date(t1).getUTCFullYear();
+      for (let y = y0; y <= y1; y++) { const t = Date.UTC(y, 0, 1); if (t < t0 || t > t1) continue; const x = mirror(L + (t - t0) / (t1 - t0) * PW); ticks.push(`<line class="grid" x1="${x.toFixed(1)}" y1="${T}" x2="${x.toFixed(1)}" y2="${H - B}"/><text class="tk" x="${x.toFixed(1)}" y="${H - 3}" text-anchor="middle">${y}</text>`); }
+      if (!ticks.length) ticks.push(`<text class="tk" x="${L}" y="${H - 3}">${builds[desc ? ti : fi].date}</text><text class="tk" x="${W - R}" y="${H - 3}" text-anchor="end">${builds[desc ? fi : ti].date}</text>`);
+    } else {
+      let ly = null; for (let i = fi; i <= ti; i++) { const yr = builds[i].date.slice(0, 4); if (yr !== ly) { const x = xOf(i); ticks.push(`<line class="grid" x1="${x.toFixed(1)}" y1="${T}" x2="${x.toFixed(1)}" y2="${H - B}"/><text class="tk" x="${x.toFixed(1)}" y="${H - 3}" text-anchor="middle">${yr}</text>`); ly = yr; } }
+    }
+    // Y 눈금: 끝값 라벨 반대쪽 (asc: 왼쪽, desc: 오른쪽)
+    const yvals = [rawHi, rawLo].concat((G.y0 || pct) ? [0] : []).filter((v, k, a) => a.indexOf(v) === k);
+    const yt = yvals.map(v => `<line class="${v === 0 && pct ? 'zero' : 'grid'}" x1="${L}" y1="${yOf(v).toFixed(1)}" x2="${W - R}" y2="${yOf(v).toFixed(1)}"/><text class="ty" x="${desc ? W - R + 4 : L - 4}" y="${(yOf(v) + 3.5).toFixed(1)}" text-anchor="${desc ? 'start' : 'end'}">${fmtA(v)}</text>`).join('');
+    // 끝값 라벨: 마지막 선이 끝나는 곳 옆(desc: 왼쪽, asc: 오른쪽). 끊긴 이유 표시(▸ 다음 판 / ✕ 삭제 / ⋯ 공백)
+    const lastRun = runs[runs.length - 1], last = lastRun[lastRun.length - 1];
+    const lastChg = lastRun.length > 1 && last[1] !== lastRun[lastRun.length - 2][1];
+    const endX = xEnd(last[0]), nxl = nextCol(last[0]), gone = nxl != null && val(nxl) == null;
+    const mark = gone ? MARK[endKind(nxl)] : '';
+    const endLab = `<text class="vl ${lastChg ? (last[1] > lastRun[lastRun.length - 2][1] ? 'up' : 'dn') : ''}" x="${(desc ? endX - 5 : endX + 5).toFixed(1)}" y="${(yOf(last[1]) + 4).toFixed(1)}" text-anchor="${desc ? 'end' : 'start'}" style="${gone ? 'opacity:.7' : ''}">${fmtA(last[1])}${mark}</text>`;
+    const svg = `<div class="gwrap"><svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" class="${cls || ''}"><line class="ax" x1="${L}" y1="${H - B}" x2="${W - R}" y2="${H - B}"/>${ticks.join('')}${yt}${hits.join('')}${segs.join('')}<g class="${cls || ''}">${dots.join('')}</g>${labels.join('')}${endLab}</svg></div>`;
+    // 변경 목록(최신순): 지금 패치 → 바로 전 패치 → …
+    const items = events.filter(e => e.kind !== 'same').sort((a, b) => b.i - a.i).map(e => {
+      const b = builds[e.i], dv = `<span class="d">${b.date}</span><span class="v">${b.version}</span>`;
+      if (e.kind === 'start') return `<li>${dv}<span class="ar">${fmtV(e.raw)}</span><span>${e.startKind}</span></li>`;
+      if (e.kind === 'gone') return `<li>${dv}<span class="dn">× 삭제</span><span>(마지막 값 ${fmtV(e.raw)})</span></li>`;
+      if (e.kind === 'seg') return `<li>${dv}<span>→ 여기서 효과 설명이 바뀜</span></li>`;
+      if (e.kind === 'gap') return `<li>${dv}<span>... 이 빌드에 값 없음</span></li>`;
+      return `<li>${dv}<span class="ar">${fmtV(e.prevRaw)} → ${fmtV(e.raw)}</span><span class="${e.raw > e.prevRaw ? 'up' : 'dn'}">${deltaTxt(e.prevRaw, e.raw, noPct)}</span></li>`;
+    });
+    const MAXL = 6;
+    const hiddenRest = items.slice(MAXL).map(li => li.replace('<li>', '<li hidden data-rest-item>')).join('');
+    const list = items.length ? `<ul class="chglist">${items.slice(0, MAXL).join('')}${items.length > MAXL ? `<li class="more" data-more>+${items.length - MAXL}개 더</li>${hiddenRest}` : ''}</ul>` : '';
+    return { svg, list };
+  }
+  function glineHTML(label, sub, builds, vals, offset, cls, itemLast, itemFirst) {
+    const [fi, ti] = gRange(builds);
+    const inRange = vals.map((v, k) => (offset + k >= fi && offset + k <= ti) ? v : null);
+    const [f, l] = firstLast(inRange), n = changes(inRange);
+    const dt = f == null ? '' : deltaTxt(f, l, cls === 'lvl');
+    const sum = f == null ? '—' : `${fmtV(f)} → ${fmtV(l)}${dt ? ` <span class="${l > f ? 'up' : 'dn'}">${dt}</span>` : ''}<br>변경 ${n}회`;
+    const g = sparkSVG(builds, vals, offset, cls, itemLast, itemFirst);
+    return `<div class="gline"><div class="gl" title="${esc(sub || label)}"><b>${esc(label)}</b>${esc(sub || '')}<div class="sum">${sum}</div></div>${g.svg}${g.list}</div>`;
+  }
+  // 카드 하나(기술·특성)의 변화 요약: 수치·레벨·판(설명 재작성)·생겨난/사라진 시점
+  function itemFacts(it, B) {
+    const segs = it.segments || [];
+    const slotN = segs.reduce((a, sg) => a + sg.slots.reduce((b, sl) => b + changes(sl.values), 0), 0);
+    const lv = it.levels ? it.levels.filter(v => v != null) : [];
+    return {
+      cdN: changes(it.cooldown), enN: changes(it.energy), slotN,
+      lvN: changes(it.levels), lvFrom: lv[0], lvTo: lv[lv.length - 1],
+      rewrites: Math.max(0, segs.length - 1),
+      added: it.first > 0, removed: it.last < B.length - 1,
+      addedAt: it.first > 0 ? B[it.first].date : null,
+      removedAt: it.last < B.length - 1 ? B[Math.min(it.last + 1, B.length - 1)].date : null,
+      quiet: !changes(it.cooldown) && !changes(it.energy) && !slotN && segs.length < 2 && !changes(it.levels),
+    };
+  }
+  function tchip(it, cls, note) {
+    const icon = it.icon ? `<img src="${ICON}${it.icon}" alt="" loading="lazy" onerror="this.style.visibility='hidden'">` : '';
+    return `<span class="t ${cls || ''}">${icon}${esc(it.name)}${note ? `<span class="d">${esc(note)}</span>` : ''}</span>`;
+  }
+  function talentSummary(sr) {
+    const B = sr.builds, T = sr.items.filter(i => i.kind === 'talent'), F = new Map(T.map(i => [i, itemFacts(i, B)]));
+    const added = T.filter(i => F.get(i).added), removed = T.filter(i => F.get(i).removed);
+    const moved = T.filter(i => F.get(i).lvN > 0), rewritten = T.filter(i => F.get(i).rewrites > 0);
+    const tuned = T.filter(i => { const f = F.get(i); return (f.slotN || f.cdN || f.enN) && !f.rewrites; });
+    const row = (k, arr, cls, note) => `<div class="row"><div class="k">${k}</div><div class="v">${arr.length
+      ? arr.map(i => tchip(i, cls, note(F.get(i), i))).join('') : '<span class="none">없음</span>'}</div></div>`;
+    return `<div class="tsum"><h4>특성 변경 한눈에 보기 <span style="font-weight:400;font-size:12px;color:var(--dim)">${B[0].date} ~ ${B[B.length - 1].date} · 특성 ${T.length}개</span></h4>
+      ${row('생긴 특성', added, 'add', f => f.addedAt)}
+      ${row('사라진 특성', removed, 'rm', f => f.removedAt)}
+      ${row('레벨 이동', moved, 'mv', f => `${f.lvFrom} → ${f.lvTo}레벨`)}
+      ${row('틀이 바뀜', rewritten, '', f => `설명 다시 쓰임 ${f.rewrites}회`)}
+      ${row('수치만 조정', tuned, '', f => `${f.slotN + f.cdN + f.enN}곳`)}
+      <div class="row"><div class="k">그대로</div><div class="v"><span class="none">${T.filter(i => F.get(i).quiet).length}개는 처음 그대로입니다.</span></div></div></div>`;
+  }
+  function itemCard(it, B) {
+    const f = itemFacts(it, B), segs = it.segments;
+    if (f.quiet) return '';
+    const icon = it.icon ? `<img src="${ICON}${it.icon}" alt="" loading="lazy" onerror="this.style.visibility='hidden'">` : '';
+    const life = (f.added || f.removed) ? `<span class="lv">${B[it.first].date.slice(0, 7)} ~ ${f.removed ? B[it.last].date.slice(0, 7) : '현재'}</span>` : '';
+    let body = '';
+    if (f.lvN) body += glineHTML('특성 레벨', '', B, it.levels, 0, 'lvl', it.last, it.first);
+    if (f.cdN) body += glineHTML('재사용 대기시간(초)', '', B, it.cooldown, 0, '', it.last, it.first);
+    if (f.enN) body += glineHTML(it.energyLabel || '자원', '', B, it.energy, 0, '', it.last, it.first);
+    segs.forEach((sg, si) => {
+      const lines = sg.slots.filter(sl => changes(sl.values) > 0)
+        .map(sl => glineHTML(sl.label, '', B, sl.values, sg.from, 'seg', it.last, it.first)).join('');
+      const head = segs.length > 1 ? `<div class="sh">${esc(sg.name)} <span class="rng">${si + 1}번째 설명 · ${B[sg.from].date.slice(0, 7)} ~ ${B[sg.to].date.slice(0, 7)}</span></div>` : '';
+      const text = `<details><summary>설명 원문${segs.length > 1 ? ' (이때)' : ''}</summary><div>${esc(sg.textLast || sg.text)}</div></details>`;
+      body += `<div class="gseg">${head}${text}${lines || (segs.length > 1 ? '<div class="gnone">이때는 수치가 그대로였습니다</div>' : '')}</div>`;
+    });
+    const tags = [];
+    if (f.added) tags.push(`<span class="lv" style="color:var(--ins)">${f.addedAt} 신설</span>`);
+    if (f.removed) tags.push(`<span class="lv" style="color:var(--del)">${f.removedAt} 삭제</span>`);
+    if (f.rewrites) tags.push(`<span class="lv">틀 바뀜 ${f.rewrites}회</span>`);
+    return `<div class="gcard"><div class="gh">${icon}${esc(it.name)}<span class="lv">${it.kind === 'talent' ? it.level + '레벨' : esc(it.type)}</span>${life}${tags.join('')}</div>${body}</div>`;
+  }
+  function seriesHTML(sr) {
+    if (!sr) return '';
+    const B = sr.builds;
+    const STAT = { life: '최대 생명력', regen: '생명력 재생', damage: '일반 공격력', period: '공격 주기(초)', range: '사거리', speed: '이동 속도' };
+    let out = '';
+    // 1) 영웅 능력치
+    const st = Object.entries(sr.stats).filter(([k, v]) => changes(v) > 0);
+    out += `<div class="gcat"><h4>영웅 능력치</h4><span class="c">${st.length ? `${st.length}가지가 바뀜` : '바뀐 것 없음'}</span></div>`;
+    out += st.length ? `<div class="gcard">${st.map(([k, v]) => glineHTML(STAT[k] || k, '', B, v, 0)).join('')}</div>`
+                     : '<div class="gnone">공개된 빌드 사이에 능력치 변화가 없습니다.</div>';
+    // 2) 기본 기술
+    const ab = sr.items.filter(i => i.kind === 'ability');
+    const abCards = ab.map(i => itemCard(i, B)).filter(Boolean);
+    const abQuiet = ab.filter(i => itemFacts(i, B).quiet);
+    out += `<div class="gcat"><h4>기본 기술</h4><span class="c">${ab.length}개 중 ${abCards.length}개가 바뀜</span></div>`;
+    out += abCards.join('') || '<div class="gnone">기술 수치 변화가 없습니다.</div>';
+    if (abQuiet.length) out += `<div class="gnone">한 번도 안 바뀜: ${abQuiet.map(i => esc(i.name)).join(', ')}</div>`;
+    // 3) 레벨별 특성
+    const tl = sr.items.filter(i => i.kind === 'talent');
+    out += talentSummary(sr);
+    [1, 4, 7, 10, 13, 16, 20].forEach(lv => {
+      const g = tl.filter(i => i.level === lv);
+      if (!g.length) return;
+      const cards = g.map(i => itemCard(i, B)).filter(Boolean);
+      const quiet = g.filter(i => itemFacts(i, B).quiet);
+      out += `<div class="gcat"><h4>${lv}레벨 특성</h4><span class="c">${g.length}개 중 ${cards.length}개가 바뀜</span></div>`;
+      out += cards.join('');
+      if (quiet.length) out += `<div class="gnone">한 번도 안 바뀜: ${quiet.map(i => esc(i.name)).join(', ')}</div>`;
+    });
+    const etc = tl.filter(i => ![1, 4, 7, 10, 13, 16, 20].includes(i.level));
+    if (etc.length) {
+      const cards = etc.map(i => itemCard(i, B)).filter(Boolean);
+      if (cards.length) out += `<div class="gcat"><h4>그 밖의 특성</h4><span class="c">${cards.length}개</span></div>` + cards.join('');
+    }
+    return `<div class="gsec ${esc(G.color)}"><h3 style="margin:6px 0 4px;font-size:16px">수치·특성 변화 <span style="font-weight:400;font-size:12px;color:var(--dim)">${B[0].date} ~ ${B[B.length - 1].date} 라이브 빌드 ${B.length}개 · 가로축 '패치별' = 값이 바뀐 패치만 한 칸씩(왼쪽이 과거, 오른쪽이 최신) · 선 색: 상승 파랑·하락 빨강·유지 회색 · 선 끝의 × 는 삭제된 시점, → 는 설명이 다시 쓰인 시점</span></h3>${gctlHTML(B)}${out}</div>`;
+  }
+
+  // 특성 변천도: 행 = 현재 능력치·기술·특성(+삭제된 것), 열 = 데이터 diff 가 있는 패치(오래된 순)
+  const ICON = 'https://sin0nis.github.io/images/abilitytalents/';
+  function chartHTML(doc) {
+    if (!doc || !doc.current) return '';
+    const cols = doc.entries.filter(e => e.data).slice().reverse();
+    if (!cols.length) return '';
+    const marks = {}, names = {}, lastLevel = {};
+    cols.forEach((e, ci) => e.data.changes.forEach(c => {
+      const id = c.type === 'stat' ? 'stat:' + c.field : c.type === 'rename' ? 'stat:name' : c.id;
+      let cls, sym, title;
+      if (c.type === 'talent_added' || c.type === 'ability_added') { cls = 'add'; sym = '+'; title = '신규' + (c.level ? ` (${c.level}레벨)` : ''); }
+      else if (c.type === 'talent_removed' || c.type === 'ability_removed') { cls = 'rm'; sym = '×'; title = '삭제' + (c.level ? ` (${c.level}레벨)` : ''); }
+      else if (c.type === 'stat') { cls = 'chg'; sym = '●'; title = `${c.field}: ${fmt(c.before)} → ${fmt(c.after)}`; }
+      else if (c.type === 'rename') { cls = 'chg'; sym = '●'; title = `이름: ${c.before} → ${c.after}`; }
+      else {
+        const lv = (c.changes || []).find(f => f.field === 'level');
+        if (lv) { cls = 'mv'; sym = '↑↓'; title = `${lv.before}레벨 → ${lv.after}레벨` + ((c.changes.length > 1) ? ' + ' + c.changes.filter(f => f.field !== 'level').map(f => FIELD[f.field] || f.field).join(', ') : ''); }
+        else { cls = 'chg'; sym = '●'; title = (c.changes || []).map(f => FIELD[f.field] || f.field).join(', ') + ' 변경'; }
+      }
+      (marks[id] = marks[id] || {})[ci] = { cls, sym, title: `${e.date} ${e.version || ''}\n${title}` };
+      if (c.name) names[id] = c.name;
+      if (c.level) lastLevel[id] = c.level;
+    }));
+    const cur = doc.current;
+    const curIds = new Set(cur.abilities.map(a => a.id).concat(cur.talents.map(t => t.id)));
+    const statRows = Object.keys(marks).filter(k => k.startsWith('stat:')).map(k => ({ id: k, name: { 'stat:life': '생명력', 'stat:energy': '자원', 'stat:speed': '이동 속도', 'stat:weapons': '일반 공격', 'stat:name': '이름' }[k] || k }));
+    const gone = Object.keys(marks).filter(k => !k.startsWith('stat:') && !curIds.has(k)).map(k => ({ id: k, name: names[k] || k, level: lastLevel[k], gone: true }));
+    const groups = [];
+    if (statRows.length) groups.push({ name: '능력치', rows: statRows });
+    groups.push({ name: '기술', rows: cur.abilities });
+    [1, 4, 7, 10, 13, 16, 20].forEach(l => { const rs = cur.talents.filter(t => t.level === l); if (rs.length) groups.push({ name: `${l}레벨 특성`, rows: rs }); });
+    if (gone.length) groups.push({ name: '삭제된 특성·기술', rows: gone.sort((a, b) => (a.level || 0) - (b.level || 0)) });
+    const head = `<tr><th class="rowh">항목 \\ 패치</th>${cols.map(e => `<th class="col ${e.isPtr ? 'ptr' : ''}" title="${esc(e.title)}"><span>${e.date}${e.isPtr ? ' PTR' : ''}</span></th>`).join('')}</tr>`;
+    const rowsHTML = groups.map(g => `<tr class="grp"><th colspan="${cols.length + 1}">${esc(g.name)}</th></tr>` + g.rows.map(r => {
+      const cells = cols.map((e, ci) => { const m = (marks[r.id] || {})[ci]; return `<td class="c">${m ? `<span class="m ${m.cls}" title="${esc(m.title)}" data-go="e-${e.date}-${e.build || 0}">${m.sym}</span>` : ''}</td>`; }).join('');
+      const icon = r.icon ? `<img src="${ICON}${r.icon}" alt="" loading="lazy" onerror="this.style.visibility='hidden'">` : '';
+      const lv = r.gone && r.level ? `<span class="lv">${r.level}레벨</span>` : (r.type && !r.level ? `<span class="lv">${esc(r.type)}</span>` : '');
+      return `<tr><th class="rowh ${r.gone ? 'gone' : ''}" title="${esc(r.name)}">${icon}${esc(r.name)}${lv}</th>${cells}</tr>`;
+    }).join('')).join('');
+    return `<h3 style="margin:6px 0 6px;font-size:16px">특성 변천도 <span style="font-weight:400;font-size:12px;color:var(--dim)">현재 기준 ${esc(cur.build)} · 데이터 diff 가 있는 패치 ${cols.length}개 (2019년 10월~)</span></h3>
+      <div class="chart-wrap"><table class="chart"><thead>${head}</thead><tbody>${rowsHTML}</tbody></table></div>
+      <div class="legend"><span class="m add">+</span> 신규 <span class="m rm">×</span> 삭제 <span class="m mv">↑↓</span> 레벨 이동 <span class="m chg">●</span> 수치·설명 변경 · 칸을 누르면 아래 해당 패치로 이동, 올리면 요약</div>`;
+  }
+
+  // ---------- 전장 목록 / 이력 ----------
+  function renderBgs() {
+    const count = {};
+    INDEX.forEach(r => r.battlegrounds.forEach(b => { count[b] = (count[b] || 0) + 1; }));
+    const ids = Object.keys(BGS).sort((a, b) => bgName(a).localeCompare(bgName(b), 'ko'));
+    app.innerHTML = headHTML('bgs') + `<p class="sub">전장을 고르면 그 전장이 언급된 공식 노트 항목을 시간순으로 봅니다.</p>
+      <div class="grid-h">${ids.map(b => count[b]
+        ? `<a href="?view=bg&id=${b}"><span>${esc(bgName(b))}</span><span class="n">${count[b]}</span></a>`
+        : `<a style="opacity:.5;cursor:default" title="이 전장은 패치 노트에 따로 언급된 적이 없습니다"><span>${esc(bgName(b))}</span><span class="n">0</span></a>`).join('')}</div>` + creditsHTML();
+  }
+  async function renderBg(id) {
+    let doc = null;
+    try { doc = await getJSON(`battlegrounds/${id}.json`); } catch (e) {}
+    const entries = doc ? doc.entries : [];
+    if (!doc) console.info('전장 기록 없음:', id);
+    const body = entries.map(e => `<div class="ent"><h3><a href="?v=${e.date}${e.build ? '&b=' + e.build : ''}">${e.date}</a>${badges({ ...e, official: 1 })}<span style="font-weight:400;font-size:13px;color:var(--dim)">${esc(e.title)}</span></h3>
+      ${e.translated ? `<div class="trnote" style="margin:0 0 8px"><b class="tag">번역</b> <span>한국어 공식판이 없어 영어 원문을 <b>${esc(e.translated.by || 'Claude')}</b> 가 번역한 내용입니다. <a href="?v=${e.date}${e.build ? '&b=' + e.build : ''}&tab=en">영어 원문 보기</a></span></div>` : ''}
+      ${e.official.map(o => `<div class="box"><div class="lab">${e.translated ? 'Claude 번역' : '공식 한글 노트'} · ${esc(o.section)}</div><div class="official">${o.html}</div></div>`).join('')}</div>`).join('');
+    app.innerHTML = headHTML('bgs') + `<a id="pn-back" href="?view=bgs">← 전장 목록</a><div class="hero-head"><div><h2>${esc(bgName(id))}</h2><div class="d">공식 노트 ${entries.length}건</div></div></div>
+      <div class="hist">${body || '<div class="empty">이 전장은 패치 노트에 따로 언급된 적이 없습니다. 영웅 변경 안에 섞여 있을 수 있습니다.</div>'}</div>${creditsHTML()}`;
+  }
+
+  function creditsHTML() {
+    return `<div class="credits"><h4>자료 출처와 수록 범위</h4><dl>
+      <dt>공식 한글 노트</dt><dd>블리자드 뉴스 한국어판에서 모았습니다(2017년 1월~). 본문의 권리는 Blizzard Entertainment 에 있으며, 각 노트에 원문 링크를 둡니다.</dd>
+      <dt>Claude 번역</dt><dd>한국어 공식판이 없는 회차만, 블리자드 <b>영어 원문</b>을 Claude 가 옮겼습니다(2016년 9월~). 공식 번역이 아니며 노트마다 고지·원문 링크·영어 원문 탭을 함께 둡니다.</dd>
+      <dt>데이터 변경점</dt><dd>게임 파일에서 뽑은 수치 비교입니다. <a href="https://github.com/HeroesToolChest/heroes-data" target="_blank" rel="noopener">HeroesToolChest/heroes-data</a> · <a href="https://github.com/HeroesToolChest/heroes-data2" target="_blank" rel="noopener">heroes-data2</a> (MIT), 2019년 10월(2.47.2) 이후 빌드만 있습니다.</dd>
+      <dt>구성 참고</dt><dd>영문 아카이브 <a href="https://nexus-patch-notes.github.io/" target="_blank" rel="noopener">Nexus Patch Notes</a> 의 구성(패치 목록·영웅별 이력)을 참고했습니다. 그 사이트의 글과 코드는 가져오지 않았고, 이 페이지의 내용은 블리자드 원문과 게임 데이터에서 직접 만들었습니다.</dd>
+      </dl><div class="warn">블리자드 뉴스 아카이브에 남아 있는 가장 오래된 글이 2016년 9월이라, 2014~2016년 상반기 패치는 싣지 못했습니다.<br>
+      이 사이트는 <b>Blizzard Entertainment 와 아무 관계가 없는 개인 팬 아카이브</b>입니다. Heroes of the Storm 및 관련 자료의 권리는 Blizzard Entertainment 에 있으며, 이 사이트는 어떤 수익도 내지 않고 권리자의 요청이 있으면 즉시 내리겠습니다.</div></div>`;
+  }
+
+  async function render() {
+    const p = q();
+    window.scrollTo(0, 0);
+    if (p.get('v')) return renderDetail(p.get('v'));
+    const view = p.get('view') || 'list';
+    if (view === 'heroes') return renderHeroes();
+    if (view === 'hero') return renderHero(p.get('id'));
+    if (view === 'bgs') return renderBgs();
+    if (view === 'bg') return renderBg(p.get('id'));
+    try { sessionStorage.setItem('patchnotes.list', p.toString()); } catch (e) {}
+    renderList();
+  }
+
+  (async function init() {
+    try {
+      [INDEX, HEROES, BGS] = await Promise.all([getJSON('index.json'), getJSON('heroes.json'), getJSON('battlegrounds.json')]);
+      render();
+    } catch (e) {
+      app.innerHTML = `<div class="empty">데이터를 불러오지 못했습니다: ${esc(e.message)}</div>`;
+    }
+  })();
+})();
+</script>
+</body>
+</html>

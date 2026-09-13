@@ -1,0 +1,640 @@
+{
+ "date": "2016-10-12",
+ "kind": "balance",
+ "title": "히어로즈 오브 더 스톰 밸런스 업데이트",
+ "source": "https://news.blizzard.com/en-us/article/20307801/heroes-of-the-storm-balance-update-october-12-2016",
+ "published": "2016-10-12T17:00:00Z",
+ "sections": [
+  {
+   "name": "머리말",
+   "key": "intro",
+   "html": "<p>넥서스에 몇 가지 밸런스 변경 사항을 적용하기 위해 히어로즈 오브 더 스톰의 새로운 패치를 배포했습니다. 아래에서 전체 패치 노트를 확인해 보시기 바랍니다.</p>\n<p><img alt=\"\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/19RBT3IUQUYB1403137112368.png\"/></p>",
+   "nameEn": "머리말"
+  },
+  {
+   "name": "전장",
+   "key": "battlegrounds",
+   "html": "<p><strong><span class=\"pn-name\">핵탄두 격전지</span></strong></p>\n<ul>\n<li>핵폭탄 중심부 추가 피해량이 100에서 50%로 감소했습니다</li>\n<li>핵폭탄의 피해량이 강화되는 시점이 14분에서 18분으로 변경되었습니다</li>\n</ul>\n<blockquote><em><strong>개발자의 의견: </strong></em>14분 시점에 핵폭탄으로 핵을 파괴하는 전략을 막기 위한 임시 조치입니다. 추후 패치에서는 핵폭탄의 위력이 시간에 따라 점진적으로 상승하여 핵의 성장과 같은 양상을 보이도록 추가 변경을 적용할 예정입니다.</blockquote>\n<p><img alt=\"\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/19RBT3IUQUYB1403137112368.png\"/></p>",
+   "items": [
+    {
+     "name": "핵탄두 격전지",
+     "battleground": "warhead_junction",
+     "html": "<ul>\n<li>핵폭탄 중심부 추가 피해량이 100에서 50%로 감소했습니다</li>\n<li>핵폭탄의 피해량이 강화되는 시점이 14분에서 18분으로 변경되었습니다</li>\n</ul>",
+     "nameEn": "Warhead Junction"
+    }
+   ],
+   "nameEn": "Battlegrounds"
+  },
+  {
+   "name": "영웅",
+   "key": "heroes",
+   "html": "<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"schedule_table\">\n<tbody>\n<tr>\n<th bgcolor=\"#1A0A33\"><strong></strong></th>\n<th bgcolor=\"#1A0A33\"><strong></strong></th>\n<th bgcolor=\"#1A0A33\"><strong></strong></th>\n<th bgcolor=\"#1A0A33\"><strong></strong></th>\n</tr>\n<tr>\n<td bgcolor=\"#100029\"></td>\n<td bgcolor=\"#100029\"></td>\n<td bgcolor=\"#100029\"></td>\n<td bgcolor=\"#100029\"></td>\n</tr>\n<tr>\n<td bgcolor=\"#100029\"></td>\n<td bgcolor=\"#100029\"></td>\n<td bgcolor=\"#100029\"></td>\n<td bgcolor=\"#100029\">.</td>\n</tr>\n<tr>\n<td bgcolor=\"#100029\"></td>\n<td bgcolor=\"#100029\"></td>\n<td bgcolor=\"#100029\"></td>\n<td bgcolor=\"#100029\"></td>\n</tr>\n</tbody>\n</table>\n<p><img alt=\"\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/19RBT3IUQUYB1403137112368.png\"/></p>",
+   "nameEn": "Heroes"
+  },
+  {
+   "name": "암살자",
+   "key": "role_assassin",
+   "html": "<h4>발라</h4>\n<p><img alt=\"Divider_Hero_Valla_Crop.png\" data-id=\"17042306\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/RHUC14VVAAUN1417483335722.png\"/></p>\n<p><strong>기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>복수의 비 (R)</strong></span><ul>\n<li>피해량이 225에서 250으로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong>특성</strong></p>\n<p><span class=\"pn-name\"><strong>1레벨</strong></span></p>\n<ul>\n<li><strong>쇠못 덫 (E)</strong><ul>\n<li>감속량이 20%에서 25%로 증가했습니다.</li>\n<li>쇠못 덫 피해량이 45에서 60으로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><span class=\"pn-name\"><strong>7레벨</strong></span></p>\n<ul>\n<li><strong>저승사자 (E)</strong><ul>\n<li>증오 중첩당 피해량이 12%에서 14%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><span class=\"pn-name\"><strong>16레벨</strong></span></p>\n<ul>\n<li><strong>서리 사격 (W)</strong><ul>\n<li>감속 지속시간이 2초에서 1.5초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><img alt=\"\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/19RBT3IUQUYB1403137112368.png\"/></p>",
+   "heroes": [
+    {
+     "name": "발라",
+     "heroId": "DemonHunter",
+     "heroIds": [
+      "DemonHunter"
+     ],
+     "changes": [
+      {
+       "name": "복수의 비",
+       "key": "R",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "피해량이 225에서 250으로 증가했습니다.",
+         "html": "피해량이 225에서 250으로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Rain of Vengeance"
+      },
+      {
+       "name": "쇠못 덫",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": null,
+       "lines": [
+        {
+         "text": "감속량이 20%에서 25%로 증가했습니다.",
+         "html": "감속량이 20%에서 25%로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "쇠못 덫 피해량이 45에서 60으로 증가했습니다.",
+         "html": "쇠못 덫 피해량이 45에서 60으로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Caltrops"
+      },
+      {
+       "name": "저승사자",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": null,
+       "lines": [
+        {
+         "text": "증오 중첩당 피해량이 12%에서 14%로 증가했습니다.",
+         "html": "증오 중첩당 피해량이 12%에서 14%로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Death Dealer"
+      },
+      {
+       "name": "서리 사격",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": null,
+       "lines": [
+        {
+         "text": "감속 지속시간이 2초에서 1.5초로 감소했습니다.",
+         "html": "감속 지속시간이 2초에서 1.5초로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Frost Shot"
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_Valla_Crop.png\" data-id=\"17042306\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/RHUC14VVAAUN1417483335722.png\"/></p>\n<p><strong>기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>복수의 비 (R)</strong></span><ul>\n<li>피해량이 225에서 250으로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong>특성</strong></p>\n<p><span class=\"pn-name\"><strong>1레벨</strong></span></p>\n<ul>\n<li><strong>쇠못 덫 (E)</strong><ul>\n<li>감속량이 20%에서 25%로 증가했습니다.</li>\n<li>쇠못 덫 피해량이 45에서 60으로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><span class=\"pn-name\"><strong>7레벨</strong></span></p>\n<ul>\n<li><strong>저승사자 (E)</strong><ul>\n<li>증오 중첩당 피해량이 12%에서 14%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><span class=\"pn-name\"><strong>16레벨</strong></span></p>\n<ul>\n<li><strong>서리 사격 (W)</strong><ul>\n<li>감속 지속시간이 2초에서 1.5초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><img alt=\"\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/19RBT3IUQUYB1403137112368.png\"/></p>",
+     "nameEn": "Valla"
+    }
+   ],
+   "nameEn": "Assassin"
+  },
+  {
+   "name": "전문가",
+   "key": "role_specialist",
+   "html": "<h4>나지보</h4>\n<p><img alt=\"Divider_Hero_Nazeebo_Crop.png\" data-id=\"17042293\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/O8ZNMK9MAPYM1417483334973.png\"/></p>\n<p><strong>기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>덩치 (R)</strong></span><ul>\n<li>덩치의 일반 공격 피해량이 195에서 176으로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>굶주린 혼령 (R)</strong></span><ul>\n<li>피해량이 94에서 103으로 증가했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>시체 거미 (Q)</strong></span><ul>\n<li>재사용 대기시간이 10초에서 9초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong>특성</strong></p>\n<p><span class=\"pn-name\"><strong>7레벨</strong></span></p>\n<ul>\n<li><strong>아라키르의 혼령 (Q)</strong><ul>\n<li>추가로 생성되는 거미의 수가 1마리에서 2마리로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong>망자의 돌진 (W)</strong><ul>\n<li>추가 피해량이 100%에서 75%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong><span class=\"pn-name\">16레벨</span></strong></p>\n<ul>\n<li><strong>맹독 고리 (W)</strong><ul>\n<li>피해량이 약 15% 감소했습니다.</li>\n</ul>\n</li>\n<li><strong>혼령 수확 (사용 효과)</strong><ul>\n<li>적중한 적 1명당 추가 효과가 3%에서 4%로, 최대치가 15%에서 20%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong><span class=\"pn-name\">20레벨</span></strong></p>\n<ul>\n<li><strong>무지막지 (R)</strong><ul>\n<li>재사용 대기시간이 20초에서 25초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<blockquote><em><strong>개발자의 의견: </strong></em>현재 좀비 벽 특성이 같은 단계의 다른 선택지보다 더 큰 유용성과 피해량을 제공하고 있는데, 이는 바람직하지 않습니다. 그래서 시체 거미를 강화하는 한편 덩치는 약화했습니다. 전반적으로 나지보의 승률은 지금과 비슷한 수준(딱 중간 정도)을 유지할 것으로 예상하지만, 다양한 플레이 방식에 어울리는 효과적인 특성 선택지는 늘어날 것입니다.</blockquote>\n<p><img alt=\"\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/19RBT3IUQUYB1403137112368.png\"/></p>",
+   "heroes": [
+    {
+     "name": "나지보",
+     "heroId": "WitchDoctor",
+     "heroIds": [
+      "WitchDoctor"
+     ],
+     "changes": [
+      {
+       "name": "덩치",
+       "key": "R",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "덩치의 일반 공격 피해량이 195에서 176으로 감소했습니다.",
+         "html": "덩치의 일반 공격 피해량이 195에서 176으로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Gargantuan"
+      },
+      {
+       "name": "굶주린 혼령",
+       "key": "R",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "피해량이 94에서 103으로 증가했습니다.",
+         "html": "피해량이 94에서 103으로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Ravenous Spirit"
+      },
+      {
+       "name": "시체 거미",
+       "key": "Q",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 10초에서 9초로 감소했습니다.",
+         "html": "재사용 대기시간이 10초에서 9초로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Corpse Spiders"
+      },
+      {
+       "name": "아라키르의 혼령",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": null,
+       "lines": [
+        {
+         "text": "추가로 생성되는 거미의 수가 1마리에서 2마리로 증가했습니다.",
+         "html": "추가로 생성되는 거미의 수가 1마리에서 2마리로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Spirit of Arachyr"
+      },
+      {
+       "name": "망자의 돌진",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": null,
+       "lines": [
+        {
+         "text": "추가 피해량이 100%에서 75%로 감소했습니다.",
+         "html": "추가 피해량이 100%에서 75%로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Dead Rush"
+      },
+      {
+       "name": "맹독 고리",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": null,
+       "lines": [
+        {
+         "text": "피해량이 약 15% 감소했습니다.",
+         "html": "피해량이 약 15% 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Ring of Poison"
+      },
+      {
+       "name": "혼령 수확",
+       "key": "Active",
+       "new": false,
+       "group": "talent",
+       "level": null,
+       "lines": [
+        {
+         "text": "적중한 적 1명당 추가 효과가 3%에서 4%로, 최대치가 15%에서 20%로 증가했습니다.",
+         "html": "적중한 적 1명당 추가 효과가 3%에서 4%로, 최대치가 15%에서 20%로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Soul Harvest"
+      },
+      {
+       "name": "무지막지",
+       "key": "R",
+       "new": false,
+       "group": "talent",
+       "level": null,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 20초에서 25초로 증가했습니다.",
+         "html": "재사용 대기시간이 20초에서 25초로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Humongoid"
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_Nazeebo_Crop.png\" data-id=\"17042293\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/O8ZNMK9MAPYM1417483334973.png\"/></p>\n<p><strong>기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>덩치 (R)</strong></span><ul>\n<li>덩치의 일반 공격 피해량이 195에서 176으로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>굶주린 혼령 (R)</strong></span><ul>\n<li>피해량이 94에서 103으로 증가했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>시체 거미 (Q)</strong></span><ul>\n<li>재사용 대기시간이 10초에서 9초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong>특성</strong></p>\n<p><span class=\"pn-name\"><strong>7레벨</strong></span></p>\n<ul>\n<li><strong>아라키르의 혼령 (Q)</strong><ul>\n<li>추가로 생성되는 거미의 수가 1마리에서 2마리로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong>망자의 돌진 (W)</strong><ul>\n<li>추가 피해량이 100%에서 75%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong><span class=\"pn-name\">16레벨</span></strong></p>\n<ul>\n<li><strong>맹독 고리 (W)</strong><ul>\n<li>피해량이 약 15% 감소했습니다.</li>\n</ul>\n</li>\n<li><strong>혼령 수확 (사용 효과)</strong><ul>\n<li>적중한 적 1명당 추가 효과가 3%에서 4%로, 최대치가 15%에서 20%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong><span class=\"pn-name\">20레벨</span></strong></p>\n<ul>\n<li><strong>무지막지 (R)</strong><ul>\n<li>재사용 대기시간이 20초에서 25초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<blockquote><em><strong>개발자의 의견: </strong></em>현재 좀비 벽 특성이 같은 단계의 다른 선택지보다 더 큰 유용성과 피해량을 제공하고 있는데, 이는 바람직하지 않습니다. 그래서 시체 거미를 강화하는 한편 덩치는 약화했습니다. 전반적으로 나지보의 승률은 지금과 비슷한 수준(딱 중간 정도)을 유지할 것으로 예상하지만, 다양한 플레이 방식에 어울리는 효과적인 특성 선택지는 늘어날 것입니다.</blockquote>\n<p><img alt=\"\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/19RBT3IUQUYB1403137112368.png\"/></p>",
+     "nameEn": "Nazeebo"
+    }
+   ],
+   "nameEn": "Specialist"
+  },
+  {
+   "name": "지원가",
+   "key": "role_support",
+   "html": "<h4>말퓨리온</h4>\n<p><img alt=\"Divider_Hero_Malfurion_Crop.png\" data-id=\"17042290\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/1JZXW9JSV6ZW1417483334684.png\"/></p>\n<p><strong>기술</strong></p>\n<ul>\n<li><strong>재생 (Q)</strong><ul>\n<li>마나 소모량이 35에서 40으로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong>휘감는 뿌리 (E)</strong><ul>\n<li>재사용 대기시간이 10초에서 14초로 증가했습니다.</li>\n<li>마나 소모량이 65에서 75로 증가했습니다.</li>\n<li>최초 지연 시간이 .25초에서 .3초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong>특성</strong></p>\n<p><strong>4레벨</strong></p>\n<ul>\n<li><strong>무성한 성장 (Q)</strong><ul>\n<li>삭제</li>\n</ul>\n</li>\n</ul>\n<blockquote><em><strong>개발자의 의견: </strong></em>변경 이후 말퓨리온의 플레이 양상에는 만족하고 있지만, 성능이 다소 강력하게 나왔습니다. 지속적인 치유를 담당하는 지원가로서의 역할은 여전히 그의 주요 강점이어야 한다고 생각하지만, 재생을 재사용 대기시간마다 계속 사용할 경우 아군을 얼마나 오래 지탱할 수 있는지는 제한하고자 합니다. 또한 무성한 성장은 말퓨리온을 순간 치유형 영웅으로 만들었는데, 이는 그가 팀에서 맡아야 할 역할과 어긋나기에 삭제했습니다. 휘감는 뿌리로 말퓨리온이 활약하며 전투를 개시할 수 있다는 점은 마음에 들지만, 현재는 적을 처치하기에 너무 강력합니다. 그래서 초기 지연 시간을 현재와 예전의 중간 수준으로 소폭 늘려 상대가 이동 불가 효과를 피할 기회를 더 갖도록 했습니다.</blockquote>\n<p><img alt=\"\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/19RBT3IUQUYB1403137112368.png\"/></p>\n<h3></h3>",
+   "heroes": [
+    {
+     "name": "말퓨리온",
+     "heroId": "Malfurion",
+     "heroIds": [
+      "Malfurion"
+     ],
+     "changes": [
+      {
+       "name": "재생",
+       "key": "Q",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "마나 소모량이 35에서 40으로 증가했습니다.",
+         "html": "마나 소모량이 35에서 40으로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Regrowth"
+      },
+      {
+       "name": "휘감는 뿌리",
+       "key": "E",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 10초에서 14초로 증가했습니다.",
+         "html": "재사용 대기시간이 10초에서 14초로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "마나 소모량이 65에서 75로 증가했습니다.",
+         "html": "마나 소모량이 65에서 75로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "최초 지연 시간이 .25초에서 .3초로 증가했습니다.",
+         "html": "최초 지연 시간이 .25초에서 .3초로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Entangling Roots"
+      },
+      {
+       "name": "무성한 성장",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": null,
+       "lines": [
+        {
+         "text": "삭제",
+         "html": "삭제",
+         "added": false
+        }
+       ],
+       "nameEn": "Rampant Growth"
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_Malfurion_Crop.png\" data-id=\"17042290\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/1JZXW9JSV6ZW1417483334684.png\"/></p>\n<p><strong>기술</strong></p>\n<ul>\n<li><strong>재생 (Q)</strong><ul>\n<li>마나 소모량이 35에서 40으로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong>휘감는 뿌리 (E)</strong><ul>\n<li>재사용 대기시간이 10초에서 14초로 증가했습니다.</li>\n<li>마나 소모량이 65에서 75로 증가했습니다.</li>\n<li>최초 지연 시간이 .25초에서 .3초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong>특성</strong></p>\n<p><strong>4레벨</strong></p>\n<ul>\n<li><strong>무성한 성장 (Q)</strong><ul>\n<li>삭제</li>\n</ul>\n</li>\n</ul>\n<blockquote><em><strong>개발자의 의견: </strong></em>변경 이후 말퓨리온의 플레이 양상에는 만족하고 있지만, 성능이 다소 강력하게 나왔습니다. 지속적인 치유를 담당하는 지원가로서의 역할은 여전히 그의 주요 강점이어야 한다고 생각하지만, 재생을 재사용 대기시간마다 계속 사용할 경우 아군을 얼마나 오래 지탱할 수 있는지는 제한하고자 합니다. 또한 무성한 성장은 말퓨리온을 순간 치유형 영웅으로 만들었는데, 이는 그가 팀에서 맡아야 할 역할과 어긋나기에 삭제했습니다. 휘감는 뿌리로 말퓨리온이 활약하며 전투를 개시할 수 있다는 점은 마음에 들지만, 현재는 적을 처치하기에 너무 강력합니다. 그래서 초기 지연 시간을 현재와 예전의 중간 수준으로 소폭 늘려 상대가 이동 불가 효과를 피할 기회를 더 갖도록 했습니다.</blockquote>\n<p><img alt=\"\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/19RBT3IUQUYB1403137112368.png\"/></p>\n<h3></h3>",
+     "nameEn": "Malfurion"
+    }
+   ],
+   "nameEn": "Support"
+  },
+  {
+   "name": "전사",
+   "key": "role_tank",
+   "html": "<h4>첸</h4>\n<p><img alt=\"Divider_Hero_Chen_Crop.png\" data-id=\"17042279\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/0WB1N574QT991417483333970.png\"/></p>\n<p><strong>능력치</strong></p>\n<ul>\n<li>기본 최대 생명력이 2658에서 2550으로 감소했습니다.</li>\n<li>기본 생명력 재생이 초당 5.54에서 5.31로 감소했습니다.</li>\n</ul>\n<p><strong>기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>폭풍, 대지, 불 (R)</strong></span><ul>\n<li>첸의 최대 생명력 변경에 따라 기본 정령 생명력이 1994에서 1913으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong>특성</strong></p>\n<p><strong>7레벨</strong></p>\n<ul>\n<li><strong>생기의 비약 (고유 능력)</strong><ul>\n<li>기본 치유 효과가 20%에서 30%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong>13레벨</strong></p>\n<ul>\n<li><strong>급소 차기 (Q)</strong><ul>\n<li>기본 감속량이 40%에서 35%로 감소했습니다.</li>\n<li>추가 감속량이 80%에서 70%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong>20레벨</strong></p>\n<ul>\n<li><strong>원소 출현 (R)</strong><ul>\n<li>첸의 최대 생명력 변경에 따라 기본 정령 생명력이 2658에서 2550으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<ul>\n</ul>\n<ul>\n</ul>\n<h4>정예 타우렌 족장</h4>\n<p><img alt=\"Divider_Hero_ETC_Crop.png\" data-id=\"17042283\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/6L0DECUU5AUA1417483334095.png\"/></p>\n<p><strong>특성</strong></p>\n<p><strong>1레벨</strong></p>\n<ul>\n<li><strong>기타 히어로 (E)</strong><ul>\n<li>치유량이 가한 일반 공격 피해량의 30%에서 35%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong>7레벨</strong></p>\n<ul>\n<li><strong>고막 터지는 슬라이드 (W)</strong><ul>\n<li>추가 피해량이 150%에서 200%로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong>에코 페달 (지속 효과)</strong><ul>\n<li>파동 피해량이 32에서 29로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong>13레벨</strong></p>\n<ul>\n<li><strong>마이크 테스트 (W)</strong><ul>\n<li>고막 터트리기의 재사용 대기시간 감소량이 5초에서 6초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<ul>\n</ul>\n<ul>\n</ul>\n<ul>\n</ul>\n<h4>자리야</h4>\n<p><img alt=\"Divider_Hero_Zarya_crop.png\" data-id=\"20311161\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/1v/1VUWFBVGUHBY1475167033295.png\"/></p>\n<p><strong>능력치</strong></p>\n<ul>\n<li>일반 공격 피해량이 24에서 21로 감소했습니다.</li>\n<li>기본 최대 생명력이 2336에서 2225로 감소했습니다.</li>\n<li>기본 생명력 재생이 4.87에서 4.64로 감소했습니다.</li>\n</ul>\n<p><strong>특성</strong></p>\n<p><strong>1레벨</strong></p>\n<ul>\n<li><strong>최대 충전 (고유 능력)</strong><ul>\n<li>퀘스트 완료 시 얻는 추가 에너지가 25에서 20으로 감소했습니다.</li>\n</ul>\n</li>\n<li><strong>폭발물 전문가 (Q)</strong><ul>\n<li>재충전 시간 감소량이 .25초에서 .375초로 증가했으며, 최대 총 3초까지 감소합니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong>4레벨</strong></p>\n<ul>\n<li><strong>증속 방벽 (E)</strong><ul>\n<li>이동 속도가 25%에서 35%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<ul>\n</ul>\n<blockquote><em><strong>개발자의 의견: </strong></em>자리야의 성능을 원하는 수준으로 되돌리기 위해 이전에 적용했던 강화 중 일부를 되돌립니다. 또한 예전만큼 높은 에너지를 쌓기가 어렵지 않게 된 만큼 최대 충전의 효과도 약화했습니다. 폭발물 전문가와 증속 방벽은 같은 단계의 다른 특성에 비해 성능이 크게 떨어졌기 때문에 강화했습니다.</blockquote>\n<h3><img alt=\"\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/19RBT3IUQUYB1403137112368.png\"/></h3>",
+   "heroes": [
+    {
+     "name": "첸",
+     "heroId": "Chen",
+     "heroIds": [
+      "Chen"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "기본 최대 생명력이 2658에서 2550으로 감소했습니다.",
+         "html": "기본 최대 생명력이 2658에서 2550으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "기본 생명력 재생이 초당 5.54에서 5.31로 감소했습니다.",
+         "html": "기본 생명력 재생이 초당 5.54에서 5.31로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "폭풍, 대지, 불",
+       "key": "R",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "첸의 최대 생명력 변경에 따라 기본 정령 생명력이 1994에서 1913으로 감소했습니다.",
+         "html": "첸의 최대 생명력 변경에 따라 기본 정령 생명력이 1994에서 1913으로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Storm, Earth, Fire"
+      },
+      {
+       "name": "생기의 비약",
+       "key": "Trait",
+       "new": false,
+       "group": "talent",
+       "level": null,
+       "lines": [
+        {
+         "text": "기본 치유 효과가 20%에서 30%로 증가했습니다.",
+         "html": "기본 치유 효과가 20%에서 30%로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Refreshing Elixir"
+      },
+      {
+       "name": "급소 차기",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": null,
+       "lines": [
+        {
+         "text": "기본 감속량이 40%에서 35%로 감소했습니다.",
+         "html": "기본 감속량이 40%에서 35%로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "추가 감속량이 80%에서 70%로 감소했습니다.",
+         "html": "추가 감속량이 80%에서 70%로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Pressure Point"
+      },
+      {
+       "name": "원소 출현",
+       "key": "R",
+       "new": false,
+       "group": "talent",
+       "level": null,
+       "lines": [
+        {
+         "text": "첸의 최대 생명력 변경에 따라 기본 정령 생명력이 2658에서 2550으로 감소했습니다.",
+         "html": "첸의 최대 생명력 변경에 따라 기본 정령 생명력이 2658에서 2550으로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Elemental Conduit"
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_Chen_Crop.png\" data-id=\"17042279\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/0WB1N574QT991417483333970.png\"/></p>\n<p><strong>능력치</strong></p>\n<ul>\n<li>기본 최대 생명력이 2658에서 2550으로 감소했습니다.</li>\n<li>기본 생명력 재생이 초당 5.54에서 5.31로 감소했습니다.</li>\n</ul>\n<p><strong>기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>폭풍, 대지, 불 (R)</strong></span><ul>\n<li>첸의 최대 생명력 변경에 따라 기본 정령 생명력이 1994에서 1913으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong>특성</strong></p>\n<p><strong>7레벨</strong></p>\n<ul>\n<li><strong>생기의 비약 (고유 능력)</strong><ul>\n<li>기본 치유 효과가 20%에서 30%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong>13레벨</strong></p>\n<ul>\n<li><strong>급소 차기 (Q)</strong><ul>\n<li>기본 감속량이 40%에서 35%로 감소했습니다.</li>\n<li>추가 감속량이 80%에서 70%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong>20레벨</strong></p>\n<ul>\n<li><strong>원소 출현 (R)</strong><ul>\n<li>첸의 최대 생명력 변경에 따라 기본 정령 생명력이 2658에서 2550으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<ul>\n</ul>\n<ul>\n</ul>",
+     "nameEn": "Chen"
+    },
+    {
+     "name": "정예 타우렌 족장",
+     "heroId": "L90ETC",
+     "heroIds": [
+      "L90ETC"
+     ],
+     "changes": [
+      {
+       "name": "기타 히어로",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": null,
+       "lines": [
+        {
+         "text": "치유량이 가한 일반 공격 피해량의 30%에서 35%로 증가했습니다.",
+         "html": "치유량이 가한 일반 공격 피해량의 30%에서 35%로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Guitar Hero"
+      },
+      {
+       "name": "고막 터지는 슬라이드",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": null,
+       "lines": [
+        {
+         "text": "추가 피해량이 150%에서 200%로 증가했습니다.",
+         "html": "추가 피해량이 150%에서 200%로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Pinball Wizard"
+      },
+      {
+       "name": "에코 페달",
+       "key": "Passive",
+       "new": false,
+       "group": "talent",
+       "level": null,
+       "lines": [
+        {
+         "text": "파동 피해량이 32에서 29로 감소했습니다.",
+         "html": "파동 피해량이 32에서 29로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Echo Pedal"
+      },
+      {
+       "name": "마이크 테스트",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": null,
+       "lines": [
+        {
+         "text": "고막 터트리기의 재사용 대기시간 감소량이 5초에서 6초로 증가했습니다.",
+         "html": "고막 터트리기의 재사용 대기시간 감소량이 5초에서 6초로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Mic Check"
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_ETC_Crop.png\" data-id=\"17042283\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/6L0DECUU5AUA1417483334095.png\"/></p>\n<p><strong>특성</strong></p>\n<p><strong>1레벨</strong></p>\n<ul>\n<li><strong>기타 히어로 (E)</strong><ul>\n<li>치유량이 가한 일반 공격 피해량의 30%에서 35%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong>7레벨</strong></p>\n<ul>\n<li><strong>고막 터지는 슬라이드 (W)</strong><ul>\n<li>추가 피해량이 150%에서 200%로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong>에코 페달 (지속 효과)</strong><ul>\n<li>파동 피해량이 32에서 29로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong>13레벨</strong></p>\n<ul>\n<li><strong>마이크 테스트 (W)</strong><ul>\n<li>고막 터트리기의 재사용 대기시간 감소량이 5초에서 6초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<ul>\n</ul>\n<ul>\n</ul>\n<ul>\n</ul>",
+     "nameEn": "E.T.C."
+    },
+    {
+     "name": "자리야",
+     "heroId": "Zarya",
+     "heroIds": [
+      "Zarya"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "일반 공격 피해량이 24에서 21로 감소했습니다.",
+         "html": "일반 공격 피해량이 24에서 21로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "기본 최대 생명력이 2336에서 2225로 감소했습니다.",
+         "html": "기본 최대 생명력이 2336에서 2225로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "기본 생명력 재생이 4.87에서 4.64로 감소했습니다.",
+         "html": "기본 생명력 재생이 4.87에서 4.64로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "최대 충전",
+       "key": "Trait",
+       "new": false,
+       "group": "talent",
+       "level": null,
+       "lines": [
+        {
+         "text": "퀘스트 완료 시 얻는 추가 에너지가 25에서 20으로 감소했습니다.",
+         "html": "퀘스트 완료 시 얻는 추가 에너지가 25에서 20으로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Maximum Charge"
+      },
+      {
+       "name": "폭발물 전문가",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": null,
+       "lines": [
+        {
+         "text": "재충전 시간 감소량이 .25초에서 .375초로 증가했으며, 최대 총 3초까지 감소합니다.",
+         "html": "재충전 시간 감소량이 .25초에서 .375초로 증가했으며, 최대 총 3초까지 감소합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Demolitions Expert"
+      },
+      {
+       "name": "증속 방벽",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": null,
+       "lines": [
+        {
+         "text": "이동 속도가 25%에서 35%로 증가했습니다.",
+         "html": "이동 속도가 25%에서 35%로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Speed Barrier"
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_Zarya_crop.png\" data-id=\"20311161\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/1v/1VUWFBVGUHBY1475167033295.png\"/></p>\n<p><strong>능력치</strong></p>\n<ul>\n<li>일반 공격 피해량이 24에서 21로 감소했습니다.</li>\n<li>기본 최대 생명력이 2336에서 2225로 감소했습니다.</li>\n<li>기본 생명력 재생이 4.87에서 4.64로 감소했습니다.</li>\n</ul>\n<p><strong>특성</strong></p>\n<p><strong>1레벨</strong></p>\n<ul>\n<li><strong>최대 충전 (고유 능력)</strong><ul>\n<li>퀘스트 완료 시 얻는 추가 에너지가 25에서 20으로 감소했습니다.</li>\n</ul>\n</li>\n<li><strong>폭발물 전문가 (Q)</strong><ul>\n<li>재충전 시간 감소량이 .25초에서 .375초로 증가했으며, 최대 총 3초까지 감소합니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong>4레벨</strong></p>\n<ul>\n<li><strong>증속 방벽 (E)</strong><ul>\n<li>이동 속도가 25%에서 35%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<ul>\n</ul>\n<blockquote><em><strong>개발자의 의견: </strong></em>자리야의 성능을 원하는 수준으로 되돌리기 위해 이전에 적용했던 강화 중 일부를 되돌립니다. 또한 예전만큼 높은 에너지를 쌓기가 어렵지 않게 된 만큼 최대 충전의 효과도 약화했습니다. 폭발물 전문가와 증속 방벽은 같은 단계의 다른 특성에 비해 성능이 크게 떨어졌기 때문에 강화했습니다.</blockquote>\n<h3><img alt=\"\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/19RBT3IUQUYB1403137112368.png\"/></h3>",
+     "nameEn": "Zarya"
+    }
+   ],
+   "nameEn": "Warrior"
+  },
+  {
+   "name": "버그 수정",
+   "key": "bugs",
+   "html": "<p><span class=\"pn-name\"><strong>일반</strong></span></p>\n<ul>\n<li><span class=\"pn-new\">관전자: 특정 상황에서 다시 보기 및 관전자 모드에서 요새와 성채가 영웅 처치로 집계되던 문제를 수정했습니다.</span></li>\n</ul>\n<p><font color=\"#0099ff\"><b>영웅 및 특성</b></font></p>\n<ul>\n<li><span class=\"pn-new\">노바: 비밀 작전 특성을 선택한 후 마비 사격의 최대 중첩 감속 효과가 게임이 끝날 때까지 유지되던 문제를 수정했습니다.</span></li>\n</ul>\n<p><img alt=\"\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/19RBT3IUQUYB1403137112368.png\"/></p>\n<strong>범례</strong>\n<ul>\n<li>주황색 글씨는 패치 노트에 추가된 내용을 나타냅니다.</li>\n</ul>\n<p><img alt=\"\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/g6/G6G0N80EOC941426801305139.png\"/></p>\n<style class=\"blockquote-dev\" type=\"text/css\">blockquote {\nbackground: #140029;\nborder-left: 10px solid #320064;\nmargin: 1.5em 10px;\npadding: 0.5em 10px;;\nquotes: \"\\201C\"\"\\201D\"\"\\2018\"\"\\2019\";\n}\nblockquote p {\ndisplay: inline;\npadding: 0px 0px 0px 0px;\n}\n</style>\n<style type=\"text/css\">table\n{\nmargin-left: auto;\nmargin-right: auto;\n}\n</style>\n<style type=\"text/css\">ul.tile-list {\nwidth: 100%;\noverflow: hidden;\nmargin: 30px 0 0;\n}\nli.tile-list-item {\nfloat: left;\nclear: left;\nmargin: 0 0 20px;\nlist-style: none;\n}\nli.tile-list-item h4 {\ntext-align: center;\nmargin-bottom: 10px;\n}\nimg.tile-list-thumb {\nwidth: 50%;\nfloat: left;\n}\nli.tile-list-item ul {\nwidth: 50%;\nfloat: left;\nmargin: 0;\npadding-left: 15px;\n}\nli.tile-list-item li {\nfont-size: 14px;\nlist-style: disc;\nmargin-left: 15px;\n}\ntable.schedule_table {\nwidth: 80%;\n}\ntable.schedule_table th,\ntable.schedule_table td {\npadding: 4px;\n}\ntable.schedule_table th {\nfont-family: Metronic, sans-serif;\nfont-weight: normal;\ntext-align: left;\ncolor: #0099ff;\ntext-transform: uppercase;\n}\ntable.schedule_table td {\nfont-size: 14px;\nline-height: 18px;\nvertical-align: top;\n}\nul.schedule_list {\nmargin: 15px 0 30px 20px;\n}\nul.schedule_list li {\nfont-size: 14px;\n}\n@media (min-width: 564px) {\nli.tile-list-item {\nclear: none;\nmax-width: none;\nwidth: 31%;\nborder: none;\nmargin-bottom: 0;\n}\nli.tile-list-item:nth-child(2) {\nmargin: 0 3.5%;\n}\nimg.tile-list-thumb {\nwidth: 100%;\n}\nli.tile-list-item ul {\nclear: left;\nmargin-top: 15px;\nwidth: 100%;\n}\n}\n</style>",
+   "nameEn": "Bug Fixes"
+  }
+ ],
+ "heroes": [
+  "Chen",
+  "DemonHunter",
+  "L90ETC",
+  "Malfurion",
+  "WitchDoctor",
+  "Zarya"
+ ],
+ "battlegrounds": [
+  "warhead_junction"
+ ],
+ "lang": "ko",
+ "newsId": "20307801",
+ "titleEn": "Heroes of the Storm Balance Update",
+ "translated": {
+  "by": "Claude (claude-opus-5)",
+  "at": "2026-09-14",
+  "source": "https://news.blizzard.com/en-us/article/20307801/heroes-of-the-storm-balance-update-october-12-2016",
+  "glossary": "HeroesToolChest 공식 게임 텍스트(enus↔kokr) 대조",
+  "untranslated": 0
+ }
+}

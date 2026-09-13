@@ -1,0 +1,620 @@
+{
+ "date": "2017-02-28",
+ "kind": "balance",
+ "title": "히어로즈 오브 더 스톰 밸런스 업데이트 노트 — 2017년 2월 28일",
+ "source": "https://news.blizzard.com/ko-kr/article/20581815/2017-2-28",
+ "published": "2017-02-27T18:00:00Z",
+ "sections": [
+  {
+   "name": "머리말",
+   "key": "intro",
+   "html": "<p>히어로즈 오브 더 스톰의 새로운 패치가 적용되었습니다. 이 패치에서는 밸런스에 몇 가지 변화가 이루어졌습니다.</p>\n<p><img alt=\"\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/19RBT3IUQUYB1403137112368.png\"/></p>"
+  },
+  {
+   "name": "영웅",
+   "key": "heroes",
+   "html": "<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"schedule_table\">\n<tbody>\n<tr>\n<th bgcolor=\"#1A0A33\"><strong></strong></th>\n<th bgcolor=\"#1A0A33\"><strong></strong></th>\n<th bgcolor=\"#1A0A33\"><strong></strong></th>\n<th bgcolor=\"#1A0A33\"><strong></strong></th>\n<th bgcolor=\"#1A0A33\"><strong></strong></th>\n</tr>\n<tr>\n<td bgcolor=\"#100029\"></td>\n<td bgcolor=\"#100029\"></td>\n<td bgcolor=\"#100029\"></td>\n<td bgcolor=\"#100029\"></td>\n<td bgcolor=\"#100029\"></td>\n</tr>\n<tr>\n<td bgcolor=\"#100029\"></td>\n<td bgcolor=\"#100029\"></td>\n<td bgcolor=\"#100029\"></td>\n<td bgcolor=\"#100029\"></td>\n<td bgcolor=\"#100029\"></td>\n</tr>\n<tr>\n<td bgcolor=\"#100029\"></td>\n<td bgcolor=\"#100029\"></td>\n<td bgcolor=\"#100029\"></td>\n<td bgcolor=\"#100029\"></td>\n<td bgcolor=\"#100029\"></td>\n</tr>\n</tbody>\n</table>\n<p><img alt=\"\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/19RBT3IUQUYB1403137112368.png\"/></p>"
+  },
+  {
+   "name": "암살자",
+   "key": "role_assassin",
+   "html": "<h4>타이커스</h4>\n<p><img alt=\"Divider_Hero_Tychus_Crop.png\" data-id=\"17042302\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/C0A9M41RWSJQ1417483335476.png\"/></p>\n<p><font color=\"#9900ff\"><b>능력치</b></font></p>\n<ul>\n<li>일반 공격 사거리가 5.5에서 4.5로 감소했습니다.</li>\n</ul>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>포화 (Q)</strong></span>\n<ul>\n<li>재사용 대기시간이 15초에서 13초로 감소했습니다.</li>\n<li>마나 소모량이 75에서 65로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>오딘 출격 (R)</strong></span>\n<ul>\n<li>공격 사거리가 8.8에서 9로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>여세를 몰아서 (E)\n<ul>\n<li>사거리 증가량이 1.9에서 1.5로 감소했습니다.</li>\n<li>지속 시간이 4초에서 3초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>13레벨</strong></span>\n<ul>\n<li>이거, 죽여주는구만! (고유 능력)\n<ul>\n<li>새로운 기능:\n<ul>\n<li>미니건의 지속 시간이 만료되면 미니건으로 영웅에게 준 추가 피해의 100%만큼 생명력을 회복합니다.\n<ul>\n<li>이제 미니건의 지속 시간 동안 예정된 회복량이 나타납니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>신소재 강철막 (사용 효과)\n<ul>\n<li>기술 방어력 증가량이 50에서 75로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<p><img alt=\"\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/19RBT3IUQUYB1403137112368.png\"/></p>",
+   "heroes": [
+    {
+     "name": "타이커스",
+     "heroId": "Tychus",
+     "heroIds": [
+      "Tychus"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "일반 공격 사거리가 5.5에서 4.5로 감소했습니다.",
+         "html": "일반 공격 사거리가 5.5에서 4.5로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "포화",
+       "key": "Q",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 15초에서 13초로 감소했습니다.",
+         "html": "재사용 대기시간이 15초에서 13초로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "마나 소모량이 75에서 65로 감소했습니다.",
+         "html": "마나 소모량이 75에서 65로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "오딘 출격",
+       "key": "R",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "공격 사거리가 8.8에서 9로 증가했습니다.",
+         "html": "공격 사거리가 8.8에서 9로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "여세를 몰아서",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "사거리 증가량이 1.9에서 1.5로 감소했습니다.",
+         "html": "사거리 증가량이 1.9에서 1.5로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "지속 시간이 4초에서 3초로 감소했습니다.",
+         "html": "지속 시간이 4초에서 3초로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "이거, 죽여주는구만!",
+       "key": "고유 능력",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": []
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "미니건의 지속 시간이 만료되면 미니건으로 영웅에게 준 추가 피해의 100%만큼 생명력을 회복합니다.",
+         "html": "미니건의 지속 시간이 만료되면 미니건으로 영웅에게 준 추가 피해의 100%만큼 생명력을 회복합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "신소재 강철막",
+       "key": "사용 효과",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "기술 방어력 증가량이 50에서 75로 증가했습니다.",
+         "html": "기술 방어력 증가량이 50에서 75로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_Tychus_Crop.png\" data-id=\"17042302\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/C0A9M41RWSJQ1417483335476.png\"/></p>\n<p><font color=\"#9900ff\"><b>능력치</b></font></p>\n<ul>\n<li>일반 공격 사거리가 5.5에서 4.5로 감소했습니다.</li>\n</ul>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>포화 (Q)</strong></span>\n<ul>\n<li>재사용 대기시간이 15초에서 13초로 감소했습니다.</li>\n<li>마나 소모량이 75에서 65로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>오딘 출격 (R)</strong></span>\n<ul>\n<li>공격 사거리가 8.8에서 9로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>여세를 몰아서 (E)\n<ul>\n<li>사거리 증가량이 1.9에서 1.5로 감소했습니다.</li>\n<li>지속 시간이 4초에서 3초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>13레벨</strong></span>\n<ul>\n<li>이거, 죽여주는구만! (고유 능력)\n<ul>\n<li>새로운 기능:\n<ul>\n<li>미니건의 지속 시간이 만료되면 미니건으로 영웅에게 준 추가 피해의 100%만큼 생명력을 회복합니다.\n<ul>\n<li>이제 미니건의 지속 시간 동안 예정된 회복량이 나타납니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>신소재 강철막 (사용 효과)\n<ul>\n<li>기술 방어력 증가량이 50에서 75로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<p><img alt=\"\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/19RBT3IUQUYB1403137112368.png\"/></p>"
+    }
+   ]
+  },
+  {
+   "name": "다중 역할",
+   "key": "다중_역할",
+   "html": "<h4>바리안</h4>\n<p><img alt=\"Divider_Hero_Varian_crop.png\" data-id=\"20371739\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/y0/Y0GG60I3URG11478716215274.png\"/></p>\n<p><font color=\"#9900ff\"><b>기술</b></font></p>\n<ul>\n<li><span class=\"pn-name\"><strong>돌진 (E)</strong></span>\n<ul>\n<li>재사용 대기시간이 14초에서 12초로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>거인의 강타 (R)</strong></span>\n<ul>\n<li>일반 공격력 증가량이 75%에서 100%로 증가했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>분노의 쌍검 (R)</strong></span>\n<ul>\n<li>일반 공격력 감소량이 25%에서 20%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>전쟁인도자 (E)\n<ul>\n<li>이제 돌진이 적을 기절시키는 대신 돌진의 감속 효과가 75%에서 85%로 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>13레벨</strong></span>\n<ul>\n<li>돌격전차 (E)\n<ul>\n<li>추가 피해가 대상 영웅의 최대 생명력의 6%에서 5%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><em><strong>개발자의 의견:  </strong></em>대상을 지정할 수 있는 기절 효과인 전쟁인도자는 너무 강력했습니다. 승률상으로는 '정상'이었지만 상대하는 입장에서는 전혀 재미있지 않았고 부정적인 경험만 줬죠. 2초 동안 기절하고 도발 당하는 동안 아무 것도 할 수 없었고, 설퍼라스 강타 등의 기술과 연계되면 더더욱 끔찍했습니다. 하지만 전쟁인도자의 기절 효과를 삭제하고 감속 효과를 더욱 강화함으로써 상대 또한 자신을 방어할 기회가 생겼습니다. 혹은 바리안이 도발을 일찍 사용해야 할 것이고, 이 경우에는 상대가 군중 제어 효과에 묶여 있는 시간이 이전보다 대폭 감소하겠죠. 물론, 이번 하향을 어느 정도 상쇄하기 위해 돌진의 재사용 대기시간을 줄여 더욱 나은 기동성을 보장했습니다. 마지막으로, 도발과 비슷한 위력을 낼 수 있도록 암살자 역할의 궁극기를 상향했습니다. 이로 인해 바리안이 진정한 다중 역할 영웅으로 거듭날 수 있길 바랍니다.</blockquote>\n<p><img alt=\"\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/19RBT3IUQUYB1403137112368.png\"/></p>",
+   "heroes": [
+    {
+     "name": "바리안",
+     "heroId": "Varian",
+     "heroIds": [
+      "Varian"
+     ],
+     "changes": [
+      {
+       "name": "돌진",
+       "key": "E",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 14초에서 12초로 감소했습니다.",
+         "html": "재사용 대기시간이 14초에서 12초로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "거인의 강타",
+       "key": "R",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "일반 공격력 증가량이 75%에서 100%로 증가했습니다.",
+         "html": "일반 공격력 증가량이 75%에서 100%로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "분노의 쌍검",
+       "key": "R",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "일반 공격력 감소량이 25%에서 20%로 감소했습니다.",
+         "html": "일반 공격력 감소량이 25%에서 20%로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "전쟁인도자",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "이제 돌진이 적을 기절시키는 대신 돌진의 감속 효과가 75%에서 85%로 증가합니다.",
+         "html": "이제 돌진이 적을 기절시키는 대신 돌진의 감속 효과가 75%에서 85%로 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "돌격전차",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "추가 피해가 대상 영웅의 최대 생명력의 6%에서 5%로 감소했습니다.",
+         "html": "추가 피해가 대상 영웅의 최대 생명력의 6%에서 5%로 감소했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_Varian_crop.png\" data-id=\"20371739\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/y0/Y0GG60I3URG11478716215274.png\"/></p>\n<p><font color=\"#9900ff\"><b>기술</b></font></p>\n<ul>\n<li><span class=\"pn-name\"><strong>돌진 (E)</strong></span>\n<ul>\n<li>재사용 대기시간이 14초에서 12초로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>거인의 강타 (R)</strong></span>\n<ul>\n<li>일반 공격력 증가량이 75%에서 100%로 증가했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>분노의 쌍검 (R)</strong></span>\n<ul>\n<li>일반 공격력 감소량이 25%에서 20%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>전쟁인도자 (E)\n<ul>\n<li>이제 돌진이 적을 기절시키는 대신 돌진의 감속 효과가 75%에서 85%로 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>13레벨</strong></span>\n<ul>\n<li>돌격전차 (E)\n<ul>\n<li>추가 피해가 대상 영웅의 최대 생명력의 6%에서 5%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><em><strong>개발자의 의견:  </strong></em>대상을 지정할 수 있는 기절 효과인 전쟁인도자는 너무 강력했습니다. 승률상으로는 '정상'이었지만 상대하는 입장에서는 전혀 재미있지 않았고 부정적인 경험만 줬죠. 2초 동안 기절하고 도발 당하는 동안 아무 것도 할 수 없었고, 설퍼라스 강타 등의 기술과 연계되면 더더욱 끔찍했습니다. 하지만 전쟁인도자의 기절 효과를 삭제하고 감속 효과를 더욱 강화함으로써 상대 또한 자신을 방어할 기회가 생겼습니다. 혹은 바리안이 도발을 일찍 사용해야 할 것이고, 이 경우에는 상대가 군중 제어 효과에 묶여 있는 시간이 이전보다 대폭 감소하겠죠. 물론, 이번 하향을 어느 정도 상쇄하기 위해 돌진의 재사용 대기시간을 줄여 더욱 나은 기동성을 보장했습니다. 마지막으로, 도발과 비슷한 위력을 낼 수 있도록 암살자 역할의 궁극기를 상향했습니다. 이로 인해 바리안이 진정한 다중 역할 영웅으로 거듭날 수 있길 바랍니다.</blockquote>\n<p><img alt=\"\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/19RBT3IUQUYB1403137112368.png\"/></p>"
+    }
+   ]
+  },
+  {
+   "name": "전문가",
+   "key": "role_specialist",
+   "html": "<h4>머키</h4>\n<p><img alt=\"Divider_Hero_Murky_Crop.png\" data-id=\"17042292\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/ALZFYULQAD0J1417483334906.png\"/></p>\n<p><strong class=\"pn-h\">능력치</strong></p>\n<ul>\n<li>기본 생명력이 761에서 730으로 감소했습니다.</li>\n<li>기본 생명력 재생량이 초당 30.43에서 29.20으로 감소했습니다.</li>\n</ul>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>점액 (Q)</strong></span>\n<ul>\n<li>감속 효과의 지속 시간이 8초에서 6초로 감소했습니다.</li>\n<li>감속 효과가 25%에서 20%로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>멀록 대행진 (R)</strong></span>\n<ul>\n<li>재사용 대기시간이 80초에서 110초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<ul>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong>\n<ul>\n<li>비릿한 거래 (사용 효과)\n<ul>\n<li>용병을 매수하는 데 필요한 매수 중첩이 7에서 8로 증가했습니다.</li>\n<li>최대 중첩수가 30에서 32로 증가했습니다.</li>\n</ul>\n</li>\n<li>가짜 알 (고유 능력)\n<ul>\n<li>가짜 알의 시야가 1 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>찐득한 점액 (Q)\n<ul>\n<li>감속 효과 증가량이 35%에서 30%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>7레벨</strong></span>\n<ul>\n<li>젖으면 미끌미끌 (E)\n<ul>\n<li>이동 속도 증가량이 35%에서 40%로 증가했습니다.</li>\n</ul>\n</li>\n<li>나는야 죽음 (지속 효과)\n<ul>\n<li>중첩당 감속 효과가 8%에서 7%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>13레벨</strong></span>\n<ul>\n<li>원기회복 방울 (E)\n<ul>\n<li>치유량이 최대 생명력의 50%에서 40%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><em><strong>개발자의 의견:  </strong></em>머키가 시공의 폭풍을 온통 점액 범벅으로 만들어서 약간 정리하는 시간을 가지려고 합니다. 지난 업데이트로 머키는 상당히 강력해졌고, 이번 기회에 하향해야겠다고 판단했죠. 전체적으로 머키의 효율이 약간 떨어졌으며, 적을 느려지게 하고 저지하는 능력이 이전보다 약할 것입니다. 너프다옳옳옳...</blockquote>\n<p><img alt=\"\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/19RBT3IUQUYB1403137112368.png\"/></p>",
+   "heroes": [
+    {
+     "name": "머키",
+     "heroId": "Murky",
+     "heroIds": [
+      "Murky"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "기본 생명력이 761에서 730으로 감소했습니다.",
+         "html": "기본 생명력이 761에서 730으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "기본 생명력 재생량이 초당 30.43에서 29.20으로 감소했습니다.",
+         "html": "기본 생명력 재생량이 초당 30.43에서 29.20으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "점액",
+       "key": "Q",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "감속 효과의 지속 시간이 8초에서 6초로 감소했습니다.",
+         "html": "감속 효과의 지속 시간이 8초에서 6초로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "감속 효과가 25%에서 20%로 감소했습니다.",
+         "html": "감속 효과가 25%에서 20%로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "멀록 대행진",
+       "key": "R",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 80초에서 110초로 증가했습니다.",
+         "html": "재사용 대기시간이 80초에서 110초로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "비릿한 거래",
+       "key": "사용 효과",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "용병을 매수하는 데 필요한 매수 중첩이 7에서 8로 증가했습니다.",
+         "html": "용병을 매수하는 데 필요한 매수 중첩이 7에서 8로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "최대 중첩수가 30에서 32로 증가했습니다.",
+         "html": "최대 중첩수가 30에서 32로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "가짜 알",
+       "key": "고유 능력",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "가짜 알의 시야가 1 감소했습니다.",
+         "html": "가짜 알의 시야가 1 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "찐득한 점액",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "감속 효과 증가량이 35%에서 30%로 감소했습니다.",
+         "html": "감속 효과 증가량이 35%에서 30%로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "젖으면 미끌미끌",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "이동 속도 증가량이 35%에서 40%로 증가했습니다.",
+         "html": "이동 속도 증가량이 35%에서 40%로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "나는야 죽음",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "중첩당 감속 효과가 8%에서 7%로 감소했습니다.",
+         "html": "중첩당 감속 효과가 8%에서 7%로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "원기회복 방울",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "치유량이 최대 생명력의 50%에서 40%로 감소했습니다.",
+         "html": "치유량이 최대 생명력의 50%에서 40%로 감소했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_Murky_Crop.png\" data-id=\"17042292\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/ALZFYULQAD0J1417483334906.png\"/></p>\n<p><strong class=\"pn-h\">능력치</strong></p>\n<ul>\n<li>기본 생명력이 761에서 730으로 감소했습니다.</li>\n<li>기본 생명력 재생량이 초당 30.43에서 29.20으로 감소했습니다.</li>\n</ul>\n<p><strong class=\"pn-h\">기술</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>점액 (Q)</strong></span>\n<ul>\n<li>감속 효과의 지속 시간이 8초에서 6초로 감소했습니다.</li>\n<li>감속 효과가 25%에서 20%로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>멀록 대행진 (R)</strong></span>\n<ul>\n<li>재사용 대기시간이 80초에서 110초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<ul>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong>\n<ul>\n<li>비릿한 거래 (사용 효과)\n<ul>\n<li>용병을 매수하는 데 필요한 매수 중첩이 7에서 8로 증가했습니다.</li>\n<li>최대 중첩수가 30에서 32로 증가했습니다.</li>\n</ul>\n</li>\n<li>가짜 알 (고유 능력)\n<ul>\n<li>가짜 알의 시야가 1 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>찐득한 점액 (Q)\n<ul>\n<li>감속 효과 증가량이 35%에서 30%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>7레벨</strong></span>\n<ul>\n<li>젖으면 미끌미끌 (E)\n<ul>\n<li>이동 속도 증가량이 35%에서 40%로 증가했습니다.</li>\n</ul>\n</li>\n<li>나는야 죽음 (지속 효과)\n<ul>\n<li>중첩당 감속 효과가 8%에서 7%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>13레벨</strong></span>\n<ul>\n<li>원기회복 방울 (E)\n<ul>\n<li>치유량이 최대 생명력의 50%에서 40%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><em><strong>개발자의 의견:  </strong></em>머키가 시공의 폭풍을 온통 점액 범벅으로 만들어서 약간 정리하는 시간을 가지려고 합니다. 지난 업데이트로 머키는 상당히 강력해졌고, 이번 기회에 하향해야겠다고 판단했죠. 전체적으로 머키의 효율이 약간 떨어졌으며, 적을 느려지게 하고 저지하는 능력이 이전보다 약할 것입니다. 너프다옳옳옳...</blockquote>\n<p><img alt=\"\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/19RBT3IUQUYB1403137112368.png\"/></p>"
+    }
+   ]
+  },
+  {
+   "name": "지원가",
+   "key": "role_support",
+   "html": "<h4></h4>\n<h4>루시우</h4>\n<p><img alt=\"Divider_Hero_Lucio.png\" data-id=\"20563586\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/2s/2S6L7YADVZQR1487796012090.png\"/></p>\n<p><span class=\"pn-h\"><strong>기술</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>볼륨을 높여라! (E)</strong></span>\n<ul>\n<li>치유 증폭 음악 강화 시 추가 치유량이 16.5에서 15.5로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>휴대용 라디오 (사용 효과)\n<ul>\n<li>지속 시간이 20초에서 30초로 증가했습니다.</li>\n</ul>\n</li>\n<li>파티 믹스 (W)\n<ul>\n<li>사거리 증가량이 25%에서 20%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4></h4>\n<h4>말퓨리온</h4>\n<p><img alt=\"Divider_Hero_Malfurion_Crop.png\" data-id=\"17042290\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/1JZXW9JSV6ZW1417483334684.png\"/></p>\n<p><span class=\"pn-h\"><strong>기술</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>휘감는 뿌리 (E)</strong></span>\n<ul>\n<li>이동 불가 효과의 지속 시간이 1.5초에서 1.25초로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>황혼의 꿈 (R)</strong></span>\n<ul>\n<li>추가 마나 재생량이 1.5에서 1.25로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong class=\"pn-name\">16레벨</strong></li>\n</ul>\n<ul>\n<li>집요한 뿌리 (E)\n<ul>\n<li>감속 효과의 지속 시간 증가량이 0.5초에서 0.25초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<h4></h4>\n<h4>태사다르</h4>\n<p><img alt=\"Divider_Hero_Tassadar_Crop.png\" data-id=\"17042301\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/2J5UMQ9U8Y951417483335330.png\"/></p>\n<p><span class=\"pn-h\"><strong>특성</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>케이다린의 울림 (Q)\n<ul>\n<li>새로운 기능:\n<ul>\n<li>퀘스트: 재생의 구슬로 회복하는 마나가 50% 증가합니다.</li>\n<li>보상(1): 재생의 구슬을 15개 이상 획득하면 플라스마 보호막의 흡수량이 20% 증가합니다. </li>\n<li>보상(2): 재생의 구슬을 30개 이상 획득하면 플라스마 보호막의 지속 시간이 100% 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><em><strong>개발자의 의견:  </strong></em>영웅을 개편할 때 가장 중요한 목표 중 하나는 기존의 플레이 스타일과 특성 조합을 최대한 유지하고, 불필요하거나 게임의 재미를 떨어트리는 특성을 과감히 제거하며 새로운 특성 조합이 나타날 여지를 두는 것입니다. 칼라의 은총을 퀘스트 특성인 케이다린의 울림으로 옮긴 후, 엄청난 효과에 걸맞게 퀘스트 또한 달성하기 매우 어렵게 만들었죠. 일부 전장에서 이 특성을 선택하여 후반부에 큰 위력을 낼 수 있게 하는 것이 원래 의도였습니다. 하지만 너무나도 어려운 퀘스트 때문에 잠재력을 추구하는 재미보다 짜증이 먼저 다가왔죠. 그래서 여러 측면에서 이 특성을 살펴본 바, 영구적으로 보호막을 부여하는 기능을 없애고 비교적 약한 특성을 더욱 쉽게 달성할 수 있도록 변경했습니다.</blockquote>\n<h4><img alt=\"\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/19RBT3IUQUYB1403137112368.png\"/></h4>\n<h4></h4>",
+   "heroes": [
+    {
+     "name": "루시우",
+     "heroId": "Lucio",
+     "heroIds": [
+      "Lucio"
+     ],
+     "changes": [
+      {
+       "name": "볼륨을 높여라!",
+       "key": "E",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "치유 증폭 음악 강화 시 추가 치유량이 16.5에서 15.5로 감소했습니다.",
+         "html": "치유 증폭 음악 강화 시 추가 치유량이 16.5에서 15.5로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "휴대용 라디오",
+       "key": "사용 효과",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "지속 시간이 20초에서 30초로 증가했습니다.",
+         "html": "지속 시간이 20초에서 30초로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "파티 믹스",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "사거리 증가량이 25%에서 20%로 감소했습니다.",
+         "html": "사거리 증가량이 25%에서 20%로 감소했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_Lucio.png\" data-id=\"20563586\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/2s/2S6L7YADVZQR1487796012090.png\"/></p>\n<p><span class=\"pn-h\"><strong>기술</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>볼륨을 높여라! (E)</strong></span>\n<ul>\n<li>치유 증폭 음악 강화 시 추가 치유량이 16.5에서 15.5로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>휴대용 라디오 (사용 효과)\n<ul>\n<li>지속 시간이 20초에서 30초로 증가했습니다.</li>\n</ul>\n</li>\n<li>파티 믹스 (W)\n<ul>\n<li>사거리 증가량이 25%에서 20%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4></h4>"
+    },
+    {
+     "name": "말퓨리온",
+     "heroId": "Malfurion",
+     "heroIds": [
+      "Malfurion"
+     ],
+     "changes": [
+      {
+       "name": "휘감는 뿌리",
+       "key": "E",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "이동 불가 효과의 지속 시간이 1.5초에서 1.25초로 감소했습니다.",
+         "html": "이동 불가 효과의 지속 시간이 1.5초에서 1.25초로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "황혼의 꿈",
+       "key": "R",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "추가 마나 재생량이 1.5에서 1.25로 감소했습니다.",
+         "html": "추가 마나 재생량이 1.5에서 1.25로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": null,
+       "lines": [
+        {
+         "text": "16레벨",
+         "html": "<strong class=\"pn-name\">16레벨</strong>",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "집요한 뿌리",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": null,
+       "lines": [
+        {
+         "text": "감속 효과의 지속 시간 증가량이 0.5초에서 0.25초로 감소했습니다.",
+         "html": "감속 효과의 지속 시간 증가량이 0.5초에서 0.25초로 감소했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_Malfurion_Crop.png\" data-id=\"17042290\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/1JZXW9JSV6ZW1417483334684.png\"/></p>\n<p><span class=\"pn-h\"><strong>기술</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>휘감는 뿌리 (E)</strong></span>\n<ul>\n<li>이동 불가 효과의 지속 시간이 1.5초에서 1.25초로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>황혼의 꿈 (R)</strong></span>\n<ul>\n<li>추가 마나 재생량이 1.5에서 1.25로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong class=\"pn-name\">16레벨</strong></li>\n</ul>\n<ul>\n<li>집요한 뿌리 (E)\n<ul>\n<li>감속 효과의 지속 시간 증가량이 0.5초에서 0.25초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<h4></h4>"
+    },
+    {
+     "name": "태사다르",
+     "heroId": "Tassadar",
+     "heroIds": [
+      "Tassadar"
+     ],
+     "changes": [
+      {
+       "name": "케이다린의 울림",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": []
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "퀘스트: 재생의 구슬로 회복하는 마나가 50% 증가합니다.",
+         "html": "퀘스트: 재생의 구슬로 회복하는 마나가 50% 증가합니다.",
+         "added": false
+        },
+        {
+         "text": "보상(1): 재생의 구슬을 15개 이상 획득하면 플라스마 보호막의 흡수량이 20% 증가합니다.",
+         "html": "보상(1): 재생의 구슬을 15개 이상 획득하면 플라스마 보호막의 흡수량이 20% 증가합니다.",
+         "added": false
+        },
+        {
+         "text": "보상(2): 재생의 구슬을 30개 이상 획득하면 플라스마 보호막의 지속 시간이 100% 증가합니다.",
+         "html": "보상(2): 재생의 구슬을 30개 이상 획득하면 플라스마 보호막의 지속 시간이 100% 증가합니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_Tassadar_Crop.png\" data-id=\"17042301\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/2J5UMQ9U8Y951417483335330.png\"/></p>\n<p><span class=\"pn-h\"><strong>특성</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>케이다린의 울림 (Q)\n<ul>\n<li>새로운 기능:\n<ul>\n<li>퀘스트: 재생의 구슬로 회복하는 마나가 50% 증가합니다.</li>\n<li>보상(1): 재생의 구슬을 15개 이상 획득하면 플라스마 보호막의 흡수량이 20% 증가합니다. </li>\n<li>보상(2): 재생의 구슬을 30개 이상 획득하면 플라스마 보호막의 지속 시간이 100% 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><em><strong>개발자의 의견:  </strong></em>영웅을 개편할 때 가장 중요한 목표 중 하나는 기존의 플레이 스타일과 특성 조합을 최대한 유지하고, 불필요하거나 게임의 재미를 떨어트리는 특성을 과감히 제거하며 새로운 특성 조합이 나타날 여지를 두는 것입니다. 칼라의 은총을 퀘스트 특성인 케이다린의 울림으로 옮긴 후, 엄청난 효과에 걸맞게 퀘스트 또한 달성하기 매우 어렵게 만들었죠. 일부 전장에서 이 특성을 선택하여 후반부에 큰 위력을 낼 수 있게 하는 것이 원래 의도였습니다. 하지만 너무나도 어려운 퀘스트 때문에 잠재력을 추구하는 재미보다 짜증이 먼저 다가왔죠. 그래서 여러 측면에서 이 특성을 살펴본 바, 영구적으로 보호막을 부여하는 기능을 없애고 비교적 약한 특성을 더욱 쉽게 달성할 수 있도록 변경했습니다.</blockquote>\n<h4><img alt=\"\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/19RBT3IUQUYB1403137112368.png\"/></h4>\n<h4></h4>"
+    }
+   ]
+  },
+  {
+   "name": "전사",
+   "key": "role_tank",
+   "html": "<h4>렉사르</h4>\n<p><img alt=\"Divider_Hero_Rexxar_Cropped.png\" data-id=\"19894884\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/vi/VIQFO0SSQW1W1442362642092.png\"/></p>\n<ul>\n<li>이제 미샤가 자동으로 되돌아오는 사거리를 시각적으로 확인할 수 있습니다.</li>\n<li>이제 미샤가 자동으로 되돌아오는 사거리 밖에도 명령을 내릴 수 있습니다. 최대 사거리까지 도달한 후에는 되돌아옵니다.</li>\n</ul>\n<p><img alt=\"\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/19RBT3IUQUYB1403137112368.png\"/></p>",
+   "heroes": [
+    {
+     "name": "렉사르",
+     "heroId": "Rexxar",
+     "heroIds": [
+      "Rexxar"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "이제 미샤가 자동으로 되돌아오는 사거리를 시각적으로 확인할 수 있습니다.",
+         "html": "이제 미샤가 자동으로 되돌아오는 사거리를 시각적으로 확인할 수 있습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "이제 미샤가 자동으로 되돌아오는 사거리 밖에도 명령을 내릴 수 있습니다. 최대 사거리까지 도달한 후에는 되돌아옵니다.",
+         "html": "이제 미샤가 자동으로 되돌아오는 사거리 밖에도 명령을 내릴 수 있습니다. 최대 사거리까지 도달한 후에는 되돌아옵니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_Rexxar_Cropped.png\" data-id=\"19894884\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/vi/VIQFO0SSQW1W1442362642092.png\"/></p>\n<ul>\n<li>이제 미샤가 자동으로 되돌아오는 사거리를 시각적으로 확인할 수 있습니다.</li>\n<li>이제 미샤가 자동으로 되돌아오는 사거리 밖에도 명령을 내릴 수 있습니다. 최대 사거리까지 도달한 후에는 되돌아옵니다.</li>\n</ul>\n<p><img alt=\"\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/19RBT3IUQUYB1403137112368.png\"/></p>"
+    }
+   ]
+  },
+  {
+   "name": "버그 수정",
+   "key": "bugs",
+   "html": "<p><span class=\"pn-h\"><strong>일반</strong></span></p>\n<ul>\n<li><strong>다시보기:</strong> 다시보기 동안 대전의 시간 표시 막대를 조절하면 오류가 발생하던 문제를 수정했습니다.</li>\n</ul>\n<p><img alt=\"\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/g6/G6G0N80EOC941426801305139.png\"/></p>\n<p><img alt=\"InvisibleDividerLine_800x50.png\" data-id=\"14509591\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/6VA2831Q81IU1403137406234.png\"/></p>\n<style type=\"text/css\">img\n{\ndisplay: block;\n}\n</style>\n<style type=\"text/css\">p\n{\ndisplay:inline;\n}\n</style>\n<style type=\"text/css\">ul.tile-list {\nwidth: 100%;\noverflow: hidden;\nmargin: 30px 0 0;\n}\nli.tile-list-item {\nfloat: left;\nclear: left;\nmargin: 0 0 20px;\nlist-style: none;\n}\nli.tile-list-item h4 {\ntext-align: center;\nmargin-bottom: 10px;\n}\nimg.tile-list-thumb {\nwidth: 50%;\nfloat: left;\n}\nli.tile-list-item ul {\nwidth: 50%;\nfloat: left;\nmargin: 0;\npadding-left: 15px;\n}\nli.tile-list-item li {\nfont-size: 14px;\nlist-style: disc;\nmargin-left: 15px;\n}\ntable.schedule_table {\nwidth: 100%;\n}\ntable.schedule_table th,\ntable.schedule_table td {\npadding: 4px;\n}\ntable.schedule_table th {\nfont-family: Metronic, sans-serif;\nfont-weight: normal;\ntext-align: left;\ncolor: #0099ff;\ntext-transform: uppercase;\n}\ntable.schedule_table td {\nfont-size: 14px;\nline-height: 18px;\nvertical-align: top;\n}\nul.schedule_list {\nmargin: 15px 0 30px 20px;\n}\nul.schedule_list li {\nfont-size: 14px;\n}\n@media (min-width: 564px) {\nli.tile-list-item {\nclear: none;\nmax-width: none;\nwidth: 31%;\nborder: none;\nmargin-bottom: 0;\n}\nli.tile-list-item:nth-child(2) {\nmargin: 0 3.5%;\n}\nimg.tile-list-thumb {\nwidth: 100%;\n}\nli.tile-list-item ul {\nclear: left;\nmargin-top: 15px;\nwidth: 100%;\n}\n}\n</style>\n<style class=\"blockquote-dev\" type=\"text/css\">blockquote {\nbackground: #140029;\nborder-left: 10px solid #320064;\nmargin: 1.5em 10px;\npadding: 0.5em 10px;;\nquotes: \"\\201C\"\"\\201D\"\"\\2018\"\"\\2019\";\n}\nblockquote p {\ndisplay: inline;\npadding: 0px 0px 0px 0px;\n}\n</style>"
+  }
+ ],
+ "heroes": [
+  "Lucio",
+  "Malfurion",
+  "Murky",
+  "Rexxar",
+  "Tassadar",
+  "Tychus",
+  "Varian"
+ ],
+ "battlegrounds": [],
+ "newsId": "20581815"
+}

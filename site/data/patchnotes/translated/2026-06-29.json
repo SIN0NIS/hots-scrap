@@ -1,0 +1,2209 @@
+{
+ "date": "2026-06-29",
+ "kind": "ptr",
+ "title": "히어로즈 오브 더 스톰 공개 테스트 서버 패치 노트 - 2026년 6월 29일",
+ "source": "https://news.blizzard.com/en-us/article/24287550/heroes-of-the-storm-ptr-patch-notes-june-29-2026",
+ "published": "2026-06-29T17:13:56Z",
+ "sections": [
+  {
+   "name": "머리말",
+   "key": "intro",
+   "html": "<p>다음 히어로즈 오브 더 스톰 패치가 공개 테스트 서버(PTR)에 적용되어 테스트 플레이가 가능합니다. 언제나 그렇듯, PTR에서 플레이하는 동안 버그를 발견하셨다면 <a href=\"https://us.forums.blizzard.com/en/heroes/c/ptr-bug-report\" target=\"_blank\">PTR 버그 신고 포럼</a>에 방문하여 경험하신 내용을 알려주시기 바랍니다.</p>",
+   "nameEn": "머리말"
+  },
+  {
+   "name": "일반",
+   "key": "general",
+   "html": "<ul>\n<li>이제 폭풍 리그에서 배치가 완료되지 않은 플레이어와 파티를 맺을 수 있습니다.</li>\n<li>유령 광산이 등급전에 추가되었습니다.</li>\n</ul>",
+   "nameEn": "General"
+  },
+  {
+   "name": "전장 업데이트",
+   "key": "map_updates",
+   "html": "<ul>\n<li><strong class=\"pn-h\">하나무라</strong><ul>\n<li>여러 위치에 수풀이 추가되었습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">핵탄두 격전지</strong><ul>\n<li>핵탄두의 정신 집중이 방해받았을 때의 대기 시간이 10초에서 5초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>",
+   "items": [
+    {
+     "name": "하나무라",
+     "battleground": "hanamura_temple",
+     "html": "<strong class=\"pn-h\">하나무라</strong>\n<ul>\n<li>여러 위치에 수풀이 추가되었습니다.</li>\n</ul>",
+     "under": null,
+     "nameEn": "Hanamura"
+    },
+    {
+     "name": "핵탄두 격전지",
+     "battleground": "warhead_junction",
+     "html": "<strong class=\"pn-h\">핵탄두 격전지</strong>\n<ul>\n<li>핵탄두의 정신 집중이 방해받았을 때의 대기 시간이 10초에서 5초로 감소했습니다.</li>\n</ul>",
+     "under": null,
+     "nameEn": "Warhead Junction"
+    }
+   ],
+   "nameEn": "Map Updates"
+  },
+  {
+   "name": "밸런스 업데이트",
+   "key": "balance",
+   "html": "<h3><strong>영웅</strong></h3>\n<h4>아바투르</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">식충 생성 [D]</strong><ul>\n<li>생명력이 350에서 225로 감소했습니다.</li>\n<li>이제 식충이 입힌 피해량의 20%만큼 생명력을 회복하고, 근처의 돌격병이 죽으면 최대 생명력의 20%만큼 생명력을 회복합니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">맹독 둥지</strong><ul>\n<li>방어력 감소량이 10에서 15로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">식충 번식</strong><ul>\n<li>16레벨에서 1레벨로 옮겨졌습니다.</li>\n<li>재사용 대기시간이 45초에서 75초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">(신규) 슬래파투르</strong><ul>\n<li>이제 아바투르의 일반 공격이 영웅이 아닌 대상을 기절시키고 500%의 추가 피해를 입힙니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">흉물 진화</strong><ul>\n<li>이제 퀘스트로 표시됩니다.</li>\n<li>이제 아바투르에게 괴물체의 생명력과 중첩을 확인할 수 있는 유닛 정보창이 표시됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">생존 본능</strong><ul>\n<li>1레벨에서 16레벨로 옮겨졌습니다.</li>\n<li>생명력 증가량이 100%에서 200%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>알렉스트라자</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">용의 여왕 [D]</strong><ul>\n<li>이제 재사용 대기시간이 용의 여왕이 끝난 후에 시작됩니다.</li>\n<li>재사용 대기시간이 150초에서 130초로 감소했습니다.</li>\n<li>생명의 선물에 영향을 주는 특성이 생명의 숨결에도 적용됩니다.</li>\n<li>풍요에 영향을 주는 특성이 보존에도 적용됩니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">생명의 숨결 [용의 여왕 Q]</strong><ul>\n<li>치유량이 20%에서 15%로 감소했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">보존 [용의 여왕 W]</strong><ul>\n<li>치유량이 30%에서 25%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">생명에서 생명을</strong><ul>\n<li>이제 생명의 숨결의 충전 속도도 25% 증가시킵니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">분노의 화염</strong><ul>\n<li><strong>새로운 신화 보상:</strong> 죽지 않고 영웅을 40회 추가로 적중시키면 적 영웅에게 피해를 입힐 때 용의 여왕의 지속시간이 갱신됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">생명의 만개</strong><ul>\n<li>이제 생명의 숨결이 감속과 이동 불가 효과를 제거합니다.</li>\n<li>이제 용의 여왕으로 변신해도 모아둔 생명꽃이 사라지지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">용의 수련</strong><ul>\n<li>더 이상 용의 여왕의 지속시간에 영향을 주지 않습니다.</li>\n<li>용의 여왕의 일반 공격으로 치유한 아군 영웅 1명당 보존의 재사용 대기시간이 1.25초 감소합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">루비 날개</strong><ul>\n<li>개편: 화염구가 적중한 지역에 영웅이 3명 이상 있으면 해당 화염구의 충전이 소모되지 않습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">고대의 불꽃</strong><ul>\n<li>활성화되어 있는 동안에는 퀘스트 중첩을 제공하지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>블레이즈</h4>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">아드레날린 자극제</strong><ul>\n<li>사용 시 공격 속도 증가량이 100%에서 85%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">벙커 투하</strong><ul>\n<li>재사용 대기시간이 80초에서 85초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>초</h4>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">단련된 가죽</strong><ul>\n<li>발동에 필요한 생명력 기준이 60%에서 40%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">방화범</strong><ul>\n<li>일반 공격당 재사용 대기시간 감소량이 1초에서 1.5초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>갈</h4>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">커져가는 공포</strong><ul>\n<li>튕길 때마다 얻는 추가 효과가 25%에서 20%로 감소했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">폭탄 받아라</strong><ul>\n<li>이제 중첩에 제한이 없습니다.</li>\n<li>중첩당 추가 피해량이 5에서 4로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">이중고</strong><ul>\n<li>퀘스트 보상으로 얻는 암흑불길의 재사용 대기시간 감소량이 0.5초에서 1초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">무쇠 보주</strong><ul>\n<li>기절 지속시간이 0.75초에서 0.6초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>크로미</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">용의 숨결 [W]</strong><ul>\n<li>이제 적에게 반경 미리보기가 표시됩니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">시간의 덫 [E]</strong><ul>\n<li>생명력이 400에서 250으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">다시 처음으로</strong><ul>\n<li>퀘스트 요구 중첩이 40에서 20으로 감소했습니다.</li>\n<li>이제 퀘스트를 죽지 않고 완료해야 합니다.</li>\n</ul>\n</li>\n</ul>\n<ul>\n<li><strong class=\"pn-name\">깊은 숨결</strong><ul>\n<li>중첩당 피해량이 1%에서 0.5%로 감소했습니다.</li>\n<li>이제 중첩에 제한이 없습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<ul>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">만성적인 현상</strong><ul>\n<li>이제 시간의 덫이 적 영웅에게 닿으면 자동으로 발동하기도 합니다.</li>\n<li>감속량이 30%에서 20%로 감소했습니다.</li>\n<li>이동 속도 증가량이 30%에서 20%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<ul>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">여기저기</strong><ul>\n<li>사거리가 20에서 40으로 증가했습니다.</li>\n<li>이제 자동 대상 지정이 적용됩니다. 플레이어가 지정한 위치에서 가장 가까운 메아리가 사용됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>디아블로</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">암흑의 돌진</strong><ul>\n<li>피해량이 40 및 충돌 시 130에서 45 및 충돌 시 140으로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">화염 발구르기</strong><ul>\n<li>피해량이 퍼져 나갈 때 12, 돌아갈 때 36에서 퍼져 나갈 때 11, 돌아갈 때 34로 감소했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">압도</strong><ul>\n<li>피해량이 73에서 80으로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">대악마의 여세</strong><ul>\n<li>일반 공격당 재사용 대기시간 감소량이 1.5초에서 2초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">단말마</strong><ul>\n<li>영웅 적중당 재사용 대기시간 감소량이 25초에서 30초로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">공포의 군주</strong><ul>\n<li>흡수하는 생명력이 최대 생명력의 10%에서 12%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>겐지</h4>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">바람처럼 빠르게</strong><ul>\n<li>이동 속도 증가량이 30%에서 40%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">심장을 노려라</strong><ul>\n<li>피해량이 134에서 142로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">완벽한 응수</strong><ul>\n<li>적중당 재사용 대기시간 감소량이 2초에서 2.5초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">흐르는 물처럼</strong><ul>\n<li>적중당 재사용 대기시간 감소량이 3초에서 4초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">최후의 베기</strong><ul>\n<li>피해량이 125에서 115로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>요한나</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">눈부신 방패 [E]</strong><ul>\n<li>재사용 대기시간이 12초에서 13초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">축복받은 방패</strong><ul>\n<li>재사용 대기시간이 60초에서 65초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>말가니스</h4>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">티콘드리우스의 의지</strong><ul>\n<li>기절 지속시간 증가량이 0.5초에서 0.25초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">눈먼 공포</strong><ul>\n<li>이제 지옥 발톱의 할퀴기 3회를 마친 후 0.2초의 재사용 지연이 발생합니다. 이는 다른 할퀴기 사이의 시간과 동일합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>키히라</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">회전 휩쓸기 [Q]</strong><ul>\n<li>회전 휩쓸기가 한 번 부착되면 대상이 정지 불가 상태가 되어도 더 이상 떨어지지 않습니다.</li>\n</ul>\n</li>\n</ul>\n<ul>\n<li><strong class=\"pn-name\">피의 분노 [W]</strong><ul>\n<li><strong>새로운 기본 퀘스트:</strong> 피의 분노의 출혈로 적 영웅에게 피해를 입히면 중첩당 피해량이 0.5%씩 영구히 증가합니다.</li>\n<li>피의 분노의 출혈 피해량이 11에서 8로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">치명상</strong><ul>\n<li>생명력이 낮은 대상에게 주는 추가 피해량이 30%에서 50%로 증가했습니다.</li>\n<li>퀘스트가 삭제되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>라그나로스</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">화염 폭풍 [W]</strong><ul>\n<li>피해량이 104에서 120으로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">화산 심장부 [D]</strong><ul>\n<li>재사용 대기시간이 120초에서 180초로 증가했습니다.</li>\n<li>생명력이 3996에서 5000으로 증가했습니다.</li>\n<li>지속시간이 18초에서 23초로 증가했습니다.</li>\n<li>이제 라그나로스가 빠져나올 때 1초 동안 기절합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">유성 휘두르기 [화산 심장부 Q]</strong><ul>\n<li>피해량이 161에서 250으로 증가했습니다.</li>\n<li>이제 돌격병에게 추가 피해를 주지 않습니다.</li>\n<li>재사용 대기시간이 6초에서 9초로 증가했습니다.</li>\n<li>이제 적을 밀쳐내기도 합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">유성우 [화산 심장부 W]</strong><ul>\n<li>피해량이 151에서 200으로 증가했습니다.</li>\n<li>재사용 대기시간이 2.5초에서 6초로 증가했습니다.</li>\n<li>효과 범위가 66% 증가했습니다.</li>\n<li>타격 간의 지연 시간이 크게 증가했습니다.</li>\n<li>이제 돌격병에게 추가 피해를 주지 않습니다.</li>\n<li>감속 효과가 25%에서 35%로 증가했습니다.</li>\n<li>사거리가 35에서 20으로 감소했지만, 이제 시간이 지남에 따라 최대 35까지 늘어납니다.</li>\n<li>이제 구조물에게 75% 감소한 피해를 입힙니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">폭발의 룬 [화산 심장부 E]</strong><ul>\n<li>재사용 대기시간이 4초에서 2.5초로 감소했습니다.</li>\n<li>이제 적중한 대상에게 5초 동안 초당 88의 피해를 주는 지속 피해를 입힙니다. 더 이상 즉시 피해를 주지 않습니다.</li>\n<li>사거리가 35에서 20으로 감소했지만, 이제 시간이 지남에 따라 최대 35까지 늘어납니다.</li>\n<li>이제 돌격병에게 추가 피해를 주지 않습니다.</li>\n<li>이제 구조물에게 75% 감소한 피해를 입힙니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">휘몰아치는 불길</strong><ul>\n<li>추가 피해량이 75%에서 50%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">설퍼라스 강타</strong><ul>\n<li><strong>새로운 신화 퀘스트:</strong> 설퍼라스 강타의 중심부로 적 영웅 8명을 적중시키십시오. 신화 보상: 설퍼라스 강타의 충전 횟수가 1회 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">용암 쇄도</strong><ul>\n<li>더 이상 용암 파도의 재사용 대기시간을 30초 감소시키지 않습니다.</li>\n<li>이제 경로에 있는 아군 돌격병과 용병의 이동 속도도 200% 증가시킵니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">영웅 난이도</strong><ul>\n<li><strong>새로운 기능:</strong> 파괴된 요새나 성채에 사용하면 화산 심장부의 재사용 대기시간이 110초 감소합니다. 또한 화산 심장부 상태에서 사용하는 기술의 초기 사거리가 100% 증가하며 계속 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>화이트메인</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">이글거리는 채찍 [E]</strong><ul>\n<li><strong>새로운 퀘스트:</strong> 이글거리는 채찍으로 영웅을 적중시키면 화이트메인의 최대 생명력이 3, 마나가 2 증가합니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">약자에 연민을</strong><ul>\n<li>적중당 재사용 대기시간 감소량이 1.5초에서 1초로 감소했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">재판관의 기도</strong><ul>\n<li><strong>개편:</strong> 이글거리는 채찍으로 적중시킨 영웅 1명당 마나를 25 회복합니다. 지속 효과: 열의의 지속시간이 2초 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">중재</strong><ul>\n<li>재사용 대기시간이 45초에서 60초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">붉은 분노</strong><ul>\n<li>마나 회복량이 0.5%에서 1%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">인도의 빛</strong><ul>\n<li>이제 열의 발동으로 얻는 기술 위력도 15% 증가시킵니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>이렐</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">정의의 망치 [Q]</strong><ul>\n<li>치유량이 320에서 370으로 증가했습니다.</li>\n<li>피해량이 140에서 160으로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">정의의 망치 [W]</strong><ul>\n<li>기절 지속시간이 0.75초에서 1초로 증가했습니다.</li>\n<li>피해량이 125에서 140으로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">응징의 격노 [E]</strong><ul>\n<li>감속 효과가 50%에서 60%로 증가했습니다.</li>\n<li>피해량이 225에서 260으로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">신성한 목적 [D]</strong><ul>\n<li>재사용 대기시간이 8초에서 16초로 증가했습니다.</li>\n<li>이제 이렐의 기본 기술이 중단될 때마다 재사용 대기시간이 8초 감소합니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">자유의 손길</strong><ul>\n<li>재사용 대기시간이 30초에서 40초로 증가했습니다.</li>\n<li>이동 속도 증가량이 30%에서 25%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">고위 천사</strong><ul>\n<li>재사용 대기시간이 10초에서 20초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+   "heroes": [
+    {
+     "name": "아바투르",
+     "heroId": "Abathur",
+     "heroIds": [
+      "Abathur"
+     ],
+     "changes": [
+      {
+       "name": "식충 생성",
+       "key": "D",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "생명력이 350에서 225로 감소했습니다.",
+         "html": "생명력이 350에서 225로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "이제 식충이 입힌 피해량의 20%만큼 생명력을 회복하고, 근처의 돌격병이 죽으면 최대 생명력의 20%만큼 생명력을 회복합니다.",
+         "html": "이제 식충이 입힌 피해량의 20%만큼 생명력을 회복하고, 근처의 돌격병이 죽으면 최대 생명력의 20%만큼 생명력을 회복합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Spawn Locust"
+      },
+      {
+       "name": "맹독 둥지",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "방어력 감소량이 10에서 15로 증가했습니다.",
+         "html": "방어력 감소량이 10에서 15로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Envenomed Nests"
+      },
+      {
+       "name": "식충 번식",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "16레벨에서 1레벨로 옮겨졌습니다.",
+         "html": "16레벨에서 1레벨로 옮겨졌습니다.",
+         "added": false
+        },
+        {
+         "text": "재사용 대기시간이 45초에서 75초로 증가했습니다.",
+         "html": "재사용 대기시간이 45초에서 75초로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Locust Brood"
+      },
+      {
+       "name": "(신규) 슬래파투르",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "이제 아바투르의 일반 공격이 영웅이 아닌 대상을 기절시키고 500%의 추가 피해를 입힙니다.",
+         "html": "이제 아바투르의 일반 공격이 영웅이 아닌 대상을 기절시키고 500%의 추가 피해를 입힙니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "(New) Slapathur"
+      },
+      {
+       "name": "흉물 진화",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "이제 퀘스트로 표시됩니다.",
+         "html": "이제 퀘스트로 표시됩니다.",
+         "added": false
+        },
+        {
+         "text": "이제 아바투르에게 괴물체의 생명력과 중첩을 확인할 수 있는 유닛 정보창이 표시됩니다.",
+         "html": "이제 아바투르에게 괴물체의 생명력과 중첩을 확인할 수 있는 유닛 정보창이 표시됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Evolve Monstrosity"
+      },
+      {
+       "name": "생존 본능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "1레벨에서 16레벨로 옮겨졌습니다.",
+         "html": "1레벨에서 16레벨로 옮겨졌습니다.",
+         "added": false
+        },
+        {
+         "text": "생명력 증가량이 100%에서 200%로 증가했습니다.",
+         "html": "생명력 증가량이 100%에서 200%로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Survival Intincts"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">식충 생성 [D]</strong><ul>\n<li>생명력이 350에서 225로 감소했습니다.</li>\n<li>이제 식충이 입힌 피해량의 20%만큼 생명력을 회복하고, 근처의 돌격병이 죽으면 최대 생명력의 20%만큼 생명력을 회복합니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">맹독 둥지</strong><ul>\n<li>방어력 감소량이 10에서 15로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">식충 번식</strong><ul>\n<li>16레벨에서 1레벨로 옮겨졌습니다.</li>\n<li>재사용 대기시간이 45초에서 75초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">(신규) 슬래파투르</strong><ul>\n<li>이제 아바투르의 일반 공격이 영웅이 아닌 대상을 기절시키고 500%의 추가 피해를 입힙니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">흉물 진화</strong><ul>\n<li>이제 퀘스트로 표시됩니다.</li>\n<li>이제 아바투르에게 괴물체의 생명력과 중첩을 확인할 수 있는 유닛 정보창이 표시됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">생존 본능</strong><ul>\n<li>1레벨에서 16레벨로 옮겨졌습니다.</li>\n<li>생명력 증가량이 100%에서 200%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Abathur"
+    },
+    {
+     "name": "알렉스트라자",
+     "heroId": "Alexstrasza",
+     "heroIds": [
+      "Alexstrasza"
+     ],
+     "changes": [
+      {
+       "name": "용의 여왕",
+       "key": "D",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "이제 재사용 대기시간이 용의 여왕이 끝난 후에 시작됩니다.",
+         "html": "이제 재사용 대기시간이 용의 여왕이 끝난 후에 시작됩니다.",
+         "added": false
+        },
+        {
+         "text": "재사용 대기시간이 150초에서 130초로 감소했습니다.",
+         "html": "재사용 대기시간이 150초에서 130초로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "생명의 선물에 영향을 주는 특성이 생명의 숨결에도 적용됩니다.",
+         "html": "생명의 선물에 영향을 주는 특성이 생명의 숨결에도 적용됩니다.",
+         "added": false
+        },
+        {
+         "text": "풍요에 영향을 주는 특성이 보존에도 적용됩니다.",
+         "html": "풍요에 영향을 주는 특성이 보존에도 적용됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Dragonqueen"
+      },
+      {
+       "name": "생명의 숨결",
+       "key": "Dragonqueen Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "치유량이 20%에서 15%로 감소했습니다.",
+         "html": "치유량이 20%에서 15%로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Breath of Life"
+      },
+      {
+       "name": "보존",
+       "key": "Dragonqueen W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "치유량이 30%에서 25%로 감소했습니다.",
+         "html": "치유량이 30%에서 25%로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Preservation"
+      },
+      {
+       "name": "생명에서 생명을",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "이제 생명의 숨결의 충전 속도도 25% 증가시킵니다.",
+         "html": "이제 생명의 숨결의 충전 속도도 25% 증가시킵니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Live and Let Live"
+      },
+      {
+       "name": "분노의 화염",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "새로운 신화 보상: 죽지 않고 영웅을 40회 추가로 적중시키면 적 영웅에게 피해를 입힐 때 용의 여왕의 지속시간이 갱신됩니다.",
+         "html": "<strong>새로운 신화 보상:</strong> 죽지 않고 영웅을 40회 추가로 적중시키면 적 영웅에게 피해를 입힐 때 용의 여왕의 지속시간이 갱신됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Flames of Fury"
+      },
+      {
+       "name": "생명의 꽃",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "이제 생명의 숨결이 감속과 이동 불가 효과를 제거합니다.",
+         "html": "이제 생명의 숨결이 감속과 이동 불가 효과를 제거합니다.",
+         "added": false
+        },
+        {
+         "text": "이제 용의 여왕으로 변신해도 모아둔 생명꽃이 사라지지 않습니다.",
+         "html": "이제 용의 여왕으로 변신해도 모아둔 생명꽃이 사라지지 않습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Life Blossom"
+      },
+      {
+       "name": "용족의 수련",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "더 이상 용의 여왕의 지속시간에 영향을 주지 않습니다.",
+         "html": "더 이상 용의 여왕의 지속시간에 영향을 주지 않습니다.",
+         "added": false
+        },
+        {
+         "text": "용의 여왕의 일반 공격으로 치유한 아군 영웅 1명당 보존의 재사용 대기시간이 1.25초 감소합니다.",
+         "html": "용의 여왕의 일반 공격으로 치유한 아군 영웅 1명당 보존의 재사용 대기시간이 1.25초 감소합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Draconic Dicipline"
+      },
+      {
+       "name": "루비 날개",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "개편: 화염구가 적중한 지역에 영웅이 3명 이상 있으면 해당 화염구의 충전이 소모되지 않습니다.",
+         "html": "개편: 화염구가 적중한 지역에 영웅이 3명 이상 있으면 해당 화염구의 충전이 소모되지 않습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "On Ruby Wings"
+      },
+      {
+       "name": "고대의 불꽃",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "활성화되어 있는 동안에는 퀘스트 중첩을 제공하지 않습니다.",
+         "html": "활성화되어 있는 동안에는 퀘스트 중첩을 제공하지 않습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Ancient Flame"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">용의 여왕 [D]</strong><ul>\n<li>이제 재사용 대기시간이 용의 여왕이 끝난 후에 시작됩니다.</li>\n<li>재사용 대기시간이 150초에서 130초로 감소했습니다.</li>\n<li>생명의 선물에 영향을 주는 특성이 생명의 숨결에도 적용됩니다.</li>\n<li>풍요에 영향을 주는 특성이 보존에도 적용됩니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">생명의 숨결 [용의 여왕 Q]</strong><ul>\n<li>치유량이 20%에서 15%로 감소했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">보존 [용의 여왕 W]</strong><ul>\n<li>치유량이 30%에서 25%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">생명에서 생명을</strong><ul>\n<li>이제 생명의 숨결의 충전 속도도 25% 증가시킵니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">분노의 화염</strong><ul>\n<li><strong>새로운 신화 보상:</strong> 죽지 않고 영웅을 40회 추가로 적중시키면 적 영웅에게 피해를 입힐 때 용의 여왕의 지속시간이 갱신됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">생명의 만개</strong><ul>\n<li>이제 생명의 숨결이 감속과 이동 불가 효과를 제거합니다.</li>\n<li>이제 용의 여왕으로 변신해도 모아둔 생명꽃이 사라지지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">용의 수련</strong><ul>\n<li>더 이상 용의 여왕의 지속시간에 영향을 주지 않습니다.</li>\n<li>용의 여왕의 일반 공격으로 치유한 아군 영웅 1명당 보존의 재사용 대기시간이 1.25초 감소합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">루비 날개</strong><ul>\n<li>개편: 화염구가 적중한 지역에 영웅이 3명 이상 있으면 해당 화염구의 충전이 소모되지 않습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">고대의 불꽃</strong><ul>\n<li>활성화되어 있는 동안에는 퀘스트 중첩을 제공하지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Alexstrasza"
+    },
+    {
+     "name": "블레이즈",
+     "heroId": "Firebat",
+     "heroIds": [
+      "Firebat"
+     ],
+     "changes": [
+      {
+       "name": "아드레날린 각성제",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "사용 시 공격 속도 증가량이 100%에서 85%로 감소했습니다.",
+         "html": "사용 시 공격 속도 증가량이 100%에서 85%로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Adrenaline Stim"
+      },
+      {
+       "name": "벙커 투하",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 80초에서 85초로 증가했습니다.",
+         "html": "재사용 대기시간이 80초에서 85초로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Bunker Drop"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">아드레날린 자극제</strong><ul>\n<li>사용 시 공격 속도 증가량이 100%에서 85%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">벙커 투하</strong><ul>\n<li>재사용 대기시간이 80초에서 85초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Blaze"
+    },
+    {
+     "name": "초",
+     "heroId": "Cho",
+     "heroIds": [
+      "Cho"
+     ],
+     "changes": [
+      {
+       "name": "단련된 가죽",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "발동에 필요한 생명력 기준이 60%에서 40%로 감소했습니다.",
+         "html": "발동에 필요한 생명력 기준이 60%에서 40%로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Calloused Hide"
+      },
+      {
+       "name": "방화범",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "일반 공격당 재사용 대기시간 감소량이 1초에서 1.5초로 증가했습니다.",
+         "html": "일반 공격당 재사용 대기시간 감소량이 1초에서 1.5초로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Firestarter"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">단련된 가죽</strong><ul>\n<li>발동에 필요한 생명력 기준이 60%에서 40%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">방화범</strong><ul>\n<li>일반 공격당 재사용 대기시간 감소량이 1초에서 1.5초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Cho"
+    },
+    {
+     "name": "갈",
+     "heroId": "Gall",
+     "heroIds": [
+      "Gall"
+     ],
+     "changes": [
+      {
+       "name": "커져가는 공포",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "튕길 때마다 얻는 추가 효과가 25%에서 20%로 감소했습니다.",
+         "html": "튕길 때마다 얻는 추가 효과가 25%에서 20%로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Rising Dread"
+      },
+      {
+       "name": "폭탄 받아라",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "이제 중첩에 제한이 없습니다.",
+         "html": "이제 중첩에 제한이 없습니다.",
+         "added": false
+        },
+        {
+         "text": "중첩당 추가 피해량이 5에서 4로 감소했습니다.",
+         "html": "중첩당 추가 피해량이 5에서 4로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Bomb's Away"
+      },
+      {
+       "name": "이중고",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "퀘스트 보상으로 얻는 암흑불길의 재사용 대기시간 감소량이 0.5초에서 1초로 증가했습니다.",
+         "html": "퀘스트 보상으로 얻는 암흑불길의 재사용 대기시간 감소량이 0.5초에서 1초로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Double Trouble"
+      },
+      {
+       "name": "무쇠 보주",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "기절 지속시간이 0.75초에서 0.6초로 감소했습니다.",
+         "html": "기절 지속시간이 0.75초에서 0.6초로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Leaden Orb"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">커져가는 공포</strong><ul>\n<li>튕길 때마다 얻는 추가 효과가 25%에서 20%로 감소했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">폭탄 받아라</strong><ul>\n<li>이제 중첩에 제한이 없습니다.</li>\n<li>중첩당 추가 피해량이 5에서 4로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">이중고</strong><ul>\n<li>퀘스트 보상으로 얻는 암흑불길의 재사용 대기시간 감소량이 0.5초에서 1초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">무쇠 보주</strong><ul>\n<li>기절 지속시간이 0.75초에서 0.6초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Gall"
+    },
+    {
+     "name": "크로미",
+     "heroId": "Chromie",
+     "heroIds": [
+      "Chromie"
+     ],
+     "changes": [
+      {
+       "name": "용의 숨결",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "이제 적에게 반경 미리보기가 표시됩니다.",
+         "html": "이제 적에게 반경 미리보기가 표시됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Dragon's Breath"
+      },
+      {
+       "name": "시간의 덫",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "생명력이 400에서 250으로 감소했습니다.",
+         "html": "생명력이 400에서 250으로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Time Trap"
+      },
+      {
+       "name": "다시 처음으로",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "퀘스트 요구 중첩이 40에서 20으로 감소했습니다.",
+         "html": "퀘스트 요구 중첩이 40에서 20으로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "이제 퀘스트를 죽지 않고 완료해야 합니다.",
+         "html": "이제 퀘스트를 죽지 않고 완료해야 합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Once Again The First Time"
+      },
+      {
+       "name": "깊은 숨결",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "중첩당 피해량이 1%에서 0.5%로 감소했습니다.",
+         "html": "중첩당 피해량이 1%에서 0.5%로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "이제 중첩에 제한이 없습니다.",
+         "html": "이제 중첩에 제한이 없습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Deep Breathing"
+      },
+      {
+       "name": "만성적인 현상",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "이제 시간의 덫이 적 영웅에게 닿으면 자동으로 발동하기도 합니다.",
+         "html": "이제 시간의 덫이 적 영웅에게 닿으면 자동으로 발동하기도 합니다.",
+         "added": false
+        },
+        {
+         "text": "감속량이 30%에서 20%로 감소했습니다.",
+         "html": "감속량이 30%에서 20%로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "이동 속도 증가량이 30%에서 20%로 감소했습니다.",
+         "html": "이동 속도 증가량이 30%에서 20%로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Chronic Conditions"
+      },
+      {
+       "name": "여기저기",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "사거리가 20에서 40으로 증가했습니다.",
+         "html": "사거리가 20에서 40으로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "이제 자동 대상 지정이 적용됩니다. 플레이어가 지정한 위치에서 가장 가까운 메아리가 사용됩니다.",
+         "html": "이제 자동 대상 지정이 적용됩니다. 플레이어가 지정한 위치에서 가장 가까운 메아리가 사용됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Here and There"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">용의 숨결 [W]</strong><ul>\n<li>이제 적에게 반경 미리보기가 표시됩니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">시간의 덫 [E]</strong><ul>\n<li>생명력이 400에서 250으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">다시 처음으로</strong><ul>\n<li>퀘스트 요구 중첩이 40에서 20으로 감소했습니다.</li>\n<li>이제 퀘스트를 죽지 않고 완료해야 합니다.</li>\n</ul>\n</li>\n</ul>\n<ul>\n<li><strong class=\"pn-name\">깊은 숨결</strong><ul>\n<li>중첩당 피해량이 1%에서 0.5%로 감소했습니다.</li>\n<li>이제 중첩에 제한이 없습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<ul>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">만성적인 현상</strong><ul>\n<li>이제 시간의 덫이 적 영웅에게 닿으면 자동으로 발동하기도 합니다.</li>\n<li>감속량이 30%에서 20%로 감소했습니다.</li>\n<li>이동 속도 증가량이 30%에서 20%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<ul>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">여기저기</strong><ul>\n<li>사거리가 20에서 40으로 증가했습니다.</li>\n<li>이제 자동 대상 지정이 적용됩니다. 플레이어가 지정한 위치에서 가장 가까운 메아리가 사용됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Chromie"
+    },
+    {
+     "name": "디아블로",
+     "heroId": "Diablo",
+     "heroIds": [
+      "Diablo"
+     ],
+     "changes": [
+      {
+       "name": "암흑의 돌진",
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "피해량이 40 및 충돌 시 130에서 45 및 충돌 시 140으로 증가했습니다.",
+         "html": "피해량이 40 및 충돌 시 130에서 45 및 충돌 시 140으로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Shadow Charge"
+      },
+      {
+       "name": "화염 발구르기",
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "피해량이 퍼져 나갈 때 12, 돌아갈 때 36에서 퍼져 나갈 때 11, 돌아갈 때 34로 감소했습니다.",
+         "html": "피해량이 퍼져 나갈 때 12, 돌아갈 때 36에서 퍼져 나갈 때 11, 돌아갈 때 34로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Fire Stomp"
+      },
+      {
+       "name": "압도",
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "피해량이 73에서 80으로 증가했습니다.",
+         "html": "피해량이 73에서 80으로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Overpower"
+      },
+      {
+       "name": "대악마의 여세",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "일반 공격당 재사용 대기시간 감소량이 1.5초에서 2초로 증가했습니다.",
+         "html": "일반 공격당 재사용 대기시간 감소량이 1.5초에서 2초로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Diabolical Momentum"
+      },
+      {
+       "name": "단말마",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "영웅 적중당 재사용 대기시간 감소량이 25초에서 30초로 증가했습니다.",
+         "html": "영웅 적중당 재사용 대기시간 감소량이 25초에서 30초로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Dying Breath"
+      },
+      {
+       "name": "공포의 군주",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "흡수하는 생명력이 최대 생명력의 10%에서 12%로 증가했습니다.",
+         "html": "흡수하는 생명력이 최대 생명력의 10%에서 12%로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Lord of Terror"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">암흑의 돌진</strong><ul>\n<li>피해량이 40 및 충돌 시 130에서 45 및 충돌 시 140으로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">화염 발구르기</strong><ul>\n<li>피해량이 퍼져 나갈 때 12, 돌아갈 때 36에서 퍼져 나갈 때 11, 돌아갈 때 34로 감소했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">압도</strong><ul>\n<li>피해량이 73에서 80으로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">대악마의 여세</strong><ul>\n<li>일반 공격당 재사용 대기시간 감소량이 1.5초에서 2초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">단말마</strong><ul>\n<li>영웅 적중당 재사용 대기시간 감소량이 25초에서 30초로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">공포의 군주</strong><ul>\n<li>흡수하는 생명력이 최대 생명력의 10%에서 12%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Diablo"
+    },
+    {
+     "name": "겐지",
+     "heroId": "Genji",
+     "heroIds": [
+      "Genji"
+     ],
+     "changes": [
+      {
+       "name": "바람처럼 빠르게",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "이동 속도 증가량이 30%에서 40%로 증가했습니다.",
+         "html": "이동 속도 증가량이 30%에서 40%로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Swift as the Wind"
+      },
+      {
+       "name": "심장을 노려라",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "피해량이 134에서 142로 증가했습니다.",
+         "html": "피해량이 134에서 142로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Strike at the Heart"
+      },
+      {
+       "name": "완벽한 응수",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "적중당 재사용 대기시간 감소량이 2초에서 2.5초로 증가했습니다.",
+         "html": "적중당 재사용 대기시간 감소량이 2초에서 2.5초로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Perfect Defense"
+      },
+      {
+       "name": "흐르는 물처럼",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "적중당 재사용 대기시간 감소량이 3초에서 4초로 증가했습니다.",
+         "html": "적중당 재사용 대기시간 감소량이 3초에서 4초로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Flow Like Water"
+      },
+      {
+       "name": "분신참",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "피해량이 125에서 115로 감소했습니다.",
+         "html": "피해량이 125에서 115로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Final Cut"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">바람처럼 빠르게</strong><ul>\n<li>이동 속도 증가량이 30%에서 40%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">심장을 노려라</strong><ul>\n<li>피해량이 134에서 142로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">완벽한 응수</strong><ul>\n<li>적중당 재사용 대기시간 감소량이 2초에서 2.5초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">흐르는 물처럼</strong><ul>\n<li>적중당 재사용 대기시간 감소량이 3초에서 4초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">최후의 베기</strong><ul>\n<li>피해량이 125에서 115로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Genji"
+    },
+    {
+     "name": "요한나",
+     "heroId": "Crusader",
+     "heroIds": [
+      "Crusader"
+     ],
+     "changes": [
+      {
+       "name": "눈부신 방패",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 12초에서 13초로 증가했습니다.",
+         "html": "재사용 대기시간이 12초에서 13초로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Shield Glare"
+      },
+      {
+       "name": "축복받은 방패",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 60초에서 65초로 증가했습니다.",
+         "html": "재사용 대기시간이 60초에서 65초로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Blessed Shield"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">눈부신 방패 [E]</strong><ul>\n<li>재사용 대기시간이 12초에서 13초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">축복받은 방패</strong><ul>\n<li>재사용 대기시간이 60초에서 65초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Johanna"
+    },
+    {
+     "name": "말가니스",
+     "heroId": "MalGanis",
+     "heroIds": [
+      "MalGanis"
+     ],
+     "changes": [
+      {
+       "name": "티콘드리우스의 의지",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "기절 지속시간 증가량이 0.5초에서 0.25초로 감소했습니다.",
+         "html": "기절 지속시간 증가량이 0.5초에서 0.25초로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Will of Tichondrius"
+      },
+      {
+       "name": "눈먼 공포",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "이제 지옥 발톱의 할퀴기 3회를 마친 후 0.2초의 재사용 지연이 발생합니다. 이는 다른 할퀴기 사이의 시간과 동일합니다.",
+         "html": "이제 지옥 발톱의 할퀴기 3회를 마친 후 0.2초의 재사용 지연이 발생합니다. 이는 다른 할퀴기 사이의 시간과 동일합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Blind as a Bat"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">티콘드리우스의 의지</strong><ul>\n<li>기절 지속시간 증가량이 0.5초에서 0.25초로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">눈먼 공포</strong><ul>\n<li>이제 지옥 발톱의 할퀴기 3회를 마친 후 0.2초의 재사용 지연이 발생합니다. 이는 다른 할퀴기 사이의 시간과 동일합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Mal'Ganis"
+    },
+    {
+     "name": "키히라",
+     "heroId": "Qhira",
+     "heroIds": [
+      "Qhira"
+     ],
+     "changes": [
+      {
+       "name": "회전 휩쓸기",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "회전 휩쓸기가 한 번 부착되면 대상이 정지 불가 상태가 되어도 더 이상 떨어지지 않습니다.",
+         "html": "회전 휩쓸기가 한 번 부착되면 대상이 정지 불가 상태가 되어도 더 이상 떨어지지 않습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Revolving Sweep"
+      },
+      {
+       "name": "피의 분노",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "새로운 기본 퀘스트: 피의 분노의 출혈로 적 영웅에게 피해를 입히면 중첩당 피해량이 0.5%씩 영구히 증가합니다.",
+         "html": "<strong>새로운 기본 퀘스트:</strong> 피의 분노의 출혈로 적 영웅에게 피해를 입히면 중첩당 피해량이 0.5%씩 영구히 증가합니다.",
+         "added": false
+        },
+        {
+         "text": "피의 분노의 출혈 피해량이 11에서 8로 감소했습니다.",
+         "html": "피의 분노의 출혈 피해량이 11에서 8로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Blood Rage"
+      },
+      {
+       "name": "치명상",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "생명력이 낮은 대상에게 주는 추가 피해량이 30%에서 50%로 증가했습니다.",
+         "html": "생명력이 낮은 대상에게 주는 추가 피해량이 30%에서 50%로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "퀘스트가 삭제되었습니다.",
+         "html": "퀘스트가 삭제되었습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Fatal Wounds"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">회전 휩쓸기 [Q]</strong><ul>\n<li>회전 휩쓸기가 한 번 부착되면 대상이 정지 불가 상태가 되어도 더 이상 떨어지지 않습니다.</li>\n</ul>\n</li>\n</ul>\n<ul>\n<li><strong class=\"pn-name\">피의 분노 [W]</strong><ul>\n<li><strong>새로운 기본 퀘스트:</strong> 피의 분노의 출혈로 적 영웅에게 피해를 입히면 중첩당 피해량이 0.5%씩 영구히 증가합니다.</li>\n<li>피의 분노의 출혈 피해량이 11에서 8로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">치명상</strong><ul>\n<li>생명력이 낮은 대상에게 주는 추가 피해량이 30%에서 50%로 증가했습니다.</li>\n<li>퀘스트가 삭제되었습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Qhira"
+    },
+    {
+     "name": "라그나로스",
+     "heroId": "Ragnaros",
+     "heroIds": [
+      "Ragnaros"
+     ],
+     "changes": [
+      {
+       "name": "화염 폭풍",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "피해량이 104에서 120으로 증가했습니다.",
+         "html": "피해량이 104에서 120으로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Blast Wave"
+      },
+      {
+       "name": "화산 심장부",
+       "key": "D",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 120초에서 180초로 증가했습니다.",
+         "html": "재사용 대기시간이 120초에서 180초로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "생명력이 3996에서 5000으로 증가했습니다.",
+         "html": "생명력이 3996에서 5000으로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "지속시간이 18초에서 23초로 증가했습니다.",
+         "html": "지속시간이 18초에서 23초로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "이제 라그나로스가 빠져나올 때 1초 동안 기절합니다.",
+         "html": "이제 라그나로스가 빠져나올 때 1초 동안 기절합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Molten Core"
+      },
+      {
+       "name": "유성 휘두르기",
+       "key": "Molten Core Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "피해량이 161에서 250으로 증가했습니다.",
+         "html": "피해량이 161에서 250으로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "이제 돌격병에게 추가 피해를 주지 않습니다.",
+         "html": "이제 돌격병에게 추가 피해를 주지 않습니다.",
+         "added": false
+        },
+        {
+         "text": "재사용 대기시간이 6초에서 9초로 증가했습니다.",
+         "html": "재사용 대기시간이 6초에서 9초로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "이제 적을 밀쳐내기도 합니다.",
+         "html": "이제 적을 밀쳐내기도 합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Meteor Swing"
+      },
+      {
+       "name": "유성우",
+       "key": "Molten Core W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "피해량이 151에서 200으로 증가했습니다.",
+         "html": "피해량이 151에서 200으로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "재사용 대기시간이 2.5초에서 6초로 증가했습니다.",
+         "html": "재사용 대기시간이 2.5초에서 6초로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "효과 범위가 66% 증가했습니다.",
+         "html": "효과 범위가 66% 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "타격 간의 지연 시간이 크게 증가했습니다.",
+         "html": "타격 간의 지연 시간이 크게 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "이제 돌격병에게 추가 피해를 주지 않습니다.",
+         "html": "이제 돌격병에게 추가 피해를 주지 않습니다.",
+         "added": false
+        },
+        {
+         "text": "감속 효과가 25%에서 35%로 증가했습니다.",
+         "html": "감속 효과가 25%에서 35%로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "사거리가 35에서 20으로 감소했지만, 이제 시간이 지남에 따라 최대 35까지 늘어납니다.",
+         "html": "사거리가 35에서 20으로 감소했지만, 이제 시간이 지남에 따라 최대 35까지 늘어납니다.",
+         "added": false
+        },
+        {
+         "text": "이제 구조물에게 75% 감소한 피해를 입힙니다.",
+         "html": "이제 구조물에게 75% 감소한 피해를 입힙니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Meteor Shower"
+      },
+      {
+       "name": "폭발의 룬",
+       "key": "Molten Core E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 4초에서 2.5초로 감소했습니다.",
+         "html": "재사용 대기시간이 4초에서 2.5초로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "이제 적중한 대상에게 5초 동안 초당 88의 피해를 주는 지속 피해를 입힙니다. 더 이상 즉시 피해를 주지 않습니다.",
+         "html": "이제 적중한 대상에게 5초 동안 초당 88의 피해를 주는 지속 피해를 입힙니다. 더 이상 즉시 피해를 주지 않습니다.",
+         "added": false
+        },
+        {
+         "text": "사거리가 35에서 20으로 감소했지만, 이제 시간이 지남에 따라 최대 35까지 늘어납니다.",
+         "html": "사거리가 35에서 20으로 감소했지만, 이제 시간이 지남에 따라 최대 35까지 늘어납니다.",
+         "added": false
+        },
+        {
+         "text": "이제 돌격병에게 추가 피해를 주지 않습니다.",
+         "html": "이제 돌격병에게 추가 피해를 주지 않습니다.",
+         "added": false
+        },
+        {
+         "text": "이제 구조물에게 75% 감소한 피해를 입힙니다.",
+         "html": "이제 구조물에게 75% 감소한 피해를 입힙니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Explosive Rune"
+      },
+      {
+       "name": "휘몰아치는 불길",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "추가 피해량이 75%에서 50%로 감소했습니다.",
+         "html": "추가 피해량이 75%에서 50%로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Engulfing Flame"
+      },
+      {
+       "name": "설퍼라스 강타",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "새로운 신화 퀘스트: 설퍼라스 강타의 중심부로 적 영웅 8명을 적중시키십시오. 신화 보상: 설퍼라스 강타의 충전 횟수가 1회 증가합니다.",
+         "html": "<strong>새로운 신화 퀘스트:</strong> 설퍼라스 강타의 중심부로 적 영웅 8명을 적중시키십시오. 신화 보상: 설퍼라스 강타의 충전 횟수가 1회 증가합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Sulfuras Smash"
+      },
+      {
+       "name": "용암 쇄도",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "더 이상 용암 파도의 재사용 대기시간을 30초 감소시키지 않습니다.",
+         "html": "더 이상 용암 파도의 재사용 대기시간을 30초 감소시키지 않습니다.",
+         "added": false
+        },
+        {
+         "text": "이제 경로에 있는 아군 돌격병과 용병의 이동 속도도 200% 증가시킵니다.",
+         "html": "이제 경로에 있는 아군 돌격병과 용병의 이동 속도도 200% 증가시킵니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Lava Surge"
+      },
+      {
+       "name": "영웅 난이도",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "새로운 기능: 파괴된 요새나 성채에 사용하면 화산 심장부의 재사용 대기시간이 110초 감소합니다. 또한 화산 심장부 상태에서 사용하는 기술의 초기 사거리가 100% 증가하며 계속 증가합니다.",
+         "html": "<strong>새로운 기능:</strong> 파괴된 요새나 성채에 사용하면 화산 심장부의 재사용 대기시간이 110초 감소합니다. 또한 화산 심장부 상태에서 사용하는 기술의 초기 사거리가 100% 증가하며 계속 증가합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Heroic Difficulty"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">화염 폭풍 [W]</strong><ul>\n<li>피해량이 104에서 120으로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">화산 심장부 [D]</strong><ul>\n<li>재사용 대기시간이 120초에서 180초로 증가했습니다.</li>\n<li>생명력이 3996에서 5000으로 증가했습니다.</li>\n<li>지속시간이 18초에서 23초로 증가했습니다.</li>\n<li>이제 라그나로스가 빠져나올 때 1초 동안 기절합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">유성 휘두르기 [화산 심장부 Q]</strong><ul>\n<li>피해량이 161에서 250으로 증가했습니다.</li>\n<li>이제 돌격병에게 추가 피해를 주지 않습니다.</li>\n<li>재사용 대기시간이 6초에서 9초로 증가했습니다.</li>\n<li>이제 적을 밀쳐내기도 합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">유성우 [화산 심장부 W]</strong><ul>\n<li>피해량이 151에서 200으로 증가했습니다.</li>\n<li>재사용 대기시간이 2.5초에서 6초로 증가했습니다.</li>\n<li>효과 범위가 66% 증가했습니다.</li>\n<li>타격 간의 지연 시간이 크게 증가했습니다.</li>\n<li>이제 돌격병에게 추가 피해를 주지 않습니다.</li>\n<li>감속 효과가 25%에서 35%로 증가했습니다.</li>\n<li>사거리가 35에서 20으로 감소했지만, 이제 시간이 지남에 따라 최대 35까지 늘어납니다.</li>\n<li>이제 구조물에게 75% 감소한 피해를 입힙니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">폭발의 룬 [화산 심장부 E]</strong><ul>\n<li>재사용 대기시간이 4초에서 2.5초로 감소했습니다.</li>\n<li>이제 적중한 대상에게 5초 동안 초당 88의 피해를 주는 지속 피해를 입힙니다. 더 이상 즉시 피해를 주지 않습니다.</li>\n<li>사거리가 35에서 20으로 감소했지만, 이제 시간이 지남에 따라 최대 35까지 늘어납니다.</li>\n<li>이제 돌격병에게 추가 피해를 주지 않습니다.</li>\n<li>이제 구조물에게 75% 감소한 피해를 입힙니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">휘몰아치는 불길</strong><ul>\n<li>추가 피해량이 75%에서 50%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">설퍼라스 강타</strong><ul>\n<li><strong>새로운 신화 퀘스트:</strong> 설퍼라스 강타의 중심부로 적 영웅 8명을 적중시키십시오. 신화 보상: 설퍼라스 강타의 충전 횟수가 1회 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">용암 쇄도</strong><ul>\n<li>더 이상 용암 파도의 재사용 대기시간을 30초 감소시키지 않습니다.</li>\n<li>이제 경로에 있는 아군 돌격병과 용병의 이동 속도도 200% 증가시킵니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">영웅 난이도</strong><ul>\n<li><strong>새로운 기능:</strong> 파괴된 요새나 성채에 사용하면 화산 심장부의 재사용 대기시간이 110초 감소합니다. 또한 화산 심장부 상태에서 사용하는 기술의 초기 사거리가 100% 증가하며 계속 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Ragnaros"
+    },
+    {
+     "name": "화이트메인",
+     "heroId": "Whitemane",
+     "heroIds": [
+      "Whitemane"
+     ],
+     "changes": [
+      {
+       "name": "이글거리는 채찍",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "새로운 퀘스트: 이글거리는 채찍으로 영웅을 적중시키면 화이트메인의 최대 생명력이 3, 마나가 2 증가합니다.",
+         "html": "<strong>새로운 퀘스트:</strong> 이글거리는 채찍으로 영웅을 적중시키면 화이트메인의 최대 생명력이 3, 마나가 2 증가합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Searing Lash"
+      },
+      {
+       "name": "약자에 연민을",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "적중당 재사용 대기시간 감소량이 1.5초에서 1초로 감소했습니다.",
+         "html": "적중당 재사용 대기시간 감소량이 1.5초에서 1초로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Pity the Frail"
+      },
+      {
+       "name": "재판관의 기도",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "개편: 이글거리는 채찍으로 적중시킨 영웅 1명당 마나를 25 회복합니다. 지속 효과: 열의의 지속시간이 2초 증가합니다.",
+         "html": "<strong>개편:</strong> 이글거리는 채찍으로 적중시킨 영웅 1명당 마나를 25 회복합니다. 지속 효과: 열의의 지속시간이 2초 증가합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Inquisitor's Prayer"
+      },
+      {
+       "name": "중재",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 45초에서 60초로 증가했습니다.",
+         "html": "재사용 대기시간이 45초에서 60초로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Intercession"
+      },
+      {
+       "name": "붉은 분노",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "마나 회복량이 0.5%에서 1%로 증가했습니다.",
+         "html": "마나 회복량이 0.5%에서 1%로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Scarlet Wrath"
+      },
+      {
+       "name": "인도의 빛",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "이제 열의 발동으로 얻는 기술 위력도 15% 증가시킵니다.",
+         "html": "이제 열의 발동으로 얻는 기술 위력도 15% 증가시킵니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Guiding Light"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">이글거리는 채찍 [E]</strong><ul>\n<li><strong>새로운 퀘스트:</strong> 이글거리는 채찍으로 영웅을 적중시키면 화이트메인의 최대 생명력이 3, 마나가 2 증가합니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">약자에 연민을</strong><ul>\n<li>적중당 재사용 대기시간 감소량이 1.5초에서 1초로 감소했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">재판관의 기도</strong><ul>\n<li><strong>개편:</strong> 이글거리는 채찍으로 적중시킨 영웅 1명당 마나를 25 회복합니다. 지속 효과: 열의의 지속시간이 2초 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">중재</strong><ul>\n<li>재사용 대기시간이 45초에서 60초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">붉은 분노</strong><ul>\n<li>마나 회복량이 0.5%에서 1%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">인도의 빛</strong><ul>\n<li>이제 열의 발동으로 얻는 기술 위력도 15% 증가시킵니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Whitemane"
+    },
+    {
+     "name": "이렐",
+     "heroId": "Yrel",
+     "heroIds": [
+      "Yrel"
+     ],
+     "changes": [
+      {
+       "name": "정의의 망치",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "치유량이 320에서 370으로 증가했습니다.",
+         "html": "치유량이 320에서 370으로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "피해량이 140에서 160으로 증가했습니다.",
+         "html": "피해량이 140에서 160으로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Righteous Hammer"
+      },
+      {
+       "name": "정의의 망치",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "기절 지속시간이 0.75초에서 1초로 증가했습니다.",
+         "html": "기절 지속시간이 0.75초에서 1초로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "피해량이 125에서 140으로 증가했습니다.",
+         "html": "피해량이 125에서 140으로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Righteous Hammer"
+      },
+      {
+       "name": "응징의 격노",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "감속 효과가 50%에서 60%로 증가했습니다.",
+         "html": "감속 효과가 50%에서 60%로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "피해량이 225에서 260으로 증가했습니다.",
+         "html": "피해량이 225에서 260으로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Avenging Wrath"
+      },
+      {
+       "name": "신성한 목적",
+       "key": "D",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 8초에서 16초로 증가했습니다.",
+         "html": "재사용 대기시간이 8초에서 16초로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "이제 이렐의 기본 기술이 중단될 때마다 재사용 대기시간이 8초 감소합니다.",
+         "html": "이제 이렐의 기본 기술이 중단될 때마다 재사용 대기시간이 8초 감소합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Divine Purpose"
+      },
+      {
+       "name": "자유의 손길",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 30초에서 40초로 증가했습니다.",
+         "html": "재사용 대기시간이 30초에서 40초로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "이동 속도 증가량이 30%에서 25%로 감소했습니다.",
+         "html": "이동 속도 증가량이 30%에서 25%로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Hand of Freedom"
+      },
+      {
+       "name": "고위 천사",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 10초에서 20초로 증가했습니다.",
+         "html": "재사용 대기시간이 10초에서 20초로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Seraphim"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">정의의 망치 [Q]</strong><ul>\n<li>치유량이 320에서 370으로 증가했습니다.</li>\n<li>피해량이 140에서 160으로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">정의의 망치 [W]</strong><ul>\n<li>기절 지속시간이 0.75초에서 1초로 증가했습니다.</li>\n<li>피해량이 125에서 140으로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">응징의 격노 [E]</strong><ul>\n<li>감속 효과가 50%에서 60%로 증가했습니다.</li>\n<li>피해량이 225에서 260으로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">신성한 목적 [D]</strong><ul>\n<li>재사용 대기시간이 8초에서 16초로 증가했습니다.</li>\n<li>이제 이렐의 기본 기술이 중단될 때마다 재사용 대기시간이 8초 감소합니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">자유의 손길</strong><ul>\n<li>재사용 대기시간이 30초에서 40초로 증가했습니다.</li>\n<li>이동 속도 증가량이 30%에서 25%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">고위 천사</strong><ul>\n<li>재사용 대기시간이 10초에서 20초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Yrel"
+    }
+   ],
+   "nameEn": "Balance Update"
+  },
+  {
+   "name": "버그 수정",
+   "key": "bugs",
+   "html": "<h3><strong>일반</strong></h3>\n<ul>\n<li>요새, 성채, 핵이 영웅을 공격할 때 발사하는 공격 광선이 더 잘 보이게 되었습니다.</li>\n</ul>\n<h3><strong>전장</strong></h3>\n<ul>\n<li><strong class=\"pn-h\">유령 광산</strong><ul>\n<li>지하 광산 안에서 귀환석을 사용할 때 자동으로 탈것에 타지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">핵탄두 격전지</strong><ul>\n<li>탄두를 발사하는 동안 영웅이 드러나지 않던 문제를 수정했습니다.</li>\n<li>탄두의 정신 집중 광선이 중단된 후에도 계속 남아 있던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n<h3><strong>영웅</strong></h3>\n<ul>\n<li><strong class=\"pn-h\">아나</strong><ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">호루스의 눈</strong><ul>\n<li>더 이상 구조물을 적중시킬 때 전역 직선 범위를 드러내지 않습니다.</li>\n<li>적 영웅에게 피해를 입힐 때 발생하던 미세한 지연을 삭제했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">아눕아락</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">풍뎅이 숙주 [고유 능력]</strong><ul>\n<li>최종 진화물로 아눕아락을 복제했을 때 생성되는 딱정벌레가 기술 위력 증가 효과를 얻지 못하던 문제를 수정했습니다.</li>\n<li>아눕아락의 딱정벌레가 주는 피해량이 D.Va의 방어 매트릭스로 감소하지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">착취 풍뎅이</strong><ul>\n<li>착취 풍뎅이의 치유량이 피해량 보정 효과의 영향을 받지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">아서스</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">울부짖는 한파 [W]</strong><ul>\n<li>울부짖는 한파의 시각 효과가 실제 적중 범위와 일치하지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">사자의 군대</strong><ul>\n<li>아서스의 구울이 주는 피해량이 D.Va의 방어 매트릭스로 감소하지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">데스윙</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">대격변 [R]</strong><ul>\n<li>이제 데스윙이 대격변 도중 사망하면 더 이상 대격변의 목표 지점으로 순간이동하지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">데커드</strong><ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">고서 회오리</strong><ul>\n<li>고서 회오리가 정지 불가 상태의 적에게 피해를 주지 못하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">들창코</strong><ul>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">제어 불가</strong><ul>\n<li>제어 불가가 보이지 않는 적을 대상으로 삼던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">제이나</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">얼음 화살 [Q]</strong><ul>\n<li>얼음 화살의 사거리 표시기와 실제 사거리가 일치하지 않던 문제를 수정했습니다.</li>\n<li>최종 진화물로 제이나를 복제했을 때 사용하는 얼음 화살이 기술 위력 증가 효과를 얻지 못하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">눈보라 [W]</strong><ul>\n<li>최종 진화물로 제이나를 복제했을 때 사용하는 눈보라가 기술 위력 증가 효과를 얻지 못하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">냉기 돌풍 [E]</strong><ul>\n<li>최종 진화물로 제이나를 복제했을 때 사용하는 냉기 돌풍이 기술 위력 증가 효과를 얻지 못하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">물의 정령 소환</strong><ul>\n<li>이제 물의 정령의 일반 공격 피해량이 제이나에게 적용된 모든 피해량 보정 효과를 그대로 물려받습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">겨울의 정령</strong><ul>\n<li>물의 정령의 겨울의 정령 효과가 냉기 상태의 대상에게 의도한 것보다 많은 피해를 주던 문제를 수정했습니다.</li>\n<li>이제 겨울의 정령의 눈보라 피해량이 제이나에게 적용된 모든 피해량 보정 효과를 그대로 물려받습니다.</li>\n<li>이제 겨울의 정령의 냉기 돌풍 피해량이 제이나에게 적용된 모든 피해량 보정 효과를 그대로 물려받습니다.</li>\n<li>이제 겨울의 정령의 냉기 돌풍이 제이나가 시전을 시작하는 것과 동시에 냉기 돌풍 시전을 시작하며, 겨울의 정령 또는 제이나의 시전이 중단되면 함께 중단됩니다.</li>\n<li>이제 겨울의 정령의 얼음 화살 피해량이 제이나에게 적용된 모든 피해량 보정 효과를 그대로 물려받습니다.</li>\n<li>이제 겨울의 정령의 얼음 화살이 제이나가 시전을 시작하는 것과 동시에 얼음 화살 시전을 시작하며, 겨울의 정령 또는 제이나의 시전이 중단되면 함께 중단됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">케리건</strong><ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">울트라리스크 소환</strong><ul>\n<li>케리건의 울트라리스크가 주는 피해량이 D.Va의 방어 매트릭스로 감소하지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">레오릭</strong><ul>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">왕가의 집중력</strong><ul>\n<li>이제 해골 왕의 휩쓸기 버튼 주위에 남은 지속시간이 표시됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">말퓨리온</strong><ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">보복의 뿌리</strong><ul>\n<li>말퓨리온의 나무정령이 주는 피해량이 D.Va의 방어 매트릭스로 감소하지 않던 문제를 수정했습니다.</li>\n<li>이제 나무정령의 피해량이 사망 요약에 보복의 뿌리로 표시됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">메디브</strong><ul>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">까마귀 전령</strong><ul>\n<li>최종 진화물로 메디브를 복제했을 때 생성되는 메디브의 까마귀 전령이 기술 위력 증가 효과를 얻지 못하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">티리스팔의 수호자</strong><ul>\n<li>티리스팔의 수호자를 선택한 경우 비전 균열의 사거리 가장자리 근처에 있는 대상이 적중되지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">나지보</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">부두 의식 [고유 능력]</strong><ul>\n<li>이제 퀘스트 진행 상황 표시가 처치한 적 돌격병 주위에 나타납니다.</li>\n<li>이제 두 번째 나지보가 대상에게 피해를 입히고 첫 번째 나지보가 부두 의식을 적용한 후 6초 이내에 대상이 사망한 경우에도 퀘스트 진행 상황을 얻습니다.</li>\n<li>심연의 생물을 선택하기 전에 획득한 부두 의식 중첩이 심연의 생물에 적용되지 않던 문제를 수정했습니다.</li>\n<li>부두 의식의 도움말에 잘못된 총 피해량이 표시되던 문제를 수정했습니다.</li>\n<li>독소 전염의 도움말에 잘못된 총 피해량이 표시되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">심연의 생물</strong><ul>\n<li>더 이상 부두 의식의 퀘스트 표시가 두 개로 나타나지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">피의 의식</strong><ul>\n<li>부두 의식의 영향을 받는 대상이 생명력이 지속적으로 감소하여 효과 시간이 만료되었을 때 피의 의식이 생명력이나 마나를 주지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">노바</strong><ul>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">빠른 재장전</strong><ul>\n<li>삼연발 사격의 대상이 탄환에 적중되기 전에 사망했을 때 빠른 재장전이 발동하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">프로비우스</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">광자포 [E]</strong><ul>\n<li>프로비우스의 광자포가 주는 피해량이 D.Va의 방어 매트릭스로 감소하지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">광물 수집</strong><ul>\n<li>이제 퀘스트를 완료하면 전장에 이미 설치되어 있는 광자포도 강화합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">타이커스</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">포화 [Q]</strong><ul>\n<li>포화가 의도하지 않은 지역을 드러내던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">줄</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">해골 불러내기 [고유 능력]</strong><ul>\n<li>줄의 해골 전사가 주는 피해량이 D.Va의 방어 매트릭스로 감소하지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">해골 마법학자</strong><ul>\n<li>줄의 해골 마법학자가 주는 피해량이 D.Va의 방어 매트릭스로 감소하지 않던 문제를 수정했습니다.</li>\n<li>줄의 해골 마법학자가 실명 상태이거나 회피 중인 영웅을 상대할 때 감속 효과를 오라로 적용하지 않던 문제를 수정했습니다.</li>\n<li>줄의 해골 마법학자가 영웅 공격에만 적용되는 회피 효과를 지닌 영웅을 공격할 때 감속 효과를 적용하지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">약화</strong><ul>\n<li>줄이 실명 상태이거나 영웅 공격에만 적용되는 회피 효과를 지닌 영웅을 상대할 때 줄의 해골 전사가 약화의 피해량 감소 효과를 적용하지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">자가라</strong><ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">감염체 투하 [E]</strong><ul>\n<li>최종 진화물로 자가라를 복제했을 때 생성되는 바퀴가 기술 위력 증가 효과를 얻지 못하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<p><strong><a href=\"https://us.forums.blizzard.com/en/heroes/\" target=\"_blank\">공식 히어로즈 오브 더 스톰 포럼에서 다른 플레이어들과 이 글에 대해 이야기를 나누려면 여기를 클릭하십시오</a>.</strong></p>\n<p><strong><img alt=\"\" class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/g6/G6G0N80EOC941426801305139.png\"/></strong></p>",
+   "items": [
+    {
+     "name": "유령 광산",
+     "battleground": "haunted_mines",
+     "html": "<strong class=\"pn-h\">유령 광산</strong>\n<ul>\n<li>지하 광산 안에서 귀환석을 사용할 때 자동으로 탈것에 타지 않던 문제를 수정했습니다.</li>\n</ul>",
+     "under": "Maps",
+     "nameEn": "Haunted Mines"
+    },
+    {
+     "name": "핵탄두 격전지",
+     "battleground": "warhead_junction",
+     "html": "<strong class=\"pn-h\">핵탄두 격전지</strong>\n<ul>\n<li>탄두를 발사하는 동안 영웅이 드러나지 않던 문제를 수정했습니다.</li>\n<li>탄두의 정신 집중 광선이 중단된 후에도 계속 남아 있던 문제를 수정했습니다.</li>\n</ul>",
+     "under": "Maps",
+     "nameEn": "Warhead Junction"
+    },
+    {
+     "name": "아나",
+     "heroId": "Ana",
+     "heroIds": [
+      "Ana"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">아나</strong>\n<ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">호루스의 눈</strong><ul>\n<li>더 이상 구조물을 적중시킬 때 전역 직선 범위를 드러내지 않습니다.</li>\n<li>적 영웅에게 피해를 입힐 때 발생하던 미세한 지연을 삭제했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "호루스의 눈",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "더 이상 구조물을 적중시킬 때 전역 직선 범위를 드러내지 않습니다.",
+         "html": "더 이상 구조물을 적중시킬 때 전역 직선 범위를 드러내지 않습니다.",
+         "added": false
+        },
+        {
+         "text": "적 영웅에게 피해를 입힐 때 발생하던 미세한 지연을 삭제했습니다.",
+         "html": "적 영웅에게 피해를 입힐 때 발생하던 미세한 지연을 삭제했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Eye of Horus"
+      }
+     ],
+     "nameEn": "Ana"
+    },
+    {
+     "name": "아눕아락",
+     "heroId": "Anubarak",
+     "heroIds": [
+      "Anubarak"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">아눕아락</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">풍뎅이 숙주 [고유 능력]</strong><ul>\n<li>최종 진화물로 아눕아락을 복제했을 때 생성되는 딱정벌레가 기술 위력 증가 효과를 얻지 못하던 문제를 수정했습니다.</li>\n<li>아눕아락의 딱정벌레가 주는 피해량이 D.Va의 방어 매트릭스로 감소하지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">착취 풍뎅이</strong><ul>\n<li>착취 풍뎅이의 치유량이 피해량 보정 효과의 영향을 받지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "풍뎅이 숙주",
+       "key": "Trait",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "최종 진화물로 아눕아락을 복제했을 때 생성되는 딱정벌레가 기술 위력 증가 효과를 얻지 못하던 문제를 수정했습니다.",
+         "html": "최종 진화물로 아눕아락을 복제했을 때 생성되는 딱정벌레가 기술 위력 증가 효과를 얻지 못하던 문제를 수정했습니다.",
+         "added": false
+        },
+        {
+         "text": "아눕아락의 딱정벌레가 주는 피해량이 D.Va의 방어 매트릭스로 감소하지 않던 문제를 수정했습니다.",
+         "html": "아눕아락의 딱정벌레가 주는 피해량이 D.Va의 방어 매트릭스로 감소하지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Scarab Host"
+      },
+      {
+       "name": "착취 풍뎅이",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "착취 풍뎅이의 치유량이 피해량 보정 효과의 영향을 받지 않던 문제를 수정했습니다.",
+         "html": "착취 풍뎅이의 치유량이 피해량 보정 효과의 영향을 받지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Leeching Scarabs"
+      }
+     ],
+     "nameEn": "Anub'arak"
+    },
+    {
+     "name": "아서스",
+     "heroId": "Arthas",
+     "heroIds": [
+      "Arthas"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">아서스</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">울부짖는 한파 [W]</strong><ul>\n<li>울부짖는 한파의 시각 효과가 실제 적중 범위와 일치하지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">사자의 군대</strong><ul>\n<li>아서스의 구울이 주는 피해량이 D.Va의 방어 매트릭스로 감소하지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "울부짖는 한파",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "울부짖는 한파의 시각 효과가 실제 적중 범위와 일치하지 않던 문제를 수정했습니다.",
+         "html": "울부짖는 한파의 시각 효과가 실제 적중 범위와 일치하지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Howling Blast"
+      },
+      {
+       "name": "사자의 군대",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "아서스의 구울이 주는 피해량이 D.Va의 방어 매트릭스로 감소하지 않던 문제를 수정했습니다.",
+         "html": "아서스의 구울이 주는 피해량이 D.Va의 방어 매트릭스로 감소하지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Army of the Dead"
+      }
+     ],
+     "nameEn": "Arthas"
+    },
+    {
+     "name": "데스윙",
+     "heroId": "Deathwing",
+     "heroIds": [
+      "Deathwing"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">데스윙</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">대격변 [R]</strong><ul>\n<li>이제 데스윙이 대격변 도중 사망하면 더 이상 대격변의 목표 지점으로 순간이동하지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "대격변",
+       "key": "R",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "이제 데스윙이 대격변 도중 사망하면 더 이상 대격변의 목표 지점으로 순간이동하지 않습니다.",
+         "html": "이제 데스윙이 대격변 도중 사망하면 더 이상 대격변의 목표 지점으로 순간이동하지 않습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Cataclysm"
+      }
+     ],
+     "nameEn": "Deathwing"
+    },
+    {
+     "name": "데커드",
+     "heroId": "Deckard",
+     "heroIds": [
+      "Deckard"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">데커드</strong>\n<ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">고서 회오리</strong><ul>\n<li>고서 회오리가 정지 불가 상태의 적에게 피해를 주지 못하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "고서 회오리",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "고서 회오리가 정지 불가 상태의 적에게 피해를 주지 못하던 문제를 수정했습니다.",
+         "html": "고서 회오리가 정지 불가 상태의 적에게 피해를 주지 못하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Lorenado"
+      }
+     ],
+     "nameEn": "Deckard"
+    },
+    {
+     "name": "들창코",
+     "heroId": "Hogger",
+     "heroIds": [
+      "Hogger"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">들창코</strong>\n<ul>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">제어 불가</strong><ul>\n<li>제어 불가가 보이지 않는 적을 대상으로 삼던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "제어 불가",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "제어 불가가 보이지 않는 적을 대상으로 삼던 문제를 수정했습니다.",
+         "html": "제어 불가가 보이지 않는 적을 대상으로 삼던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "No Control"
+      }
+     ],
+     "nameEn": "Hogger"
+    },
+    {
+     "name": "제이나",
+     "heroId": "Jaina",
+     "heroIds": [
+      "Jaina"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">제이나</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">얼음 화살 [Q]</strong><ul>\n<li>얼음 화살의 사거리 표시기와 실제 사거리가 일치하지 않던 문제를 수정했습니다.</li>\n<li>최종 진화물로 제이나를 복제했을 때 사용하는 얼음 화살이 기술 위력 증가 효과를 얻지 못하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">눈보라 [W]</strong><ul>\n<li>최종 진화물로 제이나를 복제했을 때 사용하는 눈보라가 기술 위력 증가 효과를 얻지 못하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">냉기 돌풍 [E]</strong><ul>\n<li>최종 진화물로 제이나를 복제했을 때 사용하는 냉기 돌풍이 기술 위력 증가 효과를 얻지 못하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">물의 정령 소환</strong><ul>\n<li>이제 물의 정령의 일반 공격 피해량이 제이나에게 적용된 모든 피해량 보정 효과를 그대로 물려받습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">겨울의 정령</strong><ul>\n<li>물의 정령의 겨울의 정령 효과가 냉기 상태의 대상에게 의도한 것보다 많은 피해를 주던 문제를 수정했습니다.</li>\n<li>이제 겨울의 정령의 눈보라 피해량이 제이나에게 적용된 모든 피해량 보정 효과를 그대로 물려받습니다.</li>\n<li>이제 겨울의 정령의 냉기 돌풍 피해량이 제이나에게 적용된 모든 피해량 보정 효과를 그대로 물려받습니다.</li>\n<li>이제 겨울의 정령의 냉기 돌풍이 제이나가 시전을 시작하는 것과 동시에 냉기 돌풍 시전을 시작하며, 겨울의 정령 또는 제이나의 시전이 중단되면 함께 중단됩니다.</li>\n<li>이제 겨울의 정령의 얼음 화살 피해량이 제이나에게 적용된 모든 피해량 보정 효과를 그대로 물려받습니다.</li>\n<li>이제 겨울의 정령의 얼음 화살이 제이나가 시전을 시작하는 것과 동시에 얼음 화살 시전을 시작하며, 겨울의 정령 또는 제이나의 시전이 중단되면 함께 중단됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "얼음 화살",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "얼음 화살의 사거리 표시기와 실제 사거리가 일치하지 않던 문제를 수정했습니다.",
+         "html": "얼음 화살의 사거리 표시기와 실제 사거리가 일치하지 않던 문제를 수정했습니다.",
+         "added": false
+        },
+        {
+         "text": "최종 진화물로 제이나를 복제했을 때 사용하는 얼음 화살이 기술 위력 증가 효과를 얻지 못하던 문제를 수정했습니다.",
+         "html": "최종 진화물로 제이나를 복제했을 때 사용하는 얼음 화살이 기술 위력 증가 효과를 얻지 못하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Frostbolt"
+      },
+      {
+       "name": "눈보라",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "최종 진화물로 제이나를 복제했을 때 사용하는 눈보라가 기술 위력 증가 효과를 얻지 못하던 문제를 수정했습니다.",
+         "html": "최종 진화물로 제이나를 복제했을 때 사용하는 눈보라가 기술 위력 증가 효과를 얻지 못하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Blizzard"
+      },
+      {
+       "name": "냉기 돌풍",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "최종 진화물로 제이나를 복제했을 때 사용하는 냉기 돌풍이 기술 위력 증가 효과를 얻지 못하던 문제를 수정했습니다.",
+         "html": "최종 진화물로 제이나를 복제했을 때 사용하는 냉기 돌풍이 기술 위력 증가 효과를 얻지 못하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Cone of Cold"
+      },
+      {
+       "name": "물의 정령 소환",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "이제 물의 정령의 일반 공격 피해량이 제이나에게 적용된 모든 피해량 보정 효과를 그대로 물려받습니다.",
+         "html": "이제 물의 정령의 일반 공격 피해량이 제이나에게 적용된 모든 피해량 보정 효과를 그대로 물려받습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Summon Water Elemental"
+      },
+      {
+       "name": "겨울의 정령",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "물의 정령의 겨울의 정령 효과가 냉기 상태의 대상에게 의도한 것보다 많은 피해를 주던 문제를 수정했습니다.",
+         "html": "물의 정령의 겨울의 정령 효과가 냉기 상태의 대상에게 의도한 것보다 많은 피해를 주던 문제를 수정했습니다.",
+         "added": false
+        },
+        {
+         "text": "이제 겨울의 정령의 눈보라 피해량이 제이나에게 적용된 모든 피해량 보정 효과를 그대로 물려받습니다.",
+         "html": "이제 겨울의 정령의 눈보라 피해량이 제이나에게 적용된 모든 피해량 보정 효과를 그대로 물려받습니다.",
+         "added": false
+        },
+        {
+         "text": "이제 겨울의 정령의 냉기 돌풍 피해량이 제이나에게 적용된 모든 피해량 보정 효과를 그대로 물려받습니다.",
+         "html": "이제 겨울의 정령의 냉기 돌풍 피해량이 제이나에게 적용된 모든 피해량 보정 효과를 그대로 물려받습니다.",
+         "added": false
+        },
+        {
+         "text": "이제 겨울의 정령의 냉기 돌풍이 제이나가 시전을 시작하는 것과 동시에 냉기 돌풍 시전을 시작하며, 겨울의 정령 또는 제이나의 시전이 중단되면 함께 중단됩니다.",
+         "html": "이제 겨울의 정령의 냉기 돌풍이 제이나가 시전을 시작하는 것과 동시에 냉기 돌풍 시전을 시작하며, 겨울의 정령 또는 제이나의 시전이 중단되면 함께 중단됩니다.",
+         "added": false
+        },
+        {
+         "text": "이제 겨울의 정령의 얼음 화살 피해량이 제이나에게 적용된 모든 피해량 보정 효과를 그대로 물려받습니다.",
+         "html": "이제 겨울의 정령의 얼음 화살 피해량이 제이나에게 적용된 모든 피해량 보정 효과를 그대로 물려받습니다.",
+         "added": false
+        },
+        {
+         "text": "이제 겨울의 정령의 얼음 화살이 제이나가 시전을 시작하는 것과 동시에 얼음 화살 시전을 시작하며, 겨울의 정령 또는 제이나의 시전이 중단되면 함께 중단됩니다.",
+         "html": "이제 겨울의 정령의 얼음 화살이 제이나가 시전을 시작하는 것과 동시에 얼음 화살 시전을 시작하며, 겨울의 정령 또는 제이나의 시전이 중단되면 함께 중단됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Wintermute"
+      }
+     ],
+     "nameEn": "Jaina"
+    },
+    {
+     "name": "케리건",
+     "heroId": "Kerrigan",
+     "heroIds": [
+      "Kerrigan"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">케리건</strong>\n<ul>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">울트라리스크 소환</strong><ul>\n<li>케리건의 울트라리스크가 주는 피해량이 D.Va의 방어 매트릭스로 감소하지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "울트라리스크 소환",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "케리건의 울트라리스크가 주는 피해량이 D.Va의 방어 매트릭스로 감소하지 않던 문제를 수정했습니다.",
+         "html": "케리건의 울트라리스크가 주는 피해량이 D.Va의 방어 매트릭스로 감소하지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Summon Ultralisk"
+      }
+     ],
+     "nameEn": "Kerrigan"
+    },
+    {
+     "name": "레오릭",
+     "heroId": "Leoric",
+     "heroIds": [
+      "Leoric"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">레오릭</strong>\n<ul>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">왕가의 집중력</strong><ul>\n<li>이제 해골 왕의 휩쓸기 버튼 주위에 남은 지속시간이 표시됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "왕가의 집중력",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "이제 해골 왕의 휩쓸기 버튼 주위에 남은 지속시간이 표시됩니다.",
+         "html": "이제 해골 왕의 휩쓸기 버튼 주위에 남은 지속시간이 표시됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Royal Focus"
+      }
+     ],
+     "nameEn": "Leoric"
+    },
+    {
+     "name": "말퓨리온",
+     "heroId": "Malfurion",
+     "heroIds": [
+      "Malfurion"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">말퓨리온</strong>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">보복의 뿌리</strong><ul>\n<li>말퓨리온의 나무정령이 주는 피해량이 D.Va의 방어 매트릭스로 감소하지 않던 문제를 수정했습니다.</li>\n<li>이제 나무정령의 피해량이 사망 요약에 보복의 뿌리로 표시됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "보복의 뿌리",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "말퓨리온의 나무정령이 주는 피해량이 D.Va의 방어 매트릭스로 감소하지 않던 문제를 수정했습니다.",
+         "html": "말퓨리온의 나무정령이 주는 피해량이 D.Va의 방어 매트릭스로 감소하지 않던 문제를 수정했습니다.",
+         "added": false
+        },
+        {
+         "text": "이제 나무정령의 피해량이 사망 요약에 보복의 뿌리로 표시됩니다.",
+         "html": "이제 나무정령의 피해량이 사망 요약에 보복의 뿌리로 표시됩니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Vengeful Roots"
+      }
+     ],
+     "nameEn": "Malfurion"
+    },
+    {
+     "name": "메디브",
+     "heroId": "Medivh",
+     "heroIds": [
+      "Medivh"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">메디브</strong>\n<ul>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">까마귀 전령</strong><ul>\n<li>최종 진화물로 메디브를 복제했을 때 생성되는 메디브의 까마귀 전령이 기술 위력 증가 효과를 얻지 못하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">티리스팔의 수호자</strong><ul>\n<li>티리스팔의 수호자를 선택한 경우 비전 균열의 사거리 가장자리 근처에 있는 대상이 적중되지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "까마귀 전령",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "최종 진화물로 메디브를 복제했을 때 생성되는 메디브의 까마귀 전령이 기술 위력 증가 효과를 얻지 못하던 문제를 수정했습니다.",
+         "html": "최종 진화물로 메디브를 복제했을 때 생성되는 메디브의 까마귀 전령이 기술 위력 증가 효과를 얻지 못하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Raven Familiar"
+      },
+      {
+       "name": "티리스팔의 수호자",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "티리스팔의 수호자를 선택한 경우 비전 균열의 사거리 가장자리 근처에 있는 대상이 적중되지 않던 문제를 수정했습니다.",
+         "html": "티리스팔의 수호자를 선택한 경우 비전 균열의 사거리 가장자리 근처에 있는 대상이 적중되지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Guardian of Tirisfal"
+      }
+     ],
+     "nameEn": "Medivh"
+    },
+    {
+     "name": "나지보",
+     "heroId": "WitchDoctor",
+     "heroIds": [
+      "WitchDoctor"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">나지보</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">부두 의식 [고유 능력]</strong><ul>\n<li>이제 퀘스트 진행 상황 표시가 처치한 적 돌격병 주위에 나타납니다.</li>\n<li>이제 두 번째 나지보가 대상에게 피해를 입히고 첫 번째 나지보가 부두 의식을 적용한 후 6초 이내에 대상이 사망한 경우에도 퀘스트 진행 상황을 얻습니다.</li>\n<li>심연의 생물을 선택하기 전에 획득한 부두 의식 중첩이 심연의 생물에 적용되지 않던 문제를 수정했습니다.</li>\n<li>부두 의식의 도움말에 잘못된 총 피해량이 표시되던 문제를 수정했습니다.</li>\n<li>독소 전염의 도움말에 잘못된 총 피해량이 표시되던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">심연의 생물</strong><ul>\n<li>더 이상 부두 의식의 퀘스트 표시가 두 개로 나타나지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">피의 의식</strong><ul>\n<li>부두 의식의 영향을 받는 대상이 생명력이 지속적으로 감소하여 효과 시간이 만료되었을 때 피의 의식이 생명력이나 마나를 주지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "부두 의식",
+       "key": "Trait",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "이제 퀘스트 진행 상황 표시가 처치한 적 돌격병 주위에 나타납니다.",
+         "html": "이제 퀘스트 진행 상황 표시가 처치한 적 돌격병 주위에 나타납니다.",
+         "added": false
+        },
+        {
+         "text": "이제 두 번째 나지보가 대상에게 피해를 입히고 첫 번째 나지보가 부두 의식을 적용한 후 6초 이내에 대상이 사망한 경우에도 퀘스트 진행 상황을 얻습니다.",
+         "html": "이제 두 번째 나지보가 대상에게 피해를 입히고 첫 번째 나지보가 부두 의식을 적용한 후 6초 이내에 대상이 사망한 경우에도 퀘스트 진행 상황을 얻습니다.",
+         "added": false
+        },
+        {
+         "text": "심연의 생물을 선택하기 전에 획득한 부두 의식 중첩이 심연의 생물에 적용되지 않던 문제를 수정했습니다.",
+         "html": "심연의 생물을 선택하기 전에 획득한 부두 의식 중첩이 심연의 생물에 적용되지 않던 문제를 수정했습니다.",
+         "added": false
+        },
+        {
+         "text": "부두 의식의 도움말에 잘못된 총 피해량이 표시되던 문제를 수정했습니다.",
+         "html": "부두 의식의 도움말에 잘못된 총 피해량이 표시되던 문제를 수정했습니다.",
+         "added": false
+        },
+        {
+         "text": "독소 전염의 도움말에 잘못된 총 피해량이 표시되던 문제를 수정했습니다.",
+         "html": "독소 전염의 도움말에 잘못된 총 피해량이 표시되던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Voodoo Ritual"
+      },
+      {
+       "name": "심연의 생물",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "더 이상 부두 의식의 퀘스트 표시가 두 개로 나타나지 않습니다.",
+         "html": "더 이상 부두 의식의 퀘스트 표시가 두 개로 나타나지 않습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Thing of the Deep"
+      },
+      {
+       "name": "피의 의식",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "부두 의식의 영향을 받는 대상이 생명력이 지속적으로 감소하여 효과 시간이 만료되었을 때 피의 의식이 생명력이나 마나를 주지 않던 문제를 수정했습니다.",
+         "html": "부두 의식의 영향을 받는 대상이 생명력이 지속적으로 감소하여 효과 시간이 만료되었을 때 피의 의식이 생명력이나 마나를 주지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Blood Ritual"
+      }
+     ],
+     "nameEn": "Nazeebo"
+    },
+    {
+     "name": "노바",
+     "heroId": "Nova",
+     "heroIds": [
+      "Nova"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">노바</strong>\n<ul>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">빠른 재장전</strong><ul>\n<li>삼연발 사격의 대상이 탄환에 적중되기 전에 사망했을 때 빠른 재장전이 발동하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "빠른 재장전",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "삼연발 사격의 대상이 탄환에 적중되기 전에 사망했을 때 빠른 재장전이 발동하던 문제를 수정했습니다.",
+         "html": "삼연발 사격의 대상이 탄환에 적중되기 전에 사망했을 때 빠른 재장전이 발동하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Fast Reload"
+      }
+     ],
+     "nameEn": "Nova"
+    },
+    {
+     "name": "프로비우스",
+     "heroId": "Probius",
+     "heroIds": [
+      "Probius"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">프로비우스</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">광자포 [E]</strong><ul>\n<li>프로비우스의 광자포가 주는 피해량이 D.Va의 방어 매트릭스로 감소하지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">광물 수집</strong><ul>\n<li>이제 퀘스트를 완료하면 전장에 이미 설치되어 있는 광자포도 강화합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "광자포",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "프로비우스의 광자포가 주는 피해량이 D.Va의 방어 매트릭스로 감소하지 않던 문제를 수정했습니다.",
+         "html": "프로비우스의 광자포가 주는 피해량이 D.Va의 방어 매트릭스로 감소하지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Photon Cannon"
+      },
+      {
+       "name": "광물 수집",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "이제 퀘스트를 완료하면 전장에 이미 설치되어 있는 광자포도 강화합니다.",
+         "html": "이제 퀘스트를 완료하면 전장에 이미 설치되어 있는 광자포도 강화합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Gathering Minerals"
+      }
+     ],
+     "nameEn": "Probius"
+    },
+    {
+     "name": "타이커스",
+     "heroId": "Tychus",
+     "heroIds": [
+      "Tychus"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">타이커스</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">포화 [Q]</strong><ul>\n<li>포화가 의도하지 않은 지역을 드러내던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "포화",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "포화가 의도하지 않은 지역을 드러내던 문제를 수정했습니다.",
+         "html": "포화가 의도하지 않은 지역을 드러내던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Overkill"
+      }
+     ],
+     "nameEn": "Tychus"
+    },
+    {
+     "name": "줄",
+     "heroId": "Necromancer",
+     "heroIds": [
+      "Necromancer"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">줄</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">해골 불러내기 [고유 능력]</strong><ul>\n<li>줄의 해골 전사가 주는 피해량이 D.Va의 방어 매트릭스로 감소하지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">해골 마법학자</strong><ul>\n<li>줄의 해골 마법학자가 주는 피해량이 D.Va의 방어 매트릭스로 감소하지 않던 문제를 수정했습니다.</li>\n<li>줄의 해골 마법학자가 실명 상태이거나 회피 중인 영웅을 상대할 때 감속 효과를 오라로 적용하지 않던 문제를 수정했습니다.</li>\n<li>줄의 해골 마법학자가 영웅 공격에만 적용되는 회피 효과를 지닌 영웅을 공격할 때 감속 효과를 적용하지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">약화</strong><ul>\n<li>줄이 실명 상태이거나 영웅 공격에만 적용되는 회피 효과를 지닌 영웅을 상대할 때 줄의 해골 전사가 약화의 피해량 감소 효과를 적용하지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "해골 되살리기",
+       "key": "Trait",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "줄의 해골 전사가 주는 피해량이 D.Va의 방어 매트릭스로 감소하지 않던 문제를 수정했습니다.",
+         "html": "줄의 해골 전사가 주는 피해량이 D.Va의 방어 매트릭스로 감소하지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Raise Skeleton"
+      },
+      {
+       "name": "해골 마법학자",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "줄의 해골 마법학자가 주는 피해량이 D.Va의 방어 매트릭스로 감소하지 않던 문제를 수정했습니다.",
+         "html": "줄의 해골 마법학자가 주는 피해량이 D.Va의 방어 매트릭스로 감소하지 않던 문제를 수정했습니다.",
+         "added": false
+        },
+        {
+         "text": "줄의 해골 마법학자가 실명 상태이거나 회피 중인 영웅을 상대할 때 감속 효과를 오라로 적용하지 않던 문제를 수정했습니다.",
+         "html": "줄의 해골 마법학자가 실명 상태이거나 회피 중인 영웅을 상대할 때 감속 효과를 오라로 적용하지 않던 문제를 수정했습니다.",
+         "added": false
+        },
+        {
+         "text": "줄의 해골 마법학자가 영웅 공격에만 적용되는 회피 효과를 지닌 영웅을 공격할 때 감속 효과를 적용하지 않던 문제를 수정했습니다.",
+         "html": "줄의 해골 마법학자가 영웅 공격에만 적용되는 회피 효과를 지닌 영웅을 공격할 때 감속 효과를 적용하지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Skeletal Mages"
+      },
+      {
+       "name": "약화",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "줄이 실명 상태이거나 영웅 공격에만 적용되는 회피 효과를 지닌 영웅을 상대할 때 줄의 해골 전사가 약화의 피해량 감소 효과를 적용하지 않던 문제를 수정했습니다.",
+         "html": "줄이 실명 상태이거나 영웅 공격에만 적용되는 회피 효과를 지닌 영웅을 상대할 때 줄의 해골 전사가 약화의 피해량 감소 효과를 적용하지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Weaken"
+      }
+     ],
+     "nameEn": "Xul"
+    },
+    {
+     "name": "자가라",
+     "heroId": "Zagara",
+     "heroIds": [
+      "Zagara"
+     ],
+     "under": "Heroes",
+     "html": "<strong class=\"pn-h\">자가라</strong>\n<ul>\n<li><strong>기본</strong><ul>\n<li><strong class=\"pn-name\">감염체 투하 [E]</strong><ul>\n<li>최종 진화물로 자가라를 복제했을 때 생성되는 바퀴가 기술 위력 증가 효과를 얻지 못하던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": "감염체 투하",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "최종 진화물로 자가라를 복제했을 때 생성되는 바퀴가 기술 위력 증가 효과를 얻지 못하던 문제를 수정했습니다.",
+         "html": "최종 진화물로 자가라를 복제했을 때 생성되는 바퀴가 기술 위력 증가 효과를 얻지 못하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Infested Drop"
+      }
+     ],
+     "nameEn": "Zagara"
+    }
+   ],
+   "nameEn": "Bug Fixes"
+  }
+ ],
+ "heroes": [
+  "Abathur",
+  "Alexstrasza",
+  "Ana",
+  "Anubarak",
+  "Arthas",
+  "Cho",
+  "Chromie",
+  "Crusader",
+  "Deathwing",
+  "Deckard",
+  "Diablo",
+  "Firebat",
+  "Gall",
+  "Genji",
+  "Hogger",
+  "Jaina",
+  "Kerrigan",
+  "Leoric",
+  "MalGanis",
+  "Malfurion",
+  "Medivh",
+  "Necromancer",
+  "Nova",
+  "Probius",
+  "Qhira",
+  "Ragnaros",
+  "Tychus",
+  "Whitemane",
+  "WitchDoctor",
+  "Yrel",
+  "Zagara"
+ ],
+ "battlegrounds": [
+  "hanamura_temple",
+  "haunted_mines",
+  "warhead_junction"
+ ],
+ "lang": "ko",
+ "newsId": "24287550",
+ "titleEn": "Heroes of the Storm PTR Patch Notes - June 29, 2026",
+ "translated": {
+  "by": "Claude (claude-opus-5)",
+  "at": "2026-09-14",
+  "source": "https://news.blizzard.com/en-us/article/24287550/heroes-of-the-storm-ptr-patch-notes-june-29-2026",
+  "glossary": "HeroesToolChest 공식 게임 텍스트(enus↔kokr) 대조",
+  "untranslated": 0
+ }
+}

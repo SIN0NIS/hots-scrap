@@ -1,0 +1,2355 @@
+{
+ "date": "2017-10-18",
+ "kind": "patch",
+ "title": "히어로즈 오브 더 스톰 패치 노트 – 2017년 10월 18일",
+ "source": "https://news.blizzard.com/ko-kr/article/21116539/2017-10-18",
+ "published": "2017-10-17T18:30:00Z",
+ "sections": [
+  {
+   "name": "머리말",
+   "key": "intro",
+   "html": "<p>히어로즈 오브 더 스톰의 새로운 패치가 적용되었습니다. 이 패치에서는 새로운 영웅이 추가되었고, 밸런스에 변화가 이루어졌습니다. </p>\n<p><strong class=\"pn-new\">참고: *주황색 텍스트는 패치 노트에 추가된 텍스트입니다.</strong></p>"
+  },
+  {
+   "name": "이동",
+   "key": "이동",
+   "html": "<figure class=\"pull-right\">\n<img src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/NBF5SHSTK4RK1507240504745.jpg\"/>\n</figure>\n<ul>\n<li></li>\n<li></li>\n<li></li>\n<li></li>\n<li></li>\n<li></li>\n<li></li>\n<li></li>\n</ul>"
+  },
+  {
+   "name": "일반",
+   "key": "general",
+   "html": "<p><span class=\"pn-h\"><strong>새로운 특별 이벤트: 2017 할로윈 축제</strong></span></p>\n<ul>\n<li>할로윈 축제 동안 사용자 지정, 훈련, 히어로즈 난투를 제외한 대전 모드에서 게임을 25회 플레이하면 오싹한 새로운 수집품을 획득할 수 있습니다!</li>\n<li>총 3개의 퀘스트로 이루어진 할로윈 축제 퀘스트를 완료하여 획득하는 보상을 살펴보세요.\n<ul>\n<li><span class=\"pn-name\"><strong>1부:</strong><strong> 할로윈 축제 동안 게임 2회 플레이</strong></span>\n<ul>\n<li><strong>보상:</strong> 만화 저주받은 기사 스프레이</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>2부:</strong><strong> 할로윈 축제 동안 게임 8회 플레이</strong></span>\n<ul>\n<li><strong>보상: </strong>할로윈 축제 전쟁문장 깃발</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>3부:</strong><strong> 할로윈 축제 동안 게임 15회 플레이</strong></span>\n<ul>\n<li><strong>보상:</strong> 저주받은 기사 초상화</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<ul>\n<li><span class=\"pn-name\"><strong>할로윈 축제 전리품 상자</strong></span>\n<ul>\n<li>10월 18일에 할로윈 축제가 시작되면 전리품 상자를 시공석으로 구매하거나 레벨이 오를 때 일반 전리품 상자 대신 할로윈 축제 전리품 상자를 획득할 수 있습니다. (영웅별 전리품 상자는 해당되지 않습니다.) 10월 20일 이후의 주간 난투 보상 또한 할로윈 축제 전리품 상자로 변경됩니다.</li>\n<li>할로윈 축제 전리품 상자에서는 할로윈 축제 기간 동안에만 획득할 수 있는 초상화, 스프레이, 스킨, 탈것 등의 수집품이 반드시 1개 이상 포함되어 있습니다!</li>\n<li>할로윈 축제 전리품 상자는 11월 13일에 할로윈 축제가 끝날 때까지 레벨을 올리거나 주간 히어로즈 난투 퀘스트를 완료할 때 획득할 수 있습니다. 또한 게임 내 수집품 탭에서 시공석으로 희귀 할로윈 축제 전리품 상자를 구매할 수 있습니다. 할로윈 축제 이전에 구매하거나 보유한 전리품 상자는 할로윈 축제 전리품 상자로 변경되지 않습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">단축키</strong></p>\n<ul>\n<li>게임 내 점수 화면에서 현재 <strong>F1</strong>, <strong>F2</strong>, 그리고 <strong>F3</strong> 키로 설정된 통계, 특성, 죽음 분석 탭 단축키를 단축키 메뉴에서 변경할 수 있습니다.</li>\n<li>이 단축키를 누르고 있는 동안 해당 창을 열어볼 수 있습니다.</li>\n</ul>\n<p><strong class=\"pn-h\">윈도우 XP/Vista 지원 종료</strong></p>\n<ul>\n<li>개발팀에서는 지난 7월에 히어로즈 오브 더 스톰을 윈도우 XP 및 윈도우 Vista에서 지원하지 않을 예정이라는 걸 발표했습니다. 이번 패치로 히어로즈 오브 더 스톰은 앞서 언급한 두 운영체제에서 더는 플레이할 수 없습니다. 이로 인해 영향을 받는 플레이어들은 새로운 운영체제로 업그레이드하는 것을 권장합니다.</li>\n</ul>\n<ul>\n</ul>"
+  },
+  {
+   "name": "새로운 영웅: 정크랫",
+   "key": "새로운_영웅_정크랫",
+   "html": "<p>호주 옴니움이 파괴되면서 일대가 방사능에 오염되자 재미슨 포크스 같은 생존자들 또한 이에 영향을 받았습니다. 폭발물에 광적인 집착을 보이게 된 그는 이제 범죄자 정크랫으로 거듭나 발이 닿는 곳마다 대혼란을 일으키고 아수라장으로 만들고 있습니다.</p>\n<p><span class=\"pn-h\"><strong>고유 능력 </strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>완전 난장판</strong></span>\n<ul>\n<li>죽으면 0.75초 후에 폭발하는 폭탄을 5개 떨어트려 주위 적들에게 250의 피해를 줍니다.</li>\n</ul>\n</li>\n</ul>\n<p><span class=\"pn-h\"><strong>일반 기술</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>폭탄 발사기 (Q)</strong></span>\n<ul>\n<li>적에게 적중하거나 경로 끝에 도달하면 폭발하여 주위 적들에게 117의 피해를 주는 폭탄을 발사합니다. 폭탄이 지형에 튕기면 경로가 변경될 수 있습니다. 구조물에는 50% 감소한 피해를 줍니다. 최대 4회 충전되고 한 번에 모두 충전됩니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>충격 지뢰 (W)</strong></span>\n<ul>\n<li>지면에 지뢰를 놓습니다. 고유 능력을 사용하면 지뢰를 폭발시켜 지뢰 주위 적들에게 180의 피해를 내고 밀쳐냅니다. 정크랫 또한 지뢰에 영향을 받을 수 있지만 피해는 받지 않습니다. 동시에 최대 1개의 지뢰를 유지할 수 있습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>강철 덫 (E)</strong></span>\n<ul>\n<li>지면에 덫을 설치합니다. 덫은 2초 후 활성화 되며 덫을 밟은 첫 번째 적에게 130의 피해를 주고 2초 동안 이동 불가 상태로 만듭니다. 동시에 최대 1개의 덫을 유지할 수 있습니다.</li>\n</ul>\n</li>\n</ul>\n<p><span class=\"pn-h\"><strong>궁극기</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>죽이는 타이어 (R)</strong></span>\n<ul>\n<li>15초 동안 지속되고 생명력이 500인 타이어 폭탄을 생성합니다. 사용하는 동안 정크랫은 움직일 수 없지만 죽이는 타이어의 움직임을 조종할 수 있습니다. 죽이는 타이어를 다시 사용하면 즉시 폭발시켜 주위 적들을 밀쳐내고 중심부에 얼마나 가까운지에 따라 최소 450에서 최대 750의 피해를 줍니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>로켓 자폭 (R)</strong></span>\n<ul>\n<li>1.25초 후, 로켓을 타고 하늘로 날아오릅니다. 공중에 있는 동안 이동 명령으로 착지 지점을 조정할 수 있습니다. 3.5초 후에 추락하여 주위 적들에게 780의 피해를 주고 완전 난장판을 발동시킵니다. 추락한 뒤 5초 후에 제단에서 다시 나타나고 탈것에서 내리기 전까지 이동 속도가 150% 증가합니다.</li>\n</ul>\n</li>\n</ul>"
+  },
+  {
+   "name": "전장",
+   "key": "battlegrounds",
+   "html": "<p><strong class=\"pn-h\">등급전 전장 로테이션</strong></p>\n<ul>\n<li><strong>추가된 전장</strong>\n<ul>\n<li>하늘 사원</li>\n<li>공포의 정원</li>\n<li>브락시스 항전</li>\n</ul>\n</li>\n<li><strong>제거된 전장</strong>\n<ul>\n<li>불지옥 신단</li>\n<li>영원의 전쟁터</li>\n<li>핵탄두 격전지</li>\n</ul>\n</li>\n<li><strong>등급전 전장 로테이션으로 아래 전장들이 활성화되었습니다.</strong>\n<ul>\n<li>저주받은 골짜기</li>\n<li>용의 둥지</li>\n<li>죽음의 광산</li>\n<li>거미 여왕의 무덤</li>\n<li>파멸의 탑</li>\n<li>볼스카야 공장</li>\n<li>하늘 사원</li>\n<li>공포의 정원</li>\n<li>브락시스 항전</li>\n</ul>\n</li>\n</ul>"
+  },
+  {
+   "name": "사용자 인터페이스",
+   "key": "ui",
+   "html": "<ul>\n<li>전리품 상자와 수집품 탭에서 이벤트 기간 동안에만 얻을 수 있는 수집품을 확인할 수 있는 표시가 추가되었습니다.</li>\n<li>볼스카야 공장에서 거점에 오래 있는 사람에게 부여되는 \"거점 수호자\" 명칭이 추가되었습니다.</li>\n<li>이제 관전자 인터페이스에서도 퀘스트 완료 등의 이벤트가 표시됩니다.</li>\n</ul>"
+  },
+  {
+   "name": "영웅",
+   "key": "heroes",
+   "html": "<table class=\"table table-condensed\">\n<tbody>\n<tr>\n<th></th>\n<th></th>\n</tr>\n<tr>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td></td>\n<td></td>\n</tr>\n</tbody>\n</table>"
+  },
+  {
+   "name": "암살자",
+   "key": "role_assassin",
+   "html": "<h4>정크랫</h4>\n<p><img alt=\"Divider_Hero_Junkrat.png\" data-id=\"21102450\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/0JYG2RU09ORP1507240171927.png\"/></p>\n<p><span class=\"pn-h\"><strong>기술</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>완전 난장판 (고유 능력)</strong></span>\n<ul>\n<li><span class=\"pn-new\">구조물에는 75% 감소한 피해를 줍니다.</span></li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>로켓 자폭 (R)</strong></span>\n<ul>\n<li><span class=\"pn-new\">공격력이 780에서 750으로 감소했습니다.</span></li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>죽이는 타이어 (R)</strong></span>\n<ul>\n<li><span class=\"pn-new\">외곽 부분의 공격력이 450에서 475로 증가했습니다.</span></li>\n<li><span class=\"pn-new\">외곽과 중심부 사이 부분의 공격력이 600에서 625로 증가했습니다.</span></li>\n<li><span class=\"pn-new\">중심부의 공격력이 750에서 775로 증가했습니다.</span></li>\n<li><span class=\"pn-new\">생명력이 500에서 530으로 증가했습니다.</span></li>\n</ul>\n</li>\n</ul>\n<h4>줄진</h4>\n<p><img alt=\"Divider_Hero_Zuljin_crop.png\" data-id=\"20407320\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/ep/EPJ9RJVTT6AA1481923618065.png\"/></p>\n<p><span class=\"pn-h\"><strong>능력치</strong></span></p>\n<ul>\n<li>일반 공격력이 106에서 90으로 감소했습니다.</li>\n</ul>\n<p><span class=\"pn-h\"><strong>기술</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong> \"도끼 맛 좀 보여줄까?\" 기본 퀘스트가 추가되었습니다.</strong></span>\n<ul>\n<li>!퀘스트: 적 영웅에게 일반 공격이 5회 적중할 때마다 일반 공격력이 1 증가합니다.</li>\n<li>!보상: 적 영웅에게 일반 공격이 75회 적중하면 일반 공격 사거리가 1.1 증가합니다.</li>\n<li>!보상: 적 영웅에게 일반 공격이 150회 적중하면 톱날 베기가 두 바퀴 회전합니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>잔혹한 투척 (Q)</strong></span>\n<ul>\n<li>지속 시간이 8초에서 6초로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>톱날 베기 (W)</strong></span>\n<ul>\n<li>재사용 대기시간이 8초에서 10초로 증가했습니다.</li>\n<li>마나 소모량이 50에서 60으로 증가했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>재생 (E)</strong></span>\n<ul>\n<li>회복량이 최대 생명력의 25%에서 30%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><span class=\"pn-h\"><strong>특성</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>절단마 (Q)\n<ul>\n<li>새로운 기능:\n<ul>\n<li>잔혹한 투척이 모든 적을 관통하고 적중한 영웅 하나당 10의 마나를 회복합니다. 추가로, 잔혹한 투척의 표식이 일반 공격으로 제거되지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>도끼 맛 좀 보여줄까? (지속 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>해골사냥꾼 (사용 효과)\n<ul>\n<li>4레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>!퀘스트: 모든 적 영웅을 한 번씩 처치해야 합니다. 각 영웅을 처음 처치할 때마다 공격력이 2% 증가합니다.</li>\n<li>!보상: 일반 공격 사거리가 1.1 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>무모함 (지속 효과)\n<ul>\n<li>7레벨에서 옮겨졌습니다.</li>\n<li>변경된 기능:\n<ul>\n<li>생명력이 75% 미만이면 일반 공격력이 10% 증가합니다.</li>\n<li>생명령이 50% 미만이면 기술 위력이 20% 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>트롤의 피 (E)\n<ul>\n<li>새로운 기능:\n<ul>\n<li>재생의 치유량이 25% 증가합니다. 재생이 끝까지 지속되면 최대 마나의 10%를 회복합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>(새로운 특성) 아마니의 분노 (사용 효과)</strong>\n<ul>\n<li>사용하면 현재 생명력의 50%를 잃고, 잃은 생명력을 6초에 걸쳐 회복합니다. 아마니의 분노로 생명력을 재생하는 동안에는 방어력이 10 증가합니다.</li>\n</ul>\n</li>\n<li>부두 춤 (사용 효과)\n<ul>\n<li>13레벨에서 옮겨졌습니다.\n<ul>\n<li>새로운 기능:\n<ul>\n<li>지속 효과: 재생의 재사용 대기시간과 마나 소모량이 33% 감소합니다. 사용하면 자신에게 걸린 모든 감속 및 이동 불가 효과를 제거합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>7레벨</strong></span>\n<ul>\n<li>잔악한 공격 (Q)\n<ul>\n<li>새로운 기능:\n<ul>\n<li>잔혹한 투척의 추가 피해량이 30% 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>아케이나이트 투척용 도끼 (W)\n<ul>\n<li>1레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>톱날 베기의 재사용 대기시간이 2초 감소합니다.</li>\n<li>!퀘스트: 적 영웅에게 톱날 베기가 적중해야 합니다.</li>\n<li>!보상: 톱날 베기가 적 영웅에게 적중할 때마다 톱날 베기의 공격력이 영구히 0.75 증가합니다. 무한히 반복할 수 있는 퀘스트입니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>흉포한 본성 (지속 효과)\n<ul>\n<li>16레벨에서 옮겨졌습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>13레벨</strong></span>\n<ul>\n<li>줄진의 눈 (Q)\n<ul>\n<li>새로운 기능:\n<ul>\n<li>적 영웅에게 일반 공격이 적중하면 2초 동안 이동 속도가 3% 증가하여 최대 30% 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>발목 긋기 (W)\n<ul>\n<li>16레벨에서 옮겨졌습니다.</li>\n</ul>\n</li>\n<li>그물 덫 (사용 효과)\n<ul>\n<li>20레벨에서 옮겨졌습니다.</li>\n<li>이제 적 영웅에게만 적중합니다.</li>\n<li>지속 시간이 3초에서 1.5초로 감소했습니다.</li>\n<li>재사용 대기시간이 45초에서 60초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>16레벨</strong></span>\n<ul>\n<li>소용돌이치는 톱날 (W)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>학살을 시작하자 (지속 효과)\n<ul>\n<li>4레벨에서 옮겨졌습니다.</li>\n</ul>\n</li>\n<li>영 좋지 않은 곳 (W)\n<ul>\n<li>7레벨에서 옮겨졌습니다.</li>\n<li>변경된 기능:\n<ul>\n<li>톱날 베기의 두 도끼가 동시에 적중하면 150의 추가 피해를 주고, 도끼 맛 좀 보여줄까? 퀘스트가 5회 진행됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>(새로운 특성) 자비란 없다! (Q)</strong>\n<ul>\n<li>잔혹한 투척의 표식이 남겨진 적에게 일반 공격을 하면 대상의 방어도를 무시합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>20레벨</strong></span>\n<ul>\n<li>아마니의 생존력 (R)\n<ul>\n<li>추가된 기능:\n<ul>\n<li>타즈딩고!의 지속 시간이 1초 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>가름쇠 (R)\n<ul>\n<li>추가된 기능:\n<ul>\n<li>단두대로 적 영웅을 처치하면 생명력을 모두 회복합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>수풀요법 (E)\n<ul>\n<li>13레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>재생에 정신 집중이 필요하지 않고 피해를 받아도 중단되지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>개발자의 의견:</strong> 단두대로 4명의 영웅을 한 번에 처치하는 건 정말 짜릿한 경험입니다. 하지만 10레벨이 되고 궁극기를 고를 때마다 고민이 되기는 했죠. 일반 공격력이 강한 줄진이 타즈딩고!를 포기하는 건 너무 아까웠으니까요. 이미 잘 플레이되고 있는 조합을 수정하기보다는 일반적인 특성 조합을 보완하면서 상대를 순식간에 제압할 수 있는 새로운 가능성을 열어보려 합니다. 줄진의 기본 퀘스트는 줄진의 강점을 더욱 강화하여 경기가 지속될수록 점진적으로 강력한 모습을 보이도록 도울 것입니다. 다른 영웅 개편과 동일하게 여러분의 의견을 전해주시면 개발팀 또한 이를 반영하기 위해 노력하겠습니다.</blockquote>\n<table class=\"table table-condensed\">\n<tbody>\n<tr>\n<th><strong>레벨 (특성 단계)</strong></th>\n<th colspan=\"3\"><strong>줄진의 특성</strong></th>\n</tr>\n<tr>\n<td><strong>1 (1)</strong></td>\n<td>절단마 (Q)</td>\n<td><u>무모함 (지속 효과)</u></td>\n<td><u>(!) 해골사냥꾼 (지속 효과)</u></td>\n</tr>\n<tr>\n<td><strong>4 (2)</strong></td>\n<td>트롤의 피 (E)</td>\n<td><u>부두 춤 (사용 효과)</u></td>\n<td><em>아마니의 분노 (사용 효과)</em></td>\n</tr>\n<tr>\n<td><strong>7 (3)</strong></td>\n<td>잔악한 공격 (Q)</td>\n<td><u>(!) 아케이나이트 투척용 도끼 (W)</u></td>\n<td><u>흉포한 본성 (D)</u></td>\n</tr>\n<tr>\n<td><strong>10 (4)</strong></td>\n<td>타즈딩고!</td>\n<td>단두대</td>\n<td>—</td>\n</tr>\n<tr>\n<td><strong>13 (5)</strong></td>\n<td><u>발목 긋기 (W)</u></td>\n<td>줄진의 눈 (지속 효과)</td>\n<td><u>그물 덫 (사용 효과)</u></td>\n</tr>\n<tr>\n<td><strong>16 (6)</strong></td>\n<td><u>영 좋지 않은 곳 (W)</u></td>\n<td><em>자비란 없다! (지속 효과)</em></td>\n<td><u>학살을 시작하자 (지속 효과)</u></td>\n</tr>\n<tr>\n<td><strong>20 (7)</strong></td>\n<td>아마니의 생존력 (R)</td>\n<td>가름쇠 (R)</td>\n<td><u>수풀요법 (E)</u></td>\n</tr>\n</tbody>\n</table>\n<ul>\n<li>(!)는 퀘스트 특성입니다.</li>\n<li><em>이탤릭체</em>는 <em>새로운</em> 특성입니다.</li>\n<li><u>밑줄</u>친 특성은 <u>옮겨진</u> 특성입니다.</li>\n</ul>",
+   "heroes": [
+    {
+     "name": "정크랫",
+     "heroId": "Junkrat",
+     "heroIds": [
+      "Junkrat"
+     ],
+     "changes": [
+      {
+       "name": "완전 난장판",
+       "key": "고유 능력",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "구조물에는 75% 감소한 피해를 줍니다.",
+         "html": "<span class=\"pn-new\">구조물에는 75% 감소한 피해를 줍니다.</span>",
+         "added": true
+        }
+       ]
+      },
+      {
+       "name": "로켓 자폭",
+       "key": "R",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "공격력이 780에서 750으로 감소했습니다.",
+         "html": "<span class=\"pn-new\">공격력이 780에서 750으로 감소했습니다.</span>",
+         "added": true
+        }
+       ]
+      },
+      {
+       "name": "죽이는 타이어",
+       "key": "R",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "외곽 부분의 공격력이 450에서 475로 증가했습니다.",
+         "html": "<span class=\"pn-new\">외곽 부분의 공격력이 450에서 475로 증가했습니다.</span>",
+         "added": true
+        },
+        {
+         "text": "외곽과 중심부 사이 부분의 공격력이 600에서 625로 증가했습니다.",
+         "html": "<span class=\"pn-new\">외곽과 중심부 사이 부분의 공격력이 600에서 625로 증가했습니다.</span>",
+         "added": true
+        },
+        {
+         "text": "중심부의 공격력이 750에서 775로 증가했습니다.",
+         "html": "<span class=\"pn-new\">중심부의 공격력이 750에서 775로 증가했습니다.</span>",
+         "added": true
+        },
+        {
+         "text": "생명력이 500에서 530으로 증가했습니다.",
+         "html": "<span class=\"pn-new\">생명력이 500에서 530으로 증가했습니다.</span>",
+         "added": true
+        }
+       ]
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_Junkrat.png\" data-id=\"21102450\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/0JYG2RU09ORP1507240171927.png\"/></p>\n<p><span class=\"pn-h\"><strong>기술</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>완전 난장판 (고유 능력)</strong></span>\n<ul>\n<li><span class=\"pn-new\">구조물에는 75% 감소한 피해를 줍니다.</span></li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>로켓 자폭 (R)</strong></span>\n<ul>\n<li><span class=\"pn-new\">공격력이 780에서 750으로 감소했습니다.</span></li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>죽이는 타이어 (R)</strong></span>\n<ul>\n<li><span class=\"pn-new\">외곽 부분의 공격력이 450에서 475로 증가했습니다.</span></li>\n<li><span class=\"pn-new\">외곽과 중심부 사이 부분의 공격력이 600에서 625로 증가했습니다.</span></li>\n<li><span class=\"pn-new\">중심부의 공격력이 750에서 775로 증가했습니다.</span></li>\n<li><span class=\"pn-new\">생명력이 500에서 530으로 증가했습니다.</span></li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "줄진",
+     "heroId": "Zuljin",
+     "heroIds": [
+      "Zuljin"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "일반 공격력이 106에서 90으로 감소했습니다.",
+         "html": "일반 공격력이 106에서 90으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "\"도끼 맛 좀 보여줄까?\" 기본 퀘스트가 추가되었습니다.",
+       "key": null,
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "!퀘스트: 적 영웅에게 일반 공격이 5회 적중할 때마다 일반 공격력이 1 증가합니다.",
+         "html": "!퀘스트: 적 영웅에게 일반 공격이 5회 적중할 때마다 일반 공격력이 1 증가합니다.",
+         "added": false
+        },
+        {
+         "text": "!보상: 적 영웅에게 일반 공격이 75회 적중하면 일반 공격 사거리가 1.1 증가합니다.",
+         "html": "!보상: 적 영웅에게 일반 공격이 75회 적중하면 일반 공격 사거리가 1.1 증가합니다.",
+         "added": false
+        },
+        {
+         "text": "!보상: 적 영웅에게 일반 공격이 150회 적중하면 톱날 베기가 두 바퀴 회전합니다.",
+         "html": "!보상: 적 영웅에게 일반 공격이 150회 적중하면 톱날 베기가 두 바퀴 회전합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "잔혹한 투척",
+       "key": "Q",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "지속 시간이 8초에서 6초로 감소했습니다.",
+         "html": "지속 시간이 8초에서 6초로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "톱날 베기",
+       "key": "W",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 8초에서 10초로 증가했습니다.",
+         "html": "재사용 대기시간이 8초에서 10초로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "마나 소모량이 50에서 60으로 증가했습니다.",
+         "html": "마나 소모량이 50에서 60으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "재생",
+       "key": "E",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "회복량이 최대 생명력의 25%에서 30%로 증가했습니다.",
+         "html": "회복량이 최대 생명력의 25%에서 30%로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "절단마",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": []
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "잔혹한 투척이 모든 적을 관통하고 적중한 영웅 하나당 10의 마나를 회복합니다. 추가로, 잔혹한 투척의 표식이 일반 공격으로 제거되지 않습니다.",
+         "html": "잔혹한 투척이 모든 적을 관통하고 적중한 영웅 하나당 10의 마나를 회복합니다. 추가로, 잔혹한 투척의 표식이 일반 공격으로 제거되지 않습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "도끼 맛 좀 보여줄까?",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "해골사냥꾼",
+       "key": "사용 효과",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "4레벨에서 옮겨졌습니다.",
+         "html": "4레벨에서 옮겨졌습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "!퀘스트: 모든 적 영웅을 한 번씩 처치해야 합니다. 각 영웅을 처음 처치할 때마다 공격력이 2% 증가합니다.",
+         "html": "!퀘스트: 모든 적 영웅을 한 번씩 처치해야 합니다. 각 영웅을 처음 처치할 때마다 공격력이 2% 증가합니다.",
+         "added": false
+        },
+        {
+         "text": "!보상: 일반 공격 사거리가 1.1 증가합니다.",
+         "html": "!보상: 일반 공격 사거리가 1.1 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "무모함",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "7레벨에서 옮겨졌습니다.",
+         "html": "7레벨에서 옮겨졌습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "변경된 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "생명력이 75% 미만이면 일반 공격력이 10% 증가합니다.",
+         "html": "생명력이 75% 미만이면 일반 공격력이 10% 증가합니다.",
+         "added": false
+        },
+        {
+         "text": "생명령이 50% 미만이면 기술 위력이 20% 증가합니다.",
+         "html": "생명령이 50% 미만이면 기술 위력이 20% 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "트롤의 피",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": []
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "재생의 치유량이 25% 증가합니다. 재생이 끝까지 지속되면 최대 마나의 10%를 회복합니다.",
+         "html": "재생의 치유량이 25% 증가합니다. 재생이 끝까지 지속되면 최대 마나의 10%를 회복합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "(새로운 특성) 아마니의 분노",
+       "key": "사용 효과",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "사용하면 현재 생명력의 50%를 잃고, 잃은 생명력을 6초에 걸쳐 회복합니다. 아마니의 분노로 생명력을 재생하는 동안에는 방어력이 10 증가합니다.",
+         "html": "사용하면 현재 생명력의 50%를 잃고, 잃은 생명력을 6초에 걸쳐 회복합니다. 아마니의 분노로 생명력을 재생하는 동안에는 방어력이 10 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "부두 춤",
+       "key": "사용 효과",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": []
+      },
+      {
+       "name": "13레벨에서 옮겨졌습니다.",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": []
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "지속 효과: 재생의 재사용 대기시간과 마나 소모량이 33% 감소합니다. 사용하면 자신에게 걸린 모든 감속 및 이동 불가 효과를 제거합니다.",
+         "html": "지속 효과: 재생의 재사용 대기시간과 마나 소모량이 33% 감소합니다. 사용하면 자신에게 걸린 모든 감속 및 이동 불가 효과를 제거합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "잔악한 공격",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": []
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "잔혹한 투척의 추가 피해량이 30% 증가합니다.",
+         "html": "잔혹한 투척의 추가 피해량이 30% 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "아케이나이트 투척용 도끼",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "1레벨에서 옮겨졌습니다.",
+         "html": "1레벨에서 옮겨졌습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "톱날 베기의 재사용 대기시간이 2초 감소합니다.",
+         "html": "톱날 베기의 재사용 대기시간이 2초 감소합니다.",
+         "added": false
+        },
+        {
+         "text": "!퀘스트: 적 영웅에게 톱날 베기가 적중해야 합니다.",
+         "html": "!퀘스트: 적 영웅에게 톱날 베기가 적중해야 합니다.",
+         "added": false
+        },
+        {
+         "text": "!보상: 톱날 베기가 적 영웅에게 적중할 때마다 톱날 베기의 공격력이 영구히 0.75 증가합니다. 무한히 반복할 수 있는 퀘스트입니다.",
+         "html": "!보상: 톱날 베기가 적 영웅에게 적중할 때마다 톱날 베기의 공격력이 영구히 0.75 증가합니다. 무한히 반복할 수 있는 퀘스트입니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "흉포한 본성",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "16레벨에서 옮겨졌습니다.",
+         "html": "16레벨에서 옮겨졌습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "줄진의 눈",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": []
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "적 영웅에게 일반 공격이 적중하면 2초 동안 이동 속도가 3% 증가하여 최대 30% 증가합니다.",
+         "html": "적 영웅에게 일반 공격이 적중하면 2초 동안 이동 속도가 3% 증가하여 최대 30% 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "발목 긋기",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "16레벨에서 옮겨졌습니다.",
+         "html": "16레벨에서 옮겨졌습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "그물 덫",
+       "key": "사용 효과",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "20레벨에서 옮겨졌습니다.",
+         "html": "20레벨에서 옮겨졌습니다.",
+         "added": false
+        },
+        {
+         "text": "이제 적 영웅에게만 적중합니다.",
+         "html": "이제 적 영웅에게만 적중합니다.",
+         "added": false
+        },
+        {
+         "text": "지속 시간이 3초에서 1.5초로 감소했습니다.",
+         "html": "지속 시간이 3초에서 1.5초로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "재사용 대기시간이 45초에서 60초로 증가했습니다.",
+         "html": "재사용 대기시간이 45초에서 60초로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "소용돌이치는 톱날",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "학살을 시작하자",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "4레벨에서 옮겨졌습니다.",
+         "html": "4레벨에서 옮겨졌습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "영 좋지 않은 곳",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "7레벨에서 옮겨졌습니다.",
+         "html": "7레벨에서 옮겨졌습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "변경된 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "톱날 베기의 두 도끼가 동시에 적중하면 150의 추가 피해를 주고, 도끼 맛 좀 보여줄까? 퀘스트가 5회 진행됩니다.",
+         "html": "톱날 베기의 두 도끼가 동시에 적중하면 150의 추가 피해를 주고, 도끼 맛 좀 보여줄까? 퀘스트가 5회 진행됩니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "(새로운 특성) 자비란 없다!",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "잔혹한 투척의 표식이 남겨진 적에게 일반 공격을 하면 대상의 방어도를 무시합니다.",
+         "html": "잔혹한 투척의 표식이 남겨진 적에게 일반 공격을 하면 대상의 방어도를 무시합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "아마니의 생존력",
+       "key": "R",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": []
+      },
+      {
+       "name": "추가된 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "타즈딩고!의 지속 시간이 1초 증가합니다.",
+         "html": "타즈딩고!의 지속 시간이 1초 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "가름쇠",
+       "key": "R",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": []
+      },
+      {
+       "name": "추가된 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "단두대로 적 영웅을 처치하면 생명력을 모두 회복합니다.",
+         "html": "단두대로 적 영웅을 처치하면 생명력을 모두 회복합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "수풀요법",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "13레벨에서 옮겨졌습니다.",
+         "html": "13레벨에서 옮겨졌습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "재생에 정신 집중이 필요하지 않고 피해를 받아도 중단되지 않습니다.",
+         "html": "재생에 정신 집중이 필요하지 않고 피해를 받아도 중단되지 않습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": null,
+       "lines": [
+        {
+         "text": "(!)는 퀘스트 특성입니다.",
+         "html": "(!)는 퀘스트 특성입니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": null,
+       "lines": [
+        {
+         "text": "이탤릭체 는 새로운 특성입니다.",
+         "html": "<em>이탤릭체</em>는 <em>새로운</em> 특성입니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": null,
+       "lines": [
+        {
+         "text": "밑줄 친 특성은 옮겨진 특성입니다.",
+         "html": "<u>밑줄</u>친 특성은 <u>옮겨진</u> 특성입니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_Zuljin_crop.png\" data-id=\"20407320\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/ep/EPJ9RJVTT6AA1481923618065.png\"/></p>\n<p><span class=\"pn-h\"><strong>능력치</strong></span></p>\n<ul>\n<li>일반 공격력이 106에서 90으로 감소했습니다.</li>\n</ul>\n<p><span class=\"pn-h\"><strong>기술</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong> \"도끼 맛 좀 보여줄까?\" 기본 퀘스트가 추가되었습니다.</strong></span>\n<ul>\n<li>!퀘스트: 적 영웅에게 일반 공격이 5회 적중할 때마다 일반 공격력이 1 증가합니다.</li>\n<li>!보상: 적 영웅에게 일반 공격이 75회 적중하면 일반 공격 사거리가 1.1 증가합니다.</li>\n<li>!보상: 적 영웅에게 일반 공격이 150회 적중하면 톱날 베기가 두 바퀴 회전합니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>잔혹한 투척 (Q)</strong></span>\n<ul>\n<li>지속 시간이 8초에서 6초로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>톱날 베기 (W)</strong></span>\n<ul>\n<li>재사용 대기시간이 8초에서 10초로 증가했습니다.</li>\n<li>마나 소모량이 50에서 60으로 증가했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>재생 (E)</strong></span>\n<ul>\n<li>회복량이 최대 생명력의 25%에서 30%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><span class=\"pn-h\"><strong>특성</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>절단마 (Q)\n<ul>\n<li>새로운 기능:\n<ul>\n<li>잔혹한 투척이 모든 적을 관통하고 적중한 영웅 하나당 10의 마나를 회복합니다. 추가로, 잔혹한 투척의 표식이 일반 공격으로 제거되지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>도끼 맛 좀 보여줄까? (지속 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>해골사냥꾼 (사용 효과)\n<ul>\n<li>4레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>!퀘스트: 모든 적 영웅을 한 번씩 처치해야 합니다. 각 영웅을 처음 처치할 때마다 공격력이 2% 증가합니다.</li>\n<li>!보상: 일반 공격 사거리가 1.1 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>무모함 (지속 효과)\n<ul>\n<li>7레벨에서 옮겨졌습니다.</li>\n<li>변경된 기능:\n<ul>\n<li>생명력이 75% 미만이면 일반 공격력이 10% 증가합니다.</li>\n<li>생명령이 50% 미만이면 기술 위력이 20% 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>트롤의 피 (E)\n<ul>\n<li>새로운 기능:\n<ul>\n<li>재생의 치유량이 25% 증가합니다. 재생이 끝까지 지속되면 최대 마나의 10%를 회복합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>(새로운 특성) 아마니의 분노 (사용 효과)</strong>\n<ul>\n<li>사용하면 현재 생명력의 50%를 잃고, 잃은 생명력을 6초에 걸쳐 회복합니다. 아마니의 분노로 생명력을 재생하는 동안에는 방어력이 10 증가합니다.</li>\n</ul>\n</li>\n<li>부두 춤 (사용 효과)\n<ul>\n<li>13레벨에서 옮겨졌습니다.\n<ul>\n<li>새로운 기능:\n<ul>\n<li>지속 효과: 재생의 재사용 대기시간과 마나 소모량이 33% 감소합니다. 사용하면 자신에게 걸린 모든 감속 및 이동 불가 효과를 제거합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>7레벨</strong></span>\n<ul>\n<li>잔악한 공격 (Q)\n<ul>\n<li>새로운 기능:\n<ul>\n<li>잔혹한 투척의 추가 피해량이 30% 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>아케이나이트 투척용 도끼 (W)\n<ul>\n<li>1레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>톱날 베기의 재사용 대기시간이 2초 감소합니다.</li>\n<li>!퀘스트: 적 영웅에게 톱날 베기가 적중해야 합니다.</li>\n<li>!보상: 톱날 베기가 적 영웅에게 적중할 때마다 톱날 베기의 공격력이 영구히 0.75 증가합니다. 무한히 반복할 수 있는 퀘스트입니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>흉포한 본성 (지속 효과)\n<ul>\n<li>16레벨에서 옮겨졌습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>13레벨</strong></span>\n<ul>\n<li>줄진의 눈 (Q)\n<ul>\n<li>새로운 기능:\n<ul>\n<li>적 영웅에게 일반 공격이 적중하면 2초 동안 이동 속도가 3% 증가하여 최대 30% 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>발목 긋기 (W)\n<ul>\n<li>16레벨에서 옮겨졌습니다.</li>\n</ul>\n</li>\n<li>그물 덫 (사용 효과)\n<ul>\n<li>20레벨에서 옮겨졌습니다.</li>\n<li>이제 적 영웅에게만 적중합니다.</li>\n<li>지속 시간이 3초에서 1.5초로 감소했습니다.</li>\n<li>재사용 대기시간이 45초에서 60초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>16레벨</strong></span>\n<ul>\n<li>소용돌이치는 톱날 (W)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>학살을 시작하자 (지속 효과)\n<ul>\n<li>4레벨에서 옮겨졌습니다.</li>\n</ul>\n</li>\n<li>영 좋지 않은 곳 (W)\n<ul>\n<li>7레벨에서 옮겨졌습니다.</li>\n<li>변경된 기능:\n<ul>\n<li>톱날 베기의 두 도끼가 동시에 적중하면 150의 추가 피해를 주고, 도끼 맛 좀 보여줄까? 퀘스트가 5회 진행됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>(새로운 특성) 자비란 없다! (Q)</strong>\n<ul>\n<li>잔혹한 투척의 표식이 남겨진 적에게 일반 공격을 하면 대상의 방어도를 무시합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>20레벨</strong></span>\n<ul>\n<li>아마니의 생존력 (R)\n<ul>\n<li>추가된 기능:\n<ul>\n<li>타즈딩고!의 지속 시간이 1초 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>가름쇠 (R)\n<ul>\n<li>추가된 기능:\n<ul>\n<li>단두대로 적 영웅을 처치하면 생명력을 모두 회복합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>수풀요법 (E)\n<ul>\n<li>13레벨에서 옮겨졌습니다.</li>\n<li>새로운 기능:\n<ul>\n<li>재생에 정신 집중이 필요하지 않고 피해를 받아도 중단되지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>개발자의 의견:</strong> 단두대로 4명의 영웅을 한 번에 처치하는 건 정말 짜릿한 경험입니다. 하지만 10레벨이 되고 궁극기를 고를 때마다 고민이 되기는 했죠. 일반 공격력이 강한 줄진이 타즈딩고!를 포기하는 건 너무 아까웠으니까요. 이미 잘 플레이되고 있는 조합을 수정하기보다는 일반적인 특성 조합을 보완하면서 상대를 순식간에 제압할 수 있는 새로운 가능성을 열어보려 합니다. 줄진의 기본 퀘스트는 줄진의 강점을 더욱 강화하여 경기가 지속될수록 점진적으로 강력한 모습을 보이도록 도울 것입니다. 다른 영웅 개편과 동일하게 여러분의 의견을 전해주시면 개발팀 또한 이를 반영하기 위해 노력하겠습니다.</blockquote>\n<table class=\"table table-condensed\">\n<tbody>\n<tr>\n<th><strong>레벨 (특성 단계)</strong></th>\n<th colspan=\"3\"><strong>줄진의 특성</strong></th>\n</tr>\n<tr>\n<td><strong>1 (1)</strong></td>\n<td>절단마 (Q)</td>\n<td><u>무모함 (지속 효과)</u></td>\n<td><u>(!) 해골사냥꾼 (지속 효과)</u></td>\n</tr>\n<tr>\n<td><strong>4 (2)</strong></td>\n<td>트롤의 피 (E)</td>\n<td><u>부두 춤 (사용 효과)</u></td>\n<td><em>아마니의 분노 (사용 효과)</em></td>\n</tr>\n<tr>\n<td><strong>7 (3)</strong></td>\n<td>잔악한 공격 (Q)</td>\n<td><u>(!) 아케이나이트 투척용 도끼 (W)</u></td>\n<td><u>흉포한 본성 (D)</u></td>\n</tr>\n<tr>\n<td><strong>10 (4)</strong></td>\n<td>타즈딩고!</td>\n<td>단두대</td>\n<td>—</td>\n</tr>\n<tr>\n<td><strong>13 (5)</strong></td>\n<td><u>발목 긋기 (W)</u></td>\n<td>줄진의 눈 (지속 효과)</td>\n<td><u>그물 덫 (사용 효과)</u></td>\n</tr>\n<tr>\n<td><strong>16 (6)</strong></td>\n<td><u>영 좋지 않은 곳 (W)</u></td>\n<td><em>자비란 없다! (지속 효과)</em></td>\n<td><u>학살을 시작하자 (지속 효과)</u></td>\n</tr>\n<tr>\n<td><strong>20 (7)</strong></td>\n<td>아마니의 생존력 (R)</td>\n<td>가름쇠 (R)</td>\n<td><u>수풀요법 (E)</u></td>\n</tr>\n</tbody>\n</table>\n<ul>\n<li>(!)는 퀘스트 특성입니다.</li>\n<li><em>이탤릭체</em>는 <em>새로운</em> 특성입니다.</li>\n<li><u>밑줄</u>친 특성은 <u>옮겨진</u> 특성입니다.</li>\n</ul>"
+    }
+   ]
+  },
+  {
+   "name": "전사",
+   "key": "role_tank",
+   "html": "<h4>무라딘</h4>\n<p><img alt=\"Divider_Hero_Muradin_Crop.png\" data-id=\"17042291\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/TM8DLIER5QEH1417483334689.png\"/></p>\n<p><span class=\"pn-h\"><strong>능력치</strong></span></p>\n<ul>\n<li>일반 공격력이 97에서 88로 감소했습니다.</li>\n</ul>\n<p><span class=\"pn-h\"><strong>기술</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>“두들겨 볼까” 기본 퀘스트가 추가되었습니다.</strong></span>\n<ul>\n<li>!퀘스트: 폭풍강타가 적 영웅에게 25회 적중해야 합니다. 폭풍강타가 적중한 적 영웅이 2.5초 안에 죽으면 퀘스트가 3회 진행됩니다.</li>\n<li>!보상: 폭풍강타가 처음 적중한 대상을 관통하고 일반 공격을 할 때마다 폭풍강타의 재사용 대기시간이 1초 감소합니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>폭풍강타 (Q)</strong></span>\n<ul>\n<li>마나 소모량이 60에서 50으로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>화신 (R)</strong></span>\n<ul>\n<li>명칭이 '화신'에서 '투신'으로 변경되었습니다. 마나 소모량이 100에서 80으로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>초강타 (R)</strong></span>\n<ul>\n<li>마나 소모량이 80에서 60으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><span class=\"pn-h\"><strong>특성</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>완벽한 폭풍 (Q)\n<ul>\n<li>더는 폭풍강타의 마나 소모량을 감소시키지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>군중 제어 (W)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>거대 망치 (Q)\n<ul>\n<li>공격력 증가량이 400%에서 300%로 감소했습니다.</li>\n</ul>\n</li>\n<li>반향 (W)\n<ul>\n<li>감속 효과의 지속 시간 증가량이 0.5초에서 1초로 증가했습니다.</li>\n</ul>\n</li>\n<li>천둥연소 (W)\n<ul>\n<li>변경된 기능:\n<ul>\n<li>이제 천둥벼락이 적 영웅에게 적중해야 두 번째 폭발이 일어납니다.</li>\n<li>두 번째 폭발 또한 공격 속도를 2.5초 동안 25% 감소시킵니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>7레벨</strong></span>\n<ul>\n<li>꿰뚫는 폭풍 (Q)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>강철로 벼려낸 여세 (지속 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>가속화 착지 (E)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>육중한 충격 (E)\n<ul>\n<li>16레벨에서 옮겨졌습니다.</li>\n</ul>\n</li>\n<li>도끼 집행자 (지속 효과)\n<ul>\n<li>16레벨에서 옮겨졌습니다.</li>\n<li>추가 공격력이 60%에서 50%로 감소했습니다.</li>\n</ul>\n</li>\n<li>해골파쇄 (지속 효과)\n<ul>\n<li>더는 공격 속도를 증가시키지 않습니다.</li>\n<li>추가된 기능:\n<ul>\n<li>같은 적에게 일반 공격이 연속으로 3회 적중할 때마다 기절 효과와 함께 60%의 추가 피해를 줍니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>13레벨</strong></span>\n<ul>\n<li>불타는 분노 (지속 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>기술 보호막 (지속 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li><strong>(새로운 특성) 브론즈비어드의 분노 (지속 효과)</strong>\n<ul>\n<li>주위 적들에게 주기적으로 피해를 줍니다. 감속, 이동 불가, 기절 상태인 적 영웅에게 일반 공격을 하면 이 효과의 공격력이 3초 동안 100% 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>16레벨</strong></span>\n<ul>\n<li>드워프 추진 (E)\n<ul>\n<li>사거리 증가량이 50%에서 40%로 감소했습니다.</li>\n<li>더는 충격 범위가 증가하지 않습니다.</li>\n<li>추가된 기능:\n<ul>\n<li>드워프 도약이 적 영웅에게 적중하면 재사용 대기시간이 3초 감소합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>석화 (D)\n<ul>\n<li>치유량이 최대 생명력의 40%에서 30%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>20레벨</strong></span>\n<ul>\n<li>막을 수 없는 힘 (R)\n<ul>\n<li>새로운 기능:\n<ul>\n<li>투신이 활성화된 동안 방어력이 20 증가하고 일반 공격을 할 때마다 천둥벼락과 드워프 도약의 재사용 대기시간이 0.5초 감소합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>그랜드 슬램 (R)\n<ul>\n<li>더는 초강타의 마나 소모량을 감소시키지 않습니다.</li>\n<li>추가된 기능:\n<ul>\n<li>적 영웅이 초강타에 적중당한 후 3초 안에 죽으면 초강타가 즉시 1회 충전됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>개발자의 의견:</strong> 앞으로는 전사들의 공격력이 지나치게 강해지는 것을 경계할 계획입니다. 무라딘의 변화 또한 이 목표를 달성하기 위한 것이죠. 공격력이 높은 전사를 플레이하는 것 또한 재밌겠지만, 지속적이든 폭발적이든 높은 공격력은 암살자들의 주된 특징이 되어야 한다고 생각합니다. 무라딘의 경우 튼튼하면서 여러 가지 무력화 효과를 보유한 전사가 되길 원합니다. 이를 활용하여 아군을 지켜주거나 적을 노려 아군의 처치를 돕게 만드는 게 목적이죠. 우선 폭풍강타를 능숙히 사용할수록 강해지는 완벽한 폭풍 특성의 게임 플레이를 긍정적으로 검토하여 기본 퀘스트로 변경했습니다. 이와 함께 결정적인 순간의 폭풍강타로 적 영웅을 처치하면 퀘스트가 더욱 많이 진행되게 만들었죠. 승률이든 선택률이든 저조한 특성 또한 많아서 이들을 하나의 특성으로 합치기도 했습니다. </blockquote>\n<table class=\"table table-condensed\">\n<tbody>\n<tr>\n<th><strong>레벨 (특성 단계)</strong></th>\n<th colspan=\"4\"><strong>무라딘의 특성</strong></th>\n</tr>\n<tr>\n<td><strong>1 (1)</strong></td>\n<td>막기 (지속 효과)</td>\n<td>(!) 완벽한 폭풍 (Q)</td>\n<td>극기의 바람 (고유 능력)</td>\n<td></td>\n</tr>\n<tr>\n<td><strong>4 (2)</strong></td>\n<td>거대 망치 (Q)</td>\n<td>반향 (W)</td>\n<td>천둥연소 (W)</td>\n<td></td>\n</tr>\n<tr>\n<td><strong>7 (3)</strong></td>\n<td><u>육중한 충격 (E)</u></td>\n<td><u>도끼 집행자 (지속 효과)</u></td>\n<td>해골파쇄 (지속 효과)</td>\n<td></td>\n</tr>\n<tr>\n<td><strong>10 (4)</strong></td>\n<td>투신</td>\n<td>초강타</td>\n<td>—</td>\n<td>—</td>\n</tr>\n<tr>\n<td><strong>13 (5)</strong></td>\n<td>치유의 벼락 (W)</td>\n<td>날벼락 (W)</td>\n<td><em>브론즈비어드의 분노 (지속 효과)</em></td>\n<td></td>\n</tr>\n<tr>\n<td><strong>16 (6)</strong></td>\n<td>드워프 추진 (E)</td>\n<td>압도적 존재감 (사용 효과)</td>\n<td>석화 (D)</td>\n<td></td>\n</tr>\n<tr>\n<td><strong>20 (7)</strong></td>\n<td>막을 수 없는 힘 (R)</td>\n<td>그랜드 슬램 (R)</td>\n<td>강화 보호막 (사용 효과)</td>\n<td>되돌리기 (사용 효과)</td>\n</tr>\n</tbody>\n</table>\n<ul>\n<li>(!)는 퀘스트 특성입니다.</li>\n<li><em>이탤릭체</em>는 <em>새로운</em> 특성입니다.</li>\n<li><u>밑줄</u>친 특성은 <u>옮겨진</u> 특성입니다.</li>\n</ul>",
+   "heroes": [
+    {
+     "name": "무라딘",
+     "heroId": "Muradin",
+     "heroIds": [
+      "Muradin"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "stat",
+       "level": null,
+       "lines": [
+        {
+         "text": "일반 공격력이 97에서 88로 감소했습니다.",
+         "html": "일반 공격력이 97에서 88로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "“두들겨 볼까” 기본 퀘스트가 추가되었습니다.",
+       "key": null,
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "!퀘스트: 폭풍강타가 적 영웅에게 25회 적중해야 합니다. 폭풍강타가 적중한 적 영웅이 2.5초 안에 죽으면 퀘스트가 3회 진행됩니다.",
+         "html": "!퀘스트: 폭풍강타가 적 영웅에게 25회 적중해야 합니다. 폭풍강타가 적중한 적 영웅이 2.5초 안에 죽으면 퀘스트가 3회 진행됩니다.",
+         "added": false
+        },
+        {
+         "text": "!보상: 폭풍강타가 처음 적중한 대상을 관통하고 일반 공격을 할 때마다 폭풍강타의 재사용 대기시간이 1초 감소합니다.",
+         "html": "!보상: 폭풍강타가 처음 적중한 대상을 관통하고 일반 공격을 할 때마다 폭풍강타의 재사용 대기시간이 1초 감소합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "폭풍강타",
+       "key": "Q",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "마나 소모량이 60에서 50으로 감소했습니다.",
+         "html": "마나 소모량이 60에서 50으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "화신",
+       "key": "R",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "명칭이 '화신'에서 '투신'으로 변경되었습니다. 마나 소모량이 100에서 80으로 감소했습니다.",
+         "html": "명칭이 '화신'에서 '투신'으로 변경되었습니다. 마나 소모량이 100에서 80으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "초강타",
+       "key": "R",
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "마나 소모량이 80에서 60으로 감소했습니다.",
+         "html": "마나 소모량이 80에서 60으로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "완벽한 폭풍",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "더는 폭풍강타의 마나 소모량을 감소시키지 않습니다.",
+         "html": "더는 폭풍강타의 마나 소모량을 감소시키지 않습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "군중 제어",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "거대 망치",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "공격력 증가량이 400%에서 300%로 감소했습니다.",
+         "html": "공격력 증가량이 400%에서 300%로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "반향",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "감속 효과의 지속 시간 증가량이 0.5초에서 1초로 증가했습니다.",
+         "html": "감속 효과의 지속 시간 증가량이 0.5초에서 1초로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "천둥연소",
+       "key": "W",
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": []
+      },
+      {
+       "name": "변경된 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "이제 천둥벼락이 적 영웅에게 적중해야 두 번째 폭발이 일어납니다.",
+         "html": "이제 천둥벼락이 적 영웅에게 적중해야 두 번째 폭발이 일어납니다.",
+         "added": false
+        },
+        {
+         "text": "두 번째 폭발 또한 공격 속도를 2.5초 동안 25% 감소시킵니다.",
+         "html": "두 번째 폭발 또한 공격 속도를 2.5초 동안 25% 감소시킵니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "꿰뚫는 폭풍",
+       "key": "Q",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "강철로 벼려낸 여세",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "가속화 착지",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "육중한 충격",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "16레벨에서 옮겨졌습니다.",
+         "html": "16레벨에서 옮겨졌습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "도끼 집행자",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "16레벨에서 옮겨졌습니다.",
+         "html": "16레벨에서 옮겨졌습니다.",
+         "added": false
+        },
+        {
+         "text": "추가 공격력이 60%에서 50%로 감소했습니다.",
+         "html": "추가 공격력이 60%에서 50%로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "해골파쇄",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "더는 공격 속도를 증가시키지 않습니다.",
+         "html": "더는 공격 속도를 증가시키지 않습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "추가된 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "같은 적에게 일반 공격이 연속으로 3회 적중할 때마다 기절 효과와 함께 60%의 추가 피해를 줍니다.",
+         "html": "같은 적에게 일반 공격이 연속으로 3회 적중할 때마다 기절 효과와 함께 60%의 추가 피해를 줍니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "불타는 분노",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "기술 보호막",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "삭제되었습니다.",
+         "html": "삭제되었습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "(새로운 특성) 브론즈비어드의 분노",
+       "key": "지속 효과",
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "주위 적들에게 주기적으로 피해를 줍니다. 감속, 이동 불가, 기절 상태인 적 영웅에게 일반 공격을 하면 이 효과의 공격력이 3초 동안 100% 증가합니다.",
+         "html": "주위 적들에게 주기적으로 피해를 줍니다. 감속, 이동 불가, 기절 상태인 적 영웅에게 일반 공격을 하면 이 효과의 공격력이 3초 동안 100% 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "드워프 추진",
+       "key": "E",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "사거리 증가량이 50%에서 40%로 감소했습니다.",
+         "html": "사거리 증가량이 50%에서 40%로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "더는 충격 범위가 증가하지 않습니다.",
+         "html": "더는 충격 범위가 증가하지 않습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "추가된 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "드워프 도약이 적 영웅에게 적중하면 재사용 대기시간이 3초 감소합니다.",
+         "html": "드워프 도약이 적 영웅에게 적중하면 재사용 대기시간이 3초 감소합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "석화",
+       "key": "D",
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "치유량이 최대 생명력의 40%에서 30%로 감소했습니다.",
+         "html": "치유량이 최대 생명력의 40%에서 30%로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "막을 수 없는 힘",
+       "key": "R",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": []
+      },
+      {
+       "name": "새로운 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "투신이 활성화된 동안 방어력이 20 증가하고 일반 공격을 할 때마다 천둥벼락과 드워프 도약의 재사용 대기시간이 0.5초 감소합니다.",
+         "html": "투신이 활성화된 동안 방어력이 20 증가하고 일반 공격을 할 때마다 천둥벼락과 드워프 도약의 재사용 대기시간이 0.5초 감소합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "그랜드 슬램",
+       "key": "R",
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "더는 초강타의 마나 소모량을 감소시키지 않습니다.",
+         "html": "더는 초강타의 마나 소모량을 감소시키지 않습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "추가된 기능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "적 영웅이 초강타에 적중당한 후 3초 안에 죽으면 초강타가 즉시 1회 충전됩니다.",
+         "html": "적 영웅이 초강타에 적중당한 후 3초 안에 죽으면 초강타가 즉시 1회 충전됩니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": null,
+       "lines": [
+        {
+         "text": "(!)는 퀘스트 특성입니다.",
+         "html": "(!)는 퀘스트 특성입니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": null,
+       "lines": [
+        {
+         "text": "이탤릭체 는 새로운 특성입니다.",
+         "html": "<em>이탤릭체</em>는 <em>새로운</em> 특성입니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": null,
+       "lines": [
+        {
+         "text": "밑줄 친 특성은 옮겨진 특성입니다.",
+         "html": "<u>밑줄</u>친 특성은 <u>옮겨진</u> 특성입니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><img alt=\"Divider_Hero_Muradin_Crop.png\" data-id=\"17042291\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/TM8DLIER5QEH1417483334689.png\"/></p>\n<p><span class=\"pn-h\"><strong>능력치</strong></span></p>\n<ul>\n<li>일반 공격력이 97에서 88로 감소했습니다.</li>\n</ul>\n<p><span class=\"pn-h\"><strong>기술</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>“두들겨 볼까” 기본 퀘스트가 추가되었습니다.</strong></span>\n<ul>\n<li>!퀘스트: 폭풍강타가 적 영웅에게 25회 적중해야 합니다. 폭풍강타가 적중한 적 영웅이 2.5초 안에 죽으면 퀘스트가 3회 진행됩니다.</li>\n<li>!보상: 폭풍강타가 처음 적중한 대상을 관통하고 일반 공격을 할 때마다 폭풍강타의 재사용 대기시간이 1초 감소합니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>폭풍강타 (Q)</strong></span>\n<ul>\n<li>마나 소모량이 60에서 50으로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>화신 (R)</strong></span>\n<ul>\n<li>명칭이 '화신'에서 '투신'으로 변경되었습니다. 마나 소모량이 100에서 80으로 감소했습니다.</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>초강타 (R)</strong></span>\n<ul>\n<li>마나 소모량이 80에서 60으로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><span class=\"pn-h\"><strong>특성</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>1레벨</strong></span>\n<ul>\n<li>완벽한 폭풍 (Q)\n<ul>\n<li>더는 폭풍강타의 마나 소모량을 감소시키지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>4레벨</strong></span>\n<ul>\n<li>군중 제어 (W)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>거대 망치 (Q)\n<ul>\n<li>공격력 증가량이 400%에서 300%로 감소했습니다.</li>\n</ul>\n</li>\n<li>반향 (W)\n<ul>\n<li>감속 효과의 지속 시간 증가량이 0.5초에서 1초로 증가했습니다.</li>\n</ul>\n</li>\n<li>천둥연소 (W)\n<ul>\n<li>변경된 기능:\n<ul>\n<li>이제 천둥벼락이 적 영웅에게 적중해야 두 번째 폭발이 일어납니다.</li>\n<li>두 번째 폭발 또한 공격 속도를 2.5초 동안 25% 감소시킵니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>7레벨</strong></span>\n<ul>\n<li>꿰뚫는 폭풍 (Q)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>강철로 벼려낸 여세 (지속 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>가속화 착지 (E)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>육중한 충격 (E)\n<ul>\n<li>16레벨에서 옮겨졌습니다.</li>\n</ul>\n</li>\n<li>도끼 집행자 (지속 효과)\n<ul>\n<li>16레벨에서 옮겨졌습니다.</li>\n<li>추가 공격력이 60%에서 50%로 감소했습니다.</li>\n</ul>\n</li>\n<li>해골파쇄 (지속 효과)\n<ul>\n<li>더는 공격 속도를 증가시키지 않습니다.</li>\n<li>추가된 기능:\n<ul>\n<li>같은 적에게 일반 공격이 연속으로 3회 적중할 때마다 기절 효과와 함께 60%의 추가 피해를 줍니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>13레벨</strong></span>\n<ul>\n<li>불타는 분노 (지속 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li>기술 보호막 (지속 효과)\n<ul>\n<li>삭제되었습니다.</li>\n</ul>\n</li>\n<li><strong>(새로운 특성) 브론즈비어드의 분노 (지속 효과)</strong>\n<ul>\n<li>주위 적들에게 주기적으로 피해를 줍니다. 감속, 이동 불가, 기절 상태인 적 영웅에게 일반 공격을 하면 이 효과의 공격력이 3초 동안 100% 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>16레벨</strong></span>\n<ul>\n<li>드워프 추진 (E)\n<ul>\n<li>사거리 증가량이 50%에서 40%로 감소했습니다.</li>\n<li>더는 충격 범위가 증가하지 않습니다.</li>\n<li>추가된 기능:\n<ul>\n<li>드워프 도약이 적 영웅에게 적중하면 재사용 대기시간이 3초 감소합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>석화 (D)\n<ul>\n<li>치유량이 최대 생명력의 40%에서 30%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>20레벨</strong></span>\n<ul>\n<li>막을 수 없는 힘 (R)\n<ul>\n<li>새로운 기능:\n<ul>\n<li>투신이 활성화된 동안 방어력이 20 증가하고 일반 공격을 할 때마다 천둥벼락과 드워프 도약의 재사용 대기시간이 0.5초 감소합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li>그랜드 슬램 (R)\n<ul>\n<li>더는 초강타의 마나 소모량을 감소시키지 않습니다.</li>\n<li>추가된 기능:\n<ul>\n<li>적 영웅이 초강타에 적중당한 후 3초 안에 죽으면 초강타가 즉시 1회 충전됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<blockquote><strong>개발자의 의견:</strong> 앞으로는 전사들의 공격력이 지나치게 강해지는 것을 경계할 계획입니다. 무라딘의 변화 또한 이 목표를 달성하기 위한 것이죠. 공격력이 높은 전사를 플레이하는 것 또한 재밌겠지만, 지속적이든 폭발적이든 높은 공격력은 암살자들의 주된 특징이 되어야 한다고 생각합니다. 무라딘의 경우 튼튼하면서 여러 가지 무력화 효과를 보유한 전사가 되길 원합니다. 이를 활용하여 아군을 지켜주거나 적을 노려 아군의 처치를 돕게 만드는 게 목적이죠. 우선 폭풍강타를 능숙히 사용할수록 강해지는 완벽한 폭풍 특성의 게임 플레이를 긍정적으로 검토하여 기본 퀘스트로 변경했습니다. 이와 함께 결정적인 순간의 폭풍강타로 적 영웅을 처치하면 퀘스트가 더욱 많이 진행되게 만들었죠. 승률이든 선택률이든 저조한 특성 또한 많아서 이들을 하나의 특성으로 합치기도 했습니다. </blockquote>\n<table class=\"table table-condensed\">\n<tbody>\n<tr>\n<th><strong>레벨 (특성 단계)</strong></th>\n<th colspan=\"4\"><strong>무라딘의 특성</strong></th>\n</tr>\n<tr>\n<td><strong>1 (1)</strong></td>\n<td>막기 (지속 효과)</td>\n<td>(!) 완벽한 폭풍 (Q)</td>\n<td>극기의 바람 (고유 능력)</td>\n<td></td>\n</tr>\n<tr>\n<td><strong>4 (2)</strong></td>\n<td>거대 망치 (Q)</td>\n<td>반향 (W)</td>\n<td>천둥연소 (W)</td>\n<td></td>\n</tr>\n<tr>\n<td><strong>7 (3)</strong></td>\n<td><u>육중한 충격 (E)</u></td>\n<td><u>도끼 집행자 (지속 효과)</u></td>\n<td>해골파쇄 (지속 효과)</td>\n<td></td>\n</tr>\n<tr>\n<td><strong>10 (4)</strong></td>\n<td>투신</td>\n<td>초강타</td>\n<td>—</td>\n<td>—</td>\n</tr>\n<tr>\n<td><strong>13 (5)</strong></td>\n<td>치유의 벼락 (W)</td>\n<td>날벼락 (W)</td>\n<td><em>브론즈비어드의 분노 (지속 효과)</em></td>\n<td></td>\n</tr>\n<tr>\n<td><strong>16 (6)</strong></td>\n<td>드워프 추진 (E)</td>\n<td>압도적 존재감 (사용 효과)</td>\n<td>석화 (D)</td>\n<td></td>\n</tr>\n<tr>\n<td><strong>20 (7)</strong></td>\n<td>막을 수 없는 힘 (R)</td>\n<td>그랜드 슬램 (R)</td>\n<td>강화 보호막 (사용 효과)</td>\n<td>되돌리기 (사용 효과)</td>\n</tr>\n</tbody>\n</table>\n<ul>\n<li>(!)는 퀘스트 특성입니다.</li>\n<li><em>이탤릭체</em>는 <em>새로운</em> 특성입니다.</li>\n<li><u>밑줄</u>친 특성은 <u>옮겨진</u> 특성입니다.</li>\n</ul>"
+    }
+   ]
+  },
+  {
+   "name": "수집품",
+   "key": "collection",
+   "html": "<p><strong>참고: </strong>지난 할로윈 축제의 수집품들이 일시적으로 게임에 추가되었습니다. 이에 대한 자세한 정보는 <a href=\"http://kr.battle.net/heroes/ko/blog/21042410\" target=\"_blank\">할로윈 축제 게시글</a>에서 확인할 수 있습니다.</p>\n<p><strong class=\"pn-h\">새로운 묶음 상품</strong></p>\n<ul>\n<li><span class=\"pn-new\">정크랫 영웅 묶음 상품</span></li>\n<li><span class=\"pn-new\">몰락자 정크랫 스킨 팩</span></li>\n<li><span class=\"pn-new\">2017 할로윈 축제 묶음 상품</span></li>\n<li><span class=\"pn-new\">할로윈 축제 클래식 묶음 상품</span></li>\n</ul>\n<p><strong class=\"pn-h\">새로운 스킨</strong></p>\n<ul>\n<li><span class=\"pn-name\"><strong>정크랫</strong></span>\n<ul>\n<li>익사한 정크랫</li>\n<li>녹슨 정크랫</li>\n<li>죄수 정크랫</li>\n<li>광대 정크랫</li>\n<li>몰락자 정크랫\n<ul>\n<li>악독한 몰락자 정크랫</li>\n<li>지옥의 몰락자 정크랫</li>\n<li>오크 몰락자 정크랫</li>\n<li>뒤틀린 몰락자 정크랫</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>카시아</strong></span>\n<ul>\n<li>소용돌이 해적 여왕 카시아</li>\n<li>벨벳 해적 여왕 카시아</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>겐지</strong></span>\n<ul>\n<li>강철 용 겐지</li>\n<li>첫 번째 용 겐지</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>그레이메인</strong></span>\n<ul>\n<li>울프 박사와 슈타인 그레이메인</li>\n<li>위험한 울프 박사와 슈타인 그레이메인</li>\n<li>신비한 울프 박사와 슈타인 그레이메인</li>\n<li>스톰펑크 울프 박사와 슈타인 그레이메인</li>\n<li>불꽃 울프 박사와 슈타인 그레이메인</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>자리야</strong></span>\n<ul>\n<li>진홍빛 고중력 자리야</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>발리라</strong></span>\n<ul>\n<li>흡혈귀 학살자 V</li>\n<li>도적 흡혈귀 학살자 V</li>\n<li>유령 흡혈귀 학살자 V</li>\n<li>한밤의 흡혈귀 학살자 V</li>\n<li>냉혈의 흡혈귀 학살자 V</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>빛나래</strong></span>\n<ul>\n<li>마녀 모자 빛나래</li>\n<li>활발한 마녀 모자 빛나래</li>\n<li>야생의 마녀 모자 빛나래</li>\n<li>진홍빛 마녀 모자 빛나래</li>\n<li>황혼의 마녀 모자 빛나래</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>가즈로</strong></span>\n<ul>\n<li>종이 봉지 가즈로</li>\n<li>쓰레기 봉지 가즈로</li>\n<li>로봇 봉지 가즈로</li>\n<li>문어 봉지 가즈로</li>\n<li>요상한 종이 봉지 가즈로</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>머키</strong></span>\n<ul>\n<li>괴식물 머키</li>\n<li>라일락 괴식물 머키</li>\n<li>튤립 괴식물 머키</li>\n<li>야생란 괴식물 머키</li>\n<li>히비스커스 괴식물 머키</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>크로미</strong></span>\n<ul>\n<li>오싹한 크로미</li>\n<li>오싹한 점박이 크로미</li>\n<li>오싹한 악몽 크로미</li>\n<li>오싹한 순수 크로미</li>\n<li>오싹한 괴물 크로미</li>\n</ul>\n</li>\n<li><span class=\"pn-name\"><strong>초갈</strong></span>\n<ul>\n<li>호박 초갈</li>\n<li>지옥 호박 초갈</li>\n<li>황혼의 호박 초갈</li>\n<li>불타는 호박 초갈</li>\n<li>마법 호박 초갈</li>\n</ul>\n</li>\n</ul>\n<p><span class=\"pn-h\"><strong>탈것</strong></span></p>\n<ul>\n<li><span class=\"pn-name\"><strong>악령 종마</strong></span>\n<ul>\n<li>피크닉 악령 종마</li>\n<li>음침한 악령 종마</li>\n<li>호박 악령 종마</li>\n<li>비밀 악령 종마</li>\n<li>유령 종마</li>\n</ul>\n</li>\n</ul>",
+   "items": [
+    {
+     "name": "정크랫",
+     "heroId": "Junkrat",
+     "heroIds": [
+      "Junkrat"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>정크랫</strong></span>\n<ul>\n<li>익사한 정크랫</li>\n<li>녹슨 정크랫</li>\n<li>죄수 정크랫</li>\n<li>광대 정크랫</li>\n<li>몰락자 정크랫\n<ul>\n<li>악독한 몰락자 정크랫</li>\n<li>지옥의 몰락자 정크랫</li>\n<li>오크 몰락자 정크랫</li>\n<li>뒤틀린 몰락자 정크랫</li>\n</ul>\n</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "익사한 정크랫",
+         "html": "익사한 정크랫",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "녹슨 정크랫",
+         "html": "녹슨 정크랫",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "죄수 정크랫",
+         "html": "죄수 정크랫",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "광대 정크랫",
+         "html": "광대 정크랫",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "몰락자 정크랫",
+       "key": null,
+       "new": false,
+       "group": "ability",
+       "level": null,
+       "lines": [
+        {
+         "text": "악독한 몰락자 정크랫",
+         "html": "악독한 몰락자 정크랫",
+         "added": false
+        },
+        {
+         "text": "지옥의 몰락자 정크랫",
+         "html": "지옥의 몰락자 정크랫",
+         "added": false
+        },
+        {
+         "text": "오크 몰락자 정크랫",
+         "html": "오크 몰락자 정크랫",
+         "added": false
+        },
+        {
+         "text": "뒤틀린 몰락자 정크랫",
+         "html": "뒤틀린 몰락자 정크랫",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "카시아",
+     "heroId": "Amazon",
+     "heroIds": [
+      "Amazon"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>카시아</strong></span>\n<ul>\n<li>소용돌이 해적 여왕 카시아</li>\n<li>벨벳 해적 여왕 카시아</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "소용돌이 해적 여왕 카시아",
+         "html": "소용돌이 해적 여왕 카시아",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "벨벳 해적 여왕 카시아",
+         "html": "벨벳 해적 여왕 카시아",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "겐지",
+     "heroId": "Genji",
+     "heroIds": [
+      "Genji"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>겐지</strong></span>\n<ul>\n<li>강철 용 겐지</li>\n<li>첫 번째 용 겐지</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "강철 용 겐지",
+         "html": "강철 용 겐지",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "첫 번째 용 겐지",
+         "html": "첫 번째 용 겐지",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "그레이메인",
+     "heroId": "Greymane",
+     "heroIds": [
+      "Greymane"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>그레이메인</strong></span>\n<ul>\n<li>울프 박사와 슈타인 그레이메인</li>\n<li>위험한 울프 박사와 슈타인 그레이메인</li>\n<li>신비한 울프 박사와 슈타인 그레이메인</li>\n<li>스톰펑크 울프 박사와 슈타인 그레이메인</li>\n<li>불꽃 울프 박사와 슈타인 그레이메인</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "울프 박사와 슈타인 그레이메인",
+         "html": "울프 박사와 슈타인 그레이메인",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "위험한 울프 박사와 슈타인 그레이메인",
+         "html": "위험한 울프 박사와 슈타인 그레이메인",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "신비한 울프 박사와 슈타인 그레이메인",
+         "html": "신비한 울프 박사와 슈타인 그레이메인",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "스톰펑크 울프 박사와 슈타인 그레이메인",
+         "html": "스톰펑크 울프 박사와 슈타인 그레이메인",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "불꽃 울프 박사와 슈타인 그레이메인",
+         "html": "불꽃 울프 박사와 슈타인 그레이메인",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "자리야",
+     "heroId": "Zarya",
+     "heroIds": [
+      "Zarya"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>자리야</strong></span>\n<ul>\n<li>진홍빛 고중력 자리야</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "진홍빛 고중력 자리야",
+         "html": "진홍빛 고중력 자리야",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "발리라",
+     "heroId": "Valeera",
+     "heroIds": [
+      "Valeera"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>발리라</strong></span>\n<ul>\n<li>흡혈귀 학살자 V</li>\n<li>도적 흡혈귀 학살자 V</li>\n<li>유령 흡혈귀 학살자 V</li>\n<li>한밤의 흡혈귀 학살자 V</li>\n<li>냉혈의 흡혈귀 학살자 V</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "흡혈귀 학살자 V",
+         "html": "흡혈귀 학살자 V",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "도적 흡혈귀 학살자 V",
+         "html": "도적 흡혈귀 학살자 V",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "유령 흡혈귀 학살자 V",
+         "html": "유령 흡혈귀 학살자 V",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "한밤의 흡혈귀 학살자 V",
+         "html": "한밤의 흡혈귀 학살자 V",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "냉혈의 흡혈귀 학살자 V",
+         "html": "냉혈의 흡혈귀 학살자 V",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "빛나래",
+     "heroId": "FaerieDragon",
+     "heroIds": [
+      "FaerieDragon"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>빛나래</strong></span>\n<ul>\n<li>마녀 모자 빛나래</li>\n<li>활발한 마녀 모자 빛나래</li>\n<li>야생의 마녀 모자 빛나래</li>\n<li>진홍빛 마녀 모자 빛나래</li>\n<li>황혼의 마녀 모자 빛나래</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "마녀 모자 빛나래",
+         "html": "마녀 모자 빛나래",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "활발한 마녀 모자 빛나래",
+         "html": "활발한 마녀 모자 빛나래",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "야생의 마녀 모자 빛나래",
+         "html": "야생의 마녀 모자 빛나래",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "진홍빛 마녀 모자 빛나래",
+         "html": "진홍빛 마녀 모자 빛나래",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "황혼의 마녀 모자 빛나래",
+         "html": "황혼의 마녀 모자 빛나래",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "가즈로",
+     "heroId": "Tinker",
+     "heroIds": [
+      "Tinker"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>가즈로</strong></span>\n<ul>\n<li>종이 봉지 가즈로</li>\n<li>쓰레기 봉지 가즈로</li>\n<li>로봇 봉지 가즈로</li>\n<li>문어 봉지 가즈로</li>\n<li>요상한 종이 봉지 가즈로</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "종이 봉지 가즈로",
+         "html": "종이 봉지 가즈로",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "쓰레기 봉지 가즈로",
+         "html": "쓰레기 봉지 가즈로",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "로봇 봉지 가즈로",
+         "html": "로봇 봉지 가즈로",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "문어 봉지 가즈로",
+         "html": "문어 봉지 가즈로",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "요상한 종이 봉지 가즈로",
+         "html": "요상한 종이 봉지 가즈로",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "머키",
+     "heroId": "Murky",
+     "heroIds": [
+      "Murky"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>머키</strong></span>\n<ul>\n<li>괴식물 머키</li>\n<li>라일락 괴식물 머키</li>\n<li>튤립 괴식물 머키</li>\n<li>야생란 괴식물 머키</li>\n<li>히비스커스 괴식물 머키</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "괴식물 머키",
+         "html": "괴식물 머키",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "라일락 괴식물 머키",
+         "html": "라일락 괴식물 머키",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "튤립 괴식물 머키",
+         "html": "튤립 괴식물 머키",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "야생란 괴식물 머키",
+         "html": "야생란 괴식물 머키",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "히비스커스 괴식물 머키",
+         "html": "히비스커스 괴식물 머키",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "크로미",
+     "heroId": "Chromie",
+     "heroIds": [
+      "Chromie"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>크로미</strong></span>\n<ul>\n<li>오싹한 크로미</li>\n<li>오싹한 점박이 크로미</li>\n<li>오싹한 악몽 크로미</li>\n<li>오싹한 순수 크로미</li>\n<li>오싹한 괴물 크로미</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "오싹한 크로미",
+         "html": "오싹한 크로미",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "오싹한 점박이 크로미",
+         "html": "오싹한 점박이 크로미",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "오싹한 악몽 크로미",
+         "html": "오싹한 악몽 크로미",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "오싹한 순수 크로미",
+         "html": "오싹한 순수 크로미",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "오싹한 괴물 크로미",
+         "html": "오싹한 괴물 크로미",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "초갈",
+     "heroId": "Cho",
+     "heroIds": [
+      "Cho",
+      "Gall"
+     ],
+     "under": null,
+     "html": "<span class=\"pn-name\"><strong>초갈</strong></span>\n<ul>\n<li>호박 초갈</li>\n<li>지옥 호박 초갈</li>\n<li>황혼의 호박 초갈</li>\n<li>불타는 호박 초갈</li>\n<li>마법 호박 초갈</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "호박 초갈",
+         "html": "호박 초갈",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "지옥 호박 초갈",
+         "html": "지옥 호박 초갈",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "황혼의 호박 초갈",
+         "html": "황혼의 호박 초갈",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "불타는 호박 초갈",
+         "html": "불타는 호박 초갈",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "마법 호박 초갈",
+         "html": "마법 호박 초갈",
+         "added": false
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "버그 수정",
+   "key": "bugs",
+   "html": "<p><span class=\"pn-h\"><strong>일반</strong></span></p>\n<ul>\n<li>게임의 여러 부분에 걸쳐 몇몇 오타와 설명 오류가 수정되었습니다.</li>\n</ul>\n<p><span class=\"pn-h\"><strong>인공지능</strong></span></p>\n<ul>\n<li>정원 공포를 조종하는 인공지능이 행동을 하지 않던 문제를 수정했습니다.</li>\n</ul>\n<p><strong class=\"pn-h\">아트</strong></p>\n<ul>\n<li><strong>D.Va:</strong> D.Va의 광선총에 연결된 열쇠고리가 영웅 선택 화면에서 정상적으로 표시됩니다.</li>\n<li><strong>레오릭:</strong> 특정 스킨을 사용하면 레오릭의 일반 공격의 광역 공격 애니메이션이 정상적으로 표시되지 않던 문제를 수정했습니다.</li>\n<li><strong>티란데:</strong> 독수리 눈 티란데의 달빛 화살 효과 표시가 하늘 사원 또는 그래픽 설정을 낮음으로 설정했을 때 더욱 확연하게 표시됩니다.</li>\n<li><strong>제라툴: </strong>그래픽을 저사양으로 설정했을 때 제라툴의 복면이 늘어나거나 비정상적으로 접히던 문제를 수정했습니다.</li>\n</ul>\n<p><strong class=\"pn-h\">영웅, 기술, 특성</strong></p>\n<ul>\n<li><strong>빛나래:</strong> 대상 아군이 죽었을 때 위상 이동이 정상적으로 취소됩니다.</li>\n<li><strong>빛나래:</strong> 위상 이동을 시전하는 중에 빛나래가 이동 불가 상태가 되면 기술이 정상적으로 취소됩니다.</li>\n<li><strong>가로쉬:</strong> 압살 특성을 선택한 후 들이치기를 우두머리에게 사용하면 우두머리의 생명력 막대 옆에 받는 치유량 감소 아이콘이 나타나던 문제를 수정했습니다.</li>\n<li><strong>가로쉬:</strong> 방어력 상승으로 방어력이 50 이상 증가했을 때 들이치기의 공격력이 의도한 것보다 낮게 증가하던 문제를 수정했습니다.</li>\n<li><strong>제이나:</strong> 제이나와 물의 정령을 소환하려는 위치 사이에 지나갈 수 없는 지형이 있으면 시야가 확보된 상태에서도 물의 정령을 소환할 수 없던 문제를 수정했습니다.</li>\n<li><strong>요한나: </strong>눈부신 방패가 눈부신 보호막의 재사용 대기시간을 비정상적으로 감소시키던 문제를 수정했습니다.</li>\n<li><strong>켈투자드: </strong>어둠의 균열을 미니맵에 사용할 수 있습니다.</li>\n<li><strong>켈투자드: </strong>어둠의 균열을 지하나 지상에 정상적으로 사용할 수 있습니다. </li>\n<li><strong>레오릭: </strong>생매장 특성을 선택하면 망자의 묘실 내부의 적들이 아군의 시야를 공유받지 못하던 문제를 수정했습니다.</li>\n<li><strong>루나라: </strong>사뿐걸음 특성을 선택하면 여러 아군 유닛을 뛰어넘을 수 없던 문제를 수정했습니다. </li>\n<li><strong>레가르: </strong>야생의 약진의 공격 사거리가 급격히 감소하던 문제를 수정했습니다.</li>\n<li><strong>스투코프:</strong> 알라라크의 염동력이나 누더기의 갈고리 등 영웅을 움직이는 기술들이 독성 고름을 제거시키던 문제를 수정했습니다.</li>\n<li><strong>발라:</strong> 쇠못 덫을 클릭할 때 더는 생명력 막대나 대상 선택 표시가 나타나지 않습니다.</li>\n</ul>\n<p><strong class=\"pn-h\">사용자 인터페이스</strong></p>\n<ul>\n<li>친구 목록에서 플레이어를 우클릭하고 귓속말을 선택하면 대화창이 다시 나타납니다. </li>\n<li><strong>점수 화면:</strong> 크로미의 모래 강타와 도살자의 신선한 고기 퀘스트가 완료 후에도 게임 내 점수 화면에서 진행 상황을 확인할 수 있습니다.</li>\n<li><strong>점수 화면:</strong> 모랄레스 중위가 의료선에 탑승했을 때 클리어! 특성이 게임 내 점수 화면에서 사라지던 문제를 수정했습니다.</li>\n</ul>\n<p><img alt=\"\" class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/g6/G6G0N80EOC941426801305139.png\"/></p>\n<p><img alt=\"InvisibleDividerLine_800x50.png\" class=\"no-border; no-shadow\" data-id=\"14509591\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/6VA2831Q81IU1403137406234.png\"/></p>\n<style type=\"text/css\">.article-container img { display: block; }\n.article-container p { display:inline; }\n</style>",
+   "items": [
+    {
+     "name": "D.Va",
+     "heroId": "DVa",
+     "heroIds": [
+      "DVa"
+     ],
+     "under": null,
+     "html": "<strong>D.Va:</strong> D.Va의 광선총에 연결된 열쇠고리가 영웅 선택 화면에서 정상적으로 표시됩니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "D.Va: D.Va의 광선총에 연결된 열쇠고리가 영웅 선택 화면에서 정상적으로 표시됩니다.",
+         "html": "<strong>D.Va:</strong> D.Va의 광선총에 연결된 열쇠고리가 영웅 선택 화면에서 정상적으로 표시됩니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "레오릭",
+     "heroId": "Leoric",
+     "heroIds": [
+      "Leoric"
+     ],
+     "under": null,
+     "html": "<strong>레오릭:</strong> 특정 스킨을 사용하면 레오릭의 일반 공격의 광역 공격 애니메이션이 정상적으로 표시되지 않던 문제를 수정했습니다.<strong>레오릭: </strong>생매장 특성을 선택하면 망자의 묘실 내부의 적들이 아군의 시야를 공유받지 못하던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "레오릭: 특정 스킨을 사용하면 레오릭의 일반 공격의 광역 공격 애니메이션이 정상적으로 표시되지 않던 문제를 수정했습니다.",
+         "html": "<strong>레오릭:</strong> 특정 스킨을 사용하면 레오릭의 일반 공격의 광역 공격 애니메이션이 정상적으로 표시되지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "레오릭: 생매장 특성을 선택하면 망자의 묘실 내부의 적들이 아군의 시야를 공유받지 못하던 문제를 수정했습니다.",
+         "html": "<strong>레오릭: </strong>생매장 특성을 선택하면 망자의 묘실 내부의 적들이 아군의 시야를 공유받지 못하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "티란데",
+     "heroId": "Tyrande",
+     "heroIds": [
+      "Tyrande"
+     ],
+     "under": null,
+     "html": "<strong>티란데:</strong> 독수리 눈 티란데의 달빛 화살 효과 표시가 하늘 사원 또는 그래픽 설정을 낮음으로 설정했을 때 더욱 확연하게 표시됩니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "티란데: 독수리 눈 티란데의 달빛 화살 효과 표시가 하늘 사원 또는 그래픽 설정을 낮음으로 설정했을 때 더욱 확연하게 표시됩니다.",
+         "html": "<strong>티란데:</strong> 독수리 눈 티란데의 달빛 화살 효과 표시가 하늘 사원 또는 그래픽 설정을 낮음으로 설정했을 때 더욱 확연하게 표시됩니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "제라툴",
+     "heroId": "Zeratul",
+     "heroIds": [
+      "Zeratul"
+     ],
+     "under": null,
+     "html": "<strong>제라툴: </strong>그래픽을 저사양으로 설정했을 때 제라툴의 복면이 늘어나거나 비정상적으로 접히던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "제라툴: 그래픽을 저사양으로 설정했을 때 제라툴의 복면이 늘어나거나 비정상적으로 접히던 문제를 수정했습니다.",
+         "html": "<strong>제라툴: </strong>그래픽을 저사양으로 설정했을 때 제라툴의 복면이 늘어나거나 비정상적으로 접히던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "빛나래",
+     "heroId": "FaerieDragon",
+     "heroIds": [
+      "FaerieDragon"
+     ],
+     "under": null,
+     "html": "<strong>빛나래:</strong> 대상 아군이 죽었을 때 위상 이동이 정상적으로 취소됩니다.<strong>빛나래:</strong> 위상 이동을 시전하는 중에 빛나래가 이동 불가 상태가 되면 기술이 정상적으로 취소됩니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "빛나래: 대상 아군이 죽었을 때 위상 이동이 정상적으로 취소됩니다.",
+         "html": "<strong>빛나래:</strong> 대상 아군이 죽었을 때 위상 이동이 정상적으로 취소됩니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "빛나래: 위상 이동을 시전하는 중에 빛나래가 이동 불가 상태가 되면 기술이 정상적으로 취소됩니다.",
+         "html": "<strong>빛나래:</strong> 위상 이동을 시전하는 중에 빛나래가 이동 불가 상태가 되면 기술이 정상적으로 취소됩니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "가로쉬",
+     "heroId": "Garrosh",
+     "heroIds": [
+      "Garrosh"
+     ],
+     "under": null,
+     "html": "<strong>가로쉬:</strong> 압살 특성을 선택한 후 들이치기를 우두머리에게 사용하면 우두머리의 생명력 막대 옆에 받는 치유량 감소 아이콘이 나타나던 문제를 수정했습니다.<strong>가로쉬:</strong> 방어력 상승으로 방어력이 50 이상 증가했을 때 들이치기의 공격력이 의도한 것보다 낮게 증가하던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "가로쉬: 압살 특성을 선택한 후 들이치기를 우두머리에게 사용하면 우두머리의 생명력 막대 옆에 받는 치유량 감소 아이콘이 나타나던 문제를 수정했습니다.",
+         "html": "<strong>가로쉬:</strong> 압살 특성을 선택한 후 들이치기를 우두머리에게 사용하면 우두머리의 생명력 막대 옆에 받는 치유량 감소 아이콘이 나타나던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "가로쉬: 방어력 상승으로 방어력이 50 이상 증가했을 때 들이치기의 공격력이 의도한 것보다 낮게 증가하던 문제를 수정했습니다.",
+         "html": "<strong>가로쉬:</strong> 방어력 상승으로 방어력이 50 이상 증가했을 때 들이치기의 공격력이 의도한 것보다 낮게 증가하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "제이나",
+     "heroId": "Jaina",
+     "heroIds": [
+      "Jaina"
+     ],
+     "under": null,
+     "html": "<strong>제이나:</strong> 제이나와 물의 정령을 소환하려는 위치 사이에 지나갈 수 없는 지형이 있으면 시야가 확보된 상태에서도 물의 정령을 소환할 수 없던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "제이나: 제이나와 물의 정령을 소환하려는 위치 사이에 지나갈 수 없는 지형이 있으면 시야가 확보된 상태에서도 물의 정령을 소환할 수 없던 문제를 수정했습니다.",
+         "html": "<strong>제이나:</strong> 제이나와 물의 정령을 소환하려는 위치 사이에 지나갈 수 없는 지형이 있으면 시야가 확보된 상태에서도 물의 정령을 소환할 수 없던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "요한나",
+     "heroId": "Crusader",
+     "heroIds": [
+      "Crusader"
+     ],
+     "under": null,
+     "html": "<strong>요한나: </strong>눈부신 방패가 눈부신 보호막의 재사용 대기시간을 비정상적으로 감소시키던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "요한나: 눈부신 방패가 눈부신 보호막의 재사용 대기시간을 비정상적으로 감소시키던 문제를 수정했습니다.",
+         "html": "<strong>요한나: </strong>눈부신 방패가 눈부신 보호막의 재사용 대기시간을 비정상적으로 감소시키던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "켈투자드",
+     "heroId": "KelThuzad",
+     "heroIds": [
+      "KelThuzad"
+     ],
+     "under": null,
+     "html": "<strong>켈투자드: </strong>어둠의 균열을 미니맵에 사용할 수 있습니다.<strong>켈투자드: </strong>어둠의 균열을 지하나 지상에 정상적으로 사용할 수 있습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "켈투자드: 어둠의 균열을 미니맵에 사용할 수 있습니다.",
+         "html": "<strong>켈투자드: </strong>어둠의 균열을 미니맵에 사용할 수 있습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "켈투자드: 어둠의 균열을 지하나 지상에 정상적으로 사용할 수 있습니다.",
+         "html": "<strong>켈투자드: </strong>어둠의 균열을 지하나 지상에 정상적으로 사용할 수 있습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "루나라",
+     "heroId": "Dryad",
+     "heroIds": [
+      "Dryad"
+     ],
+     "under": null,
+     "html": "<strong>루나라: </strong>사뿐걸음 특성을 선택하면 여러 아군 유닛을 뛰어넘을 수 없던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "루나라: 사뿐걸음 특성을 선택하면 여러 아군 유닛을 뛰어넘을 수 없던 문제를 수정했습니다.",
+         "html": "<strong>루나라: </strong>사뿐걸음 특성을 선택하면 여러 아군 유닛을 뛰어넘을 수 없던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "레가르",
+     "heroId": "Rehgar",
+     "heroIds": [
+      "Rehgar"
+     ],
+     "under": null,
+     "html": "<strong>레가르: </strong>야생의 약진의 공격 사거리가 급격히 감소하던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "레가르: 야생의 약진의 공격 사거리가 급격히 감소하던 문제를 수정했습니다.",
+         "html": "<strong>레가르: </strong>야생의 약진의 공격 사거리가 급격히 감소하던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "스투코프",
+     "heroId": "Stukov",
+     "heroIds": [
+      "Stukov"
+     ],
+     "under": null,
+     "html": "<strong>스투코프:</strong> 알라라크의 염동력이나 누더기의 갈고리 등 영웅을 움직이는 기술들이 독성 고름을 제거시키던 문제를 수정했습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "스투코프: 알라라크의 염동력이나 누더기의 갈고리 등 영웅을 움직이는 기술들이 독성 고름을 제거시키던 문제를 수정했습니다.",
+         "html": "<strong>스투코프:</strong> 알라라크의 염동력이나 누더기의 갈고리 등 영웅을 움직이는 기술들이 독성 고름을 제거시키던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "발라",
+     "heroId": "DemonHunter",
+     "heroIds": [
+      "DemonHunter"
+     ],
+     "under": null,
+     "html": "<strong>발라:</strong> 쇠못 덫을 클릭할 때 더는 생명력 막대나 대상 선택 표시가 나타나지 않습니다.",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "발라: 쇠못 덫을 클릭할 때 더는 생명력 막대나 대상 선택 표시가 나타나지 않습니다.",
+         "html": "<strong>발라:</strong> 쇠못 덫을 클릭할 때 더는 생명력 막대나 대상 선택 표시가 나타나지 않습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "heroes": [
+  "Amazon",
+  "Cho",
+  "Chromie",
+  "Crusader",
+  "DVa",
+  "DemonHunter",
+  "Dryad",
+  "FaerieDragon",
+  "Gall",
+  "Garrosh",
+  "Genji",
+  "Greymane",
+  "Jaina",
+  "Junkrat",
+  "KelThuzad",
+  "Leoric",
+  "Muradin",
+  "Murky",
+  "Rehgar",
+  "Stukov",
+  "Tinker",
+  "Tyrande",
+  "Valeera",
+  "Zarya",
+  "Zeratul",
+  "Zuljin"
+ ],
+ "battlegrounds": [],
+ "newsId": "21116539"
+}
