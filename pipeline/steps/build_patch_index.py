@@ -6,7 +6,7 @@
   짝이 없는 쪽은 한쪽만 있는 항목으로 남긴다(공식만 / 데이터만).
 
 index.json 항목:
-  {date, kind, title, newsId, official: "official/<date>.json"|null,
+  {date, kind, title, newsId, source(블리자드 원문 주소), official: "official/<date>.json"|null,
    build, version, diff: "diff/<from>-<to>.json"|null, heroes[], battlegrounds[], summary{heroes, changes}}
 """
 import json
@@ -58,6 +58,7 @@ def main():
             if -back <= gap <= fwd and (best is None or abs(gap) < best[0]):
                 best = (abs(gap), b)
         row = {"date": doc["date"], "kind": doc["kind"], "title": doc["title"], "newsId": doc.get("newsId"),
+               "source": doc.get("source"),
                "official": f"{o['dir']}/{o['file'].name}", "build": None, "version": None, "diff": None,
                "heroes": doc["heroes"], "battlegrounds": doc["battlegrounds"], "summary": None}
         if o["dir"] == "translated":

@@ -156,6 +156,10 @@ def clean_html(nodes):
     for t in list(frag.find_all(["p", "div", "hr"])):
         if t.name == "hr" or (not t.get_text(strip=True) and not t.find("img")):
             t.decompose()
+    for im in frag.find_all("img"):                      # 우리 쪽에서 못 받는 상대 경로 그림은 버린다
+        src = (im.get("src") or "").strip()
+        if src and not src.startswith(("http://", "https://", "//", "data:")):
+            im.decompose()
     out = frag.decode_contents()
     out = out.replace("\u200b", "").replace("\ufeff", "")      # 보이지 않는 폭 0 공백
     out = out.replace("\xa0", " ").replace("&nbsp;", " ")       # 줄바꿈을 막는 공백
