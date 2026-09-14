@@ -15,6 +15,9 @@
   @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg-glow:radial-gradient(1200px 500px at 50% -10%, #14294a 0%, transparent 60%); --new:#ffb070; --del:#ff9b9b; --del-bg:#4a1d1d; --ins:#8ee0a4; --ins-bg:#143d22; --purple:#c4a5ff; } }
   :root[data-theme="dark"] { --bg-glow:radial-gradient(1200px 500px at 50% -10%, #14294a 0%, transparent 60%); --new:#ffb070; --del:#ff9b9b; --del-bg:#4a1d1d; --ins:#8ee0a4; --ins-bg:#143d22; --purple:#c4a5ff; }
 
+  :root { --cal-d1:#e8eff9; --cal-d2:#d4e3f5; --cal-d3:#bcd4ef; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --cal-d1:#16294a; --cal-d2:#1d365f; --cal-d3:#274678; } }
+  :root[data-theme="dark"] { --cal-d1:#16294a; --cal-d2:#1d365f; --cal-d3:#274678; }
   * { box-sizing:border-box; }
   body { margin:0; background:var(--bg); background-image:var(--bg-glow); background-repeat:no-repeat; color:var(--fg);
          font-family:"Malgun Gothic","맑은 고딕","Apple SD Gothic Neo","Noto Sans KR","Segoe UI",system-ui,-apple-system,sans-serif;
@@ -233,6 +236,106 @@
   .hero-head img { width:64px; height:64px; border-radius:50%; object-fit:cover; border:2px solid var(--gold-line); }
   .hero-head h2 { margin:0; font-size:24px; } .hero-head .d { color:var(--dim); font-size:13px; }
   @media (max-width:600px) { .wrap { padding:16px 12px 50px; } .panel { padding:12px; } .row { padding:10px; } h1 { font-size:24px; } }
+
+  /* ---------- 달력·통계 ---------- */
+  .cal-tiles { display:grid; grid-template-columns:repeat(4,1fr); gap:8px; margin:10px 0 12px; }
+  .cal-tile { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:10px 12px; }
+  .cal-tile .v { font-size:23px; font-weight:800; line-height:1.15; }
+  .cal-tile .v.late { color:var(--del); } .cal-tile .v.ontime { color:var(--ins); }
+  .cal-tile .d { font-size:11px; color:var(--dim); margin-top:3px; line-height:1.45; }
+  .cal-note { font-size:12px; color:var(--dim); line-height:1.65; margin:6px 0 10px; }
+  .cal-note .sw { display:inline-block; width:9px; height:9px; border-radius:50%; vertical-align:-1px; margin-right:3px; }
+  .cal-note .sw.pat { background:var(--blue); } .cal-note .sw.bal { background:var(--gold); }
+  .cal-note .sw.dat { background:var(--dim); } .cal-note .sw.prp { background:var(--purple); }
+  .cal-note .sw.ptr { background:transparent; border:1.5px solid var(--purple); }
+  .cal-note b { color:var(--fg); font-weight:700; }
+
+  .cal { border:1px solid var(--line); border-radius:12px; background:var(--card); padding:10px 12px 12px; }
+  .cal-hd, .cal-y { display:grid; grid-template-columns:46px repeat(12,1fr) 132px; column-gap:4px; }
+  .cal-hd { margin-bottom:4px; }
+  .cal-hd span { font-size:11px; color:var(--dim); text-align:center; }
+  .cal-y { position:relative; margin-bottom:4px; }
+  .cal-yl { font-size:12px; font-weight:700; color:var(--fg); align-self:center; text-decoration:none;
+             grid-column:1; grid-row:1; }
+  .cal-yl:hover { color:var(--gold); }
+  .cal-c { grid-row:1; position:relative; display:grid; grid-template-columns:repeat(5,1fr); grid-auto-rows:var(--dot,9px);
+           gap:2px; align-content:start; padding:2px; min-height:46px; border-radius:5px;
+           border:1px solid var(--line); text-decoration:none; }
+  a.cal-c:hover { border-color:var(--gold-line); }
+  a.cal-c.on { border-color:var(--gold); box-shadow:0 0 0 1px var(--gold); }
+  .cal-c.empty { border-style:dotted; opacity:.5; }
+  .cal-c.empty::after { content:''; position:absolute; left:24%; right:24%; top:50%; border-top:1px dotted var(--dim); }
+  .cal-c.void { border:none; }
+  .cal-c.now { border-style:dashed; border-color:var(--gold-line); }
+  .cal-c.now::after { content:''; position:absolute; top:16%; bottom:16%; left:var(--cx,30%); width:2px; background:var(--gold); }
+  .cal-c.d1 { background:var(--cal-d1); } .cal-c.d2 { background:var(--cal-d2); } .cal-c.d3 { background:var(--cal-d3); }
+  .cal-c .dot { width:var(--dot,9px); height:var(--dot,9px); border-radius:50%;
+                grid-column:calc(var(--x) + 1); grid-row:calc(var(--y) + 1); }
+  .cal-c .dot.k-pat { background:var(--blue); } .cal-c .dot.k-bal { background:var(--gold); }
+  .cal-c .dot.k-dat { background:var(--dim); }
+  .cal-c .dot.k-ptr { background:transparent; border:1.5px solid var(--purple); }
+  .cal-c .dot.sel { box-shadow:0 0 0 2px var(--gold); }
+  .cal-sum { grid-column:14; grid-row:1; font-size:10px; color:var(--dim); line-height:1.35;
+              align-self:center; padding-left:6px; text-decoration:none; }
+  .cal-sum b { color:var(--fg); font-size:11px; }
+  .cal-sum:hover b { color:var(--gold); }
+  .cal-gap { grid-row:1; align-self:center; height:18px; z-index:2; pointer-events:none;
+             border-radius:4px; font-size:10px; color:var(--fg); display:flex; align-items:center;
+             justify-content:center; letter-spacing:-.2px; overflow:hidden; white-space:nowrap;
+             background:repeating-linear-gradient(135deg, var(--line) 0 5px, transparent 5px 10px);
+             border:1px solid var(--line); }
+
+  .cal-axis { position:relative; height:22px; margin:12px 0 4px; border-radius:5px;
+              border:1px solid var(--line); background:var(--card2); overflow:hidden; }
+  .cal-axis i { position:absolute; top:0; bottom:0; display:block; }
+  .cal-axis i.gap { background:repeating-linear-gradient(135deg, var(--line) 0 4px, transparent 4px 8px); }
+  .cal-axis i.tail { background:var(--gold-line); opacity:.55; }
+  .cal-axis i.yr { width:1px; background:var(--line); }
+  .cal-axis i.lb { font-size:10px; color:var(--dim); display:flex; align-items:center; justify-content:center; }
+
+  .cal-panel { margin-top:14px; }
+  .cal-panel .ph { display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; margin:0 0 8px; }
+  .cal-panel .ph h3 { margin:0; font-size:15px; }
+  .cal-panel .row.sel { border-color:var(--gold); box-shadow:0 0 0 1px var(--gold); }
+
+  .st { border:1px solid var(--line); border-radius:12px; background:var(--card); padding:12px 14px; margin:10px 0; }
+  .st h3 { margin:0 0 3px; font-size:15px; }
+  .st .cap { font-size:12px; color:var(--dim); line-height:1.65; margin:0 0 10px; }
+  .st .cap.after { margin:10px 0 0; }
+  .st-row { display:grid; grid-template-columns:var(--stl,78px) 1fr var(--str,54px); gap:8px; align-items:center; margin:3px 0; }
+  .st-row .k { font-size:12px; color:var(--dim); text-align:right; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .st-row .k a { color:inherit; text-decoration:none; }
+  .st-row .k a:hover { color:var(--gold); }
+  .st-row .k img { width:17px; height:17px; border-radius:50%; vertical-align:-4px; margin-right:4px; }
+  .st-row .v { font-size:11px; color:var(--dim); }
+  .st-row .v b { color:var(--fg); font-size:12px; }
+  .st-bar { display:flex; height:14px; border-radius:4px; overflow:hidden; background:var(--card2); }
+  .st-bar i { display:block; height:100%; }
+  .st-bar i.pat, .st-bar i.one { background:var(--blue); }
+  .st-bar i.bal { background:var(--gold); }
+  .st-bar i.dat { background:var(--dim); }
+  .st-bar i.ptr, .st-bar i.two { background:var(--purple); }
+  .st-wd { display:grid; grid-template-columns:repeat(7,1fr); gap:6px; margin:4px 0 2px; }
+  .st-wd .c { text-align:center; }
+  .st-wd .bars { display:flex; gap:3px; align-items:flex-end; justify-content:center; height:62px; }
+  .st-wd .bars i { width:10px; border-radius:2px 2px 0 0; display:block; min-height:1px; }
+  .st-wd .bars i.one { background:var(--blue); } .st-wd .bars i.two { background:var(--purple); }
+  .st-wd .lb { font-size:11px; color:var(--dim); margin-top:4px; }
+  .st-wd .lb b { color:var(--fg); }
+
+  @media (max-width:600px) {
+    .cal-tiles { grid-template-columns:1fr 1fr; }
+    .cal { padding:8px 8px 10px; }
+    .cal-hd, .cal-y { grid-template-columns:32px repeat(12,1fr); column-gap:2px; }
+    .cal-hd span { font-size:9px; } .cal-hd .mo { display:none; }
+    .cal-yl { font-size:11px; }
+    .cal-c { --dot:4px; min-height:23px; gap:1px; border-radius:3px; }
+    .cal-sum { grid-column:1/-1; grid-row:2; padding:2px 0 0 2px; }
+    .cal-gap { height:12px; font-size:0; }
+    .cal-axis { height:18px; }
+    .st-row { --stl:66px; --str:48px; gap:6px; }
+    .st-wd { gap:3px; } .st-wd .bars { height:46px; } .st-wd .bars i { width:7px; }
+  }
 </style>
 </head>
 <body>
@@ -243,8 +346,11 @@
   const DATA = '../data/patchnotes/';
   const PORTRAIT = 'https://sin0nis.github.io/images/heroportraits/';
   const KIND = { live: '라이브', balance: '밸런스', ptr: 'PTR', hotfix: '핫픽스', patch: '패치', data: '데이터' };
-  const ROLE = { Tank: '전사', Bruiser: '투사', Healer: '치유사', Support: '지원가', 'Melee Assassin': '근접 암살자', 'Ranged Assassin': '원거리 암살자' };
-  const ROLE_ORDER = ['Tank', 'Bruiser', 'Healer', 'Support', 'Melee Assassin', 'Ranged Assassin'];
+  // heroes.json 의 역할 키는 공백이 없다(MeleeAssassin). 옛 표기도 같이 받아 둔다.
+  const ROLE = { Tank: '전사', Bruiser: '투사', Healer: '치유사', Support: '지원가',
+                 MeleeAssassin: '근접 암살자', RangedAssassin: '원거리 암살자',
+                 'Melee Assassin': '근접 암살자', 'Ranged Assassin': '원거리 암살자' };
+  const ROLE_ORDER = ['Tank', 'Bruiser', 'Healer', 'Support', 'MeleeAssassin', 'RangedAssassin'];
   const roleIdx = id => { const i = ROLE_ORDER.indexOf((HEROES[id] || {}).role); return i < 0 ? 99 : i; };
   const sortHeroes = ids => [...ids].sort((a, b) => roleIdx(a) - roleIdx(b) || heroName(a).localeCompare(heroName(b), 'ko'));
   const channelOf = r => (r.kind === 'ptr' || r.isPtr) ? 'ptr' : 'live';
@@ -281,7 +387,7 @@
     const tab = (k, label, href) => `<a href="${href}" class="${view === k ? 'on' : ''}">${label}</a>`;
     return `<div class="head"><h1>패치 <span class="s">기록</span><span class="en">Patch Note History</span></h1></div>
       <p class="sub">블리자드 <b>공식 한글</b> 패치 노트(2017년 1월~)를 그대로 싣고, 한국어판이 없는 회차는 영어 원문을 <b>Claude 가 번역</b>해 채웠습니다(2016년 9월~). 여기에 게임 파일에서 뽑은 <b>데이터 변경점</b>(2019년 10월~)을 함께 봅니다. 주소를 복사하면 그 화면 그대로 공유됩니다.</p>
-      <div class="nav">${tab('list', '패치 목록', '?')}${tab('heroes', '영웅별 이력', '?view=heroes')}${tab('bgs', '전장별 이력', '?view=bgs')}</div>`;
+      <div class="nav">${tab('list', '패치 목록', '?')}${tab('cal', '달력·통계', '?view=cal')}${tab('heroes', '영웅별 이력', '?view=heroes')}${tab('bgs', '전장별 이력', '?view=bgs')}</div>`;
   }
 
   // ---------- 목록 ----------
@@ -857,6 +963,322 @@
       <div class="legend"><span class="m add">+</span> 신규 <span class="m rm">×</span> 삭제 <span class="m mv">↑↓</span> 레벨 이동 <span class="m chg">●</span> 수치·설명 변경 · 칸을 누르면 아래 해당 패치로 이동, 올리면 요약</div>`;
   }
 
+
+  // ---------- 달력·통계 ----------
+  // 하위 유닛은 본체로 합쳐서 센다(공생체→아바투르, 은신 발리라→발리라).
+  const MERGE = { AbathurSymbiote: 'Abathur', ValeeraStealthed: 'Valeera' };
+  const mainHero = h => MERGE[h] || h;
+  const dnum = s => Date.UTC(+s.slice(0, 4), +s.slice(5, 7) - 1, +s.slice(8, 10)) / 864e5;
+  const wslot = s => Math.min(4, ((+s.slice(8, 10) - 1) / 7) | 0);   // 0~4 = 1~7일, 8~14일 … (요일이 아니다)
+  const kgrp = r => channelOf(r) === 'ptr' ? 'ptr'
+    : (r.kind === 'balance' || r.kind === 'hotfix') ? 'bal'
+      : r.kind === 'data' ? 'dat' : 'pat';
+  const KG = { pat: '본 패치', bal: '밸런스·긴급 수정', dat: '데이터 변경', ptr: '테스트 서버' };
+  const med = a => { if (!a.length) return null; const b = [...a].sort((x, y) => x - y), n = b.length, h = n >> 1; return n % 2 ? b[h] : (b[h - 1] + b[h]) / 2; };
+  const d1 = v => v == null ? '—' : String(Math.round(v * 10) / 10);
+  const ymd = s => `${+s.slice(0, 4)}년 ${+s.slice(5, 7)}월 ${+s.slice(8, 10)}일`;
+  const ymTxt = k => `${+k.slice(0, 4)}년 ${+k.slice(5, 7)}월`;
+  const mIdx = k => +k.slice(0, 4) * 12 + +k.slice(5, 7);
+  const addM = (k, n) => { let y = +k.slice(0, 4), m = +k.slice(5, 7) - 1 + n; y += Math.floor(m / 12); m = ((m % 12) + 12) % 12; return `${y}-${String(m + 1).padStart(2, '0')}`; };
+  const WD = ['일', '월', '화', '수', '목', '금', '토'], WORD = [1, 2, 3, 4, 5, 6, 0];
+
+  let CAL = null;
+  function calData() {
+    if (CAL) return CAL;
+    const all = [...INDEX].sort((a, b) => a.date < b.date ? -1 : 1);   // 오래된 순
+    const live = all.filter(r => channelOf(r) === 'live');
+    const ptr = all.filter(r => channelOf(r) === 'ptr');
+    const lds = [...new Set(live.map(r => r.date))];
+    const gaps = lds.slice(1).map((d, i) => ({ n: dnum(d) - dnum(lds[i]), from: lds[i], to: d }));
+    const now = new Date();
+    const today = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+    const startM = all[0].date.slice(0, 7);
+    const lastM = all[all.length - 1].date.slice(0, 7), todayM = today.slice(0, 7);
+    const endM = lastM > todayM ? lastM : todayM;
+    const months = [];
+    for (let k = startM; k <= endM; k = addM(k, 1)) months.push(k);
+    const years = [...new Set(months.map(k => k.slice(0, 4)))];
+    const ysum = {};
+    years.forEach(y => {
+      const rs = all.filter(r => r.date.slice(0, 4) === y);
+      const g = gaps.filter(x => x.to.slice(0, 4) === y).map(x => x.n);   // 간격은 뒤쪽 회차의 연도로 센다
+      const inRange = months.filter(k => k.slice(0, 4) === y && k <= lastM);
+      const act = inRange.filter(k => all.some(r => r.date.slice(0, 7) === k)).length;
+      ysum[y] = {
+        n: rs.length, live: rs.filter(r => channelOf(r) === 'live').length,
+        ptr: rs.filter(r => channelOf(r) === 'ptr').length, cyc: med(g),
+        maxGap: g.length ? Math.max(...g) : null, act, of: inRange.length,
+        kinds: { pat: rs.filter(r => kgrp(r) === 'pat').length, bal: rs.filter(r => kgrp(r) === 'bal').length,
+          dat: rs.filter(r => kgrp(r) === 'dat').length, ptr: rs.filter(r => kgrp(r) === 'ptr').length },
+        avgHero: rs.length ? rs.reduce((a, r) => a + r.heroes.length, 0) / rs.length : 0,
+      };
+    });
+    const lag = [];
+    ptr.forEach(p => { const nx = lds.find(d => d > p.date); if (nx) lag.push(dnum(nx) - dnum(p.date)); });
+    const wd = { live: Array(7).fill(0), ptr: Array(7).fill(0) }, wdNew = Array(7).fill(0);
+    all.forEach(r => {
+      const w = new Date(dnum(r.date) * 864e5).getUTCDay();
+      wd[channelOf(r)][w]++;
+      if (r.date >= '2023-09-01') wdNew[w]++;
+    });
+    const hc = {}, bc = {};
+    all.forEach(r => {
+      [...new Set(r.heroes.map(mainHero))].forEach(h => { hc[h] = (hc[h] || 0) + 1; });
+      r.battlegrounds.forEach(b => { bc[b] = (bc[b] || 0) + 1; });
+    });
+    const roles = {};
+    Object.entries(hc).forEach(([h, n]) => {
+      const rl = (HEROES[h] || {}).role;
+      if (!rl) return;
+      roles[rl] = roles[rl] || { n: 0, heroes: 0 };
+      roles[rl].n += n; roles[rl].heroes++;
+    });
+    CAL = {
+      all, live, ptr, lds, gaps, months, years, ysum, lag, wd, wdNew, hc, bc, roles,
+      today, todayM, startM, lastM, endM, lastLive: lds[lds.length - 1],
+      sinceLast: dnum(today) - dnum(lds[lds.length - 1]),
+      recentMed: med(gaps.slice(-12).map(g => g.n)),
+      medGap: med(gaps.map(g => g.n)),
+      within14: gaps.filter(g => g.n <= 14).length,
+      maxGap: gaps.slice().sort((a, b) => b.n - a.n)[0],
+    };
+    return CAL;
+  }
+
+  function calTiles(C) {
+    const late = C.recentMed != null && C.sinceLast > C.recentMed;
+    const pct = Math.round(C.within14 / C.gaps.length * 100);
+    return `<div class="cal-tiles">
+      <div class="cal-tile"><div class="v ${late ? 'late' : 'ontime'}">${C.sinceLast}일째</div>
+        <div class="d">마지막 회차(${ymd(C.lastLive)}) 이후입니다. 최근 12번 중앙값은 ${d1(C.recentMed)}일입니다.</div></div>
+      <div class="cal-tile"><div class="v">보통 ${d1(C.medGap)}일</div>
+        <div class="d">라이브 ${C.lds.length}회 사이 ${C.gaps.length}번을 잰 중앙값입니다.</div></div>
+      <div class="cal-tile"><div class="v">2주 안에 ${pct}%</div>
+        <div class="d">${C.gaps.length}번 가운데 ${C.within14}번이 14일 안에 이어졌습니다.</div></div>
+      <div class="cal-tile"><div class="v">가장 긴 공백 ${C.maxGap.n}일</div>
+        <div class="d"><a href="?view=cal&m=${C.maxGap.to.slice(0, 7)}">${ymd(C.maxGap.from)} → ${ymd(C.maxGap.to)}</a></div></div>
+    </div>`;
+  }
+
+  // 3개월 이상 연속 공백만 띠로 묶는다. 연도 경계에서 토막 내고 화살표로 잇는다.
+  function calRuns(C, byM) {
+    const runs = [];
+    let cur = null;
+    C.months.forEach(k => {
+      const empty = !(byM[k] || []).length && k !== C.todayM;
+      if (empty) { if (cur) cur.b = k; else cur = { a: k, b: k }; }
+      else if (cur) { runs.push(cur); cur = null; }
+    });
+    if (cur) runs.push(cur);
+    return runs.map(r => ({ ...r, n: mIdx(r.b) - mIdx(r.a) + 1 })).filter(r => r.n >= 3);
+  }
+
+  function calBands(runs, y) {
+    return runs.filter(r => y >= r.a.slice(0, 4) && y <= r.b.slice(0, 4)).map(r => {
+      const head = y === r.a.slice(0, 4), tail = y === r.b.slice(0, 4);
+      const m0 = head ? +r.a.slice(5, 7) : 1, m1 = tail ? +r.b.slice(5, 7) : 12;
+      const label = head && tail ? `${r.n}개월 공백` : head ? `${r.n}개월 공백 ▶` : tail ? `▶ ${+r.b.slice(5, 7)}월까지` : '▶';
+      const tip = `${ymTxt(r.a)}부터 ${ymTxt(r.b)}까지 ${r.n}개월, 회차가 하나도 없습니다`;
+      return `<div class="cal-gap" style="grid-column:${m0 + 1} / ${m1 + 2}" title="${esc(tip)}">${label}</div>`;
+    });
+  }
+
+  function calGrid(C, shown, sel) {
+    const byM = {};
+    shown.forEach(r => { (byM[r.date.slice(0, 7)] = byM[r.date.slice(0, 7)] || []).push(r); });
+    const runs = calRuns(C, byM);
+    let out = `<div class="cal"><div class="cal-hd"><span></span>${
+      Array.from({ length: 12 }, (_, i) => `<span>${i + 1}<span class="mo">월</span></span>`).join('')}<span></span></div>`;
+    C.years.forEach(y => {
+      const cells = [];
+      for (let m = 1; m <= 12; m++) {
+        const k = `${y}-${String(m).padStart(2, '0')}`;
+        const list = (byM[k] || []).slice().sort((a, b) => a.date < b.date ? -1 : 1);
+        const col = ` style="grid-column:${m + 1}"`;
+        if (k < C.startM || k > C.endM) { cells.push(`<span class="cal-c void"${col}></span>`); continue; }
+        if (!list.length) {
+          if (k === C.todayM) {
+            const cx = ((+C.today.slice(8, 10) - 1) / 31 * 100).toFixed(0);
+            cells.push(`<span class="cal-c now" style="grid-column:${m + 1};--cx:${cx}%" title="${esc(`오늘은 ${ymd(C.today)}입니다. 마지막 회차로부터 ${C.sinceLast}일째입니다.`)}"></span>`);
+          } else cells.push(`<span class="cal-c empty"${col} title="${esc(ymTxt(k))} · 회차 없음"></span>`);
+          continue;
+        }
+        const ln = list.filter(r => channelOf(r) === 'live').length;
+        const dcls = ln >= 5 ? ' d3' : ln === 4 ? ' d2' : ln === 3 ? ' d1' : '';
+        const cnt = {};
+        list.forEach(r => { const g = kgrp(r); cnt[g] = (cnt[g] || 0) + 1; });
+        const tip = `${ymTxt(k)} · ${list.length}건` + Object.keys(KG).filter(g => cnt[g]).map(g => ` · ${KG[g]} ${cnt[g]}`).join('');
+        const seen = [0, 0, 0, 0, 0];
+        const dots = list.map(r => {
+          const x = wslot(r.date), row = Math.min(seen[x]++, 3);
+          const on = sel.s === patchKey(r) ? ' sel' : '';
+          return `<span class="dot k-${kgrp(r)}${on}" style="--x:${x};--y:${row}" data-k="${patchKey(r)}" title="${esc(r.date + ' ' + r.title)}"></span>`;
+        }).join('');
+        cells.push(`<a class="cal-c${dcls}${sel.m === k ? ' on' : ''}"${col} href="?view=cal&m=${k}" data-m="${k}" title="${esc(tip)}">${dots}</a>`);
+      }
+      const S = C.ysum[y];
+      const stip = `${y}년 · ${S.n}건 가운데 라이브는 ${S.live}건입니다. 라이브 회차 사이 간격의 중앙값 ${d1(S.cyc)}일, 그해 최장 공백 ${S.maxGap == null ? '없음' : S.maxGap + '일'}.`;
+      const sum = `<a class="cal-sum${sel.m === y ? ' on' : ''}" href="?view=cal&m=${y}" title="${esc(stip)}"><b>${S.n}건</b><br>라이브 ${S.live} · 테스트 ${S.ptr}<br>주기 ${d1(S.cyc)}일 · 활성 ${S.act}/${S.of}</a>`;
+      out += `<div class="cal-y"><a class="cal-yl" href="?view=cal&m=${y}">${y}</a>${cells.join('')}${sum}${calBands(runs, y).join('')}</div>`;
+    });
+    return out + '</div>';
+  }
+
+  function calAxis(C) {
+    const T0 = dnum(C.all[0].date), SPAN = dnum(C.today) - T0;
+    const pos = d => (dnum(d) - T0) / SPAN * 100;
+    const big = C.gaps.filter(g => g.n >= 60).sort((a, b) => b.n - a.n);
+    let out = '<div class="cal-axis">';
+    C.years.slice(1).forEach(y => { out += `<i class="yr" style="left:${pos(y + '-01-01').toFixed(2)}%"></i>`; });
+    big.forEach(g => {
+      const w = g.n / SPAN * 100;
+      const style = `left:${pos(g.from).toFixed(2)}%;width:${w.toFixed(2)}%`;
+      out += `<i class="gap" style="${style}" title="${esc(`${ymd(g.from)}부터 ${ymd(g.to)}까지 ${g.n}일 공백`)}"></i>`;
+      if (w > 4) out += `<i class="lb" style="${style}">${g.n}일</i>`;
+    });
+    out += `<i class="tail" style="left:${pos(C.lastLive).toFixed(2)}%;width:${(C.sinceLast / SPAN * 100).toFixed(2)}%" title="${esc(`마지막 회차 이후 ${C.sinceLast}일째`)}"></i></div>`;
+    return out + `<p class="cal-note">${ymd(C.all[0].date)}부터 오늘까지 ${SPAN.toLocaleString('ko-KR')}일을 실제 길이 그대로 편 띠입니다.
+      빗금은 60일 넘게 아무 회차도 없던 ${big.length}개 구간이고, 그중 가장 큰 ${big[0].n}일 하나가 띠 전체의 ${(big[0].n / SPAN * 100).toFixed(1)}%를 혼자 차지합니다.
+      오른쪽 끝 옅은 꼬리가 지금 기다리는 중인 ${C.sinceLast}일입니다.</p>`;
+  }
+
+  function stRow(key, segs, right, max, tip) {
+    const bar = segs.filter(x => x[1] > 0).map(x => `<i class="${x[0]}" style="width:${(x[1] / max * 100).toFixed(2)}%"></i>`).join('');
+    return `<div class="st-row"${tip ? ` title="${esc(tip)}"` : ''}><div class="k">${key}</div><div class="st-bar">${bar}</div><div class="v">${right}</div></div>`;
+  }
+
+  function calStats(C) {
+    let out = '';
+    const maxN = Math.max(...C.years.map(y => C.ysum[y].n));
+    out += `<div class="st"><h3>해마다 몇 번 나왔나</h3>
+      <p class="cap"><span class="sw pat"></span>본 패치 · <span class="sw bal"></span>밸런스와 긴급 수정 ·
+      <span class="sw dat"></span>데이터 변경만 · <span class="sw prp"></span>테스트 서버.
+      막대 길이는 그해 전체 회차 수입니다. 회차 수만 보면 안 됩니다. ${(() => { const y = '2024'; const S = C.ysum[y]; return `${y}년은 ${S.n}건이지만 그중 ${S.ptr}건이 테스트 서버라 본 서버에 반영된 것은 ${S.live}건뿐입니다.`; })()}</p>` +
+      C.years.map(y => {
+        const S = C.ysum[y];
+        return stRow(y, [['pat', S.kinds.pat], ['bal', S.kinds.bal], ['dat', S.kinds.dat], ['ptr', S.kinds.ptr]], `<b>${S.n}</b>건`, maxN,
+          `${y}년 · 본 패치 ${S.kinds.pat} · 밸런스와 긴급 수정 ${S.kinds.bal} · 데이터 변경만 ${S.kinds.dat} · 테스트 서버 ${S.kinds.ptr}`);
+      }).join('') + '</div>';
+
+    const maxC = Math.max(...C.years.map(y => C.ysum[y].cyc || 0));
+    out += `<div class="st"><h3>주기가 어떻게 벌어졌나</h3>
+      <p class="cap">본 서버 회차 사이 간격의 중앙값입니다. 막대가 짧을수록 자주 나왔다는 뜻입니다. 간격은 뒤쪽 회차의 연도로 셉니다.</p>` +
+      C.years.map(y => {
+        const S = C.ysum[y];
+        return stRow(y, [['one', S.cyc || 0]], `<b>${d1(S.cyc)}</b>일`, maxC,
+          `${y}년 중앙 간격 ${d1(S.cyc)}일 · 그해 최장 공백 ${S.maxGap == null ? '없음' : S.maxGap + '일'}`);
+      }).join('') + '</div>';
+
+    const mxw = Math.max(...C.wd.live, ...C.wd.ptr);
+    out += `<div class="st"><h3>무슨 요일에 나왔나</h3>
+      <p class="cap"><span class="sw pat"></span>본 서버 · <span class="sw prp"></span>테스트 서버.
+      달력 칸 안의 가로 위치는 날짜(1일에서 말일)이지 요일이 아닙니다. 요일 쏠림은 여기서만 보입니다.</p>
+      <div class="st-wd">` + WORD.map(i => `<div class="c"><div class="bars">
+        <i class="one" style="height:${(C.wd.live[i] / mxw * 62).toFixed(1)}px" title="${esc(`${WD[i]}요일 본 서버 ${C.wd.live[i]}회`)}"></i>
+        <i class="two" style="height:${(C.wd.ptr[i] / mxw * 62).toFixed(1)}px" title="${esc(`${WD[i]}요일 테스트 서버 ${C.wd.ptr[i]}회`)}"></i>
+      </div><div class="lb"><b>${WD[i]}</b><br>${C.wd.live[i]}·${C.wd.ptr[i]}</div></div>`).join('') + `</div>
+      <p class="cap after">본 서버 ${C.live.length}회 가운데 ${C.wd.live[4]}회(${Math.round(C.wd.live[4] / C.live.length * 100)}%)가 목요일이었고, 일요일에 나온 본 서버 회차는 ${C.wd.live[0]}회입니다.
+      테스트 서버는 화요일에 몰렸습니다. ${C.ptr.length}회 가운데 ${C.wd.ptr[2]}회입니다. 화요일에 올리고 목요일에 반영하는 순서였습니다.
+      2023년 9월 부활 뒤 ${C.wdNew.reduce((a, b) => a + b, 0)}회는 ${WORD.filter(i => C.wdNew[i]).map(i => `${WD[i]} ${C.wdNew[i]}`).join(' · ')}로 흩어졌습니다.</p></div>`;
+
+    const B = [[0, 7, '1주 안'], [8, 14, '2주 안'], [15, 21, '3주 안'], [22, 30, '한 달 안'], [31, 60, '두 달 안'], [61, 1e9, '두 달 넘게']];
+    const bn = B.map(b => C.lag.filter(v => v >= b[0] && v <= b[1]).length);
+    const mxb = Math.max(...bn);
+    out += `<div class="st"><h3>테스트 서버에서 본 서버까지</h3>
+      <p class="cap">테스트 서버 회차가 그 뒤 첫 본 서버 회차까지 걸린 날입니다. ${C.lag.length}건을 쟀고 중앙값은 ${d1(med(C.lag))}일, 가장 오래 걸린 것은 ${Math.max(...C.lag)}일입니다.</p>` +
+      B.map((b, i) => stRow(b[2], [['two', bn[i]]], `<b>${bn[i]}</b>건`, mxb,
+        `${b[2]} · ${b[0]}일에서 ${b[1] === 1e9 ? '그 이상' : b[1] + '일'} · ${bn[i]}건`)).join('') + '</div>';
+
+    const hs = Object.entries(C.hc).filter(([h]) => HEROES[h]).sort((a, b) => b[1] - a[1]);
+    out += `<div class="st"><h3>가장 자주 손댄 영웅</h3>
+      <p class="cap">패치 노트나 데이터 변경에 이름이 오른 회차 수입니다. 영웅 ${hs.length}명 가운데 상위 20명이고, 누르면 그 영웅 이력으로 갑니다.</p>` +
+      hs.slice(0, 20).map(([h, n]) => stRow(`<a href="?view=hero&id=${h}">${heroImg(h)}${esc(heroName(h))}</a>`, [['one', n]], `<b>${n}</b>회`, hs[0][1],
+        `${heroName(h)} · ${n}회`)).join('') + '</div>';
+
+    const rs = Object.entries(C.roles).map(([r, v]) => [r, v.n / v.heroes, v.heroes, v.n]).sort((a, b) => b[1] - a[1]);
+    out += `<div class="st"><h3>역할군별로 보면</h3>
+      <p class="cap">역할군마다 영웅 수가 달라서 총합으로는 비교가 안 됩니다. 영웅 한 명이 평균 몇 회 손질을 받았는지로 봅니다.</p>` +
+      rs.map(([r, avg, hn, tot]) => stRow(esc(ROLE[r] || r), [['one', avg]], `<b>${d1(avg)}</b>회`, rs[0][1],
+        `${ROLE[r] || r} · 영웅 ${hn}명 · 총 ${tot}회 · 영웅당 평균 ${d1(avg)}회`)).join('') + '</div>';
+
+    const bs = Object.entries(C.bc).sort((a, b) => b[1] - a[1]);
+    out += `<div class="st"><h3>가장 자주 바뀐 전장</h3>
+      <p class="cap">공식 노트에 이름이 오른 회차 수입니다. 전장 ${bs.length}곳 전부이고, 누르면 그 전장 이력으로 갑니다.</p>` +
+      bs.map(([b, n]) => stRow(`<a href="?view=bg&id=${b}">${esc(bgName(b))}</a>`, [['one', n]], `<b>${n}</b>회`, bs[0][1], `${bgName(b)} · ${n}회`)).join('') + '</div>';
+
+    const mxa = Math.max(...C.years.map(y => C.ysum[y].avgHero));
+    out += `<div class="st"><h3>한 번에 몇 명씩 손봤나</h3>
+      <p class="cap">그해 회차마다 이름이 오른 영웅 수의 평균입니다. 2022년까지는 조금씩 자주 고쳤고, 2023년 부활 뒤로는 한 번에 몰아서 고칩니다.</p>` +
+      C.years.map(y => stRow(y, [['one', C.ysum[y].avgHero]], `<b>${d1(C.ysum[y].avgHero)}</b>명`, mxa,
+        `${y}년 · 회차 ${C.ysum[y].n}건 · 회차당 평균 ${d1(C.ysum[y].avgHero)}명`)).join('') + '</div>';
+    return out;
+  }
+
+  function calList(C, shown, sel) {
+    const isYear = sel.m.length === 4;
+    const rows = shown.filter(r => r.date.slice(0, isYear ? 4 : 7) === sel.m).sort((a, b) => a.date < b.date ? 1 : -1);
+    const head = isYear ? `${sel.m}년` : ymTxt(sel.m);
+    const cap = `<div class="ph"><h3>${head} · ${rows.length}건</h3>${
+      isYear ? '' : `<a class="btn" href="?view=cal&m=${sel.m.slice(0, 4)}">${sel.m.slice(0, 4)}년 전체 보기</a>`}</div>`;
+    if (!rows.length) return cap + '<div class="empty">이 기간에는 조건에 맞는 회차가 없습니다.</div>';
+    return cap + rows.map(r => rowHTML(r).replace('class="row"', `class="row${sel.s === patchKey(r) ? ' sel' : ''}"`)).join('');
+  }
+
+  function renderCal() {
+    const C = calData(), p = q(), f = cur();
+    const sel = { m: p.get('m') || C.lastM, s: p.get('s') || '' };
+    const shown = C.all.filter(r =>
+      (!f.ch || channelOf(r) === f.ch)
+      && (!f.src || sourceOf(r) === f.src)
+      && (!f.q || (r.title || '').toLowerCase().includes(f.q.toLowerCase())));
+    const lnk = (k, v, label) => {
+      const on = ((k === 'ch' ? f.ch : f.src) || '') === v ? ' class="on"' : '';
+      const o = { view: 'cal', m: sel.m, ch: f.ch, src: f.src, q: f.q };
+      o[k] = v;
+      const u = new URLSearchParams(Object.entries(o).filter(([, x]) => x));
+      return `<a href="?${u.toString()}"${on}>${label}</a>`;
+    };
+    app.innerHTML = headHTML('cal')
+      + `<p class="sub">${ymd(C.all[0].date)}부터 ${ymd(C.all[C.all.length - 1].date)}까지 ${C.all.length}회를 달력 한 장에 놓았습니다.
+        칸 안 가로 위치는 그달 1일부터 말일까지이고, 칸이나 점을 누르면 그달 회차가 아래에 펼쳐집니다.</p>`
+      + calTiles(C)
+      + `<p class="cal-note"><span class="sw pat"></span>본 패치 · <span class="sw bal"></span>밸런스와 긴급 수정 ·
+        <span class="sw dat"></span>데이터 변경만 · <span class="sw ptr"></span>테스트 서버(속 빈 동그라미).
+        칸 배경이 진할수록 그달 본 서버 회차가 많습니다(3건부터 칠합니다).
+        칸 안 가로 위치는 1일에서 말일까지이며 <b>요일과는 관계가 없습니다</b>.</p>
+      <div class="filters"><span class="grp"><span class="lbl">채널</span>
+        ${lnk('ch', '', '전체')}${lnk('ch', 'live', '라이브')}${lnk('ch', 'ptr', '테스트 서버')}</span>
+        <span class="grp"><span class="lbl">출처</span>
+        ${lnk('src', '', '전체')}${lnk('src', 'official', '공식 한글')}${lnk('src', 'translated', 'Claude 번역')}${lnk('src', 'data', '데이터')}</span></div>`
+      + ((f.ch || f.src || f.q) ? `<p class="cal-note">거르개가 걸려 있어 달력에는 조건에 맞는 ${shown.length}건만 보입니다. 아래 통계는 언제나 전체 ${C.all.length}건 기준입니다.</p>` : '')
+      + calGrid(C, shown, sel)
+      + calAxis(C)
+      + `<div class="cal-panel">${calList(C, shown, sel)}</div>`
+      + calStats(C)
+      + creditsHTML();
+    // 칸·점 누르기는 전체를 다시 그리지 않는다(render 가 맨 위로 스크롤하기 때문에)
+    const grid = app.querySelector('.cal');
+    if (grid) {
+      grid.addEventListener('click', e => {
+        const cell = e.target.closest('a.cal-c');
+        if (!cell) return;
+        e.preventDefault();
+        const dot = e.target.closest('.dot');
+        sel.m = cell.dataset.m;
+        sel.s = dot ? dot.dataset.k : '';
+        app.querySelectorAll('a.cal-c.on, .cal-sum.on').forEach(el => el.classList.remove('on'));
+        app.querySelectorAll('.cal-c .dot.sel').forEach(el => el.classList.remove('sel'));
+        cell.classList.add('on');
+        if (dot) dot.classList.add('sel');
+        app.querySelector('.cal-panel').innerHTML = calList(C, shown, sel);
+        const u = new URL(location.href);
+        u.searchParams.set('m', sel.m);
+        if (sel.s) u.searchParams.set('s', sel.s); else u.searchParams.delete('s');
+        history.replaceState(null, '', u);
+      });
+    }
+  }
+
   // ---------- 전장 목록 / 이력 ----------
   function renderBgs() {
     const count = {};
@@ -894,6 +1316,7 @@
     window.scrollTo(0, 0);
     if (p.get('v')) return renderDetail(p.get('v'));
     const view = p.get('view') || 'list';
+    if (view === 'cal') return renderCal();
     if (view === 'heroes') return renderHeroes();
     if (view === 'hero') return renderHero(p.get('id'));
     if (view === 'bgs') return renderBgs();

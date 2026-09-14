@@ -9,7 +9,7 @@
   "translated": {"by": "Claude (claude-opus-5)", "at": "<날짜>", "source": "<블리자드 원문 URL>",
                  "glossary": "HeroesToolChest 공식 게임 텍스트(enus↔kokr) 대조", "segments": 총/번역됨}
 
-사용: python apply_translation.py [--at 2026-09-13]
+사용: python apply_translation.py [--at 2026-09-14]
 """
 import argparse
 import json
@@ -171,7 +171,7 @@ def tr_changes(changes, T, hero=None):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--at", default="2026-09-13", help="번역 표기에 남길 날짜")
+    ap.add_argument("--at", default="2026-09-14", help="번역 표기에 남길 날짜")
     a = ap.parse_args()
     T = Table()
     OUT.mkdir(parents=True, exist_ok=True)

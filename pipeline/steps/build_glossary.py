@@ -140,7 +140,7 @@ def main():
         "E.T.C.": "L90ETC", "ETC": "L90ETC", "Sgt. Hammer": "SgtHammer", "Sgt Hammer": "SgtHammer",
         "Li-Ming": "Wizard", "Li Li": "LiLi", "Lt. Morales": "Medic", "Mal'Ganis": "MalGanis", "MalGanis": "MalGanis",
         "Deckard Cain": "Deckard", "The Butcher": "Butcher", "Kel'Thuzad": "KelThuzad", "KelThuzad": "KelThuzad",
-        "Junkrat": "Junkrat", "Qhira": "Qhira", "Imperius": "Imperius", "Mei": "Mei", "Hogger": "Hogger",
+        "Junkrat": "Junkrat", "Qhira": "NexusHunter", "Imperius": "Imperius", "Mei": "MeiOW", "Hogger": "Hogger",
     }
     alias_bg = {"Volskaya": "volskaya_foundry", "Hanamura": "hanamura_temple", "Braxis": "braxis_holdout",
                 "Blackheart": "blackheart_s_bay", "Mines": "haunted_mines", "Death Mines": "haunted_mines"}
