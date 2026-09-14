@@ -11,13 +11,16 @@
   :root { --bg:var(--scrap-bg); --card:var(--scrap-card); --card2:var(--scrap-card2); --line:var(--scrap-line); --fg:var(--scrap-fg);
           --dim:var(--scrap-dim); --blue:var(--scrap-blue); --blue-soft:var(--scrap-blue-soft); --gold:var(--scrap-gold); --gold-line:var(--scrap-gold-line);
           --bg-glow:radial-gradient(1200px 500px at 50% -10%, #dbe7f7 0%, transparent 60%);
-          --new:#c2410c; --del:#b91c1c; --del-bg:#fee2e2; --ins:#15803d; --ins-bg:#dcfce7; --purple:#6d28d9; }
-  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg-glow:radial-gradient(1200px 500px at 50% -10%, #14294a 0%, transparent 60%); --new:#ffb070; --del:#ff9b9b; --del-bg:#4a1d1d; --ins:#8ee0a4; --ins-bg:#143d22; --purple:#c4a5ff; } }
-  :root[data-theme="dark"] { --bg-glow:radial-gradient(1200px 500px at 50% -10%, #14294a 0%, transparent 60%); --new:#ffb070; --del:#ff9b9b; --del-bg:#4a1d1d; --ins:#8ee0a4; --ins-bg:#143d22; --purple:#c4a5ff; }
+          --new:#c2410c; --del:#b91c1c; --del-bg:#fee2e2; --ins:#15803d; --ins-bg:#dcfce7; --purple:#6d28d9;
+          --on-accent:#fff;            /* 강조색 위에 얹는 글자색 */
+          --gold-solid:#8a6414; }      /* 글자를 얹는 금색 바탕(라이트에서 한 단계 어둡게) */
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg-glow:radial-gradient(1200px 500px at 50% -10%, #14294a 0%, transparent 60%); --new:#ffb070; --del:#ff9b9b; --del-bg:#4a1d1d; --ins:#8ee0a4; --ins-bg:#143d22; --purple:#c4a5ff; --on-accent:#0b1526; --gold-solid:var(--gold); } }
+  :root[data-theme="dark"] { --bg-glow:radial-gradient(1200px 500px at 50% -10%, #14294a 0%, transparent 60%); --new:#ffb070; --del:#ff9b9b; --del-bg:#4a1d1d; --ins:#8ee0a4; --ins-bg:#143d22; --purple:#c4a5ff; --on-accent:#0b1526; --gold-solid:var(--gold); }
 
   :root { --cal-d1:#e8eff9; --cal-d2:#d4e3f5; --cal-d3:#bcd4ef; }
   @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --cal-d1:#16294a; --cal-d2:#1d365f; --cal-d3:#274678; } }
   :root[data-theme="dark"] { --cal-d1:#16294a; --cal-d2:#1d365f; --cal-d3:#274678; }
+  html { scrollbar-gutter:stable; }   /* 스크롤막대가 생겼다 사라지며 폭이 흔들리면 그래프를 두 번 그린다 */
   * { box-sizing:border-box; }
   body { margin:0; background:var(--bg); background-image:var(--bg-glow); background-repeat:no-repeat; color:var(--fg);
          font-family:"Malgun Gothic","맑은 고딕","Apple SD Gothic Neo","Noto Sans KR","Segoe UI",system-ui,-apple-system,sans-serif;
@@ -38,23 +41,6 @@
   @media (max-width:600px) { #pn-back { left:8px; bottom:8px; padding:7px 12px; font-size:12px; opacity:.95; } }
   #pn-back:hover { border-color:var(--gold-line); color:var(--gold); }
   /* 특성 변천도 */
-  .chart-wrap { overflow:auto; max-height:70vh; border:1px solid var(--line); border-radius:12px; background:var(--card); margin:0 0 6px; }
-  table.chart { border-collapse:separate; border-spacing:0; font-size:12px; }
-  .chart th, .chart td { border-bottom:1px solid var(--line); padding:3px 6px; white-space:nowrap; }
-  .chart thead th { position:sticky; top:0; background:var(--card2); z-index:2; }
-  .chart th.rowh { position:sticky; left:0; background:var(--card); z-index:1; text-align:left; font-weight:400; min-width:180px; max-width:240px; overflow:hidden; text-overflow:ellipsis; }
-  .chart thead th.rowh { z-index:3; background:var(--card2); }
-  .chart th.col { font-weight:400; color:var(--dim); font-size:11px; padding:6px 3px; }
-  .chart th.col span { display:inline-block; writing-mode:vertical-rl; transform:rotate(180deg); }
-  .chart th.col.ptr span { color:#8b5cf6; }
-  .chart td.c { text-align:center; min-width:28px; }
-  .chart .m { display:inline-block; width:20px; height:20px; line-height:20px; border-radius:4px; font-size:12px; font-weight:700; cursor:pointer; }
-  .m.add { background:var(--ins-bg); color:var(--ins); } .m.rm { background:var(--del-bg); color:var(--del); } .m.chg { background:var(--blue-soft); color:var(--blue); } .m.mv { background:rgba(139,92,246,.18); color:var(--purple); }
-  .chart tr.grp th { background:var(--card2); color:var(--gold); font-weight:700; position:sticky; left:0; }
-  .chart .rowh img { width:18px; height:18px; vertical-align:middle; margin-right:5px; border-radius:3px; background:var(--card2); }
-  .chart .rowh .lv { color:var(--dim); font-size:10px; margin-left:4px; }
-  .chart .rowh.gone { color:var(--dim); text-decoration:line-through; }
-  .legend { display:flex; gap:12px; font-size:12px; color:var(--dim); margin:0 0 16px; flex-wrap:wrap; align-items:center; }
   /* 수치 그래프 */
   .gsec { margin:6px 0 22px; }
   .gcard { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:10px 14px; margin:0 0 10px; }
@@ -123,22 +109,29 @@
   @media (max-width:600px) { .tsum .row { grid-template-columns:1fr; } }
   .gnone span { display:inline-block; margin:2px 6px 2px 0; }
   @media (max-width:600px) { .gline { grid-template-columns:1fr; gap:2px; } }
-  .legend .m { cursor:default; }
   .hist .ent:target .box { border-color:var(--gold-line); box-shadow:0 0 0 2px var(--gold-line); }
   .hist .ent { scroll-margin-top:70px; }
   .nav a { text-decoration:none; color:var(--dim); border:1px solid var(--line); background:var(--card); border-radius:99px; padding:6px 16px; font-size:13px; }
-  .nav a.on { color:var(--gold); border-color:var(--gold-line); font-weight:700; }
+  .nav a.on { color:var(--gold); border-color:var(--gold-line); font-weight:700;
+              background:var(--blue-soft); box-shadow:inset 0 -2px 0 var(--gold-line); }
   .nav a:hover { border-color:var(--gold-line); color:var(--gold); }
   button, .btn { font-family:inherit; font-size:13px; cursor:pointer; border:1px solid var(--line); background:var(--card); color:var(--fg); border-radius:99px; padding:5px 12px; }
   button:hover, .btn:hover { border-color:var(--gold-line); color:var(--gold); }
-  button.on { background:var(--blue); border-color:var(--blue); color:#fff; }
+  button.on { background:var(--blue); border-color:var(--blue); color:var(--on-accent); }
   input[type=search] { font-family:inherit; font-size:14px; padding:9px 12px; border:1px solid var(--line); border-radius:8px; background:var(--card); color:var(--fg); width:100%; }
   .filters { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:10px 0; }
+  .filters a { font-size:13px; text-decoration:none; border:1px solid var(--line); background:var(--card);
+               color:var(--fg); border-radius:99px; padding:5px 12px; }
+  .filters a:hover { border-color:var(--gold-line); }
+  .filters a.on { background:var(--blue); border-color:var(--blue); color:var(--on-accent); font-weight:700; }
   .filters .grp { display:flex; flex-wrap:wrap; gap:6px; align-items:center; }
   .filters .lbl { color:var(--dim); font-size:12px; margin-right:2px; }
   .chip { display:inline-flex; align-items:center; gap:5px; border:1px solid var(--line); background:var(--card2); border-radius:99px; padding:3px 10px 3px 4px; font-size:13px; cursor:pointer; }
   .chip img { width:22px; height:22px; border-radius:50%; object-fit:cover; }
-  .chip .x { color:var(--dim); margin-left:2px; }
+  .chip .x { color:var(--dim); margin-left:2px; cursor:pointer; font-weight:700; background:none;
+             border:0; padding:0 2px; font-size:14px; line-height:1; font-family:inherit; }
+  .chip .x:hover { color:var(--del); }
+  .chip .x:focus-visible { outline:2px solid var(--gold); outline-offset:1px; border-radius:4px; }
   .picker { position:relative; }
   .picker .menu { position:absolute; top:110%; left:0; z-index:20; background:var(--card); border:1px solid var(--line); border-radius:10px; padding:8px; width:min(92vw,420px); max-height:340px; overflow:auto; box-shadow:0 8px 30px rgba(0,0,0,.18); }
   .picker .menu input { margin-bottom:6px; }
@@ -149,6 +142,7 @@
 
   /* 카드 목록 — 허브의 앱 카드와 같은 톤 */
   .list { display:flex; flex-direction:column; gap:8px; }
+  .list .row { content-visibility:auto; contain-intrinsic-size:auto 118px; }
   .list .row, .cal-panel .row { display:block; background:var(--card); border:1px solid var(--line);
                                 border-radius:12px; padding:12px 14px; transition:border-color .15s, box-shadow .15s; }
   .list .row:hover, .cal-panel .row:hover { border-color:var(--gold-line); box-shadow:0 4px 18px rgba(0,0,0,.08); }
@@ -156,13 +150,14 @@
   .row .top { display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
   .row .date { font-weight:700; font-variant-numeric:tabular-nums; }
   .row .title { flex:1 1 300px; font-size:14px; }
-  .badge { font-size:11px; font-weight:700; border-radius:6px; padding:2px 7px; letter-spacing:.3px; color:#fff; background:var(--dim); white-space:nowrap; }
-  .badge.official { background:var(--gold); } .badge.data { background:#4b5563; } .badge.translated { background:#7c3aed; }
+  .badge { font-size:11px; font-weight:700; border-radius:6px; padding:2px 7px; letter-spacing:.3px; color:var(--on-accent); background:var(--dim); white-space:nowrap; }
+  .badge.official { background:var(--gold-solid); }
+  .badge.data { background:#4b5563; color:#fff; } .badge.translated { background:#7c3aed; color:#fff; }
   .trnote { display:flex; gap:10px; align-items:flex-start; background:var(--card2); border:1px solid var(--line); border-left:3px solid #7c3aed; border-radius:8px; padding:9px 12px; margin:0 0 12px; font-size:12px; color:var(--dim); line-height:1.6; }
   .trnote b { color:var(--fg); }
-  .trnote .tag { flex:none; background:var(--purple); color:#fff; border-radius:5px; padding:1px 7px; font-size:11px; font-weight:700; }
-  .badge.live { background:#1758a8; } .badge.ptr { background:#6d28d9; }
-  .badge.sub { background:transparent; color:var(--dim); border:1px solid var(--line); }
+  .trnote .tag { flex:none; background:var(--purple); color:var(--on-accent); border-radius:5px; padding:1px 7px; font-size:11px; font-weight:700; }
+  .badge.live { background:#1758a8; color:#fff; } .badge.ptr { background:#6d28d9; color:#fff; }
+  .badge.sub { background:transparent; color:var(--fg); border:1px solid var(--line); font-weight:600; }
   .row .heroes { display:flex; flex-wrap:wrap; gap:3px; margin-top:8px; align-items:center; }
   .row .heroes img, .pimg { width:26px; height:26px; border-radius:50%; object-fit:cover; border:1px solid var(--line); background:var(--card2); }
   .row .heroes .more { color:var(--dim); font-size:12px; margin-left:4px; }
@@ -240,6 +235,11 @@
   @media (max-width:600px) { .wrap { padding:16px 12px 50px; } .panel { padding:12px; } .row { padding:10px; } h1 { font-size:24px; } }
 
   /* ---------- 달력·통계 ---------- */
+  .official iframe, .official video, .official embed, .official object { max-width:100%; width:100%; height:auto; aspect-ratio:16/9; border:0; }
+  .official table { display:block; max-width:100%; overflow-x:auto; }
+  .official img { max-width:100%; height:auto; }
+  .hero-sec > summary::before { content:'▸'; color:var(--dim); flex:none; margin-right:2px; }
+  .hero-sec[open] > summary::before { content:'▾'; }
   .cal-tiles { display:grid; grid-template-columns:repeat(4,1fr); gap:8px; margin:10px 0 12px; }
   .cal-tile { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:10px 12px; }
   .cal-tile .v { font-size:23px; font-weight:800; line-height:1.15; }
@@ -253,7 +253,9 @@
   .cal-note b { color:var(--fg); font-weight:700; }
 
   .cal { border:1px solid var(--line); border-radius:12px; background:var(--card); padding:10px 12px 12px; }
-  .cal-hd, .cal-y { display:grid; grid-template-columns:46px repeat(12,1fr) 132px; column-gap:4px; }
+  /* 1fr 의 최소치는 내용 크기다. 칸 안 점 5개가 칸보다 넓어지면 격자가 넘치므로 minmax(0,1fr) 로 못박는다. */
+  .cal-hd, .cal-y { display:grid; grid-template-columns:46px repeat(12,minmax(0,1fr)) 132px; column-gap:4px; }
+  .cal-c, .cal-hd span, .cal-sum { min-width:0; }
   .cal-hd { margin-bottom:4px; }
   .cal-hd span { font-size:11px; color:var(--dim); text-align:center; }
   .cal-y { position:relative; margin-bottom:4px; }
@@ -265,8 +267,8 @@
            border:1px solid var(--line); text-decoration:none; }
   a.cal-c:hover { border-color:var(--gold-line); }
   a.cal-c.on { border-color:var(--gold); box-shadow:0 0 0 1px var(--gold); }
-  .cal-c.empty { border-style:dotted; opacity:.5; }
-  .cal-c.empty::after { content:''; position:absolute; left:24%; right:24%; top:50%; border-top:1px dotted var(--dim); }
+  .cal-c.blank { border-style:dotted; opacity:.5; }
+  .cal-c.blank::after { content:''; position:absolute; left:24%; right:24%; top:50%; border-top:1px dotted var(--dim); }
   .cal-c.void { border:none; }
   .cal-c.now { border-style:dashed; border-color:var(--gold-line); }
   .cal-c.now::after { content:''; position:absolute; top:16%; bottom:16%; left:var(--cx,30%); width:2px; background:var(--gold); }
@@ -305,12 +307,12 @@
   .st h3 { margin:0 0 3px; font-size:15px; }
   .st .cap { font-size:12px; color:var(--dim); line-height:1.65; margin:0 0 10px; }
   .st .cap.after { margin:10px 0 0; }
-  .st-row { display:grid; grid-template-columns:var(--stl,78px) 1fr var(--str,54px); gap:8px; align-items:center; margin:3px 0; }
+  .st-row { display:grid; grid-template-columns:var(--stl,78px) 1fr var(--str,62px); gap:8px; align-items:center; margin:3px 0; }
   .st-row .k { font-size:12px; color:var(--dim); text-align:right; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
   .st-row .k a { color:inherit; text-decoration:none; }
   .st-row .k a:hover { color:var(--gold); }
   .st-row .k img { width:17px; height:17px; border-radius:50%; vertical-align:-4px; margin-right:4px; }
-  .st-row .v { font-size:11px; color:var(--dim); }
+  .st-row .v { font-size:11px; color:var(--dim); line-height:1.25; }
   .st-row .v b { color:var(--fg); font-size:12px; }
   .st-bar { display:flex; height:14px; border-radius:4px; overflow:hidden; background:var(--card2); }
   .st-bar i { display:block; height:100%; }
@@ -329,7 +331,7 @@
   /* 범례 — 묶음 오른쪽 위에 붙여 둔다 */
   .st-hd, .cal-top { display:flex; align-items:baseline; justify-content:space-between; gap:10px; flex-wrap:wrap; }
   .cal-top { align-items:center; margin-bottom:8px; }
-  .cal-ttl { font-size:15px; font-weight:700; }
+  .cal-ttl { font-size:15px; font-weight:700; margin:0; }
   .lg { display:flex; gap:9px; flex-wrap:wrap; font-size:11px; color:var(--dim); align-items:center; }
   .lg span { display:inline-flex; align-items:center; gap:4px; white-space:nowrap; }
   .lg i { width:10px; height:10px; border-radius:3px; display:block; flex:none; }
@@ -347,21 +349,40 @@
               padding:2px 8px; color:var(--dim); text-decoration:none; white-space:nowrap; }
   .row .ext:hover { border-color:var(--gold-line); color:var(--gold); }
   .row .lagmark { color:var(--purple); font-weight:700; }
+  .pager { display:flex; gap:8px; align-items:center; justify-content:space-between; flex-wrap:wrap; margin:12px 0 0; }
+  .pager a, .pager span { font-size:12px; border:1px solid var(--line); border-radius:10px; padding:7px 12px;
+                          color:var(--fg); text-decoration:none; background:var(--card); max-width:46%;
+                          overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .pager a:hover { border-color:var(--gold-line); color:var(--gold); }
+  .pager span { opacity:.45; }
+  .pager .d { font-weight:700; margin-right:6px; font-variant-numeric:tabular-nums; }
+  .cal-chip { display:inline-flex; align-items:center; gap:5px; background:var(--card2); border:1px solid var(--line);
+              border-radius:99px; padding:3px 10px; font-size:12px; }
+  .cal-chip img { width:18px; height:18px; border-radius:50%; }
+  .cal-chip a { color:var(--dim); text-decoration:none; font-weight:700; }
+  .cal-chip a:hover { color:var(--del); }
   .detail-src { display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin:0 0 10px; }
   .detail-src a { font-size:12px; border:1px solid var(--line); border-radius:99px; padding:4px 11px;
                   color:var(--fg); text-decoration:none; background:var(--card); }
   .detail-src a:hover { border-color:var(--gold-line); color:var(--gold); }
 
+  /* 칸이 좁아지면 점도 같이 줄여 겹치지 않게 한다(한 칸에 가로 5자리) */
+  @media (max-width:900px) { .cal-c { --dot:7px; } }
+  @media (max-width:780px) { .cal-c { --dot:6px; } }
+  @media (max-width:700px) { .cal-c { --dot:5px; } }
+
   @media (max-width:600px) {
     .cal-tiles { grid-template-columns:1fr 1fr; }
     .cal { padding:8px 8px 10px; }
-    .cal-hd, .cal-y { grid-template-columns:32px repeat(12,1fr); column-gap:2px; }
+    .cal-hd, .cal-y { grid-template-columns:32px repeat(12,minmax(0,1fr)); column-gap:2px; }
+    .cal-c, .cal-hd span { min-width:0; }
     .cal-hd span { font-size:9px; } .cal-hd .mo, .cal-hd .sumh { display:none; }
     .cal-yl { font-size:11px; }
     .cal-c { --dot:4px; min-height:23px; gap:1px; border-radius:3px; }
     .cal-sum { grid-column:1/-1; grid-row:2; padding:2px 0 0 2px; }
     .cal-gap { height:12px; font-size:0; }
     .cal-axis { height:18px; }
+    .st { --stl:66px !important; }
     .st-row { --stl:66px; --str:48px; gap:6px; }
     .st-wd { gap:3px; } .st-wd .bars { height:46px; } .st-wd .bars i { width:7px; }
   }
@@ -393,7 +414,7 @@
   const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   const q = () => new URLSearchParams(location.search);
   const heroName = id => (HEROES[id] || {}).name || id;
-  const heroImg = id => { const p = (HEROES[id] || {}).portrait; return p ? `<img src="${PORTRAIT}${p}" alt="" loading="lazy" onerror="this.style.visibility='hidden'">` : ''; };
+  const heroImg = (id, alt) => { const p = (HEROES[id] || {}).portrait; return p ? `<img src="${PORTRAIT}${p}" alt="${alt === false ? '' : esc(heroName(id))}" loading="lazy" onerror="this.style.visibility='hidden'">` : ''; };
   const bgName = s => BGS[s] || s;
   const markDiff = s => esc(s).replace(/\[\[-([\s\S]*?)-\]\]/g, '<del>$1</del>').replace(/\{\{\+([\s\S]*?)\+\}\}/g, '<ins>$1</ins>');
   const patchKey = r => r.date + (r.build ? '&b=' + r.build : '');
@@ -404,16 +425,44 @@
     if (!r.ok) throw new Error(path + ' ' + r.status);
     return (cache[path] = await r.json());
   }
+  // 화면을 갈아엎으면 초점이 body 로 날아간다. 누른 것과 같은 뜻의 요소로 돌려 놓는다.
+  let refocus = null;
+  const FKEYS = ['data-ch', 'data-src', 'data-tab', 'data-rm-hero', 'data-rm-bg', 'data-m', 'data-focus'];
+  function focusKeyOf(el) {
+    if (!el || el === document.body) return null;
+    for (const k of FKEYS) if (el.hasAttribute && el.hasAttribute(k)) return `[${k}="${el.getAttribute(k)}"]`;
+    const href = el.tagName === 'A' ? el.getAttribute('href') : null;
+    return href && href.indexOf('"') < 0 ? `a[href="${href}"]` : null;
+  }
+  function restoreFocus() {
+    const key = refocus;
+    refocus = null;
+    if (!key) return;
+    try { const el = app.querySelector(key); if (el) el.focus({ preventScroll: true }); } catch (e) {}
+  }
+
   function go(params, push = true) {
     const u = new URL(location.href); u.search = '';
     Object.entries(params).forEach(([k, v]) => { if (v != null && v !== '' && !(Array.isArray(v) && !v.length)) u.searchParams.set(k, Array.isArray(v) ? v.join(',') : v); });
     push ? history.pushState(null, '', u) : history.replaceState(null, '', u);
-    render();
+    if (!refocus) refocus = focusKeyOf(document.activeElement);
+    Promise.resolve(render()).then(restoreFocus);
   }
   window.addEventListener('popstate', render);
 
+  // 같은 화면 안 링크는 문서를 다시 받지 않고 그 자리에서 그린다.
+  document.addEventListener('click', e => {
+    if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    const a = e.target.closest('a[href^="?"]');
+    if (!a || a.target || a.hasAttribute('download')) return;
+    e.preventDefault();
+    refocus = focusKeyOf(a);
+    history.pushState(null, '', a.getAttribute('href') || '?');
+    Promise.resolve(render()).then(restoreFocus);
+  });
+
   function headHTML(view) {
-    const tab = (k, label, href) => `<a href="${href}" class="${view === k ? 'on' : ''}">${label}</a>`;
+    const tab = (k, label, href) => `<a href="${href}" class="${view === k ? 'on' : ''}"${view === k ? ' aria-current="page"' : ''}>${label}</a>`;
     return `<div class="head"><h1>패치 <span class="s">기록</span><span class="en">Patch Note History</span></h1></div>
       <p class="sub">블리자드 <b>공식 한글</b> 패치 노트(2017년 1월~)를 그대로 싣고, 한국어판이 없는 회차는 영어 원문을 <b>Claude 가 번역</b>해 채웠습니다(2016년 9월~). 여기에 게임 파일에서 뽑은 <b>데이터 변경점</b>(2019년 10월~)을 함께 봅니다. 주소를 복사하면 그 화면 그대로 공유됩니다.</p>
       <div class="nav">${tab('list', '패치 목록', '?')}${tab('cal', '달력·통계', '?view=cal')}${tab('heroes', '영웅별 이력', '?view=heroes')}${tab('bgs', '전장별 이력', '?view=bgs')}</div>`;
@@ -436,8 +485,8 @@
     const chBtns = ['', 'live', 'ptr'].map(k => `<button data-ch="${k}" class="${k === ch ? 'on' : ''}">${k ? CH[k] : '전체'}</button>`).join('');
     const SRCLBL = { official: '공식 한글', translated: 'Claude 번역', data: '데이터' };
     const srcBtns = ['', 'official', 'translated', 'data'].map(k => `<button data-src="${k}" class="${k === src ? 'on' : ''}">${k ? SRCLBL[k] : '전체'}</button>`).join('');
-    const heroChips = heroes.map(h => `<span class="chip" data-rm-hero="${h}">${heroImg(h)}${esc(heroName(h))}<span class="x">×</span></span>`).join('');
-    const bgChips = bgs.map(b => `<span class="chip" data-rm-bg="${b}">${esc(bgName(b))}<span class="x">×</span></span>`).join('');
+    const heroChips = heroes.map(h => `<span class="chip">${heroImg(h)}${esc(heroName(h))}<button type="button" class="x" data-rm-hero="${esc(h)}" aria-label="${esc(heroName(h))} 거르개 빼기">×</button></span>`).join('');
+    const bgChips = bgs.map(b => `<span class="chip">${esc(bgName(b))}<button type="button" class="x" data-rm-bg="${esc(b)}" aria-label="${esc(bgName(b))} 거르개 빼기">×</button></span>`).join('');
     const bgOpts = Object.keys(BGS).filter(b => !bgs.includes(b)).map(b => `<option value="${b}">${esc(bgName(b))}</option>`).join('');
 
     app.innerHTML = headHTML('list') + `
@@ -448,7 +497,7 @@
         <div class="grp"><span class="lbl">전장</span>${bgChips}<select id="bgPick" class="btn"><option value="">+ 전장</option>${bgOpts}</select></div>
         ${(ch || src || heroes.length || bgs.length || text) ? '<button id="clear">필터 지우기</button>' : ''}
       </div>
-      <div class="stat">${rows.length}건 / 전체 ${INDEX.length}건 · 공식 한글 ${INDEX.filter(r => r.official && !r.translated).length}건(2017년 1월~) · Claude 번역 ${INDEX.filter(r => r.translated).length}건(공식 한글판 없는 회차) · 데이터만 ${INDEX.filter(r => !r.official).length}건(게임 파일 비교)</div>
+      <div class="stat" role="status" aria-live="polite">${rows.length}건 / 전체 ${INDEX.length}건 · 공식 한글 ${INDEX.filter(r => r.official && !r.translated).length}건(2017년 1월~) · Claude 번역 ${INDEX.filter(r => r.translated).length}건(공식 한글판 없는 회차) · 데이터만 ${INDEX.filter(r => !r.official).length}건(게임 파일 비교)</div>
       <div class="list">${rows.map(rowHTML).join('') || '<div class="empty">조건에 맞는 패치가 없습니다.</div>'}</div>
       ${creditsHTML()}`;
 
@@ -470,7 +519,7 @@
     btn.onclick = e => { e.stopPropagation(); menu.hidden = !menu.hidden; if (!menu.hidden) { draw(''); menu.querySelector('input').focus(); } };
     menu.onclick = e => { e.stopPropagation(); const b = e.target.closest('[data-h]'); if (b) go({ ...cur(), hero: selected.concat(b.dataset.h) }); };
     menu.oninput = e => { const v = e.target.value; draw(v); const i = menu.querySelector('input'); i.focus(); i.setSelectionRange(v.length, v.length); };
-    document.addEventListener('click', () => { menu.hidden = true; }, { once: true });
+    document.addEventListener('click', e => { if (!e.target.closest('.picker')) menu.hidden = true; });
   }
 
   function rowHTML(r) {
@@ -499,24 +548,40 @@
     const p = q();
     const build = p.get('b');
     const row = INDEX.find(r => r.date === date && (!build || String(r.build) === build)) || INDEX.find(r => r.date === date);
-    if (!row) { app.innerHTML = headHTML('list') + `<div class="empty">${esc(date)} 패치를 찾을 수 없습니다.</div>`; return; }
-    const tab = p.get('tab') || (row.official ? 'official' : 'data');
-    const focus = p.get('hero') || '';
+    if (!row) { app.innerHTML = headHTML('list') + `<div class="empty">${esc(date)} 패치를 찾을 수 없습니다.</div>` + creditsHTML(); return; }
+    let tab = p.get('tab') || (row.official ? 'official' : 'data');
+    if (!['official', 'data', 'en'].includes(tab)
+      || (tab === 'en' && !row.en) || (tab === 'official' && !row.official) || (tab === 'data' && !row.diff)) {
+      tab = row.official ? 'official' : 'data';
+    }
+    const focus = HEROES[p.get('hero')] ? p.get('hero') : '';   // 모르는 값은 통째로 버린다
     let official = null, diff = null, enDoc = null;
-    try { if (row.official) official = await getJSON(row.official); } catch (e) { console.warn(e); }
-    try { if (row.diff) diff = await getJSON(row.diff); } catch (e) { console.warn(e); }
-    if (tab === 'en' && row.en) { try { enDoc = await getJSON(row.en); } catch (e) { console.warn(e); } }
+    const want = [];   // 한꺼번에 받고, 지금 볼 탭의 것만 받는다
+    if (row.official) want.push(getJSON(row.official).then(d => { official = d; }).catch(e => console.warn(e)));
+    if (row.diff && tab === 'data') want.push(getJSON(row.diff).then(d => { diff = d; }).catch(e => console.warn(e)));
+    if (row.en && tab === 'en') want.push(getJSON(row.en).then(d => { enDoc = d; }).catch(e => console.warn(e)));
+    await Promise.all(want);
     const tabs = `<div class="tabs">
       <button data-tab="official" class="${tab === 'official' ? 'on' : ''}" ${official ? '' : 'disabled'}>${row.translated ? '한국어 (Claude 번역)' : '공식 패치 노트'}</button>
-      <button data-tab="data" class="${tab === 'data' ? 'on' : ''}" ${diff ? '' : 'disabled'}>데이터 변경점${diff ? ` (${diff.summary.heroes}영웅 · ${diff.summary.changes})` : ''}</button>
+      <button data-tab="data" class="${tab === 'data' ? 'on' : ''}" ${row.diff ? '' : 'disabled'}>데이터 변경점${row.summary ? ` (${row.summary.heroes}영웅 · ${row.summary.changes})` : ''}</button>
       ${row.en ? `<button data-tab="en" class="${tab === 'en' ? 'on' : ''}">영어 원문</button>` : ''}</div>`;
     app.innerHTML = headHTML('list') + `<a id="pn-back" href="?${backParams()}">← 목록</a>
       <h2 style="margin:4px 0;font-size:22px">${badges(row)} ${esc(row.title)}</h2>
       <p class="sub">${row.date}${row.version ? ` · 빌드 ${row.version}` : ''}${row.buildDate && row.buildDate !== row.date ? ` (데이터 추출일 ${row.buildDate})` : ''}</p>
       ${tabs}<div class="panel">${tab === 'en' ? officialHTML(enDoc, focus, row) : tab === 'official' ? officialHTML(official, focus, row) : dataHTML(diff, focus)}</div>${creditsHTML()}`;
     app.querySelectorAll('[data-tab]').forEach(b => b.onclick = () => go({ v: date, b: build, tab: b.dataset.tab, hero: focus }));
+    app.querySelector('.panel').insertAdjacentHTML('afterend', pagerHTML(row));
     app.querySelectorAll('[data-focus]').forEach(a => a.onclick = e => { e.preventDefault(); go({ v: date, b: build, tab, hero: a.dataset.focus === focus ? '' : a.dataset.focus }); });
   }
+  // INDEX 는 최신순이다. 다음(더 최신)이 앞, 이전(더 오래됨)이 뒤.
+  function pagerHTML(row) {
+    const i = INDEX.indexOf(row);
+    const cell = (r, dir) => r
+      ? `<a href="?v=${patchKey(r)}" title="${esc(r.title)}"><span class="d">${dir === 'prev' ? '←' : ''} ${r.date} ${dir === 'next' ? '→' : ''}</span>${esc(r.title.length > 34 ? r.title.slice(0, 33) + '…' : r.title)}</a>`
+      : `<span>${dir === 'prev' ? '← 더 이전 회차 없음' : '더 최신 회차 없음 →'}</span>`;
+    return `<div class="pager">${cell(INDEX[i + 1], 'prev')}${cell(INDEX[i - 1], 'next')}</div>`;
+  }
+
   function backParams() { try { return sessionStorage.getItem('patchnotes.list') || ''; } catch (e) { return ''; } }
 
   function trNote(doc, row) {
@@ -541,7 +606,7 @@
         body += (s.key === 'intro' ? '' : `<h2>${esc(s.name)}</h2>`) + s.html;
       }
     }
-    const focusLink = focus ? `<p class="sub"><a href="?view=hero&id=${focus}">${esc(heroName(focus))} 전체 이력 보기 →</a></p>` : '';
+    const focusLink = focus ? `<p class="sub"><a href="?view=hero&id=${encodeURIComponent(focus)}">${esc(heroName(focus))} 전체 이력 보기 →</a></p>` : '';
     const ext = doc.source ? `<div class="detail-src"><a href="${esc(doc.source)}" target="_blank" rel="noopener">블리자드 원문에서 직접 확인 ↗</a><span style="font-size:11px;color:var(--dim)">${esc(doc.titleEn || doc.title)}</span></div>` : '';
     return `${ext}${trNote(doc, row)}${jump}${focusLink}<div class="official">${body || '<div class="empty">이 영웅 항목이 없습니다.</div>'}</div>
       <div class="src">출처: <a href="${esc(doc.source)}" target="_blank" rel="noopener">${esc(doc.titleEn || doc.title)}</a> — Blizzard Entertainment. 원문 전문은 링크에서 확인하세요.</div>`;
@@ -557,7 +622,7 @@
       const n = x.added ? '신규 영웅' : x.removed ? '제거' : `${x.changes.length}개 변경`;
       return `<details class="hero-sec" ${focus || shown.length <= 6 ? 'open' : ''}><summary>${heroImg(h)}${esc(heroName(h))}<span class="n">${n}</span></summary><div class="body">${x.changes.map(changeHTML).join('') || '<div class="empty">—</div>'}</div></details>`;
     }).join('');
-    const focusLink = focus ? `<p class="sub"><a href="?view=hero&id=${focus}">${esc(heroName(focus))} 전체 이력 보기 →</a></p>` : '';
+    const focusLink = focus ? `<p class="sub"><a href="?view=hero&id=${encodeURIComponent(focus)}">${esc(heroName(focus))} 전체 이력 보기 →</a></p>` : '';
     return `<p class="sub">빌드 ${esc(d.from)} → ${esc(d.to)} 사이의 영웅 데이터 변화입니다. 괄호 안은 그 빌드가 게임 데이터 저장소에 올라온 날(${d.fromDate} → ${d.toDate})이라 패치 날짜와 며칠 다를 수 있습니다${d.toPtr ? '. 테스트 서버 빌드는 직전 라이브 빌드와 비교합니다' : ''}. 툴팁은 원문 마크업을 걷어낸 평문이며 <del>삭제</del> / <ins>추가</ins> 로 표시됩니다.</p>${jump}${focusLink}${secs || '<div class="empty">변경 없음</div>'}`;
   }
 
@@ -601,6 +666,7 @@
   }
 
   async function renderHero(id) {
+    if (!HEROES[id]) { app.innerHTML = headHTML('heroes') + `<div class="empty">${esc(id || '')} 영웅을 찾을 수 없습니다.</div>` + creditsHTML(); return; }
     let doc = null, series = null;
     try { [doc, series] = await Promise.all([getJSON(`heroes/${id}.json`), getJSON(`series/${id}.json`).catch(() => null)]); } catch (e) {}
     const entries = doc ? doc.entries : [];
@@ -614,9 +680,9 @@
       return `<div class="ent" id="e-${e.date}-${e.build || 0}"><h3><a href="${link}">${e.date}</a>${badges({ ...e, official: e.official.length ? 1 : null, translated: e.translated })}<span style="font-weight:400;font-size:13px;color:var(--dim)">${esc(e.version || '')}</span></h3>${off}${dat}</div>`;
     }).join('');
     app.innerHTML = headHTML('heroes') + `<a id="pn-back" href="?view=heroes">← 영웅 목록</a>
-      <div class="hero-head">${heroImg(id)}<div><h2>${esc(heroName(id))}</h2><div class="d">패치 ${entries.length}건 · 공식 노트 ${entries.filter(e => e.official.length).length}건 · 데이터 변경 ${entries.filter(e => e.data).length}건</div></div></div>
+      <div class="hero-head">${heroImg(id)}<div><h2>${esc(heroName(id))}</h2><div class="d">패치 ${entries.length}건 · 공식 노트 ${entries.filter(e => e.official.length).length}건 · 데이터 변경 ${entries.filter(e => e.data).length}건</div>
+        <div style="margin-top:6px"><a class="btn" href="?view=cal&hero=${id}">이 영웅만 달력에서 보기</a></div></div></div>
       ${chart}<div class="hist">${body || '<div class="empty">기록이 없습니다.</div>'}</div>${creditsHTML()}`;
-    app.querySelectorAll('.chart .m[data-go]').forEach(m => m.onclick = () => { const t = document.getElementById(m.dataset.go); if (t) { t.scrollIntoView({ behavior: 'smooth', block: 'start' }); history.replaceState(null, '', '#' + m.dataset.go); } });
     const rerender = () => {
       const y = window.scrollY, sec = app.querySelector('.gsec'); if (!sec || !series) return;
       const open = [...sec.querySelectorAll('details')].map(dt => dt.open), fid = document.activeElement && document.activeElement.id;
@@ -879,7 +945,7 @@
     const tuned = T.filter(i => { const f = F.get(i); return f.tunes && !f.rewrites; });
     const row = (k, arr, cls, note) => `<div class="row"><div class="k">${k}</div><div class="v">${arr.length
       ? arr.map(i => tchip(i, cls, note(F.get(i), i))).join('') : '<span class="none">없음</span>'}</div></div>`;
-    return `<div class="tsum"><h4>특성이 어떻게 바뀌었나 <span style="font-weight:400;font-size:12px;color:var(--dim)">${B[0].date} ~ ${B[B.length - 1].date} 사이 · 지금 이 영웅의 특성 ${T.length}개 기준</span></h4>
+    return `<div class="tsum"><h4>특성 변경 요약 <span style="font-weight:400;font-size:12px;color:var(--dim)">${B[0].date} ~ ${B[B.length - 1].date} 사이 · 지금 이 영웅의 특성 ${T.length}개 기준</span></h4>
       ${row('생긴 특성', added, 'add', f => f.addedAt)}
       ${row('사라진 특성', removed, 'rm', f => f.removedAt)}
       ${row('레벨 이동', moved, 'mv', f => f.lvSeq.join(' → ') + '레벨')}
@@ -951,52 +1017,10 @@
     const ax = G.xmode === 'patch' ? '값이 바뀐 패치만 한 칸씩' : G.xmode === 'time' ? '날짜에 비례해' : '빌드마다 한 칸씩';
     const dir = G.dir === 'asc' ? '왼쪽이 과거, 오른쪽이 최신' : '왼쪽이 최신, 오른쪽이 과거';
     const val = G.val === 'pct' ? '세로축은 기간 첫값 대비 %' : '세로축은 실제 값';
-    return `<div class="gsec ${esc(G.color)}"><h3 style="margin:6px 0 4px;font-size:16px">수치가 어떻게 바뀌었나 <span style="font-weight:400;font-size:12px;color:var(--dim)">${B[0].date} ~ ${B[B.length - 1].date} 라이브 빌드 ${B.length}개 · 가로축은 ${ax}(${dir}) · ${val} · 오를 때 ${upc}, 내릴 때 ${dnc} · 선 끝의 × 는 사라진 시점, → 는 효과 설명이 바뀐 시점</span></h3>${gctlHTML(B)}${out}</div>`;
+    return `<div class="gsec ${esc(G.color)}"><h3 style="margin:6px 0 4px;font-size:16px">수치 변화 <span style="font-weight:400;font-size:12px;color:var(--dim)">${B[0].date} ~ ${B[B.length - 1].date} 라이브 빌드 ${B.length}개 · 가로축은 ${ax}(${dir}) · ${val} · 오를 때 ${upc}, 내릴 때 ${dnc} · 선 끝의 × 는 사라진 시점, → 는 효과 설명이 바뀐 시점</span></h3>${gctlHTML(B)}${out}</div>`;
   }
 
-  // 특성 변천도: 행 = 현재 능력치·기술·특성(+삭제된 것), 열 = 데이터 diff 가 있는 패치(오래된 순)
   const ICON = 'https://sin0nis.github.io/images/abilitytalents/';
-  function chartHTML(doc) {
-    if (!doc || !doc.current) return '';
-    const cols = doc.entries.filter(e => e.data).slice().reverse();
-    if (!cols.length) return '';
-    const marks = {}, names = {}, lastLevel = {};
-    cols.forEach((e, ci) => e.data.changes.forEach(c => {
-      const id = c.type === 'stat' ? 'stat:' + c.field : c.type === 'rename' ? 'stat:name' : c.id;
-      let cls, sym, title;
-      if (c.type === 'talent_added' || c.type === 'ability_added') { cls = 'add'; sym = '+'; title = '신규' + (c.level ? ` (${c.level}레벨)` : ''); }
-      else if (c.type === 'talent_removed' || c.type === 'ability_removed') { cls = 'rm'; sym = '×'; title = '삭제' + (c.level ? ` (${c.level}레벨)` : ''); }
-      else if (c.type === 'stat') { cls = 'chg'; sym = '●'; title = `${c.field}: ${fmt(c.before)} → ${fmt(c.after)}`; }
-      else if (c.type === 'rename') { cls = 'chg'; sym = '●'; title = `이름: ${c.before} → ${c.after}`; }
-      else {
-        const lv = (c.changes || []).find(f => f.field === 'level');
-        if (lv) { cls = 'mv'; sym = '↑↓'; title = `${lv.before}레벨 → ${lv.after}레벨` + ((c.changes.length > 1) ? ' + ' + c.changes.filter(f => f.field !== 'level').map(f => FIELD[f.field] || f.field).join(', ') : ''); }
-        else { cls = 'chg'; sym = '●'; title = (c.changes || []).map(f => FIELD[f.field] || f.field).join(', ') + ' 변경'; }
-      }
-      (marks[id] = marks[id] || {})[ci] = { cls, sym, title: `${e.date} ${e.version || ''}\n${title}` };
-      if (c.name) names[id] = c.name;
-      if (c.level) lastLevel[id] = c.level;
-    }));
-    const cur = doc.current;
-    const curIds = new Set(cur.abilities.map(a => a.id).concat(cur.talents.map(t => t.id)));
-    const statRows = Object.keys(marks).filter(k => k.startsWith('stat:')).map(k => ({ id: k, name: { 'stat:life': '생명력', 'stat:energy': '자원', 'stat:speed': '이동 속도', 'stat:weapons': '일반 공격', 'stat:name': '이름' }[k] || k }));
-    const gone = Object.keys(marks).filter(k => !k.startsWith('stat:') && !curIds.has(k)).map(k => ({ id: k, name: names[k] || k, level: lastLevel[k], gone: true }));
-    const groups = [];
-    if (statRows.length) groups.push({ name: '능력치', rows: statRows });
-    groups.push({ name: '기술', rows: cur.abilities });
-    [1, 4, 7, 10, 13, 16, 20].forEach(l => { const rs = cur.talents.filter(t => t.level === l); if (rs.length) groups.push({ name: `${l}레벨 특성`, rows: rs }); });
-    if (gone.length) groups.push({ name: '삭제된 특성·기술', rows: gone.sort((a, b) => (a.level || 0) - (b.level || 0)) });
-    const head = `<tr><th class="rowh">항목 \\ 패치</th>${cols.map(e => `<th class="col ${e.isPtr ? 'ptr' : ''}" title="${esc(e.title)}"><span>${e.date}${e.isPtr ? ' PTR' : ''}</span></th>`).join('')}</tr>`;
-    const rowsHTML = groups.map(g => `<tr class="grp"><th colspan="${cols.length + 1}">${esc(g.name)}</th></tr>` + g.rows.map(r => {
-      const cells = cols.map((e, ci) => { const m = (marks[r.id] || {})[ci]; return `<td class="c">${m ? `<span class="m ${m.cls}" title="${esc(m.title)}" data-go="e-${e.date}-${e.build || 0}">${m.sym}</span>` : ''}</td>`; }).join('');
-      const icon = r.icon ? `<img src="${ICON}${r.icon}" alt="" loading="lazy" onerror="this.style.visibility='hidden'">` : '';
-      const lv = r.gone && r.level ? `<span class="lv">${r.level}레벨</span>` : (r.type && !r.level ? `<span class="lv">${esc(r.type)}</span>` : '');
-      return `<tr><th class="rowh ${r.gone ? 'gone' : ''}" title="${esc(r.name)}">${icon}${esc(r.name)}${lv}</th>${cells}</tr>`;
-    }).join('')).join('');
-    return `<h3 style="margin:6px 0 6px;font-size:16px">특성 변천도 <span style="font-weight:400;font-size:12px;color:var(--dim)">현재 기준 ${esc(cur.build)} · 데이터 diff 가 있는 패치 ${cols.length}개 (2019년 10월~)</span></h3>
-      <div class="chart-wrap"><table class="chart"><thead>${head}</thead><tbody>${rowsHTML}</tbody></table></div>
-      <div class="legend"><span class="m add">+</span> 신규 <span class="m rm">×</span> 삭제 <span class="m mv">↑↓</span> 레벨 이동 <span class="m chg">●</span> 수치·설명 변경 · 칸을 누르면 아래 해당 패치로 이동, 올리면 요약</div>`;
-  }
 
 
   // ---------- 달력·통계 ----------
@@ -1065,9 +1089,13 @@
       wd[channelOf(r)][w]++;
       if (r.date >= '2023-09-01') wdNew[w]++;
     });
-    const hc = {}, bc = {};
+    const hc = {}, bc = {}, hFirst = {}, hLast = {};
     all.forEach(r => {
-      [...new Set(r.heroes.map(mainHero))].forEach(h => { hc[h] = (hc[h] || 0) + 1; });
+      [...new Set(r.heroes.map(mainHero))].forEach(h => {
+        hc[h] = (hc[h] || 0) + 1;
+        if (!hFirst[h]) hFirst[h] = r.date;
+        hLast[h] = r.date;
+      });
       r.battlegrounds.forEach(b => { bc[b] = (bc[b] || 0) + 1; });
     });
     const roles = {};
@@ -1078,7 +1106,7 @@
       roles[rl].n += n; roles[rl].heroes++;
     });
     CAL = {
-      all, live, ptr, lds, gaps, months, years, ysum, lag, lagBy, wd, wdNew, hc, bc, roles,
+      all, live, ptr, lds, gaps, months, years, ysum, lag, lagBy, wd, wdNew, hc, bc, roles, hFirst, hLast,
       today, todayM, startM, lastM, endM, lastLive: lds[lds.length - 1],
       sinceLast: dnum(today) - dnum(lds[lds.length - 1]),
       recentMed: med(gaps.slice(-12).map(g => g.n)),
@@ -1096,7 +1124,7 @@
       <div class="cal-tile"><div class="v ${late ? 'late' : 'ontime'}">${C.sinceLast}일째</div>
         <div class="d">오늘 <b>${ymd(C.today)}</b> 기준입니다. 마지막 회차는 ${ymd(C.lastLive)}이고, 최근 12번 중앙값은 ${d1(C.recentMed)}일입니다. 이 숫자는 화면을 열 때마다 다시 셉니다. 그 중앙값보다 늦어지면 <span style="color:var(--del);font-weight:700">붉게</span> 보입니다.</div></div>
       <div class="cal-tile"><div class="v">보통 ${d1(C.medGap)}일</div>
-        <div class="d">라이브 ${C.lds.length}회 사이 ${C.gaps.length}번을 잰 중앙값입니다.</div></div>
+        <div class="d">본 서버 회차가 나온 ${C.lds.length}일 사이 ${C.gaps.length}번을 잰 중앙값입니다. 같은 날 두 건이 나온 적이 있어 회차 수(${C.live.length})와 다릅니다.</div></div>
       <div class="cal-tile"><div class="v">2주 안에 ${pct}%</div>
         <div class="d">${C.gaps.length}번 가운데 ${C.within14}번이 14일 안에 이어졌습니다.</div></div>
       <div class="cal-tile"><div class="v">가장 긴 공백 ${C.maxGap.n}일</div>
@@ -1136,7 +1164,7 @@
       <span><i class="rnd pat"></i>본 패치</span><span><i class="rnd bal"></i>밸런스·긴급 수정</span>
       <span><i class="rnd dat"></i>데이터 변경만</span><span><i class="hollow"></i>테스트 서버</span>
       <span><i class="dens"></i>본 서버 3건 이상인 달</span><span><i class="band"></i>3개월 이상 공백(전체 기준)</span></div>`;
-    let out = `<div class="cal"><div class="cal-top"><div class="cal-ttl">패치 달력</div>${legend}</div><div class="cal-hd"><span></span>${
+    let out = `<div class="cal"><div class="cal-top"><h2 class="cal-ttl">패치 달력</h2>${legend}</div><div class="cal-hd"><span></span>${
       Array.from({ length: 12 }, (_, i) => `<span>${i + 1}<span class="mo">월</span></span>`).join('')}<span class="sumh">연 요약</span></div>`;
     C.years.forEach(y => {
       const cells = [];
@@ -1152,7 +1180,7 @@
             cells.push(`<span class="cal-c now" style="grid-column:${m + 1};--cx:${cx}%" title="${esc(`오늘은 ${ymd(C.today)}입니다. 마지막 회차로부터 ${C.sinceLast}일째입니다.`)}"></span>`);
           } else {
             const t = whole ? `${ymTxt(k)} · 전체 ${whole}건이지만 조건에 맞는 회차는 없습니다` : `${ymTxt(k)} · 회차 없음`;
-            cells.push(`<span class="cal-c empty"${col} title="${esc(t)}"></span>`);
+            cells.push(`<span class="cal-c blank"${col} title="${esc(t)}"></span>`);
           }
           continue;
         }
@@ -1250,21 +1278,38 @@
         `${y}년 테스트 서버 회차 ${C.ysum[y].ptr}건 · 본 서버 반영까지 중앙값 ${d1(C.ysum[y].lag)}일`)).join('') + '</div>';
 
     const hs = Object.entries(C.hc).filter(([h]) => HEROES[h]).sort((a, b) => b[1] - a[1]);
-    out += `<div class="st">` + stHead('영웅별 패치 횟수', lgHTML([['one', '이름이 오른 회차 수']]),
+    out += `<div class="st" style="--stl:112px">` + stHead('영웅별 패치 횟수', lgHTML([['one', '이름이 오른 회차 수']]),
       `패치 노트나 데이터 변경에 이름이 오른 회차 수입니다. 영웅 ${hs.length}명 가운데 상위 20명이고, 누르면 그 영웅 이력으로 갑니다.`)
       + hs.slice(0, 20).map(([h, n]) => stRow(`<a href="?view=hero&id=${h}">${heroImg(h)}${esc(heroName(h))}</a>`, [['one', n]], `<b>${n}</b>회`, hs[0][1],
         `${heroName(h)} · ${n}회`)).join('') + '</div>';
 
     const rs = Object.entries(C.roles).map(([r, v]) => [r, v.n / v.heroes, v.heroes, v.n]).sort((a, b) => b[1] - a[1]);
-    out += `<div class="st">` + stHead('역할군별 평균 패치 횟수', lgHTML([['one', '영웅 한 명당 평균 회차 수']]),
+    out += `<div class="st" style="--stl:100px">` + stHead('역할군별 평균 패치 횟수', lgHTML([['one', '영웅 한 명당 평균 회차 수']]),
       '역할군마다 영웅 수가 달라 총합으로는 비교가 안 됩니다. 영웅 한 명이 평균 몇 회 손질을 받았는지로 봅니다.')
       + rs.map(([r, avg, hn, tot]) => stRow(esc(ROLE[r] || r), [['one', avg]], `<b>${d1(avg)}</b>회`, rs[0][1],
         `${ROLE[r] || r} · 영웅 ${hn}명 · 총 ${tot}회 · 영웅당 평균 ${d1(avg)}회`)).join('') + '</div>';
 
     const bs = Object.entries(C.bc).sort((a, b) => b[1] - a[1]);
-    out += `<div class="st">` + stHead('전장별 패치 횟수', lgHTML([['one', '이름이 오른 회차 수']]),
-      `공식 노트에 이름이 오른 회차 수입니다. 전장 ${bs.length}곳 전부이고, 누르면 그 전장 이력으로 갑니다.`)
+    out += `<div class="st" style="--stl:126px">` + stHead('전장별 패치 횟수', lgHTML([['one', '이름이 오른 회차 수']]),
+      `공식 노트에 이름이 오른 회차 수입니다. 이름이 오른 적 있는 전장 ${bs.length}곳이고, 누르면 그 전장 이력으로 갑니다. 한 번도 안 나온 전장은 여기 없습니다.`)
       + bs.map(([b, n]) => stRow(`<a href="?view=bg&id=${b}">${esc(bgName(b))}</a>`, [['one', n]], `<b>${n}</b>회`, bs[0][1], `${bgName(b)} · ${n}회`)).join('') + '</div>';
+
+    const quiet = Object.entries(C.hLast).filter(([h]) => HEROES[h])
+      .map(([h, d]) => [h, d, dnum(C.today) - dnum(d)]).sort((a, b) => b[2] - a[2]).slice(0, 12);
+    out += `<div class="st" style="--stl:112px">` + stHead('오래 손대지 않은 영웅', lgHTML([['dat', '마지막으로 이름이 오른 뒤 지난 날']]),
+      `오늘 기준으로 가장 오래 언급이 없는 영웅 12명입니다. 균형이 손대지 않아도 될 만큼 맞았거나, 그냥 잊혔다는 뜻입니다.`)
+      + quiet.map(([h, d, n]) => stRow(`<a href="?view=hero&id=${h}">${heroImg(h)}${esc(heroName(h))}</a>`, [['dat', n]], `<b>${n}</b>일<br><span style="font-size:10px">${d.slice(2)}</span>`, quiet[0][2],
+        `${heroName(h)} · 마지막 ${d} · ${n}일째`)).join('') + '</div>';
+
+    const debut = {};
+    Object.entries(C.hFirst).forEach(([h, d]) => { if (HEROES[h]) debut[d.slice(0, 4)] = (debut[d.slice(0, 4)] || 0) + 1; });
+    const mxd = Math.max(...Object.values(debut));
+    const lastDebut = Object.entries(C.hFirst).filter(([h]) => HEROES[h]).sort((a, b) => a[1] < b[1] ? 1 : -1)[0];
+    out += `<div class="st">` + stHead('연도별 새 영웅', lgHTML([['one', '그해 처음 이름이 오른 영웅 수']]),
+      `패치 노트에 그 영웅 이름이 처음 등장한 해로 셉니다. 출시일과 며칠 다를 수 있고, 2016년 9월 이전에 나온 영웅은 전부 2016년으로 잡힙니다.
+      마지막으로 새로 등장한 영웅은 ${esc(heroName(lastDebut[0]))}(${lastDebut[1]})입니다.`)
+      + C.years.filter(y => debut[y]).map(y => stRow(y, [['one', debut[y]]], `<b>${debut[y]}</b>명`, mxd,
+        `${y}년에 처음 이름이 오른 영웅 ${debut[y]}명`)).join('') + '</div>';
 
     const mxa = Math.max(...C.years.map(y => C.ysum[y].avgHero));
     out += `<div class="st">` + stHead('회차당 평균 영웅 수', lgHTML([['one', '한 회차에 이름이 오른 영웅 수']]),
@@ -1274,12 +1319,12 @@
     return out;
   }
 
-  function calList(C, shown, sel) {
+  function calList(C, shown, sel, mUrl) {
     const isYear = sel.m.length === 4;
     const rows = shown.filter(r => r.date.slice(0, isYear ? 4 : 7) === sel.m).sort((a, b) => a.date < b.date ? 1 : -1);
     const head = isYear ? `${sel.m}년` : ymTxt(sel.m);
     const cap = `<div class="ph"><h3>${head} · ${rows.length}건</h3>${
-      isYear ? '' : `<a class="btn" href="?view=cal&m=${sel.m.slice(0, 4)}">${sel.m.slice(0, 4)}년 전체 보기</a>`}</div>`;
+      isYear ? '' : `<a class="btn" href="${mUrl(sel.m.slice(0, 4))}">${sel.m.slice(0, 4)}년 전체 보기</a>`}</div>`;
     if (!rows.length) return cap + '<div class="empty">이 기간에는 조건에 맞는 회차가 없습니다.</div>';
     return cap + rows.map(r => rowHTML(r).replace('class="row"', `class="row${sel.s === patchKey(r) ? ' sel' : ''}"`)).join('');
   }
@@ -1287,14 +1332,16 @@
   function renderCal() {
     const C = calData(), p = q(), f = cur();
     const sel = { m: p.get('m') || C.lastM, s: p.get('s') || '' };
+    const heroSel = (f.hero || '').split(',').filter(Boolean);
     const shown = C.all.filter(r =>
       (!f.ch || channelOf(r) === f.ch)
       && (!f.src || sourceOf(r) === f.src)
+      && (!heroSel.length || heroSel.every(h => r.heroes.map(mainHero).includes(h)))
       && (!f.q || (r.title || '').toLowerCase().includes(f.q.toLowerCase())));
-    const mUrl = m => '?' + new URLSearchParams(Object.entries({ view: 'cal', m, ch: f.ch, src: f.src, q: f.q }).filter(([, x]) => x)).toString();
+    const mUrl = m => '?' + new URLSearchParams(Object.entries({ view: 'cal', m, ch: f.ch, src: f.src, hero: f.hero, q: f.q }).filter(([, x]) => x)).toString();
     const lnk = (k, v, label) => {
-      const on = ((k === 'ch' ? f.ch : f.src) || '') === v ? ' class="on"' : '';
-      const o = { view: 'cal', m: sel.m, ch: f.ch, src: f.src, q: f.q };
+      const on = ((k === 'ch' ? f.ch : f.src) || '') === v ? ' class="on" aria-current="true"' : '';
+      const o = { view: 'cal', m: sel.m, ch: f.ch, src: f.src, hero: f.hero, q: f.q };
       o[k] = v;
       const u = new URLSearchParams(Object.entries(o).filter(([, x]) => x));
       return `<a href="?${u.toString()}"${on}>${label}</a>`;
@@ -1309,18 +1356,22 @@
       <div class="filters"><span class="grp"><span class="lbl">채널</span>
         ${lnk('ch', '', '전체')}${lnk('ch', 'live', '라이브')}${lnk('ch', 'ptr', '테스트 서버')}</span>
         <span class="grp"><span class="lbl">출처</span>
-        ${lnk('src', '', '전체')}${lnk('src', 'official', '공식 한글')}${lnk('src', 'translated', 'Claude 번역')}${lnk('src', 'data', '데이터')}</span></div>`
-      + ((f.ch || f.src || f.q) ? `<p class="cal-note">거르개가 걸려 있어 달력의 점은 조건에 맞는 ${shown.length}건만 보입니다.
+        ${lnk('src', '', '전체')}${lnk('src', 'official', '공식 한글')}${lnk('src', 'translated', 'Claude 번역')}${lnk('src', 'data', '데이터')}</span>
+        ${heroSel.filter(h => HEROES[h]).map(h => `<span class="cal-chip">${heroImg(h)}${esc(heroName(h))}<a href="${
+          '?' + new URLSearchParams(Object.entries({ view: 'cal', m: sel.m, ch: f.ch, src: f.src, q: f.q, hero: heroSel.filter(x => x !== h).join(',') }).filter(([, x]) => x)).toString()
+        }" title="이 영웅 거르기를 풉니다">×</a></span>`).join('')}</div>`
+      + ((f.ch || f.src || f.q || heroSel.length) ? `<p class="cal-note">거르개가 걸려 있어 달력의 점은 조건에 맞는 ${shown.length}건만 보입니다.
         공백 띠와 연 요약, 아래 통계는 언제나 전체 ${C.all.length}건 기준입니다.</p>` : '')
       + calGrid(C, shown, sel, mUrl)
       + calAxis(C)
-      + `<div class="cal-panel">${calList(C, shown, sel)}</div>`
+      + `<div class="cal-panel">${calList(C, shown, sel, mUrl)}</div>`
       + calStats(C)
       + creditsHTML();
     // 칸·점 누르기는 전체를 다시 그리지 않는다(render 가 맨 위로 스크롤하기 때문에)
     const grid = app.querySelector('.cal');
     if (grid) {
       grid.addEventListener('click', e => {
+        if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;   // 새 탭으로 열기는 그대로 둔다
         const cell = e.target.closest('a.cal-c');
         if (!cell) return;
         e.preventDefault();
@@ -1331,7 +1382,7 @@
         app.querySelectorAll('.cal-c .dot.sel').forEach(el => el.classList.remove('sel'));
         cell.classList.add('on');
         if (dot) dot.classList.add('sel');
-        app.querySelector('.cal-panel').innerHTML = calList(C, shown, sel);
+        app.querySelector('.cal-panel').innerHTML = calList(C, shown, sel, mUrl);
         const u = new URL(location.href);
         u.searchParams.set('m', sel.m);
         if (sel.s) u.searchParams.set('s', sel.s); else u.searchParams.delete('s');
@@ -1351,6 +1402,7 @@
         : `<a style="opacity:.5;cursor:default" title="이 전장은 패치 노트에 따로 언급된 적이 없습니다"><span>${esc(bgName(b))}</span><span class="n">0</span></a>`).join('')}</div>` + creditsHTML();
   }
   async function renderBg(id) {
+    if (!BGS[id]) { app.innerHTML = headHTML('bgs') + `<div class="empty">${esc(id || '')} 전장을 찾을 수 없습니다.</div>` + creditsHTML(); return; }
     let doc = null;
     try { doc = await getJSON(`battlegrounds/${id}.json`); } catch (e) {}
     const entries = doc ? doc.entries : [];
@@ -1363,7 +1415,9 @@
   }
 
   function creditsHTML() {
-    return `<div class="credits"><h4>자료 출처와 수록 범위</h4><dl>
+    const newest = INDEX && INDEX.length ? INDEX[0] : null;
+    const asOf = newest ? `<p class="sub" style="margin:0 0 8px">자료 기준일 <b>${newest.date}</b>${newest.version ? ` · 마지막 빌드 ${esc(newest.version)}` : ''} · 모두 ${INDEX.length}건</p>` : '';
+    return `<div class="credits">${asOf}<h2 style="font-size:15px;margin:0 0 8px">자료 출처와 수록 범위</h2><dl>
       <dt>공식 한글 노트</dt><dd>블리자드 뉴스 한국어판에서 모았습니다(2017년 1월~). 본문의 권리는 Blizzard Entertainment 에 있으며, 각 노트에 원문 링크를 둡니다.</dd>
       <dt>Claude 번역</dt><dd>한국어 공식판이 없는 회차만, 블리자드 <b>영어 원문</b>을 Claude 가 옮겼습니다(2016년 9월~). 공식 번역이 아니며 노트마다 고지·원문 링크·영어 원문 탭을 함께 둡니다.</dd>
       <dt>데이터 변경점</dt><dd>게임 파일에서 뽑은 수치 비교입니다. <a href="https://github.com/HeroesToolChest/heroes-data" target="_blank" rel="noopener">HeroesToolChest/heroes-data</a> · <a href="https://github.com/HeroesToolChest/heroes-data2" target="_blank" rel="noopener">heroes-data2</a> (MIT), 2019년 10월(2.47.2) 이후 빌드만 있습니다.</dd>
