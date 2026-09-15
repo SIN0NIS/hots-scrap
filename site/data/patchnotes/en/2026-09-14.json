@@ -1,0 +1,514 @@
+{
+ "date": "2026-09-14",
+ "kind": "ptr",
+ "title": "Heroes of the Storm PTR Patch Notes - September 14, 2026",
+ "source": "https://news.blizzard.com/en-us/article/24306095/heroes-of-the-storm-ptr-patch-notes-september-14-2026",
+ "published": "2026-09-14T17:45:00Z",
+ "sections": [
+  {
+   "name": "머리말",
+   "key": "intro",
+   "html": "<p>Our next Heroes of the Storm patch has just hit the Public Test Realm and will be available for playtesting. As always, if you encounter any bugs during your PTR play sessions, please stop by the <a href=\"https://us.forums.blizzard.com/en/heroes/c/ptr-bug-report\" target=\"_blank\">PTR Bug Report forum</a> to let us know about your experiences.</p>",
+   "nameKo": "머리말"
+  },
+  {
+   "name": "New Hero: Xal'atath",
+   "key": "new_hero_xal_atath",
+   "html": "<p>Xal'atath has arrived in the Nexus!</p>\n<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Shadow Mark [Q]</strong>\n<ul>\n<li>Shoot a single Void Orb that deals 45 damage to enemies hit. Enemies hit by the center take an additional 90 damage.</li>\n<li>Enemy Heroes directly hit are Marked for 4 seconds.</li>\n<li>Marked Heroes are Revealed and draw the Dark Heart and Void Minions toward them.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Void Step [W]</strong>\n<ul>\n<li>Cast to teleport Xal'atath 3 times in a triangular pattern.</li>\n<li>Each time Xal'atath teleports, her Basic Attacks deal +25% damage while the ability is active.</li>\n<li>Reactivate to end Void Step early and remain at the current location.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Dark Heart Ritual [E]</strong>\n<ul>\n<li>Summon the Dark Heart, which pulses for 35 damage per second to nearby enemies for 8 seconds.</li>\n<li>The Dark Heart moves to Shadow Mark's impact location.</li>\n<li>The Dark Heart pursues Marked Heroes and detonates on impact, dealing 120 damage to nearby enemies and an additional 60 damage to the Marked target.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Void Volley [Trait]</strong>\n<ul>\n<li>Void Volley is charged by Xal'atath's Basic Attacks. Unleash a barrage of Void Orbs at a target location, each dealing 99 damage on impact.</li>\n<li><strong>Quest:</strong> Hit enemy Heroes with Void Volley. Each Hero hit grants 1 stack and increases all Void damage by .1%. Xal'atath loses all stacks when killed\n\t\t<ul>\n<li><strong>Reward (30 Stacks):</strong> Increase Void Volley's range by 2. Upon death, Xal'atath now only loses 6 stacks, but cannot fall below her current milestone minimum</li>\n<li><strong>Reward (55 Stacks):</strong> Void Volley requires 1 fewer Basic Attack to charge Void Volley.</li>\n<li><strong>Mythic Reward (90 Stacks):</strong> Increase Void Attack and Ability damage by 50%. Void Volley projectiles Pierce all targets.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Anchored Core</strong>\n<ul>\n<li>Increase Dark Heart's area by 50% and duration by 50%.</li>\n<li>Dark Heart's damage bounces 2 times from the primary target to nearby enemies, dealing 18 damage.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Cloak of Shadows</strong>\n<ul>\n<li>Activating Void Step grants 50% Movement Speed and 25 Spell Armor for 2 seconds. This bonus refreshes each time Xal'atath teleports.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Toxic Mark</strong>\n<ul>\n<li>Increase Shadow Mark's duration by 1 second.</li>\n<li>Damage over time dealt to Marked Heroes is increased to 1% of their maximum Health. Marked enemies have -15 Armor while Marked.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">Dark Barrier</strong>\n<ul>\n<li>Each time Dark Heart damages an enemy, Xal'atath gains a Shield equal to 2% of her maximum Health, up to 10%.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Void Acolyte</strong>\n<ul>\n<li>Completing Void Step fully charges Void Volley.</li>\n<li>The next Void Volley deals 50% increased damage and costs no Mana.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Cold Feet</strong>\n<ul>\n<li>Increase Shadow Mark's duration by 1 second.</li>\n<li>Marked enemies are Slowed by 25%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Void Summoner</strong>\n<ul>\n<li>Activating Void Step summons a single Void Minion in its center. Void Minions are attracted to Shadow Marked Heroes.</li>\n<li>Void Minion Basic Attacks deal 95 damage per hit. Void Minions lose Health over 30 seconds.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Void Adept</strong>\n<ul>\n<li><strong>Quest:</strong> Detonate the Dark Heart on Marked enemy Heroes to increase Shadow Mark's damage by 5 each time a target is hit, up to 100 additional damage.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Silence of the Lamb</strong>\n<ul>\n<li>Activating Void Step summons a seal of Void magic on the ground. When the seal completes, it deals 99 damage to enemies inside and Silences them for 2 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 10</strong>\n<ul>\n<li><strong class=\"pn-name\">Void Eruption [R]</strong>\n<ul>\n<li>Channel a single powerful Void Orb that grows over time until reaching maximum size after 2 seconds. Recast to launch the Orb early.</li>\n<li>Enemies that come into contact with the Orb take up to 175 damage and are Blinded for 1 second.</li>\n<li>When the Orb reaches the end of its path, it detonates in a large explosion, dealing up to 700 damage.</li>\n<li>The Orb deals contact damage every 0.125 seconds.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Void Convergence [R]</strong>\n<ul>\n<li>After channeling for 2 seconds, summon a Void Portal that spawns up to 4 Void Minions to attack nearby enemies.</li>\n<li>Enemies near the Void Portal are Slowed by 25%.</li>\n<li>Void Minions are attracted to Shadow Marked Heroes.</li>\n<li>The Portal loses health over 20 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Crushing Cascade</strong>\n<ul>\n<li>Enemies hit by Void Volley are Slowed by 6% for 2 seconds per projectile, up to 50%.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Dark Heart's Protection</strong>\n<ul>\n<li>Casting Dark Heart Silences enemies inside its radius for 1 second.</li>\n<li>Xal'atath and allied Heroes gain 30 Spell Armor while inside Dark Heart's radius.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Relentless Whispers</strong>\n<ul>\n<li>While Void Step is active, Xal'atath's Basic Attack rate is increased by 200%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Pull of the Dark Heart</strong>\n<ul>\n<li>Linked enemies are Slowed by 10% for each pulse, stacking up to 5 times and decaying over 2 seconds.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Marked Resilience</strong>\n<ul>\n<li>Basic Attacks against Marked Heroes grant a 480 point Shield that rapidly decays.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Fractured Reality</strong>\n<ul>\n<li>Increase Void Volley projectile damage by 25%.</li>\n<li>Void Volley projectiles leave a trail of fire along their path for 3 seconds, dealing 15 damage over time.</li>\n<li>The trail deals damage every 1 second.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Harbinger's Consumption</strong>\n<ul>\n<li>Xal'atath's Void Eruption splits into 3 orbiting Void Orbs.</li>\n<li>Cancelling the ability early causes the orbs to travel faster.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Rift Invasion</strong>\n<ul>\n<li>Void Convergence's Portal no longer loses health over time and can spawn and sustain up to 6 Void Minions.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Dueling Orbs</strong>\n<ul>\n<li>Gain 1 additional Shadow Mark charge.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Unstable Core</strong>\n<ul>\n<li>When the Dark Heart expires or detonates on a Marked Hero, it leaves behind a pool of void flames for 5 seconds.</li>\n<li>Enemies in the flames take 15 damage over time.</li>\n<li>The flames deal damage every 1 second.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Paradox Loop</strong>\n<ul>\n<li>After completing Void Step, Xal'atath immediately performs a second Void Step in the opposite direction. Added effects are triggered again.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+   "nameKo": ""
+  },
+  {
+   "name": "General",
+   "key": "general",
+   "html": "<ul>\n<li>Updated Homescreen and Startup Music.</li>\n</ul>",
+   "nameKo": "일반"
+  },
+  {
+   "name": "Map Updates",
+   "key": "map_updates",
+   "html": "<ul>\n<li><strong class=\"pn-h\">Garden of Terror</strong>\n<ul>\n<li>Shambler Health and damage now begin 25% below their previous values and gradually return to their previous values over the course of the match.</li>\n</ul>\n</li>\n</ul>",
+   "items": [
+    {
+     "name": "Garden of Terror",
+     "battleground": "garden_of_terror",
+     "html": "<strong class=\"pn-h\">Garden of Terror</strong>\n<ul>\n<li>Shambler Health and damage now begin 25% below their previous values and gradually return to their previous values over the course of the match.</li>\n</ul>",
+     "under": null
+    }
+   ],
+   "nameKo": "전장 업데이트"
+  },
+  {
+   "name": "Balance Update",
+   "key": "balance",
+   "html": "<h3><strong>Heroes</strong></h3>\n<h4>Abathur</h4>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Bombard Strain</strong>\n<ul>\n<li>Health decay reduction lowered from 50% to 40%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Survival Instincts</strong>\n<ul>\n<li>Now provides 50% damage reduction against non-Heroes, instead of +100% Health.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>Alexstrasza</h4>\n<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li>Health increased from 1698 to 1780.</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Overprotective</strong>\n<ul>\n<li>Shield reduced from 70% of healing to 50%.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>Garrosh</h4>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Unrivaled Strength</strong>\n<ul>\n<li>Damage bonus reduced from 125% to 75%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">In For The Kill</strong>\n<ul>\n<li>Damage bonus increased from 70% to 100%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Oppressor</strong>\n<ul>\n<li>Spell Power reduction decreased from 30% to 25%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Bloodcraze</strong>\n<ul>\n<li>Heal duration increased from 3 seconds to 4 seconds. Total healing remains the same.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Double Up</strong>\n<ul>\n<li>Armor duration increased from 3 seconds to 5 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>Mal'Ganis</h4>\n<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Night Rush [E]</strong>\n<ul>\n<li>Cast time reduced from 0.75 seconds to 0.625 seconds.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Vampiric Touch [D]</strong>\n<ul>\n<li>Healing based on damage against Heroes increased from 45% to 50%.</li>\n<li>Healing based on damage against non-Heroes increased from 10% to 15%.</li>\n</ul>\n</li>\n</ul>\n<h4>Qhira</h4>\n<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Blood Rage [W]</strong>\n<ul>\n<li>Damage bonus per stack decreased from 0.25% to 0.2%.</li>\n<li>Blood Rage base damage per tick lowered from 8 to 7.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Fatal Wounds</strong>\n<ul>\n<li>Damage bonus against low Health targets increased from 50% to 70%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Pulsing Pain</strong>\n<ul>\n<li>Damage increased from 135 to 150.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Lingering Ailment</strong>\n<ul>\n<li>Armor reduction decreased from -35 to -25.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>Whitemane</h4>\n<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Desperate Plea [Q]</strong>\n<ul>\n<li>Base mana cost increased from 40 to 45. Mana scaling with each use is unchanged.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Intercession</strong>\n<ul>\n<li>Cooldown increased from 60 to 75 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Radiance</strong>\n<ul>\n<li>Healing increased from 175 to 190.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>Yrel</h4>\n<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Vindication [Q]</strong>\n<ul>\n<li>Mana cost increased from 50 to 65.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Aldor Peacekeeper</strong>\n<ul>\n<li>Damage reduction increased from 40% to 50%.</li>\n<li>Damage reduction duration increased from 3 seconds to 4 seconds.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Velen's Chosen</strong>\n<ul>\n<li>Damage bonus per stack decreased from 10% to 8%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Seraphim</strong>\n<ul>\n<li>Cooldown increased from 20 to 30 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+   "heroes": [
+    {
+     "name": "Abathur",
+     "heroId": "Abathur",
+     "heroIds": [
+      "Abathur"
+     ],
+     "changes": [
+      {
+       "name": "Bombard Strain",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "Health decay reduction lowered from 50% to 40%.",
+         "html": "Health decay reduction lowered from 50% to 40%.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Survival Instincts",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "Now provides 50% damage reduction against non-Heroes, instead of +100% Health.",
+         "html": "Now provides 50% damage reduction against non-Heroes, instead of +100% Health.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Bombard Strain</strong>\n<ul>\n<li>Health decay reduction lowered from 50% to 40%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Survival Instincts</strong>\n<ul>\n<li>Now provides 50% damage reduction against non-Heroes, instead of +100% Health.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Alexstrasza",
+     "heroId": "Alexstrasza",
+     "heroIds": [
+      "Alexstrasza"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Health increased from 1698 to 1780.",
+         "html": "Health increased from 1698 to 1780.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Overprotective",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "Shield reduced from 70% of healing to 50%.",
+         "html": "Shield reduced from 70% of healing to 50%.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li>Health increased from 1698 to 1780.</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Overprotective</strong>\n<ul>\n<li>Shield reduced from 70% of healing to 50%.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Garrosh",
+     "heroId": "Garrosh",
+     "heroIds": [
+      "Garrosh"
+     ],
+     "changes": [
+      {
+       "name": "Unrivaled Strength",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Damage bonus reduced from 125% to 75%.",
+         "html": "Damage bonus reduced from 125% to 75%.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "In For The Kill",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "Damage bonus increased from 70% to 100%.",
+         "html": "Damage bonus increased from 70% to 100%.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Oppressor",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "Spell Power reduction decreased from 30% to 25%.",
+         "html": "Spell Power reduction decreased from 30% to 25%.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Bloodcraze",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "Heal duration increased from 3 seconds to 4 seconds. Total healing remains the same.",
+         "html": "Heal duration increased from 3 seconds to 4 seconds. Total healing remains the same.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Double Up",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "Armor duration increased from 3 seconds to 5 seconds.",
+         "html": "Armor duration increased from 3 seconds to 5 seconds.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Unrivaled Strength</strong>\n<ul>\n<li>Damage bonus reduced from 125% to 75%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 4</strong>\n<ul>\n<li><strong class=\"pn-name\">In For The Kill</strong>\n<ul>\n<li>Damage bonus increased from 70% to 100%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Oppressor</strong>\n<ul>\n<li>Spell Power reduction decreased from 30% to 25%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Bloodcraze</strong>\n<ul>\n<li>Heal duration increased from 3 seconds to 4 seconds. Total healing remains the same.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Double Up</strong>\n<ul>\n<li>Armor duration increased from 3 seconds to 5 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Mal'Ganis",
+     "heroId": "MalGanis",
+     "heroIds": [
+      "MalGanis"
+     ],
+     "changes": [
+      {
+       "name": "Night Rush",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Cast time reduced from 0.75 seconds to 0.625 seconds.",
+         "html": "Cast time reduced from 0.75 seconds to 0.625 seconds.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Vampiric Touch",
+       "key": "D",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Healing based on damage against Heroes increased from 45% to 50%.",
+         "html": "Healing based on damage against Heroes increased from 45% to 50%.",
+         "added": false
+        },
+        {
+         "text": "Healing based on damage against non-Heroes increased from 10% to 15%.",
+         "html": "Healing based on damage against non-Heroes increased from 10% to 15%.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Night Rush [E]</strong>\n<ul>\n<li>Cast time reduced from 0.75 seconds to 0.625 seconds.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Vampiric Touch [D]</strong>\n<ul>\n<li>Healing based on damage against Heroes increased from 45% to 50%.</li>\n<li>Healing based on damage against non-Heroes increased from 10% to 15%.</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Qhira",
+     "heroId": "NexusHunter",
+     "heroIds": [
+      "NexusHunter"
+     ],
+     "changes": [
+      {
+       "name": "Blood Rage",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Damage bonus per stack decreased from 0.25% to 0.2%.",
+         "html": "Damage bonus per stack decreased from 0.25% to 0.2%.",
+         "added": false
+        },
+        {
+         "text": "Blood Rage base damage per tick lowered from 8 to 7.",
+         "html": "Blood Rage base damage per tick lowered from 8 to 7.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Fatal Wounds",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "Damage bonus against low Health targets increased from 50% to 70%.",
+         "html": "Damage bonus against low Health targets increased from 50% to 70%.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Pulsing Pain",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "Damage increased from 135 to 150.",
+         "html": "Damage increased from 135 to 150.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Lingering Ailment",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "Armor reduction decreased from -35 to -25.",
+         "html": "Armor reduction decreased from -35 to -25.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Blood Rage [W]</strong>\n<ul>\n<li>Damage bonus per stack decreased from 0.25% to 0.2%.</li>\n<li>Blood Rage base damage per tick lowered from 8 to 7.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 1</strong>\n<ul>\n<li><strong class=\"pn-name\">Fatal Wounds</strong>\n<ul>\n<li>Damage bonus against low Health targets increased from 50% to 70%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Pulsing Pain</strong>\n<ul>\n<li>Damage increased from 135 to 150.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Lingering Ailment</strong>\n<ul>\n<li>Armor reduction decreased from -35 to -25.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Whitemane",
+     "heroId": "Whitemane",
+     "heroIds": [
+      "Whitemane"
+     ],
+     "changes": [
+      {
+       "name": "Desperate Plea",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Base mana cost increased from 40 to 45. Mana scaling with each use is unchanged.",
+         "html": "Base mana cost increased from 40 to 45. Mana scaling with each use is unchanged.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Intercession",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "Cooldown increased from 60 to 75 seconds.",
+         "html": "Cooldown increased from 60 to 75 seconds.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Radiance",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "Healing increased from 175 to 190.",
+         "html": "Healing increased from 175 to 190.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Desperate Plea [Q]</strong>\n<ul>\n<li>Base mana cost increased from 40 to 45. Mana scaling with each use is unchanged.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 7</strong>\n<ul>\n<li><strong class=\"pn-name\">Intercession</strong>\n<ul>\n<li>Cooldown increased from 60 to 75 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 16</strong>\n<ul>\n<li><strong class=\"pn-name\">Radiance</strong>\n<ul>\n<li>Healing increased from 175 to 190.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "Yrel",
+     "heroId": "Yrel",
+     "heroIds": [
+      "Yrel"
+     ],
+     "changes": [
+      {
+       "name": "Vindication",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Mana cost increased from 50 to 65.",
+         "html": "Mana cost increased from 50 to 65.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Aldor Peacekeeper",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "Damage reduction increased from 40% to 50%.",
+         "html": "Damage reduction increased from 40% to 50%.",
+         "added": false
+        },
+        {
+         "text": "Damage reduction duration increased from 3 seconds to 4 seconds.",
+         "html": "Damage reduction duration increased from 3 seconds to 4 seconds.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Velen's Chosen",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "Damage bonus per stack decreased from 10% to 8%.",
+         "html": "Damage bonus per stack decreased from 10% to 8%.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "Seraphim",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "Cooldown increased from 20 to 30 seconds.",
+         "html": "Cooldown increased from 20 to 30 seconds.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">Base</strong></p>\n<ul>\n<li><strong class=\"pn-name\">Vindication [Q]</strong>\n<ul>\n<li>Mana cost increased from 50 to 65.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">Talents</strong></p>\n<ul>\n<li><strong>Level 13</strong>\n<ul>\n<li><strong class=\"pn-name\">Aldor Peacekeeper</strong>\n<ul>\n<li>Damage reduction increased from 40% to 50%.</li>\n<li>Damage reduction duration increased from 3 seconds to 4 seconds.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">Velen's Chosen</strong>\n<ul>\n<li>Damage bonus per stack decreased from 10% to 8%.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>Level 20</strong>\n<ul>\n<li><strong class=\"pn-name\">Seraphim</strong>\n<ul>\n<li>Cooldown increased from 20 to 30 seconds.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    }
+   ],
+   "nameKo": "밸런스 업데이트"
+  },
+  {
+   "name": "Bug Fixes",
+   "key": "bugs",
+   "html": "<h4>Malfurion</h4>\n<ul>\n<li>Fixed an issue where Entangling Roots would not continuously root enemies within its area.</li>\n</ul>\n<h4>Xul</h4>\n<ul>\n<li>Fixed an issue where Xul's skeletons were sometimes not dealing damage.</li>\n</ul>\n<p><strong><a href=\"https://us.forums.blizzard.com/en/heroes/\" target=\"_blank\">Click here to discuss this post with other players in the official Heroes of the Storm forums</a>.</strong></p>\n<p><strong><img alt=\"\" class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/g6/G6G0N80EOC941426801305139.png\"/></strong></p>",
+   "heroes": [
+    {
+     "name": "Malfurion",
+     "heroId": "Malfurion",
+     "heroIds": [
+      "Malfurion"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue where Entangling Roots would not continuously root enemies within its area.",
+         "html": "Fixed an issue where Entangling Roots would not continuously root enemies within its area.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<ul>\n<li>Fixed an issue where Entangling Roots would not continuously root enemies within its area.</li>\n</ul>"
+    },
+    {
+     "name": "Xul",
+     "heroId": "Necromancer",
+     "heroIds": [
+      "Necromancer"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "Fixed an issue where Xul's skeletons were sometimes not dealing damage.",
+         "html": "Fixed an issue where Xul's skeletons were sometimes not dealing damage.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<ul>\n<li>Fixed an issue where Xul's skeletons were sometimes not dealing damage.</li>\n</ul>\n<p><strong><a href=\"https://us.forums.blizzard.com/en/heroes/\" target=\"_blank\">Click here to discuss this post with other players in the official Heroes of the Storm forums</a>.</strong></p>\n<p><strong><img alt=\"\" class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/g6/G6G0N80EOC941426801305139.png\"/></strong></p>"
+    }
+   ],
+   "nameKo": "버그 수정"
+  }
+ ],
+ "heroes": [
+  "Abathur",
+  "Alexstrasza",
+  "Garrosh",
+  "MalGanis",
+  "Malfurion",
+  "Necromancer",
+  "NexusHunter",
+  "Whitemane",
+  "Yrel"
+ ],
+ "battlegrounds": [
+  "garden_of_terror"
+ ],
+ "lang": "en",
+ "newsId": "24306095"
+}

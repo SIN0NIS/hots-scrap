@@ -1,0 +1,553 @@
+{
+ "date": "2026-09-14",
+ "kind": "ptr",
+ "title": "히어로즈 오브 더 스톰 공개 테스트 서버 패치 노트 - 2026년 9월 14일",
+ "source": "https://news.blizzard.com/en-us/article/24306095/heroes-of-the-storm-ptr-patch-notes-september-14-2026",
+ "published": "2026-09-14T17:45:00Z",
+ "sections": [
+  {
+   "name": "머리말",
+   "key": "intro",
+   "html": "<p>다음 히어로즈 오브 더 스톰 패치가 공개 테스트 서버(PTR)에 적용되어 테스트 플레이가 가능합니다. 언제나 그렇듯, PTR에서 플레이하는 동안 버그를 발견하셨다면 <a href=\"https://us.forums.blizzard.com/en/heroes/c/ptr-bug-report\" target=\"_blank\">PTR 버그 신고 포럼</a>에 방문하여 경험하신 내용을 알려주시기 바랍니다.</p>",
+   "nameEn": "머리말"
+  },
+  {
+   "name": "새로운 영웅: 살라타스",
+   "key": "new_hero_xal_atath",
+   "html": "<p>살라타스가 시공의 폭풍에 참가합니다!</p>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">그림자 표식 [Q]</strong><ul>\n<li>공허의 보주를 하나 발사하여 적중당한 적에게 45의 피해를 줍니다. 중심에 적중당한 적은 90의 추가 피해를 받습니다.</li>\n<li>직접 적중당한 적 영웅에게 4초 동안 표식이 남습니다.</li>\n<li>표식이 남은 영웅은 드러나며, 어둠의 심장과 공허의 돌격병을 자신 쪽으로 끌어당깁니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">공허의 걸음 [W]</strong><ul>\n<li>사용하면 살라타스가 삼각형을 그리며 3회 순간이동합니다.</li>\n<li>살라타스가 순간이동할 때마다 기술이 활성화된 동안 일반 공격이 25%의 추가 피해를 줍니다.</li>\n<li>재사용하면 공허의 걸음이 일찍 끝나고 현재 위치에 남습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">어둠의 심장 의식 [E]</strong><ul>\n<li>어둠의 심장을 소환하여 8초 동안 주위의 적에게 초당 35의 피해를 줍니다.</li>\n<li>어둠의 심장은 그림자 표식이 적중한 위치로 이동합니다.</li>\n<li>어둠의 심장은 표식이 남은 영웅을 추격하여 충돌 시 폭발하며, 주위의 적에게 120의 피해를 주고 표식이 남은 대상에게 60의 추가 피해를 줍니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">공허 연발 [고유 능력]</strong><ul>\n<li>공허 연발은 살라타스의 일반 공격으로 충전됩니다. 대상 지점에 공허의 보주를 쏟아부어 각각 충돌 시 99의 피해를 줍니다.</li>\n<li><strong>퀘스트:</strong> 공허 연발로 적 영웅을 맞히십시오. 적중한 영웅 하나당 중첩을 1회 제공하고 모든 공허 피해량이 0.1% 증가합니다. 살라타스가 사망하면 모든 중첩을 잃습니다.<ul>\n<li><strong>보상(30중첩):</strong> 공허 연발의 사거리가 2 증가합니다. 사망 시 살라타스는 중첩을 6회만 잃으며, 현재 달성한 단계의 최소치 아래로는 떨어지지 않습니다.</li>\n<li><strong>보상(55중첩):</strong> 공허 연발을 충전하는 데 필요한 일반 공격이 1회 감소합니다.</li>\n<li><strong>신화 보상(90중첩):</strong> 공허 공격과 기술의 피해량이 50% 증가합니다. 공허 연발의 투사체가 모든 대상을 관통합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">고정된 핵</strong><ul>\n<li>어둠의 심장의 범위가 50%, 지속시간이 50% 증가합니다.</li>\n<li>어둠의 심장의 피해가 주 대상에서 주위의 적에게 2회 튕기며 18의 피해를 줍니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">그림자 망토</strong><ul>\n<li>공허의 걸음을 사용하면 2초 동안 이동 속도가 50% 증가하고 기술 방어력이 25 증가합니다. 이 효과는 살라타스가 순간이동할 때마다 갱신됩니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">맹독 표식</strong><ul>\n<li>그림자 표식의 지속시간이 1초 증가합니다.</li>\n<li>표식이 남은 영웅에게 주는 지속 피해량이 최대 생명력의 1%로 증가합니다. 표식이 남아 있는 동안 적의 방어력이 15 감소합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">어둠의 방벽</strong><ul>\n<li>어둠의 심장이 적에게 피해를 줄 때마다 살라타스가 최대 생명력의 2%에 해당하는 보호막을 얻습니다. 최대 10%까지 증가합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">공허의 수행자</strong><ul>\n<li>공허의 걸음을 끝내면 공허 연발이 완전히 충전됩니다.</li>\n<li>다음 공허 연발의 피해량이 50% 증가하고 마나를 소모하지 않습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">얼어붙은 발걸음</strong><ul>\n<li>그림자 표식의 지속시간이 1초 증가합니다.</li>\n<li>표식이 남은 적이 25% 감속됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">공허의 소환사</strong><ul>\n<li>공허의 걸음을 사용하면 그 중심에 공허의 돌격병이 하나 소환됩니다. 공허의 돌격병은 그림자 표식이 남은 영웅에게 이끌립니다.</li>\n<li>공허의 돌격병의 일반 공격이 적중할 때마다 95의 피해를 줍니다. 공허의 돌격병은 30초에 걸쳐 생명력을 잃습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">공허의 숙련자</strong><ul>\n<li><strong>퀘스트:</strong> 표식이 남은 적 영웅에게 어둠의 심장을 터뜨리십시오. 대상이 적중당할 때마다 그림자 표식의 피해량이 5씩, 최대 100까지 증가합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">양의 침묵</strong><ul>\n<li>공허의 걸음을 사용하면 땅에 공허 마법의 인장이 생성됩니다. 인장이 완성되면 안에 있는 적에게 99의 피해를 주고 2초 동안 침묵시킵니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>10레벨</strong><ul>\n<li><strong class=\"pn-name\">공허 폭발 [R]</strong><ul>\n<li>정신을 집중하여 강력한 공허의 보주를 하나 만들어 냅니다. 보주는 시간이 지날수록 커져 2초 후에 최대 크기에 도달합니다. 재사용하면 보주를 일찍 발사합니다.</li>\n<li>보주에 닿은 적은 최대 175의 피해를 받고 1초 동안 실명 상태가 됩니다.</li>\n<li>보주가 경로의 끝에 도달하면 크게 폭발하여 최대 700의 피해를 줍니다.</li>\n<li>보주는 0.125초마다 접촉 피해를 줍니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">공허 집결 [R]</strong><ul>\n<li>2초 동안 정신을 집중한 후 공허의 차원문을 소환하여 공허의 돌격병을 최대 4명 생성하고 주위의 적을 공격하게 합니다.</li>\n<li>공허의 차원문 근처의 적이 25% 감속됩니다.</li>\n<li>공허의 돌격병은 그림자 표식이 남은 영웅에게 이끌립니다.</li>\n<li>차원문은 20초에 걸쳐 생명력을 잃습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">짓누르는 연쇄</strong><ul>\n<li>공허 연발에 적중당한 적이 투사체 하나당 2초 동안 6% 감속되며, 최대 50%까지 중첩됩니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">어둠의 심장의 가호</strong><ul>\n<li>어둠의 심장을 시전하면 반경 안의 적이 1초 동안 침묵합니다.</li>\n<li>살라타스와 아군 영웅은 어둠의 심장의 반경 안에 있는 동안 기술 방어력이 30 증가합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">끊임없는 속삭임</strong><ul>\n<li>공허의 걸음이 활성화된 동안 살라타스의 일반 공격 속도가 200% 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">어둠의 심장의 인력</strong><ul>\n<li>연결된 적이 파동마다 10% 감속되며, 최대 5회까지 중첩되고 2초에 걸쳐 감소합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">표식의 회복력</strong><ul>\n<li>표식이 남은 영웅을 일반 공격하면 480의 보호막을 얻으며, 이 보호막은 빠르게 사라집니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">부서진 현실</strong><ul>\n<li>공허 연발 투사체의 피해량이 25% 증가합니다.</li>\n<li>공허 연발의 투사체가 지나간 자리에 3초 동안 불길을 남겨 15의 지속 피해를 줍니다.</li>\n<li>불길은 1초마다 피해를 줍니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">전령의 포식</strong><ul>\n<li>살라타스의 공허 폭발이 공허의 보주 3개로 나뉘어 주위를 공전합니다.</li>\n<li>기술을 일찍 취소하면 보주의 이동 속도가 빨라집니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">균열 침공</strong><ul>\n<li>공허 집결의 차원문이 이제 시간이 지나도 생명력을 잃지 않으며, 공허의 돌격병을 최대 6명까지 생성하고 유지할 수 있습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">결투의 보주</strong><ul>\n<li>그림자 표식의 충전 횟수가 1회 증가합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">불안정한 핵</strong><ul>\n<li>어둠의 심장이 만료되거나 표식이 남은 영웅에게 폭발하면 그 자리에 5초 동안 공허의 불길을 남깁니다.</li>\n<li>불길 안의 적은 15의 지속 피해를 받습니다.</li>\n<li>불길은 1초마다 피해를 줍니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">역설의 고리</strong><ul>\n<li>공허의 걸음이 끝나면 살라타스가 즉시 반대 방향으로 공허의 걸음을 한 번 더 사용합니다. 추가 효과도 다시 발동합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+   "nameEn": "New Hero: Xal'atath"
+  },
+  {
+   "name": "일반",
+   "key": "general",
+   "html": "<ul>\n<li>첫 화면 및 시작 음악이 업데이트되었습니다.</li>\n</ul>",
+   "nameEn": "General"
+  },
+  {
+   "name": "전장 업데이트",
+   "key": "map_updates",
+   "html": "<ul>\n<li><strong class=\"pn-h\">공포의 정원</strong><ul>\n<li>괴식물의 생명력과 피해량이 기존 수치보다 25% 낮은 상태로 시작하며, 경기가 진행되면서 서서히 기존 수치로 돌아옵니다.</li>\n</ul>\n</li>\n</ul>",
+   "items": [
+    {
+     "name": "공포의 정원",
+     "battleground": "garden_of_terror",
+     "html": "<strong class=\"pn-h\">공포의 정원</strong>\n<ul>\n<li>괴식물의 생명력과 피해량이 기존 수치보다 25% 낮은 상태로 시작하며, 경기가 진행되면서 서서히 기존 수치로 돌아옵니다.</li>\n</ul>",
+     "under": null,
+     "nameEn": "Garden of Terror"
+    }
+   ],
+   "nameEn": "Map Updates"
+  },
+  {
+   "name": "밸런스 업데이트",
+   "key": "balance",
+   "html": "<h3><strong>영웅</strong></h3>\n<h4>아바투르</h4>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">포격충 변종</strong><ul>\n<li>생명력 감소 감소량이 50%에서 40%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">생존 본능</strong><ul>\n<li>이제 최대 생명력 100% 증가 대신 영웅이 아닌 대상에게 받는 피해가 50% 감소합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>알렉스트라자</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li>생명력이 1698에서 1780으로 증가했습니다.</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">과보호</strong><ul>\n<li>보호막이 치유량의 70%에서 50%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>가로쉬</h4>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">비할 데 없는 힘</strong><ul>\n<li>추가 피해량이 125%에서 75%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">살상의 기회</strong><ul>\n<li>추가 피해량이 70%에서 100%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">폭군</strong><ul>\n<li>기술 위력 감소량이 30%에서 25%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">피의 광기</strong><ul>\n<li>치유 지속시간이 3초에서 4초로 증가했습니다. 총 치유량은 동일합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">방어력 상승</strong><ul>\n<li>방어력 지속시간이 3초에서 5초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>말가니스</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">밤의 질주 [E]</strong><ul>\n<li>시전 시간이 0.75초에서 0.625초로 감소했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">흡혈의 손길 [D]</strong><ul>\n<li>영웅에게 준 피해량에 비례한 치유량이 45%에서 50%로 증가했습니다.</li>\n<li>영웅이 아닌 대상에게 준 피해량에 비례한 치유량이 10%에서 15%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<h4>키히라</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">피의 분노 [W]</strong><ul>\n<li>중첩당 추가 피해량이 0.25%에서 0.2%로 감소했습니다.</li>\n<li>피의 분노의 주기당 기본 피해량이 8에서 7로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">치명상</strong><ul>\n<li>생명력이 낮은 대상에게 주는 추가 피해량이 50%에서 70%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">고동치는 고통</strong><ul>\n<li>피해량이 135에서 150으로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">만성 통증</strong><ul>\n<li>방어력 감소량이 -35에서 -25로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>화이트메인</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">절박한 기도 [Q]</strong><ul>\n<li>기본 마나 소모량이 40에서 45로 증가했습니다. 사용할 때마다 증가하는 마나 소모량은 변경되지 않았습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">중재</strong><ul>\n<li>재사용 대기시간이 60초에서 75초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">광휘</strong><ul>\n<li>치유량이 175에서 190으로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>이렐</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">비호 [Q]</strong><ul>\n<li>마나 소모량이 50에서 65로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">알도르 평화감시자</strong><ul>\n<li>피해 감소량이 40%에서 50%로 증가했습니다.</li>\n<li>피해 감소 지속시간이 3초에서 4초로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">벨렌의 선택</strong><ul>\n<li>중첩당 추가 피해량이 10%에서 8%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">고위 천사</strong><ul>\n<li>재사용 대기시간이 20초에서 30초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+   "heroes": [
+    {
+     "name": "아바투르",
+     "heroId": "Abathur",
+     "heroIds": [
+      "Abathur"
+     ],
+     "changes": [
+      {
+       "name": "포격충 변종",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "생명력 감소 감소량이 50%에서 40%로 감소했습니다.",
+         "html": "생명력 감소 감소량이 50%에서 40%로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Bombard Strain"
+      },
+      {
+       "name": "생존 본능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "이제 최대 생명력 100% 증가 대신 영웅이 아닌 대상에게 받는 피해가 50% 감소합니다.",
+         "html": "이제 최대 생명력 100% 증가 대신 영웅이 아닌 대상에게 받는 피해가 50% 감소합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Survival Instincts"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">포격충 변종</strong><ul>\n<li>생명력 감소 감소량이 50%에서 40%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">생존 본능</strong><ul>\n<li>이제 최대 생명력 100% 증가 대신 영웅이 아닌 대상에게 받는 피해가 50% 감소합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Abathur"
+    },
+    {
+     "name": "알렉스트라자",
+     "heroId": "Alexstrasza",
+     "heroIds": [
+      "Alexstrasza"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "생명력이 1698에서 1780으로 증가했습니다.",
+         "html": "생명력이 1698에서 1780으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "과보호",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "보호막이 치유량의 70%에서 50%로 감소했습니다.",
+         "html": "보호막이 치유량의 70%에서 50%로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Overprotective"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li>생명력이 1698에서 1780으로 증가했습니다.</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">과보호</strong><ul>\n<li>보호막이 치유량의 70%에서 50%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Alexstrasza"
+    },
+    {
+     "name": "가로쉬",
+     "heroId": "Garrosh",
+     "heroIds": [
+      "Garrosh"
+     ],
+     "changes": [
+      {
+       "name": "비할 데 없는 힘",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "추가 피해량이 125%에서 75%로 감소했습니다.",
+         "html": "추가 피해량이 125%에서 75%로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Unrivaled Strength"
+      },
+      {
+       "name": "살상의 기회",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "추가 피해량이 70%에서 100%로 증가했습니다.",
+         "html": "추가 피해량이 70%에서 100%로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "In For The Kill"
+      },
+      {
+       "name": "폭군",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "기술 위력 감소량이 30%에서 25%로 감소했습니다.",
+         "html": "기술 위력 감소량이 30%에서 25%로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Oppressor"
+      },
+      {
+       "name": "피의 광기",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "치유 지속시간이 3초에서 4초로 증가했습니다. 총 치유량은 동일합니다.",
+         "html": "치유 지속시간이 3초에서 4초로 증가했습니다. 총 치유량은 동일합니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Bloodcraze"
+      },
+      {
+       "name": "방어력 상승",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "방어력 지속시간이 3초에서 5초로 증가했습니다.",
+         "html": "방어력 지속시간이 3초에서 5초로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Double Up"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">비할 데 없는 힘</strong><ul>\n<li>추가 피해량이 125%에서 75%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>4레벨</strong><ul>\n<li><strong class=\"pn-name\">살상의 기회</strong><ul>\n<li>추가 피해량이 70%에서 100%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">폭군</strong><ul>\n<li>기술 위력 감소량이 30%에서 25%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">피의 광기</strong><ul>\n<li>치유 지속시간이 3초에서 4초로 증가했습니다. 총 치유량은 동일합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">방어력 상승</strong><ul>\n<li>방어력 지속시간이 3초에서 5초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Garrosh"
+    },
+    {
+     "name": "말가니스",
+     "heroId": "MalGanis",
+     "heroIds": [
+      "MalGanis"
+     ],
+     "changes": [
+      {
+       "name": "밤의 질주",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "시전 시간이 0.75초에서 0.625초로 감소했습니다.",
+         "html": "시전 시간이 0.75초에서 0.625초로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Night Rush"
+      },
+      {
+       "name": "흡혈의 손길",
+       "key": "D",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "영웅에게 준 피해량에 비례한 치유량이 45%에서 50%로 증가했습니다.",
+         "html": "영웅에게 준 피해량에 비례한 치유량이 45%에서 50%로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "영웅이 아닌 대상에게 준 피해량에 비례한 치유량이 10%에서 15%로 증가했습니다.",
+         "html": "영웅이 아닌 대상에게 준 피해량에 비례한 치유량이 10%에서 15%로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Vampiric Touch"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">밤의 질주 [E]</strong><ul>\n<li>시전 시간이 0.75초에서 0.625초로 감소했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">흡혈의 손길 [D]</strong><ul>\n<li>영웅에게 준 피해량에 비례한 치유량이 45%에서 50%로 증가했습니다.</li>\n<li>영웅이 아닌 대상에게 준 피해량에 비례한 치유량이 10%에서 15%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Mal'Ganis"
+    },
+    {
+     "name": "키히라",
+     "heroId": "NexusHunter",
+     "heroIds": [
+      "NexusHunter"
+     ],
+     "changes": [
+      {
+       "name": "피의 분노",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "중첩당 추가 피해량이 0.25%에서 0.2%로 감소했습니다.",
+         "html": "중첩당 추가 피해량이 0.25%에서 0.2%로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "피의 분노의 주기당 기본 피해량이 8에서 7로 감소했습니다.",
+         "html": "피의 분노의 주기당 기본 피해량이 8에서 7로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Blood Rage"
+      },
+      {
+       "name": "치명상",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "생명력이 낮은 대상에게 주는 추가 피해량이 50%에서 70%로 증가했습니다.",
+         "html": "생명력이 낮은 대상에게 주는 추가 피해량이 50%에서 70%로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Fatal Wounds"
+      },
+      {
+       "name": "고동치는 고통",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "피해량이 135에서 150으로 증가했습니다.",
+         "html": "피해량이 135에서 150으로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Pulsing Pain"
+      },
+      {
+       "name": "만성 통증",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "방어력 감소량이 -35에서 -25로 감소했습니다.",
+         "html": "방어력 감소량이 -35에서 -25로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Lingering Ailment"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">피의 분노 [W]</strong><ul>\n<li>중첩당 추가 피해량이 0.25%에서 0.2%로 감소했습니다.</li>\n<li>피의 분노의 주기당 기본 피해량이 8에서 7로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong><ul>\n<li><strong class=\"pn-name\">치명상</strong><ul>\n<li>생명력이 낮은 대상에게 주는 추가 피해량이 50%에서 70%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">고동치는 고통</strong><ul>\n<li>피해량이 135에서 150으로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">만성 통증</strong><ul>\n<li>방어력 감소량이 -35에서 -25로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Qhira"
+    },
+    {
+     "name": "화이트메인",
+     "heroId": "Whitemane",
+     "heroIds": [
+      "Whitemane"
+     ],
+     "changes": [
+      {
+       "name": "절박한 기도",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "기본 마나 소모량이 40에서 45로 증가했습니다. 사용할 때마다 증가하는 마나 소모량은 변경되지 않았습니다.",
+         "html": "기본 마나 소모량이 40에서 45로 증가했습니다. 사용할 때마다 증가하는 마나 소모량은 변경되지 않았습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Desperate Plea"
+      },
+      {
+       "name": "중재",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 60초에서 75초로 증가했습니다.",
+         "html": "재사용 대기시간이 60초에서 75초로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Intercession"
+      },
+      {
+       "name": "광휘",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "치유량이 175에서 190으로 증가했습니다.",
+         "html": "치유량이 175에서 190으로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Radiance"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">절박한 기도 [Q]</strong><ul>\n<li>기본 마나 소모량이 40에서 45로 증가했습니다. 사용할 때마다 증가하는 마나 소모량은 변경되지 않았습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>7레벨</strong><ul>\n<li><strong class=\"pn-name\">중재</strong><ul>\n<li>재사용 대기시간이 60초에서 75초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong><ul>\n<li><strong class=\"pn-name\">광휘</strong><ul>\n<li>치유량이 175에서 190으로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Whitemane"
+    },
+    {
+     "name": "이렐",
+     "heroId": "Yrel",
+     "heroIds": [
+      "Yrel"
+     ],
+     "changes": [
+      {
+       "name": "비호",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "마나 소모량이 50에서 65로 증가했습니다.",
+         "html": "마나 소모량이 50에서 65로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Vindication"
+      },
+      {
+       "name": "알도르 평화감시자",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "피해 감소량이 40%에서 50%로 증가했습니다.",
+         "html": "피해 감소량이 40%에서 50%로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "피해 감소 지속시간이 3초에서 4초로 증가했습니다.",
+         "html": "피해 감소 지속시간이 3초에서 4초로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Aldor Peacekeeper"
+      },
+      {
+       "name": "벨렌의 선택",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "중첩당 추가 피해량이 10%에서 8%로 감소했습니다.",
+         "html": "중첩당 추가 피해량이 10%에서 8%로 감소했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Velen's Chosen"
+      },
+      {
+       "name": "고위 천사",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 20초에서 30초로 증가했습니다.",
+         "html": "재사용 대기시간이 20초에서 30초로 증가했습니다.",
+         "added": false
+        }
+       ],
+       "nameEn": "Seraphim"
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">비호 [Q]</strong><ul>\n<li>마나 소모량이 50에서 65로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>13레벨</strong><ul>\n<li><strong class=\"pn-name\">알도르 평화감시자</strong><ul>\n<li>피해 감소량이 40%에서 50%로 증가했습니다.</li>\n<li>피해 감소 지속시간이 3초에서 4초로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">벨렌의 선택</strong><ul>\n<li>중첩당 추가 피해량이 10%에서 8%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong><ul>\n<li><strong class=\"pn-name\">고위 천사</strong><ul>\n<li>재사용 대기시간이 20초에서 30초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+     "nameEn": "Yrel"
+    }
+   ],
+   "nameEn": "Balance Update"
+  },
+  {
+   "name": "버그 수정",
+   "key": "bugs",
+   "html": "<h4>말퓨리온</h4>\n<ul>\n<li>휘감는 뿌리가 범위 안의 적을 지속적으로 이동 불가 상태로 만들지 않던 문제를 수정했습니다.</li>\n</ul>\n<h4>줄</h4>\n<ul>\n<li>줄의 해골이 때때로 피해를 주지 않던 문제를 수정했습니다.</li>\n</ul>\n<p><strong><a href=\"https://us.forums.blizzard.com/en/heroes/\" target=\"_blank\">공식 히어로즈 오브 더 스톰 포럼에서 다른 플레이어들과 이 글에 대해 이야기를 나누려면 여기를 클릭하십시오</a>.</strong></p>\n<p><strong><img alt=\"\" class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/g6/G6G0N80EOC941426801305139.png\"/></strong></p>",
+   "heroes": [
+    {
+     "name": "말퓨리온",
+     "heroId": "Malfurion",
+     "heroIds": [
+      "Malfurion"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "휘감는 뿌리가 범위 안의 적을 지속적으로 이동 불가 상태로 만들지 않던 문제를 수정했습니다.",
+         "html": "휘감는 뿌리가 범위 안의 적을 지속적으로 이동 불가 상태로 만들지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<ul>\n<li>휘감는 뿌리가 범위 안의 적을 지속적으로 이동 불가 상태로 만들지 않던 문제를 수정했습니다.</li>\n</ul>",
+     "nameEn": "Malfurion"
+    },
+    {
+     "name": "줄",
+     "heroId": "Necromancer",
+     "heroIds": [
+      "Necromancer"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "줄의 해골이 때때로 피해를 주지 않던 문제를 수정했습니다.",
+         "html": "줄의 해골이 때때로 피해를 주지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<ul>\n<li>줄의 해골이 때때로 피해를 주지 않던 문제를 수정했습니다.</li>\n</ul>\n<p><strong><a href=\"https://us.forums.blizzard.com/en/heroes/\" target=\"_blank\">공식 히어로즈 오브 더 스톰 포럼에서 다른 플레이어들과 이 글에 대해 이야기를 나누려면 여기를 클릭하십시오</a>.</strong></p>\n<p><strong><img alt=\"\" class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/g6/G6G0N80EOC941426801305139.png\"/></strong></p>",
+     "nameEn": "Xul"
+    }
+   ],
+   "nameEn": "Bug Fixes"
+  }
+ ],
+ "heroes": [
+  "Abathur",
+  "Alexstrasza",
+  "Garrosh",
+  "MalGanis",
+  "Malfurion",
+  "Necromancer",
+  "NexusHunter",
+  "Whitemane",
+  "Yrel"
+ ],
+ "battlegrounds": [
+  "garden_of_terror"
+ ],
+ "lang": "ko",
+ "newsId": "24306095",
+ "titleEn": "Heroes of the Storm PTR Patch Notes - September 14, 2026",
+ "translated": {
+  "by": "Claude (claude-opus-5)",
+  "at": "2026-09-15",
+  "source": "https://news.blizzard.com/en-us/article/24306095/heroes-of-the-storm-ptr-patch-notes-september-14-2026",
+  "glossary": "HeroesToolChest 공식 게임 텍스트(enus↔kokr) 대조",
+  "untranslated": 0
+ }
+}

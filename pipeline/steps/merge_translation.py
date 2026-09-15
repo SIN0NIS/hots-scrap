@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Step T3b. 번역 묶음 결과(raw/translate/out/chunk_*.json)를 번역 메모리에 합친다.
 
-out 파일 형식: {"chunk": N, "items": [{"en": "원문", "ko": "번역"}, …]}
+out 파일 형식: {"chunk": N, "items": [{"en": "원문", "ko": "번역"}, …]} 또는 그 items 목록만
 메모리 형식  : raw/translate/memory.json = {"원문": "번역"}
 
 태그(<b>·<span class="pn-new"> 등)의 종류·개수가 원문과 다른 번역은 넣지 않고 따로 보고한다.
@@ -34,7 +34,8 @@ def main():
         except Exception as e:
             problems.append({"file": f.name, "why": f"읽기 실패: {e}"})
             continue
-        for it in d.get("items", []):
+        items = d if isinstance(d, list) else d.get("items", [])   # 목록만 준 것도 받는다
+        for it in items:
             en, ko = (it.get("en") or "").strip(), (it.get("ko") or "").strip()
             if not en or not ko:
                 skipped += 1

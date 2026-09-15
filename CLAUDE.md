@@ -15,7 +15,9 @@
 ## 구조
 
 - `site/index.html` 허브 — `site/apps.json` 을 읽어 앱 카드 자동 나열 (앱 추가 = apps.json 등록)
-- `site/builds/index.html` 특성 빌드 — **단일 파일(4MB, 데이터 내장)**, 직접 편집
+- `site/builds/index.html` 특성 빌드 — 64KB. 영웅 데이터는 `site/data/builds/` 로 분리
+  (`index.json` 6KB + `<live|ptr>.<ko|en>.json` 약 1.5MB, 화면이 고른 판·언어 하나만 받는다).
+  자료 생성은 `pipeline/steps/build_talent_data.py`
 - `site/encyclopedia/index.html` 영웅 도감 — **단일 파일(6MB, 데이터 내장)**, 직접 편집
 - `site/replay/` 리플레이 뷰어 — `index.html` + `css/` + `js/`(클래식 스크립트, ES 모듈 아님). `js/data_*.js` 는 생성 파일
 - `site/shared/scrap.js` 전역 바+테마(한 줄 로드), `scrap.css` 토큰 `--scrap-*`. 여기 수정 = 전 앱 영향 → 전 앱 회귀 확인
@@ -29,9 +31,17 @@
 - `data/` JSON 스키마는 추가 전용 (필드 개명·삭제 금지)
 - 중량 자산(m3·dds·고화질 맵)은 저장소에 넣지 않음. 단일 파일 100MB 초과 금지
 - 아이콘 CDN 은 Pages 주소(`sin0nis.github.io/images/...`), raw.githubusercontent 금지(429)
+- **무료 호스팅이라 요청 수와 내려받는 양을 아낀다.** 이미지 주소는 첫 시도가 맞는 것으로 둔다
+  (실패 후 폴백은 아이콘 수만큼 404 를 낳는다). 큰 데이터는 화면이 실제로 쓰는 것만, 언어·판별로 쪼개 둔다
 - 인코딩 UTF-8(BOM 없음). 큰 단일 파일 HTML 은 Edit 로 부분 수정만 (통째로 다시 쓰지 않기)
 
 ## 외부 연동 통로 (깨뜨리면 안 되는 공개 API)
 
 - 리플레이: `replay/?src=<URL>` (`?replay=` 동일), 허용 호스트는 `replay/js/main.js` 의 `SRC_ALLOW`
-- 빌드: `builds/?b=[T코드,영웅]`, `builds/?hero=<hyperlinkId>`
+- 빌드: `builds/?b=[T코드,영웅]`, `builds/?hero=<hyperlinkId>` (자료 적재 뒤에 실행되도록 `__bootQuery` 로 미뤄 둠)
+
+## 갱신 확인
+
+`python pipeline/steps/check_updates.py` — 블리자드 뉴스(한/영)·HeroesToolChest 새 빌드·참고 사이트를 싸게 확인한다.
+할 일이 있으면 종료 코드 1. 새 영문 노트가 있으면 fetch --en --id → parse --en → extract_strings →
+make_chunks → (번역) → merge_translation → verify → apply_translation → build_patch_index 순으로 돌린다.
