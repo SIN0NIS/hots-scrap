@@ -1,4 +1,7 @@
-# 패치 노트 자동 업데이트 — 하루 두 번 블리자드 뉴스를 확인한다.
+# 패치 노트 자동 업데이트 — 6시간마다 "확인만" 싸게 하고, 있을 때만 일을 벌인다.
+#
+# 확인은 요청 3개로 끝난다(한국어 뉴스 1 + 영어 뉴스 1 + GitHub 빌드 목록 1).
+# 새 것이 없으면 그대로 끝나므로 서버에 부담이 없다.
 #
 # 여기서 자동으로 처리하는 것: **한국어 공식 패치 노트**. 받아서 파싱하고 색인을 다시 만든 뒤
 # 바로 커밋·푸시한다. 푸시하면 Deploy Pages 가 이어 돌아 사이트가 갱신된다.
@@ -12,7 +15,7 @@ name: Update Patch Notes
 
 on:
   schedule:
-    - cron: "10 1,13 * * *"     # 매일 UTC 01:10 / 13:10 = 한국 10:10 / 22:10
+    - cron: "10 */6 * * *"      # 6시간마다 (한국 04:10 · 10:10 · 16:10 · 22:10)
   workflow_dispatch:
 
 permissions:
@@ -36,8 +39,10 @@ jobs:
       - name: 라이브러리 설치
         run: pip install --quiet requests beautifulsoup4 jsonpatch
 
-      - name: 갱신 확인
+      - name: 갱신 확인 (요청 3개)
         id: check
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}   # GitHub API 한도를 넉넉히
         run: |
           set +e
           python pipeline/steps/check_updates.py --json > /tmp/check.json

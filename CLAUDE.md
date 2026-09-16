@@ -42,7 +42,8 @@
 
 ## 자동 갱신
 
-**서버(GitHub Actions)가 하는 일** — `.github/workflows/update-patchnotes.yml`, 매일 한국 시각 10:10·22:10
+**서버(GitHub Actions)가 하는 일** — `.github/workflows/update-patchnotes.yml`, **6시간마다**(한국 04:10·10:10·16:10·22:10)
+- 확인은 요청 **3개**로 끝난다(한국어 뉴스 1 + 영어 뉴스 1 + GitHub 빌드 목록 1). 새 것이 없으면 그대로 끝난다.
 - 블리자드 뉴스에 **한국어 공식 노트**가 새로 뜨면 받아서 파싱하고 색인을 다시 만든 뒤 바로 커밋·푸시한다.
   푸시하면 Deploy Pages 가 이어 돌아 사이트가 갱신된다. PC 가 꺼져 있어도 돈다.
 - 색인 생성에 필요한 빌드 자료는 **두 개뿐**이라 `ci_prepare.py` 가 heroes-data2 를 얕게 받아 그 둘만 복원한다
@@ -53,6 +54,12 @@
 - 한국어판이 없는 영문 노트 번역
 - 새 게임 빌드 반영(diff·series·빌드메이커 자료) — 전체 vendor 가 필요해 무겁다
 
-**손으로 확인**: `python pipeline/steps/check_updates.py` (할 일이 있으면 종료 코드 1)
+**새 영웅 아이콘**: `python pipeline/steps/fetch_missing_icons.py`
+화면이 부르는 아이콘 중 내 이미지 저장소(sin0nis.github.io/images)에 없는 것을
+HeroesToolChest/heroes-images(MIT)에서 받아 `site/images/` 에 둔다. 목록은 `site/images/index.json`.
+앱은 그 목록을 먼저 받아 두고 해당 파일만 로컬에서 부른다(헛걸음 요청 없음).
+나중에 내 저장소에 같은 파일을 올리면 `site/images/` 에서 지우면 된다.
+
+**손으로 확인**: `python pipeline/steps/check_updates.py` (할 일이 있으면 종료 코드 1, 요청 3개)
 새 영문 노트: fetch --en --id → parse --en → extract_strings → make_chunks → (번역) →
 merge_translation → verify → apply_translation → build_patch_index

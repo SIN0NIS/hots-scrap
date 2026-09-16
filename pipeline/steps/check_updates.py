@@ -10,7 +10,10 @@
 사용:
   python check_updates.py              # 사람이 읽는 표
   python check_updates.py --json       # 기계가 읽는 JSON
-  python check_updates.py --pages 3    # 뉴스 목록을 몇 페이지까지 볼지(기본 2)
+  python check_updates.py --pages 3    # 뉴스 목록을 몇 페이지까지 볼지(기본 1)
+  python check_updates.py --nexus      # 참고 사이트 수록 범위까지
+
+요청 수: 기본 3개(한국어 뉴스 1 + 영어 뉴스 1 + GitHub 목록 1). --nexus 를 주면 4개.
 
 돌려주는 값: 새로 할 일이 있으면 1, 없으면 0. 확인 자체가 실패하면 2.
 """
@@ -97,7 +100,8 @@ def nexus_dates():
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--pages", type=int, default=2, help="뉴스 목록을 몇 페이지까지 볼지")
+    ap.add_argument("--pages", type=int, default=1, help="뉴스 목록을 몇 페이지까지 볼지(1페이지 24건이면 몇 주치)")
+    ap.add_argument("--nexus", action="store_true", help="참고 사이트 수록 범위까지 본다(요청 하나 더)")
     ap.add_argument("--json", action="store_true", help="JSON 으로 출력")
     a = ap.parse_args()
 
@@ -123,7 +127,7 @@ def main():
     bl, berr = latest_builds()
     new_builds = [b for b in (bl or []) if b["build"] not in have_builds]
 
-    nx = nexus_dates()
+    nx = nexus_dates() if a.nexus else None
     nx_missing = sorted(d for d in (nx or []) if d not in have_dates and d >= "2016-09-29")
 
     todo = bool(new_ko or new_en or new_builds)
@@ -154,7 +158,7 @@ def main():
         for b in new_builds:
             print(f"   + {b['version']}{' (테스트 서버)' if b['isPtr'] else ''}")
     if nx is None:
-        print("[참고 사이트] 확인 실패 (넘어감)")
+        print("[참고 사이트] 건너뜀 (--nexus 로 볼 수 있습니다)")
     else:
         print(f"[참고 사이트] 거기만 있는 날짜 {len(nx_missing)}개" + (f" — {', '.join(nx_missing[:6])} …" if nx_missing else ""))
     print()

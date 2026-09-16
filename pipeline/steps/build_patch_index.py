@@ -134,6 +134,12 @@ def main():
     for f in (PN / "diff").glob("*.json"):
         for hid, h in json.loads(f.read_text(encoding="utf-8"))["heroes"].items():
             heroes.setdefault(hid, {"name": h["name"]})
+    # 시계열 파일이 없는 영웅(새 영웅·소환수)은 표시해 둔다. 화면이 없는 파일을 부르지 않게(404 아끼기).
+    for hid, e in heroes.items():
+        if (PN / "series" / f"{hid}.json").exists():
+            e.pop("noSeries", None)
+        else:
+            e["noSeries"] = True
     (PN / "heroes.json").write_text(json.dumps(heroes, ensure_ascii=False, indent=1), encoding="utf-8")
     bgs = {}
     mj = site_file("replay", "js", "data_maps.js")

@@ -414,7 +414,12 @@
   const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   const q = () => new URLSearchParams(location.search);
   const heroName = id => (HEROES[id] || {}).name || id;
-  const heroImg = (id, alt) => { const p = (HEROES[id] || {}).portrait; return p ? `<img src="${PORTRAIT}${p}" alt="${alt === false ? '' : esc(heroName(id))}" loading="lazy" onerror="this.style.visibility='hidden'">` : ''; };
+  // 새로 나온 영웅 아이콘은 이미지 저장소에 아직 없다. 여기 받아 둔 것이 있으면 그걸 쓴다.
+  // (목록을 미리 받아 두므로 헛걸음 요청이 생기지 않는다)
+  let LOCAL_IMG = new Set();
+  const portraitUrl = n => LOCAL_IMG.has('heroportraits/' + n) ? '../images/heroportraits/' + n : PORTRAIT + n;
+  const iconUrl = n => LOCAL_IMG.has('abilitytalents/' + n) ? '../images/abilitytalents/' + n : ICON + n;
+  const heroImg = (id, alt) => { const p = (HEROES[id] || {}).portrait; return p ? `<img src="${portraitUrl(p)}" alt="${alt === false ? '' : esc(heroName(id))}" loading="lazy" onerror="this.style.visibility='hidden'">` : ''; };
   const bgName = s => BGS[s] || s;
   const markDiff = s => esc(s).replace(/\[\[-([\s\S]*?)-\]\]/g, '<del>$1</del>').replace(/\{\{\+([\s\S]*?)\+\}\}/g, '<ins>$1</ins>');
   const patchKey = r => r.date + (r.build ? '&b=' + r.build : '');
@@ -668,7 +673,14 @@
   async function renderHero(id) {
     if (!HEROES[id]) { app.innerHTML = headHTML('heroes') + `<div class="empty">${esc(id || '')} 영웅을 찾을 수 없습니다.</div>` + creditsHTML(); return; }
     let doc = null, series = null;
-    try { [doc, series] = await Promise.all([getJSON(`heroes/${id}.json`), getJSON(`series/${id}.json`).catch(() => null)]); } catch (e) {}
+    // 시계열이 없는 영웅은 아예 부르지 않는다(무료 호스팅이라 헛걸음 404 를 만들지 않는다)
+    const wantSeries = !HEROES[id].noSeries;
+    try {
+      [doc, series] = await Promise.all([
+        getJSON(`heroes/${id}.json`),
+        wantSeries ? getJSON(`series/${id}.json`).catch(() => null) : null,
+      ]);
+    } catch (e) {}
     const entries = doc ? doc.entries : [];
     const chart = seriesHTML(series);
     const body = entries.map(e => {
@@ -935,7 +947,7 @@
     };
   }
   function tchip(it, cls, note) {
-    const icon = it.icon ? `<img src="${ICON}${it.icon}" alt="" loading="lazy" onerror="this.style.visibility='hidden'">` : '';
+    const icon = it.icon ? `<img src="${iconUrl(it.icon)}" alt="" loading="lazy" onerror="this.style.visibility='hidden'">` : '';
     return `<span class="t ${cls || ''}">${icon}${esc(it.name)}${note ? `<span class="d">${esc(note)}</span>` : ''}</span>`;
   }
   function talentSummary(sr) {
@@ -956,7 +968,7 @@
   function itemCard(it, B) {
     const f = itemFacts(it, B), segs = it.segments;
     if (f.quiet) return '';   // 한 번도 안 바뀐 것만 접는다 (신설·삭제는 카드로 남긴다)
-    const icon = it.icon ? `<img src="${ICON}${it.icon}" alt="" loading="lazy" onerror="this.style.visibility='hidden'">` : '';
+    const icon = it.icon ? `<img src="${iconUrl(it.icon)}" alt="" loading="lazy" onerror="this.style.visibility='hidden'">` : '';
     const life = (f.added || f.removed) ? `<span class="lv">${B[it.first].date.slice(0, 7)} ~ ${f.removed ? B[it.last].date.slice(0, 7) : '현재'}</span>` : '';
     let body = '';
     if (f.lvN) body += glineHTML('특성 레벨', '', B, it.levels, 0, 'lvl', it.last, it.first);
@@ -1421,6 +1433,7 @@
       <dt>공식 한글 노트</dt><dd>블리자드 뉴스 한국어판에서 모았습니다(2017년 1월~). 본문의 권리는 Blizzard Entertainment 에 있으며, 각 노트에 원문 링크를 둡니다.</dd>
       <dt>Claude 번역</dt><dd>한국어 공식판이 없는 회차만, 블리자드 <b>영어 원문</b>을 Claude 가 옮겼습니다(2016년 9월~). 공식 번역이 아니며 노트마다 고지·원문 링크·영어 원문 탭을 함께 둡니다.</dd>
       <dt>데이터 변경점</dt><dd>게임 파일에서 뽑은 수치 비교입니다. <a href="https://github.com/HeroesToolChest/heroes-data" target="_blank" rel="noopener">HeroesToolChest/heroes-data</a> · <a href="https://github.com/HeroesToolChest/heroes-data2" target="_blank" rel="noopener">heroes-data2</a> (MIT), 2019년 10월(2.47.2) 이후 빌드만 있습니다.</dd>
+      <dt>아이콘</dt><dd>영웅 초상·기술 아이콘은 게임에서 뽑은 것입니다. 새로 나온 영웅처럼 아직 없는 것은 <a href="https://github.com/HeroesToolChest/heroes-images" target="_blank" rel="noopener">HeroesToolChest/heroes-images</a> (MIT) 에서 같은 파일을 받아 채웁니다.</dd>
       <dt>구성 참고</dt><dd>영문 아카이브 <a href="https://nexus-patch-notes.github.io/" target="_blank" rel="noopener">Nexus Patch Notes</a> 의 구성(패치 목록·영웅별 이력)을 참고했습니다. 그 사이트의 글과 코드는 가져오지 않았고, 이 페이지의 내용은 블리자드 원문과 게임 데이터에서 직접 만들었습니다.</dd>
       </dl><div class="warn">블리자드 뉴스 아카이브에 남아 있는 가장 오래된 글이 2016년 9월이라, 2014~2016년 상반기 패치는 싣지 못했습니다.<br>
       이 사이트는 <b>Blizzard Entertainment 와 아무 관계가 없는 개인 팬 아카이브</b>입니다. Heroes of the Storm 및 관련 자료의 권리는 Blizzard Entertainment 에 있으며, 이 사이트는 어떤 수익도 내지 않고 권리자의 요청이 있으면 즉시 내리겠습니다.</div></div>`;
@@ -1449,6 +1462,10 @@
   }
 
   (async function init() {
+    try {
+      const li = await fetch('../images/index.json').then(r => r.ok ? r.json() : null);
+      if (li && li.files) LOCAL_IMG = new Set(li.files);
+    } catch (e) {}
     try {
       [INDEX, HEROES, BGS] = await Promise.all([getJSON('index.json'), getJSON('heroes.json'), getJSON('battlegrounds.json')]);
       render();
