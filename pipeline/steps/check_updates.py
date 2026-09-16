@@ -33,7 +33,8 @@ UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) hots-scrap-patchnotes/0.1 "
 BASE = "https://news.blizzard.com"
 PRODUCT = "heroes-of-the-storm"
 NEXUS = "https://nexus-patch-notes.github.io/"
-GH_TREE = "https://api.github.com/repos/HeroesToolChest/heroes-data2/contents/"
+# 버전 폴더는 저장소 루트가 아니라 heroesdata/ 아래에 있다(루트를 보면 늘 0개로 나온다)
+GH_TREE = "https://api.github.com/repos/HeroesToolChest/heroes-data2/contents/heroesdata"
 
 
 def get(url, **kw):

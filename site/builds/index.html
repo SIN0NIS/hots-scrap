@@ -231,6 +231,12 @@
             if (lang === 'ko') dataKO = d; else dataEN = d;
         }
 
+        /* 판마다 영웅 구성이 다르다(테스트 서버에만 있는 새 영웅). 고른 판에 있는 것만 목록에 둔다. */
+        function applyHeroList() {
+            const all = (BUILD_INDEX && BUILD_INDEX.heroes) || [];
+            heroList = all.filter(h => !h.ch || h.ch.indexOf(currentChannel) > -1);
+        }
+
         function markChannel() {
             const meta = (BUILD_INDEX && BUILD_INDEX.channels) || {};
             ['live', 'ptr'].forEach(function (c) {
@@ -255,6 +261,7 @@
             if (!BUILD_INDEX || !BUILD_INDEX.channels[ch] || ch === currentChannel) return;
             try { await ensureData(ch, currentLang); } catch (e) { alert('데이터를 불러오지 못했습니다.'); return; }
             currentChannel = ch;
+            applyHeroList();
             try { localStorage.setItem('builds.channel', ch); } catch (e) {}
             try {   // 주소도 맞춰 둬야 그대로 복사해 나눌 수 있다
                 const u = new URL(location.href);
@@ -262,7 +269,12 @@
                 history.replaceState(null, '', u);
             } catch (e) {}
             markChannel();
-            if (currentHeroId) { const saved = [...selectedTalents]; selectHero(currentHeroId); selectedTalents = saved; refreshTalentUI(); }
+            if (currentHeroId && !getActiveData()[currentHeroId]) {
+                currentHeroId = null; selectedTalents = [];
+                const st = document.getElementById('hero-stat-container'); if (st) st.style.display = 'none';
+                const wa = document.getElementById('welcome-area');
+                if (wa) { wa.style.display = ''; wa.textContent = CH_LABEL[ch] + ' 에는 이 영웅이 없습니다. 아래에서 다시 고르세요.'; }
+            } else if (currentHeroId) { const saved = [...selectedTalents]; selectHero(currentHeroId); selectedTalents = saved; refreshTalentUI(); }
             const box = document.getElementById('hero-search');
             if (window.renderHeroGrid) window.renderHeroGrid(box ? box.value : '');
         }
@@ -946,7 +958,6 @@ async function tcCapture(mode) {
   if (welcome) welcome.textContent = '데이터를 불러오는 중…';
   try {
     BUILD_INDEX = await fetch(DATA_DIR + 'index.json').then(r => { if (!r.ok) throw new Error('index ' + r.status); return r.json(); });
-    heroList = BUILD_INDEX.heroes || [];
     // 주소로 들어온 판이 가장 우선이다(홈에서 본 서버/테스트 서버를 갈라 들어온다)
     let want = null;
     try { want = new URLSearchParams(location.search).get('ch'); } catch (e) {}
@@ -955,6 +966,7 @@ async function tcCapture(mode) {
       try { want = localStorage.getItem('builds.channel') || 'live'; } catch (e) {}
     }
     currentChannel = BUILD_INDEX.channels[want] ? want : 'live';
+    applyHeroList();
     await ensureData(currentChannel, currentLang);
     markChannel();
     if (window.__bootGrid) window.__bootGrid();

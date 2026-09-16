@@ -133,20 +133,31 @@ def pick(table, key):
     return None
 
 
-def localize(hero_raw, gs_raw):
-    """HeroesDataParser 5.x 의 '번역된 출력' 모양으로 되돌린다."""
+def localize(hero_raw, gs_raw, fallback=None):
+    """HeroesDataParser 5.x 의 '번역된 출력' 모양으로 되돌린다.
+
+    fallback 을 주면 그 언어로 빈 자리를 메운다. 테스트 서버 자료는 새 영웅이
+    아직 번역되지 않은 채로 올라오는 일이 잦아서(빈 문자열), 그대로 두면
+    이름 없는 특성이 줄줄이 생긴다. 한국어가 비면 영어라도 보여 주는 게 낫다.
+    """
     heroes = hero_raw.get("items", hero_raw)
     g = gs_raw.get("items", gs_raw)
+    fb = (fallback or {}).get("items", fallback or {})
     ab, tl = g.get("ability", {}), g.get("talent", {})
+    fab, ftl = fb.get("ability", {}), fb.get("talent", {})
     hero_t, unit_t = g.get("hero", {}), g.get("unit", {})
+    fhero_t = fb.get("hero", {})
     out = {}
     for hid, h in heroes.items():
         if not isinstance(h, dict):
             continue
         n = json.loads(json.dumps(h))   # 원본을 건드리지 않는다
         for f, tab in hero_t.items():
-            if hid in tab:
-                n[f] = tab[hid]
+            v = tab.get(hid)
+            if not v:
+                v = (fhero_t.get(f) or {}).get(hid)
+            if v:
+                n[f] = v
         if "name" not in n:
             n["name"] = unit_t.get("name", {}).get(h.get("unitId", ""), hid)
         n["type"] = "근접" if h.get("isMelee") else "원거리"
@@ -169,13 +180,16 @@ def localize(hero_raw, gs_raw):
                 k = key_of(e)
                 for f in TEXT_FIELDS:
                     v = pick(ab.get(f, {}), k)
+                    if not v:
+                        v = pick(fab.get(f, {}), k)
                     if v is not None:
                         e[f] = clean_tip(v)
         for grp, lst in (n.get("talents") or {}).items():
             for e in lst:
                 k = key_of(e, grp)
                 for f in TEXT_FIELDS:
-                    v = pick(tl.get(f, {}), k) or pick(ab.get(f, {}), key_of(e))
+                    v = (pick(tl.get(f, {}), k) or pick(ab.get(f, {}), key_of(e))
+                         or pick(ftl.get(f, {}), k) or pick(fab.get(f, {}), key_of(e)))
                     if v is not None:
                         e[f] = clean_tip(v)
         out[hid] = n
@@ -237,7 +251,7 @@ def make(row):
     ver = row["version"] + ("_ptr" if row["isPtr"] else "")
     hero_raw, ko_raw = resolve(ver, "kokr")
     _, en_raw = resolve(ver, "enus")
-    ko = slim(adapt(localize(hero_raw, ko_raw), "kokr"))
+    ko = slim(adapt(localize(hero_raw, ko_raw, en_raw), "kokr"))   # 한국어가 비면 영어로 메운다
     en = slim(adapt(localize(hero_raw, en_raw), "enus"))
     heroes = sorted(
         ({"id": hid, "name_ko": ko[hid].get("name", hid), "name_en": en.get(hid, {}).get("name", hid),
@@ -257,7 +271,7 @@ def check(build):
     row = next(b for b in rows if str(b["build"]) == str(build))
     ver = row["version"] + ("_ptr" if row["isPtr"] else "")
     hero_raw, ko_raw = resolve(ver, "kokr")
-    mine = adapt(localize(hero_raw, ko_raw), "kokr")
+    mine = adapt(localize(hero_raw, ko_raw), "kokr")   # 대조는 메우지 않은 상태로
     miss = sorted(set(ref) - set(mine))
     extra = sorted(set(mine) - set(ref))
     print(f"영웅 수: 기준 {len(ref)} · 만든 것 {len(mine)}" + (f" · 빠짐 {miss}" if miss else "") + (f" · 더 있음 {extra}" if extra else ""))
@@ -301,13 +315,18 @@ def main():
     live, ptr = build_rows()
     OUT.mkdir(parents=True, exist_ok=True)
     index, made = {"heroes": [], "channels": {}}, []
+    by_id = {}
     for tag, row in (("live", live), ("ptr", ptr)):
         if not row or (a.only and a.only != tag):
             continue
         meta, heroes, ko, en = make(row)
         index["channels"][tag] = meta
-        if not index["heroes"]:
-            index["heroes"] = heroes
+        for h in heroes:
+            cur = by_id.setdefault(h["id"], {**h, "ch": []})
+            if tag not in cur["ch"]:
+                cur["ch"].append(tag)
+            if tag == "live":           # 이름은 본 서버 쪽을 기준으로 둔다
+                cur.update({k: h[k] for k in ("name_ko", "name_en", "hId")})
         for loc, data in (("ko", ko), ("en", en)):
             p = OUT / f"{tag}.{loc}.json"
             p.write_text(json.dumps(data, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
@@ -315,11 +334,17 @@ def main():
     # 목록·판 정보만 담은 작은 파일. 화면은 이것 하나와 고른 판 하나만 받는다.
     ip = OUT / "index.json"
     if index["channels"]:
-        if ip.exists():
+        if ip.exists():                 # --only 로 한쪽만 만들었으면 나머지는 남겨 둔다
             old = json.loads(ip.read_text(encoding="utf-8"))
-            old.get("channels", {}).update(index["channels"])
-            index["channels"] = old.get("channels", index["channels"])
-            index["heroes"] = index["heroes"] or old.get("heroes", [])
+            merged = old.get("channels", {})
+            merged.update(index["channels"])
+            index["channels"] = merged
+            for h in old.get("heroes", []):
+                cur = by_id.setdefault(h["id"], {**h, "ch": h.get("ch", [])})
+                for c in h.get("ch", []):
+                    if c not in cur["ch"] and c not in index["channels"]:
+                        cur["ch"].append(c)
+        index["heroes"] = sorted(by_id.values(), key=lambda x: x["name_ko"])
         ip.write_text(json.dumps(index, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     for tag, meta, size in made:
         print(f"{tag}: {meta['version']} ({meta['date']}) · {size // 1024}KB")

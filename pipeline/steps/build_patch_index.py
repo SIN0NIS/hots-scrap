@@ -98,13 +98,29 @@ def main():
     if hj.exists():
         for h in json.loads(hj.read_text(encoding="utf-8"))["heroes"]:
             heroes[h["id"]] = {"name": h["name"], "role": h.get("role")}
-    latest = [b for b in builds if not b["isPtr"]][-1]
-    hd = json.loads((ROOT / latest["herodata"]).read_text(encoding="utf-8-sig"))
-    for hid, h in (hd.get("items") or hd).items():
-        if not isinstance(h, dict):
-            continue
-        heroes.setdefault(hid, {"name": hid})
-        heroes[hid]["portrait"] = (h.get("portraits") or {}).get("heroSelect")
+    # 최신 본 서버 빌드 + 최신 빌드(테스트 서버일 수 있다). 새 영웅은 테스트 서버에 먼저 온다.
+    latest_live = [b for b in builds if not b["isPtr"]][-1]
+    newest = builds[-1]
+    live_ids = set()
+    for b in ([latest_live] if newest["build"] == latest_live["build"] else [latest_live, newest]):
+        hd = json.loads((ROOT / b["herodata"]).read_text(encoding="utf-8-sig"))
+        names = {}
+        try:
+            gs = json.loads((ROOT / b["kokr"]).read_text(encoding="utf-8-sig"))
+            names = (gs.get("items") or gs).get("hero", {}).get("name", {}) or {}
+        except Exception:
+            pass
+        for hid, h in (hd.get("items") or hd).items():
+            if not isinstance(h, dict):
+                continue
+            if not b["isPtr"]:
+                live_ids.add(hid)
+            e = heroes.setdefault(hid, {"name": names.get(hid) or hid})
+            if e.get("name") in (None, "", hid) and names.get(hid):
+                e["name"] = names[hid]
+            e["portrait"] = (h.get("portraits") or {}).get("heroSelect") or e.get("portrait")
+            if b["isPtr"] and hid not in live_ids:
+                e["upcoming"] = True   # 테스트 서버에만 있는 새 영웅
     for f in (PN / "diff").glob("*.json"):
         for hid, h in json.loads(f.read_text(encoding="utf-8"))["heroes"].items():
             heroes.setdefault(hid, {"name": h["name"]})
@@ -148,7 +164,7 @@ def main():
     import sys as _sys
     _sys.path.insert(0, str(Path(__file__).resolve().parent))
     from diff_heroes_data import normalize as _normalize
-    latest_norm = _normalize(json.loads((ROOT / latest["herodata"]).read_text(encoding="utf-8-sig")), json.loads((ROOT / latest["kokr"]).read_text(encoding="utf-8-sig")))
+    latest_norm = _normalize(json.loads((ROOT / latest_live["herodata"]).read_text(encoding="utf-8-sig")), json.loads((ROOT / latest_live["kokr"]).read_text(encoding="utf-8-sig")))
     (PN / "heroes").mkdir(exist_ok=True)
     (PN / "battlegrounds").mkdir(exist_ok=True)
     for hid, m in hist_h.items():
@@ -156,7 +172,7 @@ def main():
         cur = latest_norm.get(hid)
         current = None
         if cur:
-            current = {"build": latest["version"],
+            current = {"build": latest_live["version"],
                        "abilities": [{"id": k, "name": v["name"], "type": v["type"], "icon": v["icon"]} for k, v in cur["abilities"].items()],
                        "talents": sorted([{"id": k, "name": v["name"], "level": v["level"], "type": v["type"], "icon": v["icon"], "sort": v.get("sort") or 0} for k, v in cur["talents"].items()], key=lambda t: (t["level"], t["sort"]))}
         (PN / "heroes" / f"{hid}.json").write_text(json.dumps({"id": hid, "current": current, "entries": entries}, ensure_ascii=False), encoding="utf-8")

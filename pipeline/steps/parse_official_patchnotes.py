@@ -73,6 +73,9 @@ GROUPS_EN = {"base": "base", "stats": "stat", "stat": "stat", "abilities": "abil
 TOC_EN_RE = re.compile(r"quick navigation|jump to|^navigation|table of contents", re.I)
 LEVEL_EN_RE = re.compile(r"^level\s*(\d+)$", re.I)
 REWORK_EN_RE = re.compile(r"^(?:hero\s*)?rework\s*[:：]\s*(.+)$|^(.+?)\s*(?:hero\s*)?rework$", re.I)
+# 새 영웅은 "새로운 영웅: 잘아타스" 처럼 절 제목에만 이름이 있다. 거기서 뽑아 태그한다.
+NEWHERO_RE = re.compile(r"^(?:새로운|신규)\s*영웅\s*[:：]\s*(.+)$")
+NEWHERO_EN_RE = re.compile(r"^new\s*hero\s*[:：]\s*(.+)$", re.I)
 DATE_EN_RE = re.compile(r"([A-Z][a-z]+)\s+(\d{1,2}),?\s+(\d{4})")
 MONTHS = {m: i + 1 for i, m in enumerate(["january", "february", "march", "april", "may", "june", "july",
                                           "august", "september", "october", "november", "december"])}
@@ -403,6 +406,10 @@ def parse_article(html, hero_map, bg_map, unmatched, list_title=None):
         if rw and not any(isinstance(n, Tag) and n.name == "h4" for n in nodes):
             add_hero(rw.group(1) or rw.group(2), nodes, hs)
             sec["key"] = "rework"
+        nh = (NEWHERO_EN_RE if EN_MODE else NEWHERO_RE).match(name)
+        if nh:
+            add_hero(nh.group(1), nodes, hs)
+            sec["key"] = "new_hero"
         for hname, hnodes in split_by(nodes, "h4"):
             if hname is None:
                 continue
@@ -525,6 +532,10 @@ def main():
             if ko_name in bg_map:
                 en_bg[en_name] = bg_map[ko_name]
         en_hero.update((gl.get("alias_heroes") or {}))
+        if ALIAS.exists():   # aliases.json 의 영문 표기도 함께 쓴다
+            for k, v in (json.loads(ALIAS.read_text(encoding="utf-8")).get("heroes") or {}).items():
+                if not re.search(r"[가-힣]", k):
+                    en_hero.setdefault(k, v)
         en_bg.update((gl.get("alias_battlegrounds") or {}))
         hero_map, bg_map = en_hero, en_bg
     if not hero_map:
