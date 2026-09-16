@@ -10,9 +10,17 @@
     },
     {
       "id": "builds",
-      "name": "특성 빌드",
-      "path": "builds/",
-      "desc": "특성 빌드 제작·공유",
+      "name": "특성 빌드 (본 서버)",
+      "path": "builds/?ch=live",
+      "desc": "지금 게임에 적용된 본 서버(Live) 기준으로 특성 빌드를 짜고 공유합니다.",
+      "requires": "light",
+      "status": "active"
+    },
+    {
+      "id": "builds-ptr",
+      "name": "특성 빌드 (테스트 서버)",
+      "path": "builds/?ch=ptr",
+      "desc": "공개 테스트 서버(PTR) 기준으로 짭니다. 아직 본 서버에 안 들어온 변경을 미리 맞춰 볼 때 씁니다.",
       "requires": "light",
       "status": "active"
     },
