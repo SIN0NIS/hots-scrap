@@ -40,8 +40,19 @@
 - 리플레이: `replay/?src=<URL>` (`?replay=` 동일), 허용 호스트는 `replay/js/main.js` 의 `SRC_ALLOW`
 - 빌드: `builds/?b=[T코드,영웅]`, `builds/?hero=<hyperlinkId>` (자료 적재 뒤에 실행되도록 `__bootQuery` 로 미뤄 둠)
 
-## 갱신 확인
+## 자동 갱신
 
-`python pipeline/steps/check_updates.py` — 블리자드 뉴스(한/영)·HeroesToolChest 새 빌드·참고 사이트를 싸게 확인한다.
-할 일이 있으면 종료 코드 1. 새 영문 노트가 있으면 fetch --en --id → parse --en → extract_strings →
-make_chunks → (번역) → merge_translation → verify → apply_translation → build_patch_index 순으로 돌린다.
+**서버(GitHub Actions)가 하는 일** — `.github/workflows/update-patchnotes.yml`, 매일 한국 시각 10:10·22:10
+- 블리자드 뉴스에 **한국어 공식 노트**가 새로 뜨면 받아서 파싱하고 색인을 다시 만든 뒤 바로 커밋·푸시한다.
+  푸시하면 Deploy Pages 가 이어 돌아 사이트가 갱신된다. PC 가 꺼져 있어도 돈다.
+- 색인 생성에 필요한 빌드 자료는 **두 개뿐**이라 `ci_prepare.py` 가 heroes-data2 를 얕게 받아 그 둘만 복원한다
+  (vendor 전체를 받지 않는다). `vendor/full` 은 캐시한다.
+- 번역이 필요한 영문 노트, 새 게임 빌드는 **이슈로 알리기만** 한다(라벨 `auto-update`). 사람이 처리한다.
+
+**로컬에서 하는 일** — Claude 예약 작업 `hots-scrap-patch-update` (월·금 10:00, 앱이 켜져 있을 때)
+- 한국어판이 없는 영문 노트 번역
+- 새 게임 빌드 반영(diff·series·빌드메이커 자료) — 전체 vendor 가 필요해 무겁다
+
+**손으로 확인**: `python pipeline/steps/check_updates.py` (할 일이 있으면 종료 코드 1)
+새 영문 노트: fetch --en --id → parse --en → extract_strings → make_chunks → (번역) →
+merge_translation → verify → apply_translation → build_patch_index

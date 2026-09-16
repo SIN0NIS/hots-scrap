@@ -23,11 +23,21 @@ from pathlib import Path
 from bs4 import BeautifulSoup, Comment, NavigableString, Tag
 
 ROOT = Path(__file__).resolve().parents[2]
+
+def site_file(*parts):
+    """배포 저장소 안에서 돌 때도, 작업 폴더 옆에 hots_scrap 이 있을 때도 찾는다.
+    (CI 는 저장소를 hots-scrap 이라는 이름으로 받으므로 폴더 이름에 기대면 안 된다)"""
+    for base in (ROOT, ROOT.parent / "hots_scrap", ROOT.parent / "hots-scrap"):
+        p = base.joinpath("site", *parts)
+        if p.exists():
+            return p
+    return ROOT.joinpath("site", *parts)
+
 RAW = ROOT / "raw" / "official"
 OUT = ROOT / "site" / "data" / "patchnotes" / "official"
 ALIAS = ROOT / "pipeline" / "aliases.json"
-HEROES_JSON = ROOT.parent / "hots_scrap" / "site" / "data" / "97650" / "heroes.json"
-MAPS_JS = ROOT.parent / "hots_scrap" / "site" / "replay" / "js" / "data_maps.js"
+HEROES_JSON = site_file("data", "97650", "heroes.json")
+MAPS_JS = site_file("replay", "js", "data_maps.js")
 
 SECTION_KEYS = {
     "일반": "general", "전장 업데이트": "battlegrounds", "전장": "battlegrounds",

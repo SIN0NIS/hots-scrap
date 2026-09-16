@@ -14,6 +14,16 @@ from datetime import date, timedelta
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
+
+def site_file(*parts):
+    """배포 저장소 안에서 돌 때도, 작업 폴더 옆에 hots_scrap 이 있을 때도 찾는다.
+    (CI 는 저장소를 hots-scrap 이라는 이름으로 받으므로 폴더 이름에 기대면 안 된다)"""
+    for base in (ROOT, ROOT.parent / "hots_scrap", ROOT.parent / "hots-scrap"):
+        p = base.joinpath("site", *parts)
+        if p.exists():
+            return p
+    return ROOT.joinpath("site", *parts)
+
 PN = ROOT / "site" / "data" / "patchnotes"
 BACK, FWD = 2, 21       # 라이브: 빌드 추출일이 패치 후 며칠 늦는다 (2022-02 은 18일)
 BACK_PTR, FWD_PTR = 2, 35  # PTR 빌드는 저장소에 더 늦게 올라온다 (실측 25~29일)
@@ -94,7 +104,7 @@ def main():
 
     # 영웅 이름표(id → {name, portrait}) + 전장 이름표 — 프론트 필터용
     heroes = {}
-    hj = ROOT.parent / "hots_scrap" / "site" / "data" / "97650" / "heroes.json"
+    hj = site_file("data", "97650", "heroes.json")
     if hj.exists():
         for h in json.loads(hj.read_text(encoding="utf-8"))["heroes"]:
             heroes[h["id"]] = {"name": h["name"], "role": h.get("role")}
@@ -126,7 +136,7 @@ def main():
             heroes.setdefault(hid, {"name": h["name"]})
     (PN / "heroes.json").write_text(json.dumps(heroes, ensure_ascii=False, indent=1), encoding="utf-8")
     bgs = {}
-    mj = ROOT.parent / "hots_scrap" / "site" / "replay" / "js" / "data_maps.js"
+    mj = site_file("replay", "js", "data_maps.js")
     if mj.exists():
         import re
         for m in re.finditer(r'"slug": "([^"]+)", "ko": "([^"]+)"', mj.read_text(encoding="utf-8")):
