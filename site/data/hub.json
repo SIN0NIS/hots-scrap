@@ -1,0 +1,71 @@
+{
+ "build": 97650,
+ "updated": "2026-07-26",
+ "checkedAt": "2026-09-17 00:25",
+ "checkEvery": "6시간",
+ "apps": [
+  {
+   "id": "encyclopedia",
+   "name": "영웅 도감",
+   "path": "encyclopedia/",
+   "desc": "원본 게임 데이터(build 97650) 기반 영웅·스킬·특성 도감",
+   "requires": "light",
+   "status": "active",
+   "fp": "197f696c93aa5da1",
+   "updatedAt": "2026-09-15 21:49",
+   "note": "build 97650 기준"
+  },
+  {
+   "id": "builds",
+   "name": "특성 빌드 (본 서버)",
+   "path": "builds/?ch=live",
+   "desc": "지금 게임에 적용된 본 서버(Live) 기준으로 특성 빌드를 짜고 공유합니다.",
+   "requires": "light",
+   "status": "active",
+   "fp": "cd4e74e3a5fa9812",
+   "updatedAt": "2026-09-16 20:28",
+   "note": "2.55.17.98025 (2026-09-13)"
+  },
+  {
+   "id": "builds-ptr",
+   "name": "특성 빌드 (테스트 서버)",
+   "path": "builds/?ch=ptr",
+   "desc": "공개 테스트 서버(PTR) 기준으로 짭니다. 아직 본 서버에 안 들어온 변경을 미리 맞춰 볼 때 씁니다.",
+   "requires": "light",
+   "status": "active",
+   "fp": "39de831479a4a019",
+   "updatedAt": "2026-09-16 20:28",
+   "note": "2.57.0.98126 (2026-09-14)"
+  },
+  {
+   "id": "models",
+   "name": "모델 뷰어",
+   "path": "https://sin0nis.github.io/hots_hero_m3/",
+   "desc": "영웅 3D 모델(m3) 뷰어 — 현재는 구버전 외부 링크, 고퀄리티 개선판으로 교체 예정",
+   "requires": "light",
+   "status": "active"
+  },
+  {
+   "id": "replay",
+   "name": "리플레이 뷰어",
+   "path": "replay/",
+   "desc": ".StormReplay 파일을 드래그해 전황을 다시 보기",
+   "requires": "light",
+   "status": "active",
+   "fp": "cc3379d55425bf74",
+   "updatedAt": "2026-08-28 23:24",
+   "note": "맵·영웅 자료 내장"
+  },
+  {
+   "id": "patchnotes",
+   "name": "패치 기록",
+   "path": "patchnotes/",
+   "desc": "공식 한글 패치 노트 아카이브 + 버전별 데이터 변경점 · 영웅별 이력",
+   "requires": "light",
+   "status": "active",
+   "fp": "c1d0cb5ab45fff1a",
+   "updatedAt": "2026-09-17 00:09",
+   "note": "259건 · 최신 2026-09-14"
+  }
+ ]
+}

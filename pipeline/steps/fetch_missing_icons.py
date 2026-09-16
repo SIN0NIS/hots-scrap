@@ -7,12 +7,19 @@ site/images/ 에 둔다. 화면은 내 저장소를 먼저 보고, 없으면 여
 
 받는 곳: HeroesToolChest/heroes-images (MIT). 게임 데이터와 같은 출처라 파일 이름이 그대로 맞는다.
 
+**무엇이 있는지 확인하는 데 요청을 1개만 쓴다.**
+예전에는 아이콘 1,100개를 하나씩 HEAD 로 찔러 봤는데(= 내 Pages 에 요청 1,100개),
+지금은 GitHub 트리 API 로 저장소 파일 목록을 **한 번에** 받아 대조한다.
+내려받기는 진짜 없는 것에만 나간다.
+
 사용:
   python fetch_missing_icons.py            # 빠진 것만 받아 온다
   python fetch_missing_icons.py --check    # 무엇이 빠졌는지만 본다(내려받지 않음)
 """
 import argparse
 import json
+import os
+import re
 import sys
 from pathlib import Path
 
@@ -21,11 +28,20 @@ import requests
 ROOT = Path(__file__).resolve().parents[2]
 SITE = ROOT / "site"
 OUT = SITE / "images"
-CDN = "https://sin0nis.github.io/images"
+FOLDERS = ("heroportraits", "abilitytalents")
+
+# 내 이미지 저장소 — sin0nis.github.io/images 를 서빙하는 곳
+CDN_REPO = "SIN0NIS/images"
+CDN_BRANCH = "main"
+# 받아 올 곳
+SRC_REPO = "HeroesToolChest/heroes-images"
 SRC = "https://raw.githubusercontent.com/HeroesToolChest/heroes-images/main/heroesimages"
+
 UA = "Mozilla/5.0 hots-scrap/0.1 (fan archive; contact via GitHub SIN0NIS/hots-scrap)"
 S = requests.Session()
 S.headers["User-Agent"] = UA
+if os.environ.get("GITHUB_TOKEN"):        # CI 에서는 한도를 넉넉히 쓴다
+    S.headers["Authorization"] = "Bearer " + os.environ["GITHUB_TOKEN"]
 
 
 def load(p):
@@ -35,6 +51,12 @@ def load(p):
 def referenced():
     """화면이 실제로 부르는 아이콘 이름 → {(폴더, 파일)}"""
     want = set()
+
+    def icons(entries):
+        for e in entries or []:
+            if e.get("icon"):
+                want.add(("abilitytalents", e["icon"]))
+
     hj = SITE / "data" / "patchnotes" / "heroes.json"
     if hj.exists():
         for v in load(hj).values():
@@ -45,61 +67,109 @@ def referenced():
         for f in hdir.glob("*.json"):
             cur = (load(f) or {}).get("current") or {}
             for k in ("abilities", "talents"):
-                for e in cur.get(k) or []:
-                    if e.get("icon"):
-                        want.add(("abilitytalents", e["icon"]))
-    for f in (SITE / "data" / "builds").glob("*.ko.json"):
+                icons(cur.get(k))
+    # 변천도(series)가 그리는 아이콘 — 옛 특성이라 여기에만 있는 것이 있다
+    sdir = SITE / "data" / "patchnotes" / "series"
+    if sdir.is_dir():
+        for f in sdir.glob("*.json"):
+            icons((load(f) or {}).get("items"))
+    for f in (SITE / "data" / "builds").glob("*.json"):
+        if f.name == "index.json":
+            continue
         for h in load(f).values():
             p = (h.get("portraits") or {}).get("heroSelect")
             if p:
                 want.add(("heroportraits", p))
             for grp in ("abilities", "talents"):
                 for lst in (h.get(grp) or {}).values():
-                    for e in lst:
-                        if e.get("icon"):
-                            want.add(("abilitytalents", e["icon"]))
+                    icons(lst)
     return want
+
+
+def cdn_files():
+    """내 이미지 저장소에 있는 파일 목록 — 요청 **1개**로 전부 받는다."""
+    url = f"https://api.github.com/repos/{CDN_REPO}/git/trees/{CDN_BRANCH}?recursive=1"
+    r = S.get(url, timeout=60)
+    r.raise_for_status()
+    d = r.json()
+    if d.get("truncated"):
+        raise RuntimeError("저장소가 너무 커서 목록이 잘렸습니다. 폴더별로 나눠 받아야 합니다.")
+    have = set()
+    for n in d.get("tree", []):
+        if n.get("type") != "blob":
+            continue
+        p = n["path"]
+        d0 = p.split("/", 1)[0]
+        if d0 in FOLDERS:
+            have.add(p)
+    return have
+
+
+def write_index(gone=None):
+    """화면이 어떤 파일을 여기서 찾아야 하는지 적어 둔다(헛걸음 없이 바로 가게).
+
+    files   — 여기 site/images/ 에 있는 것. 화면은 이것만 로컬에서 부른다.
+    missing — 내 저장소에도, 받아 오는 곳에도 **없는** 것. 게임에서 삭제된 옛 특성 아이콘들이라
+              어디에도 남아 있지 않다. 화면은 이 목록을 보고 **아예 부르지 않는다**(404 를 안 만든다).
+
+    **항상** 다시 쓴다. 내려받은 게 없을 때 건너뛰면, 아이콘을 지운 뒤에 유령 목록이 남아
+    없는 파일을 부르게 된다."""
+    have = sorted(f"{d}/{x.name}" for d in FOLDERS for x in (OUT / d).glob("*.png")) if OUT.exists() else []
+    prev = []
+    if (OUT / "index.json").exists():
+        prev = (load(OUT / "index.json") or {}).get("missing") or []
+    gone = sorted(set(prev if gone is None else gone) - set(have))
+    OUT.mkdir(parents=True, exist_ok=True)
+    (OUT / "index.json").write_text(
+        json.dumps({"files": have, "missing": gone}, ensure_ascii=False, indent=1), encoding="utf-8")
+    return have, gone
 
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--check", action="store_true")
+    ap.add_argument("--check", action="store_true", help="무엇이 빠졌는지만 본다")
     a = ap.parse_args()
 
     want = sorted(referenced())
-    local = {(d, n) for d in ("heroportraits", "abilitytalents") for n in
-             (x.name for x in (OUT / d).glob("*.png"))} if OUT.exists() else set()
-    todo = []
-    print(f"화면이 부르는 아이콘 {len(want)}개 · 여기 이미 받아 둔 것 {len(local)}개")
-    for d, n in want:
-        if (d, n) in local:
-            continue
-        r = S.head(f"{CDN}/{d}/{n}", timeout=20, allow_redirects=True)
-        if r.status_code != 200:
-            todo.append((d, n))
-    print(f"내 이미지 저장소에 없는 것 {len(todo)}개")
+    local = {f"{d}/{x.name}" for d in FOLDERS for x in (OUT / d).glob("*.png")} if OUT.exists() else set()
+    try:
+        have = cdn_files()
+    except Exception as e:
+        print(f"내 이미지 저장소 목록을 못 읽었습니다 — {e}", file=sys.stderr)
+        return 2
+    print(f"화면이 부르는 아이콘 {len(want)}개 · 내 저장소 {len(have)}개 · 여기 받아 둔 것 {len(local)}개 (요청 1개로 확인)")
+
+    todo = [(d, n) for d, n in want if f"{d}/{n}" not in have and f"{d}/{n}" not in local]
+    stale = sorted(p for p in local if p in have)   # 내 저장소에 올라갔으니 여기 것은 필요 없다
+    print(f"내 저장소에 없어 채워야 할 것 {len(todo)}개")
     for d, n in todo:
         print(f"   {d}/{n}")
-    if a.check or not todo:
+    if stale:
+        print(f"내 저장소에 이미 올라가 여기서 지워도 되는 것 {len(stale)}개")
+        for p in stale:
+            print(f"   {p}")
+
+    if a.check:
+        write_index()
         return 1 if todo else 0
 
-    got = miss = 0
+    got, gone = 0, []
     for d, n in todo:
         r = S.get(f"{SRC}/{d}/{n}", timeout=40)
         if r.status_code != 200 or not r.content:
-            print(f"  못 받음({r.status_code}): {d}/{n}", file=sys.stderr)
-            miss += 1
+            gone.append(f"{d}/{n}")          # 어디에도 없다 — 화면이 부르지 않게 적어 둔다
             continue
         p = OUT / d / n
         p.parent.mkdir(parents=True, exist_ok=True)
         p.write_bytes(r.content)
         got += 1
-    print(f"받음 {got}개 · 실패 {miss}개 → {OUT}")
-    # 화면이 어떤 파일을 여기서 찾아야 하는지 적어 둔다(헛걸음 없이 바로 가게)
-    have = sorted(f"{d}/{x.name}" for d in ("heroportraits", "abilitytalents")
-                  for x in (OUT / d).glob("*.png")) if OUT.exists() else []
-    (OUT / "index.json").write_text(json.dumps({"files": have}, ensure_ascii=False, indent=1), encoding="utf-8")
-    print(f"목록 {len(have)}개 → {OUT / 'index.json'}")
+    if todo:
+        print(f"받음 {got}개 · 어디에도 없음 {len(gone)}개 → {OUT}")
+        for p in gone:
+            print(f"   (없음) {p}")
+    prev = (load(OUT / "index.json") or {}).get("missing", []) if (OUT / "index.json").exists() else []
+    files, gone = write_index(set(prev) | set(gone))
+    print(f"목록 {len(files)}개 · 없는 것 {len(gone)}개 → {OUT / 'index.json'}")
     return 0
 
 

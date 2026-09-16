@@ -53,10 +53,11 @@
   /* 배경 워터마크 — 빈 공간에 은은한 큰 로고 */
   body::before { content:''; position:fixed; inset:0; z-index:-1; pointer-events:none; opacity:0.05;
                  background:url("shared/logo.svg") center/72vmin no-repeat; }
+  /* 다크에서도 파일을 하나만 쓴다 — 5% 투명도라 색을 뒤집는 것으로 충분하다 (요청 1개 절약) */
   @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) body::before { background-image:url("shared/logo_light.svg"); }
+    :root:not([data-theme="light"]) body::before { filter:invert(1); }
   }
-  :root[data-theme="dark"] body::before { background-image:url("shared/logo_light.svg"); }
+  :root[data-theme="dark"] body::before { filter:invert(1); }
   .wrap { max-width:880px; margin:0 auto; padding:48px 20px; }
 
   /* 타이틀 줄 */
@@ -64,13 +65,13 @@
   .head img { height:34px; width:34px; display:block; }
   h1 { margin:0; font-size:28px; letter-spacing:0.5px; }
   h1 .s { color:var(--gold); }
-  .head img.logo-for-dark { display:none; }
+  /* 로고는 파일 두 개를 받는 대신 안에 박아 두고 색만 바꾼다 (요청 2개 절약) */
+  :root { --logo-1:#4f463d; --logo-2:#332e29; --logo-3:#221d1a; }
+  .head svg.logo { height:34px; width:34px; flex:0 0 auto; }
   @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) .head img.logo-for-dark { display:block; }
-    :root:not([data-theme="light"]) .head img.logo-for-light { display:none; }
+    :root:not([data-theme="light"]) { --logo-1:#e2d8ca; --logo-2:#bdb1a1; --logo-3:#948877; }
   }
-  :root[data-theme="dark"] .head img.logo-for-dark { display:block; }
-  :root[data-theme="dark"] .head img.logo-for-light { display:none; }
+  :root[data-theme="dark"] { --logo-1:#e2d8ca; --logo-2:#bdb1a1; --logo-3:#948877; }
 
   .headbtn { white-space:nowrap; font-size:13px; color:var(--dim); text-decoration:none; border:1px solid var(--line);
              border-radius:99px; padding:5px 14px; background:var(--card); cursor:pointer;
@@ -91,6 +92,11 @@
   a.card:hover { border-color:var(--gold); border-left-color:var(--gold); transform:translateX(2px); }
   .card h2 { margin:0; font-size:17px; white-space:nowrap; color:var(--blue); }
   .card p { margin:0; margin-left:auto; color:var(--dim); font-size:13px; line-height:1.5; text-align:right; }
+  .card .when { display:block; margin-top:3px; font-size:11.5px; color:var(--dim); opacity:.85; letter-spacing:.01em; }
+  .card .when b { font-weight:600; color:var(--blue); }
+  .check { text-align:center; margin:-6px 0 22px; font-size:12.5px; color:var(--dim); }
+  .check b { font-weight:600; }
+  .check a { color:inherit; }
   .tag { display:inline-block; flex-shrink:0; font-size:11px; color:var(--gold);
          border:1px solid var(--gold-line); border-radius:99px; padding:2px 8px; }
   .planned { opacity:.5; pointer-events:none; }
@@ -102,7 +108,7 @@
     a.card { flex-wrap:wrap; }
     .card p { margin-left:0; text-align:left; width:100%; }
     h1 { font-size:21px; white-space:nowrap; }
-    .head img { height:26px; width:26px; }
+    .head svg.logo { height:26px; width:26px; }
     .headbtn { font-size:12px; padding:4px 10px; }
   }
 </style>
@@ -110,14 +116,64 @@
 <body>
 <div class="wrap">
   <div class="head">
-    <img class="logo-for-light" src="shared/logo.svg" alt="">
-    <img class="logo-for-dark" src="shared/logo_light.svg" alt="">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" class="logo" aria-hidden="true">
+    <defs>
+    <linearGradient id="hublogo-metal" x1="0" y1="0" x2="0.5" y2="1">
+    <stop offset="0%" stop-color="var(--logo-1)"/>
+    <stop offset="45%" stop-color="var(--logo-2)"/>
+    <stop offset="100%" stop-color="var(--logo-3)"/>
+    </linearGradient>
+    <filter id="hublogo-rust" x="-10%" y="-10%" width="120%" height="120%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.22" numOctaves="4" seed="11" result="n"/>
+    <feColorMatrix in="n" type="matrix" result="rustcol"
+    values="0.9 0.4 0 0 0.12
+    0.45 0.25 0 0 0.06
+    0.15 0.1 0 0 0.03
+    0 0 0 1.1 -0.60"/>
+    <feComposite in="rustcol" in2="SourceGraphic" operator="in" result="clipped"/>
+    <feBlend in="clipped" in2="SourceGraphic" mode="normal" result="blended"/>
+    <feTurbulence type="fractalNoise" baseFrequency="3.2" numOctaves="3" seed="4" result="grain"/>
+    <feColorMatrix in="grain" type="matrix" result="graina"
+    values="0 0 0 0 0.45  0 0 0 0 0.42  0 0 0 0 0.4  0 0 0 0.35 0"/>
+    <feComposite in="graina" in2="SourceGraphic" operator="in" result="grainclip"/>
+    <feBlend in="grainclip" in2="blended" mode="overlay"/>
+    </filter>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+    <feDropShadow dx="5" dy="8" stdDeviation="8" flood-color="#000" flood-opacity="0.28"/>
+    </filter>
+    <g id="screw">
+    <path d="M -80.0,-96.0 L -22.0,-96.0 L 28.0,-46.0 L 41.0,-29.0 L 54.0,-46.0 L 67.0,-29.0 L 80.0,-46.0 L 93.0,-29.0 L 106.0,-46.0 L 119.0,-29.0 L 132.0,-46.0 L 145.0,-29.0 L 158.0,-46.0 L 171.0,-29.0 L 184.0,-46.0 L 197.0,-29.0 L 210.0,-46.0 L 223.0,-29.0 L 236.0,-46.0 L 249.0,-29.0 L 262.0,-46.0 L 276.0,-38.0 L 340.0,0 L 276.0,38.0 L 262.0,46.0 L 249.0,29.0 L 236.0,46.0 L 223.0,29.0 L 210.0,46.0 L 197.0,29.0 L 184.0,46.0 L 171.0,29.0 L 158.0,46.0 L 145.0,29.0 L 132.0,46.0 L 119.0,29.0 L 106.0,46.0 L 93.0,29.0 L 80.0,46.0 L 67.0,29.0 L 54.0,46.0 L 41.0,29.0 L 28.0,46.0 L -22.0,96.0 L -80.0,96.0 Z" fill="url(#hublogo-metal)"/>
+    <path d="M -22.0,-90.0 L -22.0,90.0"
+    stroke="#0f0c0a" stroke-opacity="0.45" stroke-width="6" fill="none"/>
+    <path d="M -64.0,-78.0 L -64.0,78.0"
+    stroke="#0f0c0a" stroke-opacity="0.30" stroke-width="5" fill="none"/>
+    </g>
+    </defs>
+    <g filter="url(#shadow)">
+    <g filter="url(#hublogo-rust)">
+    <path d="M 970,500 L 735,907 L 265,907 L 30,500 L 265,93 L 735,93 Z"
+    fill="none" stroke="url(#hublogo-metal)" stroke-width="34" stroke-linejoin="round"/>
+    <path d="M 908,500 L 704,853 L 296,853 L 92,500 L 296,147 L 704,147 Z"
+    fill="none" stroke="url(#hublogo-metal)" stroke-width="7" stroke-linejoin="round"/>
+    <g transform="rotate(0 500 500)">
+    <g transform="translate(500,500) rotate(-38) translate(-215,-140) scale(0.78)"><use href="#screw"/></g>
+    </g>
+    <g transform="rotate(120 500 500)">
+    <g transform="translate(500,500) rotate(-38) translate(-215,-140) scale(0.78)"><use href="#screw"/></g>
+    </g>
+    <g transform="rotate(240 500 500)">
+    <g transform="translate(500,500) rotate(-38) translate(-215,-140) scale(0.78)"><use href="#screw"/></g>
+    </g>
+    </g>
+    </g>
+    </svg>
     <h1>HotS <span class="s">Scrap</span></h1>
     <button id="themeBtn" class="headbtn" title="다크/라이트 전환">◐ 테마</button>
     <a class="headbtn" href="https://github.com/SIN0NIS/hots-scrap" target="_blank" rel="noopener" title="GitHub 저장소">🔗 GitHub</a>
   </div>
   <p class="sub">Salvaging every scrap of the Storm — heroes, builds &amp; replays.</p>
   <p class="build" id="build">데이터 버전 확인 중…</p>
+  <p class="check" id="check"></p>
   <div class="grid" id="grid"></div>
   <p class="foot">
     비영리 팬 프로젝트 — Heroes of the Storm™ 및 관련 자산의 권리는 Blizzard Entertainment 에 있습니다.<br>
@@ -147,31 +203,81 @@
   });
 })();
 
-/* 허브는 apps.json / latest.json 만 읽는다. 앱 코드에는 관여하지 않는다. */
+/* 허브는 data/hub.json 하나만 읽는다 (전에는 apps.json + latest.json 둘이었다 — 요청을 하나로 줄였다).
+   hub.json 은 pipeline/steps/build_status.py 가 apps.json + 자료 파일에서 만든다.
+   못 읽으면 예전 방식(apps.json)으로 되돌아간다. */
 (async () => {
-  try {
-    const latest = await fetch('data/latest.json').then(r => r.json());
-    document.getElementById('build').innerHTML = '데이터 버전: <b>build ' + latest.build + '</b>' +
-      (latest.updated ? ' · <span class="date">' + latest.updated + ' 업데이트</span>' : '');
-  } catch (e) {
-    document.getElementById('build').textContent = '데이터 버전 정보를 읽지 못했습니다';
+  var esc = function (t) {
+    return String(t == null ? '' : t).replace(/[&<>"]/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+    });
+  };
+
+  /* 자동 점검 시각 — GitHub Actions 는 UTC 로 돈다.
+     6시간마다 UTC 00:10 · 06:10 · 12:10 · 18:10 (한국 09:10 · 15:10 · 21:10 · 03:10).
+     보는 사람의 시간대로 바꿔 보여 준다. */
+  function checkTimes() {
+    var now = new Date();
+    var last = new Date(now);
+    last.setUTCMinutes(10, 0, 0);
+    last.setUTCHours(Math.floor(now.getUTCHours() / 6) * 6);
+    if (last > now) last = new Date(last.getTime() - 6 * 3600e3);
+    return { last: last, next: new Date(last.getTime() + 6 * 3600e3) };
   }
+  function hhmm(d) {
+    return d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  }
+
+  var reg = null, fellBack = false;
   try {
-    const reg = await fetch('apps.json').then(r => r.json());
-    const grid = document.getElementById('grid');
-    for (const app of reg.apps) {
-      const a = document.createElement('a');
-      a.className = 'card' + (app.status === 'planned' ? ' planned' : '');
-      a.href = app.path;
-      a.innerHTML = '<h2>' + app.name + '</h2>' +
-        '<span class="tag">' +
-        (app.requires === 'heavy' ? '로컬 자산 필요' : '바로 사용') +
-        (app.status === 'planned' ? ' · 준비 중' : '') + '</span>' +
-        '<p>' + app.desc + '</p>';
-      grid.appendChild(a);
-    }
+    reg = await fetch('data/hub.json').then(function (r) { if (!r.ok) throw 0; return r.json(); });
   } catch (e) {
-    document.getElementById('grid').innerHTML = '<p class="err">apps.json 을 읽지 못했습니다: ' + e.message + '</p>';
+    try { reg = await fetch('apps.json').then(function (r) { return r.json(); }); fellBack = true; } catch (e2) {}
+  }
+
+  var buildEl = document.getElementById('build');
+  if (reg && reg.build) {
+    buildEl.innerHTML = '데이터 버전: <b>build ' + esc(reg.build) + '</b>' +
+      (reg.updated ? ' · <span class="date">' + esc(reg.updated) + ' 업데이트</span>' : '');
+  } else if (fellBack) {
+    try {
+      var lt = await fetch('data/latest.json').then(function (r) { return r.json(); });
+      buildEl.innerHTML = '데이터 버전: <b>build ' + esc(lt.build) + '</b>' +
+        (lt.updated ? ' · <span class="date">' + esc(lt.updated) + ' 업데이트</span>' : '');
+    } catch (e) { buildEl.textContent = '데이터 버전 정보를 읽지 못했습니다'; }
+  } else {
+    buildEl.textContent = '데이터 버전 정보를 읽지 못했습니다';
+  }
+
+  var t = checkTimes();
+  document.getElementById('check').innerHTML =
+    '새 패치가 났는지 <b>6시간마다</b> 자동으로 확인합니다 · 방금 확인 <b>' + hhmm(t.last) +
+    '</b> · 다음 확인 <b>' + hhmm(t.next) + '</b> ' +
+    '<a href="https://github.com/SIN0NIS/hots-scrap/actions/workflows/update-patchnotes.yml" target="_blank" rel="noopener">기록 보기</a>';
+
+  var grid = document.getElementById('grid');
+  if (!reg || !reg.apps) {
+    grid.innerHTML = '<p class="err">앱 목록을 읽지 못했습니다</p>';
+    return;
+  }
+  for (var i = 0; i < reg.apps.length; i++) {
+    var app = reg.apps[i];
+    var a = document.createElement('a');
+    a.className = 'card' + (app.status === 'planned' ? ' planned' : '');
+    a.href = app.path;
+    var when = '';
+    if (app.updatedAt) {
+      when = '<span class="when">자료 갱신 <b>' + esc(app.updatedAt) + '</b>' +
+        (app.note ? ' · ' + esc(app.note) : '') + '</span>';
+    } else if (app.note) {
+      when = '<span class="when">' + esc(app.note) + '</span>';
+    }
+    a.innerHTML = '<h2>' + esc(app.name) + '</h2>' +
+      '<span class="tag">' +
+      (app.requires === 'heavy' ? '로컬 자산 필요' : '바로 사용') +
+      (app.status === 'planned' ? ' · 준비 중' : '') + '</span>' +
+      '<p>' + esc(app.desc) + when + '</p>';
+    grid.appendChild(a);
   }
 })();
 </script>

@@ -15,7 +15,8 @@ name: Update Patch Notes
 
 on:
   schedule:
-    - cron: "10 */6 * * *"      # 6시간마다 (한국 04:10 · 10:10 · 16:10 · 22:10)
+    - cron: "10 */6 * * *"      # 6시간마다. cron 은 UTC 기준 00:10·06:10·12:10·18:10
+                                # = 한국 시각 09:10 · 15:10 · 21:10 · 03:10
   workflow_dispatch:
 
 permissions:
@@ -46,27 +47,41 @@ jobs:
         run: |
           set +e
           python pipeline/steps/check_updates.py --json > /tmp/check.json
-          echo "exit=$?" >> "$GITHUB_OUTPUT"
+          rc=$?
+          echo "exit=$rc" >> "$GITHUB_OUTPUT"
+          # 확인이 실패하면(참고 서버가 잠깐 막히는 등) 아무 일도 벌이지 않고 조용히 끝낸다.
+          # 출력이 비면 '' != '0' 이 참이 되어 무거운 분기가 통째로 헛돌기 때문에 0 으로 못박는다.
           python - <<'PY' >> "$GITHUB_OUTPUT"
-          import json, os
-          d = json.load(open('/tmp/check.json', encoding='utf-8'))
-          ko = [x['newsId'] for x in d['newKo']]
-          print('ko_ids=' + ','.join(ko))
-          print('ko_count=%d' % len(ko))
-          print('en_count=%d' % len(d['newEnOnly']))
-          print('build_count=%d' % len(d['newBuilds']))
+          import json
+          try:
+              d = json.load(open('/tmp/check.json', encoding='utf-8'))
+              if d.get('ok') is False:
+                  raise ValueError(d.get('error', '확인 실패'))
+              ko = [x['newsId'] for x in d['newKo']]
+              print('ok=1')
+              print('ko_ids=' + ','.join(ko))
+              print('ko_count=%d' % len(ko))
+              print('en_count=%d' % len(d['newEnOnly']))
+              print('build_count=%d' % len(d['newBuilds']))
+          except Exception as e:
+              print('ok=0')
+              print('ko_ids=')
+              print('ko_count=0')
+              print('en_count=0')
+              print('build_count=0')
+              print('error=%s' % ' '.join(str(e).split())[:200])
           PY
           cat /tmp/check.json
 
       - name: 캐시 — 복원한 빌드 자료
-        if: steps.check.outputs.ko_count != '0'
+        if: steps.check.outputs.ok == '1' && steps.check.outputs.ko_count != '0'
         uses: actions/cache@v4
         with:
           path: vendor/full
           key: vendor-full-${{ hashFiles('site/data/patchnotes/builds.json') }}
 
       - name: 새 한국어 노트 받아서 반영
-        if: steps.check.outputs.ko_count != '0'
+        if: steps.check.outputs.ok == '1' && steps.check.outputs.ko_count != '0'
         env:
           PYTHONIOENCODING: utf-8
         run: |
@@ -79,14 +94,15 @@ jobs:
           done
           python pipeline/steps/ci_prepare.py
           python pipeline/steps/build_patch_index.py
+          python pipeline/steps/build_status.py      # 허브에 보일 "자료 갱신" 시각
           rm -f site/data/patchnotes/unmatched.json
 
       - name: 달라진 것이 있으면 커밋·푸시
-        if: steps.check.outputs.ko_count != '0'
+        if: steps.check.outputs.ok == '1' && steps.check.outputs.ko_count != '0'
         run: |
           git config user.name  "hots-scrap-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add site/data/patchnotes
+          git add site/data/patchnotes site/data/hub.json
           if git diff --cached --quiet; then
             echo "바뀐 파일이 없습니다."
             exit 0
@@ -99,7 +115,7 @@ jobs:
           git push
 
       - name: 사람 손이 필요한 것은 이슈로 알림
-        if: steps.check.outputs.en_count != '0' || steps.check.outputs.build_count != '0'
+        if: steps.check.outputs.ok == '1' && (steps.check.outputs.en_count != '0' || steps.check.outputs.build_count != '0')
         uses: actions/github-script@v7
         with:
           script: |
@@ -142,3 +158,7 @@ jobs:
           echo "- 새 한국어 노트: ${{ steps.check.outputs.ko_count }}건 (자동 반영)" >> "$GITHUB_STEP_SUMMARY"
           echo "- 번역 필요한 영문 노트: ${{ steps.check.outputs.en_count }}건" >> "$GITHUB_STEP_SUMMARY"
           echo "- 새 게임 빌드: ${{ steps.check.outputs.build_count }}개" >> "$GITHUB_STEP_SUMMARY"
+          if [ "${{ steps.check.outputs.ok }}" != "1" ]; then
+            echo "" >> "$GITHUB_STEP_SUMMARY"
+            echo "> 확인에 실패해 아무것도 하지 않았습니다 — ${{ steps.check.outputs.error }}" >> "$GITHUB_STEP_SUMMARY"
+          fi

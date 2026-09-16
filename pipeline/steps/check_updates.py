@@ -19,6 +19,7 @@
 """
 import argparse
 import json
+import os
 import re
 import sys
 from pathlib import Path
@@ -41,7 +42,12 @@ GH_TREE = "https://api.github.com/repos/HeroesToolChest/heroes-data2/contents/he
 
 
 def get(url, **kw):
-    r = requests.get(url, headers={"User-Agent": UA, **kw.pop("headers", {})}, timeout=30, **kw)
+    h = {"User-Agent": UA, **kw.pop("headers", {})}
+    # GitHub API 는 토큰이 있으면 시간당 한도가 60 → 5,000 으로 늘어난다.
+    # CI 에서 넘겨 주는 GITHUB_TOKEN 을 실제로 쓴다(없으면 그냥 비인증으로 간다).
+    if "api.github.com" in url and os.environ.get("GITHUB_TOKEN"):
+        h["Authorization"] = "Bearer " + os.environ["GITHUB_TOKEN"]
+    r = requests.get(url, headers=h, timeout=30, **kw)
     r.raise_for_status()
     return r
 
@@ -116,6 +122,11 @@ def main():
         en = news_list("en-us", a.pages)
     except Exception as e:
         print(f"확인 실패: 블리자드 뉴스를 못 읽었습니다 — {e}", file=sys.stderr)
+        if a.json:
+            # 빈 출력을 남기면 CI 가 "새 것 없음" 과 구별하지 못하고 무거운 분기를 헛돌린다.
+            # 반드시 모양이 온전한 JSON 을 남긴다.
+            print(json.dumps({"ok": False, "error": str(e),
+                              "newKo": [], "newEnOnly": [], "newBuilds": []}, ensure_ascii=False))
         return 2
 
     new_ko = [x for x in ko if x["newsId"] not in have_news]

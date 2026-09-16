@@ -14,7 +14,9 @@
 
 ## 구조
 
-- `site/index.html` 허브 — `site/apps.json` 을 읽어 앱 카드 자동 나열 (앱 추가 = apps.json 등록)
+- `site/index.html` 허브 — **`site/data/hub.json` 하나만** 읽는다(요청 1개).
+  앱 추가는 `site/apps.json` 에 적고 `pipeline/steps/build_status.py` 를 돌린다 (hub.json 은 생성 파일).
+  카드에 "자료 갱신 시각"과 자동 점검 주기가 같이 나온다. 로고는 파일이 아니라 HTML 안에 박혀 있다.
 - `site/builds/index.html` 특성 빌드 — 64KB. 영웅 데이터는 `site/data/builds/` 로 분리
   (`index.json` 6KB + `<live|ptr>.<ko|en>.json` 약 1.5MB, 화면이 고른 판·언어 하나만 받는다).
   자료 생성은 `pipeline/steps/build_talent_data.py`
@@ -33,6 +35,10 @@
 - 아이콘 CDN 은 Pages 주소(`sin0nis.github.io/images/...`), raw.githubusercontent 금지(429)
 - **무료 호스팅이라 요청 수와 내려받는 양을 아낀다.** 이미지 주소는 첫 시도가 맞는 것으로 둔다
   (실패 후 폴백은 아이콘 수만큼 404 를 낳는다). 큰 데이터는 화면이 실제로 쓰는 것만, 언어·판별로 쪼개 둔다
+  - 없을 수도 있는 파일은 **부르기 전에 알 수 있게** 해 둔다(`heroes.json` 의 `noSeries`, `images/index.json` 의 `missing`)
+  - 지금 안 쓰는 것은 받지 않는다: 탭은 보고 있는 탭만, 외부 CDN 은 그 기능을 쓸 때만 (`needHtml2Canvas`)
+  - 같은 정보를 두 파일에서 받지 않는다. 받는 중인 요청도 기억해 두 번 나가지 않게 한다
+  - 테마별로 파일을 둘 받지 말고, 한 파일을 CSS 로 바꿔 쓴다
 - 인코딩 UTF-8(BOM 없음). 큰 단일 파일 HTML 은 Edit 로 부분 수정만 (통째로 다시 쓰지 않기)
 
 ## 외부 연동 통로 (깨뜨리면 안 되는 공개 API)
@@ -42,7 +48,7 @@
 
 ## 자동 갱신
 
-**서버(GitHub Actions)가 하는 일** — `.github/workflows/update-patchnotes.yml`, **6시간마다**(한국 04:10·10:10·16:10·22:10)
+**서버(GitHub Actions)가 하는 일** — `.github/workflows/update-patchnotes.yml`, **6시간마다** — cron 은 UTC 00:10·06:10·12:10·18:10 = 한국 09:10·15:10·21:10·03:10
 - 확인은 요청 **3개**로 끝난다(한국어 뉴스 1 + 영어 뉴스 1 + GitHub 빌드 목록 1). 새 것이 없으면 그대로 끝난다.
 - 블리자드 뉴스에 **한국어 공식 노트**가 새로 뜨면 받아서 파싱하고 색인을 다시 만든 뒤 바로 커밋·푸시한다.
   푸시하면 Deploy Pages 가 이어 돌아 사이트가 갱신된다. PC 가 꺼져 있어도 돈다.
@@ -55,10 +61,18 @@
 - 새 게임 빌드 반영(diff·series·빌드메이커 자료) — 전체 vendor 가 필요해 무겁다
 
 **새 영웅 아이콘**: `python pipeline/steps/fetch_missing_icons.py`
-화면이 부르는 아이콘 중 내 이미지 저장소(sin0nis.github.io/images)에 없는 것을
-HeroesToolChest/heroes-images(MIT)에서 받아 `site/images/` 에 둔다. 목록은 `site/images/index.json`.
-앱은 그 목록을 먼저 받아 두고 해당 파일만 로컬에서 부른다(헛걸음 요청 없음).
-나중에 내 저장소에 같은 파일을 올리면 `site/images/` 에서 지우면 된다.
+화면이 부르는 아이콘 중 내 이미지 저장소(`SIN0NIS/images`)에 없는 것을
+HeroesToolChest/heroes-images(MIT)에서 받아 `site/images/` 에 둔다.
+- **확인에 요청 1개만 쓴다.** GitHub 트리 API 로 저장소 파일 목록을 통째로 받아 대조한다.
+  절대로 아이콘을 하나씩 HEAD 로 찔러 보지 마라(예전 방식 = 내 Pages 에 요청 1,100개).
+- `site/images/index.json` 에 두 목록을 적는다 — `files`(여기 있는 것)와
+  `missing`(내 저장소에도 원본에도 없는 것, 게임에서 지워진 옛 특성 아이콘). 앱은 `missing` 은 **아예 안 부른다**.
+- 목록은 내려받은 게 없어도 **항상** 다시 쓴다(안 그러면 파일을 지운 뒤 유령 목록이 남는다).
+- 나중에 내 저장소에 같은 파일을 올리면 `site/images/` 에서 지우면 된다(스크립트가 지워도 되는 것을 알려 준다).
+
+**허브 상태 파일**: `python pipeline/steps/build_status.py`
+`site/data/hub.json` 을 만든다. 앱마다 자료 파일 지문을 재서 **바뀐 앱만** 갱신 시각이 움직이므로
+가만히 두면 파일이 한 글자도 안 바뀐다(쓸데없는 커밋·배포가 안 생긴다).
 
 **손으로 확인**: `python pipeline/steps/check_updates.py` (할 일이 있으면 종료 코드 1, 요청 3개)
 새 영문 노트: fetch --en --id → parse --en → extract_strings → make_chunks → (번역) →

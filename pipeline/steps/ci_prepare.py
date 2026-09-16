@@ -57,7 +57,10 @@ def main():
 
     if not HD2.exists():
         VENDOR.mkdir(parents=True, exist_ok=True)
-        run(["git", "clone", "--depth", "1", "--filter=blob:none", REPO2, str(HD2)])
+        # --filter=blob:none 만 주면 체크아웃 때 결국 전부 받아 온다. --no-checkout 을 같이 줘야
+        # 정말 필요한 파일만(패치 사슬을 따라가며) 받는다.
+        run(["git", "clone", "--depth", "1", "--filter=blob:none", "--no-checkout", REPO2, str(HD2)])
+        run(["git", "checkout"], cwd=HD2)
 
     import build_talent_data as B   # 패치 사슬 복원기를 그대로 쓴다
     FULL.mkdir(parents=True, exist_ok=True)

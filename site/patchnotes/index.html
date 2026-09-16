@@ -416,20 +416,33 @@
   const heroName = id => (HEROES[id] || {}).name || id;
   // 새로 나온 영웅 아이콘은 이미지 저장소에 아직 없다. 여기 받아 둔 것이 있으면 그걸 쓴다.
   // (목록을 미리 받아 두므로 헛걸음 요청이 생기지 않는다)
-  let LOCAL_IMG = new Set();
-  const portraitUrl = n => LOCAL_IMG.has('heroportraits/' + n) ? '../images/heroportraits/' + n : PORTRAIT + n;
-  const iconUrl = n => LOCAL_IMG.has('abilitytalents/' + n) ? '../images/abilitytalents/' + n : ICON + n;
+  /* 아이콘 주소 — ../images/index.json 을 먼저 읽어 두고 고른다 (무료 호스팅이라 헛걸음 요청을 안 만든다).
+     LOCAL_IMG : 여기 site/images/ 에 받아 둔 것 (새 영웅 등)
+     LOCAL_MISS: 내 저장소에도 원본에도 없는 것 — 게임에서 삭제된 옛 특성. 아예 부르지 않는다. */
+  let LOCAL_IMG = new Set(), LOCAL_MISS = new Set();
+  const BLANK_IMG = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
+  const pickUrl = (dir, base, n) => LOCAL_MISS.has(dir + '/' + n) ? BLANK_IMG
+    : LOCAL_IMG.has(dir + '/' + n) ? '../images/' + dir + '/' + n : base + n;
+  const portraitUrl = n => pickUrl('heroportraits', PORTRAIT, n);
+  const iconUrl = n => pickUrl('abilitytalents', ICON, n);
   const heroImg = (id, alt) => { const p = (HEROES[id] || {}).portrait; return p ? `<img src="${portraitUrl(p)}" alt="${alt === false ? '' : esc(heroName(id))}" loading="lazy" onerror="this.style.visibility='hidden'">` : ''; };
   const bgName = s => BGS[s] || s;
   const markDiff = s => esc(s).replace(/\[\[-([\s\S]*?)-\]\]/g, '<del>$1</del>').replace(/\{\{\+([\s\S]*?)\+\}\}/g, '<ins>$1</ins>');
   const patchKey = r => r.date + (r.build ? '&b=' + r.build : '');
 
+  /* 받는 중인 것도 기억한다(약속을 저장). 완료된 값만 기억하면 빠른 연속 클릭에서 같은 파일이 두 번 나간다.
+     실패하면 지워서 다음에 다시 받을 수 있게 둔다. */
   async function getJSON(path) {
     if (cache[path]) return cache[path];
-    const r = await fetch(DATA + path);
-    if (!r.ok) throw new Error(path + ' ' + r.status);
-    return (cache[path] = await r.json());
+    cache[path] = (async () => {
+      const r = await fetch(DATA + path);
+      if (!r.ok) throw new Error(path + ' ' + r.status);
+      return r.json();
+    })();
+    cache[path].catch(() => { delete cache[path]; });
+    return cache[path];
   }
+
   // 화면을 갈아엎으면 초점이 body 로 날아간다. 누른 것과 같은 뜻의 요소로 돌려 놓는다.
   let refocus = null;
   const FKEYS = ['data-ch', 'data-src', 'data-tab', 'data-rm-hero', 'data-rm-bg', 'data-m', 'data-focus'];
@@ -561,13 +574,13 @@
     }
     const focus = HEROES[p.get('hero')] ? p.get('hero') : '';   // 모르는 값은 통째로 버린다
     let official = null, diff = null, enDoc = null;
-    const want = [];   // 한꺼번에 받고, 지금 볼 탭의 것만 받는다
-    if (row.official) want.push(getJSON(row.official).then(d => { official = d; }).catch(e => console.warn(e)));
+    const want = [];   // 지금 볼 탭의 것만 받는다 (공식 문서는 평균 81KB 라 그냥 받으면 아깝다)
+    if (row.official && tab === 'official') want.push(getJSON(row.official).then(d => { official = d; }).catch(e => console.warn(e)));
     if (row.diff && tab === 'data') want.push(getJSON(row.diff).then(d => { diff = d; }).catch(e => console.warn(e)));
     if (row.en && tab === 'en') want.push(getJSON(row.en).then(d => { enDoc = d; }).catch(e => console.warn(e)));
     await Promise.all(want);
     const tabs = `<div class="tabs">
-      <button data-tab="official" class="${tab === 'official' ? 'on' : ''}" ${official ? '' : 'disabled'}>${row.translated ? '한국어 (Claude 번역)' : '공식 패치 노트'}</button>
+      <button data-tab="official" class="${tab === 'official' ? 'on' : ''}" ${row.official ? '' : 'disabled'}>${row.translated ? '한국어 (Claude 번역)' : '공식 패치 노트'}</button>
       <button data-tab="data" class="${tab === 'data' ? 'on' : ''}" ${row.diff ? '' : 'disabled'}>데이터 변경점${row.summary ? ` (${row.summary.heroes}영웅 · ${row.summary.changes})` : ''}</button>
       ${row.en ? `<button data-tab="en" class="${tab === 'en' ? 'on' : ''}">영어 원문</button>` : ''}</div>`;
     app.innerHTML = headHTML('list') + `<a id="pn-back" href="?${backParams()}">← 목록</a>
@@ -662,7 +675,12 @@
     const count = {};
     INDEX.forEach(r => r.heroes.forEach(h => { count[h] = (count[h] || 0) + 1; }));
     const byRole = {};
-    ids.forEach(h => { const r = ROLE[HEROES[h].role] || HEROES[h].role || '기타'; (byRole[r] = byRole[r] || []).push(h); });
+    ids.forEach(h => {
+      const H = HEROES[h];
+      // 역할이 아직 게임 자료에 없는 새 영웅은 사실대로 적는다(짐작해서 넣지 않는다)
+      const r = ROLE[H.role] || H.role || (H.upcoming ? '역할 미정 (테스트 서버)' : '기타');
+      (byRole[r] = byRole[r] || []).push(h);
+    });
     const order = ['전사', '투사', '치유사', '지원가', '근접 암살자', '원거리 암살자'];
     const roles = order.filter(r => byRole[r]).concat(Object.keys(byRole).filter(r => !order.includes(r)));
     app.innerHTML = headHTML('heroes') + `<p class="sub">영웅을 고르면 그 영웅이 언급된 모든 패치(공식 노트 + 데이터 변경)를 시간순으로 봅니다.</p>` +
@@ -1462,12 +1480,14 @@
   }
 
   (async function init() {
+    // 보정 목록과 본 데이터를 나란히 받는다(줄줄이 기다리면 첫 화면이 왕복 1회만큼 늦어진다).
+    const imgList = fetch('../images/index.json').then(r => r.ok ? r.json() : null).catch(() => null);
     try {
-      const li = await fetch('../images/index.json').then(r => r.ok ? r.json() : null);
+      const [li, idx, hs, bg] = await Promise.all([
+        imgList, getJSON('index.json'), getJSON('heroes.json'), getJSON('battlegrounds.json')]);
       if (li && li.files) LOCAL_IMG = new Set(li.files);
-    } catch (e) {}
-    try {
-      [INDEX, HEROES, BGS] = await Promise.all([getJSON('index.json'), getJSON('heroes.json'), getJSON('battlegrounds.json')]);
+      if (li && li.missing) LOCAL_MISS = new Set(li.missing);
+      [INDEX, HEROES, BGS] = [idx, hs, bg];
       render();
     } catch (e) {
       app.innerHTML = `<div class="empty">데이터를 불러오지 못했습니다: ${esc(e.message)}</div>`;
