@@ -51,7 +51,10 @@
 **서버(GitHub Actions)가 하는 일** — `.github/workflows/update-patchnotes.yml`, **6시간마다** — cron 은 UTC 00:10·06:10·12:10·18:10 = 한국 09:10·15:10·21:10·03:10
 - 확인은 요청 **3개**로 끝난다(한국어 뉴스 1 + 영어 뉴스 1 + GitHub 빌드 목록 1). 새 것이 없으면 그대로 끝난다.
 - 블리자드 뉴스에 **한국어 공식 노트**가 새로 뜨면 받아서 파싱하고 색인을 다시 만든 뒤 바로 커밋·푸시한다.
-  푸시하면 Deploy Pages 가 이어 돌아 사이트가 갱신된다. PC 가 꺼져 있어도 돈다.
+  PC 가 꺼져 있어도 돈다.
+- **배포는 직접 깨워야 한다.** `GITHUB_TOKEN` 으로 한 푸시는 다른 워크플로를 깨우지 못한다(재귀 방지 규칙).
+  `pages.yml` 은 `push` 로 도는데 봇 푸시는 무시되므로, 커밋한 뒤 `gh workflow run pages.yml` 로 배포를 깨운다.
+  (`workflow_dispatch` 와 `repository_dispatch` 만 그 규칙의 예외다.)
 - 색인 생성에 필요한 빌드 자료는 **두 개뿐**이라 `ci_prepare.py` 가 heroes-data2 를 얕게 받아 그 둘만 복원한다
   (vendor 전체를 받지 않는다). `vendor/full` 은 캐시한다.
 - 번역이 필요한 영문 노트, 새 게임 빌드는 **이슈로 알리기만** 한다(라벨 `auto-update`). 사람이 처리한다.

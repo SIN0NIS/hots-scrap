@@ -41,12 +41,30 @@ NEXUS = "https://nexus-patch-notes.github.io/"
 GH_TREE = "https://api.github.com/repos/HeroesToolChest/heroes-data2/contents/heroesdata"
 
 
+def gh_token():
+    """GitHub 토큰. CI 는 환경변수로, 내 PC 는 gh 로그인에서 가져온다.
+    토큰이 있으면 API 한도가 시간당 60 → 5,000 이라 한도에 걸릴 일이 없다."""
+    t = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
+    if t:
+        return t
+    try:
+        import subprocess
+        r = subprocess.run(["gh", "auth", "token"], capture_output=True, text=True, timeout=10, shell=(os.name == "nt"))
+        if r.returncode == 0 and r.stdout.strip():
+            return r.stdout.strip()
+    except Exception:
+        pass
+    return None
+
+
+_GH = gh_token()
+
+
 def get(url, **kw):
     h = {"User-Agent": UA, **kw.pop("headers", {})}
     # GitHub API 는 토큰이 있으면 시간당 한도가 60 → 5,000 으로 늘어난다.
-    # CI 에서 넘겨 주는 GITHUB_TOKEN 을 실제로 쓴다(없으면 그냥 비인증으로 간다).
-    if "api.github.com" in url and os.environ.get("GITHUB_TOKEN"):
-        h["Authorization"] = "Bearer " + os.environ["GITHUB_TOKEN"]
+    if "api.github.com" in url and _GH:
+        h["Authorization"] = "Bearer " + _GH
     r = requests.get(url, headers=h, timeout=30, **kw)
     r.raise_for_status()
     return r

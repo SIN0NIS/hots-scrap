@@ -98,6 +98,7 @@ jobs:
           rm -f site/data/patchnotes/unmatched.json
 
       - name: 달라진 것이 있으면 커밋·푸시
+        id: commit
         if: steps.check.outputs.ok == '1' && steps.check.outputs.ko_count != '0'
         run: |
           git config user.name  "hots-scrap-bot"
@@ -112,7 +113,18 @@ jobs:
 
           GitHub Actions 가 블리자드 뉴스에서 받아 자동으로 넣었습니다.
           영문만 있는 회차와 새 게임 빌드는 사람이 따로 처리합니다."
-          git push
+          # 그 사이 사람이 먼저 올렸을 수 있다. 한 번 맞춰 보고 그래도 안 되면 실패로 남긴다.
+          git push || { git pull --rebase --autostash && git push; }
+          echo "pushed=1" >> "$GITHUB_OUTPUT"
+
+      # GITHUB_TOKEN 으로 한 푸시는 다른 워크플로를 깨우지 못한다(재귀 방지 규칙).
+      # 그래서 Deploy Pages(push 로 도는 워크플로)가 그냥 넘어가 사이트가 갱신되지 않는다.
+      # workflow_dispatch 는 그 규칙의 예외라, 배포를 여기서 직접 깨운다.
+      - name: 배포 깨우기 (토큰 푸시는 배포를 자동으로 깨우지 못한다)
+        if: steps.commit.outputs.pushed == '1'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh workflow run pages.yml --ref "${GITHUB_REF_NAME}"
 
       - name: 사람 손이 필요한 것은 이슈로 알림
         if: steps.check.outputs.ok == '1' && (steps.check.outputs.en_count != '0' || steps.check.outputs.build_count != '0')

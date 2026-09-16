@@ -19,7 +19,6 @@ site/images/ 에 둔다. 화면은 내 저장소를 먼저 보고, 없으면 여
 import argparse
 import json
 import os
-import re
 import sys
 from pathlib import Path
 
@@ -40,8 +39,25 @@ SRC = "https://raw.githubusercontent.com/HeroesToolChest/heroes-images/main/hero
 UA = "Mozilla/5.0 hots-scrap/0.1 (fan archive; contact via GitHub SIN0NIS/hots-scrap)"
 S = requests.Session()
 S.headers["User-Agent"] = UA
-if os.environ.get("GITHUB_TOKEN"):        # CI 에서는 한도를 넉넉히 쓴다
-    S.headers["Authorization"] = "Bearer " + os.environ["GITHUB_TOKEN"]
+def gh_token():
+    """GitHub 토큰. CI 는 환경변수로, 내 PC 는 gh 로그인에서 가져온다.
+    토큰이 있으면 API 한도가 시간당 60 → 5,000 이라 한도에 걸릴 일이 없다."""
+    t = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
+    if t:
+        return t
+    try:
+        import subprocess
+        r = subprocess.run(["gh", "auth", "token"], capture_output=True, text=True, timeout=10, shell=(os.name == "nt"))
+        if r.returncode == 0 and r.stdout.strip():
+            return r.stdout.strip()
+    except Exception:
+        pass
+    return None
+
+
+_t = gh_token()
+if _t:
+    S.headers["Authorization"] = "Bearer " + _t
 
 
 def load(p):
@@ -139,9 +155,21 @@ def main():
         return 2
     print(f"화면이 부르는 아이콘 {len(want)}개 · 내 저장소 {len(have)}개 · 여기 받아 둔 것 {len(local)}개 (요청 1개로 확인)")
 
-    todo = [(d, n) for d, n in want if f"{d}/{n}" not in have and f"{d}/{n}" not in local]
+    # 이미 "어디에도 없다" 고 확인된 것은 다시 받으러 가지 않는다.
+    # (안 그러면 실행할 때마다 원본 저장소에 404 를 21개씩 만든다)
+    known_gone = set((load(OUT / "index.json") or {}).get("missing") or []) if (OUT / "index.json").exists() else set()
+    todo, skipped = [], 0
+    for d, n in want:
+        key = f"{d}/{n}"
+        if key in have or key in local:
+            continue
+        if key in known_gone:
+            skipped += 1
+            continue
+        todo.append((d, n))
     stale = sorted(p for p in local if p in have)   # 내 저장소에 올라갔으니 여기 것은 필요 없다
-    print(f"내 저장소에 없어 채워야 할 것 {len(todo)}개")
+    print(f"내 저장소에 없어 채워야 할 것 {len(todo)}개"
+          + (f" (어디에도 없다고 이미 확인된 {skipped}개는 건너뜀)" if skipped else ""))
     for d, n in todo:
         print(f"   {d}/{n}")
     if stale:
@@ -150,7 +178,7 @@ def main():
             print(f"   {p}")
 
     if a.check:
-        write_index()
+        write_index(known_gone)
         return 1 if todo else 0
 
     got, gone = 0, []
@@ -167,8 +195,7 @@ def main():
         print(f"받음 {got}개 · 어디에도 없음 {len(gone)}개 → {OUT}")
         for p in gone:
             print(f"   (없음) {p}")
-    prev = (load(OUT / "index.json") or {}).get("missing", []) if (OUT / "index.json").exists() else []
-    files, gone = write_index(set(prev) | set(gone))
+    files, gone = write_index(known_gone | set(gone))
     print(f"목록 {len(files)}개 · 없는 것 {len(gone)}개 → {OUT / 'index.json'}")
     return 0
 
