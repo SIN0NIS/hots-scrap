@@ -136,9 +136,12 @@ function renderHeroes(){
   b0.onclick=()=>{ heroSel=null; renderHeroes(); applyToSel('hero', null); };
   heroesEl.appendChild(b0);
   let n=0;
+  // 초성도 되게 공용 검색기를 쓴다("ㅈㅈ" → 줄진). 찾는 중에는 역할군을 무시한다.
+  const raw=hsearch.value||'';
   const pass=h=>{
-    if(q) return heroNorm(h.name).includes(q) || heroNorm(h.en||'').includes(q);
-    return !roleSel || h.role===roleSel;          // 찾는 중에는 역할군을 무시한다
+    if(q) return window.scrapSearch ? window.scrapSearch.score(raw,[h.name,h.en||''])>0
+                                    : (heroNorm(h.name).includes(q) || heroNorm(h.en||'').includes(q));
+    return !roleSel || h.role===roleSel;
   };
   for(const h of BUILTIN_HEROES) if(pass(h)){ heroesEl.appendChild(heroBtn(h)); n++; }
   for(const h of customIcons)
@@ -155,6 +158,10 @@ function renderHeroes(){
   heroesEl.appendChild(ba);
 }
 hsearch.oninput=renderHeroes;
+hsearch.onkeydown=e=>{                      // Esc 한 번이면 지우고 목록을 되돌린다
+  if(e.isComposing||e.keyCode===229) return;
+  if(e.key==='Escape'){ e.preventDefault(); if(hsearch.value){ hsearch.value=''; renderHeroes(); } }
+};
 herofile.onchange=()=>{
   const fs=[...herofile.files]; if(!fs.length) return;
   let left=fs.length;

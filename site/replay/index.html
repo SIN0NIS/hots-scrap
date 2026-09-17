@@ -108,7 +108,7 @@
             <button class="teamb on" data-t="blue">🔵 BLUE</button>
             <button class="teamb" data-t="red">🔴 RED</button>
           </div>
-          <input id="hsearch" type="search" placeholder="영웅 검색 (한/영)" style="display:none" autocomplete="off">
+          <input id="hsearch" type="search" placeholder="영웅 검색 (한/영, 초성도 됩니다)" style="display:none" autocomplete="off">
           <div id="roles" style="display:none"></div>
           <div id="heroes" style="display:none"></div>
           <span id="szwrap" style="display:none"><input type="range" id="sz" min="2" max="40" value="5"><span id="szv"></span></span>
@@ -244,6 +244,8 @@
     <div id="lvTable"></div>
   </div>
 </div>
+<!-- 검색기: js/tools.js 가 쓰므로 먼저 읽는다 -->
+<script src="../shared/search.js"></script>
 <script src="js/data_maps.js?v=48"></script>
   <script src="js/data_levels.js?v=48"></script>
 <script src="js/data_heroes.js?v=48"></script>

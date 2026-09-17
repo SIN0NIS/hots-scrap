@@ -26,6 +26,22 @@ a { color:var(--blue); }
 .filter-chip { background:#222; border:1px solid #333; color:#aaa; padding:3px 8px; border-radius:12px; font-size:11px; cursor:pointer; }
 .filter-chip.active { background:var(--p); color:#fff; border-color:var(--p); }
 .hero-count { color:#666; font-size:11px; margin-bottom:6px; }
+  /* 검색어가 걸린 자리 색 — 라이트/다크 양쪽에서 읽히게 따로 잡는다
+     (금색 --gold 는 흰 바탕에서 3.7:1 이라 본문 기준 4.5:1 에 못 미친다) */
+  :root { --hit: #8a6414; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --hit: #f0c46a; } }
+  :root[data-theme="dark"] { --hit: #f0c46a; }
+.search-row { display:flex; gap:6px; align-items:stretch; margin-bottom:8px; }
+.search-row .search-box { flex:1 1 auto; min-width:0; margin-bottom:0; }
+.icon-btn { flex:0 0 auto; width:36px; border:1px solid var(--p); border-radius:6px;
+            background:transparent; color:inherit; cursor:pointer; font-size:17px; line-height:1; }
+.icon-btn:hover { background:rgba(127,127,127,.15); }
+.search-show { width:100%; padding:7px; margin-bottom:8px; border:1px dashed var(--p); border-radius:6px;
+               background:transparent; color:inherit; opacity:.75; cursor:pointer; font-size:12px; }
+.search-show:hover { opacity:1; }
+.search-show kbd { border:1px solid currentColor; border-radius:3px; padding:0 4px; font-size:11px; opacity:.8; }
+#hero-list .hero-item mark { background:transparent; color:var(--hit); font-weight:700; }
+#hero-list .hero-item.sel { background:rgba(127,127,127,.18); }
 .hero-item { padding:8px 10px; border-radius:6px; cursor:pointer; display:flex; justify-content:space-between; align-items:center; }
 .hero-item:hover { background:#222; }
 .hero-item.active { background:var(--p); color:#fff; }
@@ -338,6 +354,8 @@ a { color:var(--blue); }
 :root[data-theme="light"] .settings-panel label { color:#31405a; }
 :root[data-theme="light"] .home-hero-card:hover { background:#e3ebf5; }
 </style>
+<!-- 검색기: 본문 스크립트가 시동될 때 이미 있어야 하므로 head 에서 먼저 읽는다 -->
+<script src="../shared/search.js"></script>
 </head>
 <body>
 <div id="top-bar">
@@ -371,7 +389,11 @@ a { color:var(--blue); }
       <span id="sidebar-toggle-label">영웅 목록</span>
       <span id="sidebar-toggle-icon">▾</span>
     </div>
-    <input type="text" id="hero-search" class="search-box" placeholder="영웅 검색 (초성 지원)..." oninput="handleSearch(this.value)">
+    <div class="search-row" id="search-row">
+      <input type="text" id="hero-search" class="search-box" placeholder="영웅 검색 — 초성도 됩니다 (ㅈㅈ · 줄ㅈ · 디바)" autocomplete="off">
+      <button type="button" id="search-hide" class="icon-btn" title="검색창 접기 (Esc)" aria-label="검색창 접기">&times;</button>
+    </div>
+    <button type="button" id="search-show" class="search-show" hidden>영웅 검색 열기 <kbd>/</kbd></button>
     <div class="filter-row" id="role-filters"></div>
     <div class="hero-count" id="hero-count"></div>
     <div id="hero-list"></div>
@@ -544,25 +566,73 @@ function setRoleFilter(r) {
   handleSearch(document.getElementById('hero-search').value);
 }
 
+/* 초성 검색은 공용 검색기(../shared/search.js)가 맡는다.
+   글자를 더 칠수록 좁아진다: "ㅈㅈ" → 줄진 · "줄ㅈ" → 줄진 · "디바" → D.Va */
+var searchHits = [], searchSel = -1, searchQuery = '';
+
 function handleSearch(v) {
-  const s = (v||"").toLowerCase().replace(/\s/g, "");
-  const choInput = getChosung(s);
-  let fil = heroList.filter(h => {
-    const n_ko = h.name_ko.toLowerCase().replace(/\s/g, "");
-    const n_en = h.name_en.toLowerCase().replace(/\s/g, "");
-    return n_ko.includes(s) || n_en.includes(s) || getChosung(n_ko).includes(choInput);
+  searchQuery = v || '';
+  var base = activeRoleFilter ? heroList.filter(function (h) { return h.role === activeRoleFilter; }) : heroList;
+  searchHits = window.scrapSearch.filter(base, searchQuery, function (h) { return [h.name_ko, h.name_en]; });
+  searchSel = -1;
+  renderHeroListUI(searchHits);
+}
+
+function moveSel(d) {
+  if (!searchHits.length) return;
+  searchSel = (searchSel + d + searchHits.length) % searchHits.length;
+  var items = document.querySelectorAll('#hero-list .hero-item');
+  for (var i = 0; i < items.length; i++) items[i].classList.toggle('sel', i === searchSel);
+  if (items[searchSel]) items[searchSel].scrollIntoView({ block: 'nearest' });
+}
+
+/* 검색창 접기 — 목록을 넓게 보고 싶을 때. 접어 둔 상태는 다음에 들어와도 그대로다. */
+var ENC_HIDE_KEY = 'encyclopedia.searchHidden';
+function setSearchHidden(hide, focus) {
+  var row = document.getElementById('search-row'), show = document.getElementById('search-show');
+  if (!row || !show) return;
+  row.hidden = !!hide; show.hidden = !hide;
+  try { localStorage.setItem(ENC_HIDE_KEY, hide ? '1' : '0'); } catch (e) {}
+  if (!hide && focus) { var i = document.getElementById('hero-search'); if (i) { i.focus(); i.select(); } }
+}
+function initSearchBox() {
+  var input = document.getElementById('hero-search');
+  if (!input) return;
+  input.addEventListener('input', function () { handleSearch(this.value); });
+  input.addEventListener('keydown', function (e) {
+    if (e.isComposing || e.keyCode === 229) return;
+    if (e.key === 'ArrowDown') { e.preventDefault(); moveSel(1); }
+    else if (e.key === 'ArrowUp') { e.preventDefault(); moveSel(-1); }
+    else if (e.key === 'Enter') {
+      var pick = searchHits[searchSel >= 0 ? searchSel : 0];
+      if (pick) { e.preventDefault(); selectHero(pick.id); }
+    } else if (e.key === 'Escape') {
+      e.preventDefault();
+      if (this.value) { this.value = ''; handleSearch(''); } else setSearchHidden(true);
+    }
   });
-  if (activeRoleFilter) fil = fil.filter(h => h.role === activeRoleFilter);
-  renderHeroListUI(fil);
+  var hide = document.getElementById('search-hide');
+  if (hide) hide.addEventListener('click', function () { setSearchHidden(true); });
+  var show = document.getElementById('search-show');
+  if (show) show.addEventListener('click', function () { setSearchHidden(false, true); });
+  document.addEventListener('keydown', function (e) {
+    var t = e.target, tag = t && t.tagName;
+    if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || (t && t.isContentEditable)) return;
+    if (e.key === '/' && !e.ctrlKey && !e.metaKey && !e.altKey) { e.preventDefault(); setSearchHidden(false, true); }
+  });
+  var saved = '0';
+  try { saved = localStorage.getItem(ENC_HIDE_KEY) || '0'; } catch (e) {}
+  setSearchHidden(saved === '1');
 }
 
 function renderHeroListUI(list) {
   document.getElementById('hero-count').innerText = `${list.length}명 표시 중 (전체 ${heroList.length}명)`;
-  document.getElementById('hero-list').innerHTML = list.map(h => `
+  const S = window.scrapSearch, qq = searchQuery || '';
+  document.getElementById('hero-list').innerHTML = list.length ? list.map(h => `
     <div class="hero-item ${h.id===currentHeroId?'active':''}" onclick="selectHero('${h.id}')">
-      <span>${currentLang==='ko'?h.name_ko:h.name_en}</span>
-      <span class="r">${h.role}</span>
-    </div>`).join("");
+      <span>${S.mark(currentLang==='ko'?h.name_ko:h.name_en, qq)}</span>
+      <span class="r">${S.esc(h.role)}</span>
+    </div>`).join("") : `<div class="hero-count" style="padding:10px 0">맞는 영웅이 없습니다</div>`;
 }
 
 function selectHero(id) {
@@ -1835,6 +1905,7 @@ function renderHeroPage(keepScroll) {
 }
 
 renderRoleFilters();
+initSearchBox();
 handleSearch("");
 renderHomePage();
 </script><!--<<WIKI-FIELDS>>-->

@@ -249,10 +249,18 @@
     buildEl.textContent = '데이터 버전 정보를 읽지 못했습니다';
   }
 
+  // 가장 최근에 뭔가 갱신된 시기 한 줄 — 언제 것인지만 알면 되니 날짜까지만 적는다
+  var newest = '';
+  if (reg && reg.apps) {
+    for (var j = 0; j < reg.apps.length; j++) {
+      var u = reg.apps[j].updatedAt;
+      if (u && u > newest) newest = u;
+    }
+  }
   var t = checkTimes();
   document.getElementById('check').innerHTML =
-    '새 패치가 났는지 <b>6시간마다</b> 자동으로 확인합니다 · 방금 확인 <b>' + hhmm(t.last) +
-    '</b> · 다음 확인 <b>' + hhmm(t.next) + '</b> ' +
+    (newest ? '마지막 업데이트 <b>' + esc(newest.slice(0, 10)) + '</b> · ' : '') +
+    '새 패치가 났는지 <b>6시간마다</b> 자동으로 확인합니다 (다음 ' + hhmm(t.next) + ') ' +
     '<a href="https://github.com/SIN0NIS/hots-scrap/actions/workflows/update-patchnotes.yml" target="_blank" rel="noopener">기록 보기</a>';
 
   var grid = document.getElementById('grid');
@@ -265,13 +273,9 @@
     var a = document.createElement('a');
     a.className = 'card' + (app.status === 'planned' ? ' planned' : '');
     a.href = app.path;
-    var when = '';
-    if (app.updatedAt) {
-      when = '<span class="when">자료 갱신 <b>' + esc(app.updatedAt) + '</b>' +
-        (app.note ? ' · ' + esc(app.note) : '') + '</span>';
-    } else if (app.note) {
-      when = '<span class="when">' + esc(app.note) + '</span>';
-    }
+    // 카드에는 '무엇을 기준으로 만든 자료인지'만 적는다.
+    // 갱신 날짜를 앱마다 늘어놓으면 기록처럼 보여서, 가장 최근 것만 위에 한 줄로 둔다.
+    var when = app.note ? '<span class="when">' + esc(app.note) + '</span>' : '';
     a.innerHTML = '<h2>' + esc(app.name) + '</h2>' +
       '<span class="tag">' +
       (app.requires === 'heavy' ? '로컬 자산 필요' : '바로 사용') +

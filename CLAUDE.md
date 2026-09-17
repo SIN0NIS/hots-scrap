@@ -7,6 +7,7 @@
 1. **로컬 dev 서버**: `python tools/devserver.py 8801` → http://localhost:8801/site/ (no-cache 헤더. 8800 은 캐시 오염으로 폐기).
    Claude 는 `.claude/launch.json` 의 `hots-scrap` 구성으로 브라우저 미리보기를 연다.
 2. **검증**: 허브(`/site/`) + 수정한 앱 페이지를 열어 콘솔 오류 0 확인, 다크/라이트 양쪽, 모바일 폭 확인.
+   - 콘솔은 **새 탭에서** 본다. 같은 탭을 계속 쓰면 앞 페이지의 오류가 남아 있어 오해한다.
    - 스크립트를 손댔으면 **반드시 브라우저 콘솔로 확인한다.** 파이썬 `esprima` 는 느슨한 모드라 `const` 중복 선언 같은 정적 의미 오류를 못 잡고, `?.`·`??`·`||=` 를 오탐으로 뱉는다.
    - 스크립트를 통째로 바꿔치기하는 수정 스크립트를 쓴 뒤에는 블록이 두 벌 남지 않았는지 함수·상수 이름 중복을 센다.
 3. **커밋**: 검증이 끝난 뒤에만 `git commit` (한국어 제목, `앱: 내용` 형식). **push 는 사용자가 지시할 때만.**
@@ -16,13 +17,24 @@
 
 - `site/index.html` 허브 — **`site/data/hub.json` 하나만** 읽는다(요청 1개).
   앱 추가는 `site/apps.json` 에 적고 `pipeline/steps/build_status.py` 를 돌린다 (hub.json 은 생성 파일).
-  카드에 "자료 갱신 시각"과 자동 점검 주기가 같이 나온다. 로고는 파일이 아니라 HTML 안에 박혀 있다.
+  카드에는 **기준만** 적는다(빌드 번호·회차 수). 갱신 날짜를 앱마다 늘어놓으면 기록처럼 보여서,
+  가장 최근 것 하나만 위에 "마지막 업데이트 <날짜>" 로 둔다. hub.json 에는 앱별 시각이 그대로 있다.
+  로고는 파일이 아니라 HTML 안에 박혀 있다.
 - `site/builds/index.html` 특성 빌드 — 64KB. 영웅 데이터는 `site/data/builds/` 로 분리
   (`index.json` 6KB + `<live|ptr>.<ko|en>.json` 약 1.5MB, 화면이 고른 판·언어 하나만 받는다).
   자료 생성은 `pipeline/steps/build_talent_data.py`
 - `site/encyclopedia/index.html` 영웅 도감 — **단일 파일(6MB, 데이터 내장)**, 직접 편집
 - `site/replay/` 리플레이 뷰어 — `index.html` + `css/` + `js/`(클래식 스크립트, ES 모듈 아님). `js/data_*.js` 는 생성 파일
 - `site/shared/scrap.js` 전역 바+테마(한 줄 로드), `scrap.css` 토큰 `--scrap-*`. 여기 수정 = 전 앱 영향 → 전 앱 회귀 확인
+- `site/shared/search.js` **한글 검색기** — 네 앱(빌드·도감·패치 기록·리플레이)이 같이 쓴다. 여기 수정 = 전 앱 회귀 확인
+  - `scrapSearch.filter(목록, 검색어, 항목 => [이름들])` · `.score(검색어, 이름들)` · `.mark(이름, 검색어)`
+  - **다 친 글자는 글자대로, 자음만 친 것은 그 자리 초성으로** 맞춘다 → `줄ㅈ` 은 줄진만 걸린다.
+    검색어를 통째로 초성으로 바꾸는 옛 방식으로 되돌리지 마라(글자를 더 쳐도 안 좁혀진다).
+  - 치는 중인 마지막 글자는 받침을 안 따진다(`줄지`→줄진). 앞 글자 받침으로도 본다(`바ㄹ`→발라).
+    띄어쓰기·문장부호는 무시(`dva`→D.Va). 사람들이 실제로 치는 표기는 `ALIAS` 에(`디바`→D.Va).
+  - **읽는 순서 주의**: 앱의 시동 코드보다 먼저 실려야 한다(도감은 `<head>`, 리플레이는 `js/` 앞).
+  - 검색창 접기 상태는 앱별 `localStorage`(`builds.searchHidden` 등). `/` 로 열고 `Esc` 로 지우거나 접는다.
+  - 걸린 자리 강조색은 `--hit`(라이트 #8a6414 / 다크 #f0c46a). `--gold` 는 흰 바탕에서 3.7:1 이라 쓰면 안 된다.
 - `site/data/97650/` 공통 JSON(heroes.json, heroes/<Id>.json, talents.json), `latest.json` 포인터
 - `pipeline/steps/` 데이터 생성 스텝(로컬 실행), `tools/devserver.py`
 

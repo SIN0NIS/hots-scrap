@@ -118,6 +118,21 @@
   button, .btn { font-family:inherit; font-size:13px; cursor:pointer; border:1px solid var(--line); background:var(--card); color:var(--fg); border-radius:99px; padding:5px 12px; }
   button:hover, .btn:hover { border-color:var(--gold-line); color:var(--gold); }
   button.on { background:var(--blue); border-color:var(--blue); color:var(--on-accent); }
+  /* 검색어가 걸린 자리 색 — 라이트/다크 양쪽에서 읽히게 따로 잡는다
+     (금색 --gold 는 흰 바탕에서 3.7:1 이라 본문 기준 4.5:1 에 못 미친다) */
+  :root { --hit: #8a6414; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --hit: #f0c46a; } }
+  :root[data-theme="dark"] { --hit: #f0c46a; }
+  .qrow { display:flex; gap:6px; align-items:stretch; }
+  .qrow #q { flex:1 1 auto; min-width:0; }
+  .qhide { flex:0 0 auto; width:38px; border:1px solid var(--line); border-radius:8px;
+           background:transparent; color:inherit; cursor:pointer; font-size:17px; line-height:1; }
+  .qhide:hover { background:var(--hover, rgba(127,127,127,.15)); }
+  .qshow { width:100%; padding:8px; margin:0 0 12px; border:1px dashed var(--line); border-radius:8px;
+           background:transparent; color:var(--dim); cursor:pointer; font-size:13px; }
+  .qshow:hover { color:inherit; }
+  .qshow kbd { border:1px solid currentColor; border-radius:3px; padding:0 4px; font-size:11px; opacity:.8; }
+  .list .row mark, .menu mark { background:transparent; color:var(--hit); font-weight:700; }
   input[type=search] { font-family:inherit; font-size:14px; padding:9px 12px; border:1px solid var(--line); border-radius:8px; background:var(--card); color:var(--fg); width:100%; }
   .filters { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:10px 0; }
   .filters a { font-size:13px; text-decoration:none; border:1px solid var(--line); background:var(--card);
@@ -390,6 +405,7 @@
 </head>
 <body>
 <div class="wrap" id="app"><div class="empty">불러오는 중…</div></div>
+<script src="../shared/search.js"></script>
 <script src="../shared/scrap.js" defer></script>
 <script>
 (function () {
@@ -487,18 +503,42 @@
   }
 
   // ---------- 목록 ----------
+  /* 목록 거르기 — 검색창에 칠 때마다 화면을 통째로 다시 그리지 않고 이것만 다시 돌린다.
+     글자 찾기는 공용 검색기가 맡아 초성도 되고("ㅈㅈ" → 줄진), 날짜 순서는 그대로 둔다. */
+  function pickRows(ch, src, heroes, bgs, text) {
+    let rows = INDEX;
+    if (ch) rows = rows.filter(r => channelOf(r) === ch);
+    if (src) rows = rows.filter(r => sourceOf(r) === src);
+    if (heroes.length) rows = rows.filter(r => heroes.every(h => r.heroes.includes(h)));
+    if (bgs.length) rows = rows.filter(r => bgs.every(b => r.battlegrounds.includes(b)));
+    if (text) {
+      rows = rows.filter(r => window.scrapSearch.score(text,
+        [r.title || '', r.version || '', r.date || ''].concat((r.heroes || []).map(heroName))) > 0);
+    }
+    return rows;
+  }
+  function statHTML(rows) {
+    return `${rows.length}건 / 전체 ${INDEX.length}건 · 공식 한글 ${INDEX.filter(r => r.official && !r.translated).length}건(2017년 1월~) · Claude 번역 ${INDEX.filter(r => r.translated).length}건(공식 한글판 없는 회차) · 데이터만 ${INDEX.filter(r => !r.official).length}건(게임 파일 비교)`;
+  }
+
+  /* 검색창 접기 — 접어 둔 상태는 다음에 들어와도 그대로다 */
+  const QHIDE_KEY = 'patchnotes.searchHidden';
+  function qHidden() { try { return localStorage.getItem(QHIDE_KEY) === '1'; } catch (e) { return false; } }
+  function setQHidden(hide, focus) {
+    const row = app.querySelector('.qrow'), show = app.querySelector('.qshow');
+    if (!row || !show) return;
+    row.hidden = !!hide; show.hidden = !hide;
+    try { localStorage.setItem(QHIDE_KEY, hide ? '1' : '0'); } catch (e) {}
+    if (!hide && focus) { const i = app.querySelector('#q'); if (i) { i.focus(); i.select(); } }
+  }
+
   function renderList() {
     const p = q();
     const ch = p.get('ch') || '', src = p.get('src') || '';
     const heroes = (p.get('hero') || '').split(',').filter(Boolean);
     const bgs = (p.get('bg') || '').split(',').filter(Boolean);
     const text = (p.get('q') || '').trim();
-    let rows = INDEX;
-    if (ch) rows = rows.filter(r => channelOf(r) === ch);
-    if (src) rows = rows.filter(r => sourceOf(r) === src);
-    if (heroes.length) rows = rows.filter(r => heroes.every(h => r.heroes.includes(h)));
-    if (bgs.length) rows = rows.filter(r => bgs.every(b => r.battlegrounds.includes(b)));
-    if (text) rows = rows.filter(r => (r.title + ' ' + (r.version || '') + ' ' + r.heroes.map(heroName).join(' ')).includes(text));
+    let rows = pickRows(ch, src, heroes, bgs, text);
 
     const chBtns = ['', 'live', 'ptr'].map(k => `<button data-ch="${k}" class="${k === ch ? 'on' : ''}">${k ? CH[k] : '전체'}</button>`).join('');
     const SRCLBL = { official: '공식 한글', translated: 'Claude 번역', data: '데이터' };
@@ -508,18 +548,59 @@
     const bgOpts = Object.keys(BGS).filter(b => !bgs.includes(b)).map(b => `<option value="${b}">${esc(bgName(b))}</option>`).join('');
 
     app.innerHTML = headHTML('list') + `
-      <input type="search" id="q" placeholder="제목·버전·영웅 검색" value="${esc(text)}">
+      <div class="qrow"${qHidden() ? ' hidden' : ''}>
+        <input type="search" id="q" placeholder="제목·버전·영웅 검색 — 초성도 됩니다 (ㅈㅈ · 줄ㅈ)" value="${esc(text)}" autocomplete="off">
+        <button type="button" class="qhide" title="검색창 접기 (Esc)" aria-label="검색창 접기">&times;</button>
+      </div>
+      <button type="button" class="qshow"${qHidden() ? '' : ' hidden'}>검색창 열기 <kbd>/</kbd></button>
       <div class="filters"><div class="grp"><span class="lbl">채널</span>${chBtns}</div><div class="grp"><span class="lbl">출처</span>${srcBtns}</div></div>
       <div class="filters">
         <div class="grp"><span class="lbl">영웅</span>${heroChips}<span class="picker"><button id="heroPick">+ 영웅</button><div class="menu" id="heroMenu" hidden></div></span></div>
         <div class="grp"><span class="lbl">전장</span>${bgChips}<select id="bgPick" class="btn"><option value="">+ 전장</option>${bgOpts}</select></div>
         ${(ch || src || heroes.length || bgs.length || text) ? '<button id="clear">필터 지우기</button>' : ''}
       </div>
-      <div class="stat" role="status" aria-live="polite">${rows.length}건 / 전체 ${INDEX.length}건 · 공식 한글 ${INDEX.filter(r => r.official && !r.translated).length}건(2017년 1월~) · Claude 번역 ${INDEX.filter(r => r.translated).length}건(공식 한글판 없는 회차) · 데이터만 ${INDEX.filter(r => !r.official).length}건(게임 파일 비교)</div>
+      <div class="stat" role="status" aria-live="polite">${statHTML(rows)}</div>
       <div class="list">${rows.map(rowHTML).join('') || '<div class="empty">조건에 맞는 패치가 없습니다.</div>'}</div>
       ${creditsHTML()}`;
 
-    app.querySelector('#q').addEventListener('change', e => go({ ...cur(), q: e.target.value }));
+    /* 글자를 치는 즉시 목록만 갈아 끼운다. 화면을 통째로 다시 그리지 않으니
+       커서도 그대로 있고, 예전처럼 한 번 더 누르거나 Esc 를 칠 필요가 없다.
+       주소는 조금 늦게 조용히 맞춰 둔다(뒤로 가기 기록을 더럽히지 않게). */
+    const qIn = app.querySelector('#q');
+    let qTimer = null;
+    const applyQ = v => {
+      const got = pickRows(ch, src, heroes, bgs, v.trim());
+      const stat = app.querySelector('.stat'), list = app.querySelector('.list');
+      if (stat) stat.innerHTML = statHTML(got);
+      if (list) list.innerHTML = got.map(rowHTML).join('') || '<div class="empty">조건에 맞는 패치가 없습니다.</div>';
+      clearTimeout(qTimer);
+      qTimer = setTimeout(() => {
+        const u = new URL(location.href);
+        if (v.trim()) u.searchParams.set('q', v.trim()); else u.searchParams.delete('q');
+        history.replaceState(null, '', u);
+      }, 400);
+    };
+    qIn.addEventListener('input', e => applyQ(e.target.value));
+    qIn.addEventListener('keydown', e => {
+      if (e.isComposing || e.keyCode === 229) return;
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        if (qIn.value) { qIn.value = ''; applyQ(''); } else setQHidden(true);
+      }
+    });
+    app.querySelector('.qhide').onclick = () => setQHidden(true);
+    app.querySelector('.qshow').onclick = () => setQHidden(false, true);
+    if (!window.__qKey) {
+      window.__qKey = true;
+      document.addEventListener('keydown', e => {
+        const t = e.target, tag = t && t.tagName;
+        if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || (t && t.isContentEditable)) return;
+        if (e.key === '/' && !e.ctrlKey && !e.metaKey && !e.altKey) {
+          const i = document.querySelector('#q');
+          if (i) { e.preventDefault(); setQHidden(false, true); }
+        }
+      });
+    }
     app.querySelectorAll('[data-ch]').forEach(b => b.onclick = () => go({ ...cur(), ch: b.dataset.ch }));
     app.querySelectorAll('[data-src]').forEach(b => b.onclick = () => go({ ...cur(), src: b.dataset.src }));
     app.querySelectorAll('[data-rm-hero]').forEach(c => c.onclick = () => go({ ...cur(), hero: heroes.filter(h => h !== c.dataset.rmHero) }));
@@ -533,7 +614,12 @@
   function setupHeroPicker(selected) {
     const btn = app.querySelector('#heroPick'), menu = app.querySelector('#heroMenu');
     const ids = Object.keys(HEROES).filter(h => HEROES[h].portrait && !selected.includes(h)).sort((a, b) => heroName(a).localeCompare(heroName(b), 'ko'));
-    const draw = f => menu.innerHTML = `<input type="search" placeholder="영웅 이름" value="${esc(f)}"><div class="grid">${ids.filter(h => !f || heroName(h).includes(f) || h.toLowerCase().includes(f.toLowerCase())).map(h => `<button data-h="${h}">${heroImg(h)}${esc(heroName(h))}</button>`).join('')}</div>`;
+    const draw = f => {
+      const hit = window.scrapSearch.filter(ids, f, h => [heroName(h), h]);
+      menu.innerHTML = `<input type="search" placeholder="영웅 이름 (초성도 됩니다)" value="${esc(f)}" autocomplete="off"><div class="grid">`
+        + (hit.length ? hit.map(h => `<button data-h="${h}">${heroImg(h)}${window.scrapSearch.mark(heroName(h), f)}</button>`).join('')
+                      : `<div class="empty">맞는 영웅이 없습니다</div>`) + `</div>`;
+    };
     btn.onclick = e => { e.stopPropagation(); menu.hidden = !menu.hidden; if (!menu.hidden) { draw(''); menu.querySelector('input').focus(); } };
     menu.onclick = e => { e.stopPropagation(); const b = e.target.closest('[data-h]'); if (b) go({ ...cur(), hero: selected.concat(b.dataset.h) }); };
     menu.oninput = e => { const v = e.target.value; draw(v); const i = menu.querySelector('input'); i.focus(); i.setSelectionRange(v.length, v.length); };

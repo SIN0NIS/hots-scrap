@@ -36,6 +36,23 @@
         .search-box { width: 100%; padding: 12px; background: #222; color: white; border: 1px solid var(--p); border-radius: 6px; font-size: 16px; outline: none; box-sizing: border-box; }
         #hero-list-dropdown { position: absolute; left: 10px; right: 10px; max-height: 250px; background: #2a2a2a; overflow-y: auto; z-index: 3000; border-radius: 4px; display: none; border: 1px solid var(--p); }
         .hero-item { padding: 12px; border-bottom: 1px solid #333; cursor: pointer; }
+  /* 검색어가 걸린 자리 색 — 라이트/다크 양쪽에서 읽히게 따로 잡는다
+     (금색 --gold 는 흰 바탕에서 3.7:1 이라 본문 기준 4.5:1 에 못 미친다) */
+  :root { --hit: #8a6414; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --hit: #f0c46a; } }
+  :root[data-theme="dark"] { --hit: #f0c46a; }
+        .hero-item.sel, .hero-item:hover { background: rgba(127,127,127,.18); }
+        .hero-item mark { background: transparent; color: var(--hit); font-weight: 700; }
+        .search-row { display: flex; gap: 6px; align-items: stretch; }
+        .search-row .search-box { flex: 1 1 auto; min-width: 0; }
+        .icon-btn { flex: 0 0 auto; width: 40px; border: 1px solid var(--p); border-radius: 6px;
+                    background: transparent; color: inherit; cursor: pointer; font-size: 18px; line-height: 1; }
+        .icon-btn:hover { background: rgba(127,127,127,.15); }
+        .search-show { width: 100%; padding: 8px; border: 1px dashed var(--p); border-radius: 6px;
+                       background: transparent; color: inherit; cursor: pointer; font-size: 13px; opacity: .75; }
+        .search-show:hover { opacity: 1; }
+        .search-show kbd { border: 1px solid currentColor; border-radius: 3px; padding: 0 4px; font-size: 11px; opacity: .8; }
+        .list-empty { padding: 12px; opacity: .7; font-size: 13px; }
         
         #capture-area { flex: 1; display: flex; flex-direction: column; overflow-y: auto; padding-bottom: 280px; background: #0b0b0d; width: 100%; box-sizing: border-box; }
         #hero-stat-container { background: #1a1a20; margin: 8px; padding: 12px; border-radius: 8px; border: 1px solid #333; display: none; }
@@ -172,8 +189,13 @@
     </div>
 
     <div id="header">
-        <input type="text" id="hero-search" class="search-box" placeholder="영웅 검색 (초성 지원)..." onclick="showList()" oninput="handleSearch(this.value)">
-        <div id="hero-list-dropdown"></div>
+        <div class="search-row">
+          <input type="text" id="hero-search" class="search-box" placeholder="영웅 검색 — 초성도 됩니다 (ㅈㅈ · 줄ㅈ · 디바)"
+                 autocomplete="off" role="combobox" aria-expanded="false" aria-controls="hero-list-dropdown" aria-autocomplete="list">
+          <button type="button" id="search-hide" class="icon-btn" title="검색창 접기 (Esc)" aria-label="검색창 접기">&times;</button>
+        </div>
+        <button type="button" id="search-show" class="search-show" hidden>영웅 검색 열기 <kbd>/</kbd></button>
+        <div id="hero-list-dropdown" role="listbox"></div>
     </div>
     <div id="capture-area">
         <div id="welcome-area" style="padding:40px; text-align:center; color:#666;">영웅을 선택하세요. / Select a Hero.</div>
@@ -328,24 +350,106 @@
 
         function getActiveData() { return currentLang === 'ko' ? dataKO : dataEN; }
 
-        function getChosung(str) {
-            const cho = ["ㄱ","ㄲ","ㄴ","ㄷ","ㄸ","ㄹ","ㅁ","ㅂ","ㅃ","ㅅ","ㅆ","ㅇ","ㅈ","ㅉ","ㅊ","ㅋ","ㅌ","ㅍ","ㅎ"];
-            let res = ""; for(let i=0; i<str.length; i++) {
-                let c = str.charCodeAt(i) - 44032;
-                if(c >= 0 && c < 11172) res += cho[Math.floor(c/588)];
-                else res += str.charAt(i);
-            } return res;
-        }
+        /* 초성 검색은 공용 검색기(../shared/search.js)가 맡는다.
+           예전에는 검색어를 통째로 초성으로 바꿔 비교해서, 글자를 더 쳐도 결과가 안 좁혀졌다. */
+        function getChosung(str) { return window.scrapSearch.chosung(str); }
+
+        var searchHits = [];          // 지금 목록에 떠 있는 영웅들
+        var searchSel = -1;           // 키보드로 고르고 있는 자리
+
         function handleSearch(v) {
-            const s = v.toLowerCase().replace(/\s/g, ""), choInput = getChosung(s);
-            const fil = heroList.filter(h => {
-                const n_ko = h.name_ko.toLowerCase().replace(/\s/g, "");
-                const n_en = h.name_en.toLowerCase().replace(/\s/g, "");
-                return n_ko.includes(s) || n_en.includes(s) || getChosung(n_ko).includes(choInput);
-            }); renderList(fil);
+            searchHits = window.scrapSearch.filter(heroList, v, function (h) { return [h.name_ko, h.name_en]; });
+            searchSel = -1;
+            renderList(searchHits, v);
+            showList();               // 글자를 치면 목록이 알아서 열린다(전에는 한 번 더 눌러야 했다)
         }
-        function renderList(l) { document.getElementById("hero-list-dropdown").innerHTML = l.map(h => `<div class="hero-item" onclick="selectHero('${h.id}')">${currentLang==='ko'?h.name_ko:h.name_en}</div>`).join(""); }
-        function showList() { document.getElementById("hero-list-dropdown").style.display = "block"; }
+        function renderList(l, q) {
+            var lang = currentLang;
+            var box = document.getElementById("hero-list-dropdown");
+            if (!l.length) {
+                box.innerHTML = '<div class="list-empty">' + (q ? '\u0022' + window.scrapSearch.esc(q) + '\u0022 에 맞는 영웅이 없습니다' : '영웅이 없습니다') + '</div>';
+                return;
+            }
+            box.innerHTML = l.map(function (h, i) {
+                var name = lang === 'ko' ? h.name_ko : h.name_en;
+                return '<div class="hero-item" role="option" data-id="' + h.id + '" data-i="' + i + '">'
+                     + window.scrapSearch.mark(name, q || '') + '</div>';
+            }).join("");
+        }
+        function showList() {
+            document.getElementById("hero-list-dropdown").style.display = "block";
+            var i = document.getElementById("hero-search");
+            if (i) i.setAttribute('aria-expanded', 'true');
+        }
+        function hideList() {
+            var d = document.getElementById("hero-list-dropdown");
+            if (d) d.style.display = "none";
+            var i = document.getElementById("hero-search");
+            if (i) i.setAttribute('aria-expanded', 'false');
+            searchSel = -1;
+        }
+        function moveSel(d) {
+            if (!searchHits.length) return;
+            showList();
+            searchSel = (searchSel + d + searchHits.length) % searchHits.length;
+            var items = document.querySelectorAll('#hero-list-dropdown .hero-item');
+            for (var i = 0; i < items.length; i++) items[i].classList.toggle('sel', i === searchSel);
+            if (items[searchSel]) items[searchSel].scrollIntoView({ block: 'nearest' });
+        }
+
+        /* 검색창 접기 — 고른 영웅을 크게 보거나 그림으로 저장할 때 걸리적거리지 않게.
+           접어 둔 상태는 다음에 들어와도 그대로다. */
+        var SEARCH_HIDDEN_KEY = 'builds.searchHidden';
+        function setSearchHidden(hide, focus) {
+            var row = document.querySelector('#header .search-row');
+            var show = document.getElementById('search-show');
+            if (!row || !show) return;
+            row.hidden = !!hide;
+            show.hidden = !hide;
+            if (hide) hideList();
+            try { localStorage.setItem(SEARCH_HIDDEN_KEY, hide ? '1' : '0'); } catch (e) {}
+            if (!hide && focus) { var i = document.getElementById('hero-search'); if (i) { i.focus(); i.select(); } }
+        }
+        function initSearchBox() {
+            var input = document.getElementById('hero-search');
+            if (!input) return;
+            input.addEventListener('input', function () { handleSearch(this.value); });
+            input.addEventListener('focus', function () { if (this.value || searchHits.length) showList(); });
+            input.addEventListener('click', function () { showList(); });
+            input.addEventListener('keydown', function (e) {
+                if (e.isComposing || e.keyCode === 229) return;   // 한글 조합 중에는 건드리지 않는다
+                if (e.key === 'ArrowDown') { e.preventDefault(); moveSel(1); }
+                else if (e.key === 'ArrowUp') { e.preventDefault(); moveSel(-1); }
+                else if (e.key === 'Enter') {
+                    var pick = searchHits[searchSel >= 0 ? searchSel : 0];
+                    if (pick) { e.preventDefault(); selectHero(pick.id); }
+                } else if (e.key === 'Escape') {
+                    e.preventDefault();
+                    if (this.value) { this.value = ''; handleSearch(''); }   // 한 번 누르면 지우고
+                    else setSearchHidden(true);                              // 비어 있으면 접는다
+                }
+            });
+            var dd = document.getElementById('hero-list-dropdown');
+            if (dd) dd.addEventListener('click', function (e) {
+                var it = e.target.closest ? e.target.closest('.hero-item') : null;
+                if (it && it.dataset.id) selectHero(it.dataset.id);
+            });
+            var hide = document.getElementById('search-hide');
+            if (hide) hide.addEventListener('click', function () { setSearchHidden(true); });
+            var show = document.getElementById('search-show');
+            if (show) show.addEventListener('click', function () { setSearchHidden(false, true); });
+            document.addEventListener('click', function (e) {
+                if (!e.target.closest || !e.target.closest('#header')) hideList();
+            });
+            document.addEventListener('keydown', function (e) {
+                var t = e.target, tag = t && t.tagName;
+                if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || (t && t.isContentEditable)) return;
+                if (e.key === '/' && !e.ctrlKey && !e.metaKey && !e.altKey) { e.preventDefault(); setSearchHidden(false, true); }
+            });
+            var saved = '0';
+            try { saved = localStorage.getItem(SEARCH_HIDDEN_KEY) || '0'; } catch (e) {}
+            setSearchHidden(saved === '1');
+        }
         function updateFontSize(v) { document.documentElement.style.setProperty('--fs', v + 'px'); }
 
         function processTooltip(t, lv) {
@@ -358,7 +462,7 @@
 
         function selectHero(id) {
             currentHeroId = id; const hData = getActiveData()[id];
-            document.getElementById("welcome-area").style.display = "none"; document.getElementById("hero-list-dropdown").style.display = "none";
+            document.getElementById("welcome-area").style.display = "none"; hideList();
             document.getElementById("hero-info-title").innerText = hData.name; document.getElementById("hero-stat-container").style.display = "block";
             const lvs = Object.keys(hData.talents).filter(l => hData.talents[l].length > 0).sort((a,b) => parseInt(a.replace(/\D/g,"")) - parseInt(b.replace(/\D/g,"")));
             selectedTalents = new Array(lvs.length).fill(0);
@@ -494,7 +598,8 @@
             } catch (err) { alert("Error"); } finally { document.body.removeChild(tempDiv); }
         }
     </script>
-<script src="../shared/scrap.js" defer></script>
+<script src="../shared/search.js"></script>
+    <script src="../shared/scrap.js" defer></script>
 <script>
 /* 시작 화면: 위키 메인처럼 역할군별 초상화 그리드 — 검색과 연동 (2026-08) */
 (function () {
@@ -1005,6 +1110,7 @@ async function tcCapture(mode) {
       want = 'live';
       try { want = localStorage.getItem('builds.channel') || 'live'; } catch (e) {}
     }
+    initSearchBox();
     currentChannel = BUILD_INDEX.channels[want] ? want : 'live';
     var _ch = BUILD_INDEX.channels[currentChannel];
     if (_ch && _ch.build) window.DATA_BUILD = _ch.build;   // 저장 파일 이름에 쓴다
