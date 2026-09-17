@@ -133,6 +133,40 @@ def pick(table, key):
     return None
 
 
+# 설명을 옮겨 적을 때 믿으면 안 되는 자리 — 아래 stale_keys() 설명을 보라
+DESC_FIELDS = ("fullText", "shortText")
+
+
+def stale_keys(g):
+    """번역이 안 됐는데 **남의 설명이 그대로 남아 있는** 자리를 찾는다.
+
+    테스트 서버에 새 영웅이 올라올 때, 블리자드가 기존 기술을 복사해 만든 기술은
+    한국어 문자열 칸에 **원본 기술의 한국어 설명이 그대로** 남아 있는 일이 있다.
+    (2.57.0.98126 의 잘아타스 '어둠의 심장 의식' = 레가르 '대지 속박 토템' 설명)
+    빈 칸이 아니라 '틀린 값'이라 "비면 영어로 메운다" 규칙에 걸리지 않는다.
+
+    가려내는 방법: **이름 칸이 비었는데(=아직 번역 전) 설명이 다른 자리와 글자까지 똑같다**.
+    이름도 번역 안 된 기술의 설명만 번역돼 있을 리 없으니, 그 설명은 복사되어 남은 것이다.
+    2.57.0.98126 기준으로 이 조건에 걸리는 것은 정확히 그 한 자리뿐이다(오탐 0).
+    """
+    out = set()
+    for tab in ("ability", "talent"):
+        d = g.get(tab) or {}
+        names, full = d.get("name") or {}, d.get("fullText") or {}
+        seen = {}
+        for k, v in full.items():
+            if isinstance(v, str) and v.strip():
+                seen.setdefault(v, []).append(k)
+        for k, v in full.items():
+            if not isinstance(v, str) or not v.strip():
+                continue
+            if (names.get(k) or "").strip():
+                continue                      # 이름이 번역돼 있으면 설명도 제 것이다
+            if len(seen.get(v, ())) > 1:
+                out.add(k)
+    return out
+
+
 def localize(hero_raw, gs_raw, fallback=None):
     """HeroesDataParser 5.x 의 '번역된 출력' 모양으로 되돌린다.
 
@@ -145,6 +179,8 @@ def localize(hero_raw, gs_raw, fallback=None):
     fb = (fallback or {}).get("items", fallback or {})
     ab, tl = g.get("ability", {}), g.get("talent", {})
     fab, ftl = fb.get("ability", {}), fb.get("talent", {})
+    # 메울 언어가 있을 때만 골라낸다(영어 자료를 만들 때는 대조할 것이 없다)
+    stale = stale_keys(g) if fallback else set()
     hero_t, unit_t = g.get("hero", {}), g.get("unit", {})
     fhero_t = fb.get("hero", {})
     out = {}
@@ -178,8 +214,11 @@ def localize(hero_raw, gs_raw, fallback=None):
         for grp, lst in (n.get("abilities") or {}).items():
             for e in lst:
                 k = key_of(e)
+                bad = k in stale
                 for f in TEXT_FIELDS:
-                    v = pick(ab.get(f, {}), k)
+                    # 남의 설명이 남아 있는 자리는 아예 못 본 척하고 영어로 간다.
+                    # (재사용 대기시간 같은 틀에 박힌 칸은 멀쩡하므로 그대로 쓴다)
+                    v = None if (bad and f in DESC_FIELDS) else pick(ab.get(f, {}), k)
                     if not v:
                         v = pick(fab.get(f, {}), k)
                     if v is not None:
@@ -187,9 +226,12 @@ def localize(hero_raw, gs_raw, fallback=None):
         for grp, lst in (n.get("talents") or {}).items():
             for e in lst:
                 k = key_of(e, grp)
+                k2 = key_of(e)
+                bad = (k in stale) or (k2 in stale)
                 for f in TEXT_FIELDS:
-                    v = (pick(tl.get(f, {}), k) or pick(ab.get(f, {}), key_of(e))
-                         or pick(ftl.get(f, {}), k) or pick(fab.get(f, {}), key_of(e)))
+                    skip = bad and f in DESC_FIELDS
+                    v = (None if skip else (pick(tl.get(f, {}), k) or pick(ab.get(f, {}), k2))) \
+                        or pick(ftl.get(f, {}), k) or pick(fab.get(f, {}), k2)
                     if v is not None:
                         e[f] = clean_tip(v)
         out[hid] = n

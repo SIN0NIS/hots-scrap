@@ -23,6 +23,11 @@
 - `site/builds/index.html` 특성 빌드 — 64KB. 영웅 데이터는 `site/data/builds/` 로 분리
   (`index.json` 6KB + `<live|ptr>.<ko|en>.json` 약 1.5MB, 화면이 고른 판·언어 하나만 받는다).
   자료 생성은 `pipeline/steps/build_talent_data.py`
+  - 테스트 서버 새 영웅은 번역이 덜 된 채 올라온다. 빈 칸은 영어로 메운다.
+  - **빈 칸보다 고약한 것**: 기존 기술을 복사해 만든 기술은 한국어 칸에 *원본 기술의 설명이
+    그대로 남아* 있기도 하다(잘아타스 '어둠의 심장 의식' ← 레가르 '속박의 토템').
+    `stale_keys()` 가 걸러 낸다 — **이름이 비었는데 설명이 다른 자리와 글자까지 같으면** 찌꺼기로 본다.
+    이 판정을 느슨하게 바꾸지 마라(2.57.0.98126 기준 오탐 0, 정탐 1).
 - `site/encyclopedia/index.html` 영웅 도감 — **단일 파일(6MB, 데이터 내장)**, 직접 편집
 - `site/replay/` 리플레이 뷰어 — `index.html` + `css/` + `js/`(클래식 스크립트, ES 모듈 아님). `js/data_*.js` 는 생성 파일
 - `site/shared/scrap.js` 전역 바+테마(한 줄 로드), `scrap.css` 토큰 `--scrap-*`. 여기 수정 = 전 앱 영향 → 전 앱 회귀 확인
