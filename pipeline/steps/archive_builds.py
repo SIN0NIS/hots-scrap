@@ -36,6 +36,7 @@ GitHub 에는 올리지 않는다(용량이 크고, 사이트가 쓰는 것은 �
   python archive_builds.py --limit 20    # 한 번에 20개만 (PC 가 바쁠 때 나눠 돌린다)
   python archive_builds.py --offline     # 거울 갱신을 건너뛴다
   python archive_builds.py --locales kokr,enus,frfr
+  pythonw archive_builds.py --log <파일>  # 창 없이(작업 스케줄러). 화면 대신 파일에 기록을 남긴다
 """
 import argparse
 import hashlib
@@ -71,14 +72,52 @@ GS_RE = re.compile(r"^gamestrings_(?:[a-z]+_)?\d+_([a-z]{4})(?:\.patch)?\.json$"
 GIT_ENV = dict(os.environ, GIT_TERMINAL_PROMPT="0")     # 자격 증명 창이 떠서 멈추는 일이 없게
 # 꺼낼 때 줄바꿈을 바꾸지 않는다 — 윈도우 git 은 기본이 LF→CRLF 라 '원본 그대로'가 깨진다
 GIT_RAW = ["-c", "core.autocrlf=false", "-c", "core.eol=lf"]
+# 작업 스케줄러가 창 없이(pythonw) 돌릴 때, git 을 부를 때마다 검은 콘솔 창이 번쩍이지 않게 한다
+NO_WINDOW = {"creationflags": subprocess.CREATE_NO_WINDOW} if os.name == "nt" else {}
 
 
 def now():
     return datetime.now(KST).strftime("%Y-%m-%d %H:%M")
 
 
+class _Tee:
+    """화면과 기록 파일에 같이 쓴다. 창 없이 돌 때는 화면이 없으므로(None) 파일에만 쓴다."""
+
+    def __init__(self, screen, fh):
+        self.screen, self.fh = screen, fh
+
+    def write(self, s):
+        if self.screen is not None:
+            try:
+                self.screen.write(s)
+            except Exception:
+                pass
+        self.fh.write(s)
+        return len(s)
+
+    def flush(self):
+        for f in (self.screen, self.fh):
+            try:
+                f.flush()
+            except Exception:
+                pass
+
+
+def open_log(path):
+    """--log: 실행 기록을 파일에 이어 쓴다. 1MB 를 넘으면 뒤쪽 200KB 만 남긴다(끝없이 자라지 않게)."""
+    p = Path(path)
+    p.parent.mkdir(parents=True, exist_ok=True)
+    if p.exists() and p.stat().st_size > 1024 * 1024:
+        tail = p.read_bytes()[-200 * 1024:]
+        p.write_bytes(tail[tail.find(b"\n") + 1:])
+    fh = open(p, "a", encoding="utf-8", buffering=1)
+    fh.write(f"\n===== {now()} =====\n")
+    sys.stdout, sys.stderr = _Tee(sys.stdout, fh), _Tee(sys.stderr, fh)
+    return fh
+
+
 def git(gitdir, *args, binary=False, check=True, timeout=600):
-    r = subprocess.run(["git", *GIT_RAW, f"--git-dir={gitdir}", *args], capture_output=True, env=GIT_ENV, timeout=timeout)
+    r = subprocess.run(["git", *GIT_RAW, f"--git-dir={gitdir}", *args], capture_output=True, env=GIT_ENV, timeout=timeout, **NO_WINDOW)
     if check and r.returncode != 0:
         raise RuntimeError(f"git {' '.join(args[:3])} 실패: {r.stderr.decode('utf-8', 'replace')[-600:]}")
     return r.stdout if binary else r.stdout.decode("utf-8", "replace")
@@ -110,7 +149,7 @@ def update_mirror(dest, name, url, offline):
         if part.exists():
             _rmtree(part)
         print(f"  거울 뜨는 중(처음 한 번): {name} …", flush=True)
-        r = subprocess.run(["git", "clone", "--mirror", "--quiet", url, str(part)], capture_output=True, env=GIT_ENV, timeout=3600)
+        r = subprocess.run(["git", "clone", "--mirror", "--quiet", url, str(part)], capture_output=True, env=GIT_ENV, timeout=3600, **NO_WINDOW)
         if r.returncode != 0:
             raise RuntimeError(f"{name} 거울 실패: {r.stderr.decode('utf-8', 'replace')[-600:]}")
         part.rename(m)
@@ -425,7 +464,22 @@ def main():
     ap.add_argument("--verify", action="store_true")
     ap.add_argument("--offline", action="store_true", help="거울 갱신을 건너뛴다")
     ap.add_argument("--limit", type=int, default=0, help="한 번에 풀어 둘 빌드 수(0 = 전부)")
+    ap.add_argument("--log", default="", help="실행 기록을 이 파일에 이어 쓴다(작업 스케줄러가 창 없이 돌릴 때)")
     a = ap.parse_args()
+    if a.log:
+        open_log(a.log)
+    try:
+        return run(a)
+    except SystemExit:
+        raise
+    except Exception:
+        # 창 없이 돌 때는 오류가 어디에도 안 보인다 — 기록에 남기고 실패로 끝낸다
+        import traceback
+        traceback.print_exc()
+        return 1
+
+
+def run(a):
     dest = Path(a.dest)
     locales = {x.strip().lower() for x in a.locales.split(",") if x.strip()}
 

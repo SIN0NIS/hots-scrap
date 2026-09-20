@@ -106,6 +106,11 @@
   반드시 `-c core.autocrlf=false` 로 꺼낸다. `--verify` 가 파일마다 git blob id 까지 대조한다(2,451개 일치).
 - 새 형식의 정확성은 `vendor/full` 복원본과 JSON 대조로 확인했다(9/9 일치). 복원 로직을 바꾸면 다시 대조해라.
 - 한 저장소가 막혀도 다른 저장소는 계속 쌓고, 색인은 '다 쓴 뒤 바꿔치기'(+`.bak`)로 저장한다.
+- **윈도우 작업 스케줄러에도 물려 있다** — `\HotS Scrap\Archive game data (weekly)`, 토요일 12:00
+  (놓치면 다음에 PC 가 켜졌을 때 돈다). Claude 앱이 꺼져 있어도 쌓인다. 관리자 권한 없이 사용자 계정으로만 돈다.
+  `pythonw.exe archive_builds.py --log <보관소>/archive.log` — 창 없이 돌므로 결과는 그 기록 파일에 남는다(1MB 넘으면 스스로 줄인다).
+  창 없는 프로세스가 git 을 부르면 콘솔 창이 번쩍이므로 `CREATE_NO_WINDOW` 로 부른다. 이 둘을 빼지 마라.
+  파이썬을 새로 깔아 경로가 바뀌면 작업의 실행 파일 경로도 고쳐야 한다(`pythoncore-3.14-64\pythonw.exe`).
 
 **새 영웅 아이콘**: `python pipeline/steps/fetch_missing_icons.py`
 화면이 부르는 아이콘 중 내 이미지 저장소(`SIN0NIS/images`)에 없는 것을
