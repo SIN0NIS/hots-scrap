@@ -1,0 +1,598 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>티어표 만들기 · HotS Scrap</title>
+<link rel="icon" href="../shared/favicon.svg">
+<script src="../shared/search.js"></script>
+<script src="../shared/scrap.js" defer></script>
+<style>
+  :root {
+    --bg:#f3f6fb; --card:#ffffff; --card2:#eef2f8; --line:#cdd9ea; --line2:#b6c6de;
+    --fg:#122036; --dim:#5d6d84; --blue:#1758a8; --gold:#a97e1f; --gold-line:#d7b45c;
+    --hit:#8a6414; --shadow:0 1px 3px rgba(18,32,54,.08);
+    --sz:56px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg:#0b1526; --card:#101f38; --card2:#152747; --line:#233a5c; --line2:#2f4a72;
+      --fg:#eaf1fa; --dim:#8fa2bd; --blue:#5aa8ff; --gold:#e8c268; --gold-line:#8a6d2f;
+      --hit:#f0c46a; --shadow:0 1px 3px rgba(0,0,0,.4);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg:#0b1526; --card:#101f38; --card2:#152747; --line:#233a5c; --line2:#2f4a72;
+    --fg:#eaf1fa; --dim:#8fa2bd; --blue:#5aa8ff; --gold:#e8c268; --gold-line:#8a6d2f;
+    --hit:#f0c46a; --shadow:0 1px 3px rgba(0,0,0,.4);
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); min-height:100vh;
+         font-family:"Pretendard","Malgun Gothic","Segoe UI",sans-serif; }
+  .wrap { max-width:1100px; margin:0 auto; padding:20px 16px 60px; }
+
+  h1 { margin:0 0 4px; font-size:22px; letter-spacing:.3px; }
+  h1 .s { color:var(--gold); }
+  .sub { margin:0 0 14px; color:var(--dim); font-size:13px; line-height:1.6; }
+
+  /* ── 손잡이 줄 ───────────────────────────── */
+  .bar { display:flex; flex-wrap:wrap; gap:6px; align-items:center; margin-bottom:12px; }
+  .btn { font-family:inherit; font-size:13px; color:var(--fg); background:var(--card);
+         border:1px solid var(--line); border-radius:8px; padding:7px 12px; cursor:pointer;
+         white-space:nowrap; transition:border-color .15s, color .15s; }
+  .btn:hover { border-color:var(--gold-line); color:var(--gold); }
+  .btn.on { background:var(--blue); border-color:var(--blue); color:#fff; }
+  .btn.ghost { background:transparent; color:var(--dim); }
+  .btn:disabled { opacity:.45; cursor:default; }
+  .sep { width:1px; align-self:stretch; background:var(--line); margin:0 2px; }
+  .grow { flex:1 1 auto; }
+
+  /* ── 티어 줄 ─────────────────────────────── */
+  #tiers { display:flex; flex-direction:column; gap:8px; margin-bottom:22px; }
+  .tier { display:flex; align-items:stretch; gap:0; border:1px solid var(--line);
+          border-radius:10px; overflow:hidden; background:var(--card); box-shadow:var(--shadow); }
+  .tier.over { border-color:var(--gold); box-shadow:0 0 0 2px var(--gold-line); }
+  .tlabel { flex:0 0 108px; min-width:0; display:flex; align-items:center; justify-content:center;
+            padding:10px 8px; font-weight:700; font-size:15px; line-height:1.35; text-align:center;
+            color:#1a1a1a; word-break:keep-all; cursor:text; position:relative; }
+  .tlabel:focus { outline:2px solid var(--blue); outline-offset:-2px; }
+  .tlabel:empty::before { content:"이름"; opacity:.5; }
+  .tbody { flex:1 1 auto; min-width:0; display:flex; flex-wrap:wrap; align-content:flex-start;
+           gap:4px; padding:8px; min-height:68px; }
+  .tbody:empty::after { content:"여기로 끌어다 놓기"; color:var(--dim); font-size:12px;
+                        align-self:center; padding:4px 2px; }
+  .tside { flex:0 0 auto; display:grid; grid-template-columns:repeat(2, auto); align-content:center;
+           gap:2px; padding:4px 5px; border-left:1px solid var(--line); background:var(--card2); }
+  .tside button { width:26px; height:24px; padding:0; font-size:12px; line-height:1;
+                  border:1px solid transparent; border-radius:5px; background:transparent;
+                  color:var(--dim); cursor:pointer; }
+  .tside button:hover { color:var(--gold); border-color:var(--line); }
+
+  /* ── 영웅 딱지 ───────────────────────────── */
+  .hero { position:relative; width:var(--sz,56px); border-radius:8px; overflow:hidden;
+          background:var(--card2); border:1px solid var(--line); cursor:grab;
+          touch-action:none; user-select:none; -webkit-user-select:none; }
+  .hero img { display:block; width:100%; aspect-ratio:1/1; object-fit:cover; background:var(--card2); }
+  .hero .nm { display:block; font-size:10px; line-height:1.25; text-align:center; color:var(--fg);
+              padding:2px 2px 3px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .hero.picked { opacity:.32; }
+  .hero mark { background:transparent; color:var(--hit); font-weight:700; }
+  /* 끌고 다니는 동안 손가락을 따라다니는 복제본 */
+  #ghost { position:fixed; z-index:9999; pointer-events:none; opacity:.92;
+           transform:translate(-50%,-50%) scale(1.08); filter:drop-shadow(0 6px 12px rgba(0,0,0,.35)); }
+  .slot { flex:0 0 auto; width:var(--sz,56px); height:var(--sz,56px); border-radius:8px;
+          border:2px dashed var(--gold-line); background:rgba(169,126,31,.12); }
+
+  /* ── 보관함 ─────────────────────────────── */
+  .pool { border:1px solid var(--line); border-radius:10px; background:var(--card);
+          box-shadow:var(--shadow); padding:10px 10px 12px; }
+  .pool h2 { margin:0 0 8px; font-size:14px; display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .pool h2 .n { color:var(--dim); font-weight:400; font-size:12px; }
+  .chips { display:flex; flex-wrap:wrap; gap:5px; margin-bottom:8px; }
+  .chip { font-size:12px; padding:5px 10px; border-radius:99px; border:1px solid var(--line);
+          background:transparent; color:var(--dim); cursor:pointer; font-family:inherit; }
+  .chip.on { background:var(--blue); border-color:var(--blue); color:#fff; }
+  .prow { display:flex; gap:6px; align-items:center; margin-bottom:9px; }
+  #q { flex:1 1 auto; min-width:0; font-family:inherit; font-size:14px; padding:8px 11px;
+       border:1px solid var(--line); border-radius:8px; background:var(--card2); color:var(--fg); }
+  .lab { display:inline-flex; align-items:center; gap:5px; font-size:12px; color:var(--dim);
+         white-space:nowrap; cursor:pointer; }
+  #pool { display:flex; flex-wrap:wrap; gap:4px; align-content:flex-start; min-height:70px; }
+  #pool.over { outline:2px dashed var(--gold-line); outline-offset:3px; border-radius:8px; }
+  .empty { color:var(--dim); font-size:12px; padding:10px 2px; }
+
+  .note { margin-top:14px; color:var(--dim); font-size:12px; line-height:1.7; }
+  .note kbd { border:1px solid var(--line); border-radius:3px; padding:0 4px; font-size:11px; }
+  .toast { position:fixed; left:50%; bottom:22px; transform:translateX(-50%);
+           background:var(--fg); color:var(--bg); font-size:13px; padding:9px 16px;
+           border-radius:99px; box-shadow:0 4px 14px rgba(0,0,0,.3); z-index:9998;
+           opacity:0; pointer-events:none; transition:opacity .18s; }
+  .toast.on { opacity:.95; }
+
+  /* 손가락으로도 쓰는 기기 — 누를 크기 확보 */
+  @media (any-pointer:coarse) {
+    .btn, .chip { min-height:44px; display:inline-flex; align-items:center; }
+    .tside button { width:32px; height:32px; }
+    .lab { min-height:44px; }
+    #hidePicked { width:18px; height:18px; }
+  }
+  @media (max-width:600px) {
+    :root { --sz:48px; }
+    .wrap { padding:16px 12px 50px; }
+    .tlabel { flex-basis:78px; font-size:13px; padding:8px 5px; }
+    .tbody { padding:6px; gap:3px; min-height:58px; }
+    h1 { font-size:19px; }
+  }
+</style>
+</head>
+<body data-scrap-back-right="calc(100% - 52px)">
+<div class="wrap">
+  <h1>티어표 <span class="s">만들기</span></h1>
+  <p class="sub">아래 보관함에서 영웅을 끌어다 티어 줄에 놓습니다. 줄 이름은 눌러서 고쳐 쓸 수 있습니다 — 예: <b>S (조건 없이 사용 가능)</b>.
+    만든 표는 이 브라우저에 자동으로 저장되고, <b>공유 링크</b>를 누르면 주소 하나로 남에게 그대로 보여 줄 수 있습니다.</p>
+
+  <div class="bar">
+    <button class="btn" id="addTier">+ 줄 추가</button>
+    <div class="sep"></div>
+    <button class="btn" id="share">공유 링크 복사</button>
+    <button class="btn ghost" id="png">그림으로 저장</button>
+    <div class="grow"></div>
+    <button class="btn ghost" id="undo" disabled>되돌리기</button>
+    <button class="btn ghost" id="clear">전부 비우기</button>
+    <button class="btn ghost" id="reset">처음 상태로</button>
+  </div>
+
+  <div id="tiers"></div>
+
+  <div class="pool">
+    <h2>영웅 보관함 <span class="n" id="cnt"></span></h2>
+    <div class="chips" id="roles"></div>
+    <div class="prow">
+      <input id="q" type="search" placeholder="영웅 검색 — 초성도 됩니다 (ㅈㅈ · 줄ㅈ · 디바)" autocomplete="off">
+      <label class="lab"><input type="checkbox" id="hidePicked" checked> 올린 영웅 숨기기</label>
+    </div>
+    <div id="pool"></div>
+  </div>
+
+  <p class="note">
+    <b>쓰는 법</b> — 영웅을 끌어다 원하는 줄에 놓습니다. 줄 안에서 끌면 순서가 바뀌고, 보관함으로 끌어내리면 빠집니다.
+    영웅을 <b>두 번 누르면</b> 맨 위 줄로 바로 올라가고, 줄에 있는 영웅을 두 번 누르면 보관함으로 돌아갑니다.
+    줄 오른쪽 <kbd>↑</kbd><kbd>↓</kbd> 로 줄 차례를 바꾸고 <kbd>×</kbd> 로 줄을 지웁니다(그 줄 영웅은 보관함으로 돌아갑니다).
+  </p>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+(function () {
+  'use strict';
+  var PORTRAIT = 'https://sin0nis.github.io/images/heroportraits/';
+  var LOCAL_IMG = new Set(), LOCAL_MISS = new Set();
+  var BLANK = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
+  function portraitUrl(n) {
+    if (!n || LOCAL_MISS.has('heroportraits/' + n)) return BLANK;
+    return LOCAL_IMG.has('heroportraits/' + n) ? '../images/heroportraits/' + n : PORTRAIT + n;
+  }
+  var esc = function (s) { return window.scrapSearch.esc(s); };
+
+  var ROLE = { Tank:'전사', Bruiser:'투사', Healer:'치유사', Support:'지원가',
+               MeleeAssassin:'근접 암살자', RangedAssassin:'원거리 암살자' };
+  var ROLE_ORDER = ['Tank','Bruiser','MeleeAssassin','RangedAssassin','Healer','Support'];
+
+  var HEROES = {};                 // id → {name, role, portrait}
+  var IDS = [];                    // 보관함에 담길 수 있는 영웅 id (초상화 있는 것만)
+  var DEFAULT_TIERS = [
+    { label:'S', color:'#ff7f7f' }, { label:'A', color:'#ffbf7f' },
+    { label:'B', color:'#ffdf7f' }, { label:'C', color:'#ffff7f' },
+    { label:'D', color:'#bfff7f' }
+  ];
+  var state = null;                // { tiers:[{label,color,ids:[]}], role, q }
+  var undoStack = [];              // 되돌리기용 (최근 30 단계)
+
+  /* ── 상태 읽고 쓰기 ─────────────────────────
+     평소에는 이 브라우저에만 저장한다(주소가 깨끗하다).
+     '공유 링크'를 누를 때만 주소에 담는다. */
+  var LS = 'tier.state';
+  function fresh() {
+    return { tiers: DEFAULT_TIERS.map(function (t) { return { label:t.label, color:t.color, ids:[] }; }) };
+  }
+  /* 주소에 담는 모양:  S~ff7f7f:Anubarak,Jaina!A~ffbf7f:Rehgar
+     줄 이름은 한 번만 감싼다. URLSearchParams 로 넣으면 한 번 더 감싸져(%2520) 깨지므로
+     주소 문자열을 직접 만들고, 읽을 때도 URLSearchParams 를 쓰지 않는다.
+     구분자로 쓰는 ! ~ 는 encodeURIComponent 가 그냥 두므로 손수 바꿔 둔다. */
+  function q(str) {
+    return encodeURIComponent(str).replace(/[!~*'()]/g, function (c) {
+      return '%' + c.charCodeAt(0).toString(16).toUpperCase();
+    });
+  }
+  function encode(s) {
+    return s.tiers.map(function (t) {
+      return q(t.label) + '~' + t.color.replace('#','') + ':' + t.ids.join(',');
+    }).join('!');
+  }
+  function decode(str) {
+    try {
+      var tiers = str.split('!').map(function (part) {
+        var i = part.indexOf(':');
+        var head = i < 0 ? part : part.slice(0, i);
+        var ids = i < 0 ? [] : part.slice(i + 1).split(',').filter(Boolean);
+        var j = head.indexOf('~');
+        var label = decodeURIComponent(j < 0 ? head : head.slice(0, j));
+        var color = j < 0 ? '#9fb3cc' : '#' + head.slice(j + 1);
+        return { label: label, color: /^#[0-9a-fA-F]{6}$/.test(color) ? color : '#9fb3cc',
+                 ids: ids.filter(function (id) { return HEROES[id]; }) };   // 모르는 id 는 버린다
+      });
+      return tiers.length ? { tiers: tiers } : null;
+    } catch (e) { return null; }
+  }
+  function save() {
+    try { localStorage.setItem(LS, JSON.stringify(state)); } catch (e) {}
+  }
+  function snapshot() {
+    undoStack.push(JSON.stringify(state));
+    if (undoStack.length > 30) undoStack.shift();
+    document.getElementById('undo').disabled = false;
+  }
+
+  /* ── 그리기 ──────────────────────────────── */
+  function usedIds() {
+    var s = new Set();
+    state.tiers.forEach(function (t) { t.ids.forEach(function (id) { s.add(id); }); });
+    return s;
+  }
+  function heroCard(id, where) {
+    var h = HEROES[id] || { name:id };
+    return '<div class="hero" data-id="' + esc(id) + '" data-where="' + where + '" title="' + esc(h.name) + '">'
+      + '<img src="' + portraitUrl(h.portrait) + '" alt="" loading="lazy" draggable="false">'
+      + '<span class="nm">' + esc(h.name) + '</span></div>';
+  }
+  function drawTiers() {
+    var host = document.getElementById('tiers');
+    host.innerHTML = state.tiers.map(function (t, i) {
+      return '<div class="tier" data-i="' + i + '">'
+        + '<div class="tlabel" contenteditable="true" spellcheck="false" data-i="' + i + '"'
+        + ' style="background:' + esc(t.color) + '" title="눌러서 이름을 고칩니다">' + esc(t.label) + '</div>'
+        + '<div class="tbody" data-i="' + i + '">' + t.ids.map(function (id) { return heroCard(id, 't' + i); }).join('') + '</div>'
+        + '<div class="tside">'
+        + '<button type="button" data-up="' + i + '" title="위로">↑</button>'
+        + '<button type="button" data-down="' + i + '" title="아래로">↓</button>'
+        + '<button type="button" data-color="' + i + '" title="색 바꾸기">◑</button>'
+        + '<button type="button" data-del="' + i + '" title="이 줄 지우기">×</button>'
+        + '</div></div>';
+    }).join('');
+  }
+  function drawPool() {
+    var used = usedIds();
+    var hide = document.getElementById('hidePicked').checked;
+    var role = state.role || '';
+    var list = IDS.filter(function (id) {
+      if (hide && used.has(id)) return false;
+      if (role === '__none') { if (HEROES[id].role) return false; }
+      else if (role && HEROES[id].role !== role) return false;
+      return true;
+    });
+    var q = document.getElementById('q').value.trim();
+    if (q) list = window.scrapSearch.filter(list, q, function (id) { return [HEROES[id].name, id]; });
+    else list.sort(function (a, b) { return HEROES[a].name.localeCompare(HEROES[b].name, 'ko'); });
+
+    document.getElementById('pool').innerHTML = list.length
+      ? list.map(function (id) {
+          var cls = (!hide && used.has(id)) ? ' picked' : '';
+          var h = HEROES[id];
+          return '<div class="hero' + cls + '" data-id="' + esc(id) + '" data-where="pool" title="' + esc(h.name) + '">'
+            + '<img src="' + portraitUrl(h.portrait) + '" alt="" loading="lazy" draggable="false">'
+            + '<span class="nm">' + (q ? window.scrapSearch.mark(h.name, q) : esc(h.name)) + '</span></div>';
+        }).join('')
+      : '<div class="empty">' + (q ? '"' + esc(q) + '" 에 맞는 영웅이 없습니다' : '보관함이 비었습니다') + '</div>';
+    document.getElementById('cnt').textContent = list.length + '명 / 전체 ' + IDS.length + '명 · 올림 ' + used.size + '명';
+  }
+  function draw() { drawTiers(); drawPool(); save(); }
+
+  /* ── 끌어다 놓기 ─────────────────────────────
+     마우스와 손가락을 같이 받으려고 포인터 이벤트를 쓴다.
+     (HTML5 드래그는 폰에서 아예 동작하지 않는다) */
+  var drag = null;   // { id, from, ghost, slot }
+  function clearSlot() {
+    var s = document.querySelector('.slot'); if (s) s.remove();
+    document.querySelectorAll('.tier.over, #pool.over').forEach(function (e) { e.classList.remove('over'); });
+  }
+  function dropTargetAt(x, y) {
+    var el = document.elementFromPoint(x, y);
+    if (!el) return null;
+    var body = el.closest('.tbody');
+    if (body) return { kind:'tier', i:+body.dataset.i, el:body };
+    var pool = el.closest('#pool') || el.closest('.pool');
+    if (pool) return { kind:'pool', el:document.getElementById('pool') };
+    return null;
+  }
+  function showSlot(t, x) {
+    clearSlot();
+    if (t.kind === 'tier') t.el.closest('.tier').classList.add('over');
+    else t.el.classList.add('over');
+    if (t.kind !== 'tier') return;
+    var slot = document.createElement('div');
+    slot.className = 'slot';
+    var cards = [].slice.call(t.el.querySelectorAll('.hero'));
+    var before = null;
+    for (var i = 0; i < cards.length; i++) {
+      var r = cards[i].getBoundingClientRect();
+      if (x < r.left + r.width / 2) { before = cards[i]; break; }
+    }
+    t.el.insertBefore(slot, before);
+  }
+  function startDrag(card, ev) {
+    drag = { id: card.dataset.id, from: card.dataset.where };
+    var g = card.cloneNode(true);
+    g.id = 'ghost';
+    g.style.width = card.getBoundingClientRect().width + 'px';
+    document.body.appendChild(g);
+    drag.ghost = g;
+    moveGhost(ev.clientX, ev.clientY);
+    document.body.style.cursor = 'grabbing';
+  }
+  function moveGhost(x, y) {
+    if (drag && drag.ghost) { drag.ghost.style.left = x + 'px'; drag.ghost.style.top = y + 'px'; }
+  }
+  function removeFromAll(id) {
+    state.tiers.forEach(function (t) {
+      var k = t.ids.indexOf(id); if (k > -1) t.ids.splice(k, 1);
+    });
+  }
+  function endDrag(x, y) {
+    if (!drag) return;
+    var t = dropTargetAt(x, y);
+    var slot = document.querySelector('.slot');
+    var pos = -1;
+    if (slot && t && t.kind === 'tier') {
+      pos = [].slice.call(t.el.children).filter(function (c) {
+        return c.classList.contains('hero') || c.classList.contains('slot');
+      }).indexOf(slot);
+    }
+    if (drag.ghost) drag.ghost.remove();
+    clearSlot(); edgeStop();
+    document.body.style.cursor = '';
+    var id = drag.id, from = drag.from;
+    drag = null;
+    if (!t) return;                                   // 엉뚱한 데 놓으면 아무 일도 없다
+    if (t.kind === 'pool') {
+      if (from === 'pool') return;
+      snapshot(); removeFromAll(id); draw(); return;
+    }
+    snapshot();
+    removeFromAll(id);
+    var arr = state.tiers[t.i].ids;
+    arr.splice(pos < 0 || pos > arr.length ? arr.length : pos, 0, id);
+    draw();
+  }
+
+  var EDGE = 64;          // 화면 위아래 이 정도까지 끌고 가면 저절로 굴러간다
+  var edgeTimer = null, edgeDy = 0;
+  function edgeScroll(y) {
+    var vh = window.innerHeight;
+    edgeDy = y < EDGE ? -Math.ceil((EDGE - y) / 4) : (y > vh - EDGE ? Math.ceil((y - (vh - EDGE)) / 4) : 0);
+    if (edgeDy && !edgeTimer) edgeTimer = setInterval(function () { window.scrollBy(0, edgeDy); }, 16);
+    else if (!edgeDy && edgeTimer) { clearInterval(edgeTimer); edgeTimer = null; }
+  }
+  function edgeStop() { if (edgeTimer) { clearInterval(edgeTimer); edgeTimer = null; } edgeDy = 0; }
+
+  document.addEventListener('pointerdown', function (e) {
+    if (e.pointerType === 'mouse' && e.button !== 0) return;
+    var card = e.target.closest ? e.target.closest('.hero') : null;
+    if (!card || card.id === 'ghost') return;
+    if (card.classList.contains('picked')) return;     // 이미 올린 것(흐린 것)은 집지 않는다
+    e.preventDefault();
+
+    var touch = e.pointerType !== 'mouse';
+    var id = e.pointerId;
+    var sx = e.clientX, sy = e.clientY, ly = e.clientY;
+    var mode = 0;            // 0 아직 모름 · 1 화면 굴리는 중 · 2 끌고 가는 중
+    var lastEv = e;
+    // 손가락은 '잠깐 누르고 있으면' 끌기 — 그냥 밀면 화면이 굴러가야 하니까
+    var hold = touch ? setTimeout(function () {
+      if (mode !== 0) return;
+      mode = 2; startDrag(card, lastEv);
+      if (navigator.vibrate) { try { navigator.vibrate(12); } catch (x) {} }
+    }, 200) : null;
+
+    function mv(ev) {
+      if (ev.pointerId !== id) return;
+      lastEv = ev;
+      if (mode === 2) {
+        moveGhost(ev.clientX, ev.clientY);
+        edgeScroll(ev.clientY);
+        var t = dropTargetAt(ev.clientX, ev.clientY);
+        if (t) showSlot(t, ev.clientX); else clearSlot();
+        return;
+      }
+      var dist = Math.abs(ev.clientX - sx) + Math.abs(ev.clientY - sy);
+      if (!touch) {                       // 마우스는 살짝만 움직여도 끌기로 본다
+        if (dist < 6) return;
+        mode = 2; startDrag(card, ev); return;
+      }
+      if (mode === 0 && dist > 8) { clearTimeout(hold); mode = 1; }
+      if (mode === 1) { window.scrollBy(0, ly - ev.clientY); ly = ev.clientY; }
+    }
+    function up(ev) {
+      if (ev.pointerId !== id) return;
+      clearTimeout(hold);
+      document.removeEventListener('pointermove', mv);
+      document.removeEventListener('pointerup', up);
+      document.removeEventListener('pointercancel', up);
+      edgeStop();
+      if (mode === 2) endDrag(ev.clientX, ev.clientY);
+    }
+    document.addEventListener('pointermove', mv);
+    document.addEventListener('pointerup', up);
+    document.addEventListener('pointercancel', up);
+  });
+  // 길게 누를 때 뜨는 기본 메뉴는 끌기를 방해한다
+  document.addEventListener('contextmenu', function (e) {
+    if (e.target.closest && e.target.closest('.hero')) e.preventDefault();
+  });
+
+  /* 두 번 누르기 — 보관함이면 맨 위 줄로, 줄에 있으면 보관함으로 */
+  document.addEventListener('dblclick', function (e) {
+    var card = e.target.closest ? e.target.closest('.hero') : null;
+    if (!card) return;
+    var id = card.dataset.id;
+    snapshot();
+    if (card.dataset.where === 'pool') { removeFromAll(id); state.tiers[0].ids.push(id); }
+    else removeFromAll(id);
+    draw();
+  });
+
+  /* ── 줄 손잡이 ───────────────────────────── */
+  document.getElementById('tiers').addEventListener('click', function (e) {
+    var b = e.target.closest ? e.target.closest('button') : null;
+    if (!b) return;
+    var i;
+    if ((i = b.dataset.up) != null) { i = +i; if (i > 0) { snapshot(); var a = state.tiers.splice(i,1)[0]; state.tiers.splice(i-1,0,a); draw(); } }
+    else if ((i = b.dataset.down) != null) { i = +i; if (i < state.tiers.length-1) { snapshot(); var c = state.tiers.splice(i,1)[0]; state.tiers.splice(i+1,0,c); draw(); } }
+    else if ((i = b.dataset.del) != null) {
+      i = +i;
+      if (state.tiers.length <= 1) { toast('줄이 하나뿐이라 지울 수 없습니다'); return; }
+      snapshot(); state.tiers.splice(i,1); draw();
+    } else if ((i = b.dataset.color) != null) {
+      i = +i;
+      var inp = document.createElement('input');
+      inp.type = 'color'; inp.value = state.tiers[i].color;
+      inp.style.cssText = 'position:fixed;left:-9999px';
+      document.body.appendChild(inp);
+      inp.addEventListener('change', function () { snapshot(); state.tiers[i].color = inp.value; draw(); inp.remove(); });
+      inp.click();
+    }
+  });
+  /* 줄 이름 고치기 — 줄바꿈은 막고, 칸을 벗어날 때 저장 */
+  document.getElementById('tiers').addEventListener('keydown', function (e) {
+    if (e.target.classList.contains('tlabel') && e.key === 'Enter') { e.preventDefault(); e.target.blur(); }
+  });
+  document.getElementById('tiers').addEventListener('blur', function (e) {
+    if (!e.target.classList || !e.target.classList.contains('tlabel')) return;
+    var i = +e.target.dataset.i, v = e.target.textContent.replace(/\s+/g, ' ').trim();
+    if (v === state.tiers[i].label) return;
+    snapshot(); state.tiers[i].label = v; save();
+  }, true);
+
+  /* ── 손잡이 줄 ───────────────────────────── */
+  document.getElementById('addTier').onclick = function () {
+    snapshot();
+    state.tiers.push({ label:'새 줄', color:'#9fb3cc', ids:[] });
+    draw();
+  };
+  document.getElementById('clear').onclick = function () {
+    snapshot(); state.tiers.forEach(function (t) { t.ids = []; }); draw();
+    toast('영웅을 모두 보관함으로 되돌렸습니다');
+  };
+  document.getElementById('reset').onclick = function () {
+    snapshot(); state = fresh(); draw();
+    toast('처음 상태(S·A·B·C·D)로 되돌렸습니다');
+  };
+  document.getElementById('undo').onclick = function () {
+    if (!undoStack.length) return;
+    state = JSON.parse(undoStack.pop());
+    document.getElementById('undo').disabled = !undoStack.length;
+    draw();
+  };
+  document.getElementById('share').onclick = function () {
+    var s = location.origin + location.pathname + '?t=' + encode(state);
+    history_replace(s);
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(s).then(function () { toast('공유 링크를 복사했습니다'); },
+                                            function () { toast('주소창의 링크를 복사해 주세요'); });
+    } else toast('주소창의 링크를 복사해 주세요');
+  };
+  function history_replace(s) { try { window.history.replaceState(null, '', s); } catch (e) {} }
+
+  document.getElementById('png').onclick = function () {
+    toast('그림으로 만드는 중…');
+    needHtml2Canvas().then(function (h2c) {
+      var node = document.getElementById('tiers');
+      return h2c(node, { backgroundColor: getComputedStyle(document.body).backgroundColor, scale: 2, useCORS: true });
+    }).then(function (canvas) {
+      var a = document.createElement('a');
+      a.download = 'hots_tier.png';
+      a.href = canvas.toDataURL('image/png');
+      a.click();
+      toast('그림을 저장했습니다');
+    }).catch(function () { toast('그림으로 만들지 못했습니다'); });
+  };
+  /* 그림 저장 라이브러리는 단추를 눌렀을 때만 받는다(무료 호스팅이라 평소 요청을 아낀다) */
+  function needHtml2Canvas() {
+    if (window.html2canvas) return Promise.resolve(window.html2canvas);
+    if (!window.__h2c) {
+      window.__h2c = new Promise(function (ok, fail) {
+        var el = document.createElement('script');
+        el.src = 'https://html2canvas.hertzen.com/dist/html2canvas.min.js';
+        el.onload = function () { ok(window.html2canvas); };
+        el.onerror = function () { window.__h2c = null; fail(new Error('못 받음')); };
+        document.head.appendChild(el);
+      });
+    }
+    return window.__h2c;
+  }
+
+  document.getElementById('q').addEventListener('input', drawPool);
+  document.getElementById('q').addEventListener('keydown', function (e) {
+    if (e.isComposing || e.keyCode === 229) return;
+    if (e.key === 'Escape') { e.preventDefault(); this.value = ''; drawPool(); }
+  });
+  document.getElementById('hidePicked').addEventListener('change', drawPool);
+
+  var toastT = null;
+  function toast(msg) {
+    var t = document.getElementById('toast');
+    t.textContent = msg; t.classList.add('on');
+    clearTimeout(toastT); toastT = setTimeout(function () { t.classList.remove('on'); }, 1900);
+  }
+
+  /* ── 시동 ───────────────────────────────── */
+  (async function init() {
+    var imgList = fetch('../images/index.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; });
+    var heroes = fetch('../data/patchnotes/heroes.json').then(function (r) {
+      if (!r.ok) throw new Error('heroes ' + r.status);
+      return r.json();
+    });
+    try {
+      var got = await Promise.all([imgList, heroes]);
+      var li = got[0];
+      if (li && li.files) LOCAL_IMG = new Set(li.files);
+      if (li && li.missing) LOCAL_MISS = new Set(li.missing);
+      HEROES = got[1];
+    } catch (e) {
+      document.getElementById('pool').innerHTML = '<div class="empty">영웅 목록을 불러오지 못했습니다: ' + esc(e.message) + '</div>';
+      return;
+    }
+    IDS = Object.keys(HEROES).filter(function (id) { return HEROES[id].portrait; });
+
+    // 역할군 칩 — 실제로 영웅이 있는 역할군만
+    var have = {};
+    var noRole = 0;
+    IDS.forEach(function (id) { var r = HEROES[id].role; if (r) have[r] = (have[r] || 0) + 1; else noRole++; });
+    document.getElementById('roles').innerHTML =
+      '<button type="button" class="chip on" data-role="">전체 <span class="n">' + IDS.length + '</span></button>'
+      + ROLE_ORDER.filter(function (r) { return have[r]; }).map(function (r) {
+          return '<button type="button" class="chip" data-role="' + r + '">' + esc(ROLE[r]) + ' ' + have[r] + '</button>';
+        }).join('')
+      + (noRole ? '<button type="button" class="chip" data-role="__none">기타 ' + noRole + '</button>' : '');
+    document.getElementById('roles').addEventListener('click', function (e) {
+      var c = e.target.closest ? e.target.closest('.chip') : null;
+      if (!c) return;
+      state.role = c.dataset.role;
+      [].forEach.call(this.querySelectorAll('.chip'), function (x) { x.classList.toggle('on', x === c); });
+      drawPool();
+    });
+
+    // 주소에 티어표가 실려 있으면 그것을, 아니면 이 브라우저에 저장된 것을, 그것도 없으면 새 표를
+    var m = /[?&]t=([^&]*)/.exec(location.search);       // 여기서 풀면 안 된다 — 아래에서 줄마다 푼다
+    var fromUrl = m ? m[1] : null;
+    if (fromUrl) state = decode(fromUrl);
+    if (!state) { try { state = JSON.parse(localStorage.getItem(LS)); } catch (e) {} }
+    if (!state || !state.tiers || !state.tiers.length) state = fresh();
+    state.tiers.forEach(function (t) {
+      t.ids = (t.ids || []).filter(function (id) { return HEROES[id] && HEROES[id].portrait; });
+    });
+    draw();
+  })();
+})();
+</script>
+</body>
+</html>

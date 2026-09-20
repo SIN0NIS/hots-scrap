@@ -40,6 +40,8 @@ WATCH = {
     "replay": ["site/replay/js/data_maps.js", "site/replay/js/data_heroes.js"],
     "patchnotes": ["site/data/patchnotes/index.json", "site/data/patchnotes/builds.json",
                    "site/data/patchnotes/heroes.json"],
+    # 티어표는 영웅 목록(이름·역할·초상화)만 쓴다
+    "tier": ["site/tier/index.html", "site/data/patchnotes/heroes.json"],
     # models 는 바깥 사이트라 우리가 아는 시각이 없다
 }
 
@@ -98,6 +100,10 @@ def note_for(app_id):
         idx = load(SITE / "data" / "patchnotes" / "index.json") or []
         dates = sorted(x.get("date", "") for x in idx if x.get("date"))
         return f"{len(idx)}건 · 최신 {dates[-1]}" if dates else f"{len(idx)}건"
+    if app_id == "tier":
+        hs = load(SITE / "data" / "patchnotes" / "heroes.json") or {}
+        n = sum(1 for v in hs.values() if v.get("portrait"))
+        return f"영웅 {n}명"
     if app_id == "replay":
         mj = SITE / "replay" / "js" / "data_maps.js"
         return "맵·영웅 자료 내장" if mj.exists() else ""
