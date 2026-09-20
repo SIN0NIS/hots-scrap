@@ -47,8 +47,27 @@
   .sep { width:1px; align-self:stretch; background:var(--line); margin:0 2px; }
   .grow { flex:1 1 auto; }
 
+  /* ── 표 (제목 + 티어 줄) ───────────────────
+     그림으로 저장할 때 통째로 찍히는 범위다. */
+  #sheet { border-radius:12px; margin-bottom:22px; }
+  .sheethd { display:flex; align-items:baseline; gap:10px; flex-wrap:wrap;
+             padding:2px 2px 10px; }
+  #ttl { flex:1 1 220px; min-width:0; font-size:20px; font-weight:700; line-height:1.35;
+         color:var(--fg); word-break:keep-all; cursor:text; border-radius:6px; padding:2px 4px; }
+  #dt  { flex:0 0 auto; font-size:13px; color:var(--dim); cursor:text;
+         border-radius:6px; padding:2px 4px; }
+  #ttl:focus, #dt:focus { outline:2px solid var(--blue); outline-offset:0; }
+  #ttl:empty::before { content:"제목 — 눌러서 고치기"; opacity:.45; }
+  #dt:empty::before  { content:"날짜"; opacity:.45; }
+
+  /* 그림으로 찍는 동안에는 편집용 손잡이와 안내말을 감춘다 */
+  body.shooting .tside { display:none; }
+  body.shooting .tbody:empty::after { content:""; }
+  body.shooting #ttl:empty::before, body.shooting #dt:empty::before { content:""; }
+  body.shooting .hero { cursor:default; }
+
   /* ── 티어 줄 ─────────────────────────────── */
-  #tiers { display:flex; flex-direction:column; gap:8px; margin-bottom:22px; }
+  #tiers { display:flex; flex-direction:column; gap:8px; }
   .tier { display:flex; align-items:stretch; gap:0; border:1px solid var(--line);
           border-radius:10px; overflow:hidden; background:var(--card); box-shadow:var(--shadow); }
   .tier.over { border-color:var(--gold); box-shadow:0 0 0 2px var(--gold-line); }
@@ -128,8 +147,8 @@
 <body data-scrap-back-right="calc(100% - 52px)">
 <div class="wrap">
   <h1>티어표 <span class="s">만들기</span></h1>
-  <p class="sub">아래 보관함에서 영웅을 끌어다 티어 줄에 놓습니다. 줄 이름은 눌러서 고쳐 쓸 수 있습니다 — 예: <b>S (조건 없이 사용 가능)</b>.
-    만든 표는 이 브라우저에 자동으로 저장되고, <b>공유 링크</b>를 누르면 주소 하나로 남에게 그대로 보여 줄 수 있습니다.</p>
+  <p class="sub">아래 보관함에서 영웅을 끌어다 티어 줄에 놓습니다.
+    <b>제목·날짜·줄 이름</b>은 눌러서 고치고, 만든 표는 자동으로 저장됩니다 — <b>공유 링크</b>나 <b>그림</b>으로 남길 수 있습니다.</p>
 
   <div class="bar">
     <button class="btn" id="addTier">+ 줄 추가</button>
@@ -142,7 +161,13 @@
     <button class="btn ghost" id="reset">처음 상태로</button>
   </div>
 
-  <div id="tiers"></div>
+  <div id="sheet">
+    <div class="sheethd">
+      <div id="ttl" contenteditable="true" spellcheck="false" title="눌러서 제목을 고칩니다"></div>
+      <div id="dt" contenteditable="true" spellcheck="false" title="눌러서 날짜를 고칩니다"></div>
+    </div>
+    <div id="tiers"></div>
+  </div>
 
   <div class="pool">
     <h2>영웅 보관함 <span class="n" id="cnt"></span></h2>
@@ -155,7 +180,7 @@
   </div>
 
   <p class="note">
-    <b>쓰는 법</b> — 영웅을 끌어다 원하는 줄에 놓습니다. 줄 안에서 끌면 순서가 바뀌고, 보관함으로 끌어내리면 빠집니다.
+    <b>쓰는 법</b> — 맨 위 <b>제목</b>과 <b>날짜</b>는 눌러서 고칩니다. 영웅을 끌어다 원하는 줄에 놓습니다. 줄 안에서 끌면 순서가 바뀌고, 보관함으로 끌어내리면 빠집니다.
     영웅을 <b>두 번 누르면</b> 맨 위 줄로 바로 올라가고, 줄에 있는 영웅을 두 번 누르면 보관함으로 돌아갑니다.
     줄 오른쪽 <kbd>↑</kbd><kbd>↓</kbd> 로 줄 차례를 바꾸고 <kbd>×</kbd> 로 줄을 지웁니다(그 줄 영웅은 보관함으로 돌아갑니다).
   </p>
@@ -192,8 +217,13 @@
      평소에는 이 브라우저에만 저장한다(주소가 깨끗하다).
      '공유 링크'를 누를 때만 주소에 담는다. */
   var LS = 'tier.state';
+  function today() {
+    var d = new Date();
+    return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2);
+  }
   function fresh() {
-    return { tiers: DEFAULT_TIERS.map(function (t) { return { label:t.label, color:t.color, ids:[] }; }) };
+    return { title:'', date: today(),
+             tiers: DEFAULT_TIERS.map(function (t) { return { label:t.label, color:t.color, ids:[] }; }) };
   }
   /* 주소에 담는 모양:  S~ff7f7f:Anubarak,Jaina!A~ffbf7f:Rehgar
      줄 이름은 한 번만 감싼다. URLSearchParams 로 넣으면 한 번 더 감싸져(%2520) 깨지므로
@@ -242,7 +272,7 @@
   function heroCard(id, where) {
     var h = HEROES[id] || { name:id };
     return '<div class="hero" data-id="' + esc(id) + '" data-where="' + where + '" title="' + esc(h.name) + '">'
-      + '<img src="' + portraitUrl(h.portrait) + '" alt="" loading="lazy" draggable="false">'
+      + '<img src="' + portraitUrl(h.portrait) + '" alt="" loading="lazy" draggable="false" crossorigin="anonymous">'
       + '<span class="nm">' + esc(h.name) + '</span></div>';
   }
   function drawTiers() {
@@ -279,13 +309,18 @@
           var cls = (!hide && used.has(id)) ? ' picked' : '';
           var h = HEROES[id];
           return '<div class="hero' + cls + '" data-id="' + esc(id) + '" data-where="pool" title="' + esc(h.name) + '">'
-            + '<img src="' + portraitUrl(h.portrait) + '" alt="" loading="lazy" draggable="false">'
+            + '<img src="' + portraitUrl(h.portrait) + '" alt="" loading="lazy" draggable="false" crossorigin="anonymous">'
             + '<span class="nm">' + (q ? window.scrapSearch.mark(h.name, q) : esc(h.name)) + '</span></div>';
         }).join('')
       : '<div class="empty">' + (q ? '"' + esc(q) + '" 에 맞는 영웅이 없습니다' : '보관함이 비었습니다') + '</div>';
     document.getElementById('cnt').textContent = list.length + '명 / 전체 ' + IDS.length + '명 · 올림 ' + used.size + '명';
   }
-  function draw() { drawTiers(); drawPool(); save(); }
+  function drawHead() {
+    var t = document.getElementById('ttl'), d = document.getElementById('dt');
+    if (document.activeElement !== t) t.textContent = state.title || '';
+    if (document.activeElement !== d) d.textContent = state.date || '';
+  }
+  function draw() { drawHead(); drawTiers(); drawPool(); save(); }
 
   /* ── 끌어다 놓기 ─────────────────────────────
      마우스와 손가락을 같이 받으려고 포인터 이벤트를 쓴다.
@@ -472,6 +507,16 @@
     snapshot(); state.tiers[i].label = v; save();
   }, true);
 
+  ['ttl', 'dt'].forEach(function (id) {
+    var el = document.getElementById(id), key = id === 'ttl' ? 'title' : 'date';
+    el.addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); el.blur(); } });
+    el.addEventListener('blur', function () {
+      var v = el.textContent.replace(/\s+/g, ' ').trim();
+      if (v === state[key]) return;
+      snapshot(); state[key] = v; el.textContent = v; save();
+    });
+  });
+
   /* ── 손잡이 줄 ───────────────────────────── */
   document.getElementById('addTier').onclick = function () {
     snapshot();
@@ -493,7 +538,9 @@
     draw();
   };
   document.getElementById('share').onclick = function () {
-    var s = location.origin + location.pathname + '?t=' + encode(state);
+    var s = location.origin + location.pathname + '?t=' + encode(state)
+          + (state.title ? '&n=' + q(state.title) : '')
+          + (state.date ? '&d=' + q(state.date) : '');
     history_replace(s);
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(s).then(function () { toast('공유 링크를 복사했습니다'); },
@@ -505,15 +552,27 @@
   document.getElementById('png').onclick = function () {
     toast('그림으로 만드는 중…');
     needHtml2Canvas().then(function (h2c) {
-      var node = document.getElementById('tiers');
-      return h2c(node, { backgroundColor: getComputedStyle(document.body).backgroundColor, scale: 2, useCORS: true });
+      document.body.classList.add('shooting');      // 편집용 손잡이·안내말은 그림에 넣지 않는다
+      var node = document.getElementById('sheet');
+      return h2c(node, { backgroundColor: getComputedStyle(document.body).backgroundColor,
+                         scale: 2, useCORS: true });
     }).then(function (canvas) {
+      document.body.classList.remove('shooting');
+      // 파일 이름에 쓸 수 있는 글자만 남긴다 (경로 구분자가 섞이면 저장이 엉뚱해진다)
+      function safe(x) {
+        return (x || '').replace(/[^0-9A-Za-z가-힣ㄱ-ㆎ ()._-]/g, ' ')
+                        .replace(/\s+/g, ' ').trim();
+      }
+      var nm = (safe(state.title) + ' ' + safe(state.date)).trim().slice(0, 70) || 'hots_tier';
       var a = document.createElement('a');
-      a.download = 'hots_tier.png';
+      a.download = nm + '.png';
       a.href = canvas.toDataURL('image/png');
       a.click();
       toast('그림을 저장했습니다');
-    }).catch(function () { toast('그림으로 만들지 못했습니다'); });
+    }).catch(function () {
+      document.body.classList.remove('shooting');
+      toast('그림으로 만들지 못했습니다');
+    });
   };
   /* 그림 저장 라이브러리는 단추를 눌렀을 때만 받는다(무료 호스팅이라 평소 요청을 아낀다) */
   function needHtml2Canvas() {
@@ -521,7 +580,7 @@
     if (!window.__h2c) {
       window.__h2c = new Promise(function (ok, fail) {
         var el = document.createElement('script');
-        el.src = 'https://html2canvas.hertzen.com/dist/html2canvas.min.js';
+        el.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';
         el.onload = function () { ok(window.html2canvas); };
         el.onerror = function () { window.__h2c = null; fail(new Error('못 받음')); };
         document.head.appendChild(el);
@@ -585,8 +644,14 @@
     var m = /[?&]t=([^&]*)/.exec(location.search);       // 여기서 풀면 안 된다 — 아래에서 줄마다 푼다
     var fromUrl = m ? m[1] : null;
     if (fromUrl) state = decode(fromUrl);
+    if (state) {
+      var mn = /[?&]n=([^&]*)/.exec(location.search), md = /[?&]d=([^&]*)/.exec(location.search);
+      try { state.title = mn ? decodeURIComponent(mn[1]) : ''; } catch (e) { state.title = ''; }
+      try { state.date = md ? decodeURIComponent(md[1]) : ''; } catch (e) { state.date = ''; }
+    }
     if (!state) { try { state = JSON.parse(localStorage.getItem(LS)); } catch (e) {} }
     if (!state || !state.tiers || !state.tiers.length) state = fresh();
+    if (state.date == null) state.date = today();      // 옛 저장본에는 날짜가 없다
     state.tiers.forEach(function (t) {
       t.ids = (t.ids || []).filter(function (id) { return HEROES[id] && HEROES[id].portrait; });
     });
