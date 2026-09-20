@@ -154,22 +154,38 @@ def ensure_full_history(repo_dir):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--pull", action="store_true")
+    ap.add_argument("--data2-only", action="store_true",
+                    help="옛 저장소(heroes-data, 614MB)는 받지 않고 builds.json 에 적힌 것을 그대로 쓴다")
     a = ap.parse_args()
     VENDOR.mkdir(exist_ok=True)
 
-    print("heroes-data (sparse)…")
-    clone_sparse(REPO1, HD1, SPARSE1)
+    # 옛 저장소(heroes-data)는 2026-07 에 멈췄다. 새 빌드는 전부 heroes-data2 로만 온다.
+    # 그래서 서버(CI)에서는 614MB 짜리를 받을 필요가 없다 — 이미 적어 둔 옛 빌드 목록을 이어 쓴다.
+    light = a.data2_only
+    if light and not OUT.exists():
+        raise SystemExit("--data2-only 는 기존 builds.json 이 있어야 합니다")
+
+    if not light:
+        print("heroes-data (sparse)…")
+        clone_sparse(REPO1, HD1, SPARSE1)
     print("heroes-data2…")
     clone_full(REPO2, HD2)
     if a.pull:
-        run(["git", "pull", "--ff-only"], cwd=HD1)
+        if not light:
+            run(["git", "pull", "--ff-only"], cwd=HD1)
         run(["git", "pull", "--ff-only"], cwd=HD2)
     # 날짜를 커밋 기록에서 뽑으므로, 기록이 잘려 있으면 여기서 바로잡는다
-    ensure_full_history(HD1)
+    if not light:
+        ensure_full_history(HD1)
     ensure_full_history(HD2)
 
     builds = {}
-    for vdir in sorted((HD1 / "heroesdata").iterdir()):
+    if light:
+        for b in json.loads(OUT.read_text(encoding="utf-8-sig")):
+            if b.get("repo") == "heroes-data":
+                builds[b["build"], b["isPtr"]] = b
+        print(f"  heroes-data {len(builds)}개 버전 (builds.json 에서 이어 씀)")
+    for vdir in ([] if light else sorted((HD1 / "heroesdata").iterdir())):
         info = ver_info(vdir.name)
         if not info or not vdir.is_dir():
             continue
@@ -180,7 +196,8 @@ def main():
         info.update({"repo": "heroes-data", "date": first_commit_date(HD1, f"heroesdata/{vdir.name}"),
                      "herodata": str(hp.relative_to(ROOT)).replace("\\", "/"), "kokr": str(kp.relative_to(ROOT)).replace("\\", "/")})
         builds[info["build"], info["isPtr"]] = info
-    print(f"  heroes-data {len(builds)}개 버전")
+    if not light:
+        print(f"  heroes-data {len(builds)}개 버전")
     resolve_data2(builds)
 
     rows = sorted(builds.values(), key=lambda b: (b["build"], b["isPtr"]))

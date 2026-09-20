@@ -181,23 +181,33 @@ def main():
         write_index(known_gone)
         return 1 if todo else 0
 
-    got, gone = 0, []
+    got, gone, retry = 0, [], []
     for d, n in todo:
-        r = S.get(f"{SRC}/{d}/{n}", timeout=40)
-        if r.status_code != 200 or not r.content:
-            gone.append(f"{d}/{n}")          # 어디에도 없다 — 화면이 부르지 않게 적어 둔다
+        try:
+            r = S.get(f"{SRC}/{d}/{n}", timeout=40)
+        except Exception:
+            retry.append(f"{d}/{n}")
             continue
-        p = OUT / d / n
-        p.parent.mkdir(parents=True, exist_ok=True)
-        p.write_bytes(r.content)
-        got += 1
+        if r.status_code == 200 and r.content:
+            p = OUT / d / n
+            p.parent.mkdir(parents=True, exist_ok=True)
+            p.write_bytes(r.content)
+            got += 1
+        elif r.status_code == 404:
+            gone.append(f"{d}/{n}")          # 진짜 없다 — 화면이 부르지 않게 적어 둔다
+        else:
+            # 429·5xx 같은 일시 오류를 '영영 없음'으로 적으면 그 아이콘은 다시는 안 받아진다.
+            # 아무 데도 적지 않고 남겨 둔다 → 다음에 돌 때 다시 시도한다.
+            retry.append(f"{d}/{n}")
     if todo:
-        print(f"받음 {got}개 · 어디에도 없음 {len(gone)}개 → {OUT}")
+        print(f"받음 {got}개 · 어디에도 없음 {len(gone)}개 · 다음에 다시 시도 {len(retry)}개 → {OUT}")
         for p in gone:
             print(f"   (없음) {p}")
+        for p in retry:
+            print(f"   (일시 오류) {p}")
     files, gone = write_index(known_gone | set(gone))
     print(f"목록 {len(files)}개 · 없는 것 {len(gone)}개 → {OUT / 'index.json'}")
-    return 0
+    return 3 if retry else 0                 # 3 = 일부를 못 받았다(다시 돌리면 된다)
 
 
 if __name__ == "__main__":

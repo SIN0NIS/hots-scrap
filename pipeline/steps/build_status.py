@@ -55,13 +55,19 @@ def now():
     return datetime.now(KST).strftime("%Y-%m-%d %H:%M")
 
 
-def fingerprint(paths):
-    """자료 파일들의 지문. 내용이 같으면 같은 값이 나온다."""
+def fingerprint(paths, raw=False):
+    """자료 파일들의 지문. 내용이 같으면 같은 값이 나온다.
+
+    줄바꿈은 맞춰 놓고 잰다. 윈도우에서 git 이 파일을 다시 꺼내면 CRLF 로 바뀌는데,
+    그러면 내용은 그대로인데 지문만 달라져서 서버(리눅스)와 내 PC 가 번갈아 '바뀌었다'고 찍는다.
+    raw=True 는 예전 방식(바이트 그대로) — 옛 지문과 견줄 때만 쓴다.
+    """
     h = hashlib.sha1()
     for rel in paths:
         p = ROOT / rel
         h.update(rel.encode())
-        h.update(p.read_bytes() if p.exists() else b"-")
+        b = p.read_bytes() if p.exists() else b"-"
+        h.update(b if raw else b.replace(bytes([13, 10]), bytes([10])))   # CRLF -> LF
     return h.hexdigest()[:16]
 
 
@@ -124,9 +130,11 @@ def main():
         if watch:
             fp = fingerprint(watch)
             row["fp"] = fp
+            # 옛 지문(바이트 그대로 잰 것)과 같아도 '안 바뀜'이다 — 재는 법만 바뀐 것
+            same = old.get("fp") in (fp, fingerprint(watch, raw=True))
             if a.seed and not old.get("updatedAt"):
                 row["updatedAt"] = git_date(watch) or now()
-            elif old.get("fp") == fp and old.get("updatedAt"):
+            elif same and old.get("updatedAt"):
                 row["updatedAt"] = old["updatedAt"]          # 그대로 — 바뀐 게 없다
             else:
                 row["updatedAt"] = now()

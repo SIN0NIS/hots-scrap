@@ -1,14 +1,20 @@
-# 패치 노트 자동 업데이트 — 6시간마다 "확인만" 싸게 하고, 있을 때만 일을 벌인다.
+# 패치 자료 자동 업데이트 — 6시간마다 "확인만" 싸게 하고, 있을 때만 일을 벌인다.
 #
 # 확인은 요청 3개로 끝난다(한국어 뉴스 1 + 영어 뉴스 1 + GitHub 빌드 목록 1).
 # 새 것이 없으면 그대로 끝나므로 서버에 부담이 없다.
 #
-# 여기서 자동으로 처리하는 것: **한국어 공식 패치 노트**. 받아서 파싱하고 색인을 다시 만든 뒤
-# 바로 커밋·푸시한다. 푸시하면 Deploy Pages 가 이어 돌아 사이트가 갱신된다.
+# 여기서 자동으로 처리하는 것
+#   · **한국어 공식 패치 노트** — 받아서 파싱하고 색인을 다시 만든다
+#   · **새 게임 빌드** — 변경점·빌드메이커 자료·아이콘·색인까지 만든다
+#       테스트 서버 빌드: heroes-data2(10MB)만 있으면 되는 가벼운 길
+#       본 서버 빌드   : 변천도(그래프)를 다시 그려야 해서 옛 저장소(약 600MB)까지 받는다.
+#                        한 달에 한두 번뿐이고, GitHub 러너 안에서 도는 일이라
+#                        내 Pages(무료 호스팅)에는 요청이 한 개도 가지 않는다.
+#   둘 다 끝나면 커밋·푸시하고 배포를 깨운다. PC 가 꺼져 있어도 돈다.
 #
 # 여기서 처리하지 않고 알림만 남기는 것
-#   · 한국어판이 없는 영문 노트 → 사람이 번역해야 한다(Claude 예약 작업이 로컬에서 한다)
-#   · 새 게임 빌드 → 전체 시계열을 다시 만들어야 해서 무겁다. 로컬에서 돌린다
+#   · 한국어판이 없는 영문 노트 → 번역이 필요하다(Claude 예약 작업이 로컬에서 한다)
+#   · 새 게임 빌드 반영이 **실패했을 때** → 이슈로 알리고 이 실행을 실패로 남긴다(메일이 간다)
 #
 # 손으로 돌리려면 Actions 탭에서 Run workflow.
 name: Update Patch Notes
@@ -22,6 +28,7 @@ on:
 permissions:
   contents: write
   issues: write
+  actions: write        # 배포를 깨우는 `gh workflow run` 에 필요하다(없으면 403)
 
 concurrency:
   group: update-patchnotes
@@ -30,6 +37,8 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
+    env:
+      PYTHONIOENCODING: utf-8
     steps:
       - uses: actions/checkout@v4
 
@@ -58,32 +67,39 @@ jobs:
               if d.get('ok') is False:
                   raise ValueError(d.get('error', '확인 실패'))
               ko = [x['newsId'] for x in d['newKo']]
+              nb = d['newBuilds']
               print('ok=1')
               print('ko_ids=' + ','.join(ko))
               print('ko_count=%d' % len(ko))
               print('en_count=%d' % len(d['newEnOnly']))
-              print('build_count=%d' % len(d['newBuilds']))
+              print('build_count=%d' % len(nb))
+              print('live_build_count=%d' % sum(1 for b in nb if not b.get('isPtr')))
+              # 빌드 목록을 못 읽은 실행은 '새 빌드 0개'가 아니라 '모름'이다 — 알림을 닫는 근거로 쓰면 안 된다
+              print('builds_ok=%d' % (0 if d.get('buildsError') else 1))
+              print('build_names=' + ', '.join(b['version'] + (' (테스트 서버)' if b.get('isPtr') else '') for b in nb))
           except Exception as e:
               print('ok=0')
               print('ko_ids=')
               print('ko_count=0')
               print('en_count=0')
               print('build_count=0')
+              print('live_build_count=0')
+              print('builds_ok=0')
+              print('build_names=')
               print('error=%s' % ' '.join(str(e).split())[:200])
           PY
           cat /tmp/check.json
 
       - name: 캐시 — 복원한 빌드 자료
-        if: steps.check.outputs.ok == '1' && steps.check.outputs.ko_count != '0'
+        if: steps.check.outputs.ok == '1' && (steps.check.outputs.ko_count != '0' || steps.check.outputs.build_count != '0')
         uses: actions/cache@v4
         with:
           path: vendor/full
           key: vendor-full-${{ hashFiles('site/data/patchnotes/builds.json') }}
 
+      # ───────────── 한국어 공식 노트 ─────────────
       - name: 새 한국어 노트 받아서 반영
         if: steps.check.outputs.ok == '1' && steps.check.outputs.ko_count != '0'
-        env:
-          PYTHONIOENCODING: utf-8
         run: |
           set -e
           for id in $(echo "${{ steps.check.outputs.ko_ids }}" | tr ',' ' '); do
@@ -97,7 +113,7 @@ jobs:
           python pipeline/steps/build_status.py      # 허브에 보일 "자료 갱신" 시각
           rm -f site/data/patchnotes/unmatched.json
 
-      - name: 달라진 것이 있으면 커밋·푸시
+      - name: 노트 — 달라진 것이 있으면 커밋·푸시
         id: commit
         if: steps.check.outputs.ok == '1' && steps.check.outputs.ko_count != '0'
         run: |
@@ -111,9 +127,65 @@ jobs:
           n=$(python -c "import json;print(len(json.load(open('site/data/patchnotes/index.json',encoding='utf-8-sig'))))")
           git commit -m "패치 기록: 새 한국어 공식 노트 ${{ steps.check.outputs.ko_count }}건 반영 (모두 ${n}건)
 
-          GitHub Actions 가 블리자드 뉴스에서 받아 자동으로 넣었습니다.
-          영문만 있는 회차와 새 게임 빌드는 사람이 따로 처리합니다."
+          GitHub Actions 가 블리자드 뉴스에서 받아 자동으로 넣었습니다."
           # 그 사이 사람이 먼저 올렸을 수 있다. 한 번 맞춰 보고 그래도 안 되면 실패로 남긴다.
+          git push || { git pull --rebase --autostash && git push; }
+          echo "pushed=1" >> "$GITHUB_OUTPUT"
+
+      # ───────────── 새 게임 빌드 ─────────────
+      # 옛 저장소는 2026-07 에 멈춰서 내용이 안 바뀐다. 본 서버 빌드가 났을 때만 필요하고,
+      # 캐시에 남아 있으면 다시 받지 않는다(안 쓴 지 7일이 지나면 GitHub 이 지운다 — 그땐 다시 받는다).
+      - name: 캐시 — 옛 저장소 (본 서버 빌드가 났을 때만)
+        if: steps.check.outputs.ok == '1' && steps.check.outputs.live_build_count != '0'
+        uses: actions/cache@v4
+        with:
+          path: vendor/heroes-data
+          key: heroes-data-frozen-v1
+
+      - name: 새 게임 빌드 반영
+        id: builds
+        if: steps.check.outputs.ok == '1' && steps.check.outputs.build_count != '0'
+        continue-on-error: true      # 실패해도 위에서 올린 노트는 살리고, 아래에서 알린 뒤 실패로 남긴다
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -e
+          echo "새 빌드: ${{ steps.check.outputs.build_names }}"
+          # 1) 빌드 목록 — 가벼운 길(heroes-data2 만). 얕은 클론이 있으면 스스로 전체 기록을 받는다
+          python pipeline/steps/fetch_heroes_data.py --data2-only --pull
+          # 2) 변경점 (이미 있는 것은 건너뛴다)
+          python pipeline/steps/diff_heroes_data.py
+          python pipeline/steps/diff_heroes_data.py --ptr
+          # 3) 변천도 — 본 서버 빌드 전부가 필요해서 본 서버 빌드가 났을 때만
+          if [ "${{ steps.check.outputs.live_build_count }}" != "0" ]; then
+            python pipeline/steps/fetch_heroes_data.py --pull
+            python pipeline/steps/build_series.py
+          fi
+          # 4) 빌드메이커 자료 · 아이콘 · 색인 · 허브 상태
+          python pipeline/steps/build_talent_data.py
+          # 아이콘은 못 받아도 나머지는 올린다. 다만 빌드가 반영되고 나면 서버는 다시 시도할 계기가 없으므로
+          # 못 받았다는 사실을 남겨서 아래에서 이슈로 알린다(로컬 예약 작업이 이어 받는다).
+          if ! python pipeline/steps/fetch_missing_icons.py; then
+            echo "::warning::아이콘을 다 받지 못했습니다"
+            echo "icons_pending=1" >> "$GITHUB_OUTPUT"
+          fi
+          python pipeline/steps/build_patch_index.py
+          python pipeline/steps/build_status.py
+          rm -f site/data/patchnotes/unmatched.json
+
+          git config user.name  "hots-scrap-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add site/data site/images
+          if git diff --cached --quiet; then
+            echo "바뀐 파일이 없습니다."
+            exit 0
+          fi
+          extra=""
+          if [ "${{ steps.check.outputs.live_build_count }}" != "0" ]; then extra=" · 변천도"; fi
+          git commit -m "패치 기록: 새 게임 빌드 반영 — ${{ steps.check.outputs.build_names }}
+
+          GitHub Actions 가 HeroesToolChest/heroes-data2 에서 받아 자동으로 넣었습니다.
+          변경점 · 빌드메이커 자료 · 아이콘 · 색인${extra}"
           git push || { git pull --rebase --autostash && git push; }
           echo "pushed=1" >> "$GITHUB_OUTPUT"
 
@@ -121,56 +193,86 @@ jobs:
       # 그래서 Deploy Pages(push 로 도는 워크플로)가 그냥 넘어가 사이트가 갱신되지 않는다.
       # workflow_dispatch 는 그 규칙의 예외라, 배포를 여기서 직접 깨운다.
       - name: 배포 깨우기 (토큰 푸시는 배포를 자동으로 깨우지 못한다)
-        if: steps.commit.outputs.pushed == '1'
+        if: steps.commit.outputs.pushed == '1' || steps.builds.outputs.pushed == '1'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: gh workflow run pages.yml --ref "${GITHUB_REF_NAME}"
 
+      # ───────────── 알림 ─────────────
       - name: 사람 손이 필요한 것은 이슈로 알림
-        if: steps.check.outputs.ok == '1' && (steps.check.outputs.en_count != '0' || steps.check.outputs.build_count != '0')
+        if: steps.check.outputs.ok == '1' && (steps.check.outputs.en_count != '0' || steps.builds.outcome == 'failure' || steps.builds.outputs.icons_pending == '1')
         uses: actions/github-script@v7
         with:
           script: |
             const fs = require('fs');
             const d = JSON.parse(fs.readFileSync('/tmp/check.json', 'utf8'));
+            const buildFailed = '${{ steps.builds.outcome }}' === 'failure';
             const lines = ['자동으로 처리하지 못한 것이 있습니다.', ''];
             if (d.newEnOnly.length) {
               lines.push('### 번역이 필요한 영문 노트');
               for (const x of d.newEnOnly) lines.push(`- ${x.date} · \`${x.newsId}\` — ${x.title}`);
               lines.push('', '한국어 공식판이 없는 회차입니다. 로컬에서 번역 단계를 돌려 주세요.', '');
             }
-            if (d.newBuilds.length) {
-              lines.push('### 새 게임 빌드');
+            if (buildFailed && d.newBuilds.length) {
+              lines.push('### 새 게임 빌드 — 자동 반영 실패');
               for (const b of d.newBuilds) lines.push(`- ${b.version}${b.isPtr ? ' (테스트 서버)' : ''}`);
-              lines.push('', '시계열·빌드메이커 자료를 다시 만들어야 해서 무겁습니다. 로컬에서 돌려 주세요.', '');
+              lines.push('', `자동 반영이 도중에 실패했습니다. [실행 기록](${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId})을 확인하고 로컬에서 돌려 주세요.`, '');
+            }
+            if ('${{ steps.builds.outputs.icons_pending }}' === '1') {
+              lines.push('### 아이콘을 다 받지 못했습니다');
+              lines.push('', '새 빌드는 반영했지만 새 아이콘 일부를 받지 못했습니다(일시 오류). 로컬에서 `python pipeline/steps/fetch_missing_icons.py` 를 돌려 주세요.', '');
             }
             lines.push('---', '`python pipeline/steps/check_updates.py` 로 같은 내용을 볼 수 있습니다.');
             const body = lines.join('\n');
-            const title = '패치 자료 갱신 필요';
             const open = await github.rest.issues.listForRepo({
-              owner: context.repo.owner, repo: context.repo.repo,
-              state: 'open', labels: 'auto-update',
+              owner: context.repo.owner, repo: context.repo.repo, state: 'open', labels: 'auto-update',
             });
             if (open.data.length) {
               await github.rest.issues.update({
-                owner: context.repo.owner, repo: context.repo.repo,
-                issue_number: open.data[0].number, body,
+                owner: context.repo.owner, repo: context.repo.repo, issue_number: open.data[0].number, body,
               });
             } else {
               await github.rest.issues.create({
                 owner: context.repo.owner, repo: context.repo.repo,
-                title, body, labels: ['auto-update'],
+                title: '패치 자료 갱신 필요', body, labels: ['auto-update'],
+              });
+            }
+
+      # 할 일이 다 없어졌으면 열려 있던 알림을 닫는다(안 그러면 끝난 일이 계속 열려 있다)
+      - name: 남은 일이 없으면 알림 닫기
+        if: steps.check.outputs.ok == '1' && steps.check.outputs.builds_ok == '1' && steps.check.outputs.en_count == '0' && steps.builds.outcome != 'failure' && steps.builds.outputs.icons_pending != '1'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const open = await github.rest.issues.listForRepo({
+              owner: context.repo.owner, repo: context.repo.repo, state: 'open', labels: 'auto-update',
+            });
+            for (const it of open.data) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner, repo: context.repo.repo, issue_number: it.number,
+                body: '남은 일이 없어 닫습니다 — 새 영문 노트 0건, 새 게임 빌드는 모두 반영됐습니다.',
+              });
+              await github.rest.issues.update({
+                owner: context.repo.owner, repo: context.repo.repo, issue_number: it.number, state: 'closed',
               });
             }
 
       - name: 요약
+        if: always()
+        env:
+          CHECK_ERROR: ${{ steps.check.outputs.error }}
+          BUILD_NAMES: ${{ steps.check.outputs.build_names }}
         run: |
           echo "### 갱신 확인 결과" >> "$GITHUB_STEP_SUMMARY"
           echo "" >> "$GITHUB_STEP_SUMMARY"
           echo "- 새 한국어 노트: ${{ steps.check.outputs.ko_count }}건 (자동 반영)" >> "$GITHUB_STEP_SUMMARY"
-          echo "- 번역 필요한 영문 노트: ${{ steps.check.outputs.en_count }}건" >> "$GITHUB_STEP_SUMMARY"
-          echo "- 새 게임 빌드: ${{ steps.check.outputs.build_count }}개" >> "$GITHUB_STEP_SUMMARY"
+          echo "- 번역 필요한 영문 노트: ${{ steps.check.outputs.en_count }}건 (로컬에서 번역)" >> "$GITHUB_STEP_SUMMARY"
+          echo "- 새 게임 빌드: ${{ steps.check.outputs.build_count }}개 ${BUILD_NAMES} — 자동 반영 ${{ steps.builds.outcome }}" >> "$GITHUB_STEP_SUMMARY"
           if [ "${{ steps.check.outputs.ok }}" != "1" ]; then
             echo "" >> "$GITHUB_STEP_SUMMARY"
-            echo "> 확인에 실패해 아무것도 하지 않았습니다 — ${{ steps.check.outputs.error }}" >> "$GITHUB_STEP_SUMMARY"
+            echo "> 확인에 실패해 아무것도 하지 않았습니다 — ${CHECK_ERROR}" >> "$GITHUB_STEP_SUMMARY"
           fi
+
+      - name: 게임 빌드 반영이 실패했으면 이 실행을 실패로 남긴다 (메일 알림용)
+        if: steps.builds.outcome == 'failure'
+        run: exit 1
