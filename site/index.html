@@ -61,7 +61,7 @@
   .wrap { max-width:880px; margin:0 auto; padding:48px 20px; }
 
   /* 타이틀 줄 */
-  .head { display:flex; align-items:center; gap:10px; }
+  .head { display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
   .head img { height:34px; width:34px; display:block; }
   h1 { margin:0; font-size:28px; letter-spacing:0.5px; }
   h1 .s { color:var(--gold); }
@@ -77,6 +77,12 @@
              border-radius:99px; padding:5px 14px; background:var(--card); cursor:pointer;
              font-family:inherit; transition:border-color .15s, color .15s; }
   .headbtn:hover { border-color:var(--gold-line); color:var(--gold); }
+  /* 손가락으로도 쓰는 기기(any-pointer:coarse)에서 누를 크기를 44px 로.
+     ::after 띠로 넓히면 단추가 줄바꿈될 때 윗줄 띠가 아랫줄 단추를 덮어 엉뚱한 것이 눌린다.
+     min-height 로 요소 자체를 키운다. */
+  @media (any-pointer:coarse) {
+    .headbtn { min-height:44px; display:inline-flex; align-items:center; }
+  }
   #themeBtn { margin-left:auto; }
 
   .sub { color:var(--dim); margin:10px 0 6px; font-size:15px; }
@@ -110,6 +116,13 @@
     h1 { font-size:21px; white-space:nowrap; }
     .head svg.logo { height:26px; width:26px; }
     .headbtn { font-size:12px; padding:4px 10px; }
+    .wrap { padding:28px 14px; }
+  }
+  /* 아주 좁은 폰(320px) — 제목과 단추가 한 줄에 못 들어간다. 단추만 아랫줄로 내린다. */
+  @media (max-width:380px) {
+    .head h1 { flex:1 1 auto; }
+    .head .headbtn:first-of-type { margin-left:auto; }
+    .wrap { padding:24px 12px; }
   }
 </style>
 </head>

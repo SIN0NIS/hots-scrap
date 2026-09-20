@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>패치 기록 · HotS Scrap</title>
 <link rel="icon" type="image/svg+xml" href="../shared/favicon.svg">
-<link rel="stylesheet" href="../shared/scrap.css">
+<link rel="stylesheet" href="../shared/scrap.css" data-scrap-css>
 <style>
   /* scrap-theme: 공통 토큰(--scrap-*) 위에 이 앱만의 값 — 허브(index.html)와 같은 팔레트·폭·카드 양식 */
   :root { --bg:var(--scrap-bg); --card:var(--scrap-card); --card2:var(--scrap-card2); --line:var(--scrap-line); --fg:var(--scrap-fg);
@@ -363,6 +363,12 @@
   .row .ext { font-size:11px; border:1px solid var(--line); border-radius:99px;
               padding:2px 8px; color:var(--dim); text-decoration:none; white-space:nowrap; }
   .row .ext:hover { border-color:var(--gold-line); color:var(--gold); }
+  /* 손가락으로도 쓰는 기기(any-pointer:coarse)에서 누를 크기를 44px 로.
+     ::after 띠로 넓히면 단추가 줄바꿈될 때 윗줄 띠가 아랫줄 단추를 덮어 엉뚱한 것이 눌린다.
+     min-height 로 요소 자체를 키운다. */
+  @media (any-pointer:coarse) {
+    .row .ext { min-height:44px; display:inline-flex; align-items:center; }
+  }
   .row .lagmark { color:var(--purple); font-weight:700; }
   .pager { display:flex; gap:8px; align-items:center; justify-content:space-between; flex-wrap:wrap; margin:12px 0 0; }
   .pager a, .pager span { font-size:12px; border:1px solid var(--line); border-radius:10px; padding:7px 12px;
@@ -384,20 +390,31 @@
   /* 칸이 좁아지면 점도 같이 줄여 겹치지 않게 한다(한 칸에 가로 5자리) */
   @media (max-width:900px) { .cal-c { --dot:7px; } }
   @media (max-width:780px) { .cal-c { --dot:6px; } }
-  @media (max-width:700px) { .cal-c { --dot:5px; } }
+  /* 700px 아래부터는 밀어 보는 방식이라 칸이 34px 로 고정된다 — 점 크기는 아래 블록에서 잡는다 */
 
-  @media (max-width:600px) {
-    .cal-tiles { grid-template-columns:1fr 1fr; }
+  /* 달력 격자만 따로 — 600px 바로 위에서 칸이 24px 로 되레 좁아지므로 700px 까지 밀어 보는 방식을 쓴다 */
+  @media (max-width:700px) {
     .cal { padding:8px 8px 10px; }
-    .cal-hd, .cal-y { grid-template-columns:32px repeat(12,minmax(0,1fr)); column-gap:2px; }
-    .cal-c, .cal-hd span { min-width:0; }
-    .cal-hd span { font-size:9px; } .cal-hd .mo, .cal-hd .sumh { display:none; }
-    .cal-yl { font-size:11px; }
-    .cal-c { --dot:4px; min-height:23px; gap:1px; border-radius:3px; }
+    /* 한 해 12칸을 폰 폭에 욱여넣으면 칸이 22px 이 되고 달 번호가 9px 까지 줄어 안 읽힌다.
+       칸 크기를 지키고 **가로로 밀어 보게** 한다. 연도 칸은 왼쪽에 붙여 둬서 어느 해인지 늘 보인다. */
+    .cal-scroll { overflow-x:auto; overscroll-behavior-x:contain; -webkit-overflow-scrolling:touch;
+                  scroll-snap-type:x proximity; padding-bottom:4px; }
+    .cal-hd, .cal-y { grid-template-columns:34px repeat(12,34px); column-gap:2px; width:max-content; }
+    .cal-c, .cal-hd span { min-width:0; scroll-snap-align:start; }
+    .cal-hd span { font-size:11px; } .cal-hd .mo, .cal-hd .sumh { display:none; }
+    .cal-yl { font-size:12px; position:sticky; left:0; z-index:2; background:var(--card);
+              padding-right:2px; box-shadow:6px 0 6px -6px rgba(0,0,0,.35); }
+    .cal-hd > span:first-child { position:sticky; left:0; z-index:2; background:var(--card); }
+    .cal-c { --dot:6px; min-height:30px; gap:1px; border-radius:3px; }
+    /* 곁가지 글자도 폰에서는 10px 아래로 내려가지 않게 */
+    .cal-sum, .cal-axis .lb, .cal-y .band span { font-size:11px; }
     .cal-sum { grid-column:1/-1; grid-row:2; padding:2px 0 0 2px; }
     .cal-gap { height:12px; font-size:0; }
     .cal-axis { height:18px; }
     .st { --stl:66px !important; }
+  }
+  @media (max-width:600px) {
+    .cal-tiles { grid-template-columns:1fr 1fr; }
     .st-row { --stl:66px; --str:48px; gap:6px; }
     .st-wd { gap:3px; } .st-wd .bars { height:46px; } .st-wd .bars i { width:7px; }
   }
@@ -1280,7 +1297,7 @@
       <span><i class="rnd pat"></i>본 패치</span><span><i class="rnd bal"></i>밸런스·긴급 수정</span>
       <span><i class="rnd dat"></i>데이터 변경만</span><span><i class="hollow"></i>테스트 서버</span>
       <span><i class="dens"></i>본 서버 3건 이상인 달</span><span><i class="band"></i>3개월 이상 공백(전체 기준)</span></div>`;
-    let out = `<div class="cal"><div class="cal-top"><h2 class="cal-ttl">패치 달력</h2>${legend}</div><div class="cal-hd"><span></span>${
+    let out = `<div class="cal"><div class="cal-top"><h2 class="cal-ttl">패치 달력</h2>${legend}</div><div class="cal-scroll"><div class="cal-hd"><span></span>${
       Array.from({ length: 12 }, (_, i) => `<span>${i + 1}<span class="mo">월</span></span>`).join('')}<span class="sumh">연 요약</span></div>`;
     C.years.forEach(y => {
       const cells = [];
@@ -1318,7 +1335,7 @@
       const sum = `<a class="cal-sum${sel.m === y ? ' on' : ''}" href="${mUrl(y)}" title="${esc(stip)}"><b>${S.n}건</b><br>라이브 ${S.live} · 테스트 ${S.ptr}<br>주기 ${d1(S.cyc)}일 · 활성 ${S.act}/${S.of}</a>`;
       out += `<div class="cal-y"><a class="cal-yl" href="${mUrl(y)}">${y}</a>${cells.join('')}${sum}${calBands(runs, y).join('')}</div>`;
     });
-    return out + '</div>';
+    return out + '</div></div>';   // cal-scroll · cal
   }
 
   function calAxis(C) {

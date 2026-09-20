@@ -31,6 +31,12 @@
         #top-bar a { color: #888; text-decoration: none; font-size: 11px; }
         .ch-btn.on { background: #1758a8; border-color: #1758a8; color: #fff; }
         .lang-btn { background: #222; color: #fff; border: 1px solid var(--p); padding: 2px 10px; border-radius: 4px; cursor: pointer; font-size: 11px; font-weight: bold; }
+  /* 손가락으로도 쓰는 기기(any-pointer:coarse)에서 누를 크기를 44px 로.
+     ::after 띠로 넓히면 단추가 줄바꿈될 때 윗줄 띠가 아랫줄 단추를 덮어 엉뚱한 것이 눌린다.
+     min-height 로 요소 자체를 키운다. */
+  @media (any-pointer:coarse) {
+    .lang-btn { min-height:44px; display:inline-flex; align-items:center; justify-content:center; }
+  }
 
         #header { padding: 10px; background: #1a1a1e; border-bottom: 1px solid #333; flex-shrink: 0; }
         .search-box { width: 100%; padding: 12px; background: #222; color: white; border: 1px solid var(--p); border-radius: 6px; font-size: 16px; outline: none; box-sizing: border-box; }

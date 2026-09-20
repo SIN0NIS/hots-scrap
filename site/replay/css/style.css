@@ -510,10 +510,57 @@ body.mode-replay:not(.has-replay) #needRep{display:block}
 
 /* 좁은 화면에서는 지도에 자리를 몰아준다. 팀 명단은 한 줄로 옆으로 넘기고,
    배경 정렬 숫자칸은 감춘다 (내장 전장은 자동 정렬이라 손댈 일이 없다). */
+@media (max-width:860px){
+  /* 좁은 화면에서는 한 줄에 다 못 들어간다. 줄바꿈을 허용하고 요소가 스스로 줄어들게 둔다.
+     (예전에는 이 블록이 없고 header 를 겨냥한 규칙뿐이라 실제 막대인 #modebar 에는 안 먹어서
+      좁은 폰에서 200px 넘게 밖으로 삐져나갔다) */
+  #modebar{flex-wrap:wrap;gap:6px 8px;padding:6px 10px;min-height:0}
+  #modebar .logo em{display:none}                  /* 부제는 접는다 */
+  #modebar .tabs{flex:1 1 auto;min-width:0}
+  #modebar .tab{flex:1 1 0;min-width:0;padding:5px 8px;white-space:nowrap;
+                overflow:hidden;text-overflow:ellipsis}
+  /* 늘어나는 것은 고르개(select)뿐. 단추는 제 글자 크기를 지킨다
+     (전부 flex:1 로 늘리면 "배경 파일" 네 글자가 화면 폭만큼 커진다) */
+  #modebar .hgroup{order:3;margin-left:0;width:100%;gap:6px;flex-wrap:wrap}
+  #modebar .hgroup select{flex:1 1 120px;min-width:0;max-width:none}
+  #modebar .map-name{order:4;width:100%;max-width:none;text-align:left}
+
+  /* 재생 막대·스코어보드 축소줄도 같은 사정이다. 줄바꿈을 허용하지 않으면
+     320px 에서 문서가 722px 로 벌어져 오른쪽 절반이 잘린 채 스크롤도 안 된다
+     (body 가 overflow:hidden 이라). */
+  #controls{flex-wrap:wrap;row-gap:4px}
+  #controls #seek{flex:1 1 100%;order:5;min-width:0}
+  #board .bdmini{flex-wrap:wrap;row-gap:2px;justify-content:center}
+  /* 스코어보드 머리줄과 그래프 머리줄도 한 줄에 못 들어간다 */
+  #board .bdhd{flex-wrap:wrap;row-gap:4px;gap:8px}
+  #board .bdmid{flex:1 1 100%;order:3}
+  .rail .panhd{flex-wrap:wrap;row-gap:4px}
+  .rail .panhd select{flex:1 1 110px;min-width:0}
+}
+
+/* 화면이 작으면 구역이 여섯이라 다 들어가지 않는다(320x568 에서 지도가 2px 로 짜부라졌다).
+   body 가 overflow:hidden 이라 넘친 만큼은 그냥 안 보인다 — 그래서 **지도부터 지킨다**:
+   스코어보드는 한 줄로 접고, 아래 칸(기록·그래프)은 접어 두고, 각 구역의 최소 높이를 낮춘다.
+   사람은 필요할 때 Tab / 옆 손잡이로 다시 펼 수 있다. */
+@media (max-width:700px) and (max-height:700px), (max-height:480px){
+  #mid{min-height:0}
+  /* #mid 가 세로 방향이 되면 지도 상자가 스스로 늘어나지 못해 2px 로 짜부라진다 */
+  #mapwrap{flex:1 1 auto;min-height:0}
+  #stage{min-height:150px}                  /* 지도는 이만큼은 확보한다 */
+  /* 표시 옵션 줄은 폰에서 줄바꿈되며 121px 까지 불어나 지도를 다 먹었다.
+     한 줄로 묶고 옆으로 밀어 보게 한다. */
+  #calbar{flex-wrap:nowrap;overflow-x:auto;overscroll-behavior-x:contain;
+          white-space:nowrap;scrollbar-width:none}
+  #calbar::-webkit-scrollbar{display:none}
+  #calbar > *{flex:none}
+  #side{display:none}                       /* 기록·그래프 칸은 접는다(지도에 자리를 준다) */
+  #board{max-height:min(120px,22vh)}
+  #timeline{max-height:96px;overflow:hidden}
+  #modebar{min-height:0}
+}
+
 @media (max-width:640px){
-  #modebar{gap:8px;padding:0 10px}
   #modebar h1{display:none}
-  #modebar .tab{padding:0 12px}
   header{padding:6px 10px;gap:8px}
   header .teams{order:2;width:100%;display:flex;flex-wrap:nowrap;align-items:center;gap:4px;
     overflow-x:auto;scrollbar-width:none}
@@ -525,6 +572,18 @@ body.mode-replay:not(.has-replay) #needRep{display:block}
   #mapwrap{padding:6px 8px;gap:6px}
   #controls{gap:6px} #clock{min-width:72px;font-size:calc(15px * var(--fs))}
   #play{width:56px;padding:6px 6px} .spd{padding:6px 5px;font-size:calc(11px * var(--fs))}
+}
+
+/* 화면이 낮을 때(가로로 눕힌 폰, 작은 창) — 지도에 높이를 몰아준다.
+   세로 픽셀이 아니라 '비율'로도 본다: 가로가 세로보다 훨씬 길면 위아래 군더더기를 걷는다. */
+@media (max-height:520px), (max-aspect-ratio:1/1) and (max-width:520px){
+  #modebar .logo em{display:none}
+}
+@media (max-height:520px) and (orientation:landscape){
+  #modebar{padding:2px 10px;gap:4px 8px}
+  #modebar .logo em{display:none}
+  #board{max-height:min(200px,40vh)}
+  #mapwrap{padding:4px 6px;gap:4px}
 }
 
 /* 배치보드 표식 — 파괴된 구조물 */

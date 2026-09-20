@@ -40,3 +40,20 @@
   --scrap-gold:#e8c268;
   --scrap-gold-line:#8a6d2f;
 }
+
+/* ───────── 손가락으로 쓰는 화면에서의 공통 규칙 ─────────
+   `any-pointer:coarse` 로 가른다. `pointer:coarse` 는 **주** 입력장치만 보므로,
+   트랙패드를 붙인 아이패드나 마우스를 꽂은 터치 노트북처럼 '손가락으로도 쓰는' 기기가 빠져나간다.
+   any- 를 쓰면 "손가락 입력이 하나라도 있으면" 참이 된다.
+
+   애플·구글이 권하는 최소 누를 거리는 44px 다. 높이를 직접 키우면 줄 간격이 벌어지므로,
+   **보이는 크기는 그대로 두고 누를 넓이만** `min-height` 로 넓힌다.
+
+   예전에는 44px 짜리 ::after 띠를 위아래로 넘치게 깔았는데, 단추가 줄바꿈되면
+   윗줄 띠가 아랫줄 단추를 덮어 **엉뚱한 단추가 눌렸다**(빌드메이커에서 '본 서버' 아래를
+   누르면 KO/EN 이 실행됐다). 띠 방식으로 되돌리지 마라. */
+@media (any-pointer:coarse) {
+  #scrap-bar a, #scrap-bar button, .scrap-tap {
+    min-height:44px; display:inline-flex; align-items:center; justify-content:center;
+  }
+}

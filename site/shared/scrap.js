@@ -6,6 +6,17 @@
   var sc = document.currentScript;
   var BASE = (sc && sc.src) ? sc.src.replace(/shared\/scrap\.js.*$/, '') : '../';
 
+  /* 공통 CSS 도 여기서 같이 끌어온다 — 앱은 이 스크립트 한 줄만 부르면 된다.
+     예전에는 scrap.css 를 <link> 로 부르는 앱이 패치 기록 하나뿐이라,
+     공통 계층에 규칙을 넣어도 나머지 네 앱에는 닿지 않았다. */
+  if (!document.querySelector('link[data-scrap-css]')) {
+    var l = document.createElement('link');
+    l.rel = 'stylesheet';
+    l.href = BASE + 'shared/scrap.css';
+    l.setAttribute('data-scrap-css', '');
+    (document.head || document.documentElement).appendChild(l);
+  }
+
   function cur() {
     var t = null;
     try { t = localStorage.getItem(KEY); } catch (e) {}
