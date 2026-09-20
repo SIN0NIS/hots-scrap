@@ -34,8 +34,9 @@ KST = timezone(timedelta(hours=9))
 # 앱 id → 그 앱이 실제로 쓰는 자료 파일들. 이것들이 바뀌면 "자료 갱신" 시각이 움직인다.
 WATCH = {
     "encyclopedia": ["site/encyclopedia/index.html"],
-    "builds": ["site/data/builds/index.json", "site/data/builds/live.ko.json", "site/data/builds/live.en.json"],
-    "builds-ptr": ["site/data/builds/index.json", "site/data/builds/ptr.ko.json", "site/data/builds/ptr.en.json"],
+    # index.json 은 두 판이 같이 쓰므로 지문에 넣지 않는다(넣으면 테스트 서버만 바뀌어도 본 서버까지 '갱신'으로 찍힌다)
+    "builds": ["site/data/builds/live.ko.json", "site/data/builds/live.en.json"],
+    "builds-ptr": ["site/data/builds/ptr.ko.json", "site/data/builds/ptr.en.json"],
     "replay": ["site/replay/js/data_maps.js", "site/replay/js/data_heroes.js"],
     "patchnotes": ["site/data/patchnotes/index.json", "site/data/patchnotes/builds.json",
                    "site/data/patchnotes/heroes.json"],

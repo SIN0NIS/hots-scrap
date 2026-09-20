@@ -132,6 +132,25 @@ def resolve_data2(builds):
         print(f"  data2 {folder}  date={info['date']}")
 
 
+
+def ensure_full_history(repo_dir):
+    """얕은 클론(shallow)이면 전체 기록을 받아 온다.
+
+    빌드 날짜는 '그 버전 폴더가 처음 추가된 커밋 날짜'로 정한다. 얕은 클론에서는 옛 커밋이
+    안 보여서, 모든 폴더가 '보이는 가장 오래된 커밋'에 추가된 것처럼 나온다 -> 날짜가 한 날로 뭉개진다.
+    (2026-09-20 에 실제로 겪었다: 빌드 7개가 전부 2026-09-14 로 찍혀 공식 노트 3건의 짝이 풀렸다.
+     ci_prepare.py 가 --depth 1 로 만든 클론을 이 스크립트가 그대로 이어 썼던 것이 원인)
+    """
+    d = Path(repo_dir)
+    if not (d / ".git" / "shallow").exists():
+        return
+    print("얕은 클론이라 전체 기록을 받습니다: " + d.name, file=sys.stderr)
+    r = subprocess.run(["git", "-C", str(d), "fetch", "--unshallow"], capture_output=True, text=True)
+    if (d / ".git" / "shallow").exists():
+        raise SystemExit("전체 기록을 받지 못했습니다(" + d.name + "). 날짜가 틀어지므로 멈춥니다. "
+                         + (r.stderr or "")[-400:])
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--pull", action="store_true")
@@ -145,6 +164,9 @@ def main():
     if a.pull:
         run(["git", "pull", "--ff-only"], cwd=HD1)
         run(["git", "pull", "--ff-only"], cwd=HD2)
+    # 날짜를 커밋 기록에서 뽑으므로, 기록이 잘려 있으면 여기서 바로잡는다
+    ensure_full_history(HD1)
+    ensure_full_history(HD2)
 
     builds = {}
     for vdir in sorted((HD1 / "heroesdata").iterdir()):
