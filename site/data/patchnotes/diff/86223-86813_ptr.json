@@ -6,6 +6,8 @@
  "fromDate": "2021-10-04",
  "toDate": "2021-12-06",
  "toPtr": true,
+ "fromRepo": "heroes-data",
+ "toRepo": "heroes-data",
  "heroes": {
   "Auriel": {
    "name": "아우리엘",
@@ -23,12 +25,6 @@
        "diff": "억류의 일격이 적 영웅을 2.5초 동안 20% 느려지게 합니다. 적을 기절시키면 감속 효과와 지속 시간이 두 [[-배로-]]{{+배가 됩니다.\n지속 효과: 억류의 일격의 기절 지속 시간이 0.25초+}} 증가합니다."
       }
      ]
-    },
-    {
-     "type": "talent_removed",
-     "id": "AurielSwiftSweepSacredSweepTalent",
-     "name": "신속한 휩쓸기",
-     "level": 1
     },
     {
      "type": "talent",
@@ -57,6 +53,15 @@
        "diff": "[[-희망을 불어넣은 아군의 기술 위력이 10% 증가합니다.-]]{{+희망을 불어넣은 아군의 기술 위력이 10% 증가합니다.\n신성한 휩쓸기의 중심부에 적중하거나 억류의 일격으로 지형에 부딪힌 적 영웅의 기술 방어력이 3초 동안 10 감소합니다.+}}"
       }
      ]
+    },
+    {
+     "type": "talent_removed",
+     "id": "AurielSwiftSweepSacredSweepTalent",
+     "name": "신속한 휩쓸기",
+     "level": 1,
+     "full": "신성한 휩쓸기의 시전 속도가 50% 증가합니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_auriel_angelicsweep.png"
     }
    ]
   },
@@ -186,13 +191,13 @@
      "before": {
       "amount": 2434,
       "scale": 0.04,
-      "regenRate": 5.0703,
+      "regenRate": 5.07,
       "regenScale": 0.04
      },
      "after": {
       "amount": 2385,
       "scale": 0.04,
-      "regenRate": 4.9687,
+      "regenRate": 4.969,
       "regenScale": 0.04
      }
     },
@@ -343,7 +348,7 @@
    "changes": [
     {
      "type": "ability",
-     "id": "FalstadTailwindCooldownDisplay|Trait",
+     "id": "FalstadTailwind|Trait",
      "name": "순풍",
      "abilityType": "Trait",
      "changes": [
@@ -485,7 +490,12 @@
        "before": 7,
        "after": 13
       }
-     ]
+     ],
+     "moved": {
+      "from": 7,
+      "to": 13,
+      "kind": "moved"
+     }
     }
    ]
   },
@@ -738,12 +748,6 @@
      ]
     },
     {
-     "type": "ability_removed",
-     "id": "RehgarGhostWolf|Trait",
-     "name": "늑대 정령",
-     "abilityType": "Trait"
-    },
-    {
      "type": "ability",
      "id": "RehgarLightningShield|W",
      "name": "번개 보호막",
@@ -764,29 +768,18 @@
      ]
     },
     {
-     "type": "ability_added",
-     "id": "RehgarPurge|Trait",
-     "name": "정화",
+     "type": "ability_replaced",
      "abilityType": "Trait",
-     "full": "아군 영웅에게 사용하면 대상이 0.5초 동안 저지 불가 상태가 됩니다. 적 영웅에게 사용하면 대상이 80% 느려지며, 감속 효과는 2초에 걸쳐 서서히 사라집니다.\n자신에게 시전할 수 없습니다."
-    },
-    {
-     "type": "talent_removed",
-     "id": "GenericTalentCleanse",
-     "name": "정화",
-     "level": 7
-    },
-    {
-     "type": "talent_removed",
-     "id": "GenericTalentRewind",
-     "name": "되돌리기",
-     "level": 20
-    },
-    {
-     "type": "talent_removed",
-     "id": "GenericTalentStormShield",
-     "name": "폭풍 보호막",
-     "level": 20
+     "idFrom": "RehgarGhostWolf|Trait",
+     "idTo": "RehgarPurge|Trait",
+     "nameFrom": "늑대 정령",
+     "nameTo": "정화",
+     "fullBefore": "탈것을 사용하는 대신 늑대 정령으로 변신해서 이동 속도가 20% 증가합니다. 늑대 정령 형상일 때 일반 공격을 하면 대상을 향해 짧은 거리를 약진하고 75% 추가 피해를 줍니다. 피해를 주거나, 기술을 사용하거나, 정신 집중이 필요한 행동을 하면 늑대 정령 형상이 취소됩니다.",
+     "fullAfter": "아군 영웅에게 사용하면 대상이 0.5초 동안 저지 불가 상태가 됩니다. 적 영웅에게 사용하면 대상이 80% 느려지며, 감속 효과는 2초에 걸쳐 서서히 사라집니다.\n자신에게 시전할 수 없습니다.",
+     "cooldownBefore": "",
+     "cooldownAfter": "재사용 대기시간: 30초",
+     "match": "slot",
+     "confidence": "low"
     },
     {
      "type": "talent",
@@ -819,7 +812,12 @@
        "after": "속박의 토템을 다시 사용하면 기존 토템을 다른 위치로 옮길 수 있습니다. 토템을 한 번 시전할 때마다 한 번만 옮길 수 있습니다.\n지속 효과: 속박의 토템의 생명력, 범위, 지속 시간이 50% 증가합니다.",
        "diff": "[[-속박의 토템의 범위 및 시전 사거리가 50% 증가하고, 기술을 다시 사용해 활성화된 속박의 토템을 한 번 다른 위치로 옮길 수 있습니다.-]]{{+속박의 토템을 다시 사용하면 기존 토템을 다른 위치로 옮길 수 있습니다. 토템을 한 번 시전할 때마다 한 번만 옮길 수 있습니다.\n지속 효과: 속박의 토템의 생명력, 범위, 지속 시간이 50% 증가합니다.+}}"
       }
-     ]
+     ],
+     "moved": {
+      "from": 1,
+      "to": 7,
+      "kind": "redesign"
+     }
     },
     {
      "type": "talent",
@@ -852,7 +850,12 @@
        "after": "속박의 토템 범위 안에 있는 적 영웅의 공격 속도가 40% 감소하고 기술 위력이 25% 감소합니다.\n지속 효과: 속박의 토템의 범위가 50% 증가합니다.",
        "diff": "[[-속박의 토템의 생명력이 100% 증가합니다. 속박의 토템으로 느려진 적 영웅의 공격 속도가 40% 감소합니다.-]]{{+속박의 토템 범위 안에 있는 적 영웅의 공격 속도가 40% 감소하고 기술 위력이 25% 감소합니다.\n지속 효과: 속박의 토템의 범위가 50% 증가합니다.+}}"
       }
-     ]
+     ],
+     "moved": {
+      "from": 7,
+      "to": 1,
+      "kind": "redesign"
+     }
     },
     {
      "type": "talent",
@@ -871,14 +874,12 @@
        "after": "생명력이 50% 미만인 영웅을 연쇄 치유로 치유하면 5초에 걸쳐 250(+4%)의 생명력을 추가로 회복시킵니다.",
        "diff": "생명력이 50% 미만인 영웅을 연쇄 치유로 치유하면 5초에 걸쳐 [[-225(+4%)의-]]{{+250(+4%)의+}} 생명력을 추가로 회복시킵니다."
       }
-     ]
-    },
-    {
-     "type": "talent_added",
-     "id": "RehgarElementalConduit",
-     "name": "원소 출현",
-     "level": 20,
-     "full": "사용하면 번개 보호막을 획득하고 주위 모든 아군 영웅에게 5초 동안 최대 생명력의 10%에 해당하는 보호막을 부여합니다.\n이 효과의 번개 보호막으로 적 영웅에게 피해를 주면 주위 아군에게 5초 동안 대상의 최대 생명력의 1.5%에 해당하는 보호막을 부여합니다."
+     ],
+     "moved": {
+      "from": 13,
+      "to": 4,
+      "kind": "tweak"
+     }
     },
     {
      "type": "talent",
@@ -897,7 +898,12 @@
        "after": "늑대 정령의 이동 속도 증가 효과가 첫 1초 동안 40%로 증가한 뒤 30%로 떨어집니다. 늑대 정령으로 변신하거나 변신을 풀면 2초 동안 방어력이 20 증가합니다.",
        "diff": "[[-늑대 정령 형상일 때 생명력 재생량이 75% 증가합니다. 늑대 정령으로 일반 공격을 하면 최대 마나의 1%를 회복하며, 영웅을 대상으로는 5% 회복합니다.-]]{{+늑대 정령의 이동 속도 증가 효과가 첫 1초 동안 40%로 증가한 뒤 30%로 떨어집니다. 늑대 정령으로 변신하거나 변신을 풀면 2초 동안 방어력이 20 증가합니다.+}}"
       }
-     ]
+     ],
+     "moved": {
+      "from": 4,
+      "to": 1,
+      "kind": "redesign"
+     }
     },
     {
      "type": "talent",
@@ -958,7 +964,12 @@
        "after": "번개 보호막 대상이 번개 보호막으로 적 영웅에게 준 피해의 20%만큼 생명력을 회복합니다. 번개 보호막 대상이 자신일 경우 효과가 두 배가 됩니다.\n번개 보호막으로 적에게 피해를 주는 동안 번개 보호막 대상의 이동 속도가 10% 증가합니다.",
        "diff": "[[-번개 보호막의 반경이 25% 증가합니다. 번개 보호막으로 적 영웅에게 준 피해의 30%만큼 자신의 생명력을 회복합니다.-]]{{+번개 보호막 대상이 번개 보호막으로 적 영웅에게 준 피해의 20%만큼 생명력을 회복합니다. 번개 보호막 대상이 자신일 경우 효과가 두 배가 됩니다.\n번개 보호막으로 적에게 피해를 주는 동안 번개 보호막 대상의 이동 속도가 10% 증가합니다.+}}"
       }
-     ]
+     ],
+     "moved": {
+      "from": 1,
+      "to": 4,
+      "kind": "redesign"
+     }
     },
     {
      "type": "talent",
@@ -996,7 +1007,12 @@
        "before": false,
        "after": true
       }
-     ]
+     ],
+     "moved": {
+      "from": 4,
+      "to": 1,
+      "kind": "redesign"
+     }
     },
     {
      "type": "talent",
@@ -1013,31 +1029,68 @@
      ]
     },
     {
-     "type": "talent_added",
-     "id": "RehgarPitFighter",
-     "name": "구덩이 투사",
-     "level": 20,
-     "full": "공격력이 10%, 기술 위력이 5 증가합니다. 주위 아군 영웅 하나당 이 효과가 최대 5회까지 추가로 중첩됩니다.\n2회 이상 중첩되면 정화의 재사용 대기시간이 50% 빠르게 감소합니다."
+     "type": "talent_replaced",
+     "level": 7,
+     "idFrom": "GenericTalentCleanse",
+     "idTo": "RehgarPurification",
+     "nameFrom": "정화",
+     "nameTo": "정제",
+     "fullBefore": "사용하면 대상 아군을 1초 동안 저지 불가 상태로 만듭니다. 자신에게 시전할 수 없습니다.",
+     "fullAfter": "정화로 아군의 감속, 기절, 침묵, 이동 불가 효과를 제거하면 대상의 생명력을 260(+4%) 회복시키고 정화 재사용 대기시간의 50%를 돌려받습니다.\n적 영웅에게 정화를 사용하면 대상의 보호막에 최대 330(+4%)의 피해를 주고, 받는 치유 효과를 3초 동안 40% 감소시킵니다.",
+     "cooldownBefore": "재사용 대기시간: 60초",
+     "cooldownAfter": "",
+     "match": "slot",
+     "confidence": "low"
     },
     {
-     "type": "talent_added",
-     "id": "RehgarPurification",
-     "name": "정제",
-     "level": 7,
-     "full": "정화로 아군의 감속, 기절, 침묵, 이동 불가 효과를 제거하면 대상의 생명력을 260(+4%) 회복시키고 정화 재사용 대기시간의 50%를 돌려받습니다.\n적 영웅에게 정화를 사용하면 대상의 보호막에 최대 330(+4%)의 피해를 주고, 받는 치유 효과를 3초 동안 40% 감소시킵니다."
+     "type": "talent_replaced",
+     "level": 20,
+     "idFrom": "GenericTalentStormShield",
+     "idTo": "RehgarElementalConduit",
+     "nameFrom": "폭풍 보호막",
+     "nameTo": "원소 출현",
+     "fullBefore": "사용하면 주위 모든 아군 영웅에게 각각의 최대 생명력의 20%에 해당하는 보호막을 부여합니다. 보호막은 3초 동안 지속됩니다.",
+     "fullAfter": "사용하면 번개 보호막을 획득하고 주위 모든 아군 영웅에게 5초 동안 최대 생명력의 10%에 해당하는 보호막을 부여합니다.\n이 효과의 번개 보호막으로 적 영웅에게 피해를 주면 주위 아군에게 5초 동안 대상의 최대 생명력의 1.5%에 해당하는 보호막을 부여합니다.",
+     "cooldownBefore": "재사용 대기시간: 45초",
+     "cooldownAfter": "재사용 대기시간: 70초",
+     "match": "icon+text",
+     "confidence": "low"
+    },
+    {
+     "type": "talent_removed",
+     "id": "RehgarWolfRun",
+     "name": "질주하는 늑대",
+     "level": 1,
+     "full": "늑대 정령 형상일 때의 이동 속도 증가량이 20%에서 30%로 증가합니다. 늑대 정령 형상으로 적 영웅에게 일반 공격을 하면 늑대 정령의 재사용 대기시간이 1초 감소합니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_rehgar_ghostwolf.png"
+    },
+    {
+     "type": "talent_removed",
+     "id": "GenericTalentRewind",
+     "name": "되돌리기",
+     "level": 20,
+     "full": "사용하면 모든 일반 기술의 재사용 대기시간이 초기화됩니다.",
+     "cooldown": "재사용 대기시간: 60초",
+     "icon": "storm_ui_icon_talent_rewind.png"
     },
     {
      "type": "talent_added",
      "id": "RehgarWellspring",
      "name": "샘솟는 물살",
      "level": 13,
-     "full": "2초마다 속박의 토템이 주위에서 가장 생명력이 낮은 아군 영웅에게 특성이 적용되지 않은 연쇄 치유를 시전합니다. 이 연쇄 치유는 기본 치유량의 40%만큼 생명력을 회복시킵니다."
+     "full": "2초마다 속박의 토템이 주위에서 가장 생명력이 낮은 아군 영웅에게 특성이 적용되지 않은 연쇄 치유를 시전합니다. 이 연쇄 치유는 기본 치유량의 40%만큼 생명력을 회복시킵니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_rehgar_earthbindtotem.png"
     },
     {
-     "type": "talent_removed",
-     "id": "RehgarWolfRun",
-     "name": "질주하는 늑대",
-     "level": 1
+     "type": "talent_added",
+     "id": "RehgarPitFighter",
+     "name": "구덩이 투사",
+     "level": 20,
+     "full": "공격력이 10%, 기술 위력이 5 증가합니다. 주위 아군 영웅 하나당 이 효과가 최대 5회까지 추가로 중첩됩니다.\n2회 이상 중첩되면 정화의 재사용 대기시간이 50% 빠르게 감소합니다.",
+     "cooldown": "",
+     "icon": "storm_ui_ingame_heroselect_btn_rehgar.png"
     }
    ]
   },
@@ -1050,13 +1103,13 @@
      "before": {
       "amount": 1850,
       "scale": 0.04,
-      "regenRate": 3.8554,
+      "regenRate": 3.855,
       "regenScale": 0.04
      },
      "after": {
       "amount": 1835,
       "scale": 0.04,
-      "regenRate": 3.8242,
+      "regenRate": 3.824,
       "regenScale": 0.04
      }
     },
@@ -1179,42 +1232,9 @@
     }
    ]
   },
-  "Whitemane": {
-   "name": "화이트메인",
-   "changes": [
-    {
-     "type": "ability",
-     "id": "WhitemaneFanaticalPower|Trait",
-     "name": "열의",
-     "abilityType": "Trait",
-     "changes": [
-      {
-       "field": "full",
-       "before": "치유 기술이 대상에게 8초 동안 열의를 부여합니다. 적 영웅에게 피해를 줄 때마다 열의가 부여된 아군의 생명력을 준 피해의 100%만큼 회복시킵니다.\n사용하면 기술 위력이 5초 동안 25% 증가하지만 방어력이 25 감소합니다. 정신을 집중하는 중에도 사용할 수 있습니다.",
-       "after": "치유 기술이 대상에게 8초 동안 열의를 부여합니다. 적 영웅에게 피해를 줄 때마다 열의가 부여된 아군의 생명력을 준 피해의 100%만큼 회복시킵니다.\n사용하면 기술 위력이 5초 동안 25% 증가하지만 방어력이 0##ERROR## 감소합니다. 정신을 집중하는 중에도 사용할 수 있습니다.",
-       "diff": "치유 기술이 대상에게 8초 동안 열의를 부여합니다. 적 영웅에게 피해를 줄 때마다 열의가 부여된 아군의 생명력을 준 피해의 100%만큼 회복시킵니다.\n사용하면 기술 위력이 5초 동안 25% 증가하지만 방어력이 [[-25-]]{{+0##ERROR##+}} 감소합니다. 정신을 집중하는 중에도 사용할 수 있습니다."
-      }
-     ]
-    }
-   ]
-  },
   "Zagara": {
    "name": "자가라",
    "changes": [
-    {
-     "type": "ability",
-     "id": "ZagaraSummonHydralisk|W",
-     "name": "추적 도살자",
-     "abilityType": "W",
-     "changes": [
-      {
-       "field": "full",
-       "before": "단일 대상을 공격하며 초당 71(+5%)의 피해를 주는 히드라리스크를 소환합니다. 히드라리스크는 8초 동안 머뭅니다.",
-       "after": "단일 대상을 공격하며 초당 0(+5%)의 피해를 주는 히드라리스크를 소환합니다. 히드라리스크는 8초 동안 머뭅니다.",
-       "diff": "단일 대상을 공격하며 초당 [[-71(+5%)의-]]{{+0(+5%)의+}} 피해를 주는 히드라리스크를 소환합니다. 히드라리스크는 8초 동안 머뭅니다."
-      }
-     ]
-    },
     {
      "type": "talent",
      "id": "ZagaraMasteryHydraliskTransfusion",
@@ -1266,7 +1286,9 @@
   }
  },
  "summary": {
-  "heroes": 18,
-  "changes": 84
+  "heroes": 17,
+  "changes": 79,
+  "replaced": 3,
+  "moved": 7
  }
 }

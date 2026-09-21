@@ -6,6 +6,8 @@
  "fromDate": "2021-07-24",
  "toDate": "2021-08-21",
  "toPtr": false,
+ "fromRepo": "heroes-data",
+ "toRepo": "heroes-data",
  "heroes": {
   "Deckard": {
    "name": "데커드",
@@ -26,7 +28,7 @@
     },
     {
      "type": "ability",
-     "id": "DeckardHoradricCube|W",
+     "id": "DeckardHoradricCubeCharging|W",
      "name": "호라드림의 함",
      "abilityType": "W",
      "changes": [
@@ -149,6 +151,21 @@
        "diff": "지면에 놓은 생명력 물약이 2초 후에 특급 생명력 물약으로 커지고 치유량이 [[-120%-]]{{+100%+}} 증가합니다.{{+\n지속 효과: 대상의 생명력이 50% 미만일 경우 생명력 물약의 치유 효과가 25% 증가합니다.+}}"
       }
      ]
+    },
+    {
+     "type": "ability",
+     "id": "DeckardFortitudeOfTheFaithfulAncientBlessings|Trait",
+     "name": "케인의 수호자",
+     "abilityType": "Trait",
+     "changes": [
+      {
+       "field": "cooldown",
+       "before": "재사용 대기시간: 60초",
+       "after": "재사용 대기시간: 45초",
+       "diff": "재사용 대기시간: [[-60초-]]{{+45초+}}"
+      }
+     ],
+     "parent": "고대의 축복"
     }
    ]
   },
@@ -311,13 +328,13 @@
      "before": {
       "amount": 1323,
       "scale": 0.04,
-      "regenRate": 2.7578,
+      "regenRate": 2.758,
       "regenScale": 0.04
      },
      "after": {
       "amount": 1375,
       "scale": 0.04,
-      "regenRate": 2.8632,
+      "regenRate": 2.863,
       "regenScale": 0.04
      }
     },
@@ -337,7 +354,7 @@
     },
     {
      "type": "ability",
-     "id": "HanzoNaturalAgilityButton|Trait",
+     "id": "HanzoNaturalAgility|Trait",
      "name": "선천적인 날렵함",
      "abilityType": "Trait",
      "changes": [
@@ -398,7 +415,7 @@
    "changes": [
     {
      "type": "ability",
-     "id": "LeoricSkeletalSwingTargetedReady|Q",
+     "id": "LeoricSkeletalSwing|Q",
      "name": "해골 왕의 휩쓸기",
      "abilityType": "Q",
      "changes": [
@@ -449,7 +466,7 @@
      "before": {
       "amount": 1515,
       "scale": 0.04,
-      "regenRate": 3.1562,
+      "regenRate": 3.156,
       "regenScale": 0.04
      },
      "after": {
@@ -693,12 +710,6 @@
      ]
     },
     {
-     "type": "talent_removed",
-     "id": "GenericTalentFuryoftheStorm",
-     "name": "폭풍의 분노",
-     "level": 20
-    },
-    {
      "type": "talent",
      "id": "WitchDoctorAnnihilatingSpirits",
      "name": "파멸의 혼령",
@@ -711,13 +722,6 @@
        "diff": "[[-굶주린 혼령의 사거리가 50% 증가하고 적 영웅을 공격할 때마다 공격력이 5% 증가합니다. 지속 시간 동안만 유지됩니다.-]]{{+굶주린 혼령의 공격이 적 영웅에게 적중하면, 대상이 받는 치유량을 1초 동안 50% 감소시키고, 굶주린 혼령이 지속하는 동안 혼령의 공격력이 5% 증가합니다.\n지속 효과: 굶주린 혼령의 사거리가 50% 증가합니다.+}}"
       }
      ]
-    },
-    {
-     "type": "talent_added",
-     "id": "WitchDoctorBadMedicine",
-     "name": "나쁜 약",
-     "level": 20,
-     "full": "부두 의식 5중첩을 소모하면 2초 동안 저지 불가 상태가 되고 이동 속도가 20% 증가하며 방어력이 50 증가합니다."
     },
     {
      "type": "talent",
@@ -830,6 +834,20 @@
        "diff": "시체 [[-거미의-]]{{+거미+}} [[-마나-]]{{+단지에+}} [[-소모량이-]]{{+적중당한+}} [[-10-]]{{+적들이+}} [[-감소합니다.-]]{{+1.5초 동안 30% 느려집니다.+}}\n보상: 시체 거미가 적 영웅을 100회 이상 [[-공격하면,-]]{{+공격하면+}} 시체 거미의[[- 일반-]] 공격력이 30% 증가하고 [[-재사용-]]{{+지속+}} [[-대기시간이-]]{{+시간이+}} [[-2초-]]{{+1초+}} [[-감소합니다.-]]{{+증가합니다.+}}"
       }
      ]
+    },
+    {
+     "type": "talent_replaced",
+     "level": 20,
+     "idFrom": "GenericTalentFuryoftheStorm",
+     "idTo": "WitchDoctorBadMedicine",
+     "nameFrom": "폭풍의 분노",
+     "nameTo": "나쁜 약",
+     "fullBefore": "5초마다 다음 일반 공격이 대상에게 91(+4%)의 추가 피해를 주고, 주위 모든 돌격병, 용병, 괴물에게 228(+4%)의 피해를 줍니다.",
+     "fullAfter": "부두 의식 5중첩을 소모하면 2초 동안 저지 불가 상태가 되고 이동 속도가 20% 증가하며 방어력이 50 증가합니다.",
+     "cooldownBefore": "",
+     "cooldownAfter": "재사용 대기시간: 30초",
+     "match": "slot",
+     "confidence": "low"
     }
    ]
   },
@@ -842,7 +860,7 @@
      "before": {
       "amount": 1575,
       "scale": 0.04,
-      "regenRate": 3.2812,
+      "regenRate": 3.281,
       "regenScale": 0.04
      },
      "after": {
@@ -945,6 +963,8 @@
  },
  "summary": {
   "heroes": 10,
-  "changes": 62
+  "changes": 62,
+  "replaced": 1,
+  "subs": 1
  }
 }

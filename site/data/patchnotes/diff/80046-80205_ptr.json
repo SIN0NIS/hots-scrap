@@ -6,7 +6,29 @@
  "fromDate": "2020-06-04",
  "toDate": "2020-06-21",
  "toPtr": true,
+ "fromRepo": "heroes-data",
+ "toRepo": "heroes-data",
  "heroes": {
+  "Alexstrasza": {
+   "name": "알렉스트라자",
+   "changes": [
+    {
+     "type": "ability",
+     "id": "AlexstraszaCleansingFlameDragonqueen|Heroic",
+     "name": "정화의 불꽃",
+     "abilityType": "Heroic",
+     "changes": [
+      {
+       "field": "cooldown",
+       "before": "재사용 대기시간: 90초",
+       "after": "재사용 대기시간: 100초",
+       "diff": "재사용 대기시간: [[-90초-]]{{+100초+}}"
+      }
+     ],
+     "unit": "용 형태(용의 여왕)"
+    }
+   ]
+  },
   "MalGanis": {
    "name": "말가니스",
    "changes": [
@@ -22,7 +44,7 @@
      "after": {
       "amount": 2375,
       "scale": 0.04,
-      "regenRate": 4.9492,
+      "regenRate": 4.949,
       "regenScale": 0.04
      }
     },
@@ -201,12 +223,6 @@
      ]
     },
     {
-     "type": "talent_removed",
-     "id": "MalGanisNightmareFuel",
-     "name": "악몽의 원천",
-     "level": 7
-    },
-    {
      "type": "talent",
      "id": "MalGanisVampiricTouchFrenziedAssault",
      "name": "광란의 공격",
@@ -247,6 +263,15 @@
        "diff": "[[-자신과 주위 아군 영웅들이 준 물리 피해의 15%만큼 공격자가 생명력을 회복합니다.-]]{{+물리 공격으로 준 피해의 30%만큼 생명력을 회복합니다. 근처의 아군 영웅들도 물리 공격으로 준 피해의 15%만큼 생명력을 회복합니다.+}}"
       }
      ]
+    },
+    {
+     "type": "talent_removed",
+     "id": "MalGanisNightmareFuel",
+     "name": "악몽의 원천",
+     "level": 7,
+     "full": "수풀에서 밤의 질주를 시전하면 기술의 지속 시간이 2.75초로 증가합니다. 수면 상태인 대상에게는 일반 공격이 200%의 추가 피해를 줍니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_malganis_nightrush_b.png"
     }
    ]
   },
@@ -283,13 +308,13 @@
      "before": {
       "amount": 1925,
       "scale": 0.04,
-      "regenRate": 4.0117,
+      "regenRate": 4.012,
       "regenScale": 0.045
      },
      "after": {
       "amount": 1925,
       "scale": 0.04,
-      "regenRate": 4.0117,
+      "regenRate": 4.012,
       "regenScale": 0.04
      }
     }
@@ -300,7 +325,7 @@
    "changes": [
     {
      "type": "ability",
-     "id": "TyrandeLightofElune|Q",
+     "id": "TyrandeLightOfElune|Q",
      "name": "엘룬의 빛",
      "abilityType": "Q",
      "changes": [
@@ -335,7 +360,8 @@
   }
  },
  "summary": {
-  "heroes": 6,
-  "changes": 21
+  "heroes": 7,
+  "changes": 22,
+  "units": 1
  }
 }

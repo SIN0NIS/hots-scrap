@@ -13,9 +13,9 @@
           --bg-glow:radial-gradient(1200px 500px at 50% -10%, #dbe7f7 0%, transparent 60%);
           --new:#c2410c; --del:#b91c1c; --del-bg:#fee2e2; --ins:#15803d; --ins-bg:#dcfce7; --purple:#6d28d9;
           --on-accent:#fff;            /* 강조색 위에 얹는 글자색 */
-          --gold-solid:#8a6414; }      /* 글자를 얹는 금색 바탕(라이트에서 한 단계 어둡게) */
-  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg-glow:radial-gradient(1200px 500px at 50% -10%, #14294a 0%, transparent 60%); --new:#ffb070; --del:#ff9b9b; --del-bg:#4a1d1d; --ins:#8ee0a4; --ins-bg:#143d22; --purple:#c4a5ff; --on-accent:#0b1526; --gold-solid:var(--gold); } }
-  :root[data-theme="dark"] { --bg-glow:radial-gradient(1200px 500px at 50% -10%, #14294a 0%, transparent 60%); --new:#ffb070; --del:#ff9b9b; --del-bg:#4a1d1d; --ins:#8ee0a4; --ins-bg:#143d22; --purple:#c4a5ff; --on-accent:#0b1526; --gold-solid:var(--gold); }
+          --gold-solid:#8a6414; --warn:#9a5b00; --warn-bg:#fff1d6; }      /* 글자를 얹는 금색 바탕(라이트에서 한 단계 어둡게) */
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg-glow:radial-gradient(1200px 500px at 50% -10%, #14294a 0%, transparent 60%); --new:#ffb070; --del:#ff9b9b; --del-bg:#4a1d1d; --ins:#8ee0a4; --ins-bg:#143d22; --purple:#c4a5ff; --on-accent:#0b1526; --gold-solid:var(--gold); --warn:#ffc46a; --warn-bg:#4a3410; } }
+  :root[data-theme="dark"] { --bg-glow:radial-gradient(1200px 500px at 50% -10%, #14294a 0%, transparent 60%); --new:#ffb070; --del:#ff9b9b; --del-bg:#4a1d1d; --ins:#8ee0a4; --ins-bg:#143d22; --purple:#c4a5ff; --on-accent:#0b1526; --gold-solid:var(--gold); --warn:#ffc46a; --warn-bg:#4a3410; }
 
   :root { --cal-d1:#e8eff9; --cal-d2:#d4e3f5; --cal-d3:#bcd4ef; }
   @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --cal-d1:#16294a; --cal-d2:#1d365f; --cal-d3:#274678; } }
@@ -223,6 +223,12 @@
   .chg .f { margin:3px 0 0 8px; font-size:13px; white-space:pre-wrap; }
   .chg .f .k { color:var(--dim); font-size:12px; margin-right:6px; }
   del { background:var(--del-bg); color:var(--del); text-decoration:line-through; border-radius:3px; padding:0 2px; }
+  .chg .hd .tp.mv { background:var(--blue-soft); color:var(--blue); }
+  .chg .hd .tp.warn { background:var(--warn-bg); color:var(--warn); }
+  .chg .hd .lv.unit { color:var(--gold-solid); border-color:var(--gold-line); }
+  .chg .f.old { color:var(--dim); text-decoration:line-through; }
+  .chg .f .carried { display:inline-block; margin-left:8px; font-size:11px; color:var(--dim); }
+  .unk { display:inline-block; min-width:1.1em; text-align:center; font-weight:700; color:var(--warn); background:var(--warn-bg); border-radius:3px; padding:0 3px; }
   ins { background:var(--ins-bg); color:var(--ins); text-decoration:none; border-radius:3px; padding:0 2px; }
   .empty { color:var(--dim); padding:20px; text-align:center; }
   .src { margin-top:16px; font-size:12px; color:var(--dim); border-top:1px solid var(--line); padding-top:10px; }
@@ -744,30 +750,62 @@
       return `<details class="hero-sec" ${focus || shown.length <= 6 ? 'open' : ''}><summary>${heroImg(h)}${esc(heroName(h))}<span class="n">${n}</span></summary><div class="body">${x.changes.map(changeHTML).join('') || '<div class="empty">—</div>'}</div></details>`;
     }).join('');
     const focusLink = focus ? `<p class="sub"><a href="?view=hero&id=${encodeURIComponent(focus)}">${esc(heroName(focus))} 전체 이력 보기 →</a></p>` : '';
-    return `<p class="sub">빌드 ${esc(d.from)} → ${esc(d.to)} 사이의 영웅 데이터 변화입니다. 괄호 안은 그 빌드가 게임 데이터 저장소에 올라온 날(${d.fromDate} → ${d.toDate})이라 패치 날짜와 며칠 다를 수 있습니다${d.toPtr ? '. 테스트 서버 빌드는 직전 라이브 빌드와 비교합니다' : ''}. 툴팁은 원문 마크업을 걷어낸 평문이며 <del>삭제</del> / <ins>추가</ins> 로 표시됩니다.</p>${jump}${focusLink}${secs || '<div class="empty">변경 없음</div>'}`;
+    const s = d.summary || {};
+    const extras = [s.units ? `하위 유닛 ${s.units}` : '', s.renamed ? `개편 ${s.renamed}` : '', s.replaced ? `칸 교체 ${s.replaced}` : '', s.moved ? `이동 ${s.moved}` : '', s.suspect ? `값 불확실 ${s.suspect}` : ''].filter(Boolean);
+    const boundary = d.schemaBoundary ? ' <b>이 구간은 자료 형식(HDP 4.x → 5.x)이 바뀐 경계</b>라 기술·특성의 삭제/신규와 하위 기술은 보수적으로 판정했습니다.' : '';
+    return `<p class="sub">빌드 ${esc(d.from)} → ${esc(d.to)} 사이의 영웅 데이터 변화입니다. 괄호 안은 그 빌드가 게임 데이터 저장소에 올라온 날(${d.fromDate} → ${d.toDate})이라 패치 날짜와 며칠 다를 수 있습니다${d.toPtr ? '. 테스트 서버 빌드는 직전 라이브 빌드와 비교합니다' : ''}. 툴팁은 원문 마크업을 걷어낸 평문이며 <del>삭제</del> / <ins>추가</ins> 로 표시됩니다. 원본이 값을 못 읽은 자리는 앞 빌드 값을 이어 쓰고, 이어 쓸 값이 없으면 <span class="unk">?</span> 로 둡니다.${boundary}${extras.length ? ` (${extras.join(' · ')})` : ''}</p>${jump}${focusLink}${secs || '<div class="empty">변경 없음</div>'}`;
   }
 
   const FIELD = { name: '이름', full: '설명', cooldown: '재사용 대기시간', energy: '자원', life: '생명력', quest: '퀘스트', level: '레벨' };
-  function changeHTML(c) {
+  const STATFIELD = { life: '생명력', energy: '자원', shield: '보호막', speed: '이동 속도', weapons: '일반 공격' };
+  const MOVEKIND = { moved: '설명 그대로', tweak: '수치만 조정', redesign: '설명 재작성' };
+  // 값을 못 읽은 자리(?)만 강조한다. 이름에 든 '?!' 같은 진짜 물음표는 그대로 둔다
+  const unk = s => s.replace(/\?(?=\s*(?:초|%|회|의|마리|명|개|중첩|\)|,|\.|$|\s))/gm, '<span class="unk" title="원본에서 값을 못 읽은 자리">?</span>');
+  function chgHead(c, kind) {
     const lv = c.level ? `<span class="lv">${c.level}레벨</span>` : '';
     const abt = c.abilityType ? `<span class="lv">${esc(c.abilityType)}</span>` : '';
+    const unit = c.unit ? `<span class="lv unit" title="하위 유닛">${esc(c.unit)}</span>` : '';
+    const par = c.parent ? `<span class="lv unit" title="이 버튼을 주는 기술·특성">${esc(c.parent)} ›</span>` : '';
+    const b = [];
+    if (c.moved) b.push(`<span class="tp mv">${c.moved.from}→${c.moved.to}레벨 이동${MOVEKIND[c.moved.kind] ? ' · ' + MOVEKIND[c.moved.kind] : ''}</span>`);
+    if (c.renamed) b.push(`<span class="tp mv" title="${esc(c.idFrom || '')} → ${esc(c.idTo || '')}">개편 · 내부 ID 변경</span>`);
+    if (c.type === 'ability_moved') b.push(`<span class="tp mv">슬롯 이동 ${esc(c.typeFrom)} → ${esc(c.typeTo)}</span>`);
+    else if (c.typeFrom) b.push(`<span class="tp mv">${esc(c.typeFrom)} → ${esc(c.abilityType)}</span>`);
+    if (c.suspect) b.push(`<span class="tp warn" title="게임 자료 추출기가 수식을 못 풀어 값이 비거나 이상한 자리가 있습니다. 이 회차의 실제 값이 아닐 수 있습니다">값 불확실 · 원본에서 못 읽음</span>`);
+    return `<div class="hd">${unit}${par}<span class="nm">${esc(c.name || '')}</span>${lv}${abt}${kind}${b.join('')}</div>`;
+  }
+  function fieldHTML(f, suspect) {
+    let body = f.diff != null ? markDiff(f.diff) : `<del>${esc(fmt(f.before))}</del> → <ins>${esc(fmt(f.after))}</ins>`;
+    if (suspect) body = unk(body);
+    const note = f.carried ? `<span class="carried" title="원본이 값을 못 읽은 자리는 앞 빌드 값을 이어 썼습니다">일부 값은 앞 빌드 값을 이어 씀</span>` : '';
+    return `<div class="f"><span class="k">${FIELD[f.field] || f.field}</span>${body}${note}</div>`;
+  }
+  function changeHTML(c) {
+    const kindTag = (cls, text) => `<span class="tp ${cls}">${text}</span>`;
+    const isTal = t => t.startsWith('talent');
     switch (c.type) {
-      case 'stat': return `<div class="chg"><div class="hd"><span class="nm">능력치</span><span class="tp">${esc(c.field)}</span></div><div class="f"><del>${esc(fmt(c.before))}</del> → <ins>${esc(fmt(c.after))}</ins></div></div>`;
+      case 'stat': return `<div class="chg">${chgHead({ unit: c.unit, name: '능력치' }, kindTag('', STATFIELD[c.field] || esc(c.field)))}<div class="f"><del>${esc(fmt(c.before))}</del> → <ins>${esc(fmt(c.after))}</ins></div></div>`;
       case 'rename': return `<div class="chg"><div class="hd"><span class="nm">이름 변경</span></div><div class="f"><del>${esc(c.before)}</del> → <ins>${esc(c.after)}</ins></div></div>`;
+      case 'unit_added': case 'unit_removed':
+        return `<div class="chg"><div class="hd"><span class="nm">${esc(c.unit)}</span>${kindTag(c.type === 'unit_added' ? 'add' : 'rm', c.type === 'unit_added' ? '신규 하위 유닛' : '삭제된 하위 유닛')}</div></div>`;
       case 'ability_added': case 'talent_added':
-        return `<div class="chg"><div class="hd"><span class="nm">${esc(c.name)}</span>${lv}${abt}<span class="tp add">신규 ${c.type.startsWith('talent') ? '특성' : '기술'}</span></div><div class="f">${esc(c.full || '')}</div></div>`;
+        return `<div class="chg">${chgHead(c, kindTag('add', `신규 ${isTal(c.type) ? '특성' : '기술'}`))}<div class="f">${c.suspect ? unk(esc(c.full || '')) : esc(c.full || '')}</div></div>`;
       case 'ability_removed': case 'talent_removed':
-        return `<div class="chg"><div class="hd"><span class="nm">${esc(c.name)}</span>${lv}${abt}<span class="tp rm">삭제된 ${c.type.startsWith('talent') ? '특성' : '기술'}</span></div></div>`;
+        return `<div class="chg">${chgHead(c, kindTag('rm', `삭제된 ${isTal(c.type) ? '특성' : '기술'}`))}${c.full ? `<div class="f old">${esc(c.full)}</div>` : ''}</div>`;
+      case 'ability_replaced': case 'talent_replaced': {
+        const cd = c.cooldownBefore !== c.cooldownAfter ? `<div class="f"><span class="k">재사용 대기시간</span><del>${esc(c.cooldownBefore || '없음')}</del> → <ins>${esc(c.cooldownAfter || '없음')}</ins></div>` : '';
+        return `<div class="chg">${chgHead({ ...c, name: `${c.nameFrom || '?'} → ${c.nameTo || '?'}` }, kindTag('mv', `${isTal(c.type) ? '같은 단계에서 ' : '같은 슬롯에서 '}${c.match === 'slot' ? '교체' : '교체(추정)'}`))}
+          <div class="f"><span class="k">전</span><del>${esc(c.fullBefore || '')}</del></div><div class="f"><span class="k">후</span><ins>${esc(c.fullAfter || '')}</ins></div>${cd}</div>`;
+      }
       default:
-        return `<div class="chg"><div class="hd"><span class="nm">${esc(c.name)}</span>${lv}${abt}<span class="tp">${c.type === 'talent' ? '특성' : '기술'}</span></div>
-          ${(c.changes || []).map(f => `<div class="f"><span class="k">${FIELD[f.field] || f.field}</span>${f.diff != null ? markDiff(f.diff) : `<del>${esc(fmt(f.before))}</del> → <ins>${esc(fmt(f.after))}</ins>`}</div>`).join('')}</div>`;
+        return `<div class="chg">${chgHead(c, kindTag('', c.type === 'talent' ? '특성' : '기술'))}${(c.changes || []).map(f => fieldHTML(f, c.suspect)).join('')}</div>`;
     }
   }
-  const STATWORD = { amount: '값', scale: '레벨당 증가율', regenRate: '재생', regenScale: '재생 증가율',
+  const STATWORD = { amount: '값', scale: '레벨당 증가율', regenRate: '재생', regenScale: '재생 증가율', regenDelay: '재생 지연',
                      range: '사거리', period: '공격 주기', damage: '공격력', damageScale: '공격력 증가율' };
   function fmt(v) {
     if (v == null) return '—';
-    if (Array.isArray(v)) return v.map(fmt).join(' / ');
+    if (Array.isArray(v)) return v.length ? v.map(fmt).join(' / ') : '없음';
     if (typeof v === 'object') return Object.entries(v).map(([k, x]) => `${STATWORD[k] || k} ${x}`).join(', ');
     return String(v);
   }

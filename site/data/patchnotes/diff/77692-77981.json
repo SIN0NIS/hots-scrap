@@ -6,13 +6,15 @@
  "fromDate": "2019-12-17",
  "toDate": "2020-01-22",
  "toPtr": false,
+ "fromRepo": "heroes-data",
+ "toRepo": "heroes-data",
  "heroes": {
   "Abathur": {
    "name": "아바투르",
    "changes": [
     {
      "type": "ability",
-     "id": "AbathurSpawnLocusts|Trait",
+     "id": "AbathurLocustStrain|Trait",
      "name": "식충 변종",
      "abilityType": "Trait",
      "changes": [
@@ -368,13 +370,13 @@
      "before": {
       "amount": 2850,
       "scale": 0.045,
-      "regenRate": 5.9414,
+      "regenRate": 5.941,
       "regenScale": 0.045
      },
      "after": {
       "amount": 2950,
       "scale": 0.045,
-      "regenRate": 6.1445,
+      "regenRate": 6.144,
       "regenScale": 0.045
      }
     },
@@ -473,13 +475,13 @@
      "before": {
       "amount": 2920,
       "scale": 0.04,
-      "regenRate": 6.0781,
+      "regenRate": 6.078,
       "regenScale": 0.04
      },
      "after": {
       "amount": 2850,
       "scale": 0.04,
-      "regenRate": 5.9375,
+      "regenRate": 5.938,
       "regenScale": 0.04
      }
     },
@@ -603,11 +605,56 @@
      "changes": [
       {
        "field": "full",
-       "before": "용의 비상 사용 후, 시야가 확보된 곳 어디에든 유성우를 떨어뜨려 대상 지역 안의 적들에게 58(+4%)의 피해를 줍니다. 총 3회 충전됩니다.\n영웅에게 적중하면 최대 생명력의 0##ERROR##%를 회복하며 착지 대기시간이 1.5초 감소합니다.",
+       "before": "용의 비상 사용 후, 시야가 확보된 곳 어디에든 유성우를 떨어뜨려 대상 지역 안의 적들에게 58(+4%)의 피해를 줍니다. 총 3회 충전됩니다.\n영웅에게 적중하면 최대 생명력의 5%를 회복하며 착지 대기시간이 1.5초 감소합니다.",
        "after": "용의 비상 사용 후, 시야가 확보된 곳 어디에든 유성우를 떨어뜨려 대상 지역 안의 적들에게 58(+4%)의 피해를 줍니다. 총 3회 충전됩니다.\n영웅에게 적중하면 최대 생명력의 3%를 회복하며 착지 대기시간이 1초 감소합니다.",
-       "diff": "용의 비상 사용 후, 시야가 확보된 곳 어디에든 유성우를 떨어뜨려 대상 지역 안의 적들에게 58(+4%)의 피해를 줍니다. 총 3회 충전됩니다.\n영웅에게 적중하면 최대 생명력의 [[-0##ERROR##%를-]]{{+3%를+}} 회복하며 착지 대기시간이 [[-1.5초-]]{{+1초+}} 감소합니다."
+       "diff": "용의 비상 사용 후, 시야가 확보된 곳 어디에든 유성우를 떨어뜨려 대상 지역 안의 적들에게 58(+4%)의 피해를 줍니다. 총 3회 충전됩니다.\n영웅에게 적중하면 최대 생명력의 [[-5%를-]]{{+3%를+}} 회복하며 착지 대기시간이 [[-1.5초-]]{{+1초+}} 감소합니다."
       }
      ]
+    },
+    {
+     "type": "ability",
+     "id": "DeathwingEarthShatter|E",
+     "name": "대지 분쇄",
+     "abilityType": "E",
+     "changes": [
+      {
+       "field": "full",
+       "before": "대지에 균열을 만들어 적중한 적들에게 80(+4%)의 피해를 주고 0.75초 동안 기절시킵니다.\n파괴자: 맹격\n한 방향으로 돌진합니다.",
+       "after": "대지에 균열을 만들어 적중한 적들에게 90(+4%)의 피해를 주고 0.75초 동안 기절시킵니다.\n파괴자: 맹격\n한 방향으로 돌진합니다.",
+       "diff": "대지에 균열을 만들어 적중한 적들에게 [[-80(+4%)의-]]{{+90(+4%)의+}} 피해를 주고 0.75초 동안 기절시킵니다.\n파괴자: 맹격\n한 방향으로 돌진합니다."
+      }
+     ],
+     "parent": "형상 전환"
+    },
+    {
+     "type": "ability",
+     "id": "DeathwingLavaBurst|W",
+     "name": "용암 폭발",
+     "abilityType": "W",
+     "changes": [
+      {
+       "field": "full",
+       "before": "1초 후, 마그마를 폭발시켜 대상 지역의 모든 적에게 30(+4%)의 피해를 줍니다. 폭발한 마그마는 웅덩이를 남겨 범위 안의 적들에게 초당 16(+4%)의 피해를 주고 35% 느려지게 합니다. 6초 동안 지속됩니다.\n파괴자: 소각\n주위 적들에게 피해를 줍니다.",
+       "after": "1초 후, 마그마를 폭발시켜 대상 지역의 모든 적에게 30(+4%)의 피해를 줍니다. 폭발한 마그마는 웅덩이를 남겨 범위 안의 적들에게 초당 20(+4%)의 피해를 주고 35% 느려지게 합니다. 6초 동안 지속됩니다.\n파괴자: 소각\n주위 적들에게 피해를 줍니다.",
+       "diff": "1초 후, 마그마를 폭발시켜 대상 지역의 모든 적에게 30(+4%)의 피해를 줍니다. 폭발한 마그마는 웅덩이를 남겨 범위 안의 적들에게 초당 [[-16(+4%)의-]]{{+20(+4%)의+}} 피해를 주고 35% 느려지게 합니다. 6초 동안 지속됩니다.\n파괴자: 소각\n주위 적들에게 피해를 줍니다."
+      }
+     ],
+     "parent": "형상 전환"
+    },
+    {
+     "type": "ability",
+     "id": "DeathwingSkyfallActive|E",
+     "name": "하늘붕괴",
+     "abilityType": "E",
+     "changes": [
+      {
+       "field": "full",
+       "before": "0.8초 후, 하늘에서 유성우가 내려 대상 지역 안의 적들에게 58(+4%)의 피해를 줍니다.\n영웅에게 적중하면 최대 생명력의 5%를 회복하며 착지 대기시간이 1.5초 감소합니다.",
+       "after": "0.8초 후, 하늘에서 유성우가 내려 대상 지역 안의 적들에게 58(+4%)의 피해를 줍니다.\n영웅에게 적중하면 최대 생명력의 3%를 회복하며 착지 대기시간이 1초 감소합니다.",
+       "diff": "0.8초 후, 하늘에서 유성우가 내려 대상 지역 안의 적들에게 58(+4%)의 피해를 줍니다.\n영웅에게 적중하면 최대 생명력의 [[-5%를-]]{{+3%를+}} 회복하며 착지 대기시간이 [[-1.5초-]]{{+1초+}} 감소합니다."
+      }
+     ],
+     "parent": "하늘붕괴"
     }
    ]
   },
@@ -923,19 +970,6 @@
      ]
     },
     {
-     "type": "talent_added",
-     "id": "OrpheaChaoticAssault",
-     "name": "혼돈의 격류",
-     "level": 4,
-     "full": "혼돈이 3회 중첩되면 적 영웅을 대상으로 한 일반 공격이 50%의 추가 피해를 줍니다."
-    },
-    {
-     "type": "talent_removed",
-     "id": "OrpheaFright",
-     "name": "섬뜩함",
-     "level": 4
-    },
-    {
      "type": "talent",
      "id": "OrpheaGrowingNightmare",
      "name": "깊어가는 악몽",
@@ -962,6 +996,20 @@
        "diff": "두려움이 폭발한 후 2초 안에 사용하면 폭발 지점에서 덥석을 시전할 수 있습니다.{{+ 이 덥석은 적 영웅을 1초 동안 70% 느려지게 합니다.+}}"
       }
      ]
+    },
+    {
+     "type": "talent_replaced",
+     "level": 4,
+     "idFrom": "OrpheaFright",
+     "idTo": "OrpheaChaoticAssault",
+     "nameFrom": "섬뜩함",
+     "nameTo": "혼돈의 격류",
+     "fullBefore": "두려움의 감속 효과가 두려움의 경로에 있는 적들에게도 적용됩니다.",
+     "fullAfter": "혼돈이 3회 중첩되면 적 영웅을 대상으로 한 일반 공격이 50%의 추가 피해를 줍니다.",
+     "cooldownBefore": "",
+     "cooldownAfter": "",
+     "match": "slot",
+     "confidence": "low"
     }
    ]
   },
@@ -997,12 +1045,6 @@
      ]
     },
     {
-     "type": "talent_removed",
-     "id": "ProbiusRepulsorWarpRift",
-     "name": "퇴치",
-     "level": 16
-    },
-    {
      "type": "talent",
      "id": "ProbiusTowerDefensePhotonCannon",
      "name": "타워 디펜스",
@@ -1015,6 +1057,15 @@
        "diff": "[[-광자포가-]]{{+분열파 또는 차원 균열이+}} 적 영웅에게 피해를 줄 때마다 광자포의 재사용 대기시간이 [[-1.25초-]]{{+4초+}} 감소합니다."
       }
      ]
+    },
+    {
+     "type": "talent_removed",
+     "id": "ProbiusRepulsorWarpRift",
+     "name": "퇴치",
+     "level": 16,
+     "full": "차원 균열의 폭발이 적을 바깥으로 밀쳐냅니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_probius_warprift_b.png"
     }
    ]
   },
@@ -1023,7 +1074,21 @@
    "changes": [
     {
      "type": "ability",
-     "id": "SamuroBladeStormDummy|Heroic",
+     "id": "SamuroAdvancingStrikes|Trait",
+     "name": "환영 이동술",
+     "abilityType": "Trait",
+     "changes": [
+      {
+       "field": "cooldown",
+       "before": "재사용 대기시간: 25초",
+       "after": "재사용 대기시간: 14초",
+       "diff": "재사용 대기시간: [[-25초-]]{{+14초+}}"
+      }
+     ]
+    },
+    {
+     "type": "ability",
+     "id": "SamuroBladestorm|Heroic",
      "name": "칼날폭풍",
      "abilityType": "Heroic",
      "changes": [
@@ -1051,21 +1116,7 @@
     },
     {
      "type": "ability",
-     "id": "SamuroIllusionMaster|Trait",
-     "name": "환영 이동술",
-     "abilityType": "Trait",
-     "changes": [
-      {
-       "field": "cooldown",
-       "before": "재사용 대기시간: 25초",
-       "after": "재사용 대기시간: 14초",
-       "diff": "재사용 대기시간: [[-25초-]]{{+14초+}}"
-      }
-     ]
-    },
-    {
-     "type": "ability",
-     "id": "SamuroMirrorImageTargeted|Q",
+     "id": "SamuroMirrorImage|Q",
      "name": "환영 복제",
      "abilityType": "Q",
      "changes": [
@@ -1282,9 +1333,9 @@
      "changes": [
       {
        "field": "full",
-       "before": "연쇄 번개로 피해를 준 적에게 8초 내에 일반 공격을 하면 15의 마나를 회복하고 최대 생명력의 0##ERROR##%를 회복합니다.\n지속 효과: 연쇄 번개가 1명의 적에게 추가로 적중합니다.",
+       "before": "연쇄 번개로 피해를 준 적에게 10초 내에 일반 공격을 하면 15의 마나를 회복하고 최대 생명력의 2.5%를 회복합니다.\n지속 효과: 연쇄 번개가 1명의 적에게 추가로 적중합니다.",
        "after": "연쇄 번개로 피해를 준 적에게 8초 내에 일반 공격을 하면 서리늑대의 회복력 효과가 1회 중첩됩니다. 대상이 적 영웅이면 대상의 최대 생명력의 3%에 해당하는 피해를 주고 준 피해만큼 생명력을 회복합니다.\n지속 효과: 연쇄 번개가 1명의 적에게 추가로 적중합니다.",
-       "diff": "연쇄 번개로 피해를 준 적에게 8초 내에 일반 공격을 하면 [[-15의-]]{{+서리늑대의+}} [[-마나를-]]{{+회복력+}} [[-회복하고-]]{{+효과가 1회 중첩됩니다. 대상이 적 영웅이면 대상의+}} 최대 생명력의 [[-0##ERROR##%를-]]{{+3%에 해당하는 피해를 주고 준 피해만큼 생명력을+}} 회복합니다.\n지속 효과: 연쇄 번개가 1명의 적에게 추가로 적중합니다."
+       "diff": "연쇄 번개로 피해를 준 적에게 [[-10초-]]{{+8초+}} 내에 일반 공격을 하면 [[-15의-]]{{+서리늑대의+}} [[-마나를-]]{{+회복력+}} [[-회복하고-]]{{+효과가 1회 중첩됩니다. 대상이 적 영웅이면 대상의+}} 최대 생명력의 [[-2.5%를-]]{{+3%에 해당하는 피해를 주고 준 피해만큼 생명력을+}} 회복합니다.\n지속 효과: 연쇄 번개가 1명의 적에게 추가로 적중합니다."
       }
      ]
     }
@@ -1361,7 +1412,7 @@
    "changes": [
     {
      "type": "ability",
-     "id": "WhitemaneFanaticalPower|Trait",
+     "id": "WhitemaneTraitZeal|Trait",
      "name": "열의",
      "abilityType": "Trait",
      "changes": [
@@ -1458,6 +1509,8 @@
  },
  "summary": {
   "heroes": 25,
-  "changes": 95
+  "changes": 97,
+  "replaced": 1,
+  "subs": 3
  }
 }

@@ -179,8 +179,8 @@ def main():
     # 현재(최신 라이브 빌드) 기술·특성 스냅숏 — 변천도의 행이 된다
     import sys as _sys
     _sys.path.insert(0, str(Path(__file__).resolve().parent))
-    from diff_heroes_data import normalize as _normalize
-    latest_norm = _normalize(json.loads((ROOT / latest_live["herodata"]).read_text(encoding="utf-8-sig")), json.loads((ROOT / latest_live["kokr"]).read_text(encoding="utf-8-sig")))
+    from diff_heroes_data import load_norm as _load_norm
+    latest_norm = _load_norm(latest_live)   # fills 적용본
     (PN / "heroes").mkdir(exist_ok=True)
     (PN / "battlegrounds").mkdir(exist_ok=True)
     for hid, m in hist_h.items():

@@ -6,6 +6,8 @@
  "fromDate": "2019-12-04",
  "toDate": "2019-12-16",
  "toPtr": false,
+ "fromRepo": "heroes-data",
+ "toRepo": "heroes-data",
  "heroes": {
   "Anubarak": {
    "name": "아눕아락",
@@ -69,7 +71,7 @@
      "after": {
       "amount": 2625,
       "scale": 0.04,
-      "regenRate": 5.4687,
+      "regenRate": 5.469,
       "regenScale": 0.04
      }
     },
@@ -104,7 +106,7 @@
      "after": {
       "amount": 2920,
       "scale": 0.04,
-      "regenRate": 6.0781,
+      "regenRate": 6.078,
       "regenScale": 0.04
      }
     },
@@ -191,20 +193,6 @@
        "diff": "사용하면 8초 동안 잃은 생명력의 [[-35%에-]]{{+30%에+}} 해당하는 보호막을 얻습니다. 보호막이 지속되는 동안 초당 최대 생명력의 2%를 회복합니다. \n보호막이 만료되거나 파괴될 때 새로운 생명력에 맞는 갑옷을 다시 획득합니다.\n용의 비상을 사용하면 보호막과 효과가 즉시 사라집니다."
       }
      ]
-    },
-    {
-     "type": "talent",
-     "id": "DeathwingSkyfall",
-     "name": "하늘붕괴",
-     "level": 7,
-     "changes": [
-      {
-       "field": "full",
-       "before": "용의 비상 사용 후, 시야가 확보된 곳 어디에든 유성우를 떨어뜨려 대상 지역 안의 적들에게 58(+4%)의 피해를 줍니다. 총 3회 충전됩니다.\n영웅에게 적중하면 최대 생명력의 5%를 회복하며 착지 대기시간이 1.5초 감소합니다.",
-       "after": "용의 비상 사용 후, 시야가 확보된 곳 어디에든 유성우를 떨어뜨려 대상 지역 안의 적들에게 58(+4%)의 피해를 줍니다. 총 3회 충전됩니다.\n영웅에게 적중하면 최대 생명력의 0##ERROR##%를 회복하며 착지 대기시간이 1.5초 감소합니다.",
-       "diff": "용의 비상 사용 후, 시야가 확보된 곳 어디에든 유성우를 떨어뜨려 대상 지역 안의 적들에게 58(+4%)의 피해를 줍니다. 총 3회 충전됩니다.\n영웅에게 적중하면 최대 생명력의 [[-5%를-]]{{+0##ERROR##%를+}} 회복하며 착지 대기시간이 1.5초 감소합니다."
-      }
-     ]
     }
    ]
   },
@@ -288,13 +276,13 @@
      "before": {
       "amount": 1650,
       "scale": 0.04,
-      "regenRate": 3.4375,
+      "regenRate": 3.438,
       "regenScale": 0.04
      },
      "after": {
       "amount": 1725,
       "scale": 0.04,
-      "regenRate": 3.5898,
+      "regenRate": 3.59,
       "regenScale": 0.04
      }
     },
@@ -339,7 +327,7 @@
     },
     {
      "type": "ability",
-     "id": "SamuroBladeStormDummy|Heroic",
+     "id": "SamuroBladestorm|Heroic",
      "name": "칼날폭풍",
      "abilityType": "Heroic",
      "changes": [
@@ -373,7 +361,7 @@
     },
     {
      "type": "ability",
-     "id": "SamuroMirrorImageTargeted|Q",
+     "id": "SamuroMirrorImage|Q",
      "name": "환영 복제",
      "abilityType": "Q",
      "changes": [
@@ -404,13 +392,6 @@
        "diff": "치명타를 최대 2회 충전해서 사용할 수 있고 적 영웅에게 일반 공격을 할 때마다 치명타의 재사용 대기시간이 [[-1.75초-]]{{+2초+}} 감소합니다."
       }
      ]
-    },
-    {
-     "type": "talent_added",
-     "id": "SamuroDanceOfDeath",
-     "name": "죽음의 춤",
-     "level": 20,
-     "full": "칼날폭풍을 사용하면 환영도 칼날폭풍을 사용하여 30%의 피해를 줍니다."
     },
     {
      "type": "talent",
@@ -503,27 +484,19 @@
      ]
     },
     {
-     "type": "talent_removed",
-     "id": "SamuroWhirlwindStorm",
-     "name": "죽음의 춤",
-     "level": 20
-    }
-   ]
-  },
-  "Thrall": {
-   "name": "스랄",
-   "changes": [
-    {
      "type": "talent",
-     "id": "ThrallMasteryRollingThunder",
-     "name": "우레",
-     "level": 1,
+     "id": "SamuroDanceOfDeath",
+     "idFrom": "SamuroWhirlwindStorm",
+     "idTo": "SamuroDanceOfDeath",
+     "renamed": true,
+     "name": "죽음의 춤",
+     "level": 20,
      "changes": [
       {
        "field": "full",
-       "before": "연쇄 번개로 피해를 준 적에게 10초 내에 일반 공격을 하면 15의 마나를 회복하고 최대 생명력의 2.5%를 회복합니다.\n지속 효과: 연쇄 번개가 1명의 적에게 추가로 적중합니다.",
-       "after": "연쇄 번개로 피해를 준 적에게 8초 내에 일반 공격을 하면 15의 마나를 회복하고 최대 생명력의 0##ERROR##%를 회복합니다.\n지속 효과: 연쇄 번개가 1명의 적에게 추가로 적중합니다.",
-       "diff": "연쇄 번개로 피해를 준 적에게 [[-10초-]]{{+8초+}} 내에 일반 공격을 하면 15의 마나를 회복하고 최대 생명력의 [[-2.5%를-]]{{+0##ERROR##%를+}} 회복합니다.\n지속 효과: 연쇄 번개가 1명의 적에게 추가로 적중합니다."
+       "before": "칼날폭풍을 사용하면 환영도 칼날폭풍을 사용하여 25%의 피해를 줍니다.",
+       "after": "칼날폭풍을 사용하면 환영도 칼날폭풍을 사용하여 30%의 피해를 줍니다.",
+       "diff": "칼날폭풍을 사용하면 환영도 칼날폭풍을 사용하여 [[-25%의-]]{{+30%의+}} 피해를 줍니다."
       }
      ]
     }
@@ -538,13 +511,13 @@
      "before": {
       "amount": 2156,
       "scale": 0.04,
-      "regenRate": 4.4921,
+      "regenRate": 4.492,
       "regenScale": 0.04
      },
      "after": {
       "amount": 2075,
       "scale": 0.04,
-      "regenRate": 4.3164,
+      "regenRate": 4.316,
       "regenScale": 0.04
      }
     }
@@ -641,6 +614,21 @@
        "diff": "정의의 망치가 적 영웅의 방어력을 4초 동안 20 감소시키고 대상의 최대 생명력의 [[-6%만큼-]]{{+7%만큼+}} 추가 피해를 줍니다."
       }
      ]
+    },
+    {
+     "type": "ability",
+     "id": "YrelAvengingWrath|E",
+     "name": "응징의 격노",
+     "abilityType": "E",
+     "changes": [
+      {
+       "field": "energy",
+       "before": "",
+       "after": "마나: 65",
+       "diff": "[[--]]{{+마나: 65+}}"
+      }
+     ],
+     "parent": "응징의 격노"
     }
    ]
   },
@@ -665,7 +653,9 @@
   }
  },
  "summary": {
-  "heroes": 13,
-  "changes": 41
+  "heroes": 12,
+  "changes": 39,
+  "renamed": 1,
+  "subs": 1
  }
 }

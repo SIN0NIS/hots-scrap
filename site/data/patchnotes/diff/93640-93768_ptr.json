@@ -6,6 +6,8 @@
  "fromDate": "2025-02-03",
  "toDate": "2025-02-27",
  "toPtr": true,
+ "fromRepo": "heroes-data",
+ "toRepo": "heroes-data",
  "heroes": {
   "Auriel": {
    "name": "아우리엘",
@@ -141,6 +143,18 @@
     }
    ]
   },
+  "LostVikings": {
+   "name": "길 잃은 바이킹",
+   "changes": [
+    {
+     "type": "stat",
+     "field": "speed",
+     "before": 5.5664,
+     "after": 5.5658,
+     "unit": "에릭"
+    }
+   ]
+  },
   "Lucio": {
    "name": "루시우",
    "changes": [
@@ -259,13 +273,13 @@
      "before": {
       "amount": 2027,
       "scale": 0.04,
-      "regenRate": 4.2226,
+      "regenRate": 4.223,
       "regenScale": 0.04
      },
      "after": {
       "amount": 2080,
       "scale": 0.04,
-      "regenRate": 4.3333,
+      "regenRate": 4.333,
       "regenScale": 0.04
      }
     },
@@ -346,29 +360,11 @@
      ]
     }
    ]
-  },
-  "Tychus": {
-   "name": "타이커스",
-   "changes": [
-    {
-     "type": "talent",
-     "id": "TychusMasteryDrakkenLaserFocusingDiodes",
-     "name": "초점 조정 진공관",
-     "level": 20,
-     "changes": [
-      {
-       "field": "full",
-       "before": "드라켄 레이저 천공기의 사거리가 50% 증가합니다. 한 대상을 공격하는 시간이 길어질수록 공격력이 증가하여 최대 100%의 추가 피해를 줍니다.",
-       "after": "드라켄 레이저 천공기의 사거리가 50% 증가합니다. 한 대상을 공격하는 시간이 길어질수록 공격력이 증가하여 최대 0%의 추가 피해를 줍니다.",
-       "diff": "드라켄 레이저 천공기의 사거리가 50% 증가합니다. 한 대상을 공격하는 시간이 길어질수록 공격력이 증가하여 최대 [[-100%의-]]{{+0%의+}} 추가 피해를 줍니다."
-      }
-     ]
-    }
-   ]
   }
  },
  "summary": {
   "heroes": 5,
-  "changes": 23
+  "changes": 23,
+  "units": 1
  }
 }

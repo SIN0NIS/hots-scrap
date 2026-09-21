@@ -6,6 +6,8 @@
  "fromDate": "2020-02-12",
  "toDate": "2020-03-11",
  "toPtr": false,
+ "fromRepo": "heroes-data",
+ "toRepo": "heroes-data",
  "heroes": {
   "Ana": {
    "name": "아나",
@@ -124,7 +126,7 @@
      "before": {
       "amount": 2782,
       "scale": 0.04,
-      "regenRate": 5.8007,
+      "regenRate": 5.801,
       "regenScale": 0.04
      },
      "after": {
@@ -501,7 +503,7 @@
     },
     {
      "type": "ability",
-     "id": "NecromancerPoisonNovaInstant|Heroic",
+     "id": "NecromancerPoisonNova|Heroic",
      "name": "맹독 확산",
      "abilityType": "Heroic",
      "changes": [
@@ -515,7 +517,7 @@
     },
     {
      "type": "ability",
-     "id": "NecromancerRaiseSkeletonDisplayAbility|Trait",
+     "id": "NecromancerRaiseSkeleton|Trait",
      "name": "해골 되살리기",
      "abilityType": "Trait",
      "changes": [
@@ -540,19 +542,6 @@
        "diff": "[[-1초 후에 자신에게 돌아오는 낫을 소환합니다. 낫은 돌아오면서 적들에게 240(+4%)의 피해를 줍니다.-]]{{+1초 후에 자신에게 돌아오는 낫을 소환합니다. 낫은 돌아오면서 적들에게 210(+4%)의 피해를 주고, 적 영웅에게 적중하면 해골 전사를 1명 소환합니다. 이 효과는 자신이 최대로 부릴 수 있는 해골 전사의 수에 영향을 받지 않습니다.+}}"
       }
      ]
-    },
-    {
-     "type": "talent_removed",
-     "id": "HeroGenericExecutionerPassive",
-     "name": "집행자",
-     "level": 13
-    },
-    {
-     "type": "talent_added",
-     "id": "NecromancerBoneArmorWallOfBonesTalent",
-     "name": "뼈의 장벽",
-     "level": 7,
-     "full": "뼈 갑옷의 보호막 흡수량이 최대 생명력의 35%로 증가하며, 보호막의 지속 시간 동안 기술 방어력이 20 증가합니다."
     },
     {
      "type": "talent",
@@ -585,7 +574,12 @@
        "after": "뼈 감옥의 이동 불가 지속 시간이 0.25초 증가합니다. 뼈 감옥 안에 갇힌 적은 방어력이 2초 동안 25 감소합니다.",
        "diff": "{{+뼈 감옥의 이동 불가 지속 시간이 0.25초 증가합니다. +}}뼈 감옥 안에 갇힌 적은 방어력이 [[-1.75초-]]{{+2초+}} 동안 25 감소합니다."
       }
-     ]
+     ],
+     "moved": {
+      "from": 16,
+      "to": 13,
+      "kind": "redesign"
+     }
     },
     {
      "type": "talent",
@@ -628,19 +622,6 @@
        "diff": "[[-해골 마법사의 감속 효과가 20% 증가합니다.\n지속 효과: 해골 전사의 일반 공격이 적을 2초 동안 30% 느려지게 합니다.-]]{{+해골 마법학자의 감속 효과가 20% 증가합니다. \n유령의 낫이 적 영웅에게 5번 적중할 때마다 주위에서 죽은 적 돌격병을 해골 전사가 아닌 해골 마법학자로 되살립니다.+}}"
       }
      ]
-    },
-    {
-     "type": "talent_removed",
-     "id": "NecromancerTalentCorpseExplosion",
-     "name": "시체 폭발",
-     "level": 16
-    },
-    {
-     "type": "talent_added",
-     "id": "NecromancerTalentDecrepify",
-     "name": "노화",
-     "level": 16,
-     "full": "유령의 낫과 해골 전사의 일반 공격이 적 영웅을 2.5초 동안 40% 느려지게 합니다."
     },
     {
      "type": "talent",
@@ -706,7 +687,44 @@
        "after": "저주의 수확과 해골 전사의 공격에 적중당한 적 영웅의 공격력이 3초 동안 40% 감소합니다.",
        "diff": "[[-저주의 수확의 공격 속도 감소 효과가 35% 증가하고 지속 시간이 1초 증가합니다.-]]{{+저주의 수확과 해골 전사의 공격에 적중당한 적 영웅의 공격력이 3초 동안 40% 감소합니다.+}}"
       }
-     ]
+     ],
+     "moved": {
+      "from": 7,
+      "to": 16,
+      "kind": "redesign"
+     }
+    },
+    {
+     "type": "talent_replaced",
+     "level": 16,
+     "idFrom": "NecromancerTalentCorpseExplosion",
+     "idTo": "NecromancerTalentDecrepify",
+     "nameFrom": "시체 폭발",
+     "nameTo": "노화",
+     "fullBefore": "해골 전사가 죽으면 폭발하여 좁은 지역에 55(+4%)의 피해를 줍니다. 영웅이 아닌 대상에게는 100%의 추가 피해를 줍니다.",
+     "fullAfter": "유령의 낫과 해골 전사의 일반 공격이 적 영웅을 2.5초 동안 40% 느려지게 합니다.",
+     "cooldownBefore": "",
+     "cooldownAfter": "",
+     "match": "slot",
+     "confidence": "low"
+    },
+    {
+     "type": "talent_removed",
+     "id": "HeroGenericExecutionerPassive",
+     "name": "집행자",
+     "level": 13,
+     "full": "감속, 이동 불가, 기절 상태인 적 영웅에게 일반 공격을 하면 일반 공격력이 3초 동안 30% 증가합니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_talent_autoattack_damage.png"
+    },
+    {
+     "type": "talent_added",
+     "id": "NecromancerBoneArmorWallOfBonesTalent",
+     "name": "뼈의 장벽",
+     "level": 7,
+     "full": "뼈 갑옷의 보호막 흡수량이 최대 생명력의 35%로 증가하며, 보호막의 지속 시간 동안 기술 방어력이 20 증가합니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_necromancer_bonearmor.png"
     }
    ]
   },
@@ -838,6 +856,23 @@
        "diff": "마나: [[-60-]]{{+70+}}"
       }
      ]
+    },
+    {
+     "type": "stat",
+     "field": "life",
+     "before": {
+      "amount": 1620,
+      "scale": 0.0475,
+      "regenRate": 3.375,
+      "regenScale": 0.048
+     },
+     "after": {
+      "amount": 1520,
+      "scale": 0.0475,
+      "regenRate": 3.172,
+      "regenScale": 0.048
+     },
+     "unit": "미샤"
     }
    ]
   },
@@ -869,13 +904,13 @@
      "before": {
       "amount": 1765,
       "scale": 0.04,
-      "regenRate": 3.6757,
+      "regenRate": 3.676,
       "regenScale": 0.04
      },
      "after": {
       "amount": 1850,
       "scale": 0.04,
-      "regenRate": 3.8554,
+      "regenRate": 3.855,
       "regenScale": 0.04
      }
     },
@@ -923,6 +958,9 @@
  },
  "summary": {
   "heroes": 16,
-  "changes": 58
+  "changes": 58,
+  "replaced": 1,
+  "moved": 2,
+  "units": 1
  }
 }

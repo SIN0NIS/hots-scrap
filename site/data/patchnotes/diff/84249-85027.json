@@ -6,6 +6,8 @@
  "fromDate": "2021-03-06",
  "toDate": "2021-05-22",
  "toPtr": false,
+ "fromRepo": "heroes-data",
+ "toRepo": "heroes-data",
  "heroes": {
   "Anduin": {
    "name": "안두인",
@@ -73,25 +75,6 @@
      ]
     },
     {
-     "type": "talent_removed",
-     "id": "AnduinBoldStrategy",
-     "name": "과감한 전략",
-     "level": 1
-    },
-    {
-     "type": "talent_added",
-     "id": "AnduinCensure",
-     "name": "책망",
-     "level": 20,
-     "full": "응징이 적을 0.75초 동안 기절시키며, 이동 불가의 지속 시간이 0.5초 증가합니다."
-    },
-    {
-     "type": "talent_removed",
-     "id": "AnduinChastiseHolyReach",
-     "name": "신성한 공세",
-     "level": 4
-    },
-    {
      "type": "talent",
      "id": "AnduinDivineStarHolyNova",
      "name": "신성한 폭발",
@@ -136,7 +119,12 @@
        "after": "천상의 별이 뻗어나가는 동안 경로에 있는 아군에게 4초 동안 128(+4%)의 피해를 흡수하는 보호막을 부여합니다.\n천상의 별이 적 영웅에게 적중하면 자신에게 4초 동안 185(+4%)의 피해를 흡수하는 보호막을 부여합니다.",
        "diff": "[[-천상의 별이 적 영웅에게 적중하면 4초 동안 185(+4%)의 피해를 흡수하는 보호막을 얻습니다.-]]{{+천상의 별이 뻗어나가는 동안 경로에 있는 아군에게 4초 동안 128(+4%)의 피해를 흡수하는 보호막을 부여합니다.\n천상의 별이 적 영웅에게 적중하면 자신에게 4초 동안 185(+4%)의 피해를 흡수하는 보호막을 부여합니다.+}}"
       }
-     ]
+     ],
+     "moved": {
+      "from": 7,
+      "to": 1,
+      "kind": "redesign"
+     }
     },
     {
      "type": "talent",
@@ -161,7 +149,12 @@
        "after": "재사용 대기시간: 40초",
        "diff": "재사용 대기시간: [[-30초-]]{{+40초+}}"
       }
-     ]
+     ],
+     "moved": {
+      "from": 20,
+      "to": 7,
+      "kind": "redesign"
+     }
     },
     {
      "type": "talent",
@@ -180,13 +173,12 @@
        "after": "순간 치유를 이전과 다른 대상에게 사용하면 치유량이 10% 증가하고 재사용 대기시간이 40% 감소합니다.",
        "diff": "순간 치유를 이전과 다른 대상에게 사용하면 치유량이 [[-20%-]]{{+10%+}} 증가하고 재사용 대기시간이 [[-50%-]]{{+40%+}} 감소합니다."
       }
-     ]
-    },
-    {
-     "type": "talent_removed",
-     "id": "AnduinFlashHealInnerFocus",
-     "name": "내면의 집중력",
-     "level": 16
+     ],
+     "moved": {
+      "from": 16,
+      "to": 1,
+      "kind": "tweak"
+     }
     },
     {
      "type": "talent",
@@ -205,7 +197,12 @@
        "after": "순간 치유가 5초에 걸쳐 130(+4%)의 생명력을 추가로 회복시킵니다. 적 영웅에게 일반 공격을 할 때마다 이 효과의 지속 시간이 갱신됩니다.",
        "diff": "[[-적 영웅에게 일반 공격을 하면 다음 순간 치유가 5초에 걸쳐 130(+4%)의 생명력을 추가로 회복시킵니다.-]]{{+순간 치유가 5초에 걸쳐 130(+4%)의 생명력을 추가로 회복시킵니다. 적 영웅에게 일반 공격을 할 때마다 이 효과의 지속 시간이 갱신됩니다.+}}"
       }
-     ]
+     ],
+     "moved": {
+      "from": 1,
+      "to": 16,
+      "kind": "redesign"
+     }
     },
     {
      "type": "talent",
@@ -224,7 +221,12 @@
        "after": "빛폭탄의 대상의 이동 속도가 40% 증가하고 방어력이 50 증가합니다. 3초 동안 지속됩니다.",
        "diff": "[[-공격 속도가 20% 증가하고 일반 공격 사거리가 15% 증가합니다.-]]{{+빛폭탄의 대상의 이동 속도가 40% 증가하고 방어력이 50 증가합니다. 3초 동안 지속됩니다.+}}"
       }
-     ]
+     ],
+     "moved": {
+      "from": 4,
+      "to": 20,
+      "kind": "redesign"
+     }
     },
     {
      "type": "talent",
@@ -237,7 +239,12 @@
        "before": 20,
        "after": 16
       }
-     ]
+     ],
+     "moved": {
+      "from": 20,
+      "to": 16,
+      "kind": "moved"
+     }
     },
     {
      "type": "talent",
@@ -256,20 +263,12 @@
        "after": "주기적으로 주위 아군 영웅의 생명력을 50(+4%) 회복시키는 빛샘을 소환합니다. 아군을 15회 치유하거나 다른 곳에 소환되면 사라집니다.\n아군 영웅을 치유할 때마다 재사용 대기시간이 1초 감소합니다.",
        "diff": "주기적으로 주위 아군 영웅의 생명력을 [[-75(+4%)-]]{{+50(+4%)+}} 회복시키는 빛샘을 소환합니다. 아군을 [[-10회-]]{{+15회+}} 치유하거나 다른 곳에 소환되면 사라집니다.\n아군 영웅을 치유할 때마다 재사용 대기시간이 1초 감소합니다."
       }
-     ]
-    },
-    {
-     "type": "talent_added",
-     "id": "AnduinPiercingLight",
-     "name": "꿰뚫는 빛",
-     "level": 4,
-     "full": "응징이 첫 번째 영웅을 관통하여 최대 두 대상에게 적중합니다.\n퀘스트: 한 번의 응징이 적 영웅 두 명에게 적중하면 기술 위력이 영구히 1 증가하여 최대 10 증가합니다."
-    },
-    {
-     "type": "talent_removed",
-     "id": "AnduinPursuedByGrace",
-     "name": "뒤따르는 은총",
-     "level": 1
+     ],
+     "moved": {
+      "from": 16,
+      "to": 1,
+      "kind": "tweak"
+     }
     },
     {
      "type": "talent",
@@ -286,11 +285,67 @@
      ]
     },
     {
+     "type": "talent_removed",
+     "id": "AnduinPursuedByGrace",
+     "name": "뒤따르는 은총",
+     "level": 1,
+     "full": "적 영웅에게 피해를 주면 주위에서 생명력이 가장 낮은 아군의 생명력을 35(+4%) 회복시킵니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_anduin_varians_legacy.png"
+    },
+    {
+     "type": "talent_removed",
+     "id": "AnduinBoldStrategy",
+     "name": "과감한 전략",
+     "level": 1,
+     "full": "다른 1 레벨 특성들을 모두 습득하는 대신 순간 치유의 재사용 대기시간이 2초 증가합니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_anduin_bold_strategy.png"
+    },
+    {
+     "type": "talent_removed",
+     "id": "AnduinChastiseHolyReach",
+     "name": "신성한 공세",
+     "level": 4,
+     "full": "응징의 이동 불가 시간이 1.25초에서 1.5초로 증가합니다. 응징이 적에게 적중하면 다음 일반 공격이 75%의 추가 피해를 주고 자신 주위에 있는 아군 영웅의 생명력을 100(+4%) 회복시킵니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_anduin_chastise.png"
+    },
+    {
+     "type": "talent_removed",
+     "id": "AnduinFlashHealInnerFocus",
+     "name": "내면의 집중력",
+     "level": 16,
+     "full": "사용하면 순간 치유의 재사용 대기시간이 초기화되고 다음 순간 치유의 치유량이 40% 증가합니다.\n천상의 별로 적 영웅에게 피해를 주면 이 능력의 재사용 대기시간이 8초 감소합니다.",
+     "cooldown": "재사용 대기시간: 20초",
+     "icon": "storm_ui_icon_anduin_inner_focus.png"
+    },
+    {
      "type": "talent_added",
      "id": "AnduinSurgeofLight",
      "name": "빛의 쇄도",
      "level": 4,
-     "full": "일반 공격을 할 때마다 응징의 재사용 대기시간이 0.5초 감소합니다. 응징으로 이동 불가 상태가 된 적 영웅에게 일반 공격을 하면 일반 공격이 추가로 적중하며 25의 마나를 회복합니다."
+     "full": "일반 공격을 할 때마다 응징의 재사용 대기시간이 0.5초 감소합니다. 응징으로 이동 불가 상태가 된 적 영웅에게 일반 공격을 하면 일반 공격이 추가로 적중하며 25의 마나를 회복합니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_anduin_chastise.png"
+    },
+    {
+     "type": "talent_added",
+     "id": "AnduinPiercingLight",
+     "name": "꿰뚫는 빛",
+     "level": 4,
+     "full": "응징이 첫 번째 영웅을 관통하여 최대 두 대상에게 적중합니다.\n퀘스트: 한 번의 응징이 적 영웅 두 명에게 적중하면 기술 위력이 영구히 1 증가하여 최대 10 증가합니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_anduin_chastise_a.png"
+    },
+    {
+     "type": "talent_added",
+     "id": "AnduinCensure",
+     "name": "책망",
+     "level": 20,
+     "full": "응징이 적을 0.75초 동안 기절시키며, 이동 불가의 지속 시간이 0.5초 증가합니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_anduin_chastise.png"
     }
    ]
   },
@@ -504,12 +559,6 @@
      ]
     },
     {
-     "type": "talent_removed",
-     "id": "BattleMomentumCrusader",
-     "name": "축복받은 여세",
-     "level": 7
-    },
-    {
      "type": "talent",
      "id": "CrusaderBlessedHammer",
      "name": "축복받은 망치",
@@ -524,20 +573,6 @@
      ]
     },
     {
-     "type": "talent_added",
-     "id": "CrusaderBlessedMomentum",
-     "name": "축복받은 여세",
-     "level": 16,
-     "full": "일반 공격 시 공격 속도가 4초 동안 10% 증가하여 최대 40%까지 증가하며, 일반 기술의 재사용 대기시간도 0.5초 감소합니다."
-    },
-    {
-     "type": "talent_added",
-     "id": "CrusaderCondemnShrinkingVacuum",
-     "name": "조여드는 진공",
-     "level": 16,
-     "full": "규탄에 적중한 적의 공격력이 25% 감소하고 2초 동안 25% 느려집니다."
-    },
-    {
      "type": "talent",
      "id": "CrusaderHeroicAbilityFallingSword",
      "name": "천벌의 검",
@@ -550,13 +585,6 @@
        "diff": "[[-대상 위치로 도약합니다. 공중에 있는 동안 이동 명령으로 착지 지점을 조정할 수 있습니다.\n2초 후에 착지하여 주위 적들에게 210(+4%)의 피해를 주고 0.2초 동안 기절시키고 3초 동안 50% 느려지게 합니다.-]]{{+2초 동안 공중으로 도약하여 이동 명령으로 착지 지점을 조정할 수 있습니다. 공중에 있는 동안 아래 있는 아군들을 저지 불가 상태로 만듭니다. 착지 시 적중한 적에게 150(+4%)의 피해를 주고 0.25초 동안 기절시킵니다.+}}"
       }
      ]
-    },
-    {
-     "type": "talent_added",
-     "id": "CrusaderIronSkinSteedCharge",
-     "name": "군마 질주",
-     "level": 7,
-     "full": "사용하면 즉시 3초 동안 탈것에 타며, 피해를 받아도 탈것에서 떨어지지 않습니다.\n지속 효과: 철갑 피부의 지속 시간이 1초 증가합니다."
     },
     {
      "type": "talent",
@@ -575,7 +603,12 @@
        "after": "이동 속도가 10% 증가합니다. 규탄을 시전하는 동안 이 효과가 20%로 증가합니다.",
        "diff": "[[-규탄 사용 시, 기술이 시전될 때까지 이동 속도가 25% 증가합니다.-]]{{+이동 속도가 10% 증가합니다. 규탄을 시전하는 동안 이 효과가 20%로 증가합니다.+}}"
       }
-     ]
+     ],
+     "moved": {
+      "from": 4,
+      "to": 7,
+      "kind": "redesign"
+     }
     },
     {
      "type": "talent",
@@ -606,12 +639,6 @@
      ]
     },
     {
-     "type": "talent_removed",
-     "id": "CrusaderMasteryIronSkinFanaticism",
-     "name": "광신",
-     "level": 16
-    },
-    {
      "type": "talent",
      "id": "CrusaderMasteryIronSkinHoldYourGround",
      "name": "위치 사수",
@@ -622,13 +649,12 @@
        "before": 1,
        "after": 4
       }
-     ]
-    },
-    {
-     "type": "talent_removed",
-     "id": "CrusaderMasteryIronSkinReinforce",
-     "name": "강화 갑옷",
-     "level": 1
+     ],
+     "moved": {
+      "from": 1,
+      "to": 4,
+      "kind": "moved"
+     }
     },
     {
      "type": "talent",
@@ -666,7 +692,12 @@
        "after": "징벌이 2명 이상의 적 영웅에게 적중하면 감속 효과가 80%로 증가하고 서서히 사라지지 않습니다.\n퀘스트: 징벌이 4명 이상의 적 영웅에게 동시에 적중해야 합니다.\n보상: 징벌의 감속 효과가 80%로 증가합니다.",
        "diff": "징벌이 2명 이상의 적 영웅에게 적중하면 감속 효과가 80%로 증가하고 서서히 사라지지 않습니다.\n퀘스트: 징벌이 4명 이상의 적 영웅에게 동시에 적중해야 합니다.\n보상: 징벌의 감속 효과가 80%로 [[-증가하고 서서히 사라지지 않습니다.-]]{{+증가합니다.+}}"
       }
-     ]
+     ],
+     "moved": {
+      "from": 7,
+      "to": 4,
+      "kind": "redesign"
+     }
     },
     {
      "type": "talent",
@@ -699,14 +730,12 @@
        "after": "징벌에 적중당한 적 영웅의 받는 치유량이 2초 동안 25% 감소합니다. 대상에게 일반 공격을 하면 효과의 지속 시간이 갱신됩니다.",
        "diff": "[[-눈부신 방패가 적들에게 4초 동안 징표를 남깁니다. 아군이 징표가 있는 적을 공격하면 적은 90(+4%)의 추가 피해를 받으며, 징표는 사라집니다.-]]{{+징벌에 적중당한 적 영웅의 받는 치유량이 2초 동안 25% 감소합니다. 대상에게 일반 공격을 하면 효과의 지속 시간이 갱신됩니다.+}}"
       }
-     ]
-    },
-    {
-     "type": "talent_added",
-     "id": "CrusaderPassiveDivineFortress",
-     "name": "신의 요새",
-     "level": 1,
-     "full": "빌려온 힘: 최대 생명력이 20% 증가합니다. 죽을 때마다 이 증가량이 5% 감소합니다.\n적 영웅에게 일반 공격을 하면 2.5초 동안 물리 방어력이 8 증가하며, 최대 40회 중첩됩니다."
+     ],
+     "moved": {
+      "from": 4,
+      "to": 7,
+      "kind": "redesign"
+     }
     },
     {
      "type": "talent",
@@ -725,13 +754,89 @@
        "after": "눈부신 방패의 충전 횟수가 1회 증가합니다.",
        "diff": "[[-눈부신 방패의 실명 효과의 지속 시간이 1초 증가합니다. 눈부신 방패가 적중한 적에게 일반 공격을 하면 지속 시간이 추가로 1초 증가하여 최대 3초 증가합니다.-]]{{+눈부신 방패의 충전 횟수가 1회 증가합니다.+}}"
       }
-     ]
+     ],
+     "moved": {
+      "from": 7,
+      "to": 1,
+      "kind": "redesign"
+     }
+    },
+    {
+     "type": "talent",
+     "id": "CrusaderBlessedMomentum",
+     "idFrom": "BattleMomentumCrusader",
+     "idTo": "CrusaderBlessedMomentum",
+     "renamed": true,
+     "name": "축복받은 여세",
+     "level": 16,
+     "changes": [
+      {
+       "field": "level",
+       "before": 7,
+       "after": 16
+      },
+      {
+       "field": "full",
+       "before": "일반 공격을 할 때마다 일반 기술의 재사용 대기시간이 0.5초 감소합니다.",
+       "after": "일반 공격 시 공격 속도가 4초 동안 10% 증가하여 최대 40%까지 증가하며, 일반 기술의 재사용 대기시간도 0.5초 감소합니다.",
+       "diff": "[[-일반 공격을 할 때마다 일반 기술의 재사용 대기시간이 0.5초 감소합니다.-]]{{+일반 공격 시 공격 속도가 4초 동안 10% 증가하여 최대 40%까지 증가하며, 일반 기술의 재사용 대기시간도 0.5초 감소합니다.+}}"
+      }
+     ],
+     "moved": {
+      "from": 7,
+      "to": 16,
+      "kind": "redesign"
+     }
+    },
+    {
+     "type": "talent_replaced",
+     "level": 1,
+     "idFrom": "CrusaderMasteryIronSkinReinforce",
+     "idTo": "CrusaderPassiveDivineFortress",
+     "nameFrom": "강화 갑옷",
+     "nameTo": "신의 요새",
+     "fullBefore": "일반 기술을 사용하면 물리 방어력이 2.5초 동안 60 증가합니다.",
+     "fullAfter": "빌려온 힘: 최대 생명력이 20% 증가합니다. 죽을 때마다 이 증가량이 5% 감소합니다.\n적 영웅에게 일반 공격을 하면 2.5초 동안 물리 방어력이 8 증가하며, 최대 40회 중첩됩니다.",
+     "cooldownBefore": "",
+     "cooldownAfter": "",
+     "match": "slot",
+     "confidence": "low"
+    },
+    {
+     "type": "talent_removed",
+     "id": "CrusaderMasteryIronSkinFanaticism",
+     "name": "광신",
+     "level": 16,
+     "full": "철갑 피부의 지속 시간이 2초 증가합니다. 철갑 피부가 활성화된 동안 피해를 받을 때마다 이동 속도가 8% 증가하여 최대 40% 증가합니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_johanna_iron_skin.png"
     },
     {
      "type": "talent_removed",
      "id": "GenericTalentImposingPresence",
      "name": "압도적 존재감",
-     "level": 16
+     "level": 16,
+     "full": "사용하면 주위 적 영웅과 소환수가 2.5초 동안 공격 속도가 50%, 이동 속도가 20% 감소합니다.\n지속 효과: 자신을 공격하는 적 영웅과 소환수의 공격 속도가 2.5초 동안 20% 감소합니다.",
+     "cooldown": "재사용 대기시간: 20초",
+     "icon": "storm_ui_icon_talent_imposingpresence.png"
+    },
+    {
+     "type": "talent_added",
+     "id": "CrusaderIronSkinSteedCharge",
+     "name": "군마 질주",
+     "level": 7,
+     "full": "사용하면 즉시 3초 동안 탈것에 타며, 피해를 받아도 탈것에서 떨어지지 않습니다.\n지속 효과: 철갑 피부의 지속 시간이 1초 증가합니다.",
+     "cooldown": "재사용 대기시간: 30초",
+     "icon": "storm_btn_d3ros_crusader_steedcharge.png"
+    },
+    {
+     "type": "talent_added",
+     "id": "CrusaderCondemnShrinkingVacuum",
+     "name": "조여드는 진공",
+     "level": 16,
+     "full": "규탄에 적중한 적의 공격력이 25% 감소하고 2초 동안 25% 느려집니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_johanna_condemn.png"
     }
    ]
   },
@@ -744,7 +849,7 @@
      "before": {
       "amount": 2150,
       "scale": 0.04,
-      "regenRate": 4.4804,
+      "regenRate": 4.48,
       "regenScale": 0.04
      },
      "after": {
@@ -950,13 +1055,12 @@
        "after": "증오 중첩당 증가하는 이동 속도가 2.5%로 증가합니다.",
        "diff": "[[-증오 10중첩 시 이동 속도 증가량이 총 20%로 증가하고 초당 마나 재생량이 4 증가합니다.-]]{{+증오 중첩당 증가하는 이동 속도가 2.5%로 증가합니다.+}}"
       }
-     ]
-    },
-    {
-     "type": "talent_removed",
-     "id": "DemonHunterCombatStyleRancor",
-     "name": "원한",
-     "level": 20
+     ],
+     "moved": {
+      "from": 1,
+      "to": 7,
+      "kind": "redesign"
+     }
     },
     {
      "type": "talent",
@@ -989,7 +1093,12 @@
        "after": "빌려온 힘: 공격 속도가 20% 증가합니다. 죽을 때마다 증가 효과가 5%씩 감소합니다.\n퀘스트: 영웅에게 일반 공격이 50회 적중할 때마다 증오 중첩당 증가하는 공격력이 1%씩 증가하여 최대 5% 증가합니다.",
        "diff": "[[-공격 속도가 영구히 10% 증가합니다.\n퀘스트: 일반 공격이 적 영웅에게 100회 이상 적중해야 합니다.\n보상: 증오 중첩당 증가하는 일반 공격력이 추가로 2% 증가합니다.-]]{{+빌려온 힘: 공격 속도가 20% 증가합니다. 죽을 때마다 증가 효과가 5%씩 감소합니다.\n퀘스트: 영웅에게 일반 공격이 50회 적중할 때마다 증오 중첩당 증가하는 공격력이 1%씩 증가하여 최대 5% 증가합니다.+}}"
       }
-     ]
+     ],
+     "moved": {
+      "from": 4,
+      "to": 1,
+      "kind": "redesign"
+     }
     },
     {
      "type": "talent",
@@ -1008,7 +1117,12 @@
        "after": "도약의 일반 공격력 증가량이 증오 중첩당 6%에서 15%로 증가합니다. 이 공격이 적중한 대상을 1.5초 안에 처치하면 도약의 재사용 대기시간이 초기화되고 소모한 마나를 돌려받습니다.\n지속 효과: 도약의 재사용 대기시간이 5초 감소합니다.",
        "diff": "도약의 일반 공격력 증가량이 증오 중첩당 6%에서 [[-14%로-]]{{+15%로+}} 증가합니다. 이 [[-공격으로-]]{{+공격이+}} [[-적을-]]{{+적중한 대상을 1.5초 안에+}} 처치하면 도약의 재사용 대기시간이 [[-즉시 -]]초기화되고 소모한 마나를 돌려받습니다.{{+\n지속 효과: 도약의 재사용 대기시간이 5초 감소합니다.+}}"
       }
-     ]
+     ],
+     "moved": {
+      "from": 7,
+      "to": 4,
+      "kind": "redesign"
+     }
     },
     {
      "type": "talent",
@@ -1055,13 +1169,12 @@
        "after": "다발 사격의 사거리가 20% 증가합니다. 또한, 다발 사격 시 120(+4%)의 피해를 주는 수류탄 3개를 함께 발사하여 적 영웅에게 적중 시 25의 마나를 돌려받습니다.",
        "diff": "[[-다발 사격 시, 120(+4%)의 피해를 주는 수류탄 3개를 함께 발사합니다. 수류탄이 적중한 적 영웅 하나당 다발 사격의 재사용 대기시간이 2초 감소합니다.-]]{{+다발 사격의 사거리가 20% 증가합니다. 또한, 다발 사격 시 120(+4%)의 피해를 주는 수류탄 3개를 함께 발사하여 적 영웅에게 적중 시 25의 마나를 돌려받습니다.+}}"
       }
-     ]
-    },
-    {
-     "type": "talent_removed",
-     "id": "DemonHunterMasteryCaltrops",
-     "name": "쇠못 덫",
-     "level": 1
+     ],
+     "moved": {
+      "from": 7,
+      "to": 4,
+      "kind": "redesign"
+     }
     },
     {
      "type": "talent",
@@ -1100,7 +1213,12 @@
        "after": "다발 사격이 적을 2.5초 동안 20% 느려지게 합니다. 굶주린 화살이 느려진 적에게 25%의 추가 피해를 줍니다.",
        "diff": "[[-다발 사격의 사거리가 20% 증가하고 적을 1.5초 동안 25% 느려지게 합니다.-]]{{+다발 사격이 적을 2.5초 동안 20% 느려지게 합니다. 굶주린 화살이 느려진 적에게 25%의 추가 피해를 줍니다.+}}"
       }
-     ]
+     ],
+     "moved": {
+      "from": 16,
+      "to": 7,
+      "kind": "redesign"
+     }
     },
     {
      "type": "talent",
@@ -1119,7 +1237,12 @@
        "after": "굶주린 화살이 돌격병, 용병, 괴물에게 주는 피해가 150% 증가합니다.",
        "diff": "굶주린 [[-화살의 마나 소모량이 40 감소하고-]]{{+화살이+}} 돌격병, 용병, 괴물에게 주는 피해가 150% 증가합니다."
       }
-     ]
+     ],
+     "moved": {
+      "from": 1,
+      "to": 7,
+      "kind": "redesign"
+     }
     },
     {
      "type": "talent",
@@ -1138,7 +1261,12 @@
        "after": "굶주린 화살이 튕기는 횟수가 1회 증가합니다.\n퀘스트: 굶주린 화살의 첫 번째 공격이 적 영웅에게 적중하면 40의 마나를 돌려받고 첫 번째 공격의 피해량이 영구히 6 증가합니다.",
        "diff": "[[-퀘스트: 굶주린 화살의 첫 번째 공격이 적 영웅에게 적중할 때마다 굶주린 화살의 공격력이 5 증가하여 최대 100 증가합니다.\n보상: 추가 공격력이 100까지 증가하면, 굶주린 화살의 공격력이 추가로 75 증가하고 튕기는 횟수가 1회 증가합니다.-]]{{+굶주린 화살이 튕기는 횟수가 1회 증가합니다.\n퀘스트: 굶주린 화살의 첫 번째 공격이 적 영웅에게 적중하면 40의 마나를 돌려받고 첫 번째 공격의 피해량이 영구히 6 증가합니다.+}}"
       }
-     ]
+     ],
+     "moved": {
+      "from": 4,
+      "to": 1,
+      "kind": "redesign"
+     }
     },
     {
      "type": "talent",
@@ -1157,7 +1285,12 @@
        "after": "이제 도약에 마나가 소모되지 않습니다. 도약을 사용하면 굶주린 화살의 재사용 대기시간이 초기화됩니다.",
        "diff": "{{+이제 도약에 마나가 소모되지 않습니다. +}}도약을 사용하면 굶주린 화살의 재사용 대기시간이 초기화됩니다."
       }
-     ]
+     ],
+     "moved": {
+      "from": 7,
+      "to": 4,
+      "kind": "redesign"
+     }
     },
     {
      "type": "talent",
@@ -1188,13 +1321,6 @@
      ]
     },
     {
-     "type": "talent_added",
-     "id": "DemonHunterMultishotFireAtWill",
-     "name": "자율 사격",
-     "level": 1,
-     "full": "퀘스트: 다발 사격이 영웅에게 적중하면 증오 2중첩을 얻으며 다발 사격의 공격력이 영구히 4 증가합니다."
-    },
-    {
      "type": "talent",
      "id": "DemonHunterPunishment",
      "name": "처벌",
@@ -1211,7 +1337,12 @@
        "after": "증오가 최대로 중첩되면 다발 사격의 재사용 대기시간이 50% 더 빨리 감소합니다.",
        "diff": "[[-다발 사격의 공격력이 증오 중첩당 4% 증가합니다.-]]{{+증오가 최대로 중첩되면 다발 사격의 재사용 대기시간이 50% 더 빨리 감소합니다.+}}"
       }
-     ]
+     ],
+     "moved": {
+      "from": 4,
+      "to": 16,
+      "kind": "redesign"
+     }
     },
     {
      "type": "talent",
@@ -1228,11 +1359,32 @@
      ]
     },
     {
-     "type": "talent_added",
-     "id": "DemonHunterVaultAcrobat",
-     "name": "곡예",
+     "type": "talent_replaced",
+     "level": 1,
+     "idFrom": "DemonHunterMasteryCaltrops",
+     "idTo": "DemonHunterMultishotFireAtWill",
+     "nameFrom": "쇠못 덫",
+     "nameTo": "자율 사격",
+     "fullBefore": "도약하면서 쇠못 덫 3개를 떨어트립니다. 쇠못 덫은 적에게 60(+4%)의 피해를 주고 1초 동안 40% 느려지게 합니다.\n퀘스트: 증오가 10중첩인 상태를 총 160초 동안 유지해야 합니다.\n보상: 도약의 재사용 대기시간이 5초 감소하고 마나 소모량이 50에서 25으로,로 감소합니다.",
+     "fullAfter": "퀘스트: 다발 사격이 영웅에게 적중하면 증오 2중첩을 얻으며 다발 사격의 공격력이 영구히 4 증가합니다.",
+     "cooldownBefore": "",
+     "cooldownAfter": "",
+     "match": "slot",
+     "confidence": "low"
+    },
+    {
+     "type": "talent_replaced",
      "level": 20,
-     "full": "도약이 2회 추가로 충전되며, 도약하면서 쇠못 덫 3개를 떨어트립니다. 쇠못 덫은 적에게 60(+4%)의 피해를 주고 1초 동안 40% 느려지게 합니다."
+     "idFrom": "DemonHunterCombatStyleRancor",
+     "idTo": "DemonHunterVaultAcrobat",
+     "nameFrom": "원한",
+     "nameTo": "곡예",
+     "fullBefore": "증오 중첩당 공격 속도가 2% 증가합니다. 증오 10중첩 시 공격 속도가 추가로 30% 증가합니다.",
+     "fullAfter": "도약이 2회 추가로 충전되며, 도약하면서 쇠못 덫 3개를 떨어트립니다. 쇠못 덫은 적에게 60(+4%)의 피해를 주고 1초 동안 40% 느려지게 합니다.",
+     "cooldownBefore": "",
+     "cooldownAfter": "",
+     "match": "slot",
+     "confidence": "low"
     }
    ]
   },
@@ -1480,7 +1632,7 @@
    "changes": [
     {
      "type": "ability",
-     "id": "LostVikingsLongboatRaidNewer|Heroic",
+     "id": "LostVikingsLongboatRaid|Heroic",
      "name": "바이킹의 습격!",
      "abilityType": "Heroic",
      "changes": [
@@ -1589,6 +1741,132 @@
        "diff": "함선이 동시에 두 대상을 공격할 수 있으며, 박격포의 사거리가 100% 증가합니다.{{+ 바이킹의 습격!의 재사용 대기시간이 30초 감소합니다.+}}"
       }
      ]
+    },
+    {
+     "type": "stat",
+     "field": "life",
+     "before": {
+      "amount": 1180,
+      "scale": 0.04,
+      "regenRate": 2.457,
+      "regenScale": 0.04
+     },
+     "after": {
+      "amount": 1130,
+      "scale": 0.04,
+      "regenRate": 2.355,
+      "regenScale": 0.04
+     },
+     "unit": "밸로그"
+    },
+    {
+     "type": "stat",
+     "field": "weapons",
+     "before": [
+      {
+       "range": 4,
+       "period": 0.9,
+       "damage": 78,
+       "damageScale": 0.04
+      },
+      {
+       "range": 1.25,
+       "period": 0.9,
+       "damage": 78,
+       "damageScale": 0.04
+      }
+     ],
+     "after": [
+      {
+       "range": 4,
+       "period": 0.9,
+       "damage": 75,
+       "damageScale": 0.04
+      },
+      {
+       "range": 1.25,
+       "period": 0.9,
+       "damage": 75,
+       "damageScale": 0.04
+      }
+     ],
+     "unit": "밸로그"
+    },
+    {
+     "type": "stat",
+     "field": "life",
+     "before": {
+      "amount": 840,
+      "scale": 0.04,
+      "regenRate": 1.75,
+      "regenScale": 0.04
+     },
+     "after": {
+      "amount": 804,
+      "scale": 0.04,
+      "regenRate": 1.676,
+      "regenScale": 0.04
+     },
+     "unit": "에릭"
+    },
+    {
+     "type": "stat",
+     "field": "weapons",
+     "before": [
+      {
+       "range": 6.5,
+       "period": 0.7,
+       "damage": 65,
+       "damageScale": 0.04
+      }
+     ],
+     "after": [
+      {
+       "range": 6.5,
+       "period": 0.7,
+       "damage": 62,
+       "damageScale": 0.04
+      }
+     ],
+     "unit": "에릭"
+    },
+    {
+     "type": "stat",
+     "field": "life",
+     "before": {
+      "amount": 1540,
+      "scale": 0.04,
+      "regenRate": 3.207,
+      "regenScale": 0.04
+     },
+     "after": {
+      "amount": 1482,
+      "scale": 0.04,
+      "regenRate": 3.086,
+      "regenScale": 0.04
+     },
+     "unit": "올라프"
+    },
+    {
+     "type": "stat",
+     "field": "weapons",
+     "before": [
+      {
+       "range": 1.25,
+       "period": 1,
+       "damage": 57,
+       "damageScale": 0.04
+      }
+     ],
+     "after": [
+      {
+       "range": 1.25,
+       "period": 1,
+       "damage": 54,
+       "damageScale": 0.04
+      }
+     ],
+     "unit": "올라프"
     }
    ]
   },
@@ -1704,13 +1982,13 @@
      "before": {
       "amount": 2675,
       "scale": 0.04,
-      "regenRate": 5.5742,
+      "regenRate": 5.574,
       "regenScale": 0.04
      },
      "after": {
       "amount": 2625,
       "scale": 0.04,
-      "regenRate": 5.5703,
+      "regenRate": 5.57,
       "regenScale": 0.04
      }
     },
@@ -1794,13 +2072,13 @@
      "field": "weapons",
      "before": [
       {
-       "range": 2,
+       "range": 6.5,
        "period": 0.8,
        "damage": 101,
        "damageScale": 0.04
       },
       {
-       "range": 6.5,
+       "range": 2,
        "period": 0.8,
        "damage": 101,
        "damageScale": 0.04
@@ -1808,13 +2086,13 @@
      ],
      "after": [
       {
-       "range": 2,
+       "range": 6.5,
        "period": 0.8,
        "damage": 92,
        "damageScale": 0.04
       },
       {
-       "range": 6.5,
+       "range": 2,
        "period": 0.8,
        "damage": 92,
        "damageScale": 0.04
@@ -1862,19 +2140,6 @@
      ]
     },
     {
-     "type": "talent_added",
-     "id": "RaynorAdrenalineRushRaidersRoll",
-     "name": "특공대 나가신다",
-     "level": 20,
-     "full": "아드레날린 촉진을 사용하면 저지 불가 상태가 되고 2초 동안 추가로 생명력을 회복합니다. 생명력의 70%를 회복하면 추가 지속 시간이 만료됩니다."
-    },
-    {
-     "type": "talent_removed",
-     "id": "RaynorBasicAttackExecute",
-     "name": "마무리",
-     "level": 20
-    },
-    {
      "type": "talent",
      "id": "RaynorBehemothArmor",
      "name": "베히모스 전투복",
@@ -1903,13 +2168,6 @@
      ]
     },
     {
-     "type": "talent_added",
-     "id": "RaynorGive'EmSomePepperSergeantPepper",
-     "name": "더 뜨거운 맛",
-     "level": 20,
-     "full": "이제 뜨거운 맛을 보여주지가 3번째 일반 공격마다 활성화됩니다."
-    },
-    {
      "type": "talent",
      "id": "RaynorGiveEmSomePepperExterminator",
      "name": "박멸자",
@@ -1936,32 +2194,6 @@
        "diff": "뜨거운 맛을 보여주지의 범위가 15% 증가합니다. 뜨거운 맛을 보여주지가 적중한 적 영웅 하나당 10의 마나를 회복하고 천공 [[-탄환과 격려의-]]{{+탄환의+}} 재사용 대기시간이 [[-1초-]]{{+1.5초+}} 감소합니다."
       }
      ]
-    },
-    {
-     "type": "talent_removed",
-     "id": "RaynorGiveEmSomePepperWeakSpotAcquired",
-     "name": "약점을 포착했다",
-     "level": 20
-    },
-    {
-     "type": "talent_added",
-     "id": "RaynorHyperionCavalrysArrived",
-     "name": "해결사 등장",
-     "level": 20,
-     "full": "뜨거운 맛을 보여주지의 주 대상이 영웅이면 히페리온의 재사용 대기시간이 5초 감소합니다. 이러한 영웅들은 히페리온의 대상이 되어 100% 추가 피해를 받습니다."
-    },
-    {
-     "type": "talent_added",
-     "id": "RaynorHyperionExecuteOrders",
-     "name": "명령 수행",
-     "level": 20,
-     "full": "부활 대기시간이 30초로 감소합니다. 죽으면 가장 가까운 적 영웅 방향으로 히페리온을 호출합니다."
-    },
-    {
-     "type": "talent_removed",
-     "id": "RaynorHyperionIndomitableResolve",
-     "name": "불굴의 다짐",
-     "level": 20
     },
     {
      "type": "talent",
@@ -2008,7 +2240,12 @@
        "after": "격려의 공격 속도 증가 효과가 20% 증가합니다.\n지속 효과: 12번째 일반 공격마다 격려를 비용 없이 사용합니다.",
        "diff": "[[-격려의 지속 시간이 1초 증가하고 지속 시간 동안 주위 아군 영웅의 이동 속도 및 공격 속도가 10% 증가합니다.-]]{{+격려의 공격 속도 증가 효과가 20% 증가합니다.\n지속 효과: 12번째 일반 공격마다 격려를 비용 없이 사용합니다.+}}"
       }
-     ]
+     ],
+     "moved": {
+      "from": 13,
+      "to": 16,
+      "kind": "redesign"
+     }
     },
     {
      "type": "talent",
@@ -2021,13 +2258,12 @@
        "before": 16,
        "after": 13
       }
-     ]
-    },
-    {
-     "type": "talent_removed",
-     "id": "RaynorPenetratingRoundDebilitatingRounds",
-     "name": "쇠약의 탄환",
-     "level": 13
+     ],
+     "moved": {
+      "from": 16,
+      "to": 13,
+      "kind": "moved"
+     }
     },
     {
      "type": "talent",
@@ -2040,21 +2276,8 @@
        "before": "사용하면 다음 천공 탄환의 사거리가 30% 증가하고 감속 효과의 지속 시간이 6초로 증가합니다.",
        "after": "천공 탄환의 감속 효과가 15% 증가하고 지속 시간이 1.5초 증가합니다.",
        "diff": "[[-사용하면 다음 -]]천공 탄환의 [[-사거리가-]]{{+감속+}} [[-30%-]]{{+효과가 15%+}} 증가하고[[- 감속 효과의-]] 지속 시간이 [[-6초로-]]{{+1.5초+}} 증가합니다."
-      },
-      {
-       "field": "cooldown",
-       "before": "재사용 대기시간: 30초",
-       "after": "",
-       "diff": "[[-재사용 대기시간: 30초-]]{{++}}"
       }
      ]
-    },
-    {
-     "type": "talent_added",
-     "id": "RaynorPenetratingRoundLine'EmUp",
-     "name": "줄을 맞춰라",
-     "level": 13,
-     "full": "천공 탄환의 재사용 대기시간이 3초 감소합니다. 천공 탄환이 두 명 이상의 적 영웅에게 적중하면 재사용 대기시간이 추가로 3초 감소합니다."
     },
     {
      "type": "talent",
@@ -2083,6 +2306,79 @@
        "diff": "{{+빌려온 힘: 뜨거운 맛을 보여주지의 공격력이 60% 증가합니다. 죽을 때마다 이 추가 공격력이 15% 감소합니다. \n+}}퀘스트: 뜨거운 맛을 보여주지의 주 대상이 적 영웅이면 추가 피해량이 영구히 [[-1%-]]{{+0.75%+}} 증가합니다."
       }
      ]
+    },
+    {
+     "type": "talent_replaced",
+     "level": 13,
+     "idFrom": "RaynorPenetratingRoundDebilitatingRounds",
+     "idTo": "RaynorPenetratingRoundLine'EmUp",
+     "nameFrom": "쇠약의 탄환",
+     "nameTo": "줄을 맞춰라",
+     "fullBefore": "천공 탄환의 마나 소모량이 65에서 45으로,로 감소하고 재사용 대기시간이 3초 감소합니다. 격려가 활성화된 동안 천공 탄환의 감속 효과가 20% 증가합니다.",
+     "fullAfter": "천공 탄환의 재사용 대기시간이 3초 감소합니다. 천공 탄환이 두 명 이상의 적 영웅에게 적중하면 재사용 대기시간이 추가로 3초 감소합니다.",
+     "cooldownBefore": "",
+     "cooldownAfter": "",
+     "match": "slot",
+     "confidence": "low"
+    },
+    {
+     "type": "talent_replaced",
+     "level": 20,
+     "idFrom": "RaynorHyperionIndomitableResolve",
+     "idTo": "RaynorHyperionCavalrysArrived",
+     "nameFrom": "불굴의 다짐",
+     "nameTo": "해결사 등장",
+     "fullBefore": "뜨거운 맛을 보여주지의 주 대상이 적 영웅이면 히페리온의 재사용 대기시간이 5초 감소합니다. 격려를 사용하면 2초 동안 저지 불가 상태가 됩니다.",
+     "fullAfter": "뜨거운 맛을 보여주지의 주 대상이 영웅이면 히페리온의 재사용 대기시간이 5초 감소합니다. 이러한 영웅들은 히페리온의 대상이 되어 100% 추가 피해를 받습니다.",
+     "cooldownBefore": "",
+     "cooldownAfter": "",
+     "match": "icon+text",
+     "confidence": "low"
+    },
+    {
+     "type": "talent_removed",
+     "id": "RaynorGiveEmSomePepperWeakSpotAcquired",
+     "name": "약점을 포착했다",
+     "level": 20,
+     "full": "뜨거운 맛을 보여주지의 주 대상이 적 영웅이면 대상의 방어력이 2초 동안 25 감소합니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_raynor_acquireweakspot.png"
+    },
+    {
+     "type": "talent_removed",
+     "id": "RaynorBasicAttackExecute",
+     "name": "마무리",
+     "level": 20,
+     "full": "공격 속도가 20% 증가합니다. 생명력이 50%미만인 대상에게는 일반 공격력이 25% 증가합니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_talent_autoattack_damage.png"
+    },
+    {
+     "type": "talent_added",
+     "id": "RaynorAdrenalineRushRaidersRoll",
+     "name": "특공대 나가신다",
+     "level": 20,
+     "full": "아드레날린 촉진을 사용하면 저지 불가 상태가 되고 2초 동안 추가로 생명력을 회복합니다. 생명력의 70%를 회복하면 추가 지속 시간이 만료됩니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_raynor_adrenalinrush.png"
+    },
+    {
+     "type": "talent_added",
+     "id": "RaynorGive'EmSomePepperSergeantPepper",
+     "name": "더 뜨거운 맛",
+     "level": 20,
+     "full": "이제 뜨거운 맛을 보여주지가 3번째 일반 공격마다 활성화됩니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_raynor_acquireweakspot.png"
+    },
+    {
+     "type": "talent_added",
+     "id": "RaynorHyperionExecuteOrders",
+     "name": "명령 수행",
+     "level": 20,
+     "full": "부활 대기시간이 30초로 감소합니다. 죽으면 가장 가까운 적 영웅 방향으로 히페리온을 호출합니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_raynor_advancedoptics.png"
     }
    ]
   },
@@ -2125,7 +2421,7 @@
     },
     {
      "type": "ability",
-     "id": "StitchesHookHelpingHand|Active",
+     "id": "StitchesHelpingHand|Active",
      "name": "도움의 손길",
      "abilityType": "Active",
      "changes": [
@@ -2152,13 +2448,6 @@
      ]
     },
     {
-     "type": "ability_added",
-     "id": "StitchesShamblingHorror|Trait",
-     "name": "휘청이는 괴물",
-     "abilityType": "Trait",
-     "full": "사용하면 매초마다 넓은 영역에 유독 가스를 퍼뜨리고 5초 동안 이동 속도가 110% 미만으로 감소하지 않게 합니다. \n유독 가스\n적에게 일반 공격을 하거나 지면 강타의 안쪽 범위에 적중시키면, 대상을 유독 가스에 중독시켜 3초에 걸쳐 27(+4%)의 추가 피해를 줍니다. 돌격병과 용병, 괴물에게는 150%의 추가 피해를 줍니다."
-    },
-    {
      "type": "ability",
      "id": "StitchesSlam|W",
      "name": "지면 강타",
@@ -2179,22 +2468,18 @@
      ]
     },
     {
-     "type": "ability_removed",
-     "id": "StitchesVileGasVileCleaver|Trait",
-     "name": "유독 식칼",
-     "abilityType": "Trait"
-    },
-    {
-     "type": "talent_removed",
-     "id": "StitchesBlight",
-     "name": "역병",
-     "level": 7
-    },
-    {
-     "type": "talent_removed",
-     "id": "StitchesCannibalize",
-     "name": "시체먹기",
-     "level": 7
+     "type": "ability_replaced",
+     "abilityType": "Trait",
+     "idFrom": "StitchesVileGasVileCleaver|Trait",
+     "idTo": "StitchesShamblingHorror|Trait",
+     "nameFrom": "유독 식칼",
+     "nameTo": "휘청이는 괴물",
+     "fullBefore": "일반 공격이 유독 가스를 방출하며 주위의 적을 중독시켜 3초에 걸쳐 45(+4%)의 피해를 줍니다. 유독 가스가 다시 적용되면 지속 시간이 증가하여 최대 10초까지 증가합니다.",
+     "fullAfter": "사용하면 매초마다 넓은 영역에 유독 가스를 퍼뜨리고 5초 동안 이동 속도가 110% 미만으로 감소하지 않게 합니다. \n유독 가스\n적에게 일반 공격을 하거나 지면 강타의 안쪽 범위에 적중시키면, 대상을 유독 가스에 중독시켜 3초에 걸쳐 27(+4%)의 추가 피해를 줍니다. 돌격병과 용병, 괴물에게는 150%의 추가 피해를 줍니다.",
+     "cooldownBefore": "",
+     "cooldownAfter": "재사용 대기시간: 60초",
+     "match": "slot",
+     "confidence": "low"
     },
     {
      "type": "talent",
@@ -2213,7 +2498,12 @@
        "after": "갈고리가 적 영웅에게 적중하거나 휘청이는 괴물을 사용하면 공격 속도가 5초 동안 50% 증가합니다.",
        "diff": "[[-지면 강타가 적 영웅에게 적중하면 공격 속도가 3초 동안 25% 증가합니다. 지면 강타의 안쪽 범위에 적 영웅이 적중하면 공격 속도 증가량과 지속 시간이 두 배가 됩니다.-]]{{+갈고리가 적 영웅에게 적중하거나 휘청이는 괴물을 사용하면 공격 속도가 5초 동안 50% 증가합니다.+}}"
       }
-     ]
+     ],
+     "moved": {
+      "from": 4,
+      "to": 13,
+      "kind": "redesign"
+     }
     },
     {
      "type": "talent",
@@ -2230,46 +2520,6 @@
      ]
     },
     {
-     "type": "talent_removed",
-     "id": "StitchesFishingHook",
-     "name": "낚시 갈고리",
-     "level": 13
-    },
-    {
-     "type": "talent_added",
-     "id": "StitchesFlareUp",
-     "name": "불타는 가스",
-     "level": 16,
-     "full": "주위 적들에게 초당 15(+4%)의 피해를 줍니다. 갈고리가 적 영웅에게 적중하거나 휘청이는 괴물을 사용하면 이 공격력이 4초 동안 150% 증가합니다."
-    },
-    {
-     "type": "talent_added",
-     "id": "StitchesGasBag",
-     "name": "가스 주머니",
-     "level": 20,
-     "full": "휘청이는 괴물을 사용하면 3초 동안 저지 불가 상태가 됩니다.\n지속 효과: 휘청이는 괴물의 재사용 대기시간이 20초 감소합니다."
-    },
-    {
-     "type": "talent_removed",
-     "id": "StitchesGasFlare",
-     "name": "불타는 가스",
-     "level": 16
-    },
-    {
-     "type": "talent_added",
-     "id": "StitchesGiftFromTheEmbalmer",
-     "name": "장의사의 선물",
-     "level": 20,
-     "full": "썩은 쓸개즙이 영웅에게 100%의 추가 피해를 줍니다. \n퀘스트: 썩은 쓸개즙으로 적 영웅에게 피해를 줄 때마다 다음 부활 대기시간이 2%감소하여 최대 총 80% 감소합니다. 죽으면 이 효과가 모두 사라집니다."
-    },
-    {
-     "type": "talent_added",
-     "id": "StitchesHookMasterHooker",
-     "name": "갈고리 제왕",
-     "level": 20,
-     "full": "갈고리의 재사용 대기시간이 5초 감소합니다. 갈고리에 적중당한 적 영웅은 받는 치유량이 2초 동안 100% 감소합니다. 도움의 손길에 적중된 아군은 2초 동안 불사 상태가 됩니다."
-    },
-    {
      "type": "talent",
      "id": "StitchesHungryforMore",
      "name": "끝없는 허기",
@@ -2282,12 +2532,6 @@
        "diff": "{{+이동 속도가 5% 증가합니다.\n+}}퀘스트: 재생의 구슬을 획득할 때마다 최대 생명력이 30 증가합니다. \n보상: 재생의 구슬을 [[-15개-]]{{+20개+}} 획득할 때마다 이동 속도가 영구히 5% [[-증가하여 최대 20%-]]{{+추가로+}} 증가합니다."
       }
      ]
-    },
-    {
-     "type": "talent_removed",
-     "id": "StitchesLacerate",
-     "name": "유독성 가르기",
-     "level": 16
     },
     {
      "type": "talent",
@@ -2332,12 +2576,6 @@
      ]
     },
     {
-     "type": "talent_removed",
-     "id": "StitchesPotentBile",
-     "name": "끈적한 쓸개즙",
-     "level": 20
-    },
-    {
      "type": "talent",
      "id": "StitchesPulverizeSlam",
      "name": "분쇄",
@@ -2354,14 +2592,12 @@
        "after": "지면 강타에 적중당한 모든 적이 0.75초 동안 80% 느려지고 적 영웅은 4초 동안 방어력이 10 감소합니다.",
        "diff": "지면 강타에 적중당한 모든 적이 0.75초 동안 80% [[-느려집니다.-]]{{+느려지고 적 영웅은 4초 동안 방어력이 10 감소합니다.+}}"
       }
-     ]
-    },
-    {
-     "type": "talent_added",
-     "id": "StitchesPutrefaction",
-     "name": "부패",
-     "level": 7,
-     "full": "휘청이는 괴물이 활성화된 동안 유독 가스가 대상이 받는 치유량을 30% 감소시킵니다.\n지속 효과: 유독 가스로 준 피해의 60%만큼 생명력을 회복합니다."
+     ],
+     "moved": {
+      "from": 13,
+      "to": 16,
+      "kind": "redesign"
+     }
     },
     {
      "type": "talent",
@@ -2399,7 +2635,12 @@
        "before": false,
        "after": true
       }
-     ]
+     ],
+     "moved": {
+      "from": 20,
+      "to": 7,
+      "kind": "redesign"
+     }
     },
     {
      "type": "talent",
@@ -2418,13 +2659,12 @@
        "after": "갈고리가 적 영웅에게 적중하면 대상의 최대 생명력의 5%만큼 추가 피해를 주고 갈고리의 재사용 대기시간이 5초 감소하며, 35의 마나를 회복합니다.",
        "diff": "갈고리가 적 영웅에게 적중하면 대상의 최대 생명력의 5%만큼 추가 피해를 주고 갈고리의 재사용 대기시간이 [[-3초-]]{{+5초+}} [[-감소합니다.-]]{{+감소하며, 35의 마나를 회복합니다.+}}"
       }
-     ]
-    },
-    {
-     "type": "talent_removed",
-     "id": "StitchesShamblingHorror",
-     "name": "휘청이는 괴물",
-     "level": 20
+     ],
+     "moved": {
+      "from": 4,
+      "to": 7,
+      "kind": "redesign"
+     }
     },
     {
      "type": "talent",
@@ -2443,21 +2683,137 @@
        "after": "적 영웅에게 일반 공격을 하면 대상을 2.5초 동안 25% 느려지게 하고, 자신은 최대 생명력의 2%를 회복합니다.",
        "diff": "[[-일반 공격이 적을 2.5초 동안 25% 느려지게 하고, 지면 강타 안쪽 범위의 감속 효과의 지속 시간을 갱신시킵니다.-]]{{+적 영웅에게 일반 공격을 하면 대상을 2.5초 동안 25% 느려지게 하고, 자신은 최대 생명력의 2%를 회복합니다.+}}"
       }
+     ],
+     "moved": {
+      "from": 7,
+      "to": 4,
+      "kind": "redesign"
+     }
+    },
+    {
+     "type": "talent",
+     "id": "StitchesFlareUp",
+     "idFrom": "StitchesGasFlare",
+     "idTo": "StitchesFlareUp",
+     "renamed": true,
+     "name": "불타는 가스",
+     "level": 16,
+     "changes": [
+      {
+       "field": "full",
+       "before": "주위 적들에게 초당 15(+4%)의 피해를 줍니다. 갈고리가 적 영웅에게 적중하면 불타는 가스의 공격력이 8초 동안 150% 증가합니다.",
+       "after": "주위 적들에게 초당 15(+4%)의 피해를 줍니다. 갈고리가 적 영웅에게 적중하거나 휘청이는 괴물을 사용하면 이 공격력이 4초 동안 150% 증가합니다.",
+       "diff": "주위 적들에게 초당 15(+4%)의 피해를 줍니다. 갈고리가 적 영웅에게 [[-적중하면-]]{{+적중하거나+}} [[-불타는-]]{{+휘청이는+}} [[-가스의-]]{{+괴물을 사용하면 이+}} 공격력이 [[-8초-]]{{+4초+}} 동안 150% 증가합니다."
+      }
      ]
     },
     {
-     "type": "talent_added",
-     "id": "StitchesUnderPressure",
-     "name": "압박",
+     "type": "talent_replaced",
+     "level": 7,
+     "idFrom": "StitchesBlight",
+     "idTo": "StitchesPutrefaction",
+     "nameFrom": "역병",
+     "nameTo": "부패",
+     "fullBefore": "사용하면 유독 가스를 주위 적들에게 방출합니다. 적중당한 적 영웅은 받는 치유량이 5초 동안 20% 감소합니다.\n지속 효과: 유독 가스로 준 피해의 33%만큼 생명력을 회복합니다.",
+     "fullAfter": "휘청이는 괴물이 활성화된 동안 유독 가스가 대상이 받는 치유량을 30% 감소시킵니다.\n지속 효과: 유독 가스로 준 피해의 60%만큼 생명력을 회복합니다.",
+     "cooldownBefore": "재사용 대기시간: 40초",
+     "cooldownAfter": "",
+     "match": "icon+text",
+     "confidence": "low"
+    },
+    {
+     "type": "talent_replaced",
      "level": 13,
-     "full": "지면 강타의 공격력이 25 증가합니다.\n퀘스트: 유독 가스가 영웅에게 6번 피해를 줄 때마다 지면 강타의 공격력이 영구히 1 증가하여 최대 75 증가합니다."
+     "idFrom": "StitchesFishingHook",
+     "idTo": "StitchesUnderPressure",
+     "nameFrom": "낚시 갈고리",
+     "nameTo": "압박",
+     "fullBefore": "갈고리의 사거리가 40% 증가합니다.",
+     "fullAfter": "지면 강타의 공격력이 25 증가합니다.\n퀘스트: 유독 가스가 영웅에게 6번 피해를 줄 때마다 지면 강타의 공격력이 영구히 1 증가하여 최대 75 증가합니다.",
+     "cooldownBefore": "",
+     "cooldownAfter": "",
+     "match": "slot",
+     "confidence": "low"
+    },
+    {
+     "type": "talent_removed",
+     "id": "StitchesCannibalize",
+     "name": "시체먹기",
+     "level": 7,
+     "full": "적 영웅에게 일반 공격을 하거나 지면 강타의 안쪽 범위에 적 영웅이 적중할 때마다 최대 생명력의 2%를 회복합니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_talent_autoattack_heal.png"
+    },
+    {
+     "type": "talent_removed",
+     "id": "StitchesLacerate",
+     "name": "유독성 가르기",
+     "level": 16,
+     "full": "지면 강타가 적들에게 유독 가스를 적용하고 적중당한 적 영웅의 방어력을 4초 동안 10 감소시킵니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_stitches_slam.png"
+    },
+    {
+     "type": "talent_removed",
+     "id": "StitchesPotentBile",
+     "name": "끈적한 쓸개즙",
+     "level": 20,
+     "full": "썩은 쓸개즙의 지속 시간이 6초 증가하고, 감속 효과가 35%에서 45%로 증가합니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_stitches_putridbile.png"
+    },
+    {
+     "type": "talent_removed",
+     "id": "StitchesShamblingHorror",
+     "name": "휘청이는 괴물",
+     "level": 20,
+     "full": "사용하면 방어력이 4초 동안 50 증가합니다. \n지속 효과: 이동 속도가 100% 미만으로 감소하지 않습니다.",
+     "cooldown": "재사용 대기시간: 60초",
+     "icon": "storm_ui_icon_stitches_horror.png"
     },
     {
      "type": "talent_added",
      "id": "StitchesVileCleaver",
      "name": "유독 식칼",
      "level": 4,
-     "full": "일반 공격이 유독 가스에 당한 적에게 35%의 추가 피해를 주고, 주위 적들에게 유독 가스를 퍼뜨립니다."
+     "full": "일반 공격이 유독 가스에 당한 적에게 35%의 추가 피해를 주고, 주위 적들에게 유독 가스를 퍼뜨립니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_stitches_acidcloud.png"
+    },
+    {
+     "type": "talent_added",
+     "id": "StitchesGiftFromTheEmbalmer",
+     "name": "장의사의 선물",
+     "level": 20,
+     "full": "썩은 쓸개즙이 영웅에게 100%의 추가 피해를 줍니다. \n퀘스트: 썩은 쓸개즙으로 적 영웅에게 피해를 줄 때마다 다음 부활 대기시간이 2%감소하여 최대 총 80% 감소합니다. 죽으면 이 효과가 모두 사라집니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_stitches_putridbile.png"
+    },
+    {
+     "type": "talent_added",
+     "id": "StitchesHookMasterHooker",
+     "name": "갈고리 제왕",
+     "level": 20,
+     "full": "갈고리의 재사용 대기시간이 5초 감소합니다. 갈고리에 적중당한 적 영웅은 받는 치유량이 2초 동안 100% 감소합니다. 도움의 손길에 적중된 아군은 2초 동안 불사 상태가 됩니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_stitches_hook.png"
+    },
+    {
+     "type": "talent_added",
+     "id": "StitchesGasBag",
+     "name": "가스 주머니",
+     "level": 20,
+     "full": "휘청이는 괴물을 사용하면 3초 동안 저지 불가 상태가 됩니다.\n지속 효과: 휘청이는 괴물의 재사용 대기시간이 20초 감소합니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_stitches_acidcloud.png"
+    },
+    {
+     "type": "ability_removed",
+     "id": "StitchesVileGasVileCleaver|Trait",
+     "name": "유독 식칼",
+     "abilityType": "Trait",
+     "full": "일반 공격이 유독 가스를 방출하며 주위의 적을 중독시켜 3초에 걸쳐 45(+4%)의 피해를 줍니다. 유독 가스가 다시 적용되면 지속 시간이 증가하여 최대 10초까지 증가합니다.",
+     "parent": "StitchesBlight"
     }
    ]
   },
@@ -2558,6 +2914,11 @@
  },
  "summary": {
   "heroes": 16,
-  "changes": 185
+  "changes": 182,
+  "renamed": 2,
+  "replaced": 8,
+  "moved": 29,
+  "units": 6,
+  "subs": 1
  }
 }

@@ -6,6 +6,8 @@
  "fromDate": "2020-06-23",
  "toDate": "2020-07-16",
  "toPtr": false,
+ "fromRepo": "heroes-data",
+ "toRepo": "heroes-data",
  "heroes": {
   "Amazon": {
    "name": "카시아",
@@ -127,7 +129,12 @@
        "before": true,
        "after": false
       }
-     ]
+     ],
+     "moved": {
+      "from": 1,
+      "to": 20,
+      "kind": "redesign"
+     }
     },
     {
      "type": "talent",
@@ -193,7 +200,12 @@
        "before": false,
        "after": true
       }
-     ]
+     ],
+     "moved": {
+      "from": 20,
+      "to": 1,
+      "kind": "redesign"
+     }
     },
     {
      "type": "talent",
@@ -399,7 +411,12 @@
        "after": "점화된 기름이 적을 3초 동안 35% 느려지게 합니다. 또한, 일반 공격으로 기름을 점화할 수 있습니다.",
        "diff": "[[-점화된 기름도 적을 2.5초 동안 30% 느려지게 합니다.-]]{{+점화된 기름이 적을 3초 동안 35% 느려지게 합니다. 또한, 일반 공격으로 기름을 점화할 수 있습니다.+}}"
       }
-     ]
+     ],
+     "moved": {
+      "from": 4,
+      "to": 7,
+      "kind": "redesign"
+     }
     },
     {
      "type": "talent",
@@ -418,19 +435,18 @@
        "after": "일반 공격의 범위가 15% 증가하고 돌격병, 용병, 괴물에게 일반 공격으로 주는 피해가 70% 증가합니다.",
        "diff": "일반 공격의 범위가 15% 증가하고 돌격병, 용병, 괴물에게 일반 공격으로 주는 피해가 70% 증가합니다.[[- 추가로, 일반 공격으로 기름을 점화할 수 있습니다.-]]"
       }
-     ]
+     ],
+     "moved": {
+      "from": 7,
+      "to": 4,
+      "kind": "redesign"
+     }
     }
    ]
   },
   "Gall": {
    "name": "갈",
    "changes": [
-    {
-     "type": "talent_removed",
-     "id": "GallDoubleBack",
-     "name": "백도",
-     "level": 4
-    },
     {
      "type": "talent",
      "id": "GallPsychoticBreak",
@@ -448,7 +464,12 @@
        "after": "갈이 적 영웅에게 주는 피해가 10% 증가합니다. 죽으면 갈이 오우거의 분노 효과를 얻고 10초 동안 기술을 사용할 수 있습니다.",
        "diff": "{{+갈이 적 영웅에게 주는 피해가 10% 증가합니다. +}}죽으면 갈이 오우거의 분노 효과를 얻고 10초 동안 기술을 사용할 수 있습니다."
       }
-     ]
+     ],
+     "moved": {
+      "from": 20,
+      "to": 13,
+      "kind": "redesign"
+     }
     },
     {
      "type": "talent",
@@ -467,14 +488,30 @@
        "after": "공포의 보주가 튈 때마다 반경이 25% 증가하고 공격력이 25% 증가합니다. 공포의 보주가 두 번째로 튀기 전에 사용하면 보주가 세 번째로 튈 때 반대로 튑니다.",
        "diff": "[[-공포의 보주가 튈 때마다 반경이 25% 증가하고 공격력이 25% 증가합니다.-]]{{+공포의 보주가 튈 때마다 반경이 25% 증가하고 공격력이 25% 증가합니다. 공포의 보주가 두 번째로 튀기 전에 사용하면 보주가 세 번째로 튈 때 반대로 튑니다.+}}"
       }
-     ]
+     ],
+     "moved": {
+      "from": 13,
+      "to": 4,
+      "kind": "redesign"
+     }
+    },
+    {
+     "type": "talent_removed",
+     "id": "GallDoubleBack",
+     "name": "백도",
+     "level": 4,
+     "full": "공포의 보주가 두 번째로 튀기 전에 사용하면 보주가 세 번째로 튈 때 뒤로 튑니다.\n지속 효과: 세 번째로 튀는 공포의 보주가 영웅에게 50%의 추가 피해를 주고 영웅이 아닌 대상에게 200%의 추가 피해를 줍니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_gall_chaoscollision.png"
     },
     {
      "type": "talent_added",
      "id": "GallTwilightFrenzy",
      "name": "황혼의 광란",
      "level": 20,
-     "full": "사용하면 6초 동안 암흑불길과 공포의 보주 재사용 대기시간이 2초 감소합니다."
+     "full": "사용하면 6초 동안 암흑불길과 공포의 보주 재사용 대기시간이 2초 감소합니다.",
+     "cooldown": "재사용 대기시간: 30초",
+     "icon": "storm_ui_icon_gall_psychoticbreak.png"
     }
    ]
   },
@@ -516,13 +553,6 @@
      ]
     },
     {
-     "type": "talent_added",
-     "id": "GarroshArmorUpSeasonedSoldier",
-     "name": "노련한 병사",
-     "level": 16,
-     "full": "최대 생명력이 5% 증가하고, 대지파괴자의 감속 지속 시간이 1초 증가하며, 피의 갈증 충전 횟수가 증가합니다."
-    },
-    {
      "type": "talent",
      "id": "GarroshDecimateDeadlyCalm",
      "name": "냉철함",
@@ -537,12 +567,6 @@
      ]
     },
     {
-     "type": "talent_removed",
-     "id": "GarroshGroundbreakerRoughLanding",
-     "name": "불시착",
-     "level": 16
-    },
-    {
      "type": "talent",
      "id": "GarroshWarlordsChallengeDeathWish",
      "name": "죽음의 소원",
@@ -555,6 +579,20 @@
        "diff": "{{+전쟁군주의 도전의 지속 시간이 0.5초 증가합니다. +}}적 영웅이 전쟁군주의 도전에 도발당한 상태로 죽으면 재사용 대기시간이 45초 감소합니다."
       }
      ]
+    },
+    {
+     "type": "talent_replaced",
+     "level": 16,
+     "idFrom": "GarroshGroundbreakerRoughLanding",
+     "idTo": "GarroshArmorUpSeasonedSoldier",
+     "nameFrom": "불시착",
+     "nameTo": "노련한 병사",
+     "fullBefore": "대지파괴자의 감속 효과가 10% 증가하고 지속 시간이 1초 증가합니다.",
+     "fullAfter": "최대 생명력이 5% 증가하고, 대지파괴자의 감속 지속 시간이 1초 증가하며, 피의 갈증 충전 횟수가 증가합니다.",
+     "cooldownBefore": "",
+     "cooldownAfter": "",
+     "match": "slot",
+     "confidence": "low"
     }
    ]
   },
@@ -1002,7 +1040,7 @@
    "changes": [
     {
      "type": "ability",
-     "id": "NecromancerRaiseSkeletonDisplayAbility|Trait",
+     "id": "NecromancerRaiseSkeleton|Trait",
      "name": "해골 되살리기",
      "abilityType": "Trait",
      "changes": [
@@ -1100,7 +1138,7 @@
      "before": {
       "amount": 3150,
       "scale": 0.04,
-      "regenRate": 6.5625,
+      "regenRate": 6.562,
       "regenScale": 0.04
      },
      "after": {
@@ -1211,13 +1249,6 @@
    "name": "타이커스",
    "changes": [
     {
-     "type": "talent_added",
-     "id": "TychusCanDoThisAllDayOverkillTalent",
-     "name": "하루 종일이라도 할 수 있다고",
-     "level": 20,
-     "full": "포화의 재사용 대기시간이 4초 감소합니다. 포화를 퍼붓는 동안 방어력이 40 증가합니다."
-    },
-    {
      "type": "talent",
      "id": "TychusMasteryFragGrenadeTitanGrenade",
      "name": "타이탄 수류탄",
@@ -1230,12 +1261,6 @@
        "diff": "[[-수류탄이 영웅에게 대상의 최대 생명력의 5%만큼 추가 피해를 줍니다.-]]{{+수류탄이 대상 영웅에게 최대 생명력의 5%만큼 추가 피해를 줍니다. 수류탄에 적중당한 적 영웅 하나당 재사용 대기시간이 1초 감소합니다.+}}"
       }
      ]
-    },
-    {
-     "type": "talent_removed",
-     "id": "TychusMasteryLeadRain",
-     "name": "납탄 세례",
-     "level": 16
     },
     {
      "type": "talent",
@@ -1304,7 +1329,30 @@
        "before": 20,
        "after": 16
       }
-     ]
+     ],
+     "moved": {
+      "from": 20,
+      "to": 16,
+      "kind": "moved"
+     }
+    },
+    {
+     "type": "talent_removed",
+     "id": "TychusMasteryLeadRain",
+     "name": "납탄 세례",
+     "level": 16,
+     "full": "포화가 적의 이동 속도를 30% 감소시킵니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_tychus_overkill.png"
+    },
+    {
+     "type": "talent_added",
+     "id": "TychusCanDoThisAllDayOverkillTalent",
+     "name": "하루 종일이라도 할 수 있다고",
+     "level": 20,
+     "full": "포화의 재사용 대기시간이 4초 감소합니다. 포화를 퍼붓는 동안 방어력이 40 증가합니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_tychus_overkill.png"
     }
    ]
   },
@@ -1358,6 +1406,8 @@
  },
  "summary": {
   "heroes": 22,
-  "changes": 83
+  "changes": 82,
+  "replaced": 1,
+  "moved": 7
  }
 }

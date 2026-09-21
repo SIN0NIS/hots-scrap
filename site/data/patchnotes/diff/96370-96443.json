@@ -6,6 +6,8 @@
  "fromDate": "2026-02-11",
  "toDate": "2026-02-19",
  "toPtr": false,
+ "fromRepo": "heroes-data",
+ "toRepo": "heroes-data",
  "heroes": {
   "Azmodan": {
    "name": "아즈모단",
@@ -20,9 +22,11 @@
        "field": "full",
        "before": "악마 전사 소환의 마나 소모량이 25에서 20으로,로 감소합니다. 일반 공격을 할 때마다 악마 전사 소환의 재사용 대기시간이 -1초 감소하고 악마 부관의 재사용 대기시간이 -1초 감소합니다.",
        "after": "악마 전사 소환의 마나 소모량이 25에서 20으로,로 감소합니다. 일반 공격을 할 때마다 악마 전사 소환의 재사용 대기시간이 -1초 감소하고 악마 부관의 재사용 대기시간이 1.5초 감소합니다.",
-       "diff": "악마 전사 소환의 마나 소모량이 25에서 20으로,로 감소합니다. 일반 공격을 할 때마다 악마 전사 소환의 재사용 대기시간이 -1초 감소하고 악마 부관의 재사용 대기시간이 [[--1초-]]{{+1.5초+}} 감소합니다."
+       "diff": "악마 전사 소환의 마나 소모량이 25에서 20으로,로 감소합니다. 일반 공격을 할 때마다 악마 전사 소환의 재사용 대기시간이 -1초 감소하고 악마 부관의 재사용 대기시간이 [[--1초-]]{{+1.5초+}} 감소합니다.",
+       "suspect": true
       }
-     ]
+     ],
+     "suspect": true
     }
    ]
   },
@@ -59,12 +63,32 @@
     }
    ]
   },
+  "Jaina": {
+   "name": "제이나",
+   "changes": [
+    {
+     "type": "ability",
+     "id": "JainaImprovedIceBlockHotbar|Active",
+     "name": "향상된 얼음 방패",
+     "abilityType": "Active",
+     "changes": [
+      {
+       "field": "cooldown",
+       "before": "재사용 대기시간: 40초",
+       "after": "",
+       "diff": "[[-재사용 대기시간: 40초-]]{{++}}"
+      }
+     ],
+     "parent": "동상"
+    }
+   ]
+  },
   "Muradin": {
    "name": "무라딘",
    "changes": [
     {
      "type": "ability",
-     "id": "MuradinStormBolt|Q",
+     "id": "MuradinStormbolt|Q",
      "name": "폭풍강타",
      "abilityType": "Q",
      "changes": [
@@ -111,7 +135,7 @@
    "changes": [
     {
      "type": "ability",
-     "id": "MurkyMarchoftheMurlocs|Heroic",
+     "id": "MurkyMarchOfTheMurlocs|Heroic",
      "name": "멀록 대행진",
      "abilityType": "Heroic",
      "changes": [
@@ -153,25 +177,6 @@
     }
    ]
   },
-  "Sylvanas": {
-   "name": "실바나스",
-   "changes": [
-    {
-     "type": "talent",
-     "id": "SylvanasTalentLostSoul",
-     "name": "잃어버린 영혼",
-     "level": 7,
-     "changes": [
-      {
-       "field": "full",
-       "before": "검은 화살이 3회 중첩된 적 영웅들과 구조물에 일반 공격을 할 때마다 어둠의 비수의 재사용 대기시간이 0.75초 감소합니다. 영웅에게 피해를 주면 재사용 대기시간이 두 배로 감소합니다.\n지속 효과: 어둠의 비수가 10%의 추가 피해를 줍니다.",
-       "after": "검은 화살이 3회 중첩된 적 영웅들과 구조물에 일반 공격을 할 때마다 어둠의 비수의 재사용 대기시간이 0.75초 감소합니다. 영웅에게 피해를 주면 재사용 대기시간이 두 배로 감소합니다.\n지속 효과: 어둠의 비수가 0%의 추가 피해를 줍니다.",
-       "diff": "검은 화살이 3회 중첩된 적 영웅들과 구조물에 일반 공격을 할 때마다 어둠의 비수의 재사용 대기시간이 0.75초 감소합니다. 영웅에게 피해를 주면 재사용 대기시간이 두 배로 감소합니다.\n지속 효과: 어둠의 비수가 [[-10%의-]]{{+0%의+}} 추가 피해를 줍니다."
-      }
-     ]
-    }
-   ]
-  },
   "Tyrande": {
    "name": "티란데",
    "changes": [
@@ -194,6 +199,8 @@
  },
  "summary": {
   "heroes": 6,
-  "changes": 11
+  "changes": 11,
+  "subs": 1,
+  "suspect": 1
  }
 }

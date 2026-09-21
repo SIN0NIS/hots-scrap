@@ -6,6 +6,8 @@
  "fromDate": "2025-02-03",
  "toDate": "2025-03-12",
  "toPtr": false,
+ "fromRepo": "heroes-data",
+ "toRepo": "heroes-data",
  "heroes": {
   "Arthas": {
    "name": "아서스",
@@ -219,6 +221,18 @@
     }
    ]
   },
+  "LostVikings": {
+   "name": "길 잃은 바이킹",
+   "changes": [
+    {
+     "type": "stat",
+     "field": "speed",
+     "before": 5.5664,
+     "after": 5.5658,
+     "unit": "에릭"
+    }
+   ]
+  },
   "Lucio": {
    "name": "루시우",
    "changes": [
@@ -365,13 +379,13 @@
      "before": {
       "amount": 2027,
       "scale": 0.04,
-      "regenRate": 4.2226,
+      "regenRate": 4.223,
       "regenScale": 0.04
      },
      "after": {
       "amount": 2080,
       "scale": 0.04,
-      "regenRate": 4.3333,
+      "regenRate": 4.333,
       "regenScale": 0.04
      }
     },
@@ -488,7 +502,8 @@
   }
  },
  "summary": {
-  "heroes": 7,
-  "changes": 30
+  "heroes": 8,
+  "changes": 31,
+  "units": 1
  }
 }

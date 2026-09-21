@@ -6,26 +6,9 @@
  "fromDate": "2020-11-06",
  "toDate": "2020-12-01",
  "toPtr": true,
+ "fromRepo": "heroes-data",
+ "toRepo": "heroes-data",
  "heroes": {
-  "Anubarak": {
-   "name": "아눕아락",
-   "changes": [
-    {
-     "type": "talent",
-     "id": "AnubarakTheTraitorKing",
-     "name": "배신자 왕",
-     "level": 20,
-     "changes": [
-      {
-       "field": "full",
-       "before": "최대 생명력이 10% 증가하고 기술 방어력이 20 증가합니다. 사용하면 방어력이 4초 동안 75 증가합니다.",
-       "after": "최대 생명력이 10% 증가하고 기술 방어력이 20 증가합니다.\n사용하면 방어력이 4초 동안 75 증가합니다.",
-       "diff": "최대 생명력이 10% 증가하고 기술 방어력이 20 증가합니다.[[- -]]{{+\n+}}사용하면 방어력이 4초 동안 75 증가합니다."
-      }
-     ]
-    }
-   ]
-  },
   "Barbarian": {
    "name": "소냐",
    "changes": [
@@ -106,13 +89,13 @@
      "before": {
       "amount": 2450,
       "scale": 0.04,
-      "regenRate": 5.1054,
+      "regenRate": 5.105,
       "regenScale": 0.04
      },
      "after": {
       "amount": 2375,
       "scale": 0.04,
-      "regenRate": 4.9492,
+      "regenRate": 4.949,
       "regenScale": 0.04
      }
     },
@@ -219,7 +202,7 @@
   }
  },
  "summary": {
-  "heroes": 8,
-  "changes": 12
+  "heroes": 7,
+  "changes": 11
  }
 }

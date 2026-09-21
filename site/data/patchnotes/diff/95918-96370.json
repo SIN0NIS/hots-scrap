@@ -6,13 +6,15 @@
  "fromDate": "2025-12-16",
  "toDate": "2026-02-11",
  "toPtr": false,
+ "fromRepo": "heroes-data",
+ "toRepo": "heroes-data",
  "heroes": {
   "Anubarak": {
    "name": "아눕아락",
    "changes": [
     {
      "type": "ability",
-     "id": "AnubarakLegionOfBeetlesVisual|Trait",
+     "id": "AnubarakScarabHostTrait|Trait",
      "name": "풍뎅이 숙주",
      "abilityType": "Trait",
      "changes": [
@@ -115,12 +117,6 @@
        "before": "대상 방향으로 전진하는 악마 전사를 소환합니다. 악마 전사는 일반 공격으로 35(+4%)의 피해를 주고 주위 적들에게 초당 18(+4%)의 피해를 줍니다. 10초 동안 지속됩니다.\n모두 다 불타리라로 정신을 집중하는 동안에도 사용할 수 있습니다.",
        "after": "대상 방향으로 전진하는 악마 전사를 소환합니다. 악마 전사는 일반 공격으로 53(+4%)의 피해를 주고 17초에 걸쳐 생명력을 잃습니다. 돌격병과 용병에게 100%의 추가 피해를 줍니다.\n모두 다 불타리라로 정신을 집중하는 동안에도 사용할 수 있습니다.",
        "diff": "대상 방향으로 전진하는 악마 전사를 소환합니다. 악마 전사는 일반 공격으로 [[-35(+4%)의-]]{{+53(+4%)의+}} 피해를 주고 [[-주위-]]{{+17초에+}} [[-적들에게-]]{{+걸쳐+}} [[-초당-]]{{+생명력을+}} [[-18(+4%)의-]]{{+잃습니다. 돌격병과 용병에게 100%의 추가+}} 피해를 줍니다.[[- 10초 동안 지속됩니다.-]]\n모두 다 불타리라로 정신을 집중하는 동안에도 사용할 수 있습니다."
-      },
-      {
-       "field": "cooldown",
-       "before": "재사용 대기시간: 10초",
-       "after": "충전 대기시간: 10초",
-       "diff": "[[-재사용-]]{{+충전+}} 대기시간: 10초"
       }
      ]
     },
@@ -148,9 +144,11 @@
        "field": "full",
        "before": "악마 전사 소환의 마나 소모량이 25에서 20으로,로 감소합니다. 일반 공격을 할 때마다 악마 전사 소환의 재사용 대기시간이 0.75초 감소하고 악마 부관의 재사용 대기시간이 1.5초 감소합니다.",
        "after": "악마 전사 소환의 마나 소모량이 25에서 20으로,로 감소합니다. 일반 공격을 할 때마다 악마 전사 소환의 재사용 대기시간이 -1초 감소하고 악마 부관의 재사용 대기시간이 -1초 감소합니다.",
-       "diff": "악마 전사 소환의 마나 소모량이 25에서 20으로,로 감소합니다. 일반 공격을 할 때마다 악마 전사 소환의 재사용 대기시간이 [[-0.75초-]]{{+-1초+}} 감소하고 악마 부관의 재사용 대기시간이 [[-1.5초-]]{{+-1초+}} 감소합니다."
+       "diff": "악마 전사 소환의 마나 소모량이 25에서 20으로,로 감소합니다. 일반 공격을 할 때마다 악마 전사 소환의 재사용 대기시간이 [[-0.75초-]]{{+-1초+}} 감소하고 악마 부관의 재사용 대기시간이 [[-1.5초-]]{{+-1초+}} 감소합니다.",
+       "suspect": true
       }
-     ]
+     ],
+     "suspect": true
     },
     {
      "type": "talent",
@@ -251,12 +249,6 @@
      ]
     },
     {
-     "type": "talent_removed",
-     "id": "AzmodanPride",
-     "name": "교만",
-     "level": 20
-    },
-    {
      "type": "talent",
      "id": "AzmodanWrath",
      "name": "분노",
@@ -271,11 +263,18 @@
      ]
     },
     {
-     "type": "talent_added",
-     "id": "InescapableAnnihilation",
-     "name": "피할 수 없는 파멸",
+     "type": "talent_replaced",
      "level": 20,
-     "full": "파멸의 구슬은 이제 사거리 제한이 없습니다."
+     "idFrom": "AzmodanPride",
+     "idTo": "InescapableAnnihilation",
+     "nameFrom": "교만",
+     "nameTo": "피할 수 없는 파멸",
+     "fullBefore": "퀘스트: 파멸을 400중첩 이상 획득해야 합니다.\n보상: 파멸이 400회 중첩되면 파멸의 구슬의 범위가 15% 증가하고 공격력이 추가로 125 증가합니다.",
+     "fullAfter": "파멸의 구슬은 이제 사거리 제한이 없습니다.",
+     "cooldownBefore": "",
+     "cooldownAfter": "",
+     "match": "slot",
+     "confidence": "low"
     }
    ]
   },
@@ -315,12 +314,6 @@
        "diff": "[[-2초 후, 대상 방향으로 날며 땅을 불태워 경로상의 적들에게 90(+4%)의 피해를 주고 초당 36(+4%)의 피해를 주는 흔적을 남깁니다. 6초 동안 지속됩니다.-]]{{+2초 후, 대상 방향으로 날며 땅을 불태워 경로상의 적들에게 90(+4%)의 피해를 주고 초당 36(+4%)의 피해를 주는 흔적을 남깁니다. 6초 동안 지속됩니다.\n퀘스트: 이글거리는 화염으로 적 영웅을 적중하면 중첩을 1 획득합니다.\n퀘스트: 적 영웅을 처치하면 중첩을 50 획득합니다.\n신화 보상: 2000중첩에 도달하면 데스윙이 황혼의 시간을 불러옵니다. 대격변이 구조물에 가하는 지속 피해가 2,500% 증가합니다.+}}"
       }
      ]
-    },
-    {
-     "type": "ability_removed",
-     "id": "DeathwingFormSwitch|Active",
-     "name": "형상 전환",
-     "abilityType": "Active"
     },
     {
      "type": "ability",
@@ -377,6 +370,13 @@
      ]
     },
     {
+     "type": "ability_removed",
+     "id": "DeathwingFormSwitch|Active",
+     "name": "형상 전환",
+     "abilityType": "Active",
+     "full": "파괴자 또는 세계 파괴자로 형상을 바꾸어 형상 당 두 가지의 고유한 일반 기술을 사용합니다.\n소각은 주위 적들에게 피해를 주며 맹격으로 적에게 뛰어들 수 있습니다.\n용암 폭발은 감속 지역을 만들며 대지 분쇄는 두 줄로 적들을 기절시킵니다."
+    },
+    {
      "type": "talent",
      "id": "DeathwingDragonSoul",
      "name": "용의 영혼",
@@ -431,6 +431,33 @@
        "diff": "파괴자: 소각이 적중한 적 영웅 하나당 다음 [[-8초-]]{{+9초+}} 동안 주위 모든 적에게 초당 [[-12(+4%)의-]]{{+18(+4%)의+}} 피해를 줍니다. 최대 [[-4회-]]{{+3회+}} 중첩됩니다.\n세계 파괴자: 용암 폭발의 폭발 공격력이 [[-125%-]]{{+150%+}} 증가합니다."
       }
      ]
+    },
+    {
+     "type": "ability",
+     "id": "DeathwingLavaBurst|W",
+     "name": "용암 폭발",
+     "abilityType": "W",
+     "changes": [
+      {
+       "field": "full",
+       "before": "1초 후, 마그마를 폭발시켜 대상 지역의 모든 적에게 30(+4%)의 피해를 줍니다. 폭발한 마그마는 웅덩이를 남겨 범위 안의 적들에게 초당 24(+4%)의 피해를 주고 35% 느려지게 합니다. 6초 동안 지속됩니다.\n파괴자: 소각\n주위 적들에게 피해를 줍니다.",
+       "after": "1초 후, 마그마를 폭발시켜 대상 지역의 모든 적에게 35(+4%)의 피해를 줍니다. 폭발한 마그마는 웅덩이를 남겨 범위 안의 적들에게 초당 28(+4%)의 피해를 주고 45% 느려지게 합니다. 6초 동안 지속됩니다.\n파괴자: 소각\n주위 적들에게 피해를 줍니다.",
+       "diff": "1초 후, 마그마를 폭발시켜 대상 지역의 모든 적에게 [[-30(+4%)의-]]{{+35(+4%)의+}} 피해를 줍니다. 폭발한 마그마는 웅덩이를 남겨 범위 안의 적들에게 초당 [[-24(+4%)의-]]{{+28(+4%)의+}} 피해를 주고 [[-35%-]]{{+45%+}} 느려지게 합니다. 6초 동안 지속됩니다.\n파괴자: 소각\n주위 적들에게 피해를 줍니다."
+      },
+      {
+       "field": "cooldown",
+       "before": "재사용 대기시간: 6초",
+       "after": "재사용 대기시간: 9초",
+       "diff": "재사용 대기시간: [[-6초-]]{{+9초+}}"
+      },
+      {
+       "field": "energy",
+       "before": "기력: 15",
+       "after": "기력: 25",
+       "diff": "기력: [[-15-]]{{+25+}}"
+      }
+     ],
+     "parent": "DeathwingWorldbreakerForm"
     }
    ]
   },
@@ -665,7 +692,7 @@
    "changes": [
     {
      "type": "ability",
-     "id": "MuradinStormBolt|Q",
+     "id": "MuradinStormbolt|Q",
      "name": "폭풍강타",
      "abilityType": "Q",
      "changes": [
@@ -676,12 +703,6 @@
        "diff": "[[-망치를 던져 처음 적중한 적에게 110(+4%)의 피해를 주고 1.25초 동안 기절시킵니다.\n10레벨이 되면 폭풍강타가 처음 적중한 대상을 관통합니다. 일반 공격을 할 때마다 폭풍강타의 재사용 대기시간이 1초 감소하고 3의 마나를 회복합니다.-]]{{+망치를 던져 처음 적중한 적에게 110(+4%)의 피해를 주고 1.25초 동안 기절시킵니다.\n퀘스트: 기절, 감속, 이동 불가의 영향을 받는 적들에게 일반 공격을 해야 합니다. 감속, 이동 불가 상태인 적은 중첩을 1회 제공합니다. 기절한 적은 중첩을 2회 제공합니다.\n보상: 대상을 50회 적중하면, 폭풍강타가 처음 적중한 대상을 관통합니다. 일반 공격을 할 때마다 폭풍강타의 재사용 대기시간이 0.5초 감소합니다.\n신화 보상: 대상을 200회 적중하면 폭풍강타의 사거리가 50% 증가하고, 너비가 100% 증가하며 모든 대상을 관통합니다.+}}"
       }
      ]
-    },
-    {
-     "type": "talent_removed",
-     "id": "GenericTalentRewind",
-     "name": "되돌리기",
-     "level": 20
     },
     {
      "type": "talent",
@@ -698,13 +719,6 @@
      ]
     },
     {
-     "type": "talent_added",
-     "id": "MuradinExtraCharges",
-     "name": "산왕",
-     "level": 20,
-     "full": "천둥벼락과 드워프 도약을 각각 2회 충전할 수 있습니다."
-    },
-    {
      "type": "talent",
      "id": "MuradinGiveEmTheAxeExecutioner60DamageBonus",
      "name": "도끼 집행자",
@@ -715,7 +729,12 @@
        "before": 7,
        "after": 1
       }
-     ]
+     ],
+     "moved": {
+      "from": 7,
+      "to": 1,
+      "kind": "moved"
+     }
     },
     {
      "type": "talent",
@@ -767,7 +786,26 @@
        "before": true,
        "after": false
       }
-     ]
+     ],
+     "moved": {
+      "from": 1,
+      "to": 7,
+      "kind": "redesign"
+     }
+    },
+    {
+     "type": "talent_replaced",
+     "level": 20,
+     "idFrom": "GenericTalentRewind",
+     "idTo": "MuradinExtraCharges",
+     "nameFrom": "되돌리기",
+     "nameTo": "산왕",
+     "fullBefore": "사용하면 모든 일반 기술의 재사용 대기시간이 초기화됩니다.",
+     "fullAfter": "천둥벼락과 드워프 도약을 각각 2회 충전할 수 있습니다.",
+     "cooldownBefore": "재사용 대기시간: 60초",
+     "cooldownAfter": "",
+     "match": "slot",
+     "confidence": "low"
     }
    ]
   },
@@ -776,7 +814,7 @@
    "changes": [
     {
      "type": "ability",
-     "id": "MurkyMarchoftheMurlocs|Heroic",
+     "id": "MurkyMarchOfTheMurlocs|Heroic",
      "name": "멀록 대행진",
      "abilityType": "Heroic",
      "changes": [
@@ -817,18 +855,6 @@
      ]
     },
     {
-     "type": "talent_removed",
-     "id": "MurkyBigTunaKahuna",
-     "name": "생선왕 머킹",
-     "level": 20
-    },
-    {
-     "type": "talent_removed",
-     "id": "MurkyEggHunt",
-     "name": "가짜 알",
-     "level": 1
-    },
-    {
      "type": "talent",
      "id": "MurkyEggShell",
      "name": "알껍질",
@@ -841,13 +867,6 @@
        "diff": "[[-알에서 부활하면 최대 생명력의 100%에 해당하는 보호막을 얻습니다. 알 놓기를 시전하면 보호막이 현재 생명력의 35%만큼 회복됩니다.-]]{{+알 놓기를 시전하거나 알 하나가 파괴되면, 머키가 현재 생명력의 35%만큼 보호막을 획득합니다.+}}"
       }
      ]
-    },
-    {
-     "type": "talent_added",
-     "id": "MurkyFasterFish",
-     "name": "조기 폭발",
-     "level": 20,
-     "full": "복어가 1.5초 더 빠르게 폭발합니다."
     },
     {
      "type": "talent",
@@ -920,11 +939,32 @@
      ]
     },
     {
-     "type": "talent_added",
-     "id": "MurkyShellGame",
-     "name": "야바위",
+     "type": "talent_replaced",
      "level": 1,
-     "full": "알을 2개 놓으며, 그중에서 무작위로 부활합니다. 그러나 알 놓기의 재사용 대기시간이 15초 증가합니다."
+     "idFrom": "MurkyEggHunt",
+     "idTo": "MurkyShellGame",
+     "nameFrom": "가짜 알",
+     "nameTo": "야바위",
+     "fullBefore": "사용하면 대상 위치에 가짜 알을 놓습니다. 가짜 알은 파괴될 때 특성이 적용되지 않은 점액으로 피해를 줍니다. 최대 3개의 가짜 알을 놓을 수 있습니다.\n지속 효과: 알에서 부활하면 5초 동안 은신 상태가 됩니다.",
+     "fullAfter": "알을 2개 놓으며, 그중에서 무작위로 부활합니다. 그러나 알 놓기의 재사용 대기시간이 15초 증가합니다.",
+     "cooldownBefore": "재사용 대기시간: 3초",
+     "cooldownAfter": "",
+     "match": "slot",
+     "confidence": "low"
+    },
+    {
+     "type": "talent_replaced",
+     "level": 20,
+     "idFrom": "MurkyBigTunaKahuna",
+     "idTo": "MurkyFasterFish",
+     "nameFrom": "생선왕 머킹",
+     "nameTo": "조기 폭발",
+     "fullBefore": "최대 생명력이 두 배로 증가하지만 알에서 부활했을 때의 부활 대기시간도 두 배로 증가합니다.",
+     "fullAfter": "복어가 1.5초 더 빠르게 폭발합니다.",
+     "cooldownBefore": "",
+     "cooldownAfter": "",
+     "match": "slot",
+     "confidence": "low"
     }
    ]
   },
@@ -933,7 +973,7 @@
    "changes": [
     {
      "type": "ability",
-     "id": "SylvanasBlackArrowsActive|Trait",
+     "id": "SylvanasBlackArrows|Trait",
      "name": "검은 화살",
      "abilityType": "Trait",
      "changes": [
@@ -1128,7 +1168,7 @@
     },
     {
      "type": "ability",
-     "id": "TyrandeSentinelShot|W",
+     "id": "TyrandeSentinel|W",
      "name": "파수",
      "abilityType": "W",
      "changes": [
@@ -1169,20 +1209,6 @@
      ]
     },
     {
-     "type": "talent_added",
-     "id": "ElunesGift",
-     "name": "엘룬의 선물",
-     "level": 7,
-     "full": "달빛 화살이 적 영웅에게 적중하면 10초 동안 기술 위력이 20% 증가합니다."
-    },
-    {
-     "type": "talent_added",
-     "id": "TyrandeCommanderofSentinels",
-     "name": "파수 지휘관",
-     "level": 20,
-     "full": "파수를 2회 충전할 수 있습니다."
-    },
-    {
      "type": "talent",
      "id": "TyrandeHeroicAbilityShadowstalk",
      "name": "그림자 추적",
@@ -1211,12 +1237,6 @@
      ]
     },
     {
-     "type": "talent_removed",
-     "id": "TyrandeMasteryLunarBlaze",
-     "name": "이글거리는 달빛",
-     "level": 1
-    },
-    {
      "type": "talent",
      "id": "TyrandeMoonlitArrows",
      "name": "엘룬의 화살",
@@ -1233,7 +1253,12 @@
        "after": "일반 공격이 엘룬의 빛의 재사용 대기시간을 추가로 0.5초 감소시킵니다.",
        "diff": "일반 공격이 엘룬의 빛의 재사용 대기시간을 추가로 [[-0.75초-]]{{+0.5초+}} 감소시킵니다."
       }
-     ]
+     ],
+     "moved": {
+      "from": 7,
+      "to": 1,
+      "kind": "tweak"
+     }
     },
     {
      "type": "talent",
@@ -1250,12 +1275,6 @@
      ]
     },
     {
-     "type": "talent_removed",
-     "id": "TyrandeShootingStar",
-     "name": "유성 화살",
-     "level": 20
-    },
-    {
      "type": "talent",
      "id": "TyrandeTrueshotAura",
      "name": "정조준 오라",
@@ -1268,6 +1287,38 @@
        "diff": "사용하면{{+ 자신과+}} 주위 아군 영웅의 공격력이 [[-5초-]]{{+40초+}} 동안 [[-40%-]]{{+5%+}} 증가하고 사냥꾼의 징표의 재사용 대기시간이 초기화됩니다.[[-\n지속 효과: 일반 공격력이 30% 증가합니다.-]]"
       }
      ]
+    },
+    {
+     "type": "talent_replaced",
+     "level": 20,
+     "idFrom": "TyrandeShootingStar",
+     "idTo": "TyrandeCommanderofSentinels",
+     "nameFrom": "유성 화살",
+     "nameTo": "파수 지휘관",
+     "fullBefore": "일반 공격의 사거리가 1 증가합니다. 8번째 일반 공격마다 자신 주위에 있는 무작위 적의 위치에 비용 없이 달빛 화살이 시전됩니다. 영웅을 우선시합니다.",
+     "fullAfter": "파수를 2회 충전할 수 있습니다.",
+     "cooldownBefore": "",
+     "cooldownAfter": "",
+     "match": "slot",
+     "confidence": "low"
+    },
+    {
+     "type": "talent_removed",
+     "id": "TyrandeMasteryLunarBlaze",
+     "name": "이글거리는 달빛",
+     "level": 1,
+     "full": "달빛 화살의 사거리가 30% 증가합니다.\n퀘스트: 달빛 화살이 적 영웅에게 적중할 때마다 달빛 화살의 공격력이 5% 증가하여 최대 150% 증가합니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_tyrande_lunarflare.png"
+    },
+    {
+     "type": "talent_added",
+     "id": "ElunesGift",
+     "name": "엘룬의 선물",
+     "level": 7,
+     "full": "달빛 화살이 적 영웅에게 적중하면 10초 동안 기술 위력이 20% 증가합니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_tyrande_lunarflare.png"
     }
    ]
   },
@@ -1342,21 +1393,7 @@
    "changes": [
     {
      "type": "ability",
-     "id": "ZagaraInfestedDrop|E",
-     "name": "감염체 투하",
-     "abilityType": "E",
-     "changes": [
-      {
-       "field": "full",
-       "before": "대상 지점에 저그 낙하 주머니를 떨어트려 140(+4%)의 피해를 줍니다.\n주머니에서는 애바퀴 2마리가 생성됩니다. 애바퀴는 초당 30(+4%)의 피해를 주며 8초 동안 전장에 머뭅니다.",
-       "after": "대상 지점에 저그 낙하 주머니를 떨어트려 140(+4%)의 피해를 줍니다. \n주머니에서는 애바퀴 2마리가 생성됩니다. 애바퀴는 초당 30(+4%)의 피해를 주며 10초에 걸쳐 생명력을 잃습니다.",
-       "diff": "대상 지점에 저그 낙하 주머니를 떨어트려 140(+4%)의 피해를 줍니다.[[-\n-]]{{+ \n+}}주머니에서는 애바퀴 2마리가 생성됩니다. 애바퀴는 초당 30(+4%)의 피해를 주며 [[-8초-]]{{+10초에+}} [[-동안-]]{{+걸쳐+}} [[-전장에-]]{{+생명력을+}} [[-머뭅니다.-]]{{+잃습니다.+}}"
-      }
-     ]
-    },
-    {
-     "type": "ability",
-     "id": "ZagaraSummonCreepTumor|Trait",
+     "id": "ZagaraCreepTumor|Trait",
      "name": "점막 종양",
      "abilityType": "Trait",
      "changes": [
@@ -1370,7 +1407,7 @@
     },
     {
      "type": "ability",
-     "id": "ZagaraSummonHydralisk|W",
+     "id": "ZagaraHunterKiller|W",
      "name": "추적 도살자",
      "abilityType": "W",
      "changes": [
@@ -1379,6 +1416,20 @@
        "before": "단일 대상을 공격하며 초당 71(+5%)의 피해를 주는 히드라리스크를 소환합니다. 히드라리스크는 8초를 머물며 450(+4.5%)의 생명력을 가집니다.",
        "after": "단일 대상을 공격하며 초당 71(+5%)의 피해를 주는 히드라리스크를 소환합니다. 히드라리스크는 450(+4.5%)의 생명력을 가지며, 10초에 걸쳐 생명력을 잃습니다.",
        "diff": "단일 대상을 공격하며 초당 71(+5%)의 피해를 주는 히드라리스크를 소환합니다. 히드라리스크는 [[-8초를 머물며 -]]450(+4.5%)의 생명력을 [[-가집니다.-]]{{+가지며, 10초에 걸쳐 생명력을 잃습니다.+}}"
+      }
+     ]
+    },
+    {
+     "type": "ability",
+     "id": "ZagaraInfestedDrop|E",
+     "name": "감염체 투하",
+     "abilityType": "E",
+     "changes": [
+      {
+       "field": "full",
+       "before": "대상 지점에 저그 낙하 주머니를 떨어트려 140(+4%)의 피해를 줍니다.\n주머니에서는 애바퀴 2마리가 생성됩니다. 애바퀴는 초당 30(+4%)의 피해를 주며 8초 동안 전장에 머뭅니다.",
+       "after": "대상 지점에 저그 낙하 주머니를 떨어트려 140(+4%)의 피해를 줍니다. \n주머니에서는 애바퀴 2마리가 생성됩니다. 애바퀴는 초당 30(+4%)의 피해를 주며 10초에 걸쳐 생명력을 잃습니다.",
+       "diff": "대상 지점에 저그 낙하 주머니를 떨어트려 140(+4%)의 피해를 줍니다.[[-\n-]]{{+ \n+}}주머니에서는 애바퀴 2마리가 생성됩니다. 애바퀴는 초당 30(+4%)의 피해를 주며 [[-8초-]]{{+10초에+}} [[-동안-]]{{+걸쳐+}} [[-전장에-]]{{+생명력을+}} [[-머뭅니다.-]]{{+잃습니다.+}}"
       }
      ]
     },
@@ -1392,15 +1443,21 @@
        "field": "full",
        "before": "추적 도살자의 재사용 대기시간이 4초 감소하고, 히드라리스크 대신 30초 동안 연쇄 공격을 하고 420(+4.5%)의 생명력을 가진 뮤탈리스크를 소환합니다.",
        "after": "추적 도살자의 재사용 대기시간이 -0초 감소하고, 히드라리스크 대신 연쇄 공격을 하고 420(+4.5%)의 생명력을 가진 뮤탈리스크를 소환합니다. 뮤탈리스크는 42초에 걸쳐 생명력을 잃습니다.",
-       "diff": "추적 도살자의 재사용 대기시간이 [[-4초-]]{{+-0초+}} 감소하고, 히드라리스크 대신[[- 30초 동안-]] 연쇄 공격을 하고 420(+4.5%)의 생명력을 가진 뮤탈리스크를 소환합니다.{{+ 뮤탈리스크는 42초에 걸쳐 생명력을 잃습니다.+}}"
+       "diff": "추적 도살자의 재사용 대기시간이 [[-4초-]]{{+-0초+}} 감소하고, 히드라리스크 대신[[- 30초 동안-]] 연쇄 공격을 하고 420(+4.5%)의 생명력을 가진 뮤탈리스크를 소환합니다.{{+ 뮤탈리스크는 42초에 걸쳐 생명력을 잃습니다.+}}",
+       "suspect": true
       }
-     ]
+     ],
+     "suspect": true
     }
    ]
   }
  },
  "summary": {
   "heroes": 19,
-  "changes": 96
+  "changes": 92,
+  "replaced": 5,
+  "moved": 3,
+  "subs": 1,
+  "suspect": 2
  }
 }

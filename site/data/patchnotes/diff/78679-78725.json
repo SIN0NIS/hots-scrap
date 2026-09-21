@@ -6,29 +6,11 @@
  "fromDate": "2020-03-11",
  "toDate": "2020-03-18",
  "toPtr": false,
- "heroes": {
-  "MalGanis": {
-   "name": "말가니스",
-   "changes": [
-    {
-     "type": "talent",
-     "id": "MalGanisNecroticEmbraceWingedGuard",
-     "name": "날개 방패",
-     "level": 1,
-     "changes": [
-      {
-       "field": "full",
-       "before": "괴저 기운이 적 영웅에게 적중하면 물리 방어력이 75 증가합니다. 이 효과는 여러 번 충전될 수 있습니다.\n날개 방패가 충전되지 않은 상태면 6초 후에 1회 충전됩니다.",
-       "after": "괴저 기운이 적 영웅에게 적중하면 물리 방어력이 75 증가합니다. 이 효과는 여러 번 충전될 수 있습니다.\n날개 방패가 충전되지 않은 상태면 0##ERROR##초 후에 0##ERROR##회 충전됩니다.",
-       "diff": "괴저 기운이 적 영웅에게 적중하면 물리 방어력이 75 증가합니다. 이 효과는 여러 번 충전될 수 있습니다.\n날개 방패가 충전되지 않은 상태면 [[-6초-]]{{+0##ERROR##초+}} 후에 [[-1회-]]{{+0##ERROR##회+}} 충전됩니다."
-      }
-     ]
-    }
-   ]
-  }
- },
+ "fromRepo": "heroes-data",
+ "toRepo": "heroes-data",
+ "heroes": {},
  "summary": {
-  "heroes": 1,
-  "changes": 1
+  "heroes": 0,
+  "changes": 0
  }
 }

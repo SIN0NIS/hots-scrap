@@ -6,6 +6,8 @@
  "fromDate": "2020-09-09",
  "toDate": "2020-10-10",
  "toPtr": false,
+ "fromRepo": "heroes-data",
+ "toRepo": "heroes-data",
  "heroes": {
   "Alexstrasza": {
    "name": "알렉스트라자",
@@ -259,7 +261,7 @@
      "after": {
       "amount": 2150,
       "scale": 0.04,
-      "regenRate": 4.4804,
+      "regenRate": 4.48,
       "regenScale": 0.04
      }
     },
@@ -351,7 +353,7 @@
     },
     {
      "type": "ability",
-     "id": "DVaMechBunnyHopHeroic|Heroic",
+     "id": "DVaBunnyHopOn|Heroic",
      "name": "토끼뜀",
      "abilityType": "Heroic",
      "changes": [
@@ -513,6 +515,27 @@
        "diff": "[[-기력이 75% 이상일 때 이글거리는 화염을 사용하면 적 영웅에게 75%의 추가 피해를 줍니다.-]]{{+이글거리는 화염이 적 영웅에게 25%의 추가 피해를 줍니다. 기력이 75 이상일 때에는 추가 공격력이 75%로 증가합니다.+}}"
       }
      ]
+    },
+    {
+     "type": "ability",
+     "id": "DeathwingLavaBurst|W",
+     "name": "용암 폭발",
+     "abilityType": "W",
+     "changes": [
+      {
+       "field": "full",
+       "before": "1초 후, 마그마를 폭발시켜 대상 지역의 모든 적에게 30(+4%)의 피해를 줍니다. 폭발한 마그마는 웅덩이를 남겨 범위 안의 적들에게 초당 20(+4%)의 피해를 주고 35% 느려지게 합니다. 6초 동안 지속됩니다.\n파괴자: 소각\n주위 적들에게 피해를 줍니다.",
+       "after": "1초 후, 마그마를 폭발시켜 대상 지역의 모든 적에게 30(+4%)의 피해를 줍니다. 폭발한 마그마는 웅덩이를 남겨 범위 안의 적들에게 초당 24(+4%)의 피해를 주고 35% 느려지게 합니다. 6초 동안 지속됩니다.\n파괴자: 소각\n주위 적들에게 피해를 줍니다.",
+       "diff": "1초 후, 마그마를 폭발시켜 대상 지역의 모든 적에게 30(+4%)의 피해를 줍니다. 폭발한 마그마는 웅덩이를 남겨 범위 안의 적들에게 초당 [[-20(+4%)의-]]{{+24(+4%)의+}} 피해를 주고 35% 느려지게 합니다. 6초 동안 지속됩니다.\n파괴자: 소각\n주위 적들에게 피해를 줍니다."
+      },
+      {
+       "field": "energy",
+       "before": "기력: 20",
+       "after": "기력: 15",
+       "diff": "기력: [[-20-]]{{+15+}}"
+      }
+     ],
+     "parent": "형상 전환"
     }
    ]
   },
@@ -840,7 +863,7 @@
    "changes": [
     {
      "type": "ability",
-     "id": "RockstarDummy|Trait",
+     "id": "L90ETCRockstar|Trait",
      "name": "록스타",
      "abilityType": "Trait",
      "changes": [
@@ -1244,7 +1267,7 @@
     },
     {
      "type": "ability",
-     "id": "TinkerRoboGoblin|Heroic",
+     "id": "TinkerRoboGoblinPassive|Heroic",
      "name": "로보고블린",
      "abilityType": "Heroic",
      "changes": [
@@ -1519,7 +1542,12 @@
        "after": "미니건의 재사용 대기시간이 4초 감소합니다. 달려 쏴 사용 후 미니건의 재사용 대기시간이 추가로 4초 감소합니다.",
        "diff": "[[-달려 쏴를 사용하면 미니건의 재사용 대기시간이 8초 감소합니다.-]]{{+미니건의 재사용 대기시간이 4초 감소합니다. 달려 쏴 사용 후 미니건의 재사용 대기시간이 추가로 4초 감소합니다.+}}"
       }
-     ]
+     ],
+     "moved": {
+      "from": 1,
+      "to": 7,
+      "kind": "redesign"
+     }
     },
     {
      "type": "talent",
@@ -1536,12 +1564,6 @@
      ]
     },
     {
-     "type": "talent_removed",
-     "id": "TychusMasteryFragGrenadeConcussionGrenade",
-     "name": "충격파 수류탄",
-     "level": 7
-    },
-    {
      "type": "talent",
      "id": "TychusMasteryQuarterback",
      "name": "어깨 근육 강화제",
@@ -1552,14 +1574,12 @@
        "before": 7,
        "after": 1
       }
-     ]
-    },
-    {
-     "type": "talent_added",
-     "id": "TychusMeltingPoint",
-     "name": "융해점",
-     "level": 7,
-     "full": "수류탄에 적중당한 적이 3초에 걸쳐 75(+4%)의 추가 피해를 받습니다. 돌격병, 용병, 괴물에게는 이 추가 피해가 100% 증가합니다."
+     ],
+     "moved": {
+      "from": 7,
+      "to": 1,
+      "kind": "moved"
+     }
     },
     {
      "type": "talent",
@@ -1602,6 +1622,20 @@
        "diff": "[[-미니건의 재사용 대기시간이 2초 감소하고 -]]적 영웅의 생명력이 [[-35%-]]{{+30%+}} 이상일 때 미니건의 추가 피해가 대상의 최대 생명력의 4%로 증가하지만, [[-35%-]]{{+30%+}} 이하일 때에는 추가 피해를 주지 않습니다."
       }
      ]
+    },
+    {
+     "type": "talent_replaced",
+     "level": 7,
+     "idFrom": "TychusMasteryFragGrenadeConcussionGrenade",
+     "idTo": "TychusMeltingPoint",
+     "nameFrom": "충격파 수류탄",
+     "nameTo": "융해점",
+     "fullBefore": "수류탄의 폭발 반경이 25% 증가하고, 적을 밀쳐내는 거리가 100% 증가합니다.",
+     "fullAfter": "수류탄에 적중당한 적이 3초에 걸쳐 75(+4%)의 추가 피해를 받습니다. 돌격병, 용병, 괴물에게는 이 추가 피해가 100% 증가합니다.",
+     "cooldownBefore": "",
+     "cooldownAfter": "",
+     "match": "slot",
+     "confidence": "low"
     }
    ]
   },
@@ -1671,6 +1705,9 @@
  },
  "summary": {
   "heroes": 26,
-  "changes": 106
+  "changes": 106,
+  "replaced": 1,
+  "moved": 2,
+  "subs": 1
  }
 }

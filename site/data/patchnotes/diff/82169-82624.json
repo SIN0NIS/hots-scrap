@@ -6,6 +6,8 @@
  "fromDate": "2020-10-10",
  "toDate": "2020-11-06",
  "toPtr": false,
+ "fromRepo": "heroes-data",
+ "toRepo": "heroes-data",
  "heroes": {
   "Alarak": {
    "name": "알라라크",
@@ -58,17 +60,18 @@
      ]
     },
     {
-     "type": "talent_added",
-     "id": "AnubarakTheTraitorKing",
-     "name": "배신자 왕",
+     "type": "talent_replaced",
      "level": 20,
-     "full": "최대 생명력이 10% 증가하고 기술 방어력이 20 증가합니다. 사용하면 방어력이 4초 동안 75 증가합니다."
-    },
-    {
-     "type": "talent_removed",
-     "id": "GenericTalentHardenedShield",
-     "name": "강화 보호막",
-     "level": 20
+     "idFrom": "GenericTalentHardenedShield",
+     "idTo": "AnubarakTheTraitorKing",
+     "nameFrom": "강화 보호막",
+     "nameTo": "배신자 왕",
+     "fullBefore": "사용하면 방어력이 4초 동안 75 증가하여 받는 피해가 75% 감소합니다.",
+     "fullAfter": "최대 생명력이 10% 증가하고 기술 방어력이 20 증가합니다. 사용하면 방어력이 4초 동안 75 증가합니다.",
+     "cooldownBefore": "재사용 대기시간: 60초",
+     "cooldownAfter": "재사용 대기시간: 60초",
+     "match": "slot",
+     "confidence": "low"
     }
    ]
   },
@@ -474,12 +477,6 @@
      ]
     },
     {
-     "type": "talent_removed",
-     "id": "LeoricDrainHopeHardenedBonesTalent",
-     "name": "단단한 골격",
-     "level": 20
-    },
-    {
      "type": "talent",
      "id": "LeoricMasteryUnyieldingDespairDrainHope",
      "name": "끝없는 절망",
@@ -506,6 +503,15 @@
        "diff": "재사용 대기시간: [[-30초-]]{{+25초+}}"
       }
      ]
+    },
+    {
+     "type": "talent_removed",
+     "id": "LeoricDrainHopeHardenedBonesTalent",
+     "name": "단단한 골격",
+     "level": 20,
+     "full": "절망의 손아귀 중에 방어력이 50 증가합니다. 절망의 손아귀가 끝까지 지속되면 방어력 증가 효과가 2초 동안 유지됩니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_leoric_drainhope_var1.png"
     }
    ]
   },
@@ -518,13 +524,13 @@
      "before": {
       "amount": 2450,
       "scale": 0.04,
-      "regenRate": 5.1054,
+      "regenRate": 5.105,
       "regenScale": 0.04
      },
      "after": {
       "amount": 2550,
       "scale": 0.04,
-      "regenRate": 5.3125,
+      "regenRate": 5.312,
       "regenScale": 0.04
      }
     },
@@ -942,7 +948,7 @@
      "before": {
       "amount": 2116,
       "scale": 0.04,
-      "regenRate": 4.4062,
+      "regenRate": 4.406,
       "regenScale": 0.04
      },
      "after": {
@@ -999,6 +1005,7 @@
  },
  "summary": {
   "heroes": 18,
-  "changes": 63
+  "changes": 62,
+  "replaced": 1
  }
 }

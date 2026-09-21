@@ -6,6 +6,8 @@
  "fromDate": "2021-12-07",
  "toDate": "2022-02-20",
  "toPtr": false,
+ "fromRepo": "heroes-data",
+ "toRepo": "heroes-data",
  "heroes": {
   "Azmodan": {
    "name": "아즈모단",
@@ -175,12 +177,6 @@
      ]
     },
     {
-     "type": "talent_removed",
-     "id": "GenjiDodge",
-     "name": "회피",
-     "level": 7
-    },
-    {
      "type": "talent",
      "id": "GenjiShurikenSharpenedStars",
      "name": "예리한 수리검",
@@ -221,6 +217,15 @@
        "diff": "질풍참이 적중한 적 영웅 하나당 다음 질풍참의 공격력이 [[-20%-]]{{+30%+}} 증가합니다. 최대 3회 중첩됩니다."
       }
      ]
+    },
+    {
+     "type": "talent_removed",
+     "id": "GenjiDodge",
+     "name": "회피",
+     "level": 7,
+     "full": "7초마다 적 영웅의 일반 공격을 1회 회피합니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_genji_dodge.png"
     }
    ]
   },
@@ -308,7 +313,7 @@
      "before": {
       "amount": 2250,
       "scale": 0.04,
-      "regenRate": 4.6875,
+      "regenRate": 4.688,
       "regenScale": 0.04
      },
      "after": {
@@ -795,7 +800,7 @@
      "after": {
       "amount": 1935,
       "scale": 0.04,
-      "regenRate": 4.0312,
+      "regenRate": 4.031,
       "regenScale": 0.04
      }
     },
@@ -838,7 +843,12 @@
        "before": 7,
        "after": 1
       }
-     ]
+     ],
+     "moved": {
+      "from": 7,
+      "to": 1,
+      "kind": "moved"
+     }
     },
     {
      "type": "talent",
@@ -857,7 +867,12 @@
        "after": "속박의 토템 범위 안에 있는 적 영웅의 공격 속도가 30% 감소하고 기술 위력이 15% 감소합니다.\n지속 효과: 속박의 토템의 범위가 50% 증가합니다.",
        "diff": "속박의 토템 범위 안에 있는 적 영웅의 공격 속도가 [[-40%-]]{{+30%+}} 감소하고 기술 위력이 [[-20%-]]{{+15%+}} 감소합니다.\n지속 효과: 속박의 토템의 범위가 50% 증가합니다."
       }
-     ]
+     ],
+     "moved": {
+      "from": 1,
+      "to": 7,
+      "kind": "tweak"
+     }
     },
     {
      "type": "talent",
@@ -1095,25 +1110,6 @@
     }
    ]
   },
-  "Whitemane": {
-   "name": "화이트메인",
-   "changes": [
-    {
-     "type": "ability",
-     "id": "WhitemaneFanaticalPower|Trait",
-     "name": "열의",
-     "abilityType": "Trait",
-     "changes": [
-      {
-       "field": "full",
-       "before": "치유 기술이 대상에게 8초 동안 열의를 부여합니다. 적 영웅에게 피해를 줄 때마다 열의가 부여된 아군의 생명력을 준 피해의 100%만큼 회복시킵니다.\n사용하면 기술 위력이 5초 동안 25% 증가하지만 방어력이 0##ERROR## 감소합니다. 정신을 집중하는 중에도 사용할 수 있습니다.",
-       "after": "치유 기술이 대상에게 8초 동안 열의를 부여합니다. 적 영웅에게 피해를 줄 때마다 열의가 부여된 아군의 생명력을 준 피해의 100%만큼 회복시킵니다.\n사용하면 기술 위력이 5초 동안 25% 증가하지만 방어력이 25 감소합니다. 정신을 집중하는 중에도 사용할 수 있습니다.",
-       "diff": "치유 기술이 대상에게 8초 동안 열의를 부여합니다. 적 영웅에게 피해를 줄 때마다 열의가 부여된 아군의 생명력을 준 피해의 100%만큼 회복시킵니다.\n사용하면 기술 위력이 5초 동안 25% 증가하지만 방어력이 [[-0##ERROR##-]]{{+25+}} 감소합니다. 정신을 집중하는 중에도 사용할 수 있습니다."
-      }
-     ]
-    }
-   ]
-  },
   "Yrel": {
    "name": "이렐",
    "changes": [
@@ -1191,7 +1187,8 @@
   }
  },
  "summary": {
-  "heroes": 14,
-  "changes": 79
+  "heroes": 13,
+  "changes": 78,
+  "moved": 2
  }
 }

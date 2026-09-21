@@ -6,6 +6,8 @@
  "fromDate": "2020-08-19",
  "toDate": "2020-09-09",
  "toPtr": true,
+ "fromRepo": "heroes-data",
+ "toRepo": "heroes-data",
  "heroes": {
   "Alarak": {
    "name": "알라라크",
@@ -22,7 +24,7 @@
      "after": {
       "amount": 1950,
       "scale": 0.04,
-      "regenRate": 4.0585,
+      "regenRate": 4.059,
       "regenScale": 0.04
      }
     },
@@ -109,7 +111,7 @@
      "after": {
       "amount": 2250,
       "scale": 0.04,
-      "regenRate": 4.6875,
+      "regenRate": 4.688,
       "regenScale": 0.04
      }
     },
@@ -135,7 +137,21 @@
     },
     {
      "type": "ability",
-     "id": "DVaBoostersOn|Q",
+     "id": "DVaBunnyHopOn|Heroic",
+     "name": "토끼뜀",
+     "abilityType": "Heroic",
+     "changes": [
+      {
+       "field": "cooldown",
+       "before": "재사용 대기시간: 100초",
+       "after": "재사용 대기시간: 80초",
+       "diff": "재사용 대기시간: [[-100초-]]{{+80초+}}"
+      }
+     ]
+    },
+    {
+     "type": "ability",
+     "id": "DVaMechBoosters|Q",
      "name": "부스터",
      "abilityType": "Q",
      "changes": [
@@ -155,27 +171,7 @@
     },
     {
      "type": "ability",
-     "id": "DVaMechBunnyHopHeroic|Heroic",
-     "name": "토끼뜀",
-     "abilityType": "Heroic",
-     "changes": [
-      {
-       "field": "full",
-       "before": "메카가 저지 불가 상태가 되고 0.5초마다 발을 구르면서 적들에게 60(+4%)의 피해를 주고 40% 느려지게 합니다. 4초 동안 지속됩니다.\n메카 모드일 때에만 사용할 수 있습니다.",
-       "after": "메카가 저지 불가 상태가 되고 0.5초마다 발을 구르면서 적들에게 52(+4%)의 피해를 주고 5% 느려지게 합니다. 0##ERROR##초 동안 지속됩니다.\n메카 모드일 때에만 사용할 수 있습니다.",
-       "diff": "메카가 저지 불가 상태가 되고 0.5초마다 발을 구르면서 적들에게 [[-60(+4%)의-]]{{+52(+4%)의+}} 피해를 주고 [[-40%-]]{{+5%+}} 느려지게 합니다. [[-4초-]]{{+0##ERROR##초+}} 동안 지속됩니다.\n메카 모드일 때에만 사용할 수 있습니다."
-      },
-      {
-       "field": "cooldown",
-       "before": "재사용 대기시간: 100초",
-       "after": "재사용 대기시간: 80초",
-       "diff": "재사용 대기시간: [[-100초-]]{{+80초+}}"
-      }
-     ]
-    },
-    {
-     "type": "ability",
-     "id": "DVaMechDefenseMatrixOn|W",
+     "id": "DVaMechDefenseMatrix|W",
      "name": "방어 매트릭스",
      "abilityType": "W",
      "changes": [
@@ -226,19 +222,8 @@
      "id": "DVaMicroMissiles|Heroic",
      "name": "마이크로 미사일",
      "abilityType": "Heroic",
-     "full": ""
-    },
-    {
-     "type": "ability_removed",
-     "id": "DVaPilotBigShot|Heroic",
-     "name": "딱콩!",
-     "abilityType": "Heroic"
-    },
-    {
-     "type": "talent_removed",
-     "id": "DVaBigShot",
-     "name": "딱콩!",
-     "level": 10
+     "full": "",
+     "cooldown": "충전 대기시간: 20초"
     },
     {
      "type": "talent",
@@ -257,19 +242,12 @@
        "after": "딱콩!이 0.5초에 걸쳐 3회 발사됩니다. 회당 공격력은 15000(+4%)%로 감소합니다.",
        "diff": "딱콩!이 0.5초에 걸쳐 3회 발사됩니다. 회당 공격력은 [[-50%로-]]{{+15000(+4%)%로+}} 감소합니다."
       }
-     ]
-    },
-    {
-     "type": "talent_removed",
-     "id": "DVaBoostersComingThrough",
-     "name": "지나갑니다",
-     "level": 7
-    },
-    {
-     "type": "talent_removed",
-     "id": "DVaBoostersCrashCourse",
-     "name": "충돌의 정석",
-     "level": 1
+     ],
+     "moved": {
+      "from": 20,
+      "to": 13,
+      "kind": "tweak"
+     }
     },
     {
      "type": "talent",
@@ -288,7 +266,12 @@
        "after": "부스터의 초기 속도 증가율이 301%로 증가한 후 0.5초에 걸쳐 기본 부스터 속도로 감소합니다. 속도가 증가한 동안 적에게 부딪히면 50%의 추가 피해를 줍니다.",
        "diff": "부스터의 초기 속도 증가율이 [[-325%로-]]{{+301%로+}} 증가한 후 0.5초에 걸쳐 기본 부스터 속도로 감소합니다. 속도가 증가한 동안 적에게 부딪히면 50%의 추가 피해를 줍니다."
       }
-     ]
+     ],
+     "moved": {
+      "from": 1,
+      "to": 7,
+      "kind": "tweak"
+     }
     },
     {
      "type": "talent",
@@ -301,7 +284,12 @@
        "before": 1,
        "after": 4
       }
-     ]
+     ],
+     "moved": {
+      "from": 1,
+      "to": 4,
+      "kind": "moved"
+     }
     },
     {
      "type": "talent",
@@ -309,12 +297,6 @@
      "name": "토끼뜀",
      "level": 10,
      "changes": [
-      {
-       "field": "full",
-       "before": "메카가 저지 불가 상태가 되고 0.5초마다 발을 구르면서 적들에게 60(+4%)의 피해를 주고 40% 느려지게 합니다. 4초 동안 지속됩니다.\n메카 모드일 때에만 사용할 수 있습니다.",
-       "after": "메카가 저지 불가 상태가 되고 0.5초마다 발을 구르면서 적들에게 52(+4%)의 피해를 주고 5% 느려지게 합니다. 0##ERROR##초 동안 지속됩니다.\n메카 모드일 때에만 사용할 수 있습니다.",
-       "diff": "메카가 저지 불가 상태가 되고 0.5초마다 발을 구르면서 적들에게 [[-60(+4%)의-]]{{+52(+4%)의+}} 피해를 주고 [[-40%-]]{{+5%+}} 느려지게 합니다. [[-4초-]]{{+0##ERROR##초+}} 동안 지속됩니다.\n메카 모드일 때에만 사용할 수 있습니다."
-      },
       {
        "field": "cooldown",
        "before": "재사용 대기시간: 100초",
@@ -354,13 +336,12 @@
        "after": "메카 모드일 때 적 영웅을 일반 공격할 때마다 재사용 대기시간이 0.12초 감소합니다.",
        "diff": "메카 [[-모드에서-]]{{+모드일 때+}} 적 영웅을 일반 공격할 때마다 [[-방어 매트릭스의 -]]재사용 대기시간이 [[-0.25초-]]{{+0.12초+}} 감소합니다."
       }
-     ]
-    },
-    {
-     "type": "talent_removed",
-     "id": "DVaDefenseMatrixDazerZone",
-     "name": "감속 지대",
-     "level": 7
+     ],
+     "moved": {
+      "from": 7,
+      "to": 4,
+      "kind": "redesign"
+     }
     },
     {
      "type": "talent",
@@ -372,14 +353,13 @@
        "field": "level",
        "before": 4,
        "after": 16
-      },
-      {
-       "field": "full",
-       "before": "방어 매트릭스의 범위가 100% 증가하고 지속 시간이 25% 증가하지만 지속 시간 동안 이동 속도가 30% 감소합니다.",
-       "after": "방어 매트릭스의 범위가 100% 증가하고 지속 시간이 25% 증가하지만 지속 시간 이동 속도가 0##ERROR##% 감소합니다.",
-       "diff": "방어 매트릭스의 범위가 100% 증가하고 지속 시간이 25% 증가하지만 지속 시간 [[-동안 -]]이동 속도가 [[-30%-]]{{+0##ERROR##%+}} 감소합니다."
       }
-     ]
+     ],
+     "moved": {
+      "from": 4,
+      "to": 16,
+      "kind": "moved"
+     }
     },
     {
      "type": "talent",
@@ -398,48 +378,12 @@
        "after": "방어 매트릭스 내부에 있는 적 영웅이 공격할 때마다 자폭이 1% 충전됩니다.\n한 번에 최대 20% 충전됩니다.",
        "diff": "방어 매트릭스 내부에 있는 적 영웅이 공격할 때마다 자폭이 1% 충전됩니다.\n[[-사용할-]]{{+한+}} [[-때마다-]]{{+번에+}} 최대 [[-15%-]]{{+20%+}} 충전됩니다."
       }
-     ]
-    },
-    {
-     "type": "talent_removed",
-     "id": "DVaDefenseMatrixGetThroughThis",
-     "name": "뚫어보시지!",
-     "level": 4
-    },
-    {
-     "type": "talent_added",
-     "id": "DVaFullMetal",
-     "name": "",
-     "level": 1,
-     "full": ""
-    },
-    {
-     "type": "talent_added",
-     "id": "DVaGoodToGo",
-     "name": "",
-     "level": 13,
-     "full": ""
-    },
-    {
-     "type": "talent_added",
-     "id": "DVaHeadshot",
-     "name": "한 방이지!",
-     "level": 20,
-     "full": ""
-    },
-    {
-     "type": "talent_added",
-     "id": "DVaInForTheKill",
-     "name": "살상의 기회",
-     "level": 16,
-     "full": ""
-    },
-    {
-     "type": "talent_added",
-     "id": "DVaLiquidCooling",
-     "name": "",
-     "level": 1,
-     "full": ""
+     ],
+     "moved": {
+      "from": 4,
+      "to": 7,
+      "kind": "redesign"
+     }
     },
     {
      "type": "talent",
@@ -458,7 +402,12 @@
        "after": "메카의 최대 생명력의 4% 이하에 해당하는 모든 피해가 50% 감소합니다.\n이 효과는 자폭 충전율을 감소시키지 않습니다.",
        "diff": "메카의 최대 생명력의 4% [[-이하인-]]{{+이하에 해당하는+}} 모든 피해가 50% 감소합니다.\n이 효과는 자폭 충전율을 감소시키지 않습니다."
       }
-     ]
+     ],
+     "moved": {
+      "from": 13,
+      "to": 20,
+      "kind": "redesign"
+     }
     },
     {
      "type": "talent",
@@ -477,13 +426,12 @@
        "after": "메카가 파괴되는 대신 4초 동안 280(+4%)의 피해를 흡수하는 보호막을 얻습니다.\n30초에 한 번씩만 발동합니다.",
        "diff": "메카가 파괴되는 대신 [[-6초-]]{{+4초+}} 동안 [[-210(+4%)의-]]{{+280(+4%)의+}} 피해를 흡수하는 보호막을 얻습니다.\n[[-15초에-]]{{+30초에+}} 한 번씩만 발동합니다."
       }
-     ]
-    },
-    {
-     "type": "talent_removed",
-     "id": "DVaMechExpensivePlating",
-     "name": "강화된 장갑",
-     "level": 13
+     ],
+     "moved": {
+      "from": 13,
+      "to": 16,
+      "kind": "tweak"
+     }
     },
     {
      "type": "talent",
@@ -500,55 +448,6 @@
      ]
     },
     {
-     "type": "talent_added",
-     "id": "DVaMicroMissiles",
-     "name": "마이크로 미사일",
-     "level": 10,
-     "full": ""
-    },
-    {
-     "type": "talent_removed",
-     "id": "DVaPilotCallMechMEKAfall",
-     "name": "메카폴",
-     "level": 20
-    },
-    {
-     "type": "talent_removed",
-     "id": "DVaPilotConcussivePulse",
-     "name": "충격 파동",
-     "level": 20
-    },
-    {
-     "type": "talent_removed",
-     "id": "DVaPilotGGWP",
-     "name": "GG요!",
-     "level": 16
-    },
-    {
-     "type": "talent_removed",
-     "id": "DVaPilotNanoweaveSuit",
-     "name": "나노섬유 전투복",
-     "level": 16
-    },
-    {
-     "type": "talent_removed",
-     "id": "DVaPilotSuppressingFire",
-     "name": "제압 사격",
-     "level": 16
-    },
-    {
-     "type": "talent_removed",
-     "id": "DVaPilotTorpedoDash",
-     "name": "약진",
-     "level": 16
-    },
-    {
-     "type": "talent_removed",
-     "id": "DVaSelfDestructBringItOn",
-     "name": "덤벼봐!",
-     "level": 4
-    },
-    {
      "type": "talent",
      "id": "DVaSelfDestructNuclearOption",
      "name": "핵폭발",
@@ -563,30 +462,246 @@
        "field": "full",
        "before": "자폭 준비 시간이 3초 증가하지만, 자폭의 공격력도 70% 증가합니다.\n메카 호출은 이전과 동일하게 4초 후에 할 수 있습니다.",
        "after": "자폭 준비 시간이 1초 증가하지만 자폭의 공격력도 0% 증가합니다.\n메카 호출은 이전과 동일하게 4초 후에 할 수 있습니다.",
-       "diff": "자폭 준비 시간이 [[-3초-]]{{+1초+}} [[-증가하지만,-]]{{+증가하지만+}} 자폭의 공격력도 [[-70%-]]{{+0%+}} 증가합니다.\n메카 호출은 이전과 동일하게 4초 후에 할 수 있습니다."
+       "diff": "자폭 준비 시간이 [[-3초-]]{{+1초+}} [[-증가하지만,-]]{{+증가하지만+}} 자폭의 공격력도 [[-70%-]]{{+0%+}} 증가합니다.\n메카 호출은 이전과 동일하게 4초 후에 할 수 있습니다.",
+       "suspect": true
       }
-     ]
+     ],
+     "moved": {
+      "from": 7,
+      "to": 4,
+      "kind": "redesign"
+     },
+     "suspect": true
     },
     {
-     "type": "talent_added",
-     "id": "DVaTargetLocked",
-     "name": "방어 매트릭스",
+     "type": "talent_replaced",
+     "level": 10,
+     "idFrom": "DVaBigShot",
+     "idTo": "DVaMicroMissiles",
+     "nameFrom": "딱콩!",
+     "nameTo": "마이크로 미사일",
+     "fullBefore": "일직선상의 모든 적에게 250(+4%)의 피해를 줍니다. 적중한 적 영웅 하나당 메카 호출의 재사용 대기시간이 8초 감소합니다.\n조종사 모드일 때에만 사용할 수 있습니다.",
+     "fullAfter": "",
+     "cooldownBefore": "재사용 대기시간: 4초",
+     "cooldownAfter": "충전 대기시간: 20초",
+     "match": "slot",
+     "confidence": "low"
+    },
+    {
+     "type": "talent_removed",
+     "id": "DVaBoostersCrashCourse",
+     "name": "충돌의 정석",
+     "level": 1,
+     "full": "퀘스트: 부스터가 적 영웅에게 적중해야 합니다.\n보상: 부스터가 적 영웅에게 20회 적중하면 부스터로 부딪힌 적 영웅 하나당 재사용 대기시간이 1초 감소합니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_dva_boosters_b.png"
+    },
+    {
+     "type": "talent_removed",
+     "id": "DVaDefenseMatrixGetThroughThis",
+     "name": "뚫어보시지!",
+     "level": 4,
+     "full": "방어 매트릭스의 지속 시간이 3초 증가합니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_dva_defensematrix_a.png"
+    },
+    {
+     "type": "talent_removed",
+     "id": "DVaSelfDestructBringItOn",
+     "name": "덤벼봐!",
+     "level": 4,
+     "full": "받은 피해로 전환되는 자폭 충전율이 30% 증가합니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_dva_selfdestruct.png"
+    },
+    {
+     "type": "talent_removed",
+     "id": "DVaBoostersComingThrough",
+     "name": "지나갑니다",
+     "level": 7,
+     "full": "부스터로 적을 밀쳐내는 거리가 100% 증가합니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_dva_boosters.png"
+    },
+    {
+     "type": "talent_removed",
+     "id": "DVaDefenseMatrixDazerZone",
+     "name": "감속 지대",
+     "level": 7,
+     "full": "방어 매트릭스 내부의 적들이 20% 느려집니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_dva_defensematrix.png"
+    },
+    {
+     "type": "talent_removed",
+     "id": "DVaMechExpensivePlating",
+     "name": "강화된 장갑",
      "level": 13,
-     "full": ""
+     "full": "메카의 최대 생명력이 20% 증가하지만 메카 호출의 재사용 대기시간이 15초 증가합니다.\n이 효과는 자폭 충전율을 감소시키지 않습니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_dva_callmech.png"
+    },
+    {
+     "type": "talent_removed",
+     "id": "DVaPilotTorpedoDash",
+     "name": "약진",
+     "level": 16,
+     "full": "약진 기술을 습득하여 유닛 충돌을 무시하고 대상 위치로 약진할 수 있습니다.\n조종사 모드일 때에만 사용할 수 있습니다.",
+     "cooldown": "재사용 대기시간: 12초",
+     "icon": "storm_ui_icon_dva_jetpackattack.png"
+    },
+    {
+     "type": "talent_removed",
+     "id": "DVaPilotGGWP",
+     "name": "GG요!",
+     "level": 16,
+     "full": "조종사 모드일 때 일반 공격력이 50% 증가하고 영웅을 처치하면 메카 호출의 재사용 대기시간이 즉시 초기화됩니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_dva_pilotmode.png"
+    },
+    {
+     "type": "talent_removed",
+     "id": "DVaPilotNanoweaveSuit",
+     "name": "나노섬유 전투복",
+     "level": 16,
+     "full": "메카에서 탈출한 후 4초 동안 방어력이 50 증가합니다. 일반 공격으로 감소하는 메카 호출의 재사용 대기시간이 50% 증가합니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_dva_pilotmode_a.png"
+    },
+    {
+     "type": "talent_removed",
+     "id": "DVaPilotSuppressingFire",
+     "name": "제압 사격",
+     "level": 16,
+     "full": "조종사 모드일 때 일반 공격의 사거리가 20% 증가하고 적을 2.5초 동안 20% 느려지게 합니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_dva_pilotmode_b.png"
+    },
+    {
+     "type": "talent_removed",
+     "id": "DVaPilotConcussivePulse",
+     "name": "충격 파동",
+     "level": 20,
+     "full": "충격 파동 기술을 습득하여 부채꼴 범위의 적들에게 141(+4%)의 피해를 주고 뒤로 밀쳐낼 수 있습니다.\n조종사 모드일 때에만 사용할 수 있습니다.",
+     "cooldown": "재사용 대기시간: 7초",
+     "icon": "storm_ui_icon_dva_concussivecharge.png"
+    },
+    {
+     "type": "talent_removed",
+     "id": "DVaPilotCallMechMEKAfall",
+     "name": "메카폴",
+     "level": 20,
+     "full": "메카 호출 후 즉시 탑승할 수 있고 호출 위치를 선택할 수 있습니다. 메카가 호출될 때 대상 위치에 202(+4%)의 피해를 줍니다.",
+     "cooldown": "재사용 대기시간: 45초",
+     "icon": "storm_ui_icon_dva_callmech.png"
     },
     {
      "type": "talent_added",
-     "id": "DVaTimingAttack",
-     "name": "타이밍 공격",
-     "level": 20,
-     "full": ""
+     "id": "DVaFullMetal",
+     "name": "",
+     "level": 1,
+     "full": "",
+     "cooldown": "",
+     "icon": "storm_ui_icon_dva_mechmode.png"
+    },
+    {
+     "type": "talent_added",
+     "id": "DVaLiquidCooling",
+     "name": "",
+     "level": 1,
+     "full": "",
+     "cooldown": "재사용 대기시간: 50초",
+     "icon": "storm_ui_icon_dva_mechmode_b.png"
     },
     {
      "type": "talent_added",
      "id": "DvaGetOnThePoint",
      "name": "부스터",
      "level": 7,
-     "full": ""
+     "full": "",
+     "cooldown": "",
+     "icon": "storm_ui_icon_dva_boosters.png"
+    },
+    {
+     "type": "talent_added",
+     "id": "DVaTargetLocked",
+     "name": "방어 매트릭스",
+     "level": 13,
+     "full": "",
+     "cooldown": "",
+     "icon": "storm_ui_icon_dva_defensematrix.png"
+    },
+    {
+     "type": "talent_added",
+     "id": "DVaGoodToGo",
+     "name": "",
+     "level": 13,
+     "full": "",
+     "cooldown": "",
+     "icon": "storm_ui_icon_dva_pilotmode.png"
+    },
+    {
+     "type": "talent_added",
+     "id": "DVaInForTheKill",
+     "name": "살상의 기회",
+     "level": 16,
+     "full": "",
+     "cooldown": "",
+     "icon": "storm_ui_icon_dva_boosters.png"
+    },
+    {
+     "type": "talent_added",
+     "id": "DVaTimingAttack",
+     "name": "타이밍 공격",
+     "level": 20,
+     "full": "",
+     "cooldown": "",
+     "icon": "storm_ui_icon_dva_micromissiles.png"
+    },
+    {
+     "type": "talent_added",
+     "id": "DVaHeadshot",
+     "name": "한 방이지!",
+     "level": 20,
+     "full": "",
+     "cooldown": "",
+     "icon": "storm_ui_icon_dva_bigshot.png"
+    },
+    {
+     "type": "ability",
+     "id": "DVaPilotConcussivePulseAbility|W",
+     "name": "충격 파동",
+     "abilityType": "W",
+     "changes": [
+      {
+       "field": "full",
+       "before": "부채꼴 범위의 적들에게 141(+4%)의 피해를 주고 밀쳐냅니다.",
+       "after": "부채꼴 범위의 적들에게 120(+4%)의 피해를 주고 밀쳐냅니다.",
+       "diff": "부채꼴 범위의 적들에게 [[-141(+4%)의-]]{{+120(+4%)의+}} 피해를 주고 밀쳐냅니다."
+      },
+      {
+       "field": "cooldown",
+       "before": "재사용 대기시간: 7초",
+       "after": "재사용 대기시간: 10초",
+       "diff": "재사용 대기시간: [[-7초-]]{{+10초+}}"
+      }
+     ],
+     "unit": "조종사 모드"
+    },
+    {
+     "type": "ability",
+     "id": "DVaPilotTorpedoDashAbility|Q",
+     "name": "약진",
+     "abilityType": "Q",
+     "changes": [
+      {
+       "field": "cooldown",
+       "before": "재사용 대기시간: 12초",
+       "after": "재사용 대기시간: 10초",
+       "diff": "재사용 대기시간: [[-12초-]]{{+10초+}}"
+      }
+     ],
+     "unit": "조종사 모드"
     }
    ]
   },
@@ -764,7 +879,7 @@
      "before": {
       "amount": 1826,
       "scale": 0.04,
-      "regenRate": 3.8046,
+      "regenRate": 3.805,
       "regenScale": 0.04
      },
      "after": {
@@ -807,32 +922,6 @@
      ]
     },
     {
-     "type": "ability_added",
-     "id": "GazloweDethLazor|W",
-     "name": "죽이는 레이저",
-     "abilityType": "W",
-     "full": ""
-    },
-    {
-     "type": "ability_added",
-     "id": "GazloweSalvagerSalvageTurretAbility|Trait",
-     "name": "죽은 적도 다시 보기",
-     "abilityType": "Trait",
-     "full": ""
-    },
-    {
-     "type": "ability_removed",
-     "id": "TinkerDethLazorCharged|W",
-     "name": "죽이는 레이저",
-     "abilityType": "W"
-    },
-    {
-     "type": "ability_removed",
-     "id": "TinkerDismantleTurret|Trait",
-     "name": "고물상",
-     "abilityType": "Trait"
-    },
-    {
      "type": "ability",
      "id": "TinkerGravOBomb3000|Heroic",
      "name": "중력폭탄 3000",
@@ -860,16 +949,10 @@
     },
     {
      "type": "ability",
-     "id": "TinkerRoboGoblin|Heroic",
+     "id": "TinkerRoboGoblinPassive|Heroic",
      "name": "로보고블린",
      "abilityType": "Heroic",
      "changes": [
-      {
-       "field": "full",
-       "before": "사용하면 4초 동안 방어력이 40 증가하고 이동 속도가 30% 증가합니다.\n지속 효과: 일반 공격이 100%의 추가 피해를 줍니다.",
-       "after": "사용하면 4초 동안 방어력이 40 증가하고 이동 속도가 30% 증가합니다.\n지속 효과: 일반 공격이 0%의 추가 피해를 줍니다.",
-       "diff": "사용하면 4초 동안 방어력이 40 증가하고 이동 속도가 30% 증가합니다.\n지속 효과: 일반 공격이 [[-100%의-]]{{+0%의+}} 추가 피해를 줍니다."
-      },
       {
        "field": "cooldown",
        "before": "재사용 대기시간: 60초",
@@ -884,12 +967,6 @@
      "name": "잘나가! 포탑",
      "abilityType": "Q",
      "changes": [
-      {
-       "field": "full",
-       "before": "62(+4%)의 피해를 주는 포탑을 설치합니다. 30초 동안 지속됩니다.\n최대 2회 충전됩니다.",
-       "after": "36(+4%)의 피해를 주는 포탑을 설치합니다. 15초 동안 지속됩니다.\n최대 0##ERROR##회 충전됩니다.",
-       "diff": "[[-62(+4%)의-]]{{+36(+4%)의+}} 피해를 주는 포탑을 설치합니다. [[-30초-]]{{+15초+}} 동안 지속됩니다.\n최대 [[-2회-]]{{+0##ERROR##회+}} 충전됩니다."
-      },
       {
        "field": "cooldown",
        "before": "충전 대기시간: 15초",
@@ -906,7 +983,7 @@
     },
     {
      "type": "ability",
-     "id": "TinkerXplodiumBomb|E",
+     "id": "TinkerXplodiumCharge|E",
      "name": "터진다늄 폭탄",
      "abilityType": "E",
      "changes": [
@@ -931,132 +1008,41 @@
      ]
     },
     {
-     "type": "talent_added",
-     "id": "GazloweBigGameHunter",
-     "name": "나 이런 사냥꾼이야",
-     "level": 1,
-     "full": ""
+     "type": "ability",
+     "id": "GazloweDethLazor|W",
+     "idFrom": "TinkerDethLazor|W",
+     "idTo": "GazloweDethLazor|W",
+     "renamed": true,
+     "name": "죽이는 레이저",
+     "abilityType": "W",
+     "changes": [
+      {
+       "field": "full",
+       "before": "충전 후 공격하여 일직선상의 적들에게 137(+4%)의 피해를 줍니다. 공격력과 사거리는 충전을 오래 할수록 증가하여 3초 후 최대 100% 증가합니다.\n무한정 충전할 수 있습니다.",
+       "after": "",
+       "diff": "[[-충전 후 공격하여 일직선상의 적들에게 137(+4%)의 피해를 줍니다. 공격력과 사거리는 충전을 오래 할수록 증가하여 3초 후 최대 100% 증가합니다.\n무한정 충전할 수 있습니다.-]]{{++}}"
+      },
+      {
+       "field": "energy",
+       "before": "마나: 60",
+       "after": "",
+       "diff": "[[-마나: 60-]]{{++}}"
+      }
+     ]
     },
     {
-     "type": "talent_added",
-     "id": "GazloweDethLazorFirinMahLazorz",
-     "name": "잘나가고 죽이는 레이저",
-     "level": 16,
-     "full": "죽이는 레이저를 사용하면 현재 설치된 모든 잘나가! 포탑들이 죽이는 레이저를 발사합니다. 포탑의 죽이는 레이저는 125(+4%)의 피해를 줍니다."
-    },
-    {
-     "type": "talent_added",
-     "id": "GazloweHyperfocusCoils",
-     "name": "과집중 코일",
-     "level": 4,
-     "full": ""
-    },
-    {
-     "type": "talent_added",
-     "id": "GazloweMasterBlaster",
-     "name": "",
-     "level": 7,
-     "full": ""
-    },
-    {
-     "type": "talent_added",
-     "id": "GazloweOneManWreckingCrew",
-     "name": "",
-     "level": 1,
-     "full": ""
-    },
-    {
-     "type": "talent_added",
-     "id": "GazloweOverklock",
-     "name": "",
-     "level": 16,
-     "full": ""
-    },
-    {
-     "type": "talent_added",
-     "id": "GazloweOverload",
-     "name": "과부하",
-     "level": 7,
-     "full": ""
-    },
-    {
-     "type": "talent_added",
-     "id": "GazloweRockItSockIt",
-     "name": "잘나가! 포탑",
-     "level": 4,
-     "full": ""
-    },
-    {
-     "type": "talent_added",
-     "id": "GazloweRockItTurretOverchargedCapacitors",
-     "name": "잘나가! 포탑",
-     "level": 13,
-     "full": ""
-    },
-    {
-     "type": "talent_added",
-     "id": "GazloweRockItTurretPositiveReinforcement",
-     "name": "잘나가! 포탑",
-     "level": 13,
-     "full": ""
-    },
-    {
-     "type": "talent_added",
-     "id": "GazloweRockItTurretSuperiorSchematics",
-     "name": "완벽한 설계도",
-     "level": 13,
-     "full": ""
-    },
-    {
-     "type": "talent_added",
-     "id": "GazloweXplodiumChargeArkReaktor",
-     "name": "터진다늄 폭탄",
-     "level": 16,
-     "full": ""
-    },
-    {
-     "type": "talent_added",
-     "id": "GazloweXplodiumChargeBombToss",
-     "name": "폭탄 던지기",
-     "level": 20,
-     "full": ""
-    },
-    {
-     "type": "talent_added",
-     "id": "GazloweXplodiumChargeRocketBoots",
-     "name": "로켓 장화",
-     "level": 1,
-     "full": ""
-    },
-    {
-     "type": "talent_removed",
-     "id": "TinkerCombatStyleBreakitDown",
-     "name": "박! 살!",
-     "level": 1
-    },
-    {
-     "type": "talent_removed",
-     "id": "TinkerCombatStyleClockwerkSteamFists",
-     "name": "태엽장치 증기 주먹",
-     "level": 4
-    },
-    {
-     "type": "talent_removed",
-     "id": "TinkerCombatStyleReduceReuseRecycle",
-     "name": "죽은 적도 다시 보기",
-     "level": 4
-    },
-    {
-     "type": "talent_removed",
-     "id": "TinkerCombatStyleScrapoMaticSmelter",
-     "name": "고철공장공장장",
-     "level": 1
-    },
-    {
-     "type": "talent_removed",
-     "id": "TinkerGoblinRepairs",
-     "name": "고블린 수리법",
-     "level": 1
+     "type": "ability_replaced",
+     "abilityType": "Trait",
+     "idFrom": "TinkerSalvager|Trait",
+     "idTo": "GazloweReduceReuseRecycleTrait|Trait",
+     "nameFrom": "고물상",
+     "nameTo": "죽은 적도 다시 보기",
+     "fullBefore": "파괴된 적 구조물이나 직접 설치한 잘나가! 포탑에서 고철이 떨어집니다. 고철을 획득하면 3초에 걸쳐 30의 마나를 회복하고 이 동안 기술의 재사용 대기시간이 세 배 빨리 감소합니다.\n고물상을 사용하면 대상 잘나가! 포탑을 해체해서 고철로 만듭니다.",
+     "fullAfter": "",
+     "cooldownBefore": "",
+     "cooldownAfter": "",
+     "match": "slot",
+     "confidence": "low"
     },
     {
      "type": "talent",
@@ -1075,12 +1061,6 @@
        "before": "재사용 대기시간: 90초",
        "after": "재사용 대기시간: 60초",
        "diff": "재사용 대기시간: [[-90초-]]{{+60초+}}"
-      },
-      {
-       "field": "energy",
-       "before": "마나: 80",
-       "after": "",
-       "diff": "[[-마나: 80-]]{{++}}"
       }
      ]
     },
@@ -1091,44 +1071,12 @@
      "level": 10,
      "changes": [
       {
-       "field": "full",
-       "before": "사용하면 4초 동안 방어력이 40 증가하고 이동 속도가 30% 증가합니다.\n지속 효과: 일반 공격이 100%의 추가 피해를 줍니다.",
-       "after": "사용하면 4초 동안 방어력이 40 증가하고 이동 속도가 30% 증가합니다.\n지속 효과: 일반 공격이 0%의 추가 피해를 줍니다.",
-       "diff": "사용하면 4초 동안 방어력이 40 증가하고 이동 속도가 30% 증가합니다.\n지속 효과: 일반 공격이 [[-100%의-]]{{+0%의+}} 추가 피해를 줍니다."
-      },
-      {
        "field": "cooldown",
        "before": "재사용 대기시간: 60초",
        "after": "재사용 대기시간: 40초",
        "diff": "재사용 대기시간: [[-60초-]]{{+40초+}}"
       }
      ]
-    },
-    {
-     "type": "talent_removed",
-     "id": "TinkerHiredGoons",
-     "name": "고용된 떡대들",
-     "level": 4
-    },
-    {
-     "type": "talent",
-     "id": "TinkerItsRainingScrap",
-     "name": "하늘에서 고철이 비처럼 내려와",
-     "level": 20,
-     "changes": [
-      {
-       "field": "cooldown",
-       "before": "재사용 대기시간: 30초",
-       "after": "",
-       "diff": "[[-재사용 대기시간: 30초-]]{{++}}"
-      }
-     ]
-    },
-    {
-     "type": "talent_removed",
-     "id": "TinkerMasteryARKReaktor",
-     "name": "아크 반응로",
-     "level": 4
     },
     {
      "type": "talent",
@@ -1140,32 +1088,13 @@
        "field": "level",
        "before": 13,
        "after": 4
-      },
-      {
-       "field": "full",
-       "before": "죽이는 레이저가 3초 동안 영웅을 50% 느려지게 하고 영웅이 아닌 대상을 기절시킵니다.",
-       "after": "죽이는 레이저가 0##ERROR##초 동안 영웅을 0##ERROR##% 느려지게 하고 영웅이 아닌 대상을 기절시킵니다.",
-       "diff": "죽이는 레이저가 [[-3초-]]{{+0##ERROR##초+}} 동안 영웅을 [[-50%-]]{{+0##ERROR##%+}} 느려지게 하고 영웅이 아닌 대상을 기절시킵니다."
-      },
-      {
-       "field": "cooldown",
-       "before": "",
-       "after": "재사용 대기시간: 40초",
-       "diff": "[[--]]{{+재사용 대기시간: 40초+}}"
       }
-     ]
-    },
-    {
-     "type": "talent_removed",
-     "id": "TinkerMasteryEngineGunk",
-     "name": "기름 찌꺼기",
-     "level": 7
-    },
-    {
-     "type": "talent_removed",
-     "id": "TinkerMasteryExtraTNT",
-     "name": "추가 TNT",
-     "level": 1
+     ],
+     "moved": {
+      "from": 13,
+      "to": 4,
+      "kind": "moved"
+     }
     },
     {
      "type": "talent",
@@ -1184,13 +1113,12 @@
        "after": "",
        "diff": "[[-죽이는 레이저를 1초 더 충전해서 공격력을 추가로 100% 증가시킬 수 있습니다.-]]{{++}}"
       }
-     ]
-    },
-    {
-     "type": "talent_removed",
-     "id": "TinkerMasteryHyperfocusCoils",
-     "name": "과집중 코일",
-     "level": 7
+     ],
+     "moved": {
+      "from": 13,
+      "to": 7,
+      "kind": "redesign"
+     }
     },
     {
      "type": "talent",
@@ -1207,40 +1135,309 @@
      ]
     },
     {
+     "type": "talent",
+     "id": "GazloweHyperfocusCoils",
+     "idFrom": "TinkerMasteryHyperfocusCoils",
+     "idTo": "GazloweHyperfocusCoils",
+     "renamed": true,
+     "name": "과집중 코일",
+     "level": 4,
+     "changes": [
+      {
+       "field": "level",
+       "before": 7,
+       "after": 4
+      },
+      {
+       "field": "full",
+       "before": "죽이는 레이저가 두 배 빨리 충전되고 마나 소모량이 30 감소합니다.",
+       "after": "",
+       "diff": "[[-죽이는 레이저가 두 배 빨리 충전되고 마나 소모량이 30 감소합니다.-]]{{++}}"
+      }
+     ],
+     "moved": {
+      "from": 7,
+      "to": 4,
+      "kind": "redesign"
+     }
+    },
+    {
+     "type": "talent",
+     "id": "GazloweRockItTurretSuperiorSchematics",
+     "idFrom": "TinkerSuperiorSchematics",
+     "idTo": "GazloweRockItTurretSuperiorSchematics",
+     "renamed": true,
+     "name": "완벽한 설계도",
+     "level": 13,
+     "changes": [
+      {
+       "field": "level",
+       "before": 16,
+       "after": 13
+      },
+      {
+       "field": "full",
+       "before": "가즈로가 잘나가! 포탑의 사거리 내에 있는 동안 해당 포탑의 사거리가 25% 증가합니다.",
+       "after": "",
+       "diff": "[[-가즈로가 잘나가! 포탑의 사거리 내에 있는 동안 해당 포탑의 사거리가 25% 증가합니다.-]]{{++}}"
+      }
+     ],
+     "moved": {
+      "from": 16,
+      "to": 13,
+      "kind": "redesign"
+     }
+    },
+    {
+     "type": "talent",
+     "id": "GazloweDethLazorFirinMahLazorz",
+     "idFrom": "TinkerTalentFirinMahLazorz",
+     "idTo": "GazloweDethLazorFirinMahLazorz",
+     "renamed": true,
+     "name": "잘나가고 죽이는 레이저",
+     "level": 16,
+     "changes": [
+      {
+       "field": "level",
+       "before": 20,
+       "after": 16
+      },
+      {
+       "field": "full",
+       "before": "죽이는 레이저를 사용하면 현재 설치된 모든 잘나가! 포탑들이 죽이는 레이저를 발사합니다. 포탑의 죽이는 레이저는 137(+4%)의 피해를 줍니다.",
+       "after": "죽이는 레이저를 사용하면 현재 설치된 모든 잘나가! 포탑들이 죽이는 레이저를 발사합니다. 포탑의 죽이는 레이저는 125(+4%)의 피해를 줍니다.",
+       "diff": "죽이는 레이저를 사용하면 현재 설치된 모든 잘나가! 포탑들이 죽이는 레이저를 발사합니다. 포탑의 죽이는 레이저는 [[-137(+4%)의-]]{{+125(+4%)의+}} 피해를 줍니다."
+      }
+     ],
+     "moved": {
+      "from": 20,
+      "to": 16,
+      "kind": "tweak"
+     }
+    },
+    {
      "type": "talent_removed",
-     "id": "TinkerMasteryQuikReleaseCharge",
-     "name": "번갯불에 폭탄 구워먹기",
-     "level": 16
+     "id": "TinkerMasteryExtraTNT",
+     "name": "추가 TNT",
+     "level": 1,
+     "full": "터진다늄 폭탄의 공격력이 폭발에 적중당한 대상 하나당 10% 증가하여 최대 100% 증가합니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_gazlowe_explodiumcharge.png"
+    },
+    {
+     "type": "talent_removed",
+     "id": "TinkerCombatStyleScrapoMaticSmelter",
+     "name": "고철공장공장장",
+     "level": 1,
+     "full": "고철을 획득할 때 회복되는 마나가 100% 증가합니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_gazlowe_salvager.png"
+    },
+    {
+     "type": "talent_removed",
+     "id": "TinkerCombatStyleBreakitDown",
+     "name": "박! 살!",
+     "level": 1,
+     "full": "고철을 수집하면 3초 동안 모든 기술의 재사용 대기시간이 네 배 빨리 감소합니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_gazlowe_salvager_var1.png"
+    },
+    {
+     "type": "talent_removed",
+     "id": "TinkerGoblinRepairs",
+     "name": "고블린 수리법",
+     "level": 1,
+     "full": "퀘스트: 재생의 구슬을 획득하면 초당 생명력 재생량이 1 증가하여 최대 25 증가합니다.\n보상: 재생의 구슬을 25개 이상 획득하면 초당 생명력 재생량이 추가로 15 증가합니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_talent_regenerationmaster.png"
+    },
+    {
+     "type": "talent_removed",
+     "id": "TinkerCombatStyleClockwerkSteamFists",
+     "name": "태엽장치 증기 주먹",
+     "level": 4,
+     "full": "퀘스트: 일반 공격을 할 때마다 현재 설치된 잘나가! 포탑의 지속 시간이 1.5초 증가합니다.\n보상: 포탑의 지속 시간을 총 600초 이상 증가시키면 잘나가! 포탑의 충전 대기시간이 3초 감소합니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_gazlowe_rockitturret.png"
+    },
+    {
+     "type": "talent_removed",
+     "id": "TinkerMasteryARKReaktor",
+     "name": "아크 반응로",
+     "level": 4,
+     "full": "터진다늄 폭탄의 재사용 대기시간이 2초 감소하고, 적 영웅에게 적중하면 잘나가! 포탑이 2회 충전됩니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_gazlowe_explodiumcharge.png"
+    },
+    {
+     "type": "talent_removed",
+     "id": "TinkerCombatStyleReduceReuseRecycle",
+     "name": "죽은 적도 다시 보기",
+     "level": 4,
+     "full": "주위에서 죽은 적 돌격병이 15% 확률로 고철을 떨어트립니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_gazlowe_salvager.png"
+    },
+    {
+     "type": "talent_removed",
+     "id": "TinkerHiredGoons",
+     "name": "고용된 떡대들",
+     "level": 4,
+     "full": "우두머리를 제외한 주위 아군 용병들의 공격력이 50% 증가합니다. 잘나가! 포탑이 돌격병과 용병을 상대로 방어력이 50 증가하여 받는 피해가 50% 감소합니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_talent_mercenarylord.png"
     },
     {
      "type": "talent_removed",
      "id": "TinkerMasteryRockitTurretXL",
      "name": "완전 잘나가! 포탑",
-     "level": 7
+     "level": 7,
+     "full": "잘나가! 포탑이 최대 2명의 추가 대상에게 60%의 피해를 줍니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_gazlowe_rockitturret.png"
     },
     {
      "type": "talent_removed",
-     "id": "TinkerMasteryTurretStorage",
-     "name": "포탑 비축",
-     "level": 16
+     "id": "TinkerMasteryEngineGunk",
+     "name": "기름 찌꺼기",
+     "level": 7,
+     "full": "잘나가! 포탑의 공격이 적을 2초 동안 20% 느려지게 합니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_gazlowe_rockitturret_var1.png"
     },
     {
      "type": "talent_removed",
      "id": "TinkerMasteryXTraLargeBombs",
      "name": "특대형 폭탄",
-     "level": 13
+     "level": 13,
+     "full": "터진다늄 폭탄의 폭발 반경이 30% 증가합니다. 기절하거나 이동 불가 상태가 되면 발 아래 터진다늄 폭탄을 떨어트립니다.\n이 효과는 10초의 재사용 대기시간을 갖습니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_gazlowe_explodiumcharge.png"
     },
     {
      "type": "talent_removed",
-     "id": "TinkerSuperiorSchematics",
-     "name": "완벽한 설계도",
-     "level": 16
+     "id": "TinkerMasteryTurretStorage",
+     "name": "포탑 비축",
+     "level": 16,
+     "full": "잘나가! 포탑 최대 충전 횟수가 2에서 3으로,로 증가합니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_gazlowe_rockitturret.png"
     },
     {
      "type": "talent_removed",
-     "id": "TinkerTalentFirinMahLazorz",
-     "name": "잘나가고 죽이는 레이저",
-     "level": 20
+     "id": "TinkerMasteryQuikReleaseCharge",
+     "name": "번갯불에 폭탄 구워먹기",
+     "level": 16,
+     "full": "터진다늄 폭탄을 2회 충전해서 사용할 수 있습니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_gazlowe_explodiumcharge.png"
+    },
+    {
+     "type": "talent_added",
+     "id": "GazloweXplodiumChargeRocketBoots",
+     "name": "로켓 장화",
+     "level": 1,
+     "full": "",
+     "cooldown": "",
+     "icon": "storm_ui_icon_gazlowe_explodiumcharge.png"
+    },
+    {
+     "type": "talent_added",
+     "id": "GazloweBigGameHunter",
+     "name": "나 이런 사냥꾼이야",
+     "level": 1,
+     "full": "",
+     "cooldown": "",
+     "icon": "storm_ui_icon_gazlowe_salvager.png"
+    },
+    {
+     "type": "talent_added",
+     "id": "GazloweOneManWreckingCrew",
+     "name": "",
+     "level": 1,
+     "full": "",
+     "cooldown": "",
+     "icon": "storm_ui_icon_talent_autoattack_damage.png"
+    },
+    {
+     "type": "talent_added",
+     "id": "GazloweRockItSockIt",
+     "name": "잘나가! 포탑",
+     "level": 4,
+     "full": "",
+     "cooldown": "",
+     "icon": "storm_ui_icon_gazlowe_rockitturret.png"
+    },
+    {
+     "type": "talent_added",
+     "id": "GazloweOverload",
+     "name": "과부하",
+     "level": 7,
+     "full": "",
+     "cooldown": "",
+     "icon": "storm_ui_icon_gazlowe_dethlazor_a.png"
+    },
+    {
+     "type": "talent_added",
+     "id": "GazloweMasterBlaster",
+     "name": "",
+     "level": 7,
+     "full": "",
+     "cooldown": "",
+     "icon": "storm_ui_icon_gazlowe_combo_w_e.png"
+    },
+    {
+     "type": "talent_added",
+     "id": "GazloweRockItTurretPositiveReinforcement",
+     "name": "잘나가! 포탑",
+     "level": 13,
+     "full": "",
+     "cooldown": "",
+     "icon": "storm_ui_icon_gazlowe_rockitturret.png"
+    },
+    {
+     "type": "talent_added",
+     "id": "GazloweRockItTurretOverchargedCapacitors",
+     "name": "잘나가! 포탑",
+     "level": 13,
+     "full": "",
+     "cooldown": "",
+     "icon": "storm_ui_icon_gazlowe_rockitturret_var2.png"
+    },
+    {
+     "type": "talent_added",
+     "id": "GazloweXplodiumChargeArkReaktor",
+     "name": "터진다늄 폭탄",
+     "level": 16,
+     "full": "",
+     "cooldown": "",
+     "icon": "storm_ui_icon_gazlowe_explodiumcharge.png"
+    },
+    {
+     "type": "talent_added",
+     "id": "GazloweOverklock",
+     "name": "",
+     "level": 16,
+     "full": "",
+     "cooldown": "",
+     "icon": "storm_ui_icon_talent_autoattack_searing.png"
+    },
+    {
+     "type": "talent_added",
+     "id": "GazloweXplodiumChargeBombToss",
+     "name": "폭탄 던지기",
+     "level": 20,
+     "full": "",
+     "cooldown": "",
+     "icon": "storm_ui_icon_gazlowe_explodiumcharge.png"
+    },
+    {
+     "type": "ability_removed",
+     "id": "TinkerDethLazorCancel|W",
+     "name": "죽이는 레이저 종료",
+     "abilityType": "W",
+     "full": "죽이는 레이저 기술을 종료합니다.",
+     "parent": "TinkerDethLazorCharged"
     }
    ]
   },
@@ -1266,6 +1463,12 @@
  },
  "summary": {
   "heroes": 11,
-  "changes": 106
+  "changes": 101,
+  "renamed": 4,
+  "replaced": 2,
+  "moved": 14,
+  "units": 2,
+  "subs": 1,
+  "suspect": 1
  }
 }

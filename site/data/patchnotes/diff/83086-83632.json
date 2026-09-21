@@ -6,6 +6,8 @@
  "fromDate": "2020-12-07",
  "toDate": "2021-01-19",
  "toPtr": false,
+ "fromRepo": "heroes-data",
+ "toRepo": "heroes-data",
  "heroes": {
   "Amazon": {
    "name": "카시아",
@@ -133,19 +135,19 @@
      "before": {
       "amount": 2250,
       "scale": 0.04,
-      "regenRate": 4.6875,
+      "regenRate": 4.688,
       "regenScale": 0.04
      },
      "after": {
       "amount": 2150,
       "scale": 0.04,
-      "regenRate": 4.4804,
+      "regenRate": 4.48,
       "regenScale": 0.04
      }
     },
     {
      "type": "ability",
-     "id": "DVaMechBunnyHopHeroic|Heroic",
+     "id": "DVaBunnyHopOn|Heroic",
      "name": "토끼뜀",
      "abilityType": "Heroic",
      "changes": [
@@ -314,7 +316,7 @@
      "before": {
       "amount": 2320,
       "scale": 0.04,
-      "regenRate": 4.8281,
+      "regenRate": 4.828,
       "regenScale": 0.04
      },
      "after": {
@@ -679,12 +681,6 @@
        "before": "사용하면 볼륨을 높여라!의 지속 시간이 2초 증가합니다.",
        "after": "볼륨을 높여라!의 지속 시간이 1초 증가합니다.",
        "diff": "[[-사용하면 -]]볼륨을 높여라!의 지속 시간이 [[-2초-]]{{+1초+}} 증가합니다."
-      },
-      {
-       "field": "cooldown",
-       "before": "재사용 대기시간: 60초",
-       "after": "",
-       "diff": "[[-재사용 대기시간: 60초-]]{{++}}"
       }
      ]
     },
@@ -1034,7 +1030,7 @@
     },
     {
      "type": "ability",
-     "id": "TinkerXplodiumBomb|E",
+     "id": "TinkerXplodiumCharge|E",
      "name": "터진다늄 폭탄",
      "abilityType": "E",
      "changes": [
@@ -1250,9 +1246,11 @@
        "field": "full",
        "before": "생명력이 75% 미만이면 기술 위력이 10% 증가합니다. 생명력이 50% 미만이면 일반 공격력이 20% 증가합니다.",
        "after": "생명력이 75% 미만이면 기술 위력이 10% 증가합니다. 생명력이 50% 미만이면 일반 공격력이 15% 증가하고, 적 영웅에게 일반 공격을 하면 도끼 맛 좀 보여줄까? 중첩이 1회 추가로 증가합니다.",
-       "diff": "생명력이 75% 미만이면 기술 위력이 10% 증가합니다. 생명력이 50% 미만이면 일반 공격력이 [[-20%-]]{{+15% 증가하고, 적 영웅에게 일반 공격을 하면 도끼 맛 좀 보여줄까? 중첩이 1회 추가로+}} 증가합니다."
+       "diff": "생명력이 75% 미만이면 기술 위력이 10% 증가합니다. 생명력이 50% 미만이면 일반 공격력이 [[-20%-]]{{+15% 증가하고, 적 영웅에게 일반 공격을 하면 도끼 맛 좀 보여줄까? 중첩이 1회 추가로+}} 증가합니다.",
+       "suspect": true
       }
-     ]
+     ],
+     "suspect": true
     },
     {
      "type": "talent",
@@ -1273,6 +1271,7 @@
  },
  "summary": {
   "heroes": 21,
-  "changes": 76
+  "changes": 76,
+  "suspect": 1
  }
 }

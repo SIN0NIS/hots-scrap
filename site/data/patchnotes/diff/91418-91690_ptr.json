@@ -6,6 +6,8 @@
  "fromDate": "2023-11-22",
  "toDate": "2024-01-17",
  "toPtr": true,
+ "fromRepo": "heroes-data",
+ "toRepo": "heroes-data",
  "heroes": {
   "Abathur": {
    "name": "아바투르",
@@ -41,44 +43,15 @@
        "diff": "자폭 중인 메카에 딱콩!을 적중시키면 40% 빠르게 자폭합니다.\n지속 효과: 융합포가 적 영웅에게 추가 피해를 주면 자폭 [[-충전 횟수가-]]{{+충전율이+}} 0.25 증가합니다."
       }
      ]
-    }
-   ]
-  },
-  "Garrosh": {
-   "name": "가로쉬",
-   "changes": [
+    },
     {
-     "type": "talent",
-     "id": "GarroshWreckingBallUnrivaledStrength",
-     "name": "비할 데 없는 힘",
-     "level": 1,
-     "changes": [
-      {
-       "field": "full",
-       "before": "파쇄추의 투척 사거리가 25% 증가하고 공격력이 125% 증가합니다.",
-       "after": "파쇄추의 투척 사거리가 25% 증가하고 공격력이 0% 증가합니다.",
-       "diff": "파쇄추의 투척 사거리가 25% 증가하고 공격력이 [[-125%-]]{{+0%+}} 증가합니다."
-      }
-     ]
-    }
-   ]
-  },
-  "Genji": {
-   "name": "겐지",
-   "changes": [
-    {
-     "type": "talent",
-     "id": "GenjiSwiftStrikeStrikeAtTheHeart",
-     "name": "심장을 노려라",
-     "level": 4,
-     "changes": [
-      {
-       "field": "full",
-       "before": "질풍참의 끝부분이 적에게 적중하면 1초 뒤 134(+4%)의 추가 피해를 줍니다.",
-       "after": "질풍참의 끝부분이 적에게 적중하면 0초 뒤 0(+4%)의 추가 피해를 줍니다.",
-       "diff": "질풍참의 끝부분이 적에게 적중하면 [[-1초-]]{{+0초+}} 뒤 [[-134(+4%)의-]]{{+0(+4%)의+}} 추가 피해를 줍니다."
-      }
-     ]
+     "type": "ability_added",
+     "id": "DVaMechSelfDestruct|Active",
+     "name": "자폭",
+     "abilityType": "Active",
+     "full": "메카에서 탈출하며 4초 후에 폭발하도록 설정합니다. 넓은 지역 안의 적들에게 400(+4%)에서 1100(+4%)의 피해를 줍니다. 피해량은 대상이 중심부에 가까울수록 증가합니다. 구조물에는 50%의 피해를 줍니다.\n2초 동안 일반 공격을 할 때마다 1% 충전되고, 메카의 최대 생명력의 100%에 해당하는 받은 피해당 25% 충전됩니다.",
+     "cooldown": "",
+     "unit": "조종사 모드"
     }
    ]
   },
@@ -169,7 +142,8 @@
   }
  },
  "summary": {
-  "heroes": 7,
-  "changes": 9
+  "heroes": 5,
+  "changes": 8,
+  "units": 1
  }
 }

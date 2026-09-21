@@ -6,6 +6,8 @@
  "fromDate": "2021-01-22",
  "toDate": "2021-03-03",
  "toPtr": false,
+ "fromRepo": "heroes-data",
+ "toRepo": "heroes-data",
  "heroes": {
   "Alexstrasza": {
    "name": "알렉스트라자",
@@ -367,13 +369,6 @@
      ]
     },
     {
-     "type": "talent_added",
-     "id": "FalstadLightningRodDishonorableDischarge",
-     "name": "불명예스러운 방출",
-     "level": 1,
-     "full": "피뢰침의 재사용 대기시간이 3초 감소하며 적을 처치하면 재사용 대기시간이 초기화됩니다.\n퀘스트: 피뢰침으로 3회 공격한 이후에는 적 영웅을 대상으로 한 피뢰침 공격력이 1% 증가하여 최대 75% 증가합니다."
-    },
-    {
      "type": "talent",
      "id": "FalstadMasteryCripplingHammerHammerang",
      "name": "얼얼한 망치질",
@@ -402,49 +397,81 @@
      ]
     },
     {
-     "type": "talent_added",
-     "id": "FalstadTailwindFrequentFlyer",
-     "name": "하늘의 지배자",
-     "level": 1,
-     "full": "하늘의 지배자 사용 시 5초 동안 공격 속도가 40% 증가하며 순풍 효과를 얻습니다.\n퀘스트: 돌격병을 처치할 때마다 일반 공격력이 0.2 증가하며, 적 영웅을 처치하면 일반 공격력이 0.5 증가합니다."
-    },
-    {
-     "type": "talent_added",
-     "id": "FalstadTailwindSustainedWinds",
-     "name": "지속되는 바람",
+     "type": "talent_replaced",
      "level": 13,
-     "full": "일반 공격으로 적 영웅을 공격할 때마다 대상의 최대 생명력의 1.5%만큼 추가 피해를 줍니다. 순풍이 활성화된 동안에는 이 효과가 2%로 증가합니다."
-    },
-    {
-     "type": "talent_removed",
-     "id": "FalstadWingman",
-     "name": "호위 비행사",
-     "level": 1
-    },
-    {
-     "type": "talent_removed",
-     "id": "GenericTalentGiantKiller",
-     "name": "거인 사냥꾼",
-     "level": 13
+     "idFrom": "GenericTalentGiantKiller",
+     "idTo": "FalstadTailwindSustainedWinds",
+     "nameFrom": "거인 사냥꾼",
+     "nameTo": "지속되는 바람",
+     "fullBefore": "일반 공격으로 적 영웅을 공격할 때마다 대상의 최대 생명력의 1.5%만큼 추가 피해를 줍니다.",
+     "fullAfter": "일반 공격으로 적 영웅을 공격할 때마다 대상의 최대 생명력의 1.5%만큼 추가 피해를 줍니다. 순풍이 활성화된 동안에는 이 효과가 2%로 증가합니다.",
+     "cooldownBefore": "",
+     "cooldownAfter": "",
+     "match": "slot",
+     "confidence": "low"
     },
     {
      "type": "talent_removed",
      "id": "GenericTalentSeasonedMarksman",
      "name": "노련한 명사수",
-     "level": 1
+     "level": 1,
+     "full": "퀘스트: 주위에서 적 돌격병을 처치할 때마다 일반 공격력이 0.2 증가하고, 영웅을 처치할 때마다 일반 공격력이 0.5 증가합니다.\n보상: 일반 공격력이 40 증가하면 노련한 명사수를 사용하여 공격 속도를 4초 동안 40% 증가시킬 수 있습니다. 이 효과는 30초의 재사용 대기시간을 가집니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_talent_seasonedmarksman.png"
+    },
+    {
+     "type": "talent_removed",
+     "id": "FalstadWingman",
+     "name": "호위 비행사",
+     "level": 1,
+     "full": "주위에서 적 돌격병이 죽으면 매수 중첩이 쌓입니다. 20중첩을 대상 용병에게 사용하면, 용병이 즉시 매수되고 피뢰침의 공격력이 영구히 5% 증가합니다.\n정예 용병에게는 적용되지 않습니다. 최대 80회 중첩됩니다.\n지속 효과: 피뢰침의 재사용 대기시간이 3초 감소합니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_talent_bribe.png"
+    },
+    {
+     "type": "talent_added",
+     "id": "FalstadLightningRodDishonorableDischarge",
+     "name": "불명예스러운 방출",
+     "level": 1,
+     "full": "피뢰침의 재사용 대기시간이 3초 감소하며 적을 처치하면 재사용 대기시간이 초기화됩니다.\n퀘스트: 피뢰침으로 3회 공격한 이후에는 적 영웅을 대상으로 한 피뢰침 공격력이 1% 증가하여 최대 75% 증가합니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_falstad_lightningrod.png"
+    },
+    {
+     "type": "talent_added",
+     "id": "FalstadTailwindFrequentFlyer",
+     "name": "하늘의 지배자",
+     "level": 1,
+     "full": "하늘의 지배자 사용 시 5초 동안 공격 속도가 40% 증가하며 순풍 효과를 얻습니다.\n퀘스트: 돌격병을 처치할 때마다 일반 공격력이 0.2 증가하며, 적 영웅을 처치하면 일반 공격력이 0.5 증가합니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_falstad_tailwind_a.png"
+    },
+    {
+     "type": "ability",
+     "id": "FalstadHammerangBOOMerangActive|Q",
+     "name": "폭발",
+     "abilityType": "Q",
+     "changes": [
+      {
+       "field": "name",
+       "before": "부메랑 폭발",
+       "after": "폭발",
+       "diff": "[[-부메랑 폭발-]]{{+폭발+}}"
+      },
+      {
+       "field": "full",
+       "before": "망치 주위의 좁은 지역에 165(+4%)의 추가 피해를 줍니다.",
+       "after": "망치 주위의 좁은 지역에 95(+4%)의 추가 피해를 줍니다.",
+       "diff": "망치 주위의 좁은 지역에 [[-165(+4%)의-]]{{+95(+4%)의+}} 추가 피해를 줍니다."
+      }
+     ],
+     "parent": "부메랑 망치"
     }
    ]
   },
   "Fenix": {
    "name": "피닉스",
    "changes": [
-    {
-     "type": "talent_added",
-     "id": "FenixArmageddonBeam",
-     "name": "아마겟돈 광선",
-     "level": 20,
-     "full": "행성 분열기의 너비가 1.5초에 걸쳐 100% 증가합니다.\n지속 효과: 행성 분열기의 재사용 대기시간이 40초 감소합니다."
-    },
     {
      "type": "talent",
      "id": "FenixArsenalOvercharge",
@@ -500,6 +527,15 @@
        "diff": "보호막 축전기의 보호막이 지속되는 동안 공격력이 [[-15%-]]{{+20%+}} 증가합니다."
       }
      ]
+    },
+    {
+     "type": "talent_added",
+     "id": "FenixArmageddonBeam",
+     "name": "아마겟돈 광선",
+     "level": 20,
+     "full": "행성 분열기의 너비가 1.5초에 걸쳐 100% 증가합니다.\n지속 효과: 행성 분열기의 재사용 대기시간이 40초 감소합니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_fenix_r_planet_cracker.png"
     }
    ]
   },
@@ -550,7 +586,12 @@
        "before": 7,
        "after": 4
       }
-     ]
+     ],
+     "moved": {
+      "from": 7,
+      "to": 4,
+      "kind": "moved"
+     }
     },
     {
      "type": "talent",
@@ -563,7 +604,12 @@
        "before": 4,
        "after": 7
       }
-     ]
+     ],
+     "moved": {
+      "from": 4,
+      "to": 7,
+      "kind": "moved"
+     }
     },
     {
      "type": "talent",
@@ -576,7 +622,12 @@
        "before": 4,
        "after": 7
       }
-     ]
+     ],
+     "moved": {
+      "from": 4,
+      "to": 7,
+      "kind": "moved"
+     }
     },
     {
      "type": "talent",
@@ -595,7 +646,12 @@
        "after": "휩쓸기 사용 시 벽이나 지형 너머로 이동할 수 있습니다.\n보상: 휩쓸기가 적 영웅에게 15회 이상 적중하면 휩쓸기를 2회 충전해서 사용할 수 있습니다.",
        "diff": "휩쓸기 사용 시 벽이나 지형 너머로 이동할 수 있습니다.\n보상: 휩쓸기가 적 영웅에게 [[-30회-]]{{+15회+}} 이상 적중하면 휩쓸기를 2회 충전해서 사용할 수 있습니다."
       }
-     ]
+     ],
+     "moved": {
+      "from": 4,
+      "to": 7,
+      "kind": "tweak"
+     }
     },
     {
      "type": "talent",
@@ -608,7 +664,12 @@
        "before": 7,
        "after": 4
       }
-     ]
+     ],
+     "moved": {
+      "from": 7,
+      "to": 4,
+      "kind": "moved"
+     }
     },
     {
      "type": "talent",
@@ -621,7 +682,12 @@
        "before": 7,
        "after": 4
       }
-     ]
+     ],
+     "moved": {
+      "from": 7,
+      "to": 4,
+      "kind": "moved"
+     }
     }
    ]
   },
@@ -763,7 +829,12 @@
        "before": 13,
        "after": 7
       }
-     ]
+     ],
+     "moved": {
+      "from": 13,
+      "to": 7,
+      "kind": "moved"
+     }
     },
     {
      "type": "talent",
@@ -782,7 +853,12 @@
        "after": "운룡의 공격이 주위에 있는 2명의 대상에게 튕겨 13(+4%)의 피해를 주고 10(+4%)의 생명력을 회복시킵니다.",
        "diff": "운룡의 공격이 주위에 있는 2명의 [[-영웅에게-]]{{+대상에게+}} 튕겨 13(+4%)의 피해를 주고 10(+4%)의 생명력을 회복시킵니다."
       }
-     ]
+     ],
+     "moved": {
+      "from": 7,
+      "to": 13,
+      "kind": "redesign"
+     }
     },
     {
      "type": "talent",
@@ -801,7 +877,12 @@
        "after": "운룡이 더는 마나를 소모하지 않으며, 빠른 발이 활성화된 동안 운룡의 재사용 대기시간이 75% 빠르게 감소합니다.",
        "diff": "[[-운룡이 적 영웅을 공격할 때마다 지속 시간이 0.6초 증가합니다.-]]{{+운룡이 더는 마나를 소모하지 않으며, 빠른 발이 활성화된 동안 운룡의 재사용 대기시간이 75% 빠르게 감소합니다.+}}"
       }
-     ]
+     ],
+     "moved": {
+      "from": 4,
+      "to": 1,
+      "kind": "redesign"
+     }
     },
     {
      "type": "talent",
@@ -854,7 +935,27 @@
        "after": "운룡이 대상 아군의 이동 속도를 10% 증가시킵니다. 실명의 바람을 시전하면 이 효과가 3초 동안 20%로 증가합니다. \n지속 효과: 운룡의 공격 속도가 25% 증가합니다.",
        "diff": "[[-운룡을 시전하면 대상으로부터 가장 가까운 적에게 실명의 바람을 내보냅니다. 영웅을 우선시합니다.-]]{{+운룡이 대상 아군의 이동 속도를 10% 증가시킵니다. 실명의 바람을 시전하면 이 효과가 3초 동안 20%로 증가합니다. \n지속 효과: 운룡의 공격 속도가 25% 증가합니다.+}}"
       }
-     ]
+     ],
+     "moved": {
+      "from": 1,
+      "to": 4,
+      "kind": "redesign"
+     }
+    },
+    {
+     "type": "ability",
+     "id": "LiLiFastFeet|Trait",
+     "name": "빠른 발",
+     "abilityType": "Trait",
+     "changes": [
+      {
+       "field": "cooldown",
+       "before": "재사용 대기시간: 25초",
+       "after": "재사용 대기시간: 30초",
+       "diff": "재사용 대기시간: [[-25초-]]{{+30초+}}"
+      }
+     ],
+     "parent": "안전 질주"
     }
    ]
   },
@@ -867,7 +968,7 @@
      "before": {
       "amount": 2550,
       "scale": 0.04,
-      "regenRate": 5.3125,
+      "regenRate": 5.312,
       "regenScale": 0.04
      },
      "after": {
@@ -1059,7 +1160,12 @@
        "before": 1,
        "after": 4
       }
-     ]
+     ],
+     "moved": {
+      "from": 1,
+      "to": 4,
+      "kind": "moved"
+     }
     },
     {
      "type": "talent",
@@ -1078,7 +1184,12 @@
        "after": "정신 자극이 2회 충전됩니다. 재생의 영향을 받는 아군 하나당 정신 자극의 재사용 대기시간이 25% 더 빨리 감소합니다.",
        "diff": "[[-활성화된-]]{{+정신+}} [[-재생-]]{{+자극이 2회 충전됩니다. 재생의 영향을 받는 아군+}} 하나당 정신 자극의 재사용 대기시간이 25% 더 빨리 감소합니다."
       }
-     ]
+     ],
+     "moved": {
+      "from": 1,
+      "to": 4,
+      "kind": "redesign"
+     }
     },
     {
      "type": "talent",
@@ -1102,14 +1213,12 @@
        "before": false,
        "after": true
       }
-     ]
-    },
-    {
-     "type": "talent_added",
-     "id": "MalfurionEntanglingRootsEmeraldDreams",
-     "name": "에메랄드의 꿈",
-     "level": 1,
-     "full": "휘감는 뿌리의 이동 불가 효과가 만료되면 적 영웅을 2초 동안 수면 상태로 만듭니다."
+     ],
+     "moved": {
+      "from": 4,
+      "to": 1,
+      "kind": "redesign"
+     }
     },
     {
      "type": "talent",
@@ -1126,12 +1235,6 @@
      ]
     },
     {
-     "type": "talent_removed",
-     "id": "MalfurionMasteryStranglingVinesEntanglingRoots",
-     "name": "교살의 덩굴",
-     "level": 4
-    },
-    {
      "type": "talent",
      "id": "MalfurionMasteryVengefulRoots",
      "name": "보복의 뿌리",
@@ -1142,7 +1245,12 @@
        "before": 4,
        "after": 1
       }
-     ]
+     ],
+     "moved": {
+      "from": 4,
+      "to": 1,
+      "kind": "moved"
+     }
     },
     {
      "type": "talent",
@@ -1155,7 +1263,30 @@
        "before": 1,
        "after": 4
       }
-     ]
+     ],
+     "moved": {
+      "from": 1,
+      "to": 4,
+      "kind": "moved"
+     }
+    },
+    {
+     "type": "talent_removed",
+     "id": "MalfurionMasteryStranglingVinesEntanglingRoots",
+     "name": "교살의 덩굴",
+     "level": 4,
+     "full": "휘감는 뿌리에 묶인 적 영웅들이 받는 치유량이 3초 동안 40% 감소합니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_malfurion_entanglingroots.png"
+    },
+    {
+     "type": "talent_added",
+     "id": "MalfurionEntanglingRootsEmeraldDreams",
+     "name": "에메랄드의 꿈",
+     "level": 1,
+     "full": "휘감는 뿌리의 이동 불가 효과가 만료되면 적 영웅을 2초 동안 수면 상태로 만듭니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_malfurion_entanglingroots_a.png"
     }
    ]
   },
@@ -1548,7 +1679,7 @@
    "changes": [
     {
      "type": "ability",
-     "id": "TyraelArchangelsWrathDummy|Trait",
+     "id": "TyraelArchangelsWrath|Trait",
      "name": "대천사의 분노",
      "abilityType": "Trait",
      "changes": [
@@ -1785,6 +1916,9 @@
  },
  "summary": {
   "heroes": 17,
-  "changes": 121
+  "changes": 122,
+  "replaced": 1,
+  "moved": 15,
+  "subs": 2
  }
 }

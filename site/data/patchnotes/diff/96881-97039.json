@@ -6,6 +6,8 @@
  "fromDate": "2026-04-21",
  "toDate": "2026-05-17",
  "toPtr": false,
+ "fromRepo": "heroes-data",
+ "toRepo": "heroes-data2",
  "heroes": {
   "Arthas": {
    "name": "아서스",
@@ -16,13 +18,13 @@
      "before": {
       "amount": 2625,
       "scale": 0.04,
-      "regenRate": 5.4687,
+      "regenRate": 5.469,
       "regenScale": 0.04
      },
      "after": {
       "amount": 2750,
       "scale": 0.04,
-      "regenRate": 5.7304,
+      "regenRate": 5.73,
       "regenScale": 0.04
      }
     },
@@ -164,59 +166,9 @@
     }
    ]
   },
-  "Cho": {
-   "name": "초",
-   "changes": [
-    {
-     "type": "stat",
-     "field": "weapons",
-     "before": [
-      {
-       "range": 1,
-       "period": 1.1,
-       "damage": 130,
-       "damageScale": 0.045
-      },
-      {
-       "range": 2,
-       "period": 1.1,
-       "damage": 130,
-       "damageScale": 0.045
-      }
-     ],
-     "after": [
-      {
-       "range": 1,
-       "period": 1.1,
-       "damage": 130,
-       "damageScale": 0.045
-      },
-      {
-       "range": 2,
-       "period": 1.1,
-       "damage": 130,
-       "damageScale": 0.045
-      },
-      {
-       "range": 5,
-       "period": 1.1,
-       "damage": 130,
-       "damageScale": 0.045
-      }
-     ]
-    }
-   ]
-  },
   "Deathwing": {
    "name": "데스윙",
    "changes": [
-    {
-     "type": "ability_added",
-     "id": "DeathwingLavaBurst|W",
-     "name": "용암 폭발",
-     "abilityType": "W",
-     "full": "1초 후, 마그마를 폭발시켜 대상 지역의 모든 적에게 35(+4%)의 피해를 줍니다. 폭발한 마그마는 웅덩이를 남겨 범위 안의 적들에게 초당 28(+4%)의 피해를 주고 45% 느려지게 합니다. 6초 동안 지속됩니다.\n파괴자: 소각\n주위 적들에게 피해를 줍니다."
-    },
     {
      "type": "ability",
      "id": "DeathwingMoltenFlame|Q",
@@ -228,20 +180,8 @@
        "before": "1.5초 후, 화염 줄기를 내뿜어 0.125초마다 19(+4%)의 피해를 줍니다. 초당 30의 기력이 소모됩니다.",
        "after": "1.5초 후, 화염 줄기를 내뿜어 0.125초마다 20(+4%)의 피해를 줍니다. 초당 30의 기력이 소모됩니다.",
        "diff": "1.5초 후, 화염 줄기를 내뿜어 0.125초마다 [[-19(+4%)의-]]{{+20(+4%)의+}} 피해를 줍니다. 초당 30의 기력이 소모됩니다."
-      },
-      {
-       "field": "energy",
-       "before": "마나: 10",
-       "after": "기력: 10",
-       "diff": "[[-마나:-]]{{+기력:+}} 10"
       }
      ]
-    },
-    {
-     "type": "ability_removed",
-     "id": "DeathwingOnslaught|E",
-     "name": "맹격",
-     "abilityType": "E"
     },
     {
      "type": "talent",
@@ -256,201 +196,6 @@
        "diff": "파괴자 형태로 착지한 후 [[-6초-]]{{+4초+}} 동안 공격력이 40% 증가하고, 일반 기술의 재사용 대기시간이 50% 더 빨리 감소합니다.\n영웅에게 피해를 주면 이 효과의 지속 시간이 갱신됩니다."
       }
      ]
-    }
-   ]
-  },
-  "Dryad": {
-   "name": "루나라",
-   "changes": [
-    {
-     "type": "stat",
-     "field": "weapons",
-     "before": [
-      {
-       "range": 1.6,
-       "period": 0.9,
-       "damage": 90,
-       "damageScale": 0.04
-      },
-      {
-       "range": 5.5,
-       "period": 0.9,
-       "damage": 90,
-       "damageScale": 0.04
-      }
-     ],
-     "after": [
-      {
-       "range": 1.6,
-       "period": 0.9,
-       "damage": 90,
-       "damageScale": 0.04
-      },
-      {
-       "range": 5.5,
-       "period": 0.9,
-       "damage": 90,
-       "damageScale": 0.04
-      },
-      {
-       "range": 8.25,
-       "period": 0.9,
-       "damage": 90,
-       "damageScale": 0.04
-      }
-     ]
-    }
-   ]
-  },
-  "FaerieDragon": {
-   "name": "빛나래",
-   "changes": [
-    {
-     "type": "talent",
-     "id": "BrightwingSpeedyDragon",
-     "name": "빨라용",
-     "level": 20,
-     "changes": [
-      {
-       "field": "cooldown",
-       "before": "",
-       "after": "재사용 대기시간: 60초",
-       "diff": "[[--]]{{+재사용 대기시간: 60초+}}"
-      }
-     ]
-    }
-   ]
-  },
-  "Fenix": {
-   "name": "피닉스",
-   "changes": [
-    {
-     "type": "stat",
-     "field": "weapons",
-     "before": [
-      {
-       "range": 5,
-       "period": 1.35,
-       "damage": 83,
-       "damageScale": 0.04
-      }
-     ],
-     "after": [
-      {
-       "range": 5,
-       "period": 1.35,
-       "damage": 83,
-       "damageScale": 0.04
-      },
-      {
-       "range": 5,
-       "period": 1.35,
-       "damage": 103.75,
-       "damageScale": 0.04
-      }
-     ]
-    }
-   ]
-  },
-  "Greymane": {
-   "name": "그레이메인",
-   "changes": [
-    {
-     "type": "stat",
-     "field": "weapons",
-     "before": [
-      {
-       "range": 1.5,
-       "period": 1,
-       "damage": 148,
-       "damageScale": 0.04
-      },
-      {
-       "range": 5.5,
-       "period": 1,
-       "damage": 148,
-       "damageScale": 0.04
-      }
-     ],
-     "after": [
-      {
-       "range": 1.5,
-       "period": 1,
-       "damage": 148,
-       "damageScale": 0.04
-      },
-      {
-       "range": 5.5,
-       "period": 1,
-       "damage": 148,
-       "damageScale": 0.04
-      },
-      {
-       "range": 1.25,
-       "period": 1,
-       "damage": 148,
-       "damageScale": 0.04
-      }
-     ]
-    }
-   ]
-  },
-  "Jaina": {
-   "name": "제이나",
-   "changes": [
-    {
-     "type": "ability_added",
-     "id": "ImprovedIceBlock|Active",
-     "name": "향상된 얼음 방패",
-     "abilityType": "Active",
-     "full": "사용하면 2.5초 동안 정지 및 무적 상태가 됩니다. 이 효과가 만료될 때 주위에 있는 적들은 한기를 느낍니다."
-    }
-   ]
-  },
-  "KelThuzad": {
-   "name": "켈투자드",
-   "changes": [
-    {
-     "type": "ability_added",
-     "id": "KelThuzadGlacialSpike|Active",
-     "name": "혹한의 쐐기",
-     "abilityType": "Active",
-     "full": "사용하면 4초 후에 폭발하여 주위 적들에게 70(+2.5%)의 피해를 주는 쐐기를 소환합니다. 쐐기는 켈투자드의 사슬에 영향을 받을 수 있습니다."
-    }
-   ]
-  },
-  "LostVikings": {
-   "name": "길 잃은 바이킹",
-   "changes": [
-    {
-     "type": "ability_removed",
-     "id": "LostVikingsNordicAttackSquad|W",
-     "name": "바이킹 공격단",
-     "abilityType": "W"
-    },
-    {
-     "type": "ability_removed",
-     "id": "LostVikingsNorseForce|Q",
-     "name": "바이킹의 힘!",
-     "abilityType": "Q"
-    },
-    {
-     "type": "ability_removed",
-     "id": "LostVikingsPressA|W",
-     "name": "펄쩍!",
-     "abilityType": "W"
-    },
-    {
-     "type": "ability_removed",
-     "id": "LostVikingsSpinToWin|Q",
-     "name": "돌아야 이긴다!",
-     "abilityType": "Q"
-    },
-    {
-     "type": "ability_removed",
-     "id": "LostVikingsVikingBribery|E",
-     "name": "바이킹 매수",
-     "abilityType": "E"
     }
    ]
   },
@@ -520,7 +265,7 @@
    "changes": [
     {
      "type": "ability",
-     "id": "MurkyMarchoftheMurlocs|Heroic",
+     "id": "MurkyMarchOfTheMurlocs|Heroic",
      "name": "멀록 대행진",
      "abilityType": "Heroic",
      "changes": [
@@ -543,130 +288,6 @@
        "before": "재사용 대기시간: 100초",
        "after": "재사용 대기시간: 90초",
        "diff": "재사용 대기시간: [[-100초-]]{{+90초+}}"
-      }
-     ]
-    }
-   ]
-  },
-  "Necromancer": {
-   "name": "줄",
-   "changes": [
-    {
-     "type": "stat",
-     "field": "weapons",
-     "before": [
-      {
-       "range": 1.5,
-       "period": 0.8332,
-       "damage": 95,
-       "damageScale": 0.04
-      }
-     ],
-     "after": [
-      {
-       "range": 1.5,
-       "period": 0.8332,
-       "damage": 95,
-       "damageScale": 0.04
-      },
-      {
-       "range": 1.5,
-       "period": 0.8332,
-       "damage": 95,
-       "damageScale": 0.04
-      }
-     ]
-    }
-   ]
-  },
-  "Nova": {
-   "name": "노바",
-   "changes": [
-    {
-     "type": "stat",
-     "field": "weapons",
-     "before": [
-      {
-       "range": 6.5,
-       "period": 1,
-       "damage": 105,
-       "damageScale": 0.04
-      }
-     ],
-     "after": [
-      {
-       "range": 6.5,
-       "period": 0.5,
-       "damage": 105,
-       "damageScale": 0.04
-      },
-      {
-       "range": 6.5,
-       "period": 1,
-       "damage": 105,
-       "damageScale": 0.04
-      }
-     ]
-    }
-   ]
-  },
-  "SgtHammer": {
-   "name": "해머 상사",
-   "changes": [
-    {
-     "type": "stat",
-     "field": "weapons",
-     "before": [
-      {
-       "range": 5.5,
-       "period": 1,
-       "damage": 140,
-       "damageScale": 0.04
-      }
-     ],
-     "after": [
-      {
-       "range": 5.5,
-       "period": 1,
-       "damage": 140,
-       "damageScale": 0.04
-      },
-      {
-       "range": 11,
-       "period": 1,
-       "damage": 140,
-       "damageScale": 0.04
-      }
-     ]
-    }
-   ]
-  },
-  "Stukov": {
-   "name": "스투코프",
-   "changes": [
-    {
-     "type": "stat",
-     "field": "weapons",
-     "before": [
-      {
-       "range": 1.5,
-       "period": 1.5,
-       "damage": 261,
-       "damageScale": 0.04
-      }
-     ],
-     "after": [
-      {
-       "range": 5.5,
-       "period": 1.5,
-       "damage": 261,
-       "damageScale": 0.04
-      },
-      {
-       "range": 1.5,
-       "period": 1.5,
-       "damage": 261,
-       "damageScale": 0.04
       }
      ]
     }
@@ -718,9 +339,11 @@
        "field": "full",
        "before": "레이저 천공기를 소환해 주위 적들을 공격하여 매초 142(+4%)의 피해를 줍니다. 다시 사용하면 대상을 변경할 수 있습니다. 22초 동안 지속됩니다.",
        "after": "레이저 천공기를 소환해 주위 적들을 공격하여 매초 142(+4%)의 피해를 줍니다. 다시 사용하면 대상을 변경할 수 있습니다. -1초 동안 지속됩니다.",
-       "diff": "레이저 천공기를 소환해 주위 적들을 공격하여 매초 142(+4%)의 피해를 줍니다. 다시 사용하면 대상을 변경할 수 있습니다. [[-22초-]]{{+-1초+}} 동안 지속됩니다."
+       "diff": "레이저 천공기를 소환해 주위 적들을 공격하여 매초 142(+4%)의 피해를 줍니다. 다시 사용하면 대상을 변경할 수 있습니다. [[-22초-]]{{+-1초+}} 동안 지속됩니다.",
+       "suspect": true
       }
-     ]
+     ],
+     "suspect": true
     },
     {
      "type": "talent",
@@ -732,46 +355,11 @@
        "field": "full",
        "before": "레이저 천공기를 소환해 주위 적들을 공격하여 매초 142(+4%)의 피해를 줍니다. 다시 사용하면 대상을 변경할 수 있습니다. 22초 동안 지속됩니다.",
        "after": "레이저 천공기를 소환해 주위 적들을 공격하여 매초 142(+4%)의 피해를 줍니다. 다시 사용하면 대상을 변경할 수 있습니다. -1초 동안 지속됩니다.",
-       "diff": "레이저 천공기를 소환해 주위 적들을 공격하여 매초 142(+4%)의 피해를 줍니다. 다시 사용하면 대상을 변경할 수 있습니다. [[-22초-]]{{+-1초+}} 동안 지속됩니다."
+       "diff": "레이저 천공기를 소환해 주위 적들을 공격하여 매초 142(+4%)의 피해를 줍니다. 다시 사용하면 대상을 변경할 수 있습니다. [[-22초-]]{{+-1초+}} 동안 지속됩니다.",
+       "suspect": true
       }
-     ]
-    }
-   ]
-  },
-  "Tyrael": {
-   "name": "티리엘",
-   "changes": [
-    {
-     "type": "ability",
-     "id": "TyraelArchangelsWrathDummy|Trait",
-     "name": "대천사의 분노",
-     "abilityType": "Trait",
-     "changes": [
-      {
-       "field": "full",
-       "before": "죽으면 4초 동안 무적 상태가 되고 이동 속도가 20% 증가하며, 무적이 만료되면 폭발하여 주위 적들에게 450(+4%)의 피해를 줍니다. 폭발에 적중한 적 영웅 하나당 부활 대기시간이 10% 감소합니다.\n대천사의 분노가 활성화된 동안 주위 적 영웅의 공격력이 \n50% 감소하며, 폭발한 후에도 \n3초 동안 지속됩니다.",
-       "after": "죽으면 4초 동안 무적 상태가 되고 이동 속도가 20% 증가하며, 무적이 만료되면 폭발하여 주위 적들에게 450(+4%)의 피해를 줍니다. 폭발에 적중한 적 영웅 하나당 부활 대기시간이 10% 감소합니다.\n대천사의 분노가 활성화된 동안 주위 적 영웅의 공격력이 50% 감소하며, 폭발한 후에도 3초 동안 지속됩니다.",
-       "diff": "죽으면 4초 동안 무적 상태가 되고 이동 속도가 20% 증가하며, 무적이 만료되면 폭발하여 주위 적들에게 450(+4%)의 피해를 줍니다. 폭발에 적중한 적 영웅 하나당 부활 대기시간이 10% 감소합니다.\n대천사의 분노가 활성화된 동안 주위 적 영웅의 공격력이[[- \n-]]{{+ +}}50% 감소하며, 폭발한 후에도[[- \n-]]{{+ +}}3초 동안 지속됩니다."
-      }
-     ]
-    }
-   ]
-  },
-  "Yrel": {
-   "name": "이렐",
-   "changes": [
-    {
-     "type": "ability_added",
-     "id": "YrelAvengingWrathChannel|E",
-     "name": "응징의 격노",
-     "abilityType": "E",
-     "full": "대상 위치로 도약하여 적들에게 225(+4%)의 피해를 주고 1초 동안 50% 느려지게 합니다.\n강화할수록 사거리가 증가합니다."
-    },
-    {
-     "type": "ability_removed",
-     "id": "YrelAvengingWrath|E",
-     "name": "응징의 격노",
-     "abilityType": "E"
+     ],
+     "suspect": true
     }
    ]
   },
@@ -806,35 +394,12 @@
      ]
     }
    ]
-  },
-  "Zeratul": {
-   "name": "제라툴",
-   "changes": [
-    {
-     "type": "talent",
-     "id": "ZeratulMightOfTheNerazim",
-     "name": "네라짐의 힘",
-     "level": 10,
-     "changes": [
-      {
-       "field": "cooldown",
-       "before": "",
-       "after": "재사용 대기시간: 20초",
-       "diff": "[[--]]{{+재사용 대기시간: 20초+}}"
-      },
-      {
-       "field": "energy",
-       "before": "",
-       "after": "마나: 30",
-       "diff": "[[--]]{{+마나: 30+}}"
-      }
-     ]
-    }
-   ]
   }
  },
  "summary": {
-  "heroes": 24,
-  "changes": 46
- }
+  "heroes": 9,
+  "changes": 24,
+  "suspect": 2
+ },
+ "schemaBoundary": true
 }

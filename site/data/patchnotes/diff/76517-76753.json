@@ -6,6 +6,8 @@
  "fromDate": "2019-10-12",
  "toDate": "2019-10-15",
  "toPtr": false,
+ "fromRepo": "heroes-data",
+ "toRepo": "heroes-data",
  "heroes": {
   "Ana": {
    "name": "아나",
@@ -163,13 +165,13 @@
      "before": {
       "amount": 2670,
       "scale": 0.04,
-      "regenRate": 5.5625,
+      "regenRate": 5.562,
       "regenScale": 0.04
      },
      "after": {
       "amount": 2825,
       "scale": 0.04,
-      "regenRate": 5.8867,
+      "regenRate": 5.887,
       "regenScale": 0.04
      }
     },
@@ -226,13 +228,13 @@
      "before": {
       "amount": 1350,
       "scale": 0.04,
-      "regenRate": 2.8125,
+      "regenRate": 2.812,
       "regenScale": 0.04
      },
      "after": {
       "amount": 1425,
       "scale": 0.04,
-      "regenRate": 2.9687,
+      "regenRate": 2.969,
       "regenScale": 0.04
      }
     },
@@ -314,7 +316,12 @@
        "after": "실명의 바람이 적 영웅의 이동 속도를 2초 동안 25% 감소시킵니다.",
        "diff": "실명의 바람이 적 영웅의 이동 속도를 [[-1.5초-]]{{+2초+}} 동안 25% 감소시킵니다."
       }
-     ]
+     ],
+     "moved": {
+      "from": 4,
+      "to": 13,
+      "kind": "tweak"
+     }
     },
     {
      "type": "talent",
@@ -333,7 +340,12 @@
        "after": "실명의 바람이 2명 이상의 적 영웅에게 적중하면 재사용 대기시간이 2초 감소하고 기술 위력이 10초 동안 10% 증가합니다.",
        "diff": "실명의 바람이 2명 이상의 적 영웅에게 적중하면 재사용 대기시간이 [[-3초-]]{{+2초+}} 감소하고 기술 위력이 10초 동안 10% 증가합니다."
       }
-     ]
+     ],
+     "moved": {
+      "from": 13,
+      "to": 4,
+      "kind": "tweak"
+     }
     }
    ]
   },
@@ -380,19 +392,6 @@
    "name": "모랄레스 중위",
    "changes": [
     {
-     "type": "talent_added",
-     "id": "MedicMediDrone",
-     "name": "치유기",
-     "level": 7,
-     "full": "아군에게 보호기를 사용하면, 치유 광선으로 다른 아군을 치유해도 치유한 양의 50%만큼 보호기의 대상이 생명력을 회복합니다."
-    },
-    {
-     "type": "talent_removed",
-     "id": "MedicProlongedSafeguard",
-     "name": "장시간 보호기",
-     "level": 7
-    },
-    {
      "type": "talent",
      "id": "MedicVanadiumPlating",
      "name": "바나듐 장갑",
@@ -405,6 +404,20 @@
        "diff": "[[-대상이 이동 불가 상태이거나 기절한 동안 보호기가 증가시키는 방어력이 추가로 25 증가하고 지속 시간이 유지됩니다.-]]{{+지속 효과: 보호기의 지속 시간이 1초 증가합니다.\n보호기의 대상이 기절, 이동 불가 상태인 동안 보호기가 증가시키는 방어력이 추가로 20 증가합니다.+}}"
       }
      ]
+    },
+    {
+     "type": "talent_replaced",
+     "level": 7,
+     "idFrom": "MedicProlongedSafeguard",
+     "idTo": "MedicMediDrone",
+     "nameFrom": "장시간 보호기",
+     "nameTo": "치유기",
+     "fullBefore": "보호기의 지속 시간이 50% 증가합니다.",
+     "fullAfter": "아군에게 보호기를 사용하면, 치유 광선으로 다른 아군을 치유해도 치유한 양의 50%만큼 보호기의 대상이 생명력을 회복합니다.",
+     "cooldownBefore": "",
+     "cooldownAfter": "",
+     "match": "slot",
+     "confidence": "low"
     }
    ]
   },
@@ -629,13 +642,6 @@
      ]
     },
     {
-     "type": "ability_added",
-     "id": "WhitemaneFanaticalPower|Trait",
-     "name": "열의",
-     "abilityType": "Trait",
-     "full": "치유 기술이 대상에게 8초 동안 열의를 부여합니다. 적 영웅에게 피해를 줄 때마다 열의가 부여된 아군의 생명력을 준 피해의 100%만큼 회복시킵니다.\n사용하면 기술 위력이 5초 동안 25% 증가하지만 방어력이 25 감소합니다."
-    },
-    {
      "type": "ability",
      "id": "WhitemaneInquisitionClemency|Active",
      "name": "관용",
@@ -670,23 +676,24 @@
      ]
     },
     {
-     "type": "ability_removed",
+     "type": "ability",
      "id": "WhitemaneTraitZeal|Trait",
      "name": "열의",
-     "abilityType": "Trait"
-    },
-    {
-     "type": "talent_removed",
-     "id": "WhitemaneFanaticalPower",
-     "name": "광신적인 힘",
-     "level": 20
-    },
-    {
-     "type": "talent_added",
-     "id": "WhitemaneGuidingLight",
-     "name": "인도의 빛",
-     "level": 20,
-     "full": "사용하면 아군 영웅에게 열의를 영구히 부여합니다. 이 기술은 마나를 소모하지 않고 절박함을 얻지 않으며 사거리 제한이 없습니다. 동시에 하나만 활성화할 수 있습니다."
+     "abilityType": "Trait",
+     "changes": [
+      {
+       "field": "full",
+       "before": "치유 기술이 대상에게 8초 동안 열의를 부여합니다.\n적 영웅에게 피해를 줄 때마다 열의가 부여된 아군의 생명력을 준 피해의 100%만큼 회복시킵니다.",
+       "after": "치유 기술이 대상에게 8초 동안 열의를 부여합니다. 적 영웅에게 피해를 줄 때마다 열의가 부여된 아군의 생명력을 준 피해의 100%만큼 회복시킵니다.\n사용하면 기술 위력이 5초 동안 25% 증가하지만 방어력이 25 감소합니다.",
+       "diff": "치유 기술이 대상에게 8초 동안 열의를 부여합니다.[[-\n-]]{{+ +}}적 영웅에게 피해를 줄 때마다 열의가 부여된 아군의 생명력을 준 피해의 100%만큼 회복시킵니다.{{+\n사용하면 기술 위력이 5초 동안 25% 증가하지만 방어력이 25 감소합니다.+}}"
+      },
+      {
+       "field": "cooldown",
+       "before": "",
+       "after": "재사용 대기시간: 60초",
+       "diff": "[[--]]{{+재사용 대기시간: 60초+}}"
+      }
+     ]
     },
     {
      "type": "talent",
@@ -701,6 +708,20 @@
        "diff": "[[-일반 공격의 열의 치유량이 100% 증가합니다.-]]{{+이글거리는 채찍이 적중한 적 영웅에게 3초 동안 낙인을 찍습니다. 낙인이 찍힌 대상에게 일반 공격을 하면 50(+4%)의 추가 기술 피해를 주고 낙인을 제거합니다.+}}"
       }
      ]
+    },
+    {
+     "type": "talent_replaced",
+     "level": 20,
+     "idFrom": "WhitemaneFanaticalPower",
+     "idTo": "WhitemaneGuidingLight",
+     "nameFrom": "광신적인 힘",
+     "nameTo": "인도의 빛",
+     "fullBefore": "사용하면 아군 영웅에게 열의를 영구히 부여하는 절박한 기도를 시전합니다. 이 기술은 마나를 소모하지 않고 절박함을 얻지 않으며 사거리 제한이 없습니다. 동시에 하나만 활성화할 수 있습니다.",
+     "fullAfter": "사용하면 아군 영웅에게 열의를 영구히 부여합니다. 이 기술은 마나를 소모하지 않고 절박함을 얻지 않으며 사거리 제한이 없습니다. 동시에 하나만 활성화할 수 있습니다.",
+     "cooldownBefore": "재사용 대기시간: 30초",
+     "cooldownAfter": "재사용 대기시간: 30초",
+     "match": "slot",
+     "confidence": "low"
     }
    ]
   },
@@ -713,13 +734,13 @@
      "before": {
       "amount": 1232,
       "scale": 0.04,
-      "regenRate": 2.5664,
+      "regenRate": 2.566,
       "regenScale": 0.04
      },
      "after": {
       "amount": 1270,
       "scale": 0.04,
-      "regenRate": 2.6484,
+      "regenRate": 2.648,
       "regenScale": 0.04
      }
     },
@@ -738,12 +759,6 @@
      ]
     },
     {
-     "type": "talent_removed",
-     "id": "WizardAstralPresence",
-     "name": "초월적 존재",
-     "level": 1
-    },
-    {
      "type": "talent",
      "id": "WizardForceArmor",
      "name": "힘의 갑옷",
@@ -756,12 +771,23 @@
        "diff": "마력탄으로 적 영웅에게 피해를 주면 기술 방어력이 50 증가하여 다음 기술 공격으로 받는 피해가 50% 감소합니다. 마력탄을 한 번 시전할 [[-때 최대-]]{{+때마다+}} 1회 [[-충전됩니다.\n-]]{{+충전되어 +}}최대 4회 충전됩니다.{{+\n지속 효과: 마나가 35% 미만이면 마나 재생량이 100% 증가합니다.+}}"
       }
      ]
+    },
+    {
+     "type": "talent_removed",
+     "id": "WizardAstralPresence",
+     "name": "초월적 존재",
+     "level": 1,
+     "full": "마나가 35% 미만이면 마나 재생량이 100% 증가합니다.",
+     "cooldown": "",
+     "icon": "storm_btn_d3_traits_wizard_astralpresence.png"
     }
    ]
   }
  },
  "summary": {
   "heroes": 13,
-  "changes": 50
+  "changes": 47,
+  "replaced": 2,
+  "moved": 2
  }
 }

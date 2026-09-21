@@ -6,40 +6,9 @@
  "fromDate": "2024-05-21",
  "toDate": "2024-08-13",
  "toPtr": false,
+ "fromRepo": "heroes-data",
+ "toRepo": "heroes-data",
  "heroes": {
-  "Alexstrasza": {
-   "name": "알렉스트라자",
-   "changes": [
-    {
-     "type": "ability",
-     "id": "AlexstraszaCleansingFlame|Heroic",
-     "name": "정화의 불꽃",
-     "abilityType": "Heroic",
-     "changes": [
-      {
-       "field": "full",
-       "before": "1.25초 후, 하늘로 날아올라 6초 동안 1.2초마다 마우스 커서의 위치에 화염구를 떨어뜨려 아군 영웅들의 생명력을 0(+4%) 회복시키고 적에게는 0(+4%)의 피해를 줍니다.\n모든 화염구를 떨어뜨리고 2초 후에 마우스 커서 위치에 착지합니다.",
-       "after": "1.25초 후, 하늘로 날아올라 6초 동안 1.2초마다 마우스 커서의 위치에 화염구를 떨어뜨려 아군 영웅들의 생명력을 300(+4%) 회복시키고 적에게는 135(+4%)의 피해를 줍니다.\n모든 화염구를 떨어뜨리고 2초 후에 마우스 커서 위치에 착지합니다.",
-       "diff": "1.25초 후, 하늘로 날아올라 6초 동안 1.2초마다 마우스 커서의 위치에 화염구를 떨어뜨려 아군 영웅들의 생명력을 [[-0(+4%)-]]{{+300(+4%)+}} 회복시키고 적에게는 [[-0(+4%)의-]]{{+135(+4%)의+}} 피해를 줍니다.\n모든 화염구를 떨어뜨리고 2초 후에 마우스 커서 위치에 착지합니다."
-      }
-     ]
-    },
-    {
-     "type": "talent",
-     "id": "AlexstraszaCleansingFlame",
-     "name": "정화의 불꽃",
-     "level": 10,
-     "changes": [
-      {
-       "field": "full",
-       "before": "1.25초 후, 하늘로 날아올라 6초 동안 1.2초마다 마우스 커서의 위치에 화염구를 떨어뜨려 아군 영웅들의 생명력을 0(+4%) 회복시키고 적에게는 0(+4%)의 피해를 줍니다.\n모든 화염구를 떨어뜨리고 2초 후에 마우스 커서 위치에 착지합니다.",
-       "after": "1.25초 후, 하늘로 날아올라 6초 동안 1.2초마다 마우스 커서의 위치에 화염구를 떨어뜨려 아군 영웅들의 생명력을 300(+4%) 회복시키고 적에게는 135(+4%)의 피해를 줍니다.\n모든 화염구를 떨어뜨리고 2초 후에 마우스 커서 위치에 착지합니다.",
-       "diff": "1.25초 후, 하늘로 날아올라 6초 동안 1.2초마다 마우스 커서의 위치에 화염구를 떨어뜨려 아군 영웅들의 생명력을 [[-0(+4%)-]]{{+300(+4%)+}} 회복시키고 적에게는 [[-0(+4%)의-]]{{+135(+4%)의+}} 피해를 줍니다.\n모든 화염구를 떨어뜨리고 2초 후에 마우스 커서 위치에 착지합니다."
-      }
-     ]
-    }
-   ]
-  },
   "FaerieDragon": {
    "name": "빛나래",
    "changes": [
@@ -173,7 +142,7 @@
     },
     {
      "type": "ability",
-     "id": "NexusHunterFinalStrikeActivate|Heroic",
+     "id": "NexusHunterFinalStrike|Heroic",
      "name": "최후의 일격",
      "abilityType": "Heroic",
      "changes": [
@@ -267,7 +236,7 @@
    "changes": [
     {
      "type": "ability",
-     "id": "SamuroBladeStormDummy|Heroic",
+     "id": "SamuroBladestorm|Heroic",
      "name": "칼날폭풍",
      "abilityType": "Heroic",
      "changes": [
@@ -400,7 +369,7 @@
   }
  },
  "summary": {
-  "heroes": 7,
-  "changes": 25
+  "heroes": 6,
+  "changes": 23
  }
 }

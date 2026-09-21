@@ -6,6 +6,8 @@
  "fromDate": "2025-03-12",
  "toDate": "2025-05-16",
  "toPtr": false,
+ "fromRepo": "heroes-data",
+ "toRepo": "heroes-data",
  "heroes": {
   "Ana": {
    "name": "아나",
@@ -51,6 +53,36 @@
        "diff": "{{+때까치의 치유량이 15% 증가합니다.\n반복 +}}퀘스트:[[- 적 영웅에게 독극물 5중첩을 달성하거나 독극물이 5중첩인 영웅에게 일반 공격을 해야 합니다.\n보상:-]] 독극물 5중첩을 달성하면 때까치의 치유량이 1% 증가합니다.\n[[-보상:-]]{{+반복 퀘스트:+}} 독극물이 5중첩인 영웅에게 일반 공격을 하면 때까치의 치유량이 0.25% 증가합니다."
       }
      ]
+    },
+    {
+     "type": "ability",
+     "id": "AnaEyeOfHorusHighPoweredRound|Heroic",
+     "name": "고성능 탄환",
+     "abilityType": "Heroic",
+     "changes": [
+      {
+       "field": "cooldown",
+       "before": "",
+       "after": "재사용 대기시간: 1초",
+       "diff": "[[--]]{{+재사용 대기시간: 1초+}}"
+      }
+     ],
+     "parent": "호루스의 눈"
+    },
+    {
+     "type": "ability",
+     "id": "AnaEyeOfHorusHighPoweredRound|Q",
+     "name": "고성능 탄환",
+     "abilityType": "Q",
+     "changes": [
+      {
+       "field": "cooldown",
+       "before": "",
+       "after": "재사용 대기시간: 1초",
+       "diff": "[[--]]{{+재사용 대기시간: 1초+}}"
+      }
+     ],
+     "parent": "호루스의 눈"
     }
    ]
   },
@@ -59,7 +91,7 @@
    "changes": [
     {
      "type": "ability",
-     "id": "AnubarakLegionOfBeetlesVisual|Trait",
+     "id": "AnubarakScarabHostTrait|Trait",
      "name": "풍뎅이 숙주",
      "abilityType": "Trait",
      "changes": [
@@ -122,6 +154,61 @@
        "diff": "사용하면 짧은 거리를 돌진하여 275(+4%)의 피해를 주고 적중한 적들을 1.25초 동안 60% 느려지게 합니다.{{+\n적 영웅에게 밟아 뭉개기가 적중하면 궁극기의 재사용 대기시간이 25% 감소합니다.+}}"
       }
      ]
+    },
+    {
+     "type": "ability",
+     "id": "AzmodanAllShallBurnCancel|E",
+     "name": "모두 다 불타리라",
+     "abilityType": "E",
+     "changes": [
+      {
+       "field": "cooldown",
+       "before": "재사용 대기시간: 1초",
+       "after": "",
+       "diff": "[[-재사용 대기시간: 1초-]]{{++}}"
+      }
+     ],
+     "parent": "모두 다 불타리라"
+    }
+   ]
+  },
+  "Chromie": {
+   "name": "크로미",
+   "changes": [
+    {
+     "type": "ability",
+     "id": "ChromieDetonateTimeTrap|Trait",
+     "name": "시간의 덫 폭발",
+     "abilityType": "Trait",
+     "changes": [
+      {
+       "field": "cooldown",
+       "before": "재사용 대기시간: 2초",
+       "after": "",
+       "diff": "[[-재사용 대기시간: 2초-]]{{++}}"
+      }
+     ],
+     "parent": "시간의 덫"
+    }
+   ]
+  },
+  "Diablo": {
+   "name": "디아블로",
+   "changes": [
+    {
+     "type": "ability",
+     "id": "DiabloLightningBreathCancel|Heroic",
+     "name": "번개 숨결 중지",
+     "abilityType": "Heroic",
+     "changes": [
+      {
+       "field": "cooldown",
+       "before": "재사용 대기시간: 1.5초",
+       "after": "",
+       "diff": "[[-재사용 대기시간: 1.5초-]]{{++}}"
+      }
+     ],
+     "parent": "번개 숨결"
     }
    ]
   },
@@ -143,13 +230,6 @@
      ]
     },
     {
-     "type": "talent_added",
-     "id": "DryadForTheWildlands",
-     "name": "자생지를 위하여",
-     "level": 20,
-     "full": "가시나무 덩굴이 추가로 4개의 덩굴을 원호 모양으로 발사합니다."
-    },
-    {
      "type": "talent",
      "id": "DryadForestsWrath",
      "name": "숲의 분노",
@@ -162,6 +242,15 @@
        "diff": "[[-가시나무 덩굴이-]]{{+궁극기가+}} 자연의 독소를 2회 [[-적용합니다. 가시나무 덩굴의-]]{{+적용하며,+}} 사거리가 30% [[-증가하고-]]{{+증가합니다.\n지속 효과:+}} 시야 반경이 35% 증가합니다."
       }
      ]
+    },
+    {
+     "type": "talent_added",
+     "id": "DryadForTheWildlands",
+     "name": "자생지를 위하여",
+     "level": 20,
+     "full": "가시나무 덩굴이 추가로 4개의 덩굴을 원호 모양으로 발사합니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_lunara_wildspear.png"
     }
    ]
   },
@@ -350,13 +439,6 @@
      ]
     },
     {
-     "type": "talent_added",
-     "id": "ImperiusMoltenWrath",
-     "name": "타오르는 분노",
-     "level": 20,
-     "full": "사거리 내에 영웅이 있어도 타오르는 갑옷이 항상 2명의 추가 대상에게 적중합니다."
-    },
-    {
      "type": "talent",
      "id": "ImperiusSolarionsFireBlazeOfGlory",
      "name": "영광의 불꽃",
@@ -369,6 +451,15 @@
        "diff": "솔라리온의 불길이 중심부를 따라 이글거리는 대지를 남깁니다. 이글거리는 대지는 [[-2초-]]{{+1.75초+}} 후에 폭발하여 205(+4%)의 피해를 주며, 용기의 낙인이 찍혀 있는 적에게 추가 피해를 줍니다."
       }
      ]
+    },
+    {
+     "type": "talent_added",
+     "id": "ImperiusMoltenWrath",
+     "name": "타오르는 분노",
+     "level": 20,
+     "full": "사거리 내에 영웅이 있어도 타오르는 갑옷이 항상 2명의 추가 대상에게 적중합니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_imperius_e.png"
     }
    ]
   },
@@ -405,7 +496,7 @@
     },
     {
      "type": "ability",
-     "id": "RockstarDummy|Trait",
+     "id": "L90ETCRockstar|Trait",
      "name": "록스타",
      "abilityType": "Trait",
      "changes": [
@@ -460,30 +551,56 @@
      ]
     },
     {
+     "type": "talent_replaced",
+     "level": 20,
+     "idFrom": "GenericTalentStormShield",
+     "idTo": "L90ETCPoweroftheHorde",
+     "nameFrom": "폭풍 보호막",
+     "nameTo": "호드의 힘으로",
+     "fullBefore": "사용하면 주위 모든 아군 영웅에게 각각의 최대 생명력의 20%에 해당하는 보호막을 부여합니다. 보호막은 3초 동안 지속됩니다.",
+     "fullAfter": "사용하면 주위 아군 영웅에게 5초 동안 각각의 최대 생명력의 30%에 해당하는 피해 흡수 보호막을 부여합니다. 대상 지역에 있는 각 아군 영웅 하나당 효과가 2% 증가합니다.",
+     "cooldownBefore": "재사용 대기시간: 45초",
+     "cooldownAfter": "재사용 대기시간: 45초",
+     "match": "icon+text",
+     "confidence": "low"
+    },
+    {
      "type": "talent_removed",
      "id": "GenericTalentFlashoftheStorms",
      "name": "폭풍의 번개",
-     "level": 20
-    },
-    {
-     "type": "talent_removed",
-     "id": "GenericTalentStormShield",
-     "name": "폭풍 보호막",
-     "level": 20
-    },
-    {
-     "type": "talent_added",
-     "id": "L90ETCPoweroftheHorde",
-     "name": "호드의 힘으로",
      "level": 20,
-     "full": "사용하면 주위 아군 영웅에게 5초 동안 각각의 최대 생명력의 30%에 해당하는 피해 흡수 보호막을 부여합니다. 대상 지역에 있는 각 아군 영웅 하나당 효과가 2% 증가합니다."
+     "full": "사용하면 가까운 목표 위치로 순간이동합니다.",
+     "cooldown": "재사용 대기시간: 70초",
+     "icon": "storm_ui_icon_talent_boltofthestorm.png"
     },
     {
      "type": "talent_added",
      "id": "L90ETCRidetheLightning",
      "name": "번개를 타고",
      "level": 20,
-     "full": "사용하면 가까운 목표 위치로 순간이동하고 주위 적 영웅에게 48(+4%)의 피해를 줍니다. 적중한 적 영웅 하나당 재사용 대기시간이 10초, 최대 50초까지 감소합니다."
+     "full": "사용하면 가까운 목표 위치로 순간이동하고 주위 적 영웅에게 48(+4%)의 피해를 줍니다. 적중한 적 영웅 하나당 재사용 대기시간이 10초, 최대 50초까지 감소합니다.",
+     "cooldown": "재사용 대기시간: 70초",
+     "icon": "storm_ui_icon_talent_boltofthestorm.png"
+    }
+   ]
+  },
+  "LiLi": {
+   "name": "리 리",
+   "changes": [
+    {
+     "type": "ability",
+     "id": "LiLiCancelJugof1000Cups|Heroic",
+     "name": "1,000잔 돌리기 취소",
+     "abilityType": "Heroic",
+     "changes": [
+      {
+       "field": "cooldown",
+       "before": "재사용 대기시간: 1초",
+       "after": "",
+       "diff": "[[-재사용 대기시간: 1초-]]{{++}}"
+      }
+     ],
+     "parent": "1,000잔 돌리기"
     }
    ]
   },
@@ -548,25 +665,6 @@
     }
    ]
   },
-  "Ragnaros": {
-   "name": "라그나로스",
-   "changes": [
-    {
-     "type": "talent",
-     "id": "RagnarosCatchingFire",
-     "name": "인내하는 불길",
-     "level": 4,
-     "changes": [
-      {
-       "field": "cooldown",
-       "before": "재사용 대기시간: 30초",
-       "after": "",
-       "diff": "[[-재사용 대기시간: 30초-]]{{++}}"
-      }
-     ]
-    }
-   ]
-  },
   "Tinker": {
    "name": "가즈로",
    "changes": [
@@ -583,6 +681,26 @@
        "diff": "[[-재사용 대기시간: 1초-]]{{++}}"
       }
      ]
+    }
+   ]
+  },
+  "WitchDoctor": {
+   "name": "나지보",
+   "changes": [
+    {
+     "type": "ability",
+     "id": "WitchDoctorRavenousSpiritCancel|Heroic",
+     "name": "굶주린 혼령",
+     "abilityType": "Heroic",
+     "changes": [
+      {
+       "field": "cooldown",
+       "before": "재사용 대기시간: 1.5초",
+       "after": "",
+       "diff": "[[-재사용 대기시간: 1.5초-]]{{++}}"
+      }
+     ],
+     "parent": "굶주린 혼령"
     }
    ]
   },
@@ -604,35 +722,12 @@
      ]
     }
    ]
-  },
-  "Zeratul": {
-   "name": "제라툴",
-   "changes": [
-    {
-     "type": "talent",
-     "id": "ZeratulMightOfTheNerazim",
-     "name": "네라짐의 힘",
-     "level": 10,
-     "changes": [
-      {
-       "field": "cooldown",
-       "before": "재사용 대기시간: 20초",
-       "after": "",
-       "diff": "[[-재사용 대기시간: 20초-]]{{++}}"
-      },
-      {
-       "field": "energy",
-       "before": "마나: 30",
-       "after": "",
-       "diff": "[[-마나: 30-]]{{++}}"
-      }
-     ]
-    }
-   ]
   }
  },
  "summary": {
-  "heroes": 15,
-  "changes": 41
+  "heroes": 17,
+  "changes": 45,
+  "replaced": 1,
+  "subs": 7
  }
 }

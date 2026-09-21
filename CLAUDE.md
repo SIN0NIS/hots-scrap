@@ -131,6 +131,21 @@
   창 없는 프로세스가 git 을 부르면 콘솔 창이 번쩍이므로 `CREATE_NO_WINDOW` 로 부른다. 이 둘을 빼지 마라.
   파이썬을 새로 깔아 경로가 바뀌면 작업의 실행 파일 경로도 고쳐야 한다(`pythoncore-3.14-64\pythonw.exe`).
 
+**데이터 변경점(diff) 엔진** — `pipeline/steps/diff_heroes_data.py` (2026-09-21 재작성, 조사 근거는 계획 파일에)
+- 기술 키는 `buttonId|type` 이다. nameId/abilityId 는 HDP 판마다 부모/자식 선택이 바뀌지만(이렐 응징의 격노) buttonId 는 같다.
+- **원본(HDP)이 수식을 못 풀면 숫자 자리에 0 을 뱉는다.** 7년치 diff 에서 진짜 "→0" 변경은 0건이었다.
+  5.x 는 따옴표 없는 마크업(`<c val=#TooltipNumbers>0</c>`)이 표식이고 그 문자열의 0 아닌 숫자도 낡은 값이다(라그나로스 90≠정상 110).
+  4.x 는 91093 까지 `##ERROR##`, 그 뒤로는 표식이 없어 앞 빌드와 문장 골격을 맞춰 잡는다. 잡은 자리는 **앞 빌드 값을 이어 쓴다**(carry-forward).
+  이어 쓴 자리는 `site/data/patchnotes/fills/<version>[_ptr].json` 에 남고 `load_norm()` 이 적용한다 — series·index·빌드메이커가 모두 이것을 쓴다.
+  서버(Actions)는 직전 라이브 + 최신 두 빌드만 복원하므로 **fills 는 커밋 대상**이다(없으면 서버 diff 가 로컬과 달라진다).
+  이어 쓸 값이 없으면 `?` 로 두고 항목에 `suspect` 를 단다(화면 "값 불확실"). 0 을 그대로 찍지 않는다.
+- `heroUnits`(공생체·조종사·용암 거인·바이킹…)와 `subAbilities`(기술·특성이 주는 버튼)도 비교한다. 본체와 글자까지 같은 버튼·탈것 해제류는 뺀다.
+- **삭제/신규는 상대 빌드의 펼친 색인(본체+유닛+하위)에 없을 때만** 보고한다(데스윙 맹격↔용암 폭발 같은 배치 이동은 변경이 아니다).
+- **형식 경계(heroes-data → heroes-data2, 96881→97039)에서는 유닛·하위 기술의 삭제/신규와 하위 기술 비교를 하지 않는다**(5.x 만 특성 활성기를 하위에 넣어 +243 이 뜬다). diff 문서에 `schemaBoundary` 가 붙는다.
+- 이름이 같은 removed/added 는 `renamed`(개편, ID 변경)로 묶고, 같은 단계에 removed 1·added 1 이면 `*_replaced`(칸 교체, 추정)로 묶는다. ID 공통 접두 규칙은 정탐 0 이라 넣지 않았다.
+- 재사용 대기시간·자원은 숫자만 비교한다("마나: 10"→"기력: 10" 은 라벨 오류). 특성은 양쪽 다 값이 있을 때만. 무기는 `isDisabled` 를 빼고 nameId 로 비교.
+- 전체 재생성은 `--force --ptr` 로 한 번에, **단독으로** 돌린다(빌드 136개 순차, 수 분).
+
 **새 영웅 아이콘**: `python pipeline/steps/fetch_missing_icons.py`
 화면이 부르는 아이콘 중 내 이미지 저장소(`SIN0NIS/images`)에 없는 것을
 HeroesToolChest/heroes-images(MIT)에서 받아 `site/images/` 에 둔다.

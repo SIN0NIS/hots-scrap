@@ -6,6 +6,8 @@
  "fromDate": "2025-06-15",
  "toDate": "2025-07-30",
  "toPtr": true,
+ "fromRepo": "heroes-data",
+ "toRepo": "heroes-data",
  "heroes": {
   "Alarak": {
    "name": "알라라크",
@@ -46,39 +48,6 @@
     },
     {
      "type": "talent",
-     "id": "AlarakAppliedForce",
-     "name": "강제 이동",
-     "level": 7,
-     "changes": [
-      {
-       "field": "full",
-       "before": "가학성이 10% 감소하지만 염동력으로 밀쳐내는 거리가 20% 증가하고 사거리가 20% 증가합니다.",
-       "after": "가학성이 10% 감소하지만 염동력으로 밀쳐내는 거리가 20% 증가하고 사거리가 0% 증가합니다.",
-       "diff": "가학성이 10% 감소하지만 염동력으로 밀쳐내는 거리가 20% 증가하고 사거리가 [[-20%-]]{{+0%+}} 증가합니다."
-      }
-     ]
-    },
-    {
-     "type": "talent_removed",
-     "id": "AlarakCounterStrikeItem",
-     "name": "반격",
-     "level": 20
-    },
-    {
-     "type": "talent_removed",
-     "id": "AlarakDeadlyChargeSecondHeroic",
-     "name": "치명적인 돌진",
-     "level": 20
-    },
-    {
-     "type": "talent_added",
-     "id": "AlarakMightOfTheHighlord",
-     "name": "",
-     "level": 20,
-     "full": ""
-    },
-    {
-     "type": "talent",
      "id": "AlarakOverwhelmingPowerDiscordStrike",
      "name": "압도적인 힘",
      "level": 1,
@@ -92,11 +61,40 @@
      ]
     },
     {
+     "type": "talent_removed",
+     "id": "AlarakCounterStrikeItem",
+     "name": "반격",
+     "level": 20,
+     "full": "1초 동안 보호 및 저지 불가 상태가 되고 대상 지역을 향해 정신을 집중합니다. 이후 적 영웅에게 피해를 받으면 275(+4%)의 피해를 주는 충격파를 발산합니다.\n이 기술은 고유 능력 버튼으로 사용할 수 있습니다.",
+     "cooldown": "재사용 대기시간: 30초",
+     "icon": "storm_ui_icon_alarak_counterstrike.png"
+    },
+    {
+     "type": "talent_removed",
+     "id": "AlarakDeadlyChargeSecondHeroic",
+     "name": "치명적인 돌진",
+     "level": 20,
+     "full": "정신을 집중한 후, 전방으로 돌진하며 경로 상의 적들에게 200(+4%)의 피해를 줍니다. 돌진 거리는 정신을 집중한 시간에 비례하며, 최대 1.5초까지 정신을 집중하여 증가시킬 수 있습니다.\n정신을 집중하는 동안 이동하면 비용이 소모되지 않은 채로 정신 집중이 취소됩니다. 피해를 받으면 정신 집중이 취소됩니다.",
+     "cooldown": "재사용 대기시간: 45초",
+     "icon": "storm_ui_icon_alarak_recklesscharge.png"
+    },
+    {
      "type": "talent_added",
      "id": "AlarakWrathOfTheHighlord",
      "name": "군주의 분노",
      "level": 20,
-     "full": ""
+     "full": "",
+     "cooldown": "",
+     "icon": "storm_ui_icon_alarak_sadism.png"
+    },
+    {
+     "type": "talent_added",
+     "id": "AlarakMightOfTheHighlord",
+     "name": "",
+     "level": 20,
+     "full": "",
+     "cooldown": "",
+     "icon": "storm_ui_icon_alarak_sadism_a.png"
     }
    ]
   },
@@ -198,9 +196,11 @@
        "field": "full",
        "before": "소리 파동의 사거리의 절반 내에 있는 적들은 75% 더 멀리 밀쳐집니다.\n퀘스트: 소리 파동이 3명의 적 영웅에게 동시에 적중해야 합니다.\n보상: 소리 파동의 너비가 50% 증가하고 사거리가 20% 증가합니다.",
        "after": "소리 파동의 사거리의 절반 내에 있는 적들은 -100% 더 멀리 밀쳐집니다.\n퀘스트: 소리 파동이 3명의 적 영웅에게 동시에 적중해야 합니다.\n보상: 소리 파동의 너비가 50% 증가하고 사거리가 20% 증가합니다.",
-       "diff": "소리 파동의 사거리의 절반 내에 있는 적들은 [[-75%-]]{{+-100%+}} 더 멀리 밀쳐집니다.\n퀘스트: 소리 파동이 3명의 적 영웅에게 동시에 적중해야 합니다.\n보상: 소리 파동의 너비가 50% 증가하고 사거리가 20% 증가합니다."
+       "diff": "소리 파동의 사거리의 절반 내에 있는 적들은 [[-75%-]]{{+-100%+}} 더 멀리 밀쳐집니다.\n퀘스트: 소리 파동이 3명의 적 영웅에게 동시에 적중해야 합니다.\n보상: 소리 파동의 너비가 50% 증가하고 사거리가 20% 증가합니다.",
+       "suspect": true
       }
-     ]
+     ],
+     "suspect": true
     }
    ]
   },
@@ -213,13 +213,13 @@
      "before": {
       "amount": 2517,
       "scale": 0.04,
-      "regenRate": 5.2382,
+      "regenRate": 5.238,
       "regenScale": 0.04
      },
      "after": {
       "amount": 2517,
       "scale": 0.04,
-      "regenRate": 5.2438,
+      "regenRate": 5.244,
       "regenScale": 0.04
      }
     },
@@ -259,20 +259,6 @@
     },
     {
      "type": "ability",
-     "id": "TyraelJudgement|Heroic",
-     "name": "심판",
-     "abilityType": "Heroic",
-     "changes": [
-      {
-       "field": "cooldown",
-       "before": "재사용 대기시간: 70초",
-       "after": "재사용 대기시간:",
-       "diff": "재사용 대기시간:[[- 70초-]]"
-      }
-     ]
-    },
-    {
-     "type": "ability",
      "id": "TyraelRighteousness|W",
      "name": "정의",
      "abilityType": "W",
@@ -284,13 +270,6 @@
        "diff": "4초 동안 [[-336(+4%)의-]]{{+350(+4%)의+}} 피해를 흡수하는 보호막을 획득합니다. 주위 아군 영웅과 돌격병에게는 보호막의 40%에 해당하는 보호막을 부여합니다."
       }
      ]
-    },
-    {
-     "type": "talent_added",
-     "id": "TyraelAspectofJustice",
-     "name": "정의의 화신",
-     "level": 20,
-     "full": ""
     },
     {
      "type": "talent",
@@ -309,7 +288,12 @@
        "after": "자신과 엘드루인 주위의 적들에게 매초 15(+4%)의 피해를 줍니다. 이 효과는 엘드루인으로 순간이동한 후 공격력이 2초 동안 125% 증가합니다.",
        "diff": "자신과 엘드루인 주위의 적들에게 매초 [[-18(+4%)의-]]{{+15(+4%)의+}} 피해를 줍니다. 이 효과는 엘드루인으로 순간이동한 후 공격력이 2초 동안 [[-150%-]]{{+125%+}} 증가합니다."
       }
-     ]
+     ],
+     "moved": {
+      "from": 16,
+      "to": 7,
+      "kind": "tweak"
+     }
     },
     {
      "type": "talent",
@@ -322,21 +306,12 @@
        "before": 4,
        "after": 16
       }
-     ]
-    },
-    {
-     "type": "talent",
-     "id": "TyraelHeroicAbilityJudgement",
-     "name": "심판",
-     "level": 10,
-     "changes": [
-      {
-       "field": "cooldown",
-       "before": "재사용 대기시간: 70초",
-       "after": "재사용 대기시간:",
-       "diff": "재사용 대기시간:[[- 70초-]]"
-      }
-     ]
+     ],
+     "moved": {
+      "from": 4,
+      "to": 16,
+      "kind": "moved"
+     }
     },
     {
      "type": "talent",
@@ -349,7 +324,12 @@
        "before": 7,
        "after": 4
       }
-     ]
+     ],
+     "moved": {
+      "from": 7,
+      "to": 4,
+      "kind": "moved"
+     }
     },
     {
      "type": "talent",
@@ -360,16 +340,54 @@
       {
        "field": "full",
        "before": "정의로 획득하는 보호막이 40% 증가하고 보호막이 파괴되면 140(+4%)의 생명력을 회복합니다. 아군에게 부여하는 보호막은 증가하지 않습니다.",
-       "after": "정의로 획득하는 보호막이 0%~~0.04~~ 증가하고 보호막이 파괴되면 150(+4%)의 생명력을 회복합니다. 아군에게 부여하는 보호막은 증가하지 않습니다.",
-       "diff": "정의로 획득하는 보호막이 [[-40%-]]{{+0%~~0.04~~+}} 증가하고 보호막이 파괴되면 [[-140(+4%)의-]]{{+150(+4%)의+}} 생명력을 회복합니다. 아군에게 부여하는 보호막은 증가하지 않습니다."
+       "after": "정의로 획득하는 보호막이 0%(+4%) 증가하고 보호막이 파괴되면 150(+4%)의 생명력을 회복합니다. 아군에게 부여하는 보호막은 증가하지 않습니다.",
+       "diff": "정의로 획득하는 보호막이 [[-40%-]]{{+0%(+4%)+}} 증가하고 보호막이 파괴되면 [[-140(+4%)의-]]{{+150(+4%)의+}} 생명력을 회복합니다. 아군에게 부여하는 보호막은 증가하지 않습니다.",
+       "suspect": true
       }
-     ]
+     ],
+     "suspect": true
+    },
+    {
+     "type": "talent_added",
+     "id": "TyraelAspectofJustice",
+     "name": "정의의 화신",
+     "level": 20,
+     "full": "",
+     "cooldown": "재사용 대기시간: 90초",
+     "icon": "storm_ui_icon_tyrael_archangelswrath.png"
+    },
+    {
+     "type": "ability",
+     "id": "TyraelElDruinsMightEldruinsFlash|Q",
+     "name": "엘드루인의 섬광",
+     "abilityType": "Q",
+     "changes": [
+      {
+       "field": "full",
+       "before": "엘드루인으로 순간이동하여 주위 적들을 2초 동안 25% 느려지게 합니다.",
+       "after": "엘드루인으로 순간이동하여 주위 적들을 2초 동안 30% 느려지게 합니다.",
+       "diff": "엘드루인으로 순간이동하여 주위 적들을 2초 동안 [[-25%-]]{{+30%+}} 느려지게 합니다."
+      }
+     ],
+     "parent": "엘드루인의 힘"
+    },
+    {
+     "type": "ability_added",
+     "id": "TyraelArchangelsWrathActive|Trait",
+     "name": "대천사의 분노",
+     "abilityType": "Trait",
+     "full": "죽으면 4초 동안 무적 상태가 되고 이동 속도가 20% 증가하며, 무적이 만료되면 폭발하여 주위 적들에게 450(+4%)의 피해를 줍니다. 폭발에 적중한 적 영웅 하나당 부활 대기시간이 10% 감소합니다.\n대천사의 분노가 활성화된 동안 주위 적 영웅의 공격력이 \n50% 감소하며, 폭발한 후에도 \n3초 동안 지속됩니다.",
+     "cooldown": "재사용 대기시간: 90초",
+     "parent": "정의의 화신"
     }
    ]
   }
  },
  "summary": {
   "heroes": 6,
-  "changes": 25
+  "changes": 24,
+  "moved": 3,
+  "subs": 2,
+  "suspect": 2
  }
 }

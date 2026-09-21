@@ -6,13 +6,15 @@
  "fromDate": "2020-01-22",
  "toDate": "2020-02-12",
  "toPtr": false,
+ "fromRepo": "heroes-data",
+ "toRepo": "heroes-data",
  "heroes": {
   "Abathur": {
    "name": "아바투르",
    "changes": [
     {
      "type": "ability",
-     "id": "AbathurSpawnLocusts|Trait",
+     "id": "AbathurLocustStrain|Trait",
      "name": "식충 변종",
      "abilityType": "Trait",
      "changes": [
@@ -154,6 +156,27 @@
        "diff": "재사용 대기시간: [[-80초-]]{{+100초+}}"
       }
      ]
+    },
+    {
+     "type": "ability",
+     "id": "AurielResurrectSelf|Heroic",
+     "name": "부활",
+     "abilityType": "Heroic",
+     "changes": [
+      {
+       "field": "full",
+       "before": "3초 후, 죽었던 자리에서 최대 생명력의 100%를 지닌 채 되살아납니다.",
+       "after": "5초 후, 죽었던 자리에서 최대 생명력의 100%를 지닌 채 되살아납니다.",
+       "diff": "[[-3초-]]{{+5초+}} 후, 죽었던 자리에서 최대 생명력의 100%를 지닌 채 되살아납니다."
+      },
+      {
+       "field": "cooldown",
+       "before": "재사용 대기시간: 80초",
+       "after": "재사용 대기시간: 100초",
+       "diff": "재사용 대기시간: [[-80초-]]{{+100초+}}"
+      }
+     ],
+     "parent": "부활"
     }
    ]
   },
@@ -191,7 +214,12 @@
        "after": "모두 다 불타리라가 적 영웅을 지속 시간 동안 15% 느려지게 합니다. 모두 다 불타리라가 적 영웅에게 끝까지 지속되면 재사용 대기시간이 50% 감소하고 대상을 2.5초 동안 50% 느려지게 합니다.",
        "diff": "모두 다 불타리라가 [[-대상을-]]{{+적 영웅을+}} 지속 시간 동안 15% 느려지게 합니다. 모두 다 불타리라가 {{+적 영웅에게 +}}끝까지 지속되면 재사용 대기시간이 50% 감소하고 대상을 [[-2초-]]{{+2.5초+}} 동안 [[-45%-]]{{+50%+}} 느려지게 합니다."
       }
-     ]
+     ],
+     "moved": {
+      "from": 16,
+      "to": 20,
+      "kind": "redesign"
+     }
     },
     {
      "type": "talent",
@@ -210,7 +238,12 @@
        "after": "사용하면 짧은 거리를 돌진하여 275(+4%)의 피해를 주고 적중한 적들을 1.25초 동안 60% 느려지게 합니다.",
        "diff": "사용하면 짧은 거리를 돌진하여 [[-240(+4%)의-]]{{+275(+4%)의+}} 피해를 주고 적중한 적들을 [[-1초-]]{{+1.25초+}} 동안 60% 느려지게 합니다."
       }
-     ]
+     ],
+     "moved": {
+      "from": 20,
+      "to": 16,
+      "kind": "tweak"
+     }
     }
    ]
   },
@@ -330,6 +363,21 @@
        "diff": "용의 비상 사용 후, 시야가 확보된 곳 어디에든 유성우를 떨어뜨려 대상 지역 안의 적들에게 58(+4%)의 피해를 줍니다. 총 3회 충전됩니다.\n영웅에게 적중하면 최대 생명력의 [[-3%를-]]{{+2.5%를+}} 회복하며 착지 대기시간이 1초 감소합니다."
       }
      ]
+    },
+    {
+     "type": "ability",
+     "id": "DeathwingSkyfallActive|E",
+     "name": "하늘붕괴",
+     "abilityType": "E",
+     "changes": [
+      {
+       "field": "full",
+       "before": "0.8초 후, 하늘에서 유성우가 내려 대상 지역 안의 적들에게 58(+4%)의 피해를 줍니다.\n영웅에게 적중하면 최대 생명력의 3%를 회복하며 착지 대기시간이 1초 감소합니다.",
+       "after": "0.8초 후, 하늘에서 유성우가 내려 대상 지역 안의 적들에게 58(+4%)의 피해를 줍니다.\n영웅에게 적중하면 최대 생명력의 2.5%를 회복하며 착지 대기시간이 1초 감소합니다.",
+       "diff": "0.8초 후, 하늘에서 유성우가 내려 대상 지역 안의 적들에게 58(+4%)의 피해를 줍니다.\n영웅에게 적중하면 최대 생명력의 [[-3%를-]]{{+2.5%를+}} 회복하며 착지 대기시간이 1초 감소합니다."
+      }
+     ],
+     "parent": "하늘붕괴"
     }
    ]
   },
@@ -707,19 +755,6 @@
      ]
     },
     {
-     "type": "talent_removed",
-     "id": "GenericTalentBlock",
-     "name": "막기",
-     "level": 1
-    },
-    {
-     "type": "talent_added",
-     "id": "MuradinDwarfBlock",
-     "name": "드워프 막기",
-     "level": 1,
-     "full": "드워프 도약을 사용하면 막기가 4회 충전됩니다. 각 막기는 적 영웅 한 명의 다음 일반 공격에 대한 물리 방어력을 75 증가시켜 받는 피해를 75% 감소시킵니다. 충전된 막기는 10초 동안 지속됩니다."
-    },
-    {
      "type": "talent",
      "id": "MuradinMasteryDwarfTossHeavyImpact",
      "name": "육중한 충격",
@@ -732,6 +767,20 @@
        "diff": "드워프 도약이 적을 [[-1.25초-]]{{+1.5초+}} 동안 80% 느려지게 합니다."
       }
      ]
+    },
+    {
+     "type": "talent_replaced",
+     "level": 1,
+     "idFrom": "GenericTalentBlock",
+     "idTo": "MuradinDwarfBlock",
+     "nameFrom": "막기",
+     "nameTo": "드워프 막기",
+     "fullBefore": "5초마다, 물리 방어력이 75 증가하여 다음 영웅 일반 공격으로 받는 피해가 75% 감소합니다.\n최대 2회 충전됩니다.",
+     "fullAfter": "드워프 도약을 사용하면 막기가 4회 충전됩니다. 각 막기는 적 영웅 한 명의 다음 일반 공격에 대한 물리 방어력을 75 증가시켜 받는 피해를 75% 감소시킵니다. 충전된 막기는 10초 동안 지속됩니다.",
+     "cooldownBefore": "",
+     "cooldownAfter": "",
+     "match": "slot",
+     "confidence": "low"
     }
    ]
   },
@@ -819,17 +868,21 @@
    "name": "해머 상사",
    "changes": [
     {
-     "type": "talent_added",
+     "type": "talent",
      "id": "SgtHammerBarricade",
+     "idFrom": "SgtHammerMasteryFlakCannons",
+     "idTo": "SgtHammerBarricade",
+     "renamed": true,
      "name": "방호벽",
      "level": 4,
-     "full": "충격포의 재사용 대기시간이 3초 감소하고 마나 소모량이 40 감소하며, 충격포가 전방에 이동 경로를 막는 벽을 4초 동안 생성합니다."
-    },
-    {
-     "type": "talent_removed",
-     "id": "SgtHammerMasteryFlakCannons",
-     "name": "방호벽",
-     "level": 4
+     "changes": [
+      {
+       "field": "full",
+       "before": "충격포의 재사용 대기시간이 3초 감소하고 충격포가 전방에 이동 경로를 막는 벽을 4초 동안 생성합니다.",
+       "after": "충격포의 재사용 대기시간이 3초 감소하고 마나 소모량이 40 감소하며, 충격포가 전방에 이동 경로를 막는 벽을 4초 동안 생성합니다.",
+       "diff": "충격포의 재사용 대기시간이 3초 감소하고{{+ 마나 소모량이 40 감소하며,+}} 충격포가 전방에 이동 경로를 막는 벽을 4초 동안 생성합니다."
+      }
+     ]
     }
    ]
   },
@@ -861,7 +914,12 @@
        "before": 13,
        "after": 16
       }
-     ]
+     ],
+     "moved": {
+      "from": 13,
+      "to": 16,
+      "kind": "moved"
+     }
     },
     {
      "type": "talent",
@@ -874,7 +932,12 @@
        "before": 16,
        "after": 13
       }
-     ]
+     ],
+     "moved": {
+      "from": 16,
+      "to": 13,
+      "kind": "moved"
+     }
     },
     {
      "type": "talent",
@@ -887,7 +950,12 @@
        "before": 13,
        "after": 16
       }
-     ]
+     ],
+     "moved": {
+      "from": 13,
+      "to": 16,
+      "kind": "moved"
+     }
     },
     {
      "type": "talent",
@@ -900,7 +968,12 @@
        "before": 13,
        "after": 16
       }
-     ]
+     ],
+     "moved": {
+      "from": 13,
+      "to": 16,
+      "kind": "moved"
+     }
     },
     {
      "type": "talent",
@@ -919,7 +992,12 @@
        "after": "갈고리가 적 영웅에게 적중하면 4초에 걸쳐 최대 생명력의 20%를 회복합니다. 이 효과가 활성화된 동안 대상 영웅에게 일반 공격을 하면 치유 효과의 지속 시간이 갱신됩니다.",
        "diff": "갈고리가 적 영웅에게 적중하면 4초에 걸쳐 최대 생명력의 20%를 회복합니다. [[-이후-]]{{+이+}} [[-4초-]]{{+효과가 활성화된+}} 동안 [[-갈고리가-]]{{+대상+}} [[-적중한 적에게-]]{{+영웅에게+}} 일반 공격을 하면 치유 효과의 지속 시간이 갱신됩니다."
       }
-     ]
+     ],
+     "moved": {
+      "from": 16,
+      "to": 13,
+      "kind": "redesign"
+     }
     },
     {
      "type": "talent",
@@ -952,7 +1030,12 @@
        "after": "지면 강타에 적중당한 모든 적이 0.75초 동안 80% 느려집니다.",
        "diff": "지면 강타에 적중당한 모든 적이 0.75초 동안 [[-75%-]]{{+80%+}} 느려집니다."
       }
-     ]
+     ],
+     "moved": {
+      "from": 16,
+      "to": 13,
+      "kind": "tweak"
+     }
     }
    ]
   },
@@ -980,7 +1063,7 @@
    "changes": [
     {
      "type": "ability",
-     "id": "TyraelArchangelsWrathDummy|Trait",
+     "id": "TyraelArchangelsWrath|Trait",
      "name": "대천사의 분노",
      "abilityType": "Trait",
      "changes": [
@@ -1031,7 +1114,7 @@
      "before": {
       "amount": 2075,
       "scale": 0.04,
-      "regenRate": 4.3164,
+      "regenRate": 4.316,
       "regenScale": 0.04
      },
      "after": {
@@ -1043,7 +1126,7 @@
     },
     {
      "type": "ability",
-     "id": "UtherHammerOfJustice|E",
+     "id": "UtherHammerofJustice|E",
      "name": "심판의 망치",
      "abilityType": "E",
      "changes": [
@@ -1117,12 +1200,6 @@
      ]
     },
     {
-     "type": "talent_removed",
-     "id": "ZaryaParticleGrenadePlasmaShock",
-     "name": "플라스마 충격",
-     "level": 16
-    },
-    {
      "type": "talent",
      "id": "ZaryaPersonalBarrierExplosiveBarrier",
      "name": "폭발성 방벽",
@@ -1149,12 +1226,25 @@
        "diff": "에너지가 [[-50-]]{{+40+}} 이상이면 일반 공격의 범위가 35% 증가합니다."
       }
      ]
+    },
+    {
+     "type": "talent_removed",
+     "id": "ZaryaParticleGrenadePlasmaShock",
+     "name": "플라스마 충격",
+     "level": 16,
+     "full": "입자탄이 중심부의 적의 이동 속도를 2초 동안 35% 감소시킵니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_zarya_particlegrenade.png"
     }
    ]
   }
  },
  "summary": {
   "heroes": 26,
-  "changes": 70
+  "changes": 70,
+  "renamed": 1,
+  "replaced": 1,
+  "moved": 8,
+  "subs": 2
  }
 }

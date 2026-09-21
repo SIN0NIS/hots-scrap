@@ -6,6 +6,8 @@
  "fromDate": "2023-09-28",
  "toDate": "2023-11-20",
  "toPtr": false,
+ "fromRepo": "heroes-data",
+ "toRepo": "heroes-data",
  "heroes": {
   "Auriel": {
    "name": "아우리엘",
@@ -108,29 +110,10 @@
      ]
     }
    ]
-  },
-  "Stukov": {
-   "name": "스투코프",
-   "changes": [
-    {
-     "type": "talent",
-     "id": "StukovWeightedPustuleReactiveBallistospores",
-     "name": "반작용 탄도포자",
-     "level": 1,
-     "changes": [
-      {
-       "field": "cooldown",
-       "before": "",
-       "after": "재사용 대기시간: 75초",
-       "diff": "[[--]]{{+재사용 대기시간: 75초+}}"
-      }
-     ]
-    }
-   ]
   }
  },
  "summary": {
-  "heroes": 5,
-  "changes": 7
+  "heroes": 4,
+  "changes": 6
  }
 }

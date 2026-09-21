@@ -6,6 +6,8 @@
  "fromDate": "2021-06-21",
  "toDate": "2021-07-24",
  "toPtr": false,
+ "fromRepo": "heroes-data",
+ "toRepo": "heroes-data",
  "heroes": {
   "Amazon": {
    "name": "카시아",
@@ -106,13 +108,6 @@
      ]
     },
     {
-     "type": "talent_added",
-     "id": "ArtanisFinalCut",
-     "name": "최후의 베기",
-     "level": 7,
-     "full": "기술을 사용하면 다음 6초 내의 일반 공격이 40%의 추가 피해를 줍니다. 생명력이 25% 미만이면 이 추가 공격력이 60%로 증가합니다."
-    },
-    {
      "type": "talent",
      "id": "ArtanisHeroicAbilitySpearofAdunPurifierBeam",
      "name": "정화 광선",
@@ -189,10 +184,18 @@
      ]
     },
     {
-     "type": "talent_removed",
-     "id": "GenericTalentFollowThrough",
-     "name": "후속타",
-     "level": 7
+     "type": "talent_replaced",
+     "level": 7,
+     "idFrom": "GenericTalentFollowThrough",
+     "idTo": "ArtanisFinalCut",
+     "nameFrom": "후속타",
+     "nameTo": "최후의 베기",
+     "fullBefore": "기술을 사용한 후 6초 이내의 다음 일반 공격이 40%의 추가 피해를 줍니다.",
+     "fullAfter": "기술을 사용하면 다음 6초 내의 일반 공격이 40%의 추가 피해를 줍니다. 생명력이 25% 미만이면 이 추가 공격력이 60%로 증가합니다.",
+     "cooldownBefore": "",
+     "cooldownAfter": "",
+     "match": "slot",
+     "confidence": "low"
     }
    ]
   },
@@ -723,13 +726,13 @@
      "before": {
       "amount": 1545,
       "scale": 0.04,
-      "regenRate": 3.2187,
+      "regenRate": 3.219,
       "regenScale": 0.04
      },
      "after": {
       "amount": 1515,
       "scale": 0.04,
-      "regenRate": 3.1562,
+      "regenRate": 3.156,
       "regenScale": 0.04
      }
     },
@@ -790,13 +793,6 @@
      ]
     },
     {
-     "type": "talent_added",
-     "id": "MedicBedsideManner",
-     "name": "환자를 대하는 태도",
-     "level": 13,
-     "full": "변위 수류탄에 적중당한 영웅에게 다음 일반 공격이 최대 생명력의 6%만큼 추가 피해를 줍니다.\n지속 효과: 일반 공격이 대상의 최대 생명력의 1%만큼 추가 피해를 줍니다."
-    },
-    {
      "type": "talent",
      "id": "MedicBlastShield",
      "name": "폭발 보호막",
@@ -809,12 +805,6 @@
        "diff": "변위 [[-수류탄이-]]{{+수류탄에+}} [[-적중한-]]{{+적중당해 밀쳐진 적 영웅이 1초 동안 50% 느려지며, 적중당한+}} 적 영웅 하나당 [[-2의 기력을 회복하고-]]{{+자신의+}} 최대 생명력의 6%에 해당하는 보호막을 얻습니다. {{+이 보호막은 +}}최대 5회 중첩됩니다."
       }
      ]
-    },
-    {
-     "type": "talent_removed",
-     "id": "MedicCaduceusReactor2dot0",
-     "name": "카두세우스 반응로 2.0",
-     "level": 20
     },
     {
      "type": "talent",
@@ -913,13 +903,6 @@
      ]
     },
     {
-     "type": "talent_added",
-     "id": "MedicHospiceCare",
-     "name": "임종 간호",
-     "level": 20,
-     "full": "보호기가 대상을 1초 동안 불사 상태로 만듭니다. 불사 효과가 끝날 때 대상의 생명력이 50% 미만이면 최대 생명력의 8%를 회복시킵니다."
-    },
-    {
      "type": "talent",
      "id": "MedicHyperactivity",
      "name": "과다활동",
@@ -948,12 +931,6 @@
      ]
     },
     {
-     "type": "talent_removed",
-     "id": "MedicReinforcements",
-     "name": "지원 병력",
-     "level": 20
-    },
-    {
      "type": "talent",
      "id": "MedicSafeZone",
      "name": "안전 지대",
@@ -978,7 +955,12 @@
        "before": 13,
        "after": 20
       }
-     ]
+     ],
+     "moved": {
+      "from": 13,
+      "to": 20,
+      "kind": "moved"
+     }
     },
     {
      "type": "talent",
@@ -1035,6 +1017,42 @@
        "diff": "[[-지속 효과: 보호기의 지속 시간이 1초 증가합니다.\n-]]보호기의 대상이 기절, 이동 불가 상태인 동안 보호기가 증가시키는 방어력이 추가로 [[-20-]]{{+25+}} 증가합니다.{{+\n지속 효과: 보호기의 지속 시간이 1초 증가합니다.+}}"
       }
      ]
+    },
+    {
+     "type": "talent_removed",
+     "id": "MedicReinforcements",
+     "name": "지원 병력",
+     "level": 20,
+     "full": "사용하면 아군 폭풍의 전당에 지원 병력 의료선을 호출합니다. 지원 병력 의료선은 최대 10초 후에 이륙하여 기술을 사용했던 위치로 비행합니다. 의료선과 재사용 대기시간을 공유합니다.\n지속 효과: 의료선의 재사용 대기시간이 60초에서 30초로 감소합니다.\n의료선 궁극기를 선택하지 않아도 사용할 수 있습니다.",
+     "cooldown": "재사용 대기시간: 30초",
+     "icon": "storm_ui_icon_medic_medivacdropship_b.png"
+    },
+    {
+     "type": "talent_removed",
+     "id": "MedicCaduceusReactor2dot0",
+     "name": "카두세우스 반응로 2.0",
+     "level": 20,
+     "full": "카두세우스 반응로의 초당 치유량이 최대 생명력의 2%에서 6%로 증가합니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_medic_caduceusreactor.png"
+    },
+    {
+     "type": "talent_added",
+     "id": "MedicBedsideManner",
+     "name": "환자를 대하는 태도",
+     "level": 13,
+     "full": "변위 수류탄에 적중당한 영웅에게 다음 일반 공격이 최대 생명력의 6%만큼 추가 피해를 줍니다.\n지속 효과: 일반 공격이 대상의 최대 생명력의 1%만큼 추가 피해를 줍니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_medic_displacementgrenade_c.png"
+    },
+    {
+     "type": "talent_added",
+     "id": "MedicHospiceCare",
+     "name": "임종 간호",
+     "level": 20,
+     "full": "보호기가 대상을 1초 동안 불사 상태로 만듭니다. 불사 효과가 끝날 때 대상의 생명력이 50% 미만이면 최대 생명력의 8%를 회복시킵니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_medic_deployshield.png"
     }
    ]
   },
@@ -1046,7 +1064,9 @@
      "id": "MonkFistsofLegendTrait",
      "name": "전설의 주먹",
      "level": 20,
-     "full": "선택하지 않은 두 1레벨 특성을 50%의 효과로 습득합니다."
+     "full": "선택하지 않은 두 1레벨 특성을 50%의 효과로 습득합니다.",
+     "cooldown": "",
+     "icon": "storm_ui_glues_draft_portrait_monk.png"
     }
    ]
   },
@@ -1121,7 +1141,7 @@
     },
     {
      "type": "ability",
-     "id": "TyrandeSentinelShot|W",
+     "id": "TyrandeSentinel|W",
      "name": "파수",
      "abilityType": "W",
      "changes": [
@@ -1230,21 +1250,7 @@
     },
     {
      "type": "ability",
-     "id": "ZagaraInfestedDrop|E",
-     "name": "감염체 투하",
-     "abilityType": "E",
-     "changes": [
-      {
-       "field": "full",
-       "before": "대상 지점에 저그 낙하 주머니를 떨어트려 140(+4%)의 피해를 줍니다.\n주머니에서는 애바퀴 2마리가 생성됩니다. 애바퀴는 초당 27(+4%)의 피해를 주며 8초 동안 전장에 머뭅니다.",
-       "after": "대상 지점에 저그 낙하 주머니를 떨어트려 140(+4%)의 피해를 줍니다.\n주머니에서는 애바퀴 2마리가 생성됩니다. 애바퀴는 초당 30(+4%)의 피해를 주며 8초 동안 전장에 머뭅니다.",
-       "diff": "대상 지점에 저그 낙하 주머니를 떨어트려 140(+4%)의 피해를 줍니다.\n주머니에서는 애바퀴 2마리가 생성됩니다. 애바퀴는 초당 [[-27(+4%)의-]]{{+30(+4%)의+}} 피해를 주며 8초 동안 전장에 머뭅니다."
-      }
-     ]
-    },
-    {
-     "type": "ability",
-     "id": "ZagaraSummonCreepTumor|Trait",
+     "id": "ZagaraCreepTumor|Trait",
      "name": "점막 종양",
      "abilityType": "Trait",
      "changes": [
@@ -1257,17 +1263,18 @@
      ]
     },
     {
-     "type": "talent_removed",
-     "id": "GenericTalentFuryoftheStorm",
-     "name": "폭풍의 분노",
-     "level": 20
-    },
-    {
-     "type": "talent_added",
-     "id": "ZagaraBroodmother",
-     "name": "무리어미",
-     "level": 20,
-     "full": "3번째 일반 공격마다 대상을 향해 맹독충을 내보냅니다."
+     "type": "ability",
+     "id": "ZagaraInfestedDrop|E",
+     "name": "감염체 투하",
+     "abilityType": "E",
+     "changes": [
+      {
+       "field": "full",
+       "before": "대상 지점에 저그 낙하 주머니를 떨어트려 140(+4%)의 피해를 줍니다.\n주머니에서는 애바퀴 2마리가 생성됩니다. 애바퀴는 초당 27(+4%)의 피해를 주며 8초 동안 전장에 머뭅니다.",
+       "after": "대상 지점에 저그 낙하 주머니를 떨어트려 140(+4%)의 피해를 줍니다.\n주머니에서는 애바퀴 2마리가 생성됩니다. 애바퀴는 초당 30(+4%)의 피해를 주며 8초 동안 전장에 머뭅니다.",
+       "diff": "대상 지점에 저그 낙하 주머니를 떨어트려 140(+4%)의 피해를 줍니다.\n주머니에서는 애바퀴 2마리가 생성됩니다. 애바퀴는 초당 [[-27(+4%)의-]]{{+30(+4%)의+}} 피해를 주며 8초 동안 전장에 머뭅니다."
+      }
+     ]
     },
     {
      "type": "talent",
@@ -1284,17 +1291,39 @@
      ]
     },
     {
+     "type": "talent_removed",
+     "id": "GenericTalentFuryoftheStorm",
+     "name": "폭풍의 분노",
+     "level": 20,
+     "full": "5초마다 다음 일반 공격이 대상에게 91(+4%)의 추가 피해를 주고, 주위 모든 돌격병, 용병, 괴물에게 228(+4%)의 피해를 줍니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_talent_autoattack_damage.png"
+    },
+    {
+     "type": "talent_added",
+     "id": "ZagaraBroodmother",
+     "name": "무리어미",
+     "level": 20,
+     "full": "3번째 일반 공격마다 대상을 향해 맹독충을 내보냅니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_zagara_banelingbarrage.png"
+    },
+    {
      "type": "talent_added",
      "id": "ZagaraPackInstinct",
      "name": "무리 본능",
      "level": 20,
-     "full": "자신과 소환수가 추적 도살자에게 공격당한 지 3초 이내의 적에게 25%의 추가 피해를 줍니다."
+     "full": "자신과 소환수가 추적 도살자에게 공격당한 지 3초 이내의 적에게 25%의 추가 피해를 줍니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_zagara_hunterkiller.png"
     }
    ]
   }
  },
  "summary": {
   "heroes": 15,
-  "changes": 87
+  "changes": 86,
+  "replaced": 1,
+  "moved": 1
  }
 }

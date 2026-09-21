@@ -289,9 +289,64 @@ def build_rows():
     return (live[-1] if live else None), (ptr[-1] if ptr else None)
 
 
+FILLS = ROOT / "site" / "data" / "patchnotes" / "fills"
+F5 = {"name": "name", "full": "fullText", "cooldown": "cooldownText", "energy": "energyText", "life": "lifeText"}
+
+
+def apply_fills_raw(hero_raw, ko_raw, ver):
+    """diff 단계(diff_heroes_data.py)가 '원본이 값을 못 읽어 앞 빌드 값을 이어 쓴' 자리를 fills/<ver>.json 에 남긴다.
+    그중 원문(raw)까지 있는 자리는 gamestrings 를 그 원문으로 바꿔 빌드메이커 툴팁에 0 이 찍히지 않게 한다(5.x 만)."""
+    fp = FILLS / f"{ver}.json"
+    items = (ko_raw or {}).get("items")
+    if not fp.exists() or not items:
+        return 0
+    fills = json.loads(fp.read_text(encoding="utf-8"))
+    hd = hero_raw.get("items") or {}
+    n = 0
+    for hid, secs in fills.items():
+        h = hd.get(hid) or {}
+        for sec, keys in secs.items():
+            for key, fields in keys.items():
+                raw = fields.get("raw") or {}
+                if not raw:
+                    continue
+                # fills 키 → gamestrings linkId. 특성은 talentId, 기술은 buttonId|type (본체·하위 기술·유닛 기술 어디든)
+                link, table = None, None
+                if sec == "talents":
+                    for lst in (h.get("talents") or {}).values():
+                        for t in lst:
+                            if t.get("talentId") == key:
+                                link, table = t.get("linkId"), "talent"
+                else:
+                    pools = []
+                    if sec == "abilities" or sec == "subs":
+                        pools.append(h.get("abilities") or {})
+                        pools += list((h.get("subAbilities") or {}).values())
+                    if sec.startswith("units."):
+                        u = (h.get("heroUnits") or {}).get(sec[6:]) or {}
+                        pools.append(u.get("abilities") or {})
+                        pools += list((u.get("subAbilities") or {}).values())
+                    for grp in pools:
+                        for lst in grp.values():
+                            for a in lst:
+                                if f"{a.get('buttonId')}|{a.get('abilityType')}" == key:
+                                    link, table = a.get("linkId"), "ability"
+                if not link:
+                    continue
+                for f, text in raw.items():
+                    col = items.get(table, {}).get(F5.get(f, f))
+                    if isinstance(col, dict) and link in col:
+                        col[link] = text
+                        n += 1
+    return n
+
+
 def make(row):
     ver = row["version"] + ("_ptr" if row["isPtr"] else "")
     hero_raw, ko_raw = resolve(ver, "kokr")
+    n_fill = apply_fills_raw(hero_raw, ko_raw, ver)
+    if n_fill:
+        print(f"  {ver}: 원본이 값을 못 읽은 툴팁 {n_fill}개를 앞 빌드 원문으로 대체(fills)")
     _, en_raw = resolve(ver, "enus")
     ko = slim(adapt(localize(hero_raw, ko_raw, en_raw), "kokr"))   # 한국어가 비면 영어로 메운다
     en = slim(adapt(localize(hero_raw, en_raw), "enus"))

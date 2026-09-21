@@ -6,26 +6,9 @@
  "fromDate": "2021-03-03",
  "toDate": "2021-03-06",
  "toPtr": false,
+ "fromRepo": "heroes-data",
+ "toRepo": "heroes-data",
  "heroes": {
-  "Falstad": {
-   "name": "폴스타트",
-   "changes": [
-    {
-     "type": "talent",
-     "id": "FalstadTailwindFrequentFlyer",
-     "name": "하늘의 지배자",
-     "level": 1,
-     "changes": [
-      {
-       "field": "cooldown",
-       "before": "",
-       "after": "재사용 대기시간: 45초",
-       "diff": "[[--]]{{+재사용 대기시간: 45초+}}"
-      }
-     ]
-    }
-   ]
-  },
   "Mephisto": {
    "name": "메피스토",
    "changes": [
@@ -61,7 +44,7 @@
   }
  },
  "summary": {
-  "heroes": 2,
-  "changes": 3
+  "heroes": 1,
+  "changes": 2
  }
 }

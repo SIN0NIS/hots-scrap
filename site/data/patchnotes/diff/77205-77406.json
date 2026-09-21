@@ -6,6 +6,8 @@
  "fromDate": "2019-11-12",
  "toDate": "2019-11-22",
  "toPtr": false,
+ "fromRepo": "heroes-data",
+ "toRepo": "heroes-data",
  "heroes": {
   "Alarak": {
    "name": "알라라크",
@@ -465,6 +467,21 @@
        "diff": "강철 덫이 대상을 [[-2.5초-]]{{+2초+}} 동안 침묵시킵니다."
       }
      ]
+    },
+    {
+     "type": "ability",
+     "id": "JunkratDetonateRIPTire|Heroic",
+     "name": "죽이는 타이어 폭발",
+     "abilityType": "Heroic",
+     "changes": [
+      {
+       "field": "full",
+       "before": "즉시 죽이는 타이어를 폭발시켜 주위 적들을 밀쳐내며 중심부에는 775(+4%)의 피해를 주고 바깥 부분으로 갈수록 피해량이 점차 감소해 최소 475(+4%)의 피해를 줍니다.",
+       "after": "즉시 죽이는 타이어를 폭발시켜 주위 적들을 밀쳐내며 중심부에는 720(+4%)의 피해를 주고 바깥 부분으로 갈수록 피해량이 점차 감소해 최소 445(+4%)의 피해를 줍니다.",
+       "diff": "즉시 죽이는 타이어를 폭발시켜 주위 적들을 밀쳐내며 중심부에는 [[-775(+4%)의-]]{{+720(+4%)의+}} 피해를 주고 바깥 부분으로 갈수록 피해량이 점차 감소해 최소 [[-475(+4%)의-]]{{+445(+4%)의+}} 피해를 줍니다."
+      }
+     ],
+     "parent": "죽이는 타이어"
     }
    ]
   },
@@ -506,7 +523,7 @@
    "changes": [
     {
      "type": "ability",
-     "id": "LeoricSkeletalSwingTargetedReady|Q",
+     "id": "LeoricSkeletalSwing|Q",
      "name": "해골 왕의 휩쓸기",
      "abilityType": "Q",
      "changes": [
@@ -667,20 +684,6 @@
    "changes": [
     {
      "type": "ability",
-     "id": "WhitemaneFanaticalPower|Trait",
-     "name": "열의",
-     "abilityType": "Trait",
-     "changes": [
-      {
-       "field": "cooldown",
-       "before": "재사용 대기시간: 60초",
-       "after": "재사용 대기시간: 40초",
-       "diff": "재사용 대기시간: [[-60초-]]{{+40초+}}"
-      }
-     ]
-    },
-    {
-     "type": "ability",
      "id": "WhitemaneInquisition|W",
      "name": "심문",
      "abilityType": "W",
@@ -710,6 +713,20 @@
        "before": "재사용 대기시간: 90초",
        "after": "재사용 대기시간: 60초",
        "diff": "재사용 대기시간: [[-90초-]]{{+60초+}}"
+      }
+     ]
+    },
+    {
+     "type": "ability",
+     "id": "WhitemaneTraitZeal|Trait",
+     "name": "열의",
+     "abilityType": "Trait",
+     "changes": [
+      {
+       "field": "cooldown",
+       "before": "재사용 대기시간: 60초",
+       "after": "재사용 대기시간: 40초",
+       "diff": "재사용 대기시간: [[-60초-]]{{+40초+}}"
       }
      ]
     },
@@ -901,13 +918,6 @@
      ]
     },
     {
-     "type": "talent_added",
-     "id": "ZagaraJaggedBarbsTalent",
-     "name": "톱날 가시",
-     "level": 16,
-     "full": "점막 위에서 일반 공격력이 30% 증가하고 일반 공격 사거리가 추가로 10% 증가합니다."
-    },
-    {
      "type": "talent",
      "id": "ZagaraMasteryBanelingMassacre",
      "name": "맹독충 진격",
@@ -920,12 +930,6 @@
        "diff": "[[-맹독충 굴리기의 공격력이 20% 증가하고 충전 횟수가 2회 증가합니다.-]]{{+맹독충의 충전 횟수가 2회 증가하고 맹독충 굴리기의 재사용 대기시간이 0.5초 감소합니다.+}}"
       }
      ]
-    },
-    {
-     "type": "talent_removed",
-     "id": "ZagaraMasteryBroodExpansion",
-     "name": "무리 확장",
-     "level": 16
     },
     {
      "type": "talent",
@@ -1010,12 +1014,28 @@
        "diff": "맹독충의 이동 거리가 50% 증가하고 [[-영웅이-]]{{+공격력이+}} [[-아닌 대상에게 주는 피해가 50%-]]{{+20%+}} 증가합니다."
       }
      ]
+    },
+    {
+     "type": "talent_replaced",
+     "level": 16,
+     "idFrom": "ZagaraMasteryBroodExpansion",
+     "idTo": "ZagaraJaggedBarbsTalent",
+     "nameFrom": "무리 확장",
+     "nameTo": "톱날 가시",
+     "fullBefore": "추적 도살자의 재사용 대기시간이 7초 감소하고 마나 소모량이 30 감소합니다.",
+     "fullAfter": "점막 위에서 일반 공격력이 30% 증가하고 일반 공격 사거리가 추가로 10% 증가합니다.",
+     "cooldownBefore": "",
+     "cooldownAfter": "",
+     "match": "slot",
+     "confidence": "low"
     }
    ]
   }
  },
  "summary": {
   "heroes": 18,
-  "changes": 64
+  "changes": 64,
+  "replaced": 1,
+  "subs": 1
  }
 }

@@ -6,6 +6,8 @@
  "fromDate": "2020-05-06",
  "toDate": "2020-06-04",
  "toPtr": false,
+ "fromRepo": "heroes-data",
+ "toRepo": "heroes-data",
  "heroes": {
   "Amazon": {
    "name": "카시아",
@@ -16,7 +18,7 @@
      "before": {
       "amount": 1510,
       "scale": 0.04,
-      "regenRate": 3.1484,
+      "regenRate": 3.148,
       "regenScale": 0.04
      },
      "after": {
@@ -91,19 +93,6 @@
        "diff": "마나: [[-25-]]{{+20+}}"
       }
      ]
-    },
-    {
-     "type": "talent_removed",
-     "id": "AmazonFendDebilitatingThrusts",
-     "name": "쇠약의 공세",
-     "level": 7
-    },
-    {
-     "type": "talent_added",
-     "id": "AmazonFendGroundingRod",
-     "name": "접지봉",
-     "level": 7,
-     "full": "번개의 격노 및 난격에 적중당한 적이 2초 동안 20% 느려집니다."
     },
     {
      "type": "talent",
@@ -188,6 +177,20 @@
        "diff": "번개의 격노의 공격력이 25[[- 증가하며 시전과 동시에 공격 저지 방어력이 5-]] 증가합니다.\n퀘스트: 번개의 격노가 영웅에게 적중할 때마다 공격력이 [[-1-]]{{+1.5+}} 증가합니다."
       }
      ]
+    },
+    {
+     "type": "talent_replaced",
+     "level": 7,
+     "idFrom": "AmazonFendDebilitatingThrusts",
+     "idTo": "AmazonFendGroundingRod",
+     "nameFrom": "쇠약의 공세",
+     "nameTo": "접지봉",
+     "fullBefore": "난격에 적중당한 적이 3초 동안 30% 느려집니다.",
+     "fullAfter": "번개의 격노 및 난격에 적중당한 적이 2초 동안 20% 느려집니다.",
+     "cooldownBefore": "",
+     "cooldownAfter": "",
+     "match": "slot",
+     "confidence": "low"
     }
    ]
   },
@@ -333,7 +336,7 @@
      "after": {
       "amount": 1675,
       "scale": 0.04,
-      "regenRate": 3.4882,
+      "regenRate": 3.488,
       "regenScale": 0.04
      }
     },
@@ -400,12 +403,6 @@
      ]
     },
     {
-     "type": "talent_removed",
-     "id": "GenjiCyberAgilityDoubleJump",
-     "name": "이중 도약",
-     "level": 13
-    },
-    {
      "type": "talent",
      "id": "GenjiDeflectAugmentedGuard",
      "name": "향상된 방어",
@@ -440,13 +437,6 @@
      ]
     },
     {
-     "type": "talent_added",
-     "id": "GenjiWayOfTheShimadaTalent",
-     "name": "시마다의 길",
-     "level": 13,
-     "full": "일반 공격 사거리가 1 증가합니다. 일반 공격이 적 영웅에게 적중할 때마다 일반 공격력이 3초 동안 1% 증가하여 최대 15% 증가합니다."
-    },
-    {
      "type": "talent",
      "id": "GenjiXStrikeLivingWeapon",
      "name": "살아 있는 무기",
@@ -459,6 +449,20 @@
        "diff": "폭렬참이 적중한 적 영웅 하나당 폭렬참의 재사용 대기시간이 [[-12초-]]{{+10초+}} 감소합니다."
       }
      ]
+    },
+    {
+     "type": "talent_replaced",
+     "level": 13,
+     "idFrom": "GenjiCyberAgilityDoubleJump",
+     "idTo": "GenjiWayOfTheShimadaTalent",
+     "nameFrom": "이중 도약",
+     "nameTo": "시마다의 길",
+     "fullBefore": "사이보그의 날렵함을 2회 충전할 수 있습니다.",
+     "fullAfter": "일반 공격 사거리가 1 증가합니다. 일반 공격이 적 영웅에게 적중할 때마다 일반 공격력이 3초 동안 1% 증가하여 최대 15% 증가합니다.",
+     "cooldownBefore": "",
+     "cooldownAfter": "",
+     "match": "slot",
+     "confidence": "low"
     }
    ]
   },
@@ -682,12 +686,6 @@
        "before": "사용하면 5초 동안 모든 바이킹의 일반 공격이 대상 적 영웅 최대 생명력의 1.25%만큼 추가 피해를 줍니다.",
        "after": "올라프, 벨로그, 에릭이 다른 두 바이킹과 함께 있으면 일반 공격이 대상 적 영웅 최대 생명력의 1.25%만큼 추가 피해를 줍니다.",
        "diff": "[[-사용하면-]]{{+올라프,+}} [[-5초-]]{{+벨로그,+}} [[-동안-]]{{+에릭이+}} [[-모든-]]{{+다른+}} [[-바이킹의-]]{{+두 바이킹과 함께 있으면+}} 일반 공격이 대상 적 영웅 최대 생명력의 1.25%만큼 추가 피해를 줍니다."
-      },
-      {
-       "field": "cooldown",
-       "before": "재사용 대기시간: 20초",
-       "after": "",
-       "diff": "[[-재사용 대기시간: 20초-]]{{++}}"
       }
      ]
     },
@@ -833,7 +831,7 @@
      "before": {
       "amount": 1950,
       "scale": 0.04,
-      "regenRate": 4.0625,
+      "regenRate": 4.062,
       "regenScale": 0.04
      },
      "after": {
@@ -1039,7 +1037,7 @@
      "after": {
       "amount": 3150,
       "scale": 0.04,
-      "regenRate": 6.5625,
+      "regenRate": 6.562,
       "regenScale": 0.04
      }
     },
@@ -1209,7 +1207,12 @@
        "before": 1,
        "after": 4
       }
-     ]
+     ],
+     "moved": {
+      "from": 1,
+      "to": 4,
+      "kind": "moved"
+     }
     },
     {
      "type": "talent",
@@ -1242,7 +1245,12 @@
        "after": "두 번째 엘룬의 빛을 처음과 다른 대상에게 시전하면 치유량이 80% 증가합니다.",
        "diff": "두 번째 엘룬의 빛을 처음과 다른 대상에게 시전하면 치유량이 [[-60%-]]{{+80%+}} 증가합니다."
       }
-     ]
+     ],
+     "moved": {
+      "from": 1,
+      "to": 4,
+      "kind": "tweak"
+     }
     },
     {
      "type": "talent",
@@ -1255,7 +1263,12 @@
        "before": 1,
        "after": 4
       }
-     ]
+     ],
+     "moved": {
+      "from": 1,
+      "to": 4,
+      "kind": "moved"
+     }
     },
     {
      "type": "talent",
@@ -1268,7 +1281,12 @@
        "before": 4,
        "after": 1
       }
-     ]
+     ],
+     "moved": {
+      "from": 4,
+      "to": 1,
+      "kind": "moved"
+     }
     },
     {
      "type": "talent",
@@ -1286,14 +1304,13 @@
        "before": "사용하면 다음 파수가 적 영웅들을 관통합니다.\n지속 효과: 파수의 너비가 25% 증가하고 날아간 거리에 비례해서 공격력이 최대 250% 증가합니다.",
        "after": "파수가 처음 적중한 적 영웅을 관통합니다. 파수의 너비가 25% 증가하고 날아간 거리에 비례해서 공격력이 최대 250% 증가합니다.",
        "diff": "[[-사용하면-]]{{+파수가+}} [[-다음-]]{{+처음+}} [[-파수가-]]{{+적중한+}} 적 [[-영웅들을-]]{{+영웅을+}} 관통합니다.[[-\n지속 효과:-]] 파수의 너비가 25% 증가하고 날아간 거리에 비례해서 공격력이 최대 250% 증가합니다."
-      },
-      {
-       "field": "cooldown",
-       "before": "재사용 대기시간: 25초",
-       "after": "",
-       "diff": "[[-재사용 대기시간: 25초-]]{{++}}"
       }
-     ]
+     ],
+     "moved": {
+      "from": 4,
+      "to": 1,
+      "kind": "redesign"
+     }
     },
     {
      "type": "talent",
@@ -1306,7 +1323,12 @@
        "before": 4,
        "after": 1
       }
-     ]
+     ],
+     "moved": {
+      "from": 4,
+      "to": 1,
+      "kind": "moved"
+     }
     }
    ]
   },
@@ -1371,7 +1393,12 @@
        "before": 13,
        "after": 7
       }
-     ]
+     ],
+     "moved": {
+      "from": 13,
+      "to": 7,
+      "kind": "moved"
+     }
     },
     {
      "type": "talent",
@@ -1404,7 +1431,12 @@
        "after": "적 영웅에게 일반 공격을 하면 활성화된 모든 열의의 지속 시간이 0.5초 증가하고 열의 사용 효과의 재사용 대기시간이 1초 감소합니다.",
        "diff": "적 영웅에게 일반 공격을 [[-할-]]{{+하면+}} [[-때마다-]]{{+활성화된 모든+}} 열의의 지속 시간이 0.5초 [[-증가합니다.-]]{{+증가하고 열의 사용 효과의 재사용 대기시간이 1초 감소합니다.+}}"
       }
-     ]
+     ],
+     "moved": {
+      "from": 7,
+      "to": 13,
+      "kind": "redesign"
+     }
     }
    ]
   },
@@ -1432,35 +1464,47 @@
    "changes": [
     {
      "type": "talent_removed",
-     "id": "GenericTalentNexusBlades",
-     "name": "시공의 칼날",
-     "level": 20
+     "id": "ZeratulGiftoftheXelNaga",
+     "name": "젤나가의 선물",
+     "level": 20,
+     "full": "아군이 공허의 감옥에 영향을 받지 않고, 공허의 감옥이 사라진 후 대상의 이동 속도가 3초 동안 50% 감소합니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_zeratul_voidprison.png"
     },
     {
      "type": "talent_removed",
-     "id": "ZeratulGiftoftheXelNaga",
-     "name": "젤나가의 선물",
-     "level": 20
-    },
-    {
-     "type": "talent_added",
-     "id": "ZeratulShadowStrideTalent",
-     "name": "그림자 걸음",
+     "id": "GenericTalentNexusBlades",
+     "name": "시공의 칼날",
      "level": 20,
-     "full": "날카로운 칼날의 재사용 대기시간이 10초 감소합니다."
+     "full": "일반 공격이 20%의 추가 피해를 주고 대상의 이동 속도를 1초 동안 20% 감소시킵니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_talent_autoattack_slow.png"
     },
     {
      "type": "talent_added",
      "id": "ZeratulUnwaveringPressure",
      "name": "불굴의 압도",
      "level": 20,
-     "full": "특이점이 달라붙어 있거나 특이점 폭발로 느려진 적 영웅에게 일반 공격을 할 때마다 특이점 폭발의 재사용 대기시간이 1.25초 감소합니다."
+     "full": "특이점이 달라붙어 있거나 특이점 폭발로 느려진 적 영웅에게 일반 공격을 할 때마다 특이점 폭발의 재사용 대기시간이 1.25초 감소합니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_zeratul_singularityspike.png"
+    },
+    {
+     "type": "talent_added",
+     "id": "ZeratulShadowStrideTalent",
+     "name": "그림자 걸음",
+     "level": 20,
+     "full": "날카로운 칼날의 재사용 대기시간이 10초 감소합니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_zeratul_vorpalblade.png"
     }
    ]
   }
  },
  "summary": {
   "heroes": 21,
-  "changes": 94
+  "changes": 92,
+  "replaced": 2,
+  "moved": 8
  }
 }

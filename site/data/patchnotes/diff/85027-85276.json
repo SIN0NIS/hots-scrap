@@ -6,6 +6,8 @@
  "fromDate": "2021-05-22",
  "toDate": "2021-06-16",
  "toPtr": false,
+ "fromRepo": "heroes-data",
+ "toRepo": "heroes-data",
  "heroes": {
   "Anduin": {
    "name": "안두인",
@@ -107,13 +109,6 @@
      ]
     },
     {
-     "type": "talent_added",
-     "id": "AnduinFlashHealInnerFocus",
-     "name": "내면의 집중력",
-     "level": 16,
-     "full": "사용하면 순간 치유의 재사용 대기시간이 초기화되고 다음 순간 치유의 치유량이 25% 증가합니다.\n적 영웅에게 피해를 주면 이 능력의 재사용 대기시간이 1초 감소합니다."
-    },
-    {
      "type": "talent",
      "id": "AnduinFlashHealRenew",
      "name": "소생",
@@ -154,6 +149,15 @@
        "diff": "일반 공격을 할 때마다 응징의 재사용 대기시간이 [[-0.5초-]]{{+0.75초+}} 감소합니다. 응징으로 이동 불가 상태가 된 적 영웅에게 일반 공격을 하면 일반 공격이 추가로 적중하며 25의 마나를 회복합니다."
       }
      ]
+    },
+    {
+     "type": "talent_added",
+     "id": "AnduinFlashHealInnerFocus",
+     "name": "내면의 집중력",
+     "level": 16,
+     "full": "사용하면 순간 치유의 재사용 대기시간이 초기화되고 다음 순간 치유의 치유량이 25% 증가합니다.\n적 영웅에게 피해를 주면 이 능력의 재사용 대기시간이 1초 감소합니다.",
+     "cooldown": "재사용 대기시간: 20초",
+     "icon": "storm_ui_icon_anduin_inner_focus.png"
     }
    ]
   },
@@ -326,7 +330,7 @@
    "changes": [
     {
      "type": "ability",
-     "id": "BrightwingCalmingMist|Trait",
+     "id": "BrightwingSoothingMistCalmingMist|Trait",
      "name": "위안의 안개",
      "abilityType": "Trait",
      "changes": [
@@ -462,12 +466,6 @@
      ]
     },
     {
-     "type": "talent_removed",
-     "id": "FirebatFlameStreamCrossfire",
-     "name": "화염 포화",
-     "level": 7
-    },
-    {
      "type": "talent",
      "id": "FirebatFlameStreamSuppressiveFire",
      "name": "제압 방사",
@@ -478,14 +476,12 @@
        "before": 13,
        "after": 7
       }
-     ]
-    },
-    {
-     "type": "talent_added",
-     "id": "FirebatJetPropulsionCollisionCourse",
-     "name": "추진 전개",
-     "level": 13,
-     "full": "제트 추진기의 충돌이 처음 적중하는 적에게 325(+4%)의 피해를 줍니다."
+     ],
+     "moved": {
+      "from": 13,
+      "to": 7,
+      "kind": "moved"
+     }
     },
     {
      "type": "talent",
@@ -498,7 +494,12 @@
        "before": 13,
        "after": 7
       }
-     ]
+     ],
+     "moved": {
+      "from": 13,
+      "to": 7,
+      "kind": "moved"
+     }
     },
     {
      "type": "talent",
@@ -531,7 +532,12 @@
        "after": "점화된 기름이 적을 3초 동안 40% 느려지게 하고 지속 시간 동안 일반 공격이 35%의 추가 피해를 줍니다. 또한, 일반 공격으로 기름을 점화할 수 있습니다.",
        "diff": "점화된 기름이 적을 3초 동안 40% 느려지게 [[-합니다.-]]{{+하고 지속 시간 동안 일반 공격이 35%의 추가 피해를 줍니다.+}} 또한, 일반 공격으로 기름을 점화할 수 있습니다."
       }
-     ]
+     ],
+     "moved": {
+      "from": 7,
+      "to": 13,
+      "kind": "redesign"
+     }
     },
     {
      "type": "talent",
@@ -550,7 +556,12 @@
        "after": "점화된 기름의 공격력이 45% 증가합니다.\n퀘스트: 점화된 기름이 적 영웅에게 30회 적중해야 합니다.\n보상: 점화된 기름의 지속 시간이 2.5초 증가합니다.",
        "diff": "{{+점화된 기름의 공격력이 45% 증가합니다.\n+}}퀘스트: 점화된 기름이 적 영웅에게 [[-60회-]]{{+30회+}} 적중해야 합니다.\n보상: 점화된 기름의 지속 시간이 [[-2초 증가하고 공격력이 35%-]]{{+2.5초+}} 증가합니다."
       }
-     ]
+     ],
+     "moved": {
+      "from": 7,
+      "to": 13,
+      "kind": "redesign"
+     }
     },
     {
      "type": "talent",
@@ -563,7 +574,30 @@
        "before": 13,
        "after": 7
       }
-     ]
+     ],
+     "moved": {
+      "from": 13,
+      "to": 7,
+      "kind": "moved"
+     }
+    },
+    {
+     "type": "talent_removed",
+     "id": "FirebatFlameStreamCrossfire",
+     "name": "화염 포화",
+     "level": 7,
+     "full": "화염 방사의 두 불길이 동시에 적중한 적에게 139(+4%)의 추가 피해를 줍니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_blaze_flame.png"
+    },
+    {
+     "type": "talent_added",
+     "id": "FirebatJetPropulsionCollisionCourse",
+     "name": "추진 전개",
+     "level": 13,
+     "full": "제트 추진기의 충돌이 처음 적중하는 적에게 325(+4%)의 피해를 줍니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_blaze_jet.png"
     }
    ]
   },
@@ -575,7 +609,8 @@
      "id": "GarroshWreckingBallIntotheFray|Active",
      "name": "참전",
      "abilityType": "Active",
-     "full": "사용하면 주위의 아군을 내던지며 대상의 방어력을 3초 동안 20 증가시킵니다. 착지 지역의 적들에게는 91(+4%)의 피해를 주고 2.5초 동안 30% 느려지게 합니다.\n날아가는 중에 아군 영웅은 저지 불가 상태가 됩니다."
+     "full": "사용하면 주위의 아군을 내던지며 대상의 방어력을 3초 동안 20 증가시킵니다. 착지 지역의 적들에게는 91(+4%)의 피해를 주고 2.5초 동안 30% 느려지게 합니다.\n날아가는 중에 아군 영웅은 저지 불가 상태가 됩니다.",
+     "cooldown": "재사용 대기시간: 45초"
     },
     {
      "type": "talent",
@@ -592,13 +627,6 @@
      ]
     },
     {
-     "type": "talent_added",
-     "id": "GarroshIntotheFrayLoktarOgar",
-     "name": "록타르 오가르!",
-     "level": 7,
-     "full": "참전으로 증가하는 방어력이 20 증가합니다. 참전이 적 영웅에게 적중하면 참전의 재사용 대기시간이 12초 감소합니다."
-    },
-    {
      "type": "talent",
      "id": "GarroshOppressor",
      "name": "폭군",
@@ -613,10 +641,18 @@
      ]
     },
     {
-     "type": "talent_removed",
-     "id": "GarroshWreckingBallIntotheFray",
-     "name": "참전",
-     "level": 7
+     "type": "talent_replaced",
+     "level": 7,
+     "idFrom": "GarroshWreckingBallIntotheFray",
+     "idTo": "GarroshIntotheFrayLoktarOgar",
+     "nameFrom": "참전",
+     "nameTo": "록타르 오가르!",
+     "fullBefore": "사용하면 주위의 아군을 내던지며 대상의 방어력을 3초 동안 25 증가시킵니다. 착지 지역의 적들에게는 91(+4%)의 피해를 주고 2.5초 동안 30% 느려지게 합니다.\n날아가는 중에 아군 영웅은 저지 불가 상태가 됩니다.",
+     "fullAfter": "참전으로 증가하는 방어력이 20 증가합니다. 참전이 적 영웅에게 적중하면 참전의 재사용 대기시간이 12초 감소합니다.",
+     "cooldownBefore": "재사용 대기시간: 45초",
+     "cooldownAfter": "재사용 대기시간: 45초",
+     "match": "slot",
+     "confidence": "low"
     }
    ]
   },
@@ -758,7 +794,7 @@
    "changes": [
     {
      "type": "ability",
-     "id": "MuradinStormBolt|Q",
+     "id": "MuradinStormbolt|Q",
      "name": "폭풍강타",
      "abilityType": "Q",
      "changes": [
@@ -869,13 +905,13 @@
      "field": "weapons",
      "before": [
       {
-       "range": 2,
+       "range": 6.5,
        "period": 0.8,
        "damage": 92,
        "damageScale": 0.04
       },
       {
-       "range": 6.5,
+       "range": 2,
        "period": 0.8,
        "damage": 92,
        "damageScale": 0.04
@@ -883,13 +919,13 @@
      ],
      "after": [
       {
-       "range": 2,
+       "range": 6.5,
        "period": 0.8,
        "damage": 98,
        "damageScale": 0.04
       },
       {
-       "range": 6.5,
+       "range": 2,
        "period": 0.8,
        "damage": 98,
        "damageScale": 0.04
@@ -1173,12 +1209,6 @@
      ]
     },
     {
-     "type": "talent_removed",
-     "id": "StukovLingeringSpines",
-     "name": "잔존하는 가시뼈",
-     "level": 13
-    },
-    {
      "type": "talent",
      "id": "StukovLowBlow",
      "name": "탐식",
@@ -1191,12 +1221,6 @@
        "diff": "스멀거리는 팔이 생명력이 50% 미만인 적 영웅에게 100%의 추가 피해를 [[-줍니다.-]]{{+주고 취소된 후에도 1초 동안 지속됩니다.+}}"
       }
      ]
-    },
-    {
-     "type": "talent_removed",
-     "id": "StukovSpineLauncher",
-     "name": "가시뼈 발사",
-     "level": 1
     },
     {
      "type": "talent",
@@ -1239,12 +1263,32 @@
        "diff": "생명력이[[- 최대 생명력의-]] 50% [[-이하로-]]{{+미만이면+}} [[-떨어진-]]{{+감염체+}} [[-상태에서-]]{{+폭발의+}} [[-피해를-]]{{+재사용+}} [[-입으면-]]{{+대기시간이 150% 더 빨리 감소합니다. \n사용하면 즉시+}} 주위 적 영웅들에게 독성 고름을 전염시키고 감염체 폭발의 재사용 대기시간이 초기화됩니다.\n[[-이-]]{{+60초의+}} [[-효과는-]]{{+재사용+}} [[-25초에-]]{{+대기시간을+}} [[-한 번씩만 발동합니다.-]]{{+가집니다.+}}"
       }
      ]
+    },
+    {
+     "type": "talent_removed",
+     "id": "StukovSpineLauncher",
+     "name": "가시뼈 발사",
+     "level": 1,
+     "full": "일반 공격이 원거리가 되고 적을 1.5초 동안 20% 느려지게 하지만 일반 공격력이 40% 감소합니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_stukov_spinelauncher.png"
+    },
+    {
+     "type": "talent_removed",
+     "id": "StukovLingeringSpines",
+     "name": "잔존하는 가시뼈",
+     "level": 13,
+     "full": "스멀거리는 팔이 취소된 후에도 1.5초 동안 지속됩니다.",
+     "cooldown": "",
+     "icon": "storm_ui_icon_stukov_lurkingarm_a.png"
     }
    ]
   }
  },
  "summary": {
   "heroes": 14,
-  "changes": 84
+  "changes": 83,
+  "replaced": 1,
+  "moved": 5
  }
 }

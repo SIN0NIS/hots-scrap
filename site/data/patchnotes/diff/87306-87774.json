@@ -6,6 +6,8 @@
  "fromDate": "2022-02-20",
  "toDate": "2022-03-29",
  "toPtr": false,
+ "fromRepo": "heroes-data",
+ "toRepo": "heroes-data",
  "heroes": {
   "Alarak": {
    "name": "알라라크",
@@ -69,7 +71,7 @@
      "after": {
       "amount": 1698,
       "scale": 0.04,
-      "regenRate": 8.8437,
+      "regenRate": 8.844,
       "regenScale": 0.04
      }
     },
@@ -128,6 +130,23 @@
        "diff": "[[-생명력이 75% 이상이면 생명의 선물이 대상의 방어력을 2.5초 동안 30 증가시킵니다.-]]{{+생명의 선물이 대상의 방어력을 2.5 초 동안 10, 알렉스트라자의 생명력이 75% 이상이면 30 증가시킵니다.+}}"
       }
      ]
+    },
+    {
+     "type": "stat",
+     "field": "life",
+     "before": {
+      "amount": 1698,
+      "scale": 0.04,
+      "regenRate": 3.539,
+      "regenScale": 0.04
+     },
+     "after": {
+      "amount": 1698,
+      "scale": 0.04,
+      "regenRate": 8.844,
+      "regenScale": 0.04
+     },
+     "unit": "용 형태(용의 여왕)"
     }
    ]
   },
@@ -308,19 +327,19 @@
      "before": {
       "amount": 2525,
       "scale": 0.04,
-      "regenRate": 5.2617,
+      "regenRate": 5.262,
       "regenScale": 0.04
      },
      "after": {
       "amount": 2490,
       "scale": 0.04,
-      "regenRate": 5.1875,
+      "regenRate": 5.188,
       "regenScale": 0.04
      }
     },
     {
      "type": "ability",
-     "id": "ArtanisShieldOverloadDummy|Trait",
+     "id": "ArtanisShieldOverloadTrait|Trait",
      "name": "과부하 보호막",
      "abilityType": "Trait",
      "changes": [
@@ -541,7 +560,7 @@
      "before": {
       "amount": 1935,
       "scale": 0.04,
-      "regenRate": 4.0312,
+      "regenRate": 4.031,
       "regenScale": 0.04
      },
      "after": {
@@ -749,13 +768,13 @@
      "before": {
       "amount": 1876,
       "scale": 0.04,
-      "regenRate": 3.9062,
+      "regenRate": 3.906,
       "regenScale": 0.04
      },
      "after": {
       "amount": 1896,
       "scale": 0.04,
-      "regenRate": 3.9492,
+      "regenRate": 3.949,
       "regenScale": 0.04
      }
     },
@@ -861,7 +880,7 @@
     },
     {
      "type": "ability",
-     "id": "WhitemaneFanaticalPower|Trait",
+     "id": "WhitemaneTraitZeal|Trait",
      "name": "열의",
      "abilityType": "Trait",
      "changes": [
@@ -934,6 +953,7 @@
  },
  "summary": {
   "heroes": 12,
-  "changes": 59
+  "changes": 60,
+  "units": 1
  }
 }

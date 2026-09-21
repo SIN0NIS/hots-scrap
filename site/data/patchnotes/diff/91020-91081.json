@@ -6,29 +6,11 @@
  "fromDate": "2023-09-20",
  "toDate": "2023-09-23",
  "toPtr": false,
- "heroes": {
-  "FaerieDragon": {
-   "name": "빛나래",
-   "changes": [
-    {
-     "type": "talent",
-     "id": "BrightwingPixieDustSafetyDust",
-     "name": "안전 가루",
-     "level": 13,
-     "changes": [
-      {
-       "field": "full",
-       "before": "요정 가루의 지속 시간이 1초 증가합니다. 요정 가루를 얻은 아군에게는 위안의 안개와 점멸 치유의 치유량이 75% 증가합니다.",
-       "after": "요정 가루의 지속 시간이 1초 증가합니다. 요정 가루를 얻은 아군에게는 위안의 안개와 점멸 치유의 치유량이 0% 증가합니다.",
-       "diff": "요정 가루의 지속 시간이 1초 증가합니다. 요정 가루를 얻은 아군에게는 위안의 안개와 점멸 치유의 치유량이 [[-75%-]]{{+0%+}} 증가합니다."
-      }
-     ]
-    }
-   ]
-  }
- },
+ "fromRepo": "heroes-data",
+ "toRepo": "heroes-data",
+ "heroes": {},
  "summary": {
-  "heroes": 1,
-  "changes": 1
+  "heroes": 0,
+  "changes": 0
  }
 }

@@ -18,7 +18,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from diff_heroes_data import normalize  # noqa: E402
+from diff_heroes_data import load_norm  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[2]
 PN = ROOT / "site" / "data" / "patchnotes"
@@ -115,7 +115,7 @@ def main():
     n = len(builds)
     heroes = {}  # hid → {"stats":..., "items": {key: Item}, "name":...}
     for i, b in enumerate(builds):
-        norm = normalize(load(b["herodata"]), load(b["kokr"]))
+        norm = load_norm(b)   # 못 읽은 값을 앞 빌드 값으로 이어 쓴 정규화본(fills 적용)
         print(f"  [{i + 1}/{n}] {b['version']} {b['date']}", file=sys.stderr)
         for hid, h in norm.items():
             H = heroes.setdefault(hid, {"name": h["name"], "stats": {k: [None] * n for k in ("life", "regen", "damage", "period", "range", "speed")}, "items": {}})

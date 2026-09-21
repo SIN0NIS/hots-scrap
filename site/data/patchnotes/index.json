@@ -19,6 +19,7 @@
    "Medivh",
    "Muradin",
    "NexusHunter",
+   "Sylvanas",
    "Whitemane",
    "Xalatath",
    "Yrel",
@@ -26,8 +27,10 @@
   ],
   "battlegrounds": [],
   "summary": {
-   "heroes": 12,
-   "changes": 25
+   "heroes": 13,
+   "changes": 26,
+   "subs": 1,
+   "suspect": 6
   }
  },
  {
@@ -44,14 +47,11 @@
    "Abathur",
    "Alexstrasza",
    "Arthas",
-   "Gall",
    "Garrosh",
-   "Genji",
    "MalGanis",
    "Malfurion",
    "Necromancer",
    "NexusHunter",
-   "Ragnaros",
    "Whitemane",
    "Xalatath",
    "Yrel",
@@ -61,8 +61,8 @@
    "garden_of_terror"
   ],
   "summary": {
-   "heroes": 12,
-   "changes": 26
+   "heroes": 8,
+   "changes": 21
   },
   "translated": {
    "by": "Claude (claude-opus-5)",
@@ -70,29 +70,6 @@
   },
   "en": "en/2026-09-14.json",
   "buildDate": "2026-09-14"
- },
- {
-  "date": "2026-09-13",
-  "kind": "data",
-  "title": "데이터 변경 2.55.17.98025",
-  "newsId": null,
-  "isPtr": false,
-  "official": null,
-  "build": 98025,
-  "version": "2.55.17.98025",
-  "buildDate": "2026-09-13",
-  "diff": "diff/97771-98025.json",
-  "heroes": [
-   "Abathur",
-   "Gall",
-   "Genji",
-   "Ragnaros"
-  ],
-  "battlegrounds": [],
-  "summary": {
-   "heroes": 4,
-   "changes": 4
-  }
  },
  {
   "date": "2026-08-13",
@@ -192,7 +169,11 @@
   ],
   "summary": {
    "heroes": 23,
-   "changes": 85
+   "changes": 92,
+   "moved": 2,
+   "units": 6,
+   "subs": 2,
+   "suspect": 4
   },
   "buildDate": "2026-07-21"
  },
@@ -220,7 +201,6 @@
    "MalGanis",
    "MeiOW",
    "NexusHunter",
-   "Probius",
    "Ragnaros",
    "Whitemane",
    "WitchDoctor",
@@ -228,8 +208,11 @@
   ],
   "battlegrounds": [],
   "summary": {
-   "heroes": 17,
-   "changes": 64
+   "heroes": 16,
+   "changes": 63,
+   "moved": 2,
+   "units": 6,
+   "suspect": 4
   }
  },
  {
@@ -283,8 +266,11 @@
    "warhead_junction"
   ],
   "summary": {
-   "heroes": 18,
-   "changes": 66
+   "heroes": 17,
+   "changes": 64,
+   "moved": 2,
+   "units": 6,
+   "suspect": 4
   },
   "translated": {
    "by": "Claude (claude-opus-5)",
@@ -307,38 +293,24 @@
    "Arthas",
    "Azmodan",
    "Chen",
-   "Cho",
    "Deathwing",
-   "Dryad",
-   "FaerieDragon",
-   "Fenix",
-   "Greymane",
-   "Jaina",
-   "KelThuzad",
-   "LostVikings",
    "MalGanis",
    "Muradin",
    "Murky",
-   "Necromancer",
-   "Nova",
    "Rexxar",
-   "SgtHammer",
-   "Stukov",
    "Tinker",
    "Tychus",
-   "Tyrael",
    "Tyrande",
-   "Yrel",
-   "Zagara",
-   "Zeratul"
+   "Zagara"
   ],
   "battlegrounds": [
    "haunted_mines",
    "volskaya_foundry"
   ],
   "summary": {
-   "heroes": 24,
-   "changes": 46
+   "heroes": 9,
+   "changes": 24,
+   "suspect": 2
   },
   "buildDate": "2026-05-17"
  },
@@ -390,7 +362,8 @@
   ],
   "summary": {
    "heroes": 20,
-   "changes": 57
+   "changes": 55,
+   "subs": 1
   },
   "buildDate": "2026-04-21"
  },
@@ -422,7 +395,11 @@
   "battlegrounds": [],
   "summary": {
    "heroes": 12,
-   "changes": 60
+   "changes": 60,
+   "replaced": 1,
+   "moved": 9,
+   "subs": 3,
+   "suspect": 3
   }
  },
  {
@@ -453,7 +430,11 @@
   "battlegrounds": [],
   "summary": {
    "heroes": 12,
-   "changes": 60
+   "changes": 60,
+   "replaced": 1,
+   "moved": 9,
+   "subs": 3,
+   "suspect": 3
   }
  },
  {
@@ -494,7 +475,11 @@
   ],
   "summary": {
    "heroes": 11,
-   "changes": 54
+   "changes": 54,
+   "replaced": 1,
+   "moved": 9,
+   "subs": 3,
+   "suspect": 3
   },
   "translated": {
    "by": "Claude (claude-opus-5)",
@@ -532,7 +517,9 @@
   ],
   "summary": {
    "heroes": 6,
-   "changes": 11
+   "changes": 11,
+   "subs": 1,
+   "suspect": 1
   },
   "buildDate": "2026-02-19"
  },
@@ -577,7 +564,11 @@
   ],
   "summary": {
    "heroes": 19,
-   "changes": 96
+   "changes": 92,
+   "replaced": 5,
+   "moved": 3,
+   "subs": 1,
+   "suspect": 2
   },
   "buildDate": "2026-02-11"
  },
@@ -617,7 +608,11 @@
   "battlegrounds": [],
   "summary": {
    "heroes": 20,
-   "changes": 99
+   "changes": 93,
+   "replaced": 5,
+   "moved": 3,
+   "subs": 1,
+   "suspect": 18
   }
  },
  {
@@ -655,7 +650,11 @@
   "battlegrounds": [],
   "summary": {
    "heroes": 19,
-   "changes": 94
+   "changes": 89,
+   "replaced": 5,
+   "moved": 3,
+   "subs": 1,
+   "suspect": 12
   }
  },
  {
@@ -698,7 +697,11 @@
   ],
   "summary": {
    "heroes": 18,
-   "changes": 87
+   "changes": 83,
+   "replaced": 4,
+   "moved": 3,
+   "subs": 1,
+   "suspect": 11
   },
   "translated": {
    "by": "Claude (claude-opus-5)",
@@ -732,7 +735,7 @@
   ],
   "summary": {
    "heroes": 5,
-   "changes": 8
+   "changes": 7
   },
   "buildDate": "2025-12-16"
  },
@@ -748,13 +751,13 @@
   "buildDate": "2025-12-05",
   "diff": "diff/95774-95817.json",
   "heroes": [
-   "Kerrigan",
    "Sylvanas"
   ],
   "battlegrounds": [],
   "summary": {
-   "heroes": 2,
-   "changes": 5
+   "heroes": 1,
+   "changes": 1,
+   "renamed": 1
   }
  },
  {
@@ -773,7 +776,6 @@
    "Amazon",
    "Arthas",
    "Azmodan",
-   "Butcher",
    "Cho",
    "Crusader",
    "DVa",
@@ -792,7 +794,6 @@
    "Kerrigan",
    "L90ETC",
    "Leoric",
-   "LiLi",
    "LostVikings",
    "Lucio",
    "Medic",
@@ -817,7 +818,6 @@
    "Varian",
    "Wizard",
    "Zagara",
-   "Zarya",
    "Zuljin"
   ],
   "battlegrounds": [
@@ -829,8 +829,12 @@
    "warhead_junction"
   ],
   "summary": {
-   "heroes": 47,
-   "changes": 130
+   "heroes": 44,
+   "changes": 120,
+   "replaced": 1,
+   "moved": 4,
+   "subs": 3,
+   "suspect": 2
   },
   "buildDate": "2025-12-01"
  },
@@ -851,15 +855,12 @@
    "Amazon",
    "Arthas",
    "Azmodan",
-   "Butcher",
    "Chen",
    "Crusader",
    "DemonHunter",
-   "Dryad",
    "FaerieDragon",
    "Falstad",
    "Fenix",
-   "Gall",
    "Garrosh",
    "Guldan",
    "Hogger",
@@ -867,7 +868,6 @@
    "Kaelthas",
    "Kerrigan",
    "Leoric",
-   "LiLi",
    "LostVikings",
    "Lucio",
    "Medic",
@@ -875,27 +875,28 @@
    "Raynor",
    "Rehgar",
    "Rexxar",
-   "SgtHammer",
    "Stitches",
    "Sylvanas",
    "Tassadar",
    "Thrall",
    "Tinker",
    "Tracer",
-   "Tychus",
    "Tyrael",
    "Tyrande",
    "Uther",
    "Valeera",
    "Varian",
    "Zagara",
-   "Zarya",
    "Zuljin"
   ],
   "battlegrounds": [],
   "summary": {
-   "heroes": 45,
-   "changes": 107
+   "heroes": 38,
+   "changes": 92,
+   "replaced": 1,
+   "moved": 4,
+   "subs": 1,
+   "suspect": 2
   }
  },
  {
@@ -915,15 +916,12 @@
    "Amazon",
    "Arthas",
    "Azmodan",
-   "Butcher",
    "Chen",
    "Crusader",
    "DemonHunter",
-   "Dryad",
    "FaerieDragon",
    "Falstad",
    "Fenix",
-   "Gall",
    "Garrosh",
    "Guldan",
    "Hogger",
@@ -931,7 +929,6 @@
    "Kaelthas",
    "Kerrigan",
    "Leoric",
-   "LiLi",
    "LostVikings",
    "Lucio",
    "Medic",
@@ -939,27 +936,28 @@
    "Raynor",
    "Rehgar",
    "Rexxar",
-   "SgtHammer",
    "Stitches",
    "Sylvanas",
    "Tassadar",
    "Thrall",
    "Tinker",
    "Tracer",
-   "Tychus",
    "Tyrael",
    "Tyrande",
    "Uther",
    "Valeera",
    "Varian",
    "Zagara",
-   "Zarya",
    "Zuljin"
   ],
   "battlegrounds": [],
   "summary": {
-   "heroes": 45,
-   "changes": 105
+   "heroes": 38,
+   "changes": 90,
+   "replaced": 1,
+   "moved": 4,
+   "subs": 1,
+   "suspect": 2
   }
  },
  {
@@ -979,26 +977,21 @@
    "Amazon",
    "Arthas",
    "Azmodan",
-   "Butcher",
    "DemonHunter",
-   "Dryad",
    "FaerieDragon",
    "Falstad",
    "Fenix",
    "Guldan",
-   "Hogger",
    "Illidan",
    "Kaelthas",
    "Kerrigan",
    "Leoric",
-   "LiLi",
    "LostVikings",
    "Lucio",
    "Medic",
    "Muradin",
    "Raynor",
    "Rexxar",
-   "SgtHammer",
    "Stitches",
    "Sylvanas",
    "Thrall",
@@ -1008,13 +1001,16 @@
    "Valeera",
    "Varian",
    "Zagara",
-   "Zarya",
    "Zuljin"
   ],
   "battlegrounds": [],
   "summary": {
-   "heroes": 36,
-   "changes": 88
+   "heroes": 30,
+   "changes": 75,
+   "replaced": 1,
+   "moved": 4,
+   "subs": 1,
+   "suspect": 2
   }
  },
  {
@@ -1029,27 +1025,21 @@
   "diff": "diff/95301-95499_ptr.json",
   "heroes": [
    "Azmodan",
-   "Butcher",
    "DVa",
    "DemonHunter",
-   "Dryad",
-   "FaerieDragon",
    "Falstad",
    "Fenix",
    "Guldan",
-   "Hogger",
    "Illidan",
    "Kaelthas",
    "Kerrigan",
    "Leoric",
-   "LiLi",
    "LostVikings",
    "Lucio",
    "Medic",
    "Muradin",
    "Raynor",
    "Rexxar",
-   "SgtHammer",
    "Stitches",
    "Stukov",
    "Sylvanas",
@@ -1061,7 +1051,6 @@
    "Valeera",
    "Varian",
    "Zagara",
-   "Zarya",
    "Zuljin"
   ],
   "battlegrounds": [
@@ -1073,8 +1062,12 @@
    "warhead_junction"
   ],
   "summary": {
-   "heroes": 32,
-   "changes": 82
+   "heroes": 25,
+   "changes": 68,
+   "replaced": 1,
+   "moved": 4,
+   "subs": 1,
+   "suspect": 2
   },
   "translated": {
    "by": "Claude (claude-opus-5)",
@@ -1116,7 +1109,6 @@
    "Fenix",
    "Gall",
    "Greymane",
-   "Hogger",
    "Illidan",
    "Imperius",
    "Jaina",
@@ -1125,7 +1117,6 @@
    "KelThuzad",
    "Kerrigan",
    "L90ETC",
-   "LiLi",
    "LostVikings",
    "Lucio",
    "Maiev",
@@ -1162,8 +1153,12 @@
    "warhead_junction"
   ],
   "summary": {
-   "heroes": 22,
-   "changes": 38
+   "heroes": 14,
+   "changes": 20,
+   "replaced": 1,
+   "units": 1,
+   "subs": 1,
+   "suspect": 2
   },
   "buildDate": "2025-10-01"
  },
@@ -1181,31 +1176,27 @@
   "heroes": [
    "Abathur",
    "Azmodan",
-   "Butcher",
    "Dehaka",
    "DemonHunter",
-   "Dryad",
-   "FaerieDragon",
-   "Hogger",
    "Illidan",
    "Kaelthas",
-   "LiLi",
    "LostVikings",
    "Lucio",
-   "Raynor",
    "Rexxar",
-   "SgtHammer",
    "Thrall",
    "Uther",
    "Valeera",
    "Varian",
-   "Zagara",
-   "Zarya"
+   "Zagara"
   ],
   "battlegrounds": [],
   "summary": {
-   "heroes": 22,
-   "changes": 38
+   "heroes": 14,
+   "changes": 20,
+   "replaced": 1,
+   "units": 1,
+   "subs": 1,
+   "suspect": 2
   }
  },
  {
@@ -1222,31 +1213,27 @@
   "heroes": [
    "Abathur",
    "Azmodan",
-   "Butcher",
    "Dehaka",
    "DemonHunter",
-   "Dryad",
-   "FaerieDragon",
-   "Hogger",
    "Illidan",
    "Kaelthas",
-   "LiLi",
    "LostVikings",
    "Lucio",
-   "Raynor",
    "Rexxar",
-   "SgtHammer",
    "Thrall",
    "Uther",
    "Valeera",
    "Varian",
-   "Zagara",
-   "Zarya"
+   "Zagara"
   ],
   "battlegrounds": [],
   "summary": {
-   "heroes": 22,
-   "changes": 38
+   "heroes": 14,
+   "changes": 20,
+   "replaced": 1,
+   "units": 1,
+   "subs": 1,
+   "suspect": 2
   }
  },
  {
@@ -1281,7 +1268,6 @@
    "Fenix",
    "Gall",
    "Greymane",
-   "Hogger",
    "Illidan",
    "Imperius",
    "Jaina",
@@ -1290,7 +1276,6 @@
    "KelThuzad",
    "Kerrigan",
    "L90ETC",
-   "LiLi",
    "LostVikings",
    "Lucio",
    "Monk",
@@ -1325,8 +1310,12 @@
    "warhead_junction"
   ],
   "summary": {
-   "heroes": 21,
-   "changes": 36
+   "heroes": 12,
+   "changes": 18,
+   "replaced": 1,
+   "units": 1,
+   "subs": 1,
+   "suspect": 2
   },
   "translated": {
    "by": "Claude (claude-opus-5)",
@@ -1405,7 +1394,10 @@
   ],
   "summary": {
    "heroes": 16,
-   "changes": 44
+   "changes": 46,
+   "moved": 3,
+   "subs": 2,
+   "suspect": 1
   },
   "buildDate": "2025-07-30"
  },
@@ -1431,7 +1423,10 @@
   "battlegrounds": [],
   "summary": {
    "heroes": 6,
-   "changes": 25
+   "changes": 24,
+   "moved": 3,
+   "subs": 2,
+   "suspect": 2
   }
  },
  {
@@ -1497,7 +1492,10 @@
   ],
   "summary": {
    "heroes": 6,
-   "changes": 24
+   "changes": 23,
+   "moved": 3,
+   "subs": 2,
+   "suspect": 2
   },
   "translated": {
    "by": "Claude (claude-opus-5)",
@@ -1554,8 +1552,10 @@
    "Azmodan",
    "Barbarian",
    "Chen",
+   "Chromie",
    "Crusader",
    "Dehaka",
+   "Diablo",
    "Dryad",
    "FaerieDragon",
    "Gall",
@@ -1566,6 +1566,7 @@
    "Jaina",
    "KelThuzad",
    "L90ETC",
+   "LiLi",
    "LostVikings",
    "Malfurion",
    "Malthael",
@@ -1585,9 +1586,9 @@
    "Tychus",
    "Valeera",
    "Whitemane",
+   "WitchDoctor",
    "Wizard",
-   "Zagara",
-   "Zeratul"
+   "Zagara"
   ],
   "battlegrounds": [
    "battlefield_of_eternity",
@@ -1596,8 +1597,10 @@
    "warhead_junction"
   ],
   "summary": {
-   "heroes": 15,
-   "changes": 41
+   "heroes": 17,
+   "changes": 45,
+   "replaced": 1,
+   "subs": 7
   },
   "buildDate": "2025-05-16"
  },
@@ -1614,24 +1617,29 @@
   "diff": "diff/93810-94083_ptr.json",
   "heroes": [
    "Alarak",
+   "Ana",
    "Anubarak",
    "Artanis",
-   "Chen",
+   "Azmodan",
+   "Chromie",
+   "Diablo",
    "Dryad",
    "Genji",
    "Imperius",
    "L90ETC",
+   "LiLi",
    "Malthael",
-   "Ragnaros",
    "Tinker",
-   "Valeera",
-   "Zagara",
-   "Zeratul"
+   "WitchDoctor",
+   "Zagara"
   ],
   "battlegrounds": [],
   "summary": {
-   "heroes": 14,
-   "changes": 31
+   "heroes": 16,
+   "changes": 29,
+   "replaced": 1,
+   "subs": 7,
+   "suspect": 2
   }
  },
  {
@@ -1651,13 +1659,16 @@
    "Azmodan",
    "Barbarian",
    "Chen",
+   "Chromie",
    "Crusader",
    "Dehaka",
+   "Diablo",
    "Dryad",
    "FaerieDragon",
    "Genji",
    "Imperius",
    "Jaina",
+   "LiLi",
    "LostVikings",
    "Malthael",
    "Medic",
@@ -1668,8 +1679,8 @@
    "Sylvanas",
    "Tinker",
    "Valeera",
-   "Zagara",
-   "Zeratul"
+   "WitchDoctor",
+   "Zagara"
   ],
   "battlegrounds": [
    "battlefield_of_eternity",
@@ -1678,8 +1689,10 @@
    "warhead_junction"
   ],
   "summary": {
-   "heroes": 12,
-   "changes": 20
+   "heroes": 14,
+   "changes": 22,
+   "subs": 7,
+   "suspect": 2
   },
   "translated": {
    "by": "Claude (claude-opus-5)",
@@ -1732,8 +1745,9 @@
    "volskaya_foundry"
   ],
   "summary": {
-   "heroes": 7,
-   "changes": 30
+   "heroes": 8,
+   "changes": 31,
+   "units": 1
   },
   "buildDate": "2025-03-12"
  },
@@ -1751,14 +1765,15 @@
   "heroes": [
    "Auriel",
    "Dehaka",
+   "LostVikings",
    "Lucio",
-   "Monk",
-   "Tychus"
+   "Monk"
   ],
   "battlegrounds": [],
   "summary": {
    "heroes": 5,
-   "changes": 23
+   "changes": 23,
+   "units": 1
   }
  },
  {
@@ -1801,7 +1816,8 @@
   ],
   "summary": {
    "heroes": 5,
-   "changes": 23
+   "changes": 23,
+   "units": 1
   },
   "translated": {
    "by": "Claude (claude-opus-5)",
@@ -1839,7 +1855,6 @@
    "Firebat",
    "Gall",
    "Imperius",
-   "Junkrat",
    "KelThuzad",
    "Kerrigan",
    "L90ETC",
@@ -1852,7 +1867,6 @@
    "MeiOW",
    "Monk",
    "Muradin",
-   "Necromancer",
    "Probius",
    "Raynor",
    "Rehgar",
@@ -1867,8 +1881,10 @@
   ],
   "battlegrounds": [],
   "summary": {
-   "heroes": 18,
-   "changes": 46
+   "heroes": 15,
+   "changes": 43,
+   "subs": 2,
+   "suspect": 3
   },
   "buildDate": "2025-01-28"
  },
@@ -1916,8 +1932,9 @@
   ],
   "battlegrounds": [],
   "summary": {
-   "heroes": 11,
-   "changes": 33
+   "heroes": 7,
+   "changes": 24,
+   "suspect": 2
   },
   "translated": {
    "by": "Claude (claude-opus-5)",
@@ -1984,8 +2001,9 @@
    "volskaya_foundry"
   ],
   "summary": {
-   "heroes": 14,
-   "changes": 39
+   "heroes": 11,
+   "changes": 33,
+   "replaced": 1
   },
   "buildDate": "2024-12-12"
  },
@@ -2001,20 +2019,19 @@
   "buildDate": "2024-11-25",
   "diff": "diff/93151-93281_ptr.json",
   "heroes": [
-   "Crusader",
    "DVa",
    "Diablo",
-   "Fenix",
    "Greymane",
    "Imperius",
-   "Junkrat",
    "LiLi",
    "Samuro"
   ],
   "battlegrounds": [],
   "summary": {
-   "heroes": 9,
-   "changes": 28
+   "heroes": 6,
+   "changes": 19,
+   "replaced": 1,
+   "suspect": 1
   }
  },
  {
@@ -2029,19 +2046,18 @@
   "buildDate": "2024-11-25",
   "diff": "diff/93151-93269_ptr.json",
   "heroes": [
-   "Crusader",
    "Diablo",
-   "Fenix",
    "Greymane",
    "Imperius",
-   "Junkrat",
    "LiLi",
    "Samuro"
   ],
   "battlegrounds": [],
   "summary": {
-   "heroes": 8,
-   "changes": 17
+   "heroes": 5,
+   "changes": 8,
+   "replaced": 1,
+   "suspect": 1
   }
  },
  {
@@ -2056,7 +2072,6 @@
   "buildDate": "2024-11-18",
   "diff": "diff/93151-93229_ptr.json",
   "heroes": [
-   "Arthas",
    "Diablo",
    "Greymane",
    "Imperius",
@@ -2065,8 +2080,10 @@
   ],
   "battlegrounds": [],
   "summary": {
-   "heroes": 6,
-   "changes": 15
+   "heroes": 5,
+   "changes": 8,
+   "replaced": 1,
+   "suspect": 1
   }
  },
  {
@@ -2124,8 +2141,10 @@
    "volskaya_foundry"
   ],
   "summary": {
-   "heroes": 6,
-   "changes": 16
+   "heroes": 5,
+   "changes": 9,
+   "replaced": 1,
+   "suspect": 1
   },
   "translated": {
    "by": "Claude (claude-opus-5)",
@@ -2393,8 +2412,8 @@
    "garden_of_terror"
   ],
   "summary": {
-   "heroes": 7,
-   "changes": 25
+   "heroes": 6,
+   "changes": 23
   },
   "buildDate": "2024-08-13"
  },
@@ -2410,8 +2429,6 @@
   "buildDate": "2024-07-24",
   "diff": "diff/92264-92593_ptr.json",
   "heroes": [
-   "Alarak",
-   "FaerieDragon",
    "Genji",
    "NexusHunter",
    "Raynor",
@@ -2420,8 +2437,8 @@
   ],
   "battlegrounds": [],
   "summary": {
-   "heroes": 7,
-   "changes": 24
+   "heroes": 5,
+   "changes": 21
   }
  },
  {
@@ -2436,11 +2453,7 @@
   "buildDate": "2024-07-18",
   "diff": "diff/92264-92556_ptr.json",
   "heroes": [
-   "Abathur",
-   "Alarak",
-   "FaerieDragon",
    "Genji",
-   "Greymane",
    "Malthael",
    "NexusHunter",
    "Nova",
@@ -2450,8 +2463,8 @@
   ],
   "battlegrounds": [],
   "summary": {
-   "heroes": 11,
-   "changes": 28
+   "heroes": 7,
+   "changes": 21
   }
  },
  {
@@ -2536,8 +2549,8 @@
    "garden_of_terror"
   ],
   "summary": {
-   "heroes": 11,
-   "changes": 26
+   "heroes": 7,
+   "changes": 19
   },
   "translated": {
    "by": "Claude (claude-opus-5)",
@@ -2641,8 +2654,8 @@
    "warhead_junction"
   ],
   "summary": {
-   "heroes": 11,
-   "changes": 28
+   "heroes": 8,
+   "changes": 23
   },
   "buildDate": "2024-05-21"
  },
@@ -2658,11 +2671,8 @@
   "buildDate": "2024-05-11",
   "diff": "diff/91769-92228_ptr.json",
   "heroes": [
-   "Alexstrasza",
    "Arthas",
    "Chen",
-   "Garrosh",
-   "Genji",
    "Hogger",
    "Junkrat",
    "NexusHunter",
@@ -2672,8 +2682,8 @@
   ],
   "battlegrounds": [],
   "summary": {
-   "heroes": 11,
-   "changes": 28
+   "heroes": 8,
+   "changes": 23
   }
  },
  {
@@ -2770,8 +2780,8 @@
    "warhead_junction"
   ],
   "summary": {
-   "heroes": 11,
-   "changes": 27
+   "heroes": 8,
+   "changes": 23
   },
   "translated": {
    "by": "Claude (claude-opus-5)",
@@ -2861,8 +2871,9 @@
    "lost_cavern"
   ],
   "summary": {
-   "heroes": 7,
-   "changes": 9
+   "heroes": 5,
+   "changes": 8,
+   "units": 1
   },
   "buildDate": "2024-02-06"
  },
@@ -2880,16 +2891,15 @@
   "heroes": [
    "Abathur",
    "DVa",
-   "Garrosh",
-   "Genji",
    "LiLi",
    "Medivh",
    "Nova"
   ],
   "battlegrounds": [],
   "summary": {
-   "heroes": 7,
-   "changes": 9
+   "heroes": 5,
+   "changes": 8,
+   "units": 1
   }
  },
  {
@@ -2906,16 +2916,15 @@
   "heroes": [
    "Abathur",
    "DVa",
-   "Garrosh",
-   "Genji",
    "LiLi",
    "Medivh",
    "Nova"
   ],
   "battlegrounds": [],
   "summary": {
-   "heroes": 7,
-   "changes": 9
+   "heroes": 5,
+   "changes": 8,
+   "units": 1
   }
  },
  {
@@ -2947,7 +2956,6 @@
    "FaerieDragon",
    "Falstad",
    "Gall",
-   "Garrosh",
    "Genji",
    "Hanzo",
    "Hogger",
@@ -2991,8 +2999,9 @@
    "blackheart_s_bay"
   ],
   "summary": {
-   "heroes": 7,
-   "changes": 9
+   "heroes": 5,
+   "changes": 8,
+   "units": 1
   },
   "translated": {
    "by": "Claude (claude-opus-5)",
@@ -3108,8 +3117,8 @@
    "warhead_junction"
   ],
   "summary": {
-   "heroes": 5,
-   "changes": 7
+   "heroes": 4,
+   "changes": 6
   },
   "buildDate": "2023-11-20"
  },
@@ -3125,7 +3134,6 @@
   "diff": "diff/91093-91262_ptr.json",
   "heroes": [
    "Abathur",
-   "Alexstrasza",
    "Amazon",
    "Anduin",
    "Anubarak",
@@ -3199,8 +3207,8 @@
   ],
   "battlegrounds": [],
   "summary": {
-   "heroes": 9,
-   "changes": 10
+   "heroes": 4,
+   "changes": 5
   },
   "translated": {
    "by": "Claude (claude-opus-5)",
@@ -3208,46 +3216,6 @@
   },
   "en": "en/2023-10-23.json",
   "buildDate": "2023-11-17"
- },
- {
-  "date": "2023-09-28",
-  "kind": "data",
-  "title": "데이터 변경 2.55.3.91093",
-  "newsId": null,
-  "isPtr": false,
-  "official": null,
-  "build": 91093,
-  "version": "2.55.3.91093",
-  "buildDate": "2023-09-28",
-  "diff": "diff/91081-91093.json",
-  "heroes": [
-   "FaerieDragon"
-  ],
-  "battlegrounds": [],
-  "summary": {
-   "heroes": 1,
-   "changes": 1
-  }
- },
- {
-  "date": "2023-09-23",
-  "kind": "data",
-  "title": "데이터 변경 2.55.3.91081",
-  "newsId": null,
-  "isPtr": false,
-  "official": null,
-  "build": 91081,
-  "version": "2.55.3.91081",
-  "buildDate": "2023-09-23",
-  "diff": "diff/91020-91081.json",
-  "heroes": [
-   "FaerieDragon"
-  ],
-  "battlegrounds": [],
-  "summary": {
-   "heroes": 1,
-   "changes": 1
-  }
  },
  {
   "date": "2023-09-20",
@@ -3348,7 +3316,8 @@
   "battlegrounds": [],
   "summary": {
    "heroes": 12,
-   "changes": 59
+   "changes": 60,
+   "units": 1
   },
   "buildDate": "2022-03-29"
  },
@@ -3376,13 +3345,13 @@
    "Rehgar",
    "Stukov",
    "Tracer",
-   "Whitemane",
    "Yrel"
   ],
   "battlegrounds": [],
   "summary": {
-   "heroes": 14,
-   "changes": 79
+   "heroes": 13,
+   "changes": 78,
+   "moved": 2
   },
   "buildDate": "2022-02-20"
  },
@@ -3424,8 +3393,10 @@
   ],
   "battlegrounds": [],
   "summary": {
-   "heroes": 17,
-   "changes": 82
+   "heroes": 16,
+   "changes": 78,
+   "replaced": 3,
+   "moved": 7
   },
   "translated": {
    "by": "Claude (claude-opus-5)",
@@ -3472,8 +3443,10 @@
   ],
   "battlegrounds": [],
   "summary": {
-   "heroes": 18,
-   "changes": 84
+   "heroes": 17,
+   "changes": 79,
+   "replaced": 3,
+   "moved": 7
   },
   "buildDate": "2021-12-06"
  },
@@ -3506,7 +3479,8 @@
   "battlegrounds": [],
   "summary": {
    "heroes": 13,
-   "changes": 67
+   "changes": 68,
+   "subs": 1
   },
   "buildDate": "2021-10-04"
  },
@@ -3535,7 +3509,9 @@
   "battlegrounds": [],
   "summary": {
    "heroes": 10,
-   "changes": 62
+   "changes": 62,
+   "replaced": 1,
+   "subs": 1
   },
   "buildDate": "2021-08-21"
  },
@@ -3569,7 +3545,9 @@
   "battlegrounds": [],
   "summary": {
    "heroes": 15,
-   "changes": 87
+   "changes": 86,
+   "replaced": 1,
+   "moved": 1
   },
   "buildDate": "2021-07-24"
  },
@@ -3624,7 +3602,9 @@
   "battlegrounds": [],
   "summary": {
    "heroes": 14,
-   "changes": 84
+   "changes": 83,
+   "replaced": 1,
+   "moved": 5
   },
   "buildDate": "2021-06-16"
  },
@@ -3663,7 +3643,12 @@
   ],
   "summary": {
    "heroes": 16,
-   "changes": 185
+   "changes": 182,
+   "renamed": 2,
+   "replaced": 8,
+   "moved": 29,
+   "units": 6,
+   "subs": 1
   },
   "buildDate": "2021-05-22"
  },
@@ -3700,7 +3685,12 @@
   "battlegrounds": [],
   "summary": {
    "heroes": 16,
-   "changes": 184
+   "changes": 181,
+   "renamed": 2,
+   "replaced": 8,
+   "moved": 29,
+   "units": 6,
+   "subs": 1
   },
   "buildDate": "2021-05-16"
  },
@@ -3716,13 +3706,12 @@
   "buildDate": "2021-03-06",
   "diff": "diff/84200-84249.json",
   "heroes": [
-   "Falstad",
    "Mephisto"
   ],
   "battlegrounds": [],
   "summary": {
-   "heroes": 2,
-   "changes": 3
+   "heroes": 1,
+   "changes": 2
   }
  },
  {
@@ -3758,7 +3747,10 @@
   "battlegrounds": [],
   "summary": {
    "heroes": 17,
-   "changes": 121
+   "changes": 122,
+   "replaced": 1,
+   "moved": 15,
+   "subs": 2
   },
   "buildDate": "2021-03-03"
  },
@@ -3800,7 +3792,8 @@
   "battlegrounds": [],
   "summary": {
    "heroes": 21,
-   "changes": 76
+   "changes": 76,
+   "suspect": 1
   },
   "buildDate": "2021-01-19"
  },
@@ -3815,7 +3808,6 @@
   "version": "2.53.0.83004",
   "diff": "diff/82624-83004.json",
   "heroes": [
-   "Anubarak",
    "Barbarian",
    "FaerieDragon",
    "Hogger",
@@ -3826,8 +3818,8 @@
   ],
   "battlegrounds": [],
   "summary": {
-   "heroes": 8,
-   "changes": 12
+   "heroes": 7,
+   "changes": 11
   },
   "buildDate": "2020-12-01"
  },
@@ -3842,7 +3834,6 @@
   "version": "2.53.0.82902",
   "diff": "diff/82624-82902_ptr.json",
   "heroes": [
-   "Anubarak",
    "Barbarian",
    "FaerieDragon",
    "Hogger",
@@ -3853,8 +3844,8 @@
   ],
   "battlegrounds": [],
   "summary": {
-   "heroes": 8,
-   "changes": 12
+   "heroes": 7,
+   "changes": 11
   },
   "buildDate": "2020-12-01"
  },
@@ -3894,7 +3885,8 @@
   ],
   "summary": {
    "heroes": 18,
-   "changes": 63
+   "changes": 62,
+   "replaced": 1
   },
   "buildDate": "2020-11-06"
  },
@@ -3939,7 +3931,10 @@
   "battlegrounds": [],
   "summary": {
    "heroes": 26,
-   "changes": 106
+   "changes": 106,
+   "replaced": 1,
+   "moved": 2,
+   "subs": 1
   },
   "buildDate": "2020-10-10"
  },
@@ -3971,7 +3966,12 @@
   "battlegrounds": [],
   "summary": {
    "heroes": 13,
-   "changes": 109
+   "changes": 105,
+   "renamed": 5,
+   "replaced": 2,
+   "moved": 15,
+   "units": 2,
+   "subs": 2
   },
   "buildDate": "2020-09-09"
  },
@@ -4002,7 +4002,13 @@
   "battlegrounds": [],
   "summary": {
    "heroes": 11,
-   "changes": 106
+   "changes": 101,
+   "renamed": 4,
+   "replaced": 2,
+   "moved": 14,
+   "units": 2,
+   "subs": 1,
+   "suspect": 1
   },
   "buildDate": "2020-09-09",
   "buildDateEstimated": true
@@ -4042,7 +4048,9 @@
   "battlegrounds": [],
   "summary": {
    "heroes": 19,
-   "changes": 60
+   "changes": 60,
+   "replaced": 1,
+   "subs": 1
   },
   "buildDate": "2020-08-19"
  },
@@ -4086,7 +4094,9 @@
   "battlegrounds": [],
   "summary": {
    "heroes": 22,
-   "changes": 83
+   "changes": 82,
+   "replaced": 1,
+   "moved": 7
   },
   "buildDate": "2020-07-16"
  },
@@ -4101,6 +4111,7 @@
   "version": "2.51.0.80333",
   "diff": "diff/80046-80333.json",
   "heroes": [
+   "Alexstrasza",
    "Anduin",
    "MalGanis",
    "MeiOW",
@@ -4114,8 +4125,9 @@
   ],
   "battlegrounds": [],
   "summary": {
-   "heroes": 6,
-   "changes": 21
+   "heroes": 7,
+   "changes": 22,
+   "units": 1
   },
   "buildDate": "2020-06-23"
  },
@@ -4131,6 +4143,7 @@
   "buildDate": "2020-06-21",
   "diff": "diff/80046-80293_ptr.json",
   "heroes": [
+   "Alexstrasza",
    "MalGanis",
    "MeiOW",
    "Tracer",
@@ -4140,8 +4153,9 @@
   ],
   "battlegrounds": [],
   "summary": {
-   "heroes": 6,
-   "changes": 21
+   "heroes": 7,
+   "changes": 22,
+   "units": 1
   }
  },
  {
@@ -4155,6 +4169,7 @@
   "version": "2.51.0.80205",
   "diff": "diff/80046-80205_ptr.json",
   "heroes": [
+   "Alexstrasza",
    "Anduin",
    "MalGanis",
    "MeiOW",
@@ -4168,8 +4183,9 @@
   ],
   "battlegrounds": [],
   "summary": {
-   "heroes": 6,
-   "changes": 21
+   "heroes": 7,
+   "changes": 22,
+   "units": 1
   },
   "buildDate": "2020-06-21"
  },
@@ -4216,7 +4232,9 @@
   ],
   "summary": {
    "heroes": 21,
-   "changes": 94
+   "changes": 92,
+   "replaced": 2,
+   "moved": 8
   },
   "buildDate": "2020-06-04"
  },
@@ -4261,7 +4279,11 @@
   ],
   "summary": {
    "heroes": 19,
-   "changes": 140
+   "changes": 137,
+   "renamed": 1,
+   "replaced": 3,
+   "moved": 13,
+   "subs": 1
   },
   "buildDate": "2020-05-06"
  },
@@ -4276,11 +4298,11 @@
   "version": "2.50.0.79155",
   "diff": "diff/78725-79155.json",
   "heroes": [
+   "Alexstrasza",
    "Arthas",
    "Deathwing",
    "Garrosh",
    "Imperius",
-   "MalGanis",
    "Necromancer",
    "Stukov",
    "Tassadar",
@@ -4304,7 +4326,11 @@
   ],
   "summary": {
    "heroes": 4,
-   "changes": 51
+   "changes": 48,
+   "replaced": 3,
+   "moved": 2,
+   "units": 1,
+   "subs": 1
   },
   "buildDate": "2020-04-14"
  },
@@ -4319,11 +4345,11 @@
   "version": "2.50.0.79033",
   "diff": "diff/78725-79033_ptr.json",
   "heroes": [
+   "Alexstrasza",
    "Arthas",
    "Deathwing",
    "Garrosh",
    "Imperius",
-   "MalGanis",
    "Necromancer",
    "Stukov",
    "Tassadar",
@@ -4347,29 +4373,13 @@
   ],
   "summary": {
    "heroes": 4,
-   "changes": 51
+   "changes": 48,
+   "replaced": 3,
+   "moved": 2,
+   "units": 1,
+   "subs": 1
   },
   "buildDate": "2020-04-14"
- },
- {
-  "date": "2020-03-18",
-  "kind": "data",
-  "title": "데이터 변경 2.49.4.78725",
-  "newsId": null,
-  "isPtr": false,
-  "official": null,
-  "build": 78725,
-  "version": "2.49.4.78725",
-  "buildDate": "2020-03-18",
-  "diff": "diff/78679-78725.json",
-  "heroes": [
-   "MalGanis"
-  ],
-  "battlegrounds": [],
-  "summary": {
-   "heroes": 1,
-   "changes": 1
-  }
  },
  {
   "date": "2020-03-12",
@@ -4404,7 +4414,10 @@
   "battlegrounds": [],
   "summary": {
    "heroes": 16,
-   "changes": 58
+   "changes": 58,
+   "replaced": 1,
+   "moved": 2,
+   "units": 1
   },
   "buildDate": "2020-03-11"
  },
@@ -4450,7 +4463,11 @@
   "battlegrounds": [],
   "summary": {
    "heroes": 26,
-   "changes": 70
+   "changes": 70,
+   "renamed": 1,
+   "replaced": 1,
+   "moved": 8,
+   "subs": 2
   },
   "buildDate": "2020-02-12"
  },
@@ -4494,7 +4511,9 @@
   "battlegrounds": [],
   "summary": {
    "heroes": 25,
-   "changes": 95
+   "changes": 97,
+   "replaced": 1,
+   "subs": 3
   },
   "buildDate": "2020-01-22"
  },
@@ -4554,7 +4573,6 @@
    "Greymane",
    "Illidan",
    "Samuro",
-   "Thrall",
    "Uther",
    "WitchDoctor",
    "Yrel",
@@ -4562,8 +4580,10 @@
   ],
   "battlegrounds": [],
   "summary": {
-   "heroes": 13,
-   "changes": 41
+   "heroes": 12,
+   "changes": 39,
+   "renamed": 1,
+   "subs": 1
   }
  },
  {
@@ -4616,7 +4636,9 @@
   "battlegrounds": [],
   "summary": {
    "heroes": 7,
-   "changes": 13
+   "changes": 23,
+   "units": 9,
+   "subs": 1
   }
  },
  {
@@ -4646,7 +4668,9 @@
   ],
   "summary": {
    "heroes": 7,
-   "changes": 13
+   "changes": 23,
+   "units": 9,
+   "subs": 1
   },
   "buildDate": "2019-11-27"
  },
@@ -4683,7 +4707,9 @@
   "battlegrounds": [],
   "summary": {
    "heroes": 18,
-   "changes": 64
+   "changes": 64,
+   "replaced": 1,
+   "subs": 1
   },
   "buildDate": "2019-11-22"
  },
@@ -4735,7 +4761,9 @@
   "battlegrounds": [],
   "summary": {
    "heroes": 13,
-   "changes": 50
+   "changes": 47,
+   "replaced": 2,
+   "moved": 2
   },
   "buildDate": "2019-10-15"
  },
@@ -4761,7 +4789,10 @@
   "battlegrounds": [],
   "summary": {
    "heroes": 6,
-   "changes": 58
+   "changes": 56,
+   "renamed": 1,
+   "replaced": 1,
+   "moved": 10
   }
  },
  {
@@ -4819,7 +4850,10 @@
   "battlegrounds": [],
   "summary": {
    "heroes": 6,
-   "changes": 59
+   "changes": 57,
+   "renamed": 1,
+   "replaced": 1,
+   "moved": 10
   },
   "buildDate": "2019-10-12"
  },
