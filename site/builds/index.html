@@ -60,7 +60,7 @@
         .search-show kbd { border: 1px solid currentColor; border-radius: 3px; padding: 0 4px; font-size: 11px; opacity: .8; }
         .list-empty { padding: 12px; opacity: .7; font-size: 13px; }
         
-        #capture-area { flex: 1; display: flex; flex-direction: column; overflow-y: auto; padding-bottom: calc(var(--foot-h, 280px) + 24px); background: #0b0b0d; width: 100%; box-sizing: border-box; }
+        #capture-area { flex: 1; display: flex; flex-direction: column; overflow-y: auto; padding-bottom: 24px; background: #0b0b0d; width: 100%; box-sizing: border-box; }
         #hero-stat-container { background: #1a1a20; margin: 8px; padding: 12px; border-radius: 8px; border: 1px solid #333; display: none; }
         
         .slider-wrapper { margin: 10px 5px 25px 5px; position: relative; }
@@ -121,7 +121,9 @@
         :root[data-theme="light"] .tc-card { background:#eef2f8; border-color:#dbe3ee; }
         :root[data-theme="light"] .tc-tier { border-bottom-color:#d5deea; }
         
-        #footer { position: fixed; bottom: 0; width: 100%; background: rgba(10,10,12,0.98); border-top: 2px solid var(--p); padding: 12px; box-sizing: border-box; display: flex; flex-direction: column; gap: 8px; z-index: 1500; }
+        /* 하단 칸은 띄우지 않고 몸통 flex 의 마지막 칸으로 둔다. 띄워 두면 폰에서 칸이 커질 때
+           마지막(20레벨) 특성 줄을 덮었다. 이제 본문(#capture-area)이 남은 높이만큼 줄어든다. */
+        #footer { flex-shrink: 0; max-height: 50vh; max-height: 50dvh; overflow-y: auto; width: 100%; background: rgba(10,10,12,0.98); border-top: 2px solid var(--p); padding: 12px; box-sizing: border-box; display: flex; flex-direction: column; gap: 8px; z-index: 1500; }
         #selected-summary { display: flex; justify-content: center; gap: 4px; }
         .summary-icon { width: 32px; height: 32px; border: 1px solid #444; border-radius: 4px; background: #000; }
         #build-code-box { background: #111; border: 1px dashed var(--gold); color: var(--gold); padding: 8px; border-radius: 4px; font-family: monospace; font-size: 13px; text-align: center; cursor: pointer; }
@@ -457,16 +459,6 @@
             setSearchHidden(saved === '1');
         }
         function updateFontSize(v) { document.documentElement.style.setProperty('--fs', v + 'px'); }
-
-        /* 폰에서 고정 하단 칸(#footer)이 단추 줄바꿈·44px 누름 크기로 280px 보다 커지면
-           마지막 특성 줄(20레벨)이 그 밑에 깔려 안 눌렸다. 실제 높이를 재서 여백으로 쓴다. */
-        (function () {
-            var foot = document.getElementById('footer');
-            function syncFoot() { document.documentElement.style.setProperty('--foot-h', foot.offsetHeight + 'px'); }
-            syncFoot();
-            if (window.ResizeObserver) new ResizeObserver(syncFoot).observe(foot);
-            else window.addEventListener('resize', syncFoot);
-        })();
 
         function processTooltip(t, lv) {
             if(!t) return ""; let p = t.replace(/<[^>]*>?/gm, "").replace(/\n/g, "<br>");
