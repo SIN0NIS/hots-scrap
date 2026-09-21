@@ -25,7 +25,7 @@
     </script>
     <style>
         :root { --p: #a333ff; --bg: #0b0b0d; --card: #16161a; --blue: #00d4ff; --gold: #ffd700; --green: #00ff00; --fs: 14px; }
-        body { margin: 0; background: var(--bg); color: white; font-family: sans-serif; display: flex; flex-direction: column; height: 100vh; overflow: hidden; width: 100%; font-size: var(--fs); }
+        body { margin: 0; background: var(--bg); color: white; font-family: sans-serif; display: flex; flex-direction: column; height: 100vh; height: 100dvh; overflow: hidden; width: 100%; font-size: var(--fs); }
         
         #top-bar { background: #000; padding: 6px 12px; border-bottom: 1px solid #333; display: flex; justify-content: space-between; align-items: center; z-index: 2100; }
         #top-bar a { color: #888; text-decoration: none; font-size: 11px; }
@@ -60,7 +60,7 @@
         .search-show kbd { border: 1px solid currentColor; border-radius: 3px; padding: 0 4px; font-size: 11px; opacity: .8; }
         .list-empty { padding: 12px; opacity: .7; font-size: 13px; }
         
-        #capture-area { flex: 1; display: flex; flex-direction: column; overflow-y: auto; padding-bottom: 280px; background: #0b0b0d; width: 100%; box-sizing: border-box; }
+        #capture-area { flex: 1; display: flex; flex-direction: column; overflow-y: auto; padding-bottom: calc(var(--foot-h, 280px) + 24px); background: #0b0b0d; width: 100%; box-sizing: border-box; }
         #hero-stat-container { background: #1a1a20; margin: 8px; padding: 12px; border-radius: 8px; border: 1px solid #333; display: none; }
         
         .slider-wrapper { margin: 10px 5px 25px 5px; position: relative; }
@@ -458,8 +458,23 @@
         }
         function updateFontSize(v) { document.documentElement.style.setProperty('--fs', v + 'px'); }
 
+        /* 폰에서 고정 하단 칸(#footer)이 단추 줄바꿈·44px 누름 크기로 280px 보다 커지면
+           마지막 특성 줄(20레벨)이 그 밑에 깔려 안 눌렸다. 실제 높이를 재서 여백으로 쓴다. */
+        (function () {
+            var foot = document.getElementById('footer');
+            function syncFoot() { document.documentElement.style.setProperty('--foot-h', foot.offsetHeight + 'px'); }
+            syncFoot();
+            if (window.ResizeObserver) new ResizeObserver(syncFoot).observe(foot);
+            else window.addEventListener('resize', syncFoot);
+        })();
+
         function processTooltip(t, lv) {
             if(!t) return ""; let p = t.replace(/<[^>]*>?/gm, "").replace(/\n/g, "<br>");
+            // 자료는 "153 (+4% per level)" 로 성장치를 접어 둔다. 현재 레벨 수치로 풀고, 길어서 "(+4%)" 로만 적는다.
+            p = p.replace(/(\d+(?:\.\d+)?)\s*\(\+(-?\d+(?:\.\d+)?)%\s*per level\)/g, (m, b, r) => {
+                const v = parseFloat(b) * Math.pow(1 + parseFloat(r) / 100, lv - 1);
+                return "<strong>" + (+v.toFixed(1)) + "</strong>(+" + r + "%)";
+            });
             p = p.replace(/(\d+(?:\.\d+)?)\s*~~(0\.\d+)~~/g, (m, b, s) => {
                 const v = parseFloat(b) * Math.pow(1 + parseFloat(s), lv - 1);
                 return "<strong>" + v.toFixed(1) + "</strong>(+" + (parseFloat(s)*100).toFixed(1) + "%)";
