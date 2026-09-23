@@ -66,6 +66,12 @@ SOURCES = [
     ("heroes-data", "hdp4", "https://github.com/HeroesToolChest/heroes-data.git"),    # 빌드마다 완성된 JSON (2019-10 ~ 2026-07, 멈춤)
     ("heroes-data2", "hdp5", "https://github.com/HeroesToolChest/heroes-data2.git"),  # 앞 빌드와의 차이(JSON Patch)로 올라온다 (2026-05 ~)
 ]
+# 게임 자료가 아닌데 같이 거울 뜨는 것 — 풀지는 않고 통째로만 둔다
+#   images: 사이트 아이콘 저장소. 새 아이콘은 서버가 게임에서 꺼내 여기 올리고, PC 는 거울만 뜬다.
+#           옛 특성 아이콘은 게임에서도 빠져 이 저장소에만 남으므로 PC 에도 한 벌 둔다. (처음 한 번 약 360MB)
+EXTRA_MIRRORS = [
+    ("images", "https://github.com/SIN0NIS/images.git"),
+]
 VER_RE = re.compile(r"^(\d+\.\d+\.\d+\.(\d+))(_ptr)?$")
 # gamestrings_98182_kokr(.patch).json · gamestrings_mapdata_98182_kokr(.patch).json
 GS_RE = re.compile(r"^gamestrings_(?:[a-z]+_)?\d+_([a-z]{4})(?:\.patch)?\.json$")
@@ -418,6 +424,7 @@ README = """# 히오스 인게임 데이터 보관소 (내 PC 전용)
 | 폴더 | 내용 |
 |---|---|
 | `mirrors/*.git` | HeroesToolChest 원본 저장소를 **통째로** 거울 뜬 것. 모든 언어·모든 종류·전 기록. 원본이 사라져도 여기 남는다 |
+| `mirrors/images.git` | 사이트 아이콘 저장소(SIN0NIS/images) 거울. 새 아이콘은 서버가 게임에서 꺼내 거기 올리고, 여기는 받아만 둔다. 게임에서 빠진 옛 특성 아이콘은 이제 거기와 여기에만 있다 |
 | `builds/hdp4/<버전>/` | 옛 형식 (2019-10 ~ 2026-07). **원본 바이트 그대로** |
 | `builds/hdp5/<버전>/` | 새 형식 (2026-05 ~). 차이(JSON Patch)를 붙여 만든 **완성본** |
 | `…/data/` | 그 빌드의 게임 데이터 — 영웅(herodata)·유닛·스킨·탈것·음성·스프레이 … |
@@ -644,6 +651,13 @@ def run(a):
         (dest / "README.md").write_text(
             README.replace("__LOCALES__", ", ".join(sorted(locales))).replace("__UPSTREAM__", ", ".join(up_locales) or "(확인 못 함)"),
             encoding="utf-8")
+    # 게임 자료 말고 같이 거울 뜨는 것(아이콘 저장소). 막혀도 위에서 쌓은 것에는 영향이 없다.
+    for name, url in EXTRA_MIRRORS:
+        try:
+            m, head = update_mirror(dest, name, url, a.offline)
+            print(f"  거울 {name} — {head[:7]}", flush=True)
+        except Exception as e:
+            print(f"  ! {name} 거울: 건너뜁니다 - {str(e)[:200]}", file=sys.stderr)
     total = sum(b.get("size", 0) for b in idx["builds"])
     print(f"끝 - 이번에 {made}개 · 모두 {len(idx['builds'])}개 빌드 · {total / 1024 / 1024:,.0f} MB → {dest}")
     return 0

@@ -1,11 +1,16 @@
 # -*- coding: utf-8 -*-
-"""빠진 아이콘 채우기.
+"""빠진 아이콘 채우기 · 목록 맞추기.
 
-새 영웅이 나오면 그 초상·기술 아이콘이 내 이미지 저장소(sin0nis.github.io/images)에 아직 없다.
-게임에서 다시 뽑기 전까지는 그림이 빈 채로 보이므로, 같은 파일을 공개된 곳에서 받아
-site/images/ 에 둔다. 화면은 내 저장소를 먼저 보고, 없으면 여기를 본다.
+아이콘은 내 이미지 저장소(SIN0NIS/images → sin0nis.github.io/images)가 맡는다.
+**그 저장소가 스스로 채운다** — 여기서 적어 둔 `need`(사이트가 부르는데 거기 없는 것)를 6시간마다 읽어,
+그것만 블리자드 서버에서 게임 파일로 꺼내 올린다(SIN0NIS/images 의 tools/pick_icons.py).
 
-받는 곳: HeroesToolChest/heroes-images (MIT). 게임 데이터와 같은 출처라 파일 이름이 그대로 맞는다.
+여기서 하는 일
+  1. `need` 적기 — 사이트가 부르는 아이콘 중 이미지 저장소에 없는 것. 이미지 저장소가 이걸 읽는다.
+  2. 급한 임시본 — 이미지 저장소가 채우기 전(최대 몇 시간)에도 그림이 비지 않게, 같은 파일을
+     HeroesToolChest/heroes-images(MIT)에서 받아 site/images/ 에 둔다. 화면은 여기를 먼저 본다.
+  3. 치우기 — 이미지 저장소에 들어온 것은 여기 임시본을 지우고 `missing` 에서도 뺀다.
+     (임시본이 남으면 화면이 계속 그걸 먼저 부르고, `missing` 에 남으면 화면이 아예 안 부른다)
 
 **무엇이 있는지 확인하는 데 요청을 1개만 쓴다.**
 예전에는 아이콘 1,100개를 하나씩 HEAD 로 찔러 봤는데(= 내 Pages 에 요청 1,100개),
@@ -102,9 +107,31 @@ def referenced():
     return want
 
 
+def deployed_sha():
+    """이미지 저장소의 Pages 가 **마지막으로 성공한 배포**의 커밋. (요청 2~4개)
+
+    git 에 올라간 것과 Pages 가 실제로 내주는 것은 다르다 — 굽기가 실패하면 올라갔는데 404 다.
+    여기 임시본을 지우는 판단을 '올라갔다'로 하면, 굽기가 실패한 동안 그림이 통째로 사라진다."""
+    try:
+        r = S.get(f"https://api.github.com/repos/{CDN_REPO}/deployments?environment=github-pages&per_page=3", timeout=30)
+        r.raise_for_status()
+        for dep in r.json():
+            st = S.get(dep["statuses_url"] + "?per_page=1", timeout=30)
+            st.raise_for_status()
+            js = st.json()
+            if js and js[0].get("state") == "success":
+                return dep.get("sha"), True
+    except Exception as e:
+        print(f"  Pages 배포 상태를 못 읽었습니다 — {e}", file=sys.stderr)
+    return None, False
+
+
 def cdn_files():
-    """내 이미지 저장소에 있는 파일 목록 — 요청 **1개**로 전부 받는다."""
-    url = f"https://api.github.com/repos/{CDN_REPO}/git/trees/{CDN_BRANCH}?recursive=1"
+    """이미지 저장소가 지금 **서빙하고 있는** 파일 목록. 돌려주는 것: (목록, 서빙 확인됨?)
+
+    확인이 안 되면 올라간 것(main)으로 대신 보되, 그때는 임시본을 지우지 않는다(안전한 쪽)."""
+    sha, served = deployed_sha()
+    url = f"https://api.github.com/repos/{CDN_REPO}/git/trees/{sha or CDN_BRANCH}?recursive=1"
     r = S.get(url, timeout=60)
     r.raise_for_status()
     d = r.json()
@@ -118,26 +145,28 @@ def cdn_files():
         d0 = p.split("/", 1)[0]
         if d0 in FOLDERS:
             have.add(p)
-    return have
+    return have, served
 
 
-def write_index(gone=None):
+def write_index(gone=None, need=None, cdn=None):
     """화면이 어떤 파일을 여기서 찾아야 하는지 적어 둔다(헛걸음 없이 바로 가게).
 
     files   — 여기 site/images/ 에 있는 것. 화면은 이것만 로컬에서 부른다.
-    missing — 내 저장소에도, 받아 오는 곳에도 **없는** 것. 게임에서 삭제된 옛 특성 아이콘들이라
-              어디에도 남아 있지 않다. 화면은 이 목록을 보고 **아예 부르지 않는다**(404 를 안 만든다).
+    missing — 이미지 저장소에도 여기에도 **없는** 것. 화면은 이 목록을 보고 **아예 부르지 않는다**(404 를 안 만든다).
+              이미지 저장소에 들어온 이름은 반드시 뺀다 — 안 빼면 들어온 그림이 영영 안 보인다.
+    need    — 사이트가 부르는데 이미지 저장소에 없는 것. **이미지 저장소가 이 목록을 읽고 채운다.**
 
     **항상** 다시 쓴다. 내려받은 게 없을 때 건너뛰면, 아이콘을 지운 뒤에 유령 목록이 남아
     없는 파일을 부르게 된다."""
     have = sorted(f"{d}/{x.name}" for d in FOLDERS for x in (OUT / d).glob("*.png")) if OUT.exists() else []
-    prev = []
+    prev = {}
     if (OUT / "index.json").exists():
-        prev = (load(OUT / "index.json") or {}).get("missing") or []
-    gone = sorted(set(prev if gone is None else gone) - set(have))
+        prev = load(OUT / "index.json") or {}
+    gone = sorted(set(prev.get("missing") or [] if gone is None else gone) - set(have) - set(cdn or ()))
+    need = sorted(prev.get("need") or [] if need is None else need)
     OUT.mkdir(parents=True, exist_ok=True)
     (OUT / "index.json").write_text(
-        json.dumps({"files": have, "missing": gone}, ensure_ascii=False, indent=1), encoding="utf-8")
+        json.dumps({"files": have, "missing": gone, "need": need}, ensure_ascii=False, indent=1), encoding="utf-8")
     return have, gone
 
 
@@ -149,11 +178,13 @@ def main():
     want = sorted(referenced())
     local = {f"{d}/{x.name}" for d in FOLDERS for x in (OUT / d).glob("*.png")} if OUT.exists() else set()
     try:
-        have = cdn_files()
+        have, served = cdn_files()
     except Exception as e:
         print(f"내 이미지 저장소 목록을 못 읽었습니다 — {e}", file=sys.stderr)
         return 2
-    print(f"화면이 부르는 아이콘 {len(want)}개 · 내 저장소 {len(have)}개 · 여기 받아 둔 것 {len(local)}개 (요청 1개로 확인)")
+    print(f"화면이 부르는 아이콘 {len(want)}개 · 이미지 저장소 {len(have)}개"
+          + ("(Pages 가 내주는 그 커밋 기준)" if served else "(배포 확인 못 함 — 임시본은 그대로 둔다)")
+          + f" · 여기 받아 둔 것 {len(local)}개")
 
     # 이미 "어디에도 없다" 고 확인된 것은 다시 받으러 가지 않는다.
     # (안 그러면 실행할 때마다 원본 저장소에 404 를 21개씩 만든다)
@@ -167,19 +198,29 @@ def main():
             skipped += 1
             continue
         todo.append((d, n))
-    stale = sorted(p for p in local if p in have)   # 내 저장소에 올라갔으니 여기 것은 필요 없다
-    print(f"내 저장소에 없어 채워야 할 것 {len(todo)}개"
-          + (f" (어디에도 없다고 이미 확인된 {skipped}개는 건너뜀)" if skipped else ""))
+    wantk = {f"{d}/{n}" for d, n in want}
+    # 치울 임시본: (1) 이미지 저장소가 내주고 있는 것 — 단 배포가 확인됐을 때만, (2) 이제 아무도 안 부르는 것
+    stale = sorted(p for p in local if (served and p in have) or p not in wantk)
+    need = sorted(k for k in wantk if k not in have)
+    print(f"이미지 저장소가 채워 줄 것(need) {len(need)}개 · 그중 급한 임시본을 받아 볼 것 {len(todo)}개"
+          + (f" (HeroesToolChest 에도 없다고 이미 확인된 {skipped}개는 건너뜀)" if skipped else ""))
     for d, n in todo:
         print(f"   {d}/{n}")
     if stale:
-        print(f"내 저장소에 이미 올라가 여기서 지워도 되는 것 {len(stale)}개")
+        print(f"이미지 저장소에 들어와 여기 임시본을 치울 것 {len(stale)}개")
         for p in stale:
             print(f"   {p}")
 
     if a.check:
-        write_index(known_gone)
+        write_index(known_gone, need, have)
         return 1 if todo else 0
+
+    # 이미지 저장소에 들어왔으니 여기 임시본은 지운다 — 남겨 두면 화면이 계속 이걸 먼저 부른다
+    for p in stale:
+        try:
+            (OUT / p).unlink()
+        except FileNotFoundError:
+            pass
 
     got, gone, retry = 0, [], []
     for d, n in todo:
@@ -205,8 +246,8 @@ def main():
             print(f"   (없음) {p}")
         for p in retry:
             print(f"   (일시 오류) {p}")
-    files, gone = write_index(known_gone | set(gone))
-    print(f"목록 {len(files)}개 · 없는 것 {len(gone)}개 → {OUT / 'index.json'}")
+    files, gone = write_index(known_gone | set(gone), need, have)
+    print(f"임시본 {len(files)}개 · 아직 어디에도 없는 것 {len(gone)}개 · need {len(need)}개 → {OUT / 'index.json'}")
     return 3 if retry else 0                 # 3 = 일부를 못 받았다(다시 돌리면 된다)
 
 

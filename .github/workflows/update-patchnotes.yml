@@ -12,6 +12,11 @@
 #                        내 Pages(무료 호스팅)에는 요청이 한 개도 가지 않는다.
 #   둘 다 끝나면 커밋·푸시하고 배포를 깨운다. PC 가 꺼져 있어도 돈다.
 #
+#   · **아이콘 목록 맞추기** — 새 빌드가 없는 회차에도 요청 1개로 이미지 저장소를 확인한다.
+#       사이트가 부르는데 없는 아이콘은 site/images/index.json 의 `need` 에 적어 두고,
+#       이미지 저장소(SIN0NIS/images)가 30분 뒤 그것만 블리자드에서 꺼내 올린다.
+#       올라온 것은 여기서 임시본을 치우고 `missing` 에서 뺀다.
+#
 # 여기서 처리하지 않고 알림만 남기는 것
 #   · 한국어판이 없는 영문 노트 → 번역이 필요하다(Claude 예약 작업이 로컬에서 한다)
 #   · 새 게임 빌드 반영이 **실패했을 때** → 이슈로 알리고 이 실행을 실패로 남긴다(메일이 간다)
@@ -175,7 +180,7 @@ jobs:
 
           git config user.name  "hots-scrap-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add site/data site/images
+          git add -A site/data site/images
           if git diff --cached --quiet; then
             echo "바뀐 파일이 없습니다."
             exit 0
@@ -189,11 +194,38 @@ jobs:
           git push || { git pull --rebase --autostash && git push; }
           echo "pushed=1" >> "$GITHUB_OUTPUT"
 
+      # ───────────── 아이콘 목록 맞추기 ─────────────
+      # 새 빌드가 난 회차는 위에서 이미 했다. 그 밖의 회차에는 요청 1개(GitHub 트리 API)로
+      # 이미지 저장소를 보고, 들어온 것은 임시본을 치우고 목록을 고친다. 바뀐 게 없으면 커밋도 없다.
+      - name: 아이콘 목록 맞추기 (요청 3~5개)
+        id: icons
+        # 새 빌드를 반영한 회차는 위에서 이미 했다. 그 밖의 회차(빌드 없음·확인 실패·반영 실패)에는 여기서 한다
+        # — 반영이 실패해도 아이콘 목록은 맞춰야 이미지 저장소에 들어온 그림이 화면에 나온다.
+        if: ${{ !cancelled() && steps.builds.outcome != 'success' }}
+        continue-on-error: true      # 아이콘 목록이 어긋나도 다른 일은 살린다
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -e
+          python pipeline/steps/fetch_missing_icons.py || echo "::warning::급한 임시본 일부를 못 받았습니다(이미지 저장소가 곧 채웁니다)"
+          git config user.name  "hots-scrap-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A site/images
+          if git diff --cached --quiet; then
+            echo "아이콘 목록이 그대로입니다."
+            exit 0
+          fi
+          git commit -m "아이콘: 이미지 저장소와 목록 맞춤
+
+          GitHub Actions 가 자동으로 맞췄습니다 — 들어온 아이콘은 임시본을 치우고, 없는 것은 need 에 적었습니다."
+          git push || { git pull --rebase --autostash && git push; }
+          echo "pushed=1" >> "$GITHUB_OUTPUT"
+
       # GITHUB_TOKEN 으로 한 푸시는 다른 워크플로를 깨우지 못한다(재귀 방지 규칙).
       # 그래서 Deploy Pages(push 로 도는 워크플로)가 그냥 넘어가 사이트가 갱신되지 않는다.
       # workflow_dispatch 는 그 규칙의 예외라, 배포를 여기서 직접 깨운다.
       - name: 배포 깨우기 (토큰 푸시는 배포를 자동으로 깨우지 못한다)
-        if: steps.commit.outputs.pushed == '1' || steps.builds.outputs.pushed == '1'
+        if: steps.commit.outputs.pushed == '1' || steps.builds.outputs.pushed == '1' || steps.icons.outputs.pushed == '1'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: gh workflow run pages.yml --ref "${GITHUB_REF_NAME}"
