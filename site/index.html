@@ -187,6 +187,7 @@
   <p class="sub">Salvaging every scrap of the Storm — heroes, builds &amp; replays.</p>
   <p class="build" id="build">데이터 버전 확인 중…</p>
   <p class="check" id="check"></p>
+  <div id="admin" hidden></div>
   <div class="grid" id="grid"></div>
   <p class="foot">
     비영리 팬 프로젝트 — Heroes of the Storm™ 및 관련 자산의 권리는 Blizzard Entertainment 에 있습니다.<br>
@@ -296,6 +297,129 @@
       '<p>' + esc(app.desc) + when + '</p>';
     grid.appendChild(a);
   }
+})();
+
+/* ───────── 나만 쓰는 수동 갱신 ─────────
+   6시간을 안 기다리고 지금 바로 갱신을 돌린다. 공개 사이트라 '숨긴 단추'만으로는 못 막으므로,
+   **내 GitHub 토큰이 이 브라우저에 저장돼 있을 때만** 단추가 보이고 동작한다.
+   토큰은 localStorage 에만 있고(이 브라우저 밖으로 안 나간다), 사이트는 전부 정적이라
+   보내는 곳은 api.github.com 뿐이다. 남의 브라우저에는 이 줄이 아예 그려지지 않는다.
+
+   처음 한 번: 주소 끝에 #admin 을 붙여 연다 → 토큰을 넣고 저장.
+   토큰은 fine-grained PAT 로 저장소 두 개(hots-scrap, images)에 **Actions: Read and write** 만 주면 된다.
+   잃어버리거나 남이 알게 되면 GitHub 에서 그 토큰만 지우면 끝이다. */
+(function () {
+  var KEY = 'scrap.gh';
+  var JOBS = [
+    { repo: 'SIN0NIS/hots-scrap', wf: 'update-patchnotes.yml', name: '패치 자료' },
+    { repo: 'SIN0NIS/images', wf: 'pick-icons.yml', name: '아이콘' }
+  ];
+  var box = document.getElementById('admin');
+  var esc2 = function (s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+    return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); };
+  function tok() { try { return localStorage.getItem(KEY) || ''; } catch (e) { return ''; } }
+  function hdr() {
+    return { Authorization: 'Bearer ' + tok(), Accept: 'application/vnd.github+json',
+             'X-GitHub-Api-Version': '2022-11-28' };
+  }
+  if (!tok() && location.hash !== '#admin') return;     // 남에게는 없는 것과 같다
+
+  box.hidden = false;
+  box.style.cssText = 'margin:-6px 0 14px;font-size:12px;color:var(--dim,#5d6d84);line-height:1.8';
+  var S = 'font:inherit;padding:5px 10px;border-radius:7px;border:1px solid var(--line,#cdd9ea);cursor:pointer;background:transparent;color:inherit';
+
+  function setup(msg) {
+    box.innerHTML = '<b>수동 갱신 설정</b> — GitHub 토큰을 이 브라우저에만 저장합니다.<br>'
+      + '<input id="adm-t" type="password" placeholder="github_pat_..." autocomplete="off" '
+      + 'style="font:inherit;padding:5px 8px;border-radius:7px;border:1px solid var(--line,#cdd9ea);width:min(320px,70vw)"> '
+      + '<button id="adm-save" style="' + S + '">저장</button> '
+      + '<span id="adm-msg">' + (msg || '') + '</span><br>'
+      + '<span style="opacity:.8">fine-grained 토큰에 <b>hots-scrap</b>·<b>images</b> 두 저장소의 '
+      + '<b>Actions: Read and write</b> 권한만 주면 됩니다.</span>';
+    document.getElementById('adm-save').onclick = async function () {
+      var v = document.getElementById('adm-t').value.trim();
+      var m = document.getElementById('adm-msg');
+      if (!v) { m.textContent = '토큰을 넣어 주세요'; return; }
+      m.textContent = '확인 중…';
+      try { localStorage.setItem(KEY, v); } catch (e) {}
+      try {
+        // 진짜 쓸 수 있는 토큰인지 먼저 본다 — 아니면 저장해 두지 않는다
+        var r = await fetch('https://api.github.com/repos/SIN0NIS/hots-scrap/actions/workflows', { headers: hdr() });
+        if (!r.ok) throw new Error(r.status === 401 ? '토큰이 잘못됐습니다' : ('권한이 모자랍니다 (' + r.status + ')'));
+        panel('저장했습니다.');
+      } catch (e) {
+        try { localStorage.removeItem(KEY); } catch (e2) {}
+        m.textContent = '✗ ' + e.message;
+      }
+    };
+  }
+
+  function panel(msg) {
+    box.innerHTML = '<button id="adm-run" style="' + S + ';border-color:var(--gold-line,#d7b45c)">⟳ 지금 갱신</button> '
+      + '<span id="adm-msg">' + esc2(msg || '6시간을 기다리지 않고 바로 확인합니다.') + '</span> '
+      + '<button id="adm-out" style="' + S + ';opacity:.6">토큰 지우기</button>';
+    document.getElementById('adm-out').onclick = function () {
+      try { localStorage.removeItem(KEY); } catch (e) {}
+      setup('지웠습니다.');
+    };
+    document.getElementById('adm-run').onclick = run;
+  }
+
+  async function run() {
+    var btn = document.getElementById('adm-run'), m = document.getElementById('adm-msg');
+    btn.disabled = true;
+    var started = {};
+    try {
+      for (var i = 0; i < JOBS.length; i++) {
+        var j = JOBS[i];
+        // 지금 무엇이 마지막 실행인지 적어 둔다 — 새로 시작된 것을 가려내려고
+        var prev = await lastRun(j);
+        started[j.repo + '/' + j.wf] = prev ? prev.id : 0;
+        var r = await fetch('https://api.github.com/repos/' + j.repo + '/actions/workflows/' + j.wf + '/dispatches',
+          { method: 'POST', headers: hdr(), body: JSON.stringify({ ref: 'main' }) });
+        if (r.status !== 204) throw new Error(j.name + ' 시작 실패 (' + r.status + ')');
+      }
+    } catch (e) {
+      m.textContent = '✗ ' + e.message; btn.disabled = false; return;
+    }
+    var t0 = Date.now(), state = JOBS.map(function () { return '대기'; });
+    for (var n = 0; n < 45; n++) {                       // 8초마다, 최대 6분쯤 지켜본다
+      await new Promise(function (ok) { setTimeout(ok, 8000); });
+      var lines = [], done = 0;
+      for (var k = 0; k < JOBS.length; k++) {
+        var job = JOBS[k];
+        if (state[k] === '끝' || state[k] === '실패') {   // 끝난 것은 더 묻지 않는다(요청 아끼기)
+          done++; lines.push(job.name + ' ' + state[k]); continue;
+        }
+        var cur = await lastRun(job);
+        var fresh = cur && cur.id !== started[job.repo + '/' + job.wf];
+        state[k] = !fresh ? '대기' : (cur.status !== 'completed' ? '도는 중'
+          : (cur.conclusion === 'success' ? '끝' : '실패'));
+        if (state[k] === '끝' || state[k] === '실패') done++;
+        lines.push(job.name + ' ' + state[k]);
+      }
+      m.textContent = lines.join(' · ') + ' (' + Math.round((Date.now() - t0) / 1000) + '초)';
+      if (done === JOBS.length) {
+        m.innerHTML = lines.join(' · ') + ' — <a href="javascript:location.reload()">새로고침</a> 하면 반영된 것이 보입니다';
+        btn.disabled = false;
+        return;
+      }
+    }
+    m.textContent = '아직 도는 중입니다. 잠시 뒤 새로고침해 보세요.';
+    btn.disabled = false;
+  }
+
+  async function lastRun(j) {
+    try {
+      var r = await fetch('https://api.github.com/repos/' + j.repo + '/actions/workflows/' + j.wf
+        + '/runs?per_page=1', { headers: hdr() });
+      if (!r.ok) return null;
+      var d = await r.json();
+      return (d.workflow_runs || [])[0] || null;
+    } catch (e) { return null; }
+  }
+
+  if (tok()) panel(); else setup();
 })();
 </script>
 </body>
