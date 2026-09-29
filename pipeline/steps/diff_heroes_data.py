@@ -97,6 +97,12 @@ def skel(s):
 
 
 # ---------- 어댑터 ----------
+def gen_of(b):
+    """자료 형식 세대 — 옛 형식(4.x, heroes-data)인가 새 형식(5.x)인가.
+    출처 이름으로 가르지 마라. 내 PC 설치본에서 뽑은 것(local-install)도 새 형식이다."""
+    return "hdp4" if b.get("repo") == "heroes-data" else "hdp5"
+
+
 def normalize(herodata, kokr):
     if "items" in herodata and "meta" in herodata:
         out = norm5(herodata["items"], kokr["items"])
@@ -666,7 +672,7 @@ def main():
                 base = load_norm(prev)
             cur = normalize(load(b["herodata"]), load(b["kokr"]))
             fills = Fills()
-            same_gen = prev.get("repo") == b.get("repo")
+            same_gen = gen_of(prev) == gen_of(b)
             heroes = diff_builds(base, cur, same_gen, fills)
             summary = summarize(heroes)
             doc = {"from": prev["version"], "to": b["version"], "fromBuild": prev["build"], "toBuild": b["build"],
