@@ -1,0 +1,1200 @@
+{
+ "date": "2026-09-29",
+ "kind": "live",
+ "title": "히어로즈 오브 더 스톰 라이브 패치 노트 - 2026년 9월 29일",
+ "source": "https://news.blizzard.com/ko-kr/article/24303007/2026-9-29",
+ "published": "2026-09-28T19:35:25Z",
+ "sections": [
+  {
+   "name": "머리말",
+   "key": "intro",
+   "html": "<p>히어로즈 오브 더 스톰의 새로운 패치가 찾아왔습니다! 아래에서 자세한 정보를 확인하세요.</p>\n<p><span class=\"pn-new\"><b>참고: 주황색 텍스트는 공개 테스트 서버 이후에 변경된 내용입니다.</b></span></p>"
+  },
+  {
+   "name": "신규 영웅: 잘아타스",
+   "key": "new_hero",
+   "html": "<p>시공의 폭풍에 잘아타스가 찾아왔습니다!</p>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">그림자 표식 [Q]</strong>\n<ul>\n<li>적중한 적들에게 75의 피해를 주는 공허 보주 하나를 발사합니다. 중심부에 적중당한 적들은 150의 추가 피해를 받습니다.</li>\n<li>적 영웅 또는 구조물이 공허 보주의 중심부에 적중당하면 4초 동안 표식이 찍힙니다.</li>\n<li>그림자 표식에 걸린 대상은 모습이 드러나며, 자신의 위치로 검은 심장과 공허 하수인을 끌어당깁니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">검은 심장의 의식 [W]</strong>\n<ul>\n<li>검은 심장을 소환합니다. 심장은 맥동하며 8초 동안 매초 주위 적들에게 50의 피해를 줍니다.</li>\n<li>검은 심장은 그림자 표식의 적중 위치로 이동합니다.</li>\n<li>검은 심장은 그림자 표식이 찍힌 대상을 추적하고 적중 시 폭발해, 주위 적들에게 305의 피해를 주고 표식이 찍힌 대상에게 150의 추가 피해를 줍니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">공허 걸음 [E]</strong>\n<ul>\n<li>시전 시 잘아타스가 3회에 걸쳐 삼각형 패턴으로 순간이동합니다.</li>\n<li>잘아타스가 순간이동할 때마다 기술이 활성화된 동안 일반 공격이 10%의 추가 피해를 줍니다.</li>\n<li>재사용 시 공허 걸음을 일찍 끝내 현재 위치에 머무릅니다.</li>\n<li>무기 추가 피해 상한은 +30%입니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">공허 화살 [고유 능력]</strong>\n<ul>\n<li>일반 공격으로 적을 5회 적중시키면 잘아타스가 공허 화살을 사용해 대상 위치에 공허 보주 6개를 연달아 발사할 수 있습니다. 각 보주는 적중 시 90의 피해를 줍니다.</li>\n<li>잘아타스가 6초 동안 일반 공격으로 적을 적중시키지 않으면 충전이 모두 사라집니다.</li>\n<li><strong>퀘스트:</strong> 공허 화살로 적 영웅을 적중시킬 때마다 1중첩을 얻고 공허 화살의 피해가 1% 증가합니다. 사망하면 모든 중첩을 잃습니다.\n\t\t<ul>\n<li><strong>보상(20중첩):</strong> 공허 화살 사거리가 2 증가합니다. 잘아타스가 죽어도 6중첩만 잃으며, 중첩 수는 현재 이정표 기점 아래로 내려가지 않습니다.</li>\n<li><strong>보상(60중첩):</strong> 공허 화살 충전에 필요한 일반 공격 횟수가 1 감소합니다.</li>\n<li><strong>신화 보상(100중첩):</strong> 일반 공격 및 공허 화살 피해가 50% 증가합니다. 공허 화살 투사체가 모든 대상을 관통합니다.</li>\n</ul>\n</li>\n<li>사망으로 중첩을 잃더라도 이미 달성한 퀘스트 보상의 중첩 기준 아래로 내려가지 않습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">공허의 달인</strong>\n<ul>\n<li><strong>퀘스트:</strong> 그림자 표식에 걸린 대상에게 검은 심장을 폭발시켜야 합니다.</li>\n<li>성공적으로 폭발시킬 때마다 그림자 표식과 검은 심장의 의식 폭발 피해가 25만큼 영구적으로 증가하며, 최대 20회까지 적용됩니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">고정 핵</strong>\n<ul>\n<li>검은 심장 범위가 50% 증가하고 지속시간이 25% 증가합니다.</li>\n<li>검은 심장 피해가 주 대상에게서 주위 적들에게 2회 튕겨 25의 피해를 줍니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">그림자 망토</strong>\n<ul>\n<li>공허 걸음 사용 시 2초 동안 이동 속도가 50%, 기술 방어력이 25 증가합니다. 이 효과는 잘아타스가 순간이동할 때마다 갱신됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>4레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">겁먹은 걸음</strong>\n<ul>\n<li>그림자 표식 지속시간이 1초 증가합니다.</li>\n<li>그림자 표식에 걸린 영웅은 이동 속도가 25% 감소합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">검은 방벽</strong>\n<ul>\n<li>검은 심장이 적에게 피해를 줄 때마다 잘아타스가 최대 생명력의 2%에 해당하는 보호막을 최대 10%까지 얻습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">공허의 수행사제</strong>\n<ul>\n<li>공허 걸음을 완료하면 공허 화살이 완전히 충전됩니다.</li>\n<li>다음 공허 화살이 주는 피해가 50% 증가하고 마나를 소모하지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">맹독 표식</strong>\n<ul>\n<li>그림자 표식 지속시간이 1초 증가합니다.</li>\n<li>그림자 표식에 걸린 영웅은 방어력이 15만큼 감소하며 1초마다 최대 생명력의 1%에 해당하는 피해를 받습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">양의 침묵</strong>\n<ul>\n<li>공허 걸음을 사용하면 지면에 공허 마법의 인장을 소환합니다. 인장이 완성되면 내부의 적들에게 250의 피해를 주고 2초 동안 침묵시킵니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">공허의 소환자</strong>\n<ul>\n<li>공허 걸음을 사용하면 잘아타스의 원래 위치에 공허 하수인 하나가 소환됩니다. 공허 하수인은 그림자 표식이 찍힌 대상에게 이끌립니다.</li>\n<li>공허 하수인은 자동으로 주위의 공격로를 선택하여 진격합니다.</li>\n<li>공허 하수인의 일반 공격은 적중할 때마다 95의 피해를 줍니다. 공허 하수인은 15초에 걸쳐 생명력을 잃습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>10레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">공허 폭발 [R]</strong>\n<ul>\n<li>강력한 공허 보주 하나에 정신을 집중합니다. 보주는 점점 커져 2초 후 최대 크기에 도달합니다. 다시 사용하면 보주를 일찍 발사합니다.</li>\n<li>보주와 접촉한 적들은 최대 112의 피해를 받고 1초 동안 실명됩니다.</li>\n<li>보주가 경로 끝에 도달하면 대규모 폭발을 일으켜 400의 피해를 줍니다.</li>\n<li>이 기술을 충전하면 접촉 시 피해가 최대 175까지 증가하고, 폭발 피해는 최대 700까지 증가합니다.</li>\n<li>0.25초마다 접촉 피해를 줍니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">공허 집결 [R]</strong>\n<ul>\n<li>2초 동안 정신을 집중한 후 공허 차원문을 소환하여 최대 3기의 공허 하수인을 생성해 주위 적들을 공격하게 합니다.</li>\n<li>공허 차원문은 최대 1개까지 활성화할 수 있습니다.</li>\n<li>공허 차원문 근처의 적들은 25%만큼 감속됩니다.</li>\n<li>공허 하수인은 자동으로 주위의 공격로를 선택하여 진격합니다.</li>\n<li>공허 하수인은 그림자 표식이 찍힌 대상에게 이끌립니다.</li>\n<li>차원문은 12초 후에 만료됩니다.</li>\n<li>공허 하수인의 일반 공격은 적중할 때마다 56의 피해를 줍니다.</li>\n<li>공허 하수인은 12초에 걸쳐 생명력을 잃습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">검은 심장의 인력</strong>\n<ul>\n<li>적이 검은 심장의 의식의 맥동으로 피해를 받을 때마다 10%만큼 감속됩니다. 최대 5회 중첩되고 2초에 걸쳐 감소합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">검은 심장의 가호</strong>\n<ul>\n<li>검은 심장의 의식을 시전하면 반경 내의 적을 1초 동안 침묵시킵니다.</li>\n<li>검은 심장 반경 내의 잘아타스와 아군 영웅들이 30의 기술 방어력을 얻습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">파괴의 폭포</strong>\n<ul>\n<li>공허 화살이 적중한 적들이 2초 동안 투사체당 6%만큼, 최대 50%까지 감속됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">표식의 생존력</strong>\n<ul>\n<li>그림자 표식에 걸린 적 대상에게 일반 공격을 가하면 빠르게 사라지는 180의 보호막이 부여됩니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">끊임없는 속삭임</strong>\n<ul>\n<li>공허 걸음이 활성화된 동안 잘아타스의 일반 공격 속도가 150% 증가합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">조각난 현실</strong>\n<ul>\n<li>공허 화살 투사체 피해가 25% 증가합니다.</li>\n<li>공허 화살의 투사체가 3초 동안 지속되는 불길을 남겨, 적에게 지속적으로 9의 피해를 줍니다.</li>\n<li>대상이 불길에 오래 서 있을수록 주는 피해가 증가합니다.</li>\n<li>0.1875초마다 피해를 줍니다.</li>\n<li>피해가 최대 300% 증가합니다.</li>\n<li>불길이 여러 번 중첩되면 피해가 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">전령의 소모</strong>\n<ul>\n<li>공허 폭발이 3개의 공허 보주로 분열되어 주위를 맴돕니다. 폭발이 적중한 적 영웅 하나당 공허 폭발의 재사용 대기시간이 14초 감소합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">균열 침입</strong>\n<ul>\n<li>공허 집결의 공허 차원문이 지속시간이 지나도 사라지지 않으며, 공허 차원문을 2개까지 활성화할 수 있게 됩니다. 또한 최대 4기의 공허 하수인을 생성해 유지합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">결투의 보주</strong>\n<ul>\n<li>그림자 표식 충전 횟수가 1 증가합니다.</li>\n<li>그림자 표식 사용 간에 3초의 재사용 대기시간이 발생합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">불안정한 핵</strong>\n<ul>\n<li>검은 심장이 만료되거나 그림자 표식에 걸린 적 영웅에게 폭발하면 5초 동안 공허 화염 웅덩이를 남깁니다.</li>\n<li>화염 속에 있는 적들은 45의 지속 피해를 받습니다.</li>\n<li>화염은 1초마다 피해를 줍니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">역설의 고리</strong>\n<ul>\n<li>공허 걸음을 완료하면 잘아타스가 즉시 반대 방향으로 두 번째 공허 걸음을 사용합니다. 추가 효과가 다시 발동됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+   "heroes": [
+    {
+     "name": "잘아타스",
+     "heroId": "Xalatath",
+     "heroIds": [
+      "Xalatath"
+     ],
+     "changes": [
+      {
+       "name": "그림자 표식",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "적중한 적들에게 75의 피해를 주는 공허 보주 하나를 발사합니다. 중심부에 적중당한 적들은 150의 추가 피해를 받습니다.",
+         "html": "적중한 적들에게 75의 피해를 주는 공허 보주 하나를 발사합니다. 중심부에 적중당한 적들은 150의 추가 피해를 받습니다.",
+         "added": false
+        },
+        {
+         "text": "적 영웅 또는 구조물이 공허 보주의 중심부에 적중당하면 4초 동안 표식이 찍힙니다.",
+         "html": "적 영웅 또는 구조물이 공허 보주의 중심부에 적중당하면 4초 동안 표식이 찍힙니다.",
+         "added": false
+        },
+        {
+         "text": "그림자 표식에 걸린 대상은 모습이 드러나며, 자신의 위치로 검은 심장과 공허 하수인을 끌어당깁니다.",
+         "html": "그림자 표식에 걸린 대상은 모습이 드러나며, 자신의 위치로 검은 심장과 공허 하수인을 끌어당깁니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "검은 심장의 의식",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "검은 심장을 소환합니다. 심장은 맥동하며 8초 동안 매초 주위 적들에게 50의 피해를 줍니다.",
+         "html": "검은 심장을 소환합니다. 심장은 맥동하며 8초 동안 매초 주위 적들에게 50의 피해를 줍니다.",
+         "added": false
+        },
+        {
+         "text": "검은 심장은 그림자 표식의 적중 위치로 이동합니다.",
+         "html": "검은 심장은 그림자 표식의 적중 위치로 이동합니다.",
+         "added": false
+        },
+        {
+         "text": "검은 심장은 그림자 표식이 찍힌 대상을 추적하고 적중 시 폭발해, 주위 적들에게 305의 피해를 주고 표식이 찍힌 대상에게 150의 추가 피해를 줍니다.",
+         "html": "검은 심장은 그림자 표식이 찍힌 대상을 추적하고 적중 시 폭발해, 주위 적들에게 305의 피해를 주고 표식이 찍힌 대상에게 150의 추가 피해를 줍니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "공허 걸음",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "시전 시 잘아타스가 3회에 걸쳐 삼각형 패턴으로 순간이동합니다.",
+         "html": "시전 시 잘아타스가 3회에 걸쳐 삼각형 패턴으로 순간이동합니다.",
+         "added": false
+        },
+        {
+         "text": "잘아타스가 순간이동할 때마다 기술이 활성화된 동안 일반 공격이 10%의 추가 피해를 줍니다.",
+         "html": "잘아타스가 순간이동할 때마다 기술이 활성화된 동안 일반 공격이 10%의 추가 피해를 줍니다.",
+         "added": false
+        },
+        {
+         "text": "재사용 시 공허 걸음을 일찍 끝내 현재 위치에 머무릅니다.",
+         "html": "재사용 시 공허 걸음을 일찍 끝내 현재 위치에 머무릅니다.",
+         "added": false
+        },
+        {
+         "text": "무기 추가 피해 상한은 +30%입니다.",
+         "html": "무기 추가 피해 상한은 +30%입니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "공허 화살",
+       "key": "고유 능력",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "일반 공격으로 적을 5회 적중시키면 잘아타스가 공허 화살을 사용해 대상 위치에 공허 보주 6개를 연달아 발사할 수 있습니다. 각 보주는 적중 시 90의 피해를 줍니다.",
+         "html": "일반 공격으로 적을 5회 적중시키면 잘아타스가 공허 화살을 사용해 대상 위치에 공허 보주 6개를 연달아 발사할 수 있습니다. 각 보주는 적중 시 90의 피해를 줍니다.",
+         "added": false
+        },
+        {
+         "text": "잘아타스가 6초 동안 일반 공격으로 적을 적중시키지 않으면 충전이 모두 사라집니다.",
+         "html": "잘아타스가 6초 동안 일반 공격으로 적을 적중시키지 않으면 충전이 모두 사라집니다.",
+         "added": false
+        },
+        {
+         "text": "사망으로 중첩을 잃더라도 이미 달성한 퀘스트 보상의 중첩 기준 아래로 내려가지 않습니다.",
+         "html": "사망으로 중첩을 잃더라도 이미 달성한 퀘스트 보상의 중첩 기준 아래로 내려가지 않습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "퀘스트: 공허 화살로 적 영웅을 적중시킬 때마다 1중첩을 얻고 공허 화살의 피해가 1% 증가합니다. 사망하면 모든 중첩을 잃습니다.",
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "보상(20중첩): 공허 화살 사거리가 2 증가합니다. 잘아타스가 죽어도 6중첩만 잃으며, 중첩 수는 현재 이정표 기점 아래로 내려가지 않습니다.",
+         "html": "<strong>보상(20중첩):</strong> 공허 화살 사거리가 2 증가합니다. 잘아타스가 죽어도 6중첩만 잃으며, 중첩 수는 현재 이정표 기점 아래로 내려가지 않습니다.",
+         "added": false
+        },
+        {
+         "text": "보상(60중첩): 공허 화살 충전에 필요한 일반 공격 횟수가 1 감소합니다.",
+         "html": "<strong>보상(60중첩):</strong> 공허 화살 충전에 필요한 일반 공격 횟수가 1 감소합니다.",
+         "added": false
+        },
+        {
+         "text": "신화 보상(100중첩): 일반 공격 및 공허 화살 피해가 50% 증가합니다. 공허 화살 투사체가 모든 대상을 관통합니다.",
+         "html": "<strong>신화 보상(100중첩):</strong> 일반 공격 및 공허 화살 피해가 50% 증가합니다. 공허 화살 투사체가 모든 대상을 관통합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "공허의 달인",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "퀘스트: 그림자 표식에 걸린 대상에게 검은 심장을 폭발시켜야 합니다.",
+         "html": "<strong>퀘스트:</strong> 그림자 표식에 걸린 대상에게 검은 심장을 폭발시켜야 합니다.",
+         "added": false
+        },
+        {
+         "text": "성공적으로 폭발시킬 때마다 그림자 표식과 검은 심장의 의식 폭발 피해가 25만큼 영구적으로 증가하며, 최대 20회까지 적용됩니다.",
+         "html": "성공적으로 폭발시킬 때마다 그림자 표식과 검은 심장의 의식 폭발 피해가 25만큼 영구적으로 증가하며, 최대 20회까지 적용됩니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "고정 핵",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "검은 심장 범위가 50% 증가하고 지속시간이 25% 증가합니다.",
+         "html": "검은 심장 범위가 50% 증가하고 지속시간이 25% 증가합니다.",
+         "added": false
+        },
+        {
+         "text": "검은 심장 피해가 주 대상에게서 주위 적들에게 2회 튕겨 25의 피해를 줍니다.",
+         "html": "검은 심장 피해가 주 대상에게서 주위 적들에게 2회 튕겨 25의 피해를 줍니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "그림자 망토",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "공허 걸음 사용 시 2초 동안 이동 속도가 50%, 기술 방어력이 25 증가합니다. 이 효과는 잘아타스가 순간이동할 때마다 갱신됩니다.",
+         "html": "공허 걸음 사용 시 2초 동안 이동 속도가 50%, 기술 방어력이 25 증가합니다. 이 효과는 잘아타스가 순간이동할 때마다 갱신됩니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "겁먹은 걸음",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "그림자 표식 지속시간이 1초 증가합니다.",
+         "html": "그림자 표식 지속시간이 1초 증가합니다.",
+         "added": false
+        },
+        {
+         "text": "그림자 표식에 걸린 영웅은 이동 속도가 25% 감소합니다.",
+         "html": "그림자 표식에 걸린 영웅은 이동 속도가 25% 감소합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "검은 방벽",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "검은 심장이 적에게 피해를 줄 때마다 잘아타스가 최대 생명력의 2%에 해당하는 보호막을 최대 10%까지 얻습니다.",
+         "html": "검은 심장이 적에게 피해를 줄 때마다 잘아타스가 최대 생명력의 2%에 해당하는 보호막을 최대 10%까지 얻습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "공허의 수행사제",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "공허 걸음을 완료하면 공허 화살이 완전히 충전됩니다.",
+         "html": "공허 걸음을 완료하면 공허 화살이 완전히 충전됩니다.",
+         "added": false
+        },
+        {
+         "text": "다음 공허 화살이 주는 피해가 50% 증가하고 마나를 소모하지 않습니다.",
+         "html": "다음 공허 화살이 주는 피해가 50% 증가하고 마나를 소모하지 않습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "맹독 표식",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "그림자 표식 지속시간이 1초 증가합니다.",
+         "html": "그림자 표식 지속시간이 1초 증가합니다.",
+         "added": false
+        },
+        {
+         "text": "그림자 표식에 걸린 영웅은 방어력이 15만큼 감소하며 1초마다 최대 생명력의 1%에 해당하는 피해를 받습니다.",
+         "html": "그림자 표식에 걸린 영웅은 방어력이 15만큼 감소하며 1초마다 최대 생명력의 1%에 해당하는 피해를 받습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "양의 침묵",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "공허 걸음을 사용하면 지면에 공허 마법의 인장을 소환합니다. 인장이 완성되면 내부의 적들에게 250의 피해를 주고 2초 동안 침묵시킵니다.",
+         "html": "공허 걸음을 사용하면 지면에 공허 마법의 인장을 소환합니다. 인장이 완성되면 내부의 적들에게 250의 피해를 주고 2초 동안 침묵시킵니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "공허의 소환자",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "공허 걸음을 사용하면 잘아타스의 원래 위치에 공허 하수인 하나가 소환됩니다. 공허 하수인은 그림자 표식이 찍힌 대상에게 이끌립니다.",
+         "html": "공허 걸음을 사용하면 잘아타스의 원래 위치에 공허 하수인 하나가 소환됩니다. 공허 하수인은 그림자 표식이 찍힌 대상에게 이끌립니다.",
+         "added": false
+        },
+        {
+         "text": "공허 하수인은 자동으로 주위의 공격로를 선택하여 진격합니다.",
+         "html": "공허 하수인은 자동으로 주위의 공격로를 선택하여 진격합니다.",
+         "added": false
+        },
+        {
+         "text": "공허 하수인의 일반 공격은 적중할 때마다 95의 피해를 줍니다. 공허 하수인은 15초에 걸쳐 생명력을 잃습니다.",
+         "html": "공허 하수인의 일반 공격은 적중할 때마다 95의 피해를 줍니다. 공허 하수인은 15초에 걸쳐 생명력을 잃습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "공허 폭발",
+       "key": "R",
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "강력한 공허 보주 하나에 정신을 집중합니다. 보주는 점점 커져 2초 후 최대 크기에 도달합니다. 다시 사용하면 보주를 일찍 발사합니다.",
+         "html": "강력한 공허 보주 하나에 정신을 집중합니다. 보주는 점점 커져 2초 후 최대 크기에 도달합니다. 다시 사용하면 보주를 일찍 발사합니다.",
+         "added": false
+        },
+        {
+         "text": "보주와 접촉한 적들은 최대 112의 피해를 받고 1초 동안 실명됩니다.",
+         "html": "보주와 접촉한 적들은 최대 112의 피해를 받고 1초 동안 실명됩니다.",
+         "added": false
+        },
+        {
+         "text": "보주가 경로 끝에 도달하면 대규모 폭발을 일으켜 400의 피해를 줍니다.",
+         "html": "보주가 경로 끝에 도달하면 대규모 폭발을 일으켜 400의 피해를 줍니다.",
+         "added": false
+        },
+        {
+         "text": "이 기술을 충전하면 접촉 시 피해가 최대 175까지 증가하고, 폭발 피해는 최대 700까지 증가합니다.",
+         "html": "이 기술을 충전하면 접촉 시 피해가 최대 175까지 증가하고, 폭발 피해는 최대 700까지 증가합니다.",
+         "added": false
+        },
+        {
+         "text": "0.25초마다 접촉 피해를 줍니다.",
+         "html": "0.25초마다 접촉 피해를 줍니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "공허 집결",
+       "key": "R",
+       "new": false,
+       "group": "talent",
+       "level": 10,
+       "lines": [
+        {
+         "text": "2초 동안 정신을 집중한 후 공허 차원문을 소환하여 최대 3기의 공허 하수인을 생성해 주위 적들을 공격하게 합니다.",
+         "html": "2초 동안 정신을 집중한 후 공허 차원문을 소환하여 최대 3기의 공허 하수인을 생성해 주위 적들을 공격하게 합니다.",
+         "added": false
+        },
+        {
+         "text": "공허 차원문은 최대 1개까지 활성화할 수 있습니다.",
+         "html": "공허 차원문은 최대 1개까지 활성화할 수 있습니다.",
+         "added": false
+        },
+        {
+         "text": "공허 차원문 근처의 적들은 25%만큼 감속됩니다.",
+         "html": "공허 차원문 근처의 적들은 25%만큼 감속됩니다.",
+         "added": false
+        },
+        {
+         "text": "공허 하수인은 자동으로 주위의 공격로를 선택하여 진격합니다.",
+         "html": "공허 하수인은 자동으로 주위의 공격로를 선택하여 진격합니다.",
+         "added": false
+        },
+        {
+         "text": "공허 하수인은 그림자 표식이 찍힌 대상에게 이끌립니다.",
+         "html": "공허 하수인은 그림자 표식이 찍힌 대상에게 이끌립니다.",
+         "added": false
+        },
+        {
+         "text": "차원문은 12초 후에 만료됩니다.",
+         "html": "차원문은 12초 후에 만료됩니다.",
+         "added": false
+        },
+        {
+         "text": "공허 하수인의 일반 공격은 적중할 때마다 56의 피해를 줍니다.",
+         "html": "공허 하수인의 일반 공격은 적중할 때마다 56의 피해를 줍니다.",
+         "added": false
+        },
+        {
+         "text": "공허 하수인은 12초에 걸쳐 생명력을 잃습니다.",
+         "html": "공허 하수인은 12초에 걸쳐 생명력을 잃습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "검은 심장의 인력",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "적이 검은 심장의 의식의 맥동으로 피해를 받을 때마다 10%만큼 감속됩니다. 최대 5회 중첩되고 2초에 걸쳐 감소합니다.",
+         "html": "적이 검은 심장의 의식의 맥동으로 피해를 받을 때마다 10%만큼 감속됩니다. 최대 5회 중첩되고 2초에 걸쳐 감소합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "검은 심장의 가호",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "검은 심장의 의식을 시전하면 반경 내의 적을 1초 동안 침묵시킵니다.",
+         "html": "검은 심장의 의식을 시전하면 반경 내의 적을 1초 동안 침묵시킵니다.",
+         "added": false
+        },
+        {
+         "text": "검은 심장 반경 내의 잘아타스와 아군 영웅들이 30의 기술 방어력을 얻습니다.",
+         "html": "검은 심장 반경 내의 잘아타스와 아군 영웅들이 30의 기술 방어력을 얻습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "파괴의 폭포",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "공허 화살이 적중한 적들이 2초 동안 투사체당 6%만큼, 최대 50%까지 감속됩니다.",
+         "html": "공허 화살이 적중한 적들이 2초 동안 투사체당 6%만큼, 최대 50%까지 감속됩니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "표식의 생존력",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "그림자 표식에 걸린 적 대상에게 일반 공격을 가하면 빠르게 사라지는 180의 보호막이 부여됩니다.",
+         "html": "그림자 표식에 걸린 적 대상에게 일반 공격을 가하면 빠르게 사라지는 180의 보호막이 부여됩니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "끊임없는 속삭임",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "공허 걸음이 활성화된 동안 잘아타스의 일반 공격 속도가 150% 증가합니다.",
+         "html": "공허 걸음이 활성화된 동안 잘아타스의 일반 공격 속도가 150% 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "조각난 현실",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "공허 화살 투사체 피해가 25% 증가합니다.",
+         "html": "공허 화살 투사체 피해가 25% 증가합니다.",
+         "added": false
+        },
+        {
+         "text": "공허 화살의 투사체가 3초 동안 지속되는 불길을 남겨, 적에게 지속적으로 9의 피해를 줍니다.",
+         "html": "공허 화살의 투사체가 3초 동안 지속되는 불길을 남겨, 적에게 지속적으로 9의 피해를 줍니다.",
+         "added": false
+        },
+        {
+         "text": "대상이 불길에 오래 서 있을수록 주는 피해가 증가합니다.",
+         "html": "대상이 불길에 오래 서 있을수록 주는 피해가 증가합니다.",
+         "added": false
+        },
+        {
+         "text": "0.1875초마다 피해를 줍니다.",
+         "html": "0.1875초마다 피해를 줍니다.",
+         "added": false
+        },
+        {
+         "text": "피해가 최대 300% 증가합니다.",
+         "html": "피해가 최대 300% 증가합니다.",
+         "added": false
+        },
+        {
+         "text": "불길이 여러 번 중첩되면 피해가 증가합니다.",
+         "html": "불길이 여러 번 중첩되면 피해가 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "전령의 소모",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "공허 폭발이 3개의 공허 보주로 분열되어 주위를 맴돕니다. 폭발이 적중한 적 영웅 하나당 공허 폭발의 재사용 대기시간이 14초 감소합니다.",
+         "html": "공허 폭발이 3개의 공허 보주로 분열되어 주위를 맴돕니다. 폭발이 적중한 적 영웅 하나당 공허 폭발의 재사용 대기시간이 14초 감소합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "균열 침입",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "공허 집결의 공허 차원문이 지속시간이 지나도 사라지지 않으며, 공허 차원문을 2개까지 활성화할 수 있게 됩니다. 또한 최대 4기의 공허 하수인을 생성해 유지합니다.",
+         "html": "공허 집결의 공허 차원문이 지속시간이 지나도 사라지지 않으며, 공허 차원문을 2개까지 활성화할 수 있게 됩니다. 또한 최대 4기의 공허 하수인을 생성해 유지합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "결투의 보주",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "그림자 표식 충전 횟수가 1 증가합니다.",
+         "html": "그림자 표식 충전 횟수가 1 증가합니다.",
+         "added": false
+        },
+        {
+         "text": "그림자 표식 사용 간에 3초의 재사용 대기시간이 발생합니다.",
+         "html": "그림자 표식 사용 간에 3초의 재사용 대기시간이 발생합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "불안정한 핵",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "검은 심장이 만료되거나 그림자 표식에 걸린 적 영웅에게 폭발하면 5초 동안 공허 화염 웅덩이를 남깁니다.",
+         "html": "검은 심장이 만료되거나 그림자 표식에 걸린 적 영웅에게 폭발하면 5초 동안 공허 화염 웅덩이를 남깁니다.",
+         "added": false
+        },
+        {
+         "text": "화염 속에 있는 적들은 45의 지속 피해를 받습니다.",
+         "html": "화염 속에 있는 적들은 45의 지속 피해를 받습니다.",
+         "added": false
+        },
+        {
+         "text": "화염은 1초마다 피해를 줍니다.",
+         "html": "화염은 1초마다 피해를 줍니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "역설의 고리",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "공허 걸음을 완료하면 잘아타스가 즉시 반대 방향으로 두 번째 공허 걸음을 사용합니다. 추가 효과가 다시 발동됩니다.",
+         "html": "공허 걸음을 완료하면 잘아타스가 즉시 반대 방향으로 두 번째 공허 걸음을 사용합니다. 추가 효과가 다시 발동됩니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p>시공의 폭풍에 잘아타스가 찾아왔습니다!</p>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">그림자 표식 [Q]</strong>\n<ul>\n<li>적중한 적들에게 75의 피해를 주는 공허 보주 하나를 발사합니다. 중심부에 적중당한 적들은 150의 추가 피해를 받습니다.</li>\n<li>적 영웅 또는 구조물이 공허 보주의 중심부에 적중당하면 4초 동안 표식이 찍힙니다.</li>\n<li>그림자 표식에 걸린 대상은 모습이 드러나며, 자신의 위치로 검은 심장과 공허 하수인을 끌어당깁니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">검은 심장의 의식 [W]</strong>\n<ul>\n<li>검은 심장을 소환합니다. 심장은 맥동하며 8초 동안 매초 주위 적들에게 50의 피해를 줍니다.</li>\n<li>검은 심장은 그림자 표식의 적중 위치로 이동합니다.</li>\n<li>검은 심장은 그림자 표식이 찍힌 대상을 추적하고 적중 시 폭발해, 주위 적들에게 305의 피해를 주고 표식이 찍힌 대상에게 150의 추가 피해를 줍니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">공허 걸음 [E]</strong>\n<ul>\n<li>시전 시 잘아타스가 3회에 걸쳐 삼각형 패턴으로 순간이동합니다.</li>\n<li>잘아타스가 순간이동할 때마다 기술이 활성화된 동안 일반 공격이 10%의 추가 피해를 줍니다.</li>\n<li>재사용 시 공허 걸음을 일찍 끝내 현재 위치에 머무릅니다.</li>\n<li>무기 추가 피해 상한은 +30%입니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">공허 화살 [고유 능력]</strong>\n<ul>\n<li>일반 공격으로 적을 5회 적중시키면 잘아타스가 공허 화살을 사용해 대상 위치에 공허 보주 6개를 연달아 발사할 수 있습니다. 각 보주는 적중 시 90의 피해를 줍니다.</li>\n<li>잘아타스가 6초 동안 일반 공격으로 적을 적중시키지 않으면 충전이 모두 사라집니다.</li>\n<li><strong>퀘스트:</strong> 공허 화살로 적 영웅을 적중시킬 때마다 1중첩을 얻고 공허 화살의 피해가 1% 증가합니다. 사망하면 모든 중첩을 잃습니다.\n\t\t<ul>\n<li><strong>보상(20중첩):</strong> 공허 화살 사거리가 2 증가합니다. 잘아타스가 죽어도 6중첩만 잃으며, 중첩 수는 현재 이정표 기점 아래로 내려가지 않습니다.</li>\n<li><strong>보상(60중첩):</strong> 공허 화살 충전에 필요한 일반 공격 횟수가 1 감소합니다.</li>\n<li><strong>신화 보상(100중첩):</strong> 일반 공격 및 공허 화살 피해가 50% 증가합니다. 공허 화살 투사체가 모든 대상을 관통합니다.</li>\n</ul>\n</li>\n<li>사망으로 중첩을 잃더라도 이미 달성한 퀘스트 보상의 중첩 기준 아래로 내려가지 않습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">공허의 달인</strong>\n<ul>\n<li><strong>퀘스트:</strong> 그림자 표식에 걸린 대상에게 검은 심장을 폭발시켜야 합니다.</li>\n<li>성공적으로 폭발시킬 때마다 그림자 표식과 검은 심장의 의식 폭발 피해가 25만큼 영구적으로 증가하며, 최대 20회까지 적용됩니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">고정 핵</strong>\n<ul>\n<li>검은 심장 범위가 50% 증가하고 지속시간이 25% 증가합니다.</li>\n<li>검은 심장 피해가 주 대상에게서 주위 적들에게 2회 튕겨 25의 피해를 줍니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">그림자 망토</strong>\n<ul>\n<li>공허 걸음 사용 시 2초 동안 이동 속도가 50%, 기술 방어력이 25 증가합니다. 이 효과는 잘아타스가 순간이동할 때마다 갱신됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>4레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">겁먹은 걸음</strong>\n<ul>\n<li>그림자 표식 지속시간이 1초 증가합니다.</li>\n<li>그림자 표식에 걸린 영웅은 이동 속도가 25% 감소합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">검은 방벽</strong>\n<ul>\n<li>검은 심장이 적에게 피해를 줄 때마다 잘아타스가 최대 생명력의 2%에 해당하는 보호막을 최대 10%까지 얻습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">공허의 수행사제</strong>\n<ul>\n<li>공허 걸음을 완료하면 공허 화살이 완전히 충전됩니다.</li>\n<li>다음 공허 화살이 주는 피해가 50% 증가하고 마나를 소모하지 않습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">맹독 표식</strong>\n<ul>\n<li>그림자 표식 지속시간이 1초 증가합니다.</li>\n<li>그림자 표식에 걸린 영웅은 방어력이 15만큼 감소하며 1초마다 최대 생명력의 1%에 해당하는 피해를 받습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">양의 침묵</strong>\n<ul>\n<li>공허 걸음을 사용하면 지면에 공허 마법의 인장을 소환합니다. 인장이 완성되면 내부의 적들에게 250의 피해를 주고 2초 동안 침묵시킵니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">공허의 소환자</strong>\n<ul>\n<li>공허 걸음을 사용하면 잘아타스의 원래 위치에 공허 하수인 하나가 소환됩니다. 공허 하수인은 그림자 표식이 찍힌 대상에게 이끌립니다.</li>\n<li>공허 하수인은 자동으로 주위의 공격로를 선택하여 진격합니다.</li>\n<li>공허 하수인의 일반 공격은 적중할 때마다 95의 피해를 줍니다. 공허 하수인은 15초에 걸쳐 생명력을 잃습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>10레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">공허 폭발 [R]</strong>\n<ul>\n<li>강력한 공허 보주 하나에 정신을 집중합니다. 보주는 점점 커져 2초 후 최대 크기에 도달합니다. 다시 사용하면 보주를 일찍 발사합니다.</li>\n<li>보주와 접촉한 적들은 최대 112의 피해를 받고 1초 동안 실명됩니다.</li>\n<li>보주가 경로 끝에 도달하면 대규모 폭발을 일으켜 400의 피해를 줍니다.</li>\n<li>이 기술을 충전하면 접촉 시 피해가 최대 175까지 증가하고, 폭발 피해는 최대 700까지 증가합니다.</li>\n<li>0.25초마다 접촉 피해를 줍니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">공허 집결 [R]</strong>\n<ul>\n<li>2초 동안 정신을 집중한 후 공허 차원문을 소환하여 최대 3기의 공허 하수인을 생성해 주위 적들을 공격하게 합니다.</li>\n<li>공허 차원문은 최대 1개까지 활성화할 수 있습니다.</li>\n<li>공허 차원문 근처의 적들은 25%만큼 감속됩니다.</li>\n<li>공허 하수인은 자동으로 주위의 공격로를 선택하여 진격합니다.</li>\n<li>공허 하수인은 그림자 표식이 찍힌 대상에게 이끌립니다.</li>\n<li>차원문은 12초 후에 만료됩니다.</li>\n<li>공허 하수인의 일반 공격은 적중할 때마다 56의 피해를 줍니다.</li>\n<li>공허 하수인은 12초에 걸쳐 생명력을 잃습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">검은 심장의 인력</strong>\n<ul>\n<li>적이 검은 심장의 의식의 맥동으로 피해를 받을 때마다 10%만큼 감속됩니다. 최대 5회 중첩되고 2초에 걸쳐 감소합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">검은 심장의 가호</strong>\n<ul>\n<li>검은 심장의 의식을 시전하면 반경 내의 적을 1초 동안 침묵시킵니다.</li>\n<li>검은 심장 반경 내의 잘아타스와 아군 영웅들이 30의 기술 방어력을 얻습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">파괴의 폭포</strong>\n<ul>\n<li>공허 화살이 적중한 적들이 2초 동안 투사체당 6%만큼, 최대 50%까지 감속됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">표식의 생존력</strong>\n<ul>\n<li>그림자 표식에 걸린 적 대상에게 일반 공격을 가하면 빠르게 사라지는 180의 보호막이 부여됩니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">끊임없는 속삭임</strong>\n<ul>\n<li>공허 걸음이 활성화된 동안 잘아타스의 일반 공격 속도가 150% 증가합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">조각난 현실</strong>\n<ul>\n<li>공허 화살 투사체 피해가 25% 증가합니다.</li>\n<li>공허 화살의 투사체가 3초 동안 지속되는 불길을 남겨, 적에게 지속적으로 9의 피해를 줍니다.</li>\n<li>대상이 불길에 오래 서 있을수록 주는 피해가 증가합니다.</li>\n<li>0.1875초마다 피해를 줍니다.</li>\n<li>피해가 최대 300% 증가합니다.</li>\n<li>불길이 여러 번 중첩되면 피해가 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">전령의 소모</strong>\n<ul>\n<li>공허 폭발이 3개의 공허 보주로 분열되어 주위를 맴돕니다. 폭발이 적중한 적 영웅 하나당 공허 폭발의 재사용 대기시간이 14초 감소합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">균열 침입</strong>\n<ul>\n<li>공허 집결의 공허 차원문이 지속시간이 지나도 사라지지 않으며, 공허 차원문을 2개까지 활성화할 수 있게 됩니다. 또한 최대 4기의 공허 하수인을 생성해 유지합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">결투의 보주</strong>\n<ul>\n<li>그림자 표식 충전 횟수가 1 증가합니다.</li>\n<li>그림자 표식 사용 간에 3초의 재사용 대기시간이 발생합니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">불안정한 핵</strong>\n<ul>\n<li>검은 심장이 만료되거나 그림자 표식에 걸린 적 영웅에게 폭발하면 5초 동안 공허 화염 웅덩이를 남깁니다.</li>\n<li>화염 속에 있는 적들은 45의 지속 피해를 받습니다.</li>\n<li>화염은 1초마다 피해를 줍니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">역설의 고리</strong>\n<ul>\n<li>공허 걸음을 완료하면 잘아타스가 즉시 반대 방향으로 두 번째 공허 걸음을 사용합니다. 추가 효과가 다시 발동됩니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    }
+   ]
+  },
+  {
+   "name": "수집품",
+   "key": "collection",
+   "html": "<ul>\n<li><strong class=\"pn-h\">새로운 묶음 상품: 검은 황혼 잘아타스 묶음 상품</strong>\n<ul>\n<li>잘아타스 영웅</li>\n<li>황혼 잘아타스 스킨\n\t\t<aside class=\"gallery\">\n<figure><img alt=\"\" src=\"https://bnetcmsus-a.akamaihd.net/cms/page_media/L4KXY0QQ2QFU1790453539772.png\"/></figure>\n<figure><img alt=\"\" src=\"https://bnetcmsus-a.akamaihd.net/cms/page_media/XTZ8M0EW106F1790453539757.png\"/></figure>\n</aside>\n</li>\n<li>신도레이 불사조 탈것\n\t\t<aside class=\"gallery\">\n<figure><img alt=\"\" src=\"https://bnetcmsus-a.akamaihd.net/cms/page_media/QYNUE33H0FIO1790453539745.png\"/></figure>\n</aside>\n</li>\n</ul>\n</li>\n</ul>"
+  },
+  {
+   "name": "일반",
+   "key": "general",
+   "html": "<ul>\n<li>홈 화면과 실행 음악을 업데이트하였습니다.</li>\n<li><span class=\"pn-new\">치유의 샘 재사용 대기시간을 신호할 수 있는 기능을 추가했습니다.</span></li>\n</ul>"
+  },
+  {
+   "name": "전장 업데이트",
+   "key": "battlegrounds",
+   "html": "<ul>\n<li><strong class=\"pn-h\">공포의 정원</strong>\n<ul>\n<li>괴식물 생명력과 피해가 이전 수치보다 25% 감소한 채 시작되고, 경기가 진행되며 점차 이전 수치로 돌아갑니다.</li>\n</ul>\n</li>\n</ul>",
+   "items": [
+    {
+     "name": "공포의 정원",
+     "battleground": "garden_of_terror",
+     "html": "<strong class=\"pn-h\">공포의 정원</strong>\n<ul>\n<li>괴식물 생명력과 피해가 이전 수치보다 25% 감소한 채 시작되고, 경기가 진행되며 점차 이전 수치로 돌아갑니다.</li>\n</ul>"
+    }
+   ]
+  },
+  {
+   "name": "밸런스 업데이트",
+   "key": "balance",
+   "html": "<h3><strong>영웅</strong></h3>\n<h4>아바투르</h4>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>13레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">포격충 변종</strong>\n<ul>\n<li>생명력 감쇠 감소량이 50%에서 40%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">생존 본능</strong>\n<ul>\n<li>식충 생명력이 100% 증가하는 대신, 영웅이 아닌 대상으로부터 받는 피해가 50% 감소합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>알렉스트라자</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li>생명력이 1,698에서 1,780으로 증가했습니다.</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">분노의 화염</strong>\n<ul>\n<li>신화 보상 완료 조건이 죽지 않고 추가 적중 40회에서 30회로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">과보호</strong>\n<ul>\n<li>보호막이 치유량의 70%에서 50%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>가로쉬</h4>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">비할 데 없는 힘</strong>\n<ul>\n<li>공격력 증가량이 125%에서 75%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>4레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">살상의 기회</strong>\n<ul>\n<li>공격력 증가량이 70%에서 100%로 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">폭군</strong>\n<ul>\n<li>기술 위력 감소량이 30%에서 25%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">피의 광기</strong>\n<ul>\n<li>치유 지속시간이 3초에서 4초로 증가했습니다. 총 치유량은 그대로 유지됩니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">방어력 상승</strong>\n<ul>\n<li>방어력 증가 효과의 지속시간이 3초에서 5초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>말가니스</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">밤의 질주 [E]</strong>\n<ul>\n<li>시전 시간이 0.75초에서 0.625초로 감소했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">흡혈의 손길 [D]</strong>\n<ul>\n<li>영웅에게 준 피해에 따른 치유량이 45%에서 50%로 증가했습니다.</li>\n<li>영웅이 아닌 대상에게 준 피해에 따른 치유량이 10%에서 15%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<h4>키히라</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">피의 분노 [W]</strong>\n<ul>\n<li>중첩당 추가 공격력이 0.25%에서 0.2%로 감소했습니다.</li>\n<li>피의 분노의 주기당 기본 피해가 8에서 7로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">치명상</strong>\n<ul>\n<li>생명력이 낮은 적에게 주는 추가 피해가 50%에서 70%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">고동치는 고통</strong>\n<ul>\n<li>공격력이 135에서 150으로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">만성 통증</strong>\n<ul>\n<li>방어력 감소량이 -35에서 -25로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>화이트메인</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">절박한 기도 [Q]</strong>\n<ul>\n<li>기본 마나 소모량이 40에서 45로 증가했습니다. 사용당 증가하는 마나 소모량은 그대로입니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>7레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">중재</strong>\n<ul>\n<li>재사용 대기시간이 60초에서 75초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">광휘</strong>\n<ul>\n<li>치유량이 175에서 190으로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h4>이렐</h4>\n<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">비호 [Q]</strong>\n<ul>\n<li>마나 소모량이 50에서 65로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>13레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">알도르 평화감시자</strong>\n<ul>\n<li>공격력 감소량이 40%에서 50%로 증가했습니다.</li>\n<li>피해 감소 지속시간이 3초에서 4초로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">벨렌의 선택</strong>\n<ul>\n<li>중첩당 추가 공격력이 10%에서 8%로 감소했습니다.</li>\n<li>최대 중첩 수가 3에서 4로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">고위 천사</strong>\n<ul>\n<li>재사용 대기시간이 20초에서 30초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+   "heroes": [
+    {
+     "name": "아바투르",
+     "heroId": "Abathur",
+     "heroIds": [
+      "Abathur"
+     ],
+     "changes": [
+      {
+       "name": "포격충 변종",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "생명력 감쇠 감소량이 50%에서 40%로 감소했습니다.",
+         "html": "생명력 감쇠 감소량이 50%에서 40%로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "생존 본능",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "식충 생명력이 100% 증가하는 대신, 영웅이 아닌 대상으로부터 받는 피해가 50% 감소합니다.",
+         "html": "식충 생명력이 100% 증가하는 대신, 영웅이 아닌 대상으로부터 받는 피해가 50% 감소합니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>13레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">포격충 변종</strong>\n<ul>\n<li>생명력 감쇠 감소량이 50%에서 40%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">생존 본능</strong>\n<ul>\n<li>식충 생명력이 100% 증가하는 대신, 영웅이 아닌 대상으로부터 받는 피해가 50% 감소합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "알렉스트라자",
+     "heroId": "Alexstrasza",
+     "heroIds": [
+      "Alexstrasza"
+     ],
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "생명력이 1,698에서 1,780으로 증가했습니다.",
+         "html": "생명력이 1,698에서 1,780으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "분노의 화염",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "신화 보상 완료 조건이 죽지 않고 추가 적중 40회에서 30회로 감소했습니다.",
+         "html": "신화 보상 완료 조건이 죽지 않고 추가 적중 40회에서 30회로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "과보호",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "보호막이 치유량의 70%에서 50%로 감소했습니다.",
+         "html": "보호막이 치유량의 70%에서 50%로 감소했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li>생명력이 1,698에서 1,780으로 증가했습니다.</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">분노의 화염</strong>\n<ul>\n<li>신화 보상 완료 조건이 죽지 않고 추가 적중 40회에서 30회로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">과보호</strong>\n<ul>\n<li>보호막이 치유량의 70%에서 50%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "가로쉬",
+     "heroId": "Garrosh",
+     "heroIds": [
+      "Garrosh"
+     ],
+     "changes": [
+      {
+       "name": "비할 데 없는 힘",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "공격력 증가량이 125%에서 75%로 감소했습니다.",
+         "html": "공격력 증가량이 125%에서 75%로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "살상의 기회",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 4,
+       "lines": [
+        {
+         "text": "공격력 증가량이 70%에서 100%로 증가합니다.",
+         "html": "공격력 증가량이 70%에서 100%로 증가합니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "폭군",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "기술 위력 감소량이 30%에서 25%로 감소했습니다.",
+         "html": "기술 위력 감소량이 30%에서 25%로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "피의 광기",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "치유 지속시간이 3초에서 4초로 증가했습니다. 총 치유량은 그대로 유지됩니다.",
+         "html": "치유 지속시간이 3초에서 4초로 증가했습니다. 총 치유량은 그대로 유지됩니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "방어력 상승",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "방어력 증가 효과의 지속시간이 3초에서 5초로 증가했습니다.",
+         "html": "방어력 증가 효과의 지속시간이 3초에서 5초로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">비할 데 없는 힘</strong>\n<ul>\n<li>공격력 증가량이 125%에서 75%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>4레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">살상의 기회</strong>\n<ul>\n<li>공격력 증가량이 70%에서 100%로 증가합니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>7레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">폭군</strong>\n<ul>\n<li>기술 위력 감소량이 30%에서 25%로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">피의 광기</strong>\n<ul>\n<li>치유 지속시간이 3초에서 4초로 증가했습니다. 총 치유량은 그대로 유지됩니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">방어력 상승</strong>\n<ul>\n<li>방어력 증가 효과의 지속시간이 3초에서 5초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "말가니스",
+     "heroId": "MalGanis",
+     "heroIds": [
+      "MalGanis"
+     ],
+     "changes": [
+      {
+       "name": "밤의 질주",
+       "key": "E",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "시전 시간이 0.75초에서 0.625초로 감소했습니다.",
+         "html": "시전 시간이 0.75초에서 0.625초로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "흡혈의 손길",
+       "key": "D",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "영웅에게 준 피해에 따른 치유량이 45%에서 50%로 증가했습니다.",
+         "html": "영웅에게 준 피해에 따른 치유량이 45%에서 50%로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "영웅이 아닌 대상에게 준 피해에 따른 치유량이 10%에서 15%로 증가했습니다.",
+         "html": "영웅이 아닌 대상에게 준 피해에 따른 치유량이 10%에서 15%로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">밤의 질주 [E]</strong>\n<ul>\n<li>시전 시간이 0.75초에서 0.625초로 감소했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">흡혈의 손길 [D]</strong>\n<ul>\n<li>영웅에게 준 피해에 따른 치유량이 45%에서 50%로 증가했습니다.</li>\n<li>영웅이 아닌 대상에게 준 피해에 따른 치유량이 10%에서 15%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "키히라",
+     "heroId": "NexusHunter",
+     "heroIds": [
+      "NexusHunter"
+     ],
+     "changes": [
+      {
+       "name": "피의 분노",
+       "key": "W",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "중첩당 추가 공격력이 0.25%에서 0.2%로 감소했습니다.",
+         "html": "중첩당 추가 공격력이 0.25%에서 0.2%로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "피의 분노의 주기당 기본 피해가 8에서 7로 감소했습니다.",
+         "html": "피의 분노의 주기당 기본 피해가 8에서 7로 감소했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "치명상",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 1,
+       "lines": [
+        {
+         "text": "생명력이 낮은 적에게 주는 추가 피해가 50%에서 70%로 증가했습니다.",
+         "html": "생명력이 낮은 적에게 주는 추가 피해가 50%에서 70%로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "고동치는 고통",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "공격력이 135에서 150으로 증가했습니다.",
+         "html": "공격력이 135에서 150으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "만성 통증",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "방어력 감소량이 -35에서 -25로 감소했습니다.",
+         "html": "방어력 감소량이 -35에서 -25로 감소했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">피의 분노 [W]</strong>\n<ul>\n<li>중첩당 추가 공격력이 0.25%에서 0.2%로 감소했습니다.</li>\n<li>피의 분노의 주기당 기본 피해가 8에서 7로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>1레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">치명상</strong>\n<ul>\n<li>생명력이 낮은 적에게 주는 추가 피해가 50%에서 70%로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>13레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">고동치는 고통</strong>\n<ul>\n<li>공격력이 135에서 150으로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">만성 통증</strong>\n<ul>\n<li>방어력 감소량이 -35에서 -25로 감소했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "화이트메인",
+     "heroId": "Whitemane",
+     "heroIds": [
+      "Whitemane"
+     ],
+     "changes": [
+      {
+       "name": "절박한 기도",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "기본 마나 소모량이 40에서 45로 증가했습니다. 사용당 증가하는 마나 소모량은 그대로입니다.",
+         "html": "기본 마나 소모량이 40에서 45로 증가했습니다. 사용당 증가하는 마나 소모량은 그대로입니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "중재",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 7,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 60초에서 75초로 증가했습니다.",
+         "html": "재사용 대기시간이 60초에서 75초로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "광휘",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 16,
+       "lines": [
+        {
+         "text": "치유량이 175에서 190으로 증가했습니다.",
+         "html": "치유량이 175에서 190으로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">절박한 기도 [Q]</strong>\n<ul>\n<li>기본 마나 소모량이 40에서 45로 증가했습니다. 사용당 증가하는 마나 소모량은 그대로입니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>7레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">중재</strong>\n<ul>\n<li>재사용 대기시간이 60초에서 75초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>16레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">광휘</strong>\n<ul>\n<li>치유량이 175에서 190으로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+     "name": "이렐",
+     "heroId": "Yrel",
+     "heroIds": [
+      "Yrel"
+     ],
+     "changes": [
+      {
+       "name": "비호",
+       "key": "Q",
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "마나 소모량이 50에서 65로 증가했습니다.",
+         "html": "마나 소모량이 50에서 65로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "알도르 평화감시자",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "공격력 감소량이 40%에서 50%로 증가했습니다.",
+         "html": "공격력 감소량이 40%에서 50%로 증가했습니다.",
+         "added": false
+        },
+        {
+         "text": "피해 감소 지속시간이 3초에서 4초로 증가했습니다.",
+         "html": "피해 감소 지속시간이 3초에서 4초로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "벨렌의 선택",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 13,
+       "lines": [
+        {
+         "text": "중첩당 추가 공격력이 10%에서 8%로 감소했습니다.",
+         "html": "중첩당 추가 공격력이 10%에서 8%로 감소했습니다.",
+         "added": false
+        },
+        {
+         "text": "최대 중첩 수가 3에서 4로 증가했습니다.",
+         "html": "최대 중첩 수가 3에서 4로 증가했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": "고위 천사",
+       "key": null,
+       "new": false,
+       "group": "talent",
+       "level": 20,
+       "lines": [
+        {
+         "text": "재사용 대기시간이 20초에서 30초로 증가했습니다.",
+         "html": "재사용 대기시간이 20초에서 30초로 증가했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ],
+     "html": "<p><strong class=\"pn-h\">기본</strong></p>\n<ul>\n<li><strong class=\"pn-name\">비호 [Q]</strong>\n<ul>\n<li>마나 소모량이 50에서 65로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong class=\"pn-h\">특성</strong></p>\n<ul>\n<li><strong>13레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">알도르 평화감시자</strong>\n<ul>\n<li>공격력 감소량이 40%에서 50%로 증가했습니다.</li>\n<li>피해 감소 지속시간이 3초에서 4초로 증가했습니다.</li>\n</ul>\n</li>\n<li><strong class=\"pn-name\">벨렌의 선택</strong>\n<ul>\n<li>중첩당 추가 공격력이 10%에서 8%로 감소했습니다.</li>\n<li>최대 중첩 수가 3에서 4로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n<li><strong>20레벨</strong>\n<ul>\n<li><strong class=\"pn-name\">고위 천사</strong>\n<ul>\n<li>재사용 대기시간이 20초에서 30초로 증가했습니다.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>"
+    }
+   ]
+  },
+  {
+   "name": "버그 수정",
+   "key": "bugs",
+   "html": "<h3><strong>전장</strong></h3>\n<ul>\n<li><strong class=\"pn-h\">볼스카야 공장</strong>\n<ul>\n<li><span class=\"pn-new\">요새 한쪽 벽 내구도가 다른 벽보다 많던 문제를 수정했습니다. 이제 게임의 밸런스가 맞을 것입니다...</span></li>\n</ul>\n</li>\n</ul>\n<h3><strong>영웅</strong></h3>\n<ul>\n<li><strong class=\"pn-h\">안두인</strong>\n<ul>\n<li><span class=\"pn-new\">이동 불가 영웅을 대상으로 시전할 때 신의의 도약이 지연되던 문제를 수정했습니다.</span></li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">말퓨리온</strong>\n<ul>\n<li>휘감는 뿌리가 범위 내 적을 계속해서 이동 불가 상태로 만들지 않던 문제를 수정했습니다.</li>\n<li><span class=\"pn-new\">휘감는 뿌리가 첫 접촉 시 적용되지 않던 문제를 수정했습니다.</span></li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">라그나로스</strong>\n<ul>\n<li><span class=\"pn-new\">영웅 난이도 특성으로 인해 피해와 지속시간이 25% 증가하던 문제를 수정했습니다.</span></li>\n<li><span class=\"pn-new\">영웅 난이도 선택 시 화산 심장부 재사용 대기시간이 90초에서 70초로 감소했습니다.</span></li>\n</ul>\n</li>\n<li><strong class=\"pn-h\">줄</strong>\n<ul>\n<li>줄의 해골이 가끔 피해를 주지 않던 문제를 수정했습니다.</li>\n</ul>\n</li>\n</ul>\n<p><strong><a href=\"https://us.forums.blizzard.com/en/heroes/\" target=\"_blank\">여기를 클릭해 히어로즈 오브 더 스톰 공식 토론장에서 다른 플레이어들과 이 게시글에 대한 의견을 나눠 보세요</a>.</strong></p>\n<p><strong><img alt=\"\" class=\"no-border; no-shadow\" src=\"https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/g6/G6G0N80EOC941426801305139.png\"/></strong></p>",
+   "items": [
+    {
+     "name": "볼스카야 공장",
+     "battleground": "volskaya_foundry",
+     "html": "<strong class=\"pn-h\">볼스카야 공장</strong>\n<ul>\n<li><span class=\"pn-new\">요새 한쪽 벽 내구도가 다른 벽보다 많던 문제를 수정했습니다. 이제 게임의 밸런스가 맞을 것입니다...</span></li>\n</ul>",
+     "under": "전장"
+    },
+    {
+     "name": "안두인",
+     "heroId": "Anduin",
+     "heroIds": [
+      "Anduin"
+     ],
+     "under": "영웅",
+     "html": "<strong class=\"pn-h\">안두인</strong>\n<ul>\n<li><span class=\"pn-new\">이동 불가 영웅을 대상으로 시전할 때 신의의 도약이 지연되던 문제를 수정했습니다.</span></li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "이동 불가 영웅을 대상으로 시전할 때 신의의 도약이 지연되던 문제를 수정했습니다.",
+         "html": "<span class=\"pn-new\">이동 불가 영웅을 대상으로 시전할 때 신의의 도약이 지연되던 문제를 수정했습니다.</span>",
+         "added": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "말퓨리온",
+     "heroId": "Malfurion",
+     "heroIds": [
+      "Malfurion"
+     ],
+     "under": "영웅",
+     "html": "<strong class=\"pn-h\">말퓨리온</strong>\n<ul>\n<li>휘감는 뿌리가 범위 내 적을 계속해서 이동 불가 상태로 만들지 않던 문제를 수정했습니다.</li>\n<li><span class=\"pn-new\">휘감는 뿌리가 첫 접촉 시 적용되지 않던 문제를 수정했습니다.</span></li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "휘감는 뿌리가 범위 내 적을 계속해서 이동 불가 상태로 만들지 않던 문제를 수정했습니다.",
+         "html": "휘감는 뿌리가 범위 내 적을 계속해서 이동 불가 상태로 만들지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "휘감는 뿌리가 첫 접촉 시 적용되지 않던 문제를 수정했습니다.",
+         "html": "<span class=\"pn-new\">휘감는 뿌리가 첫 접촉 시 적용되지 않던 문제를 수정했습니다.</span>",
+         "added": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "라그나로스",
+     "heroId": "Ragnaros",
+     "heroIds": [
+      "Ragnaros"
+     ],
+     "under": "영웅",
+     "html": "<strong class=\"pn-h\">라그나로스</strong>\n<ul>\n<li><span class=\"pn-new\">영웅 난이도 특성으로 인해 피해와 지속시간이 25% 증가하던 문제를 수정했습니다.</span></li>\n<li><span class=\"pn-new\">영웅 난이도 선택 시 화산 심장부 재사용 대기시간이 90초에서 70초로 감소했습니다.</span></li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "영웅 난이도 특성으로 인해 피해와 지속시간이 25% 증가하던 문제를 수정했습니다.",
+         "html": "<span class=\"pn-new\">영웅 난이도 특성으로 인해 피해와 지속시간이 25% 증가하던 문제를 수정했습니다.</span>",
+         "added": true
+        }
+       ]
+      },
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "영웅 난이도 선택 시 화산 심장부 재사용 대기시간이 90초에서 70초로 감소했습니다.",
+         "html": "<span class=\"pn-new\">영웅 난이도 선택 시 화산 심장부 재사용 대기시간이 90초에서 70초로 감소했습니다.</span>",
+         "added": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "줄",
+     "heroId": "Necromancer",
+     "heroIds": [
+      "Necromancer"
+     ],
+     "under": "영웅",
+     "html": "<strong class=\"pn-h\">줄</strong>\n<ul>\n<li>줄의 해골이 가끔 피해를 주지 않던 문제를 수정했습니다.</li>\n</ul>",
+     "changes": [
+      {
+       "name": null,
+       "key": null,
+       "new": false,
+       "group": "base",
+       "level": null,
+       "lines": [
+        {
+         "text": "줄의 해골이 가끔 피해를 주지 않던 문제를 수정했습니다.",
+         "html": "줄의 해골이 가끔 피해를 주지 않던 문제를 수정했습니다.",
+         "added": false
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "heroes": [
+  "Abathur",
+  "Alexstrasza",
+  "Anduin",
+  "Garrosh",
+  "MalGanis",
+  "Malfurion",
+  "Necromancer",
+  "NexusHunter",
+  "Ragnaros",
+  "Whitemane",
+  "Xalatath",
+  "Yrel"
+ ],
+ "battlegrounds": [
+  "garden_of_terror",
+  "volskaya_foundry"
+ ],
+ "newsId": "24303007"
+}
