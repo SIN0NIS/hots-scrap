@@ -95,6 +95,7 @@ const HERO_DB = [
   {icon:"storm_ui_minimapicon_zarya.png",               ko:"자리야",          en:"Zarya", role:"지원가"},
   {icon:"storm_ui_minimapicon_zeratul.png",             ko:"제라툴",          en:"Zeratul", role:"근접 암살자"},
   {icon:"storm_ui_minimapicon_zuljin.png",              ko:"줄진",            en:"Zul'jin", role:"원거리 암살자"},
+  {icon:"storm_ui_minimapicon_xalatath.png",             ko:"잘아타스",      en:"Xal'atath", role:"원거리 암살자"},
 ];
 
 // 이름 비교용 정규화: 소문자, 발음 구별 기호·공백·문장부호 제거, 앞의 the 제거.

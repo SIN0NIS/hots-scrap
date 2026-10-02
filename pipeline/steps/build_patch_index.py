@@ -108,6 +108,10 @@ def main():
     if hj.exists():
         for h in json.loads(hj.read_text(encoding="utf-8"))["heroes"]:
             heroes[h["id"]] = {"name": h["name"], "role": h.get("role")}
+    # 도감 자료(97650)는 2026-07 빌드에 멈춰 있어 그 뒤 영웅은 역할군이 없다.
+    # 게임 XML 에서 뽑아 둔 것(extract_hero_roles.py)으로 빈 자리만 채운다 — 도감 쪽이 우선.
+    rj = site_file("data", "patchnotes", "roles.json")
+    extra_roles = json.loads(rj.read_text(encoding="utf-8-sig")) if rj.exists() else {}
     # 최신 본 서버 빌드 + 최신 빌드(테스트 서버일 수 있다). 새 영웅은 테스트 서버에 먼저 온다.
     latest_live = [b for b in builds if not b["isPtr"]][-1]
     newest = builds[-1]
@@ -134,6 +138,10 @@ def main():
     for f in (PN / "diff").glob("*.json"):
         for hid, h in json.loads(f.read_text(encoding="utf-8"))["heroes"].items():
             heroes.setdefault(hid, {"name": h["name"]})
+    # 역할군이 비어 있으면 게임 XML 에서 뽑아 둔 값으로 채운다(도감 자료에 없는 새 영웅)
+    for hid, e in heroes.items():
+        if not e.get("role") and extra_roles.get(hid):
+            e["role"] = extra_roles[hid]
     # 시계열 파일이 없는 영웅(새 영웅·소환수)은 표시해 둔다. 화면이 없는 파일을 부르지 않게(404 아끼기).
     for hid, e in heroes.items():
         if (PN / "series" / f"{hid}.json").exists():
