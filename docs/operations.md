@@ -99,6 +99,33 @@
    ```
 
    `--date` 는 그 패치가 나온 날입니다(안 적으면 오늘).
+
+### 새 영웅이 나왔을 때 — 두 가지 더
+
+새 영웅은 위 단계만으로 **역할군과 리플레이 뷰어가 안 따라옵니다.** 두 개를 더 돌립니다.
+
+```bash
+python pipeline/steps/extract_hero_roles.py    # 역할군 (티어표 칸·패치 기록 거르기)
+python pipeline/steps/build_replay_heroes.py   # 리플레이 뷰어 영웅표·기술·특성·아이콘
+python pipeline/steps/build_patch_index.py     # 역할군을 반영해 색인 다시
+python pipeline/steps/build_status.py
+```
+
+- 역할군은 HeroesToolChest 자료에 없어서 **게임 XML 에서** 뽑습니다. 안 돌리면 티어표에서 "기타"로 빠집니다.
+- 리플레이 뷰어는 영웅표가 생성 파일인데 저절로 안 늘어납니다. 안 돌리면 **그 영웅이 낀 리플레이에서
+  이름도 아이콘도 안 뜹니다.** 빠진 영웅만 채우며, 그림은 게임 설치본에서 꺼내 굽습니다.
+- 둘 다 `--check` 로 "할 게 있는지"만 먼저 볼 수 있습니다.
+
+**개인 추천 특성(talent_4u)** 도 따로 돌립니다 — 같은 저장소가 아닙니다.
+
+```bash
+cd D:/03-Fun/01_Game/03_claude/talent_4u
+python extract_data.py                                   # 지금 저장소에서 자료 새로
+python make.py --seed <내 추천 백업.json> --embed-icons --out 추천특성_<날짜>.html
+```
+
+`--seed` 를 빼면 추천이 **빈** 파일이 만들어집니다. 앱에서 빼 둔 JSON 백업을 꼭 넣으세요.
+`--embed-icons` 를 빼면 인터넷 없이는 그림이 안 보입니다.
 2. 로컬에서 확인 — `python tools/devserver.py 8801` → <http://localhost:8801/site/>
 3. 괜찮으면 커밋·푸시 (Claude 에게 "푸쉬해줘")
 
