@@ -134,6 +134,9 @@
         .cap-row { display: flex; align-items: flex-start; gap: 15px; border-bottom: 1px solid #333; padding: 15px 0; }
         .cap-lv { color: var(--blue); font-size: 14px; font-weight: bold; width: 45px; flex-shrink: 0; }
         .cap-img { width: 60px; height: 60px; border: 2px solid var(--gold); border-radius: 8px; flex-shrink: 0; }
+        /* 설명을 뺀 그림 — 설명만 지우면 60px 아이콘 때문에 줄이 안 줄어든다. 줄도 같이 좁힌다 */
+        .cap-row.short { padding: 7px 0; align-items: center; }
+        .cap-row.short .cap-img { width: 40px; height: 40px; }
     /* 시작 화면 영웅 그리드 (역할군별) */
 #welcome-area .bh-role { font-size:15px; font-weight:bold; color:var(--gold); border-bottom:1px solid #233a5c; padding-bottom:5px; margin:18px 0 10px; text-align:left; }
 #welcome-area .bh-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(78px,1fr)); gap:10px; }
@@ -679,6 +682,11 @@
           <button type="button" onclick="setCardTheme('dark')" style="flex:1; background:#0b0b0d; border:1px solid #445; color:#eee; border-radius:5px; padding:7px 0; cursor:pointer; font-size:12px;">☾ Dark</button>
           <button type="button" onclick="setCardTheme('light')" style="flex:1; background:#f3f6fb; border:1px solid #cdd9ea; color:#122036; border-radius:5px; padding:7px 0; cursor:pointer; font-size:12px;">☀ Light</button>
         </div>
+        <label class="scrap-tap" style="display:flex; align-items:center; gap:8px; font-size:13px; color:#8fa2bd; cursor:pointer;"
+               title="특성 설명을 빼고 아이콘과 이름만 넣습니다 — 설명이 길어 그림이 세로로 길어질 때">
+          <input type="checkbox" id="bp-short" onchange="tcShortToggle(this.checked)" style="width:16px; height:16px; accent-color:#1758a8;">
+          <span id="bp-short-txt">설명 빼기</span>
+        </label>
         <button type="button" onclick="takeScreenshot('save')" style="background:#1758a8; border:none; color:#fff; border-radius:5px; padding:10px 14px; cursor:pointer; font-size:13px; font-weight:bold;">📸 저장</button>
         <button type="button" onclick="takeScreenshot('copy')" style="background:#1c7d4f; border:none; color:#fff; border-radius:5px; padding:10px 14px; cursor:pointer; font-size:13px; font-weight:bold;">📋 복사</button>
       </div>
@@ -695,18 +703,11 @@ function bpRenderCard() {
   const nameColor = document.getElementById('name-color').value;
   const borderColor = document.getElementById('border-color').value;
   const card = document.getElementById('bp-card');
-  card.style.cssText = 'width:500px; background:' + cardBg + '; padding:25px; border:3px solid ' + borderColor + '; color:' + cardFont + '; border-radius:12px;';
-  let innerHTML = '<div style="text-align:center; margin-bottom:25px;"><div id="bp-hero-name" style="font-size:36px; font-weight:bold; color:' + nameColor + ';">' + getActiveData()[currentHeroId].name + '</div></div>';
-  const lvs = Object.keys(getActiveData()[currentHeroId].talents).filter(l => getActiveData()[currentHeroId].talents[l].length > 0).sort((a,b) => parseInt(a.replace(/\D/g,"")) - parseInt(b.replace(/\D/g,"")));
-  selectedTalents.forEach((tn, ti) => {
-    if (tn > 0) {
-      const t = getActiveData()[currentHeroId].talents[lvs[ti]][tn-1];
-      innerHTML += '<div class="cap-row"><div class="cap-lv">' + lvs[ti].replace(/\D/g,"") + 'Lv</div><img src="' + iconUrl(t.icon) + '" class="cap-img"><div style="flex:1; padding-left:15px;"><div style="font-size:18px; font-weight:bold;">' + t.name + '</div><div style="opacity:0.78; font-size:14px;">' + processTooltip(t.fullTooltip, currentLevel) + '</div></div></div>';
-    }
-  });
-  card.innerHTML = innerHTML;
+  card.style.cssText = 'width:' + buildCardWidth() + 'px; background:' + cardBg + '; padding:25px; border:3px solid ' + borderColor + '; color:' + cardFont + '; border-radius:12px;';
+  // 저장되는 그림과 **똑같은 코드**로 그린다. 예전에는 여기서 따로 그려서 보조 특성 칸이 미리보기에만 빠져 있었다.
+  card.innerHTML = buildCardInner(nameColor);
   var wrap = document.getElementById('bp-wrap');
-  var avail = wrap.clientWidth, w = 556;
+  var avail = wrap.clientWidth, w = buildCardWidth() + 56;
   card.style.transformOrigin = 'top left';
   if (avail < w) {
     card.style.transform = 'scale(' + (avail / w) + ')';
@@ -719,6 +720,7 @@ function openBuildPreview() {
   document.getElementById('bp-border-color').value = document.getElementById('border-color').value;
   document.getElementById('bp-modal').style.display = 'block';
   syncCardPickers();
+  tcShortSync();
   bpRenderCard();
 }
 function closeBuildPreview() { document.getElementById('bp-modal').style.display = 'none'; }
@@ -885,7 +887,39 @@ function resetTalents() {
 }
 
 /* ── 저장 카드 공용 빌더 — 메인 줄 + ↳ 상황별 줄 ── */
+/* 설명을 뺄 때 쓰는 **전용 배치** — 설명만 지우면 넓은 카드에 가로가 텅 빈다.
+   폭을 좁히고 한 줄에 [레벨][아이콘][이름]만 넣는다. 보조 특성은 옆 칸을 따로 두지 않고
+   이름 뒤에 작은 아이콘으로 붙인다(칸을 가르면 또 빈자리가 생긴다). */
+function buildCardWidth() { return 500; }
+function buildCardShortInner(nameColor) {
+  var hData = getActiveData()[currentHeroId];
+  var lvs = tierLevels(hData);
+  var cells = [];
+  selectedTalents.forEach(function (tn, ti) {
+    var subs = (subTalents[ti] || []).filter(function (x) { return x !== tn; });
+    var sub = subs.length ? hData.talents[lvs[ti]][subs[0] - 1] : null;
+    if (tn === 0 && !sub) return;
+    var t = tn > 0 ? hData.talents[lvs[ti]][tn - 1] : null;
+    var main = t || sub;
+    cells.push('<div style="display:flex; align-items:center; gap:8px; padding:7px 0; border-bottom:1px solid #3334; min-width:0;">'
+      + '<div style="width:30px; flex-shrink:0; color:var(--blue); font-size:12px; font-weight:bold;">' + lvs[ti].replace(/\D/g, '') + 'Lv</div>'
+      + '<img src="' + iconUrl(main.icon) + '" style="width:36px; height:36px; border:2px solid var(--gold); border-radius:7px; flex-shrink:0;'
+      + (t ? '' : ' border-style:dashed; border-color:#4d9fff;') + '">'
+      + '<div style="flex:1; min-width:0; font-size:13px; font-weight:bold; line-height:1.3; word-break:keep-all;'
+      + (t ? '' : ' color:#9fc6ff;') + '">' + main.name + '</div>'
+      + (t && sub ? '<img src="' + iconUrl(sub.icon) + '" title="' + sub.name + '" style="width:22px; height:22px; border:1px dashed #4d9fff; border-radius:5px; flex-shrink:0; opacity:.85;">' : '')
+      + '</div>');
+  });
+  // 한 줄에 하나씩 세우면 가로가 텅 빈다 — 다섯 칸을 넘으면 두 줄로 나눠 폭을 채운다
+  var cols = cells.length > 5 ? 2 : 1;
+  return '<div style="text-align:center; margin-bottom:14px;"><div id="bp-hero-name" style="font-size:30px; font-weight:bold; color:'
+    + nameColor + ';">' + hData.name + '</div></div>'
+    + '<div style="display:grid; grid-template-columns:repeat(' + cols + ', minmax(0, 1fr)); gap:0 16px;">'
+    + cells.join('') + '</div>';
+}
+
 function buildCardInner(nameColor) {
+  if (tcShort) return buildCardShortInner(nameColor);
   var hData = getActiveData()[currentHeroId];
   var lvs = tierLevels(hData);
   var html = '<div style="text-align:center; margin-bottom:25px;"><div id="bp-hero-name" style="font-size:36px; font-weight:bold; color:' + nameColor + ';">' + hData.name + '</div></div>';
@@ -899,15 +933,17 @@ function buildCardInner(nameColor) {
       : (sub ? '<img src="' + iconUrl(sub.icon) + '" class="cap-img" style="border:2px dashed #4d9fff;">' : '');
     var text = '';
     if (t) {
-      text += '<div style="font-size:18px; font-weight:bold;">' + t.name + '</div><div style="opacity:0.78; font-size:14px;">' + processTooltip(t.fullTooltip, currentLevel) + '</div>';
+      text += '<div style="font-size:18px; font-weight:bold;">' + t.name + '</div>'
+        + (tcShort ? '' : '<div style="opacity:0.78; font-size:14px;">' + processTooltip(t.fullTooltip, currentLevel) + '</div>');
     } else if (sub) {
-      text += '<div style="font-size:18px; font-weight:bold; color:#9fc6ff;">' + sub.name + '</div><div style="opacity:0.78; font-size:14px;">' + processTooltip(sub.fullTooltip, currentLevel) + '</div>';
+      text += '<div style="font-size:18px; font-weight:bold; color:#9fc6ff;">' + sub.name + '</div>'
+        + (tcShort ? '' : '<div style="opacity:0.78; font-size:14px;">' + processTooltip(sub.fullTooltip, currentLevel) + '</div>');
     }
     /* 보조는 오른쪽 별도 칸 — 아이콘 + 이름만 */
     var subCol = (t && sub)
       ? '<div style="width:88px; flex-shrink:0; display:flex; flex-direction:column; align-items:center; gap:4px; padding-left:8px; border-left:1px dashed #4d9fff55;"><img src="' + iconUrl(sub.icon) + '" style="width:34px; height:34px; border:1px dashed #4d9fff; border-radius:5px;"><span style="font-size:11px; color:#9fc6ff; text-align:center; line-height:1.3;">' + sub.name + '</span></div>'
       : '';
-    html += '<div class="cap-row"><div class="cap-lv">' + lvLabel + '</div>' + mainIcon + '<div style="flex:1; padding-left:15px;">' + text + '</div>' + subCol + '</div>';
+    html += '<div class="cap-row' + (tcShort ? ' short' : '') + '"><div class="cap-lv">' + lvLabel + '</div>' + mainIcon + '<div style="flex:1; padding-left:15px;">' + text + '</div>' + subCol + '</div>';
   });
   return html;
 }
@@ -917,7 +953,7 @@ window.takeScreenshot = async function (mode) {
   if (!currentHeroId) return;
   var nameColor = document.getElementById('name-color').value, borderColor = document.getElementById('border-color').value;
   var tempDiv = document.createElement('div');
-  tempDiv.style.cssText = 'position:absolute; left:-9999px; top:0; width:500px; background:' + cardBg + '; padding:25px; border:3px solid ' + borderColor + '; color:' + cardFont + '; border-radius:12px;';
+  tempDiv.style.cssText = 'position:absolute; left:-9999px; top:0; width:' + buildCardWidth() + 'px; background:' + cardBg + '; padding:25px; border:3px solid ' + borderColor + '; color:' + cardFont + '; border-radius:12px;';
   tempDiv.innerHTML = buildCardInner(nameColor);
   document.body.appendChild(tempDiv);
   try {
@@ -927,7 +963,7 @@ window.takeScreenshot = async function (mode) {
       var hd = getActiveData()[currentHeroId];
       var igCode = '[T' + selectedTalents.join('') + ',' + hd.hyperlinkId + ']';
       var link = document.createElement('a');
-      link.download = 'hots_scrap_build_' + (window.DATA_BUILD || '97650') + '_' + hd.name + '_' + igCode + '.png';
+      link.download = 'hots_scrap_build_' + (window.DATA_BUILD || '97650') + '_' + hd.name + '_' + igCode + (tcShort ? '_names' : '') + '.png';
       link.href = canvas.toDataURL(); link.click();
     } else {
       canvas.toBlob(async function (blob) {
@@ -947,10 +983,10 @@ window.bpRenderCard = function () {
   if (!currentHeroId) return;
   var borderColor = document.getElementById('border-color').value;
   var card = document.getElementById('bp-card');
-  card.style.cssText = 'width:500px; background:' + cardBg + '; padding:25px; border:3px solid ' + borderColor + '; color:' + cardFont + '; border-radius:12px;';
+  card.style.cssText = 'width:' + buildCardWidth() + 'px; background:' + cardBg + '; padding:25px; border:3px solid ' + borderColor + '; color:' + cardFont + '; border-radius:12px;';
   card.innerHTML = buildCardInner(document.getElementById('name-color').value);
   var wrap = document.getElementById('bp-wrap');
-  var avail = wrap.clientWidth, w = 556;
+  var avail = wrap.clientWidth, w = buildCardWidth() + 56;
   card.style.transformOrigin = 'top left';
   if (avail > 0 && avail < w) {
     card.style.transform = 'scale(' + (avail / w) + ')';
@@ -1072,20 +1108,23 @@ function tcShortToggle(on) {
   try { localStorage.setItem('builds.tcShort', tcShort ? '1' : '0'); } catch (e) {}
   tcShortSync();
   // 미리보기를 보고 있으면 바로 다시 그려 준다(누른 효과가 그 자리에서 보이게)
-  if (document.getElementById('tcp-modal') && document.getElementById('tcp-modal').style.display === 'block') openTcPreview();
+  var tcp = document.getElementById('tcp-modal'), bp = document.getElementById('bp-modal');
+  if (tcp && tcp.style.display === 'block') openTcPreview();
+  if (bp && bp.style.display === 'block') bpRenderCard();
 }
 /* 칸이 두 군데(나열 창·미리보기 창)라 서로 맞춰 둔다 */
 function tcShortSync() {
   var ko = currentLang === 'ko';
   [['tc-short', 'tc-short-txt', ko ? '아이콘+이름만' : 'Icon + name only'],
-   ['tcp-short', 'tcp-short-txt', ko ? '설명 빼기 (아이콘+이름만)' : 'No description (icon + name)']
+   ['tcp-short', 'tcp-short-txt', ko ? '설명 빼기 (아이콘+이름만)' : 'No description (icon + name)'],
+   ['bp-short', 'bp-short-txt', ko ? '설명 빼기' : 'No description']
   ].forEach(function (x) {
     var b = document.getElementById(x[0]), t = document.getElementById(x[1]);
     if (b) b.checked = tcShort;
     if (t) t.textContent = x[2];
   });
 }
-function tcCardWidth() { return tcShort ? 380 : 500; }   // 설명이 없으면 좁은 폭이 보기 좋다
+function tcCardWidth() { return 500; }
 
 /* 나열 카드 공용 빌더 — 미리보기와 캡처가 같은 마크업을 쓴다 */
 function tcCardInner() {
@@ -1098,13 +1137,18 @@ function tcCardInner() {
   lvs.forEach(function (lv) {
     if (!isAll && lv !== tcLevel) return;
     if (isAll) html += '<div style="color:#4d9fff; font-weight:bold; font-size:16px; margin:' + (tcShort ? '10px 0 2px' : '14px 0 4px') + ';">' + lv.replace(/\D/g, '') + (currentLang === 'ko' ? '레벨' : ' Lv') + '</div>';
+    // 설명을 뺄 때는 **그 단계의 특성을 한 줄에 나란히** 둔다(세로로 길어지지도, 가로가 비지도 않게)
+    if (tcShort) {
+      html += '<div style="display:grid; grid-template-columns:repeat(' + Math.min(3, hData.talents[lv].length) + ', minmax(0, 1fr)); gap:8px; padding:4px 0 8px;">';
+      hData.talents[lv].forEach(function (t) {
+        html += '<div style="display:flex; gap:7px; align-items:center; min-width:0;">'
+          + '<img src="' + iconUrl(t.icon) + '" style="width:32px; height:32px; border:1px solid #444; border-radius:6px; flex-shrink:0;">'
+          + '<div style="font-size:12px; font-weight:bold; line-height:1.25; word-break:keep-all; min-width:0;">' + t.name + '</div></div>';
+      });
+      html += '</div>';
+      return;
+    }
     hData.talents[lv].forEach(function (t) {
-      if (tcShort) {
-        html += '<div style="display:flex; gap:10px; align-items:center; padding:5px 0; border-bottom:1px solid #222;">'
-          + '<img src="' + iconUrl(t.icon) + '" style="width:34px; height:34px; border:1px solid #444; border-radius:6px; flex-shrink:0;">'
-          + '<div style="font-size:15px; font-weight:bold;">' + t.name + '</div></div>';
-        return;
-      }
       html += '<div style="display:flex; gap:12px; padding:10px 0; border-bottom:1px solid #222;"><img src="' + iconUrl(t.icon) + '" style="width:44px; height:44px; border:1px solid #444; border-radius:6px; flex-shrink:0;"><div style="flex:1;"><div style="font-size:16px; font-weight:bold;">' + t.name + '</div><div style="color:#bbb; font-size:13px; margin-top:2px; line-height:1.5;">' + processTooltip(t.fullTooltip, currentLevel) + '</div></div></div>';
     });
   });
