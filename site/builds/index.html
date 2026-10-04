@@ -900,7 +900,10 @@ function buildCardShortInner(nameColor) {
   var html = '<div style="text-align:center; margin-bottom:14px;"><div id="bp-hero-name" style="font-size:30px; font-weight:bold; color:'
     + nameColor + ';">' + hData.name + '</div></div>';
   // 가로를 **아이콘 7 : 글자 3** 으로 나눈다.
-  var inner = buildCardWidth() - 50;                 // 양쪽 여백 25씩
+  // 카드의 글 폭은 사실 500px 이다(패딩 25 는 content-box 라 그 **바깥**에 붙는다).
+  // 그런데 여기서는 일부러 50 을 뺀 450 으로 칸을 나눈다 — 남는 50px 은 글자 칸(flex:1)이
+  // 통째로 가져가므로 긴 이름이 그만큼 덜 접힌다. 이 여유를 없애면 영문 이름이 세 줄로 넘어간다.
+  var inner = buildCardWidth() - 50;
   var lvW = 34, gap = 8, iconGap = 6;
   var avail = inner - lvW - gap * 2;
   var maxN = Math.max.apply(null, lvs.map(function (lv) { return hData.talents[lv].length; }));
@@ -927,11 +930,31 @@ function buildCardShortInner(nameColor) {
       // 아이콘 칸은 **고정 폭**이다 — 아이콘 뒤에 글자를 바로 붙이면 줄마다 시작점이 달라 읽기 어렵다.
       // 칸이 덜 찬 줄은 space-evenly 로 **가로에 고르게 펴** 둔다(왼쪽에 몰면 줄마다 끝나는 자리가 들쑥날쑥하다).
       + '<div style="width:' + iconsW + 'px; flex-shrink:0; display:flex; justify-content:space-evenly; gap:' + iconGap + 'px;">' + icons + '</div>'
-      + '<div style="flex:1; min-width:' + textW + 'px; font-size:15px; font-weight:bold; line-height:1.3; word-break:keep-all;">'
+      + '<div data-fit="1" style="flex:1; min-width:' + textW + 'px; font-size:15px; font-weight:bold; line-height:1.3; word-break:keep-all;">'
       + (main ? main.name : '') + '</div>'
       + '</div>';
   });
   return html;
+}
+
+/* 이름이 긴 특성은 **두 줄까지만** 허용한다.
+   세 줄이 되면 줄 높이가 들쭉날쭉해지고, 영어 이름(Construct Additional Pylons)은
+   좁은 글자 칸을 넘어 삐져나온다. 글자 크기를 1px 씩 줄여 두 줄 안에 넣는다(15 → 10px).
+   길이로 어림잡지 않고 **그려 놓고 실제로 재는** 까닭: 한글·영문, 칸 폭(아이콘 수에 따라 다르다),
+   글꼴까지 걸려 있어 어림수는 늘 어느 한쪽에서 틀린다. */
+function fitShortNames(root) {
+  if (!root) return;
+  var names = root.querySelectorAll('[data-fit]');
+  for (var i = 0; i < names.length; i++) {
+    var el = names[i], px = 15;
+    el.style.fontSize = px + 'px';
+    while (px > 10 && el.offsetHeight > Math.ceil(px * 1.3 * 2) + 1) {
+      px -= 1;
+      el.style.fontSize = px + 'px';
+    }
+    // 끊을 자리가 없는 긴 낱말은 그때만 낱말 안에서 끊는다(평소에는 keep-all 로 말을 안 쪼갠다)
+    if (el.scrollWidth > el.clientWidth) el.style.overflowWrap = 'anywhere';
+  }
 }
 
 function buildCardInner(nameColor) {
@@ -972,6 +995,7 @@ window.takeScreenshot = async function (mode) {
   tempDiv.style.cssText = 'position:absolute; left:-9999px; top:0; width:' + buildCardWidth() + 'px; background:' + cardBg + '; padding:25px; border:3px solid ' + borderColor + '; color:' + cardFont + '; border-radius:12px;';
   tempDiv.innerHTML = buildCardInner(nameColor);
   document.body.appendChild(tempDiv);
+  fitShortNames(tempDiv);          // 반드시 붙인 뒤에 — 떼어 둔 채로는 높이를 못 잰다
   try {
     await window.needHtml2Canvas();
     var canvas = await html2canvas(tempDiv, { useCORS: true, backgroundColor: cardBg, scale: 2 });
@@ -1001,6 +1025,7 @@ window.bpRenderCard = function () {
   var card = document.getElementById('bp-card');
   card.style.cssText = 'width:' + buildCardWidth() + 'px; background:' + cardBg + '; padding:25px; border:3px solid ' + borderColor + '; color:' + cardFont + '; border-radius:12px;';
   card.innerHTML = buildCardInner(document.getElementById('name-color').value);
+  fitShortNames(card);
   var wrap = document.getElementById('bp-wrap');
   var avail = wrap.clientWidth, w = buildCardWidth() + 56;
   card.style.transformOrigin = 'top left';
