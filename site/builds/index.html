@@ -964,16 +964,14 @@ function openTierList() {
   if (!currentHeroId) { alert(currentLang === 'ko' ? '영웅을 먼저 선택하세요.' : 'Select a hero first.'); return; }
   tcLevel = 'all';
   document.getElementById('tc-modal').style.display = 'block';
-  var sh = document.getElementById('tc-short');
-  if (sh) sh.checked = tcShort;
-  var st = document.getElementById('tc-short-txt');
-  if (st) st.textContent = currentLang === 'ko' ? '아이콘+이름만' : 'Icon + name only';
+  tcShortSync();
   tcRender();
 }
 function closeTierList() { document.getElementById('tc-modal').style.display = 'none'; }
 function openTcPreview() {
   if (!currentHeroId) return;
   document.getElementById('tcp-modal').style.display = 'block';
+  tcShortSync();
   syncCardPickers();
   var card = document.getElementById('tcp-card');
   card.style.cssText = 'width:' + tcCardWidth() + 'px; background:' + cardBg + '; padding:25px; border:3px solid #233a5c; color:' + cardFont + '; border-radius:12px;';
@@ -1040,10 +1038,7 @@ function openTierAt(lv) {
   if (!currentHeroId) return;
   tcLevel = lv;
   document.getElementById('tc-modal').style.display = 'block';
-  var sh = document.getElementById('tc-short');
-  if (sh) sh.checked = tcShort;                      // 지난번에 고른 것을 되살린다
-  var st = document.getElementById('tc-short-txt');
-  if (st) st.textContent = currentLang === 'ko' ? '아이콘+이름만' : 'Icon + name only';
+  tcShortSync();                                     // 지난번에 고른 것을 되살린다
   tcRender();
 }
 function tcRender() {
@@ -1075,7 +1070,20 @@ var tcShort = (function () { try { return localStorage.getItem('builds.tcShort')
 function tcShortToggle(on) {
   tcShort = !!on;
   try { localStorage.setItem('builds.tcShort', tcShort ? '1' : '0'); } catch (e) {}
+  tcShortSync();
+  // 미리보기를 보고 있으면 바로 다시 그려 준다(누른 효과가 그 자리에서 보이게)
   if (document.getElementById('tcp-modal') && document.getElementById('tcp-modal').style.display === 'block') openTcPreview();
+}
+/* 칸이 두 군데(나열 창·미리보기 창)라 서로 맞춰 둔다 */
+function tcShortSync() {
+  var ko = currentLang === 'ko';
+  [['tc-short', 'tc-short-txt', ko ? '아이콘+이름만' : 'Icon + name only'],
+   ['tcp-short', 'tcp-short-txt', ko ? '설명 빼기 (아이콘+이름만)' : 'No description (icon + name)']
+  ].forEach(function (x) {
+    var b = document.getElementById(x[0]), t = document.getElementById(x[1]);
+    if (b) b.checked = tcShort;
+    if (t) t.textContent = x[2];
+  });
 }
 function tcCardWidth() { return tcShort ? 380 : 500; }   // 설명이 없으면 좁은 폭이 보기 좋다
 
@@ -1180,6 +1188,11 @@ async function tcCapture(mode) {
       <label style="display:flex; align-items:center; gap:6px; font-size:12px; color:#aaa;">폰트 <input type="color" id="tcp-font-color" oninput="onCardColorInput('font', this.value)" style="width:44px; height:26px;"></label>
       <button type="button" onclick="setCardTheme('dark')" style="background:#0b0b0d; border:1px solid #445; color:#eee; border-radius:5px; padding:5px 10px; cursor:pointer; font-size:11px;">☾ Dark</button>
       <button type="button" onclick="setCardTheme('light')" style="background:#f3f6fb; border:1px solid #cdd9ea; color:#122036; border-radius:5px; padding:5px 10px; cursor:pointer; font-size:11px;">☀ Light</button>
+      <label class="scrap-tap" style="display:inline-flex; align-items:center; gap:6px; font-size:12px; color:#8fa2bd; cursor:pointer; white-space:nowrap;"
+             title="설명이 길어 그림이 세로로 길어질 때 — 아이콘과 이름만 넣습니다">
+        <input type="checkbox" id="tcp-short" onchange="tcShortToggle(this.checked)" style="width:16px; height:16px; accent-color:#1758a8;">
+        <span id="tcp-short-txt">설명 빼기 (아이콘+이름만)</span>
+      </label>
     </div>
     <div id="tcp-wrap" style="overflow:hidden;"><div id="tcp-card"></div></div>
   </div>
