@@ -891,31 +891,36 @@ function resetTalents() {
    폭을 좁히고 한 줄에 [레벨][아이콘][이름]만 넣는다. 보조 특성은 옆 칸을 따로 두지 않고
    이름 뒤에 작은 아이콘으로 붙인다(칸을 가르면 또 빈자리가 생긴다). */
 function buildCardWidth() { return 500; }
+/* 설명을 뺄 때의 **전용 배치** — 인게임 특성창처럼 단계마다 **고를 수 있는 것을 전부** 깔고,
+   그중 내가 고른 것만 밝게 둔다. 설명만 지우면 가로가 텅 비는데, 이러면 폭도 다 쓰고
+   "무엇 대신 무엇을 골랐는지"까지 한눈에 보인다. */
 function buildCardShortInner(nameColor) {
   var hData = getActiveData()[currentHeroId];
   var lvs = tierLevels(hData);
-  var cells = [];
-  selectedTalents.forEach(function (tn, ti) {
-    var subs = (subTalents[ti] || []).filter(function (x) { return x !== tn; });
-    var sub = subs.length ? hData.talents[lvs[ti]][subs[0] - 1] : null;
-    if (tn === 0 && !sub) return;
-    var t = tn > 0 ? hData.talents[lvs[ti]][tn - 1] : null;
-    var main = t || sub;
-    cells.push('<div style="display:flex; align-items:center; gap:8px; padding:7px 0; border-bottom:1px solid #3334; min-width:0;">'
-      + '<div style="width:30px; flex-shrink:0; color:var(--blue); font-size:12px; font-weight:bold;">' + lvs[ti].replace(/\D/g, '') + 'Lv</div>'
-      + '<img src="' + iconUrl(main.icon) + '" style="width:36px; height:36px; border:2px solid var(--gold); border-radius:7px; flex-shrink:0;'
-      + (t ? '' : ' border-style:dashed; border-color:#4d9fff;') + '">'
-      + '<div style="flex:1; min-width:0; font-size:13px; font-weight:bold; line-height:1.3; word-break:keep-all;'
-      + (t ? '' : ' color:#9fc6ff;') + '">' + main.name + '</div>'
-      + (t && sub ? '<img src="' + iconUrl(sub.icon) + '" title="' + sub.name + '" style="width:22px; height:22px; border:1px dashed #4d9fff; border-radius:5px; flex-shrink:0; opacity:.85;">' : '')
-      + '</div>');
+  var html = '<div style="text-align:center; margin-bottom:14px;"><div id="bp-hero-name" style="font-size:30px; font-weight:bold; color:'
+    + nameColor + ';">' + hData.name + '</div></div>';
+  lvs.forEach(function (lv, ti) {
+    var picked = selectedTalents[ti] || 0;
+    var subs = (subTalents[ti] || []).filter(function (x) { return x !== picked; });
+    var icons = hData.talents[lv].map(function (t, i) {
+      var isMain = (i + 1) === picked, isSub = subs.indexOf(i + 1) > -1;
+      var style = 'width:36px; height:36px; border-radius:7px; flex-shrink:0; ';
+      if (isMain) style += 'border:2px solid var(--gold); box-shadow:0 0 0 2px rgba(232,194,104,.35);';
+      else if (isSub) style += 'border:2px dashed #4d9fff;';
+      else style += 'border:2px solid #3a3a3a; filter:grayscale(1); opacity:.3;';   // 안 고른 것은 흐리게
+      return '<img src="' + iconUrl(t.icon) + '" title="' + t.name + '" style="' + style + '">';
+    }).join('');
+    var main = picked > 0 ? hData.talents[lv][picked - 1] : null;
+    var sub = subs.length ? hData.talents[lv][subs[0] - 1] : null;
+    var label = main ? '<span style="font-weight:bold;">' + main.name + '</span>' : '';
+    if (sub) label += (label ? ' ' : '') + '<span style="color:#9fc6ff; font-size:11px;">◐ ' + sub.name + '</span>';
+    html += '<div style="display:flex; align-items:center; gap:8px; padding:6px 0; border-bottom:1px solid #3334;">'
+      + '<div style="width:32px; flex-shrink:0; color:var(--blue); font-size:12px; font-weight:bold;">' + lv.replace(/\D/g, '') + 'Lv</div>'
+      + '<div style="display:flex; gap:5px; flex-shrink:0;">' + icons + '</div>'
+      + '<div style="flex:1; min-width:0; font-size:12px; line-height:1.3; word-break:keep-all; padding-left:4px;">' + label + '</div>'
+      + '</div>';
   });
-  // 한 줄에 하나씩 세우면 가로가 텅 빈다 — 다섯 칸을 넘으면 두 줄로 나눠 폭을 채운다
-  var cols = cells.length > 5 ? 2 : 1;
-  return '<div style="text-align:center; margin-bottom:14px;"><div id="bp-hero-name" style="font-size:30px; font-weight:bold; color:'
-    + nameColor + ';">' + hData.name + '</div></div>'
-    + '<div style="display:grid; grid-template-columns:repeat(' + cols + ', minmax(0, 1fr)); gap:0 16px;">'
-    + cells.join('') + '</div>';
+  return html;
 }
 
 function buildCardInner(nameColor) {
