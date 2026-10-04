@@ -123,7 +123,10 @@ def main():
             st = H["stats"]
             st["life"][i] = (h.get("life") or {}).get("amount")
             st["regen"][i] = (h.get("life") or {}).get("regenRate")
-            w = (h.get("weapons") or [{}])[0]
+            # load_norm() 은 무기를 **{nameId: {...}} 꼴**로 준다(비활성 무기는 이미 빠져 있다).
+            # 예전 목록 꼴로 읽던 자리라, 2026-09-29 본 서버 빌드부터 서버 자동 반영이 여기서 멈춰 있었다.
+            ws = h.get("weapons") or {}
+            w = next(iter(ws.values()), {}) if isinstance(ws, dict) else (list(ws) or [{}])[0]
             st["damage"][i], st["period"][i], st["range"][i] = w.get("damage"), w.get("period"), w.get("range")
             st["speed"][i] = h.get("speed")
             for key, rec in h["abilities"].items():
