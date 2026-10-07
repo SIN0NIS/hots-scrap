@@ -54,6 +54,13 @@
   .slot.d { background:#7a5bbd; } .slot.z { background:#2f8f6f; }
   .slot.r { background:var(--gold); color:#2a2104; } .slot.x { background:#5d6d84; }
   .nm { font-size:17px; font-weight:700; }
+  .ico { width:40px; height:40px; border-radius:9px; border:1px solid var(--line2);
+         vertical-align:middle; margin-right:9px; background:var(--card2); }
+  .tico { width:28px; height:28px; border-radius:7px; border:1px solid var(--line);
+          vertical-align:middle; margin-right:7px; background:var(--card2); }
+  .face { width:52px; height:52px; border-radius:11px; border:1px solid var(--line2);
+          vertical-align:middle; margin-right:10px; background:var(--card2); }
+  .hhead { display:flex; align-items:center; gap:2px; margin:0 0 2px; }
   .id { color:var(--dim); font-size:11.5px; margin-left:6px; }
   .desc { color:var(--dim); font-size:13.5px; margin:6px 0 9px; line-height:1.65; word-break:keep-all; }
   .chips { display:flex; flex-wrap:wrap; gap:5px; margin-bottom:7px; }
@@ -114,9 +121,20 @@ const esc = s => String(s == null ? "" : s).replace(/[&<>]/g, c => ({'&':'&amp;'
 const LIST = ['피해','회복','범위','투사체','재사용 조정','지속 효과','거는 효과'];
 /* 알약(칩)에는 **비용 쪽만** — 사거리·시전 시간 따위는 아래 속성 표에 더 정확하게 들어 있다
    (칩은 날값이라 '무제한(500)' 같은 표식이 그대로 나온다) */
-const SKIP = ['이름','칸','id','설명','위키식','위키','예외',
+const SKIP = ['이름','칸','id','설명','위키식','위키','예외','아이콘',
               '사거리','시전 시간','마무리 시간','대상','이동 거리(추정)','부채꼴','최소 사거리'];
 let INDEX = [], cur = null;
+/* 아이콘은 이미지 저장소(Pages)가 내준다. 여기 임시본이 있으면 그걸, 어디에도 없으면 **안 부른다**
+   (무료 호스팅이라 404 를 아이콘 수만큼 내면 안 된다 — `images/index.json` 을 먼저 받아 안다) */
+const CDN = 'https://sin0nis.github.io/images/';
+const BLANK = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
+let LOCAL = new Set(), MISS = new Set();
+function imgUrl(dir, name) {
+  if (!name) return BLANK;
+  const key = dir + '/' + name;
+  if (MISS.has(key)) return BLANK;
+  return LOCAL.has(key) ? '../images/' + key : CDN + key;
+}
 const CACHE = new Map();          /* 한 번 받은 영웅은 다시 받지 않는다 */
 
 function slotClass(s) {
@@ -142,7 +160,8 @@ function abilityHTML(a) {
   if (a.예외) rows += `<tr><td class="k warnrow">⚠ 예외</td><td colspan="2" class="warnrow">${esc(a.예외)}</td></tr>`;
   const n = (minor.match(/<tr/g) || []).length;
   return `<div class="card">
-      <div><span class="slot ${slotClass(a.칸)}">${esc(a.칸)}</span><span class="nm">${esc(a.이름)}</span>
+      <div><img class="ico" src="${imgUrl('abilitytalents', a.아이콘)}" alt="" loading="lazy">`
+      + `<span class="slot ${slotClass(a.칸)}">${esc(a.칸)}</span><span class="nm">${esc(a.이름)}</span>
            <span class="id">${esc(a.id)}</span></div>
       ${a.설명 ? `<div class="desc">${esc(a.설명)}</div>` : ''}
       <div class="chips">${chips}</div>
@@ -159,7 +178,8 @@ function talentHTML(t) {
         + Object.entries(t.위키).filter(([k]) => k !== '출처').map(([k, v]) => `${esc(k)} ${esc(v)}`).join(' · ')
         + `</td></tr>` : '')
     + (t.예외 ? `<tr><td class="k warnrow">⚠ 예외</td><td class="warnrow">${esc(t.예외)}</td></tr>` : '');
-  return `<div class="talent"><div><span class="tn">${esc(t.이름)}</span>`
+  return `<div class="talent"><div><img class="tico" src="${imgUrl('abilitytalents', t.아이콘)}" alt="" `
+    + `loading="lazy"><span class="tn">${esc(t.이름)}</span>`
     + (t.강화 ? `<span class="up">${esc(t.강화)} 강화</span>` : '') + `</div>`
     + (t.설명 ? `<div class="tdesc">${esc(t.설명)}</div>` : '')
     + (rows ? `<table class="tt">${rows}</table>` : '') + `</div>`;
@@ -167,7 +187,8 @@ function talentHTML(t) {
 function render(h) {
   const base = Object.entries(h.기본).filter(([, v]) => v != null)
       .map(([k, v]) => `${esc(k)} <b>${esc(v)}</b>`).join(' · ');
-  let out = `<h2 style="margin:0 0 2px">${esc(h.영웅)}</h2><p class="sub">${base}</p>`;
+  let out = `<div class="hhead"><img class="face" src="${imgUrl('heroportraits', h.초상화)}" alt="">`
+    + `<h2 style="margin:0">${esc(h.영웅)}</h2></div><p class="sub">${base}</p>`;
   out += h.기술.map(abilityHTML).join('');
   let lv = null;
   for (const t of h.특성) {
@@ -216,12 +237,26 @@ $('#body').addEventListener('click', e => {
     : b.textContent.replace('접기', '보기');
 });
 $('#ids').addEventListener('click', () => document.body.classList.toggle('noid'));
+/* 이미지 저장소가 아직 안 채운 아이콘은 **깨진 그림** 대신 빈 칸으로 둔다.
+   (이미 난 404 를 가리는 것이라 요청이 늘지 않는다 — 폴백으로 다시 부르지 않는다) */
+document.addEventListener('error', e => {
+  const t = e.target;
+  if (t && t.tagName === 'IMG' && t.src !== BLANK) t.src = BLANK;
+}, true);
 
 (async function boot() {
   document.body.classList.add('noid');     /* 내부 이름은 필요할 때만 */
-  const r = await fetch('../data/herodex/index.json');
+  const [r, ri] = await Promise.all([
+    fetch('../data/herodex/index.json'),
+    fetch('../images/index.json').catch(() => null),
+  ]);
   const d = await r.json();
   INDEX = d.heroes;
+  if (ri && ri.ok) {
+    const im = await ri.json();
+    LOCAL = new Set(im.files || []);
+    MISS = new Set(im.missing || []);
+  }
   renderList('');
   const want = new URLSearchParams(location.search).get('hero');
   pick(INDEX.some(h => h.id === want) ? want : INDEX[0].id, false);

@@ -20,7 +20,7 @@ SRC = ROOT.parent / "hots_xml" / "out"
 OUT = ROOT / "site" / "data" / "herodex"
 
 # 화면이 쓰는 것만 남긴다(내부 디버그용 칸은 뺀다)
-KEEP_AB = ("이름", "칸", "id", "설명", "위키식", "자원(Energy)", "자원(Life)", "재사용 대기시간",
+KEEP_AB = ("이름", "칸", "id", "설명", "아이콘", "위키식", "자원(Energy)", "자원(Life)", "재사용 대기시간",
            "연타 제한", "충전 개수", "충전 회복", "사거리", "최소 사거리", "부채꼴", "시전 시간",
            "마무리 시간", "이동 거리(추정)", "대상", "피해", "회복", "범위", "투사체",
            "재사용 조정", "지속 효과", "거는 효과", "위키", "예외")
@@ -35,8 +35,13 @@ def level_of(t):
         return None
 
 
-def slim(d):
-    o = {"영웅": d["영웅"], "자료": d["자료"], "기본": d["기본 수치"], "기술": [], "특성": []}
+# 영웅 초상화는 이미 사이트가 가지고 있는 목록에서 가져온다(두 군데서 만들지 않는다)
+PORTRAITS = ROOT / "site" / "data" / "patchnotes" / "heroes.json"
+
+
+def slim(d, hid, portraits):
+    o = {"영웅": d["영웅"], "자료": d["자료"], "기본": d["기본 수치"],
+         "초상화": (portraits.get(hid) or {}).get("portrait"), "기술": [], "특성": []}
     for a in d["기술"]:
         x = {}
         for k in KEEP_AB:
@@ -48,7 +53,8 @@ def slim(d):
     for t in sorted(d["특성"], key=lambda x: (level_of(x) or 99, str(x.get("칸")))):
         up = t.get("강화 기술")
         o["특성"].append({
-            "레벨": level_of(t), "이름": t.get("이름", t["id"]), "설명": t.get("설명"),
+            "레벨": level_of(t), "이름": t.get("이름", t["id"]), "아이콘": t.get("아이콘"),
+            "설명": t.get("설명"),
             "강화": (f"[{up['칸']}] {up['이름']}" if up else None),
             "바뀌는 값": ([f"효과 켬 → {m['켜는 것']}" for m in t.get("칸 수정", []) if m.get("켜는 것")]
                       + (t.get("바뀌는 값") or []))[:6],
@@ -66,16 +72,18 @@ def main():
     if OUT.exists():
         shutil.rmtree(OUT)
     OUT.mkdir(parents=True)
+    portraits = json.loads(PORTRAITS.read_text(encoding="utf-8")) if PORTRAITS.exists() else {}
     index, total = [], 0
     build = ""
     for f in files:
         d = json.loads(f.read_text(encoding="utf-8"))
-        o = slim(d)
+        o = slim(d, f.stem, portraits)
         build = o["자료"]
         blob = json.dumps(o, ensure_ascii=False, separators=(",", ":"))
         (OUT / f.name).write_text(blob, encoding="utf-8")
         total += len(blob.encode("utf-8"))
-        index.append({"id": f.stem, "name": o["영웅"], "기술": len(o["기술"]), "특성": len(o["특성"])})
+        index.append({"id": f.stem, "name": o["영웅"], "초상화": o["초상화"],
+                      "기술": len(o["기술"]), "특성": len(o["특성"])})
     index.sort(key=lambda x: x["name"])
     (OUT / "index.json").write_text(
         json.dumps({"build": build, "heroes": index}, ensure_ascii=False, separators=(",", ":")) + "\n",

@@ -104,6 +104,21 @@ def referenced():
             for grp in ("abilities", "talents"):
                 for lst in (h.get(grp) or {}).values():
                     icons(lst)
+    # 영웅 도감(herodex) — 기술·특성 아이콘과 초상화. 여기 것이 빠지면 새 도감만 그림이 빈다.
+    hx = SITE / "data" / "herodex"
+    if hx.is_dir():
+        for f in hx.glob("*.json"):
+            if f.name == "index.json":
+                continue
+            d = load(f)
+            if d.get("초상화"):
+                want.add(("heroportraits", d["초상화"]))
+            for a in d.get("기술") or []:
+                if a.get("아이콘"):
+                    want.add(("abilitytalents", a["아이콘"]))
+            for t in d.get("특성") or []:
+                if t.get("아이콘"):
+                    want.add(("abilitytalents", t["아이콘"]))
     return want
 
 
