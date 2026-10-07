@@ -63,6 +63,25 @@ def slim(d, hid, portraits):
     return o
 
 
+# 범위 그림에 깔아 두는 **눈금**. 숫자를 여기 적지 않고 그 영웅 자료에서 읽는다
+# (평타 사거리가 패치로 바뀌면 그림도 같이 따라간다).
+YARDSTICK = (("Raynor", "공격 사거리", "레이너 평타"),
+             ("SgtHammer", "공격 사거리(최대)", "해머 공성 모드"))
+
+
+def yardsticks(files):
+    have = {p.stem: p for p in files}
+    o = {}
+    for hid, key, label in YARDSTICK:
+        p = have.get(hid)
+        if not p:
+            continue
+        v = (json.loads(p.read_text(encoding="utf-8")).get("기본 수치") or {}).get(key)
+        if v:
+            o[label] = v
+    return o
+
+
 def main():
     if not SRC.is_dir():
         raise SystemExit(f"{SRC} 가 없습니다. 먼저 hots_xml 에서 `python tools/hero_detail.py --all` 을 돌리세요.")
@@ -86,7 +105,7 @@ def main():
                       "기술": len(o["기술"]), "특성": len(o["특성"])})
     index.sort(key=lambda x: x["name"])
     (OUT / "index.json").write_text(
-        json.dumps({"build": build, "heroes": index}, ensure_ascii=False, separators=(",", ":")) + "\n",
+        json.dumps({"build": build, "heroes": index, "기준": yardsticks(files)}, ensure_ascii=False, separators=(",", ":")) + "\n",
         encoding="utf-8")
     print(f"영웅 {len(index)}명 · {total / 1e6:.1f}MB → {OUT}  (한 영웅 평균 {total / len(index) / 1024:.0f}KB)")
     return 0

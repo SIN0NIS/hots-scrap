@@ -67,7 +67,10 @@
   .fig { margin:7px 0 2px; }
   .fig svg { display:block; max-width:100%; height:auto; border:1px solid var(--line);
              border-radius:8px; background:var(--card2); }
-  .fig .cap { color:var(--dim); font-size:11px; margin-top:3px; }
+  .fig .cap { color:var(--dim); font-size:11px; margin-top:3px; line-height:1.7; }
+  .fig .cap b { font-weight:400; }
+  .c-hero { color:var(--hit); } .c-rng { color:var(--gold); }
+  .c-area { color:var(--blue); } .c-yard { color:var(--wiki); }
   .chips { display:flex; flex-wrap:wrap; gap:5px; margin-bottom:7px; }
   .chip { background:var(--card2); border:1px solid var(--line); border-radius:999px;
           padding:2px 10px; font-size:12.5px; }
@@ -129,7 +132,7 @@ const LIST = ['피해','회복','범위','투사체','재사용 조정','지속 
    (칩은 날값이라 '무제한(500)' 같은 표식이 그대로 나온다) */
 const SKIP = ['이름','칸','id','설명','위키식','위키','예외','아이콘',
               '사거리','시전 시간','마무리 시간','대상','이동 거리(추정)','부채꼴','최소 사거리'];
-let INDEX = [], cur = null, HERO = null;   // HERO = 지금 펼친 영웅(그림이 히트박스를 가져다 쓴다)
+let INDEX = [], cur = null, HERO = null, YARD = {};   // YARD = 비교용 눈금(레이너 평타·해머 공성)   // HERO = 지금 펼친 영웅(그림이 히트박스를 가져다 쓴다)
 /* 아이콘은 이미지 저장소(Pages)가 내준다. 여기 임시본이 있으면 그걸, 어디에도 없으면 **안 부른다**
    (무료 호스팅이라 404 를 아이콘 수만큼 내면 안 된다 — `images/index.json` 을 먼저 받아 안다) */
 const CDN = 'https://sin0nis.github.io/images/';
@@ -175,7 +178,9 @@ function shapeSVG(w) {
     else if (g.꼴 === '직사각형') { put(-g.가로 / 2, at - g.세로 / 2); put(g.가로 / 2, at + g.세로 / 2); }
     else { put(-g.반지름, at - g.반지름); put(g.반지름, at + g.반지름); }
   });
-  if (d > 0) put(0, d);
+  if (d > 0) { put(0, d); put(-d, 0); put(d, 0); put(0, -d); }   // 시전 사거리는 **사방으로** 미친다
+  const yard = Object.entries(YARD);
+  yard.forEach(([, r]) => { put(-r, -r); put(r, r); });            // 눈금도 그림 안에 들어오게
   x0 = Math.floor(x0 - 0.7); x1 = Math.ceil(x1 + 0.7);
   y0 = Math.floor(y0 - 0.7); y1 = Math.ceil(y1 + 0.7);
   const wu = x1 - x0, hu = y1 - y0;
@@ -189,9 +194,21 @@ function shapeSVG(w) {
   for (let y = y0; y <= y1; y++)
     grid += `<line x1="0" y1="${py(y)}" x2="${W}" y2="${py(y)}" stroke="var(--line)" stroke-width="${y === 0 ? 1.4 : 0.6}"/>`;
   let body = '';
+  // 눈금 — '이 범위가 레이너 평타보다 넓나?' 를 눈으로 재라고 깔아 둔다.
+  // 너무 옅으면 안 보이고 너무 진하면 정작 기술 범위를 가린다. 선은 가늘게, 대신 이름표를 붙인다.
+  yard.forEach(([k, r]) => {
+    body += `<circle cx="${px(0)}" cy="${py(0)}" r="${r * S}" fill="none" stroke="var(--wiki)" `
+          + `stroke-width="1" stroke-dasharray="4 3" opacity=".55"/>`;
+    if (py(r) > 9)
+      body += `<text x="${px(0) + 4}" y="${py(r) - 3}" font-size="9" fill="var(--wiki)" `
+            + `opacity=".85">${esc(k)} ${r}</text>`;
+  });
+  // 시전 사거리 — 어디까지 찍을 수 있나(영웅 중심). 공격 범위는 그 **끝**에 그린다.
   if (d > 0)
-    body += `<line x1="${px(0)}" y1="${py(0)}" x2="${px(0)}" y2="${py(d)}" stroke="var(--dim)" `
-          + `stroke-width="1" stroke-dasharray="3 3"/>`;
+    body += `<circle cx="${px(0)}" cy="${py(0)}" r="${d * S}" fill="none" stroke="var(--gold)" `
+          + `stroke-width="1.2" stroke-dasharray="5 4"/>`
+          + `<line x1="${px(0)}" y1="${py(0)}" x2="${px(0)}" y2="${py(d)}" stroke="var(--gold)" `
+          + `stroke-width="1" stroke-dasharray="3 3" opacity=".8"/>`;
   gs.forEach(g => {
     const at = g.자리 === '원점' ? 0 : d;
     const fill = 'fill="var(--blue)" fill-opacity=".16" stroke="var(--blue)" stroke-width="1.4"';
@@ -213,10 +230,14 @@ function shapeSVG(w) {
   body += `<circle cx="${px(0)}" cy="${py(0)}" r="${hr * S}" fill="var(--hit)" fill-opacity=".55" `
         + `stroke="var(--hit)" stroke-width="1"/>`;
   const names = gs.map(g => g.꼴).filter((v, i, z) => z.indexOf(v) === i).join(' · ');
+  const cap = [`한 칸 = 거리 1 · 위쪽이 앞`,
+               `<b class="c-hero">●</b> 영웅 히트박스 ${hr}`,
+               d > 0 ? `<b class="c-rng">◌</b> 시전 사거리 ${d}` : '',
+               `<b class="c-area">■</b> 공격 범위 ${esc(names)}`,
+               yard.map(([k, r]) => `<b class="c-yard">⌁</b> ${esc(k)} ${r}`).join(' · ')]
+              .filter(Boolean).join(' · ');
   return `<div class="fig"><svg viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" `
-       + `aria-label="범위 그림"><g>${grid}</g>${body}</svg>`
-       + `<div class="cap">한 칸 = 거리 1 · 위쪽이 앞 · 가운데 노란 원이 영웅 히트박스(반지름 ${hr})`
-       + (d > 0 ? ` · 점선은 사거리 ${d}` : '') + ` · ${esc(names)}</div></div>`;
+       + `aria-label="범위 그림"><g>${grid}</g>${body}</svg><div class="cap">${cap}</div></div>`;
 }
 function abilityHTML(a) {
   const chips = Object.entries(a).filter(([k, v]) =>
@@ -328,6 +349,7 @@ document.addEventListener('error', e => {
   ]);
   const d = await r.json();
   INDEX = d.heroes;
+  YARD = d.기준 || {};          /* 범위 그림에 깔 눈금 */
   if (ri && ri.ok) {
     const im = await ri.json();
     LOCAL = new Set(im.files || []);
