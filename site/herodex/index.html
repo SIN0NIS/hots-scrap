@@ -247,8 +247,8 @@ document.addEventListener('error', e => {
 (async function boot() {
   document.body.classList.add('noid');     /* 내부 이름은 필요할 때만 */
   const [r, ri] = await Promise.all([
-    fetch('../data/herodex/index.json'),
-    fetch('../images/index.json').catch(() => null),
+    fetch('../data/herodex/index.json', { cache: 'no-cache' }),
+    fetch('../images/index.json', { cache: 'no-cache' }).catch(() => null),
   ]);
   const d = await r.json();
   INDEX = d.heroes;

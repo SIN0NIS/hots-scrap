@@ -217,6 +217,8 @@
   });
 })();
 
+var NOCACHE = { cache: 'no-cache' };
+
 /* 허브는 data/hub.json 하나만 읽는다 (전에는 apps.json + latest.json 둘이었다 — 요청을 하나로 줄였다).
    hub.json 은 pipeline/steps/build_status.py 가 apps.json + 자료 파일에서 만든다.
    못 읽으면 예전 방식(apps.json)으로 되돌아간다. */
@@ -244,7 +246,9 @@
 
   var reg = null, fellBack = false;
   try {
-    reg = await fetch('data/hub.json').then(function (r) { if (!r.ok) throw 0; return r.json(); });
+    // 목록은 캐시(10분)에 갇히면 올린 변경이 한참 안 보인다. 'no-cache' 는
+    // 안 바뀌었으면 304(본문 0바이트)로 끝나니 요청 수는 같고 바이트만 안 쓴다.
+    reg = await fetch('data/hub.json', NOCACHE).then(function (r) { if (!r.ok) throw 0; return r.json(); });
   } catch (e) {
     try { reg = await fetch('apps.json').then(function (r) { return r.json(); }); fellBack = true; } catch (e2) {}
   }
@@ -255,7 +259,7 @@
       (reg.updated ? ' · <span class="date">' + esc(reg.updated) + ' 업데이트</span>' : '');
   } else if (fellBack) {
     try {
-      var lt = await fetch('data/latest.json').then(function (r) { return r.json(); });
+      var lt = await fetch('data/latest.json', NOCACHE).then(function (r) { return r.json(); });
       buildEl.innerHTML = '데이터 버전: <b>build ' + esc(lt.build) + '</b>' +
         (lt.updated ? ' · <span class="date">' + esc(lt.updated) + ' 업데이트</span>' : '');
     } catch (e) { buildEl.textContent = '데이터 버전 정보를 읽지 못했습니다'; }
