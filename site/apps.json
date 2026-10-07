@@ -1,10 +1,18 @@
 {
   "apps": [
     {
-      "id": "encyclopedia",
+      "id": "herodex",
       "name": "영웅 도감",
+      "path": "herodex/",
+      "desc": "게임 원본 XML 에서 직접 뽑은 기술·특성 상세 — 유형·사거리·판정·투사체 속도까지",
+      "requires": "light",
+      "status": "active"
+    },
+    {
+      "id": "encyclopedia",
+      "name": "영웅 도감 (HotS wiki 번역)",
       "path": "encyclopedia/",
-      "desc": "원본 게임 데이터(build 97650) 기반 영웅·스킬·특성 도감",
+      "desc": "HotS wiki 를 옮겨 정리한 영웅·스킬·특성 도감 (build 97650 기준)",
       "requires": "light",
       "status": "active"
     },

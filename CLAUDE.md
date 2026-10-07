@@ -28,7 +28,12 @@
     그대로 남아* 있기도 하다(잘아타스 '어둠의 심장 의식' ← 레가르 '속박의 토템').
     `stale_keys()` 가 걸러 낸다 — **이름이 비었는데 설명이 다른 자리와 글자까지 같으면** 찌꺼기로 본다.
     이 판정을 느슨하게 바꾸지 마라(2.57.0.98126 기준 오탐 0, 정탐 1).
-- `site/encyclopedia/index.html` 영웅 도감 — **단일 파일(6MB, 데이터 내장)**, 직접 편집
+- `site/herodex/` **영웅 도감** — 게임 원본 XML 에서 직접 뽑은 기술·특성 상세.
+  자료는 `site/data/herodex/`(목록 1개 + 영웅마다 1개, 평균 16KB) — 화면은 **고른 영웅 하나만** 받는다.
+  만드는 곳은 저장소 **밖**인 `../hots_xml`(engine/ + tools/hero_detail.py)이고,
+  여기서는 `pipeline/steps/build_herodex.py` 가 그 결과를 옮겨 쪼갠다(로컬 전용 단계).
+  칸 이름·분류 규칙은 `hots_xml/README.md` 의 '해석기' 절에 적혀 있다.
+- `site/encyclopedia/index.html` 영웅 도감 (HotS wiki 번역) — **단일 파일(6MB, 데이터 내장)**, 직접 편집
 - `site/replay/` 리플레이 뷰어 — `index.html` + `css/` + `js/`(클래식 스크립트, ES 모듈 아님). `js/data_*.js` 는 생성 파일
 - `site/shared/scrap.js` 전역 바+테마(한 줄 로드). **`scrap.css` 도 이 스크립트가 스스로 끌어온다** —
   앱은 `scrap.js` 한 줄만 부르면 된다(예전에는 CSS 를 `<link>` 로 부르는 앱이 패치 기록 하나뿐이라

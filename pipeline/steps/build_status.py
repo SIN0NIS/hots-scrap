@@ -34,6 +34,8 @@ KST = timezone(timedelta(hours=9))
 # 앱 id → 그 앱이 실제로 쓰는 자료 파일들. 이것들이 바뀌면 "자료 갱신" 시각이 움직인다.
 WATCH = {
     "encyclopedia": ["site/encyclopedia/index.html"],
+    # 영웅 도감은 영웅마다 파일이 따로라, 목록 파일 하나만 지문으로 본다(바뀌면 같이 바뀐다)
+    "herodex": ["site/data/herodex/index.json"],
     # index.json 은 두 판이 같이 쓰므로 지문에 넣지 않는다(넣으면 테스트 서버만 바뀌어도 본 서버까지 '갱신'으로 찍힌다)
     "builds": ["site/data/builds/live.ko.json", "site/data/builds/live.en.json"],
     "builds-ptr": ["site/data/builds/ptr.ko.json", "site/data/builds/ptr.en.json"],
@@ -90,6 +92,10 @@ def note_for(app_id):
     if app_id == "encyclopedia":
         lt = load(LATEST) or {}
         return f"build {lt.get('build', '?')} 기준"
+    if app_id == "herodex":
+        d = load(SITE / "data" / "herodex" / "index.json") or {}
+        hs = d.get("heroes") or []
+        return f"build {d.get('build', '?')} · 영웅 {len(hs)}명" if hs else ""
     if app_id in ("builds", "builds-ptr"):
         ch = (load(SITE / "data" / "builds" / "index.json") or {}).get("channels") or {}
         c = ch.get("ptr" if app_id == "builds-ptr" else "live") or {}
