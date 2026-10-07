@@ -63,6 +63,11 @@
   .hhead { display:flex; align-items:center; gap:2px; margin:0 0 2px; }
   .id { color:var(--dim); font-size:11.5px; margin-left:6px; }
   .desc { color:var(--dim); font-size:13.5px; margin:6px 0 9px; line-height:1.65; word-break:keep-all; }
+  /* 범위 그림 — 한 칸이 게임 거리 1 이다 */
+  .fig { margin:7px 0 2px; }
+  .fig svg { display:block; max-width:100%; height:auto; border:1px solid var(--line);
+             border-radius:8px; background:var(--card2); }
+  .fig .cap { color:var(--dim); font-size:11px; margin-top:3px; }
   .chips { display:flex; flex-wrap:wrap; gap:5px; margin-bottom:7px; }
   .chip { background:var(--card2); border:1px solid var(--line); border-radius:999px;
           padding:2px 10px; font-size:12.5px; }
@@ -118,12 +123,13 @@
 <script>
 const $ = s => document.querySelector(s);
 const esc = s => String(s == null ? "" : s).replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const FIGKEY = ['도형', '도형거리'];   // 표가 아니라 그림으로 보여 주는 칸
 const LIST = ['피해','회복','범위','투사체','재사용 조정','지속 효과','거는 효과'];
 /* 알약(칩)에는 **비용 쪽만** — 사거리·시전 시간 따위는 아래 속성 표에 더 정확하게 들어 있다
    (칩은 날값이라 '무제한(500)' 같은 표식이 그대로 나온다) */
 const SKIP = ['이름','칸','id','설명','위키식','위키','예외','아이콘',
               '사거리','시전 시간','마무리 시간','대상','이동 거리(추정)','부채꼴','최소 사거리'];
-let INDEX = [], cur = null;
+let INDEX = [], cur = null, HERO = null;   // HERO = 지금 펼친 영웅(그림이 히트박스를 가져다 쓴다)
 /* 아이콘은 이미지 저장소(Pages)가 내준다. 여기 임시본이 있으면 그걸, 어디에도 없으면 **안 부른다**
    (무료 호스팅이라 404 를 아이콘 수만큼 내면 안 된다 — `images/index.json` 을 먼저 받아 안다) */
 const CDN = 'https://sin0nis.github.io/images/';
@@ -144,11 +150,79 @@ function rowText(r) {
   return Object.entries(r).filter(([k, v]) => k !== '출처' && v != null)
     .map(([k, v]) => `${esc(k)} <b>${esc(v)}</b>`).join(' · ');
 }
+/* ── 범위를 격자 위에 그린다 ─────────────────────────────────────────
+   약속: **원점이 영웅, 위쪽이 앞, 한 칸이 거리 1**. 영웅 히트박스(Unit Radius)를 원점에 먼저
+   그려 두면 '반지름 4' 가 몸 몇 개 분량인지 눈으로 가늠된다.
+   부채꼴·다각형은 영웅에게서 뻗어 나가고(자리 '원점'), 원·고리·직사각형은 기술이 떨어지는
+   자리에 생긴다(자리 '착지' = 사거리만큼 앞). 그 구분은 자료가 들고 온다. */
+function shapeSVG(w) {
+  const gs = (w || {})['도형'];
+  if (!gs || !gs.length) return '';
+  const d = typeof w['도형거리'] === 'number' ? w['도형거리'] : 0;
+  const hr = (HERO && HERO.기본 && HERO.기본.반지름) || 0.6875;
+  let x0 = -hr, x1 = hr, y0 = -hr, y1 = hr;
+  const put = (x, y) => { x0 = Math.min(x0, x); x1 = Math.max(x1, x); y0 = Math.min(y0, y); y1 = Math.max(y1, y); };
+  const arcPts = (R, A, cy) => {
+    const pts = [], half = Math.min(A, 360) / 2;
+    for (let t = -half; t <= half + 0.01; t += 5)
+      pts.push([R * Math.sin(t * Math.PI / 180), cy + R * Math.cos(t * Math.PI / 180)]);
+    return pts;
+  };
+  gs.forEach(g => {
+    const at = g.자리 === '원점' ? 0 : d;
+    if (g.꼴 === '다각형') (g.점 || []).forEach(p => put(p[0], p[1]));
+    else if (g.꼴 === '부채꼴') { put(0, at); arcPts(g.반지름, g.각도, at).forEach(p => put(p[0], p[1])); }
+    else if (g.꼴 === '직사각형') { put(-g.가로 / 2, at - g.세로 / 2); put(g.가로 / 2, at + g.세로 / 2); }
+    else { put(-g.반지름, at - g.반지름); put(g.반지름, at + g.반지름); }
+  });
+  if (d > 0) put(0, d);
+  x0 = Math.floor(x0 - 0.7); x1 = Math.ceil(x1 + 0.7);
+  y0 = Math.floor(y0 - 0.7); y1 = Math.ceil(y1 + 0.7);
+  const wu = x1 - x0, hu = y1 - y0;
+  if (wu > 90 || hu > 90) return '';          // 지도 전체급은 격자로 보여 봐야 의미가 없다
+  const S = Math.max(5, Math.min(24, 300 / Math.max(wu, hu)));
+  const W = wu * S, H = hu * S;
+  const px = x => (x - x0) * S, py = y => (y1 - y) * S;
+  let grid = '';
+  for (let x = x0; x <= x1; x++)
+    grid += `<line x1="${px(x)}" y1="0" x2="${px(x)}" y2="${H}" stroke="var(--line)" stroke-width="${x === 0 ? 1.4 : 0.6}"/>`;
+  for (let y = y0; y <= y1; y++)
+    grid += `<line x1="0" y1="${py(y)}" x2="${W}" y2="${py(y)}" stroke="var(--line)" stroke-width="${y === 0 ? 1.4 : 0.6}"/>`;
+  let body = '';
+  if (d > 0)
+    body += `<line x1="${px(0)}" y1="${py(0)}" x2="${px(0)}" y2="${py(d)}" stroke="var(--dim)" `
+          + `stroke-width="1" stroke-dasharray="3 3"/>`;
+  gs.forEach(g => {
+    const at = g.자리 === '원점' ? 0 : d;
+    const fill = 'fill="var(--blue)" fill-opacity=".16" stroke="var(--blue)" stroke-width="1.4"';
+    if (g.꼴 === '다각형')
+      body += `<polygon points="${(g.점 || []).map(p => px(p[0]) + ',' + py(p[1])).join(' ')}" ${fill}/>`;
+    else if (g.꼴 === '부채꼴') {
+      const pts = arcPts(g.반지름, g.각도, at).map(p => px(p[0]) + ',' + py(p[1]));
+      body += `<polygon points="${px(0)},${py(at)} ${pts.join(' ')}" ${fill}/>`;
+    } else if (g.꼴 === '직사각형')
+      body += `<rect x="${px(-g.가로 / 2)}" y="${py(at + g.세로 / 2)}" width="${g.가로 * S}" `
+            + `height="${g.세로 * S}" ${fill}/>`;
+    else if (g.꼴 === '고리')
+      body += `<circle cx="${px(0)}" cy="${py(at)}" r="${g.반지름 * S}" ${fill}/>`
+            + `<circle cx="${px(0)}" cy="${py(at)}" r="${g.안쪽 * S}" fill="var(--card2)" `
+            + `stroke="var(--blue)" stroke-width="1"/>`;
+    else
+      body += `<circle cx="${px(0)}" cy="${py(at)}" r="${g.반지름 * S}" ${fill}/>`;
+  });
+  body += `<circle cx="${px(0)}" cy="${py(0)}" r="${hr * S}" fill="var(--hit)" fill-opacity=".55" `
+        + `stroke="var(--hit)" stroke-width="1"/>`;
+  const names = gs.map(g => g.꼴).filter((v, i, z) => z.indexOf(v) === i).join(' · ');
+  return `<div class="fig"><svg viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" `
+       + `aria-label="범위 그림"><g>${grid}</g>${body}</svg>`
+       + `<div class="cap">한 칸 = 거리 1 · 위쪽이 앞 · 가운데 노란 원이 영웅 히트박스(반지름 ${hr})`
+       + (d > 0 ? ` · 점선은 사거리 ${d}` : '') + ` · ${esc(names)}</div></div>`;
+}
 function abilityHTML(a) {
   const chips = Object.entries(a).filter(([k, v]) =>
       !SKIP.includes(k) && !LIST.includes(k) && v != null && typeof v !== 'object')
     .map(([k, v]) => `<span class="chip">${esc(k)} <b>${esc(v)}</b></span>`).join('');
-  let rows = Object.entries(a.위키식 || {}).map(([k, v]) =>
+  let rows = Object.entries(a.위키식 || {}).filter(([k]) => !FIGKEY.includes(k)).map(([k, v]) =>
       `<tr><td class="k">${esc(k)}</td><td colspan="2"><b>${esc(v)}</b></td></tr>`).join('');
   let minor = '';
   for (const k of LIST) for (const r of (a[k] || []))
@@ -166,13 +240,14 @@ function abilityHTML(a) {
       ${a.설명 ? `<div class="desc">${esc(a.설명)}</div>` : ''}
       <div class="chips">${chips}</div>
       ${rows || minor ? `<table>${rows}${minor}</table>` : ''}
+      ${shapeSVG(a.위키식)}
       ${n ? `<button class="more" type="button">원자료 ${n}줄 보기</button>` : ''}
     </div>`;
 }
 function talentHTML(t) {
   const rows = (t['바뀌는 값'] || []).map(v =>
       `<tr><td class="k chg">바뀌는 값</td><td>${esc(v)}</td></tr>`).join('')
-    + Object.entries(t.위키식 || {}).map(([k, v]) =>
+    + Object.entries(t.위키식 || {}).filter(([k]) => !FIGKEY.includes(k)).map(([k, v]) =>
       `<tr><td class="k">${esc(k)}</td><td><b>${esc(v)}</b></td></tr>`).join('')
     + (t.위키 ? `<tr><td class="k wikirow">⌁ 위키</td><td class="wikirow">`
         + Object.entries(t.위키).filter(([k]) => k !== '출처').map(([k, v]) => `${esc(k)} ${esc(v)}`).join(' · ')
@@ -182,9 +257,10 @@ function talentHTML(t) {
     + `loading="lazy"><span class="tn">${esc(t.이름)}</span>`
     + (t.강화 ? `<span class="up">${esc(t.강화)} 강화</span>` : '') + `</div>`
     + (t.설명 ? `<div class="tdesc">${esc(t.설명)}</div>` : '')
-    + (rows ? `<table class="tt">${rows}</table>` : '') + `</div>`;
+    + (rows ? `<table class="tt">${rows}</table>` : '') + shapeSVG(t.위키식) + `</div>`;
 }
 function render(h) {
+  HERO = h;
   const base = Object.entries(h.기본).filter(([, v]) => v != null)
       .map(([k, v]) => `${esc(k)} <b>${esc(v)}</b>`).join(' · ');
   let out = `<div class="hhead"><img class="face" src="${imgUrl('heroportraits', h.초상화)}" alt="">`
