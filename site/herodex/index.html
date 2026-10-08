@@ -170,9 +170,18 @@ const CACHE = new Map();          /* 한 번 받은 영웅은 다시 받지 않�
 function slotClass(s) {
   return s === 'D' ? 'd' : s === 'Z' ? 'z' : /^R/.test(s) ? 'r' : /액티브/.test(s) ? 'x' : '';
 }
+/* 이동 속도·공격 속도 같은 칸은 자료에 **비율**로 적힌다(-0.25 = 25% 느려짐).
+   숫자 그대로 보이면 '0.25 만큼 느려진다' 로 읽히니 퍼센트로 옮긴다. */
+const RATIO_KEYS = ['이동 속도', '공격 속도', '일반 공격 피해량', '기술 피해량',
+                    '최소 이동 속도', '최대 이동 속도'];
+function fmtVal(k, v) {
+  if (RATIO_KEYS.includes(k) && typeof v === 'number')
+    return (v > 0 ? '+' : '') + (Math.round(v * 1000) / 10) + '%';
+  return v;
+}
 function rowText(r) {
   return Object.entries(r).filter(([k, v]) => k !== '출처' && v != null)
-    .map(([k, v]) => `${esc(k)} <b>${esc(v)}</b>`).join(' · ');
+    .map(([k, v]) => `${esc(k)} <b>${esc(fmtVal(k, v))}</b>`).join(' · ');
 }
 /* ── 범위를 격자 위에 그린다 ─────────────────────────────────────────
    약속: **원점이 영웅, 위쪽이 앞, 한 칸이 거리 1**. 영웅 히트박스(Unit Radius)를 원점에 먼저
