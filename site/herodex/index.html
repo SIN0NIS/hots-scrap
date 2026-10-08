@@ -79,6 +79,9 @@
   /* 기본 틀과 **특성이 더하는 것**을 눈으로 갈라 둔다 */
   .mode { display:inline-block; margin-right:5px; padding:1px 7px; border-radius:999px;
           border:1px solid var(--gold-line); color:var(--gold); font-size:11px; }
+  .qch { margin:4px 0; font-size:12px; color:var(--dim); }
+  .qch > b { color:var(--gold); font-weight:400; }
+  .qch b { color:var(--fg); }
   .acc { color:var(--hit); font-size:11px; margin-top:2px; }
   .per { color:var(--warn); font-size:11px; }
   .tipv { margin:4px 0 6px; }
@@ -161,7 +164,7 @@ const FIGKEY = ['도형', '도형거리'];   // 표가 아니라 그림으로 �
 const LIST = ['피해','회복','범위','투사체','재사용 조정','지속 효과','거는 효과'];
 /* 알약(칩)에는 **비용 쪽만** — 사거리·시전 시간 따위는 아래 속성 표에 더 정확하게 들어 있다
    (칩은 날값이라 '무제한(500)' 같은 표식이 그대로 나온다) */
-const SKIP = ['이름','칸','모드','id','설명','위키식','위키','예외','아이콘','특성 강화','툴팁 수치',
+const SKIP = ['이름','칸','모드','id','퀘스트로 바뀜','설명','위키식','위키','예외','아이콘','특성 강화','툴팁 수치',
               '사거리','시전 시간','마무리 시간','대상','이동 거리(추정)','부채꼴','최소 사거리'];
 let INDEX = [], cur = null, HERO = null, YARD = {};   // YARD = 비교용 눈금(레이너 평타·해머 공성)   // HERO = 지금 펼친 영웅(그림이 히트박스를 가져다 쓴다)
 /* 아이콘은 이미지 저장소(Pages)가 내준다. 여기 임시본이 있으면 그걸, 어디에도 없으면 **안 부른다**
@@ -463,6 +466,13 @@ function tipHTML(rows) {
     `<span class="chip">${esc(r.칸)} <b>${esc(r.값)}${esc(r.단위 || '')}</b></span>`).join('');
   return `<div class="tipv"><b>툴팁이 쓰는 값</b><div class="chips">${cells}</div></div>`;
 }
+/* **퀘스트를 깨면 자료 값이 영구히 바뀐다**(무라딘 신화 보상: 관통 100명, 사거리 x1.5).
+   기본 틀은 그대로 두고, 깼을 때 얼마가 되는지를 따로 적는다. */
+function questHTML(rows) {
+  if (!rows || !rows.length) return '';
+  const t = rows.map(r => `${esc(r.칸)} ${esc(r.전)} → <b>${esc(r.값)}${esc(r.단위 || '')}</b>`).join(' · ');
+  return `<div class="qch"><b>퀘스트를 깨면</b> ${t}</div>`;
+}
 function abilityHTML(a) {
   const chips = Object.entries(a).filter(([k, v]) =>
       !SKIP.includes(k) && !LIST.includes(k) && v != null && typeof v !== 'object')
@@ -487,6 +497,7 @@ function abilityHTML(a) {
       ${a.설명 ? `<div class="desc">${esc(a.설명)}</div>` : ''}
       <div class="chips">${chips}</div>
       ${tipHTML(a['툴팁 수치'])}
+      ${questHTML(a['퀘스트로 바뀜'])}
       ${rows || minor ? `<table>${rows}${minor}</table>` : ''}
       ${shapeSVG(a.위키식)}
       ${upsHTML(a['특성 강화'])}
