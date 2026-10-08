@@ -172,15 +172,23 @@ function shapeSVG(w) {
     return pts;
   };
   gs.forEach(g => {
-    const at = g.자리 === '원점' ? 0 : d;
-    if (g.꼴 === '다각형') (g.점 || []).forEach(p => put(p[0], p[1]));
+    // 쓸고 가는 판정은 영웅에게서 출발한다(기술이 떨어지는 자리가 아니다)
+    const at = (g.자리 === '원점' || g.쓸기) ? 0 : d;
+    if (g.꼴 === '다각형' || g.꼴 === '자리들') (g.점 || []).forEach(p => put(p[0], p[1]));
     else if (g.꼴 === '부채꼴') { put(0, at); arcPts(g.반지름, g.각도, at).forEach(p => put(p[0], p[1])); }
-    else if (g.꼴 === '직사각형') { put(-g.가로 / 2, at - g.세로 / 2); put(g.가로 / 2, at + g.세로 / 2); }
-    else { put(-g.반지름, at - g.반지름); put(g.반지름, at + g.반지름); }
+    else if (g.꼴 === '직사각형') {
+      put(-g.가로 / 2, at - g.세로 / 2); put(g.가로 / 2, at + (g.쓸기 || 0) + g.세로 / 2);
+    } else { put(-g.반지름, at - g.반지름); put(g.반지름, at + g.반지름); }
   });
   if (d > 0) { put(0, d); put(-d, 0); put(d, 0); put(0, -d); }   // 시전 사거리는 **사방으로** 미친다
-  const yard = Object.entries(YARD);
-  yard.forEach(([, r]) => { put(-r, -r); put(r, r); });            // 눈금도 그림 안에 들어오게
+  // 눈금은 **기술이 차지하는 만큼만** 깐다. 반지름 1 짜리 기술에 해머 공성 11 까지 그리면
+  // 격자가 깨알이 돼 정작 그 기술이 안 보인다. 그래서 '기술이 미치는 거리' 를 먼저 재고,
+  // 그보다 큰 눈금은 **가장 작은 것 하나만** 남긴다(그것조차 없으면 비교할 게 없으니까).
+  let own = Math.max(hr, Math.abs(x0), x1, Math.abs(y0), y1);
+  const ys = Object.entries(YARD).sort((a, b) => a[1] - b[1]);
+  const limit = Math.max(own, ys.length ? ys[0][1] : 0);
+  const yard = ys.filter(([, r]) => r <= limit);
+  yard.forEach(([, r]) => { put(-r, -r); put(r, r); });
   x0 = Math.floor(x0 - 0.7); x1 = Math.ceil(x1 + 0.7);
   y0 = Math.floor(y0 - 0.7); y1 = Math.ceil(y1 + 0.7);
   const wu = x1 - x0, hu = y1 - y0;
@@ -210,26 +218,48 @@ function shapeSVG(w) {
           + `<line x1="${px(0)}" y1="${py(0)}" x2="${px(0)}" y2="${py(d)}" stroke="var(--gold)" `
           + `stroke-width="1" stroke-dasharray="3 3" opacity=".8"/>`;
   gs.forEach(g => {
-    const at = g.자리 === '원점' ? 0 : d;
+    const at = (g.자리 === '원점' || g.쓸기) ? 0 : d;
     const fill = 'fill="var(--blue)" fill-opacity=".16" stroke="var(--blue)" stroke-width="1.4"';
-    if (g.꼴 === '다각형')
+    if (g.꼴 === '자리들') {
+      // 여러 지점에 차례로 생기는 기술(잘아타스 공허 걸음의 삼각형). 자리를 잇고 번호를 붙인다.
+      const pts = (g.점 || []).map(p => px(p[0]) + ',' + py(p[1]));
+      body += `<polygon points="${pts.join(' ')}" fill="var(--blue)" fill-opacity=".10" `
+            + `stroke="var(--blue)" stroke-width="1.2" stroke-dasharray="5 3"/>`;
+      (g.점 || []).forEach((p, i) => {
+        body += `<circle cx="${px(p[0])}" cy="${py(p[1])}" r="4" fill="var(--blue)"/>`
+              + `<text x="${px(p[0]) + 6}" y="${py(p[1]) - 5}" font-size="9" fill="var(--blue)">${i + 1}</text>`;
+      });
+    } else if (g.꼴 === '다각형')
       body += `<polygon points="${(g.점 || []).map(p => px(p[0]) + ',' + py(p[1])).join(' ')}" ${fill}/>`;
     else if (g.꼴 === '부채꼴') {
       const pts = arcPts(g.반지름, g.각도, at).map(p => px(p[0]) + ',' + py(p[1]));
       body += `<polygon points="${px(0)},${py(at)} ${pts.join(' ')}" ${fill}/>`;
-    } else if (g.꼴 === '직사각형')
-      body += `<rect x="${px(-g.가로 / 2)}" y="${py(at + g.세로 / 2)}" width="${g.가로 * S}" `
-            + `height="${g.세로 * S}" ${fill}/>`;
+    } else if (g.꼴 === '직사각형') {
+      const run = g.쓸기 || 0;
+      body += `<rect x="${px(-g.가로 / 2)}" y="${py(at + run + g.세로 / 2)}" width="${g.가로 * S}" `
+            + `height="${(g.세로 + run) * S}" ${fill}/>`;
+      if (run)   // 출발할 때의 판정 상자를 한 번 더 그려 '얼마짜리 상자가 쓸고 가는지' 보이게
+        body += `<rect x="${px(-g.가로 / 2)}" y="${py(at + g.세로 / 2)}" width="${g.가로 * S}" `
+              + `height="${g.세로 * S}" fill="none" stroke="var(--blue)" stroke-width="1" `
+              + `stroke-dasharray="4 3"/>`;
+    }
     else if (g.꼴 === '고리')
       body += `<circle cx="${px(0)}" cy="${py(at)}" r="${g.반지름 * S}" ${fill}/>`
             + `<circle cx="${px(0)}" cy="${py(at)}" r="${g.안쪽 * S}" fill="var(--card2)" `
             + `stroke="var(--blue)" stroke-width="1"/>`;
-    else
+    else {
       body += `<circle cx="${px(0)}" cy="${py(at)}" r="${g.반지름 * S}" ${fill}/>`;
+      if (g.작은)   // 충전으로 커지는 원 — 처음 크기를 점선으로 같이 둔다
+        body += `<circle cx="${px(0)}" cy="${py(at)}" r="${g.작은 * S}" fill="none" `
+              + `stroke="var(--blue)" stroke-width="1" stroke-dasharray="4 3"/>`;
+    }
   });
   body += `<circle cx="${px(0)}" cy="${py(0)}" r="${hr * S}" fill="var(--hit)" fill-opacity=".55" `
         + `stroke="var(--hit)" stroke-width="1"/>`;
-  const names = gs.map(g => g.꼴).filter((v, i, z) => z.indexOf(v) === i).join(' · ');
+  const names = gs.map(g => g.꼴 === '자리들' ? `${(g.점 || []).length}곳` :
+                             g.쓸기 ? `${g.꼴}이 ${g.쓸기} 쓸고 감` :
+                             g.작은 ? `커지는 ${g.꼴}(${g.작은}~${g.반지름})` : g.꼴)
+                 .filter((v, i, z) => z.indexOf(v) === i).join(' · ');
   const cap = [`한 칸 = 거리 1 · 위쪽이 앞`,
                `<b class="c-hero">●</b> 영웅 히트박스 ${hr}`,
                d > 0 ? `<b class="c-rng">◌</b> 시전 사거리 ${d}` : '',
