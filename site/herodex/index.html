@@ -101,11 +101,14 @@
           padding:2px 10px; font-size:12.5px; }
   .chip b { color:var(--hit); }
   table { width:100%; border-collapse:collapse; font-size:13.5px; }
-  td { padding:3px 7px 3px 0; vertical-align:top; }
+  /* 긴 줄(거리별 감쇠·내부 이름)이 표를 가로로 밀어내지 않게 — 칸 안에서 접는다 */
+  table { table-layout:fixed; }
+  td { padding:3px 7px 3px 0; vertical-align:top; word-break:break-word; }
   td.k { color:var(--blue); font-weight:700; white-space:nowrap; width:92px; }
   tr.minor { display:none; } .card.open tr.minor { display:table-row; }
   tr.minor td.k { color:var(--dim); font-weight:400; }
-  td.src { color:var(--dim); font-size:11px; text-align:right; white-space:nowrap; }
+  td.src { color:var(--dim); font-size:11px; text-align:right; width:130px;
+           overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
   body.noid td.src { display:none; }
   .more { margin-top:6px; font-size:12px; padding:3px 10px; border-radius:7px; cursor:pointer;
           border:1px solid var(--line); background:var(--card2); color:var(--dim); font-family:inherit; }
