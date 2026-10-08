@@ -63,6 +63,19 @@
   .hhead { display:flex; align-items:center; gap:2px; margin:0 0 2px; }
   .id { color:var(--dim); font-size:11.5px; margin-left:6px; }
   .desc { color:var(--dim); font-size:13.5px; margin:6px 0 9px; line-height:1.65; word-break:keep-all; }
+  /* 메모 — 로컬에서만 뜬다. 이상한 걸 그 자리에 적어 두고 한꺼번에 내보낸다 */
+  .mm { float:right; border:1px solid var(--line2); background:var(--card2); color:var(--dim);
+        border-radius:7px; font:inherit; font-size:11px; padding:1px 7px; cursor:pointer; margin-left:6px; }
+  .mm.on { border-color:var(--warn); color:var(--warn); }
+  .mmbox { width:100%; box-sizing:border-box; margin-top:5px; min-height:48px; resize:vertical;
+           border:1px solid var(--warn); border-radius:8px; background:var(--card2); color:var(--fg);
+           font:inherit; font-size:12px; padding:6px 8px; }
+  .mmhit { border-left:3px solid var(--warn); padding-left:7px; }
+  #mmbar { position:fixed; right:14px; bottom:14px; z-index:99998; display:flex; gap:6px;
+           align-items:center; background:var(--card); border:1px solid var(--line2);
+           border-radius:999px; padding:6px 10px; box-shadow:var(--shadow); font-size:12px; }
+  #mmbar button { border:1px solid var(--line2); background:var(--card2); color:var(--fg);
+                  border-radius:999px; font:inherit; font-size:12px; padding:3px 10px; cursor:pointer; }
   /* 기본 틀과 **특성이 더하는 것**을 눈으로 갈라 둔다 */
   .ups { margin-top:8px; border-top:1px dashed var(--line2); padding-top:6px; }
   .ups > b { display:block; font-size:11px; color:var(--dim); font-weight:400; margin-bottom:4px; }
@@ -343,6 +356,55 @@ function upsHTML(ups) {
   return `<div class="ups"><b>위 표는 특성을 안 찍은 기본 틀입니다 · `
        + `이 기술을 바꾸는 특성 ${ups.length}개</b>${rows}</div>`;
 }
+/* ── 메모 ────────────────────────────────────────────────────────────────
+   보면서 이상한 것을 **그 자리에** 적어 두고, 한꺼번에 내보내 고치는 데 쓴다.
+   공개 사이트에는 안 띄운다(로컬 파일이나 개발 서버에서만). 적은 것은 이 브라우저
+   안에만 남고(localStorage), '내보내기' 로 json 파일 하나로 떨어진다. */
+const MEMO_ON = location.protocol === 'file:'
+             || /^(localhost|127\.|\[?::1)/.test(location.hostname);
+const MEMO_KEY = 'herodex-memo';
+let MEMO = {};
+try { MEMO = JSON.parse(localStorage.getItem(MEMO_KEY) || '{}'); } catch (e) { MEMO = {}; }
+function memoSave() { try { localStorage.setItem(MEMO_KEY, JSON.stringify(MEMO)); } catch (e) {} }
+function memoCount() { return Object.keys(MEMO).filter(k => (MEMO[k].메모 || '').trim()).length; }
+function memoBtn(kind, id, name) {
+  if (!MEMO_ON) return '';
+  const key = (HERO ? HERO.영웅 : '?') + '|' + kind + '|' + id;
+  const has = (MEMO[key] && (MEMO[key].메모 || '').trim()) ? ' on' : '';
+  return `<button class="mm${has}" type="button" data-mm="${esc(key)}" data-nm="${esc(name || '')}">`
+       + (has ? '메모 있음' : '메모') + `</button>`;
+}
+function memoBar() {
+  if (!MEMO_ON) return;
+  let bar = document.getElementById('mmbar');
+  if (!bar) {
+    bar = document.createElement('div');
+    bar.id = 'mmbar';
+    bar.innerHTML = '<span id="mmn"></span>'
+      + '<button type="button" id="mmout">내보내기</button>'
+      + '<button type="button" id="mmclr">비우기</button>';
+    document.body.appendChild(bar);
+    bar.querySelector('#mmout').addEventListener('click', memoExport);
+    bar.querySelector('#mmclr').addEventListener('click', () => {
+      if (!confirm('적어 둔 메모를 모두 지웁니다. 계속할까요?')) return;
+      MEMO = {}; memoSave(); memoBar(); if (cur) pick(cur, false);
+    });
+  }
+  bar.querySelector('#mmn').textContent = '메모 ' + memoCount() + '개';
+}
+function memoExport() {
+  const rows = Object.entries(MEMO)
+    .filter(([, v]) => (v.메모 || '').trim())
+    .map(([k, v]) => { const p = k.split('|');
+      return { 영웅: p[0], 갈래: p[1], id: p[2], 이름: v.이름 || '', 메모: v.메모.trim() }; });
+  const blob = new Blob([JSON.stringify({ 자료: ($('#meta') || {}).textContent || '', 메모: rows },
+    null, 1)], { type: 'application/json' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'herodex-memo.json';
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+}
 function abilityHTML(a) {
   const chips = Object.entries(a).filter(([k, v]) =>
       !SKIP.includes(k) && !LIST.includes(k) && v != null && typeof v !== 'object')
@@ -361,7 +423,7 @@ function abilityHTML(a) {
   return `<div class="card">
       <div><img class="ico" src="${imgUrl('abilitytalents', a.아이콘)}" alt="" loading="lazy">`
       + `<span class="slot ${slotClass(a.칸)}">${esc(a.칸)}</span><span class="nm">${esc(a.이름)}</span>
-           <span class="id">${esc(a.id)}</span></div>
+           <span class="id">${esc(a.id)}</span>${memoBtn('기술', a.id, a.이름)}</div>
       ${a.설명 ? `<div class="desc">${esc(a.설명)}</div>` : ''}
       <div class="chips">${chips}</div>
       ${rows || minor ? `<table>${rows}${minor}</table>` : ''}
@@ -382,7 +444,8 @@ function talentHTML(t) {
     + (t.예외 ? `<tr><td class="k warnrow">⚠ 예외</td><td class="warnrow">${esc(t.예외)}</td></tr>` : '');
   return `<div class="talent"><div><img class="tico" src="${imgUrl('abilitytalents', t.아이콘)}" alt="" `
     + `loading="lazy"><span class="tn">${esc(t.이름)}</span>`
-    + (t.강화 ? `<span class="up">${esc(t.강화)} 강화</span>` : '') + `</div>`
+    + (t.강화 ? `<span class="up">${esc(t.강화)} 강화</span>` : '')
+    + memoBtn('특성', t.id || t.이름, t.이름) + `</div>`
     + (t.설명 ? `<div class="tdesc">${esc(t.설명)}</div>` : '')
     + (rows ? `<table class="tt">${rows}</table>` : '') + shapeSVG(t.위키식) + `</div>`;
 }
@@ -404,6 +467,13 @@ function render(h) {
   }
   if (lv !== null) out += '</div>';
   $('#body').innerHTML = out;
+  if (MEMO_ON) {
+    $('#body').querySelectorAll('.mm.on').forEach(b2 => {
+      const host = b2.closest('.card, .talent');
+      if (host) host.classList.add('mmhit');
+    });
+    memoBar();
+  }
   $('#meta').textContent = h.자료;
   window.scrollTo(0, 0);
 }
@@ -442,6 +512,30 @@ $('#body').addEventListener('click', e => {
     : b.textContent.replace('접기', '보기');
 });
 $('#ids').addEventListener('click', () => document.body.classList.toggle('noid'));
+/* 메모 단추 → 그 자리에 적는 칸. 적는 대로 이 브라우저에 저장한다(서버가 없어도 된다). */
+$('#body').addEventListener('click', e => {
+  const b2 = e.target.closest('.mm');
+  if (!b2) return;
+  const key = b2.dataset.mm, host = b2.closest('.card, .talent');
+  let box = host.querySelector(':scope > .mmbox');
+  if (box) { box.remove(); return; }
+  box = document.createElement('textarea');
+  box.className = 'mmbox';
+  box.placeholder = '이상한 점을 적어 두세요 (적는 대로 저장됩니다)';
+  box.value = (MEMO[key] && MEMO[key].메모) || '';
+  box.addEventListener('input', () => {
+    MEMO[key] = { 이름: b2.dataset.nm, 메모: box.value };
+    if (!box.value.trim()) delete MEMO[key];
+    memoSave();
+    const has = !!box.value.trim();
+    b2.classList.toggle('on', has);
+    b2.textContent = has ? '메모 있음' : '메모';
+    host.classList.toggle('mmhit', has);
+    memoBar();
+  });
+  host.appendChild(box);
+  box.focus();
+});
 /* 이미지 저장소가 아직 안 채운 아이콘은 **깨진 그림** 대신 빈 칸으로 둔다.
    (이미 난 404 를 가리는 것이라 요청이 늘지 않는다 — 폴백으로 다시 부르지 않는다) */
 document.addEventListener('error', e => {

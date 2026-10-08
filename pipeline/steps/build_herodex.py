@@ -75,7 +75,8 @@ def slim(d, hid, portraits):
     for t in sorted(d["특성"], key=lambda x: (level_of(x) or 99, str(x.get("칸")))):
         up = t.get("강화 기술")
         o["특성"].append({
-            "레벨": level_of(t), "이름": t.get("이름", t["id"]), "아이콘": t.get("아이콘"),
+            "레벨": level_of(t), "이름": t.get("이름", t["id"]), "id": t["id"],
+            "아이콘": t.get("아이콘"),
             "설명": t.get("설명"),
             "강화": (f"[{up['칸']}] {up['이름']}" if up else None),
             "바뀌는 값": ([f"효과 켬 → {m['켜는 것']}" for m in t.get("칸 수정", []) if m.get("켜는 것")]
