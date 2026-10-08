@@ -63,6 +63,19 @@
   .hhead { display:flex; align-items:center; gap:2px; margin:0 0 2px; }
   .id { color:var(--dim); font-size:11.5px; margin-left:6px; }
   .desc { color:var(--dim); font-size:13.5px; margin:6px 0 9px; line-height:1.65; word-break:keep-all; }
+  /* 방어도별 실제 피해 */
+  .arm { margin-top:6px; font-size:11px; color:var(--dim); }
+  .arm table { width:auto; margin-top:3px; }
+  .arm td { padding:1px 7px 1px 0; }
+  .arm .v { color:var(--fg); }
+  /* 기본 틀과 **특성이 더하는 것**을 눈으로 갈라 둔다 */
+  .ups { margin-top:8px; border-top:1px dashed var(--line2); padding-top:6px; }
+  .ups > b { display:block; font-size:11px; color:var(--dim); font-weight:400; margin-bottom:4px; }
+  .up1 { display:flex; gap:6px; align-items:flex-start; padding:3px 0; }
+  .up1 img { width:22px; height:22px; border-radius:5px; flex-shrink:0; }
+  .up1 .t { font-size:12px; }
+  .up1 .lv { color:var(--gold); font-size:11px; margin-right:4px; }
+  .up1 .d { color:var(--hit); }
   /* 범위 그림 — 한 칸이 게임 거리 1 이다 */
   .fig { margin:7px 0 2px; }
   .fig svg { display:block; max-width:100%; height:auto; border:1px solid var(--line);
@@ -130,7 +143,7 @@ const FIGKEY = ['도형', '도형거리'];   // 표가 아니라 그림으로 �
 const LIST = ['피해','회복','범위','투사체','재사용 조정','지속 효과','거는 효과'];
 /* 알약(칩)에는 **비용 쪽만** — 사거리·시전 시간 따위는 아래 속성 표에 더 정확하게 들어 있다
    (칩은 날값이라 '무제한(500)' 같은 표식이 그대로 나온다) */
-const SKIP = ['이름','칸','id','설명','위키식','위키','예외','아이콘',
+const SKIP = ['이름','칸','id','설명','위키식','위키','예외','아이콘','특성 강화',
               '사거리','시전 시간','마무리 시간','대상','이동 거리(추정)','부채꼴','최소 사거리'];
 let INDEX = [], cur = null, HERO = null, YARD = {};   // YARD = 비교용 눈금(레이너 평타·해머 공성)   // HERO = 지금 펼친 영웅(그림이 히트박스를 가져다 쓴다)
 /* 아이콘은 이미지 저장소(Pages)가 내준다. 여기 임시본이 있으면 그걸, 어디에도 없으면 **안 부른다**
@@ -321,6 +334,39 @@ function shapeSVG(w) {
   return `<div class="fig"><svg viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" `
        + `aria-label="범위 그림"><g>${grid}</g>${body}</svg><div class="cap">${cap}</div></div>`;
 }
+/* 기술 하나에 특성이 넷씩 붙는다. 다 적용된 **최종 모습**만 보면 어느 특성이 무엇을
+   바꿨는지 사라지므로, 위의 표는 **특성 안 찍은 기본 틀**로 두고 여기서 특성별로
+   제 몫만 따로 적는다. 특성 자체의 설명은 아래 레벨별 특성 칸에 있다. */
+function upsHTML(ups) {
+  if (!ups || !ups.length) return '';
+  const rows = ups.map(t => {
+    const d = (t['바뀌는 값'] || []).join(' · ') || t.내용 || '';
+    return `<div class="up1"><img src="${imgUrl('abilitytalents', t.아이콘)}" alt="" loading="lazy">`
+         + `<span class="t"><span class="lv">${esc(t.단계 || '')}</span>${esc(t.이름 || '')}`
+         + (d ? ` <span class="d">${esc(d)}</span>` : '') + `</span></div>`;
+  }).join('');
+  return `<div class="ups"><b>위 표는 특성을 안 찍은 기본 틀입니다 · `
+       + `이 기술을 바꾸는 특성 ${ups.length}개</b>${rows}</div>`;
+}
+/* 방어도는 **퍼센트로 깎는다**: 받는 피해 = 피해 x (1 - 방어도/100).
+   방어도는 종류별로 따로이고(일반·기술·장판), 게임 설정에 상한이 박혀 있다
+   (core.stormmod gamedata.xml: MinArmorCap -75 · MaxArmorCap 75).
+   그래서 같은 100 피해라도 기술 방어 50 인 적에게는 50 만 들어간다. */
+const ARMOR_STEPS = [-25, 0, 25, 50, 75];
+function armorHTML(a) {
+  // 피해 줄은 **합치지 않는다**. 제이나 얼음 화살은 본인 184 와 물의 정령 73.6 이 따로인데
+  // 더하면 257.6 이라는 없는 숫자가 된다. 줄마다 제 값으로 계산한다.
+  const rows = (a.피해 || []).filter(d => typeof d.피해량 === 'number').slice(0, 3);
+  if (!rows.length) return '';
+  const head = ARMOR_STEPS.map(x => `<td>${x > 0 ? '+' : ''}${x}</td>`).join('');
+  const body = rows.map(d => `<tr><td>${d.피해량} <span style="opacity:.7">${esc(d.종류 || '')}</span></td>`
+    + ARMOR_STEPS.map(x => `<td class="v">${Math.round(d.피해량 * (1 - x / 100) * 10) / 10}</td>`).join('')
+    + `</tr>`).join('');
+  return `<div class="arm">방어도별 실제 피해`
+       + `<table><tr><td>방어도</td>${head}</tr>${body}</table>`
+       + `받는 피해 = 피해 x (1 - 방어도/100) · 상한 -75~75 · 방어도는 종류별로 따로입니다`
+       + `</div>`;
+}
 function abilityHTML(a) {
   const chips = Object.entries(a).filter(([k, v]) =>
       !SKIP.includes(k) && !LIST.includes(k) && v != null && typeof v !== 'object')
@@ -344,6 +390,8 @@ function abilityHTML(a) {
       <div class="chips">${chips}</div>
       ${rows || minor ? `<table>${rows}${minor}</table>` : ''}
       ${shapeSVG(a.위키식)}
+      ${armorHTML(a)}
+      ${upsHTML(a['특성 강화'])}
       ${n ? `<button class="more" type="button">원자료 ${n}줄 보기</button>` : ''}
     </div>`;
 }

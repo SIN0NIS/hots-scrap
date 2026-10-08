@@ -23,7 +23,7 @@ OUT = ROOT / "site" / "data" / "herodex"
 KEEP_AB = ("이름", "칸", "id", "설명", "아이콘", "위키식", "자원(Energy)", "자원(Life)", "재사용 대기시간",
            "연타 제한", "충전 개수", "충전 회복", "사거리", "최소 사거리", "부채꼴", "시전 시간",
            "마무리 시간", "이동 거리(추정)", "대상", "피해", "회복", "범위", "투사체",
-           "재사용 조정", "지속 효과", "거는 효과", "위키", "예외")
+           "재사용 조정", "지속 효과", "거는 효과", "위키", "예외", "특성 강화")
 CAP = {"지속 효과": 6, "거는 효과": 8, "투사체": 5, "범위": 6, "피해": 8, "회복": 6, "재사용 조정": 4}
 TIER_LEVEL = {1: 1, 2: 4, 3: 7, 4: 10, 5: 13, 6: 16, 7: 20}
 
@@ -39,7 +39,21 @@ def level_of(t):
 PORTRAITS = ROOT / "site" / "data" / "patchnotes" / "heroes.json"
 
 
+# 특성 강화 줄에서 **속 사정**을 가린다 — 화면에 쓸 말이 아니다
+NOISE = ("(특성 검사로 열림)", "(검사로 열림)")
+
+
+def clean(t):
+    if not t:
+        return t
+    for w in NOISE:
+        t = t.replace(w, "")
+    return " · ".join(x.strip() for x in t.split("·") if x.strip()) or None
+
+
 def slim(d, hid, portraits):
+    # 특성 그림은 특성 칸에만 실려 있다 — 기술에 붙는 '강화' 줄에서도 쓰려고 미리 모은다
+    icons = {t.get("id"): t.get("아이콘") for t in d.get("특성", []) if t.get("아이콘")}
     o = {"영웅": d["영웅"], "자료": d["자료"], "기본": d["기본 수치"],
          "초상화": (portraits.get(hid) or {}).get("portrait"), "기술": [], "특성": []}
     for a in d["기술"]:
@@ -49,6 +63,14 @@ def slim(d, hid, portraits):
             if v in (None, [], {}):
                 continue
             x[k] = v[:CAP[k]] if k in CAP else v
+        # 기술 하나에 특성이 넷씩 붙는다. 최종 모습만 보면 **어느 특성이 무엇을 바꿨는지**
+        # 가 사라지므로, 특성마다 제 몫만 따로 실어 보낸다(설명은 특성 칸에 이미 있다).
+        if x.get("특성 강화"):
+            x["특성 강화"] = [{"단계": t.get("단계"), "이름": t.get("이름"),
+                            "아이콘": t.get("아이콘") or icons.get(t.get("id")),
+                            "바뀌는 값": (t.get("바뀌는 값") or [])[:4],
+                            "내용": clean(t.get("내용"))}
+                           for t in x["특성 강화"][:8]]
         o["기술"].append(x)
     for t in sorted(d["특성"], key=lambda x: (level_of(x) or 99, str(x.get("칸")))):
         up = t.get("강화 기술")
