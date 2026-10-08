@@ -245,6 +245,14 @@ function shapeSVG(w) {
     else if (g.꼴 === '부채꼴') {
       const pts = arcPts(g.반지름, g.각도, at).map(p => px(p[0]) + ',' + py(p[1]));
       body += `<polygon points="${px(0)},${py(at)} ${pts.join(' ')}" ${fill}/>`;
+      if (g.띠) {
+        // 두께가 일정한 띠가 바깥으로 밀려 나가는 기술(안두인 응징) — 어느 한 순간에
+        // 맞는 것은 **이 띠**다. 끝이 호라는 게 여기서 보인다. 연한 부채꼴은 지나간 자리.
+        const outer = arcPts(g.반지름, g.각도, at);
+        const inner = arcPts(Math.max(g.반지름 - g.띠, 0.01), g.각도, at).reverse();
+        body += `<polygon points="${outer.concat(inner).map(q => px(q[0]) + ',' + py(q[1])).join(' ')}" `
+              + `fill="var(--blue)" fill-opacity=".30" stroke="var(--blue)" stroke-width="1.6"/>`;
+      }
     } else if (g.꼴 === '직사각형') {
       const run = g.쓸기 || 0;
       body += `<rect x="${px(-g.가로 / 2)}" y="${py(at + run + g.세로 / 2)}" width="${g.가로 * S}" `
@@ -299,6 +307,7 @@ function shapeSVG(w) {
                              (g.날아감 && g.작은) ? `날아가며 커지는 ${g.꼴}(${g.작은}→${g.반지름})` :
                              g.날아감 ? `${g.꼴} 반지름 ${g.반지름}이 ${g.날아감} 을 지나감` :
                              g.작은 ? `커지는 ${g.꼴}(최소 ${g.작은} · 최대 ${g.반지름})` :
+                             g.띠 ? `${g.꼴} ${g.각도}도 · 두께 ${g.띠} 띠가 ${g.반지름} 까지 밀려 남` :
                              g.직격 ? `${g.꼴}(직격)` : g.꼴)
                  .filter((v, i, z) => z.indexOf(v) === i).join(' · ');
   const cap = [`한 칸 = 거리 1 · 위쪽이 앞`,
