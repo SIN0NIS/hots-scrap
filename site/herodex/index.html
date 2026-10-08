@@ -396,7 +396,8 @@ function abilityHTML(a) {
     </div>`;
 }
 function talentHTML(t) {
-  const rows = (t['바뀌는 값'] || []).map(v =>
+  const rows = (t.퀘스트 ? `<tr><td class="k chg">퀘스트</td><td>${esc(t.퀘스트)}</td></tr>` : '')
+    + (t['바뀌는 값'] || []).map(v =>
       `<tr><td class="k chg">바뀌는 값</td><td>${esc(v)}</td></tr>`).join('')
     + Object.entries(t.위키식 || {}).filter(([k]) => !FIGKEY.includes(k)).map(([k, v]) =>
       `<tr><td class="k">${esc(k)}</td><td><b>${esc(v)}</b></td></tr>`).join('')
@@ -436,7 +437,9 @@ async function pick(id, push) {
   [...document.querySelectorAll('#list button')].forEach(b => b.classList.toggle('on', b.dataset.id === id));
   if (!CACHE.has(id)) {
     $('#body').innerHTML = '<p class="sub">불러오는 중…</p>';
-    const r = await fetch(`../data/herodex/${id}.json`);
+    // 영웅 자료도 목록과 같은 이유로 '바뀌었냐' 고 물어보고 받는다. 안 바뀌었으면 304 라
+    // 본문을 안 받는다 — 올린 변경이 10분 동안 안 보이는 일을 막는다.
+    const r = await fetch(`../data/herodex/${id}.json`, { cache: 'no-cache' });
     if (!r.ok) { $('#body').innerHTML = '<p class="sub">자료를 불러오지 못했습니다.</p>'; return; }
     CACHE.set(id, await r.json());
   }
