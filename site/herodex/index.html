@@ -77,6 +77,8 @@
   #mmbar button { border:1px solid var(--line2); background:var(--card2); color:var(--fg);
                   border-radius:999px; font:inherit; font-size:12px; padding:3px 10px; cursor:pointer; }
   /* 기본 틀과 **특성이 더하는 것**을 눈으로 갈라 둔다 */
+  .mode { display:inline-block; margin-right:5px; padding:1px 7px; border-radius:999px;
+          border:1px solid var(--gold-line); color:var(--gold); font-size:11px; }
   .acc { color:var(--hit); font-size:11px; margin-top:2px; }
   .per { color:var(--warn); font-size:11px; }
   .tipv { margin:4px 0 6px; }
@@ -159,7 +161,7 @@ const FIGKEY = ['도형', '도형거리'];   // 표가 아니라 그림으로 �
 const LIST = ['피해','회복','범위','투사체','재사용 조정','지속 효과','거는 효과'];
 /* 알약(칩)에는 **비용 쪽만** — 사거리·시전 시간 따위는 아래 속성 표에 더 정확하게 들어 있다
    (칩은 날값이라 '무제한(500)' 같은 표식이 그대로 나온다) */
-const SKIP = ['이름','칸','id','설명','위키식','위키','예외','아이콘','특성 강화','툴팁 수치',
+const SKIP = ['이름','칸','모드','id','설명','위키식','위키','예외','아이콘','특성 강화','툴팁 수치',
               '사거리','시전 시간','마무리 시간','대상','이동 거리(추정)','부채꼴','최소 사거리'];
 let INDEX = [], cur = null, HERO = null, YARD = {};   // YARD = 비교용 눈금(레이너 평타·해머 공성)   // HERO = 지금 펼친 영웅(그림이 히트박스를 가져다 쓴다)
 /* 아이콘은 이미지 저장소(Pages)가 내준다. 여기 임시본이 있으면 그걸, 어디에도 없으면 **안 부른다**
@@ -478,7 +480,9 @@ function abilityHTML(a) {
   const n = (minor.match(/<tr/g) || []).length;
   return `<div class="card">
       <div><img class="ico" src="${imgUrl('abilitytalents', a.아이콘)}" alt="" loading="lazy">`
-      + `<span class="slot ${slotClass(a.칸)}">${esc(a.칸)}</span><span class="nm">${esc(a.이름)}</span>
+      + `<span class="slot ${slotClass(a.칸)}">${esc(a.칸)}</span>`
+      + (a.모드 ? `<span class="mode">${esc(a.모드)}</span>` : '')
+      + `<span class="nm">${esc(a.이름)}</span>
            <span class="id">${esc(a.id)}</span>${memoBtn('기술', a.id, a.이름)}</div>
       ${a.설명 ? `<div class="desc">${esc(a.설명)}</div>` : ''}
       <div class="chips">${chips}</div>
