@@ -77,6 +77,9 @@
   #mmbar button { border:1px solid var(--line2); background:var(--card2); color:var(--fg);
                   border-radius:999px; font:inherit; font-size:12px; padding:3px 10px; cursor:pointer; }
   /* 기본 틀과 **특성이 더하는 것**을 눈으로 갈라 둔다 */
+  .tipv { margin:4px 0 6px; }
+  .tipv > b { display:block; font-size:11px; color:var(--dim); font-weight:400; margin-bottom:3px; }
+  .tipv .chip b { color:var(--blue); }
   .ups { margin-top:8px; border-top:1px dashed var(--line2); padding-top:6px; }
   .ups > b { display:block; font-size:11px; color:var(--dim); font-weight:400; margin-bottom:4px; }
   .up1 { display:flex; gap:6px; align-items:flex-start; padding:3px 0; }
@@ -151,7 +154,7 @@ const FIGKEY = ['도형', '도형거리'];   // 표가 아니라 그림으로 �
 const LIST = ['피해','회복','범위','투사체','재사용 조정','지속 효과','거는 효과'];
 /* 알약(칩)에는 **비용 쪽만** — 사거리·시전 시간 따위는 아래 속성 표에 더 정확하게 들어 있다
    (칩은 날값이라 '무제한(500)' 같은 표식이 그대로 나온다) */
-const SKIP = ['이름','칸','id','설명','위키식','위키','예외','아이콘','특성 강화',
+const SKIP = ['이름','칸','id','설명','위키식','위키','예외','아이콘','특성 강화','툴팁 수치',
               '사거리','시전 시간','마무리 시간','대상','이동 거리(추정)','부채꼴','최소 사거리'];
 let INDEX = [], cur = null, HERO = null, YARD = {};   // YARD = 비교용 눈금(레이너 평타·해머 공성)   // HERO = 지금 펼친 영웅(그림이 히트박스를 가져다 쓴다)
 /* 아이콘은 이미지 저장소(Pages)가 내준다. 여기 임시본이 있으면 그걸, 어디에도 없으면 **안 부른다**
@@ -414,6 +417,14 @@ function memoExport() {
   a.click();
   setTimeout(() => URL.revokeObjectURL(a.href), 2000);
 }
+/* **툴팁이 가리키는 값.** 어느 칸이 알맹이인지는 설계자가 툴팁에 적어 뒀다 —
+   우리가 고른 칸(아래 표)은 보충일 뿐이고, 이쪽이 게임이 실제로 보여 주는 숫자다. */
+function tipHTML(rows) {
+  if (!rows || !rows.length) return '';
+  const cells = rows.map(r =>
+    `<span class="chip">${esc(r.칸)} <b>${esc(r.값)}${esc(r.단위 || '')}</b></span>`).join('');
+  return `<div class="tipv"><b>툴팁이 쓰는 값</b><div class="chips">${cells}</div></div>`;
+}
 function abilityHTML(a) {
   const chips = Object.entries(a).filter(([k, v]) =>
       !SKIP.includes(k) && !LIST.includes(k) && v != null && typeof v !== 'object')
@@ -435,6 +446,7 @@ function abilityHTML(a) {
            <span class="id">${esc(a.id)}</span>${memoBtn('기술', a.id, a.이름)}</div>
       ${a.설명 ? `<div class="desc">${esc(a.설명)}</div>` : ''}
       <div class="chips">${chips}</div>
+      ${tipHTML(a['툴팁 수치'])}
       ${rows || minor ? `<table>${rows}${minor}</table>` : ''}
       ${shapeSVG(a.위키식)}
       ${upsHTML(a['특성 강화'])}
@@ -456,6 +468,7 @@ function talentHTML(t) {
     + (t.강화 ? `<span class="up">${esc(t.강화)} 강화</span>` : '')
     + memoBtn('특성', t.id || t.이름, t.이름) + `</div>`
     + (t.설명 ? `<div class="tdesc">${esc(t.설명)}</div>` : '')
+    + tipHTML(t['툴팁 수치'])
     + (rows ? `<table class="tt">${rows}</table>` : '') + shapeSVG(t.위키식) + `</div>`;
 }
 function render(h) {
