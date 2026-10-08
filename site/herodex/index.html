@@ -79,6 +79,9 @@
   /* 기본 틀과 **특성이 더하는 것**을 눈으로 갈라 둔다 */
   .mode { display:inline-block; margin-right:5px; padding:1px 7px; border-radius:999px;
           border:1px solid var(--gold-line); color:var(--gold); font-size:11px; }
+  .wep { margin:-4px 0 10px; font-size:12px; color:var(--fg); }
+  .wep > b { color:var(--gold); font-weight:400; margin-right:6px; }
+  .wep > div { color:var(--dim); }
   .qch { margin:4px 0; font-size:12px; color:var(--dim); }
   .qch > b { color:var(--gold); font-weight:400; }
   .qch b { color:var(--fg); }
@@ -529,12 +532,27 @@ function talentHTML(t) {
     + tipHTML(t['툴팁 수치'])
     + (rows ? `<table class="tt">${rows}</table>` : '') + shapeSVG(t.위키식) + `</div>`;
 }
+/* 평타 — 사거리·주기·공격력·근접인지 원거리인지. 특성·퀘스트를 **전부 끈** 기본값이다. */
+function weaponHTML(ws) {
+  if (!ws || !ws.length) return '';
+  const rows = ws.map(w => {
+    const bits = [w.방식,
+                  w.사거리 != null ? `사거리 ${w.사거리}` : '',
+                  w.공격력 != null ? `공격력 ${w.공격력}` : '',
+                  w.주기 != null ? `주기 ${w.주기}초 (초당 ${w['초당 공격']}회)` : '',
+                  w.부채꼴 ? `부채꼴 ${w.부채꼴}도` : '',
+                  w.스플래시 ? `스플래시 반지름 ${w.스플래시}` : ''].filter(Boolean);
+    return `<div>${esc(bits.join(' · '))}</div>`;
+  }).join('');
+  return `<div class="wep"><b>평타</b>${rows}</div>`;
+}
 function render(h) {
   HERO = h;
-  const base = Object.entries(h.기본).filter(([, v]) => v != null)
+  const base = Object.entries(h.기본).filter(([k, v]) => v != null && k !== '평타')
       .map(([k, v]) => `${esc(k)} <b>${esc(v)}</b>`).join(' · ');
   let out = `<div class="hhead"><img class="face" src="${imgUrl('heroportraits', h.초상화)}" alt="">`
-    + `<h2 style="margin:0">${esc(h.영웅)}</h2></div><p class="sub">${base}</p>`;
+    + `<h2 style="margin:0">${esc(h.영웅)}</h2></div><p class="sub">${base}</p>`
+    + weaponHTML(h.기본.평타);
   out += h.기술.map(abilityHTML).join('');
   let lv = null;
   for (const t of h.특성) {
