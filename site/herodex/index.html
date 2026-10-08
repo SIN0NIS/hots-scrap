@@ -213,8 +213,10 @@ function shapeSVG(w) {
     const at = (g.자리 === '원점' || g.쓸기) ? 0 : d;
     if (g.꼴 === '다각형' || g.꼴 === '자리들') (g.점 || []).forEach(p => put(p[0], p[1]));
     else if (g.꼴 === '부채꼴') { put(0, at); arcPts(g.반지름, g.각도, at).forEach(p => put(p[0], p[1])); }
+    else if (g.꼴 === '이동') { put(0, 0); put(0, g.거리); }
     else if (g.꼴 === '직사각형') {
-      put(-g.가로 / 2, at - g.세로 / 2); put(g.가로 / 2, at + (g.쓸기 || 0) + g.세로 / 2);
+      if (g.자리 === '원점' && !g.쓸기) { put(-g.가로 / 2, 0); put(g.가로 / 2, g.세로); }
+      else { put(-g.가로 / 2, at - g.세로 / 2); put(g.가로 / 2, at + (g.쓸기 || 0) + g.세로 / 2); }
     } else if (g.날아감) {
       // 굵기가 그대로 날아가는 원은 '작은' 이 없다 — 그대로 빼면 NaN 이 돼 그림이 통째로 깨진다
       const r0 = (g.작은 === undefined ? g.반지름 : g.작은);
@@ -286,6 +288,12 @@ function shapeSVG(w) {
         body += `<polygon points="${outer.concat(inner).map(q => px(q[0]) + ',' + py(q[1])).join(' ')}" `
               + `fill="var(--blue)" fill-opacity=".30" stroke="var(--blue)" stroke-width="1.6"/>`;
       }
+    } else if (g.꼴 === '이동') {
+      /* 판정은 없고 몸만 가는 기술 — 화살표만 그린다(아래에서 그려진다) */
+    } else if (g.꼴 === '직사각형' && g.자리 === '원점' && !g.쓸기) {
+      // 발밑에서 끝까지 깔리는 빔(디바 딱콩! 1.25 x 15) — 가운데에 놓지 않는다
+      body += `<rect x="${px(-g.가로 / 2)}" y="${py(g.세로)}" width="${g.가로 * S}" `
+            + `height="${g.세로 * S}" ${fill}/>`;
     } else if (g.꼴 === '직사각형') {
       const run = g.쓸기 || 0;
       body += `<rect x="${px(-g.가로 / 2)}" y="${py(at + run + g.세로 / 2)}" width="${g.가로 * S}" `
@@ -320,7 +328,8 @@ function shapeSVG(w) {
   // 없으면 부채꼴·다각형이 뻗은 길이만큼.
   let arrow = 0;
   gs.forEach(g => {
-    arrow = Math.max(arrow, g.쓸기 || 0, g.날아감 || 0);
+    arrow = Math.max(arrow, g.쓸기 || 0, g.날아감 || 0, g.거리 || 0,
+                     (g.꼴 === '직사각형' && g.자리 === '원점' && !g.쓸기) ? g.세로 : 0);
     if (!g.쓸기 && !g.날아감 && g.자리 === '원점')
       arrow = Math.max(arrow, g.꼴 === '부채꼴' ? g.반지름
                             : g.꼴 === '다각형' ? Math.max(...(g.점 || [[0, 0]]).map(p => p[1])) : 0);
@@ -341,6 +350,7 @@ function shapeSVG(w) {
                              g.날아감 ? `${g.꼴} 반지름 ${g.반지름}이 ${g.날아감} 을 지나감` :
                              g.작은 ? `커지는 ${g.꼴}(최소 ${g.작은} · 최대 ${g.반지름})` :
                              g.띠 ? `${g.꼴} ${g.각도}도 · 두께 ${g.띠} 띠가 ${g.반지름} 까지 밀려 남` :
+                             g.꼴 === '이동' ? `${g.거리} 이동(판정 없음)` :
                              g.직격 ? `${g.꼴}(직격)` : g.꼴)
                  .filter((v, i, z) => z.indexOf(v) === i).join(' · ');
   const cap = [`한 칸 = 거리 1 · 위쪽이 앞`,
