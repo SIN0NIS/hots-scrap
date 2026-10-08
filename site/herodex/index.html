@@ -70,7 +70,7 @@
   .fig .cap { color:var(--dim); font-size:11px; margin-top:3px; line-height:1.7; }
   .fig .cap b { font-weight:400; }
   .c-hero { color:var(--hit); } .c-rng { color:var(--gold); }
-  .c-area { color:var(--blue); } .c-yard { color:var(--wiki); }
+  .c-area { color:var(--blue); } .c-yard { color:var(--wiki); } .c-hit { color:var(--warn); }
   .chips { display:flex; flex-wrap:wrap; gap:5px; margin-bottom:7px; }
   .chip { background:var(--card2); border:1px solid var(--line); border-radius:999px;
           padding:2px 10px; font-size:12.5px; }
@@ -161,7 +161,11 @@ function rowText(r) {
 function shapeSVG(w) {
   const gs = (w || {})['도형'];
   if (!gs || !gs.length) return '';
-  const d = typeof w['도형거리'] === 'number' ? w['도형거리'] : 0;
+  let d = typeof w['도형거리'] === 'number' ? w['도형거리'] : 0;
+  // 사거리가 전역급이면(한조 용의 화살) 격자가 수십 칸이 돼 정작 범위가 안 보인다.
+  // 그럴 때는 **범위만** 제자리에 그리고, 사거리는 글로만 적는다.
+  const farCast = d > 30 ? d : 0;
+  if (farCast) d = 0;
   const hr = (HERO && HERO.기본 && HERO.기본.반지름) || 0.6875;
   let x0 = -hr, x1 = hr, y0 = -hr, y1 = hr;
   const put = (x, y) => { x0 = Math.min(x0, x); x1 = Math.max(x1, x); y0 = Math.min(y0, y); y1 = Math.max(y1, y); };
@@ -178,7 +182,8 @@ function shapeSVG(w) {
     else if (g.꼴 === '부채꼴') { put(0, at); arcPts(g.반지름, g.각도, at).forEach(p => put(p[0], p[1])); }
     else if (g.꼴 === '직사각형') {
       put(-g.가로 / 2, at - g.세로 / 2); put(g.가로 / 2, at + (g.쓸기 || 0) + g.세로 / 2);
-    } else { put(-g.반지름, at - g.반지름); put(g.반지름, at + g.반지름); }
+    } else if (g.날아감) { put(-g.반지름, -g.작은); put(g.반지름, g.날아감 + g.반지름); }
+    else { put(-g.반지름, at - g.반지름); put(g.반지름, at + g.반지름); }
   });
   if (d > 0) { put(0, d); put(-d, 0); put(d, 0); put(0, -d); }   // 시전 사거리는 **사방으로** 미친다
   // 눈금은 **기술이 차지하는 만큼만** 깐다. 반지름 1 짜리 기술에 해머 공성 11 까지 그리면
@@ -219,7 +224,9 @@ function shapeSVG(w) {
           + `stroke-width="1" stroke-dasharray="3 3" opacity=".8"/>`;
   gs.forEach(g => {
     const at = (g.자리 === '원점' || g.쓸기) ? 0 : d;
-    const fill = 'fill="var(--blue)" fill-opacity=".16" stroke="var(--blue)" stroke-width="1.4"';
+    const fill = g.직격
+      ? 'fill="var(--warn)" fill-opacity=".22" stroke="var(--warn)" stroke-width="1.4"'
+      : 'fill="var(--blue)" fill-opacity=".16" stroke="var(--blue)" stroke-width="1.4"';
     if (g.꼴 === '자리들') {
       // 여러 지점에 차례로 생기는 기술(잘아타스 공허 걸음의 삼각형). 자리를 잇고 번호를 붙인다.
       const pts = (g.점 || []).map(p => px(p[0]) + ',' + py(p[1]));
@@ -247,23 +254,38 @@ function shapeSVG(w) {
       body += `<circle cx="${px(0)}" cy="${py(at)}" r="${g.반지름 * S}" ${fill}/>`
             + `<circle cx="${px(0)}" cy="${py(at)}" r="${g.안쪽 * S}" fill="var(--card2)" `
             + `stroke="var(--blue)" stroke-width="1"/>`;
-    else {
+    else if (g.날아감) {
+      // 날아가며 커지는 원(리밍 비전 보주·안두인 응징) — 지나간 자리를 띠로 그린다.
+      // 영웅 앞 0 에서 반지름 '작은' 으로 출발해 '날아감' 거리에서 '반지름' 이 된다.
+      const r0 = g.작은, r1 = g.반지름, D = g.날아감;
+      body += `<polygon points="${px(-r0)},${py(0)} ${px(r0)},${py(0)} `
+            + `${px(r1)},${py(D)} ${px(-r1)},${py(D)}" fill="var(--blue)" fill-opacity=".10" `
+            + `stroke="var(--blue)" stroke-width="1" stroke-dasharray="4 3"/>`;
+      body += `<circle cx="${px(0)}" cy="${py(0)}" r="${r0 * S}" fill="none" stroke="var(--blue)" `
+            + `stroke-width="1" stroke-dasharray="3 3"/>`
+            + `<circle cx="${px(0)}" cy="${py(D)}" r="${r1 * S}" ${fill}/>`;
+    } else {
       body += `<circle cx="${px(0)}" cy="${py(at)}" r="${g.반지름 * S}" ${fill}/>`;
-      if (g.작은)   // 충전으로 커지는 원 — 처음 크기를 점선으로 같이 둔다
+      if (g.작은)   // 충전으로 커지는 원 — 처음 크기(충전 안 했을 때)를 점선으로
         body += `<circle cx="${px(0)}" cy="${py(at)}" r="${g.작은 * S}" fill="none" `
-              + `stroke="var(--blue)" stroke-width="1" stroke-dasharray="4 3"/>`;
+              + `stroke="var(--blue)" stroke-width="1.2" stroke-dasharray="4 3"/>`;
     }
   });
   body += `<circle cx="${px(0)}" cy="${py(0)}" r="${hr * S}" fill="var(--hit)" fill-opacity=".55" `
         + `stroke="var(--hit)" stroke-width="1"/>`;
+  body += `<text x="4" y="${H - 5}" font-size="10" fill="var(--hit)">hitbox r ${hr}</text>`;
   const names = gs.map(g => g.꼴 === '자리들' ? `${(g.점 || []).length}곳` :
                              g.쓸기 ? `${g.꼴}이 ${g.쓸기} 쓸고 감` :
-                             g.작은 ? `커지는 ${g.꼴}(${g.작은}~${g.반지름})` : g.꼴)
+                             g.날아감 ? `날아가며 커지는 ${g.꼴}(${g.작은}→${g.반지름})` :
+                             g.작은 ? `커지는 ${g.꼴}(최소 ${g.작은} · 최대 ${g.반지름})` :
+                             g.직격 ? `${g.꼴}(직격)` : g.꼴)
                  .filter((v, i, z) => z.indexOf(v) === i).join(' · ');
   const cap = [`한 칸 = 거리 1 · 위쪽이 앞`,
                `<b class="c-hero">●</b> 영웅 히트박스 ${hr}`,
                d > 0 ? `<b class="c-rng">◌</b> 시전 사거리 ${d}` : '',
+               farCast ? `시전 사거리 ${farCast} 은 너무 멀어 격자에 안 그림` : '',
                `<b class="c-area">■</b> 공격 범위 ${esc(names)}`,
+               gs.some(g => g.직격) ? `<b class="c-hit">■</b> 주황은 한 명만 맞는 직격` : '',
                yard.map(([k, r]) => `<b class="c-yard">⌁</b> ${esc(k)} ${r}`).join(' · ')]
               .filter(Boolean).join(' · ');
   return `<div class="fig"><svg viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" `
