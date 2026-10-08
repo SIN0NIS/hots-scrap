@@ -63,11 +63,6 @@
   .hhead { display:flex; align-items:center; gap:2px; margin:0 0 2px; }
   .id { color:var(--dim); font-size:11.5px; margin-left:6px; }
   .desc { color:var(--dim); font-size:13.5px; margin:6px 0 9px; line-height:1.65; word-break:keep-all; }
-  /* 방어도별 실제 피해 */
-  .arm { margin-top:6px; font-size:11px; color:var(--dim); }
-  .arm table { width:auto; margin-top:3px; }
-  .arm td { padding:1px 7px 1px 0; }
-  .arm .v { color:var(--fg); }
   /* 기본 틀과 **특성이 더하는 것**을 눈으로 갈라 둔다 */
   .ups { margin-top:8px; border-top:1px dashed var(--line2); padding-top:6px; }
   .ups > b { display:block; font-size:11px; color:var(--dim); font-weight:400; margin-bottom:4px; }
@@ -348,25 +343,6 @@ function upsHTML(ups) {
   return `<div class="ups"><b>위 표는 특성을 안 찍은 기본 틀입니다 · `
        + `이 기술을 바꾸는 특성 ${ups.length}개</b>${rows}</div>`;
 }
-/* 방어도는 **퍼센트로 깎는다**: 받는 피해 = 피해 x (1 - 방어도/100).
-   방어도는 종류별로 따로이고(일반·기술·장판), 게임 설정에 상한이 박혀 있다
-   (core.stormmod gamedata.xml: MinArmorCap -75 · MaxArmorCap 75).
-   그래서 같은 100 피해라도 기술 방어 50 인 적에게는 50 만 들어간다. */
-const ARMOR_STEPS = [-25, 0, 25, 50, 75];
-function armorHTML(a) {
-  // 피해 줄은 **합치지 않는다**. 제이나 얼음 화살은 본인 184 와 물의 정령 73.6 이 따로인데
-  // 더하면 257.6 이라는 없는 숫자가 된다. 줄마다 제 값으로 계산한다.
-  const rows = (a.피해 || []).filter(d => typeof d.피해량 === 'number').slice(0, 3);
-  if (!rows.length) return '';
-  const head = ARMOR_STEPS.map(x => `<td>${x > 0 ? '+' : ''}${x}</td>`).join('');
-  const body = rows.map(d => `<tr><td>${d.피해량} <span style="opacity:.7">${esc(d.종류 || '')}</span></td>`
-    + ARMOR_STEPS.map(x => `<td class="v">${Math.round(d.피해량 * (1 - x / 100) * 10) / 10}</td>`).join('')
-    + `</tr>`).join('');
-  return `<div class="arm">방어도별 실제 피해`
-       + `<table><tr><td>방어도</td>${head}</tr>${body}</table>`
-       + `받는 피해 = 피해 x (1 - 방어도/100) · 상한 -75~75 · 방어도는 종류별로 따로입니다`
-       + `</div>`;
-}
 function abilityHTML(a) {
   const chips = Object.entries(a).filter(([k, v]) =>
       !SKIP.includes(k) && !LIST.includes(k) && v != null && typeof v !== 'object')
@@ -390,7 +366,6 @@ function abilityHTML(a) {
       <div class="chips">${chips}</div>
       ${rows || minor ? `<table>${rows}${minor}</table>` : ''}
       ${shapeSVG(a.위키식)}
-      ${armorHTML(a)}
       ${upsHTML(a['특성 강화'])}
       ${n ? `<button class="more" type="button">원자료 ${n}줄 보기</button>` : ''}
     </div>`;
