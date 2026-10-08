@@ -78,6 +78,7 @@
                   border-radius:999px; font:inherit; font-size:12px; padding:3px 10px; cursor:pointer; }
   /* 기본 틀과 **특성이 더하는 것**을 눈으로 갈라 둔다 */
   .acc { color:var(--hit); font-size:11px; margin-top:2px; }
+  .per { color:var(--warn); font-size:11px; }
   .tipv { margin:4px 0 6px; }
   .tipv > b { display:block; font-size:11px; color:var(--dim); font-weight:400; margin-bottom:3px; }
   .tipv .chip b { color:var(--blue); }
@@ -205,8 +206,11 @@ function accText(d) {
   return `<div class="acc">${esc(s2)}</div>`;
 }
 function rowText(r) {
-  return Object.entries(r).filter(([k, v]) => k !== '출처' && v != null)
-    .map(([k, v]) => `${esc(k)} <b>${esc(fmtVal(k, v))}</b>`).join(' · ');
+  // '1회당'·'툴팁 표기' 는 날값으로 늘어놓지 않고 한 마디로 붙인다
+  const tag = r['1회당'] ? ` <span class="per">1회당 (툴팁은 ${esc(r['툴팁 표기'])})</span>` : '';
+  return Object.entries(r)
+    .filter(([k, v]) => !['출처', '1회당', '툴팁 표기'].includes(k) && v != null)
+    .map(([k, v]) => `${esc(k)} <b>${esc(fmtVal(k, v))}</b>`).join(' · ') + tag;
 }
 /* ── 범위를 격자 위에 그린다 ─────────────────────────────────────────
    약속: **원점이 영웅, 위쪽이 앞, 한 칸이 거리 1**. 영웅 히트박스(Unit Radius)를 원점에 먼저
