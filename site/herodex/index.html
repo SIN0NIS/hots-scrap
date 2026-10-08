@@ -77,6 +77,7 @@
   #mmbar button { border:1px solid var(--line2); background:var(--card2); color:var(--fg);
                   border-radius:999px; font:inherit; font-size:12px; padding:3px 10px; cursor:pointer; }
   /* 기본 틀과 **특성이 더하는 것**을 눈으로 갈라 둔다 */
+  .acc { color:var(--hit); font-size:11px; margin-top:2px; }
   .tipv { margin:4px 0 6px; }
   .tipv > b { display:block; font-size:11px; color:var(--dim); font-weight:400; margin-bottom:3px; }
   .tipv .chip b { color:var(--blue); }
@@ -181,6 +182,24 @@ function fmtVal(k, v) {
   if (RATIO_KEYS.includes(k) && typeof v === 'number')
     return (v > 0 ? '+' : '') + (Math.round(v * 1000) / 10) + '%';
   return v;
+}
+/* 숫자가 **무엇에 따라 변하는지**(CAccumulator). 거리로 줄어드는 피해는 표로 보여 준다
+   — 디바 자폭은 한가운데 1100, 거리 1마다 -116.7, 바닥 400(36%)이다. */
+function accText(d) {
+  const v = d['변하는 값'];
+  if (!v) return '';
+  const per = v['한 단위당'], base = d.피해량;
+  let s2 = `${v.무엇에} ${v.단위} ${per > 0 ? '+' : ''}${per}`;
+  if (v['최소 누적']) s2 += ` (최대 ${v['최소 누적'] > 0 ? '+' : ''}${v['최소 누적']})`;
+  if (v.무엇에 === '거리' && typeof base === 'number' && per < 0) {
+    const floor = base + (v['최소 누적'] || -Infinity);
+    const steps = [0, 2, 4, 6, 8, 10].map(x => {
+      const y = Math.max(base + x * per, floor);
+      return `${x}: ${Math.round(y)} (${Math.round(100 * y / base)}%)`;
+    });
+    s2 += ' · 거리별 ' + steps.join(' / ');
+  }
+  return `<div class="acc">${esc(s2)}</div>`;
 }
 function rowText(r) {
   return Object.entries(r).filter(([k, v]) => k !== '출처' && v != null)
@@ -443,7 +462,7 @@ function abilityHTML(a) {
       `<tr><td class="k">${esc(k)}</td><td colspan="2"><b>${esc(v)}</b></td></tr>`).join('');
   let minor = '';
   for (const k of LIST) for (const r of (a[k] || []))
-    minor += `<tr class="minor"><td class="k">${esc(k)}</td><td>${rowText(r)}</td>`
+    minor += `<tr class="minor"><td class="k">${esc(k)}</td><td>${rowText(r)}${accText(r)}</td>`
            + `<td class="src">${esc(r.출처 || '')}</td></tr>`;
   if (a.위키) rows += `<tr><td class="k wikirow">⌁ 위키</td><td colspan="2" class="wikirow">`
       + Object.entries(a.위키).filter(([k]) => k !== '출처').map(([k, v]) => `${esc(k)} ${esc(v)}`).join(' · ')
