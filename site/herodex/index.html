@@ -256,6 +256,7 @@ function shapeSVG(w) {
     else { put(-g.반지름, at - g.반지름); put(g.반지름, at + g.반지름); }
   });
   if (d > 0) { put(0, d); put(-d, 0); put(d, 0); put(0, -d); }   // 시전 사거리는 **사방으로** 미친다
+  const dead = Number(w['최소 사거리']) || 0;      // 이 안쪽으로는 못 쓴다
   // 눈금은 **기술이 차지하는 만큼만** 깐다. 반지름 1 짜리 기술에 해머 공성 11 까지 그리면
   // 격자가 깨알이 돼 정작 그 기술이 안 보인다. 그래서 '기술이 미치는 거리' 를 먼저 재고,
   // 그보다 큰 눈금은 **가장 작은 것 하나만** 남긴다(그것조차 없으면 비교할 게 없으니까).
@@ -286,6 +287,11 @@ function shapeSVG(w) {
       body += `<text x="${px(0) + 4}" y="${py(r) - 3}" font-size="9" fill="var(--wiki)" `
             + `opacity=".85">${esc(k)} ${r}</text>`;
   });
+  // **못 쓰는 안쪽** — 히트박스에 딱 붙여서는 시전이 안 되는 기술이 있다(아나 생체
+  // 수류탄 최소 3). 빗금 대신 옅은 붉은 원으로 '여기는 안 된다' 를 보인다.
+  if (dead > 0)
+    body += `<circle cx="${px(0)}" cy="${py(0)}" r="${dead * S}" fill="var(--warn)" `
+          + `fill-opacity=".10" stroke="var(--warn)" stroke-width="1" stroke-dasharray="2 3"/>`;
   // 시전 사거리 — 어디까지 찍을 수 있나(영웅 중심). 공격 범위는 그 **끝**에 그린다.
   if (d > 0)
     body += `<circle cx="${px(0)}" cy="${py(0)}" r="${d * S}" fill="none" stroke="var(--gold)" `
@@ -387,6 +393,7 @@ function shapeSVG(w) {
   const cap = [`한 칸 = 거리 1 · 위쪽이 앞`,
                `<b class="c-hero">●</b> 영웅 히트박스 ${hr}`,
                d > 0 ? `<b class="c-rng">◌</b> 시전 사거리 ${d}` : '',
+               dead > 0 ? `<b class="c-hit">◌</b> 최소 ${dead} 안쪽은 못 씀` : '',
                farCast ? `시전 사거리 ${farCast} 은 너무 멀어 격자에 안 그림` : '',
                `<b class="c-area">■</b> 공격 범위 ${esc(names)}`,
                gs.some(g => g.직격) ? `<b class="c-hit">■</b> 주황은 한 명만 맞는 직격` : '',
