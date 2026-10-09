@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""범위 구경 탭이 읽을 자료 한 장을 만든다 — `site/data/shapes.json`.
+"""도감의 **범위 구경** 화면이 읽을 자료 한 장을 만든다 — `site/data/herodex/shapes.json`.
 
-도감은 영웅을 하나씩 받는다(한 명 28KB). 범위 구경은 **영웅을 가로질러** 보는 탭이라
+도감은 영웅을 하나씩 받는다(한 명 28KB). 범위 구경은 **영웅을 가로질러** 보는 화면이라
 그 방식이면 영웅 91명 = 요청 91번이 된다. 공짜 호스팅에서 그러면 안 되므로, 그림에
 **꼭 필요한 칸만** 추려 한 장으로 미리 말아 둔다.
 
@@ -18,7 +18,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent.parent
 SRC = ROOT / "site" / "data" / "herodex"
-DST = ROOT / "site" / "data" / "shapes.json"
+DST = ROOT / "site" / "data" / "herodex" / "shapes.json"
 
 DRAW = ("도형", "도형거리", "찾는 반지름", "찾는 대상", "최소 사거리", "그래프")
 SHOW = ("유형", "영향", "지정", "속성", "범위", "아군 범위", "반지름", "아군 반지름",

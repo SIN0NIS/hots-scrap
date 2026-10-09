@@ -148,6 +148,10 @@ def main():
         json.dumps({"build": build, "heroes": index, "기준": yardsticks(files)}, ensure_ascii=False, separators=(",", ":")) + "\n",
         encoding="utf-8")
     print(f"영웅 {len(index)}명 · {total / 1e6:.1f}MB → {OUT}  (한 영웅 평균 {total / len(index) / 1024:.0f}KB)")
+    # 범위 구경 화면이 읽는 shapes.json 도 이 폴더에 산다. 위에서 폴더를 통째로 비우므로
+    # **여기서 바로 이어 만들어야** 한다 — 따로 돌리는 걸 잊으면 그 화면이 404 가 된다.
+    import build_shapes
+    build_shapes.main()
     return 0
 
 

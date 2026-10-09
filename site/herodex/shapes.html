@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>범위 구경 · HotS Scrap</title>
+<title>범위 구경 · 영웅 도감 · HotS Scrap</title>
 <meta name="description" content="히어로즈 오브 더 스톰 기술·특성의 범위를 영웅을 가로질러 한눈에 — 꼴·편·크기로 걸러 보기">
 <link rel="icon" href="../shared/favicon.svg">
 <script src="../shared/search.js"></script>
@@ -32,7 +32,12 @@
   body { margin:0; background:var(--bg); color:var(--fg); min-height:100vh;
          font-family:"Pretendard","Malgun Gothic","Segoe UI",sans-serif; }
   .wrap { max-width:1320px; margin:0 auto; padding:18px 14px 60px; }
-  h1 { font-size:20px; margin:0 0 4px; }
+  h1 { font-size:20px; margin:0; }
+  .top { display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; margin-bottom:4px; }
+  .menu { display:flex; gap:4px; }
+  .menu a { text-decoration:none; color:var(--dim); font-size:13px; padding:4px 12px;
+            border:1px solid var(--line); border-radius:999px; background:var(--card); }
+  .menu a.on { background:var(--blue); border-color:var(--blue); color:#fff; font-weight:600; }
   .sub { color:var(--dim); font-size:12.5px; margin:0 0 12px; line-height:1.7; }
   .tools { position:sticky; top:0; z-index:5; background:var(--bg);
            padding:8px 0 10px; border-bottom:1px solid var(--line); margin-bottom:12px; }
@@ -71,7 +76,8 @@
 </head>
 <body>
 <div class="wrap">
-  <h1>범위 구경</h1>
+  <div class="top"><h1>영웅 <span class="s">도감</span></h1>
+    <nav class="menu"><a class="scrap-tap" href="./">영웅별</a><a class="scrap-tap on" href="shapes.html">범위 구경</a></nav></div>
   <p class="sub" id="head">불러오는 중…</p>
   <div class="tools">
     <div class="row">
@@ -97,7 +103,7 @@
 <script>
 /* 범위 구경 — 영웅을 **가로질러** 범위만 본다.
    그림은 도감과 같은 ../shared/shape.js 가 그린다(코드를 베끼면 조용히 어긋난다).
-   자료는 data/shapes.json 한 장(302KB · gzip 45KB)이라 요청이 한 번이다. 도감처럼
+   자료는 data/herodex/shapes.json 한 장(302KB · gzip 45KB)이라 요청이 한 번이다. 도감처럼
    영웅별로 받으면 91번이 된다 — 공짜 호스팅에서 그러면 안 된다. */
 const $ = s => document.querySelector(s);
 const Q = new URLSearchParams(location.search);
@@ -126,7 +132,7 @@ function card(f) {
   return '<figure class="pic"><figcaption class="ttl">' + tag
        + '<span class="nm">' + (f._nm || esc(f.n)) + '</span>'
        + '<span class="who">' + (f._who || esc(h.name)) + '</span>'
-       + '<a class="go scrap-tap" href="../herodex/?hero=' + encodeURIComponent(h.id) + '">도감 ↗</a>'
+       + '<a class="go scrap-tap" href="./?hero=' + encodeURIComponent(h.id) + '">도감 ↗</a>'
        + '</figcaption>' + svg + '<div class="nums">' + nums + '</div></figure>';
 }
 
@@ -196,7 +202,7 @@ function chips(host, names, bag) {
     st.textContent = '#scrap-wm,#scrap-back{display:none!important}.tools{position:static}';
     document.head.appendChild(st);
   }
-  DB = await fetch('../data/shapes.json', { cache: 'no-cache' }).then(r => r.json());
+  DB = await fetch('../data/herodex/shapes.json', { cache: 'no-cache' }).then(r => r.json());
   $('#hero').innerHTML += DB['영웅'].map(h =>
     '<option value="' + esc(h.id) + '">' + esc(h.name) + '</option>').join('');
   chips('#sides', ['적', '아군', '둘 다'], on['편']);
