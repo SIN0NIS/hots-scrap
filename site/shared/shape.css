@@ -1,0 +1,10 @@
+/* HotS Scrap — 범위 그림 생김새. shape.js 가 알아서 끌어온다.
+   한 칸이 게임 거리 1 이다. 색은 쓰는 쪽(:root)이 정해 준다. */
+.fig { margin:7px 0 2px; }
+.fig svg { display:block; max-width:100%; height:auto; border:1px solid var(--line);
+           border-radius:8px; background:var(--card2); }
+.fig .cap { color:var(--dim); font-size:11px; margin-top:3px; line-height:1.7; }
+.fig .cap b { font-weight:400; }
+.c-hero { color:var(--hit); } .c-rng { color:var(--gold); }
+.c-area { color:var(--blue); } .c-yard { color:var(--wiki); } .c-hit { color:var(--warn); }
+.c-dim { color:var(--dim); } .c-foe { color:var(--foe); } .c-ally { color:var(--ally); } .c-both { color:var(--both); }

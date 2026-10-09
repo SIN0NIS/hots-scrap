@@ -36,6 +36,8 @@ WATCH = {
     "encyclopedia": ["site/encyclopedia/index.html"],
     # 영웅 도감은 영웅마다 파일이 따로라, 목록 파일 하나만 지문으로 본다(바뀌면 같이 바뀐다)
     "herodex": ["site/data/herodex/index.json"],
+    # 범위 구경은 자기 자료 한 장만 쓴다(도감 자료에서 그림 칸만 추린 것)
+    "shapes": ["site/data/shapes.json"],
     # index.json 은 두 판이 같이 쓰므로 지문에 넣지 않는다(넣으면 테스트 서버만 바뀌어도 본 서버까지 '갱신'으로 찍힌다)
     "builds": ["site/data/builds/live.ko.json", "site/data/builds/live.en.json"],
     "builds-ptr": ["site/data/builds/ptr.ko.json", "site/data/builds/ptr.en.json"],
@@ -96,6 +98,11 @@ def note_for(app_id):
         d = load(SITE / "data" / "herodex" / "index.json") or {}
         hs = d.get("heroes") or []
         return f"build {d.get('build', '?')} · 영웅 {len(hs)}명" if hs else ""
+    if app_id == "shapes":
+        sh = load(SITE / "data" / "shapes.json") or {}
+        g = sh.get("그림") or []
+        return (f"build {sh.get('build', '?')} · 그림 {len(g)}개"
+                f" · 영웅 {len(sh.get('영웅') or [])}명") if g else ""
     if app_id in ("builds", "builds-ptr"):
         ch = (load(SITE / "data" / "builds" / "index.json") or {}).get("channels") or {}
         c = ch.get("ptr" if app_id == "builds-ptr" else "live") or {}

@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>범위 구경 · HotS Scrap</title>
+<meta name="description" content="히어로즈 오브 더 스톰 기술·특성의 범위를 영웅을 가로질러 한눈에 — 꼴·편·크기로 걸러 보기">
+<link rel="icon" href="../shared/favicon.svg">
+<script src="../shared/search.js"></script>
+<script src="../shared/shape.js"></script>
+<script src="../shared/scrap.js" defer></script>
+<style>
+  /* 색은 도감과 **같은 값**이다. 같은 그림이 두 탭에서 달라 보이면 안 된다. */
+  :root {
+    --bg:#f3f6fb; --card:#ffffff; --card2:#eef2f8; --line:#cdd9ea; --line2:#b6c6de;
+    --fg:#122036; --dim:#5d6d84; --blue:#1758a8; --gold:#a97e1f; --gold-line:#d7b45c;
+    --hit:#8a6414; --wiki:#7a3fb0; --warn:#b1562a; --foe:#c0392b; --ally:#1758a8; --both:#7a3fb0; --shadow:0 1px 3px rgba(18,32,54,.08);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg:#0b1526; --card:#101f38; --card2:#152747; --line:#233a5c; --line2:#2f4a72;
+      --fg:#eaf1fa; --dim:#8fa2bd; --blue:#5aa8ff; --gold:#e8c268; --gold-line:#8a6d2f;
+      --hit:#f0c46a; --wiki:#c79cf0; --warn:#e0875b; --foe:#ff7b6b; --ally:#5aa8ff; --both:#c79cf0; --shadow:0 1px 3px rgba(0,0,0,.4);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg:#0b1526; --card:#101f38; --card2:#152747; --line:#233a5c; --line2:#2f4a72;
+    --fg:#eaf1fa; --dim:#8fa2bd; --blue:#5aa8ff; --gold:#e8c268; --gold-line:#8a6d2f;
+    --hit:#f0c46a; --wiki:#c79cf0; --warn:#e0875b; --foe:#ff7b6b; --ally:#5aa8ff; --both:#c79cf0; --shadow:0 1px 3px rgba(0,0,0,.4);
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); min-height:100vh;
+         font-family:"Pretendard","Malgun Gothic","Segoe UI",sans-serif; }
+  .wrap { max-width:1320px; margin:0 auto; padding:18px 14px 60px; }
+  h1 { font-size:20px; margin:0 0 4px; }
+  .sub { color:var(--dim); font-size:12.5px; margin:0 0 12px; line-height:1.7; }
+  .tools { position:sticky; top:0; z-index:5; background:var(--bg);
+           padding:8px 0 10px; border-bottom:1px solid var(--line); margin-bottom:12px; }
+  .row { display:flex; flex-wrap:wrap; gap:6px; align-items:center; margin-bottom:6px; }
+  .row:last-child { margin-bottom:0; }
+  .lab { color:var(--dim); font-size:12px; min-width:40px; }
+  input[type=search], select { background:var(--card); color:var(--fg);
+    border:1px solid var(--line); border-radius:8px; padding:6px 10px; font:inherit; font-size:13px; }
+  input[type=search] { flex:1 1 200px; max-width:320px; }
+  .f { background:var(--card); border:1px solid var(--line); color:var(--dim);
+       border-radius:999px; padding:3px 11px; font-size:12.5px; cursor:pointer; font-family:inherit; }
+  .f.on { background:var(--blue); border-color:var(--blue); color:#fff; }
+  .f.foe.on { background:var(--foe); border-color:var(--foe); }
+  .f.ally.on { background:var(--ally); border-color:var(--ally); }
+  .f.both.on { background:var(--both); border-color:var(--both); }
+  #grid { display:grid; gap:12px; grid-template-columns:repeat(auto-fill, minmax(290px, 1fr)); }
+  .pic { background:var(--card); border:1px solid var(--line); border-radius:10px;
+         padding:8px 10px 10px; box-shadow:var(--shadow); }
+  .ttl { display:flex; gap:6px; align-items:baseline; margin-bottom:5px; }
+  .ttl .who { color:var(--dim); font-size:12px; }
+  .ttl .nm { font-weight:700; }
+  .ttl .go { margin-left:auto; font-size:11px; color:var(--dim); text-decoration:none;
+             border:1px solid var(--line); border-radius:999px; padding:1px 8px; white-space:nowrap; }
+  .ttl .go:hover { color:var(--blue); border-color:var(--blue); }
+  .slot { display:inline-grid; place-items:center; min-width:20px; height:20px; padding:0 5px;
+          border-radius:5px; background:var(--blue); color:#fff; font-size:11px; font-weight:700; }
+  .slot.lv { background:var(--gold); }
+  .nums { display:flex; flex-wrap:wrap; gap:4px 5px; margin-top:6px; }
+  .nums span { font-size:11px; color:var(--dim); background:var(--card2);
+               border:1px solid var(--line); border-radius:5px; padding:1px 7px; }
+  .nums b { color:var(--fg); font-weight:600; }
+  mark { background:var(--gold-line); color:inherit; border-radius:3px; }
+  #more { text-align:center; color:var(--dim); font-size:12.5px; padding:18px 0 4px; }
+  @media (max-width:560px) { #grid { grid-template-columns:1fr; } .wrap { padding:12px 10px 50px; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>범위 구경</h1>
+  <p class="sub" id="head">불러오는 중…</p>
+  <div class="tools">
+    <div class="row">
+      <input type="search" id="q" class="scrap-tap" placeholder="영웅·기술 찾기 (한글·영문·초성)">
+      <select id="hero" class="scrap-tap"><option value="">영웅 전체</option></select>
+      <select id="sort" class="scrap-tap">
+        <option value="영웅">영웅 차례</option>
+        <option value="반지름">넓은 것부터</option>
+        <option value="사거리">먼 것부터</option>
+        <option value="각도">많이 벌어진 것부터</option>
+      </select>
+    </div>
+    <div class="row"><span class="lab">누구에게</span><span id="sides"></span></div>
+    <div class="row"><span class="lab">꼴</span><span id="kinds"></span></div>
+    <div class="row" id="kindrow"><span class="lab">갈래</span>
+      <button class="f scrap-tap on" data-kind="기술">기술</button>
+      <button class="f scrap-tap" data-kind="특성">특성</button>
+    </div>
+  </div>
+  <div id="grid"></div>
+  <div id="more"></div>
+</div>
+<script>
+/* 범위 구경 — 영웅을 **가로질러** 범위만 본다.
+   그림은 도감과 같은 ../shared/shape.js 가 그린다(코드를 베끼면 조용히 어긋난다).
+   자료는 data/shapes.json 한 장(302KB · gzip 45KB)이라 요청이 한 번이다. 도감처럼
+   영웅별로 받으면 91번이 된다 — 공짜 호스팅에서 그러면 안 된다. */
+const $ = s => document.querySelector(s);
+const Q = new URLSearchParams(location.search);
+const PAGE = 36;                  // 한 번에 그리는 수. 814개를 한꺼번에 그리면 화면이 버벅인다
+const ALL = Q.get('all') === '1'; // 한 장으로 사진 찍을 때만(tools/shape_shots.py) — 끊지 않고 다 그린다
+let DB = null, VIEW = [], shown = 0;
+const on = { 편: new Set(), 꼴: new Set(), 갈래: new Set(['기술']) };
+
+const esc = s => window.hotsShape.esc(s);
+const num = v => { const n = parseFloat(String(v).replace(/[^0-9.-]/g, '')); return isNaN(n) ? -1 : n; };
+const kindsOf = f => (f.w['도형'] || []).map(g => g['꼴']);
+const sidesOf = f => (f.w['도형'] || []).map(g => g['편']).filter(Boolean);
+
+const NUMS = ['범위', '아군 범위', '반지름', '아군 반지름', '안쪽 반지름', '너비', '높이',
+              '각도', '사거리', '히트박스', '투사체 속도', '모양', '기준', '지정'];
+
+function card(f) {
+  const h = DB['영웅'][f.h];
+  // 그림은 영웅 히트박스와 눈금만 있으면 그려진다 — 도감이 넘기는 것과 같은 모양으로 준다
+  const svg = window.hotsShape.svg(f.w, { hero: { '기본': { '반지름': h.r } }, yard: DB['기준'] });
+  if (!svg) return '';
+  const tag = f.lv != null ? '<b class="slot lv">' + esc(f.lv) + '</b>'
+            : f.s ? '<b class="slot">' + esc(f.s) + '</b>' : '';
+  const nums = NUMS.filter(k => f.w[k] != null && f.w[k] !== '')
+    .map(k => '<span>' + esc(k) + ' <b>' + esc(f.w[k]) + '</b></span>').join('');
+  return '<figure class="pic"><figcaption class="ttl">' + tag
+       + '<span class="nm">' + (f._nm || esc(f.n)) + '</span>'
+       + '<span class="who">' + (f._who || esc(h.name)) + '</span>'
+       + '<a class="go scrap-tap" href="../herodex/?hero=' + encodeURIComponent(h.id) + '">도감 ↗</a>'
+       + '</figcaption>' + svg + '<div class="nums">' + nums + '</div></figure>';
+}
+
+function more(n) {
+  $('#grid').insertAdjacentHTML('beforeend',
+    VIEW.slice(shown, shown + n).map(card).filter(Boolean).join(''));
+  shown += n;
+  const left = Math.max(0, VIEW.length - shown);
+  $('#more').textContent = left ? '아래로 내리면 ' + left + '개 더' : (VIEW.length ? '끝' : '');
+}
+
+function apply() {
+  const q = $('#q').value.trim(), hid = $('#hero').value;
+  let list = DB['그림'].filter(f =>
+       on['갈래'].has(f.lv != null ? '특성' : '기술')
+    && (!hid || DB['영웅'][f.h].id === hid)
+    && (!on['편'].size || sidesOf(f).some(s => on['편'].has(s)))
+    && (!on['꼴'].size || kindsOf(f).some(k => on['꼴'].has(k))));
+  if (q) {
+    list = window.scrapSearch.filter(list, q, f => [f.n, DB['영웅'][f.h].name, DB['영웅'][f.h].id, f.i]);
+    list.forEach(f => { f._nm = window.scrapSearch.mark(f.n, q);
+                        f._who = window.scrapSearch.mark(DB['영웅'][f.h].name, q); });
+  } else {
+    list.forEach(f => { f._nm = null; f._who = null; });
+  }
+  const by = $('#sort').value;
+  if (by !== '영웅') list = list.slice().sort((a, b) => num(b.w[by]) - num(a.w[by]));
+  VIEW = list; shown = 0;
+  $('#grid').innerHTML = '';
+  // 칸 수는 보통 화면 너비가 정한다. 사진으로 찍을 때만 ?cols= 로 못 박는다.
+  if (Q.get('cols')) $('#grid').style.gridTemplateColumns =
+    'repeat(' + (parseInt(Q.get('cols'), 10) || 3) + ', minmax(0, 1fr))';
+  more(ALL ? VIEW.length : PAGE);
+  $('#head').innerHTML = '그림 <b>' + VIEW.length + '</b>개 · 게임 자료 ' + esc(DB.build || '')
+    + ' · 한 칸이 게임 거리 1 입니다. 영향을 주는 쪽에 따라 '
+    + '<b class="c-foe">적 빨강</b> · <b class="c-ally">아군 파랑</b> · '
+    + '<b class="c-both">둘 다 보라</b> 로 나눴습니다.';
+  const p = new URLSearchParams();
+  if (q) p.set('q', q);
+  if (hid) p.set('hero', hid);
+  if (on['갈래'].has('특성')) p.set('tal', on['갈래'].has('기술') ? '2' : '1');
+  if (on['편'].size) p.set('side', [...on['편']].join(','));
+  if (on['꼴'].size) p.set('kind', [...on['꼴']].join(','));
+  if (by !== '영웅') p.set('sort', by);
+  history.replaceState(null, '', p.toString() ? '?' + p : location.pathname);
+}
+
+function chips(host, names, bag) {
+  $(host).innerHTML = names.map(n => {
+    const cls = n === '적' ? ' foe' : n === '아군' ? ' ally' : n === '둘 다' ? ' both' : '';
+    return '<button class="f scrap-tap' + cls + '" data-v="' + esc(n) + '">' + esc(n) + '</button>';
+  }).join('');
+  $(host).addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    const v = b.dataset.v;
+    if (bag.has(v)) bag.delete(v); else bag.add(v);
+    b.classList.toggle('on', bag.has(v));
+    apply();
+  });
+}
+
+(async function boot() {
+  if (ALL) {
+    // 사진으로 찍는 중. 배경 무늬와 뒤로가기 단추가 깔려 있으면 **빈 바탕이 아니어서**
+    // 아래 여백을 잘라 낼 수가 없다(겐지 한 장에 빈 바탕 800px 이 붙었다).
+    const st = document.createElement('style');
+    st.textContent = '#scrap-wm,#scrap-back{display:none!important}.tools{position:static}';
+    document.head.appendChild(st);
+  }
+  DB = await fetch('../data/shapes.json', { cache: 'no-cache' }).then(r => r.json());
+  $('#hero').innerHTML += DB['영웅'].map(h =>
+    '<option value="' + esc(h.id) + '">' + esc(h.name) + '</option>').join('');
+  chips('#sides', ['적', '아군', '둘 다'], on['편']);
+  chips('#kinds', [...new Set(DB['그림'].flatMap(kindsOf))].sort(), on['꼴']);
+  $('#kindrow').addEventListener('click', e => {
+    const b = e.target.closest('button[data-kind]'); if (!b) return;
+    const v = b.dataset.kind;
+    if (on['갈래'].has(v)) on['갈래'].delete(v); else on['갈래'].add(v);
+    if (!on['갈래'].size) on['갈래'].add(v);        // 둘 다 끄면 볼 게 없다
+    document.querySelectorAll('button[data-kind]').forEach(x =>
+      x.classList.toggle('on', on['갈래'].has(x.dataset.kind)));
+    apply();
+  });
+
+  // 주소에 적힌 대로 되돌린다 — 링크를 받은 사람이 같은 화면을 봐야 한다
+  if (Q.get('q')) $('#q').value = Q.get('q');
+  if (Q.get('hero')) $('#hero').value = Q.get('hero');
+  if (Q.get('sort')) $('#sort').value = Q.get('sort');
+  if (Q.get('tal')) {
+    on['갈래'].clear(); on['갈래'].add('특성');
+    if (Q.get('tal') === '2') on['갈래'].add('기술');
+  }
+  (Q.get('side') || '').split(',').filter(Boolean).forEach(v => on['편'].add(v));
+  (Q.get('kind') || '').split(',').filter(Boolean).forEach(v => on['꼴'].add(v));
+  document.querySelectorAll('.f').forEach(b => b.classList.toggle('on',
+    on['편'].has(b.dataset.v) || on['꼴'].has(b.dataset.v) || on['갈래'].has(b.dataset.kind)));
+
+  $('#q').addEventListener('input', apply);
+  $('#hero').addEventListener('change', apply);
+  $('#sort').addEventListener('change', apply);
+  new IntersectionObserver(es => {
+    if (es[0].isIntersecting && shown < VIEW.length) more(PAGE);
+  }, { rootMargin: '600px' }).observe($('#more'));
+  apply();
+  document.body.dataset.ready = '1';
+})();
+</script>
+</body>
+</html>

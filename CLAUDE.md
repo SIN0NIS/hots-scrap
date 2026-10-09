@@ -33,6 +33,15 @@
   만드는 곳은 저장소 **밖**인 `../hots_xml`(engine/ + tools/hero_detail.py)이고,
   여기서는 `pipeline/steps/build_herodex.py` 가 그 결과를 옮겨 쪼갠다(로컬 전용 단계).
   칸 이름·분류 규칙은 `hots_xml/README.md` 의 '해석기' 절에 적혀 있다.
+- `site/shapes/` **범위 구경** — 기술·특성 범위를 영웅을 **가로질러** 본다(꼴·영향을 주는 쪽·크기로 거르기).
+  자료는 `site/data/shapes.json` **한 장**(302KB · gzip 45KB) — `pipeline/steps/build_shapes.py` 가
+  도감 자료에서 그림에 필요한 칸만 추려 만든다. 도감처럼 영웅별로 받으면 요청이 91번이 된다.
+  **그림은 `site/shared/shape.js` 가 그린다 — 도감과 같은 파일이다.** 코드를 베껴 두 탭이 조용히
+  어긋나는 일을 막으려고 꺼내 놓았다(`hotsShape.svg(위키식, {hero, yard})`). 색은 쓰는 쪽이
+  `--foe/--ally/--both/--hit/--gold/--wiki` 로 정해 주고, `.fig`·`.cap`·`.c-*` 생김새는 `shared/shape.css`.
+  여기 수정 = 도감까지 회귀 확인. 그림이 안 바뀌었음은 **영웅 91명 812개 SVG 지문 대조**로 확인한다.
+  - 검토용 사진: `python ../hots_xml/tools/shape_shots.py` → `hots_xml/out/sheets/<영웅>.png`
+    (머리 없는 크롬이 `?hero=..&all=1&cols=3` 을 찍는다. `all=1` 이면 끊지 않고 다 그리고 배경 무늬를 숨긴다)
 - `site/encyclopedia/index.html` 영웅 도감 (HotS wiki 번역) — **단일 파일(6MB, 데이터 내장)**, 직접 편집
 - `site/replay/` 리플레이 뷰어 — `index.html` + `css/` + `js/`(클래식 스크립트, ES 모듈 아님). `js/data_*.js` 는 생성 파일
 - `site/shared/scrap.js` 전역 바+테마(한 줄 로드). **`scrap.css` 도 이 스크립트가 스스로 끌어온다** —
