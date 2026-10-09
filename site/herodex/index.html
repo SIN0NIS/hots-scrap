@@ -278,6 +278,13 @@ function shapeSVG(w) {
     if (g.꼴 === '다각형' || g.꼴 === '자리들') (g.점 || []).forEach(p => put(p[0], p[1]));
     else if (g.꼴 === '부채꼴') { put(0, at); arcPts(g.반지름, g.각도, at).forEach(p => put(p[0], p[1])); }
     else if (g.꼴 === '이동') { put(0, 0); put(0, g.거리); }
+    else if (g.꼴 === '갈래') {   // 여러 갈래 — 가장 바깥 갈래의 끝까지 담는다
+      const half = (g.간격 || 0) * ((g.수 || 1) - 1) / 2, L = g.길이 || 0;
+      [-half, 0, half].forEach(t => {
+        const r = t * Math.PI / 180;
+        put(Math.sin(r) * L, Math.cos(r) * L);
+      });
+    }
     else if (g.꼴 === '직사각형') {
       if (g.자리 === '원점' && !g.쓸기) { put(-g.가로 / 2, 0); put(g.가로 / 2, g.세로); }
       else { put(-g.가로 / 2, at - g.세로 / 2); put(g.가로 / 2, at + (g.쓸기 || 0) + g.세로 / 2); }
@@ -357,6 +364,20 @@ function shapeSVG(w) {
         const inner = arcPts(Math.max(g.반지름 - g.띠, 0.01), g.각도, at).reverse();
         body += `<polygon points="${outer.concat(inner).map(q => px(q[0]) + ',' + py(q[1])).join(' ')}" `
               + `fill="var(--blue)" fill-opacity=".30" stroke="var(--blue)" stroke-width="1.6"/>`;
+      }
+    } else if (g.꼴 === '갈래') {
+      /* **여러 갈래로 뻗는 기술** — 디아블로 화염 발구르기는 5갈래가 20도씩 벌어진다.
+         선 하나하나를 그려야 '부채꼴 장판' 이 아니라 '갈래' 라는 게 보인다. */
+      const n = g.수 || 1, gap = g.간격 || 0, L = g.길이 || 0;
+      const half = gap * (n - 1) / 2;
+      for (let i = 0; i < n; i++) {
+        const t = (-half + gap * i) * Math.PI / 180;
+        const ex = Math.sin(t) * L, ey = Math.cos(t) * L;
+        body += `<line x1="${px(0)}" y1="${py(0)}" x2="${px(ex)}" y2="${py(ey)}" `
+              + `stroke="var(--blue)" stroke-width="1.6" stroke-opacity=".85"/>`;
+        if (g.반지름)   // 갈래 끝의 판정 크기
+          body += `<circle cx="${px(ex)}" cy="${py(ey)}" r="${g.반지름 * S}" `
+                + `fill="var(--blue)" fill-opacity=".28" stroke="var(--blue)" stroke-width="1.2"/>`;
       }
     } else if (g.꼴 === '이동') {
       /* 판정은 없고 몸만 가는 기술 — 화살표만 그린다(아래에서 그려진다) */
