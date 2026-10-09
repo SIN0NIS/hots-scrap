@@ -11,19 +11,19 @@
   :root {
     --bg:#f3f6fb; --card:#ffffff; --card2:#eef2f8; --line:#cdd9ea; --line2:#b6c6de;
     --fg:#122036; --dim:#5d6d84; --blue:#1758a8; --gold:#a97e1f; --gold-line:#d7b45c;
-    --hit:#8a6414; --wiki:#7a3fb0; --warn:#b1562a; --shadow:0 1px 3px rgba(18,32,54,.08);
+    --hit:#8a6414; --wiki:#7a3fb0; --warn:#b1562a; --foe:#c0392b; --ally:#1e7a4a; --shadow:0 1px 3px rgba(18,32,54,.08);
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
       --bg:#0b1526; --card:#101f38; --card2:#152747; --line:#233a5c; --line2:#2f4a72;
       --fg:#eaf1fa; --dim:#8fa2bd; --blue:#5aa8ff; --gold:#e8c268; --gold-line:#8a6d2f;
-      --hit:#f0c46a; --wiki:#c79cf0; --warn:#e0875b; --shadow:0 1px 3px rgba(0,0,0,.4);
+      --hit:#f0c46a; --wiki:#c79cf0; --warn:#e0875b; --foe:#ff7b6b; --ally:#5fd19a; --shadow:0 1px 3px rgba(0,0,0,.4);
     }
   }
   :root[data-theme="dark"] {
     --bg:#0b1526; --card:#101f38; --card2:#152747; --line:#233a5c; --line2:#2f4a72;
     --fg:#eaf1fa; --dim:#8fa2bd; --blue:#5aa8ff; --gold:#e8c268; --gold-line:#8a6d2f;
-    --hit:#f0c46a; --wiki:#c79cf0; --warn:#e0875b; --shadow:0 1px 3px rgba(0,0,0,.4);
+    --hit:#f0c46a; --wiki:#c79cf0; --warn:#e0875b; --foe:#ff7b6b; --ally:#5fd19a; --shadow:0 1px 3px rgba(0,0,0,.4);
   }
   * { box-sizing:border-box; }
   body { margin:0; background:var(--bg); color:var(--fg); min-height:100vh;
@@ -134,7 +134,7 @@
   .fig .cap b { font-weight:400; }
   .c-hero { color:var(--hit); } .c-rng { color:var(--gold); }
   .c-area { color:var(--blue); } .c-yard { color:var(--wiki); } .c-hit { color:var(--warn); }
-  .c-dim { color:var(--dim); }
+  .c-dim { color:var(--dim); } .c-foe { color:var(--foe); } .c-ally { color:var(--ally); }
   .chips { display:flex; flex-wrap:wrap; gap:5px; margin-bottom:7px; }
   .chip { background:var(--card2); border:1px solid var(--line); border-radius:999px;
           padding:2px 10px; font-size:12.5px; }
@@ -339,8 +339,9 @@ function shapeSVG(w) {
           + `fill-opacity=".14" stroke="var(--dim)" stroke-width="1" stroke-dasharray="2 3"/>`;
   // **색이 뜻이다.** 빨강 = 이 안에서 대상을 찾는다 · 파랑 = 실제로 맞는 범위.
   // 유닛을 찍거나 게임이 알아서 고르는 기술은 그 동그라미가 '찾는 범위' 다.
+  // 빨강은 이제 **적을 때리는 범위** 전용이다. '세는 범위' 는 파랑으로 옮긴다.
   const seek = (w['지정'] === '유닛 대상' || w['지정'] === '자동');
-  const RC = seek ? 'var(--warn)' : 'var(--gold)';
+  const RC = seek ? 'var(--blue)' : 'var(--gold)';
   // 시전 사거리 — 어디까지 찍을 수 있나(영웅 중심). 공격 범위는 그 **끝**에 그린다.
   if (d > 0) {
     body += `<circle cx="${px(0)}" cy="${py(0)}" r="${d * S}" fill="none" stroke="${RC}" `
@@ -348,31 +349,33 @@ function shapeSVG(w) {
           + `<line x1="${px(0)}" y1="${py(0)}" x2="${px(0)}" y2="${py(d)}" stroke="${RC}" `
           + `stroke-width="1" stroke-dasharray="3 3" opacity=".8"/>`;
     if (seek && py(d) > 11)
-      body += `<text x="${px(0) + 4}" y="${py(d) + 11}" font-size="9" fill="var(--warn)" `
+      body += `<text x="${px(0) + 4}" y="${py(d) + 11}" font-size="9" fill="var(--blue)" `
             + `opacity=".9">이 안에서 찾음</text>`;
   }
   // 장판은 없고 **고를 적을 찾기만** 하는 기술(겐지 튕겨내기 `Radius 7.0`)
   const sr = seekR;
   if (sr > 0)
-    body += `<circle cx="${px(0)}" cy="${py(0)}" r="${sr * S}" fill="var(--warn)" `
-          + `fill-opacity=".07" stroke="var(--warn)" stroke-width="1.2" stroke-dasharray="5 4"/>`
+    body += `<circle cx="${px(0)}" cy="${py(0)}" r="${sr * S}" fill="var(--blue)" `
+          + `fill-opacity=".07" stroke="var(--blue)" stroke-width="1.2" stroke-dasharray="5 4"/>`
           + (py(sr) > 11 ? `<text x="${px(0) + 4}" y="${py(sr) + 11}" font-size="9" `
-             + `fill="var(--warn)" opacity=".9">이 안에서 찾음</text>` : '');
+             + `fill="var(--blue)" opacity=".9">이 안에서 찾음</text>` : '');
   gs.forEach(g => {
     const at = (g.자리 === '원점' || g.쓸기) ? 0 : d;
-    // **빨강은 '이 안에서 찾는다' 에만 쓴다.** 직격도 실제로 맞는 판정이라 파랑 쪽이다 —
-    // 한 명만 맞는다는 것은 진하게, 여럿 맞는 장판은 연하게 구별한다.
+    // **색이 "누구에게 무엇을 하나" 를 말한다.**
+    //   빨강 = 적을 때리거나 디버프 · 초록 = 아군을 이롭게 · 파랑 = 편 안 가리고 세기만
+    // 한 명만 맞는 직격은 같은 색으로 **진하게** 구별한다.
+    const C = g.편 === '아군' ? 'var(--ally)' : g.편 === '셈' ? 'var(--blue)' : 'var(--foe)';
     const fill = g.직격
-      ? 'fill="var(--blue)" fill-opacity=".30" stroke="var(--blue)" stroke-width="2"'
-      : 'fill="var(--blue)" fill-opacity=".16" stroke="var(--blue)" stroke-width="1.4"';
+      ? `fill="${C}" fill-opacity=".30" stroke="${C}" stroke-width="2"`
+      : `fill="${C}" fill-opacity=".16" stroke="${C}" stroke-width="1.4"`;
     if (g.꼴 === '자리들') {
       // 여러 지점에 차례로 생기는 기술(잘아타스 공허 걸음의 삼각형). 자리를 잇고 번호를 붙인다.
       const pts = (g.점 || []).map(p => px(p[0]) + ',' + py(p[1]));
-      body += `<polygon points="${pts.join(' ')}" fill="var(--blue)" fill-opacity=".10" `
-            + `stroke="var(--blue)" stroke-width="1.2" stroke-dasharray="5 3"/>`;
+      body += `<polygon points="${pts.join(' ')}" fill="${C}" fill-opacity=".10" `
+            + `stroke="${C}" stroke-width="1.2" stroke-dasharray="5 3"/>`;
       (g.점 || []).forEach((p, i) => {
-        body += `<circle cx="${px(p[0])}" cy="${py(p[1])}" r="4" fill="var(--blue)"/>`
-              + `<text x="${px(p[0]) + 6}" y="${py(p[1]) - 5}" font-size="9" fill="var(--blue)">${i + 1}</text>`;
+        body += `<circle cx="${px(p[0])}" cy="${py(p[1])}" r="4" fill="${C}"/>`
+              + `<text x="${px(p[0]) + 6}" y="${py(p[1]) - 5}" font-size="9" fill="${C}">${i + 1}</text>`;
       });
     } else if (g.꼴 === '다각형')
       body += `<polygon points="${(g.점 || []).map(p => px(p[0]) + ',' + py(p[1])).join(' ')}" ${fill}/>`;
@@ -385,7 +388,7 @@ function shapeSVG(w) {
         const outer = arcPts(g.반지름, g.각도, at);
         const inner = arcPts(Math.max(g.반지름 - g.띠, 0.01), g.각도, at).reverse();
         body += `<polygon points="${outer.concat(inner).map(q => px(q[0]) + ',' + py(q[1])).join(' ')}" `
-              + `fill="var(--blue)" fill-opacity=".30" stroke="var(--blue)" stroke-width="1.6"/>`;
+              + `fill="${C}" fill-opacity=".30" stroke="${C}" stroke-width="1.6"/>`;
       }
     } else if (g.꼴 === '갈래') {
       /* **여러 갈래로 뻗는 기술** — 디아블로 화염 발구르기는 5갈래가 20도씩 벌어진다.
@@ -396,10 +399,10 @@ function shapeSVG(w) {
         const t = (-half + gap * i) * Math.PI / 180;
         const ex = Math.sin(t) * L, ey = Math.cos(t) * L;
         body += `<line x1="${px(0)}" y1="${py(0)}" x2="${px(ex)}" y2="${py(ey)}" `
-              + `stroke="var(--blue)" stroke-width="1.6" stroke-opacity=".85"/>`;
+              + `stroke="${C}" stroke-width="1.6" stroke-opacity=".85"/>`;
         if (g.반지름)   // 갈래 끝의 판정 크기
           body += `<circle cx="${px(ex)}" cy="${py(ey)}" r="${g.반지름 * S}" `
-                + `fill="var(--blue)" fill-opacity=".28" stroke="var(--blue)" stroke-width="1.2"/>`;
+                + `fill="${C}" fill-opacity=".28" stroke="${C}" stroke-width="1.2"/>`;
       }
     } else if (g.꼴 === '이동') {
       /* 판정은 없고 몸만 가는 기술 — 화살표만 그린다(아래에서 그려진다) */
@@ -413,28 +416,28 @@ function shapeSVG(w) {
             + `height="${(g.세로 + run) * S}" ${fill}/>`;
       if (run)   // 출발할 때의 판정 상자를 한 번 더 그려 '얼마짜리 상자가 쓸고 가는지' 보이게
         body += `<rect x="${px(-g.가로 / 2)}" y="${py(at + g.세로 / 2)}" width="${g.가로 * S}" `
-              + `height="${g.세로 * S}" fill="none" stroke="var(--blue)" stroke-width="1" `
+              + `height="${g.세로 * S}" fill="none" stroke="${C}" stroke-width="1" `
               + `stroke-dasharray="4 3"/>`;
     }
     else if (g.꼴 === '고리')
       body += `<circle cx="${px(0)}" cy="${py(at)}" r="${g.반지름 * S}" ${fill}/>`
             + `<circle cx="${px(0)}" cy="${py(at)}" r="${g.안쪽 * S}" fill="var(--card2)" `
-            + `stroke="var(--blue)" stroke-width="1"/>`;
+            + `stroke="${C}" stroke-width="1"/>`;
     else if (g.날아감) {
       // 날아가는 원 — 지나간 자리를 띠로 그린다. 굵기가 그대로면 곧은 띠,
       // 커지면(리밍 보주·안두인 응징) 넓어지는 띠다. '바로 앞에서 맞아도 터진다' 가 여기서 보인다.
       const r0 = (g.작은 === undefined ? g.반지름 : g.작은), r1 = g.반지름, D = g.날아감;
       body += `<polygon points="${px(-r0)},${py(0)} ${px(r0)},${py(0)} `
-            + `${px(r1)},${py(D)} ${px(-r1)},${py(D)}" fill="var(--blue)" fill-opacity=".10" `
-            + `stroke="var(--blue)" stroke-width="1" stroke-dasharray="4 3"/>`;
-      body += `<circle cx="${px(0)}" cy="${py(0)}" r="${r0 * S}" fill="none" stroke="var(--blue)" `
+            + `${px(r1)},${py(D)} ${px(-r1)},${py(D)}" fill="${C}" fill-opacity=".10" `
+            + `stroke="${C}" stroke-width="1" stroke-dasharray="4 3"/>`;
+      body += `<circle cx="${px(0)}" cy="${py(0)}" r="${r0 * S}" fill="none" stroke="${C}" `
             + `stroke-width="1" stroke-dasharray="3 3"/>`
             + `<circle cx="${px(0)}" cy="${py(D)}" r="${r1 * S}" ${fill}/>`;
     } else {
       body += `<circle cx="${px(0)}" cy="${py(at)}" r="${g.반지름 * S}" ${fill}/>`;
       if (g.작은)   // 충전으로 커지는 원 — 처음 크기(충전 안 했을 때)를 점선으로
         body += `<circle cx="${px(0)}" cy="${py(at)}" r="${g.작은 * S}" fill="none" `
-              + `stroke="var(--blue)" stroke-width="1.2" stroke-dasharray="4 3"/>`;
+              + `stroke="${C}" stroke-width="1.2" stroke-dasharray="4 3"/>`;
     }
   });
   // 방향이 있는 기술은 **화살표**로 어디로 가는지 보여 준다 — 날아가는 거리,
@@ -468,13 +471,16 @@ function shapeSVG(w) {
                  .filter((v, i, z) => z.indexOf(v) === i).join(' · ');
   const cap = [`한 칸 = 거리 1 · 위쪽이 앞`,
                `<b class="c-hero">●</b> 영웅 히트박스 ${hr}`,
-               d > 0 ? `<b class="${seek ? 'c-hit' : 'c-rng'}">◌</b> `
+               d > 0 ? `<b class="${seek ? 'c-area' : 'c-rng'}">◌</b> `
                        + (seek ? `이 안에서 찾음 ${d}` : `시전 사거리 ${d}`) : '',
-               sr > 0 ? `<b class="c-hit">◌</b> 이 안에서 찾음 ${sr}` : '',
+               sr > 0 ? `<b class="c-area">◌</b> 이 안에서 찾음 ${sr}` : '',
                dead > 0 ? `<b class="c-dim">◌</b> 최소 ${dead} 안쪽은 못 씀` : '',
                farCast ? `시전 사거리 ${farCast} 은 너무 멀어 격자에 안 그림` : '',
-               names ? `<b class="c-area">■</b> 실제 범위 ${esc(names)}` : '',
-               gs.some(g => g.직격) ? `<b class="c-area">■</b> 진한 쪽은 한 명만 맞는 직격` : '',
+               gs.some(g => g.편 === '적') ? `<b class="c-foe">■</b> 적에게` : '',
+               gs.some(g => g.편 === '아군') ? `<b class="c-ally">■</b> 아군에게` : '',
+               gs.some(g => g.편 === '셈') ? `<b class="c-area">■</b> 세는 범위` : '',
+               names ? `범위 ${esc(names)}` : '',
+               gs.some(g => g.직격) ? `진한 쪽은 한 명만 맞는 직격` : '',
                yard.map(([k, r]) => `<b class="c-yard">⌁</b> ${esc(k)} ${r}`).join(' · ')]
               .filter(Boolean).join(' · ');
   return `<div class="fig"><svg viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" `
