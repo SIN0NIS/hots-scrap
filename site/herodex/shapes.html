@@ -58,6 +58,8 @@
          padding:8px 10px 10px; box-shadow:var(--shadow); }
   .ttl { display:flex; gap:6px; align-items:baseline; margin-bottom:5px; }
   .ttl .who { color:var(--dim); font-size:12px; }
+  .ttl .of { color:var(--gold); font-size:12px; font-weight:600; }
+  .slot.lv { letter-spacing:.2px; }
   .ttl .nm { font-weight:700; }
   .ttl .go { margin-left:auto; font-size:11px; color:var(--dim); text-decoration:none;
              border:1px solid var(--line); border-radius:999px; padding:1px 8px; white-space:nowrap; }
@@ -125,12 +127,16 @@ function card(f) {
   // 그림은 영웅 히트박스와 눈금만 있으면 그려진다 — 도감이 넘기는 것과 같은 모양으로 준다
   const svg = window.hotsShape.svg(f.w, { hero: { '기본': { '반지름': h.r } }, yard: DB['기준'] });
   if (!svg) return '';
-  const tag = f.lv != null ? '<b class="slot lv">' + esc(f.lv) + '</b>'
+  // 특성이 바꾸는 모습이면 **어느 기술을 몇 레벨 특성이 바꾸나**를 그대로 보여 준다.
+  // `부패 ▸ 16T-2 파괴적인 고통` — 기본 틀 카드 바로 뒤에 붙어 있으니 견주기만 하면 된다.
+  const tag = f.t ? '<b class="slot lv" title="' + esc(f.t) + ' 특성">' + esc(f.t) + '</b>'
+            : f.lv != null ? '<b class="slot lv">' + esc(f.lv) + '</b>'
             : f.s ? '<b class="slot">' + esc(f.s) + '</b>' : '';
+  const of = f.of ? '<span class="of">' + esc(f.of) + ' ▸</span> ' : '';
   const nums = NUMS.filter(k => f.w[k] != null && f.w[k] !== '')
     .map(k => '<span>' + esc(k) + ' <b>' + esc(f.w[k]) + '</b></span>').join('');
   return '<figure class="pic"><figcaption class="ttl">' + tag
-       + '<span class="nm">' + (f._nm || esc(f.n)) + '</span>'
+       + of + '<span class="nm">' + (f._nm || esc(f.n)) + '</span>'
        + '<span class="who">' + (f._who || esc(h.name)) + '</span>'
        + '<a class="go scrap-tap" href="./?hero=' + encodeURIComponent(h.id) + '">도감 ↗</a>'
        + '</figcaption>' + svg + '<div class="nums">' + nums + '</div></figure>';

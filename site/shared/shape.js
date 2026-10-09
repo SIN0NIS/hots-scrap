@@ -77,11 +77,13 @@
     };
     gs.forEach(g => {
       // 쓸고 가는 판정은 영웅에게서 출발한다(기술이 떨어지는 자리가 아니다)
-      const at = (g.자리 === '원점' || g.쓸기) ? 0 : d;
+      // `자리: '앞'` 은 **제 거리를 들고 다니는 도형**이다(굴단 부패가 0·3·6 에서 세 번 터진다).
+    const at = g.자리 === '앞' ? (g.거리 || 0) : (g.자리 === '원점' || g.쓸기) ? 0 : d;
       if (g.꼴 === '다각형' || g.꼴 === '자리들') (g.점 || []).forEach(p => put(p[0], p[1]));
       else if (g.꼴 === '부채꼴') { put(0, at); arcPts(g.반지름, g.각도, at).forEach(p => put(p[0], p[1])); }
       else if (g.꼴 === '이동') { put(0, 0); put(0, g.거리); }
       else if (g.꼴 === '둘레') { put(-g.반지름, -g.반지름); put(g.반지름, g.반지름); }
+      else if (g.꼴 === '튕김') { put(-g.반지름, at - g.반지름); put(g.반지름, at + g.반지름); }
       else if (g.꼴 === '갈래') {   // 여러 갈래 — 가장 바깥 갈래의 끝까지 담는다
         const half = (g.간격 || 0) * ((g.수 || 1) - 1) / 2, L = g.길이 || 0;
         [-half, 0, half].forEach(t => {
@@ -158,7 +160,8 @@
             + (py(sr) > 11 ? `<text x="${px(0) + 4}" y="${py(sr) + 11}" font-size="9" `
                + `fill="${SC}" opacity=".9">이 안에서 찾음</text>` : '');
     gs.forEach(g => {
-      const at = (g.자리 === '원점' || g.쓸기) ? 0 : d;
+      // `자리: '앞'` 은 **제 거리를 들고 다니는 도형**이다(굴단 부패가 0·3·6 에서 세 번 터진다).
+    const at = g.자리 === '앞' ? (g.거리 || 0) : (g.자리 === '원점' || g.쓸기) ? 0 : d;
       // **색은 '누구에게' 한 가지만 말한다** — 빨강 적 · 파랑 아군 · 보라 둘 다.
       // '찾는 범위인가' 는 색이 아니라 **점선**이 말한다. 한 명만 맞는 직격은 진하게.
       const C = SIDEC(g.편);
@@ -186,6 +189,26 @@
           const inner = arcPts(Math.max(g.반지름 - g.띠, 0.01), g.각도, at).reverse();
           body += `<polygon points="${outer.concat(inner).map(q => px(q[0]) + ',' + py(q[1])).join(' ')}" `
                 + `fill="${C}" fill-opacity=".30" stroke="${C}" stroke-width="1.6"/>`;
+        }
+      } else if (g.꼴 === '튕김') {
+        /* **옮겨 붙는 거리**(연쇄·튕김)는 장판이 아니다. 레가르 연쇄 치유의 반지름 7 은
+           "여기 있는 아군을 다 치유한다" 가 아니라 "다음 대상을 여기서 고른다" 다.
+           빨간·파란 장판으로 그리면 광역기로 읽히므로 **채우지 않고**, 점선 테두리에
+           밖으로 뻗는 화살표를 둘러 '여기로 옮겨 간다' 를 보이게 한다. */
+        const cx = px(0), cy = py(at), R = g.반지름 * S;
+        body += `<circle cx="${cx}" cy="${cy}" r="${R}" fill="none" stroke="${C}" `
+              + `stroke-width="1.6" stroke-dasharray="5 5" opacity=".85"/>`;
+        for (let i = 0; i < 6; i++) {
+          const t = (i * 60 + 30) * Math.PI / 180;
+          const ux = Math.sin(t), uy = -Math.cos(t);
+          const x0 = cx + ux * R * 0.3, y0 = cy + uy * R * 0.3;
+          const x1 = cx + ux * R * 0.88, y1 = cy + uy * R * 0.88;
+          const hx = -uy, hy = ux, h = 4.5;
+          body += `<line x1="${x0.toFixed(1)}" y1="${y0.toFixed(1)}" `
+                + `x2="${x1.toFixed(1)}" y2="${y1.toFixed(1)}" stroke="${C}" stroke-width="1.4"/>`
+                + `<polygon points="${(x1 + ux * h).toFixed(1)},${(y1 + uy * h).toFixed(1)} `
+                + `${(x1 + hx * h * 0.5).toFixed(1)},${(y1 + hy * h * 0.5).toFixed(1)} `
+                + `${(x1 - hx * h * 0.5).toFixed(1)},${(y1 - hy * h * 0.5).toFixed(1)}" fill="${C}"/>`;
         }
       } else if (g.꼴 === '둘레') {
         /* **둘러싸는 자리** — 마이에브 감시관의 감옥은 반지름 5.5 둘레에 화신 여덟을 세운다.
@@ -273,7 +296,8 @@
                                g.날아감 ? `${g.꼴} 반지름 ${g.반지름}이 ${g.날아감} 을 지나감` :
                                g.작은 ? `커지는 ${g.꼴}(최소 ${g.작은} · 최대 ${g.반지름})` :
                                g.띠 ? `${g.꼴} ${g.각도}도 · 두께 ${g.띠} 띠가 ${g.반지름} 까지 밀려 남` :
-                               g.꼴 === '이동' ? `${g.거리} 이동(판정 없음)` :
+                               g.꼴 === '튕김' ? `${g.반지름} 안으로 옮겨 붙음` + (g.수 > 1 ? ` x${g.수}` : '') :
+                             g.꼴 === '이동' ? `${g.거리} 이동(판정 없음)` :
                                g.직격 ? `${g.꼴}(직격)` : g.꼴)
                    .filter((v, i, z) => z.indexOf(v) === i).join(' · ');
     const cap = [`한 칸 = 거리 1 · 위쪽이 앞`,
