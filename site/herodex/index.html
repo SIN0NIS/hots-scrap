@@ -260,6 +260,34 @@ function rowText(r) {
 function SIDEC(side) {
   return side === '아군' ? 'var(--ally)' : side === '둘 다' ? 'var(--both)' : 'var(--foe)';
 }
+/* **서서히 차는 값**은 숫자 두 개로는 "얼마나 빨리 차나" 가 안 보인다.
+   거리에 따라 줄어드는 피해(디바 자폭 1100→400)나 단계마다 자라는 반지름
+   (리밍 비전 보주 0.25→2.14)을 작은 꺾은선으로 보여 준다. */
+function graphSVG(w) {
+  const g = (w || {})['그래프'];
+  if (!g || !g.점 || g.점.length < 2) return '';
+  const W = 190, H = 64, L = 30, B = 14;
+  const xs = g.점.map(p => p[0]), ys = g.점.map(p => p[1]);
+  const x0 = Math.min(...xs), x1 = Math.max(...xs);
+  const y0 = Math.min(...ys), y1 = Math.max(...ys);
+  const px = v => L + (x1 === x0 ? 0 : (v - x0) / (x1 - x0)) * (W - L - 6);
+  const py = v => (H - B) - (y1 === y0 ? 0 : (v - y0) / (y1 - y0)) * (H - B - 10);
+  const pts = g.점.map(p => px(p[0]) + ',' + py(p[1])).join(' ');
+  const t = (x, y, s, anc) => `<text x="${x}" y="${y}" font-size="8.5" fill="var(--dim)"`
+          + `${anc ? ` text-anchor="${anc}"` : ''}>${esc(s)}</text>`;
+  return `<div class="fig"><svg viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" `
+       + `aria-label="서서히 바뀌는 값"><g>`
+       + `<line x1="${L}" y1="${H - B}" x2="${W - 4}" y2="${H - B}" stroke="var(--line)" stroke-width="1"/>`
+       + `<line x1="${L}" y1="6" x2="${L}" y2="${H - B}" stroke="var(--line)" stroke-width="1"/></g>`
+       + `<polyline points="${pts}" fill="none" stroke="var(--gold)" stroke-width="1.8"/>`
+       + g.점.filter((_, i, A) => i === 0 || i === A.length - 1)
+           .map(p => `<circle cx="${px(p[0])}" cy="${py(p[1])}" r="2.6" fill="var(--gold)"/>`).join('')
+       + t(L - 3, py(y1) + 3, String(y1), 'end') + t(L - 3, py(y0) + 3, String(y0), 'end')
+       + t(L, H - 3, String(x0)) + t(W - 4, H - 3, String(x1), 'end')
+       + `</svg><div class="cap">${esc(g.가로)}에 따라 <b>${esc(g.세로)}</b> `
+       + `${y0 === ys[0] ? '늘어남' : '줄어듦'} — ${esc(String(ys[0]))} → ${esc(String(ys[ys.length - 1]))}`
+       + `</div></div>`;
+}
 function shapeSVG(w) {
   const gs = (w || {})['도형'] || [];
   // 장판이 없어도 **찾는 범위**만 있으면 그릴 값이 있다(겐지 튕겨내기 `Radius 7.0`)
@@ -285,6 +313,7 @@ function shapeSVG(w) {
     if (g.꼴 === '다각형' || g.꼴 === '자리들') (g.점 || []).forEach(p => put(p[0], p[1]));
     else if (g.꼴 === '부채꼴') { put(0, at); arcPts(g.반지름, g.각도, at).forEach(p => put(p[0], p[1])); }
     else if (g.꼴 === '이동') { put(0, 0); put(0, g.거리); }
+    else if (g.꼴 === '둘레') { put(-g.반지름, -g.반지름); put(g.반지름, g.반지름); }
     else if (g.꼴 === '갈래') {   // 여러 갈래 — 가장 바깥 갈래의 끝까지 담는다
       const half = (g.간격 || 0) * ((g.수 || 1) - 1) / 2, L = g.길이 || 0;
       [-half, 0, half].forEach(t => {
@@ -389,6 +418,16 @@ function shapeSVG(w) {
         const inner = arcPts(Math.max(g.반지름 - g.띠, 0.01), g.각도, at).reverse();
         body += `<polygon points="${outer.concat(inner).map(q => px(q[0]) + ',' + py(q[1])).join(' ')}" `
               + `fill="${C}" fill-opacity=".30" stroke="${C}" stroke-width="1.6"/>`;
+      }
+    } else if (g.꼴 === '둘레') {
+      /* **둘러싸는 자리** — 마이에브 감시관의 감옥은 반지름 5.5 둘레에 화신 여덟을 세운다.
+         원 하나만 그리면 '장판' 으로 보이니, 둘레를 점선으로 긋고 자리마다 점을 찍는다. */
+      body += `<circle cx="${px(0)}" cy="${py(0)}" r="${g.반지름 * S}" fill="none" `
+            + `stroke="${C}" stroke-width="1.6" stroke-dasharray="6 4"/>`;
+      for (let i = 0; i < (g.수 || 0); i++) {
+        const t = i * 2 * Math.PI / g.수;
+        body += `<circle cx="${px(Math.sin(t) * g.반지름)}" cy="${py(Math.cos(t) * g.반지름)}" `
+              + `r="3.5" fill="${C}"/>`;
       }
     } else if (g.꼴 === '갈래') {
       /* **여러 갈래로 뻗는 기술** — 디아블로 화염 발구르기는 5갈래가 20도씩 벌어진다.
@@ -690,6 +729,7 @@ function abilityHTML(a) {
       ${questHTML(a['퀘스트로 바뀜'])}
       ${rows || minor ? `<table>${rows}${minor}</table>` : ''}
       ${shapeSVG(a.위키식)}
+      ${graphSVG(a.위키식)}
       ${upsHTML(a['특성 강화'])}
       ${n ? `<button class="more" type="button">원자료 ${n}줄 보기</button>` : ''}
     </div>`;
