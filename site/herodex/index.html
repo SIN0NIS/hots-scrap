@@ -75,19 +75,29 @@
   .ck { float:right; border:1px solid var(--line2); background:var(--card2); color:var(--dim);
         border-radius:7px; font:inherit; font-size:11px; padding:1px 7px; cursor:pointer; margin-left:6px; }
   .ck.on { border-color:var(--warn); color:var(--warn); background:var(--warn-bg, transparent); }
-  tr.minor td.k { cursor:pointer; }
-  tr.minor td.k:hover { color:var(--warn); }
-  tr.minor.ckrow td { background:var(--card2); }
-  tr.minor.ckrow td.k { color:var(--warn); font-weight:700; }
-  tr.minor.ckrow td.k::before { content:"A0 "; }
-  .up1.ckrow { border-left:3px solid var(--warn); padding-left:7px; }
+  td.k[data-rk], .chip[data-rk] { cursor:pointer; }
+  td.k[data-rk]:hover, .chip[data-rk]:hover { color:var(--warn); }
+  td.k.ckon { color:var(--warn); font-weight:700; }
+  td.k.ckon::before { content:"A0 "; }
+  td.k.ckon ~ td { background:var(--card2); }
+  .chip.ckon { border-color:var(--warn); color:var(--warn); }
+  .chip.ckon::before { content:"A0 "; }
   .up1 .t { cursor:pointer; }
+  .up1 .t:hover { color:var(--warn); }
+  .up1 .t.ckon { color:var(--warn); }
+  .up1 .t.ckon::before { content:"A0 "; }
   #mmlist { position:fixed; right:14px; bottom:52px; z-index:99999; max-height:62vh; overflow:auto;
             width:min(420px, 92vw); background:var(--card); border:1px solid var(--line2);
             border-radius:12px; padding:10px 12px; box-shadow:var(--shadow); font-size:12.5px; }
   #mmlist h4 { margin:0 0 7px; font-size:12.5px; }
   #mmlist a { display:block; padding:3px 0; color:var(--fg); text-decoration:none; border-bottom:1px solid var(--line2); }
   #mmlist a:hover { color:var(--warn); }
+  #mmlist .mrow { border-bottom:1px solid var(--line2); padding:4px 0; }
+  #mmlist .mrow a { border:0; padding:1px 0; }
+  #mmlist .mnote { width:100%; box-sizing:border-box; margin-top:3px; border:1px solid var(--line2);
+                   border-radius:6px; background:var(--card2); color:var(--fg); font:inherit;
+                   font-size:11.5px; padding:3px 6px; }
+  #mmlist .mnote:focus { border-color:var(--warn); outline:none; }
   #mmlist .w { color:var(--warn); }
   #mmlist .n { color:var(--dim); }
   #mmbar { position:fixed; right:14px; bottom:14px; z-index:99998; display:flex; gap:6px;
@@ -432,11 +442,11 @@ function upsHTML(ups) {
   if (!ups || !ups.length) return '';
   const rows = ups.map(t => {
     const d = (t['바뀌는 값'] || []).join(' · ') || t.내용 || '';
-    const rk = (HERO ? HERO.영웅 : '?') + '|특성강화|' + (t.id || t.이름);
-    const on = (MEMO[rk] && MEMO[rk].체크) ? ' ckrow' : '';
-    return `<div class="up1${on}" data-rk="${esc(rk)}" data-nm="${esc(t.이름 || '')}">`
+    const ti = t.id || t.이름;
+    return `<div class="up1">`
          + `<img src="${imgUrl('abilitytalents', t.아이콘)}" alt="" loading="lazy">`
-         + `<span class="t" title="이상하면 눌러 두세요"><span class="lv">${esc(t.단계 || '')}</span>${esc(t.이름 || '')}`
+         + `<span class="t${ckC('특성강화', ti, '줄')}"${ckA('특성강화', ti, '줄', t.이름 || '')}`
+         + ` title="이상하면 눌러 두세요"><span class="lv">${esc(t.단계 || '')}</span>${esc(t.이름 || '')}`
          + (d ? ` <span class="d">${esc(d)}</span>` : '') + `</span></div>`;
   }).join('');
   return `<div class="ups"><b>위 표는 특성을 안 찍은 기본 틀입니다 · `
@@ -463,6 +473,17 @@ function ckBtn(kind, id, name) {
   return `<button class="ck${on}" type="button" title="이상하면 눌러 두세요"`
        + ` data-ck="${esc(key)}" data-nm="${esc(name || '')}">⚠${on ? ' 이상' : ''}</button>`;
 }
+/* **칸 하나하나**에 ⚠ 를 달 수 있게 하는 열쇠.
+   `영웅|갈래|대상id|칸` 으로 적어 두면 내보낼 때 어디를 짚었는지 그대로 나온다.
+   표의 칸 이름(td.k)과 칩(span.chip)에 직접 붙이므로, 누를 자리가 곧 표시될 자리다. */
+function ckAt(kind, id, field, label) {
+  if (!MEMO_ON) return '';
+  const key = (HERO ? HERO.영웅 : '?') + '|' + kind + '|' + id + '|' + field;
+  const on = (MEMO[key] && MEMO[key].체크) ? ' ckon' : '';
+  return { attr: ` data-rk="${esc(key)}" data-nm="${esc(label || field)}"`, cls: on };
+}
+function ckA(kind, id, field, label) { const r = ckAt(kind, id, field, label); return r ? r.attr : ''; }
+function ckC(kind, id, field) { const r = ckAt(kind, id, field); return r ? r.cls : ''; }
 /* 눌린 상태를 자료에 적고 화면에 바로 비춘다 (카드·줄 모두 이걸 쓴다) */
 function ckToggle(key, name, el, cls) {
   const cur = !(MEMO[key] && MEMO[key].체크);
@@ -515,14 +536,28 @@ function memoList(close) {
   } else {
     const by = {};
     for (const [k, v] of rows) (by[k.split('|')[0]] = by[k.split('|')[0]] || []).push([k, v]);
-    box.innerHTML = `<h4>⚠ ${ckCount()} · 메모 ${memoCount()}</h4>`
+    // 찍을 때는 빠르게, **여기서 이유를 적는다** — 칸마다 한 줄 적는 칸을 둔다.
+    box.innerHTML = `<h4>⚠ ${ckCount()} · 메모 ${memoCount()}  <span class="n">— 왜 이상한지 여기에 적으면 됩니다</span></h4>`
       + Object.entries(by).map(([h, list]) => list.map(([k, v]) => {
           const p = k.split('|');
-          const what = p[1] === '줄' ? `${v.이름 || p[2]}` : (v.이름 || p[2]);
-          return `<a href="?hero=${encodeURIComponent(hid(h) || '')}" data-h="${esc(h)}">`
-               + `${v.체크 ? '<span class="w">⚠</span> ' : ''}<b>${esc(h)}</b> ${esc(what)}`
-               + (v.메모 ? ` <span class="n">— ${esc(v.메모.slice(0, 40))}</span>` : '') + `</a>`;
+          const what = v.이름 || p.slice(2).join(' / ');
+          return `<div class="mrow">`
+               + `<a href="?hero=${encodeURIComponent(hid(h) || '')}">`
+               + `${v.체크 ? '<span class="w">⚠</span> ' : ''}<b>${esc(h)}</b> ${esc(what)}</a>`
+               + `<input class="mnote" data-k="${esc(k)}" value="${esc(v.메모 || '')}"`
+               + ` placeholder="왜 이상한가요 (안 적어도 됩니다)">`
+               + `</div>`;
         }).join('')).join('');
+    box.addEventListener('input', e => {
+      const inp = e.target.closest('.mnote');
+      if (!inp) return;
+      const k = inp.dataset.k;
+      MEMO[k] = Object.assign({}, MEMO[k], { 메모: inp.value });
+      if (!inp.value.trim() && !MEMO[k].체크) delete MEMO[k];
+      memoSave();
+      document.querySelector('#mmbar #mmn').textContent =
+        '⚠ ' + ckCount() + ' · 메모 ' + memoCount();
+    });
   }
   document.body.appendChild(box);
 }
@@ -535,11 +570,14 @@ function memoExport() {
   const rows = Object.entries(MEMO)
     .filter(([, v]) => (v.메모 || '').trim() || v.체크)
     .map(([k, v]) => { const p = k.split('|');
+      // 열쇠는 `영웅|갈래|대상id|칸…` 이다. 원자료 줄만 칸 뒤에 **출처**가 더 붙는다.
       const o = { 영웅: p[0], 갈래: p[1], id: p[2], 이름: v.이름 || '' };
       if (p[1] === '줄') { o.칸 = p[3]; o.출처 = p.slice(4).join('|'); }
+      else if (p.length > 3) { o.칸 = p.slice(3).join('|'); }
       if (v.체크) o.이상 = true;                       // 글 없이 눌러만 둔 것
       if ((v.메모 || '').trim()) o.메모 = v.메모.trim();
-      return o; });
+      return o; })
+    .sort((x, y) => (x.영웅 + x.id).localeCompare(y.영웅 + y.id));
   const blob = new Blob([JSON.stringify({ 자료: ($('#meta') || {}).textContent || '', 메모: rows },
     null, 1)], { type: 'application/json' });
   const a = document.createElement('a');
@@ -550,10 +588,11 @@ function memoExport() {
 }
 /* **툴팁이 가리키는 값.** 어느 칸이 알맹이인지는 설계자가 툴팁에 적어 뒀다 —
    우리가 고른 칸(아래 표)은 보충일 뿐이고, 이쪽이 게임이 실제로 보여 주는 숫자다. */
-function tipHTML(rows) {
+function tipHTML(rows, id, name) {
   if (!rows || !rows.length) return '';
   const cells = rows.map(r =>
-    `<span class="chip">${esc(r.칸)} <b>${esc(r.값)}${esc(r.단위 || '')}</b></span>`).join('');
+    `<span class="chip${ckC('툴팁', id, r.칸)}"${ckA('툴팁', id, r.칸, (name || '') + ' / 툴팁 ' + r.칸)}>`
+    + `${esc(r.칸)} <b>${esc(r.값)}${esc(r.단위 || '')}</b></span>`).join('');
   return `<div class="tipv"><b>툴팁이 쓰는 값</b><div class="chips">${cells}</div></div>`;
 }
 /* **퀘스트를 깨면 자료 값이 영구히 바뀐다**(무라딘 신화 보상: 관통 100명, 사거리 x1.5).
@@ -564,19 +603,24 @@ function questHTML(rows) {
   return `<div class="qch"><b>퀘스트를 깨면</b> ${t}</div>`;
 }
 function abilityHTML(a) {
+  // 칩도 칸이다 — 자원·재사용·사거리가 틀렸으면 그 칩만 찍을 수 있어야 한다
   const chips = Object.entries(a).filter(([k, v]) =>
       !SKIP.includes(k) && !LIST.includes(k) && v != null && typeof v !== 'object')
-    .map(([k, v]) => `<span class="chip">${esc(k)} <b>${esc(v)}</b></span>`).join('');
+    .map(([k, v]) => `<span class="chip${ckC('칸', a.id, k)}"${ckA('칸', a.id, k, (a.이름 || '') + ' / ' + k)}>`
+       + `${esc(k)} <b>${esc(v)}</b></span>`).join('');
+  // 위키식 칸(유형·피해·사거리·범위·판정 …) — **눈에 보이는 알맹이**라 여기가 제일 중요하다
   let rows = Object.entries(a.위키식 || {}).filter(([k]) => !FIGKEY.includes(k)).map(([k, v]) =>
-      `<tr><td class="k">${esc(k)}</td><td colspan="2"><b>${esc(v)}</b></td></tr>`).join('');
+      `<tr><td class="k${ckC('칸', a.id, k)}"${ckA('칸', a.id, k, (a.이름 || '') + ' / ' + k)}>${esc(k)}</td>`
+      + `<td colspan="2"><b>${esc(v)}</b></td></tr>`).join('');
   let minor = '';
   for (const k of LIST) for (const r of (a[k] || [])) {
     // 줄마다 열쇠를 둔다 — 출처가 그 줄을 가리키는 가장 또렷한 이름이다.
     // 칸 이름을 누르면 ⚠ 가 붙는다(글을 안 써도 된다).
-    const rk = (HERO ? HERO.영웅 : '?') + '|줄|' + a.id + '|' + k + '|' + (r.출처 || '');
-    const on = (MEMO[rk] && MEMO[rk].체크) ? ' ckrow' : '';
-    minor += `<tr class="minor${on}" data-rk="${esc(rk)}" data-nm="${esc((a.이름 || '') + ' / ' + k)}">`
-           + `<td class="k">${esc(k)}</td><td>${rowText(r)}${accText(r)}</td>`
+    // 원자료 줄은 **출처까지** 열쇠에 담는다 — 같은 칸이 여러 줄일 수 있다
+    const f = k + '|' + (r.출처 || '');
+    minor += `<tr class="minor">`
+           + `<td class="k${ckC('줄', a.id, f)}"${ckA('줄', a.id, f, (a.이름 || '') + ' / ' + k)}>${esc(k)}</td>`
+           + `<td>${rowText(r)}${accText(r)}</td>`
            + `<td class="src">${esc(r.출처 || '')}</td></tr>`;
   }
   if (a.위키) rows += `<tr><td class="k wikirow">⌁ 위키</td><td colspan="2" class="wikirow">`
@@ -592,7 +636,7 @@ function abilityHTML(a) {
            <span class="id">${esc(a.id)}</span>${memoBtn('기술', a.id, a.이름)}</div>
       ${a.설명 ? `<div class="desc">${esc(a.설명)}</div>` : ''}
       <div class="chips">${chips}</div>
-      ${tipHTML(a['툴팁 수치'])}
+      ${tipHTML(a['툴팁 수치'], a.id, a.이름)}
       ${questHTML(a['퀘스트로 바뀜'])}
       ${rows || minor ? `<table>${rows}${minor}</table>` : ''}
       ${shapeSVG(a.위키식)}
@@ -601,11 +645,18 @@ function abilityHTML(a) {
     </div>`;
 }
 function talentHTML(t) {
-  const rows = (t.퀘스트 ? `<tr><td class="k chg">퀘스트</td><td>${esc(t.퀘스트)}</td></tr>` : '')
-    + (t['바뀌는 값'] || []).map(v =>
-      `<tr><td class="k chg">바뀌는 값</td><td>${esc(v)}</td></tr>`).join('')
+  const ti = t.id || t.이름;
+  const rows = (t.퀘스트 ? `<tr><td class="k chg${ckC('특성칸', ti, '퀘스트')}"`
+      + `${ckA('특성칸', ti, '퀘스트', (t.이름 || '') + ' / 퀘스트')}>퀘스트</td>`
+      + `<td>${esc(t.퀘스트)}</td></tr>` : '')
+    // 바뀌는 값은 줄마다 다른 칸이라 **몇 번째 줄인지**까지 열쇠에 담는다
+    + (t['바뀌는 값'] || []).map((v, i) =>
+      `<tr><td class="k chg${ckC('특성칸', ti, '바뀌는 값#' + i)}"`
+      + `${ckA('특성칸', ti, '바뀌는 값#' + i, (t.이름 || '') + ' / ' + v)}>바뀌는 값</td>`
+      + `<td>${esc(v)}</td></tr>`).join('')
     + Object.entries(t.위키식 || {}).filter(([k]) => !FIGKEY.includes(k)).map(([k, v]) =>
-      `<tr><td class="k">${esc(k)}</td><td><b>${esc(v)}</b></td></tr>`).join('')
+      `<tr><td class="k${ckC('특성칸', ti, k)}"${ckA('특성칸', ti, k, (t.이름 || '') + ' / ' + k)}>${esc(k)}</td>`
+      + `<td><b>${esc(v)}</b></td></tr>`).join('')
     + (t.위키 ? `<tr><td class="k wikirow">⌁ 위키</td><td class="wikirow">`
         + Object.entries(t.위키).filter(([k]) => k !== '출처').map(([k, v]) => `${esc(k)} ${esc(v)}`).join(' · ')
         + `</td></tr>` : '')
@@ -615,27 +666,31 @@ function talentHTML(t) {
     + (t.강화 ? `<span class="up">${esc(t.강화)} 강화</span>` : '')
     + memoBtn('특성', t.id || t.이름, t.이름) + `</div>`
     + (t.설명 ? `<div class="tdesc">${esc(t.설명)}</div>` : '')
-    + tipHTML(t['툴팁 수치'])
+    + tipHTML(t['툴팁 수치'], t.id || t.이름, t.이름)
     + (rows ? `<table class="tt">${rows}</table>` : '') + shapeSVG(t.위키식) + `</div>`;
 }
 /* 평타 — 사거리·주기·공격력·근접인지 원거리인지. 특성·퀘스트를 **전부 끈** 기본값이다. */
 function weaponHTML(ws) {
   if (!ws || !ws.length) return '';
-  const rows = ws.map(w => {
+  const rows = ws.map((w, wi) => {
     const bits = [w.방식,
                   w.사거리 != null ? `사거리 ${w.사거리}` : '',
                   w.공격력 != null ? `공격력 ${w.공격력}` : '',
                   w.주기 != null ? `주기 ${w.주기}초 (초당 ${w['초당 공격']}회)` : '',
                   w.부채꼴 ? `부채꼴 ${w.부채꼴}도` : '',
                   w.스플래시 ? `스플래시 반지름 ${w.스플래시}` : ''].filter(Boolean);
-    return `<div>${esc(bits.join(' · '))}</div>`;
+    // 평타도 조각마다 따로 찍을 수 있어야 한다(사거리는 맞는데 주기가 틀릴 수 있다)
+    return '<div>' + bits.map((b2, bi) =>
+      `<span class="chip${ckC('평타', wi, bi)}"${ckA('평타', wi, bi, '평타 / ' + b2)}>${esc(b2)}</span>`
+    ).join('') + '</div>';
   }).join('');
   return `<div class="wep"><b>평타</b>${rows}</div>`;
 }
 function render(h) {
   HERO = h;
   const base = Object.entries(h.기본).filter(([k, v]) => v != null && k !== '평타')
-      .map(([k, v]) => `${esc(k)} <b>${esc(v)}</b>`).join(' · ');
+      .map(([k, v]) => `<span class="chip${ckC('기본', '영웅', k)}"${ckA('기본', '영웅', k, '기본 / ' + k)}>`
+         + `${esc(k)} <b>${esc(v)}</b></span>`).join('');
   let out = `<div class="hhead"><img class="face" src="${imgUrl('heroportraits', h.초상화)}" alt="">`
     + `<h2 style="margin:0">${esc(h.영웅)}</h2></div><p class="sub">${base}</p>`
     + weaponHTML(h.기본.평타);
@@ -707,15 +762,11 @@ $('#body').addEventListener('click', e => {
     if (host) host.classList.toggle('mmhit', on || host.querySelector(':scope > .mmbox'));
     return;
   }
-  const tr = e.target.closest('tr.minor');
-  if (tr && e.target.closest('td.k')) {
-    ckToggle(tr.dataset.rk, tr.dataset.nm, tr, 'ckrow');
-    return;
-  }
-  const up = e.target.closest('.up1');
-  if (up && e.target.closest('.t')) {
-    ckToggle(up.dataset.rk, up.dataset.nm, up, 'ckrow');
-  }
+  // **열쇠가 붙은 칸이면 어디든** 누르는 대로 켜고 끈다 — 칩이든 표의 칸 이름이든.
+  const cell = e.target.closest('[data-rk]');
+  if (!cell) return;
+  ckToggle(cell.dataset.rk, cell.dataset.nm, cell,
+           cell.classList.contains('up1') ? 'ckrow' : 'ckon');
 });
 /* 메모 단추 → 그 자리에 적는 칸. 적는 대로 이 브라우저에 저장한다(서버가 없어도 된다). */
 $('#body').addEventListener('click', e => {
