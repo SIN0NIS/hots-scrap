@@ -75,7 +75,8 @@ def slim(d, hid, portraits):
         if x.get("툴팁 수치"):
             x["툴팁 수치"] = [{k: v for k, v in r.items() if k != "출처"} for r in x["툴팁 수치"]]
         if x.get("특성 강화"):
-            x["특성 강화"] = [{"단계": t.get("단계"), "이름": t.get("이름"),
+            # `id` 를 남긴다 — 체크/메모를 내보냈을 때 **어느 특성인지 정확히** 집어야 한다
+            x["특성 강화"] = [{"단계": t.get("단계"), "이름": t.get("이름"), "id": t.get("id"),
                             "아이콘": t.get("아이콘") or icons.get(t.get("id")),
                             "바뀌는 값": (t.get("바뀌는 값") or [])[:4],
                             "내용": clean(t.get("내용"))}

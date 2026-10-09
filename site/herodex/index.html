@@ -71,6 +71,25 @@
            border:1px solid var(--warn); border-radius:8px; background:var(--card2); color:var(--fg);
            font:inherit; font-size:12px; padding:6px 8px; }
   .mmhit { border-left:3px solid var(--warn); padding-left:7px; }
+  /* 체크 — 글 안 쓰고 **한 번 눌러 표시만** 한다. 둘러보다 걸리는 걸 빨리 찍어 두는 용도 */
+  .ck { float:right; border:1px solid var(--line2); background:var(--card2); color:var(--dim);
+        border-radius:7px; font:inherit; font-size:11px; padding:1px 7px; cursor:pointer; margin-left:6px; }
+  .ck.on { border-color:var(--warn); color:var(--warn); background:var(--warn-bg, transparent); }
+  tr.minor td.k { cursor:pointer; }
+  tr.minor td.k:hover { color:var(--warn); }
+  tr.minor.ckrow td { background:var(--card2); }
+  tr.minor.ckrow td.k { color:var(--warn); font-weight:700; }
+  tr.minor.ckrow td.k::before { content:"A0 "; }
+  .up1.ckrow { border-left:3px solid var(--warn); padding-left:7px; }
+  .up1 .t { cursor:pointer; }
+  #mmlist { position:fixed; right:14px; bottom:52px; z-index:99999; max-height:62vh; overflow:auto;
+            width:min(420px, 92vw); background:var(--card); border:1px solid var(--line2);
+            border-radius:12px; padding:10px 12px; box-shadow:var(--shadow); font-size:12.5px; }
+  #mmlist h4 { margin:0 0 7px; font-size:12.5px; }
+  #mmlist a { display:block; padding:3px 0; color:var(--fg); text-decoration:none; border-bottom:1px solid var(--line2); }
+  #mmlist a:hover { color:var(--warn); }
+  #mmlist .w { color:var(--warn); }
+  #mmlist .n { color:var(--dim); }
   #mmbar { position:fixed; right:14px; bottom:14px; z-index:99998; display:flex; gap:6px;
            align-items:center; background:var(--card); border:1px solid var(--line2);
            border-radius:999px; padding:6px 10px; box-shadow:var(--shadow); font-size:12px; }
@@ -413,8 +432,11 @@ function upsHTML(ups) {
   if (!ups || !ups.length) return '';
   const rows = ups.map(t => {
     const d = (t['바뀌는 값'] || []).join(' · ') || t.내용 || '';
-    return `<div class="up1"><img src="${imgUrl('abilitytalents', t.아이콘)}" alt="" loading="lazy">`
-         + `<span class="t"><span class="lv">${esc(t.단계 || '')}</span>${esc(t.이름 || '')}`
+    const rk = (HERO ? HERO.영웅 : '?') + '|특성강화|' + (t.id || t.이름);
+    const on = (MEMO[rk] && MEMO[rk].체크) ? ' ckrow' : '';
+    return `<div class="up1${on}" data-rk="${esc(rk)}" data-nm="${esc(t.이름 || '')}">`
+         + `<img src="${imgUrl('abilitytalents', t.아이콘)}" alt="" loading="lazy">`
+         + `<span class="t" title="이상하면 눌러 두세요"><span class="lv">${esc(t.단계 || '')}</span>${esc(t.이름 || '')}`
          + (d ? ` <span class="d">${esc(d)}</span>` : '') + `</span></div>`;
   }).join('');
   return `<div class="ups"><b>위 표는 특성을 안 찍은 기본 틀입니다 · `
@@ -431,11 +453,32 @@ let MEMO = {};
 try { MEMO = JSON.parse(localStorage.getItem(MEMO_KEY) || '{}'); } catch (e) { MEMO = {}; }
 function memoSave() { try { localStorage.setItem(MEMO_KEY, JSON.stringify(MEMO)); } catch (e) {} }
 function memoCount() { return Object.keys(MEMO).filter(k => (MEMO[k].메모 || '').trim()).length; }
+function ckCount() { return Object.keys(MEMO).filter(k => MEMO[k].체크).length; }
+/* 체크는 **글을 안 쓴다** — 한 번 누르면 표시, 다시 누르면 해제. 둘러보다 걸리는 걸
+   빨리 찍어 두고, 설명이 필요하면 그때 옆의 '메모' 를 쓴다. */
+function ckBtn(kind, id, name) {
+  if (!MEMO_ON) return '';
+  const key = (HERO ? HERO.영웅 : '?') + '|' + kind + '|' + id;
+  const on = (MEMO[key] && MEMO[key].체크) ? ' on' : '';
+  return `<button class="ck${on}" type="button" title="이상하면 눌러 두세요"`
+       + ` data-ck="${esc(key)}" data-nm="${esc(name || '')}">⚠${on ? ' 이상' : ''}</button>`;
+}
+/* 눌린 상태를 자료에 적고 화면에 바로 비춘다 (카드·줄 모두 이걸 쓴다) */
+function ckToggle(key, name, el, cls) {
+  const cur = !(MEMO[key] && MEMO[key].체크);
+  MEMO[key] = Object.assign({}, MEMO[key], { 이름: name || (MEMO[key] || {}).이름 || '', 체크: cur });
+  if (!cur && !((MEMO[key].메모 || '').trim())) delete MEMO[key];
+  memoSave();
+  if (el) el.classList.toggle(cls, cur);
+  memoBar();
+  return cur;
+}
 function memoBtn(kind, id, name) {
   if (!MEMO_ON) return '';
   const key = (HERO ? HERO.영웅 : '?') + '|' + kind + '|' + id;
   const has = (MEMO[key] && (MEMO[key].메모 || '').trim()) ? ' on' : '';
-  return `<button class="mm${has}" type="button" data-mm="${esc(key)}" data-nm="${esc(name || '')}">`
+  return ckBtn(kind, id, name)
+       + `<button class="mm${has}" type="button" data-mm="${esc(key)}" data-nm="${esc(name || '')}">`
        + (has ? '메모 있음' : '메모') + `</button>`;
 }
 function memoBar() {
@@ -445,22 +488,58 @@ function memoBar() {
     bar = document.createElement('div');
     bar.id = 'mmbar';
     bar.innerHTML = '<span id="mmn"></span>'
+      + '<button type="button" id="mmsee">모아보기</button>'
       + '<button type="button" id="mmout">내보내기</button>'
       + '<button type="button" id="mmclr">비우기</button>';
     document.body.appendChild(bar);
     bar.querySelector('#mmout').addEventListener('click', memoExport);
     bar.querySelector('#mmclr').addEventListener('click', () => {
       if (!confirm('적어 둔 메모를 모두 지웁니다. 계속할까요?')) return;
-      MEMO = {}; memoSave(); memoBar(); if (cur) pick(cur, false);
+      MEMO = {}; memoSave(); memoBar(); memoList(true); if (cur) pick(cur, false);
     });
+    bar.querySelector('#mmsee').addEventListener('click', () => memoList());
   }
-  bar.querySelector('#mmn').textContent = '메모 ' + memoCount() + '개';
+  bar.querySelector('#mmn').textContent = '⚠ ' + ckCount() + ' · 메모 ' + memoCount();
+}
+/* 여기저기 눌러 둔 것을 **한 자리에 모아** 보여 준다. 눌러 둔 영웅으로 바로 건너뛴다. */
+function memoList(close) {
+  let box = document.getElementById('mmlist');
+  if (box) { box.remove(); if (close) return; } else if (close) { return; }
+  if (close) return;
+  const rows = Object.entries(MEMO).filter(([, v]) => v.체크 || (v.메모 || '').trim());
+  box = document.createElement('div');
+  box.id = 'mmlist';
+  if (!rows.length) {
+    box.innerHTML = '<h4>아직 눌러 둔 것이 없습니다</h4>'
+      + '<div class="n">기술·특성 오른쪽의 ⚠ 를 누르거나, 표의 칸 이름을 누르세요.</div>';
+  } else {
+    const by = {};
+    for (const [k, v] of rows) (by[k.split('|')[0]] = by[k.split('|')[0]] || []).push([k, v]);
+    box.innerHTML = `<h4>⚠ ${ckCount()} · 메모 ${memoCount()}</h4>`
+      + Object.entries(by).map(([h, list]) => list.map(([k, v]) => {
+          const p = k.split('|');
+          const what = p[1] === '줄' ? `${v.이름 || p[2]}` : (v.이름 || p[2]);
+          return `<a href="?hero=${encodeURIComponent(hid(h) || '')}" data-h="${esc(h)}">`
+               + `${v.체크 ? '<span class="w">⚠</span> ' : ''}<b>${esc(h)}</b> ${esc(what)}`
+               + (v.메모 ? ` <span class="n">— ${esc(v.메모.slice(0, 40))}</span>` : '') + `</a>`;
+        }).join('')).join('');
+  }
+  document.body.appendChild(box);
+}
+/* 한국어 영웅 이름 → 목록에 있는 내부 이름 (모아보기에서 건너뛸 때 쓴다) */
+function hid(ko) {
+  const m = (INDEX || []).find(x => x.name === ko);
+  return m ? m.id : '';
 }
 function memoExport() {
   const rows = Object.entries(MEMO)
-    .filter(([, v]) => (v.메모 || '').trim())
+    .filter(([, v]) => (v.메모 || '').trim() || v.체크)
     .map(([k, v]) => { const p = k.split('|');
-      return { 영웅: p[0], 갈래: p[1], id: p[2], 이름: v.이름 || '', 메모: v.메모.trim() }; });
+      const o = { 영웅: p[0], 갈래: p[1], id: p[2], 이름: v.이름 || '' };
+      if (p[1] === '줄') { o.칸 = p[3]; o.출처 = p.slice(4).join('|'); }
+      if (v.체크) o.이상 = true;                       // 글 없이 눌러만 둔 것
+      if ((v.메모 || '').trim()) o.메모 = v.메모.trim();
+      return o; });
   const blob = new Blob([JSON.stringify({ 자료: ($('#meta') || {}).textContent || '', 메모: rows },
     null, 1)], { type: 'application/json' });
   const a = document.createElement('a');
@@ -491,9 +570,15 @@ function abilityHTML(a) {
   let rows = Object.entries(a.위키식 || {}).filter(([k]) => !FIGKEY.includes(k)).map(([k, v]) =>
       `<tr><td class="k">${esc(k)}</td><td colspan="2"><b>${esc(v)}</b></td></tr>`).join('');
   let minor = '';
-  for (const k of LIST) for (const r of (a[k] || []))
-    minor += `<tr class="minor"><td class="k">${esc(k)}</td><td>${rowText(r)}${accText(r)}</td>`
+  for (const k of LIST) for (const r of (a[k] || [])) {
+    // 줄마다 열쇠를 둔다 — 출처가 그 줄을 가리키는 가장 또렷한 이름이다.
+    // 칸 이름을 누르면 ⚠ 가 붙는다(글을 안 써도 된다).
+    const rk = (HERO ? HERO.영웅 : '?') + '|줄|' + a.id + '|' + k + '|' + (r.출처 || '');
+    const on = (MEMO[rk] && MEMO[rk].체크) ? ' ckrow' : '';
+    minor += `<tr class="minor${on}" data-rk="${esc(rk)}" data-nm="${esc((a.이름 || '') + ' / ' + k)}">`
+           + `<td class="k">${esc(k)}</td><td>${rowText(r)}${accText(r)}</td>`
            + `<td class="src">${esc(r.출처 || '')}</td></tr>`;
+  }
   if (a.위키) rows += `<tr><td class="k wikirow">⌁ 위키</td><td colspan="2" class="wikirow">`
       + Object.entries(a.위키).filter(([k]) => k !== '출처').map(([k, v]) => `${esc(k)} ${esc(v)}`).join(' · ')
       + (a.위키.출처 ? ` <a href="${esc(a.위키.출처)}" target="_blank" rel="noopener">출처</a>` : '') + `</td></tr>`;
@@ -567,7 +652,7 @@ function render(h) {
   if (lv !== null) out += '</div>';
   $('#body').innerHTML = out;
   if (MEMO_ON) {
-    $('#body').querySelectorAll('.mm.on').forEach(b2 => {
+    $('#body').querySelectorAll('.mm.on, .ck.on').forEach(b2 => {
       const host = b2.closest('.card, .talent');
       if (host) host.classList.add('mmhit');
     });
@@ -611,6 +696,27 @@ $('#body').addEventListener('click', e => {
     : b.textContent.replace('접기', '보기');
 });
 $('#ids').addEventListener('click', () => document.body.classList.toggle('noid'));
+/* 체크 — **한 번 누르면 ⚠, 다시 누르면 해제**. 글을 안 써도 되니 둘러보며 빨리 찍는다.
+   ⑴ 기술·특성 오른쪽의 ⚠ 단추 ⑵ 표의 칸 이름(피해·범위 …) ⑶ 특성 강화 줄. */
+$('#body').addEventListener('click', e => {
+  const btn = e.target.closest('.ck');
+  if (btn) {
+    const on = ckToggle(btn.dataset.ck, btn.dataset.nm, btn, 'on');
+    btn.textContent = '⚠' + (on ? ' 이상' : '');
+    const host = btn.closest('.card, .talent');
+    if (host) host.classList.toggle('mmhit', on || host.querySelector(':scope > .mmbox'));
+    return;
+  }
+  const tr = e.target.closest('tr.minor');
+  if (tr && e.target.closest('td.k')) {
+    ckToggle(tr.dataset.rk, tr.dataset.nm, tr, 'ckrow');
+    return;
+  }
+  const up = e.target.closest('.up1');
+  if (up && e.target.closest('.t')) {
+    ckToggle(up.dataset.rk, up.dataset.nm, up, 'ckrow');
+  }
+});
 /* 메모 단추 → 그 자리에 적는 칸. 적는 대로 이 브라우저에 저장한다(서버가 없어도 된다). */
 $('#body').addEventListener('click', e => {
   const b2 = e.target.closest('.mm');
