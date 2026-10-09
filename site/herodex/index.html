@@ -11,19 +11,19 @@
   :root {
     --bg:#f3f6fb; --card:#ffffff; --card2:#eef2f8; --line:#cdd9ea; --line2:#b6c6de;
     --fg:#122036; --dim:#5d6d84; --blue:#1758a8; --gold:#a97e1f; --gold-line:#d7b45c;
-    --hit:#8a6414; --wiki:#7a3fb0; --warn:#b1562a; --foe:#c0392b; --ally:#1e7a4a; --shadow:0 1px 3px rgba(18,32,54,.08);
+    --hit:#8a6414; --wiki:#7a3fb0; --warn:#b1562a; --foe:#c0392b; --ally:#1758a8; --both:#7a3fb0; --shadow:0 1px 3px rgba(18,32,54,.08);
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
       --bg:#0b1526; --card:#101f38; --card2:#152747; --line:#233a5c; --line2:#2f4a72;
       --fg:#eaf1fa; --dim:#8fa2bd; --blue:#5aa8ff; --gold:#e8c268; --gold-line:#8a6d2f;
-      --hit:#f0c46a; --wiki:#c79cf0; --warn:#e0875b; --foe:#ff7b6b; --ally:#5fd19a; --shadow:0 1px 3px rgba(0,0,0,.4);
+      --hit:#f0c46a; --wiki:#c79cf0; --warn:#e0875b; --foe:#ff7b6b; --ally:#5aa8ff; --both:#c79cf0; --shadow:0 1px 3px rgba(0,0,0,.4);
     }
   }
   :root[data-theme="dark"] {
     --bg:#0b1526; --card:#101f38; --card2:#152747; --line:#233a5c; --line2:#2f4a72;
     --fg:#eaf1fa; --dim:#8fa2bd; --blue:#5aa8ff; --gold:#e8c268; --gold-line:#8a6d2f;
-    --hit:#f0c46a; --wiki:#c79cf0; --warn:#e0875b; --foe:#ff7b6b; --ally:#5fd19a; --shadow:0 1px 3px rgba(0,0,0,.4);
+    --hit:#f0c46a; --wiki:#c79cf0; --warn:#e0875b; --foe:#ff7b6b; --ally:#5aa8ff; --both:#c79cf0; --shadow:0 1px 3px rgba(0,0,0,.4);
   }
   * { box-sizing:border-box; }
   body { margin:0; background:var(--bg); color:var(--fg); min-height:100vh;
@@ -134,7 +134,7 @@
   .fig .cap b { font-weight:400; }
   .c-hero { color:var(--hit); } .c-rng { color:var(--gold); }
   .c-area { color:var(--blue); } .c-yard { color:var(--wiki); } .c-hit { color:var(--warn); }
-  .c-dim { color:var(--dim); } .c-foe { color:var(--foe); } .c-ally { color:var(--ally); }
+  .c-dim { color:var(--dim); } .c-foe { color:var(--foe); } .c-ally { color:var(--ally); } .c-both { color:var(--both); }
   .chips { display:flex; flex-wrap:wrap; gap:5px; margin-bottom:7px; }
   .chip { background:var(--card2); border:1px solid var(--line); border-radius:999px;
           padding:2px 10px; font-size:12.5px; }
@@ -256,6 +256,10 @@ function rowText(r) {
    그려 두면 '반지름 4' 가 몸 몇 개 분량인지 눈으로 가늠된다.
    부채꼴·다각형은 영웅에게서 뻗어 나가고(자리 '원점'), 원·고리·직사각형은 기술이 떨어지는
    자리에 생긴다(자리 '착지' = 사거리만큼 앞). 그 구분은 자료가 들고 온다. */
+/* **색은 '누구에게' 한 가지만 말한다** — 빨강 적 · 파랑 아군 · 보라 둘 다. */
+function SIDEC(side) {
+  return side === '아군' ? 'var(--ally)' : side === '둘 다' ? 'var(--both)' : 'var(--foe)';
+}
 function shapeSVG(w) {
   const gs = (w || {})['도형'] || [];
   // 장판이 없어도 **찾는 범위**만 있으면 그릴 값이 있다(겐지 튕겨내기 `Radius 7.0`)
@@ -339,32 +343,28 @@ function shapeSVG(w) {
           + `fill-opacity=".14" stroke="var(--dim)" stroke-width="1" stroke-dasharray="2 3"/>`;
   // **색이 뜻이다.** 빨강 = 이 안에서 대상을 찾는다 · 파랑 = 실제로 맞는 범위.
   // 유닛을 찍거나 게임이 알아서 고르는 기술은 그 동그라미가 '찾는 범위' 다.
-  // 빨강은 이제 **적을 때리는 범위** 전용이다. '세는 범위' 는 파랑으로 옮긴다.
-  const seek = (w['지정'] === '유닛 대상' || w['지정'] === '자동');
-  const RC = seek ? 'var(--blue)' : 'var(--gold)';
+  // 시전 사거리는 '누구에게' 가 아니라 '어디까지 찍나' 라서 색을 안 쓴다 — 늘 금색.
+  const RC = 'var(--gold)';
   // 시전 사거리 — 어디까지 찍을 수 있나(영웅 중심). 공격 범위는 그 **끝**에 그린다.
   if (d > 0) {
     body += `<circle cx="${px(0)}" cy="${py(0)}" r="${d * S}" fill="none" stroke="${RC}" `
           + `stroke-width="1.2" stroke-dasharray="5 4"/>`
           + `<line x1="${px(0)}" y1="${py(0)}" x2="${px(0)}" y2="${py(d)}" stroke="${RC}" `
           + `stroke-width="1" stroke-dasharray="3 3" opacity=".8"/>`;
-    if (seek && py(d) > 11)
-      body += `<text x="${px(0) + 4}" y="${py(d) + 11}" font-size="9" fill="var(--blue)" `
-            + `opacity=".9">이 안에서 찾음</text>`;
   }
   // 장판은 없고 **고를 적을 찾기만** 하는 기술(겐지 튕겨내기 `Radius 7.0`)
   const sr = seekR;
+  const SC = SIDEC(w['찾는 대상']);
   if (sr > 0)
-    body += `<circle cx="${px(0)}" cy="${py(0)}" r="${sr * S}" fill="var(--blue)" `
-          + `fill-opacity=".07" stroke="var(--blue)" stroke-width="1.2" stroke-dasharray="5 4"/>`
+    body += `<circle cx="${px(0)}" cy="${py(0)}" r="${sr * S}" fill="${SC}" `
+          + `fill-opacity=".07" stroke="${SC}" stroke-width="1.2" stroke-dasharray="5 4"/>`
           + (py(sr) > 11 ? `<text x="${px(0) + 4}" y="${py(sr) + 11}" font-size="9" `
-             + `fill="var(--blue)" opacity=".9">이 안에서 찾음</text>` : '');
+             + `fill="${SC}" opacity=".9">이 안에서 찾음</text>` : '');
   gs.forEach(g => {
     const at = (g.자리 === '원점' || g.쓸기) ? 0 : d;
-    // **색이 "누구에게 무엇을 하나" 를 말한다.**
-    //   빨강 = 적을 때리거나 디버프 · 초록 = 아군을 이롭게 · 파랑 = 편 안 가리고 세기만
-    // 한 명만 맞는 직격은 같은 색으로 **진하게** 구별한다.
-    const C = g.편 === '아군' ? 'var(--ally)' : g.편 === '셈' ? 'var(--blue)' : 'var(--foe)';
+    // **색은 '누구에게' 한 가지만 말한다** — 빨강 적 · 파랑 아군 · 보라 둘 다.
+    // '찾는 범위인가' 는 색이 아니라 **점선**이 말한다. 한 명만 맞는 직격은 진하게.
+    const C = SIDEC(g.편);
     const fill = g.직격
       ? `fill="${C}" fill-opacity=".30" stroke="${C}" stroke-width="2"`
       : `fill="${C}" fill-opacity=".16" stroke="${C}" stroke-width="1.4"`;
@@ -471,14 +471,13 @@ function shapeSVG(w) {
                  .filter((v, i, z) => z.indexOf(v) === i).join(' · ');
   const cap = [`한 칸 = 거리 1 · 위쪽이 앞`,
                `<b class="c-hero">●</b> 영웅 히트박스 ${hr}`,
-               d > 0 ? `<b class="${seek ? 'c-area' : 'c-rng'}">◌</b> `
-                       + (seek ? `이 안에서 찾음 ${d}` : `시전 사거리 ${d}`) : '',
-               sr > 0 ? `<b class="c-area">◌</b> 이 안에서 찾음 ${sr}` : '',
+               d > 0 ? `<b class="c-rng">◌</b> 시전 사거리 ${d}` : '',
+               sr > 0 ? `◌ 이 안에서 찾음 ${sr}` : '',
                dead > 0 ? `<b class="c-dim">◌</b> 최소 ${dead} 안쪽은 못 씀` : '',
                farCast ? `시전 사거리 ${farCast} 은 너무 멀어 격자에 안 그림` : '',
                gs.some(g => g.편 === '적') ? `<b class="c-foe">■</b> 적에게` : '',
                gs.some(g => g.편 === '아군') ? `<b class="c-ally">■</b> 아군에게` : '',
-               gs.some(g => g.편 === '셈') ? `<b class="c-area">■</b> 세는 범위` : '',
+               gs.some(g => g.편 === '둘 다') ? `<b class="c-both">■</b> 적·아군 모두` : '',
                names ? `범위 ${esc(names)}` : '',
                gs.some(g => g.직격) ? `진한 쪽은 한 명만 맞는 직격` : '',
                yard.map(([k, r]) => `<b class="c-yard">⌁</b> ${esc(k)} ${r}`).join(' · ')]
