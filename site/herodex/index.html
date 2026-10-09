@@ -134,6 +134,7 @@
   .fig .cap b { font-weight:400; }
   .c-hero { color:var(--hit); } .c-rng { color:var(--gold); }
   .c-area { color:var(--blue); } .c-yard { color:var(--wiki); } .c-hit { color:var(--warn); }
+  .c-dim { color:var(--dim); }
   .chips { display:flex; flex-wrap:wrap; gap:5px; margin-bottom:7px; }
   .chip { background:var(--card2); border:1px solid var(--line); border-radius:999px;
           padding:2px 10px; font-size:12.5px; }
@@ -256,8 +257,10 @@ function rowText(r) {
    부채꼴·다각형은 영웅에게서 뻗어 나가고(자리 '원점'), 원·고리·직사각형은 기술이 떨어지는
    자리에 생긴다(자리 '착지' = 사거리만큼 앞). 그 구분은 자료가 들고 온다. */
 function shapeSVG(w) {
-  const gs = (w || {})['도형'];
-  if (!gs || !gs.length) return '';
+  const gs = (w || {})['도형'] || [];
+  // 장판이 없어도 **찾는 범위**만 있으면 그릴 값이 있다(겐지 튕겨내기 `Radius 7.0`)
+  const seekR = Number((w || {})['찾는 반지름']) || 0;
+  if (!gs.length && !seekR) return '';
   let d = typeof w['도형거리'] === 'number' ? w['도형거리'] : 0;
   // 사거리가 전역급이면(한조 용의 화살) 격자가 수십 칸이 돼 정작 범위가 안 보인다.
   // 그럴 때는 **범위만** 제자리에 그리고, 사거리는 글로만 적는다.
@@ -296,6 +299,7 @@ function shapeSVG(w) {
     else { put(-g.반지름, at - g.반지름); put(g.반지름, at + g.반지름); }
   });
   if (d > 0) { put(0, d); put(-d, 0); put(d, 0); put(0, -d); }   // 시전 사거리는 **사방으로** 미친다
+  if (seekR > 0) { put(-seekR, -seekR); put(seekR, seekR); }      // 찾는 범위도 격자에 담는다
   const dead = Number(w['최소 사거리']) || 0;      // 이 안쪽으로는 못 쓴다
   // 눈금은 **기술이 차지하는 만큼만** 깐다. 반지름 1 짜리 기술에 해머 공성 11 까지 그리면
   // 격자가 깨알이 돼 정작 그 기술이 안 보인다. 그래서 '기술이 미치는 거리' 를 먼저 재고,
@@ -329,19 +333,37 @@ function shapeSVG(w) {
   });
   // **못 쓰는 안쪽** — 히트박스에 딱 붙여서는 시전이 안 되는 기술이 있다(아나 생체
   // 수류탄 최소 3). 빗금 대신 옅은 붉은 원으로 '여기는 안 된다' 를 보인다.
+  // 빨강은 '찾는 범위' 한 뜻으로만 쓴다 — 못 쓰는 안쪽은 **회색**으로 비켜 준다
   if (dead > 0)
-    body += `<circle cx="${px(0)}" cy="${py(0)}" r="${dead * S}" fill="var(--warn)" `
-          + `fill-opacity=".10" stroke="var(--warn)" stroke-width="1" stroke-dasharray="2 3"/>`;
+    body += `<circle cx="${px(0)}" cy="${py(0)}" r="${dead * S}" fill="var(--dim)" `
+          + `fill-opacity=".14" stroke="var(--dim)" stroke-width="1" stroke-dasharray="2 3"/>`;
+  // **색이 뜻이다.** 빨강 = 이 안에서 대상을 찾는다 · 파랑 = 실제로 맞는 범위.
+  // 유닛을 찍거나 게임이 알아서 고르는 기술은 그 동그라미가 '찾는 범위' 다.
+  const seek = (w['지정'] === '유닛 대상' || w['지정'] === '자동');
+  const RC = seek ? 'var(--warn)' : 'var(--gold)';
   // 시전 사거리 — 어디까지 찍을 수 있나(영웅 중심). 공격 범위는 그 **끝**에 그린다.
-  if (d > 0)
-    body += `<circle cx="${px(0)}" cy="${py(0)}" r="${d * S}" fill="none" stroke="var(--gold)" `
+  if (d > 0) {
+    body += `<circle cx="${px(0)}" cy="${py(0)}" r="${d * S}" fill="none" stroke="${RC}" `
           + `stroke-width="1.2" stroke-dasharray="5 4"/>`
-          + `<line x1="${px(0)}" y1="${py(0)}" x2="${px(0)}" y2="${py(d)}" stroke="var(--gold)" `
+          + `<line x1="${px(0)}" y1="${py(0)}" x2="${px(0)}" y2="${py(d)}" stroke="${RC}" `
           + `stroke-width="1" stroke-dasharray="3 3" opacity=".8"/>`;
+    if (seek && py(d) > 11)
+      body += `<text x="${px(0) + 4}" y="${py(d) + 11}" font-size="9" fill="var(--warn)" `
+            + `opacity=".9">이 안에서 찾음</text>`;
+  }
+  // 장판은 없고 **고를 적을 찾기만** 하는 기술(겐지 튕겨내기 `Radius 7.0`)
+  const sr = seekR;
+  if (sr > 0)
+    body += `<circle cx="${px(0)}" cy="${py(0)}" r="${sr * S}" fill="var(--warn)" `
+          + `fill-opacity=".07" stroke="var(--warn)" stroke-width="1.2" stroke-dasharray="5 4"/>`
+          + (py(sr) > 11 ? `<text x="${px(0) + 4}" y="${py(sr) + 11}" font-size="9" `
+             + `fill="var(--warn)" opacity=".9">이 안에서 찾음</text>` : '');
   gs.forEach(g => {
     const at = (g.자리 === '원점' || g.쓸기) ? 0 : d;
+    // **빨강은 '이 안에서 찾는다' 에만 쓴다.** 직격도 실제로 맞는 판정이라 파랑 쪽이다 —
+    // 한 명만 맞는다는 것은 진하게, 여럿 맞는 장판은 연하게 구별한다.
     const fill = g.직격
-      ? 'fill="var(--warn)" fill-opacity=".22" stroke="var(--warn)" stroke-width="1.4"'
+      ? 'fill="var(--blue)" fill-opacity=".30" stroke="var(--blue)" stroke-width="2"'
       : 'fill="var(--blue)" fill-opacity=".16" stroke="var(--blue)" stroke-width="1.4"';
     if (g.꼴 === '자리들') {
       // 여러 지점에 차례로 생기는 기술(잘아타스 공허 걸음의 삼각형). 자리를 잇고 번호를 붙인다.
@@ -446,11 +468,13 @@ function shapeSVG(w) {
                  .filter((v, i, z) => z.indexOf(v) === i).join(' · ');
   const cap = [`한 칸 = 거리 1 · 위쪽이 앞`,
                `<b class="c-hero">●</b> 영웅 히트박스 ${hr}`,
-               d > 0 ? `<b class="c-rng">◌</b> 시전 사거리 ${d}` : '',
-               dead > 0 ? `<b class="c-hit">◌</b> 최소 ${dead} 안쪽은 못 씀` : '',
+               d > 0 ? `<b class="${seek ? 'c-hit' : 'c-rng'}">◌</b> `
+                       + (seek ? `이 안에서 찾음 ${d}` : `시전 사거리 ${d}`) : '',
+               sr > 0 ? `<b class="c-hit">◌</b> 이 안에서 찾음 ${sr}` : '',
+               dead > 0 ? `<b class="c-dim">◌</b> 최소 ${dead} 안쪽은 못 씀` : '',
                farCast ? `시전 사거리 ${farCast} 은 너무 멀어 격자에 안 그림` : '',
-               `<b class="c-area">■</b> 공격 범위 ${esc(names)}`,
-               gs.some(g => g.직격) ? `<b class="c-hit">■</b> 주황은 한 명만 맞는 직격` : '',
+               names ? `<b class="c-area">■</b> 실제 범위 ${esc(names)}` : '',
+               gs.some(g => g.직격) ? `<b class="c-area">■</b> 진한 쪽은 한 명만 맞는 직격` : '',
                yard.map(([k, r]) => `<b class="c-yard">⌁</b> ${esc(k)} ${r}`).join(' · ')]
               .filter(Boolean).join(' · ');
   return `<div class="fig"><svg viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" `
