@@ -146,6 +146,9 @@
   td.src { color:var(--dim); font-size:11px; text-align:right; width:130px;
            overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
   body.noid td.src { display:none; }
+  /* 범위 그림은 **기본으로 접어 둔다.** 기술마다 한 장씩 들어가 목록이 길어지는데,
+     표를 훑어 읽을 때는 거의 안 본다. 오른쪽 위 단추로 켠다(켠 상태는 기억해 둔다). */
+  body.nofig .fig { display:none; }
   .more { margin-top:6px; font-size:12px; padding:3px 10px; border-radius:7px; cursor:pointer;
           border:1px solid var(--line); background:var(--card2); color:var(--dim); font-family:inherit; }
   .lv { color:var(--gold); font-weight:700; }
@@ -161,6 +164,7 @@
   .top { display:flex; gap:8px; align-items:baseline; flex-wrap:wrap; }
   .btn { font-family:inherit; font-size:12.5px; color:var(--dim); background:var(--card2);
          border:1px solid var(--line); border-radius:8px; padding:4px 10px; cursor:pointer; }
+  .btn.on { background:var(--blue); border-color:var(--blue); color:#fff; }
   @media (any-pointer:coarse) { #list button, .more, .btn { min-height:44px; } }
   @media (max-width:820px) {
     .wrap { flex-direction:column; }
@@ -179,6 +183,7 @@
     <div class="top">
       <h1>영웅 <span class="s">도감</span></h1>
       <nav class="menu"><a class="scrap-tap on" href="./">영웅별</a><a class="scrap-tap" href="shapes.html">범위 구경</a></nav>
+      <button class="btn" id="figs" type="button">범위 보이기</button>
       <button class="btn" id="ids" type="button">내부 이름</button>
       <span class="id" id="meta"></span>
     </div>
@@ -578,6 +583,19 @@ $('#body').addEventListener('click', e => {
     : b.textContent.replace('접기', '보기');
 });
 $('#ids').addEventListener('click', () => document.body.classList.toggle('noid'));
+/* 범위 그림 켜고 끄기. 앱 격리 규약대로 열쇠는 `herodex.` 로 시작한다. */
+const FIG_KEY = 'herodex.figs';
+function figsPaint() {
+  const on = !document.body.classList.contains('nofig');
+  $('#figs').textContent = on ? '범위 숨기기' : '범위 보이기';
+  $('#figs').classList.toggle('on', on);
+}
+$('#figs').addEventListener('click', () => {
+  document.body.classList.toggle('nofig');
+  try { localStorage.setItem(FIG_KEY,
+    document.body.classList.contains('nofig') ? '0' : '1'); } catch (e) {}
+  figsPaint();
+});
 /* 체크 — **한 번 누르면 ⚠, 다시 누르면 해제**. 글을 안 써도 되니 둘러보며 빨리 찍는다.
    ⑴ 기술·특성 오른쪽의 ⚠ 단추 ⑵ 표의 칸 이름(피해·범위 …) ⑶ 특성 강화 줄. */
 $('#body').addEventListener('click', e => {
@@ -628,6 +646,10 @@ document.addEventListener('error', e => {
 
 (async function boot() {
   document.body.classList.add('noid');     /* 내부 이름은 필요할 때만 */
+  let figOn = '0';
+  try { figOn = localStorage.getItem(FIG_KEY) || '0'; } catch (e) {}
+  if (figOn !== '1') document.body.classList.add('nofig');   /* 기본은 접어 둠 */
+  figsPaint();
   const [r, ri] = await Promise.all([
     fetch('../data/herodex/index.json', { cache: 'no-cache' }),
     fetch('../images/index.json', { cache: 'no-cache' }).catch(() => null),
