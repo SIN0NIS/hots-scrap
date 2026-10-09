@@ -20,7 +20,7 @@ SRC = ROOT.parent / "hots_xml" / "out"
 OUT = ROOT / "site" / "data" / "herodex"
 
 # 화면이 쓰는 것만 남긴다(내부 디버그용 칸은 뺀다)
-KEEP_AB = ("이름", "칸", "모드", "id", "설명", "아이콘", "위키식", "자원(Energy)", "자원(Life)", "재사용 대기시간",
+KEEP_AB = ("이름", "칸", "모드", "id", "설명", "아이콘", "위키식", "자원", "생명력 소모", "재사용 대기시간",
            "연타 제한", "충전 개수", "충전 회복", "사거리", "최소 사거리", "부채꼴", "시전 시간",
            "마무리 시간", "이동 거리(추정)", "대상", "피해", "회복", "범위", "투사체",
            "재사용 조정", "지속 효과", "거는 효과", "위키", "예외", "특성 강화", "퀘스트",
@@ -68,6 +68,9 @@ def slim(d, hid, portraits):
             if v in (None, [], {}):
                 continue
             x[k] = v[:CAP[k]] if k in CAP else v
+        # 밑줄로 시작하는 칸은 **안에서만 쓰는 것**이라 내보내지 않는다(바이트도 아낀다)
+        if isinstance(x.get("위키식"), dict):
+            x["위키식"] = {k: v for k, v in x["위키식"].items() if not str(k).startswith("_")}
         # 기술 하나에 특성이 넷씩 붙는다. 최종 모습만 보면 **어느 특성이 무엇을 바꿨는지**
         # 가 사라지므로, 특성마다 제 몫만 따로 실어 보낸다(설명은 특성 칸에 이미 있다).
         # 툴팁 수치의 `출처`(Behavior,…,Modification[0].…)는 내부 이름이라 화면에 안 쓴다.
@@ -91,7 +94,8 @@ def slim(d, hid, portraits):
             "강화": (f"[{up['칸']}] {up['이름']}" if up else None),
             "바뀌는 값": ([f"효과 켬 → {m['켜는 것']}" for m in t.get("칸 수정", []) if m.get("켜는 것")]
                       + (t.get("바뀌는 값") or []))[:6],
-            "위키식": t.get("위키식") or {}, "위키": t.get("위키"), "예외": t.get("예외"),
+            "위키식": {k: v for k, v in (t.get("위키식") or {}).items()
+                     if not str(k).startswith("_")}, "위키": t.get("위키"), "예외": t.get("예외"),
             "퀘스트": t.get("퀘스트"),
             "툴팁 수치": [{k: v for k, v in r.items() if k != "출처"}
                       for r in (t.get("툴팁 수치") or [])[:8]] or None,
