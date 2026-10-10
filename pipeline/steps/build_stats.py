@@ -26,6 +26,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent.parent
 SRC = ROOT / "site" / "data" / "herodex"
 OUT = SRC / "stats.json"
+ROWS = SRC / "stats-rows.json"      # 값 목록 — 칸을 열 때만 받는다
 try:
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 except Exception:                                   # noqa: BLE001
@@ -85,6 +86,20 @@ def num(v):
         return None
 
 
+# 값 목록은 **고른 칸을 열 때만** 받는 둘째 파일로 뺀다(`stats-rows.json`).
+# 다 합치면 38,335줄 1MB 라, 통계 화면을 열자마자 받게 하면 공짜 호스팅에 과하다.
+# 대상(영웅·기술 이름)은 2,700가지뿐이라 한 번만 적고 **색인으로 가리킨다**.
+ENTS, ENT_IX = [], {}
+
+
+def ent_id(ko, nm, kind):
+    key = (ko, nm, kind)
+    if key not in ENT_IX:
+        ENT_IX[key] = len(ENTS)
+        ENTS.append([ko, nm, kind])
+    return ENT_IX[key]
+
+
 class Field:
     """칸 하나 — 값이 숫자면 분포를, 말이면 값별 수를 센다."""
 
@@ -96,11 +111,12 @@ class Field:
         self.samples = []
         self.dropped = Counter()        # 뺀 까닭 → 몇 개
         self.drop_ex = []               # 뺀 보기
+        self.rows = []                  # [대상 색인, 값] — 줄 세우기·그래프용
 
     def __init_drops(self):
         pass
 
-    def add(self, v, ko, nm):
+    def add(self, v, ko, nm, kind="기술"):
         f = num(v)
         if f is not None:
             why = drop_reason(self.name, f)
@@ -110,6 +126,7 @@ class Field:
                     self.drop_ex.append([ko, nm, str(v)[:24]])
                 return
         self.n += 1
+        self.rows.append([ent_id(ko, nm, kind), f if f is not None else str(v)[:30]])
         if f is None:
             w = str(v)
             if len(w) <= 24:
@@ -123,7 +140,10 @@ class Field:
     def dump(self, total):
         numeric = len(self.nums) >= max(3, self.n * 0.5)
         pool = [x for x in self.samples if x[3] == numeric] or self.samples
-        o = {"갈래": self.group, "이름": self.name, "수": self.n,
+        # 열쇠는 **만들 때 같이** 넣는다. 밖에서 `zip(정렬된 rows, fields.values())` 로
+        # 붙였더니 정렬 때문에 엉뚱한 칸에 붙어, 재사용을 눌렀는데 '대상' 이 열렸다.
+        o = {"열쇠": f"{self.group}|{self.name}",
+             "갈래": self.group, "이름": self.name, "수": self.n,
              "덮음": round(self.n / total, 4) if total else 0,
              "보기": [x[:3] for x in pool[:SAMPLES]]}
         if self.dropped:
@@ -173,12 +193,12 @@ def main():
         row = {"id": fn.stem, "영웅": ko}
         for k, v in base.items():
             row[k] = v
-            fld("기본", k).add(v, ko, "기본 수치")
+            fld("기본", k).add(v, ko, "기본 수치", "영웅")
         for k, v in wep.items():
             if k in ("출처", "이름"):
                 continue
             row["평타 " + k] = v
-            fld("평타", k).add(v, ko, wep.get("이름") or "평타")
+            fld("평타", k).add(v, ko, wep.get("이름") or "평타", "영웅")
         heroes.append(row)
 
         # ── 기술 ────────────────────────────────────────────────────
@@ -193,13 +213,13 @@ def main():
                         for kk, vv in r.items():
                             if kk in SKIP or vv in (None, "", [], {}) or isinstance(vv, (list, dict)):
                                 continue
-                            fld("원자료", f"{k}.{kk}").add(vv, ko, nm)
+                            fld("원자료", f"{k}.{kk}").add(vv, ko, nm, "기술")
                 elif not isinstance(v, (list, dict)):
-                    fld("기술", k).add(v, ko, nm)
+                    fld("기술", k).add(v, ko, nm, "기술")
             for k, v in (a.get("위키식") or {}).items():
                 if k in SKIP or v in (None, "", [], {}) or isinstance(v, (list, dict)):
                     continue
-                fld("위키식", k).add(v, ko, nm)
+                fld("위키식", k).add(v, ko, nm, "기술")
 
         # ── 특성 ────────────────────────────────────────────────────
         for t in d.get("특성") or []:
@@ -208,11 +228,11 @@ def main():
             for k, v in t.items():
                 if k in SKIP or v in (None, "", [], {}) or isinstance(v, (list, dict)):
                     continue
-                fld("특성", k).add(v, ko, nm)
+                fld("특성", k).add(v, ko, nm, "특성")
             for k, v in (t.get("위키식") or {}).items():
                 if k in SKIP or v in (None, "", [], {}) or isinstance(v, (list, dict)):
                     continue
-                fld("특성 위키식", k).add(v, ko, nm)
+                fld("특성 위키식", k).add(v, ko, nm, "특성")
 
     # 갈래마다 '모수' 가 다르다 — 덮음(%)을 제대로 내려면 각자 세어야 한다
     DENOM = {"기본": tot["영웅"], "평타": tot["영웅"], "기술": tot["기술"],
@@ -231,9 +251,14 @@ def main():
         out["자료"] = json.loads(idx.read_text(encoding="utf-8")).get("build", "")
     OUT.write_text(json.dumps(out, ensure_ascii=False, separators=(",", ":")),
                    encoding="utf-8")
+    ROWS.write_text(json.dumps(
+        {"대상": ENTS, "칸": {f"{f.group}|{f.name}": f.rows for f in fields.values()}},
+        ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     kb = OUT.stat().st_size // 1024
     print(f"칸 {len(rows)}가지 · 영웅 {tot['영웅']} · 기술 {tot['기술']} · 특성 {tot['특성']}"
           f" · {kb}KB → {OUT}")
+    print(f"   값 목록 {sum(len(f.rows) for f in fields.values())}줄 · 대상 {len(ENTS)}가지"
+          f" · {ROWS.stat().st_size // 1024}KB → {ROWS.name}")
     by = Counter(r["갈래"] for r in rows)
     print("   " + " · ".join(f"{k} {v}" for k, v in by.most_common()))
     if drops:
