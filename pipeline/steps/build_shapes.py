@@ -13,6 +13,7 @@
 """
 import io
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -44,14 +45,21 @@ def changes_map(d):
 
 
 def tier_label(step):
-    """'5-3' → '13lv 3' (열세 레벨 셋째). 못 읽으면 그대로 돌려준다.
+    """'5-3' → '13레벨 3특성'. 못 읽으면 그대로 돌려준다.
 
-    **레벨 + 순서**로 적는다 — `13T-3` 보다 `13lv 3` 이 읽기 쉽다."""
+    **레벨 + 순서**로 적는다 — `5-3` 도 `13lv 3` 도 게임에서 쓰는 말이 아니다.
+    고르는 화면에 적힌 그대로 "열세 레벨의 셋째 특성" 이라고 읽히게 한다."""
     try:
         t, k = str(step).split("-")
-        return f"{TIER_LV[int(t) - 1]}lv {k}"
+        return f"{TIER_LV[int(t) - 1]}레벨 {k}특성"
     except (ValueError, IndexError):
         return str(step or "")
+
+
+def _lv_of(label):
+    """'13레벨 3특성' → 13. 줄 세우기용 — 글자로 세면 16레벨이 1레벨 앞에 선다."""
+    m = re.match(r"(\d+)", str(label or ""))
+    return int(m.group(1)) if m else 0
 
 
 def rows_of(d, hi, key, kind, chg=None):
@@ -99,8 +107,7 @@ def main():
             # 글자로 줄 세우면 16T 가 1T 앞에 선다. **레벨 숫자**로 센다.
             # 궁극기 해금 특성(이름이 기술과 같다)은 기술 카드와 똑같아서 뺀다.
             mine = [t for t in after.pop(r["n"], []) if t["n"] != r["n"]]
-            figs += sorted(mine, key=lambda x: (int(str(x.get("t") or "0").split("lv")[0] or 0),
-                                                str(x.get("t") or "")))
+            figs += sorted(mine, key=lambda x: (_lv_of(x.get("t")), str(x.get("t") or "")))
         for rest in after.values():          # 어느 기술인지 못 밝힌 것은 그 영웅 끝에
             figs += rest
 

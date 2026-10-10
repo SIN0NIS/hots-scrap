@@ -125,7 +125,7 @@
   .up1 { display:flex; gap:6px; align-items:flex-start; padding:3px 0; }
   .up1 img { width:22px; height:22px; border-radius:5px; flex-shrink:0; }
   .up1 .t { font-size:12px; }
-  .up1 .lv { color:var(--gold); font-size:11px; margin-right:4px; }
+  .up1 .lv { color:var(--gold); font-size:11px; margin-right:5px; white-space:nowrap; }
   .up1 .d { color:var(--hit); }
   /* 범위 그림(.fig·.cap·.c-*) 생김새는 ../shared/shape.css 에 있다 */
   .menu { display:flex; gap:4px; }
@@ -277,6 +277,15 @@ function shapeSVG(w) { return window.hotsShape.svg(w, { hero: HERO, yard: YARD }
 /* 기술 하나에 특성이 넷씩 붙는다. 다 적용된 **최종 모습**만 보면 어느 특성이 무엇을
    바꿨는지 사라지므로, 위의 표는 **특성 안 찍은 기본 틀**로 두고 여기서 특성별로
    제 몫만 따로 적는다. 특성 자체의 설명은 아래 레벨별 특성 칸에 있다. */
+/* 특성 단계는 자료에 "5-3"(다섯째 줄 셋째)으로 적혀 있다. 사람이 쓰는 말은
+   **레벨**이라 `13레벨 3특성` 으로 옮긴다 — 고르는 화면에 적힌 그대로다. */
+const TIER_LV = [1, 4, 7, 10, 13, 16, 20];
+function tierLabel(step) {
+  const m = /^(\d+)-(\d+)$/.exec(String(step || ''));
+  if (!m) return String(step || '');
+  const lv = TIER_LV[+m[1] - 1];
+  return lv ? `${lv}레벨 ${m[2]}특성` : String(step);
+}
 function upsHTML(ups) {
   if (!ups || !ups.length) return '';
   const rows = ups.map(t => {
@@ -285,7 +294,7 @@ function upsHTML(ups) {
     return `<div class="up1">`
          + `<img src="${imgUrl('abilitytalents', t.아이콘)}" alt="" loading="lazy">`
          + `<span class="t${ckC('특성강화', ti, '줄')}"${ckA('특성강화', ti, '줄', t.이름 || '')}`
-         + ` title="이상하면 눌러 두세요"><span class="lv">${esc(t.단계 || '')}</span>${esc(t.이름 || '')}`
+         + ` title="이상하면 눌러 두세요"><span class="lv">${esc(tierLabel(t.단계))}</span> ${esc(t.이름 || '')}`
          + (d ? ` <span class="d">${esc(d)}</span>` : '') + `</span></div>`;
   }).join('');
   return `<div class="ups"><b>위 표는 특성을 안 찍은 기본 틀입니다 · `
