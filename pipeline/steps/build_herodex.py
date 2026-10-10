@@ -170,6 +170,9 @@ def main():
     # **여기서 바로 이어 만들어야** 한다 — 따로 돌리는 걸 잊으면 그 화면이 404 가 된다.
     import build_shapes
     build_shapes.main()
+    # 통계도 여기서 이어 만든다 — 이 함수가 폴더를 통째로 비우므로 따로 돌리면 잊는다
+    import build_stats
+    build_stats.main()
     return 0
 
 

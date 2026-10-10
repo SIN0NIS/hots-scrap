@@ -42,6 +42,15 @@
     어긋나는 일을 막으려고 꺼내 놓았다(`hotsShape.svg(위키식, {hero, yard})`). 색은 쓰는 쪽이
     `--foe/--ally/--both/--hit/--gold/--wiki` 로 정해 주고, `.fig`·`.cap`·`.c-*` 생김새는 `shared/shape.css`.
     여기 수정 = 두 화면 다 회귀 확인. 그림이 안 바뀌었음은 **영웅 91명 812개 SVG 지문 대조**로 확인한다.
+  - `stats.html` **통계 보기** — 도감 안의 셋째 화면. 게임 원본에서 **읽히는 칸이 무엇무엇인지**
+    카탈로그로 보이고(245가지), 칸마다 값 분포(수면 최소·중앙·최대와 막대, 말이면 값별 수)를 보여 준다.
+    둘째 탭은 영웅 91명 기본 수치표(머리글을 눌러 줄 세우기).
+    자료는 `site/data/herodex/stats.json` **한 장**(147KB · gzip 27KB) — `pipeline/steps/build_stats.py`.
+    **세는 일은 빌드 때 한 번만** 한다. 화면에서 세려면 영웅 91개 파일 2.7MB 를 다 받아야 한다.
+    `build_shapes` 와 같은 이유로 **`build_herodex.py` 끝에서 이어 만든다**(그 함수가 폴더를 비운다).
+    - **생명력 1 · 반지름 0 인 유닛은 몸이 아니라 더미다**(바이킹 `…Controller` 는 이동 속도 20).
+      진짜 몸은 `AlternateUnitArray` 쪽에 있다. 갈은 바꿀 몸이 아예 없어(초와 한 몸) 칸을 **비운다** —
+      거짓 수를 적으면 통계 최솟값이 1 이 된다. 이 보호 장치를 빼지 마라.
     - 검토용 사진: `python ../hots_xml/tools/shape_shots.py` → `hots_xml/out/sheets/<영웅>.png`
       (머리 없는 크롬이 `shapes.html?hero=..&all=1&cols=3` 을 찍는다. `all=1` 이면 끊지 않고 다 그리고 배경 무늬를 숨긴다)
 - `site/encyclopedia/index.html` 영웅 도감 (HotS wiki 번역) — **단일 파일(6MB, 데이터 내장)**, 직접 편집

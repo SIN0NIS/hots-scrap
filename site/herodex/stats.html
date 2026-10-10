@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>통계 보기 · 영웅 도감 · HotS Scrap</title>
+<meta name="description" content="히어로즈 오브 더 스톰 게임 원본에서 읽히는 모든 칸의 카탈로그와 값 분포 — 영웅 기본 수치·기술·특성">
+<link rel="icon" href="../shared/favicon.svg">
+<script src="../shared/scrap.js" defer></script>
+<style>
+  /* 색은 도감·범위 구경과 **같은 값**이다. */
+  :root {
+    --bg:#f3f6fb; --card:#ffffff; --card2:#eef2f8; --line:#cdd9ea; --line2:#b6c6de;
+    --fg:#122036; --dim:#5d6d84; --blue:#1758a8; --gold:#a97e1f;
+    --hit:#8a6414; --warn:#b1562a; --bar:#7aa6dd; --shadow:0 1px 3px rgba(18,32,54,.08);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg:#0b1526; --card:#101f38; --card2:#152747; --line:#233a5c; --line2:#2f4a72;
+      --fg:#eaf1fa; --dim:#8fa2bd; --blue:#5aa8ff; --gold:#e8c268;
+      --hit:#f0c46a; --warn:#e0875b; --bar:#3d6ea8; --shadow:0 1px 3px rgba(0,0,0,.4);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg:#0b1526; --card:#101f38; --card2:#152747; --line:#233a5c; --line2:#2f4a72;
+    --fg:#eaf1fa; --dim:#8fa2bd; --blue:#5aa8ff; --gold:#e8c268;
+    --hit:#f0c46a; --warn:#e0875b; --bar:#3d6ea8; --shadow:0 1px 3px rgba(0,0,0,.4);
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); min-height:100vh;
+         font-family:"Pretendard","Malgun Gothic","Segoe UI",sans-serif; }
+  .wrap { max-width:1320px; margin:0 auto; padding:18px 14px 60px; }
+  h1 { font-size:20px; margin:0; }
+  .top { display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; margin-bottom:4px; }
+  .menu { display:flex; gap:4px; flex-wrap:wrap; }
+  .menu a { text-decoration:none; color:var(--dim); font-size:13px; padding:4px 12px;
+            border:1px solid var(--line); border-radius:999px; background:var(--card); }
+  .menu a.on { background:var(--blue); border-color:var(--blue); color:#fff; font-weight:600; }
+  .sub { color:var(--dim); font-size:12.5px; margin:0 0 12px; line-height:1.7; }
+  .tools { position:sticky; top:0; z-index:5; background:var(--bg);
+           padding:8px 0 10px; border-bottom:1px solid var(--line); margin-bottom:12px; }
+  .row { display:flex; flex-wrap:wrap; gap:6px; align-items:center; margin-bottom:6px; }
+  .row:last-child { margin-bottom:0; }
+  .lab { color:var(--dim); font-size:12px; min-width:40px; }
+  .pill, .tab { border:1px solid var(--line); background:var(--card); color:var(--dim);
+                border-radius:999px; font:inherit; font-size:12px; padding:3px 11px; cursor:pointer; }
+  .pill.on, .tab.on { background:var(--blue); border-color:var(--blue); color:#fff; font-weight:600; }
+  @media (any-pointer:coarse) { .pill, .tab { min-height:44px; } }
+  input[type=search] { flex:1; min-width:150px; border:1px solid var(--line2); border-radius:9px;
+                       background:var(--card); color:var(--fg); font:inherit; font-size:13px; padding:6px 9px; }
+
+  /* ── 칸 카탈로그 ───────────────────────────────────────────── */
+  .grid { display:grid; gap:10px; grid-template-columns:repeat(auto-fill,minmax(290px,1fr)); }
+  .f { border:1px solid var(--line); border-radius:11px; background:var(--card);
+       padding:9px 11px 10px; box-shadow:var(--shadow); }
+  .f h3 { margin:0 0 2px; font-size:14px; display:flex; align-items:baseline; gap:6px; flex-wrap:wrap; }
+  .g { font-size:10.5px; color:var(--dim); border:1px solid var(--line2); border-radius:999px;
+       padding:0 6px; font-weight:400; }
+  .cov { color:var(--dim); font-size:11.5px; margin-left:auto; }
+  .nums { display:flex; gap:10px; flex-wrap:wrap; font-size:12px; color:var(--dim); margin:4px 0 2px; }
+  .nums b { color:var(--fg); }
+  /* 막대 — 값이 어디에 몰려 있나 */
+  .bars { display:flex; align-items:flex-end; gap:2px; height:38px; margin:6px 0 3px; }
+  .bars i { flex:1; background:var(--bar); border-radius:2px 2px 0 0; min-height:1px; }
+  .ends { display:flex; justify-content:space-between; color:var(--dim); font-size:10.5px; }
+  .vals { margin:5px 0 0; font-size:12px; }
+  .vals div { display:flex; gap:7px; align-items:center; padding:1px 0; }
+  .vals span.n { color:var(--dim); font-size:11px; min-width:34px; text-align:right; }
+  .vals span.b { flex:1; height:7px; background:var(--card2); border-radius:3px; overflow:hidden; }
+  .vals span.b i { display:block; height:100%; background:var(--bar); }
+  .vals span.t { min-width:88px; }
+  .ex { margin-top:6px; color:var(--dim); font-size:11.5px; line-height:1.6; border-top:1px solid var(--line); padding-top:5px; }
+
+  /* ── 영웅 수치표 ───────────────────────────────────────────── */
+  .tscroll { overflow-x:auto; border:1px solid var(--line); border-radius:11px; background:var(--card); }
+  table { border-collapse:collapse; width:100%; font-size:12.5px; }
+  th, td { padding:5px 9px; text-align:right; white-space:nowrap; border-bottom:1px solid var(--line); }
+  th { position:sticky; top:0; background:var(--card2); cursor:pointer; user-select:none; font-weight:600; }
+  th:first-child, td:first-child { text-align:left; position:sticky; left:0; background:var(--card); }
+  th:first-child { background:var(--card2); z-index:2; }
+  tbody tr:hover td { background:var(--card2); }
+  th.sorted { color:var(--blue); }
+  .note { color:var(--dim); font-size:12px; margin:8px 0 0; line-height:1.7; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><h1>통계 보기</h1>
+    <nav class="menu"><a class="scrap-tap" href="./">영웅별</a><a class="scrap-tap" href="shapes.html">범위 구경</a><a class="scrap-tap on" href="stats.html">통계 보기</a></nav></div>
+  <p class="sub" id="sub">자료를 읽는 중…</p>
+
+  <div class="tools">
+    <div class="row">
+      <button class="tab on" data-tab="칸">칸 카탈로그</button>
+      <button class="tab" data-tab="영웅">영웅 수치표</button>
+    </div>
+    <div class="row" id="filters">
+      <span class="lab">갈래</span><span id="groups"></span>
+    </div>
+    <div class="row" id="searchrow">
+      <input type="search" id="q" placeholder="칸 이름 찾기 (사거리·피해·반지름…)">
+      <button class="pill" id="onlynum">수 칸만</button>
+    </div>
+  </div>
+
+  <div id="catalog"><div class="grid" id="grid"></div></div>
+  <div id="herotab" hidden>
+    <div class="tscroll"><table id="htab"></table></div>
+    <p class="note">머리글을 누르면 그 칸으로 줄을 세웁니다. 값은 게임 원본에서 그대로 읽은 것입니다.</p>
+  </div>
+</div>
+
+<script>
+/* 통계 보기 — 게임 원본에서 **읽히는 칸이 무엇무엇인지** 와 그 값이 어떻게 퍼져 있나.
+   도감은 영웅 하나를, 범위 구경은 그림을 본다. 여기는 전체를 가로로 본다.
+
+   자료는 `data/herodex/stats.json` **한 장**이다(143KB). 영웅 91명 파일을 다 받아
+   화면에서 세면 2.7MB 가 되므로, 세는 일은 `pipeline/steps/build_stats.py` 가 미리 한다. */
+const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const num = v => { const n = Number(v); return Number.isFinite(n) ? n : null; };
+/* 수를 사람이 읽기 좋게 — 4.8398 은 4.84, 2075 는 2,075 */
+const fmt = v => {
+  const n = num(v);
+  if (n === null) return esc(v);
+  const r = Math.abs(n) >= 100 ? Math.round(n) : Math.round(n * 100) / 100;
+  return r.toLocaleString('ko-KR');
+};
+
+let DB = null, TAB = '칸', GROUP = new Set(), ONLYNUM = false;
+
+/* ── 칸 한 장 ─────────────────────────────────────────────── */
+function fieldCard(f) {
+  let body = '';
+  if (f.꼴 === '수' && f.요약) {
+    const s = f.요약;
+    body += `<div class="nums"><span>최소 <b>${fmt(s.최소)}</b></span>`
+          + `<span>중앙 <b>${fmt(s.중앙)}</b></span>`
+          + `<span>최대 <b>${fmt(s.최대)}</b></span>`
+          + `<span>평균 <b>${fmt(s.평균)}</b></span></div>`;
+    if (f.막대) {
+      const hi = Math.max(...f.막대.수, 1);
+      body += `<div class="bars">${f.막대.수.map(n =>
+                 `<i style="height:${Math.max(1, Math.round(n / hi * 38))}px" title="${n}개"></i>`).join('')}</div>`
+            + `<div class="ends"><span>${fmt(s.최소)}</span><span>${fmt(s.최대)}</span></div>`;
+    }
+  } else if (f.값 && f.값.length) {
+    const hi = f.값[0][1] || 1;
+    body += `<div class="vals">` + f.값.map(([v, n]) =>
+        `<div><span class="t">${esc(v)}</span><span class="b"><i style="width:${Math.round(n / hi * 100)}%"></i></span>`
+      + `<span class="n">${n}</span></div>`).join('') + `</div>`;
+    if (f['값 수'] > f.값.length) body += `<div class="ends"><span>… 모두 ${f['값 수']}가지</span></div>`;
+  }
+  if (f.보기 && f.보기.length)
+    body += `<div class="ex">${f.보기.slice(0, 3).map(([ko, nm, v]) =>
+      `${esc(ko)} <b>${esc(nm)}</b> ${esc(v)}`).join(' · ')}</div>`;
+  return `<div class="f"><h3>${esc(f.이름)}<span class="g">${esc(f.갈래)}</span>`
+       + `<span class="cov">${f.수}개 · ${Math.round(f.덮음 * 100)}%</span></h3>${body}</div>`;
+}
+
+function drawCatalog() {
+  const q = (document.getElementById('q').value || '').trim().toLowerCase();
+  const rows = DB.칸.filter(f =>
+       (!GROUP.size || GROUP.has(f.갈래))
+    && (!ONLYNUM || f.꼴 === '수')
+    && (!q || f.이름.toLowerCase().includes(q)));
+  document.getElementById('grid').innerHTML =
+    rows.length ? rows.map(fieldCard).join('')
+                : `<p class="note">걸리는 칸이 없습니다.</p>`;
+  document.getElementById('sub').innerHTML =
+    `게임 원본에서 읽히는 칸 <b>${DB.칸.length}</b>가지 가운데 <b>${rows.length}</b>가지 · `
+  + `영웅 ${DB['센 것'].영웅} · 기술 ${DB['센 것'].기술} · 특성 ${DB['센 것'].특성}`
+  + (DB.자료 ? ` · 자료 ${esc(DB.자료)}` : '');
+}
+
+/* ── 영웅 수치표 ───────────────────────────────────────────── */
+let SORT = { k: '생명력', asc: false };
+function drawHeroes() {
+  const keys = [];
+  for (const h of DB.영웅) for (const k of Object.keys(h)) if (k !== 'id' && !keys.includes(k)) keys.push(k);
+  const rows = DB.영웅.slice().sort((a, b) => {
+    const x = a[SORT.k], y = b[SORT.k];
+    const nx = num(x), ny = num(y);
+    if (nx !== null && ny !== null) return SORT.asc ? nx - ny : ny - nx;
+    return SORT.asc ? String(x ?? '').localeCompare(String(y ?? ''), 'ko')
+                    : String(y ?? '').localeCompare(String(x ?? ''), 'ko');
+  });
+  document.getElementById('htab').innerHTML =
+      `<thead><tr>${keys.map(k =>
+        `<th data-k="${esc(k)}" class="${k === SORT.k ? 'sorted' : ''}">${esc(k)}${k === SORT.k ? (SORT.asc ? ' ▲' : ' ▼') : ''}</th>`).join('')}</tr></thead>`
+    + `<tbody>${rows.map(h => `<tr>${keys.map(k =>
+        `<td>${h[k] == null ? '<span style="color:var(--dim)">–</span>' : fmt(h[k])}</td>`).join('')}</tr>`).join('')}</tbody>`;
+  document.getElementById('sub').innerHTML =
+    `영웅 <b>${DB.영웅.length}</b>명의 기본 수치 — 게임 원본에 적힌 그대로입니다`
+  + (DB.자료 ? ` · 자료 ${esc(DB.자료)}` : '');
+}
+
+function draw() {
+  const cat = TAB === '칸';
+  document.getElementById('catalog').hidden = !cat;
+  document.getElementById('herotab').hidden = cat;
+  document.getElementById('filters').style.display = cat ? '' : 'none';
+  document.getElementById('searchrow').style.display = cat ? '' : 'none';
+  cat ? drawCatalog() : drawHeroes();
+}
+
+fetch('../data/herodex/stats.json').then(r => r.json()).then(d => {
+  DB = d;
+  const gs = [...new Set(d.칸.map(f => f.갈래))];
+  document.getElementById('groups').innerHTML = gs.map(g =>
+    `<button class="pill" data-g="${esc(g)}">${esc(g)} ${d.칸.filter(f => f.갈래 === g).length}</button>`).join(' ');
+  draw();
+}).catch(e => {
+  document.getElementById('sub').textContent = '자료를 못 읽었습니다: ' + e;
+});
+
+document.addEventListener('click', e => {
+  const t = e.target.closest('.tab');
+  if (t) { TAB = t.dataset.tab; document.querySelectorAll('.tab').forEach(x => x.classList.toggle('on', x === t)); draw(); return; }
+  const g = e.target.closest('[data-g]');
+  if (g) { const k = g.dataset.g; GROUP.has(k) ? GROUP.delete(k) : GROUP.add(k); g.classList.toggle('on'); drawCatalog(); return; }
+  if (e.target.id === 'onlynum') { ONLYNUM = !ONLYNUM; e.target.classList.toggle('on', ONLYNUM); drawCatalog(); return; }
+  const th = e.target.closest('th[data-k]');
+  if (th) { const k = th.dataset.k; SORT = { k, asc: SORT.k === k ? !SORT.asc : false }; drawHeroes(); }
+});
+document.getElementById('q').addEventListener('input', () => { if (TAB === '칸') drawCatalog(); });
+</script>
+</body>
+</html>
