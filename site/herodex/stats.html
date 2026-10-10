@@ -69,6 +69,9 @@
   .vals span.b { flex:1; height:7px; background:var(--card2); border-radius:3px; overflow:hidden; }
   .vals span.b i { display:block; height:100%; background:var(--bar); }
   .vals span.t { min-width:88px; }
+  .drop { margin-top:5px; color:var(--warn); font-size:11.5px; line-height:1.5; }
+  .drop .dx { color:var(--dim); }
+  .dropsum { color:var(--warn); }
   .ex { margin-top:6px; color:var(--dim); font-size:11.5px; line-height:1.6; border-top:1px solid var(--line); padding-top:5px; }
 
   /* ── 영웅 수치표 ───────────────────────────────────────────── */
@@ -150,6 +153,11 @@ function fieldCard(f) {
       + `<span class="n">${n}</span></div>`).join('') + `</div>`;
     if (f['값 수'] > f.값.length) body += `<div class="ends"><span>… 모두 ${f['값 수']}가지</span></div>`;
   }
+  if (f['뺀 것'] && f['뺀 것'].length)
+    body += `<div class="drop">뺀 값 ${f['뺀 것'].map(([why, n]) => `${esc(why)} ${n}개`).join(' · ')}`
+          + (f['뺀 보기'] && f['뺀 보기'].length
+              ? ` <span class="dx">(${f['뺀 보기'].map(([ko, nm, v]) =>
+                   `${esc(ko)} ${esc(nm)} ${esc(v)}`).join(' · ')})</span>` : '') + `</div>`;
   if (f.보기 && f.보기.length)
     body += `<div class="ex">${f.보기.slice(0, 3).map(([ko, nm, v]) =>
       `${esc(ko)} <b>${esc(nm)}</b> ${esc(v)}`).join(' · ')}</div>`;
@@ -169,7 +177,11 @@ function drawCatalog() {
   document.getElementById('sub').innerHTML =
     `게임 원본에서 읽히는 칸 <b>${DB.칸.length}</b>가지 가운데 <b>${rows.length}</b>가지 · `
   + `영웅 ${DB['센 것'].영웅} · 기술 ${DB['센 것'].기술} · 특성 ${DB['센 것'].특성}`
-  + (DB.자료 ? ` · 자료 ${esc(DB.자료)}` : '');
+  + (DB.자료 ? ` · 자료 ${esc(DB.자료)}` : '')
+  + (DB['뺀 것'] && DB['뺀 것'].length
+      ? `<br><span class="dropsum">정상 게임에서 만날 수 없는 값 `
+        + `<b>${DB['뺀 것'].reduce((a, b) => a + b[1], 0)}개</b>는 빼고 셌습니다 — `
+        + DB['뺀 것'].map(([w, n]) => `${esc(w)} ${n}`).join(' · ') + `</span>` : '');
 }
 
 /* ── 영웅 수치표 ───────────────────────────────────────────── */
