@@ -69,10 +69,20 @@ def slim(d, hid, portraits):
     icons = {t.get("id"): t.get("아이콘") for t in d.get("특성", []) if t.get("아이콘")}
     o = {"영웅": d["영웅"], "자료": d["자료"], "기본": d["기본 수치"],
          "초상화": (portraits.get(hid) or {}).get("portrait"), "기술": [], "특성": []}
+    def clean(v):
+        """**밑줄로 시작하는 칸은 우리끼리 쓰는 표식**이라 내보내지 않는다 —
+        원자료 줄에 `_쏜자리 true` · `_찾기 true` 가 그대로 보이고 있었다.
+        속이 또 사전인 칸(`_나오는 상자`)은 화면에서 `[object Object]` 가 된다."""
+        if isinstance(v, dict):
+            return {k2: clean(v2) for k2, v2 in v.items() if not str(k2).startswith("_")}
+        if isinstance(v, list):
+            return [clean(x2) for x2 in v]
+        return v
+
     for a in d["기술"]:
         x = {}
         for k in KEEP_AB:
-            v = a.get(k)
+            v = clean(a.get(k))
             if v in (None, [], {}):
                 continue
             x[k] = v[:CAP[k]] if k in CAP else v

@@ -235,6 +235,15 @@ const RATIO_KEYS = ['이동 속도', '공격 속도', '일반 공격 피해량',
 function fmtVal(k, v) {
   if (RATIO_KEYS.includes(k) && typeof v === 'number')
     return (v > 0 ? '+' : '') + (Math.round(v * 1000) / 10) + '%';
+  /* **속이 또 사전인 칸**은 그냥 찍으면 `[object Object]` 가 된다 —
+     `조건부 보정 [{"값":"-25%"}]` · `변하는 값 {한 단위당: …}` 따위가 그랬다.
+     밑줄로 시작하는 안쪽 표식은 여기서도 뺀다. */
+  if (Array.isArray(v)) return v.map(x => fmtVal(k, x)).filter(t => t !== '').join(' · ');
+  if (v && typeof v === 'object')
+    return Object.entries(v)
+      .filter(([k2, v2]) => !String(k2).startsWith('_') && k2 !== '출처'
+                         && v2 != null && v2 !== false)
+      .map(([k2, v2]) => v2 === true ? k2 : `${k2} ${fmtVal(k2, v2)}`).join(' ');
   return v;
 }
 /* 숫자가 **무엇에 따라 변하는지**(CAccumulator). 거리로 줄어드는 피해는 표로 보여 준다
@@ -258,9 +267,13 @@ function accText(d) {
 function rowText(r) {
   // '1회당'·'툴팁 표기' 는 날값으로 늘어놓지 않고 한 마디로 붙인다
   const tag = r['1회당'] ? ` <span class="per">1회당 (툴팁은 ${esc(r['툴팁 표기'])})</span>` : '';
+  /* 참/거짓은 **"주문력 적용 false" 가 아니라 적지 않거나 이름만** 적는다 —
+     영어 낱말이 한글 줄에 섞여 보인다. 밑줄로 시작하는 칸은 우리끼리 쓰는 표식이다. */
   return Object.entries(r)
-    .filter(([k, v]) => !['출처', '1회당', '툴팁 표기'].includes(k) && v != null)
-    .map(([k, v]) => `${esc(k)} <b>${esc(fmtVal(k, v))}</b>`).join(' · ') + tag;
+    .filter(([k, v]) => !['출처', '1회당', '툴팁 표기'].includes(k)
+                     && !String(k).startsWith('_') && v != null && v !== false)
+    .map(([k, v]) => v === true ? `<b>${esc(k)}</b>`
+                                : `${esc(k)} <b>${esc(fmtVal(k, v))}</b>`).join(' · ') + tag;
 }
 /* ── 범위를 격자 위에 그린다 ─────────────────────────────────────────
    약속: **원점이 영웅, 위쪽이 앞, 한 칸이 거리 1**. 영웅 히트박스(Unit Radius)를 원점에 먼저
