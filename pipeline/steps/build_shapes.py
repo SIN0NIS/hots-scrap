@@ -44,10 +44,12 @@ def changes_map(d):
 
 
 def tier_label(step):
-    """'6-2' → '16T-2' (열여섯 레벨 둘째). 못 읽으면 그대로 돌려준다."""
+    """'5-3' → '13lv 3' (열세 레벨 셋째). 못 읽으면 그대로 돌려준다.
+
+    **레벨 + 순서**로 적는다 — `13T-3` 보다 `13lv 3` 이 읽기 쉽다."""
     try:
         t, k = str(step).split("-")
-        return f"{TIER_LV[int(t) - 1]}T-{k}"
+        return f"{TIER_LV[int(t) - 1]}lv {k}"
     except (ValueError, IndexError):
         return str(step or "")
 
@@ -67,7 +69,13 @@ def rows_of(d, hi, key, kind, chg=None):
                 r["of"] = of                 # 이 특성이 바꾸는 기술
                 r["t"] = tier_label(step)    # 16T-3 꼴
         elif a.get("칸"):
-            r["s"] = a["칸"]
+            # 같은 자리를 나눠 쓰는 기술은 **그 자리 글자**로 보인다(발리라 매복 = Q).
+            share = str(a.get("같은 칸") or "").split(" ")[0]
+            r["s"] = share or a["칸"]
+            if share:
+                r["alt"] = a["같은 칸"]
+        if a.get("모드"):
+            r["m"] = a["모드"]
         out.append(r)
     return out
 
@@ -91,7 +99,7 @@ def main():
             # 글자로 줄 세우면 16T 가 1T 앞에 선다. **레벨 숫자**로 센다.
             # 궁극기 해금 특성(이름이 기술과 같다)은 기술 카드와 똑같아서 뺀다.
             mine = [t for t in after.pop(r["n"], []) if t["n"] != r["n"]]
-            figs += sorted(mine, key=lambda x: (int(str(x.get("t") or "0").split("T")[0] or 0),
+            figs += sorted(mine, key=lambda x: (int(str(x.get("t") or "0").split("lv")[0] or 0),
                                                 str(x.get("t") or "")))
         for rest in after.values():          # 어느 기술인지 못 밝힌 것은 그 영웅 끝에
             figs += rest
