@@ -131,6 +131,10 @@
         const d2 = Math.hypot(g.가로, g.세로) / 2;
         put(-d2, at - d2); put(d2, at + d2);
       }
+      else if (g.꼴 === '직사각형' && g.향함) {
+        const m = g.가로 / 2 + g.세로 / 2;
+        put(-m, -m); put(m, m); put(g.향함[0] - m, g.향함[1] - m); put(g.향함[0] + m, g.향함[1] + m);
+      }
       else if (g.꼴 === '직사각형' && g.모임) {
         // 가까이 찍으면 일찍 엇갈린 뒤 **훨씬 옆까지** 뻗는다 — 도착점을 담아야 안 잘린다
         const sx = g.옆 || 0, L = g.쓸기 || 0, h = Math.hypot(sx, g.모임) || 1;
@@ -352,6 +356,21 @@
         const sx = g.옆 || 0;
         body += `<rect x="${px(sx - g.가로 / 2)}" y="${py(g.세로)}" width="${g.가로 * S}" `
               + `height="${g.세로 * S}" ${fill}/>`;
+      } else if (g.꼴 === '직사각형' && g.향함) {
+        /* **흩어져 나가는 길**(겐지 수리검 셋). 도착점만 찍어 두면 "어디로 날아가는지"
+           가 안 보인다. 제자리에서 제 도착점까지 쓸고 간 자리를 기울인 상자로 긋고,
+           출발할 때의 판정 상자를 점선으로 한 번 더 그려 굵기를 보인다. */
+        const tx = g.향함[0], ty = g.향함[1];
+        const len = Math.hypot(tx, ty), ang = Math.atan2(tx, ty) * 180 / Math.PI;
+        const x0 = px(0), y0 = py(0), hw = g.가로 * S / 2;
+        const turn = `rotate(${(-ang).toFixed(2)} ${x0.toFixed(1)} ${y0.toFixed(1)})`;
+        body += `<rect x="${(x0 - hw).toFixed(1)}" y="${(y0 - len * S).toFixed(1)}" `
+              + `width="${(g.가로 * S).toFixed(1)}" height="${(len * S).toFixed(1)}" ${fill} `
+              + `transform="${turn}"/>`
+              + `<rect x="${(x0 - hw).toFixed(1)}" y="${(y0 - g.세로 * S).toFixed(1)}" `
+              + `width="${(g.가로 * S).toFixed(1)}" height="${(g.세로 * S).toFixed(1)}" `
+              + `fill="none" stroke="${C}" stroke-width="1" stroke-dasharray="4 3" `
+              + `transform="${turn}"/>`;
       } else if (g.꼴 === '직사각형' && g.모임 && g.옆) {
         /* **옆에서 나와 찍은 자리에서 엇갈리는 길.** 리밍 마력탄은 ±3 에서 나와 커서를
            겨누는데, **날아가는 거리는 12 로 늘 같다** — 커서에서 멈추지 않고 그대로
