@@ -76,57 +76,6 @@
   .nums b { color:var(--fg); font-weight:600; }
   mark { background:var(--gold-line); color:inherit; border-radius:3px; }
   #more { text-align:center; color:var(--dim); font-size:12.5px; padding:18px 0 4px; }
-  /* ── 크게 보기 ─────────────────────────────────────────────────────────
-     카드가 290px 이라 반지름 18 짜리 나선이나 조각 여럿은 깨알로 보인다.
-     **그림을 통째로 옮겨 와서** 띄운다 — 베껴 그리면 다이얼·손잡이가 안 먹는다
-     (동작은 전부 document 에 걸려 있어 자리를 옮겨도 그대로 움직인다). */
-  .zb { margin-left:6px; font-size:11px; color:var(--dim); background:var(--card2);
-        border:1px solid var(--line); border-radius:999px; padding:1px 8px; cursor:pointer;
-        font-family:inherit; white-space:nowrap; }
-  .zb:hover { color:var(--blue); border-color:var(--blue); }
-  .pic .fig > svg { cursor:zoom-in; }
-  /* 좁은 화면에서는 **아래에서 올라오는 판**이다 — 통계 보기의 `.pane` 과 같은 꼴.
-     위로 띄우면 전역 바(z-index 99999)가 머리글을 덮는다. */
-  .zoom { position:fixed; inset:0; z-index:40; background:rgba(8,14,26,.72);
-          display:flex; align-items:flex-end; justify-content:center;
-          overscroll-behavior:contain; }
-  .zoom[hidden] { display:none; }
-  @media (min-width:700px) { .zoom { align-items:center; padding:20px; } }
-  .zbox { background:var(--card); border:1px solid var(--line2);
-          border-radius:14px 14px 0 0; box-shadow:0 10px 40px rgba(0,0,0,.35);
-          width:min(1040px, 100%); max-height:92vh; display:flex; flex-direction:column;
-          overflow:hidden; }
-  @media (min-width:700px) { .zbox { border-radius:14px; max-height:88vh; } }
-  /* 머리글은 **접히더라도 닫기 단추가 따라가면 안 된다** — 줄바꿈되는 쪽은 따로 싸고
-     ✕ 는 바깥에 둬서 늘 오른쪽 위에 붙어 있게 한다(375px 에서 아래로 떨어졌었다). */
-  .zhead { display:flex; gap:8px; align-items:center; padding:10px 12px;
-           border-bottom:1px solid var(--line); }
-  .zh1 { display:flex; gap:7px; align-items:baseline; flex-wrap:wrap; min-width:0; flex:1 1 auto; }
-  .zhead .nm { font-weight:700; font-size:16px; }
-  .zhead .who { color:var(--dim); font-size:12.5px; }
-  .zhead .of { color:var(--gold); font-size:12.5px; font-weight:600; }
-  .zhead .go { font-size:11px; color:var(--dim); text-decoration:none; white-space:nowrap;
-               border:1px solid var(--line); border-radius:999px; padding:1px 8px; }
-  .zhead .go:hover { color:var(--blue); border-color:var(--blue); }
-  .zx { width:30px; height:30px; flex:0 0 auto;
-        border:1px solid var(--line); background:var(--card2); color:var(--dim);
-        border-radius:8px; cursor:pointer; font-size:15px; line-height:1; font-family:inherit; }
-  .zx:hover { color:var(--fg); border-color:var(--line2); }
-  .zbody { display:grid; grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);
-           gap:14px; padding:12px; overflow:auto; }
-  .zfig { min-width:0; }
-  .zfig .fig { margin:0; }
-  /* `max-width` 만으로는 **커지지 않는다** — 작게만 막을 뿐이다. 크게 보려고 연 자리니
-     폭을 꽉 채우게 한다(그림은 viewBox 라 늘려도 안 깨진다). */
-  .zfig .fig > svg { width:100%; height:auto; }
-  .zfig .fig .cap { font-size:12px; }
-  .zfig .fig .cv { margin-top:8px; }
-  .zside { min-width:0; }
-  .zdesc { color:var(--fg); font-size:13.5px; line-height:1.7; margin:0 0 10px;
-           word-break:keep-all; white-space:pre-line; }
-  .zdesc.wait { color:var(--dim); }
-  .zhint { color:var(--dim); font-size:11.5px; margin:10px 0 0; line-height:1.7; }
-  @media (max-width:760px) { .zbody { grid-template-columns:1fr; } }
   @media (max-width:560px) { #grid { grid-template-columns:1fr; } .wrap { padding:12px 10px 50px; } }
 </style>
 </head>
@@ -155,26 +104,6 @@
   </div>
   <div id="grid"></div>
   <div id="more"></div>
-</div>
-<div class="zoom" id="zoom" hidden>
-  <div class="zbox" role="dialog" aria-modal="true" aria-labelledby="ztitle">
-    <div class="zhead">
-      <div class="zh1">
-        <span id="ztag"></span><span class="of" id="zof"></span>
-        <span class="nm" id="ztitle"></span><span class="who" id="zwho"></span>
-        <a class="go scrap-tap" id="zgo" href="./">도감 ↗</a>
-      </div>
-      <button class="zx scrap-tap" id="zclose" aria-label="닫기">✕</button>
-    </div>
-    <div class="zbody">
-      <div class="zfig" id="zfig"></div>
-      <div class="zside">
-        <p class="zdesc" id="zdesc"></p>
-        <div class="nums" id="znums"></div>
-        <p class="zhint" id="zhint"></p>
-      </div>
-    </div>
-  </div>
 </div>
 <script>
 /* 범위 구경 — 영웅을 **가로질러** 범위만 본다.
@@ -219,7 +148,6 @@ function card(f, k) {
        + (f.m ? '<span class="mode">' + esc(f.m) + '</span>' : '')
        + '<span class="who">' + (f._who || esc(h.name)) + '</span>'
        + '<a class="go scrap-tap" href="./?hero=' + encodeURIComponent(h.id) + '">도감 ↗</a>'
-       + '<button type="button" class="zb scrap-tap" aria-label="크게 보기">크게 ⤢</button>'
        + '</figcaption>' + svg + '<div class="nums">' + nums + '</div></figure>';
 }
 
@@ -250,7 +178,7 @@ function apply() {
   VIEW = list; shown = 0;
   // 크게 보기로 **옮겨 가 있는 그림**이 있으면 먼저 돌려놓는다 — 그냥 지우면
   // 돌려놓을 자리(주석 마디)가 사라져 그림이 모달에 갇힌다.
-  if (ZBACK) closeZoom();
+  if (window.hotsShape.크게중()) window.hotsShape.크게끄기();
   $('#grid').innerHTML = '';
   // 칸 수는 보통 화면 너비가 정한다. 사진으로 찍을 때만 ?cols= 로 못 박는다.
   if (Q.get('cols')) $('#grid').style.gridTemplateColumns =
@@ -332,14 +260,11 @@ function chips(host, names, bag) {
 })();
 
 /* ── 크게 보기 ────────────────────────────────────────────────────────────
-   카드 폭이 290px 이라 반지름 18 짜리 나선이나 조각 여럿은 깨알로 보인다.
-   **그림을 베껴 그리지 않고 통째로 옮겨 온다** — 다이얼과 손잡이가 그대로 따라온다
-   (동작은 shared/shape.js 가 document 에 한 번만 걸어 두어 자리를 옮겨도 먹는다).
-   닫을 때 원래 자리에 돌려놓으려고 **자리 표식(주석 마디)** 을 꽂아 둔다.
+   큰 판·다이얼·설명 자리는 **shared/shape.js** 가 가진다(도감도 같은 것을 쓴다).
+   여기서는 "이 그림이 무엇인가" 만 대 준다.
    설명은 shapes.json 에 없다 — 686개를 다 싣는 것보다 **열어 볼 때 그 영웅 것 하나만**
    받는 쪽이 싸다(한 명 29KB, 공짜 호스팅 규약). 받은 것은 기억해 두 번 안 받는다. */
 const DESC = new Map();                  // 영웅 id → 도감 자료(설명을 꺼내 쓴다)
-let ZBACK = null, ZSLOT = null;          // 돌려놓을 그림과 그 자리
 
 function heroDoc(id) {
   if (!DESC.has(id)) {
@@ -362,61 +287,23 @@ function findSay(doc, id) {
   return null;
 }
 
-function openZoom(fig, f) {
-  if (!fig || ZBACK) return;
-  const h = DB['영웅'][f.h];
-  $('#ztag').innerHTML = f.t ? '<b class="slot lv">' + esc(f.t) + '</b>'
-    : f.lv != null ? '<b class="slot lv">' + esc(f.lv) + '</b>'
-    : f.s ? '<b class="slot">' + esc(f.s) + '</b>' : '';
-  $('#zof').textContent = f.of ? f.of + ' ▸' : '';
-  $('#ztitle').textContent = f.n;
-  $('#zwho').textContent = h.name;
-  $('#zgo').href = './?hero=' + encodeURIComponent(h.id);
-  $('#znums').innerHTML = NUMS.filter(k => f.w[k] != null && f.w[k] !== '')
-    .map(k => '<span>' + esc(k) + ' <b>' + esc(f.w[k]) + '</b></span>').join('');
-  const cv = fig.querySelector('.cv');
-  $('#zhint').textContent = cv
-    ? (cv.querySelector('.cvd') ? '다이얼을 끌면 방향이 돌아갑니다(화살표 키로도). ' : '')
-      + (cv.querySelector('.cvt') ? '손잡이를 밀면 시간에 따라 어떻게 되는지 보입니다. ' : '')
-      + (cv.querySelector('.cvr') ? '막대를 밀면 모이는 자리가 움직입니다.' : '')
-    : '';
-  const d = $('#zdesc');
-  d.textContent = '설명 불러오는 중…'; d.className = 'zdesc wait';
-  heroDoc(h.id).then(doc => {
-    if (!ZBACK) return;                                   // 그새 닫혔다
-    const say = findSay(doc, f.i);
-    d.textContent = say || '게임이 적어 둔 설명이 없습니다.';
-    d.className = 'zdesc' + (say ? '' : ' wait');
-  });
-  ZBACK = fig;
-  ZSLOT = document.createComment('fig');
-  fig.parentNode.replaceChild(ZSLOT, fig);
-  $('#zfig').appendChild(fig);
-  $('#zoom').hidden = false;
-  document.body.style.overflow = 'hidden';
-  $('#zclose').focus();
-}
-
-function closeZoom() {
-  if (ZBACK && ZSLOT && ZSLOT.parentNode) ZSLOT.parentNode.replaceChild(ZBACK, ZSLOT);
-  ZBACK = ZSLOT = null;
-  $('#zoom').hidden = true;
-  document.body.style.overflow = '';
-}
-
 function wireZoom() {
-  $('#grid').addEventListener('click', e => {
-    // 막대·단추·다이얼을 누른 것은 조작이지 '크게 보기' 가 아니다
-    if (e.target.closest('.cv') || e.target.closest('a')) return;
-    const hit = e.target.closest('.zb') || e.target.closest('svg');
-    if (!hit) return;
-    const pic = hit.closest('.pic'); if (!pic) return;
-    openZoom(pic.querySelector('.fig'), VIEW[Number(pic.dataset.k)]);
-  });
-  $('#zclose').addEventListener('click', closeZoom);
-  $('#zoom').addEventListener('click', e => { if (e.target.id === 'zoom') closeZoom(); });
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && !$('#zoom').hidden) closeZoom();
+  window.hotsShape.크게(fig => {
+    const pic = fig.closest('.pic');
+    const f = pic && VIEW[Number(pic.dataset.k)];
+    if (!f) return null;
+    const h = DB['영웅'][f.h];
+    return {
+      '꼬리표': f.t ? '<b class="slot lv">' + esc(f.t) + '</b>'
+              : f.lv != null ? '<b class="slot lv">' + esc(f.lv) + '</b>'
+              : f.s ? '<b class="slot">' + esc(f.s) + '</b>' : '',
+      '앞말': f.of ? f.of + ' ▸' : '',
+      '이름': f.n, '영웅': h.name,
+      '링크': './?hero=' + encodeURIComponent(h.id),
+      '설명': heroDoc(h.id).then(doc => findSay(doc, f.i)),
+      '칸들': NUMS.filter(k => f.w[k] != null && f.w[k] !== '')
+                .map(k => '<span>' + esc(k) + ' <b>' + esc(f.w[k]) + '</b></span>').join(''),
+    };
   });
 }
 </script>

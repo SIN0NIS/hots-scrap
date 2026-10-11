@@ -539,7 +539,7 @@ function abilityHTML(a, opt) {
   const n = (minor.match(/<tr/g) || []).length;
   // 같은 자리를 나눠 쓰거나 딸린 단계인 기술은 **한 칸 들여** 위아래 관계를 보인다
   const sub = (alt || a['딸린 곳']) ? ' sub' : '';
-  return `<div class="card${sub}">
+  return `<div class="card${sub}" data-zi="${esc(a.id)}">
       <div><img class="ico" src="${imgUrl('abilitytalents', a.아이콘)}" alt="" loading="lazy">`
       + `<span class="slot ${slotClass(slot)}${alt ? ' alt' : ''}"`
       + ` title="${alt ? esc(a['같은 칸']) : ''}">${esc(slot)}</span>`
@@ -574,7 +574,8 @@ function talentHTML(t) {
         + Object.entries(t.위키).filter(([k]) => k !== '출처').map(([k, v]) => `${esc(k)} ${esc(v)}`).join(' · ')
         + `</td></tr>` : '')
     + (t.예외 ? `<tr><td class="k warnrow">⚠ 예외</td><td class="warnrow">${esc(t.예외)}</td></tr>` : '');
-  return `<div class="talent"><div><img class="tico" src="${imgUrl('abilitytalents', t.아이콘)}" alt="" `
+  return `<div class="talent" data-zi="${esc(t.id || t.이름)}"><div>`
+    + `<img class="tico" src="${imgUrl('abilitytalents', t.아이콘)}" alt="" `
     + `loading="lazy"><span class="tn">${esc(t.이름)}</span>`
     + (t.강화 ? `<span class="up">${esc(t.강화)} 강화</span>` : '')
     + memoBtn('특성', t.id || t.이름, t.이름) + `</div>`
@@ -599,8 +600,37 @@ function weaponHTML(ws) {
   }).join('');
   return `<div class="wep"><b>평타</b>${rows}</div>`;
 }
+/* ── 크게 보기 ────────────────────────────────────────────────────────────
+   큰 판·다이얼·설명 자리는 **shared/shape.js** 가 가진다(범위 구경도 같은 것을 쓴다).
+   여기서는 "이 그림이 무엇인가" 만 대 준다 — 자료는 이미 손에 있으니 설명도 바로 준다.
+   `data-zi` 는 기술 카드와 특성 칸에 달아 둔 **그 항목의 id** 다. */
+function wireZoom() {
+  window.hotsShape.크게(fig => {
+    const host = fig.closest('[data-zi]');
+    if (!host || !HERO) return null;
+    const tal = host.classList.contains('talent');
+    const x = (tal ? HERO.특성 : HERO.기술).find(v => (v.id || v.이름) === host.dataset.zi);
+    if (!x) return null;
+    return {
+      '꼬리표': tal ? `<span class="slot lv">${esc(x.레벨 || '?')}레벨</span>`
+              : `<span class="slot ${slotClass(x.칸)}">${esc(x.칸 || '')}</span>`,
+      '앞말': tal && x.강화 ? x.강화 + ' 강화' : '',
+      '이름': x.이름 || '',
+      '영웅': HERO.영웅 || '',
+      '링크': 'shapes.html?hero=' + encodeURIComponent(cur || ''),
+      '링크글': '범위 구경 ↗',
+      '설명': x.설명 || null,
+      '칸들': Object.entries(x.위키식 || {}).filter(([k]) => !FIGKEY.includes(k))
+                .map(([k, v]) => `<span>${esc(k)} <b>${esc(v)}</b></span>`).join(''),
+    };
+  });
+}
+
 function render(h) {
   HERO = h;
+  // 크게 보기로 **옮겨 가 있는 그림**이 있으면 먼저 돌려놓는다 — 본문을 갈아엎으면
+  // 돌려놓을 자리(주석 마디)가 사라져 그림이 큰 판에 갇힌다.
+  if (window.hotsShape.크게중()) window.hotsShape.크게끄기();
   const base = Object.entries(h.기본).filter(([k, v]) => v != null && k !== '평타')
       .map(([k, v]) => `<span class="chip${ckC('기본', '영웅', k)}"${ckA('기본', '영웅', k, '기본 / ' + k)}>`
          + `${esc(k)} <b>${esc(v)}</b></span>`).join('');
@@ -627,6 +657,7 @@ function render(h) {
     memoBar();
   }
   $('#meta').textContent = h.자료;
+  wireZoom();                       // 그림 안의 ⤢ 를 꺼내 준다(한 번만 걸린다)
   window.scrollTo(0, 0);
 }
 async function pick(id, push) {

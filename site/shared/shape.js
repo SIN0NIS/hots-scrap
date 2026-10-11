@@ -38,7 +38,8 @@
     const pts = g.점.map(p => px(p[0]) + ',' + py(p[1])).join(' ');
     const t = (x, y, s, anc) => `<text x="${x}" y="${y}" font-size="8.5" fill="var(--dim)"`
             + `${anc ? ` text-anchor="${anc}"` : ''}>${esc(s)}</text>`;
-    return `<div class="fig"><svg viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" `
+    return `<div class="fig"><button type="button" class="figz" aria-label="크게 보기">⤢</button>`
+         + `<svg viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" `
          + `aria-label="서서히 바뀌는 값"><g>`
          + `<line x1="${L}" y1="${H - B}" x2="${W - 4}" y2="${H - B}" stroke="var(--line)" stroke-width="1"/>`
          + `<line x1="${L}" y1="6" x2="${L}" y2="${H - B}" stroke="var(--line)" stroke-width="1"/></g>`
@@ -600,7 +601,11 @@
       if (canSpin) inner += dialHTML(spin);
       bar = `<div class="cv" data-cv="${id}" data-deg="${spin}">${inner}</div>`;
     }
-    return `<div class="fig"><svg viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" `
+    /* **크게 보기 단추**는 늘 넣어 둔다 — 보일지 말지는 CSS 가 정한다
+       (`hotsShape.크게(…)` 로 자료를 대 주는 화면에서만 뜬다). 그림 안에 넣어야
+       그림을 옮겨도 같이 따라다니고, 다시 그릴 때(svg·꼬리말만 갈아 끼운다)도 안 날아간다. */
+    return `<div class="fig"><button type="button" class="figz" aria-label="크게 보기">⤢</button>`
+         + `<svg viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" `
          + `aria-label="범위 그림"><g>${grid}</g>${body}</svg>${bar}`
          + `<div class="cap">${cap}</div></div>`;
   }
@@ -727,5 +732,98 @@
     }, true);
   }
 
-  g.hotsShape = { svg: shapeSVG, graph: graphSVG, side: SIDEC, esc: esc };
+  /* ── 크게 보기 ──────────────────────────────────────────────────────────
+     카드가 좁아 깨알로 보이는 그림을 큰 판에 띄운다. **베껴 그리지 않고 `.fig` 를
+     통째로 옮겨 온다** — 다이얼·시간 손잡이·거리 막대가 그대로 따라온다(동작은 모두
+     document 에 걸려 있어 자리를 옮겨도 먹는다). 닫을 때 돌려놓으려고 **자리 표식**
+     (주석 마디)을 꽂아 둔다.
+
+     쓰는 쪽은 `hotsShape.크게(fig => 정보)` 로 **그림 하나를 무엇이라 부를지**만 대 준다:
+       { 꼬리표, 앞말, 이름, 영웅, 링크, 링크글, 설명, 칸들 }
+     `설명` 은 글이거나 **약속(Promise)** 이어도 된다 — 범위 구경은 그때 가서 받아 온다.
+     `꼬리표`·`칸들` 은 쓰는 쪽이 만든 조각이라 그대로 싣는다(이미 `esc` 를 거친 것). */
+  let SAY = null, ZBACK = null, ZSLOT = null, ZBOX = null;
+
+  function zoomShell() {
+    if (ZBOX) return ZBOX;
+    const d = document.createElement('div');
+    d.className = 'hz';
+    d.hidden = true;
+    d.innerHTML = '<div class="hzbox" role="dialog" aria-modal="true" aria-labelledby="hz-nm">'
+      + '<div class="hzhead"><div class="hzh1"><span class="hz-tag"></span>'
+      + '<span class="of hz-of"></span><span class="nm" id="hz-nm"></span>'
+      + '<span class="who hz-who"></span><a class="go hz-go scrap-tap" href="./">도감 ↗</a></div>'
+      + '<button type="button" class="hzx scrap-tap" aria-label="닫기">✕</button></div>'
+      + '<div class="hzbody"><div class="hzfig"></div><div class="hzside">'
+      + '<p class="hzsay"></p><div class="hznums"></div><p class="hzhint"></p>'
+      + '</div></div></div>';
+    document.body.appendChild(d);
+    d.addEventListener('click', e => {
+      if (e.target === d || e.target.closest('.hzx')) zoomClose();
+    });
+    ZBOX = d;
+    return d;
+  }
+
+  function zoomOpen(fig, info) {
+    if (!fig || ZBACK) return;
+    const d = zoomShell(), q = x => d.querySelector(x);
+    info = info || {};
+    q('.hz-tag').innerHTML = info['꼬리표'] || '';
+    q('.hz-of').textContent = info['앞말'] || '';
+    q('#hz-nm').textContent = info['이름'] || '';
+    q('.hz-who').textContent = info['영웅'] || '';
+    const go = q('.hz-go');
+    go.hidden = !info['링크'];
+    if (info['링크']) { go.href = info['링크']; go.textContent = info['링크글'] || '도감 ↗'; }
+    q('.hznums').innerHTML = info['칸들'] || '';
+    const cv = fig.querySelector('.cv');
+    q('.hzhint').textContent = cv
+      ? (cv.querySelector('.cvd') ? '다이얼을 끌면 방향이 돌아갑니다(화살표 키로도). ' : '')
+        + (cv.querySelector('.cvt') ? '손잡이를 밀면 시간에 따라 어떻게 되는지 보입니다. ' : '')
+        + (cv.querySelector('.cvr') ? '막대를 밀면 모이는 자리가 움직입니다.' : '')
+      : '';
+    const say = q('.hzsay'), txt = info['설명'];
+    const put = t => { say.textContent = t || '게임이 적어 둔 설명이 없습니다.';
+                       say.className = 'hzsay' + (t ? '' : ' wait'); };
+    if (txt && typeof txt.then === 'function') {
+      say.textContent = '설명 불러오는 중…'; say.className = 'hzsay wait';
+      txt.then(t => { if (ZBACK) put(t); }, () => { if (ZBACK) put(null); });
+    } else put(txt);
+    ZBACK = fig;
+    ZSLOT = document.createComment('fig');
+    fig.parentNode.replaceChild(ZSLOT, fig);
+    q('.hzfig').appendChild(fig);
+    d.hidden = false;
+    document.body.style.overflow = 'hidden';
+    q('.hzx').focus();
+  }
+
+  function zoomClose() {
+    if (ZBACK && ZSLOT && ZSLOT.parentNode) ZSLOT.parentNode.replaceChild(ZBACK, ZSLOT);
+    ZBACK = ZSLOT = null;
+    if (ZBOX) ZBOX.hidden = true;
+    document.body.style.overflow = '';
+  }
+
+  function zoomWire(fn) {
+    SAY = fn;
+    document.documentElement.dataset.hotsZoom = '1';     // CSS 가 단추를 꺼내 준다
+    if (zoomWire.on) return;
+    zoomWire.on = true;
+    document.addEventListener('click', e => {
+      if (!SAY || ZBACK || !e.target.closest) return;
+      if (e.target.closest('.hz') || e.target.closest('.cv') || e.target.closest('a')) return;
+      const hit = e.target.closest('.figz') || e.target.closest('.fig > svg');
+      if (!hit) return;
+      const fig = hit.closest('.fig');
+      if (fig) zoomOpen(fig, SAY(fig));
+    });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && ZBACK) zoomClose();
+    });
+  }
+
+  g.hotsShape = { svg: shapeSVG, graph: graphSVG, side: SIDEC, esc: esc,
+                  크게: zoomWire, 크게끄기: zoomClose, 크게중: () => !!ZBACK };
 })(window);
