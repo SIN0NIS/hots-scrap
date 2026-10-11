@@ -279,16 +279,7 @@
       // **색은 '누구에게' 한 가지만 말한다** — 빨강 적 · 파랑 아군 · 보라 둘 다.
       // '찾는 범위인가' 는 색이 아니라 **점선**이 말한다. 한 명만 맞는 직격은 진하게.
       const C = SIDEC(g.편);
-      /* **휩쓸 때마다 넓어지는 기술**(스투코프 거친 휩쓸기 — 1.75초에 3회, 5 → 8 → 11).
-         셋을 한꺼번에 겹쳐 그리면 "겹친 부채꼴 셋" 으로만 보인다. 손잡이가 가리키는
-         번째만 진하게, **이미 지나간 번째는 옅게**, 아직 안 온 것은 안 그린다. */
-      const stN = g.단계수 || 0, stI = g.단계 || 0;
-      const stCur = stN ? (at01 >= 1 ? stN : Math.min(stN, Math.floor(at01 * stN) + 1)) : 0;
-      if (stN && stI > stCur) return;              // 아직 안 휘두른 번째
-      const past = stN && stI < stCur;
-      const fill = past
-        ? `fill="${C}" fill-opacity=".06" stroke="${C}" stroke-width="1" stroke-opacity=".45"`
-        : g.직격
+      const fill = g.직격
         ? `fill="${C}" fill-opacity=".30" stroke="${C}" stroke-width="2"`
         : `fill="${C}" fill-opacity=".16" stroke="${C}" stroke-width="1.4"`;
       /* **지나온 자리** — 도는 판정이 여태 쓸고 온 넓이. 도는 조각만 그리면 "앞에
@@ -333,6 +324,40 @@
         });
       } else if (g.꼴 === '다각형')
         body += `<polygon points="${(g.점 || []).map(p => px(p[0]) + ',' + py(p[1])).join(' ')}" ${fill}/>`;
+      else if (g.꼴 === '부채꼴' && g.조각방향 && g.조각방향.length) {
+        /* **휩쓰는 기술** — 조각을 한꺼번에 깔면 "넓은 부채꼴 하나" 로 보여, 어느 쪽으로
+           휘두르는지도 몇 번 휘두르는지도 안 보인다. 자료는 조각마다 방향(`FacingAdjustment`)
+           과 차례(이름 끝의 Start/Mid/End · 1/2/3)를 적어 둔다 — 그대로 한 조각씩,
+           손잡이가 가리키는 차례만 진하게 그리고 **휘두르는 쪽을 호 화살표**로 긋는다. */
+        const seq = g.조각방향, wdt = g.조각각 || (g.각도 / seq.length);
+        const base = g.차례시작 || 1, tot = Number(w['휩쓰는 차례']) || seq.length;
+        const cur = at01 >= 1 ? tot : Math.min(tot, Math.floor(at01 * tot) + 1);
+        seq.forEach((face, i) => {
+          const ord = base + i;
+          if (ord > cur) return;                       // 아직 안 휘두른 조각
+          const was = ord < cur;
+          const pts = [[0, 0]].concat(arcPts(g.반지름, wdt, 0))
+                       .map(p => px(p[0]) + ',' + py(p[1])).join(' ');
+          body += `<g transform="rotate(${face} ${px(0)} ${py(0)})">`
+                + `<polygon points="${pts}" fill="${C}" `
+                + `fill-opacity="${was ? '.07' : (g.직격 ? '.30' : '.18')}" stroke="${C}" `
+                + `stroke-width="${was ? 1 : 1.6}" stroke-opacity="${was ? '.45' : '1'}"/></g>`;
+        });
+        // **휘두르는 쪽** — 첫 조각에서 끝 조각으로 호를 따라 화살표 하나
+        if (seq.length > 1 && base <= cur) {
+          const RA = g.반지름 * 0.62, a0 = seq[0], a1 = seq[seq.length - 1];
+          const step = a1 > a0 ? 4 : -4, qs = [];
+          for (let t = a0; (step > 0 ? t <= a1 : t >= a1); t += step)
+            qs.push(px(RA * Math.sin(t * Math.PI / 180)) + ','
+                  + py(RA * Math.cos(t * Math.PI / 180)));
+          const hx = px(RA * Math.sin(a1 * Math.PI / 180)), hy = py(RA * Math.cos(a1 * Math.PI / 180));
+          body += `<polyline points="${qs.join(' ')}" fill="none" stroke="var(--fg)" `
+                + `stroke-width="1.4" opacity=".55"/>`
+                + `<g transform="rotate(${a1 + (a1 > a0 ? 90 : -90)} ${hx} ${hy})">`
+                + `<polygon points="${hx},${hy - 5} ${hx - 7},${hy + 3} ${hx + 7},${hy + 3}" `
+                + `fill="var(--fg)" opacity=".55"/></g>`;
+        }
+      }
       else if (g.꼴 === '부채꼴') {
         if (g.안쪽) {
           /* **가운데가 빈 부채꼴.** 가로쉬 대지파괴자는 0~7.25 를 때리는 부채꼴과,
@@ -646,8 +671,8 @@
                    ? `<b class="c-dim">⌁</b> 나선은 도는 모양만 눈대중 — 반지름은 자료로 잰 상한`
                    : gs.some(g => g.꼴 === '나선')
                    ? `<b class="c-dim">⌁</b> 나선은 눈대중 — 뻗는 거리는 자료에 없다` : '',
-                 gs.some(g => g.단계수) ? `<b class="c-rng">◍</b> 휩쓸 때마다 넓어진다 — `
-                   + `손잡이를 밀어 번째를 바꾼다` : '',
+                 gs.some(g => g.조각방향) ? `<b class="c-rng">◍</b> 조각을 <b>차례로</b> 휘두른다 — `
+                   + `화살표가 휘두르는 쪽, 손잡이가 차례` : '',
                  gs.some(g => g.꼴 === '모르는 이동')
                    ? `<b class="c-dim">⌁</b> 화살표는 방향만 — 거리는 자료에 없다` : '',
                  yard.map(([k, r]) => `<b class="c-yard">⌁</b> ${esc(k)} ${r}`).join(' · ')]
