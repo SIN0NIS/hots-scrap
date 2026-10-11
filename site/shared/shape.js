@@ -279,7 +279,16 @@
       // **색은 '누구에게' 한 가지만 말한다** — 빨강 적 · 파랑 아군 · 보라 둘 다.
       // '찾는 범위인가' 는 색이 아니라 **점선**이 말한다. 한 명만 맞는 직격은 진하게.
       const C = SIDEC(g.편);
-      const fill = g.직격
+      /* **휩쓸 때마다 넓어지는 기술**(스투코프 거친 휩쓸기 — 1.75초에 3회, 5 → 8 → 11).
+         셋을 한꺼번에 겹쳐 그리면 "겹친 부채꼴 셋" 으로만 보인다. 손잡이가 가리키는
+         번째만 진하게, **이미 지나간 번째는 옅게**, 아직 안 온 것은 안 그린다. */
+      const stN = g.단계수 || 0, stI = g.단계 || 0;
+      const stCur = stN ? (at01 >= 1 ? stN : Math.min(stN, Math.floor(at01 * stN) + 1)) : 0;
+      if (stN && stI > stCur) return;              // 아직 안 휘두른 번째
+      const past = stN && stI < stCur;
+      const fill = past
+        ? `fill="${C}" fill-opacity=".06" stroke="${C}" stroke-width="1" stroke-opacity=".45"`
+        : g.직격
         ? `fill="${C}" fill-opacity=".30" stroke="${C}" stroke-width="2"`
         : `fill="${C}" fill-opacity=".16" stroke="${C}" stroke-width="1.4"`;
       /* **지나온 자리** — 도는 판정이 여태 쓸고 온 넓이. 도는 조각만 그리면 "앞에
@@ -637,6 +646,8 @@
                    ? `<b class="c-dim">⌁</b> 나선은 도는 모양만 눈대중 — 반지름은 자료로 잰 상한`
                    : gs.some(g => g.꼴 === '나선')
                    ? `<b class="c-dim">⌁</b> 나선은 눈대중 — 뻗는 거리는 자료에 없다` : '',
+                 gs.some(g => g.단계수) ? `<b class="c-rng">◍</b> 휩쓸 때마다 넓어진다 — `
+                   + `손잡이를 밀어 번째를 바꾼다` : '',
                  gs.some(g => g.꼴 === '모르는 이동')
                    ? `<b class="c-dim">⌁</b> 화살표는 방향만 — 거리는 자료에 없다` : '',
                  yard.map(([k, r]) => `<b class="c-yard">⌁</b> ${esc(k)} ${r}`).join(' · ')]
@@ -662,9 +673,10 @@
         /* **시간 손잡이** — 왼쪽 끝이 '안 모음', 오른쪽 끝이 '끝까지'.
            초를 아는 것(알라라크 1.5초 · 요한나 3.5초)은 초로, 모르는 것(초 주먹)은
            백분율로 적는다. 0 에서 끝까지 밀어 보면 시간에 따라 어떻게 되는지 보인다. */
-        inner += `<span class="cvl">${chg.도는중 ? '도는 중' : '모으기'}</span>`
+        const chgNm = chg.도는중 ? '도는 중' : chg.휩쓰는중 ? '휩쓰는 중' : '모으기';
+        inner += `<span class="cvl">${chgNm}</span>`
                + `<input type="range" class="cvt" min="0" max="1" step="any" `
-               + `value="${at01}" aria-label="${chg.도는중 ? '도는 시간' : '모으는 시간'}">`
+               + `value="${at01}" aria-label="${chgNm} 시간">`
                + `<span class="cvn cvs">${chgLabel(chg, at01)}</span>`;
       }
       if (canSpin) inner += dialHTML(spin);
