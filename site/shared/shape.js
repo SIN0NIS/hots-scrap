@@ -122,7 +122,9 @@
              : (g.자리 === '원점' || g.쓸기) ? 0 : d;
       if (g.꼴 === '다각형' || g.꼴 === '자리들') (g.점 || []).forEach(p => put(p[0], p[1]));
       else if (g.꼴 === '부채꼴') { put(0, at); arcPts(g.반지름, g.각도, at).forEach(p => put(p[0], p[1])); }
-      else if (g.꼴 === '이동') { put(0, 0); put(0, g.거리); }
+      // 몸만 가는 거리는 75 나 되기도 한다(폴스타트 비행). 끌기와 같은 잣대로
+      // **그리는 길이는 12 까지만** 담고 진짜 거리는 꼬리말에 숫자로 적는다.
+      else if (g.꼴 === '이동') { put(0, 0); put(0, Math.min(g.거리 || 0, 12)); }
       else if (g.꼴 === '둘레') { put(-g.반지름, -g.반지름); put(g.반지름, g.반지름); }
       else if (g.꼴 === '나선') { const R = g.반지름 || 3.2; put(-R, -R); put(R, R); }
       else if (g.꼴 === '모르는 이동') { put(-1, 0); put(1, 6); }
@@ -493,6 +495,13 @@
         body += `<circle cx="${px(0)}" cy="${py(0)}" r="${r0 * S}" fill="none" stroke="${C}" `
               + `stroke-width="1" stroke-dasharray="3 3"/>`
               + `<circle cx="${px(0)}" cy="${py(D)}" r="${r1 * S}" ${fill}/>`;
+      } else if (g.유지) {
+        /* **닿는 넓이가 아니라 "이 안에 머물러야 이어진다" 는 거리**(폴스타트 피뢰침).
+           속을 칠하면 "여기 있는 모두를 때린다" 로 읽히므로 **테두리만** 긋는다. */
+        body += `<circle cx="${px(0)}" cy="${py(at)}" r="${g.반지름 * S}" fill="none" `
+              + `stroke="${C}" stroke-width="1.6" stroke-dasharray="7 5" opacity=".9"/>`
+              + `<text x="${px(0) + 4}" y="${py(at) - g.반지름 * S - 4}" font-size="9" `
+              + `fill="${C}" opacity=".95">여기 벗어나면 끊김 ${g.반지름}</text>`;
       } else {
         body += `<circle cx="${px(0)}" cy="${py(at)}" r="${g.반지름 * S}" ${fill}/>`;
         if (g.작은)   // 충전으로 커지는 원 — 처음 크기(충전 안 했을 때)를 점선으로
@@ -508,7 +517,8 @@
     // 없으면 부채꼴·다각형이 뻗은 길이만큼.
     let arrow = 0;
     gs.forEach(g => {
-      arrow = Math.max(arrow, g.쓸기 || 0, g.날아감 || 0, g.거리 || 0,
+      arrow = Math.max(arrow, g.쓸기 || 0, g.날아감 || 0,
+                       Math.min(g.거리 || 0, 12),          // 끌기·이동은 12 까지만 긋는다
                        (g.꼴 === '직사각형' && g.자리 === '원점' && !g.쓸기) ? g.세로 : 0);
       if (!g.쓸기 && !g.날아감 && g.자리 === '원점')
         arrow = Math.max(arrow, g.꼴 === '부채꼴' ? g.반지름
@@ -550,7 +560,9 @@
                  gs.some(g => g.편 === '아군') ? `<b class="c-ally">■</b> 아군에게` : '',
                  gs.some(g => g.편 === '둘 다') ? `<b class="c-both">■</b> 적·아군 모두` : '',
                  names ? `범위 ${esc(names)}` : '',
-                 gs.some(g => g.직격) ? `진한 쪽은 한 명만 맞는 직격` : '',
+                 gs.some(g => g.직격 && !g.유지) ? `진한 쪽은 한 명만 맞는 직격` : '',
+                 gs.some(g => g.유지)
+                   ? `<b class="c-dim">◌</b> 점선 안은 맞는 범위가 아니라 <b>붙어 있어야 하는 거리</b>` : '',
                  gs.some(g => g.꼴 === '나선' && g.반지름)
                    ? `<b class="c-dim">⌁</b> 나선은 도는 모양만 눈대중 — 반지름은 자료로 잰 상한`
                    : gs.some(g => g.꼴 === '나선')
