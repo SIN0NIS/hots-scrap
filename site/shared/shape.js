@@ -553,7 +553,7 @@
                    .filter((v, i, z) => z.indexOf(v) === i).join(' · ');
     const cap = [`한 칸 = 거리 1 · 위쪽이 앞`,
                  `<b class="c-hero">●</b> 영웅 히트박스 ${hr}`,
-                 d > 0 ? `<b class="c-rng">◌</b> 시전 사거리 ${d}` : '',
+                 d > 0 ? `<b class="c-rng">◌</b> ${(w || {})['기준'] === '평타가 닿는 곳' ? '평타 사거리' : '시전 사거리'} ${d}` : '',
                  sr > 0 ? `◌ 이 안에서 찾음 ${sr}` : '',
                  dead > 0 ? `<b class="c-dim">◌</b> 최소 ${dead} 안쪽은 못 씀` : '',
                  farCast ? `시전 사거리 ${farCast} 은 너무 멀어 격자에 안 그림` : '',
