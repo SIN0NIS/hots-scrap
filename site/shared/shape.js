@@ -307,6 +307,16 @@
         const sx = g.옆 || 0;
         body += `<rect x="${px(sx - g.가로 / 2)}" y="${py(g.세로)}" width="${g.가로 * S}" `
               + `height="${g.세로 * S}" ${fill}/>`;
+      } else if (g.꼴 === '직사각형' && g.모임 && g.옆) {
+        /* **옆에서 나와 한 자리로 모이는 길.** 리밍 마력탄은 ±3 에서 나와 커서로 모인다 —
+           평행하게 그리면 "나란히 세 줄이 나간다" 로 읽혀 실제와 다르다.
+           출발점 (옆, 0) 에서 도착점 (0, 모임) 까지를 **기울인 상자**로 긋는다. */
+        const sx = g.옆, to = g.모임;
+        const len = Math.hypot(sx, to), ang = Math.atan2(sx, to) * 180 / Math.PI;
+        const x0 = px(sx), y0 = py(0);
+        body += `<rect x="${(x0 - g.가로 * S / 2).toFixed(1)}" y="${(y0 - len * S).toFixed(1)}" `
+              + `width="${(g.가로 * S).toFixed(1)}" height="${(len * S).toFixed(1)}" ${fill} `
+              + `transform="rotate(${(-ang).toFixed(2)} ${x0.toFixed(1)} ${y0.toFixed(1)})"/>`;
       } else if (g.꼴 === '직사각형') {
         const run = g.쓸기 || 0, sx = g.옆 || 0;
         body += `<rect x="${px(sx - g.가로 / 2)}" y="${py(at + run + g.세로 / 2)}" width="${g.가로 * S}" `
