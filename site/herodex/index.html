@@ -840,9 +840,12 @@ document.addEventListener('error', e => {
 
 (async function boot() {
   document.body.classList.add('noid');     /* 내부 이름은 필요할 때만 */
-  let figOn = '0';
-  try { figOn = localStorage.getItem(FIG_KEY) || '0'; } catch (e) {}
-  if (figOn !== '1') document.body.classList.add('nofig');   /* 기본은 접어 둠 */
+  /* **범위는 기본으로 펴 둔다.** 이 도감의 알맹이가 그림인데 접어 두면, 처음 온 사람은
+     — 특히 머리의 단추가 눈에 잘 안 띄는 손전화에서는 — 범위가 아예 없는 줄 안다.
+     한 영웅에 많아야 열다섯 장이라 펴 둬도 무겁지 않다. 접은 적이 있으면 그 뜻을 따른다. */
+  let figOn = '1';
+  try { figOn = localStorage.getItem(FIG_KEY) || '1'; } catch (e) {}
+  if (figOn !== '1') document.body.classList.add('nofig');
   figsPaint();
   const [r, ri] = await Promise.all([
     fetch('../data/herodex/index.json', { cache: 'no-cache' }),
