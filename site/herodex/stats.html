@@ -85,8 +85,16 @@
   .rank { width:100%; border-collapse:collapse; font-size:12.5px; }
   .rank td { padding:3px 6px; border-bottom:1px solid var(--line); }
   .rank td.i { color:var(--dim); width:34px; text-align:right; }
-  .rank td.h { width:84px; color:var(--dim); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-  .rank td.b { width:38%; }
+  /* **영웅은 글자가 아니라 얼굴로 센다.** 이름을 다 적으면 '정예 타우렌 족장' 같은
+     긴 이름이 줄을 밀어내 정작 값이 안 보인다. 테두리 색이 역할군이다. */
+  .rank td.h { width:30px; padding-right:0; }
+  .rank td.h img { display:block; width:24px; height:24px; border-radius:50%;
+                   background:var(--card2); box-shadow:0 0 0 2px var(--rc, var(--line)); }
+  /* 역할군 여섯 — 밝은 바탕·어두운 바탕 둘 다에서 읽히는 중간 채도로 잡았다 */
+  :root { --r-tank:#4c86ff; --r-bruiser:#15a0a0; --r-healer:#35a853;
+          --r-support:#9a6ad8; --r-melee:#e2564a; --r-ranged:#d9478f; }
+  .rank td.w { max-width:0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .rank td.b { width:42%; }
   .rank td.b span { display:block; height:8px; background:var(--card2); border-radius:4px; overflow:hidden; }
   .rank td.b i { display:block; height:100%; background:var(--bar); }
   .rank td.v { width:84px; text-align:right; font-weight:600; white-space:nowrap; }
@@ -104,9 +112,12 @@
   .lonebtn { border:1px solid var(--line); background:var(--card2); color:var(--dim);
              border-radius:5px; font-size:11px; padding:1px 6px; cursor:pointer; }
   /* 리플레이에서 쓰던 **미니맵 아이콘** — 24px 라 표가 안 무거워진다 */
-  .ht td:first-child img, .rank td.h img { width:20px; height:20px; border-radius:50%;
-       vertical-align:-5px; margin-right:6px; background:var(--card2); }
-  .rank td.h img { width:17px; height:17px; vertical-align:-4px; margin-right:5px; }
+  .ht td:first-child img { width:20px; height:20px; border-radius:50%;
+       vertical-align:-5px; margin-right:6px; background:var(--card2);
+       box-shadow:0 0 0 2px var(--rc, var(--line)); }
+  .rol { display:inline-block; padding:1px 7px; border-radius:999px; font-size:11px;
+         color:#fff; background:var(--rc, var(--dim)); white-space:nowrap; }
+  .pill[data-r] { border-left:4px solid var(--rc, var(--line)); }
   .ht tr.rhead td { background:var(--card2); font-weight:700; color:var(--blue);
        text-align:left; position:sticky; left:0; }
   .ht tr.rhead td span { color:var(--dim); font-weight:400; margin-left:6px; }
@@ -136,7 +147,9 @@
   <div id="catalog"></div>
   <div id="herotab" hidden>
     <div class="tscroll"><table class="ht" id="htab"></table></div>
-    <p class="note">머리글을 누르면 그 칸으로 줄을 세웁니다. 값은 게임 원본에서 그대로 읽은 것입니다.</p>
+    <p class="note">머리글을 누르면 그 칸으로 줄을 세웁니다. 값은 게임 원본에서 그대로 읽은 것이고,
+      <b>평타 초당 피해</b>만 <b>공격력 × 초당 공격</b>으로 낸 값입니다.
+      칸이 <b>–</b> 인 것은 그 영웅에게 해당이 없다는 뜻입니다(평타 부채꼴·스플래시는 가진 영웅만 있습니다).</p>
   </div>
 </div>
 
@@ -251,7 +264,11 @@ function paint(busy) {
   html += `</div><div class="bbody">`;
   if (busy) { html += busy; }
   else {
-    const raw = (ROWS.칸[f.열쇠] || []).slice();
+    /* **역할군을 고르면 순위표도 따라 줄어든다.** 치유사만 켜고 '치유량' 을 열면
+       치유사 16명만 줄 세워진다 — 전체 줄 세우기보다 견줄 거리가 분명하다. */
+    let raw = (ROWS.칸[f.열쇠] || []).slice();
+    if (ROLE_ON.size)
+      raw = raw.filter(([ei]) => ROLE_ON.has(roleOf((ROWS.대상[ei] || [''])[0])));
     const numeric = f.꼴 === '수';
     /* **말 칸은 값별로 몇 개인지가 알맹이다.** 글자순으로 늘어놓으면 "치유, 이동: 돌진"
        이 세 줄 이어질 뿐 아무것도 안 보인다. 값마다 세어 그 수로 줄을 세운다. */
@@ -274,6 +291,14 @@ function paint(busy) {
       document.body.insertAdjacentHTML('beforeend', html);
       return;
     }
+    if (!raw.length) {
+      html += `<p class="note">고른 역할군에는 이 항목을 가진 영웅이 없습니다.</p>`
+            + `</div></div></div>`;
+      const old1 = document.getElementById('pane');
+      if (old1) old1.remove();
+      document.body.insertAdjacentHTML('beforeend', html);
+      return;
+    }
     raw.sort((a, b) => ASC ? a[1] - b[1] : b[1] - a[1]);
     if (raw.length > 1) {
       const vals = raw.map(r => r[1]), hi = Math.max(...vals, 1), n = Math.min(60, vals.length);
@@ -286,8 +311,10 @@ function paint(busy) {
       const e = ROWS.대상[ei] || ['', '', ''];
       // 영웅 수치는 이름 칸이 늘 '기본 수치' 라 군더더기다 — 영웅 이름만 남긴다
       const who = e[1] === '기본 수치' ? '' : e[1];
-      return `<tr><td class="i">${i + 1}</td><td class="h">${FACE(e[0])}${esc(e[0])}</td>`
-        + `<td>${esc(who)}</td>`
+      const tip = who ? `${e[0]} · ${who}` : e[0];
+      return `<tr title="${esc(tip)}"><td class="i">${i + 1}</td>`
+        + `<td class="h" style="${rcv(roleOf(e[0]))}">${FACE(e[0])}</td>`
+        + `<td class="w">${esc(who)}</td>`
         + (numeric ? `<td class="b"><span><i style="width:${Math.round(Math.abs(v) / hi * 100)}%"></i></span></td>` : `<td></td>`)
         + `<td class="v">${fmt(v)}</td></tr>`;
     }).join('') + `</table>`;
@@ -301,15 +328,28 @@ function paint(busy) {
 
 /* ── 영웅 수치표 ───────────────────────────────────────────── */
 let SORT = { k: '생명력', asc: false }, BYROLE = false, ROLE_ON = new Set();
+/* 역할군 색 — 단추·알약·아이콘 테두리가 **같은 색**을 쓴다. 색만 보고도
+   "이 줄은 전사" 가 읽히게 하려는 것이다. */
+const RC = { '전사': 'var(--r-tank)', '투사': 'var(--r-bruiser)', '치유사': 'var(--r-healer)',
+             '지원가': 'var(--r-support)', '근접 암살자': 'var(--r-melee)',
+             '원거리 암살자': 'var(--r-ranged)' };
+const rcv = r => (RC[r] ? `--rc:${RC[r]}` : '');
+/* 영웅 이름 → 얼굴·역할군. `stats.json` 의 영웅 줄이 이미 둘 다 들고 있다. */
+let FACES = null;
+function faces() {
+  if (!FACES) FACES = new Map((DB.영웅 || []).map(h => [h.영웅, h]));
+  return FACES;
+}
+const roleOf = ko => (faces().get(ko) || {}).역할 || '';
 const ICON = h => h._아이콘
   ? `<img src="../shared/icons/${esc(h._아이콘)}" alt="" loading="lazy" decoding="async">` : '';
-/* 순위표의 줄은 **누구 것인지**가 먼저다 — 이름만 적힌 줄에 얼굴을 붙여 준다.
-   영웅 이름 → 작은 아이콘 표는 `stats.json` 의 영웅 줄이 이미 들고 있다. */
-let FACES = null;
+/* **이름을 지우고 얼굴만 남긴다.** 이름은 title 로 남겨 눌러 보면 알 수 있다. */
 function FACE(ko) {
-  if (!FACES) FACES = new Map((DB.영웅 || []).map(h => [h.영웅, h._아이콘]));
-  const f = FACES.get(ko);
-  return f ? `<img src="../shared/icons/${esc(f)}" alt="" loading="lazy" decoding="async">` : '';
+  const h = faces().get(ko) || {};
+  return h._아이콘
+    ? `<img src="../shared/icons/${esc(h._아이콘)}" alt="${esc(ko)}" title="${esc(ko)}" `
+      + `loading="lazy" decoding="async">`
+    : `<span class="rol" style="${rcv(h.역할)}">${esc(ko.slice(0, 2))}</span>`;
 }
 function drawHeroes() {
   const keys = [];
@@ -323,8 +363,9 @@ function drawHeroes() {
                     : String(b[SORT.k] ?? '').localeCompare(String(a[SORT.k] ?? ''), 'ko');
   });
   const cell = (h, k, i) => `<td>${i === 0 ? ICON(h) : ''}`
-    + `${h[k] == null ? '<span style="color:var(--dim)">–</span>' : fmt(h[k])}</td>`;
-  const tr = h => `<tr>${keys.map((k, i) => cell(h, k, i)).join('')}</tr>`;
+    + (k === '역할' && h[k] ? `<span class="rol">${esc(h[k])}</span>`
+       : `${h[k] == null ? '<span style="color:var(--dim)">–</span>' : fmt(h[k])}`) + `</td>`;
+  const tr = h => `<tr style="${rcv(h.역할)}">${keys.map((k, i) => cell(h, k, i)).join('')}</tr>`;
   /* **역할군별로 보기** — 같은 줄 세우기를 역할군 안에서 되풀이한다.
      전사끼리 생명력을 견주는 게 전체 91명 줄 세우기보다 할 말이 많다. */
   let tb;
@@ -350,7 +391,7 @@ function draw() {
   document.getElementById('herotab').hidden = cat;
   document.getElementById('filters').style.display = cat ? '' : 'none';
   document.getElementById('searchrow').style.display = cat ? '' : 'none';
-  document.getElementById('rolerow').style.display = cat ? 'none' : '';
+  document.getElementById('rolerow').style.display = '';   // 두 탭에서 다 쓴다
   cat ? drawCatalog() : drawHeroes();
 }
 
@@ -367,7 +408,7 @@ fetch('../data/herodex/stats.json').then(r => r.json()).then(d => {
                   - d.영웅.filter(h => h.역할 === a).length);
   document.getElementById('roles').innerHTML =
       `<button class="pill on" data-r="*">모든 영웅 ${d.영웅.length}</button> `
-    + rs.map(r => `<button class="pill" data-r="${esc(r)}">${esc(r)} `
+    + rs.map(r => `<button class="pill" data-r="${esc(r)}" style="${rcv(r)}">${esc(r)} `
     + `${d.영웅.filter(h => h.역할 === r).length}</button>`).join(' ')
     + ` <button class="pill" id="group">역할군으로 묶기</button>`;
   draw();
@@ -385,7 +426,7 @@ document.addEventListener('click', e => {
     else ROLE_ON.has(k) ? ROLE_ON.delete(k) : ROLE_ON.add(k);
     document.querySelectorAll('[data-r]').forEach(x => x.classList.toggle('on',
       x.dataset.r === '*' ? !ROLE_ON.size : ROLE_ON.has(x.dataset.r)));
-    drawHeroes();
+    if (TAB === '칸') { drawCatalog(); if (OPEN) paint(); } else drawHeroes();
     return;
   }
   if (e.target.id === 'lone') {
