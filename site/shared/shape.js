@@ -240,7 +240,7 @@
          두 바퀴, 키히라 회전 휩쓸기는 한 바퀴). 시간 손잡이만큼 돌려 놓고, **지나온
          자리**를 옅게 깔아 "여기까지 쓸고 갔다" 를 보인다. */
       const turn = (g.돌기 || 0) * at01;
-      const mark = ((spin && spins(g)) || turn) ? body.length : -1;
+      let mark = -1;                 // 돌릴 자리는 **지나온 자리를 깐 뒤**에 찍는다(아래)
       // `자리: '앞'` 은 **제 거리를 들고 다니는 도형**이다(굴단 부패가 0·3·6 에서 세 번 터진다).
     const at = g.자리 === '앞' ? (g.거리 || 0)
              : g.자리 === '착지' ? d + (g.거리 || 0)
@@ -252,33 +252,36 @@
         ? `fill="${C}" fill-opacity=".30" stroke="${C}" stroke-width="2"`
         : `fill="${C}" fill-opacity=".16" stroke="${C}" stroke-width="1.4"`;
       /* **지나온 자리** — 도는 판정이 여태 쓸고 온 넓이. 도는 조각만 그리면 "앞에
-         부채꼴 하나" 로 보이지만, 실제로 맞는 넓이는 이것이다. 한 바퀴를 넘기면
-         띠가 통째로 찬다. 돌아가는 조각보다 **옅게**, 밑에 깐다. */
+         부채꼴 하나" 로 보이지만, 실제로 맞는 넓이는 이것이다.
+         ⚠ **점선으로 긋지 않는다.** 이 그림에서 점선은 '거리 눈금'(시전 사거리·평타
+         견줌)이 쓰는 표기라, 지나온 자리를 점선으로 두르면 "이것도 무슨 사거리인가"
+         로 읽힌다. 옅게 채우고 **가는 실선**으로만 두른다 — 돌아가는 조각(진한 실선)의
+         꼬리라는 게 한눈에 보이게. 안쪽이 빈 띠는 **고리 모양 다각형**으로 긋는다.
+         (속을 덮는 원을 겹쳐 놓으면 그 안의 눈금과 영웅이 통째로 가려진다.) */
       if (turn) {
         const R0 = g.꼴 === '부채꼴' ? g.반지름 : (g.세로 || 0);
         const In = g.꼴 === '부채꼴' ? (g.안쪽 || 0) : 0;
         const half = (g.꼴 === '부채꼴' ? Math.min(g.각도 || 0, 360) : 0) / 2;
-        const a0 = Math.min(0, turn) - half, a1 = Math.max(0, turn) + half;
-        const full = a1 - a0 >= 359.5;
+        const a0 = Math.min(0, turn) - half;
+        const span = Math.min(Math.max(0, turn) + half - a0, 360);
         const ring = (R, from, to) => {
           const q = [];
           for (let t = from; t <= to + 0.01; t += 4)
             q.push([R * Math.sin(t * Math.PI / 180), R * Math.cos(t * Math.PI / 180)]);
           return q;
         };
-        if (R0 > 0 && full) {
-          body += `<circle cx="${px(0)}" cy="${py(0)}" r="${R0 * S}" fill="${C}" `
-                + `fill-opacity=".10" stroke="${C}" stroke-width="1" stroke-dasharray="4 3"/>`
-                + (In ? `<circle cx="${px(0)}" cy="${py(0)}" r="${In * S}" fill="var(--card2)" `
-                      + `stroke="${C}" stroke-width="1" stroke-dasharray="4 3"/>` : '');
-        } else if (R0 > 0) {
-          const out = ring(R0, a0, a1);
-          const back = In ? ring(In, a0, a1).reverse() : [[0, 0]];
+        if (R0 > 0) {
+          const out = ring(R0, a0, a0 + span);
+          const back = In ? ring(In, a0, a0 + span).reverse() : [[0, 0]];
           body += `<polygon points="${out.concat(back).map(q2 => px(q2[0]) + ',' + py(q2[1])).join(' ')}" `
-                + `fill="${C}" fill-opacity=".10" stroke="${C}" stroke-width="1" `
-                + `stroke-dasharray="4 3"/>`;
+                + `fill="${C}" fill-opacity=".12" stroke="${C}" stroke-width="1" `
+                + `stroke-opacity=".55"/>`;
         }
       }
+      /* ⚠ **지나온 자리는 돌면 안 된다.** 아래 `rotate` 는 여기서부터 끝까지를 감싸므로,
+         표식을 띠보다 앞에 찍으면 **띠까지 같이 돌아가** 조각과 어긋난 자리에 깔린다
+         (180도 돌린 피닉스 Q 에서 띠가 반대쪽에 깔렸다). 띠를 다 깐 뒤에 찍는다. */
+      mark = ((spin && spins(g)) || turn) ? body.length : -1;
       if (g.꼴 === '자리들') {
         // 여러 지점에 차례로 생기는 기술(잘아타스 공허 걸음의 삼각형). 자리를 잇고 번호를 붙인다.
         const pts = (g.점 || []).map(p => px(p[0]) + ',' + py(p[1]));
