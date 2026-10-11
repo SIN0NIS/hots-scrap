@@ -102,6 +102,23 @@
     const farCast = d > 30 ? d : 0;
     if (farCast) d = 0;
     const hr = (HERO && HERO.기본 && HERO.기본.반지름) || 0.6875;
+    /* **사거리가 무제한인 기술**(노바 정밀 타격 · 한조 용의 화살 · 켈투자드 어둠의 균열 …).
+       숫자가 없으니 `도형거리` 가 비어 **제 발밑에** 그려졌다 — "내 둘레에 터지는 기술"
+       로 읽힌다. 실제로는 지도 어디에나 놓인다. 본체에서 범위까지 **끊긴 선**으로 잇고
+       끝에 '무제한' 이라고 적는다. 거리를 지어내지 않으려고 **선을 끊어** 둔다 —
+       띄운 만큼은 그림을 읽히게 하려는 자리이지 잰 거리가 아니다. */
+    const freeCast = typeof w['도형거리'] !== 'number' && !farCast
+                  && /무제한|전역/.test(String(w['사거리'] || ''))
+                  && gs.some(g0 => g0.자리 === '착지');
+    let freeR = 0;
+    if (freeCast) {
+      gs.forEach(g0 => {
+        if (g0.자리 !== '착지') return;
+        freeR = Math.max(freeR, Number(g0.반지름) || 0, (Number(g0.세로) || 0) / 2,
+                         (Number(g0.가로) || 0) / 2);
+      });
+      d = freeR + hr + 2.6;
+    }
     let x0 = -hr, x1 = hr, y0 = -hr, y1 = hr;
     let tmp = null;        // 도는 도형은 따로 모아 **제 기준점에서 한 바퀴** 돌려 담는다
     const put = (x, y) => {
@@ -221,7 +238,21 @@
     // 시전 사거리는 '누구에게' 가 아니라 '어디까지 찍나' 라서 색을 안 쓴다 — 늘 금색.
     const RC = 'var(--gold)';
     // 시전 사거리 — 어디까지 찍을 수 있나(영웅 중심). 공격 범위는 그 **끝**에 그린다.
-    if (d > 0) {
+    // 무제한인 기술은 **그 동그라미를 안 그린다** — 띄운 거리는 잰 값이 아니다.
+    if (freeCast) {
+      const x = px(0), yA = py(hr * 1.15), yB = py(d - freeR), yM = (yA + yB) / 2;
+      body += `<line x1="${x}" y1="${yA}" x2="${x}" y2="${(yM + 7).toFixed(1)}" `
+            + `stroke="var(--gold)" stroke-width="1.2" stroke-dasharray="4 4" opacity=".8"/>`
+            + `<line x1="${x}" y1="${(yM - 7).toFixed(1)}" x2="${x}" y2="${yB}" `
+            + `stroke="var(--gold)" stroke-width="1.2" stroke-dasharray="4 4" opacity=".8"/>`
+            // 끊긴 자리 — 빗금 둘로 "여기는 잰 거리가 아니다" 를 보인다
+            + `<line x1="${x - 5}" y1="${(yM + 4).toFixed(1)}" x2="${x + 5}" y2="${(yM - 1).toFixed(1)}" `
+            + `stroke="var(--gold)" stroke-width="1.4"/>`
+            + `<line x1="${x - 5}" y1="${(yM + 1).toFixed(1)}" x2="${x + 5}" y2="${(yM - 4).toFixed(1)}" `
+            + `stroke="var(--gold)" stroke-width="1.4"/>`
+            + `<text x="${x + 8}" y="${(yM + 3).toFixed(1)}" font-size="9" fill="var(--gold)">`
+            + `사거리 무제한</text>`;
+    } else if (d > 0) {
       body += `<circle cx="${px(0)}" cy="${py(0)}" r="${d * S}" fill="none" stroke="${RC}" `
             + `stroke-width="1.2" stroke-dasharray="5 4"/>`
             + `<line x1="${px(0)}" y1="${py(0)}" x2="${px(0)}" y2="${py(d)}" stroke="${RC}" `
@@ -590,7 +621,8 @@
                    .filter((v, i, z) => z.indexOf(v) === i).join(' · ');
     const cap = [`한 칸 = 거리 1 · 위쪽이 앞`,
                  `<b class="c-hero">●</b> 영웅 히트박스 ${hr}`,
-                 d > 0 ? `<b class="c-rng">◌</b> ${(w || {})['기준'] === '평타가 닿는 곳' ? '평타 사거리' : '시전 사거리'} ${d}` : '',
+                 freeCast ? `<b class="c-rng">⇢</b> 사거리 <b>무제한</b> — 지도 어디에나 놓는다`
+                 : d > 0 ? `<b class="c-rng">◌</b> ${(w || {})['기준'] === '평타가 닿는 곳' ? '평타 사거리' : '시전 사거리'} ${d}` : '',
                  sr > 0 ? `◌ 이 안에서 찾음 ${sr}` : '',
                  dead > 0 ? `<b class="c-dim">◌</b> 최소 ${dead} 안쪽은 못 씀` : '',
                  farCast ? `시전 사거리 ${farCast} 은 너무 멀어 격자에 안 그림` : '',
