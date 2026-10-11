@@ -75,6 +75,12 @@
        붙은 장판**이 같이 돈다 — 둘은 저마다 제 기준점에서 돈다. */
     /* **끌기 축이 있나로 세면 안 된다.** 메이 빙벽·줄 해골 마법학자·알라라크 염동력은
        끌어서 쓰는데 축 도형이 없어 다이얼이 빠져 있었다. `지정` 이 '끌어서' 면 다 붙인다. */
+    /* **모으는 시간 손잡이.** 알라라크 돌진·초 주먹은 모은 만큼 멀리 가고,
+       요한나 망치는 도는 동안 벌어진다 — 셋 다 '시간이 흐르면 어떻게 되나' 다.
+       0(안 모음) ~ 1(끝까지)로 받아 도형이 제 몫을 줄인다. */
+    const chg = (w || {})['모으기'];
+    const at01 = (chg && typeof opt.모음 === 'number')
+                 ? Math.max(0, Math.min(1, opt.모음)) : 1;
     const canSpin = gs0.some(g0 => g0.꼴 === '끌기')
                  || String((w || {})['지정'] || '').startsWith('끌어서');
     const spin = (canSpin && typeof opt.방향 === 'number') ? ((opt.방향 % 360) + 360) % 360 : 0;
@@ -120,6 +126,7 @@
       else if (g.꼴 === '둘레') { put(-g.반지름, -g.반지름); put(g.반지름, g.반지름); }
       else if (g.꼴 === '나선') { const R = 3.2; put(-R, -R); put(R, R); }
       else if (g.꼴 === '모르는 이동') { put(-1, 0); put(1, 6); }
+      else if (g.꼴 === '모아 쏘는 이동') { put(-1.5, 0); put(1.5, g.최대 + 1); }
       else if (g.꼴 === '튕김' || g.꼴 === '뿌림') { put(-g.반지름, at - g.반지름); put(g.반지름, at + g.반지름); }
       // 끌 수 있는 거리는 25~30 이나 되기도 한다(데커드 고서 회오리·라그나로스 유성).
       // 그대로 담으면 격자가 깨알이 되니 **그리는 길이는 12 까지만** 담고 숫자로 적는다.
@@ -406,6 +413,24 @@
                 + `height="${g.세로 * S}" fill="none" stroke="${C}" stroke-width="1" `
                 + `stroke-dasharray="4 3"/>`;
       }
+      else if (g.꼴 === '모아 쏘는 이동') {
+        /* **모은 만큼 멀리 간다.** 자료에 공식이 그대로 있다(알라라크는 누적기
+           `3 + 0.6354 × 횟수`, 최대 24번). 지금 모은 만큼은 **실선**, 끝까지
+           모았을 때는 **점선**으로 남겨 '얼마나 더 갈 수 있나' 가 보이게 한다. */
+        const lo = g.최소, hi = g.최대, now = lo + (hi - lo) * at01;
+        const cx3 = px(0), y0b = py(0);
+        body += `<line x1="${cx3}" y1="${y0b}" x2="${cx3}" y2="${py(hi).toFixed(1)}" `
+              + `stroke="${C}" stroke-width="1.4" stroke-dasharray="4 5" opacity=".45"/>`
+              + `<line x1="${cx3}" y1="${y0b}" x2="${cx3}" y2="${py(now).toFixed(1)}" `
+              + `stroke="${C}" stroke-width="3" opacity=".95"/>`
+              + `<polygon points="${cx3},${(py(now) - 9).toFixed(1)} `
+              + `${(cx3 - 5.5).toFixed(1)},${py(now).toFixed(1)} `
+              + `${(cx3 + 5.5).toFixed(1)},${py(now).toFixed(1)}" fill="${C}"/>`
+              + `<text x="${cx3 + 9}" y="${(py(now) + 4).toFixed(1)}" font-size="10" `
+              + `fill="${C}">${Math.round(now * 100) / 100}</text>`
+              + `<text x="${cx3 + 9}" y="${(py(hi) + 4).toFixed(1)}" font-size="9" `
+              + `fill="var(--dim)">끝까지 ${hi}</text>`;
+      }
       else if (g.꼴 === '모르는 이동') {
         /* **거리가 자료에 없는 돌진.** 게임 설명이 "돌진 거리는 … 에 비례" 라고
            스스로 말한다 — 고정된 수가 없다. 안 그리면 '범위 없는 기술' 로 읽히니
@@ -430,7 +455,7 @@
         const pitch = Math.atan2(g.바깥 || 0.6, g.옆 || 1);    // 벌어지는 기울기
         const r0 = Math.max(hr, 0.5), R = 3.2, turns = 2;
         const pts = [];
-        for (let t = 0; t <= 1.0001; t += 0.02) {
+        for (let t = 0; t <= at01 + 0.0001; t += 0.02) {
           const th = t * turns * 2 * Math.PI;
           const rr = r0 + (R - r0) * t;                       // 고르게 벌어지게
           pts.push(`${px(rr * Math.sin(th)).toFixed(1)},${py(rr * Math.cos(th)).toFixed(1)}`);
@@ -524,7 +549,7 @@
                  yard.map(([k, r]) => `<b class="c-yard">⌁</b> ${esc(k)} ${r}`).join(' · ')]
                 .filter(Boolean).join(' · ');
     let bar = '';
-    if ((span || canSpin) && !opt.막대끔) {
+    if ((span || canSpin || chg) && !opt.막대끔) {
       const cur = atTo === null ? (span ? span[1] : 0) : atTo;
       const id = 'cv' + (++SEQ);
       REG.set(id, { w: w, opt: opt });
@@ -540,6 +565,15 @@
               + `<button type="button" class="cvb" data-d="1" aria-label="멀게">+</button>`
               + `<span class="cvn">${Math.round(cur * 100) / 100}</span>`;
       }
+      if (chg) {
+        /* **시간 손잡이** — 왼쪽 끝이 '안 모음', 오른쪽 끝이 '끝까지'.
+           초를 아는 것(알라라크 1.5초 · 요한나 3.5초)은 초로, 모르는 것(초 주먹)은
+           백분율로 적는다. 0 에서 끝까지 밀어 보면 시간에 따라 어떻게 되는지 보인다. */
+        inner += `<span class="cvl">${chg.도는중 ? '도는 중' : '모으기'}</span>`
+               + `<input type="range" class="cvt" min="0" max="1" step="any" `
+               + `value="${at01}" aria-label="${chg.도는중 ? '도는 시간' : '모으는 시간'}">`
+               + `<span class="cvn cvs">${chgLabel(chg, at01)}</span>`;
+      }
       if (canSpin) inner += dialHTML(spin);
       bar = `<div class="cv" data-cv="${id}" data-deg="${spin}">${inner}</div>`;
     }
@@ -553,6 +587,9 @@
      `<input type="range">` 를 쓰면 마우스 끌기·손가락 밀기·화살표 키가 공짜로 따라온다. */
   let SEQ = 0;
   const REG = new Map();
+  const chgLabel = (c, t) => (c && c.초)
+    ? `${Math.round(t * c.초 * 100) / 100}초`
+    : `${Math.round(t * 100)}%`;
 
   /* **시계 같은 방향 다이얼.** 12시가 앞이고 시계 방향으로 돈다. 바늘을 잡아 끌거나
      (마우스·손가락) 눈금을 눌러도 되고, 포커스를 주면 화살표 키로 5°씩 움직인다. */
@@ -608,6 +645,8 @@
        사라져 손가락이 끊기고, 다시 그릴 때마다 등록표에 새 자리가 쌓인다. */
     const t = document.createElement('div');
     const o = Object.assign({}, m.opt, { 막대끔: true, 방향: Number(box.dataset.deg) || 0 });
+    const tr = box.querySelector('.cvt');
+    if (tr) o.모음 = Number(tr.value);
     if (typeof at === 'number') o.모임 = at;
     t.innerHTML = shapeSVG(m.w, o);
     const ns = t.querySelector('svg'), nc = t.querySelector('.cap');
@@ -621,7 +660,14 @@
     g.__hotsShapeWired = true;
     g.addEventListener('input', e => {
       const r = e.target.closest && e.target.closest('.cvr');
-      if (r) redraw(r.closest('.cv'), Number(r.value));
+      if (r) { redraw(r.closest('.cv'), Number(r.value)); return; }
+      const t = e.target.closest && e.target.closest('.cvt');
+      if (t) {
+        const box = t.closest('.cv'), m = REG.get(box.dataset.cv);
+        const lab = box.querySelector('.cvs');
+        if (lab && m) lab.textContent = chgLabel((m.w || {})['모으기'], Number(t.value));
+        redraw(box);
+      }
     }, true);
     g.addEventListener('pointerdown', e => {
       const d0 = e.target.closest && e.target.closest('.cvd');

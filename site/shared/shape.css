@@ -27,3 +27,9 @@
 .fig .cvd:active { cursor:grabbing; }
 .fig .cvd:focus-visible { outline:2px solid var(--gold); outline-offset:2px; }
 .fig .cvw { min-width:3.4em; color:var(--fg); opacity:.85; }
+
+/* 시간 손잡이 — 모으는 동안 어떻게 되는지 밀어 본다 */
+.fig .cvt { flex:1; min-width:60px; height:22px; accent-color:var(--hit); cursor:pointer;
+            touch-action:pan-y; }
+.fig .cvl { flex:0 0 auto; color:var(--dim); font-size:11px; }
+.fig .cvs { min-width:3.2em; color:var(--hit); }
