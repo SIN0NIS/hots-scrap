@@ -20,3 +20,10 @@
 .fig .cvb:active { background:var(--line); }
 .fig .cvn { flex:0 0 auto; min-width:2.6em; text-align:right; color:var(--gold);
             font-size:11px; font-variant-numeric:tabular-nums; }
+
+/* 시계 같은 방향 다이얼 — 끌어서 놓는 기술은 플레이어가 방향을 정한다. */
+.fig .cvd { flex:0 0 auto; cursor:grab; touch-action:none; border-radius:50%;
+            background:var(--card2); }
+.fig .cvd:active { cursor:grabbing; }
+.fig .cvd:focus-visible { outline:2px solid var(--gold); outline-offset:2px; }
+.fig .cvw { min-width:3.4em; color:var(--fg); opacity:.85; }
