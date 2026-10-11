@@ -118,6 +118,8 @@
       else if (g.꼴 === '부채꼴') { put(0, at); arcPts(g.반지름, g.각도, at).forEach(p => put(p[0], p[1])); }
       else if (g.꼴 === '이동') { put(0, 0); put(0, g.거리); }
       else if (g.꼴 === '둘레') { put(-g.반지름, -g.반지름); put(g.반지름, g.반지름); }
+      else if (g.꼴 === '나선') { const R = 3.2; put(-R, -R); put(R, R); }
+      else if (g.꼴 === '모르는 이동') { put(-1, 0); put(1, 6); }
       else if (g.꼴 === '튕김' || g.꼴 === '뿌림') { put(-g.반지름, at - g.반지름); put(g.반지름, at + g.반지름); }
       // 끌 수 있는 거리는 25~30 이나 되기도 한다(데커드 고서 회오리·라그나로스 유성).
       // 그대로 담으면 격자가 깨알이 되니 **그리는 길이는 12 까지만** 담고 숫자로 적는다.
@@ -404,6 +406,45 @@
                 + `height="${g.세로 * S}" fill="none" stroke="${C}" stroke-width="1" `
                 + `stroke-dasharray="4 3"/>`;
       }
+      else if (g.꼴 === '모르는 이동') {
+        /* **거리가 자료에 없는 돌진.** 게임 설명이 "돌진 거리는 … 에 비례" 라고
+           스스로 말한다 — 고정된 수가 없다. 안 그리면 '범위 없는 기술' 로 읽히니
+           방향만 점선 화살표로 긋고, 길이는 믿지 말라고 글에 적는다. */
+        const L2 = 5.5 * S, cx2 = px(0), cy2 = py(0);
+        body += `<line x1="${cx2}" y1="${cy2}" x2="${cx2}" y2="${(cy2 - L2).toFixed(1)}" `
+              + `stroke="${C}" stroke-width="2" stroke-dasharray="6 5" opacity=".85"/>`
+              + `<polygon points="${cx2},${(cy2 - L2 - 8).toFixed(1)} `
+              + `${(cx2 - 5).toFixed(1)},${(cy2 - L2).toFixed(1)} `
+              + `${(cx2 + 5).toFixed(1)},${(cy2 - L2).toFixed(1)}" fill="${C}" opacity=".85"/>`
+              + `<text x="${cx2 + 8}" y="${(cy2 - L2 / 2).toFixed(1)}" font-size="9" `
+              + `fill="var(--dim)">거리는 자료에 없음</text>`
+              + (g.까닭 ? `<text x="${cx2 + 8}" y="${(cy2 - L2 / 2 + 12).toFixed(1)}" `
+                 + `font-size="9" fill="var(--dim)">${esc(g.까닭)} 늘어남</text>` : '');
+      }
+      else if (g.꼴 === '나선') {
+        /* **돌며 벌어지는 길**(요한나 축복받은 망치 · 들창코 제어 불가).
+           벌어지는 **비율**(옆 : 바깥)은 자료가 주지만 **얼마나 멀리까지**는 자료에
+           없다 — `ApplyForce` 는 힘이라 실제 궤적은 엔진이 가속·회전율로 푼다.
+           그래서 점선으로 긋고 '눈대중' 이라고 글에 못 박는다. 안 그리면
+           "제자리에 원 하나" 로 읽히고, 거리까지 그리면 없는 수를 지어내는 셈이다. */
+        const pitch = Math.atan2(g.바깥 || 0.6, g.옆 || 1);    // 벌어지는 기울기
+        const r0 = Math.max(hr, 0.5), R = 3.2, turns = 2;
+        const pts = [];
+        for (let t = 0; t <= 1.0001; t += 0.02) {
+          const th = t * turns * 2 * Math.PI;
+          const rr = r0 + (R - r0) * t;                       // 고르게 벌어지게
+          pts.push(`${px(rr * Math.sin(th)).toFixed(1)},${py(rr * Math.cos(th)).toFixed(1)}`);
+        }
+        body += `<polyline points="${pts.join(' ')}" fill="none" stroke="${C}" `
+              + `stroke-width="1.6" stroke-dasharray="5 4" opacity=".9"/>`;
+        // 판정 크기는 **자료 그대로** — 끝자리에 실선 동그라미로 보여 준다
+        if (g.판정)
+          body += `<circle cx="${px(0)}" cy="${py(R)}" r="${g.판정 * S}" ${fill}/>`;
+        body += `<text x="${px(0) + 5}" y="${py(R) - g.판정 * S - 4}" font-size="9" `
+              + `fill="${C}" opacity=".95">판정 ${g.판정 || ''}</text>`
+              + `<text x="${px(-R)}" y="${py(-R) + 11}" font-size="9" fill="var(--dim)">`
+              + `나선은 눈대중 — 벌어지는 비율만 자료</text>`;
+      }
       else if (g.꼴 === '고리')
         body += `<circle cx="${px(0)}" cy="${py(at)}" r="${g.반지름 * S}" ${fill}/>`
               + `<circle cx="${px(0)}" cy="${py(at)}" r="${g.안쪽 * S}" fill="var(--card2)" `
@@ -476,6 +517,10 @@
                  gs.some(g => g.편 === '둘 다') ? `<b class="c-both">■</b> 적·아군 모두` : '',
                  names ? `범위 ${esc(names)}` : '',
                  gs.some(g => g.직격) ? `진한 쪽은 한 명만 맞는 직격` : '',
+                 gs.some(g => g.꼴 === '나선')
+                   ? `<b class="c-dim">⌁</b> 나선은 눈대중 — 뻗는 거리는 자료에 없다` : '',
+                 gs.some(g => g.꼴 === '모르는 이동')
+                   ? `<b class="c-dim">⌁</b> 화살표는 방향만 — 거리는 자료에 없다` : '',
                  yard.map(([k, r]) => `<b class="c-yard">⌁</b> ${esc(k)} ${r}`).join(' · ')]
                 .filter(Boolean).join(' · ');
     let bar = '';
