@@ -66,11 +66,12 @@
                  : null;      // 글에 3.45025157474266 이 그대로 나오면 안 된다
     const gs0 = (w || {})['도형'] || [];
     const gs = atTo === null ? gs0
-             : gs0.map(g0 => (g0.모임 ? Object.assign({}, g0, { 모임: atTo, 쓸기: atTo }) : g0));
+             : gs0.map(g0 => (g0.모임 ? Object.assign({}, g0, { 모임: atTo }) : g0));
     /* 격자는 **맨 끝까지 펼친 모습**으로 재 둔다. 짧게 당길 때마다 칸이 다시 잡히면
        그림판이 300px → 58px 로 쪼그라들어 아래 글이 손가락 밑에서 밀려 올라간다.
        틀을 붙잡아 두면 '짧아졌다' 는 것도 눈으로 바로 보인다. */
-    const gsExt = span ? gs0 : gs;
+    const gsExt = span ? gs0.concat(gs0.map(g0 =>
+                    g0.모임 ? Object.assign({}, g0, { 모임: span[0] }) : g0)) : gs;
     // 장판이 없어도 **찾는 범위**만 있으면 그릴 값이 있다(겐지 튕겨내기 `Radius 7.0`)
     const seekR = Number((w || {})['찾는 반지름']) || 0;
     if (!gs.length && !seekR) return '';
@@ -91,7 +92,9 @@
     gsExt.forEach(g => {
       // 쓸고 가는 판정은 영웅에게서 출발한다(기술이 떨어지는 자리가 아니다)
       // `자리: '앞'` 은 **제 거리를 들고 다니는 도형**이다(굴단 부패가 0·3·6 에서 세 번 터진다).
-    const at = g.자리 === '앞' ? (g.거리 || 0) : (g.자리 === '원점' || g.쓸기) ? 0 : d;
+    const at = g.자리 === '앞' ? (g.거리 || 0)
+             : g.자리 === '착지' ? d + (g.거리 || 0)
+             : (g.자리 === '원점' || g.쓸기) ? 0 : d;
       if (g.꼴 === '다각형' || g.꼴 === '자리들') (g.점 || []).forEach(p => put(p[0], p[1]));
       else if (g.꼴 === '부채꼴') { put(0, at); arcPts(g.반지름, g.각도, at).forEach(p => put(p[0], p[1])); }
       else if (g.꼴 === '이동') { put(0, 0); put(0, g.거리); }
@@ -112,6 +115,12 @@
       else if (g.꼴 === '직사각형' && g.각) {
         const d2 = Math.hypot(g.가로, g.세로) / 2;
         put(-d2, at - d2); put(d2, at + d2);
+      }
+      else if (g.꼴 === '직사각형' && g.모임) {
+        // 가까이 찍으면 일찍 엇갈린 뒤 **훨씬 옆까지** 뻗는다 — 도착점을 담아야 안 잘린다
+        const sx = g.옆 || 0, L = g.쓸기 || 0, h = Math.hypot(sx, g.모임) || 1;
+        const ex = sx + L * (-sx) / h, ey = L * g.모임 / h, m = g.세로 / 2 + g.가로 / 2;
+        put(sx - m, -m); put(sx + m, m); put(ex - m, ey - m); put(ex + m, ey + m);
       }
       else if (g.꼴 === '직사각형') {
         // `옆` 은 **나란히 나가는 줄**의 좌우 어긋남이다(리밍 마력탄 -3 · 0 · 3)
@@ -185,7 +194,9 @@
                + `fill="${SC}" opacity=".9">이 안에서 찾음</text>` : '');
     gs.forEach(g => {
       // `자리: '앞'` 은 **제 거리를 들고 다니는 도형**이다(굴단 부패가 0·3·6 에서 세 번 터진다).
-    const at = g.자리 === '앞' ? (g.거리 || 0) : (g.자리 === '원점' || g.쓸기) ? 0 : d;
+    const at = g.자리 === '앞' ? (g.거리 || 0)
+             : g.자리 === '착지' ? d + (g.거리 || 0)
+             : (g.자리 === '원점' || g.쓸기) ? 0 : d;
       // **색은 '누구에게' 한 가지만 말한다** — 빨강 적 · 파랑 아군 · 보라 둘 다.
       // '찾는 범위인가' 는 색이 아니라 **점선**이 말한다. 한 명만 맞는 직격은 진하게.
       const C = SIDEC(g.편);
@@ -320,20 +331,23 @@
         const sx = g.옆 || 0;
         body += `<rect x="${px(sx - g.가로 / 2)}" y="${py(g.세로)}" width="${g.가로 * S}" `
               + `height="${g.세로 * S}" ${fill}/>`;
-      } else if (g.꼴 === '직사각형' && g.모임 && !g.옆) {
-        // 가운데 줄 — 기울지 않지만 **함께 짧아져야** 한다
-        body += `<rect x="${px(-g.가로 / 2)}" y="${py(g.모임)}" width="${(g.가로 * S).toFixed(1)}" `
-              + `height="${(g.모임 * S).toFixed(1)}" ${fill}/>`;
       } else if (g.꼴 === '직사각형' && g.모임 && g.옆) {
-        /* **옆에서 나와 한 자리로 모이는 길.** 리밍 마력탄은 ±3 에서 나와 커서로 모인다 —
-           평행하게 그리면 "나란히 세 줄이 나간다" 로 읽혀 실제와 다르다.
-           출발점 (옆, 0) 에서 도착점 (0, 모임) 까지를 **기울인 상자**로 긋는다. */
+        /* **옆에서 나와 찍은 자리에서 엇갈리는 길.** 리밍 마력탄은 ±3 에서 나와 커서를
+           겨누는데, **날아가는 거리는 12 로 늘 같다** — 커서에서 멈추지 않고 그대로
+           지나쳐 간다. 그래서 바뀌는 것은 길이가 아니라 **겨누는 각도**뿐이고,
+           가까이 찍으면 일찍 엇갈린 뒤 양옆으로 크게 벌어진다.
+           길이를 커서까지로 줄여 그리면 "가까이 찍으면 조금만 난다" 로 잘못 읽힌다. */
         const sx = g.옆, to = g.모임;
-        const len = Math.hypot(sx, to), ang = Math.atan2(sx, to) * 180 / Math.PI;
+        const len = g.쓸기 || Math.hypot(sx, to);
+        const ang = Math.atan2(sx, to) * 180 / Math.PI;
         const x0 = px(sx), y0 = py(0);
         body += `<rect x="${(x0 - g.가로 * S / 2).toFixed(1)}" y="${(y0 - len * S).toFixed(1)}" `
               + `width="${(g.가로 * S).toFixed(1)}" height="${(len * S).toFixed(1)}" ${fill} `
               + `transform="rotate(${(-ang).toFixed(2)} ${x0.toFixed(1)} ${y0.toFixed(1)})"/>`;
+        if (sx > 0)        // 한 번만 — 세 줄이 만나는 자리
+          body += `<circle cx="${px(0)}" cy="${py(to)}" r="4" fill="none" stroke="${C}" `
+                + `stroke-width="1.6"/><text x="${px(0) + 7}" y="${py(to) + 3}" font-size="9" `
+                + `fill="${C}" opacity=".95">여기서 엇갈림</text>`;
       } else if (g.꼴 === '직사각형') {
         const run = g.쓸기 || 0, sx = g.옆 || 0;
         body += `<rect x="${px(sx - g.가로 / 2)}" y="${py(at + run + g.세로 / 2)}" width="${g.가로 * S}" `
