@@ -57,7 +57,20 @@
     // 예전에는 도감의 전역 변수를 그대로 집어 썼다. 그래서 이 그림은 도감 안에서만 살 수
     // 있었고, 범위만 모아 보는 탭을 만들려면 코드를 베끼는 수밖에 없었다.
     const HERO = opt.hero || null, YARD = opt.yard || {};
-    const gs = (w || {})['도형'] || [];
+    /* **찍는 자리를 밀어 볼 수 있는 기술**(리밍 마력탄)은 끝점을 밖에서 받는다.
+       가까이 찍으면 세 줄이 크게 벌어지고 멀리 찍으면 거의 나란해진다 — 한 장면만
+       그려 두면 그 변화가 안 보인다. */
+    const span = (w || {})['모임 범위'];
+    const atTo = (typeof opt.모임 === 'number' && span)
+                 ? Math.round(Math.max(span[0], Math.min(span[1], opt.모임)) * 100) / 100
+                 : null;      // 글에 3.45025157474266 이 그대로 나오면 안 된다
+    const gs0 = (w || {})['도형'] || [];
+    const gs = atTo === null ? gs0
+             : gs0.map(g0 => (g0.모임 ? Object.assign({}, g0, { 모임: atTo, 쓸기: atTo }) : g0));
+    /* 격자는 **맨 끝까지 펼친 모습**으로 재 둔다. 짧게 당길 때마다 칸이 다시 잡히면
+       그림판이 300px → 58px 로 쪼그라들어 아래 글이 손가락 밑에서 밀려 올라간다.
+       틀을 붙잡아 두면 '짧아졌다' 는 것도 눈으로 바로 보인다. */
+    const gsExt = span ? gs0 : gs;
     // 장판이 없어도 **찾는 범위**만 있으면 그릴 값이 있다(겐지 튕겨내기 `Radius 7.0`)
     const seekR = Number((w || {})['찾는 반지름']) || 0;
     if (!gs.length && !seekR) return '';
@@ -75,7 +88,7 @@
         pts.push([R * Math.sin(t * Math.PI / 180), cy + R * Math.cos(t * Math.PI / 180)]);
       return pts;
     };
-    gs.forEach(g => {
+    gsExt.forEach(g => {
       // 쓸고 가는 판정은 영웅에게서 출발한다(기술이 떨어지는 자리가 아니다)
       // `자리: '앞'` 은 **제 거리를 들고 다니는 도형**이다(굴단 부패가 0·3·6 에서 세 번 터진다).
     const at = g.자리 === '앞' ? (g.거리 || 0) : (g.자리 === '원점' || g.쓸기) ? 0 : d;
@@ -307,6 +320,10 @@
         const sx = g.옆 || 0;
         body += `<rect x="${px(sx - g.가로 / 2)}" y="${py(g.세로)}" width="${g.가로 * S}" `
               + `height="${g.세로 * S}" ${fill}/>`;
+      } else if (g.꼴 === '직사각형' && g.모임 && !g.옆) {
+        // 가운데 줄 — 기울지 않지만 **함께 짧아져야** 한다
+        body += `<rect x="${px(-g.가로 / 2)}" y="${py(g.모임)}" width="${(g.가로 * S).toFixed(1)}" `
+              + `height="${(g.모임 * S).toFixed(1)}" ${fill}/>`;
       } else if (g.꼴 === '직사각형' && g.모임 && g.옆) {
         /* **옆에서 나와 한 자리로 모이는 길.** 리밍 마력탄은 ±3 에서 나와 커서로 모인다 —
            평행하게 그리면 "나란히 세 줄이 나간다" 로 읽혀 실제와 다르다.
@@ -396,8 +413,63 @@
                  gs.some(g => g.직격) ? `진한 쪽은 한 명만 맞는 직격` : '',
                  yard.map(([k, r]) => `<b class="c-yard">⌁</b> ${esc(k)} ${r}`).join(' · ')]
                 .filter(Boolean).join(' · ');
+    let bar = '';
+    if (span && !opt.막대끔) {
+      const cur = atTo === null ? span[1] : atTo;
+      const id = 'cv' + (++SEQ);
+      REG.set(id, { w: w, opt: opt, at: cur });
+      /* `step="any"` — 눈금에 걸리지 않아 **끌기가 매끄럽고 맨 끝까지 닿는다.**
+         딱 떨어지는 눈금을 주면 0.4375 + 0.5k 격자에 묶여 최대 12 에 못 간다.
+         +/− 단추가 쓸 걸음은 따로 들려 준다. */
+      const step = Math.max(0.25, Math.round((span[1] - span[0]) / 16 * 4) / 4);
+      bar = `<div class="cv" data-cv="${id}">`
+          + `<button type="button" class="cvb" data-d="-1" aria-label="가깝게">−</button>`
+          + `<input type="range" class="cvr" min="${span[0]}" max="${span[1]}" step="any" `
+          + `data-s="${step}" value="${cur}" aria-label="찍는 자리까지의 거리">`
+          + `<button type="button" class="cvb" data-d="1" aria-label="멀게">+</button>`
+          + `<span class="cvn">${Math.round(cur * 100) / 100}</span></div>`;
+    }
     return `<div class="fig"><svg viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" `
-         + `aria-label="범위 그림"><g>${grid}</g>${body}</svg><div class="cap">${cap}</div></div>`;
+         + `aria-label="범위 그림"><g>${grid}</g>${body}</svg>${bar}`
+         + `<div class="cap">${cap}</div></div>`;
+  }
+
+  /* 조절 막대는 **그리는 층이 스스로** 맡는다 — 두 화면이 같은 코드를 쓰므로
+     여기서 한 번만 이어 두면 도감과 범위 구경 양쪽에서 다 움직인다.
+     `<input type="range">` 를 쓰면 마우스 끌기·손가락 밀기·화살표 키가 공짜로 따라온다. */
+  let SEQ = 0;
+  const REG = new Map();
+  function redraw(box, at) {
+    const m = REG.get(box.dataset.cv), fig = box.closest('.fig');
+    if (!m || !fig) return;
+    /* **그림과 글만** 갈아 끼운다. `.fig` 를 통째로 새로 만들면 끌고 있던 막대가
+       사라져 손가락이 끊기고, 다시 그릴 때마다 등록표에 새 자리가 쌓인다. */
+    const t = document.createElement('div');
+    t.innerHTML = shapeSVG(m.w, Object.assign({}, m.opt, { 모임: at, 막대끔: true }));
+    const ns = t.querySelector('svg'), nc = t.querySelector('.cap');
+    const os = fig.querySelector('svg'), oc = fig.querySelector('.cap');
+    if (ns && os) os.replaceWith(ns);
+    if (nc && oc) oc.replaceWith(nc);
+    const lab = box.querySelector('.cvn');
+    if (lab) lab.textContent = Math.round(at * 100) / 100;
+    m.at = at;
+  }
+  if (!g.__hotsShapeWired) {
+    g.__hotsShapeWired = true;
+    g.addEventListener('input', e => {
+      const r = e.target.closest && e.target.closest('.cvr');
+      if (r) redraw(r.closest('.cv'), Number(r.value));
+    }, true);
+    g.addEventListener('click', e => {
+      const b = e.target.closest && e.target.closest('.cvb');
+      if (!b) return;
+      const box = b.closest('.cv'), r = box.querySelector('.cvr');
+      const st = Number(r.dataset.s) || 1;
+      const v = Math.max(Number(r.min), Math.min(Number(r.max),
+                Number(r.value) + st * Number(b.dataset.d)));
+      r.value = v;                                    // 손잡이도 따라가야 한다
+      redraw(box, v);
+    }, true);
   }
 
   g.hotsShape = { svg: shapeSVG, graph: graphSVG, side: SIDEC, esc: esc };

@@ -8,3 +8,15 @@
 .c-hero { color:var(--hit); } .c-rng { color:var(--gold); }
 .c-area { color:var(--blue); } .c-yard { color:var(--wiki); } .c-hit { color:var(--warn); }
 .c-dim { color:var(--dim); } .c-foe { color:var(--foe); } .c-ally { color:var(--ally); } .c-both { color:var(--both); }
+
+/* **찍는 자리를 밀어 보는 막대** — 리밍 마력탄처럼 거리에 따라 꼴이 바뀌는 기술.
+   마우스로 끌기·손가락으로 밀기·화살표 키는 <input type=range> 가 알아서 해 준다. */
+.fig .cv { display:flex; align-items:center; gap:6px; margin-top:5px; }
+.fig .cvr { flex:1; min-width:0; height:22px; accent-color:var(--gold); cursor:pointer;
+            touch-action:pan-y; }
+.fig .cvb { width:30px; height:28px; flex:0 0 auto; padding:0; cursor:pointer;
+            border:1px solid var(--line); border-radius:6px; background:var(--card2);
+            color:var(--fg); font-size:14px; line-height:1; }
+.fig .cvb:active { background:var(--line); }
+.fig .cvn { flex:0 0 auto; min-width:2.6em; text-align:right; color:var(--gold);
+            font-size:11px; font-variant-numeric:tabular-nums; }
