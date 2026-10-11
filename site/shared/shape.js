@@ -236,7 +236,11 @@
             + (py(sr) > 11 ? `<text x="${px(0) + 4}" y="${py(sr) + 11}" font-size="9" `
                + `fill="${SC}" opacity=".9">이 안에서 찾음</text>` : '');
     gs.forEach(g => {
-      const mark = (spin && spins(g)) ? body.length : -1;
+      /* **도는 판정** — 조각 하나가 가운데를 중심으로 빙 돈다(피닉스 플라스마 절단기는
+         두 바퀴, 키히라 회전 휩쓸기는 한 바퀴). 시간 손잡이만큼 돌려 놓고, **지나온
+         자리**를 옅게 깔아 "여기까지 쓸고 갔다" 를 보인다. */
+      const turn = (g.돌기 || 0) * at01;
+      const mark = ((spin && spins(g)) || turn) ? body.length : -1;
       // `자리: '앞'` 은 **제 거리를 들고 다니는 도형**이다(굴단 부패가 0·3·6 에서 세 번 터진다).
     const at = g.자리 === '앞' ? (g.거리 || 0)
              : g.자리 === '착지' ? d + (g.거리 || 0)
@@ -247,6 +251,34 @@
       const fill = g.직격
         ? `fill="${C}" fill-opacity=".30" stroke="${C}" stroke-width="2"`
         : `fill="${C}" fill-opacity=".16" stroke="${C}" stroke-width="1.4"`;
+      /* **지나온 자리** — 도는 판정이 여태 쓸고 온 넓이. 도는 조각만 그리면 "앞에
+         부채꼴 하나" 로 보이지만, 실제로 맞는 넓이는 이것이다. 한 바퀴를 넘기면
+         띠가 통째로 찬다. 돌아가는 조각보다 **옅게**, 밑에 깐다. */
+      if (turn) {
+        const R0 = g.꼴 === '부채꼴' ? g.반지름 : (g.세로 || 0);
+        const In = g.꼴 === '부채꼴' ? (g.안쪽 || 0) : 0;
+        const half = (g.꼴 === '부채꼴' ? Math.min(g.각도 || 0, 360) : 0) / 2;
+        const a0 = Math.min(0, turn) - half, a1 = Math.max(0, turn) + half;
+        const full = a1 - a0 >= 359.5;
+        const ring = (R, from, to) => {
+          const q = [];
+          for (let t = from; t <= to + 0.01; t += 4)
+            q.push([R * Math.sin(t * Math.PI / 180), R * Math.cos(t * Math.PI / 180)]);
+          return q;
+        };
+        if (R0 > 0 && full) {
+          body += `<circle cx="${px(0)}" cy="${py(0)}" r="${R0 * S}" fill="${C}" `
+                + `fill-opacity=".10" stroke="${C}" stroke-width="1" stroke-dasharray="4 3"/>`
+                + (In ? `<circle cx="${px(0)}" cy="${py(0)}" r="${In * S}" fill="var(--card2)" `
+                      + `stroke="${C}" stroke-width="1" stroke-dasharray="4 3"/>` : '');
+        } else if (R0 > 0) {
+          const out = ring(R0, a0, a1);
+          const back = In ? ring(In, a0, a1).reverse() : [[0, 0]];
+          body += `<polygon points="${out.concat(back).map(q2 => px(q2[0]) + ',' + py(q2[1])).join(' ')}" `
+                + `fill="${C}" fill-opacity=".10" stroke="${C}" stroke-width="1" `
+                + `stroke-dasharray="4 3"/>`;
+        }
+      }
       if (g.꼴 === '자리들') {
         // 여러 지점에 차례로 생기는 기술(잘아타스 공허 걸음의 삼각형). 자리를 잇고 번호를 붙인다.
         const pts = (g.점 || []).map(p => px(p[0]) + ',' + py(p[1]));
@@ -509,10 +541,12 @@
           body += `<circle cx="${px(0)}" cy="${py(at)}" r="${g.작은 * S}" fill="none" `
                 + `stroke="${C}" stroke-width="1.2" stroke-dasharray="4 3"/>`;
       }
-      if (mark >= 0)    // 제 기준점에서 돌린다(화면은 y 가 아래라 +가 시계 방향)
+      if (mark >= 0) {   // 제 기준점에서 돌린다(화면은 y 가 아래라 +가 시계 방향)
+        const deg = ((spin && spins(g)) ? spin : 0) + turn;
         body = body.slice(0, mark)
-             + `<g transform="rotate(${spin.toFixed(1)} ${px(0).toFixed(1)} `
+             + `<g transform="rotate(${deg.toFixed(1)} ${px(0).toFixed(1)} `
              + `${py(pivot(g)).toFixed(1)})">` + body.slice(mark) + '</g>';
+      }
     });
     // 방향이 있는 기술은 **화살표**로 어디로 가는지 보여 준다 — 날아가는 거리,
     // 없으면 부채꼴·다각형이 뻗은 길이만큼.
