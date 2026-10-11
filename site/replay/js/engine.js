@@ -278,7 +278,7 @@ function nameHTML(label, players){
   const t=teamOf(label,players);
   const hero=(String(label||'').match(/\((.+)\)$/)||[])[1];
   const hd=hero?heroByName(hero):null;
-  const ic=hd?`<img class="li" src="icons/${hd.icon}" alt="">`:'';
+  const ic=hd?`<img class="li" src="../shared/icons/${hd.icon}" alt="">`:'';
   return `<b class="${t===0?'b':t===1?'r':'g'}">${ic}${label}</b>`;
 }
 /* 추정치 딱지 — 리플레이에 없어서 추론한 값 옆에 붙인다 */

@@ -11,6 +11,7 @@ hots_xml 은 저장소 **밖**이다(게임 자산이라 GitHub 에 안 올린�
 서버(Actions)는 여기서 만들어 커밋한 JSON 을 그대로 쓴다.
 """
 import json
+import re
 import shutil
 import sys
 from pathlib import Path
@@ -50,6 +51,26 @@ def level_of(t):
 
 # 영웅 초상화는 이미 사이트가 가지고 있는 목록에서 가져온다(두 군데서 만들지 않는다)
 PORTRAITS = ROOT / "site" / "data" / "patchnotes" / "heroes.json"
+
+# **작은 아이콘은 리플레이 앱의 표에서 가져온다.** 원본 XML 에도 미니맵 아이콘이 있지만
+# 액터 안에 중첩돼 있어 상속으로 안 닿고, 파일명 대소문자도 제각각이다(`..._Junkrat.dds`).
+# 리플레이 쪽 표는 91명이 실제로 화면에 떠 있는 **검증된** 이름이라 그걸 쓴다 —
+# 무료 호스팅이라 404 를 영웅 수만큼 내면 안 되는 자리다.
+# 읽는 것은 **빌드 때 한 번**이고, 화면은 제 data 파일만 본다(앱 격리는 지킨다).
+MINIMAP = ROOT / "site" / "replay" / "js" / "data_heroes.js"
+
+ROLE_KO = {"Tank": "전사", "Bruiser": "투사", "Healer": "치유사",
+           "Support": "지원가", "MeleeAssassin": "근접 암살자",
+           "RangedAssassin": "원거리 암살자"}
+
+
+def minimap_icons():
+    """리플레이 표 → {한국어 이름: 작은 아이콘}."""
+    if not MINIMAP.exists():
+        return {}
+    t = MINIMAP.read_text(encoding="utf-8")
+    return {m.group(2): m.group(1) for m in re.finditer(
+        r'\{icon:"([^"]+)",\s*ko:"([^"]+)"', t)}
 
 
 # 특성 강화 줄에서 **속 사정**을 가린다 — 화면에 쓸 말이 아니다
@@ -150,6 +171,7 @@ def main():
         shutil.rmtree(OUT)
     OUT.mkdir(parents=True)
     portraits = json.loads(PORTRAITS.read_text(encoding="utf-8")) if PORTRAITS.exists() else {}
+    small = minimap_icons()
     index, total = [], 0
     build = ""
     for f in files:
@@ -159,9 +181,19 @@ def main():
         blob = json.dumps(o, ensure_ascii=False, separators=(",", ":"))
         (OUT / f.name).write_text(blob, encoding="utf-8")
         total += len(blob.encode("utf-8"))
-        index.append({"id": f.stem, "name": o["영웅"], "초상화": o["초상화"],
-                      "기술": len(o["기술"]), "특성": len(o["특성"])})
+        row = {"id": f.stem, "name": o["영웅"], "초상화": o["초상화"],
+               "기술": len(o["기술"]), "특성": len(o["특성"])}
+        role = (portraits.get(f.stem) or {}).get("role")
+        if ROLE_KO.get(role):
+            row["역할"] = ROLE_KO[role]
+        if small.get(o["영웅"]):
+            row["작은아이콘"] = small[o["영웅"]]
+        index.append(row)
     index.sort(key=lambda x: x["name"])
+    _nr = [x["name"] for x in index if not x.get("역할")]
+    _ni = [x["name"] for x in index if not x.get("작은아이콘")]
+    if _nr or _ni:        # 하나라도 비면 화면에서 티가 난다 — 빌드 때 바로 말한다
+        print(f"   !! 역할 없음 {len(_nr)}명 {_nr[:5]} · 작은아이콘 없음 {len(_ni)}명 {_ni[:5]}")
     (OUT / "index.json").write_text(
         json.dumps({"build": build, "heroes": index, "기준": yardsticks(files)}, ensure_ascii=False, separators=(",", ":")) + "\n",
         encoding="utf-8")

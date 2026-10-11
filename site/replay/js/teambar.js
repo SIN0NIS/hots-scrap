@@ -98,7 +98,7 @@ function buildTeamBar(){
     const who = document.createElement('button');
     who.type='button'; who.className='who'; who.title=lab;
     const por = document.createElement('span'); por.className='por';
-    const psrc = ad && ad.p ? 'portraits/'+ad.p+'.webp' : (hd ? 'icons/'+hd.icon : '');
+    const psrc = ad && ad.p ? 'portraits/'+ad.p+'.webp' : (hd ? '../shared/icons/'+hd.icon : '');
     if(psrc){ const im=document.createElement('img'); im.src=psrc; im.alt=hh.heroName; por.appendChild(im); }
     const ult = mkTal(10); ult.classList.add('ult'); por.appendChild(ult);
     pips.ult = ult;                       // 초상화 쪽 사본 (같은 티어를 둘 다 켠다)

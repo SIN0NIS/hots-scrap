@@ -101,6 +101,15 @@
   .ht th:first-child, .ht td:first-child { text-align:left; position:sticky; left:0; background:var(--card); }
   .ht th:first-child { background:var(--card2); z-index:2; }
   .ht tbody tr:hover td { background:var(--card2); }
+  .lonebtn { border:1px solid var(--line); background:var(--card2); color:var(--dim);
+             border-radius:5px; font-size:11px; padding:1px 6px; cursor:pointer; }
+  /* 리플레이에서 쓰던 **미니맵 아이콘** — 24px 라 표가 안 무거워진다 */
+  .ht td:first-child img, .rank td.h img { width:20px; height:20px; border-radius:50%;
+       vertical-align:-5px; margin-right:6px; background:var(--card2); }
+  .rank td.h img { width:17px; height:17px; vertical-align:-4px; margin-right:5px; }
+  .ht tr.rhead td { background:var(--card2); font-weight:700; color:var(--blue);
+       text-align:left; position:sticky; left:0; }
+  .ht tr.rhead td span { color:var(--dim); font-weight:400; margin-left:6px; }
   .ht th.sorted { color:var(--blue); }
   .note { color:var(--dim); font-size:12px; margin:8px 0 0; line-height:1.7; }
 </style>
@@ -117,6 +126,7 @@
       <button class="tab" data-tab="영웅">영웅 수치표</button>
     </div>
     <div class="row" id="filters"><span class="lab">주제</span><span id="topics"></span></div>
+    <div class="row" id="rolerow"><span class="lab">역할군</span><span id="roles"></span></div>
     <div class="row" id="searchrow">
       <input type="search" id="q" placeholder="항목 찾기 (사거리·피해·재사용…)">
       <button class="pill" id="onlynum">줄 세울 수 있는 것만</button>
@@ -205,7 +215,13 @@ function drawCatalog() {
   + (DB['뺀 것'] && DB['뺀 것'].length
       ? `<br><span class="dropsum">정상 게임에서 만날 수 없는 값 `
         + `<b>${DB['뺀 것'].reduce((a, b) => a + b[1], 0)}개</b>는 빼고 셌습니다 — `
-        + DB['뺀 것'].map(([w, n]) => `${esc(w)} ${n}`).join(' · ') + `</span>` : '');
+        + DB['뺀 것'].map(([w, n]) => `${esc(w)} ${n}`).join(' · ') + `</span>` : '')
+  /* **딱 하나만 잡히는 칸은 통계가 아니라서 아예 안 싣는다.** 숨긴 게 아니라
+     뺀 것이니 몇 가지인지는 적어 둔다(목록은 눌러서 편다). */
+  + (DB['하나뿐'] && DB['하나뿐'].length
+      ? `<br><span class="dropsum">값이 하나뿐이라 뺀 항목 `
+        + `<b>${DB['하나뿐'].length}가지</b> <button class="lonebtn" id="lone">보기</button>`
+        + `<span id="lonelist" hidden> — ${DB['하나뿐'].map(esc).join(' · ')}</span></span>` : '');
 }
 
 /* ── 고른 항목 — 줄 세우기와 그래프 ──────────────────────────── */
@@ -270,7 +286,8 @@ function paint(busy) {
       const e = ROWS.대상[ei] || ['', '', ''];
       // 영웅 수치는 이름 칸이 늘 '기본 수치' 라 군더더기다 — 영웅 이름만 남긴다
       const who = e[1] === '기본 수치' ? '' : e[1];
-      return `<tr><td class="i">${i + 1}</td><td class="h">${esc(e[0])}</td><td>${esc(who)}</td>`
+      return `<tr><td class="i">${i + 1}</td><td class="h">${FACE(e[0])}${esc(e[0])}</td>`
+        + `<td>${esc(who)}</td>`
         + (numeric ? `<td class="b"><span><i style="width:${Math.round(Math.abs(v) / hi * 100)}%"></i></span></td>` : `<td></td>`)
         + `<td class="v">${fmt(v)}</td></tr>`;
     }).join('') + `</table>`;
@@ -283,23 +300,47 @@ function paint(busy) {
 }
 
 /* ── 영웅 수치표 ───────────────────────────────────────────── */
-let SORT = { k: '생명력', asc: false };
+let SORT = { k: '생명력', asc: false }, BYROLE = false, ROLE_ON = new Set();
+const ICON = h => h._아이콘
+  ? `<img src="../shared/icons/${esc(h._아이콘)}" alt="" loading="lazy" decoding="async">` : '';
+/* 순위표의 줄은 **누구 것인지**가 먼저다 — 이름만 적힌 줄에 얼굴을 붙여 준다.
+   영웅 이름 → 작은 아이콘 표는 `stats.json` 의 영웅 줄이 이미 들고 있다. */
+let FACES = null;
+function FACE(ko) {
+  if (!FACES) FACES = new Map((DB.영웅 || []).map(h => [h.영웅, h._아이콘]));
+  const f = FACES.get(ko);
+  return f ? `<img src="../shared/icons/${esc(f)}" alt="" loading="lazy" decoding="async">` : '';
+}
 function drawHeroes() {
   const keys = [];
-  for (const h of DB.영웅) for (const k of Object.keys(h)) if (k !== 'id' && !keys.includes(k)) keys.push(k);
-  const rows = DB.영웅.slice().sort((a, b) => {
+  for (const h of DB.영웅) for (const k of Object.keys(h))
+    if (k !== 'id' && k !== '_아이콘' && !keys.includes(k)) keys.push(k);
+  const pick = DB.영웅.filter(h => !ROLE_ON.size || ROLE_ON.has(h.역할));
+  const rows = pick.slice().sort((a, b) => {
     const nx = num(a[SORT.k]), ny = num(b[SORT.k]);
     if (nx !== null && ny !== null) return SORT.asc ? nx - ny : ny - nx;
     return SORT.asc ? String(a[SORT.k] ?? '').localeCompare(String(b[SORT.k] ?? ''), 'ko')
                     : String(b[SORT.k] ?? '').localeCompare(String(a[SORT.k] ?? ''), 'ko');
   });
+  const cell = (h, k, i) => `<td>${i === 0 ? ICON(h) : ''}`
+    + `${h[k] == null ? '<span style="color:var(--dim)">–</span>' : fmt(h[k])}</td>`;
+  const tr = h => `<tr>${keys.map((k, i) => cell(h, k, i)).join('')}</tr>`;
+  /* **역할군별로 보기** — 같은 줄 세우기를 역할군 안에서 되풀이한다.
+     전사끼리 생명력을 견주는 게 전체 91명 줄 세우기보다 할 말이 많다. */
+  let tb;
+  if (BYROLE) {
+    const by = new Map();
+    for (const h of rows) { const r = h.역할 || '그 밖'; if (!by.has(r)) by.set(r, []); by.get(r).push(h); }
+    tb = [...by].map(([r, hs]) =>
+        `<tr class="rhead"><td colspan="${keys.length}">${esc(r)}<span>${hs.length}명</span></td></tr>`
+      + hs.map(tr).join('')).join('');
+  } else tb = rows.map(tr).join('');
   document.getElementById('htab').innerHTML =
       `<thead><tr>${keys.map(k =>
         `<th data-k="${esc(k)}" class="${k === SORT.k ? 'sorted' : ''}">${esc(k)}${k === SORT.k ? (SORT.asc ? ' ▲' : ' ▼') : ''}</th>`).join('')}</tr></thead>`
-    + `<tbody>${rows.map(h => `<tr>${keys.map(k =>
-        `<td>${h[k] == null ? '<span style="color:var(--dim)">–</span>' : fmt(h[k])}</td>`).join('')}</tr>`).join('')}</tbody>`;
+    + `<tbody>${tb}</tbody>`;
   document.getElementById('sub').innerHTML =
-    `영웅 <b>${DB.영웅.length}</b>명의 기본 수치 — 게임 원본에 적힌 그대로입니다`
+    `영웅 <b>${rows.length}</b>명의 기본 수치 — 게임 원본에 적힌 그대로입니다`
   + (DB.자료 ? ` · 자료 ${esc(DB.자료)}` : '');
 }
 
@@ -309,6 +350,7 @@ function draw() {
   document.getElementById('herotab').hidden = cat;
   document.getElementById('filters').style.display = cat ? '' : 'none';
   document.getElementById('searchrow').style.display = cat ? '' : 'none';
+  document.getElementById('rolerow').style.display = cat ? 'none' : '';
   cat ? drawCatalog() : drawHeroes();
 }
 
@@ -317,12 +359,41 @@ fetch('../data/herodex/stats.json').then(r => r.json()).then(d => {
   const ts = TOPIC.map(([t]) => t).filter(t => d.칸.some(f => topicOf(f) === t));
   document.getElementById('topics').innerHTML = ts.map(t =>
     `<button class="pill" data-t="${esc(t)}">${esc(t)} ${d.칸.filter(f => topicOf(f) === t).length}</button>`).join(' ');
+  /* **모든 영웅 ↔ 역할군별.** 역할군 하나만 켜면 그 역할군만, 아무것도 안 켜면 전부.
+     '역할군으로 묶기' 는 묶음 머리줄을 끼워 역할군 안에서 줄 세우기를 되풀이한다. */
+  const rs = [];
+  for (const h of d.영웅) if (h.역할 && !rs.includes(h.역할)) rs.push(h.역할);
+  rs.sort((a, b) => d.영웅.filter(h => h.역할 === b).length
+                  - d.영웅.filter(h => h.역할 === a).length);
+  document.getElementById('roles').innerHTML =
+      `<button class="pill on" data-r="*">모든 영웅 ${d.영웅.length}</button> `
+    + rs.map(r => `<button class="pill" data-r="${esc(r)}">${esc(r)} `
+    + `${d.영웅.filter(h => h.역할 === r).length}</button>`).join(' ')
+    + ` <button class="pill" id="group">역할군으로 묶기</button>`;
   draw();
 }).catch(e => { document.getElementById('sub').textContent = '자료를 못 읽었습니다: ' + e; });
 
 document.addEventListener('click', e => {
   const t = e.target.closest('.tab');
   if (t) { TAB = t.dataset.tab; document.querySelectorAll('.tab').forEach(x => x.classList.toggle('on', x === t)); draw(); return; }
+  const gb = e.target.closest('#group');
+  if (gb) { BYROLE = !BYROLE; gb.classList.toggle('on', BYROLE); drawHeroes(); return; }
+  const rb = e.target.closest('[data-r]');
+  if (rb) {
+    const k = rb.dataset.r;
+    if (k === '*') ROLE_ON.clear();
+    else ROLE_ON.has(k) ? ROLE_ON.delete(k) : ROLE_ON.add(k);
+    document.querySelectorAll('[data-r]').forEach(x => x.classList.toggle('on',
+      x.dataset.r === '*' ? !ROLE_ON.size : ROLE_ON.has(x.dataset.r)));
+    drawHeroes();
+    return;
+  }
+  if (e.target.id === 'lone') {
+    const L = document.getElementById('lonelist');
+    L.hidden = !L.hidden;
+    e.target.textContent = L.hidden ? '보기' : '접기';
+    return;
+  }
   const tp = e.target.closest('[data-t]');
   if (tp) { const k = tp.dataset.t; TOPIC_ON.has(k) ? TOPIC_ON.delete(k) : TOPIC_ON.add(k); tp.classList.toggle('on'); drawCatalog(); return; }
   if (e.target.id === 'onlynum') { ONLYNUM = !ONLYNUM; e.target.classList.toggle('on', ONLYNUM); drawCatalog(); return; }

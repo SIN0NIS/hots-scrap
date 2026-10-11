@@ -90,7 +90,7 @@ const herofile=document.getElementById('herofile');
 const hsearch=document.getElementById('hsearch');
 const BUILTIN_HEROES = HERO_DB.slice()
   .sort((a,b)=>a.ko.localeCompare(b.ko,'ko'))
-  .map(h=>({name:h.ko, en:h.en, role:h.role||'', src:'icons/'+h.icon}));
+  .map(h=>({name:h.ko, en:h.en, role:h.role||'', src:'../shared/icons/'+h.icon}));
 /* 역할군 고르기 — 90명을 한 줄로 늘어놓으면 찾기 어렵다.
    역할은 게임 데이터의 expandedRole 을 그대로 쓴다 (tools/build_roles.py). */
 let roleSel='';                                   // '' = 전체

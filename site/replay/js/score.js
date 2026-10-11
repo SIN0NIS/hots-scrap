@@ -79,7 +79,7 @@ function scoreHTML(){
     }
     const hd = heroByName(r.hero);
     h += `<tr class="${r.team?'r':'b'}"><td class="nm">`
-       + (hd ? `<img src="icons/${hd.icon}" alt="">` : '')
+       + (hd ? `<img src="../shared/icons/${hd.icon}" alt="">` : '')
        + `<span>${r.hero}</span><em>${r.name}</em></td>`;
     for(const c of cols){
       const v = r.get(c.k);
@@ -109,7 +109,7 @@ function talentHTML(){
   for(const c of group){
     const hd = heroByName(c.hh.heroName);
     h += `<tr class="${c.hh.team===1?'r':'b'}"><td class="nm">`
-       + (hd ? `<img src="icons/${hd.icon}" alt="">` : '')
+       + (hd ? `<img src="../shared/icons/${hd.icon}" alt="">` : '')
        + `<span>${c.hh.heroName}</span><em>${c.lab.replace(/\(.*\)$/,'')}</em></td>`;
     for(const t of TIER){
       const cell = c.pips[t];

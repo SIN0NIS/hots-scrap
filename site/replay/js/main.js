@@ -169,7 +169,7 @@ function load(raw){
   // 영웅 미니맵 아이콘 준비 (이름 -> 내장 아이콘)
   for(const lab in G.heroes){
     const h=G.heroes[lab], hd=heroByName(h.heroName);
-    if(hd){ const im=new Image(); im.src='icons/'+hd.icon; im.onload=markDirty; h.img=im; }
+    if(hd){ const im=new Image(); im.src='../shared/icons/'+hd.icon; im.onload=markDirty; h.img=im; }
   }
   // 맵 이름으로 배경 자동 선택 + 리플레이의 전장으로 고정
   const m=matchMap(raw.map);
@@ -234,7 +234,7 @@ document.getElementById('snapBoard').onclick=()=>{
     const hd=heroByName(hh.heroName);
     const [px,py]=proj(p.x,p.y);
     team = hh.team===1?'red':'blue';
-    heroSel = hd ? {name:hh.heroName, src:'icons/'+hd.icon} : null;
+    heroSel = hd ? {name:hh.heroName, src:'../shared/icons/'+hd.icon} : null;
     const o=addTok(px,py);
     if(p.dead){ o.dead=true; paintObj(o); o.el.title=hh.heroName+' (사망 중)'; dead++; }
     else alive++;

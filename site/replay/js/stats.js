@@ -168,7 +168,7 @@ function spanHTML(a, b){
   for(const r of rows){
     const hd = heroByName(r.hero);
     h += `<tr class="${r.team ? 'r' : 'b'}"><td class="nm">`
-       + (hd ? `<img src="icons/${hd.icon}" alt="">` : '')
+       + (hd ? `<img src="../shared/icons/${hd.icon}" alt="">` : '')
        + `<span>${r.hero}</span><em>${r.lab.replace(/\(.*\)$/, '')}</em></td>`
        + `<td>${r.s.td}</td><td>${r.s.death}</td><td>${r.s.cs}</td><td>${r.s.merc}</td>`
        + `<td>${r.s.struct}</td><td>${r.s.globe}</td><td>${r.s.apm}</td>`

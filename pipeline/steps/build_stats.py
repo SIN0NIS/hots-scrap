@@ -169,6 +169,11 @@ class Field:
 
 
 def main():
+    # 역할·작은 아이콘은 도감 index 가 이미 들고 있다(두 군데서 만들지 않는다)
+    _ix = SRC / "index.json"
+    META = {}
+    if _ix.exists():
+        META = {h["id"]: h for h in json.loads(_ix.read_text(encoding="utf-8"))["heroes"]}
     heroes, fields = [], {}
     tot = Counter()
 
@@ -191,6 +196,11 @@ def main():
         base = dict(d.get("기본") or {})
         wep = (base.pop("평타", None) or [{}])[0]
         row = {"id": fn.stem, "영웅": ko}
+        _m = META.get(fn.stem) or {}
+        if _m.get("역할"):
+            row["역할"] = _m["역할"]
+        if _m.get("작은아이콘"):
+            row["_아이콘"] = _m["작은아이콘"]      # 화면에만 쓰는 값 — 통계로 안 센다
         for k, v in base.items():
             row[k] = v
             fld("기본", k).add(v, ko, "기본 수치", "영웅")
@@ -239,22 +249,30 @@ def main():
              "위키식": tot["기술"], "원자료": tot["기술"],
              "특성": tot["특성"], "특성 위키식": tot["특성"]}
     rows = [f.dump(DENOM.get(f.group, 1)) for f in fields.values()]
+    # **딱 하나만 잡히는 칸은 통계가 아니다.** 최소·중앙·최대가 다 같은 수 하나고
+    # 막대도 한 칸뿐이라, 카탈로그에 끼면 "볼 게 있나" 싶어 열었다가 허탕 친다.
+    # 센 김에 몇 개를 뺐는지는 화면에 적어 둔다(숨긴 게 아니라 뺀 것이다).
+    lone = [r["이름"] for r in rows if r["수"] <= 1]
+    rows = [r for r in rows if r["수"] > 1]
     rows.sort(key=lambda r: (r["갈래"], -r["수"]))
 
     drops = Counter()
     for f in fields.values():
         drops.update(f.dropped)
     out = {"자료": "", "센 것": dict(tot), "칸 수": len(rows),
-           "뺀 것": drops.most_common(), "영웅": heroes, "칸": rows}
+           "뺀 것": drops.most_common(), "하나뿐": sorted(lone),
+           "영웅": heroes, "칸": rows}
     idx = SRC / "index.json"
     if idx.exists():
         out["자료"] = json.loads(idx.read_text(encoding="utf-8")).get("build", "")
     OUT.write_text(json.dumps(out, ensure_ascii=False, separators=(",", ":")),
                    encoding="utf-8")
     ROWS.write_text(json.dumps(
-        {"대상": ENTS, "칸": {f"{f.group}|{f.name}": f.rows for f in fields.values()}},
+        {"대상": ENTS, "칸": {f"{f.group}|{f.name}": f.rows for f in fields.values()
+                             if len(f.rows) > 1}},
         ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     kb = OUT.stat().st_size // 1024
+    print(f"   표본이 하나뿐이라 뺀 칸 {len(lone)}가지")
     print(f"칸 {len(rows)}가지 · 영웅 {tot['영웅']} · 기술 {tot['기술']} · 특성 {tot['특성']}"
           f" · {kb}KB → {OUT}")
     print(f"   값 목록 {sum(len(f.rows) for f in fields.values())}줄 · 대상 {len(ENTS)}가지"

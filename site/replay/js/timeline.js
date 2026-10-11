@@ -568,7 +568,7 @@ function drawPies(kind, live){
         n = s.pick(((G.raw&&G.raw.kill_anchors||{})[lab]||[]).filter(k=>k[0]<=cutoff));
       }
     }
-    byTeam[tm].push({ ko:hh.heroName, n, ic: hd ? `icons/${hd.icon}` : null });
+    byTeam[tm].push({ ko:hh.heroName, n, ic: hd ? `../shared/icons/${hd.icon}` : null });
   });
   // 리플레이에 그대로 있는 값인가, 추론해 채운 값인가
   const guess = kind!=='total' || live;
