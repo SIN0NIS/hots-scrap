@@ -237,6 +237,13 @@
     // 유닛을 찍거나 게임이 알아서 고르는 기술은 그 동그라미가 '찾는 범위' 다.
     // 시전 사거리는 '누구에게' 가 아니라 '어디까지 찍나' 라서 색을 안 쓴다 — 늘 금색.
     const RC = 'var(--gold)';
+    // **특성이 사거리를 늘렸으면 예전 사거리도** 옅은 점선으로 같이 긋는다
+    const wasD = typeof w['전거리'] === 'number' ? w['전거리'] : null;
+    if (wasD != null && wasD > 0 && !freeCast && !farCast)
+      body += `<circle cx="${px(0)}" cy="${py(0)}" r="${wasD * S}" fill="none" `
+            + `stroke="var(--dim)" stroke-width="1.1" stroke-dasharray="3 4" opacity=".75"/>`
+            + `<text x="${px(0) + 4}" y="${py(wasD) - 3}" font-size="9" fill="var(--dim)" `
+            + `opacity=".9">특성 전 ${wasD}</text>`;
     // 시전 사거리 — 어디까지 찍을 수 있나(영웅 중심). 공격 범위는 그 **끝**에 그린다.
     // 무제한인 기술은 **그 동그라미를 안 그린다** — 띄운 거리는 잰 값이 아니다.
     if (freeCast) {
@@ -282,6 +289,27 @@
       const fill = g.직격
         ? `fill="${C}" fill-opacity=".30" stroke="${C}" stroke-width="2"`
         : `fill="${C}" fill-opacity=".16" stroke="${C}" stroke-width="1.4"`;
+      /* **특성이 범위를 바꿨으면 예전 크기를 점선으로** 남긴다. 숫자만 "반지름 9.5 →
+         11.25" 라고 적어 두면 얼마나 넓어지는지 눈으로는 알 수가 없다. 채우지 않고
+         테두리만 긋는다 — 채우면 "장판이 둘" 로 읽힌다. */
+      const was = { 반지름: g.전반지름, 가로: g.전가로, 세로: g.전세로,
+                    안쪽: g.전안쪽, 각도: g.전각도 };
+      if (Object.values(was).some(v => v != null) || (wasD != null && g.자리 === '착지')) {
+        const G = Object.assign({}, g);
+        for (const k2 of Object.keys(was)) if (was[k2] != null) G[k2] = was[k2];
+        const atW = (wasD != null && g.자리 === '착지') ? wasD + (g.거리 || 0) : at;
+        const gl = `fill="none" stroke="${C}" stroke-width="1.3" stroke-dasharray="5 4" opacity=".6"`;
+        if (G.꼴 === '원')
+          body += `<circle cx="${px(0)}" cy="${py(atW)}" r="${G.반지름 * S}" ${gl}/>`;
+        else if (G.꼴 === '부채꼴') {
+          const o2 = arcPts(G.반지름, G.각도, atW);
+          const p2 = G.안쪽 ? o2.concat(arcPts(G.안쪽, G.각도, atW).reverse())
+                            : [[0, atW]].concat(o2);
+          body += `<polygon points="${p2.map(q => px(q[0]) + ',' + py(q[1])).join(' ')}" ${gl}/>`;
+        } else if (G.꼴 === '직사각형' && !G.쓸기)
+          body += `<rect x="${px(-G.가로 / 2)}" y="${py(atW + G.세로 / 2)}" `
+                + `width="${G.가로 * S}" height="${G.세로 * S}" ${gl}/>`;
+      }
       /* **지나온 자리** — 도는 판정이 여태 쓸고 온 넓이. 도는 조각만 그리면 "앞에
          부채꼴 하나" 로 보이지만, 실제로 맞는 넓이는 이것이다.
          ⚠ **점선으로 긋지 않는다.** 이 그림에서 점선은 '거리 눈금'(시전 사거리·평타
@@ -671,6 +699,9 @@
                    ? `<b class="c-dim">⌁</b> 나선은 도는 모양만 눈대중 — 반지름은 자료로 잰 상한`
                    : gs.some(g => g.꼴 === '나선')
                    ? `<b class="c-dim">⌁</b> 나선은 눈대중 — 뻗는 거리는 자료에 없다` : '',
+                 (wasD != null || gs.some(g => g.전반지름 != null || g.전가로 != null
+                                            || g.전세로 != null || g.전각도 != null))
+                   ? `<b class="c-dim">◌</b> 점선은 <b>특성 찍기 전</b> 크기` : '',
                  gs.some(g => g.조각방향) ? `<b class="c-rng">◍</b> 조각을 <b>차례로</b> 휘두른다 — `
                    + `화살표가 휘두르는 쪽, 손잡이가 차례` : '',
                  gs.some(g => g.꼴 === '모르는 이동')
