@@ -73,10 +73,17 @@
     /* **끌어서 놓는 기술은 방향을 플레이어가 정한다.** 앞쪽 한 장면만 그려 두면
        "앞으로만 쓰는 기술" 로 읽힌다. 시계 같은 다이얼을 돌리면 끌기 축과 **찍은 자리에
        붙은 장판**이 같이 돈다 — 둘은 저마다 제 기준점에서 돈다. */
-    const canSpin = gs0.some(g0 => g0.꼴 === '끌기');
+    /* **끌기 축이 있나로 세면 안 된다.** 메이 빙벽·줄 해골 마법학자·알라라크 염동력은
+       끌어서 쓰는데 축 도형이 없어 다이얼이 빠져 있었다. `지정` 이 '끌어서' 면 다 붙인다. */
+    const canSpin = gs0.some(g0 => g0.꼴 === '끌기')
+                 || String((w || {})['지정'] || '').startsWith('끌어서');
     const spin = (canSpin && typeof opt.방향 === 'number') ? ((opt.방향 % 360) + 360) % 360 : 0;
-    const spins = g0 => canSpin && (g0.자리 === '착지' || g0.꼴 === '끌기');
-    const pivot = () => d;        // 끌기 축도 장판도 **찍은 자리**를 중심으로 돈다
+    const spins = g0 => canSpin
+                     && (g0.자리 === '착지' || g0.자리 === '원점' || g0.꼴 === '끌기');
+    // **제가 놓인 자리에서 돈다.** 찍은 자리에 붙은 것(장판·끌기 축)은 거기서,
+    // 제자리에 깔리는 것(메이 빙벽)은 영웅에게서 — 기준을 하나로 묶으면 빙벽이
+    // 11 떨어진 점을 축으로 휘둘러진다.
+    const pivot = g0 => ((g0.꼴 === '끌기' || g0.자리 === '착지') ? d : 0);
     const gsExt = span ? gs0.concat(gs0.map(g0 =>
                     g0.모임 ? Object.assign({}, g0, { 모임: span[0] }) : g0)) : gs;
     // 장판이 없어도 **찾는 범위**만 있으면 그릴 값이 있다(겐지 튕겨내기 `Radius 7.0`)
@@ -116,7 +123,7 @@
       // 그대로 담으면 격자가 깨알이 되니 **그리는 길이는 12 까지만** 담고 숫자로 적는다.
       else if (g.꼴 === '끌기') {
         // 끌기 축은 **찍은 자리**에 붙는다 — 거기서 방향을 정하는 것이기 때문이다
-        const L = Math.min(g.거리 || 0, 12); put(-1, d - L); put(1, d + L);
+        const L = Math.min(g.거리 || 0, 12); put(-1, d); put(1, d + L);
       }
       else if (g.꼴 === '갈래') {   // 여러 갈래 — 가장 바깥 갈래의 끝까지 담는다
         const half = (g.간격 || 0) * ((g.수 || 1) - 1) / 2, L = g.길이 || 0;
@@ -153,7 +160,7 @@
       }
       else { put(-g.반지름, at - g.반지름); put(g.반지름, at + g.반지름); }
       if (tmp) {
-        const pv = pivot(), got = tmp; tmp = null;
+        const pv = pivot(g), got = tmp; tmp = null;
         const r = got.reduce((m, q) => Math.max(m, Math.hypot(q[0], q[1] - pv)), 0);
         put(-r, pv - r); put(r, pv + r);
       }
@@ -275,16 +282,16 @@
       } else if (g.꼴 === '끌기') {
         /* **끌어서 놓는 기술**(알라락 염력·데커드 고서 회오리·줄 해골 마법학자 …).
            누르고 끌어 자리와 방향을 같이 정한다. 장판이 아니므로 채우지 않고,
-           끌 수 있는 축을 **양쪽 화살표 막대**로 긋는다 — 튕김(퍼지는 화살표)과 다른 표시다. */
+           끌 수 있는 거리를 **화살표 하나**로 긋는다 — 튕김(퍼지는 화살표)과 다른 표시다.
+           **양쪽으로 긋지 않는다.** 방향은 옆의 다이얼이 정하므로, 반대쪽 화살표는
+           "뒤로도 나간다" 로 잘못 읽힌다. */
         const L = Math.min(g.거리 || 0, 12) * S, cx = px(0), cy = py(d);
-        body += `<line x1="${cx}" y1="${(cy - L).toFixed(1)}" x2="${cx}" y2="${(cy + L).toFixed(1)}" `
-              + `stroke="${C}" stroke-width="2" stroke-dasharray="7 4" opacity=".9"/>`;
-        for (const d2 of [-1, 1]) {
-          const ey = cy + d2 * L;
-          body += `<polygon points="${cx},${(ey + d2 * 7).toFixed(1)} `
-                + `${(cx - 5).toFixed(1)},${(ey).toFixed(1)} ${(cx + 5).toFixed(1)},${(ey).toFixed(1)}" `
-                + `fill="${C}"/>`;
-        }
+        const ey = cy - L;
+        body += `<line x1="${cx}" y1="${cy.toFixed(1)}" x2="${cx}" y2="${ey.toFixed(1)}" `
+              + `stroke="${C}" stroke-width="2" stroke-dasharray="7 4" opacity=".9"/>`
+              + `<polygon points="${cx},${(ey - 7).toFixed(1)} `
+              + `${(cx - 5).toFixed(1)},${ey.toFixed(1)} ${(cx + 5).toFixed(1)},${ey.toFixed(1)}" `
+              + `fill="${C}"/>`;
         body += `<line x1="${(cx - 7).toFixed(1)}" y1="${cy}" x2="${(cx + 7).toFixed(1)}" y2="${cy}" `
               + `stroke="${C}" stroke-width="2"/>`;
       } else if (g.꼴 === '튕김') {
@@ -420,7 +427,7 @@
       if (mark >= 0)    // 제 기준점에서 돌린다(화면은 y 가 아래라 +가 시계 방향)
         body = body.slice(0, mark)
              + `<g transform="rotate(${spin.toFixed(1)} ${px(0).toFixed(1)} `
-             + `${py(pivot()).toFixed(1)})">` + body.slice(mark) + '</g>';
+             + `${py(pivot(g)).toFixed(1)})">` + body.slice(mark) + '</g>';
     });
     // 방향이 있는 기술은 **화살표**로 어디로 가는지 보여 준다 — 날아가는 거리,
     // 없으면 부채꼴·다각형이 뻗은 길이만큼.
