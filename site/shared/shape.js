@@ -124,7 +124,7 @@
       else if (g.꼴 === '부채꼴') { put(0, at); arcPts(g.반지름, g.각도, at).forEach(p => put(p[0], p[1])); }
       else if (g.꼴 === '이동') { put(0, 0); put(0, g.거리); }
       else if (g.꼴 === '둘레') { put(-g.반지름, -g.반지름); put(g.반지름, g.반지름); }
-      else if (g.꼴 === '나선') { const R = 3.2; put(-R, -R); put(R, R); }
+      else if (g.꼴 === '나선') { const R = g.반지름 || 3.2; put(-R, -R); put(R, R); }
       else if (g.꼴 === '모르는 이동') { put(-1, 0); put(1, 6); }
       else if (g.꼴 === '모아 쏘는 이동') { put(-1.5, 0); put(1.5, g.최대 + 1); }
       else if (g.꼴 === '튕김' || g.꼴 === '뿌림') { put(-g.반지름, at - g.반지름); put(g.반지름, at + g.반지름); }
@@ -448,27 +448,36 @@
       }
       else if (g.꼴 === '나선') {
         /* **돌며 벌어지는 길**(요한나 축복받은 망치 · 들창코 제어 불가).
-           벌어지는 **비율**(옆 : 바깥)은 자료가 주지만 **얼마나 멀리까지**는 자료에
-           없다 — `ApplyForce` 는 힘이라 실제 궤적은 엔진이 가속·회전율로 푼다.
-           그래서 점선으로 긋고 '눈대중' 이라고 글에 못 박는다. 안 그리면
-           "제자리에 원 하나" 로 읽히고, 거리까지 그리면 없는 수를 지어내는 셈이다. */
-        const pitch = Math.atan2(g.바깥 || 0.6, g.옆 || 1);    // 벌어지는 기울기
-        const r0 = Math.max(hr, 0.5), R = 3.2, turns = 2;
-        const pts = [];
-        for (let t = 0; t <= at01 + 0.0001; t += 0.02) {
-          const th = t * turns * 2 * Math.PI;
-          const rr = r0 + (R - r0) * t;                       // 고르게 벌어지게
-          pts.push(`${px(rr * Math.sin(th)).toFixed(1)},${py(rr * Math.cos(th)).toFixed(1)}`);
-        }
-        body += `<polyline points="${pts.join(' ')}" fill="none" stroke="${C}" `
-              + `stroke-width="1.6" stroke-dasharray="5 4" opacity=".9"/>`;
-        // 판정 크기는 **자료 그대로** — 끝자리에 실선 동그라미로 보여 준다
-        if (g.판정)
-          body += `<circle cx="${px(0)}" cy="${py(R)}" r="${g.판정 * S}" ${fill}/>`;
-        body += `<text x="${px(0) + 5}" y="${py(R) - g.판정 * S - 4}" font-size="9" `
-              + `fill="${C}" opacity=".95">판정 ${g.판정 || ''}</text>`
-              + `<text x="${px(-R)}" y="${py(-R) + 11}" font-size="9" fill="var(--dim)">`
-              + `나선은 눈대중 — 벌어지는 비율만 자료</text>`;
+           `ApplyForce` 는 힘이라 궤적 자체는 엔진이 가속·회전율로 푼다 — **도는 모양**은
+           눈대중이다. 다만 **얼마나 멀리까지**는 자료로 잰다: 몸이 `속도 x 지속` 만큼
+           가고 그 길에서 바깥으로 가는 몫이 `바깥/√(옆²+바깥²)` 이니, 그 곱이 반지름의
+           상한이다(망치 10 x 3.5 x 51% = 18). `반지름` 이 오면 **자에 맞춰** 그린다 —
+           없으면 옛 눈대중 3.2 로 둔다(들창코). 안 그리면 "제자리에 원 하나" 로 읽힌다. */
+        const R = g.반지름 || 3.2, turns = 2;
+        const r0 = Math.min(Math.max(hr, 0.5), R * 0.1);
+        // 몇 개가 도나 · 둘째는 몇 초 뒤에 나오나(망치 둘, 1초 뒤) — 늦은 것은 덜 감겼다
+        const secs = (chg && chg.초) || 0;
+        const lag = (g.시차 && secs) ? g.시차 / secs : 0;
+        const arms = [];
+        for (let k = 0; k < Math.max(1, g.수 || 1); k += 1) arms.push(Math.max(0, at01 - k * lag));
+        arms.forEach((t1, k) => {
+          const pts = [];
+          for (let t = 0; t <= t1 + 0.0001; t += 0.01) {
+            const th = t * turns * 2 * Math.PI;
+            const rr = r0 + (R - r0) * t;                     // 고르게 벌어지게
+            pts.push(`${px(rr * Math.sin(th)).toFixed(1)},${py(rr * Math.cos(th)).toFixed(1)}`);
+          }
+          if (pts.length < 2) return;
+          body += `<polyline points="${pts.join(' ')}" fill="none" stroke="${C}" `
+                + `stroke-width="1.6" stroke-dasharray="5 4" opacity="${k ? '.55' : '.9'}"/>`;
+          // 판정 크기는 **자료 그대로** — 지금 망치가 있는 자리에 실선 동그라미로
+          const rr1 = r0 + (R - r0) * t1, th1 = t1 * turns * 2 * Math.PI;
+          const hx = px(rr1 * Math.sin(th1)), hy = py(rr1 * Math.cos(th1));
+          if (g.판정) body += `<circle cx="${hx}" cy="${hy}" r="${g.판정 * S}" ${fill}/>`;
+          if (g.판정 && !k)
+            body += `<text x="${hx + g.판정 * S + 3}" y="${hy + 3}" font-size="9" `
+                  + `fill="${C}" opacity=".95">판정 ${g.판정}</text>`;
+        });
       }
       else if (g.꼴 === '고리')
         body += `<circle cx="${px(0)}" cy="${py(at)}" r="${g.반지름 * S}" ${fill}/>`
@@ -542,7 +551,9 @@
                  gs.some(g => g.편 === '둘 다') ? `<b class="c-both">■</b> 적·아군 모두` : '',
                  names ? `범위 ${esc(names)}` : '',
                  gs.some(g => g.직격) ? `진한 쪽은 한 명만 맞는 직격` : '',
-                 gs.some(g => g.꼴 === '나선')
+                 gs.some(g => g.꼴 === '나선' && g.반지름)
+                   ? `<b class="c-dim">⌁</b> 나선은 도는 모양만 눈대중 — 반지름은 자료로 잰 상한`
+                   : gs.some(g => g.꼴 === '나선')
                    ? `<b class="c-dim">⌁</b> 나선은 눈대중 — 뻗는 거리는 자료에 없다` : '',
                  gs.some(g => g.꼴 === '모르는 이동')
                    ? `<b class="c-dim">⌁</b> 화살표는 방향만 — 거리는 자료에 없다` : '',
