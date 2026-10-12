@@ -266,9 +266,16 @@ function wireExpand(raw) {
       const v = tr.getAttribute('data-v');
       const who = raw.filter(([, val]) => String(val) === v)
                      .map(([ei]) => ROWS.대상[ei] || []);
-      const li = who.slice(0, 400).map(w =>
-        `<span class="who"><b>${esc(w[0] || '')}</b> ${esc(w[1] || '')}`
-        + (w[2] ? `<em>${esc(w[2])}</em>` : '') + `</span>`).join('');
+      /* **짧은 표를 앞에 세운다** — `아바-Q` 꼴. 이름만 늘어놓으면 길고 어느 자리
+         것인지도 안 보인다. 영웅은 두 글자로 줄이고(겹치면 그대로 둔다), 정확한
+         이름은 그 뒤에 그대로 적는다. 자료의 넷째 칸이 칸·단계를 접어 둔 것이다. */
+      const li = who.slice(0, 400).map(w => {
+        const ko = String(w[0] || ''), tag = w[3] || '';
+        const ab = ko.length > 2 ? ko.slice(0, 2) : ko;
+        return `<span class="who"><b>${esc(ab)}${tag ? '-' + esc(tag) : ''}</b>`
+             + ` ${esc(w[1] || '')}`
+             + `<em>${esc(ko)}${w[2] ? ' · ' + esc(w[2]) : ''}</em></span>`;
+      }).join('');
       tr.insertAdjacentHTML('afterend',
         `<tr class="xl"><td colspan="5"><div class="wholist">${li}`
         + (who.length > 400 ? `<span class="who">… 그 밖 ${who.length - 400}개</span>` : '')

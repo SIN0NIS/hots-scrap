@@ -150,6 +150,13 @@
   /* 범위 그림은 **기본으로 접어 둔다.** 기술마다 한 장씩 들어가 목록이 길어지는데,
      표를 훑어 읽을 때는 거의 안 본다. 오른쪽 위 단추로 켠다(켠 상태는 기억해 둔다). */
   body.nofig .fig { display:none; }
+  /* 기술 → 그 기술을 바꾸는 특성으로 데려가는 단추 */
+  .goup { margin-left:auto; flex:0 0 auto; border:1px solid var(--line); border-radius:6px;
+          background:var(--card2, var(--bg)); color:var(--dim); cursor:pointer;
+          font:inherit; font-size:11px; line-height:1; padding:3px 7px; }
+  .goup:hover { color:var(--blue); border-color:var(--blue); }
+  @keyframes gohl { 0%,100% { background:transparent; } 25%,60% { background:var(--blue-soft); } }
+  .hl { animation:gohl 1.4s ease; border-radius:10px; }
   .more { margin-top:6px; font-size:12px; padding:3px 10px; border-radius:7px; cursor:pointer;
           border:1px solid var(--line); background:var(--card2); color:var(--dim); font-family:inherit; }
   .lv { color:var(--gold); font-weight:700; }
@@ -336,7 +343,11 @@ function upsHTML(ups) {
          + `<img src="${imgUrl('abilitytalents', t.아이콘)}" alt="" loading="lazy">`
          + `<span class="t${ckC('특성강화', ti, '줄')}"${ckA('특성강화', ti, '줄', t.이름 || '')}`
          + ` title="이상하면 눌러 두세요"><span class="lv">${esc(tierLabel(t.단계))}</span> ${esc(t.이름 || '')}`
-         + (d ? ` <span class="d">${esc(d)}</span>` : '') + `</span></div>`;
+         + (d ? ` <span class="d">${esc(d)}</span>` : '') + `</span>`
+         /* **이름은 이미 '이상하면 눌러 두세요' 칸이라** 거기에 이동을 겹칠 수 없다.
+            따로 작은 단추를 둬서 그 특성 자리로 데려간다(같은 화면 안에 있다). */
+         + `<button class="goup" type="button" data-go="${esc(ti)}"
+                    title="그 특성 자리로">↓</button></div>`;
   }).join('');
   return `<div class="ups"><b>위 표는 특성을 안 찍은 기본 틀입니다 · `
        + `이 기술을 바꾸는 특성 ${ups.length}개</b>${rows}</div>`;
@@ -777,6 +788,20 @@ $('#body').addEventListener('click', e => {
     : b.textContent.replace('접기', '보기');
 });
 $('#ids').addEventListener('click', () => document.body.classList.toggle('noid'));
+/* 기술 아래의 '이 기술을 바꾸는 특성' 에서 그 특성 자리로. 같은 화면 안에 있으므로
+   옮겨 가는 게 아니라 **그 자리로 데려가고 잠깐 밝힌다** — 어디로 갔는지 보이게. */
+$('#body').addEventListener('click', e => {
+  const b = e.target.closest('.goup');
+  if (!b) return;
+  e.preventDefault(); e.stopPropagation();
+  const id = b.getAttribute('data-go');
+  const el = document.querySelector(`.talent[data-zi="${CSS.escape(id)}"]`);
+  if (!el) return;
+  el.scrollIntoView({ block: 'center', behavior: 'smooth' });
+  el.classList.remove('hl');
+  void el.offsetWidth;                 // 애니메이션을 다시 틀려면 한 번 끊어야 한다
+  el.classList.add('hl');
+});
 /* 범위 그림 켜고 끄기. 앱 격리 규약대로 열쇠는 `herodex.` 로 시작한다. */
 const FIG_KEY = 'herodex.figs';
 function figsPaint() {
