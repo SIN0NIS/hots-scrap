@@ -80,13 +80,17 @@
   .leg:hover { border-color:var(--blue); }
   .leg.off { color:var(--dim); background:transparent; }
 
-  /* 아래 작은 줄 — 네 갈래에 안 드는 것 */
-  .more { margin-top:26px; display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
-  .more .lab { color:var(--dim); font-size:12px; margin-right:2px; }
-  .more a { font-size:12.5px; text-decoration:none; color:var(--fg);
-            border:1px solid var(--line); border-radius:999px; padding:4px 12px;
-            background:var(--card); }
-  .more a:hover { border-color:var(--gold-line); color:var(--gold); }
+  /* ── 히오스 정보 — 넷과 성격이 다른 묶음 ─────────────────────────
+     패치 기록도 티어표도 **읽고 고르는 정보**지 무언가를 만드는 도구가 아니다.
+     받은 아이콘이 넷뿐이라 같은 크기로 세우면 빈 육각이 생긴다 — 이름은 주되
+     한 단 낮춰 **가로로 긴 띠**로 둔다. */
+  .info { margin-top:16px; background:var(--card); border:1px solid var(--line);
+          border-radius:16px; padding:15px 20px; box-shadow:var(--shadow);
+          display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
+  .info h2 { margin:0; font-size:15.5px; color:var(--gold); white-space:nowrap; }
+  .info .say { margin:0; color:var(--dim); font-size:12.5px; word-break:keep-all;
+               flex:1 1 220px; min-width:0; }
+  .info .legs { margin:0; }
   .foot { margin-top:30px; color:var(--dim); font-size:11.5px; }
 </style>
 </head>
@@ -190,11 +194,14 @@
     </a>
   </div>
 
-  <div class="more">
-    <span class="lab">그 밖에</span>
-    <a href="patchnotes/">패치 기록</a>
-    <a href="tier/">티어표 만들기</a>
-  </div>
+  <section class="info">
+    <h2>히오스 정보</h2>
+    <p class="say">판마다 무엇이 바뀌었는지 짚어 보고, 내 생각대로 티어표를 만들어 둡니다.</p>
+    <div class="legs">
+      <a class="leg" href="patchnotes/">패치 기록</a>
+      <a class="leg" href="tier/">티어표 만들기</a>
+    </div>
+  </section>
 
   <p class="foot" id="foot"></p>
 </div>
