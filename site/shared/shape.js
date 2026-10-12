@@ -343,6 +343,17 @@
       mark = ((spin && spins(g)) || turn) ? body.length : -1;
       if (g.꼴 === '자리들') {
         // 여러 지점에 차례로 생기는 기술(잘아타스 공허 걸음의 삼각형). 자리를 잇고 번호를 붙인다.
+        /* **담은 차례가 없다.** 레오릭 망자의 묘실은 ㄷ 자 담이 한꺼번에 서는 것이라,
+           칸마다 1~73 을 적으면 담은 안 보이고 숫자만 보인다. 칸을 네모로 깔아 담처럼
+           보이게 하고 번호도 잇는 선도 안 그린다(`벽` 이 몇 장인지 자료에 적혀 있다). */
+        if (g.벽) {
+          const sz = Math.max(3, S * 0.26);
+          (g.점 || []).forEach(p => {
+            body += `<rect x="${px(p[0]) - sz / 2}" y="${py(p[1]) - sz / 2}" `
+                  + `width="${sz}" height="${sz}" fill="${C}" fill-opacity=".55" `
+                  + `stroke="${C}" stroke-width="0.8"/>`;
+          });
+        } else {
         const pts = (g.점 || []).map(p => px(p[0]) + ',' + py(p[1]));
         body += `<polygon points="${pts.join(' ')}" fill="${C}" fill-opacity=".10" `
               + `stroke="${C}" stroke-width="1.2" stroke-dasharray="5 3"/>`;
@@ -350,6 +361,7 @@
           body += `<circle cx="${px(p[0])}" cy="${py(p[1])}" r="4" fill="${C}"/>`
                 + `<text x="${px(p[0]) + 6}" y="${py(p[1]) - 5}" font-size="9" fill="${C}">${i + 1}</text>`;
         });
+        }
       } else if (g.꼴 === '다각형')
         body += `<polygon points="${(g.점 || []).map(p => px(p[0]) + ',' + py(p[1])).join(' ')}" ${fill}/>`;
       else if (g.꼴 === '부채꼴' && g.조각방향 && g.조각방향.length) {
