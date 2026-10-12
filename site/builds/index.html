@@ -254,6 +254,18 @@
             <input type="range" min="12" max="20" value="14" oninput="updateFontSize(this.value)">
         </div>
         <div class="btn-group">
+            <!-- **설명 빼기는 저장 단추 옆에 있어야 한다.** 미리보기 창 안에만 두면,
+                 미리보기를 안 거치고 바로 저장하는 사람은 그런 고르개가 있는 줄도 모른다.
+                 상태는 `tcShortSync` 가 창마다 맞춰 준다. -->
+            <label class="scrap-tap" id="ft-short-wrap"
+                   title="특성 설명을 빼고 아이콘과 이름만 넣습니다 — 설명이 길어 그림이 세로로 길어질 때"
+                   style="display:inline-flex; align-items:center; gap:6px; font-size:12px;
+                          color:#8fa2bd; cursor:pointer; padding:4px 10px; border-radius:5px;
+                          border:1px solid #233a5c; background:#132b4d;">
+              <input type="checkbox" id="ft-short" onchange="tcShortToggle(this.checked)"
+                     style="width:15px; height:15px; accent-color:#1758a8;">
+              <span id="ft-short-txt">설명 빼기</span>
+            </label>
             <button class="footer-btn" onclick="takeScreenshot('save')">📸 저장</button>
             <button class="footer-btn" style="background:#27ae60;" onclick="takeScreenshot('copy')">📋 이미지 복사</button>
         </div>
@@ -1158,7 +1170,8 @@ function tcShortSync() {
   var ko = currentLang === 'ko';
   [['tc-short', 'tc-short-txt', ko ? '아이콘+이름만' : 'Icon + name only'],
    ['tcp-short', 'tcp-short-txt', ko ? '설명 빼기 (아이콘+이름만)' : 'No description (icon + name)'],
-   ['bp-short', 'bp-short-txt', ko ? '설명 빼기' : 'No description']
+   ['bp-short', 'bp-short-txt', ko ? '설명 빼기' : 'No description'],
+   ['ft-short', 'ft-short-txt', ko ? '설명 빼기' : 'No description']
   ].forEach(function (x) {
     var b = document.getElementById(x[0]), t = document.getElementById(x[1]);
     if (b) b.checked = tcShort;
