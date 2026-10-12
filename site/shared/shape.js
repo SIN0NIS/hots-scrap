@@ -347,12 +347,20 @@
            칸마다 1~73 을 적으면 담은 안 보이고 숫자만 보인다. 칸을 네모로 깔아 담처럼
            보이게 하고 번호도 잇는 선도 안 그린다(`벽` 이 몇 장인지 자료에 적혀 있다). */
         if (g.벽) {
-          const sz = Math.max(3, S * 0.26);
-          (g.점 || []).forEach(p => {
-            body += `<rect x="${px(p[0]) - sz / 2}" y="${py(p[1]) - sz / 2}" `
-                  + `width="${sz}" height="${sz}" fill="${C}" fill-opacity=".55" `
-                  + `stroke="${C}" stroke-width="0.8"/>`;
+          /* 담 한 장을 **선 하나**로 긋는다. 칸마다 점을 찍고 1~73 번호를 매기면
+             담은 안 보이고 숫자만 보인다(레오릭 묘실). 자료가 담의 두 끝을 준다. */
+          (g.벽선 || []).forEach(seg => {
+            body += `<line x1="${px(seg[0][0])}" y1="${py(seg[0][1])}" `
+                  + `x2="${px(seg[1][0])}" y2="${py(seg[1][1])}" stroke="${C}" `
+                  + `stroke-width="5" stroke-linecap="square" stroke-opacity=".85"/>`;
           });
+          if (!(g.벽선 || []).length) {          // 두 끝을 못 받았으면 칸을 깔아 둔다
+            const sz = Math.max(3, S * 0.26);
+            (g.점 || []).forEach(p => {
+              body += `<rect x="${px(p[0]) - sz / 2}" y="${py(p[1]) - sz / 2}" `
+                    + `width="${sz}" height="${sz}" fill="${C}" fill-opacity=".55"/>`;
+            });
+          }
         } else {
         const pts = (g.점 || []).map(p => px(p[0]) + ',' + py(p[1]));
         body += `<polygon points="${pts.join(' ')}" fill="${C}" fill-opacity=".10" `
