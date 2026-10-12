@@ -155,6 +155,10 @@
     </div>
   </div>
 
+  <p class="note" style="margin:2px 0 14px; font-size:12.5px;">
+    항목 하나를 누르면 <b>값이 어떻게 퍼져 있는지</b>와 <b>어느 기술·특성이 그 값을 가지는지</b>가 펼쳐집니다.
+    카드 오른쪽 위의 <b>“91개 · 100%”</b> 는 <i>그 칸을 가진 것의 수</i>와 <i>전체 가운데 몇 %가 그 칸을 가지는지</i>입니다.
+  </p>
   <div id="catalog"></div>
   <div id="herotab" hidden>
     <div class="tscroll"><table class="ht" id="htab"></table></div>
@@ -213,7 +217,7 @@ function card(f) {
     ? `${fmt(f.요약.최소)} ~ ${fmt(f.요약.최대)} · 중앙 <b>${fmt(f.요약.중앙)}</b>`
     : (f.값 && f.값.length ? `${f['값 수']}가지 · 으뜸 <b>${esc(f.값[0][0])}</b> ${f.값[0][1]}` : '');
   return `<button class="f" data-k="${esc(f.열쇠)}"><h3>${esc(f.이름)}`
-       + `<span class="cov">${f.수}개 · ${Math.round(f.덮음 * 100)}%</span></h3>`
+       + `<span class="cov" title="이 칸을 가진 것이 ${f.수}개 — 모든 기술·특성 가운데 ${Math.round(f.덮음 * 100)}% 가 이 칸을 가집니다">${f.수}개 · ${Math.round(f.덮음 * 100)}%</span></h3>`
        + mini + `<div class="line">${line}</div>`
        + (f['뺀 것'] ? `<div class="drop">뺀 값 ${f['뺀 것'].reduce((a, b) => a + b[1], 0)}개</div>` : '')
        + `</button>`;

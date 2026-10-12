@@ -242,7 +242,8 @@
     <div id="footer">
         <div id="selected-summary"></div>
         <div style="display:flex; gap:6px;">
-            <input type="text" id="code-load-input" placeholder="[T3211224,Diablo] 코드 붙여넣기" style="flex:1; background:#132b4d; border:1px dashed #233a5c; color:#eaf1fa; border-radius:4px; padding:7px 10px; font-family:monospace; font-size:12px; outline:none;">
+            <input type="text" id="code-load-input" placeholder="[T3211224,Diablo] 코드 붙여넣기"
+                   title="게임 안에서 복사한 특성 코드입니다 — 특성 화면의 '빌드 복사' 로 얻은 [T…,영웅] 글을 그대로 붙여넣으면 그 빌드가 찍힙니다" style="flex:1; background:#132b4d; border:1px dashed #233a5c; color:#eaf1fa; border-radius:4px; padding:7px 10px; font-family:monospace; font-size:12px; outline:none;">
             <button type="button" onclick="loadBuildCode(document.getElementById('code-load-input').value)" style="background:#1758a8; border:none; color:#fff; border-radius:4px; padding:0 14px; cursor:pointer; font-size:12px; font-weight:bold;">불러오기</button>
         </div>
         <div id="build-code-box" onclick="copyBuildCode()">특성을 선택하세요.</div>
@@ -250,6 +251,10 @@
             <span style="font-size:12px; color:#aaa;">이름 <input type="color" id="name-color" value="#a333ff"></span>
             <span style="font-size:12px; color:#aaa;">테두리 <input type="color" id="border-color" value="#a333ff"></span>
             <button type="button" onclick="openBuildPreview()" style="background:#132b4d; border:1px solid #233a5c; color:#eaf1fa; border-radius:5px; padding:4px 12px; cursor:pointer; font-size:12px;">👁 미리보기</button>
+            <!-- 되돌리기는 초기화 **왼쪽**에 둔다 — 실수로 초기화를 눌렀을 때
+                 손이 가장 가까운 자리가 되돌리기여야 한다. -->
+            <button type="button" id="undo-btn" onclick="undoTalent()" title="되돌릴 것이 없습니다"
+                    style="background:#132b4d; border:1px solid #233a5c; color:#cfe0f5; border-radius:5px; padding:4px 12px; cursor:default; font-size:12px; opacity:.4;">↶ 되돌리기</button>
             <button type="button" onclick="resetTalents()" title="선택한 특성을 모두 지운다" style="background:#3a1520; border:1px solid #6b2b3a; color:#e8a0a8; border-radius:5px; padding:4px 12px; cursor:pointer; font-size:12px;">🗑 초기화</button>
             <input type="range" min="12" max="20" value="14" oninput="updateFontSize(this.value)">
         </div>
@@ -494,6 +499,12 @@
             document.getElementById("hero-info-title").innerText = hData.name; document.getElementById("hero-stat-container").style.display = "block";
             const lvs = Object.keys(hData.talents).filter(l => hData.talents[l].length > 0).sort((a,b) => parseInt(a.replace(/\D/g,"")) - parseInt(b.replace(/\D/g,"")));
             selectedTalents = new Array(lvs.length).fill(0);
+            /* ⚠ **여기서 비우면 안 된다.** `selectHero` 는 영웅을 바꿀 때만 도는 게
+               아니라 말·서버를 바꿀 때도 다시 돈다(그때는 고른 특성을 되살려 둔다).
+               여기서 비우면 되돌리기가 늘 0 이 된다 — 실제로 그래서 한 번도 안 쌓였다.
+               **영웅이 진짜 바뀌었을 때만** 비운다. */
+            if (undoHero !== id) { undoStack = []; undoHero = id; }
+            undoPaint();
             let h = ''; lvs.forEach((lv, i) => {
                 h += `<div class="tier-row"><button type="button" class="lv-list-btn" title="${currentLang==='ko'?'이 레벨 특성 모두 보기':'Show all talents of this tier'}" onclick="openTierAt('${lv}')">${lv.replace(/\D/g,"")}</button><div style="display:flex;gap:4px;">`;
                 hData.talents[lv].forEach((t, ti) => { h += `<img src="${iconUrl(t.icon)}" class="t-icon t-row-${i}" onclick="toggleTalent(${i}, ${ti+1}, this)">`; });
@@ -503,7 +514,46 @@
             renderStats(); renderAbilities(); updateBuildUI();
         }
 
+        /* ── 되돌리기 ─────────────────────────────────────────────────────
+           특성은 **한 번 잘못 누르면 무엇을 눌렀었는지 기억이 안 난다** — 특히
+           초기화는 스무 개를 한꺼번에 지운다. 바꾸기 **직전의 상태**를 쌓아 두고
+           한 걸음씩 되짚는다(스무 걸음까지). 영웅을 바꾸면 쌓은 것은 비운다 —
+           다른 영웅의 특성 번호를 되돌려 봐야 말이 안 되기 때문이다. */
+        var undoStack = [], undoHero = null;
+        function undoPush() {
+            /* ⚠ `currentHeroId` 가 있을 때만 쌓던 것을 풀었다 — 주소로 바로 들어오면
+               (`?hero=Diablo`) 특성은 그려지는데 그 칸이 아직 안 차 있어, 되돌리기가
+               한 번도 안 쌓였다. 영웅 이름은 **표시로만** 쓰고 쌓는 것은 늘 쌓는다. */
+            undoStack.push({
+                hero: currentHeroId,
+                sel: (selectedTalents || []).slice(),
+                sub: JSON.parse(JSON.stringify(subTalents || []))
+            });
+            if (undoStack.length > 20) undoStack.shift();
+            undoPaint();
+        }
+        function undoPaint() {
+            var b = document.getElementById('undo-btn');
+            if (!b) return;
+            var n = undoStack.length;
+            b.disabled = !n;
+            b.style.opacity = n ? '1' : '.4';
+            b.style.cursor = n ? 'pointer' : 'default';
+            b.title = n ? ('바로 앞 상태로 되돌립니다 (남은 걸음 ' + n + ')')
+                        : '되돌릴 것이 없습니다';
+        }
+        function undoTalent() {
+            var st = undoStack.pop();
+            if (!st) return;
+            if (st.hero !== currentHeroId) { undoStack = []; undoPaint(); return; }
+            selectedTalents = st.sel;
+            subTalents = st.sub;
+            refreshTalentUI();
+            undoPaint();
+        }
+
         function toggleTalent(ti, tn, el) {
+            undoPush();
             if(selectedTalents[ti] == tn) selectedTalents[ti] = 0;
             else selectedTalents[ti] = tn;
             refreshTalentUI();
@@ -820,6 +870,7 @@ function tierLevels(hData) {
 /* 클릭 모델: 첫 클릭 = 메인, 다음 클릭 = 상황별(보조), 보조 클릭 = 메인과 교체, 메인 클릭 = 해제 */
 (function () {
   window.toggleTalent = function (ti, tn, el) {
+    undoPush();   // **진짜 쓰이는 것은 이쪽이다** — 위의 toggleTalent 는 여기서 덮인다
     var main = selectedTalents[ti];
     if (!subTalents[ti]) subTalents[ti] = [];
     var subs = subTalents[ti];
@@ -893,6 +944,7 @@ document.addEventListener('touchend', function (e) {
 /* 선택 초기화 — 메인·보조 전부 비우고 다시 고르기 */
 function resetTalents() {
   if (!currentHeroId) return;
+  undoPush();                 // 스무 개를 한꺼번에 지우는 자리라 더욱 되돌릴 수 있어야 한다
   selectedTalents = selectedTalents.map(function () { return 0; });
   subTalents = (subTalents || []).map(function () { return []; });
   refreshTalentUI();
