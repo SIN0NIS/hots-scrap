@@ -370,8 +370,16 @@
                 + `<text x="${px(p[0]) + 6}" y="${py(p[1]) - 5}" font-size="9" fill="${C}">${i + 1}</text>`;
         });
         }
-      } else if (g.꼴 === '다각형')
-        body += `<polygon points="${(g.점 || []).map(p => px(p[0]) + ',' + py(p[1])).join(' ')}" ${fill}/>`;
+      } else if (g.꼴 === '다각형') {
+        /* 가늠자 다각형(`겉`)은 **어디까지 미치나**를 그린 것이라, 안에 든 탐색 상자와
+           겹쳐 그리면 "부채 안에 상자가 하나 더" 로 보인다. 겉은 **테두리 쪽**으로,
+           속을 채우는 것은 상자 쪽에 맡긴다. */
+        const pp = (g.점 || []).map(p => px(p[0]) + ',' + py(p[1])).join(' ');
+        body += g.겉
+          ? `<polygon points="${pp}" fill="${C}" fill-opacity=".08" stroke="${C}" `
+            + `stroke-width="2" stroke-opacity=".9"/>`
+          : `<polygon points="${pp}" ${fill}/>`;
+      }
       else if (g.꼴 === '부채꼴' && g.조각방향 && g.조각방향.length) {
         /* **휩쓰는 기술** — 조각을 한꺼번에 깔면 "넓은 부채꼴 하나" 로 보여, 어느 쪽으로
            휘두르는지도 몇 번 휘두르는지도 안 보인다. 자료는 조각마다 방향(`FacingAdjustment`)
@@ -487,12 +495,17 @@
       } else if (g.꼴 === '둘레') {
         /* **둘러싸는 자리** — 마이에브 감시관의 감옥은 반지름 5.5 둘레에 화신 여덟을 세운다.
            원 하나만 그리면 '장판' 으로 보이니, 둘레를 점선으로 긋고 자리마다 점을 찍는다. */
-        body += `<circle cx="${px(0)}" cy="${py(0)}" r="${g.반지름 * S}" fill="none" `
-              + `stroke="${C}" stroke-width="1.6" stroke-dasharray="6 4"/>`;
+        /* **막는 구조물은 테두리를 실선으로** 긋는다 — 점선은 거리 고리 몫이라(규칙 95)
+           섞어 쓰면 '얼마나 먼가' 로 읽힌다. 감옥·좀비 벽은 **지나갈 수 없는 담**이다.
+           자리마다 네모를 깔아 담 한 칸씩이라는 것도 보이게 한다(묘실과 같은 꼴). */
+        body += `<circle cx="${px(0)}" cy="${py(0)}" r="${g.반지름 * S}" fill="${C}" `
+              + `fill-opacity=".05" stroke="${C}" stroke-width="2.4" stroke-opacity=".85"/>`;
+        const bz = Math.max(4, S * 0.5);
         for (let i = 0; i < (g.수 || 0); i++) {
           const t = i * 2 * Math.PI / g.수;
-          body += `<circle cx="${px(Math.sin(t) * g.반지름)}" cy="${py(Math.cos(t) * g.반지름)}" `
-                + `r="3.5" fill="${C}"/>`;
+          const bx = px(Math.sin(t) * g.반지름), by = py(Math.cos(t) * g.반지름);
+          body += `<rect x="${bx - bz / 2}" y="${by - bz / 2}" width="${bz}" height="${bz}" `
+                + `fill="${C}" fill-opacity=".75" stroke="${C}" stroke-width="1"/>`;
         }
       } else if (g.꼴 === '갈래') {
         /* **여러 갈래로 뻗는 기술** — 디아블로 화염 발구르기는 5갈래가 20도씩 벌어진다.
