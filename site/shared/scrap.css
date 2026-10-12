@@ -75,3 +75,18 @@
   #scrap-bar .scrap-nav { padding:4px 6px; font-size:11.5px; }
   #scrap-bar { padding-right:82px; }
 }
+
+/* 갈래마다 제 아이콘 — 메인 타일에 쓰는 육각 그림 그대로다.
+   `<img>` 가 아니라 **마스크**라서 바탕이 currentColor 를 따라간다(밝기 전환 OK). */
+/* **색을 바에서 물려받는다.** 안 주면 브라우저 기본 링크색(파랑)이 걸리고,
+   아이콘은 그 색을 그대로 뒤집어쓴다(currentColor 라서). */
+#scrap-bar .scrap-nav { display:inline-flex; align-items:center; gap:5px; color:inherit; }
+.scrap-ic { width:15px; height:15px; flex:0 0 auto; background:currentColor;
+  -webkit-mask-repeat:no-repeat; mask-repeat:no-repeat;
+  -webkit-mask-position:center; mask-position:center;
+  -webkit-mask-size:contain; mask-size:contain; }
+.ic-talent { -webkit-mask-image:url(../images/main/talent.svg); mask-image:url(../images/main/talent.svg); }
+.ic-codex  { -webkit-mask-image:url(../images/main/codex.svg);  mask-image:url(../images/main/codex.svg); }
+.ic-replay { -webkit-mask-image:url(../images/main/replay.svg); mask-image:url(../images/main/replay.svg); }
+.ic-viewer { -webkit-mask-image:url(../images/main/viewer.svg); mask-image:url(../images/main/viewer.svg); }
+@media (max-width:560px) { .scrap-ic { width:14px; height:14px; } }

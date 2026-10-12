@@ -29,10 +29,10 @@
      메인의 큰 타일 넷과 **같은 이름·같은 차례**라 어디 있든 길이 같아 보인다.
      지금 보고 있는 갈래는 눌러도 제자리이므로 글자만 또렷하게 해 둔다. */
   var NAV = [
-    ['builds/?ch=live', '특성 찍기', ['builds']],
-    ['herodex/', '위키', ['herodex', 'encyclopedia', 'patchnotes', 'tier']],
-    ['replay/', '리플레이', ['replay']],
-    ['https://sin0nis.github.io/hots_hero_m3/', '뷰어', []]
+    ['builds/?ch=live', '특성 찍기', ['builds'], 'talent'],
+    ['herodex/', '위키', ['herodex', 'encyclopedia', 'patchnotes', 'tier'], 'codex'],
+    ['replay/', '리플레이', ['replay'], 'replay'],
+    ['https://sin0nis.github.io/hots_hero_m3/', '뷰어', [], 'viewer']
   ];
 
   function navLinks() {
@@ -41,8 +41,12 @@
       var n = NAV[i], on = false;
       for (var j = 0; j < n[2].length; j++)
         if (here.indexOf('/' + n[2][j] + '/') >= 0) on = true;
+      /* 아이콘은 **마스크**로 깐다 — `<img>` 로 넣으면 색이 파일에 박혀 밝기 전환을
+         안 따라온다. 마스크면 바탕이 `currentColor` 라 글자와 같은 색으로 움직인다. */
       out += '<a class="scrap-nav' + (on ? ' on' : '') + '" href="'
-           + (/^https?:/.test(n[0]) ? n[0] : BASE + n[0]) + '">' + n[1] + '</a>';
+           + (/^https?:/.test(n[0]) ? n[0] : BASE + n[0]) + '">'
+           + '<i class="scrap-ic ic-' + n[3] + '" aria-hidden="true"></i>'
+           + '<span>' + n[1] + '</span></a>';
     }
     return '<span id="scrap-nav">' + out + '</span>';
   }
