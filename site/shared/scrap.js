@@ -24,11 +24,35 @@
     return t;
   }
 
+  /* **어느 페이지에서든 네 갈래로 오간다.** 앱마다 머리줄을 따로 두면 하나 늘 때마다
+     여러 군데를 고쳐야 한다 — 전역 바가 이미 모든 화면에 깔리니 여기 한 자리에 둔다.
+     메인의 큰 타일 넷과 **같은 이름·같은 차례**라 어디 있든 길이 같아 보인다.
+     지금 보고 있는 갈래는 눌러도 제자리이므로 글자만 또렷하게 해 둔다. */
+  var NAV = [
+    ['builds/?ch=live', '특성 찍기', ['builds']],
+    ['herodex/', '위키', ['herodex', 'encyclopedia', 'patchnotes', 'tier']],
+    ['replay/', '리플레이', ['replay']],
+    ['https://sin0nis.github.io/hots_hero_m3/', '뷰어', []]
+  ];
+
+  function navLinks() {
+    var here = location.pathname, out = '';
+    for (var i = 0; i < NAV.length; i++) {
+      var n = NAV[i], on = false;
+      for (var j = 0; j < n[2].length; j++)
+        if (here.indexOf('/' + n[2][j] + '/') >= 0) on = true;
+      out += '<a class="scrap-nav' + (on ? ' on' : '') + '" href="'
+           + (/^https?:/.test(n[0]) ? n[0] : BASE + n[0]) + '">' + n[1] + '</a>';
+    }
+    return '<span id="scrap-nav">' + out + '</span>';
+  }
+
   function addBar() {
     if (document.getElementById('scrap-bar')) return;
     var d = document.createElement('div');
     d.id = 'scrap-bar';
     d.innerHTML = '<a id="scrap-brand" href="' + BASE + '" style="font-weight:600;letter-spacing:0.3px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;"><img id="scrap-logo" src="' + BASE + 'shared/logo_light.svg" alt="" style="height:18px;width:18px;"> HotS Scrap</a>'
+      + navLinks()
       + '<span style="position:absolute;right:8px;top:50%;transform:translateY(-50%);display:flex;gap:6px;align-items:center;">'
       + '<button id="scrap-theme-btn" type="button" title="다크/라이트 전환 — 모든 화면에 적용" style="border-radius:99px;padding:4px 10px;cursor:pointer;font-size:12px;line-height:1;">◐</button>'
       + '<a id="scrap-gh" href="https://github.com/SIN0NIS/hots-scrap" target="_blank" rel="noopener" title="GitHub 저장소" style="text-decoration:none;font-size:12px;line-height:1;border-radius:99px;padding:4px 10px;">🔗</a>'
