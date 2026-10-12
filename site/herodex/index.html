@@ -151,6 +151,10 @@
      표를 훑어 읽을 때는 거의 안 본다. 오른쪽 위 단추로 켠다(켠 상태는 기억해 둔다). */
   body.nofig .fig { display:none; }
   /* 기술 → 그 기술을 바꾸는 특성으로 데려가는 단추 */
+  /* 이번 판에 바뀐 자리 — 패치 때마다 "뭐가 바뀌었지" 를 찾아 헤매지 않게 */
+  .chg { display:inline-block; margin-left:6px; font-size:10.5px; font-weight:600;
+         color:#fff; background:var(--gold, #a97e1f); border-radius:999px;
+         padding:1px 7px; vertical-align:middle; }
   .goup { margin-left:auto; flex:0 0 auto; border:1px solid var(--line); border-radius:6px;
           background:var(--card2, var(--bg)); color:var(--dim); cursor:pointer;
           font:inherit; font-size:11px; line-height:1; padding:3px 7px; }
@@ -238,6 +242,9 @@
 </div>
 <script>
 const $ = s => document.querySelector(s);
+let CHANGED = {};              // 영웅 id -> 이번 판에 바뀐 기술·특성 id 들
+const chgBadge = id => (CHANGED[cur] || []).includes(id)
+  ? `<span class="chg" title="이번 판에 값이 바뀌었습니다">이번 판</span>` : '';
 const esc = s => String(s == null ? "" : s).replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
 const FIGKEY = ['도형', '도형거리', '그래프', '_범위상세', '모임 범위', '모으기', '휩쓰는 차례', '전거리'];   // 표가 아니라 그림으로 보여 주는 칸(또는 안에서만 쓰는 칸)
 const LIST = ['피해','회복','범위','투사체','재사용 조정','지속 효과','거는 효과',
@@ -582,7 +589,7 @@ function abilityHTML(a, opt) {
       + `<span class="slot ${slotClass(slot)}${alt ? ' alt' : ''}"`
       + ` title="${alt ? esc(a['같은 칸']) : ''}">${esc(slot)}</span>`
       + (a.모드 && !opt.묶음 ? `<span class="mode">${esc(a.모드)}</span>` : '')
-      + `<span class="nm">${esc(a.이름)}</span>
+      + `<span class="nm">${esc(a.이름)}</span>${chgBadge(a.id)}
            <span class="id">${esc(a.id)}</span>${memoBtn('기술', a.id, a.이름)}</div>
       ${a.설명 ? `<div class="desc">${esc(a.설명)}</div>` : ''}
       <div class="chips">${chips}</div>
@@ -614,7 +621,7 @@ function talentHTML(t) {
     + (t.예외 ? `<tr><td class="k warnrow">⚠ 예외</td><td class="warnrow">${esc(t.예외)}</td></tr>` : '');
   return `<div class="talent" data-zi="${esc(t.id || t.이름)}"><div>`
     + `<img class="tico" src="${imgUrl('abilitytalents', t.아이콘)}" alt="" `
-    + `loading="lazy"><span class="tn">${esc(t.이름)}</span>`
+    + `loading="lazy"><span class="tn">${esc(t.이름)}</span>${chgBadge(t.id || t.이름)}`
     + (t.강화 ? `<span class="up">${esc(t.강화)} 강화</span>` : '')
     + memoBtn('특성', t.id || t.이름, t.이름) + `</div>`
     + (t.설명 ? `<div class="tdesc">${esc(t.설명)}</div>` : '')
@@ -872,6 +879,12 @@ document.addEventListener('error', e => {
   try { figOn = localStorage.getItem(FIG_KEY) || '1'; } catch (e) {}
   if (figOn !== '1') document.body.classList.add('nofig');
   figsPaint();
+  /* 이번 판에 바뀐 기술·특성 — herodex_update.py 가 적어 둔다. 없으면 그냥 없는 대로
+     간다(첫 만들기이거나 바뀐 게 없을 때). */
+  fetch('../data/herodex/changed.json', { cache: 'no-cache' })
+    .then(x => x.ok ? x.json() : null)
+    .then(x => { CHANGED = (x && x['영웅']) || {}; })
+    .catch(() => {});
   const [r, ri] = await Promise.all([
     fetch('../data/herodex/index.json', { cache: 'no-cache' }),
     fetch('../images/index.json', { cache: 'no-cache' }).catch(() => null),

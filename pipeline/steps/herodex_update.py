@@ -118,11 +118,12 @@ def key_set(d, kind):
 
 def diff_hero(old, new):
     """한 영웅 안에서 **새로 생긴 것 · 없어진 것 · 값이 바뀐 것**을 센다."""
-    out = {"생김": [], "빠짐": [], "바뀜": []}
+    out = {"생김": [], "빠짐": [], "바뀜": [], "_ids": []}
     for kind in ("기술", "특성"):
         a, b = key_set(old, kind), key_set(new, kind)
         for k in b.keys() - a.keys():
             out["생김"].append(f"{kind} {b[k].get('이름') or k}")
+            out["_ids"].append(k)
         for k in a.keys() - b.keys():
             out["빠짐"].append(f"{kind} {a[k].get('이름') or k}")
         for k in a.keys() & b.keys():
@@ -142,7 +143,12 @@ def diff_hero(old, new):
                 bits.append("그림")
             if bits:
                 out["바뀜"].append(f"{kind} {b[k].get('이름') or k} — " + " · ".join(bits[:6]))
+                out["_ids"].append(k)
     return out
+
+
+# 이번 판에 바뀐 기술·특성 — 화면이 표식을 달 수 있게 한 장으로 적어 둔다.
+CHANGED = {}
 
 
 def report_changes():
@@ -171,9 +177,11 @@ def report_changes():
             continue
         new = json.loads(new_f.read_text(encoding="utf-8"))
         d = diff_hero(old, new)
-        if not any(d.values()):
+        if not any(v for k2, v in d.items() if k2 != "_ids"):
             continue
         n_ch += 1
+        if d["_ids"]:
+            CHANGED[hid] = sorted(set(d["_ids"]))
         L.append(f"### {new.get('영웅') or hid}")
         for tag in ("생김", "빠짐", "바뀜"):
             for line in d[tag][:12]:
@@ -195,6 +203,14 @@ def report_changes():
                     for g in (w.get("도형") or []):
                         kinds.add(g.get("꼴"))
         return kinds - {None}, keys
+    if CHANGED:
+        # **이번 판에 무엇이 바뀌었나**를 화면도 알아야 한다. 보고는 사람이 한 번 읽고
+        # 지나가지만, 이 한 장은 도감이 읽어 바뀐 자리에 표식을 단다.
+        (SITE / "changed.json").write_text(json.dumps(
+            {"build": idx_new.get("build"), "영웅": CHANGED},
+            ensure_ascii=False, indent=1), encoding="utf-8")
+        L.append(f"(바뀐 자리 표식 {sum(len(v) for v in CHANGED.values())}개를 "
+                 f"changed.json 에 적었습니다)")
     _old = {h: git_show(f"site/data/herodex/{h}.json") for h in sorted(old_h)}
     _new = {h: json.loads((SITE / f"{h}.json").read_text(encoding="utf-8"))
             for h in sorted(new_h) if (SITE / f"{h}.json").exists()}
