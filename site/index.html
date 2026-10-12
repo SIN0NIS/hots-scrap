@@ -9,514 +9,252 @@
   /* ── HotS 팔레트: 남색(넥서스) · 흰색 · 황금 ─────────────────────
      라이트가 기본(:root), 다크는 media + data-theme 로 겹쳐 쓴다.   */
   :root {
-    --bg:#f3f6fb;            /* 옅은 청백 */
+    --bg:#f3f6fb;
     --bg-glow:radial-gradient(1200px 500px at 50% -10%, #dbe7f7 0%, transparent 60%);
     --card:#ffffff;
     --line:#cdd9ea;
-    --fg:#122036;            /* 짙은 남색 글자 */
+    --fg:#122036;
     --dim:#5d6d84;
-    --blue:#1758a8;          /* 히오스 UI 블루 */
+    --blue:#1758a8;
     --blue-soft:#e8f0fb;
-    --gold:#a97e1f;          /* 황금 (라이트에선 진하게) */
+    --gold:#a97e1f;
     --gold-line:#d7b45c;
-    --bar:#0b1526;           /* 전역 바 톤과 동일 */
+    --shadow:0 1px 2px rgba(18,32,54,.06), 0 8px 24px rgba(18,32,54,.07);
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-      --bg:#0b1526;          /* 넥서스 심연 남색 */
+      --bg:#0b1526;
       --bg-glow:radial-gradient(1200px 500px at 50% -10%, #14294a 0%, transparent 60%);
-      --card:#101f38;
-      --line:#233a5c;
-      --fg:#eaf1fa;
-      --dim:#8fa2bd;
-      --blue:#5aa8ff;
-      --blue-soft:#132b4d;
-      --gold:#e8c268;        /* 황금 (다크에선 밝게) */
-      --gold-line:#8a6d2f;
+      --card:#101f38; --line:#233a5c; --fg:#eaf1fa; --dim:#8fa2bd;
+      --blue:#5aa8ff; --blue-soft:#132b4d; --gold:#e8c268; --gold-line:#8a6d2f;
+      --shadow:0 1px 2px rgba(0,0,0,.35), 0 10px 30px rgba(0,0,0,.35);
+      color-scheme:dark;
     }
   }
   :root[data-theme="dark"] {
     --bg:#0b1526;
     --bg-glow:radial-gradient(1200px 500px at 50% -10%, #14294a 0%, transparent 60%);
-    --card:#101f38;
-    --line:#233a5c;
-    --fg:#eaf1fa;
-    --dim:#8fa2bd;
-    --blue:#5aa8ff;
-    --blue-soft:#132b4d;
-    --gold:#e8c268;
-    --gold-line:#8a6d2f;
+    --card:#101f38; --line:#233a5c; --fg:#eaf1fa; --dim:#8fa2bd;
+    --blue:#5aa8ff; --blue-soft:#132b4d; --gold:#e8c268; --gold-line:#8a6d2f;
+    --shadow:0 1px 2px rgba(0,0,0,.35), 0 10px 30px rgba(0,0,0,.35);
+    color-scheme:dark;
   }
   * { box-sizing:border-box; }
-  body { margin:0; background:var(--bg); background-image:var(--bg-glow); background-repeat:no-repeat;
-         color:var(--fg); font-family:"Malgun Gothic","Segoe UI",sans-serif; min-height:100vh; }
-  /* 배경 워터마크 — 빈 공간에 은은한 큰 로고 */
-  body::before { content:''; position:fixed; inset:0; z-index:-1; pointer-events:none; opacity:0.05;
-                 background:url("shared/logo.svg") center/72vmin no-repeat; }
-  /* 다크에서도 파일을 하나만 쓴다 — 5% 투명도라 색을 뒤집는 것으로 충분하다 (요청 1개 절약) */
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) body::before { filter:invert(1); }
-  }
-  :root[data-theme="dark"] body::before { filter:invert(1); }
-  .wrap { max-width:880px; margin:0 auto; padding:48px 20px; }
+  html, body { margin:0; }
+  body { background:var(--bg); background-image:var(--bg-glow); background-repeat:no-repeat;
+         color:var(--fg); font:15px/1.65 "Noto Sans KR", -apple-system, BlinkMacSystemFont,
+         "Segoe UI", Roboto, sans-serif; min-height:100vh; }
+  .wrap { max-width:1000px; margin:0 auto; padding-block:34px 56px; padding-left:16px; padding-right:16px; }
 
-  /* 타이틀 줄 */
-  .head { display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
-  .head img { height:34px; width:34px; display:block; }
-  h1 { margin:0; font-size:28px; letter-spacing:0.5px; }
-  h1 .s { color:var(--gold); }
-  /* 로고는 파일 두 개를 받는 대신 안에 박아 두고 색만 바꾼다 (요청 2개 절약) */
-  :root { --logo-1:#4f463d; --logo-2:#332e29; --logo-3:#221d1a; }
-  .head svg.logo { height:34px; width:34px; flex:0 0 auto; }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) { --logo-1:#e2d8ca; --logo-2:#bdb1a1; --logo-3:#948877; }
-  }
-  :root[data-theme="dark"] { --logo-1:#e2d8ca; --logo-2:#bdb1a1; --logo-3:#948877; }
+  /* 머리 */
+  .top { display:flex; align-items:baseline; gap:12px; flex-wrap:wrap; margin-bottom:6px; }
+  h1 { margin:0; font-size:27px; letter-spacing:-.01em; }
+  h1 em { font-style:normal; color:var(--gold); }
+  .top .btn { margin-left:auto; border:1px solid var(--line); border-radius:999px;
+              padding:5px 14px; background:var(--card); color:var(--dim); cursor:pointer;
+              font:inherit; font-size:12.5px; }
+  .top .btn:hover { color:var(--fg); border-color:var(--gold-line); }
+  .lead { margin:0 0 26px; color:var(--dim); font-size:13.5px; word-break:keep-all; }
 
-  .headbtn { white-space:nowrap; font-size:13px; color:var(--dim); text-decoration:none; border:1px solid var(--line);
-             border-radius:99px; padding:5px 14px; background:var(--card); cursor:pointer;
-             font-family:inherit; transition:border-color .15s, color .15s; }
-  .headbtn:hover { border-color:var(--gold-line); color:var(--gold); }
-  /* 손가락으로도 쓰는 기기(any-pointer:coarse)에서 누를 크기를 44px 로.
-     ::after 띠로 넓히면 단추가 줄바꿈될 때 윗줄 띠가 아랫줄 단추를 덮어 엉뚱한 것이 눌린다.
-     min-height 로 요소 자체를 키운다. */
-  @media (any-pointer:coarse) {
-    .headbtn { min-height:44px; display:inline-flex; align-items:center; }
-  }
-  #themeBtn { margin-left:auto; }
+  /* ── 큰 타일 넷 ───────────────────────────────────────────────
+     아이콘은 육각 테두리 안에 들어 있고 `currentColor` 를 쓴다 —
+     색을 CSS 가 쥐고 있어서 라이트/다크가 저절로 따라온다. */
+  .tiles { display:grid; gap:16px; grid-template-columns:repeat(2, minmax(0, 1fr)); }
+  @media (max-width:640px) { .tiles { grid-template-columns:1fr; } }
+  .tile { display:block; background:var(--card); border:1px solid var(--line);
+          border-radius:16px; padding:20px 20px 16px; text-decoration:none; color:inherit;
+          box-shadow:var(--shadow); transition:border-color .14s, transform .14s; }
+  .tile:hover { border-color:var(--gold-line); transform:translateY(-2px); }
+  .tile .head { display:flex; align-items:center; gap:14px; }
+  .tile svg { width:50px; height:50px; flex:0 0 auto; color:var(--gold); }
+  .tile h2 { margin:0; font-size:19px; }
+  .tile .say { margin:10px 0 0; color:var(--dim); font-size:13px; word-break:keep-all; }
+  .tile .when { margin-top:9px; font-size:11.5px; color:var(--dim); opacity:.85; }
+  .tile .when b { color:var(--blue); font-weight:600; }
 
-  .sub { color:var(--dim); margin:10px 0 6px; font-size:15px; }
-  .build { color:var(--dim); font-size:13px; margin:0 0 30px; }
-  .build b { color:var(--blue); }
-  .build .date { color:var(--gold); }
+  /* 타일 안의 갈래 — 들어갈 자리가 둘 이상인 것(뷰어·위키) */
+  .legs { display:flex; flex-wrap:wrap; gap:7px; margin-top:12px; }
+  .leg { font-size:12px; text-decoration:none; color:var(--blue);
+         border:1px solid var(--line); border-radius:999px; padding:3px 11px;
+         background:var(--blue-soft); }
+  .leg:hover { border-color:var(--blue); }
+  .leg.off { color:var(--dim); background:transparent; }
 
-  /* 앱 목록 — 1줄 1앱 */
-  .grid { display:flex; flex-direction:column; gap:10px; }
-  a.card { display:flex; align-items:center; gap:14px; background:var(--card); border:1px solid var(--line);
-           border-left:3px solid var(--gold-line); border-radius:10px; padding:16px 20px;
-           text-decoration:none; color:inherit; transition:border-color .15s, transform .1s; }
-  a.card:hover { border-color:var(--gold); border-left-color:var(--gold); transform:translateX(2px); }
-  .card h2 { margin:0; font-size:17px; white-space:nowrap; color:var(--blue); }
-  .card p { margin:0; margin-left:auto; color:var(--dim); font-size:13px; line-height:1.5; text-align:right; }
-  .card .when { display:block; margin-top:3px; font-size:11.5px; color:var(--dim); opacity:.85; letter-spacing:.01em; }
-  .card .when b { font-weight:600; color:var(--blue); }
-  .check { text-align:center; margin:-6px 0 22px; font-size:12.5px; color:var(--dim); }
-  .check b { font-weight:600; }
-  .check a { color:inherit; }
-  .tag { display:inline-block; flex-shrink:0; font-size:11px; color:var(--gold);
-         border:1px solid var(--gold-line); border-radius:99px; padding:2px 8px; }
-  .planned { opacity:.5; pointer-events:none; }
-  .err { color:#d97070; }
-
-  .foot { margin-top:40px; font-size:11px; color:var(--dim); line-height:1.6;
-          border-top:1px solid var(--line); padding-top:16px; }
-  @media (max-width:560px) {
-    a.card { flex-wrap:wrap; }
-    .card p { margin-left:0; text-align:left; width:100%; }
-    h1 { font-size:21px; white-space:nowrap; }
-    .head svg.logo { height:26px; width:26px; }
-    .headbtn { font-size:12px; padding:4px 10px; }
-    .wrap { padding:28px 14px; }
-  }
-  /* 아주 좁은 폰(320px) — 제목과 단추가 한 줄에 못 들어간다. 단추만 아랫줄로 내린다. */
-  @media (max-width:380px) {
-    .head h1 { flex:1 1 auto; }
-    .head .headbtn:first-of-type { margin-left:auto; }
-    .wrap { padding:24px 12px; }
-  }
+  /* 아래 작은 줄 — 네 갈래에 안 드는 것 */
+  .more { margin-top:26px; display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
+  .more .lab { color:var(--dim); font-size:12px; margin-right:2px; }
+  .more a { font-size:12.5px; text-decoration:none; color:var(--fg);
+            border:1px solid var(--line); border-radius:999px; padding:4px 12px;
+            background:var(--card); }
+  .more a:hover { border-color:var(--gold-line); color:var(--gold); }
+  .foot { margin-top:30px; color:var(--dim); font-size:11.5px; }
 </style>
 </head>
 <body>
 <div class="wrap">
-  <div class="head">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" class="logo" aria-hidden="true">
-    <defs>
-    <linearGradient id="hublogo-metal" x1="0" y1="0" x2="0.5" y2="1">
-    <stop offset="0%" stop-color="var(--logo-1)"/>
-    <stop offset="45%" stop-color="var(--logo-2)"/>
-    <stop offset="100%" stop-color="var(--logo-3)"/>
-    </linearGradient>
-    <filter id="hublogo-rust" x="-10%" y="-10%" width="120%" height="120%">
-    <feTurbulence type="fractalNoise" baseFrequency="0.22" numOctaves="4" seed="11" result="n"/>
-    <feColorMatrix in="n" type="matrix" result="rustcol"
-    values="0.9 0.4 0 0 0.12
-    0.45 0.25 0 0 0.06
-    0.15 0.1 0 0 0.03
-    0 0 0 1.1 -0.60"/>
-    <feComposite in="rustcol" in2="SourceGraphic" operator="in" result="clipped"/>
-    <feBlend in="clipped" in2="SourceGraphic" mode="normal" result="blended"/>
-    <feTurbulence type="fractalNoise" baseFrequency="3.2" numOctaves="3" seed="4" result="grain"/>
-    <feColorMatrix in="grain" type="matrix" result="graina"
-    values="0 0 0 0 0.45  0 0 0 0 0.42  0 0 0 0 0.4  0 0 0 0.35 0"/>
-    <feComposite in="graina" in2="SourceGraphic" operator="in" result="grainclip"/>
-    <feBlend in="grainclip" in2="blended" mode="overlay"/>
-    </filter>
-    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-    <feDropShadow dx="5" dy="8" stdDeviation="8" flood-color="#000" flood-opacity="0.28"/>
-    </filter>
-    <g id="screw">
-    <path d="M -80.0,-96.0 L -22.0,-96.0 L 28.0,-46.0 L 41.0,-29.0 L 54.0,-46.0 L 67.0,-29.0 L 80.0,-46.0 L 93.0,-29.0 L 106.0,-46.0 L 119.0,-29.0 L 132.0,-46.0 L 145.0,-29.0 L 158.0,-46.0 L 171.0,-29.0 L 184.0,-46.0 L 197.0,-29.0 L 210.0,-46.0 L 223.0,-29.0 L 236.0,-46.0 L 249.0,-29.0 L 262.0,-46.0 L 276.0,-38.0 L 340.0,0 L 276.0,38.0 L 262.0,46.0 L 249.0,29.0 L 236.0,46.0 L 223.0,29.0 L 210.0,46.0 L 197.0,29.0 L 184.0,46.0 L 171.0,29.0 L 158.0,46.0 L 145.0,29.0 L 132.0,46.0 L 119.0,29.0 L 106.0,46.0 L 93.0,29.0 L 80.0,46.0 L 67.0,29.0 L 54.0,46.0 L 41.0,29.0 L 28.0,46.0 L -22.0,96.0 L -80.0,96.0 Z" fill="url(#hublogo-metal)"/>
-    <path d="M -22.0,-90.0 L -22.0,90.0"
-    stroke="#0f0c0a" stroke-opacity="0.45" stroke-width="6" fill="none"/>
-    <path d="M -64.0,-78.0 L -64.0,78.0"
-    stroke="#0f0c0a" stroke-opacity="0.30" stroke-width="5" fill="none"/>
-    </g>
-    </defs>
-    <g filter="url(#shadow)">
-    <g filter="url(#hublogo-rust)">
-    <path d="M 970,500 L 735,907 L 265,907 L 30,500 L 265,93 L 735,93 Z"
-    fill="none" stroke="url(#hublogo-metal)" stroke-width="34" stroke-linejoin="round"/>
-    <path d="M 908,500 L 704,853 L 296,853 L 92,500 L 296,147 L 704,147 Z"
-    fill="none" stroke="url(#hublogo-metal)" stroke-width="7" stroke-linejoin="round"/>
-    <g transform="rotate(0 500 500)">
-    <g transform="translate(500,500) rotate(-38) translate(-215,-140) scale(0.78)"><use href="#screw"/></g>
-    </g>
-    <g transform="rotate(120 500 500)">
-    <g transform="translate(500,500) rotate(-38) translate(-215,-140) scale(0.78)"><use href="#screw"/></g>
-    </g>
-    <g transform="rotate(240 500 500)">
-    <g transform="translate(500,500) rotate(-38) translate(-215,-140) scale(0.78)"><use href="#screw"/></g>
-    </g>
-    </g>
-    </g>
-    </svg>
-    <h1>HotS <span class="s">Scrap</span></h1>
-    <button id="themeBtn" class="headbtn" title="다크/라이트 전환">◐ 테마</button>
-    <a class="headbtn" href="https://github.com/SIN0NIS/hots-scrap" target="_blank" rel="noopener" title="GitHub 저장소">🔗 GitHub</a>
+  <div class="top">
+    <h1>HotS <em>Scrap</em></h1>
+    <button class="btn" id="themeBtn" type="button">☀ Light</button>
   </div>
-  <p class="sub">Salvaging every scrap of the Storm — heroes, builds &amp; replays.</p>
-  <p class="build" id="build">데이터 버전 확인 중…</p>
-  <p class="check" id="check"></p>
-  <div id="admin" hidden></div>
-  <div class="grid" id="grid"></div>
-  <p class="foot">
-    비영리 팬 프로젝트 — Heroes of the Storm™ 및 관련 자산의 권리는 Blizzard Entertainment 에 있습니다.<br>
-    Non-commercial fan project. All game assets © Blizzard Entertainment.
-  </p>
+  <p class="lead">히어로즈 오브 더 스톰 게임 원본에서 직접 읽어 만든 도구 모음입니다.
+    자료는 새 판이 나올 때마다 다시 뽑습니다.</p>
+
+  <div class="tiles">
+    <!-- ① 특성 찍기 — 서버(라이브/테스트)는 **들어가서** 고른다 -->
+    <a class="tile" href="builds/?ch=live" id="t-builds">
+      <div class="head">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M46 24 L35 43 L13 43 L2 24 L13 5 L35 5 Z" stroke-width="2" opacity=".35"/>
+          <g stroke-width="1.8" opacity=".45">
+            <circle cx="15" cy="13" r="2.6"/><circle cx="33" cy="13" r="2.6"/>
+            <circle cx="24" cy="20.5" r="2.6"/><circle cx="33" cy="20.5" r="2.6"/>
+            <circle cx="15" cy="28" r="2.6"/><circle cx="24" cy="28" r="2.6"/>
+            <circle cx="15" cy="35.5" r="2.6"/><circle cx="33" cy="35.5" r="2.6"/>
+          </g>
+          <path d="M24 13 L15 20.5 L33 28 L24 35.5"/>
+          <g fill="currentColor" stroke="none">
+            <circle cx="24" cy="13" r="3.2"/><circle cx="15" cy="20.5" r="3.2"/>
+            <circle cx="33" cy="28" r="3.2"/><circle cx="24" cy="35.5" r="3.2"/>
+          </g>
+        </svg>
+        <h2>특성 찍기</h2>
+      </div>
+      <p class="say">영웅을 고르고 1~20레벨 특성을 찍어 봅니다. 본 서버와 테스트 서버는
+        안에서 바꿉니다.</p>
+      <div class="when" data-when="builds"></div>
+    </a>
+
+    <!-- ② 위키 — 기본은 우리 도감, 번역본으로 갈아탈 수 있다 -->
+    <a class="tile" href="herodex/" id="t-codex">
+      <div class="head">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M46 24 L35 43 L13 43 L2 24 L13 5 L35 5 Z" stroke-width="2" opacity=".35"/>
+          <path d="M24 14.5 C21 12 17 11.2 13 11.6 L13 33.4 C17 33 21 33.8 24 36.3"/>
+          <path d="M24 14.5 C27 12 31 11.2 35 11.6 L35 33.4 C31 33 27 33.8 24 36.3"/>
+          <path d="M24 14.5 L24 36.3" stroke-width="1.6" opacity=".6"/>
+          <g stroke-width="1.6" opacity=".7">
+            <path d="M16.5 17.5 L20.5 17.5"/><path d="M16.5 21.5 L20.5 21.5"/>
+            <path d="M16.5 25.5 L20.5 25.5"/>
+          </g>
+          <path d="M29.5 21.5 L31.8 22.9 L31.8 25.6 L29.5 27 L27.2 25.6 L27.2 22.9 Z"
+                fill="currentColor" stroke="none"/>
+        </svg>
+        <h2>위키</h2>
+      </div>
+      <p class="say">게임 원본 XML 에서 직접 뽑은 기술·특성 상세와 범위 그림. 공식 위키
+        번역본도 함께 볼 수 있습니다.</p>
+      <div class="legs">
+        <span class="leg">영웅 도감</span>
+        <span class="leg off" data-go="encyclopedia/">HotS wiki 번역본</span>
+      </div>
+      <div class="when" data-when="herodex"></div>
+    </a>
+
+    <!-- ③ 리플레이 — 누르면 바로 리플레이를 본다 -->
+    <a class="tile" href="replay/" id="t-replay">
+      <div class="head">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M46 24 L35 43 L13 43 L2 24 L13 5 L35 5 Z" stroke-width="2" opacity=".35"/>
+          <path d="M14 20 A12 12 0 1 0 24 12 L16.5 12"/>
+          <path d="M21 7.5 L16 12 L21 16.5"/>
+          <path d="M21.5 19 L31 24.5 L21.5 30 Z" fill="currentColor" stroke="none"/>
+        </svg>
+        <h2>리플레이</h2>
+      </div>
+      <p class="say">리플레이 파일을 올리면 바로 펼쳐 봅니다. 맵 위에 옮겨 놓고 어디서
+        무슨 일이 있었는지 짚어 볼 수 있습니다.</p>
+      <div class="when" data-when="replay"></div>
+    </a>
+
+    <!-- ④ 뷰어 — 들어갈 자리가 둘이라 갈래를 보인다 -->
+    <a class="tile" href="https://sin0nis.github.io/hots_hero_m3/" id="t-viewer">
+      <div class="head">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M46 24 L35 43 L13 43 L2 24 L13 5 L35 5 Z" stroke-width="2" opacity=".35"/>
+          <path d="M24 11.5 L34 17 L34 28 L24 33.5 L14 28 L14 17 Z"/>
+          <path d="M14 17 L24 22.5 L34 17"/><path d="M24 22.5 L24 33.5"/>
+          <path d="M11 30 C14 34.5 33 34.5 36.5 30" stroke-width="1.8" opacity=".55"/>
+        </svg>
+        <h2>뷰어</h2>
+      </div>
+      <p class="say">영웅 모델을 돌려 보고, 전장을 넓게 펼쳐 봅니다.</p>
+      <div class="legs">
+        <span class="leg">영웅 3D 뷰어</span>
+        <span class="leg off" data-go="replay/">맵 뷰어</span>
+      </div>
+      <div class="when" data-when="models"></div>
+    </a>
+  </div>
+
+  <div class="more">
+    <span class="lab">그 밖에</span>
+    <a href="patchnotes/">패치 기록</a>
+    <a href="tier/">티어표 만들기</a>
+  </div>
+
+  <p class="foot" id="foot"></p>
 </div>
+
 <script>
-/* 테마 토글 — localStorage('scrap.theme') 은 사이트 전역 공유 (앱 전역 바에서도 바꿀 수 있다) */
+/* 밝기 — 고른 것은 기억해 둔다(앱마다 열쇠를 따로 쓰는 규약) */
 (function () {
   var KEY = 'scrap.theme';
   function apply(t) {
-    if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+    if (t) document.documentElement.setAttribute('data-theme', t);
     else document.documentElement.removeAttribute('data-theme');
-    var eff = t || ((window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light');
-    var b = document.getElementById('themeBtn');
-    if (b) b.textContent = eff === 'light' ? '☀ Light' : '☾ Dark';
+    var dark = t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    document.getElementById('themeBtn').textContent = dark ? '☾ Dark' : '☀ Light';
   }
   var saved = null;
-  try { saved = localStorage.getItem(KEY) || localStorage.getItem('hub.theme'); } catch (e) {}
+  try { saved = localStorage.getItem(KEY); } catch (e) {}
   apply(saved);
   document.getElementById('themeBtn').addEventListener('click', function () {
-    var cur = document.documentElement.getAttribute('data-theme');
-    if (!cur) cur = (window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
-    var next = cur === 'dark' ? 'light' : 'dark';
+    var now = document.documentElement.getAttribute('data-theme');
+    var next = now === 'dark' ? 'light' : 'dark';
     try { localStorage.setItem(KEY, next); } catch (e) {}
     apply(next);
   });
 })();
 
-var NOCACHE = { cache: 'no-cache' };
+/* **타일 안의 갈래는 타일을 따라가지 않는다.** 바깥이 통째로 링크라서, 갈래를
+   누르면 둘 다 반응해 엉뚱한 데로 간다. 눌린 쪽만 가도록 막아 둔다. */
+document.querySelectorAll('.leg[data-go]').forEach(function (el) {
+  el.addEventListener('click', function (e) {
+    e.preventDefault(); e.stopPropagation();
+    location.href = el.getAttribute('data-go');
+  });
+});
 
-/* 허브는 data/hub.json 하나만 읽는다 (전에는 apps.json + latest.json 둘이었다 — 요청을 하나로 줄였다).
-   hub.json 은 pipeline/steps/build_status.py 가 apps.json + 자료 파일에서 만든다.
-   못 읽으면 예전 방식(apps.json)으로 되돌아간다. */
-(async () => {
+/* 자료가 언제 것인지 — 허브 한 장(data/hub.json)만 읽는다.
+   build_status.py 가 앱마다 판·갱신 시각을 적어 둔다. */
+(function () {
   var esc = function (t) {
     return String(t == null ? '' : t).replace(/[&<>"]/g, function (c) {
-      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+      return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c];
     });
   };
-
-  /* 자동 점검 시각 — GitHub Actions 는 UTC 로 돈다.
-     6시간마다 UTC 00:10 · 06:10 · 12:10 · 18:10 (한국 09:10 · 15:10 · 21:10 · 03:10).
-     보는 사람의 시간대로 바꿔 보여 준다. */
-  function checkTimes() {
-    var now = new Date();
-    var last = new Date(now);
-    last.setUTCMinutes(10, 0, 0);
-    last.setUTCHours(Math.floor(now.getUTCHours() / 6) * 6);
-    if (last > now) last = new Date(last.getTime() - 6 * 3600e3);
-    return { last: last, next: new Date(last.getTime() + 6 * 3600e3) };
-  }
-  function hhmm(d) {
-    return d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-  }
-
-  var reg = null, fellBack = false;
-  try {
-    // 목록은 캐시(10분)에 갇히면 올린 변경이 한참 안 보인다. 'no-cache' 는
-    // 안 바뀌었으면 304(본문 0바이트)로 끝나니 요청 수는 같고 바이트만 안 쓴다.
-    reg = await fetch('data/hub.json', NOCACHE).then(function (r) { if (!r.ok) throw 0; return r.json(); });
-  } catch (e) {
-    try { reg = await fetch('apps.json').then(function (r) { return r.json(); }); fellBack = true; } catch (e2) {}
-  }
-
-  var buildEl = document.getElementById('build');
-  if (reg && reg.build) {
-    buildEl.innerHTML = '데이터 버전: <b>build ' + esc(reg.build) + '</b>' +
-      (reg.updated ? ' · <span class="date">' + esc(reg.updated) + ' 업데이트</span>' : '');
-  } else if (fellBack) {
-    try {
-      var lt = await fetch('data/latest.json', NOCACHE).then(function (r) { return r.json(); });
-      buildEl.innerHTML = '데이터 버전: <b>build ' + esc(lt.build) + '</b>' +
-        (lt.updated ? ' · <span class="date">' + esc(lt.updated) + ' 업데이트</span>' : '');
-    } catch (e) { buildEl.textContent = '데이터 버전 정보를 읽지 못했습니다'; }
-  } else {
-    buildEl.textContent = '데이터 버전 정보를 읽지 못했습니다';
-  }
-
-  // 가장 최근에 뭔가 갱신된 시기 한 줄 — 언제 것인지만 알면 되니 날짜까지만 적는다
-  var newest = '';
-  if (reg && reg.apps) {
-    for (var j = 0; j < reg.apps.length; j++) {
-      var u = reg.apps[j].updatedAt;
-      if (u && u > newest) newest = u;
-    }
-  }
-  var t = checkTimes();
-  document.getElementById('check').innerHTML =
-    (newest ? '마지막 업데이트 <b>' + esc(newest.slice(0, 10)) + '</b> · ' : '') +
-    '새 패치가 났는지 <b>6시간마다</b> 자동으로 확인합니다 (다음 ' + hhmm(t.next) + ') ' +
-    '<a href="https://github.com/SIN0NIS/hots-scrap/actions/workflows/update-patchnotes.yml" target="_blank" rel="noopener">기록 보기</a>';
-
-  var grid = document.getElementById('grid');
-  if (!reg || !reg.apps) {
-    grid.innerHTML = '<p class="err">앱 목록을 읽지 못했습니다</p>';
-    return;
-  }
-  for (var i = 0; i < reg.apps.length; i++) {
-    var app = reg.apps[i];
-    var a = document.createElement('a');
-    a.className = 'card' + (app.status === 'planned' ? ' planned' : '');
-    a.href = app.path;
-    // 카드에는 '무엇을 기준으로 만든 자료인지'만 적는다.
-    // 갱신 날짜를 앱마다 늘어놓으면 기록처럼 보여서, 가장 최근 것만 위에 한 줄로 둔다.
-    var when = app.note ? '<span class="when">' + esc(app.note) + '</span>' : '';
-    a.innerHTML = '<h2>' + esc(app.name) + '</h2>' +
-      '<span class="tag">' +
-      (app.requires === 'heavy' ? '로컬 자산 필요' : '바로 사용') +
-      (app.status === 'planned' ? ' · 준비 중' : '') + '</span>' +
-      '<p>' + esc(app.desc) + when + '</p>';
-    grid.appendChild(a);
-  }
-})();
-
-/* ───────── 숨긴 입구 + 비밀번호로 잠근 수동 갱신 ─────────
-   6시간을 안 기다리고 지금 바로 갱신을 돌린다. 나만 쓰는 기능이다.
-
-   **입구**: 왼쪽 위 로고(또는 제목)를 빠르게 다섯 번 두드린다. 주소 끝에 #admin 을 붙여도 같다.
-   숨긴 동작 자체는 이 파일을 읽으면 알 수 있다(정적 사이트라 소스가 공개다).
-   그래서 입구는 '가림막'일 뿐이고, **진짜 자물쇠는 비밀번호**다.
-
-   **자물쇠**: 비밀번호를 맞나 틀리나 비교하는 데 쓰지 않는다(그건 소스만 보면 뚫린다).
-   비밀번호에서 열쇠를 만들어(PBKDF2-SHA256 20만 회) GitHub 토큰을 **암호로 잠가서**(AES-GCM)
-   저장한다. 그러니 비밀번호를 모르면 토큰을 꺼낼 수 없다 — 이 브라우저를 통째로 가져가도 마찬가지다.
-   비밀번호는 어디에도 저장하지 않고, 푼 토큰은 이 화면에만 있다(새로 고치면 다시 물어본다).
-
-   토큰은 fine-grained PAT 로 저장소 두 개(hots-scrap, images)에 Actions: Read and write 만 주면 된다.
-   잊어버렸으면 '토큰 지우기' 로 지우고 GitHub 에서 그 토큰을 폐기한 뒤 새로 넣으면 된다. */
-(function () {
-  var KEY = 'scrap.gh';              // 잠근 토큰 봉투 {v,salt,iv,ct} — 평문은 들어가지 않는다
-  var JOBS = [
-    { repo: 'SIN0NIS/hots-scrap', wf: 'update-patchnotes.yml', name: '패치 자료' },
-    { repo: 'SIN0NIS/images', wf: 'pick-icons.yml', name: '아이콘' }
-  ];
-  var box = document.getElementById('admin');
-  var TOKEN = '';                    // 푼 토큰 — 이 화면에만 (localStorage 에 평문으로 남기지 않는다)
-  var S = 'font:inherit;padding:5px 10px;border-radius:7px;border:1px solid var(--line,#cdd9ea);cursor:pointer;background:transparent;color:inherit';
-  var IN = 'font:inherit;padding:5px 8px;border-radius:7px;border:1px solid var(--line,#cdd9ea);width:min(220px,44vw)';
-
-  function esc2(s) {
-    return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
-      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
-    });
-  }
-  function raw() { try { return localStorage.getItem(KEY) || ''; } catch (e) { return ''; } }
-  function sealed() {
-    try { var j = JSON.parse(raw()); return j && j.v === 1 && j.ct ? j : null; } catch (e) { return null; }
-  }
-  function legacy() { var r = raw(); return r && !sealed() ? r : ''; }   // 예전에 평문으로 넣어 둔 것
-
-  // ── 자물쇠 (브라우저 기본 기능만 쓴다. https·localhost 에서만 동작한다)
-  function b64(buf) { return btoa(String.fromCharCode.apply(null, new Uint8Array(buf))); }
-  function unb64(s) { return Uint8Array.from(atob(s), function (c) { return c.charCodeAt(0); }); }
-  async function keyFrom(pw, salt) {
-    var base = await crypto.subtle.importKey('raw', new TextEncoder().encode(pw), 'PBKDF2', false, ['deriveKey']);
-    return crypto.subtle.deriveKey({ name: 'PBKDF2', salt: salt, iterations: 200000, hash: 'SHA-256' },
-      base, { name: 'AES-GCM', length: 256 }, false, ['encrypt', 'decrypt']);
-  }
-  async function seal(pw, token) {
-    var salt = crypto.getRandomValues(new Uint8Array(16)), iv = crypto.getRandomValues(new Uint8Array(12));
-    var ct = await crypto.subtle.encrypt({ name: 'AES-GCM', iv: iv }, await keyFrom(pw, salt),
-      new TextEncoder().encode(token));
-    localStorage.setItem(KEY, JSON.stringify({ v: 1, salt: b64(salt), iv: b64(iv), ct: b64(ct) }));
-  }
-  async function unseal(pw, env) {
-    var pt = await crypto.subtle.decrypt({ name: 'AES-GCM', iv: unb64(env.iv) },
-      await keyFrom(pw, unb64(env.salt)), unb64(env.ct));   // 비밀번호가 틀리면 여기서 실패한다
-    return new TextDecoder().decode(pt);
-  }
-
-  function hdr() {
-    return { Authorization: 'Bearer ' + TOKEN, Accept: 'application/vnd.github+json',
-             'X-GitHub-Api-Version': '2022-11-28' };
-  }
-  async function usable() {          // 진짜 쓸 수 있는 토큰인지 한 번 확인한다
-    var r = await fetch('https://api.github.com/repos/SIN0NIS/hots-scrap/actions/workflows', { headers: hdr() });
-    if (r.status === 401) throw new Error('토큰이 잘못됐습니다');
-    if (!r.ok) throw new Error('권한이 모자랍니다 (' + r.status + ')');
-  }
-
-  // ── 화면
-  function show(html) { box.hidden = false; box.innerHTML = html; }
-  function msg(t) { var m = document.getElementById('adm-msg'); if (m) m.textContent = t; }
-
-  function gate(note) {
-    var env = sealed(), old = legacy();
-    if (env) {
-      show('<b>수동 갱신</b> — 비밀번호 '
-        + '<input id="adm-p" type="password" autocomplete="current-password" style="' + IN + '"> '
-        + '<button id="adm-go" style="' + S + '">열기</button> '
-        + '<span id="adm-msg">' + esc2(note || '') + '</span>');
-      document.getElementById('adm-p').focus();
-      var go = async function () {
-        var pw = document.getElementById('adm-p').value;
-        if (!pw) { return msg('비밀번호를 넣어 주세요'); }
-        msg('여는 중…');
-        try {
-          TOKEN = await unseal(pw, env);
-          await usable();
-          panel('열었습니다.');
-        } catch (e) {
-          TOKEN = '';
-          // 비밀번호가 틀리면 브라우저는 OperationError 를 던지는데 설명이 비어 있다(빈 '✗' 만 보이지 않게)
-          var why = (e && e.name === 'OperationError') || !(e && e.message)
-            ? '비밀번호가 다릅니다' : e.message;
-          msg('✗ ' + why);
-        }
-      };
-      document.getElementById('adm-go').onclick = go;
-      document.getElementById('adm-p').onkeydown = function (e) { if (e.key === 'Enter') go(); };
-      return;
-    }
-    // 처음이거나, 예전에 평문으로 넣어 둔 것을 잠글 때
-    show('<b>수동 갱신 ' + (old ? '잠그기' : '설정') + '</b> — 비밀번호 '
-      + '<input id="adm-p" type="password" autocomplete="new-password" placeholder="비밀번호" style="' + IN + '"> '
-      + (old ? '' : '<input id="adm-t" type="password" autocomplete="off" placeholder="github_pat_..." style="' + IN + '"> ')
-      + '<button id="adm-go" style="' + S + '">저장</button> '
-      + '<span id="adm-msg">' + esc2(note || '') + '</span><br>'
-      + '<span style="opacity:.8">토큰은 이 비밀번호로 잠가서 이 브라우저에만 둡니다. 비밀번호는 어디에도 저장하지 않습니다.'
-      + (old ? '' : ' fine-grained 토큰에 <b>hots-scrap</b>·<b>images</b> 두 저장소의 <b>Actions: Read and write</b> 만 주면 됩니다.')
-      + '</span>');
-    document.getElementById('adm-go').onclick = async function () {
-      var pw = document.getElementById('adm-p').value;
-      var tk = old || (document.getElementById('adm-t') || {}).value || '';
-      if (pw.length < 4) { return msg('비밀번호를 4자 이상으로'); }
-      if (!tk.trim()) { return msg('토큰을 넣어 주세요'); }
-      msg('확인 중…');
-      TOKEN = tk.trim();
-      try {
-        await usable();                       // 쓸 수 없는 토큰은 저장하지 않는다
-        await seal(pw, TOKEN);
-        panel('저장했습니다.');
-      } catch (e) { TOKEN = ''; msg('✗ ' + e.message); }
-    };
-  }
-
-  function panel(note) {
-    show('<button id="adm-run" style="' + S + ';border-color:var(--gold-line,#d7b45c)">⟳ 지금 갱신</button> '
-      + '<span id="adm-msg">' + esc2(note || '6시간을 기다리지 않고 바로 확인합니다.') + '</span> '
-      + '<button id="adm-lock" style="' + S + ';opacity:.7">잠그기</button> '
-      + '<button id="adm-out" style="' + S + ';opacity:.5">토큰 지우기</button>');
-    document.getElementById('adm-run').onclick = run;
-    document.getElementById('adm-lock').onclick = function () { TOKEN = ''; gate('잠갔습니다.'); };
-    document.getElementById('adm-out').onclick = function () {
-      TOKEN = '';
-      try { localStorage.removeItem(KEY); } catch (e) {}
-      gate('지웠습니다.');
-    };
-  }
-
-  // ── 갱신 돌리기
-  async function lastRun(j) {
-    try {
-      var r = await fetch('https://api.github.com/repos/' + j.repo + '/actions/workflows/' + j.wf
-        + '/runs?per_page=1', { headers: hdr() });
-      if (!r.ok) return null;
-      var d = await r.json();
-      return (d.workflow_runs || [])[0] || null;
-    } catch (e) { return null; }
-  }
-
-  async function run() {
-    var btn = document.getElementById('adm-run');
-    btn.disabled = true;
-    var started = {};
-    try {
-      for (var i = 0; i < JOBS.length; i++) {
-        var j = JOBS[i];
-        var prev = await lastRun(j);           // 지금 마지막 실행 — 새로 시작된 것을 가려내려고
-        started[j.repo + '/' + j.wf] = prev ? prev.id : 0;
-        var r = await fetch('https://api.github.com/repos/' + j.repo + '/actions/workflows/' + j.wf + '/dispatches',
-          { method: 'POST', headers: hdr(), body: JSON.stringify({ ref: 'main' }) });
-        if (r.status !== 204) throw new Error(j.name + ' 시작 실패 (' + r.status + ')');
-      }
-    } catch (e) { msg('✗ ' + e.message); btn.disabled = false; return; }
-
-    var t0 = Date.now(), state = JOBS.map(function () { return '대기'; });
-    for (var n = 0; n < 45; n++) {             // 8초마다, 최대 6분쯤 지켜본다
-      await new Promise(function (ok) { setTimeout(ok, 8000); });
-      var lines = [], done = 0;
-      for (var k = 0; k < JOBS.length; k++) {
-        var job = JOBS[k];
-        if (state[k] === '끝' || state[k] === '실패') {    // 끝난 것은 더 묻지 않는다(요청 아끼기)
-          done++; lines.push(job.name + ' ' + state[k]); continue;
-        }
-        var cur = await lastRun(job);
-        var fresh = cur && cur.id !== started[job.repo + '/' + job.wf];
-        state[k] = !fresh ? '대기' : (cur.status !== 'completed' ? '도는 중'
-          : (cur.conclusion === 'success' ? '끝' : '실패'));
-        if (state[k] === '끝' || state[k] === '실패') done++;
-        lines.push(job.name + ' ' + state[k]);
-      }
-      msg(lines.join(' · ') + ' (' + Math.round((Date.now() - t0) / 1000) + '초)');
-      if (done === JOBS.length) {
-        document.getElementById('adm-msg').innerHTML =
-          esc2(lines.join(' · ')) + ' — <a href="javascript:location.reload()">새로고침</a> 하면 반영된 것이 보입니다';
-        btn.disabled = false;
-        return;
-      }
-    }
-    msg('아직 도는 중입니다. 잠시 뒤 새로고침해 보세요.');
-    btn.disabled = false;
-  }
-
-  // ── 숨긴 입구: 로고(또는 제목)를 빠르게 다섯 번
-  function enter() {
-    if (!(window.crypto && crypto.subtle)) {   // http 로 열면 브라우저가 자물쇠를 막는다
-      show('이 주소에서는 잠금을 쓸 수 없습니다 (https 로 열어 주세요)');
-      return;
-    }
-    if (TOKEN) panel(); else gate();
-  }
-  var taps = 0, last = 0;
-  function tap(e) {
-    var now = Date.now();
-    taps = (now - last < 1200) ? taps + 1 : 1;
-    last = now;
-    if (taps >= 5) { taps = 0; e.preventDefault(); enter(); }
-  }
-  var marks = [document.querySelector('.wrap svg'), document.querySelector('h1')];
-  for (var m = 0; m < marks.length; m++) {
-    if (!marks[m]) continue;
-    marks[m].style.cursor = 'default';
-    marks[m].style.webkitTapHighlightColor = 'transparent';
-    marks[m].style.userSelect = 'none';
-    marks[m].addEventListener('click', tap);
-  }
-  if (location.hash === '#admin') enter();
+  fetch('data/hub.json', { cache: 'no-cache' }).then(function (r) { return r.json(); })
+    .then(function (d) {
+      var apps = Array.isArray(d) ? d : (d.apps || []);
+      var by = {};
+      apps.forEach(function (a) { by[a.id] = a; });
+      document.querySelectorAll('[data-when]').forEach(function (el) {
+        var a = by[el.getAttribute('data-when')];
+        if (!a) return;
+        var bits = [];
+        if (a.note) bits.push('<b>' + esc(a.note) + '</b>');
+        if (a.updatedAt) bits.push(esc(a.updatedAt));
+        el.innerHTML = bits.join(' · ');
+      });
+      var n = apps.length;
+      document.getElementById('foot').textContent =
+        '앱 ' + n + '가지 · 자료는 게임 원본에서 직접 읽습니다.';
+    })
+    .catch(function () {});
 })();
 </script>
 </body>
