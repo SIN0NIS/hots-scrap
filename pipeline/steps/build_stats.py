@@ -63,8 +63,15 @@ def drop_reason(name, f):
         return "'한도 없음' 표식(65535)"
     if base in ("생명력", "LifeMax") and f <= 1:
         return "몸이 없는 더미 유닛"
-    if f == 0 and any(k == base for k in ZERO_KEYS):
+    # **꼬리로 견준다.** `k == base` 로만 보면 `투사체.최대 속도` 의 0 이 빠져나가
+    # (base 가 '최대 속도' 라 '속도' 와 안 맞는다) 그레이메인 숨통을 노려라의 속도 0 이
+    # 분포에 섞였다.
+    if f == 0 and any(base == k or base.endswith(" " + k) for k in ZERO_KEYS):
         return "0 은 '없음' 이지 크기가 아니다"
+    # **간격 0 은 '한꺼번에' 지 간격이 아니다**(갈 연발 어둠의 화살·가로쉬 대지파괴자).
+    # 중앙값을 0.05 까지 끌어내리고 있었다.
+    if f == 0 and base in ("간격", "주기"):
+        return "0 은 '한꺼번에' 지 간격이 아니다"
     return None
 BOX = 14            # 막대 칸 수
 SAMPLES = 6         # 칸마다 남길 보기
