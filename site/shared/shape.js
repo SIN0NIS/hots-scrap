@@ -379,20 +379,30 @@
            손잡이가 가리키는 차례만 진하게 그리고 **휘두르는 쪽을 호 화살표**로 긋는다. */
         const seq = g.조각방향, wdt = g.조각각 || (g.각도 / seq.length);
         const base = g.차례시작 || 1, tot = Number(w['휩쓰는 차례']) || seq.length;
-        const cur = at01 >= 1 ? tot : Math.min(tot, Math.floor(at01 * tot) + 1);
-        seq.forEach((face, i) => {
-          const ord = base + i;
-          if (ord > cur) return;                       // 아직 안 휘두른 조각
-          const was = ord < cur;
-          const pts = [[0, 0]].concat(arcPts(g.반지름, wdt, 0))
-                       .map(p => px(p[0]) + ',' + py(p[1])).join(' ');
-          body += `<g transform="rotate(${face} ${px(0)} ${py(0)})">`
-                + `<polygon points="${pts}" fill="${C}" `
-                + `fill-opacity="${was ? '.07' : (g.직격 ? '.30' : '.18')}" stroke="${C}" `
-                + `stroke-width="${was ? 1 : 1.6}" stroke-opacity="${was ? '.45' : '1'}"/></g>`;
-        });
+        /* **게임에서는 매끄럽게 돈다.** 자료가 조각 셋으로 적힌 까닭은 판정을 세 번
+           굴리기 때문이고, 눈에 보이는 것은 **부채꼴 하나가 죽 돌아가는 모습**이다.
+           조각을 뚝뚝 끊어 켜면 "세 번 찍는 기술" 로 읽힌다. 그래서 첫 조각 각에서 끝
+           조각 각까지 **이어서** 돌리고, 지나온 자리는 그만큼 넓어진 부채꼴로 덮는다.
+           (조각 수 x 조각각 이 적혀 있는 `각도` 와 맞는다 — 초 황혼의 망치 146+73=219≈220) */
+        const where = at01 * tot;                       // 손잡이가 가리키는 '차례' 자리
+        const u = Math.max(0, Math.min(1, (where - (base - 1)) / seq.length));
+        if (u > 0) {
+          const a0 = seq[0], aN = seq[seq.length - 1];
+          const now = a0 + (aN - a0) * u;               // 지금 겨누는 쪽
+          const cone = (A, rot, op, sw, so) => {
+            const pts = [[0, 0]].concat(arcPts(g.반지름, A, 0))
+                         .map(q => px(q[0]) + ',' + py(q[1])).join(' ');
+            body += `<g transform="rotate(${rot} ${px(0)} ${py(0)})">`
+                  + `<polygon points="${pts}" fill="${C}" fill-opacity="${op}" `
+                  + `stroke="${C}" stroke-width="${sw}" stroke-opacity="${so}"/></g>`;
+          };
+          // ① 지나온 자리 — 시작 쪽부터 지금 쪽까지 통째로(옅게)
+          cone(Math.abs(now - a0) + wdt, (a0 + now) / 2, '.07', 1, '.45');
+          // ② 지금 자리 — 한 조각 너비로(진하게)
+          cone(wdt, now, g.직격 ? '.30' : '.18', 1.6, '1');
+        }
         // **휘두르는 쪽** — 첫 조각에서 끝 조각으로 호를 따라 화살표 하나
-        if (seq.length > 1 && base <= cur) {
+        if (seq.length > 1 && u > 0) {
           const RA = g.반지름 * 0.62, a0 = seq[0], a1 = seq[seq.length - 1];
           const step = a1 > a0 ? 4 : -4, qs = [];
           for (let t = a0; (step > 0 ? t <= a1 : t >= a1); t += step)
