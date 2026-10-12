@@ -43,7 +43,7 @@
         if (here.indexOf('/' + n[2][j] + '/') >= 0) on = true;
       /* 아이콘은 **마스크**로 깐다 — `<img>` 로 넣으면 색이 파일에 박혀 밝기 전환을
          안 따라온다. 마스크면 바탕이 `currentColor` 라 글자와 같은 색으로 움직인다. */
-      out += '<a class="scrap-nav' + (on ? ' on' : '') + '" href="'
+      out += '<a class="scrap-nav' + (on ? ' on' : '') + '" title="' + n[1] + '" href="'
            + (/^https?:/.test(n[0]) ? n[0] : BASE + n[0]) + '">'
            + '<i class="scrap-ic ic-' + n[3] + '" aria-hidden="true"></i>'
            + '<span>' + n[1] + '</span></a>';

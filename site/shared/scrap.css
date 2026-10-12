@@ -90,3 +90,11 @@
 .ic-replay { -webkit-mask-image:url(../images/main/replay.svg); mask-image:url(../images/main/replay.svg); }
 .ic-viewer { -webkit-mask-image:url(../images/main/viewer.svg); mask-image:url(../images/main/viewer.svg); }
 @media (max-width:560px) { .scrap-ic { width:14px; height:14px; } }
+/* **아주 좁으면 글자를 접고 아이콘만 남긴다.** 네 갈래에 브랜드·밝기·GitHub 까지
+   한 줄에 들어갈 수 없어 바가 옆으로 밀렸다(320px 에서 49px 넘침). 글자를 접으면
+   넷이 다 들어가고, 무엇인지는 `title` 이 말해 준다. */
+@media (max-width:430px) {
+  #scrap-bar .scrap-nav span { display:none; }
+  #scrap-bar .scrap-nav { padding:4px 7px; gap:0; }
+  .scrap-ic { width:16px; height:16px; }
+}

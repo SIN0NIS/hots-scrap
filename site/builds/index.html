@@ -184,6 +184,28 @@
 :root[data-theme="light"] .ability-list { border-top-color:#cdd9ea; }
 :root[data-theme="light"] .cap-row { border-bottom-color:#dbe3ee; }
 </style>
+<style>
+/* ── 좁아져도 글자가 단어 한가운데서 끊기지 않게 ──────────────────────────
+   머리줄·바닥줄은 단추가 여럿이라 폭이 줄면 한글이 "특성 빌 / 드" 처럼 두 줄로
+   갈라진다. 글자는 **안 끊고**(nowrap) 줄이 모자라면 **단추째** 다음 줄로 내린다
+   (wrap). 단추가 쪼그라들지 않게 flex-shrink 도 막는다. */
+#top-bar { flex-wrap:wrap; row-gap:6px; }
+#top-bar a, #top-bar button, #top-bar label, #top-bar span { white-space:nowrap; }
+#top-bar > span { flex-wrap:wrap; row-gap:6px; min-width:0; }
+#top-bar a, #top-bar button, #top-bar label { flex:0 0 auto; }
+.btn-group { flex-wrap:wrap; row-gap:6px; }
+.btn-group .footer-btn, .btn-group label, #ft-short-wrap { white-space:nowrap; flex:0 0 auto; }
+/* 아주 좁으면 글자를 한 호흡 줄여 한 줄을 더 버틴다 */
+@media (max-width:420px) {
+  #top-bar a, #top-bar button { font-size:10.5px; padding-left:7px; padding-right:7px; }
+  /* 바닥줄도 좁은 화면에서는 한 호흡 줄인다 — 저장·복사·설명 빼기 셋이 한 줄에
+     안 들어가면 가로로 밀려 화면 전체가 옆으로 움직인다. */
+  .btn-group .footer-btn { font-size:12px; padding-left:10px; padding-right:10px; }
+  #ft-short-wrap { font-size:11px; padding:3px 7px; }
+}
+/* 바닥 단추 줄이 통째로 넘치지 않게 — 가로로 미는 대신 줄을 바꾼다 */
+.btn-group { max-width:100%; }
+</style>
 </head>
 <body data-scrap-back-bottom="190px">
     <div id="top-bar">
