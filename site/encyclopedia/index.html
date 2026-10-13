@@ -2260,6 +2260,13 @@ function xsFillBox(el, it) {
              + (ko ? '범위 보기' : 'Show area') + '</button>' : '');
   }
   if (fig) box.setAttribute('data-aoe', it.id);   // 아이콘·단추를 누르면 우리 그림이 열린다
+  /* **비고는 위키 글이다.** 표를 우리 값으로 갈아 끼웠으니, 바로 밑의 주석까지 게임
+     원본에서 나온 것처럼 읽히면 안 된다 — 어디서 온 글인지 제목에 적어 둔다. */
+  const nsum = box.querySelector('.wiki-note > summary');
+  if (nsum && !nsum.dataset.src) {
+    nsum.dataset.src = '1';
+    nsum.append(' · heroesofthestorm.fandom');
+  }
   let grid = box.querySelector('.wiki-grid');
   if (!grid) {
     grid = document.createElement('div');
