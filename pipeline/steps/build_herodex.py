@@ -175,7 +175,18 @@ def main():
     index, total = [], 0
     build = ""
     for f in files:
-        d = json.loads(f.read_text(encoding="utf-8"))
+        # **영웅이 아닌 JSON 이 섞여 있을 수 있다.** 뽑기 폴더(`hots_xml/out/`)에는 사전
+        # 점검 같은 딴 도구의 결과도 떨어진다(`fields.json`). 통째로 멎지 말고 건너뛰되,
+        # 무엇을 건너뛰었는지는 **말한다** — 조용히 빠지면 영웅 하나가 사라져도 모른다.
+        try:
+            _d0 = json.loads(f.read_text(encoding="utf-8"))
+        except Exception:
+            print(f"   !! {f.name} — 못 읽어 건너뛴다")
+            continue
+        if not isinstance(_d0, dict) or "영웅" not in _d0:
+            print(f"   !! {f.name} — 영웅 자료가 아니라 건너뛴다")
+            continue
+        d = _d0
         o = slim(d, f.stem, portraits)
         build = o["자료"]
         blob = json.dumps(o, ensure_ascii=False, separators=(",", ":"))

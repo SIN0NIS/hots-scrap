@@ -82,15 +82,6 @@
     const chg = (w || {})['모으기'];
     const at01 = (chg && typeof opt.모음 === 'number')
                  ? Math.max(0, Math.min(1, opt.모음)) : 1;
-    const canSpin = gs0.some(g0 => g0.꼴 === '끌기')
-                 || String((w || {})['지정'] || '').startsWith('끌어서');
-    const spin = (canSpin && typeof opt.방향 === 'number') ? ((opt.방향 % 360) + 360) % 360 : 0;
-    const spins = g0 => canSpin
-                     && (g0.자리 === '착지' || g0.자리 === '원점' || g0.꼴 === '끌기');
-    // **제가 놓인 자리에서 돈다.** 찍은 자리에 붙은 것(장판·끌기 축)은 거기서,
-    // 제자리에 깔리는 것(메이 빙벽)은 영웅에게서 — 기준을 하나로 묶으면 빙벽이
-    // 11 떨어진 점을 축으로 휘둘러진다.
-    const pivot = g0 => ((g0.꼴 === '끌기' || g0.자리 === '착지') ? d : 0);
     const gsExt = span ? gs0.concat(gs0.map(g0 =>
                     g0.모임 ? Object.assign({}, g0, { 모임: span[0] }) : g0)) : gs;
     // 장판이 없어도 **찾는 범위**만 있으면 그릴 값이 있다(겐지 튕겨내기 `Radius 7.0`)
@@ -119,6 +110,51 @@
       });
       d = freeR + hr + 2.6;
     }
+    /* 다이얼 셋을 가리는 자리 — `freeCast`·`farCast` 가 정해진 뒤라야
+       '사거리를 아는 기술인가' 를 물을 수 있다(그 둘이 `d` 를 고친다). */
+    const canSpin = gs0.some(g0 => g0.꼴 === '끌기')
+                 || String((w || {})['지정'] || '').startsWith('끌어서');
+    /* **겨냥 다이얼이 붙는 기술** — 사거리 안의 한 점을 찍는 것. 끌어서 쓰는 기술은
+       방향 다이얼이 이미 있고, 거리 막대(`모임 범위`)가 있는 기술은 그 막대가 거리를
+       맡으므로 겹치지 않게 비켜 둔다. 사거리를 모르는 것(무제한·전역)도 뺀다. */
+    /* **방향만 정하는 기술** — 제 몸에 붙은 방향 있는 도형(부채꼴·직사각형·쓸기).
+       원·고리는 돌려도 똑같으니 뺀다. 끌어서 쓰는 기술은 끌기 다이얼이 맡는다. */
+    const 방향꼴 = g0 => (g0.자리 === '원점' || g0.자리 === undefined || g0.쓸기)
+                     && ((g0.꼴 === '부채꼴' && (Number(g0.각도) || 360) < 350)
+                         || g0.꼴 === '직사각형' || g0.꼴 === '다각형');
+    /* **날아가는 판정이 있으면 쏘는 기술이다.** 쓸기(몸에서 앞으로 쓸고 가는 판정)나
+       직격은 '어디에 떨어뜨릴까' 가 아니라 '어느 쪽으로 쏠까' 다 — 맞는 자리는 날아가다
+       부딪히는 데서 정해진다(축복받은 방패). 그래서 겨냥 대신 방향을 단다. */
+    const 쏘는꼴 = g0 => (Number(g0.쓸기) || 0) > 0 || g0.직격;
+    const isShot = gs0.some(쏘는꼴);
+    const canTurn = !canSpin && (gs0.some(방향꼴) || isShot);
+    /* **방향을 돌리면 그림이 통째로 돈다.** 착지에 매달린 것(튕김 원·뿌림)도 같이 돌아야
+       한다 — 방패를 옆으로 던졌는데 튕김 원만 앞에 남아 있으면 거짓말이다. 몸 가운데
+       있는 원은 돌려도 제자리다. */
+    const turns = g0 => canTurn;
+    const aimMax = (typeof w['도형거리'] === 'number') ? w['도형거리'] : 0;
+    const canAim = !span && !canSpin && !isShot && !freeCast && !farCast && aimMax > 0
+                && gs0.some(g0 => g0.자리 === '착지');
+    const aim = (canAim && opt.겨냥 && typeof opt.겨냥.거리 === 'number')
+              ? { 각: ((Number(opt.겨냥.각) || 0) % 360 + 360) % 360,
+                  거리: Math.max(0, Math.min(aimMax, Number(opt.겨냥.거리))) }
+              : null;
+    if (aim) d = aim.거리;
+    /* 겨냥은 **찍은 자리에 매달린 것**을 다 옮긴다 — 장판(착지)만이 아니라 거기서
+       튕기고 퍼지는 것, 제 거리를 들고 다니는 것까지. 몸에 붙은 것(원점)은 안 움직인다. */
+    const aims = g0 => !!aim && (g0.자리 === '착지' || g0.자리 === '앞'
+                                 || g0.꼴 === '튕김' || g0.꼴 === '뿌림');
+    const spin = ((canSpin || canTurn) && typeof opt.방향 === 'number')
+                 ? ((opt.방향 % 360) + 360) % 360 : 0;
+    const spins = g0 => (canSpin
+                      && (g0.자리 === '착지' || g0.자리 === '원점' || g0.꼴 === '끌기'))
+                     || turns(g0);
+    // **제가 놓인 자리에서 돈다.** 찍은 자리에 붙은 것(장판·끌기 축)은 거기서,
+    // 제자리에 깔리는 것(메이 빙벽)은 영웅에게서 — 기준을 하나로 묶으면 빙벽이
+    // 11 떨어진 점을 축으로 휘둘러진다.
+    // 겨냥은 **영웅을 축으로** 돈다 — 제 착지점을 축으로 돌리면 자리가 안 옮겨진다
+    const pivot = g0 => ((aims(g0) || turns(g0)) ? 0
+                      : (g0.꼴 === '끌기' || g0.자리 === '착지') ? d : 0);
     let x0 = -hr, x1 = hr, y0 = -hr, y1 = hr;
     let tmp = null;        // 도는 도형은 따로 모아 **제 기준점에서 한 바퀴** 돌려 담는다
     const put = (x, y) => {
@@ -132,13 +168,18 @@
       return pts;
     };
     gsExt.forEach(g => {
-      if (spins(g)) tmp = [];
+      /* 돌거나 옮겨 다니는 도형은 **한 바퀴 돌린 자리까지** 틀에 담아 둬야 끌 때
+         그림이 안 흔들린다. 다만 방향 갈래는 **실제로 돌렸을 때만** 넓힌다 —
+         늘 넓히면 가만히 있는 그림의 틀까지 커져 예전 그림과 달라진다. */
+      if ((canSpin && spins(g)) || aims(g) || (spin && turns(g))) tmp = [];
       // 쓸고 가는 판정은 영웅에게서 출발한다(기술이 떨어지는 자리가 아니다)
       // `자리: '앞'` 은 **제 거리를 들고 다니는 도형**이다(굴단 부패가 0·3·6 에서 세 번 터진다).
     const at = g.자리 === '앞' ? (g.거리 || 0)
              : g.자리 === '착지' ? d + (g.거리 || 0)
              : (g.자리 === '원점' || g.쓸기) ? 0 : d;
-      if (g.꼴 === '다각형' || g.꼴 === '자리들') (g.점 || []).forEach(p => put(p[0], p[1]));
+      // **점 꼴도 제 자리를 탄다.** 찍은 자리에 놓이는 패턴(데커드 결계의 두루마리)을
+      // 좌표 그대로 찍으면 영웅 둘레에 그려진다 — 그만큼 밀어 담는다.
+      if (g.꼴 === '다각형' || g.꼴 === '자리들') (g.점 || []).forEach(p => put(p[0], p[1] + at));
       else if (g.꼴 === '부채꼴') { put(0, at); arcPts(g.반지름, g.각도, at).forEach(p => put(p[0], p[1])); }
       // 몸만 가는 거리는 75 나 되기도 한다(폴스타트 비행). 끌기와 같은 잣대로
       // **그리는 길이는 12 까지만** 담고 진짜 거리는 꼬리말에 숫자로 적는다.
@@ -195,6 +236,18 @@
       }
     });
     if (d > 0) { put(0, d); put(-d, 0); put(d, 0); put(0, -d); }   // 시전 사거리는 **사방으로** 미친다
+    /* 겨냥 중에는 **사거리 끝까지** 자리를 미리 잡아 둔다. 꼭지를 당길 때마다 판이
+       다시 재어지면 그림이 쪼그라들어 아래 글이 손가락 밑에서 밀려 올라간다. */
+    if (aim) {
+      let 품 = 0;
+      gs0.forEach(g0 => {
+        if (g0.자리 !== '착지') return;
+        품 = Math.max(품, Number(g0.반지름) || 0, (Number(g0.세로) || 0) / 2,
+                      (Number(g0.가로) || 0) / 2, Number(g0.거리) || 0);
+      });
+      const rr = aimMax + 품;
+      put(-rr, -rr); put(rr, rr);
+    }
     if (seekR > 0) { put(-seekR, -seekR); put(seekR, seekR); }      // 찾는 범위도 격자에 담는다
     const dead = Number(w['최소 사거리']) || 0;      // 이 안쪽으로는 못 쓴다
     // 눈금은 **기술이 차지하는 만큼만** 깐다. 반지름 1 짜리 기술에 해머 공성 11 까지 그리면
@@ -340,7 +393,7 @@
       /* ⚠ **지나온 자리는 돌면 안 된다.** 아래 `rotate` 는 여기서부터 끝까지를 감싸므로,
          표식을 띠보다 앞에 찍으면 **띠까지 같이 돌아가** 조각과 어긋난 자리에 깔린다
          (180도 돌린 피닉스 Q 에서 띠가 반대쪽에 깔렸다). 띠를 다 깐 뒤에 찍는다. */
-      mark = ((spin && spins(g)) || turn) ? body.length : -1;
+      mark = ((spin && spins(g)) || (aim && aims(g)) || turn) ? body.length : -1;
       if (g.꼴 === '자리들') {
         // 여러 지점에 차례로 생기는 기술(잘아타스 공허 걸음의 삼각형). 자리를 잇고 번호를 붙인다.
         /* **담은 차례가 없다.** 레오릭 망자의 묘실은 ㄷ 자 담이 한꺼번에 서는 것이라,
@@ -350,31 +403,32 @@
           /* 담 한 장을 **선 하나**로 긋는다. 칸마다 점을 찍고 1~73 번호를 매기면
              담은 안 보이고 숫자만 보인다(레오릭 묘실). 자료가 담의 두 끝을 준다. */
           (g.벽선 || []).forEach(seg => {
-            body += `<line x1="${px(seg[0][0])}" y1="${py(seg[0][1])}" `
-                  + `x2="${px(seg[1][0])}" y2="${py(seg[1][1])}" stroke="${C}" `
+            body += `<line x1="${px(seg[0][0])}" y1="${py(seg[0][1] + at)}" `
+                  + `x2="${px(seg[1][0])}" y2="${py(seg[1][1] + at)}" stroke="${C}" `
                   + `stroke-width="5" stroke-linecap="square" stroke-opacity=".85"/>`;
           });
           if (!(g.벽선 || []).length) {          // 두 끝을 못 받았으면 칸을 깔아 둔다
             const sz = Math.max(3, S * 0.26);
             (g.점 || []).forEach(p => {
-              body += `<rect x="${px(p[0]) - sz / 2}" y="${py(p[1]) - sz / 2}" `
+              body += `<rect x="${px(p[0]) - sz / 2}" y="${py(p[1] + at) - sz / 2}" `
                     + `width="${sz}" height="${sz}" fill="${C}" fill-opacity=".55"/>`;
             });
           }
         } else {
-        const pts = (g.점 || []).map(p => px(p[0]) + ',' + py(p[1]));
+        const pts = (g.점 || []).map(p => px(p[0]) + ',' + py(p[1] + at));
         body += `<polygon points="${pts.join(' ')}" fill="${C}" fill-opacity=".10" `
               + `stroke="${C}" stroke-width="1.2" stroke-dasharray="5 3"/>`;
         (g.점 || []).forEach((p, i) => {
-          body += `<circle cx="${px(p[0])}" cy="${py(p[1])}" r="4" fill="${C}"/>`
-                + `<text x="${px(p[0]) + 6}" y="${py(p[1]) - 5}" font-size="9" fill="${C}">${i + 1}</text>`;
+          body += `<circle cx="${px(p[0])}" cy="${py(p[1] + at)}" r="4" fill="${C}"/>`
+                + `<text x="${px(p[0]) + 6}" y="${py(p[1] + at) - 5}" font-size="9" `
+                + `fill="${C}">${i + 1}</text>`;
         });
         }
       } else if (g.꼴 === '다각형') {
         /* 가늠자 다각형(`겉`)은 **어디까지 미치나**를 그린 것이라, 안에 든 탐색 상자와
            겹쳐 그리면 "부채 안에 상자가 하나 더" 로 보인다. 겉은 **테두리 쪽**으로,
            속을 채우는 것은 상자 쪽에 맡긴다. */
-        const pp = (g.점 || []).map(p => px(p[0]) + ',' + py(p[1])).join(' ');
+        const pp = (g.점 || []).map(p => px(p[0]) + ',' + py(p[1] + at)).join(' ');
         body += g.겉
           ? `<polygon points="${pp}" fill="${C}" fill-opacity=".08" stroke="${C}" `
             + `stroke-width="2" stroke-opacity=".9"/>`
@@ -684,7 +738,8 @@
                 + `stroke="${C}" stroke-width="1.2" stroke-dasharray="4 3"/>`;
       }
       if (mark >= 0) {   // 제 기준점에서 돌린다(화면은 y 가 아래라 +가 시계 방향)
-        const deg = ((spin && spins(g)) ? spin : 0) + turn;
+        const deg = ((spin && spins(g)) ? spin : 0)
+                  + ((aim && aims(g)) ? aim.각 : 0) + turn;
         body = body.slice(0, mark)
              + `<g transform="rotate(${deg.toFixed(1)} ${px(0).toFixed(1)} `
              + `${py(pivot(g)).toFixed(1)})">` + body.slice(mark) + '</g>';
@@ -755,7 +810,7 @@
                  yard.map(([k, r]) => `<b class="c-yard">⌁</b> ${esc(k)} ${r}`).join(' · ')]
                 .filter(Boolean).join(' · ');
     let bar = '';
-    if ((span || canSpin || chg) && !opt.막대끔) {
+    if ((span || canSpin || canTurn || chg || canAim) && !opt.막대끔) {
       const cur = atTo === null ? (span ? span[1] : 0) : atTo;
       const id = 'cv' + (++SEQ);
       REG.set(id, { w: w, opt: opt });
@@ -781,8 +836,15 @@
                + `value="${at01}" aria-label="${chgNm} 시간">`
                + `<span class="cvn cvs">${chgLabel(chg, at01)}</span>`;
       }
-      if (canSpin) inner += dialHTML(spin);
-      bar = `<div class="cv" data-cv="${id}" data-deg="${spin}">${inner}</div>`;
+      if (canTurn) inner += `<span class="cvl">방향</span>` + dialHTML(spin);
+      if (canSpin) inner += `<span class="cvl">끌기</span>` + dragHTML(spin);
+      /* 겨냥 손잡이 — 처음 자리는 **사거리 끝, 앞쪽**이다(예전 그림과 같은 자리). */
+      const a0 = aim || { 각: 0, 거리: aimMax };
+      if (canAim) inner += `<span class="cvl">겨냥</span>` + aimHTML(a0.각, a0.거리, aimMax);
+      bar = `<div class="cv" data-cv="${id}" data-deg="${spin}"`
+          + (canAim ? ` data-aimdeg="${a0.각}" data-aimdist="${a0.거리}" `
+                    + `data-aimmax="${aimMax}"` : '')
+          + `>${inner}</div>`;
     }
     /* **크게 보기 단추**는 늘 넣어 둔다 — 보일지 말지는 CSS 가 정한다
        (`hotsShape.크게(…)` 로 자료를 대 주는 화면에서만 뜬다). 그림 안에 넣어야
@@ -827,11 +889,106 @@
          + `<circle cx="22" cy="22" r="2.6" fill="var(--gold)"/></svg>`
          + `<span class="cvn cvw">${wayName(deg)}</span>`;
   }
+  /* **겨냥 다이얼(조이스틱).** 제자리에서 터지는 기술은 자리를 고를 게 없지만,
+     사거리 안의 **한 점을 찍는 기술**은 플레이어가 어디에 놓을지 정한다. 앞쪽 끝에
+     한 장면만 그려 두면 "앞으로만 쓰는 기술" 로 읽히고, 가까이 찍었을 때 내 몸과
+     얼마나 겹치는지도 안 보인다. 그래서 **원 안에서 자리를 끌어 옮기는** 손잡이를 둔다.
+
+     방향 다이얼(`.cvd`)과 다른 점은 **거리까지 함께** 정한다는 것이다. 바늘이 아니라
+     꼭지를 원 안에서 옮긴다 — 가운데가 제자리, 테두리가 사거리 끝. */
+  const aimWay = deg => wayName(deg);
+  function aimHTML(deg, dist, max) {
+    const R = 19, cx = 23, cy = 23;
+    const r0 = max > 0 ? Math.max(0, Math.min(1, dist / max)) * R : 0;
+    const a0 = deg * Math.PI / 180;
+    let ring = '';
+    for (let t = 0; t < 360; t += 45) {
+      const a1 = t * Math.PI / 180;
+      ring += `<line x1="${(cx + (R - 3) * Math.sin(a1)).toFixed(1)}" `
+            + `y1="${(cy - (R - 3) * Math.cos(a1)).toFixed(1)}" `
+            + `x2="${(cx + R * Math.sin(a1)).toFixed(1)}" `
+            + `y2="${(cy - R * Math.cos(a1)).toFixed(1)}" stroke="var(--line)" stroke-width="1"/>`;
+    }
+    return `<svg class="cva" viewBox="0 0 46 46" width="46" height="46" tabindex="0" `
+         + `role="slider" aria-label="끌어서 정할 자리(사거리 안)" aria-valuemin="0" `
+         + `aria-valuemax="${max}" aria-valuenow="${Math.round(dist * 10) / 10}">`
+         + `<circle cx="${cx}" cy="${cy}" r="${R}" fill="var(--card2)" `
+         + `stroke="var(--ally)" stroke-width="1.2"/>${ring}`
+         + `<circle cx="${cx}" cy="${cy}" r="2" fill="var(--dim)"/>`
+         + `<line class="cvaL" x1="${cx}" y1="${cy}" `
+         + `x2="${(cx + r0 * Math.sin(a0)).toFixed(1)}" y2="${(cy - r0 * Math.cos(a0)).toFixed(1)}" `
+         + `stroke="var(--ally)" stroke-width="1.4" stroke-dasharray="3 2"/>`
+         + `<circle class="cvaK" cx="${(cx + r0 * Math.sin(a0)).toFixed(1)}" `
+         + `cy="${(cy - r0 * Math.cos(a0)).toFixed(1)}" r="4.6" fill="var(--ally)" `
+         + `stroke="var(--card)" stroke-width="1.2"/></svg>`
+         + `<span class="cvn cvay">${aimWay(deg)} ${Math.round(dist * 10) / 10}</span>`;
+  }
+  function paintAim(box) {
+    const max = Number(box.dataset.aimmax) || 0;
+    const deg = Number(box.dataset.aimdeg) || 0;
+    const dist = Math.max(0, Math.min(max, Number(box.dataset.aimdist) || 0));
+    const R = 19, cx = 23, cy = 23;
+    const r0 = max > 0 ? (dist / max) * R : 0, a0 = deg * Math.PI / 180;
+    const x = (cx + r0 * Math.sin(a0)).toFixed(1), y = (cy - r0 * Math.cos(a0)).toFixed(1);
+    const L = box.querySelector('.cvaL'), K = box.querySelector('.cvaK');
+    if (L) { L.setAttribute('x2', x); L.setAttribute('y2', y); }
+    if (K) { K.setAttribute('cx', x); K.setAttribute('cy', y); }
+    const s = box.querySelector('.cva');
+    if (s) s.setAttribute('aria-valuenow', Math.round(dist * 10) / 10);
+    const lab = box.querySelector('.cvay');
+    if (lab) lab.textContent = `${aimWay(deg)} ${Math.round(dist * 10) / 10}`;
+  }
+  function setAim(box, deg, dist, ev) {
+    const max = Number(box.dataset.aimmax) || 0;
+    box.dataset.aimdeg = ((Math.round(deg / 5) * 5 % 360) + 360) % 360;
+    box.dataset.aimdist = Math.max(0, Math.min(max, Math.round(dist * 20) / 20));
+    paintAim(box);
+    redraw(box);
+    if (ev && ev.cancelable) ev.preventDefault();
+  }
+  /* 꼭지를 끌 때 쓰는 자리 셈 — 원 밖으로 끌면 테두리에 붙는다(사거리 끝). */
+  function aimAt(svg, ev, max) {
+    const r = svg.getBoundingClientRect();
+    const dx = ev.clientX - (r.left + r.width / 2), dy = ev.clientY - (r.top + r.height / 2);
+    const deg = Math.atan2(dx, -dy) * 180 / Math.PI;
+    const R = r.width / 2 * (19 / 23);                 // 그림의 테두리 반지름만큼
+    const dist = Math.min(1, Math.hypot(dx, dy) / (R || 1)) * max;
+    return [deg, dist];
+  }
+  /* **끌기 다이얼.** 눌러 끌어서 쏘는 기술(알라라크 염동력·메이 빙벽)이 쓴다. 방향
+     다이얼과 한눈에 갈리게 **네모 틀 + 점선 화살표**로 그린다 — '끌어 당긴다' 는 몸짓
+     그대로다. 값은 방향 다이얼과 같은 `data-deg` 라 코드가 둘로 갈리지 않는다. */
+  function dragHTML(deg) {
+    const c = 22, R = 16, a0 = deg * Math.PI / 180;
+    const x = (c + R * Math.sin(a0)), y = (c - R * Math.cos(a0));
+    const h = 4.6, ax = Math.sin(a0), ay = -Math.cos(a0);
+    const p1 = `${(x - h * ax + h * 0.62 * ay).toFixed(1)},${(y - h * ay - h * 0.62 * ax).toFixed(1)}`;
+    const p2 = `${(x - h * ax - h * 0.62 * ay).toFixed(1)},${(y - h * ay + h * 0.62 * ax).toFixed(1)}`;
+    return `<svg class="cvg" viewBox="0 0 44 44" width="44" height="44" tabindex="0" `
+         + `role="slider" aria-label="끌어서 쏘는 방향" aria-valuemin="0" aria-valuemax="359" `
+         + `aria-valuenow="${Math.round(deg)}">`
+         + `<rect x="3.5" y="3.5" width="37" height="37" rx="7" fill="none" `
+         + `stroke="var(--both)" stroke-width="1.2"/>`
+         + `<circle cx="${c}" cy="${c}" r="2.4" fill="var(--both)"/>`
+         + `<line class="cvp" x1="${c}" y1="${c}" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}" `
+         + `stroke="var(--both)" stroke-width="1.8" stroke-dasharray="4 2.5"/>`
+         + `<polygon class="cvh" points="${x.toFixed(1)},${y.toFixed(1)} ${p1} ${p2}" `
+         + `fill="var(--both)"/></svg>`
+         + `<span class="cvn cvw">${wayName(deg)}</span>`;
+  }
   function paintDial(box) {
     const deg = Number(box.dataset.deg) || 0, a0 = deg * Math.PI / 180;
-    const p = box.querySelector('.cvp'), d0 = box.querySelector('.cvd');
-    if (p) { p.setAttribute('x2', (22 + 16 * Math.sin(a0)).toFixed(1));
-             p.setAttribute('y2', (22 - 16 * Math.cos(a0)).toFixed(1)); }
+    const p = box.querySelector('.cvp'), d0 = box.querySelector('.cvd, .cvg');
+    const R = box.querySelector('.cvg') ? 16 : 16;
+    const x = 22 + R * Math.sin(a0), y = 22 - R * Math.cos(a0);
+    if (p) { p.setAttribute('x2', x.toFixed(1)); p.setAttribute('y2', y.toFixed(1)); }
+    const h0 = box.querySelector('.cvh');          // 끌기 다이얼의 화살촉
+    if (h0) {
+      const h = 4.6, ax = Math.sin(a0), ay = -Math.cos(a0);
+      h0.setAttribute('points', `${x.toFixed(1)},${y.toFixed(1)} `
+        + `${(x - h * ax + h * 0.62 * ay).toFixed(1)},${(y - h * ay - h * 0.62 * ax).toFixed(1)} `
+        + `${(x - h * ax - h * 0.62 * ay).toFixed(1)},${(y - h * ay + h * 0.62 * ax).toFixed(1)}`);
+    }
     if (d0) d0.setAttribute('aria-valuenow', Math.round(deg));
     const w0 = box.querySelector('.cvw');
     if (w0) w0.textContent = wayName(deg);
@@ -856,6 +1013,10 @@
        사라져 손가락이 끊기고, 다시 그릴 때마다 등록표에 새 자리가 쌓인다. */
     const t = document.createElement('div');
     const o = Object.assign({}, m.opt, { 막대끔: true, 방향: Number(box.dataset.deg) || 0 });
+    if (box.dataset.aimmax) {
+      o.겨냥 = { 각: Number(box.dataset.aimdeg) || 0,
+                 거리: Number(box.dataset.aimdist) || 0 };
+    }
     const tr = box.querySelector('.cvt');
     if (tr) o.모음 = Number(tr.value);
     if (typeof at === 'number') o.모임 = at;
@@ -881,22 +1042,53 @@
       }
     }, true);
     g.addEventListener('pointerdown', e => {
-      const d0 = e.target.closest && e.target.closest('.cvd');
+      const a0 = e.target.closest && e.target.closest('.cva');
+      if (a0) {
+        try { a0.setPointerCapture(e.pointerId); } catch (x) {}
+        a0.dataset.grab = '1';
+        const box = a0.closest('.cv');
+        const [dg, ds] = aimAt(a0, e, Number(box.dataset.aimmax) || 0);
+        setAim(box, dg, ds, e);
+        return;
+      }
+      const d0 = e.target.closest && e.target.closest('.cvd, .cvg');
       if (!d0) return;
       try { d0.setPointerCapture(e.pointerId); } catch (x) {}   // 못 잡아도 돌아는 간다
       d0.dataset.grab = '1';
       setDeg(d0.closest('.cv'), degAt(d0, e), e);
     }, true);
     g.addEventListener('pointermove', e => {
-      const d0 = e.target.closest && e.target.closest('.cvd');
+      const a0 = e.target.closest && e.target.closest('.cva');
+      if (a0 && a0.dataset.grab === '1') {
+        const box = a0.closest('.cv');
+        const [dg, ds] = aimAt(a0, e, Number(box.dataset.aimmax) || 0);
+        setAim(box, dg, ds, e);
+        return;
+      }
+      const d0 = e.target.closest && e.target.closest('.cvd, .cvg');
       if (d0 && d0.dataset.grab === '1') setDeg(d0.closest('.cv'), degAt(d0, e), e);
     }, true);
     g.addEventListener('pointerup', e => {
-      const d0 = e.target.closest && e.target.closest('.cvd');
+      const a0 = e.target.closest && e.target.closest('.cva');
+      if (a0) delete a0.dataset.grab;
+      const d0 = e.target.closest && e.target.closest('.cvd, .cvg');
       if (d0) delete d0.dataset.grab;
     }, true);
     g.addEventListener('keydown', e => {
-      const d0 = e.target.closest && e.target.closest('.cvd');
+      const a0 = e.target.closest && e.target.closest('.cva');
+      if (a0) {
+        // 좌우로 방향, 위아래로 거리 — 사거리의 1/20 씩 움직인다
+        const box = a0.closest('.cv'), max = Number(box.dataset.aimmax) || 0;
+        const dg = Number(box.dataset.aimdeg) || 0, ds = Number(box.dataset.aimdist) || 0;
+        const st = Math.max(0.25, Math.round(max / 20 * 4) / 4);
+        if (e.key === 'ArrowRight') return setAim(box, dg + 5, ds, e);
+        if (e.key === 'ArrowLeft') return setAim(box, dg - 5, ds, e);
+        if (e.key === 'ArrowUp') return setAim(box, dg, ds + st, e);
+        if (e.key === 'ArrowDown') return setAim(box, dg, ds - st, e);
+        if (e.key === 'Home') return setAim(box, 0, max, e);
+        return;
+      }
+      const d0 = e.target.closest && e.target.closest('.cvd, .cvg');
       if (!d0) return;
       const box = d0.closest('.cv'), now = Number(box.dataset.deg) || 0;
       const k = { ArrowRight: 5, ArrowUp: 5, ArrowLeft: -5, ArrowDown: -5 }[e.key];

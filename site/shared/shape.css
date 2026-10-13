@@ -21,12 +21,24 @@
 .fig .cvn { flex:0 0 auto; min-width:2.6em; text-align:right; color:var(--gold);
             font-size:11px; font-variant-numeric:tabular-nums; }
 
-/* 시계 같은 방향 다이얼 — 끌어서 놓는 기술은 플레이어가 방향을 정한다. */
-.fig .cvd { flex:0 0 auto; cursor:grab; touch-action:none; border-radius:50%;
+/* ── 다이얼 셋 ─────────────────────────────────────────────────────────────
+   무엇을 정할 수 있는 기술인지 **생김새로 가른다** — 셋이 한 화면에 섞여 나오므로
+   색과 테두리 모양이 다르지 않으면 어느 것이 어느 것인지 알 수 없다.
+
+     방향 `.cvd`  둥근 시계 눈금 + 바늘      금색 — 제자리에서 방향만 정한다
+     겨냥 `.cva`  옅게 찬 원 + 꼭지          파랑 — 사거리 안에서 자리를 정한다
+     끌기 `.cvg`  둥근 네모 + 점선 화살표    보라 — 눌러 끌어서 쏜다 */
+.fig .cvd, .fig .cva, .fig .cvg { flex:0 0 auto; cursor:grab; touch-action:none;
             background:var(--card2); }
-.fig .cvd:active { cursor:grabbing; }
+.fig .cvd { border-radius:50%; }
+.fig .cva { border-radius:50%; }
+.fig .cvg { border-radius:9px; }
+.fig .cvd:active, .fig .cva:active, .fig .cvg:active { cursor:grabbing; }
 .fig .cvd:focus-visible { outline:2px solid var(--gold); outline-offset:2px; }
+.fig .cva:focus-visible { outline:2px solid var(--ally); outline-offset:2px; }
+.fig .cvg:focus-visible { outline:2px solid var(--both); outline-offset:2px; }
 .fig .cvw { min-width:3.4em; color:var(--fg); opacity:.85; }
+.fig .cvay { min-width:4.2em; color:var(--ally); }
 
 /* 시간 손잡이 — 모으는 동안 어떻게 되는지 밀어 본다 */
 .fig .cvt { flex:1; min-width:60px; height:22px; accent-color:var(--hit); cursor:pointer;
