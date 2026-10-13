@@ -256,6 +256,68 @@
   body.home .back { display:none; }
   body:not(.home) .back { display:inline-block; }
   body.home #figs, body.home #ids, body.home #meta { display:none; }
+  /* ── 위키 문서처럼 ───────────────────────────────────────────────────────
+     백과(encyclopedia)에 입힌 그 꼴을 여기에도 둔다 — 한 칸으로 흐르는 글, 제목 밑의
+     가는 줄, 오른쪽 정보상자, 두 칸짜리 표, 줄로만 나뉘는 목록. 카드·그림자·둥근
+     모서리를 걷어낸다. 범위 그림과 다이얼은 그대로다(그게 이 화면의 값어치다).
+     색은 새로 만들지 않고 있는 변수로만 쓴다 — 맨 끝에 둬야 위 규칙을 덮는다. */
+  #body { max-width:1080px; }
+  .hhead { align-items:center; gap:16px; margin-bottom:6px; }
+  .hhead h2 { font-size:26px; letter-spacing:-.3px; }
+  .htags { margin-top:4px; display:flex; gap:6px; flex-wrap:wrap; }
+  .htag { font-size:11.5px; color:var(--dim); border:1px solid var(--line);
+          border-radius:3px; padding:1px 7px; }
+  .sec { margin:0 0 28px; }
+  .sec-h { font-size:19px; font-weight:600; color:var(--fg); margin:0 0 14px;
+           padding:0 0 7px; border-bottom:2px solid var(--line); letter-spacing:-.2px; }
+  /* 정보상자를 옆에 세우는 폭 — 여기는 **왼쪽에 영웅 목록(230px)** 이 더 있어서
+     백과(950px)보다 늦게 세운다. 950px 에서 나누면 본문이 398px 로 쪼그라든다. */
+  @media (min-width:1120px) {
+    .hbody { display:grid; grid-template-columns:minmax(0,1fr) 296px; column-gap:30px;
+             align-items:start; }
+  }
+  /* 능력치 정보상자 */
+  .statbox { border:1px solid var(--line); border-radius:6px; overflow:hidden;
+             background:var(--card2); }
+  .srow { display:flex; justify-content:space-between; gap:10px; align-items:baseline;
+          padding:6px 11px; border-bottom:1px solid var(--line); }
+  .srow:last-child { border-bottom:0; }
+  .sk { color:var(--dim); font-size:12.5px; }
+  .sv { color:var(--fg); font-weight:600; font-variant-numeric:tabular-nums; }
+  .hside .wep { margin-top:10px; border:1px solid var(--line); border-radius:6px;
+                background:var(--card2); padding:8px 11px; }
+  /* 기술·특성 — 카드가 아니라 줄로 나뉜 항목 */
+  .card { background:transparent; border:0; border-bottom:1px solid var(--line);
+          border-radius:0; padding:14px 0; margin:0; box-shadow:none; }
+  .card.sub { margin-left:18px; border-left:2px solid var(--line); padding-left:14px; }
+  .card:last-child { border-bottom:0; }
+  .card .nm { font-size:16px; }
+  .card .ico { width:44px; height:44px; }
+  .tlv { margin:0 0 18px; }
+  .lvh { font-size:14px; font-weight:600; color:var(--gold); margin:0 0 2px;
+         padding-bottom:5px; border-bottom:1px solid var(--line); }
+  .talent { border-left:0; padding:11px 0 11px 2px; margin:0;
+            border-bottom:1px solid var(--line); }
+  .talent:last-child { border-bottom:0; }
+  .talent .tn { font-size:14px; }
+  .tdesc { font-size:13px; line-height:1.6; }
+  /* 표 — 이름 | 값 두 칸 */
+  .card table, .talent table.tt { border:1px solid var(--line); border-radius:6px;
+            border-collapse:separate; border-spacing:0; overflow:hidden; margin-top:7px;
+            width:100%; }
+  .card table td, .talent table.tt td { border-bottom:1px solid var(--line);
+            padding:5px 10px; }
+  .card table tr:last-child td, .talent table.tt tr:last-child td { border-bottom:0; }
+  td.k, .talent table.tt td.k { background:var(--card2); color:var(--dim);
+            border-right:1px solid var(--line); width:150px; font-weight:400; }
+  tr.minor td.k { color:var(--dim); opacity:.8; }
+  td.src { opacity:.75; }
+  .desc { font-size:13.5px; line-height:1.65; }
+  @media (max-width:560px) {
+    td.k, .talent table.tt td.k { width:118px; }
+    .card.sub { margin-left:8px; }
+  }
+
 </style>
 </head>
 <body data-scrap-back-bottom="64px">
@@ -798,23 +860,32 @@ function render(h) {
   // 크게 보기로 **옮겨 가 있는 그림**이 있으면 먼저 돌려놓는다 — 본문을 갈아엎으면
   // 돌려놓을 자리(주석 마디)가 사라져 그림이 큰 판에 갇힌다.
   if (window.hotsShape.크게중()) window.hotsShape.크게끄기();
+  /* **능력치는 칩이 아니라 정보상자다.** 위키 문서가 그렇듯 이름 | 값 줄로 세워 두면
+     훑어 읽힌다(칩은 줄바꿈 자리가 제멋대로라 눈이 걸린다). 메모 열쇠는 그대로 둔다. */
   const base = Object.entries(h.기본).filter(([k, v]) => v != null && k !== '평타')
-      .map(([k, v]) => `<span class="chip${ckC('기본', '영웅', k)}"${ckA('기본', '영웅', k, '기본 / ' + k)}>`
-         + `${esc(k)} <b>${esc(v)}</b></span>`).join('');
+      .map(([k, v]) => `<div class="srow"><span class="sk${ckC('기본', '영웅', k)}"`
+         + `${ckA('기본', '영웅', k, '기본 / ' + k)}>${esc(k)}</span>`
+         + `<span class="sv">${esc(v)}</span></div>`).join('');
+  const meta = (INDEX || []).find(x => x.id === cur) || {};
+  const tags = [meta.역할, h.기술 ? h.기술.length + '기술' : '', h.특성 ? h.특성.length + '특성' : '']
+      .filter(Boolean).map(t => `<span class="htag">${esc(t)}</span>`).join('');
   let out = `<div class="hhead"><img class="face" src="${imgUrl('heroportraits', h.초상화)}" alt="">`
-    + `<h2 style="margin:0">${esc(h.영웅)}</h2></div><p class="sub">${base}</p>`
-    + weaponHTML(h.기본.평타);
-  out += modeBlocks(h.기술);
-  let lv = null;
+    + `<div><h2 style="margin:0">${esc(h.영웅)}</h2><div class="htags">${tags}</div></div></div>`
+    + `<div class="hbody"><div class="hmain">`
+    + `<section class="sec"><h3 class="sec-h">기술</h3>${modeBlocks(h.기술)}</section>`;
+  let lv = null, tal = '';
   for (const t of h.특성) {
     if (t.레벨 !== lv) {
-      if (lv !== null) out += '</div>';
+      if (lv !== null) tal += '</div>';
       lv = t.레벨;
-      out += `<div class="card"><div class="nm lv">${esc(lv || '?')}레벨 특성</div>`;
+      tal += `<div class="tlv"><div class="lvh">${esc(lv || '?')}레벨</div>`;
     }
-    out += talentHTML(t);
+    tal += talentHTML(t);
   }
-  if (lv !== null) out += '</div>';
+  if (lv !== null) tal += '</div>';
+  out += `<section class="sec"><h3 class="sec-h">특성</h3>${tal}</section></div>`
+    + `<aside class="hside"><section class="sec"><h3 class="sec-h">능력치</h3>`
+    + `<div class="statbox">${base}</div>${weaponHTML(h.기본.평타)}</section></aside></div>`;
   $('#body').innerHTML = out;
   if (MEMO_ON) {
     $('#body').querySelectorAll('.mm.on, .ck.on').forEach(b2 => {
