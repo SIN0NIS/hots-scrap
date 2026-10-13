@@ -11,7 +11,10 @@
 
 /* **찍는 자리를 밀어 보는 막대** — 리밍 마력탄처럼 거리에 따라 꼴이 바뀌는 기술.
    마우스로 끌기·손가락으로 밀기·화살표 키는 <input type=range> 가 알아서 해 준다. */
-.fig .cv { display:flex; align-items:center; gap:6px; margin-top:5px; }
+.fig .cv { display:flex; align-items:center; gap:6px; margin-top:5px;
+           flex-wrap:wrap; row-gap:4px; }
+/* ↑ 한 줄에 시간 손잡이와 방향 다이얼이 같이 오면(초갈) 최소 276px 라 폰 카드 폭(약 260px)을
+   넘어 문서 전체가 옆으로 밀렸다(320px 에서 94px 넘침). 모자라면 다음 줄로 넘긴다. */
 .fig .cvr { flex:1; min-width:0; height:22px; accent-color:var(--gold); cursor:pointer;
             touch-action:pan-y; }
 .fig .cvb { width:30px; height:28px; flex:0 0 auto; padding:0; cursor:pointer;
