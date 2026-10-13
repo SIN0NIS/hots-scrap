@@ -71,6 +71,7 @@
   .tile .say { margin:10px 0 0; color:var(--dim); font-size:13px; word-break:keep-all; }
   .tile .when { margin-top:9px; font-size:11.5px; color:var(--dim); opacity:.85; }
   .tile .when b { color:var(--blue); font-weight:600; }
+  .tile .when span { white-space:nowrap; }   /* '2026-10-12 / 01:57' 로 끊기지 않게 */
 
   /* 타일 안의 갈래 — 들어갈 자리가 둘 이상인 것(뷰어·위키) */
   .legs { display:flex; flex-wrap:wrap; gap:7px; margin-top:12px; }
@@ -241,7 +242,7 @@ document.querySelectorAll('.leg[data-go]').forEach(function (el) {
         if (!a) return;
         var bits = [];
         if (a.note) bits.push('<b>' + esc(a.note) + '</b>');
-        if (a.updatedAt) bits.push(esc(a.updatedAt));
+        if (a.updatedAt) bits.push('<span>' + esc(a.updatedAt) + '</span>');
         el.innerHTML = bits.join(' · ');
       });
       var n = apps.length;

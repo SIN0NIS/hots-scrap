@@ -32,7 +32,7 @@
   .wrap { max-width:1180px; margin:0 auto; padding:18px 14px 60px; display:flex; gap:14px;
           align-items:flex-start; }
   h1 { margin:0 0 4px; font-size:22px; } h1 .s { color:var(--gold); }
-  .sub { margin:0 0 12px; color:var(--dim); font-size:13px; line-height:1.6; }
+  .sub { margin:0 0 12px; color:var(--dim); font-size:13px; line-height:1.6; word-break:keep-all; }
 
   /* ── 영웅 목록 ─────────────────────────── */
   aside { width:200px; flex:0 0 200px; position:sticky; top:8px; }
@@ -105,7 +105,14 @@
            align-items:center; background:var(--card); border:1px solid var(--line2);
            border-radius:999px; padding:6px 10px; box-shadow:var(--shadow); font-size:12px; }
   #mmbar button { border:1px solid var(--line2); background:var(--card2); color:var(--fg);
-                  border-radius:999px; font:inherit; font-size:12px; padding:3px 10px; cursor:pointer; }
+                  border-radius:999px; font:inherit; font-size:12px; padding:3px 10px; cursor:pointer;
+                  white-space:nowrap; }
+  /* 폰 폭에서 '모아보/기'·'비우/기' 처럼 한 글자씩 떨어졌다 — 글자는 접지 않고 여백을 줄인다 */
+  #mmbar #mmn { white-space:nowrap; }
+  @media (max-width:420px) {
+    #mmbar { right:8px; left:8px; justify-content:center; gap:4px; padding:5px 6px; }
+    #mmbar button { padding:3px 8px; }
+  }
   /* 기본 틀과 **특성이 더하는 것**을 눈으로 갈라 둔다 */
   .mode { display:inline-block; margin-right:5px; padding:1px 7px; border-radius:999px;
           border:1px solid var(--gold-line); color:var(--gold); font-size:11px; }
@@ -135,6 +142,11 @@
   .chips { display:flex; flex-wrap:wrap; gap:5px; margin-bottom:7px; }
   .chip { background:var(--card2); border:1px solid var(--line); border-radius:999px;
           padding:2px 10px; font-size:12.5px; }
+  /* 칩이 글 줄을 따라 흘러서 '이동 속도 / 4.75' 처럼 칩 한가운데서 쪼개졌다.
+     한 덩이(inline-block)로 두면 칩째로 다음 줄로 가고, 화면보다 긴 문장 칩만 안에서 접힌다
+     (nowrap 으로 묶으면 그 긴 칩이 화면을 594px 로 밀어낸다) */
+  .chip { display:inline-block; max-width:100%; box-sizing:border-box; word-break:keep-all;
+          margin:1px 0; }
   .chip b { color:var(--hit); }
   table { width:100%; border-collapse:collapse; font-size:13.5px; }
   /* 긴 줄(거리별 감쇠·내부 이름)이 표를 가로로 밀어내지 않게 — 칸 안에서 접는다 */
@@ -215,7 +227,7 @@
   body.home #figs, body.home #ids, body.home #meta { display:none; }
 </style>
 </head>
-<body>
+<body data-scrap-back-bottom="64px">
 <div class="wrap">
   <aside>
     <input id="q" placeholder="영웅 검색 (한글·영문·초성)" autocomplete="off">

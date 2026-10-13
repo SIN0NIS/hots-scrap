@@ -67,13 +67,26 @@
 #scrap-bar .scrap-nav:hover { opacity:1; background:rgba(255,255,255,.10); }
 #scrap-bar .scrap-nav.on { opacity:1; font-weight:600;
   background:rgba(255,255,255,.14); }
-/* 오른쪽 단추(밝기·GitHub)는 바에 **떠 있다**. 자리를 안 비워 두면 좁은 화면에서
-   마지막 갈래가 그 밑으로 들어가 가린다 — 단추 두 개 몫을 미리 비운다. */
-#scrap-bar { padding-right:88px; }
+/* 넓은 화면: 브랜드+갈래는 가운데, 오른쪽 단추(밝기·GitHub)는 바에 **떠 있다**.
+   떠 있는 단추 몫은 양쪽 여백으로 비운다.
+   (예전에는 이 여백을 scrap.js 가 인라인으로 박아서 아래 좁은 화면 규칙이 하나도 안 먹었다 —
+    320px 에서 가운데 칸이 128px 뿐이라 바가 두 줄로 접히고, 단추가 갈래 아이콘 위에 얹혔다.
+    배치는 여기서만 정한다.) */
+#scrap-bar { padding:6px 120px; text-align:center; }
+#scrap-tools { position:absolute; right:8px; top:50%; transform:translateY(-50%);
+  display:flex; gap:6px; align-items:center; }
+/* 좁은 화면: 한 줄 가로 배치로 바꾼다. 브랜드 ─ 갈래 ─ 단추 순서로 흐르니
+   아무것도 겹치지 않고, 바 높이도 한 줄로 끝난다. */
+@media (max-width:700px) {
+  #scrap-bar { display:flex; align-items:center; gap:6px; padding:5px 8px; text-align:left; }
+  #scrap-brand { flex:0 0 auto; white-space:nowrap; }
+  #scrap-nav { flex:1 1 auto; justify-content:center; margin-left:0; gap:2px; min-width:0; }
+  #scrap-tools { position:static; transform:none; flex:0 0 auto; gap:4px; }
+  #scrap-bar .scrap-tl { display:none; }            /* 'Light/Dark' 낱말은 접고 ☀/☾ 만 */
+  #scrap-theme-btn, #scrap-gh { padding:4px 8px !important; }
+}
 @media (max-width:560px) {
-  #scrap-nav { margin-left:7px; gap:0; }
   #scrap-bar .scrap-nav { padding:4px 6px; font-size:11.5px; }
-  #scrap-bar { padding-right:82px; }
 }
 
 /* 갈래마다 제 아이콘 — 메인 타일에 쓰는 육각 그림 그대로다.
@@ -93,8 +106,16 @@
 /* **아주 좁으면 글자를 접고 아이콘만 남긴다.** 네 갈래에 브랜드·밝기·GitHub 까지
    한 줄에 들어갈 수 없어 바가 옆으로 밀렸다(320px 에서 49px 넘침). 글자를 접으면
    넷이 다 들어가고, 무엇인지는 `title` 이 말해 준다. */
-@media (max-width:430px) {
+@media (max-width:520px) {
   #scrap-bar .scrap-nav span { display:none; }
   #scrap-bar .scrap-nav { padding:4px 7px; gap:0; }
   .scrap-ic { width:16px; height:16px; }
 }
+
+/* ── 한글 줄바꿈 ──────────────────────────────────────────────
+   브라우저 기본값은 한글을 **글자마다** 끊어서 폰 폭에서 '그/대로', '있/습니다' 처럼
+   낱말 한가운데서 줄이 바뀌었다. 띄어쓰기 자리에서만 끊고(keep-all),
+   한 낱말이 칸보다 길 때만 그 낱말을 쪼갠다(break-word — anywhere 와 달리
+   표·flex 칸의 최소 폭을 키우지 않는다). 입력칸·코드는 건드리지 않는다. */
+body { word-break:keep-all; overflow-wrap:break-word; }
+input, textarea, pre, code, kbd, samp { word-break:normal; }

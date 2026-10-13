@@ -40,6 +40,9 @@
   .dropsum { color:var(--warn); }
   .tools { position:sticky; top:0; z-index:5; background:var(--bg);
            padding:8px 0 10px; border-bottom:1px solid var(--line); margin-bottom:12px; }
+  /* 폰에서는 이 판이 600px 를 넘어(주제 단추가 여러 줄) 화면보다 커진다 — 붙여 두면
+     스크롤해도 판만 보이고 내용은 그 밑에 깔린다. 좁거나 낮은 화면에서는 붙이지 않는다. */
+  @media (max-width:700px), (max-height:520px) { .tools { position:static; } }
   .row { display:flex; flex-wrap:wrap; gap:6px; align-items:center; margin-bottom:6px; }
   .row:last-child { margin-bottom:0; }
   .lab { color:var(--dim); font-size:12px; min-width:40px; }
