@@ -63,6 +63,8 @@
           vertical-align:middle; margin-right:10px; background:var(--card2); }
   .hhead { display:flex; align-items:center; gap:2px; margin:0 0 2px; }
   .id { color:var(--dim); font-size:11.5px; margin-left:6px; }
+  /* 비율 옆에 붙는 절대값 — 눈에 띄되 원래 값보다 조용하게 */
+  .abs { color:var(--dim); font-size:11.5px; margin-left:5px; white-space:nowrap; }
   .desc { color:var(--dim); font-size:13.5px; margin:6px 0 9px; line-height:1.65; word-break:keep-all; }
   /* 메모 — 로컬에서만 뜬다. 이상한 걸 그 자리에 적어 두고 한꺼번에 내보낸다 */
   .mm { float:right; border:1px solid var(--line2); background:var(--card2); color:var(--dim);
@@ -570,7 +572,10 @@ function abilityHTML(a, opt) {
   // 위키식 칸(유형·피해·사거리·범위·판정 …) — **눈에 보이는 알맹이**라 여기가 제일 중요하다
   let rows = Object.entries(a.위키식 || {}).filter(([k]) => !FIGKEY.includes(k)).map(([k, v]) =>
       `<tr><td class="k${ckC('칸', a.id, k)}"${ckA('칸', a.id, k, (a.이름 || '') + ' / ' + k)}>${esc(k)}</td>`
-      + `<td colspan="2"><b>${esc(v)}</b></td></tr>`).join('');
+      // 조건부 보정("피해 +100% (…일 때)")도 비율만 적혀 있다 — 기본은 그 기술 제 피해다
+      + `<td colspan="2"><b>${esc(v)}</b>`
+      + ((k === '보정' || k === '조건부 피해') ? 절대값(String(v).replace(/\s*\([^)]*\)\s*$/, ''), a) : '')
+      + `</td></tr>`).join('');
   let minor = '';
   for (const k of LIST) for (const r of (a[k] || [])) {
     // 줄마다 열쇠를 둔다 — 출처가 그 줄을 가리키는 가장 또렷한 이름이다.
@@ -607,6 +612,71 @@ function abilityHTML(a, opt) {
       ${n ? `<button class="more" type="button">원자료 ${n}줄 보기</button>` : ''}
     </div>`;
 }
+
+/* ── 비율에 절대값을 붙인다 ───────────────────────────────────────────────
+   특성은 "피해 +70%" 처럼 **비율만** 적어 둔다. 그것만 보면 얼마가 느는지 모른다 —
+   기본값이 자료에 있으니 셈해서 같이 보인다(기본 59 → 100.3 · +41.3).
+   기본값을 못 찾으면 **아무것도 덧붙이지 않는다.** 지어낸 수를 적느니 비율만 두는 게 낫다. */
+const 숫자 = v => { const m = /-?\d+(?:\.\d+)?/.exec(String(v == null ? '' : v)); return m ? Number(m[0]) : null; };
+const 깔끔 = n => Math.round(n * 100) / 100;
+
+function 기본수(기술, 칸) {
+  if (!기술) return null;
+  if (칸 === '피해') {
+    const r = (기술.피해 || []).filter(x => x && x.피해량 != null);
+    if (!r.length) return null;
+    return 숫자(r.map(x => x.피해량).sort((a, b) => 숫자(b) - 숫자(a))[0]);
+  }
+  if (칸 === '회복' || 칸 === '치유') {
+    for (const x of (기술.회복 || [])) {
+      const v = x['생명력 회복량'] != null ? x['생명력 회복량'] : x['마나 회복량'];
+      if (v != null) return 숫자(v);
+    }
+  }
+  return null;
+}
+
+/* `강화` 는 `"[E] 눈부신 방패"` 꼴이다 — 칸 표식을 떼고 이름으로 찾는다. */
+function 키우는기술(t) {
+  const nm = String(t['강화'] || '').replace(/^\[[^\]]*\]\s*/, '').trim();
+  if (!nm || !HERO) return null;
+  return (HERO.기술 || []).find(a => a.이름 === nm) || null;
+}
+
+/* **어느 값에 붙는 보정인가**는 갈래가 말해 준다.
+     `피해 +70%`   키우는 기술의 피해에 붙는다(열성의 섬광 → 눈부신 방패 59)
+     `중첩당 40%`  그 특성이 제 손으로 주는 피해에 붙는다(신성한 격노 제 피해 15)
+   섞어 쓰면 규탄의 55 로 신성한 격노를 셈하는 거짓말이 된다. */
+function 절대값(보정글, 기술, 제것) {
+  if (!보정글 || (!기술 && !제것)) return '';
+  const 덧 = [];
+  for (const c of String(보정글).split(' · ')) {
+    let m = /^(피해|회복|치유)\s*([+-])(\d+(?:\.\d+)?)%$/.exec(c.trim());
+    if (m) {
+      const 기본 = 기본수(기술, m[1]) != null ? 기본수(기술, m[1]) : 숫자(제것);
+      if (기본 == null) continue;
+      const 몫 = 기본 * Number(m[3]) / 100 * (m[2] === '-' ? -1 : 1);
+      덧.push(`기본 ${깔끔(기본)} → ${깔끔(기본 + 몫)} · ${몫 >= 0 ? '+' : ''}${깔끔(몫)}`);
+      continue;
+    }
+    // 중첩으로 쌓이는 것 — 한 겹과 끝까지 쌓았을 때를 둘 다 적는다
+    m = /^중첩당\s*(\d+(?:\.\d+)?)%(?:\s*\(최대\s*(\d+(?:\.\d+)?)%\))?$/.exec(c.trim());
+    if (m) {
+      // 중첩은 **제 피해**에 쌓인다 — 없으면 키우는 기술의 피해로 본다
+      const 기본 = 제것 != null ? 숫자(제것) : 기본수(기술, '피해');
+      if (기본 == null) continue;
+      const 한겹 = 기본 * Number(m[1]) / 100;
+      /* **터진 천장으로 '끝까지' 를 적지 않는다.** `최대 327675%` 는 누산기의 느슨한
+         천장이지 실제 상한이 아니다 — 그대로 곱하면 20만짜리 피해가 적힌다. */
+      const 끝 = m[2] && Number(m[2]) < 1000 ? 깔끔(기본 * Number(m[2]) / 100) : null;
+      덧.push(끝 != null
+        ? `기본 ${깔끔(기본)} · 한 겹 +${깔끔(한겹)} · 끝까지 +${끝}`
+        : `기본 ${깔끔(기본)} · 한 겹 +${깔끔(한겹)}`);
+    }
+  }
+  return 덧.length ? ` <span class="abs">(${esc(덧.join(' / '))})</span>` : '';
+}
+
 function talentHTML(t) {
   const ti = t.id || t.이름;
   const rows = (t.퀘스트 ? `<tr><td class="k chg${ckC('특성칸', ti, '퀘스트')}"`
@@ -619,7 +689,10 @@ function talentHTML(t) {
       + `<td>${esc(v)}</td></tr>`).join('')
     + Object.entries(t.위키식 || {}).filter(([k]) => !FIGKEY.includes(k)).map(([k, v]) =>
       `<tr><td class="k${ckC('특성칸', ti, k)}"${ckA('특성칸', ti, k, (t.이름 || '') + ' / ' + k)}>${esc(k)}</td>`
-      + `<td><b>${esc(v)}</b></td></tr>`).join('')
+      // **비율만 적힌 보정에는 절대값을 같이 보인다** — 키우는 기술의 기본값으로 셈한다
+      + `<td><b>${esc(v)}</b>`
+      + (k === '보정' ? 절대값(v, 키우는기술(t), (t.위키식 || {})['피해']) : '')
+      + `</td></tr>`).join('')
     + (t.위키 ? `<tr><td class="k wikirow">⌁ 위키</td><td class="wikirow">`
         + Object.entries(t.위키).filter(([k]) => k !== '출처').map(([k, v]) => `${esc(k)} ${esc(v)}`).join(' · ')
         + `</td></tr>` : '')
