@@ -301,6 +301,118 @@ a { color:var(--blue); }
 .gl-foot { color:#4a4a52; font-size:11.5px; margin-top:28px; line-height:1.8; }
 @media (max-width:760px) { .gl-cols { column-count:1; } .gl-table td.en { width:45%; } }
 <!--<</WIKI-FIELDS>>-->
+/* ── 위키 문서처럼 ─────────────────────────────────────────────────────────
+   팬덤 위키가 깔끔한 까닭은 장식이 아니라 **뼈대**다 — 한 칸으로 흐르는 글, 제목 밑의
+   가는 줄, 오른쪽 정보상자, 두 칸짜리 표, 넉넉한 여백. 카드·그림자·둥근 모서리를 걷고
+   그 뼈대만 남긴다. 색은 **이미 있는 변수로만** 써서 다크·라이트 양쪽에 다 산다.
+   (이 묶음은 맨 끝에 둔다 — 위의 옛 규칙을 덮어써야 하기 때문이다.) */
+#main { max-width:1060px; padding:24px 28px 90px; font-size:14px; line-height:1.66; }
+#hero-page h1 { font-size:27px; margin:0 0 2px; letter-spacing:-.3px; }
+.hero-header { align-items:center; gap:18px; margin-bottom:10px; }
+.subtitle { color:var(--dim); font-size:14px; }
+.desc-text { color:var(--fg); opacity:.86; margin:0 0 10px; }
+.desc-label { color:var(--dim); font-size:11px; letter-spacing:.6px; margin-top:12px; }
+
+/* 문단 — 카드가 아니라 **문서의 절**이다 */
+.section { background:transparent; border:0; border-radius:0; margin:0 0 30px; overflow:visible; }
+.section-head { background:transparent !important; border:0 !important;
+  border-bottom:2px solid var(--line) !important; border-radius:0;
+  padding:0 0 7px; margin:0 0 14px; font-size:19px; font-weight:600;
+  color:var(--fg) !important; letter-spacing:-.2px; }
+.section-body { padding:0; }
+
+/* 능력치 — 위키의 **정보상자**. 넓은 화면에서는 오른쪽에 세운다. */
+.sec-stats .section-body, .sec-ratings .section-body { border:1px solid var(--line);
+  border-radius:6px; overflow:hidden; background:var(--card2); }
+.stat-grid { display:block; }
+.stat-item { display:flex; justify-content:space-between; align-items:baseline; gap:10px;
+  background:transparent; border-radius:0; border-bottom:1px solid var(--line);
+  padding:7px 11px; }
+.stat-item:last-child { border-bottom:0; }
+.stat-label { display:block; color:var(--dim); font-size:12px; }
+.stat-value { color:var(--fg) !important; font-size:14.5px; font-weight:600; margin:0;
+  font-variant-numeric:tabular-nums; }
+.rating-row { margin:0; padding:6px 11px; border-bottom:1px solid var(--line); }
+.rating-row:last-child { border-bottom:0; }
+.rating-label { color:var(--dim); }
+.rating-bar-bg { background:var(--line); height:8px; }
+/* 정보상자를 세우는 폭 — 옆 목록(280px)을 빼고도 글이 400px 는 남아야 읽힌다 */
+@media (min-width:950px) {
+  #hero-page { display:grid; grid-template-columns:minmax(0,1fr) 296px;
+               column-gap:30px; align-items:start; }
+  .sec-overview { grid-area:1 / 1 / 3 / 2; }
+  .sec-ratings  { grid-area:1 / 2 / 2 / 3; }
+  .sec-stats    { grid-area:2 / 2 / 3 / 3; }
+  .sec-abilities, .sec-subunits, .sec-talents, .sec-portraits, .sec-extra { grid-column:1 / -1; }
+}
+
+/* 기술 — 카드가 아니라 **줄로 나뉜 항목**. 아이콘·이름·설명·세부 수치 차례. */
+.ability-item { background:transparent !important; border:0 !important; border-radius:0;
+  border-bottom:1px solid var(--line) !important; padding:14px 0; margin:0; gap:14px; }
+.ability-item:last-child { border-bottom:0 !important; }
+.ability-item.nested { border-left:2px solid var(--line) !important; padding-left:14px; }
+.ability-icon { width:46px; height:46px; border-radius:6px; }
+.ability-name { font-size:16px; color:var(--fg) !important; }
+.ability-name-row { gap:7px; margin-bottom:3px; }
+.ability-desc { color:var(--fg) !important; opacity:.84; font-size:13.5px; margin-top:5px;
+  line-height:1.65; }
+.subgroup-title { border-top:0; color:var(--fg); font-size:15px; margin:18px 0 4px; }
+
+/* 특성 — 등급마다 가로로 늘어선 카드였다. **한 줄에 하나씩** 놓으면 설명이 다 보인다. */
+.talent-level-block { margin-bottom:18px; }
+.talent-level-head { border-bottom:1px solid var(--line); padding-bottom:5px; margin-bottom:0; }
+.talent-level-num { background:transparent; color:var(--gold); border:1px solid var(--line);
+  border-radius:4px; padding:1px 7px; }
+.talent-row { display:block; }
+.talent-card { width:auto; background:transparent; border:0; border-bottom:1px solid var(--line);
+  border-radius:0; padding:11px 2px; gap:11px; }
+.talent-card:last-child { border-bottom:0; }
+.talent-card.talent-highlight { background:var(--card2); box-shadow:none;
+  border-bottom-color:var(--gold); }
+.talent-card img { width:38px; height:38px; }
+.talent-card .tn { font-size:14px; color:var(--fg) !important; }
+.talent-card .td { font-size:13px; color:var(--fg) !important; opacity:.82; line-height:1.6;
+  margin-top:3px; }
+
+/* 세부 필드 — 위키의 작은 표처럼 **이름 | 값** 두 칸. 기술·특성 모두 같은 꼴이다. */
+.wiki-fields { border-top:0 !important; margin-top:8px; }
+.wiki-grid { display:block; border:1px solid var(--line); border-radius:6px; overflow:hidden;
+  margin-top:4px; }
+.wiki-row { display:grid; grid-template-columns:148px minmax(0,1fr); gap:0; font-size:12.5px;
+  border-bottom:1px solid var(--line); }
+.wiki-row:last-child { border-bottom:0; }
+.wiki-row .k { color:var(--dim) !important; background:var(--card2); padding:5px 10px;
+  border-right:1px solid var(--line); }
+.wiki-row .v { color:var(--fg) !important; opacity:.9; padding:5px 10px; }
+.xs-table { border:1px solid var(--line); border-radius:6px; overflow:hidden; font-size:12.5px;
+  margin-top:4px; }
+.xs-table th { background:var(--card2); color:var(--dim); width:168px; padding:5px 10px;
+  border-bottom:1px solid var(--line); border-right:1px solid var(--line); }
+.xs-table td { color:var(--fg); opacity:.92; padding:5px 10px; border-bottom:1px solid var(--line); }
+.xs-table tr:last-child th, .xs-table tr:last-child td { border-bottom:0; }
+/* '비고'(위키 주석) 상자는 색이 #101016 으로 박혀 있어 **밝은 쪽에서도 까맸다** —
+   문서 꼴로 바꾸니 한가운데 검은 띠로 보인다. 변수로 돌려 양쪽에 맞춘다. */
+.wiki-note { background:var(--card2); border-left:2px solid var(--line);
+  color:var(--fg); opacity:.95; }
+.wiki-note-body { color:var(--fg); opacity:.82; }
+.wiki-note > summary { color:var(--dim); }
+.wiki-note > summary::before { color:var(--dim); }
+/* 묶음 표식은 네모 딱지가 아니라 **이름 앞의 작은 글씨**로 — 표가 조용해진다 */
+.xs-table th .xs-fg { display:inline; border:0; padding:0; margin:0 5px 0 0; opacity:.8;
+  font-size:9px; }
+/* 자리표는 **값을 어디에 채울지 적어 둔 표식**일 뿐이라 눈에 보이면 안 된다 */
+.xs-slot:empty { display:none; }
+details.xs { margin-top:9px; }
+details.xs summary { color:var(--dim); font-size:12px; padding:2px 0; }
+details.xs[open] summary { color:var(--fg); opacity:.8; }
+.xs-fg { font-size:9.5px; opacity:.95; }
+.xs-aoe { border-radius:4px; }
+@media (max-width:560px) {
+  #main { padding:16px 14px 70px; }
+  .wiki-row { grid-template-columns:118px minmax(0,1fr); }
+  .xs-table th { width:116px; }
+}
+
 </style>
 <style id="scrap-theme">
 /* HotS Scrap 팔레트 — 원본 스타일 위에 겹쳐 쓴다 (허브와 통일) */
@@ -2120,17 +2232,57 @@ function xsExtraRows(it) {
                             '조건·게이팅', '#8d99ae']);
   return out;
 }
-function xsBlockHtml(it, kind) {
+/* **표는 하나다.** 기술 밑에 '위키 상세' 와 '게임 원본 제원' 이 따로 서면 어느 쪽을
+   봐야 하는지부터 헷갈린다. 자리는 위키 상세 하나로 두고 **그 안을 우리 값으로 채운다**.
+   우리 자료가 없는 기술은 위키 값이 그대로 남는다(지우지 않는다). */
+function xsFillBox(el, it) {
   const w = it['위키식'] || {};
   const rows = xsSpecRows(w).concat(xsExtraRows(it));
   const fig = ((w['도형'] || []).length || w['그래프']) ? true : false;
-  if (!rows.length && !fig) return '';
-  const btn = fig ? '<span class="xs-aoe" onclick="event.stopPropagation();openAoe(\''
-                  + xsEsc(it.id) + '\', currentHeroId)">📐 범위 보기</span>' : '';
-  if (!rows.length) return btn;
-  return '<details class="xs"' + (kind === 'a' ? ' open' : '') + '><summary>'
-       + '게임 원본 제원 ' + rows.length + '칸' + (fig ? ' · 범위 그림' : '') + '</summary>'
-       + xsRows(rows) + xsDmgLine(it) + xsSumLine(it) + '</details>' + btn;
+  if (!rows.length && !fig) return;
+  const ko = currentLang === 'ko';
+  const 판 = (XMETA && XMETA.build) ? ' · 판 ' + XMETA.build : '';
+  /* 자리는 **바로 앞 형제**다 — 카드 속틀에서 `renderWikiFields` 바로 뒤에 찍어 두었다.
+     안쪽에 딸린 기술이 또 있어서 `querySelector` 로 찾으면 남의 표를 집는다. */
+  let box = el.previousElementSibling;
+  if (box && !box.classList.contains('wiki-fields')) box = null;
+  if (!box) {                               // 위키에 없던 기술 — 표를 새로 세운다
+    box = document.createElement('div');
+    box.className = 'wiki-fields';
+    box.innerHTML = '<div class="wiki-fields-head"></div>';
+    el.appendChild(box);
+  }
+  const head = box.querySelector('.wiki-fields-head');
+  if (head) {
+    head.innerHTML = '📐 ' + (ko ? '상세 제원' : 'Details')
+      + '<span class="src">' + (ko ? '게임 원본 XML' : 'game XML') + xsEsc(판) + '</span>'
+      + (fig ? '<button class="aoe-open" type="button">◎ '
+             + (ko ? '범위 보기' : 'Show area') + '</button>' : '');
+  }
+  if (fig) box.setAttribute('data-aoe', it.id);   // 아이콘·단추를 누르면 우리 그림이 열린다
+  let grid = box.querySelector('.wiki-grid');
+  if (!grid) {
+    grid = document.createElement('div');
+    grid.className = 'wiki-grid';
+    box.insertBefore(grid, box.querySelector('.wiki-note'));
+  }
+  /* **비용과 재사용이 맨 위**다 — 표에서 제일 자주 찾는 수다. 위키 표도 그랬다.
+     (카드 머리의 '재사용 대기시간: 8초' 와 겹치지만, 표는 모아 보는 자리다.) */
+  const cost = [];
+  if (it['마나'] != null) cost.push(['소모 자원', String(it['마나'])]);
+  if (it['재사용 대기시간'] != null) cost.push(['재사용 대기시간', it['재사용 대기시간'] + '초']);
+  if (it['충전 개수'] != null) cost.push(['충전', it['충전 개수'] + '회']);
+  if (it['연타 제한'] != null) cost.push(['연타 제한', it['연타 제한'] + '초']);
+  const extra = [];
+  const d = (it['피해'] || []).filter(r => r && r['피해량'] != null)
+    .map(r => r['피해량'] + (r['성장'] ? ' ' + r['성장'] : ''));
+  if (d.length && !w['피해']) extra.push(['피해', d.join(' · ')]);
+  const u = (it['소환'] || []).filter(r => r && r['유닛'])
+    .map(r => r['유닛'] + (r['마리 수'] > 1 ? ' ×' + r['마리 수'] : ''));
+  if (u.length && !w['소환']) extra.push(['소환', u.join(' · ')]);
+  grid.innerHTML = cost.concat(rows.map(r => [r[0], r[1]]), extra).map(r =>
+    '<div class="wiki-row"><span class="k">' + xsEsc(r[0]) + '</span>'
+    + '<span class="v">' + xsEsc(r[1]) + '</span></div>').join('');
 }
 /* 영웅 자료를 받아 빈 자리를 채운다. 못 받으면 **아무것도 안 적는다**(지어내지 않는다). */
 async function xsFill() {
@@ -2147,7 +2299,7 @@ async function xsFill() {
   document.querySelectorAll('.xs-slot:not([data-done])').forEach(el => {
     el.setAttribute('data-done', '1');
     const it = XS_ITEM[el.getAttribute('data-xs')];
-    if (it) el.innerHTML = xsBlockHtml(it, el.getAttribute('data-k'));
+    if (it) xsFillBox(el, it);
   });
 }
 
@@ -2277,9 +2429,9 @@ function xsRows(rows) {
       '</td></tr>';
   }).join('') + '</table>';
 }
-/* 2026-08 에는 제원 표를 **안 그리기로** 했다 — 옛 파서 값이 날것이라 중복·과잉이었다.
-   지금 자료는 해석기를 거친 것이라 그 까닭이 사라졌다. 기술은 펼친 채로, 특성은 접어서
-   (한 영웅에 특성이 스물이 넘는다) 보인다. 자리만 잡고 `xsFill` 이 채운다. */
+/* 표는 **위에 하나**뿐이다. 여기서는 '어느 항목인지' 만 적어 두고(자리표),
+   `xsFill` 이 그 카드의 '상세 제원' 표를 우리 값으로 채운다. 아래에 따로 표를
+   세우지 않는다 — 같은 기술에 표가 둘이면 어느 쪽을 봐야 할지 헷갈린다. */
 function xsAbil(nameId, buttonId) {
   return xsSlot(nameId || buttonId, 'a');
 }
