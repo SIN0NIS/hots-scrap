@@ -87,7 +87,15 @@
       거짓 수를 적으면 통계 최솟값이 1 이 된다. 이 보호 장치를 빼지 마라.
     - 검토용 사진: `python ../hots_xml/tools/shape_shots.py` → `hots_xml/out/sheets/<영웅>.png`
       (머리 없는 크롬이 `shapes.html?hero=..&all=1&cols=3` 을 찍는다. `all=1` 이면 끊지 않고 다 그리고 배경 무늬를 숨긴다)
-- `site/encyclopedia/index.html` 영웅 도감 (HotS wiki 번역) — **단일 파일(6MB, 데이터 내장)**, 직접 편집
+- `site/encyclopedia/index.html` 영웅 도감 (HotS wiki 번역) — **단일 파일(4MB, 위키 자료 내장)**, 직접 편집
+  - **수치 제원은 도감(herodex) 자료를 받아 쓴다** — 영웅을 고를 때 `data/herodex/<영웅>.json`
+    하나(30KB) + `index.json`(눈금·판 번호). 예전에는 옛 파서가 뽑은 `XML_SPECS` 2.1MB 가
+    박혀 있었는데 값이 날것이라(재사용 0.0625초 = 연타 잠금, 반경 500 = 무제한 표식) 2026-08 부터
+    아예 안 그리고 있었다. 박아 두지 않으니 도감을 갱신하면 여기도 따라온다.
+    **목록(index.json)에 없는 id 는 안 부른다** — 공생체·은신 발리라 같은 딸린 유닛이라 404 가 난다.
+  - 범위 그림도 **같은 `shared/shape.js`** 가 그린다(다이얼 셋이 따라온다). 우리 도형이 없는
+    기술만 예전 그림(`aoeSvg` + 위키 `geom`)으로 넘어간다 — 그 길을 지우지 마라.
+  - `XS_GLOSS`(용어 사전)의 통계 수는 **옛 추출 기준**이다. 칸 카탈로그는 도감 `stats.html` 로 간다.
 - `site/replay/` 리플레이 뷰어 — `index.html` + `css/` + `js/`(클래식 스크립트, ES 모듈 아님). `js/data_*.js` 는 생성 파일
 - `site/shared/scrap.js` 전역 바+테마(한 줄 로드). **`scrap.css` 도 이 스크립트가 스스로 끌어온다** —
   앱은 `scrap.js` 한 줄만 부르면 된다(예전에는 CSS 를 `<link>` 로 부르는 앱이 패치 기록 하나뿐이라
