@@ -64,7 +64,11 @@
   .hhead { display:flex; align-items:center; gap:2px; margin:0 0 2px; }
   .id { color:var(--dim); font-size:11.5px; margin-left:6px; }
   /* 비율 옆에 붙는 절대값 — 눈에 띄되 원래 값보다 조용하게 */
-  .abs { color:var(--dim); font-size:11.5px; margin-left:5px; white-space:nowrap; }
+  /* 절대값 덧붙임 — 통째로 nowrap 이면 '(기본 68 → 81.6 · +13.6 / …)' 가 400px 한 줄이 되어
+     폰에서 문서 전체를 옆으로 밀었다(레이너·라그나로스 등 21명). 항목 하나만 덩어리로 두고
+     ' / ' 사이에서 접는다 */
+  .abs { color:var(--dim); font-size:11.5px; margin-left:5px; }
+  .abs > span { display:inline-block; max-width:100%; }   /* 칸보다 긴 항목(피닉스 167px)만 안에서 접힌다 */
   .desc { color:var(--dim); font-size:13.5px; margin:6px 0 9px; line-height:1.65; word-break:keep-all; }
   /* 메모 — 로컬에서만 뜬다. 이상한 걸 그 자리에 적어 두고 한꺼번에 내보낸다 */
   .mm { float:right; border:1px solid var(--line2); background:var(--card2); color:var(--dim);
@@ -81,14 +85,35 @@
   td.k[data-rk], .chip[data-rk] { cursor:pointer; }
   td.k[data-rk]:hover, .chip[data-rk]:hover { color:var(--warn); }
   td.k.ckon { color:var(--warn); font-weight:700; }
-  td.k.ckon::before { content:"A0 "; }
+  td.k.ckon::before { content:"⚠ "; }
   td.k.ckon ~ td { background:var(--card2); }
   .chip.ckon { border-color:var(--warn); color:var(--warn); }
-  .chip.ckon::before { content:"A0 "; }
+  .chip.ckon::before { content:"⚠ "; }
+  /* 특성 강화 줄은 **글자가 곧 단추다** — 누르면 그 특성 자리로 간다.
+     (메모 ⚠ 는 줄 끝의 작은 단추로 옮겼다 — 한 자리에 두 가지를 겹칠 수 없다.) */
   .up1 .t { cursor:pointer; }
-  .up1 .t:hover { color:var(--warn); }
-  .up1 .t.ckon { color:var(--warn); }
-  .up1 .t.ckon::before { content:"A0 "; }
+  .up1 .t:hover .tnm, .up1 .t:focus-visible .tnm { color:var(--blue); text-decoration:underline; }
+  .up1 .t:focus-visible { outline:2px solid var(--blue); outline-offset:2px; border-radius:5px; }
+  .rck { flex:0 0 auto; border:1px solid var(--line2); background:var(--card2); color:var(--dim);
+         border-radius:6px; font:inherit; font-size:11px; line-height:1; padding:3px 5px;
+         cursor:pointer; }
+  .rck.ckon { border-color:var(--warn); color:var(--warn); }
+  /* 특성의 '… 강화' — 그 특성이 키우는 기술 자리로 */
+  .upgo { cursor:pointer; }
+  .upgo:hover, .upgo:focus-visible { text-decoration:underline; }
+  /* **왔던 자리로 돌아가는 단추.** 오른쪽 아래는 메모 바 자리라 왼쪽 아래에 띄운다. */
+  #goback { position:fixed; left:12px; bottom:calc(env(safe-area-inset-bottom, 0px) + 14px);
+            z-index:99997; display:none; max-width:min(62vw, 320px); overflow:hidden;
+            white-space:nowrap; text-overflow:ellipsis; border:1px solid var(--blue);
+            border-radius:999px; background:var(--card2, var(--bg)); color:var(--blue);
+            font:inherit; font-size:12.5px; padding:7px 13px; cursor:pointer;
+            box-shadow:0 2px 10px rgba(0,0,0,.18); }
+  #goback.on { display:block; }
+  #goback:hover { background:var(--blue-soft); }
+  /* 좁은 화면에서는 메모 바가 아래를 가로질러 깔린다 — 그 위로 올린다 */
+  @media (max-width:560px) {
+    body.memoon #goback { bottom:calc(env(safe-area-inset-bottom, 0px) + 58px); }
+  }
   #mmlist { position:fixed; right:14px; bottom:52px; z-index:99999; max-height:62vh; overflow:auto;
             width:min(420px, 92vw); background:var(--card); border:1px solid var(--line2);
             border-radius:12px; padding:10px 12px; box-shadow:var(--shadow); font-size:12.5px; }
@@ -178,9 +203,13 @@
   .talent .tn { font-weight:700; font-size:14.5px; }
   .up { color:var(--blue); font-size:12px; margin-left:6px; }
   .tdesc { color:var(--dim); font-size:12.5px; margin:3px 0 0; line-height:1.6; word-break:keep-all; }
-  table.tt { width:auto; margin-top:4px; }
+  /* 위의 table-layout:fixed 를 물려받으면 width:auto 표는 칸 이름이 32px 로 쪼그라들어
+     '보/정'·'유/형' 처럼 한 글자씩 세로로 섰다 — 이 표는 내용대로 칸을 나눈다
+     (값 칸은 td 의 break-word 가 접어 주므로 옆으로 넘치지 않는다) */
+  table.tt { width:auto; max-width:100%; margin-top:4px; table-layout:auto; }
   table.tt td { padding:1px 12px 1px 0; font-size:12.5px; }
-  table.tt td.k { color:var(--dim); font-weight:400; width:auto; }
+  table.tt td.k { color:var(--dim); font-weight:400; width:auto; overflow-wrap:normal; }
+  /* ↑ anywhere 면 칸의 최소 폭이 한 글자라 표가 이 칸을 짜부라뜨린다 — 낱말은 지킨다 */
   table.tt td.chg { color:var(--hit); }
   .wikirow { color:var(--wiki); } .warnrow { color:var(--warn); }
   .top { display:flex; gap:8px; align-items:baseline; flex-wrap:wrap; }
@@ -348,18 +377,26 @@ function tierLabel(step) {
   const lv = TIER_LV[+m[1] - 1];
   return lv ? `${lv}레벨 ${m[2]}특성` : String(step);
 }
+/* 줄에 붙이는 ⚠ — 열쇠(`영웅|갈래|id|칸`)는 예전과 같아 적어 둔 것이 그대로 살아 있다. */
+function rowCk(kind, id, field, label) {
+  if (!MEMO_ON) return '';
+  return `<button class="rck${ckC(kind, id, field)}" type="button"`
+       + ` title="이상하면 눌러 두세요"${ckA(kind, id, field, label)}>⚠</button>`;
+}
 function upsHTML(ups) {
   if (!ups || !ups.length) return '';
   const rows = ups.map(t => {
     const d = (t['바뀌는 값'] || []).join(' · ') || t.내용 || '';
     const ti = t.id || t.이름;
+    /* **글자를 누르면 그 특성 자리로 간다.** 끝의 ↓ 도 같은 곳으로 — 손가락으로
+       보는 화면에는 hover 가 없어 '누를 수 있다' 는 표시가 하나는 있어야 한다. */
     return `<div class="up1">`
          + `<img src="${imgUrl('abilitytalents', t.아이콘)}" alt="" loading="lazy">`
-         + `<span class="t${ckC('특성강화', ti, '줄')}"${ckA('특성강화', ti, '줄', t.이름 || '')}`
-         + ` title="이상하면 눌러 두세요"><span class="lv">${esc(tierLabel(t.단계))}</span> ${esc(t.이름 || '')}`
+         + `<span class="t" data-go="${esc(ti)}" role="button" tabindex="0"`
+         + ` title="누르면 그 특성 자리로"><span class="lv">${esc(tierLabel(t.단계))}</span> `
+         + `<span class="tnm">${esc(t.이름 || '')}</span>`
          + (d ? ` <span class="d">${esc(d)}</span>` : '') + `</span>`
-         /* **이름은 이미 '이상하면 눌러 두세요' 칸이라** 거기에 이동을 겹칠 수 없다.
-            따로 작은 단추를 둬서 그 특성 자리로 데려간다(같은 화면 안에 있다). */
+         + rowCk('특성강화', ti, '줄', t.이름 || '')
          + `<button class="goup" type="button" data-go="${esc(ti)}"
                     title="그 특성 자리로">↓</button></div>`;
   }).join('');
@@ -674,7 +711,7 @@ function 절대값(보정글, 기술, 제것) {
         : `기본 ${깔끔(기본)} · 한 겹 +${깔끔(한겹)}`);
     }
   }
-  return 덧.length ? ` <span class="abs">(${esc(덧.join(' / '))})</span>` : '';
+  return 덧.length ? ` <span class="abs">(${덧.map(x => `<span>${esc(x)}</span>`).join(' / ')})</span>` : '';
 }
 
 function talentHTML(t) {
@@ -700,7 +737,12 @@ function talentHTML(t) {
   return `<div class="talent" data-zi="${esc(t.id || t.이름)}"><div>`
     + `<img class="tico" src="${imgUrl('abilitytalents', t.아이콘)}" alt="" `
     + `loading="lazy"><span class="tn">${esc(t.이름)}</span>`
-    + (t.강화 ? `<span class="up">${esc(t.강화)} 강화</span>` : '')
+    /* **거꾸로도 간다** — 특성에서 그 특성이 키우는 기술 자리로.
+       기술을 못 찾으면(이름이 어긋나면) 누를 수 없는 글자로 그냥 둔다. */
+    + (t.강화 ? (키우는기술(t)
+        ? `<span class="up upgo" data-go="${esc(키우는기술(t).id)}" role="button" tabindex="0"`
+          + ` title="누르면 그 기술 자리로">${esc(t.강화)} 강화</span>`
+        : `<span class="up">${esc(t.강화)} 강화</span>`) : '')
     + memoBtn('특성', t.id || t.이름, t.이름) + `</div>`
     + (t.설명 ? `<div class="tdesc">${esc(t.설명)}</div>` : '')
     + tipHTML(t['툴팁 수치'], t.id || t.이름, t.이름)
@@ -751,6 +793,8 @@ function wireZoom() {
 
 function render(h) {
   HERO = h;
+  // 본문을 갈아엎으면 돌아갈 자리가 사라진다 — 단추도 같이 치운다
+  if (typeof 돌아갈곳 !== 'undefined') { 돌아갈곳.length = 0; 돌아가기칸(); }
   // 크게 보기로 **옮겨 가 있는 그림**이 있으면 먼저 돌려놓는다 — 본문을 갈아엎으면
   // 돌려놓을 자리(주석 마디)가 사라져 그림이 큰 판에 갇힌다.
   if (window.hotsShape.크게중()) window.hotsShape.크게끄기();
@@ -873,20 +917,79 @@ $('#body').addEventListener('click', e => {
     : b.textContent.replace('접기', '보기');
 });
 $('#ids').addEventListener('click', () => document.body.classList.toggle('noid'));
-/* 기술 아래의 '이 기술을 바꾸는 특성' 에서 그 특성 자리로. 같은 화면 안에 있으므로
-   옮겨 가는 게 아니라 **그 자리로 데려가고 잠깐 밝힌다** — 어디로 갔는지 보이게. */
-$('#body').addEventListener('click', e => {
-  const b = e.target.closest('.goup');
-  if (!b) return;
-  e.preventDefault(); e.stopPropagation();
-  const id = b.getAttribute('data-go');
-  const el = document.querySelector(`.talent[data-zi="${CSS.escape(id)}"]`);
-  if (!el) return;
+/* ── 기술 ↔ 특성 오가기 ────────────────────────────────────────────────────
+   같은 화면 안에 있으므로 옮겨 가는 게 아니라 **그 자리로 데려가고 잠깐 밝힌다**
+   — 어디로 갔는지 보이게. 그리고 **왔던 자리로 돌아가는 단추**를 띄운다:
+   긴 영웅은 화면이 길어서, 보고 나서 기술까지 되올라가는 것이 일이다. */
+const 돌아갈곳 = [];                     // 여러 번 뛰어다녀도 차례로 되짚어 간다
+function 자리찾기(id) {
+  const q = CSS.escape(id);
+  return document.querySelector(`.card[data-zi="${q}"], .talent[data-zi="${q}"]`);
+}
+function 밝히기(el) {
   el.scrollIntoView({ block: 'center', behavior: 'smooth' });
   el.classList.remove('hl');
   void el.offsetWidth;                 // 애니메이션을 다시 틀려면 한 번 끊어야 한다
   el.classList.add('hl');
+}
+function 자리이름(el) {
+  const n = el.querySelector(':scope > div > .nm, :scope > div > .tn');
+  return n ? n.textContent.trim() : (el.dataset.zi || '');
+}
+/* '…로/으로' — 받침이 없거나 ㄹ 이면 '로' 다(방패로 · 징벌로 · 규탄으로). */
+function 로으로(w) {
+  const t = String(w || '');
+  const c = t.charCodeAt(t.length - 1);
+  if (!(c >= 0xac00 && c <= 0xd7a3)) return '로';
+  const j = (c - 0xac00) % 28;
+  return (j === 0 || j === 8) ? '로' : '으로';
+}
+function 돌아가기칸() {
+  const b = document.getElementById('goback');
+  if (!b) return;
+  const 끝 = 돌아갈곳[돌아갈곳.length - 1];
+  b.classList.toggle('on', !!끝);
+  if (끝) b.textContent = `← ${끝.이름}${로으로(끝.이름)} 돌아가기`;
+}
+function 뛰기(id, 시작) {
+  const el = 자리찾기(id);
+  if (!el) return;
+  const 집 = 시작 && 시작.closest('.card[data-zi], .talent[data-zi]');
+  if (집 && 집 !== el) {
+    // **같은 자리를 거듭 쌓지 않는다** — 한 기술에서 특성 넷을 차례로 봐도 돌아갈 곳은 하나다
+    const 끝 = 돌아갈곳[돌아갈곳.length - 1];
+    if (!끝 || 끝.id !== 집.dataset.zi) 돌아갈곳.push({ id: 집.dataset.zi, 이름: 자리이름(집) });
+  }
+  밝히기(el);
+  돌아가기칸();
+}
+$('#body').addEventListener('click', e => {
+  const b = e.target.closest('[data-go]');
+  if (!b) return;
+  e.preventDefault(); e.stopPropagation();
+  뛰기(b.getAttribute('data-go'), b);
 });
+/* 글자를 눌러서 가는 자리는 **글쇠로도** 가야 한다(탭으로 짚고 엔터·스페이스). */
+$('#body').addEventListener('keydown', e => {
+  if (e.key !== 'Enter' && e.key !== ' ') return;
+  const b = e.target.closest('[data-go][role="button"]');
+  if (!b) return;
+  e.preventDefault();
+  뛰기(b.getAttribute('data-go'), b);
+});
+const 돌아가기단추 = document.createElement('button');
+돌아가기단추.id = 'goback';
+돌아가기단추.type = 'button';
+돌아가기단추.title = '왔던 자리로';
+돌아가기단추.addEventListener('click', () => {
+  const 곳 = 돌아갈곳.pop();
+  돌아가기칸();
+  if (!곳) return;
+  const el = 자리찾기(곳.id);
+  if (el) 밝히기(el);
+});
+document.body.appendChild(돌아가기단추);
+if (MEMO_ON) document.body.classList.add('memoon');   // 메모 바를 피해 앉으려고
 /* 범위 그림 켜고 끄기. 앱 격리 규약대로 열쇠는 `herodex.` 로 시작한다. */
 const FIG_KEY = 'herodex.figs';
 function figsPaint() {
