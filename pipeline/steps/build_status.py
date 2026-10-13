@@ -35,7 +35,10 @@ KST = timezone(timedelta(hours=9))
 WATCH = {
     "encyclopedia": ["site/encyclopedia/index.html"],
     # 영웅 도감은 영웅마다 파일이 따로라, 목록 파일 하나만 지문으로 본다(바뀌면 같이 바뀐다)
-    "herodex": ["site/data/herodex/index.json"],
+    # 도감은 **index.json 만 보면 안 된다** — 거기엔 판과 영웅 수만 있어, 해석기를 고쳐
+    # 영웅 자료 86개가 바뀌어도 '갱신 안 됨' 으로 찍힌다. 같이 만들어지는 두 장을 함께 본다.
+    "herodex": ["site/data/herodex/index.json", "site/data/herodex/shapes.json",
+                "site/data/herodex/stats.json"],
     # index.json 은 두 판이 같이 쓰므로 지문에 넣지 않는다(넣으면 테스트 서버만 바뀌어도 본 서버까지 '갱신'으로 찍힌다)
     "builds": ["site/data/builds/live.ko.json", "site/data/builds/live.en.json"],
     "builds-ptr": ["site/data/builds/ptr.ko.json", "site/data/builds/ptr.en.json"],
