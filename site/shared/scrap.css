@@ -72,18 +72,18 @@
    (예전에는 이 여백을 scrap.js 가 인라인으로 박아서 아래 좁은 화면 규칙이 하나도 안 먹었다 —
     320px 에서 가운데 칸이 128px 뿐이라 바가 두 줄로 접히고, 단추가 갈래 아이콘 위에 얹혔다.
     배치는 여기서만 정한다.) */
-#scrap-bar { padding:6px 120px; text-align:center; }
+#scrap-bar { padding:6px 164px; text-align:center; }   /* 오른쪽 단추 셋(?·밝기·GitHub) 몫 */
 #scrap-tools { position:absolute; right:8px; top:50%; transform:translateY(-50%);
   display:flex; gap:6px; align-items:center; }
 /* 좁은 화면: 한 줄 가로 배치로 바꾼다. 브랜드 ─ 갈래 ─ 단추 순서로 흐르니
    아무것도 겹치지 않고, 바 높이도 한 줄로 끝난다. */
-@media (max-width:700px) {
+@media (max-width:860px) {
   #scrap-bar { display:flex; align-items:center; gap:6px; padding:5px 8px; text-align:left; }
   #scrap-brand { flex:0 0 auto; white-space:nowrap; }
   #scrap-nav { flex:1 1 auto; justify-content:center; margin-left:0; gap:2px; min-width:0; }
   #scrap-tools { position:static; transform:none; flex:0 0 auto; gap:4px; }
   #scrap-bar .scrap-tl { display:none; }            /* 'Light/Dark' 낱말은 접고 ☀/☾ 만 */
-  #scrap-theme-btn, #scrap-gh { padding:4px 8px !important; }
+  #scrap-theme-btn, #scrap-gh, #scrap-help { padding:4px 8px !important; }
 }
 @media (max-width:560px) {
   #scrap-bar .scrap-nav { padding:4px 6px; font-size:11.5px; }
@@ -107,6 +107,8 @@
    한 줄에 들어갈 수 없어 바가 옆으로 밀렸다(320px 에서 49px 넘침). 글자를 접으면
    넷이 다 들어가고, 무엇인지는 `title` 이 말해 준다. */
 @media (max-width:520px) {
+  /* '?'(사용법) 단추 몫을 만들려고 브랜드 글자도 접는다 — 로고만으로도 처음 화면으로 간다 */
+  #scrap-brand .scrap-bt { display:none; }
   #scrap-bar .scrap-nav span { display:none; }
   #scrap-bar .scrap-nav { padding:4px 7px; gap:0; }
   .scrap-ic { width:16px; height:16px; }

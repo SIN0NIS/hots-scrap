@@ -51,13 +51,30 @@
     return '<span id="scrap-nav">' + out + '</span>';
   }
 
+  /* **이 화면의 사용법으로 바로.** 사용법(guide/)은 앱마다 단락이 있어, 보고 있는 화면에 맞는
+     단락으로 보낸다. 더 구체적인 것(도감 안의 범위 구경·통계)을 먼저 본다. 사용법 안에서는 안 띄운다. */
+  var HELP = [
+    [/\/herodex\/shapes/, 'herodex-shapes'], [/\/herodex\/stats/, 'herodex-stats'], [/\/herodex\//, 'herodex'],
+    [/\/builds\//, 'builds'], [/\/encyclopedia\//, 'ency'], [/\/patchnotes\//, 'patch'],
+    [/\/tier\//, 'tier'], [/\/replay\//, 'replay'], [/hots_hero_m3/, 'viewer']
+  ];
+  function helpLink() {
+    var here = location.pathname;
+    if (/\/guide\//.test(here)) return '';
+    var at = 'start';
+    for (var i = 0; i < HELP.length; i++) if (HELP[i][0].test(here)) { at = HELP[i][1]; break; }
+    return '<a id="scrap-help" href="' + BASE + 'guide/#' + at + '" title="이 화면 사용법" '
+         + 'style="text-decoration:none;font-size:12px;line-height:1;border-radius:99px;padding:4px 9px;font-weight:700;">?</a>';
+  }
+
   function addBar() {
     if (document.getElementById('scrap-bar')) return;
     var d = document.createElement('div');
     d.id = 'scrap-bar';
-    d.innerHTML = '<a id="scrap-brand" href="' + BASE + '" style="font-weight:600;letter-spacing:0.3px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;"><img id="scrap-logo" src="' + BASE + 'shared/logo_light.svg" alt="" style="height:18px;width:18px;"> HotS Scrap</a>'
+    d.innerHTML = '<a id="scrap-brand" href="' + BASE + '" style="font-weight:600;letter-spacing:0.3px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;"><img id="scrap-logo" src="' + BASE + 'shared/logo_light.svg" alt="" style="height:18px;width:18px;"><span class="scrap-bt"> HotS Scrap</span></a>'
       + navLinks()
       + '<span id="scrap-tools">'
+      + helpLink()
       + '<button id="scrap-theme-btn" type="button" title="다크/라이트 전환 — 모든 화면에 적용" style="border-radius:99px;padding:4px 10px;cursor:pointer;font-size:12px;line-height:1;">◐</button>'
       + '<a id="scrap-gh" href="https://github.com/SIN0NIS/hots-scrap" target="_blank" rel="noopener" title="GitHub 저장소" style="text-decoration:none;font-size:12px;line-height:1;border-radius:99px;padding:4px 10px;">🔗</a>'
       + '</span>';
@@ -99,6 +116,8 @@
       var ctl = light ? 'background:#ffffff;border:1px solid #cdd9ea;color:#31405a;' : 'background:#132b4d;border:1px solid #233a5c;color:#eaf1fa;';
       btn.style.cssText = 'border-radius:99px;padding:4px 10px;cursor:pointer;font-size:12px;line-height:1;' + ctl;
       document.getElementById('scrap-gh').style.cssText = 'text-decoration:none;font-size:12px;line-height:1;border-radius:99px;padding:4px 10px;' + ctl;
+      var hp = document.getElementById('scrap-help');
+      if (hp) hp.style.cssText = 'text-decoration:none;font-size:12px;line-height:1;border-radius:99px;padding:4px 9px;font-weight:700;' + ctl;
       // 낱말은 따로 싸 둔다 — 좁은 화면에서는 CSS 가 낱말을 접고 ☀/☾ 만 남긴다
       btn.innerHTML = light ? '☀<span class="scrap-tl"> Light</span>' : '☾<span class="scrap-tl"> Dark</span>';
       var wm2 = document.getElementById('scrap-wm');
