@@ -45,6 +45,8 @@ WATCH = {
     "replay": ["site/replay/js/data_maps.js", "site/replay/js/data_heroes.js"],
     "patchnotes": ["site/data/patchnotes/index.json", "site/data/patchnotes/builds.json",
                    "site/data/patchnotes/heroes.json"],
+    # 전장 도감은 자료를 페이지에 품는다(지도 그림은 img/ 에 따로지만 페이지와 같이 만들어진다)
+    "maps": ["site/maps/index.html"],
     # 티어표는 영웅 목록(이름·역할·초상화)만 쓴다
     "tier": ["site/tier/index.html", "site/data/patchnotes/heroes.json"],
     # models 는 바깥 사이트라 우리가 아는 시각이 없다

@@ -54,6 +54,16 @@ def scroll_into(sel, block="start", dy=0):
     return act
 
 
+def maps_open(키):
+    """전장 도감 — 그 전장을 고르고 설명을 넓게(설명만) 편다"""
+    def act(pg):
+        pg.click(f'.mp[data-k="{키}"]')
+        pg.click('.vb[data-v="full"]')
+        pg.add_style_tag(content=".sidebody{scroll-behavior:auto!important}")   # 부드러운 스크롤이 끝나기 전에 찍히지 않게
+        pg.wait_for_timeout(500)
+    return act
+
+
 def builds_pick(pg):
     """제이나: 1레벨 메인 하나, 4레벨 메인+보조, 7레벨 메인 하나"""
     pg.click(".t-row-0 >> nth=1")
@@ -148,6 +158,14 @@ SHOTS = [
                 ["button.set-btn >> text=⚙ 표시 설정", "button.lang-btn"]]),
     dict(id="ency-hero", url="encyclopedia/",
          do=[lambda pg: (pg.click(".home-hero-card >> nth=0"), pg.wait_for_timeout(900))], marks=[]),
+
+    # 전장 도감 — 흐름·자리 사진은 회차 자리가 다 정해진 블랙하트로, 설명을 넓게 펴서 찍는다
+    dict(id="maps", url="maps/",
+         marks=["#picker", ["#t", "#tmin"], "#rstops", "#keybtn", "#atk", "#jump"]),
+    dict(id="maps-flow", url="maps/", do=[maps_open("blackheartsbay"), scroll_into("#s-흐름", "start", -6)],
+         marks=[".lim", ".ftl", ".flist"]),
+    dict(id="maps-place", url="maps/", do=[maps_open("blackheartsbay"), scroll_into("#s-자리차례", "start", -6)],
+         marks=[".nxt", ".nxo"]),
 
     # 패치 기록
     dict(id="patch", url="patchnotes/",
