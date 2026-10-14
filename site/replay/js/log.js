@@ -43,7 +43,7 @@ let firstShown=0, shown=0;      // 화면에 올라간 구간 [firstShown, shown
 
 function evRow(e){
   const d=document.createElement('div');
-  d.className='ev';
+  d.className='ev '+CAT(e);
   d.innerHTML=evHTML(e,G.players);
   return d;
 }

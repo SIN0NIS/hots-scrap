@@ -48,7 +48,7 @@ function prepare(raw){
     const acts=h.pts.filter(p=>p.src==='m'||p.src==='a').map(p=>p.t).sort((a,b)=>a-b);
     for(const t of raw.hearths[nm]){
       const cut=acts.find(a=>a>t+0.3 && a<=t+HEARTH_T);   // 0.3초 안의 명령은 누르는 김에 나온 것
-      if(cut===undefined) h.pts.push({t:t+HEARTH_T, x:home[1], y:home[2], src:'j'});
+      if(cut===undefined) h.pts.push({t:t+HEARTH_T, x:home[1], y:home[2], src:'j', hz:true});
     }
   }
   // 카메라 중심(src 'v') — 위치를 당기는 데는 안 쓴다(효과 −0.6%, 잡음 수준).
@@ -87,6 +87,7 @@ function prepare(raw){
     const h = heroes[lab];
     h.path = smoothPath(buildPath(h.pts, maxT), h.pts, maxT);
     h.conf = buildConf(h.path, h.pts);     // 프레임별 «얼마나 믿을 수 있나» 0~1
+    h.leaps = findLeaps(h.path, h.pts);    // 걸어서는 못 가는 «먼 이동» — 화면에 화살표로
     h.heroName = (lab.match(/\((.+)\)$/)||[])[1] || lab;   // 라벨 "이름(영웅)" -> 영웅
   }
   return out;
@@ -298,6 +299,43 @@ function buildConf(P, pts){
   }
   return cf;
 }
+/* ── 먼 이동 감지 ────────────────────────────────────────────────────
+   재구성된 경로에서 «걸어서는 못 가는 속도»로 LEAP_MIN 타일 넘게 옮겨 간 구간을 찾는다.
+   이동기·귀환·부활 직후 순간이동, 그리고 추정이 빗나가 실측 스냅샷이 위치를 크게
+   고친 경우(«위치 보정»)다. 그대로 두면 영웅이 맵을 가로질러 미끄러지거나 툭 사라져
+   보이므로, 화면이 출발→도착 화살표를 미리 띄워 «멀리 옮겨 간다»를 알려 준다.
+   LEAP_V: 한 스텝 이동이 이속의 1.8배를 넘으면 «빠름». LEAP_GAP 스텝까지 끊겨도 한 덩어리. */
+const LEAP_V=SPEED*PDT*1.8, LEAP_MIN=10, LEAP_GAP=3;
+function findLeaps(P, pts){
+  const {n,xs,ys,fl}=P, out=[];
+  let s=-1, e=-1;
+  const flush=()=>{
+    if(s<0) return;
+    const d=Math.hypot(xs[e]-xs[s], ys[e]-ys[s]);
+    if(d>=LEAP_MIN) out.push({t0:s*PDT, t1:e*PDT, x0:xs[s], y0:ys[s], x1:xs[e], y1:ys[e], d,
+                              kind:leapKind(pts, s*PDT, e*PDT)});
+    s=-1;
+  };
+  for(let k=0;k<n-1;k++){
+    if(fl[k]!==1 || fl[k+1]!==1){ flush(); continue; }
+    if(Math.hypot(xs[k+1]-xs[k], ys[k+1]-ys[k])>LEAP_V){ if(s<0) s=k; e=k+1; }
+    else if(s>=0 && k+1-e>LEAP_GAP) flush();
+  }
+  flush();
+  return out;
+}
+function leapKind(pts, t0, t1){
+  for(const p of pts){
+    if(p.t<t0-0.3) continue;
+    if(p.t>t1+0.3) break;
+    if(p.src==='j') return p.hz ? '귀환' : '이동기';
+  }
+  for(const p of pts){
+    if(p.t>t0+0.1) break;
+    if(p.src==='r' && t0-p.t<=REV_W) return '부활 후 이동';
+  }
+  return '위치 보정';
+}
 /* 지형 격자가 없으면 늘 통과 (기존 동작 유지).
    스냅샷 좌표는 정수라 가끔 «벽» 칸 위에 그대로 떨어진다. 그러면 어느 쪽으로도
    못 나가 다음 스냅샷까지 15초를 그 자리에 못박혔다 (실측 8경기 4건·59.6초).
@@ -346,6 +384,17 @@ function nameHTML(label, players){
   const ic=hd?`<img class="li" src="../shared/icons/${hd.icon}" alt="">`:'';
   return `<b class="${t===0?'b':t===1?'r':'g'}">${ic}${label}</b>`;
 }
+/* 로그용 «아이콘만» 표기 — 인게임 킬 알림처럼 초상화만 늘어놓는다.
+   닉네임은 길어서 줄이 넘쳤다. 이름은 마우스를 올리면(title) 보인다.
+   아이콘을 못 찾으면 예전처럼 글자 라벨로 돌아간다. */
+function heroIcHTML(label, players, extra){
+  const t=teamOf(label,players);
+  const hero=(String(label||'').match(/\((.+)\)$/)||[])[1];
+  const hd=hero?heroByName(hero):null;
+  if(!hd) return nameHTML(label,players);
+  const safe=String(label).replace(/"/g,'&quot;');
+  return `<img class="ki ${t===0?'b':t===1?'r':'g'}${extra?' '+extra:''}" src="../shared/icons/${hd.icon}" alt="${safe}" title="${safe}">`;
+}
 /* 추정치 딱지 — 리플레이에 없어서 추론한 값 옆에 붙인다 */
 function estB(why){ return `<u class="estb" title="${why}">추정치</u>`; }
 const EST_WHY = {
@@ -366,15 +415,17 @@ function evHTML(e, players){
   let ic='•', body='';
   switch(CAT(e)){
     case 'kill':{ ic='💀';
-      body=`${nameHTML(e.player,players)} 처치됨 <span class="dim">←</span> `+
-        (e.killers||[]).map(k=>nameHTML(k,players)).join(', '); break; }
+      // 인게임 킬 알림 꼴: [처치 관여자들] ▸ [죽은 영웅]. 리플레이의 killers 는
+      // «관여자 목록»이라 막타가 누군지는 모른다 — 그래서 킬/어시를 나누지 않고 나란히 둔다.
+      const ks=(e.killers||[]).map(k=>heroIcHTML(k,players)).join('');
+      body=`<span class="kf">${ks}${ks?'<span class="kx">▸</span>':''}${heroIcHTML(e.player,players,'dead')}</span>`; break; }
     case 'struct':{
       const k=(typeof structKind==='function')?structKind(e.UnitType||e.unit)
               :{ko:(e.UnitType||e.unit||'건물').replace(/^Town/,''), ic:'🏰'};
       ic=k.ic;
       body=`<b class="g">${k.ko}</b> 파괴`
          + (e.killers && e.killers.length
-              ? ` <span class="dim">←</span> `+e.killers.map(k=>nameHTML(k,players)).join(', ')
+              ? ` <span class="kf">`+e.killers.map(k=>heroIcHTML(k,players)).join('')+`</span>`
               : estB(EST_WHY.struct)); break; }
     case 'merc':{ ic='⚔️'; body=`${span((e.CampType||'용병'), tm(e.TeamID))} 점령 <span class="dim">(캠프 ${e.CampID??'?'} · ${tm(e.TeamID)===0?'1팀':'2팀'})</span>`; break; }
     case 'obj':{ ic='🪶'; body=`<b class="g">${e.e}</b>` + (e.TeamID?` <span class="dim">${tm(e.TeamID)===0?'1팀':'2팀'}</span>`:''); break; }
@@ -386,7 +437,8 @@ function evHTML(e, players){
              + (e.picks.length ? ` <span class="talstrip">` + e.picks.map(p=>
                  `<span class="tp" title="${p.hero} · ${p.ko}">`
                  + (p.ic?`<img src="talents/${p.ic}.webp" alt="">`:'')
-                 + `${p.hero}</span>`).join('') + `</span>` : '');
+                 + (heroByName(p.hero) ? `<img class="ki sm" src="../shared/icons/${heroByName(p.hero).icon}" alt="${p.hero}">` : p.hero)
+                 + `</span>`).join('') + `</span>` : '');
       }else{
         body = e.e==='LevelUp' ? `${nameHTML(e.player??'?',players)} <span class="dim">레벨 ${e.Level??''}</span>`
              : `${nameHTML(e.player??'?',players)} <span class="dim">특성: ${e.PurchaseName??''}</span>`;

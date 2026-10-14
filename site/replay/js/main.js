@@ -120,6 +120,7 @@ function syncCalInputs(){ if(!cal) return;
 for(const [el,k] of [[calL,'L'],[calR,'R'],[calB,'B'],[calT,'T']])
   el.oninput=()=>{ if(cal){ cal[k]=+el.value; placeBg(); markDirty(); } };
 document.getElementById('confTgl').onchange=e=>{ showConf=e.target.checked; markDirty(); };
+document.getElementById('leapTgl').onchange=e=>{ showLeaps=e.target.checked; markDirty(); };
 document.getElementById('bgAlpha').oninput=e=>{ bgAlpha=e.target.value/100; placeBg(); };
 /* 영웅 표시 크기 — 두 보기에서 뜻이 조금 다르다.
      리플레이 보기: 오버레이 초상화의 «화면 px 반지름» (확대해도 크기가 유지된다)

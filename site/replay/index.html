@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 <title>리플레이 뷰어 · HotS Scrap</title>
 <link rel="icon" type="image/svg+xml" href="../shared/favicon.svg">
-<link rel="stylesheet" href="css/style.css?v=50">
+<link rel="stylesheet" href="css/style.css?v=51">
 <style id="scrap-theme">
 /* 재생줄의 맨 시간 슬라이더는 이벤트 타임라인(클릭 탐색 지원)과 역할이 겹쳐 숨긴다 */
 #seek { display:none; }
@@ -130,7 +130,8 @@
         <label><input type="checkbox" id="showStruct" checked> 구조물</label>
         <label><input type="checkbox" id="heroIconTgl" checked> 영웅 아이콘</label>
         <label title="15초마다 오는 실측 위치에서 멀수록 흐리게 + 불확실 반경을 점선으로 — 어디가 «확실»하고 어디가 «짐작»인지 보여 준다"><input type="checkbox" id="confTgl" checked> 신뢰도</label>
-        <span class="estb" title="지도 위 영웅 위치는 15초 간격 스냅샷과 이동·조준 명령으로 되살린 값입니다 — 표본 검증 오차 평균 5.1 · 중앙값 3.7 타일. 스냅샷이 있는 순간만 «사실» 입니다.">위치 추정치</span>
+        <label title="이동기·귀환·부활 직후 순간이동, 추정이 빗나가 실측으로 크게 고쳐진 «위치 보정»(점선)처럼 걸어서는 못 가는 먼 이동을 1.5초 전부터 화살표로 미리 보여 준다"><input type="checkbox" id="leapTgl" checked> 먼 이동</label>
+        <span class="estb" title="지도 위 영웅 위치는 15초 간격 스냅샷과 이동·조준 명령으로 되살린 값입니다 — 표본 검증 오차 평균 3.3 · 중앙값 2.2 타일. 스냅샷이 있는 순간만 «사실» 입니다.">위치 추정치</span>
         <button id="snapBoard" class="mini" title="지금 화면의 영웅 위치를 전술 보드 말로 옮긴다 (맵 보기에서도 남는다)">📌 현재 배치를 보드로</button>
         <span class="sep2"></span>
       </span>
@@ -252,28 +253,28 @@
 </div>
 <!-- 검색기: js/tools.js 가 쓰므로 먼저 읽는다 -->
 <script src="../shared/search.js"></script>
-<script src="js/data_maps.js?v=50"></script>
-  <script src="js/data_levels.js?v=50"></script>
-<script src="js/data_heroes.js?v=50"></script>
-<script src="js/data_abilities.js?v=50"></script>
-<script src="js/data_talents.js?v=50"></script>
-<script src="js/data_samples.js?v=50"></script>
-<script src="js/data_pathing.js?v=50"></script>
-<script src="js/demo_replay.js?v=50"></script>
-<script src="js/py_bundle.js?v=50"></script>
-<script src="js/pathing.js?v=50"></script>
-<script src="js/engine.js?v=50"></script>
-<script src="js/render.js?v=50"></script>
-<script src="js/log.js?v=50"></script>
-<script src="js/teambar.js?v=50"></script>
-<script src="js/timeline.js?v=50"></script>
-<script src="js/stats.js?v=50"></script>
-<script src="js/score.js?v=50"></script>
-<script src="js/panzoom.js?v=50"></script>
-<script src="js/tools.js?v=50"></script>
-<script src="js/maps.js?v=50"></script>
-<script src="js/parser.js?v=50"></script>
-<script src="js/main.js?v=50"></script>
+<script src="js/data_maps.js?v=51"></script>
+  <script src="js/data_levels.js?v=51"></script>
+<script src="js/data_heroes.js?v=51"></script>
+<script src="js/data_abilities.js?v=51"></script>
+<script src="js/data_talents.js?v=51"></script>
+<script src="js/data_samples.js?v=51"></script>
+<script src="js/data_pathing.js?v=51"></script>
+<script src="js/demo_replay.js?v=51"></script>
+<script src="js/py_bundle.js?v=51"></script>
+<script src="js/pathing.js?v=51"></script>
+<script src="js/engine.js?v=51"></script>
+<script src="js/render.js?v=51"></script>
+<script src="js/log.js?v=51"></script>
+<script src="js/teambar.js?v=51"></script>
+<script src="js/timeline.js?v=51"></script>
+<script src="js/stats.js?v=51"></script>
+<script src="js/score.js?v=51"></script>
+<script src="js/panzoom.js?v=51"></script>
+<script src="js/tools.js?v=51"></script>
+<script src="js/maps.js?v=51"></script>
+<script src="js/parser.js?v=51"></script>
+<script src="js/main.js?v=51"></script>
 <script src="../shared/scrap.js" defer></script>
 </body>
 </html>

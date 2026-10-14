@@ -11,6 +11,8 @@ let G = null;
 let tCur = 0, playing = false, speed = 4, lastTs = 0;
 let bgImg = null, bgAlpha = 0.7, showStruct = true, showHeroIcons = true;
 let showConf = true;             // 위치 신뢰도를 흐림·점선 원으로 표시
+let showLeaps = true;            // 먼 이동(이동기·귀환·위치 보정)을 화살표로 표시
+const LEAP_PRE=1.5, LEAP_POST=2.5;   // 화살표를 이동 몇 초 전부터 띄우고 몇 초 뒤까지 남기나
 let cal = null;
 const R = 2;                     // 월드 좌표계 기준 배율 (예전 캔버스 배율을 그대로 씀)
 /* 캔버스는 CSS 변수를 읽지 못한다. css/style.css 의 토큰과 같은 색을 hex 로 적어 둔다
@@ -139,6 +141,19 @@ function draw(){
     ctx.strokeStyle = CAT(e)==='kill' ? `rgba(255,95,109,${.8*(1-k)})` : `rgba(232,182,76,${.8*(1-k)})`;
     ctx.lineWidth=4*ws; ctx.stroke();
   }
+  // 먼 이동 화살표 — 영웅 아래에 깐다. 이동 LEAP_PRE 초 전부터 옅게 «미리» 보여 주고,
+  // 옮겨 가는 동안 진하게, 도착 뒤 LEAP_POST 초에 걸쳐 사라진다.
+  // «위치 보정»(추정이 빗나가 실측이 고친 것)은 실제 이동이 아니므로 점선으로 구분한다.
+  if(showLeaps) for(const lab in G.heroes){
+    const hh=G.heroes[lab]; if(!hh.leaps||!hh.leaps.length) continue;
+    const col = hh.team===0?'#339fee':'#e64343';
+    for(const L of hh.leaps){
+      if(tCur<L.t0-LEAP_PRE || tCur>L.t1+LEAP_POST) continue;
+      const a = tCur<L.t0 ? 0.3+0.5*(1-(L.t0-tCur)/LEAP_PRE)
+              : tCur<=L.t1 ? 0.95 : 0.95*(1-(tCur-L.t1)/LEAP_POST);
+      drawLeap(S, L, col, a, ss);
+    }
+  }
   // 영웅 — 화면상 크기가 늘 일정하도록 ss(=DPR)만 곱한다
   for(const lab in G.heroes){
     const hh=G.heroes[lab], col = hh.team===0?'#339fee':'#e64343';
@@ -192,4 +207,36 @@ function draw(){
       ctx.globalAlpha=1;
     }
   }
+}
+function drawLeap(S, L, col, a, ss){
+  const [x0,y0]=S(L.x0,L.y0), [x1,y1]=S(L.x1,L.y1);
+  const dx=x1-x0, dy=y1-y0, d=Math.hypot(dx,dy); if(d<4*DPR) return;
+  const ux=dx/d, uy=dy/d, hl=Math.min(d*0.4, 16*DPR), hw=hl*0.6;
+  const ex=x1-ux*hl, ey=y1-uy*hl;                 // 화살촉이 시작되는 곳
+  ctx.save();
+  ctx.globalAlpha=Math.max(0,Math.min(1,a));
+  ctx.lineCap='round';
+  const dash = L.kind==='위치 보정' ? [7*DPR,6*DPR] : [];
+  // 어두운 테두리 → 팀색 순으로 두 번 그어 어느 배경에서도 보이게
+  for(const [c,w] of [['rgba(10,14,22,.85)',6*DPR],[col,3*DPR]]){
+    ctx.setLineDash(dash); ctx.strokeStyle=c; ctx.lineWidth=w;
+    ctx.beginPath(); ctx.moveTo(x0,y0); ctx.lineTo(ex,ey); ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.beginPath(); ctx.moveTo(x1,y1);
+    ctx.lineTo(ex-uy*hw, ey+ux*hw); ctx.lineTo(ex+uy*hw, ey-ux*hw); ctx.closePath();
+    ctx.fillStyle=c; if(c===col) ctx.fill(); else { ctx.lineWidth=w*0.6; ctx.lineJoin='round'; ctx.stroke(); }
+  }
+  // 출발점 고리
+  ctx.beginPath(); ctx.arc(x0,y0,4*DPR,0,7); ctx.fillStyle=col; ctx.fill();
+  // 가운데 딱지: «귀환 62타일»
+  const txt=`${L.kind} ${Math.round(L.d)}타일`;
+  ctx.font=`600 ${11*DPR}px system-ui, sans-serif`;
+  const tw=ctx.measureText(txt).width, px=(x0+x1)/2, py=(y0+y1)/2;
+  ctx.fillStyle='rgba(10,14,22,.85)';
+  ctx.beginPath(); ctx.roundRect ? ctx.roundRect(px-tw/2-6*DPR, py-9*DPR, tw+12*DPR, 18*DPR, 9*DPR)
+                                 : ctx.rect(px-tw/2-6*DPR, py-9*DPR, tw+12*DPR, 18*DPR);
+  ctx.fill();
+  ctx.fillStyle='#fff'; ctx.textAlign='center'; ctx.textBaseline='middle';
+  ctx.fillText(txt, px, py+0.5*DPR);
+  ctx.restore();
 }

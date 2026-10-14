@@ -719,3 +719,12 @@ body.mode-replay:not(.has-replay) #needRep{display:block}
   background:color-mix(in oklab,var(--ink) 7%,transparent)}
 .ev .talstrip .tp img{width:12px;height:12px;border-radius:2px}
 #calbar .estb{margin-left:2px}
+/* 로그의 «아이콘만» 표기 — 인게임 킬 알림처럼 [관여자들] ▸ [죽은 영웅] */
+.ev.kill,.ev.struct{align-items:center}
+.ev .kf{display:inline-flex;align-items:center;flex-wrap:wrap;gap:5px;vertical-align:middle}
+.ev img.ki{width:calc(22px * var(--fs));height:calc(22px * var(--fs));border-radius:50%;
+  box-shadow:0 0 0 2px var(--gold);vertical-align:middle;background:var(--line)}
+.ev img.ki.b{box-shadow:0 0 0 2px var(--blue)} .ev img.ki.r{box-shadow:0 0 0 2px var(--red)}
+.ev img.ki.dead{filter:grayscale(1) brightness(.8);opacity:.85}
+.ev img.ki.sm{width:14px;height:14px;box-shadow:none}
+.ev .kx{color:var(--dim);font-size:calc(12px * var(--fs));margin:0 1px}
