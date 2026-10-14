@@ -19,14 +19,15 @@ function prepare(raw){
     // 그때만 label 표로 옮긴다 (동명이인이면 옛 형식에서는 어차피 구분이 안 된다).
     const lab = heroes[nm] ? nm : (label[nm] || nm);
     if(!heroes[lab]) heroes[lab] = {team: teamOf(lab,players), pts:[]};
-    for(const p of raw.movement_commands[nm]) heroes[lab].pts.push({t:p[0],x:p[1],y:p[2],src:'m'});
+    // 4번째 칸 "u" = 유닛을 찍은 우클릭(적 공격·아군 따라가기) → 그 유닛 근처에서 멈춘다
+    for(const p of raw.movement_commands[nm]) heroes[lab].pts.push({t:p[0],x:p[1],y:p[2],src:'m',u:p[3]==='u'});
   }
   // 어택무브(A + 클릭) — «스킬»로 분류되지만 실제로는 거기까지 걸어가는 명령이다.
   // 실측: 8경기에서 10,014건이 나와 목적지 정보가 16% 늘어난다.
   for(const nm in (raw.attack_moves||{})){
     const lab = heroes[nm] ? nm : (label[nm] || nm);
     if(!heroes[lab]) continue;
-    for(const p of raw.attack_moves[nm]) heroes[lab].pts.push({t:p[0],x:p[1],y:p[2],src:'m'});
+    for(const p of raw.attack_moves[nm]) heroes[lab].pts.push({t:p[0],x:p[1],y:p[2],src:'m',u:p[3]==='u',am:true});
   }
   // 스킬 조준점 — 이동 목적지가 아니라 «그때 사거리 안에 있었다»는 약한 단서
   for(const nm in (raw.ability_aims||{})){
@@ -50,10 +51,18 @@ function prepare(raw){
       if(cut===undefined) h.pts.push({t:t+HEARTH_T, x:home[1], y:home[2], src:'j'});
     }
   }
+  // 카메라 중심(src 'v') — 위치를 당기는 데는 안 쓴다(효과 −0.6%, 잡음 수준).
+  // «부활 직후 순간이동» 판정에서 «선수도 거기를 보고 있었나» 확인용으로만 쓴다.
+  for(const nm in (raw.camera||{})){
+    const lab = heroes[nm] ? nm : (label[nm] || nm);
+    if(!heroes[lab]) continue;
+    for(const p of raw.camera[nm]) heroes[lab].pts.push({t:p[0],x:p[1],y:p[2],src:'v'});
+  }
   let maxT = 0, minX=1e9,maxX=-1e9,minY=1e9,maxY=-1e9;
   for(const lab in heroes){
     heroes[lab].pts.sort((a,b)=>a.t-b.t);
-    for(const p of heroes[lab].pts){ maxT=Math.max(maxT,p.t);
+    for(const p of heroes[lab].pts){ if(p.src==='v') continue;   // 카메라는 맵 범위 계산에서 뺀다
+      maxT=Math.max(maxT,p.t);
       minX=Math.min(minX,p.x);maxX=Math.max(maxX,p.x);minY=Math.min(minY,p.y);maxY=Math.max(maxY,p.y); }
   }
   const evs = (raw.timeline||[]).filter(e=>!/^EndOfGame|^PlayerSpawned$/.test(e.e));
@@ -97,6 +106,22 @@ function prepare(raw){
    귀환 반영 후: 6.0 → 3.88 · 6.5 → 3.92 · 7.0 → 4.02 */
 const PDT=0.1, SPEED=6.0, SNAP_DIST=10;
 const HEARTH_T=6;         // 귀환석 채널 시간(초)
+/* 멈춤 거리 — 목적지에 «이만큼 남으면» 선다. 추정이 목적지에 먼저 닿고 실제는 아직
+   못 간 경우가 남은 오차의 23% 였다.
+     STOP_U: 유닛을 찍은 우클릭·어택무브 — 사거리에서 멈춘다(근접·원거리 평균).
+             영웅별 공격 사거리(+2)로 나눠 보았지만 고정값보다 1.4% 나을 뿐이라 단순하게 둔다.
+     STOP_A: 땅을 찍은 어택무브 — 가는 길에 적이 사거리에 들면 선다.
+     STOP_M: 그냥 이동 — 우클릭을 끌면 목적지가 영웅보다 앞서 나간다.
+   홀드아웃(표본 8판): 멈춤 없음 3.84 → STOP_U 6 3.53 → +STOP_A 5 3.40 → +STOP_M 2 3.26.
+   표본을 반으로 나눠 한쪽에서 고른 값을 다른 쪽에 써도 같은 만큼 좋아졌다(과적합 아님). */
+const STOP_U=6, STOP_A=5, STOP_M=2;
+/* 부활 직후 순간이동 — 머키는 알에서 되살아나는데 부활 좌표는 본진으로 찍힌다.
+   부활 뒤 REV_W 초 안에 클릭 CL_N 개가 CL_W 초 사이에 반경 CL_SP 안에 몰려 있고,
+   카메라도 거기(CAM_OK 안)를 보는데 추정 위치가 TP_R 넘게 떨어져 있으면 그리로 옮긴다.
+   카메라 확인이 없으면 «본진에서 먼 곳을 찍고 걸어가는» 평범한 출발을 순간이동으로
+   오인했다(켈투자드 3.9 → 11.0 등). 카메라를 붙이면 오탐 0, 머키 60.9 → 0.9.
+   부활 시각 제한 없이 아무 때나 쓰면 «카메라를 먼저 보내 놓고 멀리 가는» 경우가 걸려 손해였다. */
+const TP_R=25, CL_W=1.5, CL_N=3, CL_SP=8, CAM_OK=12, REV_W=5;
 // 전투 스냅샷 보정 비율(스텝당). 한 번에 60% 를 당기면 그 프레임만 툭 튀므로
 // 여러 스텝에 나눠 수렴시킨다. 0.25 면 스냅샷 간격(약 1초=10스텝)에 대부분 따라잡는다.
 const CORR=0.25;
@@ -112,15 +137,31 @@ function buildPath(pts, maxT){
   let lastFix=-1;                                // 마지막으로 실측 좌표를 적용한 시각
   // 첫 점이 한참 뒤에 있는 리플레이(난투 등)는 그 전 구간이 통째로 비어
   // 영웅이 안 그려졌다. 첫 위치를 시작부터 깔아 둔다.
-  const first=pts.find(p=>p.src!=='m'&&p.src!=='a'&&p.src!=='j');
+  const first=pts.find(p=>p.src!=='m'&&p.src!=='a'&&p.src!=='j'&&p.src!=='v');
   if(first){ cx=first.x; cy=first.y; has=true; }
-  const setTarget=(x,y)=>{ tx=x; ty=y; hasT=true; route=null; ri=0; };
+  let tStop=0;                                   // 지금 목적지의 멈춤 거리
+  const setTarget=(x,y,r)=>{ tx=x; ty=y; hasT=true; route=null; ri=0; tStop=r||0; };
+  const recent=[]; let cam=null, lastRev=-1e9;   // 부활 직후 순간이동 판정용
   for(let k=0;k<n;k++){
     const t=k*PDT;
     while(i<pts.length && pts[i].t<=t){
       const p=pts[i++];
+      if(p.src==='v'){ cam=p; continue; }
       // 새 이동 명령이 오면 스냅샷 수렴은 끝낸다 — 둘이 맞서면 교착에 빠진다(아래 참고)
-      if(p.src==='m'){ setTarget(p.x,p.y); hasS=false; }
+      if(p.src==='m'){
+        setTarget(p.x,p.y, p.u?STOP_U:(p.am?STOP_A:STOP_M)); hasS=false;
+        recent.push(p); while(recent.length && recent[0].t<p.t-CL_W) recent.shift();
+        if(has && !dead && p.t-lastRev<=REV_W && recent.length>=CL_N && cam && p.t-cam.t<=1.5){
+          let mx=0,my=0; for(const q of recent){ mx+=q.x; my+=q.y; }
+          mx/=recent.length; my/=recent.length;
+          let sp=0; for(const q of recent) sp=Math.max(sp, Math.hypot(q.x-mx,q.y-my));
+          if(sp<=CL_SP && Math.hypot(cam.x-mx,cam.y-my)<=CAM_OK && Math.hypot(mx-cx,my-cy)>TP_R){
+            const w=(typeof nearestWalkable==='function' && nearestWalkable(recent[0].x,recent[0].y,6))
+                    || [recent[0].x,recent[0].y];
+            cx=w[0]; cy=w[1]; route=null;
+          }
+        }
+      }
       else if(p.src==='j'){                      // 이동기(도약·돌진·점멸) — 바로 옮긴다
         if(has && !dead){ cx=p.x; cy=p.y; hasT=false; hasS=false; route=null; }
       }
@@ -135,7 +176,8 @@ function buildPath(pts, maxT){
           }
         }
       }
-      else if(p.src==='s'||p.src==='r'){ cx=p.x; cy=p.y; has=true; dead=false; hasT=false; hasS=false; route=null; lastFix=p.t; }
+      else if(p.src==='s'||p.src==='r'){ cx=p.x; cy=p.y; has=true; dead=false; hasT=false; hasS=false; route=null; lastFix=p.t;
+        if(p.src==='r'){ lastRev=p.t; recent.length=0; } }
       else if(p.src==='d'){ cx=p.x; cy=p.y; has=true; dead=true; hasT=false; hasS=false; route=null; lastFix=p.t; }
       else if(p.src==='c'){
         if(!has){ cx=p.x; cy=p.y; has=true; hasS=false; }
@@ -154,6 +196,7 @@ function buildPath(pts, maxT){
         // 위치는 건드리지 않는다 (스냅시키면 그 자체가 순간이동이 된다).
         else if(++sAge>=15) hasS=false;
       }
+      if(hasT && tStop>0 && Math.hypot(tx-cx,ty-cy)<=tStop){ hasT=false; route=null; }   // 멈춤 거리 안
       if(hasT){
         // 목적지가 벽 건너편이면 한 번만 길을 찾아 두고 그 경로를 따라간다
         if(!route && typeof findPath==='function' && !clearLine(cx,cy,tx,ty)){
@@ -208,7 +251,7 @@ function smoothPath(P, pts, maxT){
   // 시간을 뒤집은 앵커만으로 한 번 더 (명령·조준점 없이)
   const rev=[];
   // 이동기·귀환(j)도 뺀다 — 시간을 뒤집으면 «어디서 왔나»가 아니라 «어디로 갔나»가 되어 뜻이 없다
-  for(const p of pts) if(p.src!=='m'&&p.src!=='a'&&p.src!=='j') rev.push({t:maxT-p.t,x:p.x,y:p.y,src:p.src});
+  for(const p of pts) if(p.src!=='m'&&p.src!=='a'&&p.src!=='j'&&p.src!=='v') rev.push({t:maxT-p.t,x:p.x,y:p.y,src:p.src});
   rev.sort((a,b)=>a.t-b.t);
   const B=buildPath(rev, maxT);
   let hi=0;
@@ -309,7 +352,7 @@ const EST_WHY = {
   struct: '리플레이는 건물을 «누가» 부쉈는지 거의 남기지 않습니다 (실측 39건 중 4건). '
         + '건물이 붙어 있는 진영으로 부순 팀을 추론한 값입니다.',
   pos:    '위치는 15초 간격 스냅샷과 이동(끌기 포함)·조준·귀환 명령으로 되살린 값입니다. '
-        + '표본 검증 오차 평균 3.9 · 중앙값 2.8 타일.',
+        + '표본 검증 오차 평균 3.3 · 중앙값 2.2 타일.',
   lvxp:   '레벨 문턱값은 리플레이에 없습니다. 표본 8판의 30초 간격 기록에서 뽑은 하한입니다.',
   pie:    '영웅별 «항목 경험치» 는 리플레이에 없습니다. 그 항목을 만든 사건 수로 나눈 비율입니다.',
   pieLive:'점수표의 경험치 기여도는 경기 최종값 하나뿐입니다. '
