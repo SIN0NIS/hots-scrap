@@ -144,6 +144,7 @@ function draw(){
   // 먼 이동 화살표 — 영웅 아래에 깐다. 이동 LEAP_PRE 초 전부터 옅게 «미리» 보여 주고,
   // 옮겨 가는 동안 진하게, 도착 뒤 LEAP_POST 초에 걸쳐 사라진다.
   // «위치 보정»(추정이 빗나가 실측이 고친 것)은 실제 이동이 아니므로 점선으로 구분한다.
+  leapLabels.length=0;
   if(showLeaps) for(const lab in G.heroes){
     const hh=G.heroes[lab]; if(!hh.leaps||!hh.leaps.length) continue;
     const col = hh.team===0?'#339fee':'#e64343';
@@ -208,6 +209,8 @@ function draw(){
     }
   }
 }
+// 같은 프레임에 이미 놓인 딱지 자리 — 동시에 일어난 이동끼리 딱지가 포개지지 않게 아래로 비킨다
+const leapLabels=[];
 function drawLeap(S, L, col, a, ss){
   const [x0,y0]=S(L.x0,L.y0), [x1,y1]=S(L.x1,L.y1);
   const dx=x1-x0, dy=y1-y0, d=Math.hypot(dx,dy); if(d<4*DPR) return;
@@ -231,7 +234,10 @@ function drawLeap(S, L, col, a, ss){
   // 가운데 딱지: «귀환 62타일»
   const txt=`${L.kind} ${Math.round(L.d)}타일`;
   ctx.font=`600 ${11*DPR}px system-ui, sans-serif`;
-  const tw=ctx.measureText(txt).width, px=(x0+x1)/2, py=(y0+y1)/2;
+  const tw=ctx.measureText(txt).width, px=(x0+x1)/2, hw2=tw/2+6*DPR, lh=20*DPR;
+  let py=(y0+y1)/2;
+  for(let tries=0; tries<6 && leapLabels.some(r=>Math.abs(r[0]-px)<r[2]+hw2 && Math.abs(r[1]-py)<lh); tries++) py+=lh;
+  leapLabels.push([px,py,hw2]);
   ctx.fillStyle='rgba(10,14,22,.85)';
   ctx.beginPath(); ctx.roundRect ? ctx.roundRect(px-tw/2-6*DPR, py-9*DPR, tw+12*DPR, 18*DPR, 9*DPR)
                                  : ctx.rect(px-tw/2-6*DPR, py-9*DPR, tw+12*DPR, 18*DPR);
