@@ -54,6 +54,10 @@
               padding:5px 14px; background:var(--card); color:var(--dim); cursor:pointer;
               font:inherit; font-size:12.5px; }
   .top .btn:hover { color:var(--fg); border-color:var(--gold-line); }
+  /* 사용법·밝기는 한 묶음 — 좁은 화면에서 밝기 단추만 다음 줄 왼쪽으로 떨어지지 않게 */
+  .top .tools { margin-left:auto; display:flex; gap:6px; }
+  .top .tools .btn { margin-left:0; }
+  a.btn { text-decoration:none; }
   .lead { margin:0 0 26px; color:var(--dim); font-size:13.5px; word-break:keep-all; }
 
   /* ── 큰 타일 넷 ───────────────────────────────────────────────
@@ -88,7 +92,10 @@
 <div class="wrap">
   <div class="top">
     <h1>HotS <em>Scrap</em></h1>
-    <button class="btn" id="themeBtn" type="button">☀ Light</button>
+    <span class="tools">
+      <a class="btn" href="guide/" id="guideBtn">? 사용법</a>
+      <button class="btn" id="themeBtn" type="button">☀ Light</button>
+    </span>
   </div>
   <p class="lead">히어로즈 오브 더 스톰 게임 원본에서 직접 읽어 만든 도구 모음입니다.
     자료는 새 판이 나올 때마다 다시 뽑습니다.</p>

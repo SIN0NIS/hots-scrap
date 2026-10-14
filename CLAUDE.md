@@ -109,6 +109,12 @@
   - **읽는 순서 주의**: 앱의 시동 코드보다 먼저 실려야 한다(도감은 `<head>`, 리플레이는 `js/` 앞).
   - 검색창 접기 상태는 앱별 `localStorage`(`builds.searchHidden` 등). `/` 로 열고 `Esc` 로 지우거나 접는다.
   - 걸린 자리 강조색은 `--hit`(라이트 #8a6414 / 다크 #f0c46a). `--gold` 는 흰 바탕에서 3.7:1 이라 쓰면 안 된다.
+- `site/guide/` **사용법** — 앱마다 실제 화면 사진 + 번호 상자 + 설명. 허브 오른쪽 위 "? 사용법"에서 들어온다.
+  글은 `guide/index.html` 에 손으로 쓰고, 사진과 번호 자리는 **`python tools/guide_shots.py [id…]`** 가 찍는다
+  (개발 서버 8801 이 떠 있어야 함, `pip install playwright`, 브라우저는 PC 크롬). 결과는 `guide/shots/<id>.jpg` +
+  `guide/shots.json`(번호 차례대로 `[x,y,w,h]`) — 글의 ①②③ 은 그 차례다. **앱 화면을 바꾸면 그 장면만 다시 찍는다.**
+  - 찍을 때 주소를 `scrap.test`(→127.0.0.1)로 연다. **localhost 로 찍으면 도감의 ⚠·메모·메모 막대(개발 전용)가 사진에 나온다.**
+  - 번호를 못 찾으면 "못 찾음 / 사진 밖" 을 찍어 준다 — 그 줄의 선택자를 고친다. 상자 수와 설명 수가 다르면 글이 어긋난 것이다.
 - `site/data/97650/` 공통 JSON(heroes.json, heroes/<Id>.json, talents.json), `latest.json` 포인터
 - `pipeline/steps/` 데이터 생성 스텝(로컬 실행), `tools/devserver.py`
 

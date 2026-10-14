@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>사용법 · HotS Scrap</title>
+<link rel="icon" type="image/svg+xml" href="../shared/favicon.svg">
+<script src="../shared/scrap.js" defer></script>
+<style>
+  /* 허브와 같은 팔레트 — 라이트가 기본, 다크는 media + data-theme */
+  :root {
+    --bg:#f3f6fb; --card:#ffffff; --card2:#eef2f8; --line:#cdd9ea; --fg:#122036; --dim:#5d6d84;
+    --blue:#1758a8; --blue-soft:#e8f0fb; --gold:#a97e1f; --gold-line:#d7b45c;
+    --mark:#e0245e; --mark-soft:rgba(224,36,94,.14);
+    --shadow:0 1px 2px rgba(18,32,54,.06), 0 8px 24px rgba(18,32,54,.07);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg:#0b1526; --card:#101f38; --card2:#152747; --line:#233a5c; --fg:#eaf1fa; --dim:#8fa2bd;
+      --blue:#5aa8ff; --blue-soft:#132b4d; --gold:#e8c268; --gold-line:#8a6d2f;
+      --mark:#ff4f86; --mark-soft:rgba(255,79,134,.18);
+      --shadow:0 1px 2px rgba(0,0,0,.35), 0 10px 30px rgba(0,0,0,.35); color-scheme:dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg:#0b1526; --card:#101f38; --card2:#152747; --line:#233a5c; --fg:#eaf1fa; --dim:#8fa2bd;
+    --blue:#5aa8ff; --blue-soft:#132b4d; --gold:#e8c268; --gold-line:#8a6d2f;
+    --mark:#ff4f86; --mark-soft:rgba(255,79,134,.18);
+    --shadow:0 1px 2px rgba(0,0,0,.35), 0 10px 30px rgba(0,0,0,.35); color-scheme:dark;
+  }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; scroll-padding-top:14px; }
+  body { margin:0; background:var(--bg); color:var(--fg);
+         font:15px/1.7 "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  a { color:var(--blue); }
+  .wrap { max-width:1180px; margin:0 auto; padding:26px 16px 70px;
+          display:grid; grid-template-columns:200px minmax(0,1fr); gap:34px; }
+  @media (max-width:900px) { .wrap { grid-template-columns:minmax(0,1fr); gap:10px; } }   /* 1fr 이면 넓은 사진이 칸을 밀어낸다 */
+
+  /* 차례 — 넓으면 왼쪽에 붙어 따라오고, 좁으면 위에 칩으로 */
+  nav.toc { position:sticky; top:14px; align-self:start; font-size:13.5px; }
+  nav.toc b { display:block; color:var(--dim); font-size:12px; font-weight:600; margin:0 0 6px; }
+  nav.toc a { display:block; text-decoration:none; color:var(--dim); padding:4px 10px;
+              border-left:2px solid var(--line); }
+  nav.toc a.sub { padding-left:22px; font-size:12.5px; }
+  nav.toc a:hover { color:var(--fg); }
+  nav.toc a.on { color:var(--blue); border-left-color:var(--blue); font-weight:600; }
+  @media (max-width:900px) {
+    nav.toc { position:static; display:flex; flex-wrap:wrap; gap:6px; }
+    nav.toc b { width:100%; margin:0; }
+    nav.toc a { border:1px solid var(--line); border-radius:999px; padding:4px 12px; background:var(--card); }
+    nav.toc a.sub { display:none; }
+    nav.toc a.on { border-color:var(--blue); }
+  }
+  @media (max-width:900px) and (any-pointer:coarse) { nav.toc a { min-height:44px; display:inline-flex; align-items:center; } }
+
+  h1 { margin:0 0 6px; font-size:28px; letter-spacing:-.01em; }
+  h1 em { font-style:normal; color:var(--gold); }
+  .lead { color:var(--dim); margin:0 0 6px; }
+  .how { display:flex; flex-wrap:wrap; gap:8px 18px; margin:14px 0 4px; padding:12px 14px;
+         background:var(--card); border:1px solid var(--line); border-radius:12px; font-size:13.5px; color:var(--dim); }
+  .how span { word-break:keep-all; }
+  .how i { display:inline-block; width:18px; height:18px; border-radius:5px; background:var(--mark);
+           color:#fff; font:700 11px/18px sans-serif; text-align:center; font-style:normal; margin-right:5px;
+           vertical-align:-3px; }
+
+  h2 { font-size:22px; margin:52px 0 6px; padding-top:6px; border-top:2px solid var(--gold-line); }
+  h2 small { font-size:13px; color:var(--dim); font-weight:400; margin-left:8px; }
+  h3 { font-size:17px; margin:30px 0 4px; }
+  p.say { margin:0 0 10px; color:var(--dim); }
+  .go { display:inline-block; margin:2px 0 10px; font-size:13px; text-decoration:none; border:1px solid var(--line);
+        background:var(--card); border-radius:999px; padding:3px 12px; }
+  .go:hover { border-color:var(--blue); }
+
+  /* ── 사진 + 번호 상자 ─────────────────────────────────────────────
+     상자 자리는 shots.json 의 픽셀 값을 사진 크기에 대한 %로 바꿔 얹는다 —
+     사진이 화면 폭에 맞춰 줄어도 상자가 같이 줄어 제자리에 남는다. */
+  .step { display:grid; grid-template-columns:minmax(0,1fr); gap:12px; margin:10px 0 6px; }
+  figure.shot { position:relative; margin:0; border:1px solid var(--line); border-radius:10px;
+                overflow:hidden; background:var(--card2); box-shadow:var(--shadow); width:100%; max-width:100%; justify-self:start; }
+  figure.shot .in { position:relative; }
+  figure.shot img { display:block; width:100%; height:auto; }
+  /* 폰에서 1280px 화면 사진을 화면 폭(345px)에 욱여넣으면 글자가 깨알이 된다 —
+     읽을 만한 크기(최대 760px)로 두고 옆으로 밀어 보게 한다. 설명을 누르면 그 번호로 밀린다. */
+  @media (max-width:700px) {
+    figure.shot { overflow-x:auto; overscroll-behavior-x:contain; }
+    figure.shot .in { width:max(100%, min(var(--w), 760px)); }
+    figure.shot.wide::after { content:"← 옆으로 밀어 보기 →"; position:sticky; left:0; display:block;
+      font-size:11.5px; color:var(--dim); text-align:center; padding:3px 0 4px; background:var(--card2); }
+  }
+  figure.shot.small { max-width:min(100%, 640px); }
+  .mk { position:absolute; border:2.5px solid var(--mark); border-radius:6px; cursor:pointer;
+        box-shadow:0 0 0 1px rgba(255,255,255,.65); transition:background .15s, box-shadow .15s; }
+  .mk b { position:absolute; left:-2.5px; top:-2.5px; min-width:20px; height:20px; padding:0 5px;
+          background:var(--mark); color:#fff; font:700 12px/20px sans-serif; text-align:center;
+          border-radius:5px 0 6px 0; }
+  .mk.on, .mk:hover { background:var(--mark-soft); box-shadow:0 0 0 4px var(--mark-soft), 0 0 0 1px #fff; }
+  .mk.on { animation:blink .9s ease 2; }
+  @keyframes blink { 50% { box-shadow:0 0 0 9px var(--mark-soft), 0 0 0 1px #fff; } }
+
+  ol.marks { list-style:none; margin:0; padding:0; display:grid; gap:6px;
+             grid-template-columns:repeat(auto-fill, minmax(min(100%, 330px), 1fr)); }
+  ol.marks li { position:relative; padding:8px 12px 8px 40px; background:var(--card); border:1px solid var(--line);
+                border-radius:10px; font-size:14px; cursor:default; word-break:keep-all; overflow-wrap:break-word; }
+  ol.marks li::before { content:attr(data-n); position:absolute; left:10px; top:9px; min-width:21px; height:21px;
+                        border-radius:6px; background:var(--mark); color:#fff; font:700 12px/21px sans-serif; text-align:center; }
+  ol.marks li.on { border-color:var(--mark); background:var(--mark-soft); }
+  ol.marks li b { color:var(--fg); }
+  .tip { margin:10px 0 0; padding:10px 14px; border-left:3px solid var(--gold-line); background:var(--card);
+         border-radius:0 10px 10px 0; font-size:14px; color:var(--dim); }
+  .tip b { color:var(--fg); }
+  kbd { font:12px/1 ui-monospace, Consolas, monospace; border:1px solid var(--line); border-bottom-width:2px;
+        border-radius:4px; padding:2px 5px; background:var(--card2); color:var(--fg); }
+  code { font:13px ui-monospace, Consolas, monospace; background:var(--card2); border:1px solid var(--line);
+         border-radius:4px; padding:0 4px; word-break:break-all; }
+  .foot { margin-top:50px; color:var(--dim); font-size:12px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav class="toc" id="toc">
+  <b>차례</b>
+  <a href="#start">처음 화면</a>
+  <a href="#builds">특성 찍기</a>
+  <a class="sub" href="#builds-pick">특성 고르기</a>
+  <a class="sub" href="#builds-save">그림 저장</a>
+  <a href="#herodex">위키 · 영웅 도감</a>
+  <a class="sub" href="#herodex-shapes">범위 구경</a>
+  <a class="sub" href="#herodex-stats">통계 보기</a>
+  <a href="#ency">영웅 도감 (WIKI)</a>
+  <a href="#patch">패치 기록</a>
+  <a href="#tier">티어표 만들기</a>
+  <a href="#replay">리플레이</a>
+  <a href="#viewer">뷰어</a>
+  <a href="#tips">알아 두면 좋은 것</a>
+</nav>
+
+<main>
+  <h1>HotS Scrap <em>사용법</em></h1>
+  <p class="lead">화면마다 실제 사이트를 찍은 사진과 함께 무엇을 누르면 무엇이 되는지 적어 두었습니다.</p>
+  <div class="how">
+    <span><i>1</i>사진의 번호 = 아래 설명의 번호</span>
+    <span>설명에 마우스를 올리면(폰은 누르면) 사진에서 그 자리가 반짝입니다</span>
+    <span>사진을 누르면 원래 크기로 열립니다</span>
+  </div>
+
+  <!-- ───────────────────────── 처음 화면 ───────────────────────── -->
+  <h2 id="start">처음 화면</h2>
+  <p class="say">사이트에 들어오면 보이는 화면입니다. 큰 카드 넷이 이 사이트의 네 갈래입니다.</p>
+  <div class="step">
+    <figure class="shot" data-shot="hub"></figure>
+    <ol class="marks" data-shot="hub">
+      <li><b>특성 찍기</b> — 카드를 누르면 본 서버(LIVE) 기준으로 열립니다. 아래 <b>PTR</b>을 누르면 테스트 서버 기준입니다.</li>
+      <li><b>위키</b>의 갈래 — 카드를 누르면 영웅 도감(XML)으로 가고, 작은 단추로 번역 도감(WIKI)·패치 역사·티어표 만들기로 바로 갑니다.</li>
+      <li><b>리플레이</b> — 2D 맵 위에서 리플레이를 다시 봅니다.</li>
+      <li><b>뷰어</b> — 영웅 3D 모델 뷰어(다른 주소로 열림). <b>맵 뷰어</b>는 리플레이 화면의 '맵 보기'입니다.</li>
+      <li><b>사용법</b> — 지금 보고 있는 이 페이지입니다.</li>
+      <li><b>밝기</b> — 밝게/어둡게. 고른 것은 기억되고 모든 화면에 같이 적용됩니다.</li>
+    </ol>
+  </div>
+
+  <h3>어느 화면에서든 맨 위에 있는 막대</h3>
+  <div class="step">
+    <figure class="shot" data-shot="bar"></figure>
+    <ol class="marks" data-shot="bar">
+      <li><b>HotS Scrap</b> — 처음 화면으로 돌아갑니다.</li>
+      <li><b>네 갈래</b> — 특성 찍기·위키·리플레이·뷰어로 바로 갑니다. 지금 있는 곳이 굵게 보입니다. 폰에서는 아이콘만 보입니다.</li>
+      <li><b>밝기</b> 전환 — 처음 화면의 단추와 같습니다.</li>
+      <li><b>GitHub</b> — 이 사이트의 저장소(문의·제안은 이슈로).</li>
+    </ol>
+  </div>
+  <p class="tip">화면 오른쪽 아래 둥근 <b>←</b> 단추는 바로 앞 화면으로 돌아갑니다(돌아갈 곳이 있을 때만 나옵니다).</p>
+
+  <!-- ───────────────────────── 특성 찍기 ───────────────────────── -->
+  <h2 id="builds">특성 찍기 <small>영웅마다 1~20레벨 특성을 찍고 그림으로 남긴다</small></h2>
+  <a class="go" href="../builds/?ch=live">특성 찍기 열기 →</a>
+  <h3>영웅 고르기</h3>
+  <div class="step">
+    <figure class="shot" data-shot="b-home"></figure>
+    <ol class="marks" data-shot="b-home">
+      <li><b>검색</b> — 이름 일부나 초성만 쳐도 됩니다. <code>ㅈㅇㄴ</code> → 제이나, <code>줄ㅈ</code> → 줄진, <code>디바</code> → D.Va. <kbd>/</kbd>로 검색창을 열고 <kbd>Esc</kbd>로 지웁니다.</li>
+      <li><b>영웅 얼굴</b> — 누르면 그 영웅 화면으로 갑니다. 역할군별로 묶여 있습니다.</li>
+      <li><b>본 서버 / 테스트 서버</b> — 어느 서버 자료로 볼지 고릅니다. 왼쪽에 판 번호와 날짜가 나옵니다.</li>
+      <li><b>KO / EN</b> — 특성 이름과 설명을 한국어/영어로 바꿉니다.</li>
+    </ol>
+  </div>
+
+  <h3>레벨과 능력치</h3>
+  <div class="step">
+    <figure class="shot" data-shot="b-stats"></figure>
+    <ol class="marks" data-shot="b-stats">
+      <li><b>레벨</b> — <b>−/+</b> 단추나 막대로 1~30레벨을 고릅니다. 능력치와 기술 설명의 숫자가 그 레벨 값으로 바뀝니다.</li>
+      <li><b>능력치</b> — 생명력·마나·공격력·공격 주기·사거리·피격 반지름. 레벨마다 오르는 비율은 <b>(+4.0%)</b>처럼 옆에 적혀 있습니다. 아래로 내리면 기술 목록이 이어집니다.</li>
+    </ol>
+  </div>
+
+  <h3 id="builds-pick">특성 고르기</h3>
+  <div class="step">
+    <figure class="shot" data-shot="b-talent"></figure>
+    <ol class="marks" data-shot="b-talent">
+      <li><b>메인 특성</b>(금색 테) — 아이콘을 누르면 그 레벨의 특성으로 찍힙니다. 다시 누르면 풀립니다.</li>
+      <li><b>보조 특성</b>(점선 테) — 메인을 찍은 줄에서 다른 아이콘을 누르면 <b>상황에 따라 바꿔 찍을 대안</b>으로 붙습니다. 줄마다 하나, 다른 것을 누르면 바뀝니다.</li>
+      <li><b>레벨 숫자</b> — 그 레벨 특성을 설명과 함께 한눈에 펼쳐 봅니다(아래 '특성 나열').</li>
+      <li><b>고른 특성</b> — 찍은 메인 특성이 레벨 차례로 모입니다.</li>
+      <li><b>코드 불러오기</b> — 게임이나 다른 사람에게 받은 <code>[T3211224,Diablo]</code> 같은 코드를 붙여 넣고 <b>불러오기</b>를 누르면 그대로 찍힙니다.</li>
+      <li><b>빌드 코드</b> — 지금 찍은 빌드의 게임 속 특성 코드입니다. 누르면 복사되고, 게임 채팅창에 붙여 넣으면 그 빌드를 나눌 수 있습니다.</li>
+    </ol>
+  </div>
+  <p class="tip"><b>지우개</b> — PC는 아이콘을 <b>오른쪽 클릭</b>, 폰은 <b>길게 누르기</b>. 메인이든 보조든 그 자리를 지웁니다.</p>
+
+  <h3 id="builds-save">그림으로 저장하기</h3>
+  <div class="step">
+    <figure class="shot" data-shot="b-save"></figure>
+    <ol class="marks" data-shot="b-save">
+      <li><b>이름·테두리 색</b> — 저장되는 그림에서 영웅 이름과 테두리의 색.</li>
+      <li><b>미리보기</b> — 저장될 그림을 먼저 보고 색을 더 고칩니다(아래).</li>
+      <li><b>되돌리기 / 초기화</b> — 초기화로 전부 지워도 되돌리기로 살릴 수 있습니다.</li>
+      <li><b>글씨 크기</b> — 화면 글씨를 키우거나 줄입니다(12~20).</li>
+      <li><b>설명 빼기</b> — 특성 설명 없이 아이콘과 이름만 넣습니다. 그림이 너무 길어질 때 씁니다.</li>
+      <li><b>저장 / 이미지 복사</b> — PNG 파일로 내려받거나, 클립보드에 복사해 디스코드·카톡에 바로 붙여 넣습니다.</li>
+    </ol>
+  </div>
+  <div class="step">
+    <figure class="shot" data-shot="b-preview"></figure>
+    <ol class="marks" data-shot="b-preview">
+      <li><b>저장될 그림</b> 그대로입니다. 메인 옆의 작은 아이콘이 보조 특성입니다.</li>
+      <li><b>색 고르기</b> — 이름·테두리·배경·글자 색.</li>
+      <li><b>Dark / Light</b> — 어두운 바탕·밝은 바탕을 한 번에 맞춥니다.</li>
+      <li><b>설명 빼기</b> — 바깥의 같은 단추와 이어져 있습니다.</li>
+      <li><b>저장 / 복사</b> — 여기서 바로 내려받거나 복사합니다.</li>
+    </ol>
+  </div>
+
+  <h3>특성 나열 — 레벨별 특성을 전부 펼쳐 보기</h3>
+  <p class="say">위쪽 <b>⚖ 특성 나열</b>이나 레벨 숫자를 누르면 열립니다. 빌드를 찍는 것과 상관없이 특성 설명을 읽거나 나눌 때 씁니다.</p>
+  <div class="step">
+    <figure class="shot" data-shot="b-list"></figure>
+    <ol class="marks" data-shot="b-list">
+      <li><b>레벨 탭</b> — 전체 또는 한 레벨만 봅니다.</li>
+      <li><b>미리보기 · 저장 · 복사</b> — 이 목록을 그림으로 남깁니다.</li>
+      <li><b>아이콘+이름만</b> — 설명을 빼고 짧게.</li>
+      <li><b>닫기</b>.</li>
+    </ol>
+  </div>
+
+  <!-- ───────────────────────── 위키 · 영웅 도감 ───────────────────────── -->
+  <h2 id="herodex">위키 · 영웅 도감 <small>게임 원본 XML에서 직접 뽑은 기술·특성 상세</small></h2>
+  <a class="go" href="../herodex/">영웅 도감 열기 →</a>
+  <p class="say">숫자는 모두 게임 자료에서 계산한 값입니다. 자료로 풀리지 않는 자리는 <b>⌁ 위키</b>(위키 값으로 메움) 또는 <b>⚠ 예외</b>로 표시됩니다.</p>
+  <div class="step">
+    <figure class="shot" data-shot="h-home"></figure>
+    <ol class="marks" data-shot="h-home">
+      <li><b>검색</b> — 왼쪽 목록과 얼굴판을 같이 거릅니다. 한글·영문·초성 모두 됩니다.</li>
+      <li><b>세 화면</b> — 영웅별(이 화면) · 범위 구경 · 통계 보기를 오갑니다.</li>
+      <li><b>얼굴판</b> — 역할군별로 모여 있고, 아래 숫자는 기술·특성 수입니다. 누르면 그 영웅 문서가 열립니다.</li>
+    </ol>
+  </div>
+
+  <h3>영웅 문서</h3>
+  <div class="step">
+    <figure class="shot" data-shot="h-hero"></figure>
+    <ol class="marks" data-shot="h-hero">
+      <li><b>세 화면</b> 오가기.</li>
+      <li><b>영웅 고르기</b> — 얼굴판으로 돌아갑니다.</li>
+      <li><b>범위 숨기기 / 보이기</b> — 기술마다 붙은 범위 그림을 접거나 펼칩니다. 고른 것은 기억됩니다.</li>
+      <li><b>내부 이름</b> — <code>JainaFrostbolt</code> 같은 게임 속 이름과 원자료 자리를 보이거나 숨깁니다.</li>
+    </ol>
+  </div>
+  <div class="step">
+    <figure class="shot" data-shot="h-card"></figure>
+    <ol class="marks" data-shot="h-card">
+      <li><b>기본값</b> — 마나·재사용 대기시간·퀘스트 같은 것을 한 줄로.</li>
+      <li><b>툴팁이 쓰는 값</b> — 게임 툴팁 문장에 들어가는 숫자들.</li>
+      <li><b>상세 표</b> — 유형·성장·영향(누구에게)·속성·지정 방식·시전 시간·사거리·히트박스·투사체 속도 등. 회색 괄호는 비율 보정의 실제 값입니다(기본 184 → 276).</li>
+      <li><b>⤢ 크게 보기</b> — 범위 그림을 크게 띄웁니다(아래).</li>
+    </ol>
+  </div>
+  <div class="step">
+    <figure class="shot" data-shot="h-ups"></figure>
+    <ol class="marks" data-shot="h-ups">
+      <li><b>이 기술을 바꾸는 특성</b> — 위 표는 특성을 안 찍은 기본값이고, 여기에 어느 특성이 무엇을 얼마나 바꾸는지 모여 있습니다.</li>
+      <li><b>↓</b> — 그 특성의 설명 자리로 갑니다. 특성 줄의 글자를 눌러도 됩니다. 거꾸로 특성 쪽의 '… 강화' 글자를 누르면 그 기술로 갑니다.</li>
+      <li><b>원자료 보기</b> — 해석한 값 밑의 게임 자료 칸을 그대로 펼칩니다.</li>
+    </ol>
+  </div>
+  <div class="step">
+    <figure class="shot" data-shot="h-jump"></figure>
+    <ol class="marks" data-shot="h-jump">
+      <li><b>← 돌아가기</b> — 기술↔특성으로 뛰어간 뒤 왼쪽 아래에 뜹니다. 누르면 왔던 자리로 돌아가고, 여러 번 뛰어다녀도 차례로 되짚어 갑니다. 간 자리는 잠깐 색이 들어와 어디인지 보입니다.</li>
+    </ol>
+  </div>
+  <div class="step">
+    <figure class="shot" data-shot="h-zoom"></figure>
+    <ol class="marks" data-shot="h-zoom">
+      <li><b>범위 그림</b> — 한 칸이 게임 거리 1, 위쪽이 앞, 가운데 원이 영웅 몸(히트박스)입니다. 점선 원은 견줄 눈금(레이너 평타 6.5 등)입니다.</li>
+      <li><b>다이얼</b> — 끌어서 방향을 돌립니다(화살표 키도 됩니다). 기술에 따라 겨냥(자리 고르기)·끌기 다이얼이 붙습니다.</li>
+      <li><b>설명과 수치</b>.</li>
+      <li><b>범위 구경 ↗</b> — 이 기술을 범위 구경 화면에서 다른 기술과 견줘 봅니다.</li>
+      <li><b>닫기</b>.</li>
+    </ol>
+  </div>
+
+  <h3 id="herodex-shapes">범위 구경 — 기술 범위를 영웅을 가로질러 보기</h3>
+  <div class="step">
+    <figure class="shot" data-shot="shapes"></figure>
+    <ol class="marks" data-shot="shapes">
+      <li><b>찾기</b> — 영웅·기술 이름(초성 됨).</li>
+      <li><b>영웅 고르기 · 줄 세우기</b> — 넓은 것부터·먼 것부터 등.</li>
+      <li><b>누구에게</b> — 적(빨강)·아군(파랑)·둘 다(보라).</li>
+      <li><b>꼴</b> — 원·직사각형·부채꼴처럼 범위 모양으로 거릅니다.</li>
+      <li><b>갈래</b> — 기술만, 특성만.</li>
+      <li><b>그림 카드</b> — 눈금 읽는 법은 위 크게 보기와 같습니다. 그림 아래에 범위·반지름·사거리가 적혀 있습니다.</li>
+      <li><b>다이얼</b> — 방향을 정할 수 있는 기술은 여기서 돌려 봅니다.</li>
+      <li><b>도감 ↗</b> — 그 영웅 문서로 갑니다.</li>
+    </ol>
+  </div>
+
+  <h3 id="herodex-stats">통계 보기 — 게임 자료의 칸을 한꺼번에</h3>
+  <div class="step">
+    <figure class="shot" data-shot="stats"></figure>
+    <ol class="marks" data-shot="stats">
+      <li><b>항목 고르기 / 영웅 수치표</b> — 칸별로 보기, 영웅 91명 기본 수치를 표로 보기.</li>
+      <li><b>주제</b> — 영웅 수치·비용과 시간·거리와 크기 같은 묶음으로 거릅니다.</li>
+      <li><b>역할군</b> — 한 역할군만 보거나 <b>역할군으로 묶기</b>로 나눠 봅니다.</li>
+      <li><b>항목 찾기</b>(사거리·피해·재사용…) · <b>줄 세울 수 있는 것만</b>(숫자 칸만).</li>
+      <li><b>항목 카드</b> — 값이 퍼진 모양(막대)과 범위·중앙값. 오른쪽 위 "91개 · 100%"는 그 칸을 가진 수와 비율입니다. 누르면 아래처럼 펼쳐집니다.</li>
+    </ol>
+  </div>
+  <div class="step">
+    <figure class="shot" data-shot="stats-open"></figure>
+    <ol class="marks" data-shot="stats-open">
+      <li><b>큰 값부터 / 작은 값부터</b> — 줄 세우는 방향.</li>
+      <li><b>닫기</b>. 막대그래프 아래 순위에 영웅 얼굴과 그 값을 가진 기술·특성이 나옵니다.</li>
+    </ol>
+  </div>
+  <div class="step">
+    <figure class="shot" data-shot="stats-table"></figure>
+    <ol class="marks" data-shot="stats-table">
+      <li><b>머리글</b>을 누르면 그 칸으로 줄 세웁니다(한 번 더 누르면 거꾸로).</li>
+    </ol>
+  </div>
+
+  <!-- ───────────────────────── 번역 도감 ───────────────────────── -->
+  <h2 id="ency">영웅 도감 (WIKI) <small>HotS wiki를 옮겨 정리한 도감</small></h2>
+  <a class="go" href="../encyclopedia/">번역 도감 열기 →</a>
+  <div class="step">
+    <figure class="shot" data-shot="ency"></figure>
+    <ol class="marks" data-shot="ency">
+      <li><b>검색</b>(초성 됨).</li>
+      <li><b>역할군</b>으로 목록 거르기.</li>
+      <li><b>영웅 얼굴</b> — 누르면 그 영웅 문서.</li>
+      <li><b>용어집</b> — 도감에 나오는 낱말의 뜻.</li>
+      <li><b>표시 설정</b>(보일 칸 고르기) · <b>KO / EN</b>.</li>
+    </ol>
+  </div>
+  <div class="step">
+    <figure class="shot" data-shot="ency-hero"></figure>
+  </div>
+  <p class="tip">영웅 문서는 개요·평점 지표·능력치(레벨 막대로 값이 바뀜)·기술·특성 차례로 이어집니다. 왼쪽 목록에서 다른 영웅을 바로 고를 수 있고, 왼쪽 아래 <b>← 이전</b>으로 앞 영웅으로 돌아갑니다.</p>
+
+  <!-- ───────────────────────── 패치 기록 ───────────────────────── -->
+  <h2 id="patch">패치 기록 <small>공식 한글 노트 · 번역 · 게임 데이터 변경점</small></h2>
+  <a class="go" href="../patchnotes/">패치 기록 열기 →</a>
+  <div class="step">
+    <figure class="shot" data-shot="patch"></figure>
+    <ol class="marks" data-shot="patch">
+      <li><b>네 화면</b> — 패치 목록 · 달력·통계 · 영웅별 이력 · 전장별 이력.</li>
+      <li><b>검색</b> — 제목·버전·영웅 이름(초성 됨).</li>
+      <li><b>채널</b> — 라이브(본 서버) / 테스트 서버.</li>
+      <li><b>출처</b> — 공식 한글(블리자드 한국어 노트) / Claude 번역(한국어판이 없는 회차) / 데이터(게임 파일 비교만).</li>
+      <li><b>+ 영웅 / + 전장</b> — 그 영웅·전장이 나온 회차만 남깁니다.</li>
+      <li><b>회차</b> — 누르면 노트가 열립니다. 얼굴은 그 회차에 바뀐 영웅입니다.</li>
+    </ol>
+  </div>
+  <div class="step">
+    <figure class="shot" data-shot="patch-note"></figure>
+    <ol class="marks" data-shot="patch-note">
+      <li><b>공식 패치 노트 / 데이터 변경점</b> — 글로 된 노트와, 게임 파일에서 직접 비교한 수치 변화.</li>
+      <li><b>블리자드 원문</b> — 원래 글을 새 창으로 엽니다.</li>
+      <li><b>영웅</b> — 누르면 이 노트에서 그 영웅 대목만 모아 봅니다.</li>
+    </ol>
+  </div>
+  <h3>달력·통계</h3>
+  <div class="step">
+    <figure class="shot" data-shot="patch-cal"></figure>
+  </div>
+  <p class="tip">2016년부터의 모든 회차를 달력 한 장에 놓았습니다. 점 색이 본 패치·밸런스·데이터 변경·테스트 서버를 나타내고, 칸을 누르면 그달 회차가 아래에 펼쳐집니다. 위 카드에는 마지막 패치 뒤 며칠째인지, 보통 간격, 가장 긴 공백이 나옵니다.</p>
+  <h3>영웅별 이력</h3>
+  <div class="step">
+    <figure class="shot" data-shot="patch-hero"></figure>
+  </div>
+  <p class="tip">한 영웅의 수치가 패치마다 어떻게 바뀌었는지 꺾은선으로 봅니다. 기간·가로축(패치별/날짜 비례)·방향·Y축·값(절대값/첫값 대비 %)을 위 칸에서 고릅니다. <b>이 영웅만 달력에서 보기</b>로 그 영웅이 나온 회차만 달력에 남길 수도 있습니다.</p>
+
+  <!-- ───────────────────────── 티어표 ───────────────────────── -->
+  <h2 id="tier">티어표 만들기 <small>영웅을 끌어다 줄에 놓는다</small></h2>
+  <a class="go" href="../tier/">티어표 열기 →</a>
+  <div class="step">
+    <figure class="shot" data-shot="tier"></figure>
+    <ol class="marks" data-shot="tier">
+      <li><b>제목 · 날짜</b> — 눌러서 고칩니다.</li>
+      <li><b>줄 이름</b>(S·A·B…) — 눌러서 고칩니다.</li>
+      <li><b>영웅</b> — 끌어서 다른 줄로 옮깁니다. 줄 안에서 끌면 차례가 바뀌고, 두 번 누르면 보관함으로 돌아갑니다.</li>
+      <li><b>줄 단추</b> — <b>↑↓</b> 줄 차례, <b>◑</b> 색 바꾸기, <b>×</b> 줄 지우기(그 줄 영웅은 보관함으로).</li>
+      <li><b>줄 추가 · 공유 링크 복사 · 그림으로 저장</b> — 공유 링크를 받은 사람은 같은 표를 그대로 엽니다.</li>
+      <li><b>되돌리기 · 전부 비우기 · 처음 상태로</b>.</li>
+    </ol>
+  </div>
+  <div class="step">
+    <figure class="shot" data-shot="tier-pool"></figure>
+    <ol class="marks" data-shot="tier-pool">
+      <li><b>역할군</b>으로 보관함 거르기.</li>
+      <li><b>검색</b>(초성 됨).</li>
+      <li><b>올린 영웅 숨기기</b> — 이미 줄에 놓은 영웅을 보관함에서 감춥니다.</li>
+      <li><b>보관함 영웅</b> — 끌어다 원하는 줄에 놓습니다. <b>두 번 누르면</b> 맨 위 줄로 바로 올라갑니다.</li>
+    </ol>
+  </div>
+  <p class="tip">만든 표는 이 브라우저에 <b>자동으로 저장</b>됩니다. 다른 기기에서 열거나 남에게 보여 줄 때는 공유 링크를 쓰세요.</p>
+
+  <!-- ───────────────────────── 리플레이 ───────────────────────── -->
+  <h2 id="replay">리플레이 <small>맵 보기 · 리플레이 분석</small></h2>
+  <a class="go" href="../replay/">리플레이 열기 →</a>
+  <h3>맵 보기 — 전장 지도와 전술 그리기</h3>
+  <div class="step">
+    <figure class="shot" data-shot="r-map"></figure>
+    <ol class="marks" data-shot="r-map">
+      <li><b>맵 보기 / 리플레이 분석</b> 바꾸기.</li>
+      <li><b>전장 고르기</b> · <b>배경 파일</b>(직접 만든 SVG·PNG를 바탕으로).</li>
+      <li><b>확대·축소·맞춤</b> · <b>고화질</b>(원본 화질, 처음 한 번 13.6MB를 받습니다). 지도는 끌어서 옮기고 휠로 확대합니다.</li>
+      <li><b>도구</b> — 지도 위에 전술을 그립니다(아래).</li>
+      <li><b>투명도 · 영웅 크기 · 글씨</b>.</li>
+    </ol>
+  </div>
+  <div class="step">
+    <figure class="shot small" data-shot="r-tool"></figure>
+    <ol class="marks" data-shot="r-tool">
+      <li><b>이동/선택</b> — 놓은 것을 끌어서 옮깁니다. 휴지통에 놓으면 지워집니다.</li>
+      <li><b>펜 · 지우개</b>.</li>
+      <li><b>핀 · 토큰</b> — 영웅을 고르면 영웅 핀이 됩니다.</li>
+      <li><b>이미지 넣기</b>.</li>
+      <li><b>되돌리기</b>(<kbd>Ctrl</kbd>+<kbd>Z</kbd>) · <b>모두 지우기</b>.</li>
+    </ol>
+  </div>
+  <p class="tip">지도에서 <b>오른쪽 클릭</b>하면 도구를 빨리 고를 수 있고, 단축키 <kbd>V</kbd> 이동 · <kbd>B</kbd> 펜 · <kbd>E</kbd> 지우개 · <kbd>P</kbd> 핀 · <kbd>T</kbd> 토큰도 됩니다.</p>
+
+  <h3>리플레이 분석</h3>
+  <div class="step">
+    <figure class="shot" data-shot="r-play"></figure>
+    <ol class="marks" data-shot="r-play">
+      <li><b>예제 · 리플레이 열기</b> — 예제를 고르거나 내 <code>.StormReplay</code> 파일을 엽니다. 파일은 <b>이 브라우저 안에서만</b> 읽고 어디에도 올리지 않습니다.</li>
+      <li><b>점수판</b> — 팀·킬·건물·레벨. <b>통계</b>(<kbd>S</kbd>)·<b>특성</b>(<kbd>T</kbd>)으로 자세히 보고, 오른쪽 끝 단추(<kbd>Tab</kbd>)로 접습니다.</li>
+      <li><b>지도</b> — 영웅이 움직이는 대로 재생됩니다. 아래에서 구조물·영웅 아이콘·위치 신뢰도를 켜고 끄고, <b>현재 배치를 보드로</b> 지금 위치를 전술 보드 말로 옮깁니다.</li>
+      <li><b>이벤트 로그 · 지표 그래프</b> — 킬·건물·용병·목표·레벨로 거르고, 그래프(경험치 등)를 누르면 그 시각으로 갑니다. <kbd>G</kbd>로 크게.</li>
+      <li><b>재생 막대</b>(아래 자세히).</li>
+      <li><b>타임라인</b> — 팀별 사건이 시간 위에 놓여 있습니다. 누르면 그 시각으로 갑니다.</li>
+    </ol>
+  </div>
+  <div class="step">
+    <figure class="shot" data-shot="r-span"></figure>
+    <ol class="marks" data-shot="r-span">
+      <li><b>이전 사건 · 재생 · 다음 사건</b>.</li>
+      <li><b>배속</b> ×1 · ×4 · ×8 · ×16.</li>
+      <li><b>구간 찍기</b> — 지금 시각을 구간 시작 <kbd>[</kbd> / 끝 <kbd>]</kbd>으로.</li>
+      <li><b>Σ 구간</b>(<kbd>\</kbd>) — 찍은 구간의 통계 · <b>Σ 지금까지</b>(<kbd>=</kbd>) — 처음부터 지금까지, 재생을 따라 계속 바뀝니다.</li>
+    </ol>
+  </div>
+
+  <!-- ───────────────────────── 뷰어 ───────────────────────── -->
+  <h2 id="viewer">뷰어</h2>
+  <p class="say">영웅 3D 모델을 돌려 보는 뷰어는 따로 떨어진 주소에 있습니다. 처음 화면의 <b>뷰어</b> 카드나 맨 위 막대의 <b>뷰어</b>로 갑니다. 전장 지도를 보려면 리플레이의 <a href="#replay">맵 보기</a>를 쓰세요.</p>
+  <a class="go" href="https://sin0nis.github.io/hots_hero_m3/">영웅 3D 뷰어 열기 ↗</a>
+
+  <!-- ───────────────────────── 팁 ───────────────────────── -->
+  <h2 id="tips">알아 두면 좋은 것</h2>
+  <ol class="marks plain">
+    <li data-n="가"><b>초성 검색</b> — 검색창이 있는 곳은 모두 초성으로 찾습니다. <code>ㅈㅇㄴ</code>·<code>줄ㅈ</code>·<code>디바</code>·<code>dva</code> 모두 됩니다.</li>
+    <li data-n="나"><b>주소로 나누기</b> — 패치 기록은 보고 있는 화면 주소를 그대로 보내면 같은 화면이 열립니다. 특성 찍기는 <code>builds/?b=[T3211224,Diablo]</code>처럼 코드를 붙인 주소로 그 빌드를 엽니다.</li>
+    <li data-n="다"><b>폰에서</b> — 특성 지우개는 길게 누르기, 티어표는 손가락으로 끌기·두 번 누르기가 됩니다. 넓은 표와 달력은 옆으로 밀어 봅니다.</li>
+    <li data-n="라"><b>자료는 언제 것?</b> — 처음 화면 카드 아래에 기준 게임 판(빌드 번호)이 적혀 있습니다. 새 패치가 나오면 자동으로 다시 뽑습니다.</li>
+  </ol>
+
+  <p class="foot">비영리 팬 프로젝트입니다. Heroes of the Storm 및 관련 이미지·게임 데이터의 권리는 Blizzard Entertainment에 있습니다.</p>
+</main>
+</div>
+
+<script>
+/* 사진과 번호 상자 — shots.json 하나만 받는다(요청 1개). */
+(function () {
+  var figs = document.querySelectorAll('figure.shot');
+  fetch('shots.json', { cache: 'no-cache' }).then(function (r) { return r.json(); }).then(function (S) {
+    figs.forEach(function (fig) {
+      var id = fig.getAttribute('data-shot'), s = S[id];
+      if (!s) return;
+      var a = document.createElement('a');
+      a.href = 'shots/' + id + '.jpg'; a.target = '_blank'; a.rel = 'noopener';
+      var img = new Image();
+      img.src = 'shots/' + id + '.jpg'; img.loading = 'lazy'; img.decoding = 'async';
+      img.width = s.w; img.height = s.h; img.alt = '';
+      var box = document.createElement('div');
+      box.className = 'in'; box.style.setProperty('--w', s.w + 'px');
+      a.appendChild(img); box.appendChild(a); fig.appendChild(box);
+      if (s.w < 700) fig.classList.add('small');
+      if (s.w > 760) fig.classList.add('wide');
+      fig.style.maxWidth = 'min(100%, ' + s.w + 'px)';      // 원래보다 크게 늘리지 않는다
+      var list = document.querySelector('ol.marks[data-shot="' + id + '"]');
+      var lis = list ? list.querySelectorAll('li') : [];
+      (s.marks || []).forEach(function (m, i) {
+        if (!m) return;
+        var d = document.createElement('span');
+        d.className = 'mk';
+        d.style.left = (100 * m[0] / s.w) + '%';  d.style.top = (100 * m[1] / s.h) + '%';
+        d.style.width = (100 * m[2] / s.w) + '%'; d.style.height = (100 * m[3] / s.h) + '%';
+        d.innerHTML = '<b>' + (i + 1) + '</b>';
+        d.addEventListener('click', function (e) {          // 상자를 누르면 그 설명으로
+          e.preventDefault();
+          var li = lis[i]; if (!li) return;
+          li.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); flash(li, d);
+        });
+        d.addEventListener('mouseenter', function () { if (lis[i]) lis[i].classList.add('on'); });
+        d.addEventListener('mouseleave', function () { if (lis[i]) lis[i].classList.remove('on'); });
+        box.appendChild(d);
+        if (lis[i]) {
+          lis[i]._mk = d;
+          lis[i].addEventListener('mouseenter', function () { d.classList.add('on'); });
+          lis[i].addEventListener('mouseleave', function () { d.classList.remove('on'); });
+          lis[i].addEventListener('click', function () {      // 폰: 누르면 사진의 그 자리로
+            // 세로는 문서가, 가로는 사진 칸이 따로 민다 — scrollIntoView 하나로 둘을 시키면
+            // 부드럽게 밀기가 서로를 끊어 가로가 안 움직인다
+            var r = fig.getBoundingClientRect();
+            if (r.top < 0 || r.bottom > innerHeight)
+              window.scrollTo({ top: scrollY + r.top - 70, behavior: 'smooth' });
+            if (fig.scrollWidth > fig.clientWidth + 2)
+              fig.scrollTo({ left: d.offsetLeft + d.offsetWidth / 2 - fig.clientWidth / 2, behavior: 'smooth' });
+            flash(lis[i], d);
+          });
+        }
+      });
+    });
+  }).catch(function () {});
+  function flash(li, d) {
+    li.classList.add('on'); d.classList.remove('on'); void d.offsetWidth; d.classList.add('on');
+    setTimeout(function () { li.classList.remove('on'); d.classList.remove('on'); }, 1800);
+  }
+  // 번호 — 차례대로 1, 2, 3 (팁 목록처럼 손수 단 것은 두다)
+  document.querySelectorAll('ol.marks li').forEach(function (li) {
+    if (!li.hasAttribute('data-n')) li.setAttribute('data-n', [].indexOf.call(li.parentNode.children, li) + 1);
+  });
+})();
+
+/* 차례 — 보고 있는 단락을 표시한다 */
+(function () {
+  var links = [].slice.call(document.querySelectorAll('#toc a'));
+  var heads = links.map(function (a) { return document.getElementById(a.getAttribute('href').slice(1)); });
+  function mark() {
+    var y = window.scrollY + 120, cur = 0;
+    heads.forEach(function (h, i) { if (h && h.offsetTop <= y) cur = i; });
+    links.forEach(function (a, i) { a.classList.toggle('on', i === cur); });
+  }
+  window.addEventListener('scroll', mark, { passive: true }); mark();
+})();
+</script>
+</body>
+</html>
