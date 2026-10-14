@@ -161,9 +161,9 @@ SHOTS = [
 
     # 전장 도감 — 흐름·자리 사진은 회차 자리가 다 정해진 블랙하트로, 설명을 넓게 펴서 찍는다
     dict(id="maps", url="maps/",
-         marks=["#picker", ["#t", "#tmin"], "#rstops", "#keybtn", "#atk", "#jump"]),
+         marks=["#picker", ["#t", "#tmin"], "#rstops", "#keybtn", "#atk", "#jump", "#body .glance"]),
     dict(id="maps-flow", url="maps/", do=[maps_open("blackheartsbay"), scroll_into("#s-흐름", "start", -6)],
-         marks=[".lim", ".ftl", ".flist"]),
+         marks=[".ftl", ".flist"]),
     dict(id="maps-place", url="maps/", do=[maps_open("blackheartsbay"), scroll_into("#s-자리차례", "start", -6)],
          marks=[".nxt", ".nxo"]),
 

@@ -512,6 +512,17 @@ details.lvt summary { cursor:pointer; color:var(--dim); width:max-content; max-w
 .nxo { margin:5px 2px 0; font-size:12px; color:var(--dim); line-height:1.5; }
 .fp.fpl { color:var(--fg); background:var(--shade); }
 .pgnote { margin:5px 2px 0; font-size:11px; color:var(--dim); }
+/* ── 한눈에 · 단계 띠 · 노리는 곳 */
+.glance { border:1px solid var(--gold); border-radius:10px; background:var(--gold-soft); padding:9px 12px; margin:6px 0 10px; display:grid; gap:4px; }
+.glh { font-size:11.5px; font-weight:700; color:var(--gold); letter-spacing:.4px; }
+.gl { display:grid; grid-template-columns:72px minmax(0,1fr); gap:8px; font-size:13px; line-height:1.5; align-items:baseline; }
+.glk { font-size:11.5px; font-weight:700; color:var(--dim); }
+.tier { display:flex; align-items:baseline; gap:8px; margin:22px 0 2px; padding:5px 10px; border-radius:8px; background:var(--shade); font-size:12px; color:var(--dim); }
+.tier:first-child { margin-top:12px; }
+.tier b { color:var(--fg); font-size:12.5px; letter-spacing:.3px; }
+.rwf.rwgo > span:last-child { line-height:1.55; }
+.nxb.nx-man { color:var(--order); }
+@container (max-width:420px) { .gl { grid-template-columns:1fr; gap:0; } }
 
 </style>
 
@@ -814,7 +825,7 @@ function 규칙절(m) {
       + `<div class="tnote">위 시간 칸에 분:초를 넣거나 손잡이를 움직이면 바뀝니다 · 0:00 = 문이 열린 때(게임 시계)</div></div>`
     : '';
   return `<h2 id="s-규칙">규칙서<span class="cnt">하면 → 된다</span></h2>`
-    + `<p class="note">${esc(BOOK.말)}</p>` + 상자 + 포격상자(m.키) + 몸;
+    + `<p class="note">${esc(BOOK.말)}</p>` + 상자 + 몸;
 }
 
 /* ── 한 전장 그리기 */
@@ -919,13 +930,20 @@ function 설명그리기() {
     + `</details>` : '';
 
   document.getElementById('body').innerHTML = `
-    <h2 id="s-개요">${esc(m.이름)}<span class="cnt">지도 기호</span></h2>
+    ${단계띠('기본', '처음 보는 사람용 — 무엇을 하면 무엇을 받는지, 언제 · 어디서')}
+    <h2 id="s-개요">${esc(m.이름)}<span class="cnt">한눈에 · 지도 기호</span></h2>
+    ${한눈에(m)}
     ${배치범례(m.키)}
     <details class="common"><summary>맵 정보</summary><div class="statbox">${옆}</div></details>
     ${흐름절(m)}
     ${보상절(m)}
-    ${자리절(m)}
+    ${단계띠('자세히', '규칙을 하나하나 — 하면 → 된다 · 자리 · 되풀이 간격')}
     ${규칙절(m)}
+    ${자리절(m)}
+    ${주기절(m)}
+    ${단계띠('깊이', '수치를 파고들 때 — 피해 계산 · 성장 한계 · 단계별 진행 · 위키와 맞대기')}
+    ${계산절(m)}
+    ${한계절h(m)}
     ${순서}${공통규칙}
     ${기믹 ? `<h2>기믹<span class="cnt">게임이 적어 둔 설명</span></h2>${기믹}` : ''}
     ${대조}
@@ -1167,8 +1185,8 @@ document.getElementById('mapkey').addEventListener('click', e => {
 });
 
 /* 사이드바 바로가기 */
-const 바로 = [['s-개요', '기호'], ['s-흐름', '흐름'], ['s-보상', '보상'], ['s-자리', '자리'], ['s-규칙', '규칙서'], ['s-순서', '진행 순서'], ['s-공통', '공통 규칙'],
-             ['s-위키', '위키 대조']];
+const 바로 = [['s-개요', '한눈에'], ['s-흐름', '흐름'], ['s-보상', '보상'], ['s-규칙', '규칙서'], ['s-자리', '자리'], ['s-주기', '주기'],
+             ['s-계산', '계산'], ['s-한계', '성장 한계'], ['s-순서', '진행 순서'], ['s-공통', '공통 규칙'], ['s-위키', '위키 대조']];
 function 바로가기() {
   document.getElementById('jump').innerHTML = 바로.filter(([id]) => document.getElementById(id))
     .map(([id, t]) => `<a href="#${id}" data-to="${id}">${t}</a>`).join('');
@@ -1808,13 +1826,11 @@ function 흐름절(m) {
     + (e.다시 ? ` <span class="fre" data-re="${e.다시}" data-first="${e.처음}"></span>` : '') + `</span></li>`).join('');
   return `<h2 id="s-흐름">맵 흐름<span class="cnt">문이 열린 때부터</span></h2>`
     + `<p class="note">0:00 은 문이 열린 때(게임 시계)입니다. 시각은 게임 자료 값이고, 첫 목표물 뒤로는 끝난 때를 기준으로 되풀이합니다 — 아래 '그 뒤 되풀이'. 띠 아래 잔 눈금은 하수인 무리(30초마다)입니다.</p>`
-    + 한계절(m.키)
     + `<div class="ftl"><div class="ftl-row">${물결}${표}</div><div class="ftl-axis">${눈.join('')}</div>`
     + `<div class="ftl-now" id="ftlnow"><span></span></div></div>`
     + `<ol class="flist">${줄}</ol>`
     + 자리상자(m.키)
-    + `<div class="frep2"><b>↻ 그 뒤 되풀이</b>${F.반복 ? `<p>${esc(F.반복)}</p>` : ''}<ul>${되}</ul></div>`
-    + 주기모음(m, F);
+    + `<div class="frep2"><b>↻ 그 뒤 되풀이</b>${F.반복 ? `<p>${esc(F.반복)}</p>` : ''}<ul>${되}</ul></div>`;
 }
 function 흐름갱신() {
   한계갱신();
@@ -2490,17 +2506,73 @@ const 보상표 = {
     }];
   },
 };
-function 보상카드(c) {
+/* 보상이 어디로 가나 · 무엇을 먼저 치나 — 사람이 고르지 않는 보상은 게임이 정한 기준을 따른다(맵 스크립트에서 읽음).
+   [이름, 내용, 정해짐] — 정해짐: 고정(늘 같음) · 규칙(그때 상태로 정해짐) · 무작위 · 사람(영웅이 직접 고름) */
+const 향함표 = {
+  blackheartsbay: [
+    ['노리는 차례', '적 바깥 요새 마을 Mid → Top → Bot, 그다음 안쪽 성채 마을 Mid → Top → Bot, 다 무너지면 핵', '고정'],
+    ['한 마을 안에서', '요새에서 10 넘게 떨어진 바깥 건물(포탑·관문) → 요새 둘레 건물 → 요새 차례. 같은 단계 안에서는 무작위, 이미 겨눈 건물은 뺀다', '규칙']],
+  hanamura: [
+    ['노리는 마을', '적 바깥 요새 둘 가운데 건물 생명이 더 많이 남은 쪽(같으면 무작위) → 둘 다 무너지면 안쪽 성채 둘 가운데 더 멀쩡한 쪽 → 그다음 핵', '규칙'],
+    ['한 마을 안에서', '포탑 → 관문 → 치유의 샘 → 요새·성채 차례. 같은 종류 안에서는 무작위 — 바로 앞에 쏜 건물과 이미 날아가는 포탄으로 깨질 건물은 뺀다', '규칙']],
+  skytemple: [
+    ['노리는 마을', '사원마다 자기 라인 요새부터 — Top 사원: Top → Mid → Bot 요새 · Mid 사원: Mid → Top → Bot · Bot 사원: Bot → Mid → Top. 요새가 다 무너지면 성채를 같은 차례로, 그다음 핵', '고정'],
+    ['한 마을 안에서', '요새에서 10 넘게 떨어진 바깥 건물 가운데 그 사원에 가장 가까운 것 → 요새 둘레(요새 포함) 가운데 가장 가까운 것', '고정']],
+  battlefieldofeternity: [
+    ['가는 라인', '적 바깥 요새가 더 멀쩡한 라인 — 한쪽 요새가 이미 무너졌으면 요새가 서 있는 라인, 둘 다 서 있으면 마을 건물 생명 합(치유의 샘 빼고)이 더 많은 라인, 같으면 무작위. 바깥이 다 무너졌으면 안쪽 성채끼리 같은 셈', '규칙'],
+    ['출발', '한가운데 준비 자리에서 15초 준비한 뒤', '고정']],
+  tombofthespiderqueen: [['나오는 곳', '바친 팀 본진 앞 — Top · Mid · Bot 라인마다 하나씩 나와 그 라인을 따라 간다', '고정']],
+  alteracpass: [['나오는 곳', '그 팀 핵 바로 앞에서 셋이 나와 Top · Mid · Bot 라인으로 하나씩 간다', '고정']],
+  gardenofterror: [['나오는 곳', '셋째 씨앗을 먹은 바로 그 자리에서 셋이 솟아 각자 Top · Mid · Bot 라인으로 걸어간다', '고정']],
+  infernalshrines: [['나오는 곳', '켜졌던 신단 바로 옆에서 나와 그 신단에서 가장 가까운 라인을 따라 간다', '고정']],
+  hauntedmines: [['나오는 곳', '광산이 열릴 때 정해진 라인 자리에 미리 놓인다 — 1회차 블루팀 Top · 레드팀 Bot, 그 뒤 번갈아', '고정']],
+  braxisholdout: [['나오는 곳', '그 회차 저그 우리에서 나와 그 라인을 따라 적 본진으로 — 우리는 회차마다 번갈아', '고정']],
+  cursedhollow: [['닿는 곳', '적 포탑·요새·성채 전부와 적 하수인 전부 — 고르는 것 없음(핵은 그대로)', '고정']],
+  towersofdoom: [['노리는 곳', '늘 적 핵 — 다른 건물은 맞지 않는다', '고정']],
+  dragonshire: [['가는 곳', '영웅이 직접 타고 움직인다', '사람']],
+  volskaya: [['가는 곳', '조종사 · 사수 영웅이 직접 탄다', '사람']],
+  warheadjunction: [['떨어지는 곳', '핵을 든 영웅이 사거리 14 안 땅을 찍는다', '사람']],
+};
+const 향함색 = { 고정: 'fix', 규칙: 'half', 무작위: 'rnd', 사람: 'man' };
+
+/* 한눈에 — 처음 보는 사람이 맨 먼저 알아야 할 것: 무엇을 하면 무엇을 받나 · 언제 · 어디서 */
+function 한눈에(m) {
+  const 카드 = 보상표[m.키] ? 보상표[m.키]()[0] : null;
+  const F = ((BOOK.전장 || {})[m.키] || {}).흐름;
+  if (!카드 || !F) return '';
+  const 첫목 = F.사건.find(e => e.갈래 === '목표'), 목되 = (F.되풀이 || []).find(e => e.갈래 === '목표' && /^다음/.test(둘로(e.말)[0]));
+  const 자 = 자리규칙[m.키], 향 = 향함표[m.키];
+  const 줄 = [['하는 일', 카드.얻기], ['받는 것', 카드.보상], 향 ? [향[0][0], 향[0][1]] : null,
+             첫목 ? ['첫 목표물', `${시각글(첫목.때)} — ${둘로(첫목.말)[1] || 첫목.말}`] : null,
+             목되 ? ['다음 회차', 둘로(목되.말)[1].split(' · ')[0]] : null,
+             자 ? ['1회차 자리', `${자[2][0][1]} (${자[2][0][2]})`] : null].filter(r => r && r[1]);
+  return `<div class="glance"><div class="glh">한눈에</div>${줄.map(([k, v]) => `<div class="gl"><span class="glk">${esc(k)}</span><span>${esc(v)}</span></div>`).join('')}</div>`;
+}
+/* 단계 띠 — 기본 → 자세히 → 깊이. 아래로 갈수록 깊은 내용 */
+const 단계띠 = (말, 풀이) => `<div class="tier"><b>${말}</b><span>${풀이}</span></div>`;
+function 주기절(m) {
+  const F = ((BOOK.전장 || {})[m.키] || {}).흐름;
+  return F ? `<h2 id="s-주기">주기 모음<span class="cnt">되풀이되는 것의 간격</span></h2>` + 주기모음(m, F) : '';
+}
+function 한계절h(m) { return `<h2 id="s-한계">성장 한계<span class="cnt">급마다 오르다 멈추는 곳</span></h2>` + 한계절(m.키); }
+function 계산절(m) {
+  const 상자 = 포격상자(m.키);
+  return 상자 ? `<h2 id="s-계산">목표물 공격 계산<span class="cnt">시간에 따라</span></h2>`
+    + `<p class="note">위 시간(⏱) 기준으로 목표물이 건물에 넣는 피해와, 시간에 따라 몸이 얼마나 자라는지(급별 막대·표)를 셈합니다.</p>` + 상자 : '';
+}
+function 보상카드(c, 향) {
   return `<div class="rw"><div class="rwh"><span class="rwi" aria-hidden="true">${c.아이}</span><b>${esc(c.이름)}</b></div>`
     + `<div class="rwflow">${c.얻기 ? `<div class="rwf"><span class="rwk">얻는 법</span><span>${esc(c.얻기)}</span></div>` : ''}`
-    + `<div class="rwf"><span class="rwk">보상</span><span>${esc(c.보상)}</span></div></div>`
+    + `<div class="rwf"><span class="rwk">보상</span><span>${esc(c.보상)}</span></div>`
+    + (향 || []).map(([k, v, s]) => `<div class="rwf rwgo"><span class="rwk">${esc(k)}</span><span>${esc(v)} <span class="nxb nx-${향함색[s]}">${esc(s)}</span></span></div>`).join('')
+    + `</div>`
     + (c.효과 && c.효과.length ? `<div class="rwe">${c.효과.map(([k, v]) => `<div class="re"><span class="rek">${esc(k)}</span><span class="rev">${v}</span></div>`).join('')}</div>` : '')
     + (c.표 || []).map(t => `<div class="rtb"><div class="rtt">${esc(t.제목)}</div><div class="tbl"><table class="wt rwt"><thead><tr>${t.머리.map(h => `<th>${esc(h)}</th>`).join('')}</tr></thead><tbody>`
       + t.줄.map((r, i) => `<tr${i === t.지금 ? ' class="now"' : ''}>${r.map((v, j) => `<td${j ? ' class="mono"' : ''}>${esc(v)}</td>`).join('')}</tr>`).join('')
       + `</tbody></table></div>${t.말 ? `<div class="rtn">${esc(t.말)}</div>` : ''}</div>`).join('')
     + (c.근거 ? `<div class="dimid itsrc">근거 · ${esc(c.근거)}</div>` : '') + `</div>`;
 }
-function 보상속(키) { return (보상표[키] ? 보상표[키]() : []).map(보상카드).join(''); }
+function 보상속(키) { return (보상표[키] ? 보상표[키]() : []).map((c, i) => 보상카드(c, i ? null : 향함표[키])).join(''); }   // 노리는 곳은 첫 카드(목표물 보상)에
 function 보상절(m) {
   if (!보상표[m.키]) return '';
   return `<h2 id="s-보상">보상과 효과<span class="cnt" id="rwdt"></span></h2>`
