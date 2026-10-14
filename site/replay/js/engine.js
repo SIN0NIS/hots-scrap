@@ -34,6 +34,22 @@ function prepare(raw){
     if(!heroes[lab]) continue;
     for(const p of raw.ability_aims[nm]) heroes[lab].pts.push({t:p[0],x:p[1],y:p[2],src:'a',link:p[3]});
   }
+  // 귀환석 — HEARTH_T 초 채널을 다른 명령(이동·조준)이 끊지 않았으면 «본진으로 순간이동».
+  // 기존 이동기 표식(src 'j')으로 넣는다. 귀환한 영웅은 싸우지 않으니 전투 스냅샷이
+  // 한참 안 오고, 그동안 영웅이 전선에 서 있다가 다음 스냅샷에 순간이동하던 자리다.
+  // 홀드아웃(표본 8판): 평균 4.22 -> 3.88 (−8%). 채널 시간은 5.5·6.5·7 보다 6 이 가장 좋다.
+  for(const nm in (raw.hearths||{})){
+    const lab = heroes[nm] ? nm : (label[nm] || nm);
+    if(!heroes[lab]) continue;
+    const h=heroes[lab];
+    const home=((raw.hero_position_tracks||{})[lab]||[]).find(p=>p[3]==='s');
+    if(!home) continue;
+    const acts=h.pts.filter(p=>p.src==='m'||p.src==='a').map(p=>p.t).sort((a,b)=>a-b);
+    for(const t of raw.hearths[nm]){
+      const cut=acts.find(a=>a>t+0.3 && a<=t+HEARTH_T);   // 0.3초 안의 명령은 누르는 김에 나온 것
+      if(cut===undefined) h.pts.push({t:t+HEARTH_T, x:home[1], y:home[2], src:'j'});
+    }
+  }
   let maxT = 0, minX=1e9,maxX=-1e9,minY=1e9,maxY=-1e9;
   for(const lab in heroes){
     heroes[lab].pts.sort((a,b)=>a.t-b.t);
@@ -75,7 +91,12 @@ function prepare(raw){
      4) 지형 — 못 가는 칸은 통과하지 못하고, 벽 건너편을 찍으면 길찾기로 돌아간다.
    원본 스냅샷이 15초 간격이라 그 사이는 어차피 추정이다. 여기서 촘촘한 격자로
    한 번 풀어 두고 posAt 에서 다시 보간하면 60fps 로 이어져 보인다. */
-const PDT=0.1, SPEED=5.5, SNAP_DIST=10;
+/* SPEED: 걷기(약 4.8)와 탈것(약 6.3) 사이의 «평균 이속». 탈것을 따로 흉내 내 보았지만
+   (탈것 기술 111 시전 + 1초 → ×1.15~1.5, 조준·피격 시 내림) 고정 6.0 보다 나은 조합이 없었다.
+   홀드아웃(표본 8판·끌기 이동 포함, 귀환 반영 전): 4.8 → 4.91 · 5.0 → 4.68 · 5.5 → 4.34 · 6.0 → 4.22
+   귀환 반영 후: 6.0 → 3.88 · 6.5 → 3.92 · 7.0 → 4.02 */
+const PDT=0.1, SPEED=6.0, SNAP_DIST=10;
+const HEARTH_T=6;         // 귀환석 채널 시간(초)
 // 전투 스냅샷 보정 비율(스텝당). 한 번에 60% 를 당기면 그 프레임만 툭 튀므로
 // 여러 스텝에 나눠 수렴시킨다. 0.25 면 스냅샷 간격(약 1초=10스텝)에 대부분 따라잡는다.
 const CORR=0.25;
@@ -91,7 +112,7 @@ function buildPath(pts, maxT){
   let lastFix=-1;                                // 마지막으로 실측 좌표를 적용한 시각
   // 첫 점이 한참 뒤에 있는 리플레이(난투 등)는 그 전 구간이 통째로 비어
   // 영웅이 안 그려졌다. 첫 위치를 시작부터 깔아 둔다.
-  const first=pts.find(p=>p.src!=='m'&&p.src!=='a');
+  const first=pts.find(p=>p.src!=='m'&&p.src!=='a'&&p.src!=='j');
   if(first){ cx=first.x; cy=first.y; has=true; }
   const setTarget=(x,y)=>{ tx=x; ty=y; hasT=true; route=null; ri=0; };
   for(let k=0;k<n;k++){
@@ -186,7 +207,8 @@ function smoothPath(P, pts, maxT){
   if(hardT.length<2) return P;
   // 시간을 뒤집은 앵커만으로 한 번 더 (명령·조준점 없이)
   const rev=[];
-  for(const p of pts) if(p.src!=='m'&&p.src!=='a') rev.push({t:maxT-p.t,x:p.x,y:p.y,src:p.src});
+  // 이동기·귀환(j)도 뺀다 — 시간을 뒤집으면 «어디서 왔나»가 아니라 «어디로 갔나»가 되어 뜻이 없다
+  for(const p of pts) if(p.src!=='m'&&p.src!=='a'&&p.src!=='j') rev.push({t:maxT-p.t,x:p.x,y:p.y,src:p.src});
   rev.sort((a,b)=>a.t-b.t);
   const B=buildPath(rev, maxT);
   let hi=0;
@@ -286,8 +308,8 @@ function estB(why){ return `<u class="estb" title="${why}">추정치</u>`; }
 const EST_WHY = {
   struct: '리플레이는 건물을 «누가» 부쉈는지 거의 남기지 않습니다 (실측 39건 중 4건). '
         + '건물이 붙어 있는 진영으로 부순 팀을 추론한 값입니다.',
-  pos:    '위치는 15초 간격 스냅샷과 이동·조준 명령으로 되살린 값입니다. '
-        + '표본 검증 오차 평균 5.1 · 중앙값 3.7 타일.',
+  pos:    '위치는 15초 간격 스냅샷과 이동(끌기 포함)·조준·귀환 명령으로 되살린 값입니다. '
+        + '표본 검증 오차 평균 3.9 · 중앙값 2.8 타일.',
   lvxp:   '레벨 문턱값은 리플레이에 없습니다. 표본 8판의 30초 간격 기록에서 뽑은 하한입니다.',
   pie:    '영웅별 «항목 경험치» 는 리플레이에 없습니다. 그 항목을 만든 사건 수로 나눈 비율입니다.',
   pieLive:'점수표의 경험치 기여도는 경기 최종값 하나뿐입니다. '
