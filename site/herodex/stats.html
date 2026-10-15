@@ -137,6 +137,22 @@
          border:1px solid var(--line); border-radius:999px; padding:2px 9px; }
   .who b { color:var(--blue); font-weight:600; margin-right:4px; }
   .who em { font-style:normal; color:var(--dim); margin-left:5px; font-size:10.5px; }
+  a.who { text-decoration:none; } a.who:hover { border-color:var(--blue); }
+  /* 값 한 줄 = 도감의 그 기술·특성으로 가는 길 */
+  .rank tr.go { cursor:pointer; } .rank tr.go:hover td { background:var(--card2); }
+  .rank td.w a { color:inherit; text-decoration:none; } .rank tr.go:hover td.w a { text-decoration:underline; }
+  .rank td.w .go-arrow { color:var(--blue); margin-left:4px; font-size:11px; }
+  .rank td.w .hn { color:var(--dim); font-size:11px; margin-left:6px; }
+  /* 용어로 모아 보기 */
+  #terms { display:flex; flex-wrap:wrap; gap:5px; align-items:center; }
+  .termbar { display:flex; flex-wrap:wrap; align-items:center; gap:8px 12px; margin:0 0 14px; padding:10px 14px;
+             border:1px solid var(--blue); border-radius:12px; background:var(--card); font-size:13px; }
+  .termbar b { color:var(--blue); }
+  .tsec { border-bottom:1px solid var(--line); padding:10px 0 12px; }
+  .tsec:last-child { border-bottom:0; }
+  .tsec h3 { margin:0 0 6px; font-size:14px; display:flex; flex-wrap:wrap; align-items:baseline; gap:4px 10px; }
+  .tsec h3 span { font-size:12px; color:var(--dim); font-weight:400; }
+  .tsec .all { margin-left:auto; }
 </style>
 </head>
 <body>
@@ -156,10 +172,12 @@
       <input type="search" id="q" placeholder="항목 찾기 (사거리·피해·재사용…)">
       <button class="pill" id="onlynum">줄 세울 수 있는 것만</button>
     </div>
+    <div class="row" id="termrow"><span class="lab">용어</span><span id="terms"></span></div>
   </div>
 
   <p class="note" style="margin:2px 0 14px; font-size:12.5px;">
     항목 하나를 누르면 <b>값이 어떻게 퍼져 있는지</b>와 <b>어느 기술·특성이 그 값을 가지는지</b>가 펼쳐집니다.
+    값 한 줄을 누르면 도감의 그 기술·특성으로 갑니다. <b>용어</b>를 고르면 그 말이 들어간 항목을 한데 모아 봅니다.
     카드 오른쪽 위의 <b>“91개 · 100%”</b> 는 <i>그 칸을 가진 것의 수</i>와 <i>전체 가운데 몇 %가 그 칸을 가지는지</i>입니다.
   </p>
   <div id="catalog"></div>
@@ -207,6 +225,14 @@ const TOPIC = [
 const topicOf = f => (TOPIC.find(([, t]) => t(f)) || ['그 밖'])[0];
 
 let DB = null, ROWS = null, TAB = '칸', TOPIC_ON = new Set(), ONLYNUM = false, OPEN = null, SHOW = 60;
+/* 대상 한 줄([영웅, 이름, 갈래, 짧은 표, 자리 id]) → 도감 주소. 자리 id 가 있으면 그 기술·특성으로 바로 간다 */
+let HID = new Map();
+function 도감길(e) {
+  const id = HID.get(e[0]);
+  return id ? `./?hero=${encodeURIComponent(id)}${e[4] ? `&at=${encodeURIComponent(e[4])}` : ''}` : '';
+}
+/* 자주 찾는 말 — 눌러서 찾기 칸에 넣는다(항목 이름에 그 말이 든 것을 한데 모은다) */
+const TERMS = ['생명력', '마나', '피해', '회복', '보호막', '사거리', '반지름', '재사용', '지속', '이동 속도', '공격 속도', '방어력'];
 
 /* ── 항목 카드 ─────────────────────────────────────────────── */
 function card(f) {
@@ -234,11 +260,16 @@ function drawCatalog() {
     && (!q || f.이름.toLowerCase().includes(q)));
   const by = new Map();
   for (const f of keep) { const t = topicOf(f); if (!by.has(t)) by.set(t, []); by.get(t).push(f); }
-  document.getElementById('catalog').innerHTML = keep.length
+  document.getElementById('terms').innerHTML = TERMS.map(w =>
+    `<button class="pill${q === w.toLowerCase() ? ' on' : ''}" data-term="${esc(w)}">${esc(w)}</button>`).join(' ');
+  const bar = q && keep.length > 1
+    ? `<div class="termbar">‘<b>${esc(q)}</b>’ 이 든 항목 <b>${keep.length}</b>가지`
+      + `<button class="pill on" id="termall">한데 모아 보기</button></div>` : '';
+  document.getElementById('catalog').innerHTML = bar + (keep.length
     ? TOPIC.map(([t]) => by.has(t)
         ? `<section class="topic"><h2>${esc(t)}<span>${by.get(t).length}가지</span></h2>`
           + `<div class="grid">${by.get(t).map(card).join('')}</div></section>` : '').join('')
-    : `<p class="note">걸리는 항목이 없습니다.</p>`;
+    : `<p class="note">걸리는 항목이 없습니다.</p>`);
   document.getElementById('sub').innerHTML =
     `게임 원본에서 읽히는 항목 <b>${DB.칸.length}</b>가지 가운데 <b>${keep.length}</b>가지 · `
   + `영웅 ${DB['센 것'].영웅} · 기술 ${DB['센 것'].기술} · 특성 ${DB['센 것'].특성}`
@@ -275,9 +306,10 @@ function wireExpand(raw) {
       const li = who.slice(0, 400).map(w => {
         const ko = String(w[0] || ''), tag = w[3] || '';
         const ab = ko.length > 2 ? ko.slice(0, 2) : ko;
-        return `<span class="who"><b>${esc(ab)}${tag ? '-' + esc(tag) : ''}</b>`
+        const href = 도감길(w);
+        return `<${href ? `a href="${esc(href)}"` : 'span'} class="who"><b>${esc(ab)}${tag ? '-' + esc(tag) : ''}</b>`
              + ` ${esc(w[1] || '')}`
-             + `<em>${esc(ko)}${w[2] ? ' · ' + esc(w[2]) : ''}</em></span>`;
+             + `<em>${esc(ko)}${w[2] ? ' · ' + esc(w[2]) : ''}</em></${href ? 'a' : 'span'}>`;
       }).join('');
       tr.insertAdjacentHTML('afterend',
         `<tr class="xl"><td colspan="5"><div class="wholist">${li}`
@@ -368,9 +400,10 @@ function paint(busy) {
       // 영웅 수치는 이름 칸이 늘 '기본 수치' 라 군더더기다 — 영웅 이름만 남긴다
       const who = e[1] === '기본 수치' ? '' : e[1];
       const tip = who ? `${e[0]} · ${who}` : e[0];
-      return `<tr title="${esc(tip)}"><td class="i">${i + 1}</td>`
+      const href = 도감길(e);
+      return `<tr title="${esc(tip)}${href ? ' — 눌러서 도감에서 보기' : ''}"${href ? ` class="go" data-href="${esc(href)}"` : ''}><td class="i">${i + 1}</td>`
         + `<td class="h" style="${rcv(roleOf(e[0]))}">${FACE(e[0])}</td>`
-        + `<td class="w">${esc(who)}</td>`
+        + `<td class="w">${href ? `<a href="${esc(href)}">${esc(who || e[0])}<span class="go-arrow">↗</span></a>${who ? `<span class="hn">${esc(e[0])}</span>` : ''}` : esc(who)}</td>`
         + (numeric ? `<td class="b"><span><i style="width:${Math.round(Math.abs(v) / hi * 100)}%"></i></span></td>` : `<td></td>`)
         + `<td class="v">${fmt(v)}</td></tr>`;
     }).join('') + `</table>`;
@@ -383,6 +416,50 @@ function paint(busy) {
 }
 
 /* ── 영웅 수치표 ───────────────────────────────────────────── */
+/* ── 용어로 모아 보기 — 찾는 말이 든 항목마다 앞 몇 줄씩, 줄은 도감으로 가는 길 ── */
+async function openTerm() {
+  const q = (document.getElementById('q').value || '').trim().toLowerCase();
+  const fs = DB.칸.filter(f => (!TOPIC_ON.size || TOPIC_ON.has(topicOf(f))) && (!ONLYNUM || f.꼴 === '수')
+                            && f.이름.toLowerCase().includes(q));
+  if (!fs.length) return;
+  OPEN = null;
+  const 창 = body => {
+    document.getElementById('pane')?.remove();
+    document.body.insertAdjacentHTML('beforeend', `<div class="pane" id="pane"><div class="box">`
+      + `<div class="bhead"><h2>‘${esc(q)}’ 이 든 항목<span class="cov" style="color:var(--dim);font-size:12px;font-weight:400">${fs.length}가지</span>`
+      + `<button class="x" id="close">닫기</button></h2></div><div class="bbody">${body}</div></div></div>`);
+  };
+  if (!ROWS) { 창('<p class="note">값 목록을 받는 중…</p>'); ROWS = await fetch('../data/herodex/stats-rows.json').then(r => r.json()); }
+  const 줄수 = 8;
+  const 섹션 = f => {
+    let raw = (ROWS.칸[f.열쇠] || []).slice();
+    if (ROLE_ON.size) raw = raw.filter(([ei]) => ROLE_ON.has(roleOf((ROWS.대상[ei] || [''])[0])));
+    let rows = '';
+    if (f.꼴 === '수') {
+      raw.sort((a, b) => b[1] - a[1]);
+      rows = raw.slice(0, 줄수).map(([ei, v], i) => {
+        const e = ROWS.대상[ei] || ['', '', ''], who = e[1] === '기본 수치' ? '' : e[1], href = 도감길(e);
+        return `<tr${href ? ` class="go" data-href="${esc(href)}"` : ''}><td class="i">${i + 1}</td>`
+          + `<td class="h" style="${rcv(roleOf(e[0]))}">${FACE(e[0])}</td>`
+          + `<td class="w">${href ? `<a href="${esc(href)}">${esc(who || e[0])}<span class="go-arrow">↗</span></a>${who ? `<span class="hn">${esc(e[0])}</span>` : ''}` : esc(who || e[0])}</td>`
+          + `<td class="v">${fmt(v)}</td></tr>`;
+      }).join('');
+    } else {
+      const cnt = new Map();
+      for (const [, v] of raw) cnt.set(String(v), (cnt.get(String(v)) || 0) + 1);
+      rows = [...cnt.entries()].sort((a, b) => b[1] - a[1]).slice(0, 줄수)
+        .map(([v, n], i) => `<tr><td class="i">${i + 1}</td><td colspan="2">${esc(v)}</td><td class="v">${n}개</td></tr>`).join('');
+    }
+    return `<section class="tsec"><h3>${esc(f.이름)}<span>${esc(topicOf(f))} · ${f.수}개${f.꼴 === '수' && f.요약 ? ` · ${fmt(f.요약.최소)} ~ ${fmt(f.요약.최대)}` : ''}</span>`
+      + `<button class="pill all" data-open="${esc(f.열쇠)}">전부 보기</button></h3>`
+      + (rows ? `<table class="rank">${rows}</table>` : `<p class="note">고른 역할군에는 없습니다.</p>`) + `</section>`;
+  };
+  const 차례 = TOPIC.map(([t]) => t);
+  fs.sort((a, b) => 차례.indexOf(topicOf(a)) - 차례.indexOf(topicOf(b)) || b.수 - a.수);
+  창(`<p class="note" style="margin-top:0">항목마다 큰 값부터 ${줄수}줄 — 줄을 누르면 도감의 그 기술·특성으로, ‘전부 보기’는 그 항목의 순위표로 갑니다.</p>`
+     + fs.map(섹션).join(''));
+}
+
 let SORT = { k: '생명력', asc: false }, BYROLE = false, ROLE_ON = new Set();
 /* 역할군 색 — 단추·알약·아이콘 테두리가 **같은 색**을 쓴다. 색만 보고도
    "이 줄은 전사" 가 읽히게 하려는 것이다. */
@@ -447,12 +524,14 @@ function draw() {
   document.getElementById('herotab').hidden = cat;
   document.getElementById('filters').style.display = cat ? '' : 'none';
   document.getElementById('searchrow').style.display = cat ? '' : 'none';
+  document.getElementById('termrow').style.display = cat ? '' : 'none';
   document.getElementById('rolerow').style.display = '';   // 두 탭에서 다 쓴다
   cat ? drawCatalog() : drawHeroes();
 }
 
 fetch('../data/herodex/stats.json').then(r => r.json()).then(d => {
   DB = d;
+  HID = new Map(d.영웅.map(h => [h.영웅, h.id]));
   const ts = TOPIC.map(([t]) => t).filter(t => d.칸.some(f => topicOf(f) === t));
   document.getElementById('topics').innerHTML = ts.map(t =>
     `<button class="pill" data-t="${esc(t)}">${esc(t)} ${d.칸.filter(f => topicOf(f) === t).length}</button>`).join(' ');
@@ -494,6 +573,17 @@ document.addEventListener('click', e => {
   const tp = e.target.closest('[data-t]');
   if (tp) { const k = tp.dataset.t; TOPIC_ON.has(k) ? TOPIC_ON.delete(k) : TOPIC_ON.add(k); tp.classList.toggle('on'); drawCatalog(); return; }
   if (e.target.id === 'onlynum') { ONLYNUM = !ONLYNUM; e.target.classList.toggle('on', ONLYNUM); drawCatalog(); return; }
+  const tm = e.target.closest('[data-term]');
+  if (tm) {
+    const q = document.getElementById('q');
+    q.value = q.value.trim() === tm.dataset.term ? '' : tm.dataset.term;
+    drawCatalog(); return;
+  }
+  if (e.target.id === 'termall') { openTerm(); return; }
+  const op = e.target.closest('[data-open]');
+  if (op) { openField(op.dataset.open); return; }
+  const go = e.target.closest('tr.go[data-href]');
+  if (go && !e.target.closest('a')) { location.href = go.dataset.href; return; }
   const f = e.target.closest('.f[data-k]');
   if (f) { openField(f.dataset.k); return; }
   const s = e.target.closest('[data-sort]');

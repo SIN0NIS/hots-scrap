@@ -1146,8 +1146,14 @@ document.addEventListener('error', e => {
   renderList('');
   // **주소에 영웅이 없으면 고르는 화면이다.** 예전에는 첫 영웅을 펼쳐 놓아서,
   // 들어온 사람이 "왜 D.Va 가 떠 있지" 하고 멈췄다.
-  const want = new URLSearchParams(location.search).get('hero');
-  if (INDEX.some(h => h.id === want)) pick(want, false);
+  const qs = new URLSearchParams(location.search), want = qs.get('hero'), at = qs.get('at');
+  if (INDEX.some(h => h.id === want)) {
+    await pick(want, false);
+    // 통계 보기에서 값 한 줄을 누르고 왔으면 그 기술·특성으로 데려가 잠깐 밝힌다
+    const el = at && 자리찾기(at);
+    // 막 열린 화면이라 부드럽게 굴리지 않고 바로 그 자리로 — 그림·글꼴이 자리 잡은 뒤에
+    if (el) setTimeout(() => { el.scrollIntoView({ block: 'center' }); 밝히기(el); }, 80);
+  }
   else renderHome();
 })();
 </script>

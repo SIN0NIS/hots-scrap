@@ -117,11 +117,14 @@ def short_tag(kind, slot, step):
     return f"{lv}Lv{slot}T" if slot else f"{lv}Lv"
 
 
-def ent_id(ko, nm, kind, tag=""):
-    key = (ko, nm, kind, tag)
+def ent_id(ko, nm, kind, tag="", zid=""):
+    """대상 한 줄 = [영웅, 이름, 갈래, 짧은 표, 도감 자리 id].
+    **다섯째 칸(자리 id)은 통계 화면에서 그 줄을 눌러 도감의 그 기술·특성으로 바로 가는 데 쓴다**
+    (도감 카드의 `data-zi` 와 같은 값). 앞 칸들은 그대로라 예전 읽는 쪽이 안 깨진다."""
+    key = (ko, nm, kind, tag, zid)
     if key not in ENT_IX:
         ENT_IX[key] = len(ENTS)
-        ENTS.append([ko, nm, kind] + ([tag] if tag else []))
+        ENTS.append([ko, nm, kind] + ([tag, zid] if zid else ([tag] if tag else [])))
     return ENT_IX[key]
 
 
@@ -141,7 +144,7 @@ class Field:
     def __init_drops(self):
         pass
 
-    def add(self, v, ko, nm, kind="기술", tag=""):
+    def add(self, v, ko, nm, kind="기술", tag="", zid=""):
         f = num(v)
         if f is not None:
             why = drop_reason(self.name, f)
@@ -151,7 +154,7 @@ class Field:
                     self.drop_ex.append([ko, nm, str(v)[:24]])
                 return
         self.n += 1
-        self.rows.append([ent_id(ko, nm, kind, tag),
+        self.rows.append([ent_id(ko, nm, kind, tag, zid),
                           f if f is not None else str(v)[:30]])
         if f is None:
             w = str(v)
@@ -251,6 +254,7 @@ def main():
             tot["기술"] += 1
             nm = a.get("이름") or ""
             _tag = short_tag("기술", a.get("칸"), None)
+            _zid = a.get("id") or ""
             for k, v in a.items():
                 if k in SKIP or v in (None, "", [], {}):
                     continue
@@ -259,27 +263,28 @@ def main():
                         for kk, vv in r.items():
                             if kk in SKIP or vv in (None, "", [], {}) or isinstance(vv, (list, dict)):
                                 continue
-                            fld("원자료", f"{k}.{kk}").add(vv, ko, nm, "기술", _tag)
+                            fld("원자료", f"{k}.{kk}").add(vv, ko, nm, "기술", _tag, _zid)
                 elif not isinstance(v, (list, dict)):
-                    fld("기술", k).add(v, ko, nm, "기술", _tag)
+                    fld("기술", k).add(v, ko, nm, "기술", _tag, _zid)
             for k, v in (a.get("위키식") or {}).items():
                 if k in SKIP or v in (None, "", [], {}) or isinstance(v, (list, dict)):
                     continue
-                fld("위키식", k).add(v, ko, nm, "기술", _tag)
+                fld("위키식", k).add(v, ko, nm, "기술", _tag, _zid)
 
         # ── 특성 ────────────────────────────────────────────────────
         for t in d.get("특성") or []:
             tot["특성"] += 1
             nm = t.get("이름") or ""
             _tag = short_tag("특성", t.get("칸"), t.get("단계"))
+            _zid = t.get("id") or nm
             for k, v in t.items():
                 if k in SKIP or v in (None, "", [], {}) or isinstance(v, (list, dict)):
                     continue
-                fld("특성", k).add(v, ko, nm, "특성", _tag)
+                fld("특성", k).add(v, ko, nm, "특성", _tag, _zid)
             for k, v in (t.get("위키식") or {}).items():
                 if k in SKIP or v in (None, "", [], {}) or isinstance(v, (list, dict)):
                     continue
-                fld("특성 위키식", k).add(v, ko, nm, "특성", _tag)
+                fld("특성 위키식", k).add(v, ko, nm, "특성", _tag, _zid)
 
     # 갈래마다 '모수' 가 다르다 — 덮음(%)을 제대로 내려면 각자 세어야 한다
     DENOM = {"기본": tot["영웅"], "평타": tot["영웅"], "기술": tot["기술"],
