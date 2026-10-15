@@ -153,6 +153,22 @@
   .tsec h3 { margin:0 0 6px; font-size:14px; display:flex; flex-wrap:wrap; align-items:baseline; gap:4px 10px; }
   .tsec h3 span { font-size:12px; color:var(--dim); font-weight:400; }
   .tsec .all { margin-left:auto; }
+  .tsec h3 .pre, .f h3 .pre { color:var(--dim); font-weight:400; }
+  .f h3 .fn { min-width:0; }
+  .f h3 .src, .tsec h3 .src { font-size:10.5px; color:var(--dim); border:1px solid var(--line); border-radius:6px; padding:0 5px; font-weight:400; white-space:nowrap; }
+  .subh { margin:10px 0 6px; font-size:12.5px; display:flex; align-items:center; gap:8px; color:var(--fg); }
+  .subh span { color:var(--dim); font-size:11px; font-weight:400; }
+  .topic > h2 .pill, .subh .pill { margin-left:auto; }
+  .pill.sm { font-size:11.5px; padding:2px 9px; }
+  details.tmap { display:block; }
+  details.tmap > summary { cursor:pointer; list-style:none; display:flex; align-items:baseline; gap:6px; }
+  details.tmap > summary::-webkit-details-marker { display:none; }
+  details.tmap > summary::before { content:'▸'; color:var(--dim); font-size:11px; }
+  details.tmap[open] > summary::before { content:'▾'; }
+  .tmsum { color:var(--dim); font-size:12px; }
+  #terms { display:grid; gap:5px; margin-top:7px; }
+  .tgrp { display:flex; flex-wrap:wrap; align-items:center; gap:4px 5px; }
+  .tgrp > b { font-size:12px; min-width:88px; color:var(--fg); }
 </style>
 </head>
 <body>
@@ -172,12 +188,12 @@
       <input type="search" id="q" placeholder="항목 찾기 (사거리·피해·재사용…)">
       <button class="pill" id="onlynum">줄 세울 수 있는 것만</button>
     </div>
-    <div class="row" id="termrow"><span class="lab">용어</span><span id="terms"></span></div>
+    <details class="row tmap" id="termrow"><summary><span class="lab">용어 지도</span> <span class="tmsum">성질별 12갈래 — 작은 갈래를 누르면 그 항목을 한데 모아 봅니다</span></summary><div id="terms"></div></details>
   </div>
 
   <p class="note" style="margin:2px 0 14px; font-size:12.5px;">
     항목 하나를 누르면 <b>값이 어떻게 퍼져 있는지</b>와 <b>어느 기술·특성이 그 값을 가지는지</b>가 펼쳐집니다.
-    값 한 줄을 누르면 도감의 그 기술·특성으로 갑니다. <b>용어</b>를 고르면 그 말이 들어간 항목을 한데 모아 봅니다.
+    값 한 줄을 누르면 도감의 그 기술·특성으로 갑니다. 항목은 <b>성질별 12갈래</b>로 묶었고, <b>용어 지도</b>나 갈래 머리의 <b>모아 보기</b>로 한 갈래를 한 창에 봅니다.
     카드 오른쪽 위의 <b>“91개 · 100%”</b> 는 <i>그 칸을 가진 것의 수</i>와 <i>전체 가운데 몇 %가 그 칸을 가지는지</i>입니다.
   </p>
   <div id="catalog"></div>
@@ -206,23 +222,23 @@ const fmt = v => {
   return r.toLocaleString('ko-KR');
 };
 
-/* **주제로 묶는다.** 자료를 만든 갈래(기술·위키식·원자료…)는 어디서 읽었나이지
-   무엇에 대한 값인가가 아니다. 고르는 사람에게는 뒤쪽이 필요하다. */
-const TOPIC = [
-  ['영웅 수치',   f => f.갈래 === '기본' || f.갈래 === '평타'],
-  ['비용과 시간', f => /재사용|연타 제한|시전 시간|마무리 시간|충전|마나|분노|고철|광기|취기|기력|탄약|에너지|자원|생명력 소모|처음 지연/.test(f.이름)],
-  ['날아가는 것', f => /투사체|날아가|튕기는|질주|밀침|밀리는|가속도|오는 방향|이동 거리/.test(f.이름)],
-  ['거리와 크기', f => /사거리|반지름|너비|높이|각도|히트박스|도형거리|끌기 범위|나오는 범위|부채꼴|가로|세로|크기|안쪽|바깥|뿌리는 구역|자리 패턴|나란히|둘러싼|연속 판정|방향/.test(f.이름)],
-  ['피해와 회복', f => /피해|회복|성장|흡수|틱|보호막|치유/.test(f.이름)],
-  ['소환',        f => /소환|나오는|마리|유닛/.test(f.이름)],
-  ['효과와 지속', f => /지속|주기|간격|반복|이동 속도|공격 속도|방어력|기절|감속|중첩|기술 추가|상태|보정|효과|커지는|부른 횟수|단계/.test(f.이름)],
-  ['누구에게',    f => /대상|영향|지정|고르는 차례|찾는|최대 대상|빼는/.test(f.이름)],
-  ['퀘스트와 특성', f => /퀘스트|보상|레벨|강화|툴팁 수치|예외/.test(f.이름)],
-  ['분류와 이름', f => /유형|속성|범위|기준|종류|모양|방식|갈래|칸$|모드|탈것|이름/.test(f.이름)],
-  ['이어진 기술', f => /이어짐|이어받음|딸린 곳|같은 칸/.test(f.이름)],
-  ['그 밖',       () => true],
-];
-const topicOf = f => (TOPIC.find(([, t]) => t(f)) || ['그 밖'])[0];
+/* **성질로 묶는다.** 자료를 만든 갈래(기술·위키식·원자료…)는 어디서 읽었나이지
+   무엇에 대한 값인가가 아니다. 큰 갈래 12 → 작은 갈래로 두 번 묶는다.
+   [큰 갈래, 한 줄 풀이, [[작은 갈래, [항목…]]…]] — '갈래|이름' 은 그 갈래만, 이름만 쓰면 모든 갈래.
+   '갈래|이름' 규칙이 먼저 잡는다(평타|사거리 · 기본|반지름). 표에 없는 새 항목은 '그 밖' 으로 간다. */
+const CLASSES = [["생존","얼마나 버티나 — 생명력 · 방어 · 보호막",[["생명력",["기본|생명력","기본|생명력 재생"]],["방어",["거는 효과.방어력","거는 효과.기술 방어력","거는 효과.받는 피해"]],["보호막",["거는 효과.피해 흡수"]]]],["공격","얼마나 아프게 — 일반 공격과 피해량",[["일반 공격",["평타|_이름","평타|사거리","평타|주기","평타|초당 공격","평타|방식","평타|공격력","평타|부채꼴","기본|공격 사거리","기본|공격 사거리(최대)"]],["피해량",["피해.피해량","피해.1회당","피해.툴팁 표기","피해","총 피해","틱당 피해","조건부 피해","아군이 주는 피해"]],["피해 성질",["피해.종류","피해.기술 위력 적용","피해.성장"]],["레벨 성장",["성장"]]]],["회복","얼마나 채우나 — 생명력 · 자원 회복",[["생명력 회복",["회복.생명력 회복량","회복.최대 생명력 비례 회복","회복.1회당","회복.툴팁 표기","회복.성장","회복","거는 효과.주는 치유량"]],["자원 회복",["회복.마나 회복량","회복.마나 회복","회복.최대 마나 비례 회복","회복.분노 회복","회복.광기 회복"]]]],["비용과 재사용","쓰는 데 드는 것 — 자원 · 재사용",[["자원",["기본|자원","마나","기력","분노","취기","회복.생명력 소모","회복.마나 소모","회복.기력 소모"]],["재사용",["재사용 대기시간","충전 개수","연타 제한","재사용 조정.재사용 조정","재사용 조정.대상 기술"]]]],["시간","언제 · 얼마 동안 — 시전 · 지속 · 주기",[["시전",["시전 시간","마무리 시간","모으는 시간"]],["지속",["거는 효과.지속 시간","지속","지속 효과.유지 시간","지속 시간 조정.지속 시간 조정"]],["주기와 반복",["거는 효과.주기","지속 효과.반복 횟수","지속 효과.간격","지속 효과.반복","틱 속도","틱 속도(날것)","갱신 틱"]]]],["거리와 범위","어디까지 · 얼마나 넓게",[["사거리",["사거리","최소 사거리","도형거리","전거리","끌기 범위"]],["범위 크기",["범위.반지름","반지름","범위.작은 반지름","범위.안쪽 반지름","범위.가로","범위.세로","너비","높이","범위.부채꼴","부채꼴","각도","범위.띠 두께","히트박스","아군 반지름","범위.커지는 양","찾는 반지름"]],["범위 모양",["범위","모양","자리 패턴","나란히","둘러싼 수","뿌리는 구역","범위.단계","범위.부른 횟수"]],["범위 움직임",["범위.날아가며","범위.따라감","범위.방향","연속 판정","지속 효과.앞으로","지속 효과.제자리부터","휩쓰는 차례","휩쓰는 쪽","휩쓰는 꼴","휩쓰는 시간","도는 바퀴","도는 시간","도는 꼴"]],["몸집과 시야",["기본|반지름","기본|시야"]]]],["움직임","얼마나 빠르게 · 어디로",[["이동",["기본|이동 속도","이동 거리(추정)","질주 속도","질주 거리","돌진 거리"]],["투사체",["투사체 속도","투사체.방식","투사체.최대 속도","투사체.속도","투사체.가속도","투사체.최소 속도","속도 바뀜","속도가 다른 까닭","투사체.튕기는 거리","투사체.튕기는 횟수","튕기는 거리","튕기는 횟수","오는 방향"]],["밀침",["밀침.속도","밀침.지속 시간","밀침.거리","밀침 속도","밀침 지속","밀리는 거리"]],["순간이동",["순간이동.내려놓는 각도","순간이동.내려놓는 범위","순간이동.기준"]]]],["상태 효과","맞으면 · 쓰면 걸리는 것",[["거는 효과",["거는 효과.종류","거는 효과.상태","효과","거는 효과.성장"]],["속도 변화",["거는 효과.이동 속도","거는 효과.공격 속도"]],["강화",["거는 효과.기술 피해량","거는 효과.일반 공격 피해량","거는 효과.기술 추가","보정"]]]],["대상","누구에게 · 몇에게",[["누구에게",["대상","범위.대상","지정","영향","기준","찾는 대상","아군 범위"]],["거르기와 수",["범위.빼는 대상","빼는 대상","범위.최대 대상","최소 대상","범위.고르는 차례","고르는 차례"]]]],["소환","불러내는 것",[["소환",["소환.유닛","소환.마리 수","소환.나오는 범위","소환","나오는 범위","나오는 자리"]]]],["특성과 퀘스트","레벨에서 고르고 · 쌓아서 바뀌는 것",[["특성",["특성|레벨","특성|강화","특성 강화.단계","특성 강화.내용","특성 전","보상 갈래"]],["퀘스트",["퀘스트","퀘스트 점수.한 번에","퀘스트로 바뀜.칸","퀘스트로 바뀜.전","퀘스트로 바뀜.값","퀘스트로 바뀜.방식","퀘스트로 바뀜.단위"]]]],["기술 정보","어떤 기술인가 — 분류 · 이어짐 · 툴팁",[["분류",["유형","속성","칸","모드","탈것","예외"]],["이어짐",["이어받음","이어짐","같은 칸","지속 효과.이어짐"]],["툴팁 수치",["툴팁 수치.칸","툴팁 수치.값","툴팁 수치.단위"]]]]];
+const 갈래규칙 = new Map(), 이름규칙 = new Map();
+for (const [큰, , 작들] of CLASSES)
+  for (const [작, 것들] of 작들) for (const x of 것들) (x.includes('|') ? 갈래규칙 : 이름규칙).set(x, [큰, 작]);
+const 분류of = f => 갈래규칙.get(f.열쇠) || 이름규칙.get(f.이름) || ['그 밖', '그 밖'];
+const topicOf = f => 분류of(f)[0];
+const TOPIC = [...CLASSES.map(([큰]) => [큰]), ['그 밖']];          // 차례만 쓴다
+const 큰풀이 = new Map(CLASSES.map(([큰, 말]) => [큰, 말]));
+const 작차례 = 큰 => ((CLASSES.find(c => c[0] === 큰) || [0, 0, []])[2].map(([작]) => 작)).concat(['그 밖']);
+/* 항목 이름 '거는 효과.방어력' 은 앞(묶음)을 옅게, 뒤(뜻)를 진하게 */
+const 이름글 = n => { const i = n.indexOf('.'); return i > 0 ? `<span class="pre">${esc(n.slice(0, i))} ·</span> ${esc(n.slice(i + 1))}` : esc(n); };
+/* 같은 이름이 여러 갈래에 있다(사거리 = 기술 원본 · 기술 위키식 · 특성) — 어디서 읽은 값인지 작게 */
+const 출처말 = { '기본': '영웅', '평타': '평타', '기술': '기술', '원자료': '기술 세부', '위키식': '기술 위키식', '특성': '특성', '특성 위키식': '특성 위키식' };
 
 let DB = null, ROWS = null, TAB = '칸', TOPIC_ON = new Set(), ONLYNUM = false, OPEN = null, SHOW = 60;
 /* 대상 한 줄([영웅, 이름, 갈래, 짧은 표, 자리 id]) → 도감 주소. 자리 id 가 있으면 그 기술·특성으로 바로 간다 */
@@ -231,8 +247,6 @@ function 도감길(e) {
   const id = HID.get(e[0]);
   return id ? `./?hero=${encodeURIComponent(id)}${e[4] ? `&at=${encodeURIComponent(e[4])}` : ''}` : '';
 }
-/* 자주 찾는 말 — 눌러서 찾기 칸에 넣는다(항목 이름에 그 말이 든 것을 한데 모은다) */
-const TERMS = ['생명력', '마나', '피해', '회복', '보호막', '사거리', '반지름', '재사용', '지속', '이동 속도', '공격 속도', '방어력'];
 
 /* ── 항목 카드 ─────────────────────────────────────────────── */
 function card(f) {
@@ -245,7 +259,7 @@ function card(f) {
   const line = f.꼴 === '수' && f.요약
     ? `${fmt(f.요약.최소)} ~ ${fmt(f.요약.최대)} · 중앙 <b>${fmt(f.요약.중앙)}</b>`
     : (f.값 && f.값.length ? `${f['값 수']}가지 · 으뜸 <b>${esc(f.값[0][0])}</b> ${f.값[0][1]}` : '');
-  return `<button class="f" data-k="${esc(f.열쇠)}"><h3>${esc(f.이름)}`
+  return `<button class="f" data-k="${esc(f.열쇠)}"><h3><span class="fn">${이름글(f.이름)}</span><span class="src">${esc(출처말[f.갈래] || f.갈래)}</span>`
        + `<span class="cov" title="이 칸을 가진 것이 ${f.수}개 — 모든 기술·특성 가운데 ${Math.round(f.덮음 * 100)}% 가 이 칸을 가집니다">${f.수}개 · ${Math.round(f.덮음 * 100)}%</span></h3>`
        + mini + `<div class="line">${line}</div>`
        + (f['뺀 것'] ? `<div class="drop">뺀 값 ${f['뺀 것'].reduce((a, b) => a + b[1], 0)}개</div>` : '')
@@ -258,17 +272,27 @@ function drawCatalog() {
        (!TOPIC_ON.size || TOPIC_ON.has(topicOf(f)))
     && (!ONLYNUM || f.꼴 === '수')
     && (!q || f.이름.toLowerCase().includes(q)));
-  const by = new Map();
-  for (const f of keep) { const t = topicOf(f); if (!by.has(t)) by.set(t, []); by.get(t).push(f); }
-  document.getElementById('terms').innerHTML = TERMS.map(w =>
-    `<button class="pill${q === w.toLowerCase() ? ' on' : ''}" data-term="${esc(w)}">${esc(w)}</button>`).join(' ');
+  const by = new Map();                       // 큰 갈래 → (작은 갈래 → 항목들)
+  for (const f of keep) {
+    const [큰, 작] = 분류of(f);
+    if (!by.has(큰)) by.set(큰, new Map());
+    const m = by.get(큰); if (!m.has(작)) m.set(작, []); m.get(작).push(f);
+  }
   const bar = q && keep.length > 1
     ? `<div class="termbar">‘<b>${esc(q)}</b>’ 이 든 항목 <b>${keep.length}</b>가지`
       + `<button class="pill on" id="termall">한데 모아 보기</button></div>` : '';
   document.getElementById('catalog').innerHTML = bar + (keep.length
-    ? TOPIC.map(([t]) => by.has(t)
-        ? `<section class="topic"><h2>${esc(t)}<span>${by.get(t).length}가지</span></h2>`
-          + `<div class="grid">${by.get(t).map(card).join('')}</div></section>` : '').join('')
+    ? TOPIC.map(([큰]) => {
+        const m = by.get(큰);
+        if (!m) return '';
+        const 작들 = 작차례(큰).filter(작 => m.has(작)), n = [...m.values()].reduce((a, l) => a + l.length, 0);
+        const 하나 = 작들.length === 1 && 작들[0] === 큰;      // 소환처럼 작은 갈래가 저 하나뿐이면 머리줄을 겹치지 않는다
+        const 모아 = (작, l) => l.length > 1 ? `<button class="pill sm" data-sub="${esc(큰 + '|' + 작)}">모아 보기</button>` : '';
+        return `<section class="topic"><h2>${esc(큰)}<span>${esc(큰풀이.get(큰) || '')} · ${n}가지</span>${하나 ? 모아(큰, m.get(큰)) : ''}</h2>`
+          + 작들.map(작 => (하나 ? '' : `<h4 class="subh">${esc(작)}<span>${m.get(작).length}가지</span>${모아(작, m.get(작))}</h4>`)
+                         + `<div class="grid">${m.get(작).map(card).join('')}</div>`).join('')
+          + `</section>`;
+      }).join('')
     : `<p class="note">걸리는 항목이 없습니다.</p>`);
   document.getElementById('sub').innerHTML =
     `게임 원본에서 읽히는 항목 <b>${DB.칸.length}</b>가지 가운데 <b>${keep.length}</b>가지 · `
@@ -421,12 +445,19 @@ async function openTerm() {
   const q = (document.getElementById('q').value || '').trim().toLowerCase();
   const fs = DB.칸.filter(f => (!TOPIC_ON.size || TOPIC_ON.has(topicOf(f))) && (!ONLYNUM || f.꼴 === '수')
                             && f.이름.toLowerCase().includes(q));
+  return openGroup(`‘${q}’ 이 든 항목`, fs);
+}
+function openSub(key) {
+  const [큰, 작] = key.split('|');
+  return openGroup(`${큰} · ${작}`, DB.칸.filter(f => { const c = 분류of(f); return c[0] === 큰 && c[1] === 작; }));
+}
+async function openGroup(제목, fs) {
   if (!fs.length) return;
   OPEN = null;
   const 창 = body => {
     document.getElementById('pane')?.remove();
     document.body.insertAdjacentHTML('beforeend', `<div class="pane" id="pane"><div class="box">`
-      + `<div class="bhead"><h2>‘${esc(q)}’ 이 든 항목<span class="cov" style="color:var(--dim);font-size:12px;font-weight:400">${fs.length}가지</span>`
+      + `<div class="bhead"><h2>${esc(제목)}<span class="cov" style="color:var(--dim);font-size:12px;font-weight:400">${fs.length}가지</span>`
       + `<button class="x" id="close">닫기</button></h2></div><div class="bbody">${body}</div></div></div>`);
   };
   if (!ROWS) { 창('<p class="note">값 목록을 받는 중…</p>'); ROWS = await fetch('../data/herodex/stats-rows.json').then(r => r.json()); }
@@ -450,12 +481,13 @@ async function openTerm() {
       rows = [...cnt.entries()].sort((a, b) => b[1] - a[1]).slice(0, 줄수)
         .map(([v, n], i) => `<tr><td class="i">${i + 1}</td><td colspan="2">${esc(v)}</td><td class="v">${n}개</td></tr>`).join('');
     }
-    return `<section class="tsec"><h3>${esc(f.이름)}<span>${esc(topicOf(f))} · ${f.수}개${f.꼴 === '수' && f.요약 ? ` · ${fmt(f.요약.최소)} ~ ${fmt(f.요약.최대)}` : ''}</span>`
+    return `<section class="tsec"><h3>${이름글(f.이름)}<span>${esc(출처말[f.갈래] || f.갈래)} · ${esc(분류of(f).join(' · '))} · ${f.수}개${f.꼴 === '수' && f.요약 ? ` · ${fmt(f.요약.최소)} ~ ${fmt(f.요약.최대)}` : ''}</span>`
       + `<button class="pill all" data-open="${esc(f.열쇠)}">전부 보기</button></h3>`
       + (rows ? `<table class="rank">${rows}</table>` : `<p class="note">고른 역할군에는 없습니다.</p>`) + `</section>`;
   };
   const 차례 = TOPIC.map(([t]) => t);
-  fs.sort((a, b) => 차례.indexOf(topicOf(a)) - 차례.indexOf(topicOf(b)) || b.수 - a.수);
+  fs = fs.slice().sort((a, b) => 차례.indexOf(topicOf(a)) - 차례.indexOf(topicOf(b))
+                         || 작차례(topicOf(a)).indexOf(분류of(a)[1]) - 작차례(topicOf(a)).indexOf(분류of(b)[1]) || b.수 - a.수);
   창(`<p class="note" style="margin-top:0">항목마다 큰 값부터 ${줄수}줄 — 줄을 누르면 도감의 그 기술·특성으로, ‘전부 보기’는 그 항목의 순위표로 갑니다.</p>`
      + fs.map(섹션).join(''));
 }
@@ -532,6 +564,10 @@ function draw() {
 fetch('../data/herodex/stats.json').then(r => r.json()).then(d => {
   DB = d;
   HID = new Map(d.영웅.map(h => [h.영웅, h.id]));
+  document.getElementById('terms').innerHTML = CLASSES.map(([큰, 말, 작들]) =>
+    `<div class="tgrp"><b title="${esc(말)}">${esc(큰)}</b>`
+    + 작들.map(([작]) => `<button class="pill sm" data-sub="${esc(큰 + '|' + 작)}">${esc(작)}</button>`).join('') + `</div>`).join('');
+  document.getElementById('termrow').open = matchMedia('(min-width:900px)').matches;   // 넓은 화면은 펼쳐 둔다
   const ts = TOPIC.map(([t]) => t).filter(t => d.칸.some(f => topicOf(f) === t));
   document.getElementById('topics').innerHTML = ts.map(t =>
     `<button class="pill" data-t="${esc(t)}">${esc(t)} ${d.칸.filter(f => topicOf(f) === t).length}</button>`).join(' ');
@@ -573,12 +609,8 @@ document.addEventListener('click', e => {
   const tp = e.target.closest('[data-t]');
   if (tp) { const k = tp.dataset.t; TOPIC_ON.has(k) ? TOPIC_ON.delete(k) : TOPIC_ON.add(k); tp.classList.toggle('on'); drawCatalog(); return; }
   if (e.target.id === 'onlynum') { ONLYNUM = !ONLYNUM; e.target.classList.toggle('on', ONLYNUM); drawCatalog(); return; }
-  const tm = e.target.closest('[data-term]');
-  if (tm) {
-    const q = document.getElementById('q');
-    q.value = q.value.trim() === tm.dataset.term ? '' : tm.dataset.term;
-    drawCatalog(); return;
-  }
+  const sb = e.target.closest('[data-sub]');
+  if (sb) { openSub(sb.dataset.sub); return; }
   if (e.target.id === 'termall') { openTerm(); return; }
   const op = e.target.closest('[data-open]');
   if (op) { openField(op.dataset.open); return; }
