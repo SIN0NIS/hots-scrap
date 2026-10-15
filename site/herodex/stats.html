@@ -166,6 +166,42 @@
   .rankhow h4 { margin:9px 0 3px; font-size:12px; }
   .rankhow ul { margin:0; padding-left:18px; line-height:1.6; }
   .rankhow .cut { color:var(--dim); }
+  .pgrid { display:grid; gap:10px; grid-template-columns:repeat(auto-fill, minmax(min(100%, 430px), 1fr)); }
+  .pc { border:1px solid var(--line); border-radius:11px; background:var(--card); padding:9px 11px 10px; min-width:0; box-shadow:var(--shadow); }
+  .pch { all:unset; display:block; width:100%; box-sizing:border-box; cursor:pointer; color:var(--fg); }
+  .pch h3 { margin:0 0 2px; font-size:13.5px; display:flex; align-items:baseline; gap:6px; }
+  .pch h3 .cov { color:var(--dim); font-size:11px; margin-left:auto; font-weight:400; white-space:nowrap; }
+  .pch:hover .fn, .pch:focus-visible .fn { text-decoration:underline; }
+  .pic { display:grid; gap:3px; margin-top:7px; }
+  .pr { display:grid; grid-template-columns:82px minmax(0, 1fr) 30px; align-items:center; gap:7px; }
+  .pr .pv { font-size:11px; color:var(--dim); text-align:right; white-space:nowrap; overflow:hidden;
+            text-overflow:ellipsis; font-variant-numeric:tabular-nums; }
+  .pr .pn { font-size:11px; color:var(--dim); font-variant-numeric:tabular-nums; }
+  .pr .pt { position:relative; min-width:0; padding-bottom:5px; }
+  .pr .tks { display:flex; flex-wrap:wrap; gap:2px; max-height:22px; overflow:hidden; }
+  .pr .pb { position:absolute; left:0; bottom:0; height:3px; border-radius:2px; background:var(--bar); }
+  .pr.gap .pv { letter-spacing:1px; line-height:10px; }
+  .pic.full .pr { grid-template-columns:104px minmax(0, 1fr) 34px; }
+  .pic.full .tks { max-height:none; gap:3px; }
+  .tk { flex:none; position:relative; display:inline-flex; align-items:center; gap:2px; height:22px;
+        text-decoration:none; color:var(--fg); vertical-align:middle; }
+  .tk img, .tk .nf { display:block; width:22px; height:22px; box-sizing:border-box; border:2px solid var(--rc, var(--line2));
+                     background:var(--card2); }
+  .tk .nf { display:grid; place-items:center; font-style:normal; font-size:9px; color:var(--dim); }
+  .tk.th img, .tk.th .nf, .tk.tt img, .tk.tt .nf { border-radius:50%; }
+  .tk.ts img, .tk.ts .nf { border-radius:5px; }
+  .tk.tt { padding-right:5px; border-radius:11px; background:var(--card2); box-shadow:inset 0 0 0 1.5px var(--rc, var(--line2)); }
+  .tk.tt img, .tk.tt .nf { width:20px; height:20px; margin-left:1px; border:none; }
+  .tk.tt b { font-size:10.5px; font-weight:600; font-variant-numeric:tabular-nums; letter-spacing:-.2px; }
+  a.tk:hover { z-index:1; transform:scale(1.18); }
+  .pic.full .tk { height:28px; }
+  .pic.full .tk img, .pic.full .tk .nf { width:28px; height:28px; }
+  .pic.full .tk.tt img, .pic.full .tk.tt .nf { width:24px; height:24px; margin-left:2px; }
+  .pic.full .tk.tt b { font-size:11.5px; }
+  .plegend { font-size:11.5px; color:var(--dim); line-height:1.9; margin:0 0 12px; }
+  .plegend .tk { height:18px; } .plegend .tk .nf { width:18px; height:18px; }
+  .plegend .tk.tt .nf { width:16px; height:16px; } .plegend .tk.tt b { color:var(--fg); }
+  .rank td.h.k { width:1%; white-space:nowrap; }
   details.tmap { display:block; }
   details.tmap > summary { cursor:pointer; list-style:none; display:flex; align-items:baseline; gap:6px; }
   details.tmap > summary::-webkit-details-marker { display:none; }
@@ -358,11 +394,10 @@ async function openField(key) {
   const f = DB.칸.find(x => x.열쇠 === key) || (RANK ? RANK.줄.find(x => x.열쇠 === key) : null);
   if (!f) return;
   OPEN = f; SHOW = 60;
-  if (!ROWS) {
+  if (!f.값 && !ROWS) {                      // 순위 줄은 값과 대상을 제 파일(stats-rank.json)에 들고 온다
     paint('<p class="note">값 목록을 받는 중…</p>');
     ROWS = await fetch('../data/herodex/stats-rows.json').then(r => r.json());
   }
-  if (f.값) ROWS.칸[f.열쇠] = f.값;          // 순위 줄은 값을 제 몸에 들고 온다(대상 표는 값 목록 것을 같이 쓴다)
   paint();
 }
 
@@ -376,20 +411,112 @@ function 갈래칩(list) {
 /* ── 수치 순위 — 같은 단위 · 같은 뜻인 수만, 섞인 것은 나누고, 작은 것은 뺀 줄 세우기 ── */
 let RANK = null;
 const 단위붙임 = (v, u) => `${fmt(v)}${u || ''}`;
+
+/* ── 그림 조각 — 영웅은 얼굴, 기술은 아이콘, 특성은 '레벨·순서' 와 작은 얼굴 ──
+   대상 한 줄 = [영웅, 이름, 갈래, 짧은 표, 자리 id, 그림]. 그림은 기술이면 아이콘 파일, 특성이면 '16·3'.
+   기술 아이콘은 이미지 저장소(Pages)가 내준다 — 어디에도 없는 것은 `images/index.json` 으로 미리 알아 **안 부른다**. */
+const CDN = 'https://sin0nis.github.io/images/';
+const BLANK = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
+let IMGS = { local: new Set(), miss: new Set() };
+function 아이콘길(ic) {
+  const k = 'abilitytalents/' + ic;
+  return IMGS.miss.has(k) ? '' : IMGS.local.has(k) ? '../images/' + k : CDN + k;
+}
+const 얼굴길 = ko => { const h = faces().get(ko); return h && h._아이콘 ? '../shared/icons/' + h._아이콘 : ''; };
+const 작은얼굴 = ko => 얼굴길(ko)
+  ? `<img src="${esc(얼굴길(ko))}" alt="" loading="lazy" decoding="async">` : `<i class="nf">${esc(ko.slice(0, 1))}</i>`;
+function 조각(e, v, u) {
+  const [ko, nm, kind, , , pic] = e, href = 도감길(e);
+  const tip = (kind === '영웅' ? ko : `${nm} — ${ko}${kind === '특성' && pic ? ` ${pic.replace('·', '레벨 ')}번째 특성` : ''}`)
+            + ` · ${단위붙임(v, u)}`;
+  let cls, body;
+  if (kind === '특성') { cls = 'tt'; body = `${작은얼굴(ko)}<b>${esc(pic || '특성')}</b>`; }
+  else if (kind === '기술' && pic && 아이콘길(pic)) {      // 아이콘이 아직 저장소에 없으면 얼굴로 갈아 끼운다(data-f)
+    cls = 'ts'; body = `<img src="${esc(아이콘길(pic))}" data-f="${esc(얼굴길(ko))}" alt="" loading="lazy" decoding="async">`; }
+  else { cls = 'th'; body = 작은얼굴(ko); }
+  const tag = href ? 'a' : 'span';
+  return `<${tag} class="tk ${cls}"${href ? ` href="${esc(href)}"` : ''} title="${esc(tip)}" style="${rcv(roleOf(ko))}">${body}</${tag}>`;
+}
+
+/* **값을 줄로 나눠 조각을 늘어놓는다(그림 막대).** 값 가짓수가 적으면 값 하나가 한 줄,
+   많으면 고른 너비(1·2·2.5·5 × 10ⁿ)로 묶는다. 비는 구간이 이어지면 '⋯' 한 줄로 접는다 —
+   생명력 재생처럼 혼자 멀리 떨어진 값이 있어도 그림이 늘어지지 않게. */
+function 줄칸(m) {
+  if (m._칸) return m._칸;
+  const ds = [...new Set(m.값.map(r => r[1]))].sort((a, b) => a - b);
+  if (ds.length <= 12) return (m._칸 = { key: v => v, rows: ds.map(v => ({ k: v, lab: 단위붙임(v, m.단위) })) });
+  /* **멀리 떨어진 몇 개가 칸 너비를 정하면 안 된다.** 기절은 대부분 2초 안인데 20초짜리 하나 때문에
+     2초 너비 칸이 되어 83개 중 74개가 한 줄에 몰렸다. 꼬리가 몸통보다 길면 95% 지점까지만 고르게
+     나누고, 그 위는 'X 이상' 한 줄로 모은다. */
+  const vs = m.값.map(r => r[1]).sort((a, b) => a - b);
+  const lo = ds[0], hi = ds[ds.length - 1], q95 = vs[Math.floor((vs.length - 1) * 0.95)];
+  const top = hi - q95 > (q95 - lo) * 0.5 && q95 > lo ? q95 : hi;
+  const raw = (top - lo) / 10, p = 10 ** Math.floor(Math.log10(raw));
+  const step = [1, 2, 2.5, 5, 10].map(x => x * p).find(s => s >= raw - 1e-9);
+  // 마지막 칸은 끝을 닫는다 — 최댓값 120 이 '120~140' 이라는 빈 꼬리 칸을 따로 만들지 않게
+  const start = Math.floor(lo / step + 1e-9) * step, n = Math.max(1, Math.ceil((top - start) / step - 1e-9));
+  const end = start + n * step, over = hi > end + 1e-9;
+  const rows = Array.from({ length: n }, (_, i) => ({ k: i, lab: `${fmt(start + i * step)}~${fmt(start + (i + 1) * step)}${m.단위 || ''}` }));
+  if (over) rows.push({ k: n, lab: `${fmt(end)}${m.단위 || ''} 넘음` });
+  return (m._칸 = {
+    key: v => over && v > end + 1e-9 ? n : Math.min(n - 1, Math.floor((v - start) / step + 1e-9)),
+    rows,
+  });
+}
+const 역할거름 = rows => ROLE_ON.size ? rows.filter(([ei]) => ROLE_ON.has(roleOf(RANK.대상[ei][0]))) : rows;
+function 그림(m, full) {
+  const rows = 역할거름(m.값);
+  if (!rows.length) return '<p class="note">고른 역할군에는 이 값이 없습니다.</p>';
+  const b = 줄칸(m), by = new Map(b.rows.map(r => [r.k, []]));
+  for (const r of rows) by.get(b.key(r[1])).push(r);
+  const most = Math.max(1, ...[...by.values()].map(l => l.length));
+  const up = full && ASC;                                   // 펼친 창에서 '작은 값부터' 를 고르면 뒤집는다
+  const order = up ? b.rows : b.rows.slice().reverse();
+  const cap = full ? Infinity : 40;                          // 카드는 한 줄만 보인다 — 넘치는 조각은 만들지 않는다
+  let out = '', gap = false;
+  for (const r of order) {
+    const l = by.get(r.k);
+    if (!l.length) { gap = true; continue; }
+    if (gap && out) out += `<div class="pr gap"><span class="pv">⋯</span></div>`;
+    gap = false;
+    l.sort((x, y) => (up ? x[1] - y[1] : y[1] - x[1]) || RANK.대상[x[0]][0].localeCompare(RANK.대상[y[0]][0], 'ko'));
+    out += `<div class="pr"><span class="pv">${esc(r.lab)}</span><span class="pt"><span class="tks">`
+         + l.slice(0, cap).map(([ei, v]) => 조각(RANK.대상[ei], v, m.단위)).join('')
+         + `</span><i class="pb" style="width:${Math.max(2, Math.round(l.length / most * 100))}%"></i></span>`
+         + `<span class="pn">${l.length}</span></div>`;
+  }
+  return `<div class="pic${full ? ' full' : ''}">${out}</div>`;
+}
+const 그림풀이 = `<div class="plegend"><span class="tk th"><i class="nf">영</i></span> 영웅 기본 수치`
+  + ` · <span class="tk ts"><i class="nf">기</i></span> 기술 아이콘`
+  + ` · <span class="tk tt"><i class="nf">특</i><b>16·3</b></span> 특성(16레벨 셋째)`
+  + ` · 테두리 색은 역할군 · 위가 큰 값 · 줄 끝 수는 그 줄에 든 개수, 밑줄 길이도 같다`
+  + ` · 조각을 누르면 도감의 그 기술·특성으로</div>`;
 function rankCard(m) {
-  const s = m.요약, hi = m.막대 ? Math.max(...m.막대.수, 1) : 1;
-  const mini = m.막대 ? `<div class="mini">${m.막대.수.map(n => `<i style="height:${Math.max(1, Math.round(n / hi * 22))}px"></i>`).join('')}</div>` : '';
-  return `<button class="f" data-k="${esc(m.열쇠)}"><h3><span class="fn">${esc(m.이름)}</span>`
-    + `<span class="cov">${m.수}개</span></h3>${mini}`
-    + `<div class="line">${단위붙임(s.최소, m.단위)} ~ ${단위붙임(s.최대, m.단위)} · 중앙 <b>${단위붙임(s.중앙, m.단위)}</b></div>`
+  const s = m.요약, rows = 역할거름(m.값);
+  return `<section class="pc"><button class="pch" data-k="${esc(m.열쇠)}" title="눌러서 전부 보기">`
+    + `<h3><span class="fn">${esc(m.이름)}</span><span class="cov">${rows.length < m.수 ? `${rows.length} / ` : ''}${m.수}개 ▸</span></h3>`
+    + `<div class="line">${단위붙임(s.최소, m.단위)} ~ ${단위붙임(s.최대, m.단위)} · 중앙 <b>${단위붙임(s.중앙, m.단위)}</b></div></button>`
+    + `<div class="picbox" data-p="${esc(m.열쇠)}" style="min-height:${Math.min(12, 줄칸(m).rows.length) * 26}px"></div>`
     + (m['뺀 값'] ? `<div class="drop">${m['뺀 값'].map(([w, n]) => `${esc(w)} ${n}개 뺌`).join(' · ')}</div>` : '')
-    + `</button>`;
+    + `</section>`;
+}
+/* 카드 78장의 조각을 한꺼번에 만들면 수천 개다 — 화면 가까이 온 카드만 그린다 */
+let PIO = null;
+function 그림채우기(box) {
+  const m = RANK.줄.find(x => x.열쇠 === box.dataset.p);
+  if (m) { box.innerHTML = 그림(m, false); box.style.minHeight = ''; }
 }
 async function drawRank() {
   const box = document.getElementById('ranktab');
   if (!RANK) {
     box.innerHTML = '<p class="note">수치 순위를 받는 중…</p>';
-    RANK = await fetch('../data/herodex/stats-rank.json').then(r => r.json());
+    const [r, im] = await Promise.all([
+      fetch('../data/herodex/stats-rank.json').then(r => r.json()),
+      fetch('../images/index.json', { cache: 'no-cache' }).then(r => r.ok ? r.json() : null).catch(() => null),
+    ]);
+    RANK = r;
+    if (im) IMGS = { local: new Set(im.files || []), miss: new Set(im.missing || []) };
   }
   갈래칩(RANK.줄);
   const q = (document.getElementById('q').value || '').trim().toLowerCase();
@@ -409,14 +536,19 @@ async function drawRank() {
         const [g, n] = k.split('|');
         return `${esc((n || k).replace('.', ' · '))}<span class="cut">(${esc(출처말[g] || g)})</span>`; }).join(', ')}</li>`).join('')}`
     + `<li><b>너무 작음</b> — 항목 고르기의 숫자 칸 가운데 ${기준['최소 개수']}개 미만인 것들</li></ul></details>`;
-  box.innerHTML = how + (ms.length ? TOPIC.map(([큰]) => {
+  box.innerHTML = how + 그림풀이 + (ms.length ? TOPIC.map(([큰]) => {
       const g = by.get(큰); if (!g) return '';
       const 작들 = 작차례(큰).filter(작 => g.has(작)), n = [...g.values()].reduce((a, l) => a + l.length, 0);
       const 하나 = 작들.length === 1 && 작들[0] === 큰;
       return `<section class="topic"><h2>${esc(큰)}<span>${esc(큰풀이.get(큰) || '')} · ${n}가지</span></h2>`
         + 작들.map(작 => (하나 ? '' : `<h4 class="subh">${esc(작)}<span>${g.get(작).length}가지</span></h4>`)
-                       + `<div class="grid">${g.get(작).map(rankCard).join('')}</div>`).join('') + `</section>`;
+                       + `<div class="pgrid">${g.get(작).map(rankCard).join('')}</div>`).join('') + `</section>`;
     }).join('') : '<p class="note">걸리는 수치가 없습니다.</p>');
+  if (PIO) PIO.disconnect();
+  PIO = 'IntersectionObserver' in window
+    ? new IntersectionObserver(es => es.forEach(x => { if (x.isIntersecting) { PIO.unobserve(x.target); 그림채우기(x.target); } }),
+                               { rootMargin: '900px 0px' }) : null;
+  box.querySelectorAll('.picbox').forEach(b => PIO ? PIO.observe(b) : 그림채우기(b));
   document.getElementById('sub').innerHTML = `줄 세울 수 있는 수치 <b>${RANK.줄.length}</b>가지 가운데 <b>${ms.length}</b>가지 · `
     + `값 ${RANK.줄.reduce((a, m) => a + m.수, 0).toLocaleString('ko-KR')}개` + (RANK.자료 ? ` · 자료 ${esc(RANK.자료)}` : '');
 }
@@ -439,9 +571,10 @@ function paint(busy) {
   else {
     /* **역할군을 고르면 순위표도 따라 줄어든다.** 치유사만 켜고 '치유량' 을 열면
        치유사 16명만 줄 세워진다 — 전체 줄 세우기보다 견줄 거리가 분명하다. */
-    let raw = (ROWS.칸[f.열쇠] || []).slice();
+    const T = f.값 ? RANK.대상 : ROWS.대상;      // 순위 줄은 제 대상 표를 쓴다
+    let raw = (f.값 || ROWS.칸[f.열쇠] || []).slice();
     if (ROLE_ON.size)
-      raw = raw.filter(([ei]) => ROLE_ON.has(roleOf((ROWS.대상[ei] || [''])[0])));
+      raw = raw.filter(([ei]) => ROLE_ON.has(roleOf((T[ei] || [''])[0])));
     const numeric = f.꼴 === '수';
     /* **말 칸은 값별로 몇 개인지가 알맹이다.** 글자순으로 늘어놓으면 "치유, 이동: 돌진"
        이 세 줄 이어질 뿐 아무것도 안 보인다. 값마다 세어 그 수로 줄을 세운다. */
@@ -478,7 +611,8 @@ function paint(busy) {
       return;
     }
     raw.sort((a, b) => ASC ? a[1] - b[1] : b[1] - a[1]);
-    if (raw.length > 1) {
+    if (f.값) html += 그림풀이 + 그림(f, true);
+    else if (raw.length > 1) {
       const vals = raw.map(r => r[1]), hi = Math.max(...vals, 1), n = Math.min(60, vals.length);
       html += `<div class="chart">${vals.slice(0, n).map(v =>
         `<i style="height:${Math.max(2, Math.round(Math.abs(v) / hi * 118))}px" title="${fmt(v)}"></i>`).join('')}</div>`
@@ -486,13 +620,13 @@ function paint(busy) {
     }
     const hi = numeric ? Math.max(...raw.map(r => Math.abs(r[1])), 1) : 1;
     html += `<table class="rank">` + raw.slice(0, SHOW).map(([ei, v], i) => {
-      const e = ROWS.대상[ei] || ['', '', ''];
+      const e = T[ei] || ['', '', ''];
       // 영웅 수치는 이름 칸이 늘 '기본 수치' 라 군더더기다 — 영웅 이름만 남긴다
       const who = e[1] === '기본 수치' ? '' : e[1];
       const tip = who ? `${e[0]} · ${who}` : e[0];
       const href = 도감길(e);
       return `<tr title="${esc(tip)}${href ? ' — 눌러서 도감에서 보기' : ''}"${href ? ` class="go" data-href="${esc(href)}"` : ''}><td class="i">${i + 1}</td>`
-        + `<td class="h" style="${rcv(roleOf(e[0]))}">${FACE(e[0])}</td>`
+        + (f.값 ? `<td class="h k">${조각(e, v, f.단위)}</td>` : `<td class="h" style="${rcv(roleOf(e[0]))}">${FACE(e[0])}</td>`)
         + `<td class="w">${href ? `<a href="${esc(href)}">${esc(who || e[0])}<span class="go-arrow">↗</span></a>${who ? `<span class="hn">${esc(e[0])}</span>` : ''}` : esc(who)}</td>`
         + (numeric ? `<td class="b"><span><i style="width:${Math.round(Math.abs(v) / hi * 100)}%"></i></span></td>` : `<td></td>`)
         + `<td class="v">${fmt(v)}</td></tr>`;
@@ -667,7 +801,7 @@ document.addEventListener('click', e => {
     else ROLE_ON.has(k) ? ROLE_ON.delete(k) : ROLE_ON.add(k);
     document.querySelectorAll('[data-r]').forEach(x => x.classList.toggle('on',
       x.dataset.r === '*' ? !ROLE_ON.size : ROLE_ON.has(x.dataset.r)));
-    if (TAB === '칸') { drawCatalog(); if (OPEN) paint(); } else if (TAB === '순위') { if (OPEN) paint(); } else drawHeroes();
+    if (TAB === '칸') { drawCatalog(); if (OPEN) paint(); } else if (TAB === '순위') { drawRank(); if (OPEN) paint(); } else drawHeroes();
     return;
   }
   if (e.target.id === 'lone') {
@@ -686,7 +820,7 @@ document.addEventListener('click', e => {
   if (op) { openField(op.dataset.open); return; }
   const go = e.target.closest('tr.go[data-href]');
   if (go && !e.target.closest('a')) { location.href = go.dataset.href; return; }
-  const f = e.target.closest('.f[data-k]');
+  const f = e.target.closest('.f[data-k], .pch[data-k]');
   if (f) { openField(f.dataset.k); return; }
   const s = e.target.closest('[data-sort]');
   if (s) { ASC = s.dataset.sort === 'asc'; SHOW = 60; paint(); return; }
@@ -695,6 +829,11 @@ document.addEventListener('click', e => {
   const th = e.target.closest('.ht th[data-k]');
   if (th) { const k = th.dataset.k; SORT = { k, asc: SORT.k === k ? !SORT.asc : false }; drawHeroes(); }
 });
+document.addEventListener('error', e => {
+  const t = e.target;
+  if (!t || t.tagName !== 'IMG' || t.src === BLANK || !t.closest('.tk')) return;
+  if (t.dataset.f) { const f = t.dataset.f; delete t.dataset.f; t.src = f; } else t.src = BLANK;
+}, true);
 document.getElementById('q').addEventListener('input', () => { if (TAB === '칸') drawCatalog(); else if (TAB === '순위') drawRank(); });
 document.addEventListener('keydown', e => { if (e.key === 'Escape') { document.getElementById('pane')?.remove(); OPEN = null; } });
 </script>

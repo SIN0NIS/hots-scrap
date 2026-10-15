@@ -97,6 +97,8 @@ def num(v):
 # 다 합치면 38,335줄 1MB 라, 통계 화면을 열자마자 받게 하면 공짜 호스팅에 과하다.
 # 대상(영웅·기술 이름)은 2,700가지뿐이라 한 번만 적고 **색인으로 가리킨다**.
 ENTS, ENT_IX = [], {}
+RANK_ICON = {}                  # (영웅, 갈래, 자리 id) → 수치 순위 그림 — 기술은 아이콘 파일, 특성은 '레벨·순서'(16·3)
+                                # 갈래까지 열쇠에 넣는다: 궁극기와 그 10레벨 특성은 자리 id 가 같다(특성이 아이콘을 덮었었다)
 RANK_ROWS = defaultdict(list)          # 수치 순위용 — (무엇, 어떻게 나눔) → [대상 색인, 값]
 
 
@@ -317,6 +319,7 @@ def main():
         META = {h["id"]: h for h in json.loads(_ix.read_text(encoding="utf-8"))["heroes"]}
     heroes, fields = [], {}
     RANK_ROWS.clear()
+    RANK_ICON.clear()
     tot = Counter()
 
     def fld(group, name):
@@ -368,6 +371,8 @@ def main():
             nm = a.get("이름") or ""
             _tag = short_tag("기술", a.get("칸"), None)
             _zid = a.get("id") or ""
+            if a.get("아이콘"):
+                RANK_ICON[(ko, "기술", _zid)] = a["아이콘"]
             for k, v in a.items():
                 if k in SKIP or v in (None, "", [], {}):
                     continue
@@ -405,11 +410,15 @@ def main():
                         RANK_ROWS[(k2, "+" if x > 0 else "-")].append([ent_id(ko, nm, "기술", _tag, _zid), abs(x)])
 
         # ── 특성 ────────────────────────────────────────────────────
+        _lvn = Counter()                # 레벨마다 몇 번째인가 — 자료의 차례가 게임 화면의 차례다
         for t in d.get("특성") or []:
             tot["특성"] += 1
             nm = t.get("이름") or ""
             _tag = short_tag("특성", t.get("칸"), t.get("단계"))
             _zid = t.get("id") or nm
+            if t.get("레벨"):
+                _lvn[t["레벨"]] += 1
+                RANK_ICON[(ko, "특성", _zid)] = f"{t['레벨']}·{_lvn[t['레벨']]}"
             for k, v in t.items():
                 if k in SKIP or v in (None, "", [], {}) or isinstance(v, (list, dict)):
                     continue
@@ -547,10 +556,22 @@ def build_rank(fields, build):
         splits.append([f"{k2} 변화", [x for x, ok in ((plus, a), (minus, b)) if ok],
                        [f"{x} {len(RANK_ROWS[(k2, s)])}개 — 너무 작아 뺌" for x, ok, s in ((plus, a, "+"), (minus, b, "-")) if not ok]])
     why = [[w, ks] for w, ks in RANK_WHY]
+    # **순위 줄이 쓰는 대상만 따로 싣는다.** 값 목록(923KB)을 받지 않아도 순위 탭이 선다.
+    # 한 줄 = [영웅, 이름, 갈래, 짧은 표, 자리 id, 그림] — 앞 다섯 칸은 값 목록의 대상과 같은 꼴.
+    # 그림은 기술이면 아이콘 파일, 특성이면 '레벨·순서'(16·3 = 16레벨 셋째), 영웅 수치면 빈칸(얼굴을 쓴다)
+    used, remap = [], {}
+    for m in out:
+        for r in m["값"]:
+            e = r[0]
+            if e not in remap:
+                remap[e] = len(used)
+                x = (ENTS[e] + ["", ""])[:5]
+                used.append(x + [RANK_ICON.get((x[0], x[2], x[4]), "")])
+            r[0] = remap[e]
     RANK.write_text(json.dumps({"자료": build, "기준": {"최소 개수": RANK_MIN, "최소 값 가짓수": RANK_KINDS},
-                                "줄": out, "나눈 것": splits, "뺀 것": why, "작아서 뺀 것": small},
+                                "대상": used, "줄": out, "나눈 것": splits, "뺀 것": why, "작아서 뺀 것": small},
                                ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
-    print(f"   수치 순위 {len(out)}가지 · {sum(m['수'] for m in out)}줄 · {RANK.stat().st_size // 1024}KB → {RANK.name}"
+    print(f"   수치 순위 {len(out)}가지 · {sum(m['수'] for m in out)}줄 · 대상 {len(used)} · {RANK.stat().st_size // 1024}KB → {RANK.name}"
           f" · 작아서 뺀 것 {len(small)}")
 
 
