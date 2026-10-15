@@ -154,6 +154,10 @@ SHOTS = [
          do=[lambda pg: (pg.fill("#q", "생명력"), pg.wait_for_timeout(300),
                          pg.click("#termall"), pg.wait_for_timeout(1500))],
          marks=[".tsec >> nth=0", "#pane button.all >> nth=0", "#pane .tsec tr.go >> nth=0"]),
+    dict(id="stats-rank", url="herodex/stats.html",
+         do=[lambda pg: (pg.click("button.tab >> text=수치 순위"), pg.wait_for_timeout(1200))],
+         marks=["button.tab >> text=수치 순위", ".rankhow > summary", "#ranktab .subh >> nth=0", "#ranktab button.f >> nth=0",
+                "#ranktab .drop >> nth=0"]),
     dict(id="stats-table", url="herodex/stats.html",
          do=[lambda pg: (pg.click("button.tab >> text=영웅 수치표"), pg.wait_for_timeout(900))], marks=["table th >> nth=1"]),
 

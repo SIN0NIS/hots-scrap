@@ -160,6 +160,12 @@
   .subh span { color:var(--dim); font-size:11px; font-weight:400; }
   .topic > h2 .pill, .subh .pill { margin-left:auto; }
   .pill.sm { font-size:11.5px; padding:2px 9px; }
+  .rankhow { border:1px solid var(--line); border-radius:11px; background:var(--card); padding:9px 13px; margin:0 0 14px; font-size:12.5px; }
+  .rankhow > summary { cursor:pointer; font-weight:600; padding:6px 0; }
+  .rankhow p { margin:7px 0; color:var(--dim); line-height:1.6; }
+  .rankhow h4 { margin:9px 0 3px; font-size:12px; }
+  .rankhow ul { margin:0; padding-left:18px; line-height:1.6; }
+  .rankhow .cut { color:var(--dim); }
   details.tmap { display:block; }
   details.tmap > summary { cursor:pointer; list-style:none; display:flex; align-items:baseline; gap:6px; }
   details.tmap > summary::-webkit-details-marker { display:none; }
@@ -180,6 +186,7 @@
   <div class="tools">
     <div class="row">
       <button class="tab on" data-tab="칸">항목 고르기</button>
+      <button class="tab" data-tab="순위">수치 순위</button>
       <button class="tab" data-tab="영웅">영웅 수치표</button>
     </div>
     <div class="row" id="filters"><span class="lab">주제</span><span id="topics"></span></div>
@@ -191,12 +198,13 @@
     <details class="row tmap" id="termrow"><summary><span class="lab">용어 지도</span> <span class="tmsum">성질별 12갈래 — 작은 갈래를 누르면 그 항목을 한데 모아 봅니다</span></summary><div id="terms"></div></details>
   </div>
 
-  <p class="note" style="margin:2px 0 14px; font-size:12.5px;">
+  <p class="note" id="catnote" style="margin:2px 0 14px; font-size:12.5px;">
     항목 하나를 누르면 <b>값이 어떻게 퍼져 있는지</b>와 <b>어느 기술·특성이 그 값을 가지는지</b>가 펼쳐집니다.
     값 한 줄을 누르면 도감의 그 기술·특성으로 갑니다. 항목은 <b>성질별 12갈래</b>로 묶었고, <b>용어 지도</b>나 갈래 머리의 <b>모아 보기</b>로 한 갈래를 한 창에 봅니다.
     카드 오른쪽 위의 <b>“91개 · 100%”</b> 는 <i>그 칸을 가진 것의 수</i>와 <i>전체 가운데 몇 %가 그 칸을 가지는지</i>입니다.
   </p>
   <div id="catalog"></div>
+  <div id="ranktab" hidden></div>
   <div id="herotab" hidden>
     <div class="tscroll"><table class="ht" id="htab"></table></div>
     <p class="note">머리글을 누르면 그 칸으로 줄을 세웁니다. 값은 게임 원본에서 그대로 읽은 것이고,
@@ -231,7 +239,7 @@ const 갈래규칙 = new Map(), 이름규칙 = new Map();
 for (const [큰, , 작들] of CLASSES)
   for (const [작, 것들] of 작들) for (const x of 것들) (x.includes('|') ? 갈래규칙 : 이름규칙).set(x, [큰, 작]);
 const 분류of = f => 갈래규칙.get(f.열쇠) || 이름규칙.get(f.이름) || ['그 밖', '그 밖'];
-const topicOf = f => 분류of(f)[0];
+const topicOf = f => f.큰 || 분류of(f)[0];
 const TOPIC = [...CLASSES.map(([큰]) => [큰]), ['그 밖']];          // 차례만 쓴다
 const 큰풀이 = new Map(CLASSES.map(([큰, 말]) => [큰, 말]));
 const 작차례 = 큰 => ((CLASSES.find(c => c[0] === 큰) || [0, 0, []])[2].map(([작]) => 작)).concat(['그 밖']);
@@ -347,22 +355,80 @@ function wireExpand(raw) {
 /* ── 고른 항목 — 줄 세우기와 그래프 ──────────────────────────── */
 let ASC = false;
 async function openField(key) {
-  const f = DB.칸.find(x => x.열쇠 === key);
+  const f = DB.칸.find(x => x.열쇠 === key) || (RANK ? RANK.줄.find(x => x.열쇠 === key) : null);
   if (!f) return;
   OPEN = f; SHOW = 60;
   if (!ROWS) {
     paint('<p class="note">값 목록을 받는 중…</p>');
     ROWS = await fetch('../data/herodex/stats-rows.json').then(r => r.json());
   }
+  if (f.값) ROWS.칸[f.열쇠] = f.값;          // 순위 줄은 값을 제 몸에 들고 온다(대상 표는 값 목록 것을 같이 쓴다)
   paint();
+}
+
+/* 주제 단추의 수는 지금 탭의 것 — 순위에 하나도 없는 갈래는 숨긴다 */
+function 갈래칩(list) {
+  for (const b of document.querySelectorAll('#topics [data-t]')) {
+    const n = list.filter(f => topicOf(f) === b.dataset.t).length;
+    b.querySelector('.tn').textContent = n; b.hidden = !n;
+  }
+}
+/* ── 수치 순위 — 같은 단위 · 같은 뜻인 수만, 섞인 것은 나누고, 작은 것은 뺀 줄 세우기 ── */
+let RANK = null;
+const 단위붙임 = (v, u) => `${fmt(v)}${u || ''}`;
+function rankCard(m) {
+  const s = m.요약, hi = m.막대 ? Math.max(...m.막대.수, 1) : 1;
+  const mini = m.막대 ? `<div class="mini">${m.막대.수.map(n => `<i style="height:${Math.max(1, Math.round(n / hi * 22))}px"></i>`).join('')}</div>` : '';
+  return `<button class="f" data-k="${esc(m.열쇠)}"><h3><span class="fn">${esc(m.이름)}</span>`
+    + `<span class="cov">${m.수}개</span></h3>${mini}`
+    + `<div class="line">${단위붙임(s.최소, m.단위)} ~ ${단위붙임(s.최대, m.단위)} · 중앙 <b>${단위붙임(s.중앙, m.단위)}</b></div>`
+    + (m['뺀 값'] ? `<div class="drop">${m['뺀 값'].map(([w, n]) => `${esc(w)} ${n}개 뺌`).join(' · ')}</div>` : '')
+    + `</button>`;
+}
+async function drawRank() {
+  const box = document.getElementById('ranktab');
+  if (!RANK) {
+    box.innerHTML = '<p class="note">수치 순위를 받는 중…</p>';
+    RANK = await fetch('../data/herodex/stats-rank.json').then(r => r.json());
+  }
+  갈래칩(RANK.줄);
+  const q = (document.getElementById('q').value || '').trim().toLowerCase();
+  const on = [...TOPIC_ON].filter(t => RANK.줄.some(m => m.큰 === t));   // 순위에 없는 갈래(특성과 퀘스트 …)는 거르지 않는다
+  const ms = RANK.줄.filter(m => (!on.length || on.includes(m.큰)) && (!q || m.이름.toLowerCase().includes(q)));
+  const by = new Map();
+  for (const m of ms) {
+    if (!by.has(m.큰)) by.set(m.큰, new Map());
+    const g = by.get(m.큰); if (!g.has(m.작)) g.set(m.작, []); g.get(m.작).push(m);
+  }
+  const 기준 = RANK.기준 || {};
+  const how = `<details class="rankhow"><summary>어떻게 골랐나 — 남긴 것 ${RANK.줄.length}가지</summary>`
+    + `<p>같은 단위 · 같은 뜻인 수만 남겼습니다. 한 칸에 다른 것이 섞여 있으면 나눴고, 나눈 조각이 <b>${기준['최소 개수']}개 미만</b>이거나 값이 <b>${기준['최소 값 가짓수']}가지 미만</b>이면 뺐습니다. 뺀 칸도 '항목 고르기'에는 그대로 있습니다.</p>`
+    + `<h4>나눈 것</h4><ul>${RANK['나눈 것'].map(([원, 남, 뺌]) => `<li><b>${esc(원)}</b> → ${남.map(esc).join(' · ') || '없음'}`
+        + (뺌.length ? `<span class="cut"> · 뺀 조각: ${뺌.map(esc).join(' · ')}</span>` : '') + `</li>`).join('')}</ul>`
+    + `<h4>뺀 칸</h4><ul>${RANK['뺀 것'].map(([w, ks]) => `<li><b>${esc(w)}</b> — ${ks.map(k => {
+        const [g, n] = k.split('|');
+        return `${esc((n || k).replace('.', ' · '))}<span class="cut">(${esc(출처말[g] || g)})</span>`; }).join(', ')}</li>`).join('')}`
+    + `<li><b>너무 작음</b> — 항목 고르기의 숫자 칸 가운데 ${기준['최소 개수']}개 미만인 것들</li></ul></details>`;
+  box.innerHTML = how + (ms.length ? TOPIC.map(([큰]) => {
+      const g = by.get(큰); if (!g) return '';
+      const 작들 = 작차례(큰).filter(작 => g.has(작)), n = [...g.values()].reduce((a, l) => a + l.length, 0);
+      const 하나 = 작들.length === 1 && 작들[0] === 큰;
+      return `<section class="topic"><h2>${esc(큰)}<span>${esc(큰풀이.get(큰) || '')} · ${n}가지</span></h2>`
+        + 작들.map(작 => (하나 ? '' : `<h4 class="subh">${esc(작)}<span>${g.get(작).length}가지</span></h4>`)
+                       + `<div class="grid">${g.get(작).map(rankCard).join('')}</div>`).join('') + `</section>`;
+    }).join('') : '<p class="note">걸리는 수치가 없습니다.</p>');
+  document.getElementById('sub').innerHTML = `줄 세울 수 있는 수치 <b>${RANK.줄.length}</b>가지 가운데 <b>${ms.length}</b>가지 · `
+    + `값 ${RANK.줄.reduce((a, m) => a + m.수, 0).toLocaleString('ko-KR')}개` + (RANK.자료 ? ` · 자료 ${esc(RANK.자료)}` : '');
 }
 
 function paint(busy) {
   const f = OPEN;
   let html = `<div class="pane" id="pane"><div class="box">`
     + `<div class="bhead"><h2>${esc(f.이름)}`
-    + `<span class="cov" style="color:var(--dim);font-size:12px;font-weight:400">${esc(topicOf(f))} · ${f.수}개</span>`
-    + `<button class="x" id="close">닫기</button></h2>`;
+    + `<span class="cov" style="color:var(--dim);font-size:12px;font-weight:400">${esc(topicOf(f))}${f.작 && f.작 !== topicOf(f) ? ' · ' + esc(f.작) : ''} · ${f.수}개${f.단위 ? ' · 단위 ' + esc(f.단위) : ''}</span>`
+    + `<button class="x" id="close">닫기</button></h2>`
+    + (f.풀이 ? `<p class="line" style="margin:2px 0 6px">${esc(f.풀이)}</p>` : '')
+    + (f['뺀 값'] ? `<p class="drop" style="margin:0 0 6px">${f['뺀 값'].map(([w, n]) => `${esc(w)} ${n}개 뺌`).join(' · ')}</p>` : '');
   if (!busy) {
     const w = f.꼴 === '수' ? ['큰 값부터', '작은 값부터'] : ['많은 것부터', '적은 것부터'];
     html += `<div class="row"><button class="pill ${ASC ? '' : 'on'}" data-sort="desc">${w[0]}</button>`
@@ -551,14 +617,18 @@ function drawHeroes() {
 }
 
 function draw() {
-  const cat = TAB === '칸';
+  const cat = TAB === '칸', rank = TAB === '순위';
   document.getElementById('catalog').hidden = !cat;
-  document.getElementById('herotab').hidden = cat;
-  document.getElementById('filters').style.display = cat ? '' : 'none';
-  document.getElementById('searchrow').style.display = cat ? '' : 'none';
+  document.getElementById('catnote').hidden = !cat;
+  document.getElementById('ranktab').hidden = !rank;
+  document.getElementById('herotab').hidden = cat || rank;
+  document.getElementById('filters').style.display = cat || rank ? '' : 'none';
+  document.getElementById('searchrow').style.display = cat || rank ? '' : 'none';
+  document.getElementById('onlynum').style.display = cat ? '' : 'none';
   document.getElementById('termrow').style.display = cat ? '' : 'none';
-  document.getElementById('rolerow').style.display = '';   // 두 탭에서 다 쓴다
-  cat ? drawCatalog() : drawHeroes();
+  document.getElementById('rolerow').style.display = '';   // 세 탭에서 다 쓴다
+  if (cat) 갈래칩(DB.칸);
+  cat ? drawCatalog() : rank ? drawRank() : drawHeroes();
 }
 
 fetch('../data/herodex/stats.json').then(r => r.json()).then(d => {
@@ -570,7 +640,7 @@ fetch('../data/herodex/stats.json').then(r => r.json()).then(d => {
   document.getElementById('termrow').open = matchMedia('(min-width:900px)').matches;   // 넓은 화면은 펼쳐 둔다
   const ts = TOPIC.map(([t]) => t).filter(t => d.칸.some(f => topicOf(f) === t));
   document.getElementById('topics').innerHTML = ts.map(t =>
-    `<button class="pill" data-t="${esc(t)}">${esc(t)} ${d.칸.filter(f => topicOf(f) === t).length}</button>`).join(' ');
+    `<button class="pill" data-t="${esc(t)}">${esc(t)} <span class="tn">${d.칸.filter(f => topicOf(f) === t).length}</span></button>`).join(' ');
   /* **모든 영웅 ↔ 역할군별.** 역할군 하나만 켜면 그 역할군만, 아무것도 안 켜면 전부.
      '역할군으로 묶기' 는 묶음 머리줄을 끼워 역할군 안에서 줄 세우기를 되풀이한다. */
   const rs = [];
@@ -597,7 +667,7 @@ document.addEventListener('click', e => {
     else ROLE_ON.has(k) ? ROLE_ON.delete(k) : ROLE_ON.add(k);
     document.querySelectorAll('[data-r]').forEach(x => x.classList.toggle('on',
       x.dataset.r === '*' ? !ROLE_ON.size : ROLE_ON.has(x.dataset.r)));
-    if (TAB === '칸') { drawCatalog(); if (OPEN) paint(); } else drawHeroes();
+    if (TAB === '칸') { drawCatalog(); if (OPEN) paint(); } else if (TAB === '순위') { if (OPEN) paint(); } else drawHeroes();
     return;
   }
   if (e.target.id === 'lone') {
@@ -607,7 +677,7 @@ document.addEventListener('click', e => {
     return;
   }
   const tp = e.target.closest('[data-t]');
-  if (tp) { const k = tp.dataset.t; TOPIC_ON.has(k) ? TOPIC_ON.delete(k) : TOPIC_ON.add(k); tp.classList.toggle('on'); drawCatalog(); return; }
+  if (tp) { const k = tp.dataset.t; TOPIC_ON.has(k) ? TOPIC_ON.delete(k) : TOPIC_ON.add(k); tp.classList.toggle('on'); TAB === '순위' ? drawRank() : drawCatalog(); return; }
   if (e.target.id === 'onlynum') { ONLYNUM = !ONLYNUM; e.target.classList.toggle('on', ONLYNUM); drawCatalog(); return; }
   const sb = e.target.closest('[data-sub]');
   if (sb) { openSub(sb.dataset.sub); return; }
@@ -625,7 +695,7 @@ document.addEventListener('click', e => {
   const th = e.target.closest('.ht th[data-k]');
   if (th) { const k = th.dataset.k; SORT = { k, asc: SORT.k === k ? !SORT.asc : false }; drawHeroes(); }
 });
-document.getElementById('q').addEventListener('input', () => { if (TAB === '칸') drawCatalog(); });
+document.getElementById('q').addEventListener('input', () => { if (TAB === '칸') drawCatalog(); else if (TAB === '순위') drawRank(); });
 document.addEventListener('keydown', e => { if (e.key === 'Escape') { document.getElementById('pane')?.remove(); OPEN = null; } });
 </script>
 </body>
