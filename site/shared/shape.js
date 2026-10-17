@@ -3,7 +3,7 @@
 
      hotsShape.svg(위키식, { hero: 영웅자료, yard: 눈금 })   범위 그림 <div class="fig">
      hotsShape.graph(위키식)                                시간·거리에 따라 변하는 값 그래프
-     hotsShape.side('적'|'아군'|'둘 다')                     편에 따른 색
+     hotsShape.side('적'|'아군'|'둘 다'|'자신')                     편에 따른 색
 
    **도감(herodex)과 범위 구경(shapes) 탭이 같은 이 파일을 쓴다.** 한쪽만 고쳐져 둘이
    조용히 어긋나는 일을 막으려고 꺼내 놓았다. 색은 쓰는 쪽이 --foe/--ally/--both/--hit/
@@ -21,7 +21,8 @@
   const esc = s => String(s == null ? "" : s).replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
 
   function SIDEC(side) {
-    return side === '아군' ? 'var(--ally)' : side === '둘 다' ? 'var(--both)' : 'var(--foe)';
+    return side === '아군' ? 'var(--ally)' : side === '둘 다' ? 'var(--both)'
+         : side === '자신' ? 'var(--self, #17806d)' : 'var(--foe)';
   }
   /* **서서히 차는 값**은 숫자 두 개로는 "얼마나 빨리 차나" 가 안 보인다.
      거리에 따라 줄어드는 피해(디바 자폭 1100→400)나 단계마다 자라는 반지름
@@ -792,6 +793,7 @@
                  gs.some(g => g.편 === '적') ? `<b class="c-foe">■</b> 적에게` : '',
                  gs.some(g => g.편 === '아군') ? `<b class="c-ally">■</b> 아군에게` : '',
                  gs.some(g => g.편 === '둘 다') ? `<b class="c-both">■</b> 적·아군 모두` : '',
+                 gs.some(g => g.편 === '자신') ? `<b class="c-self">■</b> 나에게만(제 몸에 거는 구역)` : '',
                  names ? `범위 ${esc(names)}` : '',
                  gs.some(g => g.직격 && !g.유지) ? `진한 쪽은 한 명만 맞는 직격` : '',
                  gs.some(g => g.유지)

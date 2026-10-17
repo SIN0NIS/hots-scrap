@@ -14,19 +14,19 @@
   :root {
     --bg:#f3f6fb; --card:#ffffff; --card2:#eef2f8; --line:#cdd9ea; --line2:#b6c6de;
     --fg:#122036; --dim:#5d6d84; --blue:#1758a8; --gold:#a97e1f; --gold-line:#d7b45c;
-    --hit:#8a6414; --wiki:#7a3fb0; --warn:#b1562a; --foe:#c0392b; --ally:#1758a8; --both:#7a3fb0; --shadow:0 1px 3px rgba(18,32,54,.08);
+    --hit:#8a6414; --wiki:#7a3fb0; --warn:#b1562a; --foe:#c0392b; --ally:#1758a8; --both:#7a3fb0; --self:#17806d; --shadow:0 1px 3px rgba(18,32,54,.08);
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
       --bg:#0b1526; --card:#101f38; --card2:#152747; --line:#233a5c; --line2:#2f4a72;
       --fg:#eaf1fa; --dim:#8fa2bd; --blue:#5aa8ff; --gold:#e8c268; --gold-line:#8a6d2f;
-      --hit:#f0c46a; --wiki:#c79cf0; --warn:#e0875b; --foe:#ff7b6b; --ally:#5aa8ff; --both:#c79cf0; --shadow:0 1px 3px rgba(0,0,0,.4);
+      --hit:#f0c46a; --wiki:#c79cf0; --warn:#e0875b; --foe:#ff7b6b; --ally:#5aa8ff; --both:#c79cf0; --self:#4fd1b5; --shadow:0 1px 3px rgba(0,0,0,.4);
     }
   }
   :root[data-theme="dark"] {
     --bg:#0b1526; --card:#101f38; --card2:#152747; --line:#233a5c; --line2:#2f4a72;
     --fg:#eaf1fa; --dim:#8fa2bd; --blue:#5aa8ff; --gold:#e8c268; --gold-line:#8a6d2f;
-    --hit:#f0c46a; --wiki:#c79cf0; --warn:#e0875b; --foe:#ff7b6b; --ally:#5aa8ff; --both:#c79cf0; --shadow:0 1px 3px rgba(0,0,0,.4);
+    --hit:#f0c46a; --wiki:#c79cf0; --warn:#e0875b; --foe:#ff7b6b; --ally:#5aa8ff; --both:#c79cf0; --self:#4fd1b5; --shadow:0 1px 3px rgba(0,0,0,.4);
   }
   * { box-sizing:border-box; }
   body { margin:0; background:var(--bg); color:var(--fg); min-height:100vh;
@@ -53,6 +53,7 @@
   .f.foe.on { background:var(--foe); border-color:var(--foe); }
   .f.ally.on { background:var(--ally); border-color:var(--ally); }
   .f.both.on { background:var(--both); border-color:var(--both); }
+  .f.self.on { background:var(--self); border-color:var(--self); }
   #grid { display:grid; gap:12px; grid-template-columns:repeat(auto-fill, minmax(290px, 1fr)); }
   .pic { background:var(--card); border:1px solid var(--line); border-radius:10px;
          padding:8px 10px 10px; box-shadow:var(--shadow); }
@@ -191,7 +192,7 @@ function apply() {
   $('#head').innerHTML = '그림 <b>' + VIEW.length + '</b>개 · 게임 자료 ' + esc(DB.build || '')
     + ' · 한 칸이 게임 거리 1 입니다. 영향을 주는 쪽에 따라 '
     + '<b class="c-foe">적 빨강</b> · <b class="c-ally">아군 파랑</b> · '
-    + '<b class="c-both">둘 다 보라</b> 로 나눴습니다.';
+    + '<b class="c-both">둘 다 보라</b> · <b class="c-self">나에게만 청록</b> 으로 나눴습니다.';
   const p = new URLSearchParams();
   if (q) p.set('q', q);
   if (hid) p.set('hero', hid);
@@ -204,7 +205,7 @@ function apply() {
 
 function chips(host, names, bag) {
   $(host).innerHTML = names.map(n => {
-    const cls = n === '적' ? ' foe' : n === '아군' ? ' ally' : n === '둘 다' ? ' both' : '';
+    const cls = n === '적' ? ' foe' : n === '아군' ? ' ally' : n === '둘 다' ? ' both' : n === '자신' ? ' self' : '';
     return '<button class="f scrap-tap' + cls + '" data-v="' + esc(n) + '">' + esc(n) + '</button>';
   }).join('');
   $(host).addEventListener('click', e => {
@@ -227,7 +228,7 @@ function chips(host, names, bag) {
   DB = await fetch('../data/herodex/shapes.json', { cache: 'no-cache' }).then(r => r.json());
   $('#hero').innerHTML += DB['영웅'].map(h =>
     '<option value="' + esc(h.id) + '">' + esc(h.name) + '</option>').join('');
-  chips('#sides', ['적', '아군', '둘 다'], on['편']);
+  chips('#sides', ['적', '아군', '둘 다', '자신'], on['편']);
   chips('#kinds', [...new Set(DB['그림'].flatMap(kindsOf))].sort(), on['꼴']);
   $('#kindrow').addEventListener('click', e => {
     const b = e.target.closest('button[data-kind]'); if (!b) return;

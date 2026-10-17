@@ -13,7 +13,7 @@
   --gold:#ffd700; --green:#3ddc84; --red:#ff5f5f; --gray:#8a8a95; --fs:14px;
   --q:#4aa3ff; --w:#ffb84a; --e:#4aff8f; --heroic:#ffd700; --trait:#c46bff; --z:#8a8a95; --active:#ff7b7b;
   /* 범위 그림(shared/shape.js)이 쓰는 색 — 적·아군·둘 다, 그리고 선·글자 */
-  --foe:#ff7b6b; --ally:#5aa8ff; --both:#c79cf0; --wiki:#c79cf0; --warn:#e0875b;
+  --foe:#ff7b6b; --ally:#5aa8ff; --both:#c79cf0; --self:#4fd1b5; --wiki:#c79cf0; --warn:#e0875b;
   --fg:#eaf1fa; --dim:#8fa2bd; --line:#233a5c; --line2:#2f4a72;
 }
 * { box-sizing: border-box; }
@@ -424,7 +424,7 @@ details.xs[open] summary { color:var(--fg); opacity:.8; }
 .settings-panel { background:#101f38; }
 /* 라이트 테마 — 전역 바 토글(scrap.theme)이 data-theme 을 켠다 */
 :root[data-theme="light"] { --p:#1758a8; --bg:#f3f6fb; --card:#ffffff; --card2:#eef2f8; --blue:#1758a8; --gold:#a97e1f;
-  --foe:#c0392b; --ally:#1758a8; --both:#7a3fb0; --wiki:#7a3fb0; --warn:#b1562a;
+  --foe:#c0392b; --ally:#1758a8; --both:#7a3fb0; --self:#17806d; --wiki:#7a3fb0; --warn:#b1562a;
   --fg:#122036; --dim:#5d6d84; --line:#cdd9ea; --line2:#b6c6de; }
 :root[data-theme="light"] body { color:#122036; }
 :root[data-theme="light"] #top-bar { background:#e8eef7; border-bottom:1px solid #cdd9ea; }
