@@ -50,6 +50,13 @@
                 border-radius:999px; font:inherit; font-size:12px; padding:3px 11px; cursor:pointer; }
   .pill.on, .tab.on { background:var(--blue); border-color:var(--blue); color:#fff; font-weight:600; }
   @media (any-pointer:coarse) { .pill, .tab { min-height:44px; } }
+  /* 폰에서는 주제·역할군 단추가 여러 줄로 쌓여 첫 화면을 다 차지했다 — 한 줄로 두고 옆으로 민다 */
+  @media (max-width:700px) {
+    #filters, #rolerow { flex-wrap:nowrap; }
+    #topics, #roles { display:flex; gap:6px; flex:1; min-width:0; overflow-x:auto; flex-wrap:nowrap;
+                      scrollbar-width:thin; padding-bottom:3px; -webkit-overflow-scrolling:touch; }
+    #topics > *, #roles > * { flex:0 0 auto; }
+  }
   input[type=search] { flex:1; min-width:150px; border:1px solid var(--line2); border-radius:9px;
                        background:var(--card); color:var(--fg); font:inherit; font-size:13px; padding:6px 9px; }
 
