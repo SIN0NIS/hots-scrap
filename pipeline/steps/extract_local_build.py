@@ -51,7 +51,7 @@ INSTALLS = {
     "live": Path(r"C:\Program Files (x86)\Heroes of the Storm"),
     "ptr": Path(r"C:\Program Files (x86)\Heroes of the Storm Public Test"),
 }
-HDP = Path(os.environ.get("HDP_PATH", r"C:\Users\sinon\.dotnet\tools\dotnet-heroes-data-parser.exe"))
+HDP = Path(os.environ.get("HDP_PATH") or (Path.home() / ".dotnet" / "tools" / "dotnet-heroes-data-parser.exe"))
 # 원본(HeroesToolChest)과 같은 결과를 내는 설정. 바꾸지 마라 — 위 머리말 참고.
 FLAGS = ["-e", "all", "--localized-text", "Extract",
          "--gs-replace-constant-vars", "--gs-preserve-constant-vars",

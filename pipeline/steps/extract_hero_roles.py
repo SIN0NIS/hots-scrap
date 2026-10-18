@@ -33,7 +33,7 @@ INSTALLS = {
     "live": Path(r"C:\Program Files (x86)\Heroes of the Storm"),
     "ptr": Path(r"C:\Program Files (x86)\Heroes of the Storm Public Test"),
 }
-HDP = Path(os.environ.get("HDP_PATH", r"C:\Users\sinon\.dotnet\tools\dotnet-heroes-data-parser.exe"))
+HDP = Path(os.environ.get("HDP_PATH") or (Path.home() / ".dotnet" / "tools" / "dotnet-heroes-data-parser.exe"))
 # 영웅 정의가 들어 있는 XML 만 꺼낸다
 FILTERS = ["-i", "mods/heroesdata.stormmod/base.stormdata/gamedata/herodata.xml",
            "-i", "mods/heromods/**/*data.xml"]

@@ -37,7 +37,7 @@ JS = RP / "js"
 BUILDS = SITE / "data" / "patchnotes" / "builds.json"
 ROLES = SITE / "data" / "patchnotes" / "roles.json"
 INSTALL = Path(r"C:\Program Files (x86)\Heroes of the Storm")
-HDP = Path(os.environ.get("HDP_PATH", r"C:\Users\sinon\.dotnet\tools\dotnet-heroes-data-parser.exe"))
+HDP = Path(os.environ.get("HDP_PATH") or (Path.home() / ".dotnet" / "tools" / "dotnet-heroes-data-parser.exe"))
 
 ROLE_KO = {"Tank": "전사", "Bruiser": "투사", "Healer": "치유사", "Support": "지원가",
            "MeleeAssassin": "근접 암살자", "RangedAssassin": "원거리 암살자"}

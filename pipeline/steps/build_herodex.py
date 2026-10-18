@@ -43,6 +43,9 @@ TIER_LEVEL = {1: 1, 2: 4, 3: 7, 4: 10, 5: 13, 6: 16, 7: 20}
 
 
 def level_of(t):
+    # 해석기가 영웅의 TalentTierArray 로 정한 레벨이 있으면 그것 — 크로미는 2·5·8·11·14·18
+    if t.get("레벨"):
+        return t["레벨"]
     try:
         return TIER_LEVEL.get(int(float(str(t.get("단계")))))
     except (TypeError, ValueError):
@@ -90,6 +93,12 @@ def slim(d, hid, portraits):
     icons = {t.get("id"): t.get("아이콘") for t in d.get("특성", []) if t.get("아이콘")}
     o = {"영웅": d["영웅"], "자료": d["자료"], "기본": d["기본 수치"],
          "초상화": (portraits.get(hid) or {}).get("portrait"), "기술": [], "특성": []}
+    # 새 판에서도 바로 쓰도록 XML 에서 읽은 칸을 덧붙인다(추가 칸 — 도감 화면은 안 쓴다, 위키가 쓴다)
+    for k in ("세계관", "레벨 성장", "역할(XML)", "초상화(XML)", "작은아이콘(XML)"):
+        if d.get(k):
+            o[k] = d[k]
+    if d.get("다른 모습"):          # 디바 메카처럼 영웅 몸과 다른 몸의 생명력·무기(추가 칸)
+        o["다른 모습"] = [{k: v for k, v in f.items() if not str(k).startswith("_")} for f in d["다른 모습"]]
     def clean(v):
         """**밑줄로 시작하는 칸은 우리끼리 쓰는 표식**이라 내보내지 않는다 —
         원자료 줄에 `_쏜자리 true` · `_찾기 true` 가 그대로 보이고 있었다.
@@ -194,7 +203,7 @@ def main():
         total += len(blob.encode("utf-8"))
         row = {"id": f.stem, "name": o["영웅"], "초상화": o["초상화"],
                "기술": len(o["기술"]), "특성": len(o["특성"])}
-        role = (portraits.get(f.stem) or {}).get("role")
+        role = (portraits.get(f.stem) or {}).get("role") or d.get("역할(XML)")   # 패치노트 목록에 아직 없는 새 영웅
         if ROLE_KO.get(role):
             row["역할"] = ROLE_KO[role]
         if small.get(o["영웅"]):

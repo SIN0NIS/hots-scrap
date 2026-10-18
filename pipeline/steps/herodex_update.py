@@ -279,6 +279,10 @@ def main():
     say(f"설치본({side}) {inst or '못 찾음'} · 꺼내 둔 것 {have[-1] if have else '없음'}"
         f" · 사이트 자료 {built or '없음'}")
     todo = bool(inst) and (inst not in have or built != inst)
+    if not inst:
+        # 설치본을 못 찾았는데 '할 일 없음' 이라 하면 갱신이 조용히 멈춘다 — 따로 알린다
+        say("!! 설치본을 못 찾았습니다(경로·.build.info). 할 일을 판단할 수 없습니다.")
+        return 2
     if a.check:
         say("할 일: " + ("있음" if todo else "없음"))
         return 1 if todo else 0
@@ -294,7 +298,9 @@ def main():
             return 2
 
     say("\n── ③ 상세 뽑기 (91명) ───────────────────────")
-    code, out = run(["tools/hero_detail.py", "--all"], XML)
+    # 설치본 판을 **콕 집어** 넘긴다 — 안 넘기면 도구가 폴더를 스스로 골라 테스트 서버 판·옛 판이 섞일 수 있다
+    pick = ["--build", inst] if inst and (XML / inst).is_dir() else []
+    code, out = run(["tools/hero_detail.py", "--all"] + pick, XML)
     if code:
         say("!! 상세 뽑기가 실패했습니다.")
         return 2
