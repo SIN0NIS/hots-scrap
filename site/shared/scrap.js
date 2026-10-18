@@ -30,7 +30,7 @@
      지금 보고 있는 갈래는 눌러도 제자리이므로 글자만 또렷하게 해 둔다. */
   var NAV = [
     ['builds/?ch=live', '특성 찍기', ['builds'], 'talent'],
-    ['herodex/', '위키', ['herodex', 'encyclopedia', 'maps', 'patchnotes', 'tier'], 'codex'],
+    ['wiki/', '위키', ['wiki', 'herodex', 'encyclopedia', 'maps', 'patchnotes', 'tier'], 'codex'],
     ['replay/', '리플레이', ['replay'], 'replay'],
     ['https://sin0nis.github.io/hots_hero_m3/', '뷰어', [], 'viewer']
   ];
@@ -54,7 +54,7 @@
   /* **이 화면의 사용법으로 바로.** 사용법(guide/)은 앱마다 단락이 있어, 보고 있는 화면에 맞는
      단락으로 보낸다. 더 구체적인 것(도감 안의 범위 구경·통계)을 먼저 본다. 사용법 안에서는 안 띄운다. */
   var HELP = [
-    [/\/herodex\/shapes/, 'herodex-shapes'], [/\/herodex\/stats/, 'herodex-stats'], [/\/herodex\//, 'herodex'],
+    [/\/herodex\/shapes/, 'herodex-shapes'], [/\/herodex\/stats/, 'herodex-stats'], [/\/herodex\//, 'herodex'], [/\/wiki\//, 'wiki'],
     [/\/builds\//, 'builds'], [/\/encyclopedia\//, 'ency'], [/\/maps\//, 'maps'], [/\/patchnotes\//, 'patch'],
     [/\/tier\//, 'tier'], [/\/replay\//, 'replay'], [/hots_hero_m3/, 'viewer']
   ];

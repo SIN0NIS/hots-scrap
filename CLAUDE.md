@@ -28,6 +28,16 @@
     그대로 남아* 있기도 하다(잘아타스 '어둠의 심장 의식' ← 레가르 '속박의 토템').
     `stale_keys()` 가 걸러 낸다 — **이름이 비었는데 설명이 다른 자리와 글자까지 같으면** 찌꺼기로 본다.
     이 판정을 느슨하게 바꾸지 마라(2.57.0.98126 기준 오탐 0, 정탐 1).
+- `site/wiki/` **위키** — 허브 '위키' 칸과 전역 바 '위키' 가 여기로 온다. 영웅·전장·시스템·통계·용어·패치 여섯 갈래.
+  **만드는 곳은 저장소 밖** `../hots_extract`(`update_wiki.py` → `report/wiki/`)이고, `python ../hots_extract/wiki_site.py` 가
+  사이트 판으로 감싸(`<html data-site>` + `scrap.js` + 뒤로가기 130px) 이 폴더에 **통째로 덮어쓴다** — 여기서 직접 고치지 마라.
+  - 처음엔 영웅 목록(`data/heroes.json`)·핵심 그림(`data/icons.json`)만 받고, 영웅 문서를 열 때 `data/hero/<id>.json`·`data/icon/<id>.json` 을 받는다.
+  - **패치** 갈래와 영웅 문서의 '패치 이력' 은 `../data/patchnotes/` 를 **그대로 읽는다**(복사 안 함) — 패치 노트 자동 갱신이 위키에도 바로 보인다.
+    그 자료의 모양(`index.json`·`official/`·`diff/`·`heroes/`)을 바꾸면 위키의 `pPatches`·`pPatch`·`pChange` 도 같이 본다.
+  - 전장 배치도의 바탕 그림은 사이트에서는 `../replay/maps_lite/*.svg` 를 쓴다(위키 자체 SVG 는 안 옮긴다).
+  - 밝기는 `scrap.theme` 을 따른다(`data-site` 면 자기 밝기 단추를 숨긴다). 자기 localStorage 키는 `wiki.*`.
+  - 위키 자체의 버전(히오스 패치.틀.내용)은 '위키 변경 기록'(`#history`, 대문 맨 아래)에 있다.
+  - 이 위키가 못 하는 것은 원래 앱에 남긴다: 범위 구경·칸 통계(herodex), 전장 흐름(maps), 스킨·대사(encyclopedia), 티어표.
 - `site/herodex/` **영웅 도감** — 게임 원본 XML 에서 직접 뽑은 기술·특성 상세.
   자료는 `site/data/herodex/`(목록 1개 + 영웅마다 1개, 평균 16KB) — 화면은 **고른 영웅 하나만** 받는다.
   주소에 `?hero=` 가 없으면 **영웅 고르는 첫 화면**(역할군별 얼굴판)이다 — 들어오자마자 첫 영웅이

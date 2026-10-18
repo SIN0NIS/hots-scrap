@@ -33,6 +33,8 @@ KST = timezone(timedelta(hours=9))
 
 # 앱 id → 그 앱이 실제로 쓰는 자료 파일들. 이것들이 바뀌면 "자료 갱신" 시각이 움직인다.
 WATCH = {
+    # 위키는 영웅·전장·시스템 자료를 다 품는다 — 버전 기록(history/index.json)이 바뀌면 위키도 바뀐 것
+    "wiki": ["site/wiki/index.html", "site/wiki/data/history/index.json"],
     "encyclopedia": ["site/encyclopedia/index.html"],
     # 영웅 도감은 영웅마다 파일이 따로라, 목록 파일 하나만 지문으로 본다(바뀌면 같이 바뀐다)
     # 도감은 **index.json 만 보면 안 된다** — 거기엔 판과 영웅 수만 있어, 해석기를 고쳐
@@ -97,6 +99,9 @@ def note_for(app_id):
     if app_id == "encyclopedia":
         lt = load(LATEST) or {}
         return f"build {lt.get('build', '?')} 기준"
+    if app_id == "wiki":
+        v = ((load(SITE / "wiki" / "data" / "history" / "index.json") or {}).get("판들") or [{}])[0]
+        return f"v{v['버전']} · 히오스 {v.get('판', '?')} · 영웅 {v.get('영웅 수', '?')}명" if v.get("버전") else ""
     if app_id == "herodex":
         d = load(SITE / "data" / "herodex" / "index.json") or {}
         hs = d.get("heroes") or []

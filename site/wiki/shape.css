@@ -1,0 +1,108 @@
+/* HotS Scrap — 범위 그림 생김새. shape.js 가 알아서 끌어온다.
+   한 칸이 게임 거리 1 이다. 색은 쓰는 쪽(:root)이 정해 준다. */
+.fig { margin:7px 0 2px; }
+.fig svg { display:block; max-width:100%; height:auto; border:1px solid var(--line);
+           border-radius:8px; background:var(--card2); }
+.fig .cap { color:var(--dim); font-size:11px; margin-top:3px; line-height:1.7; }
+.fig .cap b { font-weight:400; }
+.c-hero { color:var(--hit); } .c-rng { color:var(--gold); }
+.c-area { color:var(--blue); } .c-yard { color:var(--wiki); } .c-hit { color:var(--warn); }
+.c-dim { color:var(--dim); } .c-foe { color:var(--foe); } .c-ally { color:var(--ally); } .c-both { color:var(--both); } .c-self { color:var(--self, #17806d); }
+
+/* **찍는 자리를 밀어 보는 막대** — 리밍 마력탄처럼 거리에 따라 꼴이 바뀌는 기술.
+   마우스로 끌기·손가락으로 밀기·화살표 키는 <input type=range> 가 알아서 해 준다. */
+.fig .cv { display:flex; align-items:center; gap:6px; margin-top:5px;
+           flex-wrap:wrap; row-gap:4px; }
+/* ↑ 한 줄에 시간 손잡이와 방향 다이얼이 같이 오면(초갈) 최소 276px 라 폰 카드 폭(약 260px)을
+   넘어 문서 전체가 옆으로 밀렸다(320px 에서 94px 넘침). 모자라면 다음 줄로 넘긴다. */
+.fig .cvr { flex:1; min-width:0; height:22px; accent-color:var(--gold); cursor:pointer;
+            touch-action:pan-y; }
+.fig .cvb { width:30px; height:28px; flex:0 0 auto; padding:0; cursor:pointer;
+            border:1px solid var(--line); border-radius:6px; background:var(--card2);
+            color:var(--fg); font-size:14px; line-height:1; }
+.fig .cvb:active { background:var(--line); }
+.fig .cvn { flex:0 0 auto; min-width:2.6em; text-align:right; color:var(--gold);
+            font-size:11px; font-variant-numeric:tabular-nums; }
+
+/* ── 다이얼 셋 ─────────────────────────────────────────────────────────────
+   무엇을 정할 수 있는 기술인지 **생김새로 가른다** — 셋이 한 화면에 섞여 나오므로
+   색과 테두리 모양이 다르지 않으면 어느 것이 어느 것인지 알 수 없다.
+
+     방향 `.cvd`  둥근 시계 눈금 + 바늘      금색 — 제자리에서 방향만 정한다
+     겨냥 `.cva`  옅게 찬 원 + 꼭지          파랑 — 사거리 안에서 자리를 정한다
+     끌기 `.cvg`  둥근 네모 + 점선 화살표    보라 — 눌러 끌어서 쏜다 */
+.fig .cvd, .fig .cva, .fig .cvg { flex:0 0 auto; cursor:grab; touch-action:none;
+            background:var(--card2); }
+.fig .cvd { border-radius:50%; }
+.fig .cva { border-radius:50%; }
+.fig .cvg { border-radius:9px; }
+.fig .cvd:active, .fig .cva:active, .fig .cvg:active { cursor:grabbing; }
+.fig .cvd:focus-visible { outline:2px solid var(--gold); outline-offset:2px; }
+.fig .cva:focus-visible { outline:2px solid var(--ally); outline-offset:2px; }
+.fig .cvg:focus-visible { outline:2px solid var(--both); outline-offset:2px; }
+.fig .cvw { min-width:3.4em; color:var(--fg); opacity:.85; }
+.fig .cvay { min-width:4.2em; color:var(--ally); }
+
+/* 시간 손잡이 — 모으는 동안 어떻게 되는지 밀어 본다 */
+.fig .cvt { flex:1; min-width:60px; height:22px; accent-color:var(--hit); cursor:pointer;
+            touch-action:pan-y; }
+.fig .cvl { flex:0 0 auto; color:var(--dim); font-size:11px; }
+.fig .cvs { min-width:3.2em; color:var(--hit); }
+
+/* ── 크게 보기 ────────────────────────────────────────────────────────────
+   카드 폭이 290px 안팎이라 반지름 18 짜리 나선이나 조각 여럿은 깨알로 보인다.
+   **그림을 베껴 그리지 않고 통째로 옮겨 와서** 띄운다 — 다이얼·손잡이가 그대로
+   따라온다(동작은 document 에 한 번만 걸려 있다). 도감과 범위 구경이 같이 쓴다. */
+.fig { position:relative; }
+.figz { display:none; position:absolute; right:7px; top:7px; z-index:1;
+        width:26px; height:26px; padding:0; cursor:zoom-in; font:inherit; font-size:13px;
+        line-height:1; border:1px solid var(--line); border-radius:7px;
+        background:var(--card); color:var(--dim); opacity:.75; }
+.figz:hover { opacity:1; color:var(--blue); border-color:var(--blue); }
+[data-hots-zoom] .figz { display:block; }
+[data-hots-zoom] .fig > svg { cursor:zoom-in; }
+.hz { position:fixed; inset:0; z-index:40; background:rgba(8,14,26,.72);
+      display:flex; align-items:flex-end; justify-content:center; overscroll-behavior:contain; }
+.hz[hidden] { display:none; }
+/* 좁은 화면에서는 **아래에서 올라오는 판**이다 — 위로 띄우면 전역 바(z-index 99999)가
+   머리글을 덮는다. 통계 보기의 `.pane` 과 같은 꼴로 맞춘다. */
+@media (min-width:700px) { .hz { align-items:center; padding:20px; } }
+.hzbox { background:var(--card); border:1px solid var(--line2);
+         border-radius:14px 14px 0 0; box-shadow:0 10px 40px rgba(0,0,0,.35);
+         width:min(1040px,100%); max-height:92vh; display:flex; flex-direction:column;
+         overflow:hidden; }
+@media (min-width:700px) { .hzbox { border-radius:14px; max-height:88vh; } }
+/* 머리글은 접히더라도 닫기 단추가 따라가면 안 된다 — 접히는 쪽만 따로 싼다 */
+.hzhead { display:flex; gap:8px; align-items:center; padding:10px 12px;
+          border-bottom:1px solid var(--line); }
+.hzh1 { display:flex; gap:7px; align-items:baseline; flex-wrap:wrap; min-width:0; flex:1 1 auto; }
+.hzhead .nm { font-weight:700; font-size:16px; }
+.hzhead .who { color:var(--dim); font-size:12.5px; }
+.hzhead .of { color:var(--gold); font-size:12.5px; font-weight:600; }
+.hzhead .go { font-size:11px; color:var(--dim); text-decoration:none; white-space:nowrap;
+              border:1px solid var(--line); border-radius:999px; padding:1px 8px; }
+.hzhead .go:hover { color:var(--blue); border-color:var(--blue); }
+.hzx { width:30px; height:30px; flex:0 0 auto; border:1px solid var(--line);
+       background:var(--card2); color:var(--dim); border-radius:8px; cursor:pointer;
+       font:inherit; font-size:15px; line-height:1; }
+.hzx:hover { color:var(--fg); border-color:var(--line2); }
+.hzbody { display:grid; grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);
+          gap:14px; padding:12px; overflow:auto; }
+@media (max-width:760px) { .hzbody { grid-template-columns:1fr; } }
+.hzfig { min-width:0; }
+.hzfig .fig { margin:0; }
+/* `max-width:100%` 만으로는 **안 커진다**(작게만 막는다). 다만 `.fig svg` 로 잡으면
+   다이얼 시계까지 꽉 차게 커지므로 **바로 밑 자식**만 집는다. */
+.hzfig .fig > svg { width:100%; height:auto; cursor:default; }
+.hzfig .figz { display:none; }
+.hzfig .fig .cap { font-size:12px; }
+.hzfig .fig .cv { margin-top:8px; }
+.hzside { min-width:0; }
+.hzsay { color:var(--fg); font-size:13.5px; line-height:1.7; margin:0 0 10px;
+         word-break:keep-all; white-space:pre-line; }
+.hzsay.wait { color:var(--dim); }
+.hznums { display:flex; flex-wrap:wrap; gap:4px 5px; }
+.hznums span { font-size:11px; color:var(--dim); background:var(--card2);
+               border:1px solid var(--line); border-radius:5px; padding:1px 7px; }
+.hznums b { color:var(--fg); font-weight:600; }
+.hzhint { color:var(--dim); font-size:11.5px; margin:10px 0 0; line-height:1.7; }
