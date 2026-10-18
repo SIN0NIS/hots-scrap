@@ -940,7 +940,7 @@ window.KS={score:score,mark:mark,esc:esc};})();
         + (picked.fx.some(f => f.cond) ? `<p class="note">조건부 — 아래 조건이 맞을 때의 값입니다: ${picked.fx.filter(f => f.cond).map(f => esc(f.s)).join(" / ")}</p>` : "")
         + `</div>`;
     }
-    return `<div class="tsel"><div class="tsh-t">능력치를 바꾸는 특성 <span class="note">${cands.length}개 · 늘 붙는 증가만 · 하나를 고르면 그 값이 금색으로 나옵니다</span></div><div class="tsh">${chips}</div>${body}</div>`;
+    return `<div class="tsel"><div class="tsh-t">능력치를 바꾸는 특성 <span class="note">${cands.length}개</span></div><div class="tsh">${chips}</div>${body}</div>`;
   }
 
   /* ── 특성 하나의 세부 수치·범위 그림 — 기술과 같은 그림 코드(shape.js)·같은 다이얼 ── */
@@ -1029,10 +1029,12 @@ window.KS={score:score,mark:mark,esc:esc};})();
                 return `<h3 class="sub">다른 모습 — ${esc(f["이름"])}</h3>` + tbl(["항목", [`${LV}레벨`]], [["생명력", f["생명력"], rLife], ["생명력 재생", f["생명력 재생"], rReg, "/초"], ["일반 공격 공격력", fw["공격력"], +rAtk], ["초당 공격", fw["초당 공격"], 0],
                   ["공격 사거리", f["공격 사거리"], 0], ["반지름", f["반지름"], 0]].filter(x => x[1] != null).map(([k, v, g, u]) => `<tr><td>${esc(k)}</td><td class="n${g && LV > 0 ? " grow" : ""}">${typeof v === "number" ? fmt(v * kL(g)) : esc(v)}${u || ""}</td></tr>`)); }).join("")
             + (list(st["켜질 때 쓰는 무기"]).length ? `<p class="note">특성·모드를 켜야 쓰는 무기가 ${list(st["켜질 때 쓰는 무기"]).length}개 더 있습니다(위 일반 공격에는 넣지 않았습니다).</p>` : "")
+            + (statC.length || starC.length ? `<p class="note">이 영웅은 능력치를 바꾸는 특성이 있습니다 — <button type="button" class="lnk" data-go="sec2">아래 '특성으로 바뀌는 능력치' 에서 [적용] ↓</button></p>` : "") },
+        ...(statC.length || starC.length ? [{ title: "특성으로 바뀌는 능력치", html: `<p class="note">특성을 하나 골라 <b>[적용]</b> 하면 위 능력치 표의 값이 그 특성으로 얼마가 되는지 금색으로 나옵니다. 늘 붙는 % 또는 고정값 증가만 모았습니다(조건부·퀘스트·남에게 주는 효과는 특성 목록에).</p>`
             + statBlock(h, statC, stBase, Object.fromEntries(list(h["다른 모습"]).map(f => { const fw = list(f["평타"])[0] || {};
                 return [f["이름"], { "생명력": f["생명력"] * kL(rLife), "생명력 재생": f["생명력 재생"] * kL(rReg), "일반 공격 공격력": fw["공격력"] != null ? fw["공격력"] * kL(+rAtk) : undefined,
                   "초당 공격": fw["초당 공격"], "공격 사거리": f["공격 사거리"] }]; })))
-            + (starC.length ? selBlock(h, "*", starC, starRes) : "") },
+            + (starC.length ? selBlock(h, "*", starC, starRes) : "") }] : []),
         { title: "기술", badge: BD.sure, html: `<p class="note">이름·설명은 게임 파일 그대로라 <b>설명 속 숫자는 ${LV0}</b> 입니다. 금색 '피해' 칸은 리모컨 레벨을 적용한 ${LVN(LV)} 이고, 재사용·마나·사거리는 레벨과 상관없습니다. 특성 [적용] 결과의 피해는 ${BD.est}입니다.</p>` + sk.map(skill).join("") },
         { title: "특성", badge: BD.sure, html: `<p class="note">레벨마다 하나를 고른다(${cardLink("talent_system")}). 기술 카드의 '이 기술을 바꾸는 특성' 에서 [적용] 하면 그 효과가 기술에 겹쳐 보입니다. 특성 설명과 펼친 세부 수치의 숫자는 ${LV0} 입니다.</p>${tiers}` },
         ...(IN_SITE ? [{ title: "패치 이력", html: heroPatches(id) }] : []),
