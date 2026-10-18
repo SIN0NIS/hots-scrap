@@ -880,6 +880,7 @@ window.KS={score:score,mark:mark,esc:esc};})();
   const STAT_RX = [
     ["생명력", String.raw`(?:최대 )?생명력(?:이|을)? ${NUMRX}(?:만큼)? (증가|감소)`],
     ["생명력 재생", String.raw`생명력 재생(?:량|률)?(?:이)? ${NUMRX} (증가|감소)`],
+    ["마나 재생", String.raw`(?:초당 )?마나 재생(?:량|률)?(?:이)? ${NUMRX} (증가|감소)`],
     ["마나", String.raw`(?:최대 )?마나(?:가)? ${NUMRX} (증가|감소)`],
     ["이동 속도", String.raw`이동 속도(?:가)? ${NUMRX} (증가|감소)`],
     ["초당 공격", String.raw`공격 속도(?:가)? ${NUMRX} (증가|감소)`],
@@ -896,7 +897,9 @@ window.KS={score:score,mark:mark,esc:esc};})();
   const FORMHEAD = /(메카|조종사|인간|늑대인간)의\s$/;
   const OTHER = /(?:적(?: 영웅)?(?:들)?|아군(?: 영웅)?(?:들)?|소환수|대상|미샤|토템|포탑|돌격병|용병)(?:은|는|이|가|과|와) /;
   const CONDRX = /동안|하면|할 때|일 때|때 |때,|때마다|마다|이후|후,|이상|이하|중첩|퀘스트|보상|적중|사용|처치|있으면|있을|있는|없을|받으면|주면|에게 피해|최대 \d|상태에서|위에서|당 |상대로|승부수|모드/;
-  function statFx(desc) {
+  function statFx(desc, self) {
+    // '타이커스의 일반 공격 사거리' 처럼 영웅 제 이름이 앞에 붙으면 제 값이다
+    const SELF = self ? String(self) + "의 " : null;
     const out = [];
     String(desc || "").split(/\n|(?<=[.!?])\s+/).forEach(s => {
       // '최대 생명력과 생명력 재생량이 40% 증가' — 둘 다
@@ -905,9 +908,10 @@ window.KS={score:score,mark:mark,esc:esc};})();
       STAT_RX.forEach(([k, rx]) => { rx.lastIndex = 0; let m;
         while ((m = rx.exec(s))) {
           const pre = s.slice(0, m.index).replace(/^지속 효과:\s*/, "");
-          if (!HEAD.test(pre) && !FORMHEAD.test(pre)) continue;
+          const own = !!SELF && pre.endsWith(SELF) && HEAD.test(pre.slice(0, -SELF.length));
+          if (!own && !HEAD.test(pre) && !FORMHEAD.test(pre)) continue;
           // 앞에 남이 주어로 나오면(적 영웅은 · 포탑이 · 토템의) 그 사람의 값이다
-          if (OTHER.test(pre) || (/[가-힣]의 /.test(pre) && !FORMHEAD.test(pre))) continue;
+          if (!own && (OTHER.test(pre) || (/[가-힣]의 /.test(pre) && !FORMHEAD.test(pre)))) continue;
           if (out.some(o => o.k === k && o.s === s.trim())) continue;
           // 조건은 **그 능력치 앞까지만** 본다 — 뒤 마디의 조건(…하면 기력 회복)이 앞의 값에 붙지 않게
           out.push({ k, v: (m[3] === "감소" ? -1 : 1) * +m[1], pct: !!m[2], cond: CONDRX.test(s.slice(0, m.index + m[0].length)), s: s.trim() });
@@ -975,13 +979,13 @@ window.KS={score:score,mark:mark,esc:esc};})();
     const rLife = rate(/^LifeMax$/), rReg = rate(/^LifeRegenRate$/), rMana = rate(/^EnergyMax$/);
     const rAtk = w["공격력"] ? (gr.find(x => /Weapon|Attack/i.test(x["항목"] || "") && x["칸"] === "Amount") || {})["레벨마다"] || rLife : 0;
     const R2 = h["반지름 둘"] || {};
-    const stats = [["생명력", st["생명력"], rLife], ["생명력 재생", st["생명력 재생"], rReg, "/초"], ...(st["자원"] === "마나" && st["마나"] != null ? [["마나", st["마나"], rMana]] : []),
+    const stats = [["생명력", st["생명력"], rLife], ["생명력 재생", st["생명력 재생"], rReg, "/초"], ...(st["자원"] === "마나" && st["마나"] != null ? [["마나", st["마나"], rMana], ...(st["마나 재생"] != null ? [["마나 재생", st["마나 재생"], 0, "/초"]] : [])] : []),
       [w["발 수"] > 1 ? `일반 공격 공격력 (한 번에 ${w["발 수"]}발, 한 발 값)` : "일반 공격 공격력", w["공격력"], +rAtk], ["초당 공격", w["초당 공격"], 0], ["일반 공격 초당 피해", w["공격력"] && w["초당 공격"] ? w["공격력"] * (w["발 수"] || 1) * w["초당 공격"] : null, +rAtk], ["공격 사거리", st["공격 사거리"], 0], ["이동 속도", st["이동 속도"], 0], ["시야", st["시야"], 0],
       ["피격 반지름 · 기술에 맞는 판정", R2["피격"] || st["반지름"], 0], ["충돌 반지름 · 유닛끼리 부딪히는 판정", R2["충돌"], 0]].filter(x => x[1] != null && x[1] !== 0);
     const statRows = stats.map(([k, v, g, u]) => { const now = typeof v === "number" ? v * kL(g) : v;
       return `<tr><td>${esc(k)}</td><td class="n${g && LV > 0 ? " grow" : ""}">${typeof now === "number" ? fmt(now) : esc(v)}${u || ""}</td><td class="n">${g ? num(g * 100) + "%" : ""}</td><td class="n">${g && LV > 0 ? Math.round((kL(g) - 1) * 100) + "% 증가" : ""}</td></tr>`; });
     /* 능력치를 바꾸는 특성은 능력치 표 아래로 모은다 — 기술을 바꾸는 특성은 기술마다 따로 있다 */
-    const statC = TS.map(t => ({ t, fx: statFx(t["설명"]).filter(f => !f.cond) })).filter(x => x.fx.length).sort((a, b) => a.t["레벨"] - b.t["레벨"]);
+    const statC = TS.map(t => ({ t, fx: statFx(t["설명"], h["이름"]).filter(f => !f.cond) })).filter(x => x.fx.length).sort((a, b) => a.t["레벨"] - b.t["레벨"]);
     const statIds = new Set(statC.map(x => x.t.id));
     const stBase = Object.fromEntries(stats.map(([k, v, g]) => [k.replace(/ \(.*$/, ""), typeof v === "number" ? v * kL(g) : v]));
     const starC = TS.filter(t => !statIds.has(t.id) && (tdItems(id, t.id).some(x => x["기술"] === "*" && x["꼴"] === "버프" && plainItem(x)) || (!targetOf(h, t) && list(t["바뀌는 값"]).some(NUMCHG)))).sort((a, b) => a["레벨"] - b["레벨"]);
@@ -1373,7 +1377,8 @@ window.KS={score:score,mark:mark,esc:esc};})();
       ["생명력 (20레벨)", h => at(h["기본"]["생명력"], g(h, /^LifeMax$/), 20), "자료 값(0레벨)에 성장률을 20번 겹친 값"],
       ["생명력 레벨 성장률", h => g(h, /^LifeMax$/) ? +(g(h, /^LifeMax$/) * 100).toFixed(2) : null, "", "%"],
       ["생명력 재생 (1레벨)", h => at(h["기본"]["생명력 재생"], g(h, /^LifeRegenRate$/), 1), "", "/초"],
-      ["마나 (1레벨)", h => h["기본"]["자원"] === "마나" ? h["기본"]["마나"] : null],
+      ["마나", h => h["기본"]["자원"] === "마나" ? h["기본"]["마나"] : null],
+      ["마나 재생", h => h["기본"]["자원"] === "마나" ? h["기본"]["마나 재생"] : null, "", "/초"],
       ["일반 공격 공격력 (1레벨)", h => at(w0(h)["공격력"], gA(h), 1), "한 발 값 — 한 번에 여러 발 쏘는 영웅(루시우 4발)은 초당 피해에 발 수를 곱했습니다"],
       ["초당 공격", h => w0(h)["초당 공격"]],
       ["일반 공격 초당 피해 (1레벨)", h => w0(h)["공격력"] && w0(h)["초당 공격"] ? +(at(w0(h)["공격력"], gA(h), 1) * (w0(h)["발 수"] || 1) * w0(h)["초당 공격"]).toFixed(1) : null, "공격력 × 한 번에 쏘는 발 수 × 초당 공격"],
