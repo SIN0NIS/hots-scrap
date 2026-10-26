@@ -253,7 +253,7 @@
   .search-box { padding:8px 10px; }
   .search-show { padding:5px; }
 }
-@media (max-width:600px) and (any-pointer:coarse) {
+@media (any-pointer:coarse) {
   #top-bar .lang-btn, #top-bar .tb-list { --tb-bg:#132b4d; --tb-bd:#233a5c; position:relative; z-index:0;
     min-height:44px; display:inline-flex; align-items:center; background:transparent !important; border-color:transparent !important; }
   #top-bar .ch-btn.on { --tb-bg:#1758a8; --tb-bd:#1758a8; }
@@ -264,18 +264,34 @@
     z-index:-1; border-radius:5px; background:var(--tb-bg); border:1px solid var(--tb-bd); }
   #top-bar .tb-home { min-height:44px; display:inline-flex; align-items:center; }
 }
+/* 더 좁으면(작은 폰 · 글자 키운 폰) '특성 빌드' 글을 접고 ⌂ 만 — 안 접으면 '본 서버' 가 '나열' 을 덮었다.
+   360px 은 글까지 딱 들어가므로 그보다 좁을 때만 접는다 */
+@media (max-width:350px) {
+  #top-bar .tb-xs { display:none; }
+}
+@media (max-width:300px) {
+  #top-bar .lang-btn, #top-bar .tb-list { padding:3px 6px !important; }
+}
+/* 가로로 눕힌 폰처럼 **낮은** 화면 — 폭은 넓어도 높이가 375px 뿐이라 위쪽을 얇게 */
+@media (max-height:500px) {
+  #top-bar { padding-top:0; padding-bottom:0; }
+  #header { padding:4px 8px; }
+  .search-box { padding:6px 10px; }
+}
 </style>
 </head>
 <body data-scrap-back-bottom="190px">
     <div id="top-bar">
         <span class="tb-left" style="display:flex; align-items:center; gap:12px;">
-          <a href="./" class="tb-home" title="빌드 홈으로" style="font-weight:bold; color:var(--p); font-size:12px; text-decoration:none;">⌂ 특성 빌드</a>
-        <button type="button" class="tb-list" onclick="openTierList()" style="margin-left:10px; background:#132b4d; border:1px solid #233a5c; color:#eaf1fa; border-radius:5px; padding:3px 10px; cursor:pointer; font-size:11px;">⚖ <span class="tb-lg">특성 </span>나열</button>
+          <!-- 글자는 안쪽 span 하나로 감싼다 — 손가락 기기에서 단추가 inline-flex 가 되면
+               글 조각마다 따로 놓여 띄어쓰기가 사라진다('테스트서버') -->
+          <a href="./" class="tb-home" title="빌드 홈으로" style="font-weight:bold; color:var(--p); font-size:12px; text-decoration:none;"><span>⌂<span class="tb-xs"> 특성 빌드</span></span></a>
+        <button type="button" class="tb-list" onclick="openTierList()" style="margin-left:10px; background:#132b4d; border:1px solid #233a5c; color:#eaf1fa; border-radius:5px; padding:3px 10px; cursor:pointer; font-size:11px;"><span>⚖ <span class="tb-lg">특성 </span>나열</span></button>
         </span>
         <span class="tb-right" style="display:flex; align-items:center; gap:6px; flex-wrap:wrap; justify-content:flex-end;">
           <span id="ch-note" style="font-size:11px; color:#8fa2bd;"></span>
           <button type="button" class="lang-btn ch-btn" id="ch-live" onclick="setChannel('live')" hidden>본 서버</button>
-          <button type="button" class="lang-btn ch-btn" id="ch-ptr" onclick="setChannel('ptr')" hidden>테스트<span class="tb-lg"> 서버</span></button>
+          <button type="button" class="lang-btn ch-btn" id="ch-ptr" onclick="setChannel('ptr')" hidden><span>테스트<span class="tb-lg"> 서버</span></span></button>
           <button class="lang-btn" onclick="toggleLanguage()">KO / EN</button>
         </span>
     </div>
