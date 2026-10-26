@@ -110,7 +110,7 @@ SHOTS = [
     dict(id="b-stats", url="builds/?ch=live&hero=Jaina", do=[scroll_inner_top],
          marks=[["text=LV 1", "#level-slider"], "#stat-grid"]),
     dict(id="b-talent", url="builds/?ch=live&hero=Jaina", do=[builds_pick, scroll_into(".lv-list-btn", "start", -8)],
-         marks=[".t-row-1 >> nth=0", ".t-row-1 >> nth=2", ".lv-list-btn >> nth=0", "#selected-summary",
+         marks=[".t-row-1 >> nth=0", ".t-row-1 >> nth=2", ".lv-list-btn >> nth=0", "#selected-summary", "#ft-toggle",
                 ["#code-load-input", "button >> text=불러오기"], "#build-code-box"]),
     dict(id="b-save", url="builds/?ch=live&hero=Jaina", do=[builds_pick],
          clip=("#build-code-box", 220, "up"),
@@ -238,7 +238,8 @@ def shoot(pw, spec):
     size = spec.get("size", (W, H))
     br = pw.chromium.launch(channel="chrome", args=["--host-resolver-rules=MAP scrap.test 127.0.0.1"])
     ctx = br.new_context(viewport={"width": size[0], "height": size[1]}, color_scheme="light", locale="ko-KR")
-    ctx.add_init_script("try{localStorage.setItem('scrap.theme','light')}catch(e){};"
+    # 빌드의 아래 칸은 화면이 낮으면 접힌 채로 시작한다 — 사진은 늘 펼친 상태로 찍는다
+    ctx.add_init_script("try{localStorage.setItem('scrap.theme','light');localStorage.setItem('builds.footerMin','0')}catch(e){};"
                         "document.addEventListener('DOMContentLoaded',()=>{const s=document.createElement('style');"
                         f"s.textContent={json.dumps(HIDE_CSS)};document.head.appendChild(s)}});")
     pg = ctx.new_page()

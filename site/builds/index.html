@@ -205,18 +205,77 @@
 }
 /* 바닥 단추 줄이 통째로 넘치지 않게 — 가로로 미는 대신 줄을 바꾼다 */
 .btn-group { max-width:100%; }
+
+/* ── 아래 칸 접기/펴기 — 맨 윗줄만 남긴다 ── */
+#ft-top { display:flex; align-items:center; gap:6px; min-width:0; }
+#ft-top #selected-summary { flex:1; min-width:0; align-items:center; }
+/* 요약 칸은 자리가 모자라면 같이 줄어든다(접은 줄에 단추 셋이 같이 서야 해서). 32px 이 최대 */
+#selected-summary .summary-icon { flex:0 1 32px; min-width:0; width:auto; height:auto; max-width:32px; aspect-ratio:1/1; box-sizing:border-box; }
+#ft-mini { display:none; gap:6px; flex-shrink:0; }
+#footer.min #ft-mini { display:flex; }
+#footer.min > :not(#ft-top) { display:none !important; }   /* 코드 줄은 style 에 display:flex 가 박혀 있어 !important 가 있어야 숨는다 */
+#footer.min { padding-top:6px; padding-bottom:6px; overflow:visible; }
+#ft-toggle, .ft-mini-btn { flex-shrink:0; background:#132b4d; border:1px solid #233a5c; color:#eaf1fa;
+  border-radius:5px; padding:4px 10px; font-size:12px; line-height:1.2; cursor:pointer; white-space:nowrap; }
+.ft-mini-btn { min-width:36px; padding:4px 8px; font-size:15px; }
+#ft-toggle { font-weight:bold; }
+:root[data-theme="light"] #ft-toggle, :root[data-theme="light"] .ft-mini-btn { background:#ffffff; border-color:#cdd9ea; color:#122036; }
+@media (any-pointer:coarse) {
+  #ft-toggle, .ft-mini-btn { min-height:44px; }
+}
+
+/* 검색창 접기 — .search-row 의 display:flex 가 hidden 속성을 이겨서 × 를 눌러도 안 접히고
+   '영웅 검색 열기' 단추만 하나 더 생겼다(둘이 같이 보였다) */
+.search-row[hidden], .search-show[hidden] { display:none !important; }
+
+/* 밝은 테마에서 고른 서버 단추가 안 보이던 것 — 밝은 .lang-btn(흰 바탕)이 .ch-btn.on 을 이겼다 */
+:root[data-theme="light"] #top-bar .ch-btn.on { background:#1758a8; border-color:#1758a8; color:#fff; }
+
+/* ── 폰: 위쪽을 얇게 ─────────────────────────────────────────────────
+   좁아질수록 위 단추줄이 3줄로 접혀(137px) 44px 상자가 줄줄이 튀어나왔다. 한 줄로 모은다.
+   - 판 번호·날짜 글은 단추의 title 에 이미 있어 숨긴다(테스트 서버 자료가 낡았다는 경고만 남긴다)
+   - '특성 나열' → '나열', '테스트 서버' → '테스트'
+   - 손가락 기기: 단추 자체는 44px 로 두고 **보이는 알약만 작게** 그린다(::before).
+     알약이 단추 안쪽에 있으니 이웃 단추를 덮지 않는다(::after 띠로 넓히다 생긴 사고와 반대 방향). */
+@media (max-width:600px) {
+  #top-bar { flex-wrap:nowrap; padding:2px 8px; gap:6px; }
+  #top-bar .tb-left { gap:4px !important; flex-shrink:0; }
+  #top-bar .tb-right { flex-wrap:nowrap !important; gap:4px !important; min-width:0; }
+  #top-bar .tb-right:has(#ch-note.stale) { flex-wrap:wrap !important; }
+  #top-bar .tb-list { margin-left:0 !important; }
+  #top-bar .tb-lg { display:none; }
+  #ch-note:not(.stale) { display:none; }
+  #ch-note.stale { flex-basis:100%; order:9; text-align:right; font-size:10px !important; white-space:normal !important; }
+  #top-bar .lang-btn, #top-bar .tb-list { font-size:11px !important; padding:3px 9px !important; }
+  #top-bar .lang-btn { border-color:#233a5c; }
+  /* 검색창도 한 호흡 얇게(글자 16px 은 그대로 — 그보다 작으면 아이폰이 화면을 확대한다) */
+  #header { padding:6px 8px; }
+  .search-box { padding:8px 10px; }
+  .search-show { padding:5px; }
+}
+@media (max-width:600px) and (any-pointer:coarse) {
+  #top-bar .lang-btn, #top-bar .tb-list { --tb-bg:#132b4d; --tb-bd:#233a5c; position:relative; z-index:0;
+    min-height:44px; display:inline-flex; align-items:center; background:transparent !important; border-color:transparent !important; }
+  #top-bar .ch-btn.on { --tb-bg:#1758a8; --tb-bd:#1758a8; }
+  :root[data-theme="light"] #top-bar .lang-btn, :root[data-theme="light"] #top-bar .tb-list { --tb-bg:#ffffff; --tb-bd:#cdd9ea; }
+  :root[data-theme="light"] #top-bar .tb-list { color:#122036 !important; }
+  :root[data-theme="light"] #top-bar .ch-btn.on { --tb-bg:#1758a8; --tb-bd:#1758a8; }
+  #top-bar .lang-btn::before, #top-bar .tb-list::before { content:""; position:absolute; left:0; right:0; top:9px; bottom:9px;
+    z-index:-1; border-radius:5px; background:var(--tb-bg); border:1px solid var(--tb-bd); }
+  #top-bar .tb-home { min-height:44px; display:inline-flex; align-items:center; }
+}
 </style>
 </head>
 <body data-scrap-back-bottom="190px">
     <div id="top-bar">
-        <span style="display:flex; align-items:center; gap:12px;">
-          <a href="./" title="빌드 홈으로" style="font-weight:bold; color:var(--p); font-size:12px; text-decoration:none;">⌂ 특성 빌드</a>
-        <button type="button" onclick="openTierList()" style="margin-left:10px; background:#132b4d; border:1px solid #233a5c; color:#eaf1fa; border-radius:5px; padding:3px 10px; cursor:pointer; font-size:11px;">⚖ 특성 나열</button>
+        <span class="tb-left" style="display:flex; align-items:center; gap:12px;">
+          <a href="./" class="tb-home" title="빌드 홈으로" style="font-weight:bold; color:var(--p); font-size:12px; text-decoration:none;">⌂ 특성 빌드</a>
+        <button type="button" class="tb-list" onclick="openTierList()" style="margin-left:10px; background:#132b4d; border:1px solid #233a5c; color:#eaf1fa; border-radius:5px; padding:3px 10px; cursor:pointer; font-size:11px;">⚖ <span class="tb-lg">특성 </span>나열</button>
         </span>
-        <span style="display:flex; align-items:center; gap:6px; flex-wrap:wrap; justify-content:flex-end;">
+        <span class="tb-right" style="display:flex; align-items:center; gap:6px; flex-wrap:wrap; justify-content:flex-end;">
           <span id="ch-note" style="font-size:11px; color:#8fa2bd;"></span>
           <button type="button" class="lang-btn ch-btn" id="ch-live" onclick="setChannel('live')" hidden>본 서버</button>
-          <button type="button" class="lang-btn ch-btn" id="ch-ptr" onclick="setChannel('ptr')" hidden>테스트 서버</button>
+          <button type="button" class="lang-btn ch-btn" id="ch-ptr" onclick="setChannel('ptr')" hidden>테스트<span class="tb-lg"> 서버</span></button>
           <button class="lang-btn" onclick="toggleLanguage()">KO / EN</button>
         </span>
     </div>
@@ -262,7 +321,15 @@
         <div id="main-content"></div>
     </div>
     <div id="footer">
-        <div id="selected-summary"></div>
+        <!-- 맨 윗줄은 접어도 남는다 — 고른 특성 요약 + (접혔을 때만) 되돌리기·저장 + 접기 단추 -->
+        <div id="ft-top">
+            <div id="selected-summary"></div>
+            <span id="ft-mini">
+                <button type="button" id="undo-mini" class="ft-mini-btn" onclick="undoTalent()" aria-label="되돌리기" title="되돌릴 것이 없습니다" disabled style="opacity:.4;">↶</button>
+                <button type="button" class="ft-mini-btn" onclick="takeScreenshot('save')" aria-label="이미지로 저장" title="이미지로 저장">📸</button>
+            </span>
+            <button type="button" id="ft-toggle" onclick="footerToggle()" aria-controls="footer" aria-expanded="true" title="아래 칸 접기 — 특성 목록을 넓게 봅니다">접기 ▾</button>
+        </div>
         <div style="display:flex; gap:6px;">
             <input type="text" id="code-load-input" placeholder="[T3211224,Diablo] 코드 붙여넣기"
                    title="게임 안에서 복사한 특성 코드입니다 — 특성 화면의 '빌드 복사' 로 얻은 [T…,영웅] 글을 그대로 붙여넣으면 그 빌드가 찍힙니다" style="flex:1; background:#132b4d; border:1px dashed #233a5c; color:#eaf1fa; border-radius:4px; padding:7px 10px; font-family:monospace; font-size:12px; outline:none;">
@@ -297,6 +364,52 @@
             <button class="footer-btn" style="background:#27ae60;" onclick="takeScreenshot('copy')">📋 이미지 복사</button>
         </div>
     </div>
+    <script>
+        /* ── 아래 칸 접기/펴기 ─────────────────────────────────────────────
+           폰에서는 아래 칸이 화면 절반(글자를 키운 폰은 그 이상)을 먹어 특성 줄이 안 보였다.
+           접으면 맨 윗줄(고른 특성 요약 · 되돌리기 · 저장)만 남는다.
+           - 한 번 고른 상태는 이 브라우저에 기억한다(builds.footerMin).
+           - 고른 적이 없으면 **아래 칸이 화면 높이의 30% 를 넘을 때** 접힌 채로 시작한다
+             (폰 세로·가로는 접힘, PC·태블릿은 펼침). 고르기 전에는 화면을 돌리면 다시 판단한다.
+           - 오른쪽 아래 ← 단추는 아래 칸 바로 위에 붙어 다닌다(높이가 바뀔 때마다 따라간다). */
+        (function () {
+            var KEY = 'builds.footerMin';
+            var ft = document.getElementById('footer'), tg = document.getElementById('ft-toggle');
+            function saved() { try { return localStorage.getItem(KEY); } catch (e) { return null; } }
+            function syncBack() {
+                var px = (ft.offsetHeight + 10) + 'px';
+                document.body.setAttribute('data-scrap-back-bottom', px);   // 밝기를 바꿔 다시 그릴 때도 이 값을 쓴다
+                var bk = document.getElementById('scrap-back');
+                if (bk) bk.style.bottom = px;
+            }
+            function apply(min) {
+                ft.classList.toggle('min', min);
+                tg.textContent = min ? '펴기 ▴' : '접기 ▾';
+                tg.title = min ? '아래 칸 펴기 — 코드·색·저장 옵션' : '아래 칸 접기 — 특성 목록을 넓게 봅니다';
+                tg.setAttribute('aria-expanded', min ? 'false' : 'true');
+                syncBack();   // 크기 감시(ResizeObserver)는 다음 그리기 때 돌아 늦을 수 있어 바로 맞춘다
+            }
+            function autoMin() {
+                ft.classList.remove('min');
+                return ft.offsetHeight > innerHeight * 0.3;
+            }
+            window.footerToggle = function () {
+                var min = !ft.classList.contains('min');
+                apply(min);
+                try { localStorage.setItem(KEY, min ? '1' : '0'); } catch (e) {}
+            };
+            var s = saved();
+            apply(s === null ? autoMin() : s === '1');
+            var rz = 0;
+            addEventListener('resize', function () {
+                if (saved() !== null) return;
+                cancelAnimationFrame(rz);
+                rz = requestAnimationFrame(function () { apply(autoMin()); });
+            });
+            if (window.ResizeObserver) new ResizeObserver(syncBack).observe(ft);
+            syncBack();
+        })();
+    </script>
     <script>
         /* 영웅 데이터는 파일로 따로 둔다(data/builds/). 한 번에 받는 양을 줄이려고
            고른 판(본 서버/테스트 서버)과 고른 언어 하나만 받는다. */
@@ -343,6 +456,7 @@
                 tag.textContent = CH_LABEL[currentChannel] + ' ' + m.version + ' · ' + m.date
                     + (stale ? ' (본 서버보다 오래된 빌드입니다. 새 테스트 서버 자료가 아직 없습니다)' : '');
                 tag.style.color = stale ? '#e8a13a' : '';
+                tag.classList.toggle('stale', stale);   // 폰에서는 판 번호 줄을 숨기지만 이 경고만은 보인다
             }
         }
 
@@ -560,14 +674,17 @@
             undoPaint();
         }
         function undoPaint() {
-            var b = document.getElementById('undo-btn');
-            if (!b) return;
             var n = undoStack.length;
-            b.disabled = !n;
-            b.style.opacity = n ? '1' : '.4';
-            b.style.cursor = n ? 'pointer' : 'default';
-            b.title = n ? ('바로 앞 상태로 되돌립니다 (남은 걸음 ' + n + ')')
-                        : '되돌릴 것이 없습니다';
+            // 되돌리기는 두 군데 — 펼친 아래 칸의 단추와, 접었을 때 남는 윗줄의 ↶
+            ['undo-btn', 'undo-mini'].forEach(function (id) {
+                var b = document.getElementById(id);
+                if (!b) return;
+                b.disabled = !n;
+                b.style.opacity = n ? '1' : '.4';
+                b.style.cursor = n ? 'pointer' : 'default';
+                b.title = n ? ('바로 앞 상태로 되돌립니다 (남은 걸음 ' + n + ')')
+                            : '되돌릴 것이 없습니다';
+            });
         }
         function undoTalent() {
             var st = undoStack.pop();
