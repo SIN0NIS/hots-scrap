@@ -67,6 +67,73 @@
          + 'style="text-decoration:none;font-size:12px;line-height:1;border-radius:99px;padding:4px 9px;font-weight:700;">?</a>';
   }
 
+  /* **건의함** — 받는 서버(Cloudflare Pages Function /api/feedback)가 있는 곳에서만 보인다.
+     hotscrap.com 과 그 미리보기 주소, wrangler 로컬(8788). GitHub Pages 판에는 서버가 없어 숨긴다. */
+  var FEEDBACK = /(^|\.)hotscrap\.(com|pages\.dev)$/.test(location.hostname) || location.port === '8788';
+  var FB_KINDS = [['idea', '제안'], ['bug', '오류 신고'], ['etc', '기타']];
+  var FB_AUTO = true;
+
+  function feedbackLink() {
+    return FEEDBACK ? '<button id="scrap-fb" type="button" title="건의함 — 제안·오류 신고" '
+      + 'style="border-radius:99px;padding:4px 10px;cursor:pointer;font-size:12px;line-height:1;">'
+      + '✉<span class="scrap-tl"> 건의</span></button>' : '';
+  }
+
+  function openFeedback(ctl, light) {
+    if (document.getElementById('scrap-fb-box')) return;
+    var panel = light ? 'background:#ffffff;color:#122036;border:1px solid #cdd9ea;'
+                      : 'background:#101f38;color:#eaf1fa;border:1px solid #233a5c;';
+    var field = 'width:100%;box-sizing:border-box;margin-top:6px;padding:8px 10px;border-radius:10px;font:13px/1.5 inherit;' + ctl;
+    var wrap = document.createElement('div');
+    wrap.id = 'scrap-fb-box';
+    wrap.style.cssText = 'position:fixed;inset:0;z-index:100000;background:rgba(0,0,0,0.35);display:flex;'
+      + 'align-items:flex-start;justify-content:center;padding:64px 16px 16px;box-sizing:border-box;';
+    var kinds = '';
+    for (var i = 0; i < FB_KINDS.length; i++)
+      kinds += '<label style="margin-right:12px;cursor:pointer;"><input type="radio" name="scrap-fb-kind" value="'
+        + FB_KINDS[i][0] + '"' + (i ? '' : ' checked') + '> ' + FB_KINDS[i][1] + '</label>';
+    wrap.innerHTML = '<form style="width:100%;max-width:440px;border-radius:16px;padding:18px 18px 16px;'
+      + 'box-shadow:0 10px 30px rgba(0,0,0,0.3);font:13px/1.5 Malgun Gothic,Segoe UI,sans-serif;' + panel + '">'
+      + '<div style="display:flex;align-items:center;justify-content:space-between;">'
+      + '<b style="font-size:16px;">건의함</b>'
+      + '<button type="button" data-close style="border:0;background:none;color:inherit;font-size:20px;cursor:pointer;line-height:1;">×</button></div>'
+      + '<p style="margin:6px 0 10px;opacity:.75;">고쳤으면 하는 점, 있었으면 하는 기능, 틀린 자료를 알려 주세요. 보낸 내용은 운영자만 봅니다.</p>'
+      + '<div>' + kinds + '</div>'
+      + '<textarea name="message" rows="6" maxlength="2000" required placeholder="내용 (5자 이상)" style="' + field + 'resize:vertical;"></textarea>'
+      + '<input name="contact" maxlength="100" placeholder="답장 받을 곳 (선택 · 디스코드·메일 등)" style="' + field + '">'
+      + '<input name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;">'
+      + '<div style="display:flex;align-items:center;gap:10px;margin-top:12px;">'
+      + '<button type="submit" style="border-radius:99px;padding:7px 18px;cursor:pointer;font-weight:700;' + ctl + '">보내기</button>'
+      + '<span data-msg style="font-size:12px;"></span></div></form>';
+    document.body.appendChild(wrap);
+    var form = wrap.querySelector('form'), msg = wrap.querySelector('[data-msg]');
+    function close() { wrap.remove(); document.removeEventListener('keydown', onKey); }
+    function onKey(e) { if (e.key === 'Escape') close(); }
+    document.addEventListener('keydown', onKey);
+    wrap.addEventListener('click', function (e) { if (e.target === wrap || e.target.hasAttribute('data-close')) close(); });
+    form.message.focus();
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var send = form.querySelector('[type=submit]');
+      send.disabled = true;
+      msg.textContent = '보내는 중…';
+      fetch('/api/feedback', {
+        method: 'POST', headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ kind: (form.querySelector('[name=scrap-fb-kind]:checked') || {}).value,
+          message: form.message.value, contact: form.contact.value, website: form.website.value,
+          page: location.pathname + location.search })
+      }).then(function (r) { return r.json(); }).then(function (r) {
+        if (!r.ok) throw new Error(r.error || '보내지 못했어요');
+        form.innerHTML = '<b style="font-size:16px;">고마워요!</b><p style="margin:8px 0 12px;">건의가 전달됐어요.</p>'
+          + '<button type="button" data-close style="border-radius:99px;padding:7px 18px;cursor:pointer;' + ctl + '">닫기</button>';
+      }).catch(function (err) {
+        send.disabled = false;
+        msg.style.color = '#d9534f';
+        msg.textContent = err.message || '보내지 못했어요. 잠시 뒤 다시 해 주세요';
+      });
+    });
+  }
+
   function addBar() {
     if (document.getElementById('scrap-bar')) return;
     var d = document.createElement('div');
@@ -74,6 +141,7 @@
     d.innerHTML = '<a id="scrap-brand" href="' + BASE + '" style="font-weight:600;letter-spacing:0.3px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;"><img id="scrap-logo" src="' + BASE + 'shared/logo_light.svg" alt="" style="height:18px;width:18px;"><span class="scrap-bt"> HotS Scrap</span></a>'
       + navLinks()
       + '<span id="scrap-tools">'
+      + feedbackLink()
       + helpLink()
       + '<button id="scrap-theme-btn" type="button" title="다크/라이트 전환 — 모든 화면에 적용" style="border-radius:99px;padding:4px 10px;cursor:pointer;font-size:12px;line-height:1;">◐</button>'
       + '<a id="scrap-gh" href="https://github.com/SIN0NIS/hots-scrap" target="_blank" rel="noopener" title="GitHub 저장소" style="text-decoration:none;font-size:12px;line-height:1;border-radius:99px;padding:4px 10px;">🔗</a>'
@@ -116,6 +184,14 @@
       var ctl = light ? 'background:#ffffff;border:1px solid #cdd9ea;color:#31405a;' : 'background:#132b4d;border:1px solid #233a5c;color:#eaf1fa;';
       btn.style.cssText = 'border-radius:99px;padding:4px 10px;cursor:pointer;font-size:12px;line-height:1;' + ctl;
       document.getElementById('scrap-gh').style.cssText = 'text-decoration:none;font-size:12px;line-height:1;border-radius:99px;padding:4px 10px;' + ctl;
+      var fb = document.getElementById('scrap-fb');
+      if (fb) {
+        fb.style.cssText = 'border-radius:99px;padding:4px 10px;cursor:pointer;font-size:12px;line-height:1;' + ctl;
+        fb.onclick = function () { openFeedback(ctl, light); };
+        // 허브(전역 바가 없는 첫 화면)의 건의 단추는 ?feedback=1 로 여기 와서 창을 연다
+        // (한 번만 — paint 는 밝기를 바꿀 때마다 다시 돈다)
+        if (FB_AUTO && /[?&]feedback=1/.test(location.search)) { FB_AUTO = false; openFeedback(ctl, light); }
+      }
       var hp = document.getElementById('scrap-help');
       if (hp) hp.style.cssText = 'text-decoration:none;font-size:12px;line-height:1;border-radius:99px;padding:4px 9px;font-weight:700;' + ctl;
       // 낱말은 따로 싸 둔다 — 좁은 화면에서는 CSS 가 낱말을 접고 ☀/☾ 만 남긴다
