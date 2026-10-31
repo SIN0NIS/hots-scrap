@@ -45,20 +45,13 @@
   @media (max-width:640px) { .cards { grid-template-columns:1fr; } }
   .card { background:var(--card); border:1px solid var(--line); border-radius:16px;
           padding:20px 20px 18px; box-shadow:var(--shadow); }
-  .card.wide { grid-column:1 / -1; }
   .card h2 { margin:0; font-size:19px; }
   .card .kind { font-size:11.5px; color:var(--gold); font-weight:700; letter-spacing:.04em; }
   .card p { margin:8px 0 0; color:var(--dim); font-size:13.5px; word-break:keep-all; }
-  .card ul { margin:10px 0 0; padding-left:18px; color:var(--dim); font-size:13.5px; word-break:keep-all; }
-  .card li { margin:3px 0; }
-  .card li b { color:var(--fg); font-weight:600; }
   .go { display:inline-flex; align-items:center; gap:6px; margin-top:14px; text-decoration:none;
         color:var(--blue); background:var(--blue-soft); border:1px solid var(--line);
         border-radius:999px; padding:7px 16px; font-size:13.5px; font-weight:600; }
   .go:hover { border-color:var(--blue); }
-  .credit { margin-top:14px; padding-top:12px; border-top:1px dashed var(--line);
-            font-size:12px; color:var(--dim); word-break:keep-all; }
-  .credit a { color:var(--blue); }
   @media (any-pointer:coarse) { .go { min-height:44px; } }
 </style>
 <script src="../shared/scrap.js" defer></script>
@@ -84,38 +77,19 @@
       <a class="go" href="../maps/">전장 도감</a>
     </div>
 
-    <div class="card wide" id="obs">
-      <div class="kind">게임용 파일 · 리플레이 인터페이스</div>
-      <h2>hots-scrap-obs</h2>
-      <p>게임 안에서 리플레이를 볼 때 쓰는 화면(인터페이스)입니다. 한국어판(KOR)과 영어판(ENG)이 있습니다.
-        왼쪽 위 <b>[메뉴]</b> 버튼 하나로 원하는 것만 켜고 끕니다.</p>
-      <ul>
-        <li><b>화면</b> — 상단바·미니맵·채팅창·리플레이 컨트롤·유닛 정보·알림을 하나씩, 또는 UI 전체를 켜고 끄기</li>
-        <li><b>머리 위 이름</b> — 유저 이름 대신 영웅 이름으로 바꿔 보기</li>
-        <li><b>상단바 모드</b> — 영웅마다 네모 카드에 특성(1~20레벨)·궁극기 쿨다운·체력·자원, 스킬 쿨다운(쓸 수 있으면 밝게, 쿨다운 중이면 회색과 남은 초)</li>
-        <li><b>체력바 숫자</b> — 현재/최대 체력과 퍼센트, 쉴드는 막대 옆에 <b>+숫자</b>로 따로</li>
-      </ul>
+    <div class="card" id="obs">
+      <div class="kind">게임용 파일</div>
+      <h2>리플레이 인터페이스</h2>
+      <p>게임 안 리플레이 화면(hots-scrap-obs)입니다. 메뉴 하나로 화면 요소를 켜고 끄고, 상단바에 특성·쿨다운을 띄웁니다.</p>
       <a class="go" href="https://github.com/SIN0NIS/hots-scrap-obs" target="_blank" rel="noopener">GitHub 에서 받기 ↗</a>
-      <p>받는 법과 설치 위치(<code>문서\Heroes of the Storm\Interfaces</code>)는 GitHub 페이지 맨 위에 있습니다.</p>
-      <div class="credit">Ahli 의 <a href="https://github.com/Ahli/Galaxy-Observer-UI" target="_blank" rel="noopener">AhliObs</a>(MIT)를 바탕으로 만들었고,
-        상단바 카드 디자인은 spazzo966 의 <a href="https://github.com/spazzo966/SpazzoReplayStatKit" target="_blank" rel="noopener">SpazzoReplayStatKit</a> 을 참고했습니다(코드는 쓰지 않음).</div>
     </div>
-    <div class="card wide" id="custom-viewer">
-      <div class="kind">게임용 프로그램 · 리플레이 시야 조절</div>
-      <h2>hots-scrap-custom-viewer</h2>
-      <p>리플레이를 볼 때 카메라를 원하는 각도로 돌려 <b>흔들림 없이 고정</b>하고, 줌을 더 멀리·더 가까이 보는 작은 프로그램입니다.
-        exe 하나만 받아 실행하면 되고, 파이썬이나 다른 프로그램은 필요 없습니다.</p>
-      <ul>
-        <li><b>각도</b> — 일반 전장은 ±180° 안에서 슬라이더·숫자 입력·±1°로 정하고 그 자리에 고정, 무작위·난투는 게임 한계인 ±45°</li>
-        <li><b>줌</b> — 일반 전장은 12단계(기본에서 멀리 5 · 가까이 6), 무작위·난투는 관전 줌 1·2</li>
-        <li><b>리플레이 열기</b> — 창에서 최근 리플레이를 골라 열면 임시 변환본으로 열리고, 리플레이를 나가는 순간 자동으로 지워집니다. 원본은 건드리지 않습니다.</li>
-        <li><b>처음 한 번</b> — 창 아래 <b>[회전 키 설정]</b>을 게임을 끈 상태에서 누르면 카메라 회전 키(Insert/Delete)가 켜집니다.</li>
-      </ul>
-      <a class="go" href="https://github.com/SIN0NIS/hots-scrap-custom-viewer/releases/latest/download/HotsReplayView.exe">exe 바로 받기 ↓</a>
-      <a class="go" href="https://github.com/SIN0NIS/hots-scrap-custom-viewer" target="_blank" rel="noopener">GitHub 에서 보기 ↗</a>
-      <p>Windows 전용입니다. 처음 실행할 때 SmartScreen 경고(서명 없는 exe)가 뜨면 <b>추가 정보 → 실행</b>을 누르세요. 쓰는 법은 GitHub 페이지에 있습니다.</p>
-      <div class="credit">MPQ 읽기는 <a href="https://github.com/eagleflo/mpyq" target="_blank" rel="noopener">mpyq</a>(BSD-2), 쓰기는 Ladislav Zezula 의
-        <a href="https://github.com/ladislav-zezula/StormLib" target="_blank" rel="noopener">StormLib</a>(MIT)을 씁니다. 게임 메모리는 읽지도 쓰지도 않고, 게임에 키 입력만 보냅니다.</div>
+
+    <div class="card" id="custom-viewer">
+      <div class="kind">게임용 프로그램</div>
+      <h2>리플레이 시야 조절</h2>
+      <p>리플레이 카메라를 원하는 각도로 돌려 고정하고, 줌을 더 멀리·가까이 봅니다(hots-scrap-custom-viewer, Windows exe).</p>
+      <a class="go" href="https://github.com/SIN0NIS/hots-scrap-custom-viewer/releases/latest/download/HotsReplayView.exe">exe 받기 ↓</a>
+      <a class="go" href="https://github.com/SIN0NIS/hots-scrap-custom-viewer" target="_blank" rel="noopener">GitHub ↗</a>
     </div>
   </div>
 </div>
