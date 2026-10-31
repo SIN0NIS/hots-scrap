@@ -66,7 +66,7 @@
 <body>
 <div class="wrap">
   <h1>자료실</h1>
-  <p class="lead">영웅과 전장을 하나씩 들여다보는 뷰어, 그리고 직접 만든 게임용 파일을 모아 둔 곳입니다.</p>
+  <p class="lead">영웅과 전장을 하나씩 들여다보는 뷰어, 그리고 직접 만든 게임용 파일·프로그램을 모아 둔 곳입니다.</p>
 
   <div class="cards">
     <div class="card">
@@ -99,6 +99,23 @@
       <p>받는 법과 설치 위치(<code>문서\Heroes of the Storm\Interfaces</code>)는 GitHub 페이지 맨 위에 있습니다.</p>
       <div class="credit">Ahli 의 <a href="https://github.com/Ahli/Galaxy-Observer-UI" target="_blank" rel="noopener">AhliObs</a>(MIT)를 바탕으로 만들었고,
         상단바 카드 디자인은 spazzo966 의 <a href="https://github.com/spazzo966/SpazzoReplayStatKit" target="_blank" rel="noopener">SpazzoReplayStatKit</a> 을 참고했습니다(코드는 쓰지 않음).</div>
+    </div>
+    <div class="card wide" id="custom-viewer">
+      <div class="kind">게임용 프로그램 · 리플레이 시야 조절</div>
+      <h2>hots-scrap-custom-viewer</h2>
+      <p>리플레이를 볼 때 카메라를 원하는 각도로 돌려 <b>흔들림 없이 고정</b>하고, 줌을 더 멀리·더 가까이 보는 작은 프로그램입니다.
+        exe 하나만 받아 실행하면 되고, 파이썬이나 다른 프로그램은 필요 없습니다.</p>
+      <ul>
+        <li><b>각도</b> — 일반 전장은 ±180° 안에서 슬라이더·숫자 입력·±1°로 정하고 그 자리에 고정, 무작위·난투는 게임 한계인 ±45°</li>
+        <li><b>줌</b> — 일반 전장은 12단계(기본에서 멀리 5 · 가까이 6), 무작위·난투는 관전 줌 1·2</li>
+        <li><b>리플레이 열기</b> — 창에서 최근 리플레이를 골라 열면 임시 변환본으로 열리고, 리플레이를 나가는 순간 자동으로 지워집니다. 원본은 건드리지 않습니다.</li>
+        <li><b>처음 한 번</b> — 창 아래 <b>[회전 키 설정]</b>을 게임을 끈 상태에서 누르면 카메라 회전 키(Insert/Delete)가 켜집니다.</li>
+      </ul>
+      <a class="go" href="https://github.com/SIN0NIS/hots-scrap-custom-viewer/releases/latest/download/HotsReplayView.exe">exe 바로 받기 ↓</a>
+      <a class="go" href="https://github.com/SIN0NIS/hots-scrap-custom-viewer" target="_blank" rel="noopener">GitHub 에서 보기 ↗</a>
+      <p>Windows 전용입니다. 처음 실행할 때 SmartScreen 경고(서명 없는 exe)가 뜨면 <b>추가 정보 → 실행</b>을 누르세요. 쓰는 법은 GitHub 페이지에 있습니다.</p>
+      <div class="credit">MPQ 읽기는 <a href="https://github.com/eagleflo/mpyq" target="_blank" rel="noopener">mpyq</a>(BSD-2), 쓰기는 Ladislav Zezula 의
+        <a href="https://github.com/ladislav-zezula/StormLib" target="_blank" rel="noopener">StormLib</a>(MIT)을 씁니다. 게임 메모리는 읽지도 쓰지도 않고, 게임에 키 입력만 보냅니다.</div>
     </div>
   </div>
 </div>
