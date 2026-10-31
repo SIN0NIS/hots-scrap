@@ -29,3 +29,9 @@ raw/
 
 # 파이프라인 진단 출력(빈 파일일 때가 많다)
 site/data/patchnotes/unmatched.json
+
+# Cloudflare 판 (cloudflare/build_cf.py 가 만드는 것·로컬 시험 상태·비밀값)
+cloudflare/public/
+cloudflare/.build_origin
+cloudflare/.wrangler/
+cloudflare/.dev.vars

@@ -1,6 +1,17 @@
-# site/ 폴더를 GitHub Pages 루트로 배포 — 짧은 주소를 위해
-# https://sin0nis.github.io/hots-scrap/            (허브)
-# https://sin0nis.github.io/hots-scrap/encyclopedia/  등
+# 사이트 배포 — push 와 update-patchnotes.yml 이 깨울 때 돈다. 두 곳에 내보낸다.
+#
+# 1) Cloudflare Pages = 진짜 사이트 https://hotscrap.com (2026-10-31 부터)
+#    site/ + 아이콘(SIN0NIS/images) + 맵 그림(hots-scrap-assets) + 3D 뷰어(hots_hero_m3) + 릴리스 파일을
+#    cloudflare/build_cf.py 가 한 폴더로 모으고 wrangler 가 **바뀐 파일만** 올린다(PC 의 자동 갱신과 같은 스크립트).
+#    켜려면 저장소 설정에 두 가지:
+#      Secrets   CLOUDFLARE_API_TOKEN   (Account > Cloudflare Pages > Edit 권한 토큰)
+#      Variables CLOUDFLARE_DEPLOY = 1
+#    배포가 끝나면 사이트의 /deploy.json 에 by=github-actions 가 적히고, PC 의 자동 갱신(hotscrap_xyz/auto_update.py)은
+#    그것을 보고 12시간 동안 손을 뗀다. 여기가 멈추면 PC 가 다시 이어받는다.
+#
+# 2) GitHub Pages = https://sin0nis.github.io/hots-scrap/
+#    Variables REDIRECT_ONLY = 1 이면 cloudflare/github_redirect/ 만 내보낸다 — 옛 주소가 같은 경로의 hotscrap.com 으로 넘어간다.
+#    아니면 예전처럼 site/ 를 그대로 내보낸다.
 name: Deploy Pages
 on:
   push:
@@ -27,6 +38,44 @@ jobs:
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: site
+          path: ${{ vars.REDIRECT_ONLY == '1' && 'cloudflare/github_redirect' || 'site' }}
       - id: deployment
         uses: actions/deploy-pages@v4
+
+  cloudflare:
+    if: vars.CLOUDFLARE_DEPLOY == '1'
+    runs-on: ubuntu-latest
+    env:
+      PYTHONIOENCODING: utf-8
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+
+      # 다른 저장소의 그림들 — 최신 한 판만(얕게)
+      - uses: actions/checkout@v4
+        with: { repository: SIN0NIS/images, path: _src/images, fetch-depth: 1 }
+      - uses: actions/checkout@v4
+        with: { repository: SIN0NIS/hots-scrap-assets, path: _src/hots-scrap-assets, fetch-depth: 1 }
+      - uses: actions/checkout@v4
+        with: { repository: SIN0NIS/hots_hero_m3, path: _src/hots_hero_m3, fetch-depth: 1 }
+
+      - name: 릴리스 파일 (시야 조절 exe · 리플레이 인터페이스)
+        run: |
+          mkdir -p _src/releases
+          gh release download -R SIN0NIS/hots-scrap-custom-viewer -p HotsReplayView.exe -D _src/releases
+          gh release download -R SIN0NIS/hots-scrap-obs -p "*.StormInterface" -D _src/releases
+
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - uses: actions/setup-node@v4
+        with: { node-version: "22" }
+
+      - name: 한 폴더로 모으기
+        run: python cloudflare/build_cf.py --src _src --by github-actions
+
+      - name: Cloudflare 에 올리기 (바뀐 파일만)
+        working-directory: cloudflare
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: 327c7d26e56a3f1edeb5d78e097c2446
+        run: npx --yes wrangler@4 pages deploy --branch main --commit-dirty=true

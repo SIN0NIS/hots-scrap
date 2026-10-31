@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>건의함 · HotS Scrap</title>
+<link rel="icon" type="image/svg+xml" href="/shared/favicon.svg">
+<style>
+  /* 운영자 전용 — 건의함(/api/feedback) 읽기·지우기. 비밀번호는 이 탭(sessionStorage)에만 둔다. */
+  :root { --bg:#f3f6fb; --card:#fff; --line:#cdd9ea; --fg:#122036; --dim:#5d6d84; --blue:#1758a8; --red:#c0392b; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#0b1526; --card:#101f38; --line:#233a5c; --fg:#eaf1fa; --dim:#8fa2bd; --blue:#5aa8ff; --red:#ff7b6b; color-scheme:dark; } }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:14px/1.6 "Malgun Gothic","Segoe UI",sans-serif; }
+  .wrap { max-width:860px; margin:0 auto; padding:28px 16px 48px; }
+  h1 { margin:0 0 4px; font-size:24px; }
+  .dim { color:var(--dim); font-size:13px; }
+  form, .item { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 16px; margin-top:14px; }
+  input { padding:8px 10px; border-radius:10px; border:1px solid var(--line); background:var(--bg); color:var(--fg); font:inherit; width:min(320px, 100%); }
+  button { padding:7px 14px; border-radius:99px; border:1px solid var(--line); background:var(--card); color:var(--fg); font:inherit; cursor:pointer; }
+  .head { display:flex; flex-wrap:wrap; gap:6px 12px; align-items:center; font-size:12.5px; color:var(--dim); }
+  .kind { font-weight:700; color:var(--blue); }
+  .kind.bug { color:var(--red); }
+  .msg { margin:8px 0 0; white-space:pre-wrap; word-break:break-word; }
+  .del { margin-left:auto; font-size:12px; padding:3px 10px; }
+  #more { margin-top:14px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>건의함</h1>
+  <div class="dim" id="state">운영자 비밀번호를 넣으세요.</div>
+  <form id="login">
+    <input id="key" type="password" autocomplete="current-password" placeholder="비밀번호">
+    <button>열기</button>
+  </form>
+  <div id="list"></div>
+  <button id="more" hidden>더 보기</button>
+</div>
+<script>
+  const KINDS = { idea: '제안', bug: '오류 신고', etc: '기타' };
+  const $ = (id) => document.getElementById(id);
+  let key = sessionStorage.getItem('admin.key') || '';
+  let last = null;
+
+  const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const when = (iso) => new Date(iso).toLocaleString('ko-KR', { dateStyle: 'medium', timeStyle: 'short' });
+
+  async function api(method, query = '') {
+    const r = await fetch('/api/feedback' + query, { method, headers: { 'x-admin-key': key } });
+    const body = await r.json().catch(() => ({ ok: false, error: r.status + ' 오류' }));
+    if (!body.ok) throw new Error(body.error);
+    return body;
+  }
+
+  async function load(more) {
+    try {
+      const r = await api('GET', more && last ? '?before=' + last : '');
+      sessionStorage.setItem('admin.key', key);
+      $('login').hidden = true;
+      $('state').textContent = `모두 ${r.total}건`;
+      if (!more) $('list').innerHTML = '';
+      for (const it of r.items) {
+        const div = document.createElement('div');
+        div.className = 'item';
+        div.innerHTML = `<div class="head"><span class="kind ${esc(it.kind)}">${esc(KINDS[it.kind] || it.kind)}</span>
+          <span>#${it.id} · ${esc(when(it.created_at))}</span>
+          ${it.page ? `<a href="${esc(it.page)}" target="_blank" rel="noopener">${esc(it.page)}</a>` : ''}
+          ${it.contact ? `<span>연락: ${esc(it.contact)}</span>` : ''}
+          <button class="del" data-id="${it.id}">지우기</button></div>
+          <p class="msg">${esc(it.message)}</p>`;
+        $('list').appendChild(div);
+        last = it.id;
+      }
+      $('more').hidden = r.items.length < 100;
+    } catch (e) {
+      sessionStorage.removeItem('admin.key');
+      $('login').hidden = false;
+      $('state').textContent = e.message;
+    }
+  }
+
+  $('login').addEventListener('submit', (e) => { e.preventDefault(); key = $('key').value; load(false); });
+  $('more').addEventListener('click', () => load(true));
+  $('list').addEventListener('click', async (e) => {
+    const id = e.target.dataset && e.target.dataset.id;
+    if (!id || !confirm(`#${id} 건의를 지울까요? 되돌릴 수 없습니다.`)) return;
+    await api('DELETE', '?id=' + id);
+    e.target.closest('.item').remove();
+  });
+  if (key) load(false);
+</script>
+</body>
+</html>

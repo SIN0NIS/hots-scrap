@@ -1,0 +1,11 @@
+# Cloudflare Pages response headers. Scripts and styles are revalidated on every load so an update reaches
+# everyone at once (the zone's default browser cache would keep the old scrap.js for 4 hours).
+/*.js
+  Cache-Control: public, max-age=0, must-revalidate
+/*.css
+  Cache-Control: public, max-age=0, must-revalidate
+/admin/*
+  X-Robots-Tag: noindex
+# icons and map pictures hardly ever change: reuse them for a day instead of asking on every load
+/cdn/*
+  Cache-Control: public, max-age=86400

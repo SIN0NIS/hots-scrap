@@ -1,6 +1,19 @@
 # HotS Scrap — 작업 규약 (Claude 용)
 
-배포 사이트: https://sin0nis.github.io/hots-scrap/ (GitHub `SIN0NIS/hots-scrap`, `main` push 시 Actions 가 `site/` 를 Pages 루트로 자동 배포)
+배포 사이트: **https://hotscrap.com** (Cloudflare Pages, 2026-10-31 부터) — 옛 주소 https://sin0nis.github.io/hots-scrap/ 은
+넘겨주기 전용으로 바꿀 예정(GitHub 계정이 '수상한 로그인'으로 잠겨 404 인 동안 옮겼다).
+
+## Cloudflare 판 (`cloudflare/`)
+
+- `build_cf.py` 가 `site/` + 아이콘(images) + 맵 그림(hots-scrap-assets) + 3D 뷰어(hots_hero_m3) + 릴리스 파일을 `cloudflare/public/`
+  으로 모으고 `sin0nis.github.io/…` 주소를 `/`·`/cdn/images/`·`/cdn/assets/`·`/hero3d/`·`/downloads/` 로 바꾼다. **바뀐 파일만** 다시 쓴다.
+  배포는 `cloudflare/` 에서 `npx wrangler pages deploy --branch main` (wrangler.toml 이 public·functions 를 같이 올린다).
+- `functions/api/feedback.js` 건의함(D1 `hotscrap-feedback`, 비밀값 ADMIN_KEY) · `extra/` 이 호스트 전용 파일(admin/, `_headers`)
+  · `github_redirect/` 옛 주소 넘겨주기(GitHub Pages 용).
+- 누가 올리나: `.github/workflows/pages.yml` 의 `cloudflare` 작업(Variables `CLOUDFLARE_DEPLOY=1` + Secret `CLOUDFLARE_API_TOKEN`).
+  GitHub 가 못 하는 동안은 PC 의 `../hotscrap_xyz/auto_update.py`(작업 스케줄러)가 같은 일을 한다. 둘은 사이트의 `/deploy.json`
+  (`by`·`at`)으로 서로를 안다 — GitHub 배포가 12시간 안이면 PC 는 쉰다.
+- 건의 단추(`scrap.js` 의 ✉)는 hotscrap.com 에서만 보인다(서버가 거기만 있다).
 
 ## 작업 흐름: 로컬 테스트 → 이상 없음 → 커밋 → push
 

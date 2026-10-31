@@ -1,0 +1,10 @@
+# Cloudflare Pages project for hotscrap.com: static files from public/ (build_cf.py), server functions from
+# functions/ (the feedback box). Deploy from this folder: npx wrangler pages deploy --branch main
+name = "hotscrap"
+pages_build_output_dir = "public"
+compatibility_date = "2026-10-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "hotscrap-feedback"
+database_id = "48596e6d-940f-4ce7-add1-2eb4a91e0a0c"
