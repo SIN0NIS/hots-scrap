@@ -32,7 +32,7 @@
     ['builds/?ch=live', '특성 찍기', ['builds'], 'talent'],
     ['wiki/', '위키', ['wiki', 'herodex', 'encyclopedia', 'maps', 'patchnotes', 'tier'], 'codex'],
     ['replay/', '리플레이', ['replay'], 'replay'],
-    ['https://sin0nis.github.io/hots_hero_m3/', '뷰어', [], 'viewer']
+    ['library/', '자료실', ['library'], 'viewer']
   ];
 
   function navLinks() {
@@ -56,7 +56,7 @@
   var HELP = [
     [/\/herodex\/shapes/, 'herodex-shapes'], [/\/herodex\/stats/, 'herodex-stats'], [/\/herodex\//, 'herodex'], [/\/wiki\//, 'wiki'],
     [/\/builds\//, 'builds'], [/\/encyclopedia\//, 'ency'], [/\/maps\//, 'maps'], [/\/patchnotes\//, 'patch'],
-    [/\/tier\//, 'tier'], [/\/replay\//, 'replay'], [/hots_hero_m3/, 'viewer']
+    [/\/tier\//, 'tier'], [/\/replay\//, 'replay'], [/\/library\//, 'viewer'], [/hots_hero_m3/, 'viewer']
   ];
   function helpLink() {
     var here = location.pathname;

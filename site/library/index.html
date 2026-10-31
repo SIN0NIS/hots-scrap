@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>자료실 · HotS Scrap</title>
+<link rel="icon" type="image/svg+xml" href="../shared/favicon.svg">
+<style>
+  /* 허브와 같은 팔레트 — 라이트가 기본, 다크는 media + data-theme 로 겹쳐 쓴다 */
+  :root {
+    --bg:#f3f6fb;
+    --bg-glow:radial-gradient(1200px 500px at 50% -10%, #dbe7f7 0%, transparent 60%);
+    --card:#ffffff; --line:#cdd9ea; --fg:#122036; --dim:#5d6d84;
+    --blue:#1758a8; --blue-soft:#e8f0fb; --gold:#a97e1f; --gold-line:#d7b45c;
+    --shadow:0 1px 2px rgba(18,32,54,.06), 0 8px 24px rgba(18,32,54,.07);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg:#0b1526;
+      --bg-glow:radial-gradient(1200px 500px at 50% -10%, #14294a 0%, transparent 60%);
+      --card:#101f38; --line:#233a5c; --fg:#eaf1fa; --dim:#8fa2bd;
+      --blue:#5aa8ff; --blue-soft:#132b4d; --gold:#e8c268; --gold-line:#8a6d2f;
+      --shadow:0 1px 2px rgba(0,0,0,.35), 0 10px 30px rgba(0,0,0,.35);
+      color-scheme:dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg:#0b1526;
+    --bg-glow:radial-gradient(1200px 500px at 50% -10%, #14294a 0%, transparent 60%);
+    --card:#101f38; --line:#233a5c; --fg:#eaf1fa; --dim:#8fa2bd;
+    --blue:#5aa8ff; --blue-soft:#132b4d; --gold:#e8c268; --gold-line:#8a6d2f;
+    --shadow:0 1px 2px rgba(0,0,0,.35), 0 10px 30px rgba(0,0,0,.35);
+    color-scheme:dark;
+  }
+  * { box-sizing:border-box; }
+  html, body { margin:0; }
+  body { background:var(--bg); background-image:var(--bg-glow); background-repeat:no-repeat;
+         color:var(--fg); font:15px/1.65 "Noto Sans KR", -apple-system, BlinkMacSystemFont,
+         "Segoe UI", Roboto, sans-serif; min-height:100vh; }
+  .wrap { max-width:1000px; margin:0 auto; padding:34px 16px 56px; }
+  h1 { margin:0 0 6px; font-size:27px; letter-spacing:-.01em; }
+  .lead { margin:0 0 26px; color:var(--dim); font-size:13.5px; word-break:keep-all; }
+
+  .cards { display:grid; gap:16px; grid-template-columns:repeat(2, minmax(0, 1fr)); }
+  @media (max-width:640px) { .cards { grid-template-columns:1fr; } }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:16px;
+          padding:20px 20px 18px; box-shadow:var(--shadow); }
+  .card.wide { grid-column:1 / -1; }
+  .card h2 { margin:0; font-size:19px; }
+  .card .kind { font-size:11.5px; color:var(--gold); font-weight:700; letter-spacing:.04em; }
+  .card p { margin:8px 0 0; color:var(--dim); font-size:13.5px; word-break:keep-all; }
+  .card ul { margin:10px 0 0; padding-left:18px; color:var(--dim); font-size:13.5px; word-break:keep-all; }
+  .card li { margin:3px 0; }
+  .card li b { color:var(--fg); font-weight:600; }
+  .go { display:inline-flex; align-items:center; gap:6px; margin-top:14px; text-decoration:none;
+        color:var(--blue); background:var(--blue-soft); border:1px solid var(--line);
+        border-radius:999px; padding:7px 16px; font-size:13.5px; font-weight:600; }
+  .go:hover { border-color:var(--blue); }
+  .credit { margin-top:14px; padding-top:12px; border-top:1px dashed var(--line);
+            font-size:12px; color:var(--dim); word-break:keep-all; }
+  .credit a { color:var(--blue); }
+  @media (any-pointer:coarse) { .go { min-height:44px; } }
+</style>
+<script src="../shared/scrap.js" defer></script>
+</head>
+<body>
+<div class="wrap">
+  <h1>자료실</h1>
+  <p class="lead">영웅과 전장을 하나씩 들여다보는 뷰어, 그리고 직접 만든 게임용 파일을 모아 둔 곳입니다.</p>
+
+  <div class="cards">
+    <div class="card">
+      <div class="kind">뷰어</div>
+      <h2>영웅 3D 뷰어</h2>
+      <p>영웅 3D 모델(m3)을 돌려 보며 스킨과 동작을 봅니다. 다른 주소에서 열립니다.</p>
+      <a class="go" href="https://sin0nis.github.io/hots_hero_m3/">영웅 3D 뷰어 열기 ↗</a>
+    </div>
+
+    <div class="card">
+      <div class="kind">뷰어</div>
+      <h2>맵 뷰어</h2>
+      <p>리플레이 화면의 '맵 보기'로 전장 지도를 봅니다. 전장의 목표물 규칙과 흐름은 전장 도감에 있습니다.</p>
+      <a class="go" href="../replay/">맵 뷰어 열기</a>
+      <a class="go" href="../maps/">전장 도감</a>
+    </div>
+
+    <div class="card wide" id="obs">
+      <div class="kind">게임용 파일 · 리플레이 인터페이스</div>
+      <h2>hots-scrap-obs</h2>
+      <p>게임 안에서 리플레이를 볼 때 쓰는 화면(인터페이스)입니다. 한국어판(KOR)과 영어판(ENG)이 있습니다.
+        왼쪽 위 <b>[메뉴]</b> 버튼 하나로 원하는 것만 켜고 끕니다.</p>
+      <ul>
+        <li><b>화면</b> — 상단바·미니맵·채팅창·리플레이 컨트롤·유닛 정보·알림을 하나씩, 또는 UI 전체를 켜고 끄기</li>
+        <li><b>머리 위 이름</b> — 유저 이름 대신 영웅 이름으로 바꿔 보기</li>
+        <li><b>상단바 모드</b> — 영웅마다 네모 카드에 특성(1~20레벨)·궁극기 쿨다운·체력·자원, 스킬 쿨다운(쓸 수 있으면 밝게, 쿨다운 중이면 회색과 남은 초)</li>
+        <li><b>체력바 숫자</b> — 현재/최대 체력과 퍼센트, 쉴드는 막대 옆에 <b>+숫자</b>로 따로</li>
+      </ul>
+      <a class="go" href="https://github.com/SIN0NIS/hots-scrap-obs" target="_blank" rel="noopener">GitHub 에서 받기 ↗</a>
+      <p>받는 법과 설치 위치(<code>문서\Heroes of the Storm\Interfaces</code>)는 GitHub 페이지 맨 위에 있습니다.</p>
+      <div class="credit">Ahli 의 <a href="https://github.com/Ahli/Galaxy-Observer-UI" target="_blank" rel="noopener">AhliObs</a>(MIT)를 바탕으로 만들었고,
+        상단바 카드 디자인은 spazzo966 의 <a href="https://github.com/spazzo966/SpazzoReplayStatKit" target="_blank" rel="noopener">SpazzoReplayStatKit</a> 을 참고했습니다(코드는 쓰지 않음).</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
