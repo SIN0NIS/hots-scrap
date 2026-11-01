@@ -53,14 +53,24 @@
       else for (let i = 0; i < 3; i++) out[i] = (d[a + i] * wa + d[b + i] * wb + d[c + i] * wc + d[e + i] * we) / 255;
       return true;
     }
-    function shade(i, o, u, v, t) {
+    // gv: 그러데이션 발광을 반지름 비율로 읽을 때(원형 부채꼴 — 게임은 호 모양 판에 바깥으로 갈수록 밝게 입힌다)
+    // 층마다 제 tile·angle 로 텍스처 좌표를 바꾼다(발광과 마스크가 따로 — 원형 부채꼴은 발광만 8배·90°).
+    // 1 보다 촘촘히 깐 층은 되풀이(감싸기), 성기게 깐 층(얼음 고리 0.91)은 밖이면 비운다
+    const UV = [0, 0];
+    function layerUV(L, u, v) {
+      if ((L.tile == null || L.tile === 1) && !L.angle) { UV[0] = u; UV[1] = v; return UV; }
+      const r = (L.angle || 0) * Math.PI / 180, ca = Math.cos(r), sa = Math.sin(r), x = u - 0.5, y = v - 0.5, k = L.tile || 1;
+      let a = (x * ca - y * sa) * k + 0.5, b = (x * sa + y * ca) * k + 0.5;
+      if (k > 1) { a -= Math.floor(a); b -= Math.floor(b); }
+      UV[0] = a; UV[1] = b; return UV;
+    }
+    function shade(i, o, u, v, t, gv) {
       const L = o.m.emis;
-      if (L.tile !== 1 || L.angle) {
-        const r = (L.angle || 0) * Math.PI / 180, ca = Math.cos(r), sa = Math.sin(r), x = u - 0.5, y = v - 0.5;
-        u = (x * ca - y * sa) * L.tile + 0.5; v = (x * sa + y * ca) * L.tile + 0.5;
-      }
-      if (!samp(o.te, L.chan, u, v, S)) return;
-      samp(o.tm, o.m.mask.chan, u, v, M);
+      const grad = gv != null && /gradient/.test(L.tex);
+      let q = grad ? [0.5, gv] : layerUV(L, u, v);
+      if (!samp(o.te, L.chan, q[0], q[1], S)) return;
+      q = layerUV(o.m.mask, u, v);
+      if (!samp(o.tm, o.m.mask.chan, q[0], q[1], M)) return;
       const a = (M[0] + M[1] + M[2]) / 3;
       // 발광이 밋밋한 그러데이션이면(원형 부채꼴의 가운데 재질) 마스크 모양으로 깎는다 — 안 그러면 부채꼴 전체가 빛난다
       const k = o.m.mult * (o.m.blend === 3 || /gradient/.test(o.m.emis.tex) ? a : 1);
@@ -97,23 +107,24 @@
         const r = e.radius, cy = e.kind === "range" || e.self ? 0 : -reach, ms = mats(e.model, 2 * r);
         each(0, cy, r * 1.42, (x, y, i) => { for (const o of ms) shade(i, o, x / (2 * r) + 0.5, (y - cy) / (2 * r) + 0.5, t); });
       } else if (e.kind === "quad") {
-        const w = e.width, len = e.length, p = e.parts || {}, cap = Math.min(w, len / 3), seg = [];
+        // 아주 가는 직선(겐지 표창 0.25)은 끝 조각도 그만큼 줄어 화살촉이 안 보인다 — 끝 조각은 폭 0.8 을 보장
+        const w = e.width, len = e.length, p = e.parts || {}, cw = Math.max(w, 0.8), cap = Math.min(cw, len / 3), seg = [];
         if (p.center) {
           if (p.launch) seg.push([p.launch, 0, cap]);
           seg.push([p.center, p.launch ? cap : 0, p.impact ? len - cap : len]);
           if (p.impact) seg.push([p.impact, len - cap, len]);
         } else for (const m of [p.launch, p.impact]) if (m) seg.push([m, 0, len]);
-        const S2 = seg.map(([m, s0, s1]) => [mats(m, w), s0, s1, m === p.center]);
+        const S2 = seg.map(([m, s0, s1]) => [mats(m, w), s0, s1, m === p.center, m === p.center || !p.center ? w : cw]);
         let ox = 0, oy = 0, ax = dx, ay = dy;
         if (e.place === "perp") { ox = dy * len / 2; oy = -reach - dx * len / 2; ax = -dy; ay = dx; }
         else if (e.place === "center") { oy = -(reach - len / 2); }
         const bx = -ay, by = ax;
-        each(ox + ax * len / 2, oy + ay * len / 2, len / 2 + w, (x, y, i) => {
+        each(ox + ax * len / 2, oy + ay * len / 2, len / 2 + cw, (x, y, i) => {
           const lx = x - ox, ly = y - oy, s = lx * ax + ly * ay, q = lx * bx + ly * by;
-          if (s < 0 || s > len || Math.abs(q) > w / 2) return;
-          for (const [ms, s0, s1, mid] of S2) {
-            if (s < s0 || s > s1) continue;
-            const u = q / w + 0.5, v = mid ? 1 - ((s - s0) / w) % 1 : 1 - (s - s0) / (s1 - s0);
+          if (s < 0 || s > len || Math.abs(q) > cw / 2) return;
+          for (const [ms, s0, s1, mid, pw] of S2) {
+            if (s < s0 || s > s1 || Math.abs(q) > pw / 2) continue;
+            const u = q / pw + 0.5, v = mid ? 1 - ((s - s0) / w) % 1 : 1 - (s - s0) / (s1 - s0);
             for (const o of ms) shade(i, o, u, v, t);
           }
         });
@@ -129,7 +140,8 @@
           let th = Math.atan2(y, x) - base; th = Math.atan2(Math.sin(th), Math.cos(th));
           if (Math.abs(th) > half) return;
           const ph = P0 + (th + half) / (2 * half) * (P1 - P0), rho = r / Rr;
-          if (ring) for (const o of fill) shade(i, o, 0.5 + 0.5 * rho * Math.sin(th), 0.5 - 0.5 * rho * Math.cos(th), t);
+          // 원형 그림은 앞이 오른쪽(+u) — 오른쪽에 가운데 장식, 왼쪽(뒤)이 끊겨 있다
+          if (ring) for (const o of fill) shade(i, o, 0.5 + 0.5 * rho * Math.cos(th), 0.5 + 0.5 * rho * Math.sin(th), t, rho);
           else for (const o of fill) shade(i, o, rho * Math.sin(ph), 1 - rho * Math.cos(ph), t);
           if (half < Math.PI * 0.99) {
             const inw = r * Math.sin(half - Math.abs(th)), al = r * Math.cos(half - Math.abs(th));
