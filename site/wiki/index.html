@@ -336,8 +336,10 @@ a.wl:hover { text-decoration:none; border-bottom-style:solid; }
 /* 인게임 범위 표시(splat.js) — 판정 그림 옆에 나란히, 좁으면 아래로 */
 .figrow { display:flex; flex-wrap:wrap; gap:12px; align-items:flex-start; }
 .figrow .figbox { flex:1 1 260px; }
-.splatbox { flex:0 0 auto; width:260px; max-width:100%; margin-top:4px; }
-.splatbox canvas { display:block; width:260px; max-width:100%; height:auto; border-radius:8px; border:1px solid var(--line); }
+/* 인게임 그림이 있으면 그것만 — 자료가 없으면 splat.js 가 칸을 지워 옛 판정 그림이 돌아온다 */
+.figrow:has(.splatbox) > .figbox { display:none; }
+.splatbox { flex:0 0 auto; width:300px; max-width:100%; margin-top:4px; }
+.splatbox canvas { display:block; width:300px; max-width:100%; height:auto; border-radius:8px; border:1px solid var(--line); }
 .splatcap { font-size:12px; color:var(--dim); margin-top:4px; line-height:1.45; }
 .splatcap b { color:var(--fg, inherit); font-weight:600; }
 .splatcap .est { border-bottom:1px dotted currentColor; cursor:help; }
@@ -1018,7 +1020,7 @@ window.KS={score:score,mark:mark,esc:esc};})();
         <p class="desc" style="margin:4px 0">${descHtml(a["설명"], ctx)}</p>
         ${cands.length ? selBlock(h, a.id, cands, res) : ""}
         ${(() => { const dt = detailTable(a, t, dmgTxt ? dmgTxt + (res && res.lines.length ? "<br>" + res.lines.filter(l => !/^<b>한 번/.test(l)).join("<br>") : "") : "");
-          return (fig || dt) ? `<details class="more2"${t ? " open" : ""}><summary>${fig ? "범위 그림" : ""}${fig && dt ? " · " : ""}${dt ? "상세 표" : ""}</summary>${`<div class="figrow">${fig ? `<div class="figbox">${fig}</div>` : ""}<div class="splatbox" data-h="${esc(id)}" data-s="${esc(a.id)}"></div></div>`}${dt.replace('<details class="det" open><summary>상세 표</summary>', "").replace(/<\/details>$/, "")}</details>` : ""; })()}</div></div>`;
+          return (fig || dt) ? `<details class="more2"${t ? " open" : ""}><summary>${fig ? "범위 그림" : ""}${fig && dt ? " · " : ""}${dt ? "상세 표" : ""}</summary>${`<div class="figrow">${fig ? `<div class="figbox">${fig}</div>` : ""}<div class="splatbox" data-h="${esc(id)}" data-s="${esc(a.id)}"${list(wk["도형"]).length ? ` data-g="${encodeURIComponent(JSON.stringify({ d: wk["도형거리"], g: list(wk["도형"]).map(g => ({ 꼴: g["꼴"], 자리: g["자리"], 반지름: g["반지름"], 각도: g["각도"], 가로: g["가로"], 세로: g["세로"], 길이: g["길이"] })) }))}"` : ""}></div></div>`}${dt.replace('<details class="det" open><summary>상세 표</summary>', "").replace(/<\/details>$/, "")}</details>` : ""; })()}</div></div>`;
     };
     const tl = groupBy(TS, t => t["레벨"] ?? "?");
     const tiers = Object.keys(tl).sort((a, b) => +a - +b).map(lv => `<div class="tier"><div class="lv">${esc(lv)}<small>레벨</small></div><div class="picks">${tl[lv].map(p =>

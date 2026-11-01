@@ -2,15 +2,16 @@
    게임이 기술 버튼에 마우스를 올리거나 조준할 때 바닥에 까는 노란 범위 표시를 게임 텍스처 그대로 그린다.
    자료는 splat/ (02_뷰어/hots_skill_range/tools/export_site.py 가 만든다):
      models.json      모델별 재질(발광·마스크 텍스처와 채널, 혼합, 배율)
-     hero/<id>.json   { 기술 id: [그림 항목 …] }
+     hero/<id>.json   { 기술 id: { r: 기술 사거리, e: [그림 항목 …] } }
      tex/*.webp
    쓰는 법: 기술 칸에 <div class="splatbox" data-h="영웅 id" data-s="기술 id"></div> 를 두면
-   화면에 들어올 때 스스로 채운다(자료가 없으면 칸이 사라진다).
+   화면에 들어올 때 스스로 채운다(자료가 없으면 칸이 사라지고 옛 판정 그림이 대신 보인다 — CSS :has).
+   그림 항목의 fwd·side·rot 은 게임이 그 그림을 놓는 자리(HostSiteOps): 앞으로 fwd, 왼쪽으로 side, 왼쪽으로 rot° 돌림.
    합성(추정): 결과 = 바탕 × (1 − 마스크) + 틴트 × 발광 × 배율 — 겹치면 각각 최댓값, 가산 재질은 더한다. */
 (function () {
   "use strict";
   const BASE = (document.currentScript && document.currentScript.src || "").replace(/splat\.js.*$/, "") + "splat/";
-  const CSS = 260;                                  // 칸 한 변(px)
+  const CSS = 300;                                  // 칸 한 변(px)
   const CH = { 0: -1, 1: -1, 2: 3, 3: 0, 4: 1, 5: 2 };   // LAYR 채널 → RGBA 칸 (-1 = RGB)
   const FAR = 30;
   let META = null;
@@ -60,7 +61,9 @@
       }
       if (!samp(o.te, L.chan, u, v, S)) return;
       samp(o.tm, o.m.mask.chan, u, v, M);
-      const a = (M[0] + M[1] + M[2]) / 3, k = o.m.mult * (o.m.blend === 3 ? a : 1);
+      const a = (M[0] + M[1] + M[2]) / 3;
+      // 발광이 밋밋한 그러데이션이면(원형 부채꼴의 가운데 재질) 마스크 모양으로 깎는다 — 안 그러면 부채꼴 전체가 빛난다
+      const k = o.m.mult * (o.m.blend === 3 || /gradient/.test(o.m.emis.tex) ? a : 1);
       const r = S[0] * t[0] * k, g = S[1] * t[1] * k, b = S[2] * t[2] * k;
       if (o.m.blend === 2 || o.m.blend === 3) { ER[i] += r; EG[i] += g; EB[i] += b; return; }
       if (r > ER[i]) ER[i] = r; if (g > EG[i]) EG[i] = g; if (b > EB[i]) EB[i] = b;
@@ -68,7 +71,7 @@
     }
     const mats = (model, size) => (META.models[model] || []).filter(m => tex[m.emis.tex] && tex[m.mask.tex])
       .map(m => ({ m, te: lod(tex[m.emis.tex], size), tm: lod(tex[m.mask.tex], size) }));
-    function each(cx, cy, r, fn) {
+    function eachW(cx, cy, r, fn) {
       const x0 = Math.max(0, Math.floor((cx - r + R) * PX)), x1 = Math.min(N - 1, Math.ceil((cx + r + R) * PX));
       const y0 = Math.max(0, Math.floor((cy - r + R) * PX)), y1 = Math.min(N - 1, Math.ceil((cy + r + R) * PX));
       for (let py = y0; py <= y1; py++) {
@@ -76,12 +79,22 @@
         for (let px = x0; px <= x1; px++) fn((px + 0.5) / PX - R, wy, py * N + px);
       }
     }
-    const dx = 0, dy = -1, nx = 1, ny = 0;            // 조준은 위쪽
+    const dx = 0, dy = -1;                            // 조준은 위쪽 (그림마다 제 틀에서 그린다)
     for (const e of ents) {
+      // 제 틀: 앞 = 위쪽(−y). 게임이 놓는 자리만큼 옮기고 돌린다
+      const rr = (e.rot || 0) * Math.PI / 180, fx = -Math.sin(rr), fy = -Math.cos(rr);   // 앞 방향
+      const rx = -fy, ry = fx;                                                        // 오른쪽
+      // 커서를 따라가는 그림은 조준점(위쪽 reach)이 기준이다
+      const cur = e.cursor && e.kind !== "circle" ? -(e.offset && e.offset < FAR ? Math.min(REACH, e.offset) : REACH) : 0;
+      const ox = fx * (e.fwd || 0) - rx * (e.side || 0), oy = cur + fy * (e.fwd || 0) - ry * (e.side || 0);
+      const each = (cx, cy, r, fn) => eachW(ox + rx * cx - fx * cy, oy + ry * cx - fy * cy, r, (x, y, i) => {
+        const X = x - ox, Y = y - oy;
+        fn(X * rx + Y * ry, -(X * fx + Y * fy), i);
+      });
       const t = (e.tint || [255, 255, 255]).map(c => c / 255);
       const reach = e.offset && e.offset < FAR ? Math.min(REACH, e.offset) : REACH;
       if (e.kind === "range" || e.kind === "circle") {
-        const r = e.radius, cy = e.kind === "range" ? 0 : -reach, ms = mats(e.model, 2 * r);
+        const r = e.radius, cy = e.kind === "range" || e.self ? 0 : -reach, ms = mats(e.model, 2 * r);
         each(0, cy, r * 1.42, (x, y, i) => { for (const o of ms) shade(i, o, x / (2 * r) + 0.5, (y - cy) / (2 * r) + 0.5, t); });
       } else if (e.kind === "quad") {
         const w = e.width, len = e.length, p = e.parts || {}, cap = Math.min(w, len / 3), seg = [];
@@ -106,6 +119,7 @@
         });
       } else if (e.kind === "cone") {
         const Rr = e.radius, half = Math.min(e.arc, 359.9) / 2 * Math.PI / 180, base = Math.atan2(dy, dx);
+        const ring = /360/.test(e.model);     // 원형 부채꼴(storm_ui_aoecone360) — 호가 가운데 원 그림이라 각을 그대로 쓴다
         const all = (META.models[e.model] || []).filter(m => tex[m.emis.tex] && tex[m.mask.tex]);
         const fill = all.filter(m => /center/i.test(m.name)).map(m => ({ m, te: lod(tex[m.emis.tex], Rr), tm: lod(tex[m.mask.tex], Rr) }));
         const edge = all.filter(m => !/center/i.test(m.name)).slice(0, 1).map(m => ({ m, te: lod(tex[m.emis.tex], Rr / 2), tm: lod(tex[m.mask.tex], Rr / 2) }));
@@ -115,7 +129,8 @@
           let th = Math.atan2(y, x) - base; th = Math.atan2(Math.sin(th), Math.cos(th));
           if (Math.abs(th) > half) return;
           const ph = P0 + (th + half) / (2 * half) * (P1 - P0), rho = r / Rr;
-          for (const o of fill) shade(i, o, rho * Math.sin(ph), 1 - rho * Math.cos(ph), t);
+          if (ring) for (const o of fill) shade(i, o, 0.5 + 0.5 * rho * Math.sin(th), 0.5 - 0.5 * rho * Math.cos(th), t);
+          else for (const o of fill) shade(i, o, rho * Math.sin(ph), 1 - rho * Math.cos(ph), t);
           if (half < Math.PI * 0.99) {
             const inw = r * Math.sin(half - Math.abs(th)), al = r * Math.cos(half - Math.abs(th));
             for (const o of edge) shade(i, o, inw / (Rr / 2), 1 - al / Rr, t);
@@ -150,20 +165,50 @@
     let r = 3;
     for (const e of ents) {
       const reach = e.offset && e.offset < FAR ? Math.min(REACH, e.offset) : REACH;
+      const sh = Math.abs(e.fwd || 0) + Math.abs(e.side || 0) + (e.cursor ? REACH : 0);
       if (e.kind === "range") r = Math.max(r, e.radius);
-      else if (e.kind === "circle") r = Math.max(r, reach + e.radius);
-      else if (e.kind === "cone") r = Math.max(r, e.radius);
+      else if (e.kind === "cone") r = Math.max(r, sh + e.radius);
+      else if (e.kind === "circle") r = Math.max(r, (e.self ? 0 : reach) + e.radius);
       else if (e.kind === "triangle") r = Math.max(r, Math.min(e.length, FAR));
       else if (e.kind === "poly") r = Math.max(r, ...e.verts.map(v => Math.hypot(v[0], v[1])));
-      else if (e.kind === "quad") r = Math.max(r, Math.min(FAR, e.place === "down" ? e.length : reach + e.length / 2));
+      else if (e.kind === "quad") r = Math.max(r, Math.min(FAR, (e.place === "down" ? e.length : reach + e.length / 2) + (e.cursor ? REACH : 0)));
     }
     return Math.min(r + 0.8, FAR);
   }
 
-  /* 기술 하나에 여러 그림이 있으면(특성으로 바뀐 판) 사거리 원 하나 + 조준 그림 하나만 고른다 */
-  function pick(list) {
-    const h = list.find(e => e.kind === "range"), g = list.find(e => e.kind !== "range");
-    return [h, g].filter(Boolean);
+  /* 기술 하나에 그림이 여럿이면 특성 판(variant)은 빼고 기본 판을 **다** 겹친다 — 겐지 표창 세 갈래,
+     그레이메인 술병(직선 끝에서 부채꼴). 사거리 원은 하나만. 사거리 원이 없는데 기술 사거리를 알면
+     게임의 사거리 그림으로 깔아 둔다(시전 거리 + 그 뒤 범위가 같이 보이게). */
+  function pick(skill) {
+    const list = skill.e || [];
+    const base = list.filter(e => !e.variant);
+    const use = base.length ? base : list.slice(0, 1);
+    const ranges = use.filter(e => e.kind === "range"), rest = use.filter(e => e.kind !== "range");
+    const out = ranges.slice(0, 1).concat(rest);
+    if (!ranges.length && skill.r && META.models[META.range])
+      out.unshift({ kind: "range", radius: skill.r, model: META.range, tint: META.tint, synth: true });
+    return out;
+  }
+
+  /* 게임이 범위를 안 띄우는 기술(첸 술통 부수기·아르타니스 이연격 …) — 위키 판정 도형(data-g)을
+     같은 노란 UI 로 그린다. 원·직사각형·부채꼴만; 이동·여러 자리·다각형은 옛 그림을 남긴다(null). */
+  function fromWiki(raw) {
+    if (!raw) return null;
+    let w; try { w = JSON.parse(decodeURIComponent(raw)); } catch (e) { return null; }
+    const G = META.gen, out = [];
+    for (const g of w.g || []) {
+      const at = g["자리"] === "착지" && w.d > 0;     // 도형거리 0 이면 제자리
+      if (g["꼴"] === "원" && g["반지름"] > 0)
+        out.push({ kind: "circle", radius: +g["반지름"], self: !at, offset: at ? w.d : undefined, model: G.circle });
+      else if (g["꼴"] === "직사각형" && (g["길이"] || g["세로"]))
+        out.push({ kind: "quad", width: +(g["가로"] || 1), length: +(g["길이"] || g["세로"]),
+                   place: at ? "center" : "down", offset: w.d, parts: G.quad });
+      else if (g["꼴"] === "부채꼴" && g["반지름"] > 0)
+        out.push({ kind: "cone", radius: +g["반지름"], arc: +(g["각도"] || 90), model: G.cone });
+      else return null;                   // 못 그리는 꼴이 섞이면 통째로 옛 그림
+    }
+    out.forEach(e => { e.tint = META.tint; e.fromWiki = true; });
+    return out.length ? out : null;
   }
 
   const KIND = { range: "사거리", circle: "범위", quad: "직선", cone: "부채꼴", triangle: "삼각형", poly: "범위" };
@@ -178,9 +223,9 @@
 
   async function fill(box) {
     box.classList.add("on");
-    const list = (await heroData(box.dataset.h))[box.dataset.s];
-    if (!list || !list.length) { box.remove(); return; }
-    const ents = pick(list);
+    const skill = (await heroData(box.dataset.h))[box.dataset.s];
+    const ents = skill && (skill.e || []).length ? pick(skill) : fromWiki(box.dataset.g);
+    if (!ents || !ents.length) { box.remove(); return; }
     const names = new Set();
     for (const e of ents) for (const m of [e.model, ...Object.values(e.parts || {})])
       for (const mt of META.models[m] || []) { names.add(mt.emis.tex); names.add(mt.mask.tex); }
@@ -209,14 +254,15 @@
     g.fillStyle = "#e6edf3"; g.beginPath(); g.arc(N / 2, N / 2, Math.max(3, 0.55 * PX), 0, Math.PI * 2); g.fill();
     g.fillStyle = "rgba(0,0,0,.55)"; g.fillRect(0, N - 18 * dpr, 64 * dpr, 18 * dpr);
     g.fillStyle = "#c9d1d9"; g.font = `${11 * dpr}px system-ui, sans-serif`; g.fillText(`±${Math.round(R)}`, 5 * dpr, N - 5 * dpr);
-    const est = ents.some(e => e.guess || e.region || e.bounce);
+    const est = ents.some(e => e.guess || e.region || e.bounce || e.synth) && !ents[0].fromWiki;
     box.innerHTML = "";
     box.appendChild(cv);
     const cap = document.createElement("div");
     cap.className = "splatcap";
-    cap.innerHTML = `<b>인게임 범위 표시</b> ${ents.map(label).join(" · ")}`
+    cap.innerHTML = (ents[0].fromWiki ? `<b>판정 범위</b> ${ents.map(label).join(" · ")} · <span class="est" title="게임은 이 기술에 바닥 범위 표시를 띄우지 않아, 판정 범위를 같은 모양의 노란 UI 로 그렸습니다">게임엔 표시 없음</span>`
+                                     : `<b>인게임 범위 표시</b> ${ents.map(label).join(" · ")}`)
       + (ents.some(e => e.kind !== "range") ? " · 조준은 위쪽" : "")
-      + (est ? ` · <span class="est" title="${ents.map(e => e.guess || (e.region ? "지역 " + e.region : "") || (e.bounce ? "벽 반사 생략" : "")).filter(Boolean).join(" / ")}">일부 추정</span>` : "");
+      + (est ? ` · <span class="est" title="${ents.map(e => e.guess || (e.region ? "지역 " + e.region : "") || (e.bounce ? "벽 반사 생략" : "") || (e.synth ? "사거리 원은 기술 사거리로 그림(게임은 안 띄움)" : "")).filter(Boolean).join(" / ")}">일부 추정</span>` : "");
     box.appendChild(cap);
   }
 
