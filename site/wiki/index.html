@@ -333,6 +333,14 @@ a.wl:hover { text-decoration:none; border-bottom-style:solid; }
 /* 범위 그림은 글 아래(글 칸 안)에 — 옆 칸에 두면 정보 상자와 겹쳐 글이 한 글자씩 접혔다 */
 .skill .figbox { grid-column:2; max-width:300px; }
 .skill .figbox .fig { margin:4px 0 0; }
+/* 인게임 범위 표시(splat.js) — 판정 그림 옆에 나란히, 좁으면 아래로 */
+.figrow { display:flex; flex-wrap:wrap; gap:12px; align-items:flex-start; }
+.figrow .figbox { flex:1 1 260px; }
+.splatbox { flex:0 0 auto; width:260px; max-width:100%; margin-top:4px; }
+.splatbox canvas { display:block; width:260px; max-width:100%; height:auto; border-radius:8px; border:1px solid var(--line); }
+.splatcap { font-size:12px; color:var(--dim); margin-top:4px; line-height:1.45; }
+.splatcap b { color:var(--fg, inherit); font-weight:600; }
+.splatcap .est { border-bottom:1px dotted currentColor; cursor:help; }
 .cond { font-size:11.5px; color:var(--hit); }
 
 /* 시스템 — 규칙 상자 */
@@ -495,6 +503,7 @@ details.more > summary .note { font-weight:400; margin-left:6px; }
 <footer class="foot">팬이 만든 비공식 자료이며 Blizzard Entertainment 와 관계가 없습니다. 히오스 <span id="fv"></span> 의 게임 자료(XML·galaxy·AI 트리·맵 파일)에서 직접 읽었습니다.</footer>
 
 <script src="shape.js"></script>
+<script src="splat.js"></script>
 <script>
 /* ─── 한글 검색기 — HotS Scrap site/shared/search.js 와 같은 규칙(다 친 글자는 글자대로, 자음 하나는 그 자리 초성) ─── */
 (function(){var SB=0xac00,SL=0xd7a3,NJ=21,NO=28,CHO='ㄱㄲㄴㄷㄸㄹㅁㅂㅃㅅㅆㅇㅈㅉㅊㅋㅌㅍㅎ',JUNG='ㅏㅐㅑㅒㅓㅔㅕㅖㅗㅘㅙㅚㅛㅜㅝㅞㅟㅠㅡㅢㅣ',JONG='\u0000ㄱㄲㄳㄴㄵㄶㄷㄹㄺㄻㄼㄽㄾㄿㅀㅁㅂㅄㅅㅆㅇㅈㅊㅋㅌㅍㅎ';
@@ -1009,7 +1018,7 @@ window.KS={score:score,mark:mark,esc:esc};})();
         <p class="desc" style="margin:4px 0">${descHtml(a["설명"], ctx)}</p>
         ${cands.length ? selBlock(h, a.id, cands, res) : ""}
         ${(() => { const dt = detailTable(a, t, dmgTxt ? dmgTxt + (res && res.lines.length ? "<br>" + res.lines.filter(l => !/^<b>한 번/.test(l)).join("<br>") : "") : "");
-          return (fig || dt) ? `<details class="more2"${t ? " open" : ""}><summary>${fig ? "범위 그림" : ""}${fig && dt ? " · " : ""}${dt ? "상세 표" : ""}</summary>${fig ? `<div class="figbox">${fig}</div>` : ""}${dt.replace('<details class="det" open><summary>상세 표</summary>', "").replace(/<\/details>$/, "")}</details>` : ""; })()}</div></div>`;
+          return (fig || dt) ? `<details class="more2"${t ? " open" : ""}><summary>${fig ? "범위 그림" : ""}${fig && dt ? " · " : ""}${dt ? "상세 표" : ""}</summary>${`<div class="figrow">${fig ? `<div class="figbox">${fig}</div>` : ""}<div class="splatbox" data-h="${esc(id)}" data-s="${esc(a.id)}"></div></div>`}${dt.replace('<details class="det" open><summary>상세 표</summary>', "").replace(/<\/details>$/, "")}</details>` : ""; })()}</div></div>`;
     };
     const tl = groupBy(TS, t => t["레벨"] ?? "?");
     const tiers = Object.keys(tl).sort((a, b) => +a - +b).map(lv => `<div class="tier"><div class="lv">${esc(lv)}<small>레벨</small></div><div class="picks">${tl[lv].map(p =>

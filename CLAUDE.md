@@ -56,6 +56,12 @@
   - 전장 배치도의 바탕 그림은 사이트에서는 `../replay/maps_lite/*.svg` 를 쓴다(위키 자체 SVG 는 안 옮긴다).
   - 밝기는 `scrap.theme` 을 따른다(`data-site` 면 자기 밝기 단추를 숨긴다). 자기 localStorage 키는 `wiki.*`.
   - 위키 자체의 버전(히오스 패치.틀.내용)은 '위키 변경 기록'(`#history`, 대문 맨 아래)에 있다.
+  - **인게임 범위 표시**(`wiki/splat.js` + `wiki/splat/`, 2026-11-02) — 기술 칸의 '범위 그림' 안, 판정 그림 옆에
+    게임이 바닥에 까는 노란 범위 UI 를 게임 텍스처 그대로 그린다. 자료는 저장소 밖
+    `../02_뷰어/hots_skill_range` 에서 `tools/build_all.py` → `tools/export_site.py` 로 만든다(텍스처 2.3MB, 영웅 문서를 열고
+    칸이 화면에 들어올 때 그 영웅 것만 받는다). 생성기 `../hots_extract` 가 지금 디스크에 없어 `index.html` 을 직접 고쳤다 —
+    생성기가 돌아오면 `figrow`·`splatbox` 줄과 `<script src="splat.js">` 를 거기에도 넣어야 덮어쓸 때 안 사라진다.
+    특성 칸·못 그린 특수형(머키 문어잡이 등 3개)은 차후 업데이트.
   - 이 위키가 못 하는 것은 원래 앱에 남긴다: 범위 구경·칸 통계(herodex), 전장 흐름(maps), 스킨·대사(encyclopedia), 티어표.
 - `site/herodex/` **영웅 도감** — 게임 원본 XML 에서 직접 뽑은 기술·특성 상세.
   자료는 `site/data/herodex/`(목록 1개 + 영웅마다 1개, 평균 16KB) — 화면은 **고른 영웅 하나만** 받는다.
