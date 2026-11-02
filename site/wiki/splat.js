@@ -199,6 +199,16 @@
     const out = ranges.slice(0, 1).concat(rest);
     if (!ranges.length && skill.r && META.models[META.range])
       out.unshift({ kind: "range", radius: skill.r, model: META.range, tint: META.tint, synth: true });
+    /* 두 번째 단계 — 게임 그림이 사거리 원뿐인데 효과를 따라가 피해 범위를 찾았으면(아우리엘 수정 방패:
+       아군 지정 → 만료되며 주위 7 폭발) 대상 자리에 겹친다. 사거리가 없으면 제 자리. */
+    if (!rest.length && skill.a && META.gen) {
+      // 즉시 시전(가로쉬 척살)이거나 사거리 원이 곧 효과 범위면 제 자리
+      const rr = skill.r || (ranges[0] && ranges[0].radius);
+      const same = rr && Math.abs(rr - skill.a.radius) < 0.6;   // 사거리 원이 곧 효과 범위 — 겹쳐 그릴 것 없음
+      const reach = skill.self || same ? 0 : rr;
+      if (!(same && skill.self)) out.push({ kind: "circle", radius: skill.a.radius, self: !reach, offset: reach || undefined,
+                 model: META.gen.circle, tint: META.tint, area: skill.a.src });
+    }
     return out;
   }
 
@@ -226,6 +236,7 @@
   const KIND = { range: "사거리", circle: "범위", quad: "직선", cone: "부채꼴", triangle: "삼각형", poly: "범위" };
   const n2 = v => Math.round(v * 100) / 100;
   function label(e) {
+    if (e.area) return `효과 범위 ${n2(e.radius)}`;
     if (e.kind === "range" || e.kind === "circle") return `${KIND[e.kind]} ${n2(e.radius)}`;
     if (e.kind === "quad") return `직선 ${n2(e.length)}×${n2(e.width)}`;
     if (e.kind === "cone") return `부채꼴 ${n2(e.radius)} · ${n2(e.arc)}°`;
@@ -266,7 +277,7 @@
     g.fillStyle = "#e6edf3"; g.beginPath(); g.arc(N / 2, N / 2, Math.max(3, 0.55 * PX), 0, Math.PI * 2); g.fill();
     g.fillStyle = "rgba(0,0,0,.55)"; g.fillRect(0, N - 18 * dpr, 64 * dpr, 18 * dpr);
     g.fillStyle = "#c9d1d9"; g.font = `${11 * dpr}px system-ui, sans-serif`; g.fillText(`±${Math.round(R)}`, 5 * dpr, N - 5 * dpr);
-    const est = ents.some(e => e.guess || e.region || e.bounce || e.synth) && !ents[0].fromWiki;
+    const est = ents.some(e => e.guess || e.region || e.bounce || e.synth || e.area) && !ents[0].fromWiki;
     box.innerHTML = "";
     box.appendChild(cv);
     const cap = document.createElement("div");
@@ -274,8 +285,11 @@
     cap.innerHTML = (ents[0].fromWiki ? `<b>판정 범위</b> ${ents.map(label).join(" · ")} · <span class="est" title="게임은 이 기술에 바닥 범위 표시를 띄우지 않아, 판정 범위를 같은 모양의 노란 UI 로 그렸습니다">게임엔 표시 없음</span>`
                                      : `<b>인게임 범위 표시</b> ${ents.map(label).join(" · ")}`)
       + (ents.some(e => e.kind !== "range") ? " · 조준은 위쪽" : "")
-      + (est ? ` · <span class="est" title="${ents.map(e => e.guess || (e.region ? "지역 " + e.region : "") || (e.bounce ? "벽 반사 생략" : "") || (e.synth ? "사거리 원은 기술 사거리로 그림(게임은 안 띄움)" : "")).filter(Boolean).join(" / ")}">일부 추정</span>` : "");
+      + (est ? ` · <span class="est" title="${ents.map(e => e.guess || (e.region ? "지역 " + e.region : "") || (e.bounce ? "벽 반사 생략" : "") || (e.synth ? "사거리 원은 기술 사거리로 그림(게임은 안 띄움)" : "") || (e.area ? "효과 범위는 게임 효과(" + e.area + ")에서 읽음 — 게임은 바닥에 안 띄움" : "")).filter(Boolean).join(" / ")}">일부 추정</span>` : "");
     box.appendChild(cap);
+    // 옛 판정 그림이 없던 기술은 펼침 제목이 '상세 표' 뿐이다 — 그림이 붙었으니 앞에 적어 준다
+    const sum = box.closest("details") && box.closest("details").querySelector(":scope > summary");
+    if (sum && !/범위 그림/.test(sum.textContent)) sum.textContent = "범위 그림" + (sum.textContent.trim() ? " · " + sum.textContent.trim() : "");
   }
 
   const io = "IntersectionObserver" in window ? new IntersectionObserver(es => {
