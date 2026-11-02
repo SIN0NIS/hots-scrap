@@ -38,8 +38,11 @@
     });
   }
 
-  function paint(ents, N) {
-    const R = extent(ents), PX = N / (2 * R);
+  /* st: 다이얼 상태 — th 조준 방향(시계 방향 °), dist 찍는 자리까지 거리(null = 기본), phi 끌기 방향(°), drag 끌어서 쓰는 기술 */
+  function paint(ents, N, st) {
+    st = st || {};
+    const R = st.R || extent(ents, st), PX = N / (2 * R);
+    const TH = (st.th || 0) * Math.PI / 180, PH = (st.phi || 0) * Math.PI / 180, cP = Math.cos(PH), sP = Math.sin(PH);
     const ER = new Float32Array(N * N), EG = new Float32Array(N * N), EB = new Float32Array(N * N), A = new Float32Array(N * N);
     const lod = (lv, size) => lv[Math.min(Math.floor(Math.log2(Math.max(1, lv[0].w / Math.max(1e-3, size * PX)))), lv.length - 1)];
     const S = [0, 0, 0], M = [0, 0, 0];
@@ -92,17 +95,25 @@
     const dx = 0, dy = -1;                            // 조준은 위쪽 (그림마다 제 틀에서 그린다)
     for (const e of ents) {
       // 제 틀: 앞 = 위쪽(−y). 게임이 놓는 자리만큼 옮기고 돌린다
-      const rr = (e.rot || 0) * Math.PI / 180, fx = -Math.sin(rr), fy = -Math.cos(rr);   // 앞 방향
+      // 조준 방향 다이얼만큼 틀째 돌린다(rot 은 왼쪽 +, th 는 시계 방향 +)
+      const rr = (e.rot || 0) * Math.PI / 180 - TH, fx = -Math.sin(rr), fy = -Math.cos(rr);   // 앞 방향
       const rx = -fy, ry = fx;                                                        // 오른쪽
-      // 커서를 따라가는 그림은 조준점(위쪽 reach)이 기준이다
-      const cur = e.cursor && e.kind !== "circle" ? -(e.offset && e.offset < FAR ? Math.min(REACH, e.offset) : REACH) : 0;
-      const ox = fx * (e.fwd || 0) - rx * (e.side || 0), oy = cur + fy * (e.fwd || 0) - ry * (e.side || 0);
-      const each = (cx, cy, r, fn) => eachW(ox + rx * cx - fx * cy, oy + ry * cx - fy * cy, r, (x, y, i) => {
-        const X = x - ox, Y = y - oy;
-        fn(X * rx + Y * ry, -(X * fx + Y * fy), i);
-      });
+      const reach = reachOf(e, st);
+      // 커서를 따라가는 그림은 조준점(조준 방향으로 reach)이 기준이다
+      const cur = e.cursor && e.kind !== "circle" ? reach : 0;
+      const ox = Math.sin(TH) * cur + fx * (e.fwd || 0) - rx * (e.side || 0), oy = -Math.cos(TH) * cur + fy * (e.fwd || 0) - ry * (e.side || 0);
+      // 끌기: 찍은 자리(제 틀의 0,−reach)를 축으로 phi 만큼 더 돌린다
+      const spin = st.drag && e.anch && PH;
+      const each = (cx, cy, r, fn) => {
+        if (spin) { const X = cx, Y = cy + reach; cx = X * cP - Y * sP; cy = X * sP + Y * cP - reach; }
+        eachW(ox + rx * cx - fx * cy, oy + ry * cx - fy * cy, r, (x, y, i) => {
+          const X = x - ox, Y = y - oy;
+          let lx = X * rx + Y * ry, ly = -(X * fx + Y * fy);
+          if (spin) { const a = lx, b = ly + reach; lx = a * cP + b * sP; ly = -a * sP + b * cP - reach; }
+          fn(lx, ly, i);
+        });
+      };
       const t = (e.tint || [255, 255, 255]).map(c => c / 255);
-      const reach = e.offset && e.offset < FAR ? Math.min(REACH, e.offset) : REACH;
       if (e.kind === "range" || e.kind === "circle") {
         const r = e.radius, cy = e.kind === "range" || e.self ? 0 : -reach, ms = mats(e.model, 2 * r);
         // turn: 조준 방향을 따라 도는 원 그림 — 그림 아래쪽이 앞이라 뒤집어 찍는다(마이에브 칼날 부채)
@@ -120,6 +131,7 @@
         let ox = 0, oy = 0, ax = dx, ay = dy;
         if (e.place === "perp") { ox = dy * len / 2; oy = -reach - dx * len / 2; ax = -dy; ay = dx; }
         else if (e.place === "center") { oy = -(reach - len / 2); }
+        else if (e.anch) oy = -reach;                 // 찍은 자리에서 시작하는 직선(끌어서 쓰는 기술)
         const bx = -ay, by = ax;
         each(ox + ax * len / 2, oy + ay * len / 2, len / 2 + cw, (x, y, i) => {
           const lx = x - ox, ly = y - oy, s = lx * ax + ly * ay, q = lx * bx + ly * by;
@@ -164,10 +176,18 @@
         const L = cum[cum.length - 1], cap = Math.min(Math.max(w, 0.8), L / 3);
         const mC = mats(p.center, w), mL = p.launch ? mats(p.launch, w) : [], mI = p.impact ? mats(p.impact, w) : [];
         const far = Math.max(...P.map(q => Math.hypot(q[0], q[1]))) + w;
+        const BX = [], BX2 = [], BY = [], BY2 = [];
+        for (let k = 1; k < P.length; k++) {
+          BX[k] = Math.min(P[k - 1][0], P[k][0]); BX2[k] = Math.max(P[k - 1][0], P[k][0]);
+          BY[k] = Math.min(P[k - 1][1], P[k][1]); BY2[k] = Math.max(P[k - 1][1], P[k][1]);
+        }
         each(0, 0, far, (x, y, i) => {
           const b = -y; let bd = hw * hw, bs = -1, bq = 0;
           for (let k = 1; k < P.length; k++) {
-            const ax = P[k - 1][0], ay = P[k - 1][1], vx = P[k][0] - ax, vy = P[k][1] - ay, l2 = vx * vx + vy * vy || 1;
+            const ax = P[k - 1][0], ay = P[k - 1][1];
+            // 조각 상자 밖이면 건너뛴다(나선 160 조각 × 칸 전체가 다이얼을 끌 때 무겁다)
+            if (x < BX[k] - hw || x > BX2[k] + hw || b < BY[k] - hw || b > BY2[k] + hw) continue;
+            const vx = P[k][0] - ax, vy = P[k][1] - ay, l2 = vx * vx + vy * vy || 1;
             const tt = Math.max(0, Math.min(1, ((x - ax) * vx + (b - ay) * vy) / l2));
             const ex = x - ax - vx * tt, ey = b - ay - vy * tt, d2 = ex * ex + ey * ey;
             if (d2 <= bd) { bd = d2; bs = cum[k - 1] + tt * (cum[k] - cum[k - 1]); bq = (vx * ey - vy * ex) / Math.sqrt(l2); }
@@ -213,10 +233,15 @@
   }
 
   const REACH = 6;
-  function extent(ents) {
+  // 찍은 자리에 놓이는 그림 — 겨냥 다이얼의 거리를 따른다
+  const aimed = e => (e.kind === "circle" && !e.self) || e.anch || (e.kind === "quad" && (e.place === "perp" || e.place === "center")) || (e.cursor && e.kind !== "circle");
+  const baseReach = e => e.offset && e.offset < FAR ? Math.min(REACH, e.offset) : REACH;
+  const reachOf = (e, st) => st && st.dist != null && aimed(e) ? st.dist : baseReach(e);
+  // 칸 크기는 다이얼을 끝까지 당겨도 그대로이게 — 거리는 최대로 잡고 잰다
+  function extent(ents, st) {
     let r = 3;
     for (const e of ents) {
-      const reach = e.offset && e.offset < FAR ? Math.min(REACH, e.offset) : REACH;
+      const reach = st && st.maxR && aimed(e) ? st.maxR : baseReach(e);
       const sh = Math.abs(e.fwd || 0) + Math.abs(e.side || 0) + (e.cursor ? REACH : 0);
       if (e.kind === "range") r = Math.max(r, e.radius);
       else if (e.kind === "cone") r = Math.max(r, sh + e.radius);
@@ -224,7 +249,7 @@
       else if (e.kind === "triangle") r = Math.max(r, Math.min(e.length, FAR));
       else if (e.kind === "poly") r = Math.max(r, ...e.verts.map(v => Math.hypot(v[0], v[1])));
       else if (e.kind === "path") r = Math.max(r, Math.max(...e.pts.map(v => Math.hypot(v[0], v[1]))) + e.width);
-      else if (e.kind === "quad") r = Math.max(r, Math.min(FAR, (e.place === "down" ? e.length + sh : reach + e.length / 2) + (e.cursor ? REACH : 0)));
+      else if (e.kind === "quad") r = Math.max(r, Math.min(FAR, (e.anch ? reach + e.length + sh : e.place === "down" ? e.length + sh : reach + e.length / 2) + (e.cursor ? REACH : 0)));
     }
     // 견줄 눈금(레이너 일반 공격)은 늘 보이게 — 범위가 작아도 칸을 그만큼은 넓힌다
     const base = META && META.refs && META.refs["레이너 일반 공격"] || 0;
@@ -282,8 +307,12 @@
     const at = g["자리"] === "앞" ? (+g["거리"] || 0) : g["자리"] === "착지" ? d + (+g["거리"] || 0)
              : (g["자리"] === "원점" || g["쓸기"]) ? 0 : d;
     const fw = v => Math.min(v, MAXD * 1.25);
-    const disc = (r, x, y, lab) => ({ kind: "circle", radius: r, self: true, side: x ? -x : undefined, fwd: fw(y) || undefined, model: G.circle, lab });
-    const ring = (r, x, y, lab) => ({ kind: "circle", radius: r, self: true, side: x ? -x : undefined, fwd: fw(y) || undefined, model: META.range, lab });
+    // 찍은 자리(도형거리 d) 둘레에 놓이는 것은 그 자리를 기준으로 적는다 — 겨냥 다이얼로 옮겨 다닌다
+    const atAim = d > 0 && Math.abs(at - d) < 1e-6;
+    const place = (y, o) => atAim ? Object.assign(o, { self: false, offset: d, fwd: (y - d) || undefined })
+                                  : Object.assign(o, { self: true, fwd: fw(y) || undefined });
+    const disc = (r, x, y, lab) => place(y, { kind: "circle", radius: r, side: x ? -x : undefined, model: G.circle, lab });
+    const ring = (r, x, y, lab) => place(y, { kind: "circle", radius: r, side: x ? -x : undefined, model: META.range, lab });
     // 직선: (x, y) 에서 오른쪽으로 ang° 기운 쪽으로 길이 len.
     // 그림의 fwd·side 는 돌린 축 기준이라(게임 HostSiteOps 와 같다) 시작점을 그 축으로 옮겨 적는다
     const line = (x, y, len, wd, ang, lab) => {
@@ -353,8 +382,9 @@
         g["점"].forEach(p => out.push(disc(r, p[0], p[1] + at, "")));
         out[0].lab = `${g["점"].length}곳`;
       }
-    } else if (k === "끌기") {               // 찍은 자리에서 끌어 방향을 정함 — 화살표 하나
-      out.push(line(0, d, Math.min(+g["거리"] || 0, MAXD) || 1, 0.8, 0, `끌기 ${n2(+g["거리"] || 0)}`));
+    } else if (k === "끌기") {               // 찍은 자리에서 끌어 방향을 정함 — 화살표 하나(끌기 다이얼로 돈다)
+      out.push({ kind: "quad", place: "down", anch: true, offset: d || undefined, length: Math.min(+g["거리"] || 0, MAXD) || 1,
+                 width: 0.8, parts: G.quad, lab: `끌기 ${n2(+g["거리"] || 0)}` });
     } else if (k === "갈래" && g["길이"]) {
       const n = g["수"] || 1, gap = g["간격"] || 0, L = +g["길이"], half = gap * (n - 1) / 2;
       for (let i = 0; i < n; i++) {
@@ -399,7 +429,9 @@
     const w = wikiData(raw);
     if (!w) return [];
     if (!(w.d > 0) && skill && skill.r) w.d = skill.r;       // 옮겨 붙는 자리는 첫 대상(사거리 끝)
-    return (w.g || []).filter(g => g["꼴"] === "나선" || g["꼴"] === "튕김")
+    const quad = skill && (skill.e || []).some(e => e.kind === "quad");
+    // 끌기 화살표는 게임 그림에 직선이 없을 때만(라그나로스 살아 있는 유성: 원 하나뿐)
+    return (w.g || []).filter(g => g["꼴"] === "나선" || g["꼴"] === "튕김" || (g["꼴"] === "끌기" && !quad))
       .flatMap(g => (wikiEnts(g, w) || []).map(e => Object.assign(e, { data: e.data || "extra" })));
   }
 
@@ -418,24 +450,11 @@
     return KIND[e.kind];
   }
 
-  async function fill(box) {
-    box.classList.add("on");
-    const hd = await heroData(box.dataset.h);
-    const skill = box.dataset.t ? (hd._t || {})[box.dataset.t] : hd[box.dataset.s];
-    let ents = skill && (skill.e || []).length ? pick(skill) : fromWiki(box.dataset.g);
-    if (skill && (skill.e || []).length) {
-      const ex = extraWiki(box.dataset.g, skill);
-      // 효과 범위로 찾은 원이 사실 옮겨 붙는 거리였으면(스랄 연쇄 번개 6) 가는 원 하나만 남긴다
-      ents = ents.filter(e => !(e.area && ex.some(x => x.model === META.range && Math.abs(x.radius - e.radius) < 0.3))).concat(ex);
-    }
-    if (!ents || !ents.length) { box.remove(); return; }
-    const names = new Set();
-    for (const e of ents) for (const m of [e.model, ...Object.values(e.parts || {})])
-      for (const mt of META.models[m] || []) { names.add(mt.emis.tex); names.add(mt.mask.tex); }
-    await Promise.all([...names].map(loadTex));
-    const dpr = Math.min(2, window.devicePixelRatio || 1), N = Math.round(CSS * dpr);
-    const { R, ER, EG, EB, A } = paint(ents, N);
-    const cv = document.createElement("canvas"); cv.width = cv.height = N;
+  /* 칸 하나 그리기 — 다이얼을 끄는 동안(fast)은 반 해상도로 그려 손을 안 놓치게 */
+  function draw(cv, ents, st, fast) {
+    const dpr = Math.min(2, window.devicePixelRatio || 1) / (fast ? 2 : 1), N = Math.round(CSS * dpr);
+    const { R, ER, EG, EB, A } = paint(ents, N, st);
+    if (cv.width !== N || cv.height !== N) cv.width = cv.height = N;
     const g = cv.getContext("2d");
     // 바탕 — 어두운 판 + 거리 1 격자 (밝기 테마와 상관없이 게임 바닥처럼)
     g.fillStyle = "#1a1f27"; g.fillRect(0, 0, N, N);
@@ -465,10 +484,121 @@
       g.fillStyle = "rgba(160,200,255,.8)"; g.fillText(`${nm} ${rv}`, lx - 3 * dpr, ly - 3 * dpr);
     }
     g.restore();
+    // 찍은 자리 — 겨냥 다이얼이 있을 때만(어디를 찍었는지)
+    if (st.dist != null) {
+      const ax = N / 2 + Math.sin(st.th * Math.PI / 180) * st.dist * PX, ay = N / 2 - Math.cos(st.th * Math.PI / 180) * st.dist * PX;
+      g.strokeStyle = "rgba(120,190,255,.95)"; g.lineWidth = 1.5 * dpr;
+      g.beginPath(); g.arc(ax, ay, 4 * dpr, 0, Math.PI * 2);
+      g.moveTo(ax - 8 * dpr, ay); g.lineTo(ax - 5 * dpr, ay); g.moveTo(ax + 5 * dpr, ay); g.lineTo(ax + 8 * dpr, ay);
+      g.moveTo(ax, ay - 8 * dpr); g.lineTo(ax, ay - 5 * dpr); g.moveTo(ax, ay + 5 * dpr); g.lineTo(ax, ay + 8 * dpr); g.stroke();
+    }
     // 영웅 자리
     g.fillStyle = "#e6edf3"; g.beginPath(); g.arc(N / 2, N / 2, Math.max(3, 0.55 * PX), 0, Math.PI * 2); g.fill();
     g.fillStyle = "rgba(0,0,0,.55)"; g.fillRect(0, N - 18 * dpr, 64 * dpr, 18 * dpr);
     g.fillStyle = "#c9d1d9"; g.font = `${11 * dpr}px system-ui, sans-serif`; g.fillText(`±${Math.round(R)}`, 5 * dpr, N - 5 * dpr);
+  }
+
+  /* ── 다이얼 — 마우스를 올려 보는 게임과 달리 폰에서도 돌려 보게 ──
+     겨냥(조이스틱): 사거리 안의 한 점을 찍는 기술 — 방향과 거리를 같이 정한다.
+     방향(시계): 제자리에서 쏘는 기술 — 그림을 통째로 돌린다.
+     끌기(네모): 끌어서 쓰는 기술 — 찍은 자리를 축으로 끄는 방향을 정한다. */
+  function setup(ents, skill, box) {
+    const w = wikiData(box.dataset.g) || {};
+    const st = { th: 0, phi: 0, dist: null };
+    st.drag = !!box.dataset.dr || (w.g || []).some(g => g["꼴"] === "끌기");
+    if (st.drag) for (const e of ents) if (e.kind === "quad" && e.place === "down" && e.offset) e.anch = true;
+    const rng = ents.find(e => e.kind === "range");
+    const offs = ents.filter(aimed).map(e => e.offset).filter(v => v > 0 && v < FAR);
+    const maxR = (rng && rng.radius < FAR && rng.radius) || (skill && skill.r < FAR && skill.r) || (offs.length ? Math.max(...offs) : 0);
+    if (ents.some(aimed) && maxR > 0) {
+      st.maxR = maxR;
+      // 처음 자리는 예전 그림 그대로 — 게임 그림은 6 까지, 위키 도형은 그 도형거리
+      st.dist = ents[0].fromWiki ? Math.min(maxR, MAXD * 1.25) : Math.min(REACH, maxR);
+    }
+    // 돌려 봐도 똑같은 그림(제자리 원·사거리 원뿐)은 다이얼을 안 단다
+    st.turnable = ents.some(e => !(e.kind === "range" || (e.kind === "circle" && e.self && !e.fwd && !e.side)));
+    st.R = extent(ents, st);
+    return st;
+  }
+  const SVGNS = 'xmlns="http://www.w3.org/2000/svg"';
+  const way = th => { const h = Math.round(((th % 360) + 360) % 360 / 30) % 12; return `${h || 12}시`; };
+  function dials(box, cv, ents, st) {
+    if (!st.turnable && !st.drag) return;
+    const row = document.createElement("div");
+    row.className = "splatdial";
+    const aim = st.dist != null;
+    let html = "";
+    if (aim) html += `<span class="sdl">겨냥</span><svg class="sda" ${SVGNS} viewBox="0 0 46 46" width="46" height="46" tabindex="0" role="slider" aria-label="겨냥 — 방향과 거리"><circle cx="23" cy="23" r="20"/><line x1="23" y1="23" x2="23" y2="3"/><circle class="k" cx="23" cy="3" r="5"/></svg><span class="sdn sdav"></span>`;
+    else if (st.turnable) html += `<span class="sdl">방향</span><svg class="sdd" ${SVGNS} viewBox="0 0 44 44" width="44" height="44" tabindex="0" role="slider" aria-label="조준 방향">${[0, 90, 180, 270].map(a => `<line class="tk" x1="22" y1="4" x2="22" y2="8" transform="rotate(${a} 22 22)"/>`).join("")}<circle cx="22" cy="22" r="18"/><line class="nd" x1="22" y1="22" x2="22" y2="7"/><circle class="hb" cx="22" cy="22" r="2.5"/></svg><span class="sdn sddv"></span>`;
+    if (st.drag) html += `<span class="sdl">끌기</span><svg class="sdg" ${SVGNS} viewBox="0 0 44 44" width="44" height="44" tabindex="0" role="slider" aria-label="끄는 방향"><rect x="3" y="3" width="38" height="38" rx="9"/><g class="ar"><line x1="22" y1="22" x2="22" y2="9"/><path d="M22 5 L17.5 11 L26.5 11 Z"/></g><circle class="hb" cx="22" cy="22" r="2.5"/></svg><span class="sdn sdgv"></span>`;
+    html += `<button type="button" class="sdr" title="처음대로">↺</button>`;
+    row.innerHTML = html;
+    box.insertBefore(row, box.querySelector(".splatcap"));
+    const init = { th: st.th, dist: st.dist, phi: st.phi };
+    const sync = () => {
+      const a = row.querySelector(".sda");
+      if (a) {
+        const k = 20 * st.dist / st.maxR, t = st.th * Math.PI / 180, x = 23 + Math.sin(t) * k, y = 23 - Math.cos(t) * k;
+        a.querySelector("line").setAttribute("x2", x.toFixed(1)); a.querySelector("line").setAttribute("y2", y.toFixed(1));
+        a.querySelector(".k").setAttribute("cx", x.toFixed(1)); a.querySelector(".k").setAttribute("cy", y.toFixed(1));
+        row.querySelector(".sdav").textContent = `${way(st.th)} ${n2(st.dist)}`;
+      }
+      const d = row.querySelector(".sdd");
+      if (d) { d.querySelector(".nd").setAttribute("transform", `rotate(${st.th} 22 22)`); row.querySelector(".sddv").textContent = way(st.th); }
+      const gq = row.querySelector(".sdg");
+      if (gq) { gq.querySelector(".ar").setAttribute("transform", `rotate(${st.th + st.phi} 22 22)`); row.querySelector(".sdgv").textContent = way(st.th + st.phi); }
+    };
+    let pend = 0, busy = false;
+    const redraw = fast => {
+      if (pend) cancelAnimationFrame(pend);
+      pend = requestAnimationFrame(() => { pend = 0; draw(cv, ents, st, fast); });
+    };
+    const ang = (el, ev) => { const r = el.getBoundingClientRect(), x = ev.clientX - r.left - r.width / 2, y = ev.clientY - r.top - r.height / 2;
+                               return { a: Math.atan2(x, -y) * 180 / Math.PI, k: Math.hypot(x, y) / (r.width / 2 - 3) }; };
+    const snap = v => Math.round(v / 5) * 5;          // 5° 씩 — 손 떨림에 그림이 흔들리지 않게
+    const set = (el, ev) => {
+      const { a, k } = ang(el, ev);
+      if (el.classList.contains("sda")) { st.th = snap(a); st.dist = Math.round(Math.min(1, k) * st.maxR * 4) / 4; }
+      else if (el.classList.contains("sdd")) st.th = snap(a);
+      else st.phi = snap(a - st.th);
+      sync(); redraw(true);
+    };
+    for (const el of row.querySelectorAll("svg")) {
+      el.addEventListener("pointerdown", ev => { busy = true; el.setPointerCapture(ev.pointerId); set(el, ev); ev.preventDefault(); });
+      el.addEventListener("pointermove", ev => { if (busy && el.hasPointerCapture(ev.pointerId)) set(el, ev); });
+      const up = () => { if (busy) { busy = false; redraw(false); } };
+      el.addEventListener("pointerup", up); el.addEventListener("pointercancel", up);
+      el.addEventListener("keydown", ev => {
+        const step = { ArrowLeft: -15, ArrowRight: 15 }[ev.key];
+        if (step == null && !(el.classList.contains("sda") && /Arrow(Up|Down)/.test(ev.key))) return;
+        ev.preventDefault();
+        if (step != null) { if (el.classList.contains("sdg")) st.phi += step; else st.th += step; }
+        else st.dist = Math.max(0, Math.min(st.maxR, st.dist + (ev.key === "ArrowUp" ? 0.5 : -0.5)));
+        sync(); redraw(false);
+      });
+    }
+    row.querySelector(".sdr").addEventListener("click", () => { Object.assign(st, init); sync(); redraw(false); });
+    sync();
+  }
+
+  async function fill(box) {
+    box.classList.add("on");
+    const hd = await heroData(box.dataset.h);
+    const skill = box.dataset.t ? (hd._t || {})[box.dataset.t] : hd[box.dataset.s];
+    let ents = skill && (skill.e || []).length ? pick(skill) : fromWiki(box.dataset.g);
+    if (skill && (skill.e || []).length) {
+      const ex = extraWiki(box.dataset.g, skill);
+      // 효과 범위로 찾은 원이 사실 옮겨 붙는 거리였으면(스랄 연쇄 번개 6) 가는 원 하나만 남긴다
+      ents = ents.filter(e => !(e.area && ex.some(x => x.model === META.range && Math.abs(x.radius - e.radius) < 0.3))).concat(ex);
+    }
+    if (!ents || !ents.length) { box.remove(); return; }
+    const names = new Set();
+    for (const e of ents) for (const m of [e.model, ...Object.values(e.parts || {})])
+      for (const mt of META.models[m] || []) { names.add(mt.emis.tex); names.add(mt.mask.tex); }
+    await Promise.all([...names].map(loadTex));
+    const st = setup(ents, skill, box);
+    const cv = document.createElement("canvas");
+    draw(cv, ents, st, false);
     const est = ents.some(e => e.guess || e.region || e.bounce || e.synth || e.area || e.data) && !ents[0].fromWiki;
     box.innerHTML = "";
     box.appendChild(cv);
@@ -476,9 +606,10 @@
     cap.className = "splatcap";
     cap.innerHTML = (ents[0].fromWiki ? `<b>판정 범위</b> ${ents.map(label).filter(Boolean).join(" · ")} · <span class="est" title="게임은 이 기술에 바닥 범위 표시를 띄우지 않아, 판정 범위를 같은 모양의 노란 UI 로 그렸습니다">게임엔 표시 없음</span>`
                                      : `<b>인게임 범위 표시</b> ${ents.map(label).filter(Boolean).join(" · ")}`)
-      + (ents.some(e => e.kind !== "range") ? " · 조준은 위쪽" : "")
-      + (est ? ` · <span class="est" title="${ents.map(e => e.guess || (e.region ? "지역 " + e.region : "") || (e.bounce ? "벽 반사 생략" : "") || (e.synth ? "사거리 원은 기술 사거리로 그림(게임은 안 띄움)" : "") || (e.area ? "효과 범위는 게임 효과(" + e.area + ")에서 읽음 — 게임은 바닥에 안 띄움" : "") || (e.data === "spiral" ? "나선 궤적은 게임 UI 에 없음 — 뻗는 거리는 자료(속도·지속)로 잰 상한, 도는 모양은 눈대중" : "") || (e.data === "move" ? "이동 길은 게임 UI 에 없음 — 자료의 거리로 그림" : "") || (e.data === "extra" ? "옮겨 붙는 거리는 게임 UI 에 없음 — 자료로 그림" : "")).filter(Boolean).join(" / ")}">일부 추정</span>` : "");
+      + (st.turnable ? "" : ents.some(e => e.kind !== "range") ? " · 조준은 위쪽" : "")
+      + (est ? ` · <span class="est" title="${ents.map(e => e.guess || (e.region ? "지역 " + e.region : "") || (e.bounce ? "벽 반사 생략" : "") || (e.synth ? "사거리 원은 기술 사거리로 그림(게임은 안 띄움)" : "") || (e.area ? "효과 범위는 게임 효과(" + e.area + ")에서 읽음 — 게임은 바닥에 안 띄움" : "") || (e.data === "spiral" ? "나선 궤적은 게임 UI 에 없음 — 뻗는 거리는 자료(속도·지속)로 잰 상한, 도는 모양은 눈대중" : "") || (e.data === "move" ? "이동 길은 게임 UI 에 없음 — 자료의 거리로 그림" : "") || (e.data === "extra" ? (e.anch ? "끄는 거리는 게임 UI 에 없음 — 자료로 그림" : "옮겨 붙는 거리는 게임 UI 에 없음 — 자료로 그림") : "")).filter(Boolean).join(" / ")}">일부 추정</span>` : "");
     box.appendChild(cap);
+    dials(box, cv, ents, st);
     // 옛 판정 그림이 없던 기술은 펼침 제목이 '상세 표' 뿐이다 — 그림이 붙었으니 앞에 적어 준다
     const sum = box.closest("details") && box.closest("details").querySelector(":scope > summary");
     if (sum && !/범위 그림/.test(sum.textContent)) sum.textContent = "범위 그림" + (sum.textContent.trim() ? " · " + sum.textContent.trim() : "");
