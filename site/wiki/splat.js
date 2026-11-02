@@ -154,7 +154,7 @@
         const L = e.length, hw = L * Math.tan(e.angle / 2 * Math.PI / 180), ms = mats(e.model, 2 * hw);
         each(0, -L / 2, L / 2 + hw, (x, y, i) => {
           const s = -y; if (s < 0 || s > L) return;
-          for (const o of ms) shade(i, o, x / (2 * hw) + 0.5, s / L, t);
+          for (const o of ms) shade(i, o, x / (2 * hw) + 0.5, 1 - s / L, t);   // 텍스처 위(v=0)가 먼 끝 — 직선 그림과 같다(알라라크 Q 는 밑변이 앞, 디바 매트릭스는 멀수록 넓다)
         });
       } else if (e.kind === "path") {
         /* 게임이 바닥에 안 까는 **움직이는 판정의 길**(요한나 축복받은 망치 나선 · 루나라 위습 이동) —
