@@ -105,7 +105,9 @@
       const reach = e.offset && e.offset < FAR ? Math.min(REACH, e.offset) : REACH;
       if (e.kind === "range" || e.kind === "circle") {
         const r = e.radius, cy = e.kind === "range" || e.self ? 0 : -reach, ms = mats(e.model, 2 * r);
-        each(0, cy, r * 1.42, (x, y, i) => { for (const o of ms) shade(i, o, x / (2 * r) + 0.5, (y - cy) / (2 * r) + 0.5, t); });
+        // turn: 조준 방향을 따라 도는 원 그림 — 그림 아래쪽이 앞이라 뒤집어 찍는다(마이에브 칼날 부채)
+        const sg = e.turn ? -1 : 1;
+        each(0, cy, r * 1.42, (x, y, i) => { for (const o of ms) shade(i, o, sg * x / (2 * r) + 0.5, sg * (y - cy) / (2 * r) + 0.5, t); });
       } else if (e.kind === "quad") {
         // 아주 가는 직선(겐지 표창 0.25)은 끝 조각도 그만큼 줄어 화살촉이 안 보인다 — 끝 조각은 폭 0.8 을 보장
         const w = e.width, len = e.length, p = e.parts || {}, cw = Math.max(w, 0.8), cap = Math.min(cw, len / 3), seg = [];
@@ -201,7 +203,9 @@
       else if (e.kind === "poly") r = Math.max(r, ...e.verts.map(v => Math.hypot(v[0], v[1])));
       else if (e.kind === "quad") r = Math.max(r, Math.min(FAR, (e.place === "down" ? e.length : reach + e.length / 2) + (e.cursor ? REACH : 0)));
     }
-    return Math.min(r + 0.8, FAR);
+    // 견줄 눈금(레이너 일반 공격)은 늘 보이게 — 범위가 작아도 칸을 그만큼은 넓힌다
+    const base = META && META.refs && META.refs["레이너 일반 공격"] || 0;
+    return Math.min(Math.max(r, base) + 0.8, FAR);
   }
 
   /* 기술 하나에 그림이 여럿이면 특성 판(variant)은 빼고 기본 판을 **다** 겹친다 — 겐지 표창 세 갈래,
@@ -264,7 +268,8 @@
 
   async function fill(box) {
     box.classList.add("on");
-    const skill = (await heroData(box.dataset.h))[box.dataset.s];
+    const hd = await heroData(box.dataset.h);
+    const skill = box.dataset.t ? (hd._t || {})[box.dataset.t] : hd[box.dataset.s];
     const ents = skill && (skill.e || []).length ? pick(skill) : fromWiki(box.dataset.g);
     if (!ents || !ents.length) { box.remove(); return; }
     const names = new Set();
@@ -291,6 +296,18 @@
       d[k + 2] = Math.min(255, d[k + 2] * a + EB[i] * 255);
     }
     g.putImageData(img, 0, 0);
+    // 견줄 눈금 — 손으로 그릴 때 배경에 깔던 사거리(레이너 일반 공격·해머 공성 모드). 칸 안에 드는 것만
+    g.save();
+    g.setLineDash([4 * dpr, 4 * dpr]); g.lineWidth = dpr;
+    g.font = `${10 * dpr}px system-ui, sans-serif`; g.textAlign = "right";
+    for (const [nm, rv] of Object.entries(META.refs || {})) {
+      if (!(rv > 0) || rv > R) continue;
+      g.strokeStyle = "rgba(140,190,255,.45)";
+      g.beginPath(); g.arc(N / 2, N / 2, rv * PX, 0, Math.PI * 2); g.stroke();
+      const a = -Math.PI / 4, lx = N / 2 + Math.cos(a) * rv * PX, ly = N / 2 + Math.sin(a) * rv * PX;
+      g.fillStyle = "rgba(160,200,255,.8)"; g.fillText(`${nm} ${rv}`, lx - 3 * dpr, ly - 3 * dpr);
+    }
+    g.restore();
     // 영웅 자리
     g.fillStyle = "#e6edf3"; g.beginPath(); g.arc(N / 2, N / 2, Math.max(3, 0.55 * PX), 0, Math.PI * 2); g.fill();
     g.fillStyle = "rgba(0,0,0,.55)"; g.fillRect(0, N - 18 * dpr, 64 * dpr, 18 * dpr);

@@ -954,6 +954,14 @@ window.KS={score:score,mark:mark,esc:esc};})();
     return `<div class="tsel"><div class="tsh-t">능력치를 바꾸는 특성 <span class="note">${cands.length}개</span></div><div class="tsh">${chips}</div>${body}</div>`;
   }
 
+  /* 인게임 범위 표시 칸(splat.js) — 기술(data-s)·특성(data-t) 둘 다. 위키 판정 도형은 data-g 로 넘겨
+     게임이 범위를 안 띄우는 것도 같은 노란 UI 로 그리게 한다 */
+  function splatBox(hid, attr, id, wk) {
+    const gs = list(wk["도형"]);
+    const g = gs.length ? ` data-g="${encodeURIComponent(JSON.stringify({ d: wk["도형거리"], g: gs.map(g => ({ 꼴: g["꼴"], 자리: g["자리"], 반지름: g["반지름"], 각도: g["각도"], 가로: g["가로"], 세로: g["세로"], 길이: g["길이"], 점: g["점"] })) }))}"` : "";
+    return `<div class="splatbox" data-h="${esc(hid)}" data-${attr}="${esc(id)}"${g}></div>`;
+  }
+
   /* ── 특성 하나의 세부 수치·범위 그림 — 기술과 같은 그림 코드(shape.js)·같은 다이얼 ── */
   const TOPEN = new Set();          // 펼쳐 둔 특성(다시 그려도 열린 채로)
   function talentMore(h, p) {
@@ -971,7 +979,7 @@ window.KS={score:score,mark:mark,esc:esc};})();
     if (!fig && !rows.length) return "";
     const kv = rows.length ? `<div class="kv">${rows.map(r => `<div class="kvr${r[2] ? " calc" : ""}"><span class="k">${esc(r[0])}</span><span class="v">${esc(r[1])}</span></div>`).join("")}</div>` : "";
     const lab = (fig ? "범위 그림" : "") + (fig && rows.length ? " · " : "") + (rows.length ? `세부 수치 ${rows.length}` : "") + " " + LV0;
-    return `<details class="more2" data-tf="${esc(p.id)}"${TOPEN.has(p.id) ? " open" : ""}><summary>${lab}</summary>${fig ? `<div class="figbox">${fig}</div>` : ""}${kv}</details>`;
+    return `<details class="more2" data-tf="${esc(p.id)}"${TOPEN.has(p.id) ? " open" : ""}><summary>${lab}</summary><div class="figrow">${fig ? `<div class="figbox">${fig}</div>` : ""}${splatBox(h.id, "t", p.id, wk)}</div>${kv}</details>`;
   }
   document.addEventListener("toggle", e => { const d = e.target; if (d.dataset && d.dataset.tf) { if (d.open) TOPEN.add(d.dataset.tf); else TOPEN.delete(d.dataset.tf); } }, true);
   function pHero(id) {
@@ -1020,7 +1028,7 @@ window.KS={score:score,mark:mark,esc:esc};})();
         <p class="desc" style="margin:4px 0">${descHtml(a["설명"], ctx)}</p>
         ${cands.length ? selBlock(h, a.id, cands, res) : ""}
         ${(() => { const dt = detailTable(a, t, dmgTxt ? dmgTxt + (res && res.lines.length ? "<br>" + res.lines.filter(l => !/^<b>한 번/.test(l)).join("<br>") : "") : "");
-          return (fig || dt) ? `<details class="more2"${t ? " open" : ""}><summary>${fig ? "범위 그림" : ""}${fig && dt ? " · " : ""}${dt ? "상세 표" : ""}</summary>${`<div class="figrow">${fig ? `<div class="figbox">${fig}</div>` : ""}<div class="splatbox" data-h="${esc(id)}" data-s="${esc(a.id)}"${list(wk["도형"]).length ? ` data-g="${encodeURIComponent(JSON.stringify({ d: wk["도형거리"], g: list(wk["도형"]).map(g => ({ 꼴: g["꼴"], 자리: g["자리"], 반지름: g["반지름"], 각도: g["각도"], 가로: g["가로"], 세로: g["세로"], 길이: g["길이"], 점: g["점"] })) }))}"` : ""}></div></div>`}${dt.replace('<details class="det" open><summary>상세 표</summary>', "").replace(/<\/details>$/, "")}</details>` : ""; })()}</div></div>`;
+          return (fig || dt) ? `<details class="more2"${t ? " open" : ""}><summary>${fig ? "범위 그림" : ""}${fig && dt ? " · " : ""}${dt ? "상세 표" : ""}</summary>${`<div class="figrow">${fig ? `<div class="figbox">${fig}</div>` : ""}${splatBox(id, "s", a.id, wk)}</div>`}${dt.replace('<details class="det" open><summary>상세 표</summary>', "").replace(/<\/details>$/, "")}</details>` : ""; })()}</div></div>`;
     };
     const tl = groupBy(TS, t => t["레벨"] ?? "?");
     const tiers = Object.keys(tl).sort((a, b) => +a - +b).map(lv => `<div class="tier"><div class="lv">${esc(lv)}<small>레벨</small></div><div class="picks">${tl[lv].map(p =>
