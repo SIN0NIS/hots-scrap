@@ -519,6 +519,31 @@
       d[k + 1] = Math.min(255, d[k + 1] * a + EG[i] * 255);
       d[k + 2] = Math.min(255, d[k + 2] * a + EB[i] * 255);
     }
+    // 특성 적용 전 그림 — 테두리만 흰 점선으로(안이 칠해진 곳과 바깥이 맞닿는 화소)
+    if (st.ghost) {
+      // 바깥에서 물을 채워 닿지 않은 곳을 안으로 친다 — 고리(사거리 원)도 겉 테두리 한 줄만 남는다
+      // 무늬 틈(디바 방어 매트릭스 빗금)으로 물이 새지 않게 몇 화소 부풀려 막는다
+      const A0 = paint(st.ghost, N, st).A, w = Math.max(1, Math.round(dpr)), dash = 5 * w, r = 3 * w;
+      const H = new Uint8Array(N * N), G = new Uint8Array(N * N);
+      for (let y = 0; y < N; y++) for (let x = 0; x < N; x++) if (A0[y * N + x] > 0.005)
+        for (let k = Math.max(0, x - r); k <= Math.min(N - 1, x + r); k++) H[y * N + k] = 1;
+      for (let x = 0; x < N; x++) for (let y = 0; y < N; y++) if (H[y * N + x])
+        for (let k = Math.max(0, y - r); k <= Math.min(N - 1, y + r); k++) G[k * N + x] = 1;
+      const out = new Uint8Array(N * N), q = [];
+      for (let i = 0; i < N; i++) for (const v of [i, (N - 1) * N + i, i * N, i * N + N - 1]) if (!out[v] && !G[v]) { out[v] = 1; q.push(v); }
+      while (q.length) {
+        const v = q.pop(), x = v % N;
+        for (const u of [x > 0 ? v - 1 : -1, x < N - 1 ? v + 1 : -1, v - N, v + N])
+          if (u >= 0 && u < N * N && !out[u] && !G[u]) { out[u] = 1; q.push(u); }
+      }
+      const on = v => !out[v];
+      for (let y = w; y < N - w; y++) for (let x = w; x < N - w; x++) {
+        const i = y * N + x;
+        if (!on(i) || (on(i - w) && on(i + w) && on(i - w * N) && on(i + w * N))) continue;
+        // 흰 칸·검은 칸을 번갈아 — 노란 칠 위에서도 어두운 바닥에서도 보이게
+        d[i * 4] = d[i * 4 + 1] = d[i * 4 + 2] = Math.floor((x + y) / dash) % 2 ? 25 : 245;
+      }
+    }
     g.putImageData(img, 0, 0);
     // 견줄 눈금 — 손으로 그릴 때 배경에 깔던 사거리(레이너 일반 공격·해머 공성 모드). 칸 안에 드는 것만
     g.save();
@@ -637,8 +662,9 @@
 
   /* 특성 [적용] — '바뀌는 값' 의 «칸 A → B» 를 그림 크기에 옮긴다. 값이 A 와 같은 칸만 바꾼다
      (발라 무기고: 다발 사격 반지름 10 → 12.35). 바꾼 칸 수를 돌려준다. */
-  const CHG = [[/사거리/, [["range", "radius"], ["*", "offset"]]],
-               [/반지름/, [["circle", "radius"], ["cone", "radius"]]],
+  // 쏘는 직선·삼각형은 사거리가 곧 길이(데하카 끌기 6 → 7.1), 제자리 범위는 사거리 원으로 그린다(우서 천상의 폭풍 3.5)
+  const CHG = [[/사거리/, [["range", "radius"], ["quad", "length"], ["triangle", "length"]]],
+               [/반지름/, [["circle", "radius"], ["cone", "radius"], ["range", "radius"]]],
                [/너비|폭|가로/, [["quad", "width"]]],
                [/길이|높이|세로|거리/, [["quad", "length"], ["triangle", "length"]]],
                [/각도/, [["cone", "arc"], ["triangle", "angle"]]]];
@@ -646,14 +672,39 @@
     let n = 0;
     for (const c of chg || []) {
       const m = /^(.*?)\s+(-?[\d.]+)\s*→\s*(-?[\d.]+)/.exec(String(c));
-      if (!m) continue;
+      // 판정 세로는 날아가는 판정 길이, 탐색·이동 거리는 그림 크기가 아니다(데하카 길쭉한 혀·겐지 시마다의 길).
+      // 판정 가로는 직선 폭과 같으면 옮긴다(티란데 파수꾼 1.25 → 1.56)
+      if (!m || /판정 (세로|높이|길이)|탐색|이동|속도|시간/.test(m[1])) continue;
       const a = +m[2], b = +m[3], row = CHG.find(([rx]) => rx.test(m[1]));
       if (!row || !(a > 0) || !(b > 0)) continue;
-      for (const e of ents) for (const [k, f] of row[1])
-        if ((k === "*" || e.kind === k) && typeof e[f] === "number" && Math.abs(e[f] - a) < 0.02) { e[f] = b; e.tal = true; n++; }
+      for (const e of ents) for (const [k, f] of row[1]) {
+        if (!((k === "*" || e.kind === k) && typeof e[f] === "number")) continue;
+        if (row === CHG[0] && e.kind === "quad" && f === "length" && e.place && e.place !== "down") continue;   // 찍은 자리에 눕는 벽 길이는 사거리가 아니다
+        // 사거리 원은 게임이 조금 넉넉히 띄운다(타사다르 사이오닉 폭풍 8.75 → 원 9) — 차이만큼 옮긴다
+        const tol = e.kind === "range" && f === "radius" && row === CHG[0] ? 0.3 : Math.max(0.02, a * 0.003);
+        if (Math.abs(e[f] - a) > tol) continue;
+        if (e.lab != null) e.lab = e.lab.replace(String(n2(e[f])), String(n2(e[f] + b - a)));
+        e[f] += b - a; e.tal = true; n++;
+      }
     }
     return n;
   }
+  /* 특성 판 그림(게임이 특성을 고르면 띄우는 그림)을 기본 그림에 얹는다. 같은 꼴이 더 크거나 같으면 바꾸고
+     (디바 동력 전환 삼각형 7 → 8.75), 더 작으면 눈금으로 같이 그린다(크로미 빨리감기 15 위의 7.5,
+     루시우 가까이 오시겠다? 70° 안의 20°, 겐지 심장을 노려라 12 위의 9.43) */
+  const size = e => e.kind === "quad" ? e.length * e.width : e.kind === "cone" ? e.radius * e.radius * e.arc
+    : e.kind === "triangle" ? e.length * e.angle : (e.radius || 0);
+  function mergeTal(base, tal) {
+    // 특성 그림 하나는 같은 꼴 중 크기가 가장 가까운 기본 그림 하나만 바꾼다(켈투자드 얼음 손아귀: 3 은 바꾸고 1.5 는 둔다)
+    const keep = base.slice();
+    for (const t of tal) {
+      let j = -1;
+      keep.forEach((e, i) => { if (e.kind === t.kind && (j < 0 || Math.abs(size(e) - size(t)) < Math.abs(size(keep[j]) - size(t)))) j = i; });
+      if (j >= 0 && size(t) >= size(keep[j]) - 1e-6) keep.splice(j, 1);
+    }
+    return tal.concat(keep);
+  }
+  const geo = ents => JSON.stringify(ents.map(e => [e.kind, e.radius, e.length, e.width, e.arc, e.angle, e.offset, e.fwd, e.side, e.self].map(v => typeof v === "number" ? n2(v) : v ?? null)).sort());
   /* 영웅 문서가 '이 기술을 바꾸는 특성' 칩을 고를 때 — 특성 판 그림이 어느 기술 것인지(특성 id → 기술 id).
      아직 안 받았으면 받고 나서 cb 를 부른다 */
   function tals(hid, cb) {
@@ -665,24 +716,43 @@
   async function fill(box) {
     box.classList.add("on");
     const hd = await heroData(box.dataset.h);
-    let skill = box.dataset.t ? (hd._t || {})[box.dataset.t] : hd[box.dataset.s];
+    const skill = box.dataset.t ? (hd._t || {})[box.dataset.t] : hd[box.dataset.s];
     const ta = box.dataset.ta, tf = ta && (hd._t || {})[ta];
-    let tfig = false;
-    if (tf && tf.s === box.dataset.s && (tf.e || []).length) { skill = tf; tfig = true; }   // 특성이 그림째 바꾸는 기술
-    let ents = skill && (skill.e || []).length ? pick(skill) : fromWiki(box.dataset.g);
-    if (skill && (skill.e || []).length) {
-      const ex = extraWiki(box.dataset.g, skill);
-      // 효과 범위로 찾은 원이 사실 옮겨 붙는 거리였으면(스랄 연쇄 번개 6) 가는 원 하나만 남긴다
-      ents = ents.filter(e => !(e.area && ex.some(x => x.model === META.range && Math.abs(x.radius - e.radius) < 0.3))).concat(ex);
-      ents = moreWiki(ents, box.dataset.g, skill, !!box.dataset.dr);
-    }
+    const build = sk => {
+      let es = sk && (sk.e || []).length ? pick(sk) : fromWiki(box.dataset.g);
+      if (sk && (sk.e || []).length) {
+        const ex = extraWiki(box.dataset.g, sk);
+        // 효과 범위로 찾은 원이 사실 옮겨 붙는 거리였으면(스랄 연쇄 번개 6) 가는 원 하나만 남긴다
+        es = es.filter(e => !(e.area && ex.some(x => x.model === META.range && Math.abs(x.radius - e.radius) < 0.3))).concat(ex);
+        es = moreWiki(es, box.dataset.g, sk, !!box.dataset.dr);
+      }
+      return es;
+    };
+    let ents = build(skill);
     if (!ents || !ents.length) { box.remove(); return; }
-    const tn = ta ? applyChg(ents, wikiData(box.dataset.chg)) : 0;
+    let ghost = null;
+    if (ta) {
+      // 적용 전 그림은 따로 떠 두고, 바뀌었으면 그 테두리를 겹쳐 그린다
+      ghost = ents.map(e => Object.assign({}, e));
+      if (tf && tf.s === box.dataset.s && (tf.e || []).length && skill && (skill.e || []).length) {   // 특성이 그림째 바꾸는 기술
+        const t = pick(tf).filter(e => !(e.synth && ents.some(b => b.kind === "range")));
+        ents = mergeTal(ents, t.filter(e => e.kind !== "range" || !ents.some(b => b.kind === "range" && Math.abs(b.radius - e.radius) < 0.02)));
+      }
+      ents = ents.map(e => Object.assign({}, e));
+      applyChg(ents, wikiData(box.dataset.chg));
+      if (geo(ents) === geo(ghost)) ghost = null;
+    }
     const names = new Set();
-    for (const e of ents) for (const m of [e.model, ...Object.values(e.parts || {})])
+    for (const e of ents.concat(ghost || [])) for (const m of [e.model, ...Object.values(e.parts || {})])
       for (const mt of META.models[m] || []) { names.add(mt.emis.tex); names.add(mt.mask.tex); }
     await Promise.all([...names].map(loadTex));
     const st = setup(ents, skill, box);
+    if (ghost) {
+      // 적용 전 그림도 같은 자리 잡기를 거치고, 둘 다 들어가게 칸을 넓힌다
+      const g0 = setup(ghost, skill, box);
+      st.ghost = ghost;
+      if (g0.R > st.R) { st.R = g0.R; st.css = st.R > 12 ? Math.min(460, Math.round(CSS * Math.sqrt(st.R / 12))) : CSS; }
+    }
     const cv = document.createElement("canvas");
     draw(cv, ents, st, false);
     const est = ents.some(e => e.guess || e.region || e.bounce || e.synth || e.area || e.data) && !ents[0].fromWiki;
@@ -691,7 +761,7 @@
     box.appendChild(cv);
     const cap = document.createElement("div");
     cap.className = "splatcap";
-    cap.innerHTML = (ta ? `<b class="calc-v">특성 적용 · ${esc(box.dataset.tn || "")}</b> ${tfig || tn ? "" : "<span class=\"note\">(범위는 그대로)</span> "}· ` : "") + (ents[0].fromWiki ? `<b>판정 범위</b> ${ents.map(label).filter(Boolean).join(" · ")} · <span class="est" title="게임은 이 기술에 바닥 범위 표시를 띄우지 않아, 판정 범위를 같은 모양의 노란 UI 로 그렸습니다">게임엔 표시 없음</span>`
+    cap.innerHTML = (ta ? `<b class="calc-v">특성 적용 · ${esc(box.dataset.tn || "")}</b> ${ghost ? `<span class="sghost">흰 점선 = 적용 전 (${ghost.map(label).filter(Boolean).join(" · ")})</span> ` : "<span class=\"note\">(그림에 나온 크기는 그대로 — 바뀌는 수치는 그림 밖)</span> "}· ` : "") + (ents[0].fromWiki ? `<b>판정 범위</b> ${ents.map(label).filter(Boolean).join(" · ")} · <span class="est" title="게임은 이 기술에 바닥 범위 표시를 띄우지 않아, 판정 범위를 같은 모양의 노란 UI 로 그렸습니다">게임엔 표시 없음</span>`
                                      : `<b>인게임 범위 표시</b> ${ents.map(label).filter(Boolean).join(" · ")}`)
       + (st.turnable ? "" : ents.some(e => e.kind !== "range") ? " · 조준은 위쪽" : "")
       + (est ? ` · <span class="est" title="${ents.map(e => e.guess || (e.region ? "지역 " + e.region : "") || (e.bounce ? "벽 반사 생략" : "") || (e.synth ? "사거리 원은 기술 사거리로 그림(게임은 안 띄움)" : "") || (e.area ? "효과 범위는 게임 효과(" + e.area + ")에서 읽음 — 게임은 바닥에 안 띄움" : "") || (e.data === "spiral" ? "나선 궤적은 게임 UI 에 없음 — 뻗는 거리는 자료(속도·지속)로 잰 상한, 도는 모양은 눈대중" : "") || (e.data === "move" ? "이동 길은 게임 UI 에 없음 — 자료의 거리로 그림" : "") || (e.data === "more" ? "이 범위는 게임 UI 에 없음 — 위키 판정 자료로 그림" : "") || (e.data === "extra" ? (e.anch ? "끄는 거리는 게임 UI 에 없음 — 자료로 그림" : "옮겨 붙는 거리는 게임 UI 에 없음 — 자료로 그림") : "")).filter(Boolean).join(" / ")}">일부 추정</span>` : "");
