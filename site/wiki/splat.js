@@ -156,6 +156,28 @@
           const s = -y; if (s < 0 || s > L) return;
           for (const o of ms) shade(i, o, x / (2 * hw) + 0.5, s / L, t);
         });
+      } else if (e.kind === "path") {
+        /* 게임이 바닥에 안 까는 **움직이는 판정의 길**(요한나 축복받은 망치 나선 · 루나라 위습 이동) —
+           자료로 잰 길을 직선 그림(시작·가운데·끝 조각)을 휘어 붙여 그린다. 점은 [오른쪽, 앞] */
+        const P = e.pts, w = e.width, hw = w / 2, p = e.parts || {}, cum = [0];
+        for (let k = 1; k < P.length; k++) cum.push(cum[k - 1] + Math.hypot(P[k][0] - P[k - 1][0], P[k][1] - P[k - 1][1]));
+        const L = cum[cum.length - 1], cap = Math.min(Math.max(w, 0.8), L / 3);
+        const mC = mats(p.center, w), mL = p.launch ? mats(p.launch, w) : [], mI = p.impact ? mats(p.impact, w) : [];
+        const far = Math.max(...P.map(q => Math.hypot(q[0], q[1]))) + w;
+        each(0, 0, far, (x, y, i) => {
+          const b = -y; let bd = hw * hw, bs = -1, bq = 0;
+          for (let k = 1; k < P.length; k++) {
+            const ax = P[k - 1][0], ay = P[k - 1][1], vx = P[k][0] - ax, vy = P[k][1] - ay, l2 = vx * vx + vy * vy || 1;
+            const tt = Math.max(0, Math.min(1, ((x - ax) * vx + (b - ay) * vy) / l2));
+            const ex = x - ax - vx * tt, ey = b - ay - vy * tt, d2 = ex * ex + ey * ey;
+            if (d2 <= bd) { bd = d2; bs = cum[k - 1] + tt * (cum[k] - cum[k - 1]); bq = (vx * ey - vy * ex) / Math.sqrt(l2); }
+          }
+          if (bs < 0) return;
+          const u = -bq / w + 0.5;
+          if (bs < cap && mL.length) { for (const o of mL) shade(i, o, u, 1 - bs / cap, t); }
+          else if (bs > L - cap && mI.length) { for (const o of mI) shade(i, o, u, 1 - (bs - L + cap) / cap, t); }
+          else for (const o of mC) shade(i, o, u, 1 - ((bs - cap) / w) % 1, t);
+        });
       } else if (e.kind === "poly") {
         const P = e.verts.map(([x, y]) => [x, -y]);
         const xs = P.map(p => p[0]), fs = P.map(p => p[1]);
@@ -201,6 +223,7 @@
       else if (e.kind === "circle") r = Math.max(r, (e.self ? 0 : reach) + e.radius);
       else if (e.kind === "triangle") r = Math.max(r, Math.min(e.length, FAR));
       else if (e.kind === "poly") r = Math.max(r, ...e.verts.map(v => Math.hypot(v[0], v[1])));
+      else if (e.kind === "path") r = Math.max(r, Math.max(...e.pts.map(v => Math.hypot(v[0], v[1]))) + e.width);
       else if (e.kind === "quad") r = Math.max(r, Math.min(FAR, (e.place === "down" ? e.length : reach + e.length / 2) + (e.cursor ? REACH : 0)));
     }
     // 견줄 눈금(레이너 일반 공격)은 늘 보이게 — 범위가 작아도 칸을 그만큼은 넓힌다
@@ -221,7 +244,8 @@
       out.unshift({ kind: "range", radius: skill.r, model: META.range, tint: META.tint, synth: true });
     /* 두 번째 단계 — 게임 그림이 사거리 원뿐인데 효과를 따라가 피해 범위를 찾았으면(아우리엘 수정 방패:
        아군 지정 → 만료되며 주위 7 폭발) 대상 자리에 겹친다. 사거리가 없으면 제 자리. */
-    if (!rest.length && skill.a && META.gen) {
+    // 반경 1 미만은 날아가는 판정 하나의 크기(요한나 망치 0.75)라 제자리 원으로 그리면 거짓이다
+    if (!rest.length && skill.a && skill.a.radius >= 1 && META.gen) {
       // 즉시 시전(가로쉬 척살)이거나 사거리 원이 곧 효과 범위면 제 자리
       const rr = skill.r || (ranges[0] && ranges[0].radius);
       const same = rr && Math.abs(rr - skill.a.radius) < 0.6;   // 사거리 원이 곧 효과 범위 — 겹쳐 그릴 것 없음
@@ -249,16 +273,48 @@
         out.push({ kind: "poly", verts: g["점"].map(p => [p[0], -(p[1] + (at ? w.d : 0))]) });
       else if (g["꼴"] === "부채꼴" && g["반지름"] > 0)
         out.push({ kind: "cone", radius: +g["반지름"], arc: +(g["각도"] || 90), model: G.cone });
+      else if (g["꼴"] === "이동" && g["거리"] > 0 || g["꼴"] === "나선") out.push(...moving(g));
       else return null;                   // 못 그리는 꼴이 섞이면 통째로 옛 그림
     }
     out.forEach(e => { e.tint = META.tint; e.fromWiki = true; });
     return out.length ? out : null;
   }
 
+  /* 게임 UI 는 없지만 자료가 있는 움직이는 판정 — 같은 노란 직선 그림을 길 따라 휘어 붙인다.
+     나선: 반지름은 자료로 잰 상한(속도 × 지속 × 바깥 몫), 도는 모양(두 바퀴)은 눈대중(shared/shape.js 와 같은 길).
+     이동: 몸이 가는 길(12 까지만 그리고 숫자는 꼬리말에). */
+  function moving(g) {
+    const G = META.gen, out = [];
+    if (g["꼴"] === "나선") {
+      const R = +g["반지름"] || 3.2, r0 = Math.min(0.75, R * 0.1), turns = 2, pts = [];
+      for (let k = 0; k <= 160; k++) {
+        const t = k / 160, th = t * turns * 2 * Math.PI, rr = r0 + (R - r0) * t;
+        pts.push([rr * Math.sin(th), rr * Math.cos(th)]);
+      }
+      const hit = +g["판정"] || 0.5, end = pts[pts.length - 1];
+      out.push({ kind: "path", pts, width: 2 * hit, parts: G.quad, data: "spiral", R, n: g["수"] || 1, guessShape: !!g["눈대중"] });
+      out.push({ kind: "circle", radius: hit, self: true, side: -end[0], fwd: end[1], model: G.circle, data: "hit" });
+    } else {
+      const L = Math.min(+g["거리"], 12);
+      out.push({ kind: "path", pts: [[0, 0], [0, L]], width: +(g["반지름"] || 0.5) * 2, parts: G.quad, data: "move", dist: +g["거리"] });
+    }
+    out.forEach(e => { e.tint = META.tint; });
+    return out;
+  }
+  // 게임 그림이 있는 기술에도 게임이 안 그리는 움직이는 판정은 덧그린다(요한나 축복받은 망치)
+  function extraWiki(raw) {
+    if (!raw) return [];
+    let w; try { w = JSON.parse(decodeURIComponent(raw)); } catch (e) { return []; }
+    return (w.g || []).filter(g => g["꼴"] === "나선").flatMap(moving);
+  }
+
   const KIND = { range: "사거리", circle: "범위", quad: "직선", cone: "부채꼴", triangle: "삼각형", poly: "다각형" };
   const n2 = v => Math.round(v * 100) / 100;
   function label(e) {
     if (e.area) return `효과 범위 ${n2(e.radius)}`;
+    if (e.data === "spiral") return `나선 궤적 ~${n2(e.R)}${e.n > 1 ? ` × ${e.n}개` : ""}`;
+    if (e.data === "hit") return `판정 ${n2(e.radius)}`;
+    if (e.data === "move") return `이동 ${n2(e.dist)}`;
     if (e.kind === "range" || e.kind === "circle") return `${KIND[e.kind]} ${n2(e.radius)}`;
     if (e.kind === "quad") return `직선 ${n2(e.length)}×${n2(e.width)}`;
     if (e.kind === "cone") return `부채꼴 ${n2(e.radius)} · ${n2(e.arc)}°`;
@@ -270,7 +326,7 @@
     box.classList.add("on");
     const hd = await heroData(box.dataset.h);
     const skill = box.dataset.t ? (hd._t || {})[box.dataset.t] : hd[box.dataset.s];
-    const ents = skill && (skill.e || []).length ? pick(skill) : fromWiki(box.dataset.g);
+    const ents = skill && (skill.e || []).length ? pick(skill).concat(extraWiki(box.dataset.g)) : fromWiki(box.dataset.g);
     if (!ents || !ents.length) { box.remove(); return; }
     const names = new Set();
     for (const e of ents) for (const m of [e.model, ...Object.values(e.parts || {})])
@@ -312,7 +368,7 @@
     g.fillStyle = "#e6edf3"; g.beginPath(); g.arc(N / 2, N / 2, Math.max(3, 0.55 * PX), 0, Math.PI * 2); g.fill();
     g.fillStyle = "rgba(0,0,0,.55)"; g.fillRect(0, N - 18 * dpr, 64 * dpr, 18 * dpr);
     g.fillStyle = "#c9d1d9"; g.font = `${11 * dpr}px system-ui, sans-serif`; g.fillText(`±${Math.round(R)}`, 5 * dpr, N - 5 * dpr);
-    const est = ents.some(e => e.guess || e.region || e.bounce || e.synth || e.area) && !ents[0].fromWiki;
+    const est = ents.some(e => e.guess || e.region || e.bounce || e.synth || e.area || e.data) && !ents[0].fromWiki;
     box.innerHTML = "";
     box.appendChild(cv);
     const cap = document.createElement("div");
@@ -320,7 +376,7 @@
     cap.innerHTML = (ents[0].fromWiki ? `<b>판정 범위</b> ${ents.map(label).join(" · ")} · <span class="est" title="게임은 이 기술에 바닥 범위 표시를 띄우지 않아, 판정 범위를 같은 모양의 노란 UI 로 그렸습니다">게임엔 표시 없음</span>`
                                      : `<b>인게임 범위 표시</b> ${ents.map(label).join(" · ")}`)
       + (ents.some(e => e.kind !== "range") ? " · 조준은 위쪽" : "")
-      + (est ? ` · <span class="est" title="${ents.map(e => e.guess || (e.region ? "지역 " + e.region : "") || (e.bounce ? "벽 반사 생략" : "") || (e.synth ? "사거리 원은 기술 사거리로 그림(게임은 안 띄움)" : "") || (e.area ? "효과 범위는 게임 효과(" + e.area + ")에서 읽음 — 게임은 바닥에 안 띄움" : "")).filter(Boolean).join(" / ")}">일부 추정</span>` : "");
+      + (est ? ` · <span class="est" title="${ents.map(e => e.guess || (e.region ? "지역 " + e.region : "") || (e.bounce ? "벽 반사 생략" : "") || (e.synth ? "사거리 원은 기술 사거리로 그림(게임은 안 띄움)" : "") || (e.area ? "효과 범위는 게임 효과(" + e.area + ")에서 읽음 — 게임은 바닥에 안 띄움" : "") || (e.data === "spiral" ? "나선 궤적은 게임 UI 에 없음 — 뻗는 거리는 자료(속도·지속)로 잰 상한, 도는 모양은 눈대중" : "") || (e.data === "move" ? "이동 길은 게임 UI 에 없음 — 자료의 거리로 그림" : "")).filter(Boolean).join(" / ")}">일부 추정</span>` : "");
     box.appendChild(cap);
     // 옛 판정 그림이 없던 기술은 펼침 제목이 '상세 표' 뿐이다 — 그림이 붙었으니 앞에 적어 준다
     const sum = box.closest("details") && box.closest("details").querySelector(":scope > summary");
