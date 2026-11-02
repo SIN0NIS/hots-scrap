@@ -163,9 +163,25 @@
           for (let i = 0, j = P.length - 1; i < P.length; j = i++)
             if ((P[i][1] > b) !== (P[j][1] > b) && a < (P[j][0] - P[i][0]) * (b - P[i][1]) / (P[j][1] - P[i][1]) + P[i][0]) c = !c;
           return c; };
+        // 보이는 그림 모델을 못 찾은 지역(데스윙 맹격)은 기본 원을 늘이면 타원이 된다 —
+        // 다각형 모양 그대로 노란 테두리 + 안쪽 은은한 그늘(커서 그림과 같은 짜임)로 그린다
+        const outline = !e.model || (e.region && /storm_ui_aoecursor_fantasy/.test(e.model));
+        const tt = outline ? META.tint.map(c => c / 255) : t;
+        const edgeDist = (a, b) => { let m = 1e9;
+          for (let i = 0, j = P.length - 1; i < P.length; j = i++) {
+            const ax = P[j][0], ay = P[j][1], bx = P[i][0] - ax, by = P[i][1] - ay;
+            const k = Math.max(0, Math.min(1, ((a - ax) * bx + (b - ay) * by) / (bx * bx + by * by || 1)));
+            m = Math.min(m, Math.hypot(a - ax - bx * k, b - ay - by * k));
+          }
+          return m; };
+        const lw = Math.max(0.07, 1.4 / PX);              // 선 굵기(거리) — 작은 칸에서도 1px 넘게
         each(0, 0, Math.max(...xs.map(Math.abs), ...fs.map(Math.abs)), (x, y, i) => {
           const b = -y; if (!inside(x, b)) return;
-          for (const o of ms) shade(i, o, (x - x0) / (x1 - x0), 1 - (b - f0) / (f1 - f0), t);
+          if (!outline) { for (const o of ms) shade(i, o, (x - x0) / (x1 - x0), 1 - (b - f0) / (f1 - f0), tt); return; }
+          const dd = edgeDist(x, b);
+          const line = Math.max(0, 1 - dd / lw) * 1.5, shadow = 0.5 * Math.exp(-dd / 0.6);
+          if (line * tt[0] > ER[i]) { ER[i] = line * tt[0]; EG[i] = line * tt[1]; EB[i] = line * tt[2]; }
+          if (shadow > A[i]) A[i] = shadow;
         });
       }
     }
@@ -213,7 +229,7 @@
   }
 
   /* 게임이 범위를 안 띄우는 기술(첸 술통 부수기·아르타니스 이연격 …) — 위키 판정 도형(data-g)을
-     같은 노란 UI 로 그린다. 원·직사각형·부채꼴만; 이동·여러 자리·다각형은 옛 그림을 남긴다(null). */
+     같은 노란 UI 로 그린다. 원·직사각형·부채꼴·다각형만; 이동·여러 자리는 옛 그림을 남긴다(null). */
   function fromWiki(raw) {
     if (!raw) return null;
     let w; try { w = JSON.parse(decodeURIComponent(raw)); } catch (e) { return null; }
@@ -225,6 +241,8 @@
       else if (g["꼴"] === "직사각형" && (g["길이"] || g["세로"]))
         out.push({ kind: "quad", width: +(g["가로"] || 1), length: +(g["길이"] || g["세로"]),
                    place: at ? "center" : "down", offset: w.d, parts: G.quad });
+      else if (g["꼴"] === "다각형" && (g["점"] || []).length >= 3)        // 위키 좌표는 앞이 +y
+        out.push({ kind: "poly", verts: g["점"].map(p => [p[0], -(p[1] + (at ? w.d : 0))]) });
       else if (g["꼴"] === "부채꼴" && g["반지름"] > 0)
         out.push({ kind: "cone", radius: +g["반지름"], arc: +(g["각도"] || 90), model: G.cone });
       else return null;                   // 못 그리는 꼴이 섞이면 통째로 옛 그림
@@ -233,7 +251,7 @@
     return out.length ? out : null;
   }
 
-  const KIND = { range: "사거리", circle: "범위", quad: "직선", cone: "부채꼴", triangle: "삼각형", poly: "범위" };
+  const KIND = { range: "사거리", circle: "범위", quad: "직선", cone: "부채꼴", triangle: "삼각형", poly: "다각형" };
   const n2 = v => Math.round(v * 100) / 100;
   function label(e) {
     if (e.area) return `효과 범위 ${n2(e.radius)}`;
