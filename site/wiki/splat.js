@@ -113,7 +113,8 @@
           fn(lx, ly, i);
         });
       };
-      const t = (e.tint || [255, 255, 255]).map(c => c / 255);
+      // 틴트를 못 읽은 지역 그림(오르피아 압도의 아귀 · 안두인 응징)도 게임은 같은 노랑으로 칠한다(StormCustomGuideModel)
+      const t = (e.tint || META.tint || [255, 255, 255]).map(c => c / 255);
       if (e.kind === "range" || e.kind === "circle") {
         const r = e.radius, cy = e.kind === "range" || e.self ? 0 : -reach, ms = mats(e.model, 2 * r);
         // turn: 조준 방향을 따라 도는 원 그림 — 그림 아래쪽이 앞이라 뒤집어 찍는다(마이에브 칼날 부채)
@@ -264,7 +265,11 @@
   function pick(skill) {
     const list = skill.e || [];
     const base = list.filter(e => !e.variant);
-    const use = base.length ? base : list.slice(0, 1);
+    let use = base.length ? base : list.slice(0, 1);
+    // 시전자에서 쏘는 직선에 붙은 '추정' 원(이름으로 찾은 탐색 범위, 사거리 없음)은 날아가는 판정 크기다
+    // (리밍 마력탄 1.6) — 6 거리에 원으로 그리면 거짓이다
+    if (use.some(e => e.kind === "quad" && e.place === "down"))
+      use = use.filter(e => !(e.kind === "circle" && e.guess && !(e.offset < FAR)));
     const ranges = use.filter(e => e.kind === "range"), rest = use.filter(e => e.kind !== "range");
     const out = ranges.slice(0, 1).concat(rest);
     if (!ranges.length && skill.r && META.models[META.range])
@@ -445,13 +450,20 @@
     const w = wikiData(raw);
     if (!w || !(w.g || []).length) return ents;
     const out = ents.slice();
+    // 모양만 있는 지역 부채꼴(그림 모델을 못 찾아 기본 90°)은 위키의 각도를 쓴다(안두인 응징 20°)
+    out.forEach((e, i) => {
+      if (e.kind !== "cone" || !e.region) return;
+      const g = w.g.find(g => g["꼴"] === "부채꼴" && g["각도"] && Math.abs(g["반지름"] - e.radius) / e.radius < 0.15);
+      if (g) out[i] = Object.assign({}, e, { arc: +g["각도"] });
+    });
     const shell = w.g.find(g => g["꼴"] === "다각형" && g["겉"] && (g["점"] || []).length >= 3);
     if (shell) out.forEach((e, i) => {
       const p = e.parts || {};
       if (e.kind === "quad" && p.launch && !p.center && !p.impact && e.place === "down")
         out[i] = { kind: "poly", verts: shell["점"].map(q => [q[0], -q[1]]), model: p.launch, tint: e.tint, lab: `직선 ${n2(Math.max(...shell["점"].map(q => q[1])))}` };
     });
-    const have = out.filter(e => e.kind === "circle" || e.kind === "range").map(e => e.radius);
+    // 사거리 원은 영웅 둘레라 찍은 자리의 원을 대신하지 못한다(들창코 들창 폭풍 사거리 2.75 ↔ 착지 2.62)
+    const have = out.filter(e => e.kind === "circle").map(e => e.radius);
     // 게임 그림이 사거리 원뿐이면 대상을 찍는 기술이다(카라짐 흙의 벗) — 덧그린 원은 찍은 자리를 따른다
     const aim = drag || out.some(aimed) || !out.some(e => e.kind !== "range");
     for (const g of w.g) {
