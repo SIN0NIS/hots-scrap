@@ -41,6 +41,8 @@
   /* st: 다이얼 상태 — th 조준 방향(시계 방향 °), dist 찍는 자리까지 거리(null = 기본), phi 끌기 방향(°), drag 끌어서 쓰는 기술 */
   function paint(ents, N, st) {
     st = st || {};
+    // foot: 텍스처 무늬 대신 도형이 차지하는 자리만 채운다(특성 적용 전 테두리를 도형대로 긋는 데 쓴다)
+    const FOOT = !!st.foot;
     const R = st.R || extent(ents, st), PX = N / (2 * R);
     const TH = (st.th || 0) * Math.PI / 180, PH = (st.phi || 0) * Math.PI / 180, cP = Math.cos(PH), sP = Math.sin(PH);
     const ER = new Float32Array(N * N), EG = new Float32Array(N * N), EB = new Float32Array(N * N), A = new Float32Array(N * N);
@@ -68,6 +70,7 @@
       UV[0] = a; UV[1] = b; return UV;
     }
     function shade(i, o, u, v, t, gv) {
+      if (FOOT) { A[i] = 1; return; }
       const L = o.m.emis;
       const grad = gv != null && /gradient/.test(L.tex);
       let q = grad ? [0.5, gv] : layerUV(L, u, v);
@@ -119,7 +122,10 @@
         const r = e.radius, cy = e.kind === "range" || e.self ? 0 : -reach, ms = mats(e.model, 2 * r);
         // turn: 조준 방향을 따라 도는 원 그림 — 그림 아래쪽이 앞이라 뒤집어 찍는다(마이에브 칼날 부채)
         const sg = e.turn ? -1 : 1;
-        each(0, cy, r * 1.42, (x, y, i) => { for (const o of ms) shade(i, o, sg * x / (2 * r) + 0.5, sg * (y - cy) / (2 * r) + 0.5, t); });
+        each(0, cy, r * 1.42, (x, y, i) => {
+          if (FOOT) { if (Math.hypot(x, y - cy) <= r) A[i] = 1; return; }
+          for (const o of ms) shade(i, o, sg * x / (2 * r) + 0.5, sg * (y - cy) / (2 * r) + 0.5, t);
+        });
       } else if (e.kind === "quad") {
         // 아주 가는 직선(겐지 표창 0.25)은 끝 조각도 그만큼 줄어 화살촉이 안 보인다 — 끝 조각은 폭 0.8 을 보장
         const w = e.width, len = e.length, p = e.parts || {}, cw = Math.max(w, 0.8), cap = Math.min(cw, len / 3), seg = [];
@@ -169,6 +175,7 @@
         const L = e.length, hw = L * Math.tan(e.angle / 2 * Math.PI / 180), ms = mats(e.model, 2 * hw);
         each(0, -L / 2, L / 2 + hw, (x, y, i) => {
           const s = -y; if (s < 0 || s > L) return;
+          if (FOOT) { if (Math.abs(x) <= hw * s / L) A[i] = 1; return; }
           for (const o of ms) shade(i, o, x / (2 * hw) + 0.5, 1 - s / L, t);   // 텍스처 위(v=0)가 먼 끝 — 직선 그림과 같다(알라라크 Q 는 밑변이 앞, 디바 매트릭스는 멀수록 넓다)
         });
       } else if (e.kind === "path") {
@@ -224,6 +231,7 @@
         const lw = Math.max(0.07, 1.4 / PX);              // 선 굵기(거리) — 작은 칸에서도 1px 넘게
         each(0, 0, Math.max(...xs.map(Math.abs), ...fs.map(Math.abs)), (x, y, i) => {
           const b = -y; if (!inside(x, b)) return;
+          if (FOOT) { A[i] = 1; return; }
           if (!outline) { for (const o of ms) shade(i, o, (x - x0) / (x1 - x0), 1 - (b - f0) / (f1 - f0), tt); return; }
           const dd = edgeDist(x, b);
           const line = Math.max(0, 1 - dd / lw) * 1.5, shadow = 0.5 * Math.exp(-dd / 0.6);
@@ -521,27 +529,13 @@
     }
     // 특성 적용 전 그림 — 테두리만 흰 점선으로(안이 칠해진 곳과 바깥이 맞닿는 화소)
     if (st.ghost) {
-      // 바깥에서 물을 채워 닿지 않은 곳을 안으로 친다 — 고리(사거리 원)도 겉 테두리 한 줄만 남는다
-      // 무늬 틈(디바 방어 매트릭스 빗금)으로 물이 새지 않게 몇 화소 부풀려 막는다
-      const A0 = paint(st.ghost, N, st).A, w = Math.max(1, Math.round(dpr)), dash = 5 * w, r = 3 * w;
-      const H = new Uint8Array(N * N), G = new Uint8Array(N * N);
-      for (let y = 0; y < N; y++) for (let x = 0; x < N; x++) if (A0[y * N + x] > 0.005)
-        for (let k = Math.max(0, x - r); k <= Math.min(N - 1, x + r); k++) H[y * N + k] = 1;
-      for (let x = 0; x < N; x++) for (let y = 0; y < N; y++) if (H[y * N + x])
-        for (let k = Math.max(0, y - r); k <= Math.min(N - 1, y + r); k++) G[k * N + x] = 1;
-      const out = new Uint8Array(N * N), q = [];
-      for (let i = 0; i < N; i++) for (const v of [i, (N - 1) * N + i, i * N, i * N + N - 1]) if (!out[v] && !G[v]) { out[v] = 1; q.push(v); }
-      while (q.length) {
-        const v = q.pop(), x = v % N;
-        for (const u of [x > 0 ? v - 1 : -1, x < N - 1 ? v + 1 : -1, v - N, v + N])
-          if (u >= 0 && u < N * N && !out[u] && !G[u]) { out[u] = 1; q.push(u); }
-      }
-      const on = v => !out[v];
+      const G = paint(st.ghost, N, Object.assign({}, st, { foot: true })).A, w = Math.max(2, Math.round(1.5 * dpr)), dash = 4 * w;
+      const on = v => G[v] > 0;
       for (let y = w; y < N - w; y++) for (let x = w; x < N - w; x++) {
         const i = y * N + x;
         if (!on(i) || (on(i - w) && on(i + w) && on(i - w * N) && on(i + w * N))) continue;
         // 흰 칸·검은 칸을 번갈아 — 노란 칠 위에서도 어두운 바닥에서도 보이게
-        d[i * 4] = d[i * 4 + 1] = d[i * 4 + 2] = Math.floor((x + y) / dash) % 2 ? 25 : 245;
+        d[i * 4] = d[i * 4 + 1] = d[i * 4 + 2] = (Math.floor(x / dash) + Math.floor(y / dash)) % 2 ? 25 : 245;   // 바둑판 칸 — 어느 방향 선이든 끊김 없이 번갈아
       }
     }
     g.putImageData(img, 0, 0);
@@ -730,7 +724,7 @@
     };
     let ents = build(skill);
     if (!ents || !ents.length) { box.remove(); return; }
-    let ghost = null;
+    let ghost = null, gone = [];
     if (ta) {
       // 적용 전 그림은 따로 떠 두고, 바뀌었으면 그 테두리를 겹쳐 그린다
       ghost = ents.map(e => Object.assign({}, e));
@@ -741,6 +735,8 @@
       ents = ents.map(e => Object.assign({}, e));
       applyChg(ents, wikiData(box.dataset.chg));
       if (geo(ents) === geo(ghost)) ghost = null;
+      // 점선은 바뀌거나 사라진 조각만 — 그대로인 조각에 겹치면 눈만 어지럽다
+      else gone = ghost.filter(g => !ents.some(e => geo([e]) === geo([g]))).map(g => ghost.indexOf(g));
     }
     const names = new Set();
     for (const e of ents.concat(ghost || [])) for (const m of [e.model, ...Object.values(e.parts || {})])
@@ -750,7 +746,7 @@
     if (ghost) {
       // 적용 전 그림도 같은 자리 잡기를 거치고, 둘 다 들어가게 칸을 넓힌다
       const g0 = setup(ghost, skill, box);
-      st.ghost = ghost;
+      if (gone.length) st.ghost = gone.map(i => ghost[i]);
       if (g0.R > st.R) { st.R = g0.R; st.css = st.R > 12 ? Math.min(460, Math.round(CSS * Math.sqrt(st.R / 12))) : CSS; }
     }
     const cv = document.createElement("canvas");
@@ -761,7 +757,7 @@
     box.appendChild(cv);
     const cap = document.createElement("div");
     cap.className = "splatcap";
-    cap.innerHTML = (ta ? `<b class="calc-v">특성 적용 · ${esc(box.dataset.tn || "")}</b> ${ghost ? `<span class="sghost">흰 점선 = 적용 전 (${ghost.map(label).filter(Boolean).join(" · ")})</span> ` : "<span class=\"note\">(그림에 나온 크기는 그대로 — 바뀌는 수치는 그림 밖)</span> "}· ` : "") + (ents[0].fromWiki ? `<b>판정 범위</b> ${ents.map(label).filter(Boolean).join(" · ")} · <span class="est" title="게임은 이 기술에 바닥 범위 표시를 띄우지 않아, 판정 범위를 같은 모양의 노란 UI 로 그렸습니다">게임엔 표시 없음</span>`
+    cap.innerHTML = (ta ? `<b class="calc-v">특성 적용 · ${esc(box.dataset.tn || "")}</b> ${ghost ? `<span class="sghost">적용 전 ${ghost.map(label).filter(Boolean).join(" · ")}${gone.length ? " (바뀐 곳은 흰 점선)" : " (그 위에 더해짐)"}</span> ` : "<span class=\"note\">(그림에 나온 크기는 그대로 — 바뀌는 수치는 그림 밖)</span> "}· ` : "") + (ents[0].fromWiki ? `<b>판정 범위</b> ${ents.map(label).filter(Boolean).join(" · ")} · <span class="est" title="게임은 이 기술에 바닥 범위 표시를 띄우지 않아, 판정 범위를 같은 모양의 노란 UI 로 그렸습니다">게임엔 표시 없음</span>`
                                      : `<b>인게임 범위 표시</b> ${ents.map(label).filter(Boolean).join(" · ")}`)
       + (st.turnable ? "" : ents.some(e => e.kind !== "range") ? " · 조준은 위쪽" : "")
       + (est ? ` · <span class="est" title="${ents.map(e => e.guess || (e.region ? "지역 " + e.region : "") || (e.bounce ? "벽 반사 생략" : "") || (e.synth ? "사거리 원은 기술 사거리로 그림(게임은 안 띄움)" : "") || (e.area ? "효과 범위는 게임 효과(" + e.area + ")에서 읽음 — 게임은 바닥에 안 띄움" : "") || (e.data === "spiral" ? "나선 궤적은 게임 UI 에 없음 — 뻗는 거리는 자료(속도·지속)로 잰 상한, 도는 모양은 눈대중" : "") || (e.data === "move" ? "이동 길은 게임 UI 에 없음 — 자료의 거리로 그림" : "") || (e.data === "more" ? "이 범위는 게임 UI 에 없음 — 위키 판정 자료로 그림" : "") || (e.data === "extra" ? (e.anch ? "끄는 거리는 게임 UI 에 없음 — 자료로 그림" : "옮겨 붙는 거리는 게임 UI 에 없음 — 자료로 그림") : "")).filter(Boolean).join(" / ")}">일부 추정</span>` : "");
