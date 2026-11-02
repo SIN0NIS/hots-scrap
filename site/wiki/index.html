@@ -958,7 +958,7 @@ window.KS={score:score,mark:mark,esc:esc};})();
      게임이 범위를 안 띄우는 것도 같은 노란 UI 로 그리게 한다 */
   function splatBox(hid, attr, id, wk) {
     const gs = list(wk["도형"]);
-    const g = gs.length ? ` data-g="${encodeURIComponent(JSON.stringify({ d: wk["도형거리"], g: gs.map(g => ({ 꼴: g["꼴"], 자리: g["자리"], 반지름: g["반지름"], 각도: g["각도"], 가로: g["가로"], 세로: g["세로"], 길이: g["길이"], 점: g["점"], 거리: g["거리"], 판정: g["판정"], 수: g["수"], 눈대중: g["눈대중"] })) }))}"` : "";
+    const g = gs.length ? ` data-g="${encodeURIComponent(JSON.stringify({ d: wk["도형거리"], g: gs }))}"` : "";
     return `<div class="splatbox" data-h="${esc(hid)}" data-${attr}="${esc(id)}"${g}></div>`;
   }
 

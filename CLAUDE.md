@@ -61,7 +61,9 @@
     `../02_뷰어/hots_skill_range` 에서 `tools/build_all.py` → `tools/export_site.py` 로 만든다(텍스처 2.3MB, 영웅 문서를 열고
     칸이 화면에 들어올 때 그 영웅 것만 받는다). 생성기 `../hots_extract` 가 지금 디스크에 없어 `index.html` 을 직접 고쳤다 —
     생성기가 돌아오면 `figrow`·`splatbox` 줄과 `<script src="splat.js">` 를 거기에도 넣어야 덮어쓸 때 안 사라진다.
-    특성 칸·못 그린 특수형(머키 문어잡이 등 3개)은 차후 업데이트.
+    게임 UI 가 없는 기술·특성은 위키 판정 도형(`data-g`, 도형 칸 전부)을 같은 노란 UI 로 옮겨 그린다(`wikiEnts` —
+    나선·이동·튕김·끌기·고리·둘레·뿌림·자리들·갈래 …, 자리 잡는 법은 `shared/shape.js` 와 같다). 게임 그림이 있어도 나선·튕김은 덧그린다.
+    거리가 자료에 없는 꼴(초 쇄도의 주먹 '모르는 이동')만 옛 그림. 전수 점검은 localhost 에서 `window.__splatFill(box)` 로.
   - 이 위키가 못 하는 것은 원래 앱에 남긴다: 범위 구경·칸 통계(herodex), 전장 흐름(maps), 스킨·대사(encyclopedia), 티어표.
 - `site/herodex/` **영웅 도감** — 게임 원본 XML 에서 직접 뽑은 기술·특성 상세.
   자료는 `site/data/herodex/`(목록 1개 + 영웅마다 1개, 평균 16KB) — 화면은 **고른 영웅 하나만** 받는다.

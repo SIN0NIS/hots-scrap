@@ -220,11 +220,11 @@
       const sh = Math.abs(e.fwd || 0) + Math.abs(e.side || 0) + (e.cursor ? REACH : 0);
       if (e.kind === "range") r = Math.max(r, e.radius);
       else if (e.kind === "cone") r = Math.max(r, sh + e.radius);
-      else if (e.kind === "circle") r = Math.max(r, (e.self ? 0 : reach) + e.radius);
+      else if (e.kind === "circle") r = Math.max(r, (e.self ? 0 : reach) + e.radius + Math.hypot(e.fwd || 0, e.side || 0));
       else if (e.kind === "triangle") r = Math.max(r, Math.min(e.length, FAR));
       else if (e.kind === "poly") r = Math.max(r, ...e.verts.map(v => Math.hypot(v[0], v[1])));
       else if (e.kind === "path") r = Math.max(r, Math.max(...e.pts.map(v => Math.hypot(v[0], v[1]))) + e.width);
-      else if (e.kind === "quad") r = Math.max(r, Math.min(FAR, (e.place === "down" ? e.length : reach + e.length / 2) + (e.cursor ? REACH : 0)));
+      else if (e.kind === "quad") r = Math.max(r, Math.min(FAR, (e.place === "down" ? e.length + sh : reach + e.length / 2) + (e.cursor ? REACH : 0)));
     }
     // 견줄 눈금(레이너 일반 공격)은 늘 보이게 — 범위가 작아도 칸을 그만큼은 넓힌다
     const base = META && META.refs && META.refs["레이너 일반 공격"] || 0;
@@ -257,27 +257,119 @@
   }
 
   /* 게임이 범위를 안 띄우는 기술(첸 술통 부수기·아르타니스 이연격 …) — 위키 판정 도형(data-g)을
-     같은 노란 UI 로 그린다. 원·직사각형·부채꼴·다각형만; 이동·여러 자리는 옛 그림을 남긴다(null). */
+     같은 노란 UI 로 그린다. 자료로 잴 수 있는 꼴은 다 옮기고, 거리가 자료에 없는 꼴(모르는 이동)이
+     섞이면 옛 그림을 남긴다(null). 자리 잡는 법은 shared/shape.js 와 같다. */
   function fromWiki(raw) {
-    if (!raw) return null;
-    let w; try { w = JSON.parse(decodeURIComponent(raw)); } catch (e) { return null; }
-    const G = META.gen, out = [];
+    const w = wikiData(raw);
+    if (!w) return null;
+    const out = [];
     for (const g of w.g || []) {
-      const at = g["자리"] === "착지" && w.d > 0;     // 도형거리 0 이면 제자리
-      if (g["꼴"] === "원" && g["반지름"] > 0)
-        out.push({ kind: "circle", radius: +g["반지름"], self: !at, offset: at ? w.d : undefined, model: G.circle });
-      else if (g["꼴"] === "직사각형" && (g["길이"] || g["세로"]))
-        out.push({ kind: "quad", width: +(g["가로"] || 1), length: +(g["길이"] || g["세로"]),
-                   place: at ? "center" : "down", offset: w.d, parts: G.quad });
-      else if (g["꼴"] === "다각형" && (g["점"] || []).length >= 3)        // 위키 좌표는 앞이 +y
-        out.push({ kind: "poly", verts: g["점"].map(p => [p[0], -(p[1] + (at ? w.d : 0))]) });
-      else if (g["꼴"] === "부채꼴" && g["반지름"] > 0)
-        out.push({ kind: "cone", radius: +g["반지름"], arc: +(g["각도"] || 90), model: G.cone });
-      else if (g["꼴"] === "이동" && g["거리"] > 0 || g["꼴"] === "나선") out.push(...moving(g));
-      else return null;                   // 못 그리는 꼴이 섞이면 통째로 옛 그림
+      const es = wikiEnts(g, w);
+      if (!es) return null;               // 못 그리는 꼴이 섞이면 통째로 옛 그림
+      out.push(...es);
     }
-    out.forEach(e => { e.tint = META.tint; e.fromWiki = true; });
+    out.forEach(e => { e.fromWiki = true; });
     return out.length ? out : null;
+  }
+  function wikiData(raw) {
+    if (!raw) return null;
+    try { return JSON.parse(decodeURIComponent(raw)); } catch (e) { return null; }
+  }
+  const MAXD = 12;                        // 길게 가는 것은 12 까지만 그리고 숫자는 꼬리말에
+  // 위키 도형 하나 → 그림 항목들. 위키 좌표는 [오른쪽, 앞], 각도는 오른쪽이 +
+  function wikiEnts(g, w) {
+    const G = META.gen, d = +w.d || 0, k = g["꼴"], out = [];
+    const at = g["자리"] === "앞" ? (+g["거리"] || 0) : g["자리"] === "착지" ? d + (+g["거리"] || 0)
+             : (g["자리"] === "원점" || g["쓸기"]) ? 0 : d;
+    const fw = v => Math.min(v, MAXD * 1.25);
+    const disc = (r, x, y, lab) => ({ kind: "circle", radius: r, self: true, side: x ? -x : undefined, fwd: fw(y) || undefined, model: G.circle, lab });
+    const ring = (r, x, y, lab) => ({ kind: "circle", radius: r, self: true, side: x ? -x : undefined, fwd: fw(y) || undefined, model: META.range, lab });
+    // 직선: (x, y) 에서 오른쪽으로 ang° 기운 쪽으로 길이 len.
+    // 그림의 fwd·side 는 돌린 축 기준이라(게임 HostSiteOps 와 같다) 시작점을 그 축으로 옮겨 적는다
+    const line = (x, y, len, wd, ang, lab) => {
+      const a = (ang || 0) * Math.PI / 180, sa = Math.sin(a), ca = Math.cos(a);
+      const f = x * sa + y * ca, sd = -(x * ca - y * sa);
+      return { kind: "quad", place: "down", length: len, width: wd, parts: G.quad,
+               side: sd || undefined, fwd: f || undefined, rot: ang ? -ang : undefined, lab };
+    };
+    const R = +g["반지름"] || 0;
+    if (k === "원" && R > 0) {
+      if (g["날아감"]) {                  // 날아가는 원 — 지나간 길 + 닿는 자리
+        const D = Math.min(+g["날아감"], MAXD), r0 = g["작은"] != null ? +g["작은"] : R;
+        out.push(line(0, 0, D, Math.max(2 * r0, 0.3), 0, `날아감 ${n2(+g["날아감"])}`), disc(R, 0, D));
+      } else out.push(g["유지"] ? ring(R, 0, at, `유지 거리 ${n2(R)}`) : disc(R, 0, at));
+    } else if (k === "직사각형" && (g["세로"] || g["길이"])) {
+      const W = +(g["가로"] || 1), H = +(g["세로"] || g["길이"]), sx = +g["옆"] || 0, run = +g["쓸기"] || 0;
+      if (g["각"]) {                       // X 로 엇갈리는 막대(겐지 폭렬참)
+        for (const s of [1, -1]) {
+          const t = s * g["각"] * Math.PI / 180;
+          out.push(line(-Math.sin(t) * H / 2, at - Math.cos(t) * H / 2, H, W, s * g["각"], s > 0 ? `${n2(W)}×${n2(H)} 엇갈림` : ""));
+        }
+      } else if (g["향함"]) {               // 흩어져 나가는 길(겐지 수리검)
+        const [tx, ty] = g["향함"];
+        out.push(line(0, 0, Math.hypot(tx, ty), W, Math.atan2(tx, ty) * 180 / Math.PI));
+      } else if (g["모임"] && sx) {         // 옆에서 나와 엇갈리는 길(리밍 마력탄)
+        out.push(line(sx, 0, run || Math.hypot(sx, g["모임"]), W, Math.atan2(-sx, g["모임"]) * 180 / Math.PI));
+      } else if (g["자리"] === "원점" && !run) {
+        out.push(line(sx, g["가운데"] ? -H / 2 : 0, H, W, 0));
+      } else out.push(line(sx, at - H / 2, H + run, W, 0));
+    } else if (k === "다각형" && (g["점"] || []).length >= 3) {
+      out.push({ kind: "poly", verts: g["점"].map(p => [p[0], -(p[1] + at)]) });
+    } else if (k === "부채꼴" && R > 0) {
+      const seq = g["조각방향"];
+      if (seq && seq.length) {              // 휩쓰는 기술 — 휘두르는 전체 폭을 한 부채꼴로
+        const wd = g["조각각"] || g["각도"] / seq.length, a0 = seq[0], a1 = seq[seq.length - 1];
+        out.push({ kind: "cone", radius: R, arc: Math.min(360, Math.abs(a1 - a0) + wd), rot: -(a0 + a1) / 2, model: G.cone,
+                   lab: `휩쓸기 ${n2(R)} · ${n2(Math.abs(a1 - a0) + wd)}°` });
+      } else out.push({ kind: "cone", radius: R, arc: +(g["각도"] || 90), fwd: at || undefined, model: G.cone });
+      if (g["안쪽"]) out.push(ring(+g["안쪽"], 0, at, `안쪽 ${n2(+g["안쪽"])} 빔`));
+    } else if (k === "고리" && R > 0) {      // 가운데가 빈 고리 — 안쪽 경계를 가는 원으로
+      out.push(disc(R, 0, at, `고리 ${n2(+g["안쪽"] || 0)}~${n2(R)}`), ring(+g["안쪽"] || 0.01, 0, at, ""));
+    } else if (k === "튕김" && R > 0) {      // 다음 대상을 고르는 거리 — 장판이 아니라 가는 원
+      out.push(ring(R, 0, at, `옮겨 붙음 ${n2(R)}${g["수"] > 1 ? ` ×${g["수"]}` : ""}`));
+    } else if (k === "뿌림" && R > 0) {      // 구역 아무 데나 떨어짐 — 구역 + 몇 발
+      out.push(ring(R, 0, at, `${n2(R)} 안에 무작위`));
+      const hit = +g["판정"] || Math.max(0.5, R * 0.12);
+      for (const [ux, uy] of [[0.42, 0.18], [-0.3, 0.55], [0.1, -0.6], [-0.62, -0.2], [0.68, -0.38]])
+        out.push(disc(hit, ux * R, at + uy * R, ""));
+    } else if (k === "뿌림상자" && g["가로"]) {
+      const W = +g["가로"], H = +g["세로"] || 1;
+      out.push({ kind: "poly", verts: [[-W / 2, 0], [W / 2, 0], [W / 2, -H], [-W / 2, -H]], lab: `${n2(W)}×${n2(H)} 안에서 흩어져 나옴` });
+    } else if (k === "둘레" && R > 0) {      // 둘러싸는 담 — 둘레 + 칸마다 작은 원
+      out.push(ring(R, 0, 0, `둘레 ${n2(R)}${g["수"] ? ` · ${g["수"]}칸` : ""}`));
+      for (let i = 0; i < (g["수"] || 0); i++) {
+        const t = i * 2 * Math.PI / g["수"];
+        out.push(disc(0.5, Math.sin(t) * R, Math.cos(t) * R, ""));
+      }
+    } else if (k === "자리들" && (g["점"] || []).length) {
+      if (g["벽"] && (g["벽선"] || []).length) {   // 담 한 장 = 직선 하나(레오릭 묘실)
+        for (const [p0, p1] of g["벽선"]) {
+          const vx = p1[0] - p0[0], vy = p1[1] - p0[1];
+          out.push(line(p0[0], p0[1] + at, Math.max(Math.hypot(vx, vy), 0.5), 1, Math.atan2(vx, vy) * 180 / Math.PI, ""));
+        }
+        out[0].lab = `담 ${g["벽선"].length}장`;
+      } else {
+        const r = +g["판정"] || R || 0.6;
+        g["점"].forEach(p => out.push(disc(r, p[0], p[1] + at, "")));
+        out[0].lab = `${g["점"].length}곳`;
+      }
+    } else if (k === "끌기") {               // 찍은 자리에서 끌어 방향을 정함 — 화살표 하나
+      out.push(line(0, d, Math.min(+g["거리"] || 0, MAXD) || 1, 0.8, 0, `끌기 ${n2(+g["거리"] || 0)}`));
+    } else if (k === "갈래" && g["길이"]) {
+      const n = g["수"] || 1, gap = g["간격"] || 0, L = +g["길이"], half = gap * (n - 1) / 2;
+      for (let i = 0; i < n; i++) {
+        const a = -half + gap * i, t = a * Math.PI / 180;
+        out.push(line(0, 0, L, 0.5, a, ""));
+        if (R) out.push(disc(R, Math.sin(t) * L, Math.cos(t) * L, ""));
+      }
+      out[0].lab = `${n}갈래 ${n2(L)}`;
+    } else if (k === "모아 쏘는 이동" && g["최대"]) {
+      out.push({ kind: "path", pts: [[0, 0], [0, Math.min(+g["최대"], MAXD)]], width: 1, parts: G.quad, data: "move",
+                 lab: `모아서 이동 ${n2(+g["최소"] || 0)}~${n2(+g["최대"])}` });
+    } else if (k === "이동" && g["거리"] > 0 || k === "나선") out.push(...moving(g));
+    else return null;
+    out.forEach(e => { e.tint = META.tint; });
+    return out;
   }
 
   /* 게임 UI 는 없지만 자료가 있는 움직이는 판정 — 같은 노란 직선 그림을 길 따라 휘어 붙인다.
@@ -292,25 +384,29 @@
         pts.push([rr * Math.sin(th), rr * Math.cos(th)]);
       }
       const hit = +g["판정"] || 0.5, end = pts[pts.length - 1];
-      out.push({ kind: "path", pts, width: 2 * hit, parts: G.quad, data: "spiral", R, n: g["수"] || 1, guessShape: !!g["눈대중"] });
+      out.push({ kind: "path", pts, width: 2 * hit, parts: G.quad, data: "spiral", R, n: g["수"] || 1 });
       out.push({ kind: "circle", radius: hit, self: true, side: -end[0], fwd: end[1], model: G.circle, data: "hit" });
     } else {
-      const L = Math.min(+g["거리"], 12);
+      const L = Math.min(+g["거리"], MAXD);
       out.push({ kind: "path", pts: [[0, 0], [0, L]], width: +(g["반지름"] || 0.5) * 2, parts: G.quad, data: "move", dist: +g["거리"] });
     }
     out.forEach(e => { e.tint = META.tint; });
     return out;
   }
-  // 게임 그림이 있는 기술에도 게임이 안 그리는 움직이는 판정은 덧그린다(요한나 축복받은 망치)
-  function extraWiki(raw) {
-    if (!raw) return [];
-    let w; try { w = JSON.parse(decodeURIComponent(raw)); } catch (e) { return []; }
-    return (w.g || []).filter(g => g["꼴"] === "나선").flatMap(moving);
+  // 게임 그림이 있는 기술에도 게임이 안 그리는 것은 덧그린다 — 나선(요한나 축복받은 망치),
+  // 옮겨 붙는 거리(스랄 연쇄 번개: 게임은 첫 대상 사거리만 띄운다)
+  function extraWiki(raw, skill) {
+    const w = wikiData(raw);
+    if (!w) return [];
+    if (!(w.d > 0) && skill && skill.r) w.d = skill.r;       // 옮겨 붙는 자리는 첫 대상(사거리 끝)
+    return (w.g || []).filter(g => g["꼴"] === "나선" || g["꼴"] === "튕김")
+      .flatMap(g => (wikiEnts(g, w) || []).map(e => Object.assign(e, { data: e.data || "extra" })));
   }
 
   const KIND = { range: "사거리", circle: "범위", quad: "직선", cone: "부채꼴", triangle: "삼각형", poly: "다각형" };
   const n2 = v => Math.round(v * 100) / 100;
   function label(e) {
+    if (e.lab != null) return e.lab;
     if (e.area) return `효과 범위 ${n2(e.radius)}`;
     if (e.data === "spiral") return `나선 궤적 ~${n2(e.R)}${e.n > 1 ? ` × ${e.n}개` : ""}`;
     if (e.data === "hit") return `판정 ${n2(e.radius)}`;
@@ -326,7 +422,12 @@
     box.classList.add("on");
     const hd = await heroData(box.dataset.h);
     const skill = box.dataset.t ? (hd._t || {})[box.dataset.t] : hd[box.dataset.s];
-    const ents = skill && (skill.e || []).length ? pick(skill).concat(extraWiki(box.dataset.g)) : fromWiki(box.dataset.g);
+    let ents = skill && (skill.e || []).length ? pick(skill) : fromWiki(box.dataset.g);
+    if (skill && (skill.e || []).length) {
+      const ex = extraWiki(box.dataset.g, skill);
+      // 효과 범위로 찾은 원이 사실 옮겨 붙는 거리였으면(스랄 연쇄 번개 6) 가는 원 하나만 남긴다
+      ents = ents.filter(e => !(e.area && ex.some(x => x.model === META.range && Math.abs(x.radius - e.radius) < 0.3))).concat(ex);
+    }
     if (!ents || !ents.length) { box.remove(); return; }
     const names = new Set();
     for (const e of ents) for (const m of [e.model, ...Object.values(e.parts || {})])
@@ -373,16 +474,17 @@
     box.appendChild(cv);
     const cap = document.createElement("div");
     cap.className = "splatcap";
-    cap.innerHTML = (ents[0].fromWiki ? `<b>판정 범위</b> ${ents.map(label).join(" · ")} · <span class="est" title="게임은 이 기술에 바닥 범위 표시를 띄우지 않아, 판정 범위를 같은 모양의 노란 UI 로 그렸습니다">게임엔 표시 없음</span>`
-                                     : `<b>인게임 범위 표시</b> ${ents.map(label).join(" · ")}`)
+    cap.innerHTML = (ents[0].fromWiki ? `<b>판정 범위</b> ${ents.map(label).filter(Boolean).join(" · ")} · <span class="est" title="게임은 이 기술에 바닥 범위 표시를 띄우지 않아, 판정 범위를 같은 모양의 노란 UI 로 그렸습니다">게임엔 표시 없음</span>`
+                                     : `<b>인게임 범위 표시</b> ${ents.map(label).filter(Boolean).join(" · ")}`)
       + (ents.some(e => e.kind !== "range") ? " · 조준은 위쪽" : "")
-      + (est ? ` · <span class="est" title="${ents.map(e => e.guess || (e.region ? "지역 " + e.region : "") || (e.bounce ? "벽 반사 생략" : "") || (e.synth ? "사거리 원은 기술 사거리로 그림(게임은 안 띄움)" : "") || (e.area ? "효과 범위는 게임 효과(" + e.area + ")에서 읽음 — 게임은 바닥에 안 띄움" : "") || (e.data === "spiral" ? "나선 궤적은 게임 UI 에 없음 — 뻗는 거리는 자료(속도·지속)로 잰 상한, 도는 모양은 눈대중" : "") || (e.data === "move" ? "이동 길은 게임 UI 에 없음 — 자료의 거리로 그림" : "")).filter(Boolean).join(" / ")}">일부 추정</span>` : "");
+      + (est ? ` · <span class="est" title="${ents.map(e => e.guess || (e.region ? "지역 " + e.region : "") || (e.bounce ? "벽 반사 생략" : "") || (e.synth ? "사거리 원은 기술 사거리로 그림(게임은 안 띄움)" : "") || (e.area ? "효과 범위는 게임 효과(" + e.area + ")에서 읽음 — 게임은 바닥에 안 띄움" : "") || (e.data === "spiral" ? "나선 궤적은 게임 UI 에 없음 — 뻗는 거리는 자료(속도·지속)로 잰 상한, 도는 모양은 눈대중" : "") || (e.data === "move" ? "이동 길은 게임 UI 에 없음 — 자료의 거리로 그림" : "") || (e.data === "extra" ? "옮겨 붙는 거리는 게임 UI 에 없음 — 자료로 그림" : "")).filter(Boolean).join(" / ")}">일부 추정</span>` : "");
     box.appendChild(cap);
     // 옛 판정 그림이 없던 기술은 펼침 제목이 '상세 표' 뿐이다 — 그림이 붙었으니 앞에 적어 준다
     const sum = box.closest("details") && box.closest("details").querySelector(":scope > summary");
     if (sum && !/범위 그림/.test(sum.textContent)) sum.textContent = "범위 그림" + (sum.textContent.trim() ? " · " + sum.textContent.trim() : "");
   }
 
+  if (/^(localhost|127\.0\.0\.1)$/.test(location.hostname)) window.__splatFill = fill;   // 개발용 전수 점검
   const io = "IntersectionObserver" in window ? new IntersectionObserver(es => {
     for (const en of es) if (en.isIntersecting) { io.unobserve(en.target); fill(en.target).catch(() => en.target.remove()); }
   }, { rootMargin: "300px" }) : null;
