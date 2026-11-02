@@ -974,11 +974,13 @@ window.KS={score:score,mark:mark,esc:esc};})();
 
   /* 인게임 범위 표시 칸(splat.js) — 기술(data-s)·특성(data-t) 둘 다. 위키 판정 도형은 data-g 로 넘겨
      게임이 범위를 안 띄우는 것도 같은 노란 UI 로 그리게 한다 */
-  function splatBox(hid, attr, id, wk) {
+  function splatBox(hid, attr, id, wk, t) {
     const gs = list(wk["도형"]);
     const g = gs.length ? ` data-g="${encodeURIComponent(JSON.stringify({ d: wk["도형거리"], g: gs }))}"` : "";
     const dr = /끌어/.test(wk["지정"] || "") ? ' data-dr="1"' : "";      // 끌어서 쓰는 기술 — 끌기 다이얼
-    return `<div class="splatbox" data-h="${esc(hid)}" data-${attr}="${esc(id)}"${g}${dr}></div>`;
+    // [적용] 한 특성 — 특성 판 그림(splat _t)이 있으면 그것으로, 없으면 '바뀌는 값' 의 크기 변화를 그림에 옮긴다
+    const ta = t ? ` data-ta="${esc(t.id)}" data-tn="${esc(t["이름"] || "")}" data-chg="${encodeURIComponent(JSON.stringify(list(t["바뀌는 값"])))}"` : "";
+    return `<div class="splatbox" data-h="${esc(hid)}" data-${attr}="${esc(id)}"${g}${dr}${ta}></div>`;
   }
 
   /* ── 특성 하나의 세부 수치·범위 그림 — 기술과 같은 그림 코드(shape.js)·같은 다이얼 ── */
@@ -1033,12 +1035,14 @@ window.KS={score:score,mark:mark,esc:esc};})();
       const lines = [...new Set(tdItems(id, starT.id).filter(x => x["기술"] === "*" && x["꼴"] === "버프" && plainItem(x)).map(x => `${esc(x["갈래"] || "")} 피해 <b class="calc-v">${Math.round(x["몫"] * 100)}% 증가</b>${x["겹"] ? ` (중첩당, 최대 ${x["겹"]}중첩)` : ""}${(x["조건"] || []).length ? ` <span class="cond">조건: ${esc(x["조건"].join(" · "))}</span>` : ""}`))];
       starRes = { lines, cond: [], si: null, conds: [] };
     }
+    const TALS = window.hotsSplat ? window.hotsSplat.tals(id, () => { if (curHero === id) route(true); }) : null;
     const skill = a => {
       const wk = a["위키식"] || {};
       const fig = (window.hotsShape && (list(wk["도형"]).length || wk["그래프"])) ? (() => { try { return window.hotsShape.svg(wk, { hero: h, yard: YARD }) + (window.hotsShape.graph(wk) || ""); } catch (e) { return ""; } })() : "";
       const dmgs = list(a["피해"]).filter(d => typeof d["피해량"] === "number");
       const dmgTxt = [...new Set(dmgs.map(d => fmt(d["피해량"] * kL(growthOf(d))) + (d["종류"] && d["종류"] !== "기술 피해" ? " " + d["종류"] : "")))].join(" · ");
-      const cands = TS.filter(t => (targetOf(h, t) === a || tdItems(id, t.id).some(x => x["기술"] === a.id)) && numericFor(id, a, t)).sort((x, y) => x["레벨"] - y["레벨"]);
+      // 수치를 바꾸는 특성 + 범위 그림째 바꾸는 특성(게임의 특성 판 범위 표시 — 그레이메인 과감한 공세)
+      const cands = TS.filter(t => ((targetOf(h, t) === a || tdItems(id, t.id).some(x => x["기술"] === a.id)) && numericFor(id, a, t)) || (TALS && TALS[t.id] === a.id)).sort((x, y) => x["레벨"] - y["레벨"]);
       const t = cands.find(x => x.id === S[a.id]);
       const res = t ? combine(id, a, t) : null;
       const meta = [["재사용", a["재사용 대기시간"], "초"], ["마나", a["마나"], ""], ...["기력", "분노", "취기", "고철", "생명력 소모"].map(k => [k, a[k], ""]), ["사거리", wk["사거리"] || a["사거리"], ""]].filter(x => x[1] != null && x[1] !== "");
@@ -1047,7 +1051,7 @@ window.KS={score:score,mark:mark,esc:esc};})();
         <p class="desc" style="margin:4px 0">${descHtml(a["설명"], ctx)}</p>
         ${cands.length ? selBlock(h, a.id, cands, res) : ""}
         ${(() => { const dt = detailTable(a, t, dmgTxt ? dmgTxt + (res && res.lines.length ? "<br>" + res.lines.filter(l => !/^<b>한 번/.test(l)).join("<br>") : "") : "");
-          return (fig || dt) ? `<details class="more2"${t ? " open" : ""}><summary>${fig ? "범위 그림" : ""}${fig && dt ? " · " : ""}${dt ? "상세 표" : ""}</summary>${`<div class="figrow">${fig ? `<div class="figbox">${fig}</div>` : ""}${splatBox(id, "s", a.id, wk)}</div>`}${dt.replace('<details class="det" open><summary>상세 표</summary>', "").replace(/<\/details>$/, "")}</details>` : ""; })()}</div></div>`;
+          return (fig || dt) ? `<details class="more2"${t ? " open" : ""}><summary>${fig ? "범위 그림" : ""}${fig && dt ? " · " : ""}${dt ? "상세 표" : ""}</summary>${`<div class="figrow">${fig ? `<div class="figbox">${fig}</div>` : ""}${splatBox(id, "s", a.id, wk, t)}</div>`}${dt.replace('<details class="det" open><summary>상세 표</summary>', "").replace(/<\/details>$/, "")}</details>` : ""; })()}</div></div>`;
     };
     const tl = groupBy(TS, t => t["레벨"] ?? "?");
     const tiers = Object.keys(tl).sort((a, b) => +a - +b).map(lv => `<div class="tier"><div class="lv">${esc(lv)}<small>레벨</small></div><div class="picks">${tl[lv].map(p =>
