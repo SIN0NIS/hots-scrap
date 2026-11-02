@@ -452,7 +452,7 @@
 
   /* 칸 하나 그리기 — 다이얼을 끄는 동안(fast)은 반 해상도로 그려 손을 안 놓치게 */
   function draw(cv, ents, st, fast) {
-    const dpr = Math.min(2, window.devicePixelRatio || 1) / (fast ? 2 : 1), N = Math.round(CSS * dpr);
+    const dpr = Math.min(2, window.devicePixelRatio || 1) / (fast ? 2 : 1), N = Math.round((st.css || CSS) * dpr);
     const { R, ER, EG, EB, A } = paint(ents, N, st);
     if (cv.width !== N || cv.height !== N) cv.width = cv.height = N;
     const g = cv.getContext("2d");
@@ -518,6 +518,8 @@
     // 돌려 봐도 똑같은 그림(제자리 원·사거리 원뿐)은 다이얼을 안 단다
     st.turnable = ents.some(e => !(e.kind === "range" || (e.kind === "circle" && e.self && !e.fwd && !e.side)));
     st.R = extent(ents, st);
+    // 넓은 그림(±12 넘게 — 메이 빙벽 ±27)은 칸을 키운다. 거리 1 이 너무 작아지지 않게, 460px 까지
+    st.css = st.R > 12 ? Math.min(460, Math.round(CSS * Math.sqrt(st.R / 12))) : CSS;
     return st;
   }
   const SVGNS = 'xmlns="http://www.w3.org/2000/svg"';
@@ -601,6 +603,7 @@
     draw(cv, ents, st, false);
     const est = ents.some(e => e.guess || e.region || e.bounce || e.synth || e.area || e.data) && !ents[0].fromWiki;
     box.innerHTML = "";
+    if (st.css !== CSS) { box.style.width = st.css + "px"; cv.style.width = st.css + "px"; }   // 폰에서는 max-width 100% 가 줄인다
     box.appendChild(cv);
     const cap = document.createElement("div");
     cap.className = "splatcap";
