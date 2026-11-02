@@ -131,7 +131,9 @@
         let ox = 0, oy = 0, ax = dx, ay = dy;
         if (e.place === "perp") { ox = dy * len / 2; oy = -reach - dx * len / 2; ax = -dy; ay = dx; }
         else if (e.place === "center") { oy = -(reach - len / 2); }
-        else if (e.anch) oy = -reach;                 // 찍은 자리에서 시작하는 직선(끌어서 쓰는 기술)
+        // 찍은 자리에서 시작하는 직선 — 끌어서 쓰는 기술은 그 자리에서, 게임의 Detached 직선은 폭 절반 뒤에서
+        // (굴단 부패: 원 0·3·6 + 반지름 1.5 = −1.5~7.5, 데커드 호라드림 상자 6×6 은 찍은 자리가 한가운데)
+        else if (e.anch) oy = -reach + (e.anch === "detached" ? w / 2 : 0);
         const bx = -ay, by = ax;
         each(ox + ax * len / 2, oy + ay * len / 2, len / 2 + cw, (x, y, i) => {
           const lx = x - ox, ly = y - oy, s = lx * ax + ly * ay, q = lx * bx + ly * by;
@@ -308,7 +310,7 @@
              : (g["자리"] === "원점" || g["쓸기"]) ? 0 : d;
     const fw = v => Math.min(v, MAXD * 1.25);
     // 찍은 자리(도형거리 d) 둘레에 놓이는 것은 그 자리를 기준으로 적는다 — 겨냥 다이얼로 옮겨 다닌다
-    const atAim = d > 0 && Math.abs(at - d) < 1e-6;
+    const atAim = d > 0 && !(g["자리"] === "원점" || g["자리"] === "앞" || g["쓸기"]);   // 착지(+거리) — 찍은 자리 기준
     const place = (y, o) => atAim ? Object.assign(o, { self: false, offset: d, fwd: (y - d) || undefined })
                                   : Object.assign(o, { self: true, fwd: fw(y) || undefined });
     const disc = (r, x, y, lab) => place(y, { kind: "circle", radius: r, side: x ? -x : undefined, model: G.circle, lab });
@@ -433,6 +435,39 @@
     // 끌기 화살표는 게임 그림에 직선이 없을 때만(라그나로스 살아 있는 유성: 원 하나뿐)
     return (w.g || []).filter(g => g["꼴"] === "나선" || g["꼴"] === "튕김" || (g["꼴"] === "끌기" && !quad))
       .flatMap(g => (wikiEnts(g, w) || []).map(e => Object.assign(e, { data: e.data || "extra" })));
+  }
+
+  /* 게임 그림이 있어도 위키 판정의 **두 번째 범위**가 빠진 것을 채운다 — 오르피아 두려움(직선 끝 원 2.5),
+     들창코 노획물 투척(착지 2.75 + 더미 4.5·2). 이미 같은 크기 원이 있으면 안 그린다(±0.3).
+     시전자에서 뻗는 기술이면 그 거리에 붙이고(방향 다이얼로 돈다), 찍는 기술이면 찍은 자리를 따른다.
+     게임 그림이 전용 데칼 하나뿐인 직선(들창코 충격파)은 위키 가늠자 다각형(겉) 모양으로 데칼을 편다. */
+  function moreWiki(ents, raw, skill, drag) {
+    const w = wikiData(raw);
+    if (!w || !(w.g || []).length) return ents;
+    const out = ents.slice();
+    const shell = w.g.find(g => g["꼴"] === "다각형" && g["겉"] && (g["점"] || []).length >= 3);
+    if (shell) out.forEach((e, i) => {
+      const p = e.parts || {};
+      if (e.kind === "quad" && p.launch && !p.center && !p.impact && e.place === "down")
+        out[i] = { kind: "poly", verts: shell["점"].map(q => [q[0], -q[1]]), model: p.launch, tint: e.tint, lab: `직선 ${n2(Math.max(...shell["점"].map(q => q[1])))}` };
+    });
+    const have = out.filter(e => e.kind === "circle" || e.kind === "range").map(e => e.radius);
+    // 게임 그림이 사거리 원뿐이면 대상을 찍는 기술이다(카라짐 흙의 벗) — 덧그린 원은 찍은 자리를 따른다
+    const aim = drag || out.some(aimed) || !out.some(e => e.kind !== "range");
+    for (const g of w.g) {
+      if (g["꼴"] !== "원" || g["날아감"] || g["직격"] || !(g["반지름"] >= 1) || !(w.d > 0)) continue;
+      if (g["자리"] === "원점" || g["자리"] === "앞") continue;
+      if (have.some(r => Math.abs(r - g["반지름"]) < 0.3)) continue;
+      have.push(+g["반지름"]);
+      for (const e of wikiEnts(g, w) || []) {
+        e.data = "more";
+        e.lab = `범위 ${n2(e.radius)}${g["편"] === "자신" ? "(자신)" : g["편"] === "아군" ? "(아군)" : ""}`;
+        // 시전자에서 뻗는 기술은 찍는 자리가 없다 — 도형거리에 못 박는다
+        if (!aim && !e.self) Object.assign(e, { self: true, fwd: Math.min((e.offset || 0) + (e.fwd || 0), MAXD * 1.25), offset: undefined });
+        out.push(e);
+      }
+    }
+    return out;
   }
 
   const KIND = { range: "사거리", circle: "범위", quad: "직선", cone: "부채꼴", triangle: "삼각형", poly: "다각형" };
@@ -596,6 +631,7 @@
       const ex = extraWiki(box.dataset.g, skill);
       // 효과 범위로 찾은 원이 사실 옮겨 붙는 거리였으면(스랄 연쇄 번개 6) 가는 원 하나만 남긴다
       ents = ents.filter(e => !(e.area && ex.some(x => x.model === META.range && Math.abs(x.radius - e.radius) < 0.3))).concat(ex);
+      ents = moreWiki(ents, box.dataset.g, skill, !!box.dataset.dr);
     }
     if (!ents || !ents.length) { box.remove(); return; }
     const names = new Set();
@@ -614,7 +650,7 @@
     cap.innerHTML = (ents[0].fromWiki ? `<b>판정 범위</b> ${ents.map(label).filter(Boolean).join(" · ")} · <span class="est" title="게임은 이 기술에 바닥 범위 표시를 띄우지 않아, 판정 범위를 같은 모양의 노란 UI 로 그렸습니다">게임엔 표시 없음</span>`
                                      : `<b>인게임 범위 표시</b> ${ents.map(label).filter(Boolean).join(" · ")}`)
       + (st.turnable ? "" : ents.some(e => e.kind !== "range") ? " · 조준은 위쪽" : "")
-      + (est ? ` · <span class="est" title="${ents.map(e => e.guess || (e.region ? "지역 " + e.region : "") || (e.bounce ? "벽 반사 생략" : "") || (e.synth ? "사거리 원은 기술 사거리로 그림(게임은 안 띄움)" : "") || (e.area ? "효과 범위는 게임 효과(" + e.area + ")에서 읽음 — 게임은 바닥에 안 띄움" : "") || (e.data === "spiral" ? "나선 궤적은 게임 UI 에 없음 — 뻗는 거리는 자료(속도·지속)로 잰 상한, 도는 모양은 눈대중" : "") || (e.data === "move" ? "이동 길은 게임 UI 에 없음 — 자료의 거리로 그림" : "") || (e.data === "extra" ? (e.anch ? "끄는 거리는 게임 UI 에 없음 — 자료로 그림" : "옮겨 붙는 거리는 게임 UI 에 없음 — 자료로 그림") : "")).filter(Boolean).join(" / ")}">일부 추정</span>` : "");
+      + (est ? ` · <span class="est" title="${ents.map(e => e.guess || (e.region ? "지역 " + e.region : "") || (e.bounce ? "벽 반사 생략" : "") || (e.synth ? "사거리 원은 기술 사거리로 그림(게임은 안 띄움)" : "") || (e.area ? "효과 범위는 게임 효과(" + e.area + ")에서 읽음 — 게임은 바닥에 안 띄움" : "") || (e.data === "spiral" ? "나선 궤적은 게임 UI 에 없음 — 뻗는 거리는 자료(속도·지속)로 잰 상한, 도는 모양은 눈대중" : "") || (e.data === "move" ? "이동 길은 게임 UI 에 없음 — 자료의 거리로 그림" : "") || (e.data === "more" ? "이 범위는 게임 UI 에 없음 — 위키 판정 자료로 그림" : "") || (e.data === "extra" ? (e.anch ? "끄는 거리는 게임 UI 에 없음 — 자료로 그림" : "옮겨 붙는 거리는 게임 UI 에 없음 — 자료로 그림") : "")).filter(Boolean).join(" / ")}">일부 추정</span>` : "");
     box.appendChild(cap);
     dials(box, cv, ents, st);
     // 옛 판정 그림이 없던 기술은 펼침 제목이 '상세 표' 뿐이다 — 그림이 붙었으니 앞에 적어 준다
