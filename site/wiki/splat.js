@@ -506,7 +506,11 @@
     const w = wikiData(box.dataset.g) || {};
     const st = { th: 0, phi: 0, dist: null };
     st.drag = !!box.dataset.dr || (w.g || []).some(g => g["꼴"] === "끌기");
-    if (st.drag) for (const e of ents) if (e.kind === "quad" && e.place === "down" && e.offset) e.anch = true;
+    /* 끌어서 쓰는 기술의 직선은 **찍은 자리(사거리 안)에서 시작**해 끄는 쪽으로 뻗는다. 게임 자료의 앞 옮김
+       (메이 빙벽 SOpMoveForwardBy3)은 끌기 전 안내용이라 빼야 시작점이 사거리 밖으로 밀리지 않는다 */
+    if (st.drag) ents.forEach((e, i) => {
+      if (e.kind === "quad" && e.place === "down" && e.offset) ents[i] = Object.assign({}, e, { anch: true, fwd: 0, side: 0 });
+    });
     const rng = ents.find(e => e.kind === "range");
     const offs = ents.filter(aimed).map(e => e.offset).filter(v => v > 0 && v < FAR);
     const maxR = (rng && rng.radius < FAR && rng.radius) || (skill && skill.r < FAR && skill.r) || (offs.length ? Math.max(...offs) : 0);
