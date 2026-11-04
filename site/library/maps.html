@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>고화질 전장 지도 · HotS Scrap</title>
+<link rel="icon" type="image/svg+xml" href="../shared/favicon.svg">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<style>
+  /* 허브·자료실과 같은 팔레트 */
+  :root {
+    --bg:#f3f6fb; --card:#ffffff; --line:#cdd9ea; --fg:#122036; --dim:#5d6d84;
+    --blue:#1758a8; --blue-soft:#e8f0fb; --gold:#a97e1f; --stage:#0b1526;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg:#0b1526; --card:#101f38; --line:#233a5c; --fg:#eaf1fa; --dim:#8fa2bd;
+      --blue:#5aa8ff; --blue-soft:#132b4d; --gold:#e8c268; color-scheme:dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg:#0b1526; --card:#101f38; --line:#233a5c; --fg:#eaf1fa; --dim:#8fa2bd;
+    --blue:#5aa8ff; --blue-soft:#132b4d; --gold:#e8c268; color-scheme:dark;
+  }
+  * { box-sizing:border-box; }
+  html, body { margin:0; height:100%; }
+  body { background:var(--bg); color:var(--fg); display:flex; flex-direction:column;
+         font:15px/1.6 "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  .head { padding:12px 16px 8px; display:flex; flex-wrap:wrap; align-items:baseline; gap:6px 14px; }
+  .head h1 { margin:0; font-size:20px; }
+  .head .say { color:var(--dim); font-size:12.5px; }
+  .head .say a { color:var(--blue); }
+  /* 전장 고르기 — 폰에서는 한 줄로 밀어 본다 */
+  #pick { display:flex; gap:6px; padding:0 16px 10px; overflow-x:auto; scrollbar-width:thin; }
+  #pick button { flex:0 0 auto; font:inherit; font-size:13px; cursor:pointer; white-space:nowrap;
+                 color:var(--dim); background:var(--card); border:1px solid var(--line);
+                 border-radius:999px; padding:4px 12px; }
+  #pick button:hover { color:var(--fg); }
+  #pick button.on { color:var(--blue); background:var(--blue-soft); border-color:var(--blue); font-weight:700; }
+  @media (any-pointer:coarse) { #pick button { min-height:44px; } }
+  #map { flex:1 1 auto; min-height:300px; background:var(--stage); }
+  .leaflet-container { font:inherit; }
+  #msg { padding:40px 16px; text-align:center; color:#8fa2bd; }
+</style>
+<script src="../shared/scrap.js" defer></script>
+</head>
+<body>
+<div class="head">
+  <h1>고화질 전장 지도</h1>
+  <span class="say">휠·손가락으로 확대하면 보이는 부분만 받습니다. <a href="./">← 자료실</a></span>
+</div>
+<div id="pick"></div>
+<div id="map"><div id="msg">지도를 불러오는 중…</div></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+(function () {
+  /* 타일은 저장소 밖 무거운 자산이다(pipeline/steps/build_map_tiles.py → hots-scrap-assets/maps_hires/).
+     이 주소는 Cloudflare 판에서 /cdn/assets/ 로 바뀐다(cloudflare/build_cf.py). 개발할 때는 ?base= 로 바꿔 끼운다. */
+  var BASE = 'https://sin0nis.github.io/hots-scrap-assets/maps_hires/';
+  var q = new URLSearchParams(location.search);
+  if (q.get('base') && /^(localhost|127\.0\.0\.1)$/.test(location.hostname)) BASE = q.get('base');
+
+  var NAMES = {
+    alterac_pass: '알터랙 고개', battlefield_of_eternity: '영원의 전쟁터', blackheart_s_bay: '블랙하트 항만',
+    braxis_holdout: '브락시스 항전', cursed_hollow: '저주받은 골짜기', dragon_shire: '용의 둥지',
+    garden_of_terror: '공포의 정원', hanamura_temple: '하나무라 사원', haunted_mines: '유령 광산',
+    infernal_shrines: '불지옥 신단', sky_temple: '하늘 사원', tomb_of_the_spider_queen: '거미 여왕의 무덤',
+    towers_of_doom: '파멸의 탑', volskaya_foundry: '볼스카야 공장', warhead_junction: '핵탄두 격전지'
+  };
+  var box = document.getElementById('map'), pick = document.getElementById('pick');
+  var map = null, layer = null, idx = null;
+
+  function show(slug) {
+    var info = idx[slug];
+    if (!info) return;
+    var s = Math.pow(2, info.top);   // 맨 위 단계에서 1 단위 = 2^top 픽셀
+    var bounds = L.latLngBounds([[-info.h / s, 0], [0, info.w / s]]);
+    if (!map) {
+      box.innerHTML = '';
+      map = L.map(box, { crs: L.CRS.Simple, zoomSnap: 0.25, zoomDelta: 0.5, attributionControl: false });
+    }
+    if (layer) map.removeLayer(layer);
+    layer = L.tileLayer(BASE + slug + '/{z}/{x}_{y}.webp', {
+      tileSize: info.tile, bounds: bounds, noWrap: true,
+      minNativeZoom: 0, maxNativeZoom: info.top, minZoom: -3, maxZoom: info.top + 1
+    }).addTo(map);
+    map.setMaxBounds(bounds.pad(0.25));
+    map.setMinZoom(-3);
+    map.setMaxZoom(info.top + 1);
+    map.fitBounds(bounds);
+    map.setMinZoom(map.getZoom() - 0.5);   // 지도보다 훨씬 작게 줄어들지 않게
+    pick.querySelectorAll('button').forEach(function (b) { b.classList.toggle('on', b.dataset.slug === slug); });
+    document.title = NAMES[slug] + ' · 고화질 전장 지도 · HotS Scrap';
+    if (q.get('map') !== slug) {
+      q.set('map', slug);
+      history.replaceState(null, '', '?' + q.toString());
+    }
+  }
+
+  fetch(BASE + 'index.json').then(function (r) { if (!r.ok) throw r.status; return r.json(); })
+    .then(function (d) {
+      idx = d;
+      var slugs = Object.keys(NAMES).filter(function (k) { return d[k]; });
+      slugs.forEach(function (k) {
+        var b = document.createElement('button');
+        b.type = 'button'; b.dataset.slug = k; b.textContent = NAMES[k];
+        b.addEventListener('click', function () { show(k); });
+        pick.appendChild(b);
+      });
+      var want = q.get('map');
+      show(d[want] ? want : slugs[0]);
+    })
+    .catch(function () {
+      document.getElementById('msg').textContent = '지도 목록을 받지 못했습니다. 잠시 뒤 다시 열어 주세요.';
+    });
+})();
+</script>
+</body>
+</html>
