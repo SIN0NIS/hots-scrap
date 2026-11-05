@@ -38,6 +38,10 @@
   #pick button:hover { color:var(--fg); }
   #pick button.on { color:var(--blue); background:var(--blue-soft); border-color:var(--blue); font-weight:700; }
   @media (any-pointer:coarse) { #pick button { min-height:44px; } }
+  #hq { margin-left:auto; font:inherit; font-size:13px; font-weight:700; cursor:pointer; white-space:nowrap;
+        color:#fff; background:var(--blue); border:1px solid var(--blue); border-radius:999px; padding:5px 14px; }
+  #hq:disabled { cursor:default; color:var(--blue); background:var(--blue-soft); }
+  @media (any-pointer:coarse) { #hq { min-height:44px; } }
   #map { flex:1 1 auto; min-height:300px; background:var(--stage); }
   .leaflet-container { font:inherit; }
   #msg { padding:40px 16px; text-align:center; color:#8fa2bd; }
@@ -47,7 +51,8 @@
 <body>
 <div class="head">
   <h1>고화질 전장 지도</h1>
-  <span class="say">휠·손가락으로 확대하면 보이는 부분만 받습니다. <a href="./">← 자료실</a></span>
+  <span class="say">처음엔 가벼운 지도로 열립니다. 크게 보려면 고화질 단추를 누르세요(보이는 부분만 받습니다). <a href="./">← 자료실</a></span>
+  <button type="button" id="hq" hidden></button>
 </div>
 <div id="pick"></div>
 <div id="map"><div id="msg">지도를 불러오는 중…</div></div>
@@ -69,11 +74,34 @@
     towers_of_doom: '파멸의 탑', volskaya_foundry: '볼스카야 공장', warhead_junction: '핵탄두 격전지'
   };
   var box = document.getElementById('map'), pick = document.getElementById('pick');
-  var map = null, layer = null, idx = null;
+  var hqBtn = document.getElementById('hq');
+  var map = null, layer = null, stale = null, idx = null, cur = null;
+  var hq = {};   // 고화질로 바꾼 전장 — 단추를 누른 전장만 큰 조각(z3 이상)을 받는다
+  var LOW = 2;   // 기본은 z2(가로 2000px, 전장 하나 통째로 0.6MB 안쪽)
+
+  function lowTop(info) { return Math.min(info.top, LOW); }
+
+  function hqLabel(info) {
+    if (info.top <= LOW) { hqBtn.hidden = true; return; }
+    hqBtn.hidden = false;
+    if (hq[cur]) { hqBtn.textContent = '고화질 켜짐 ✓'; hqBtn.disabled = true; return; }
+    var kb = (info.kb || []).slice(LOW + 1).reduce(function (a, b) { return a + b; }, 0);
+    hqBtn.disabled = false;
+    hqBtn.textContent = '고화질로 보기' + (kb ? ' (최대 ' + (kb / 1024).toFixed(1) + 'MB)' : '');
+  }
+
+  function makeLayer(slug, bounds) {
+    var info = idx[slug];
+    return L.tileLayer(BASE + slug + '/{z}/{x}_{y}.webp', {
+      tileSize: info.tile, bounds: bounds, noWrap: true,
+      minNativeZoom: 0, maxNativeZoom: hq[slug] ? info.top : lowTop(info), minZoom: -3, maxZoom: info.top + 1
+    });
+  }
 
   function show(slug) {
     var info = idx[slug];
     if (!info) return;
+    cur = slug;
     var s = Math.pow(2, info.top);   // 맨 위 단계에서 1 단위 = 2^top 픽셀
     var bounds = L.latLngBounds([[-info.h / s, 0], [0, info.w / s]]);
     if (!map) {
@@ -81,10 +109,9 @@
       map = L.map(box, { crs: L.CRS.Simple, zoomSnap: 0.25, zoomDelta: 0.5, attributionControl: false });
     }
     if (layer) map.removeLayer(layer);
-    layer = L.tileLayer(BASE + slug + '/{z}/{x}_{y}.webp', {
-      tileSize: info.tile, bounds: bounds, noWrap: true,
-      minNativeZoom: 0, maxNativeZoom: info.top, minZoom: -3, maxZoom: info.top + 1
-    }).addTo(map);
+    if (stale) { map.removeLayer(stale); stale = null; }   // 고화질로 갈아 끼우던 옛 층
+    layer = makeLayer(slug, bounds).addTo(map);
+    hqLabel(info);
     map.setMaxBounds(bounds.pad(0.25));
     map.setMinZoom(-3);
     map.setMaxZoom(info.top + 1);
@@ -97,6 +124,20 @@
       history.replaceState(null, '', '?' + q.toString());
     }
   }
+
+  if (/^(localhost|127\.0\.0\.1)$/.test(location.hostname)) window.__mapsDbg = function () { return map; };   // 점검용
+
+  hqBtn.addEventListener('click', function () {
+    var info = idx && idx[cur];
+    if (!info || hq[cur]) return;
+    hq[cur] = true;
+    // 지금 보는 자리·배율을 그대로 두고 조각만 큰 것으로 갈아 끼운다.
+    // redraw() 는 소수 배율(0.25)로 조각을 불러서 쓰지 않는다 — 새 층을 깔고, 다 받으면 옛 층을 걷는다.
+    var old = stale = layer;
+    layer = makeLayer(cur, old.options.bounds).addTo(map);
+    layer.once('load', function () { map.removeLayer(old); if (stale === old) stale = null; });
+    hqLabel(info);
+  });
 
   fetch(BASE + 'index.json').then(function (r) { if (!r.ok) throw r.status; return r.json(); })
     .then(function (d) {

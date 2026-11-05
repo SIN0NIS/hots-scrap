@@ -42,6 +42,12 @@ def cut(jpg, dst, max_w):
     return {"w": w, "h": h, "top": top, "tile": TILE, "tiles": n}
 
 
+def level_kb(dst):
+    """KB per zoom level - the viewer shows what the high-quality button will cost."""
+    return [round(sum(f.stat().st_size for f in (dst / str(z)).glob("*.webp")) / 1024)
+            for z in range(len([d for d in dst.iterdir() if d.is_dir()]))]
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--src", type=pathlib.Path, default=SRC)
@@ -71,6 +77,7 @@ def main():
                 f.unlink() if f.is_file() else f.rmdir()
         info = cut(jpg, dst, a.max)
         info["max"] = a.max
+        info["kb"] = level_kb(dst)
         idx[slug] = info
         a.out.mkdir(parents=True, exist_ok=True)
         idx_path.write_text(json.dumps(idx, ensure_ascii=False, indent=1), encoding="utf-8")
