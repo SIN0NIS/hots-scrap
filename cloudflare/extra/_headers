@@ -1,11 +1,25 @@
-# Cloudflare Pages response headers. Scripts and styles are revalidated on every load so an update reaches
-# everyone at once (the zone's default browser cache would keep the old scrap.js for 4 hours).
+# Cloudflare Pages response headers.
+# The server is far (Tokyo/Hong Kong for Korea): one "has it changed?" round trip costs ~0.2 s, and a page asks
+# that 13-34 times. Asking on EVERY load made every page feel a beat late. So:
+#   max-age=60                 within a minute (moving between apps) nothing is asked at all
+#   stale-while-revalidate     after that the cached copy is used at once and checked in the background —
+#                              an update still reaches everyone, one load later (not 4 hours later, which was
+#                              the zone default and why this file exists)
+# Don't let two rules match the same file: Pages joins both Cache-Control values with a comma.
 /*.js
-  Cache-Control: public, max-age=0, must-revalidate
+  Cache-Control: public, max-age=60, stale-while-revalidate=604800
 /*.css
-  Cache-Control: public, max-age=0, must-revalidate
+  Cache-Control: public, max-age=60, stale-while-revalidate=604800
+/shared/*.svg
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+/data/*
+  Cache-Control: public, max-age=60, stale-while-revalidate=86400
+/wiki/data/*
+  Cache-Control: public, max-age=60, stale-while-revalidate=86400
+/images/*
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
 /admin/*
   X-Robots-Tag: noindex
 # icons and map pictures hardly ever change: reuse them for a day instead of asking on every load
 /cdn/*
-  Cache-Control: public, max-age=86400
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800

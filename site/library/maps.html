@@ -94,6 +94,8 @@
     var info = idx[slug];
     return L.tileLayer(BASE + slug + '/{z}/{x}_{y}.webp', {
       tileSize: info.tile, bounds: bounds, noWrap: true,
+      updateWhenZooming: false,   // 휠을 굴리는 중간 배율마다 조각을 새로 부르면 버벅인다 — 멈춘 뒤 한 번만
+      keepBuffer: 3,              // 끌어 옮길 때 화면 밖 조각을 조금 더 붙들어 둔다
       minNativeZoom: 0, maxNativeZoom: hq[slug] ? info.top : lowTop(info), minZoom: -3, maxZoom: info.top + 1
     });
   }
