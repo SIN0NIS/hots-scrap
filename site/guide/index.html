@@ -109,6 +109,7 @@
   .tip { margin:10px 0 0; padding:10px 14px; border-left:3px solid var(--gold-line); background:var(--card);
          border-radius:0 10px 10px 0; font-size:14px; color:var(--dim); }
   .tip b { color:var(--fg); }
+  ul.tip { padding-left:32px; } ul.tip li { margin:3px 0; }
   kbd { font:12px/1 ui-monospace, Consolas, monospace; border:1px solid var(--line); border-bottom-width:2px;
         border-radius:4px; padding:2px 5px; background:var(--card2); color:var(--fg); }
   code { font:13px ui-monospace, Consolas, monospace; background:var(--card2); border:1px solid var(--line);
@@ -439,12 +440,12 @@
   <div class="step">
     <figure class="shot" data-shot="patch"></figure>
     <ol class="marks" data-shot="patch">
-      <li><b>네 화면</b> — 패치 목록 · 달력·통계 · 영웅별 이력 · 전장별 이력.</li>
+      <li><b>다섯 화면</b> — 패치 목록 · 달력 · 통계 · 영웅별 이력 · 전장별 이력.</li>
       <li><b>검색</b> — 제목·버전·영웅 이름(초성 됨).</li>
       <li><b>채널</b> — 라이브(본 서버) / 테스트 서버.</li>
       <li><b>출처</b> — 공식 한글(블리자드 한국어 노트) / Claude 번역(한국어판이 없는 회차) / 데이터(게임 파일 비교만).</li>
       <li><b>+ 영웅 / + 전장</b> — 그 영웅·전장이 나온 회차만 남깁니다.</li>
-      <li><b>회차</b> — 누르면 노트가 열립니다. 얼굴은 그 회차에 바뀐 영웅입니다.</li>
+      <li><b>회차</b> — 누르면 노트가 열립니다. 얼굴은 그 회차에 바뀐 영웅입니다. 목록은 해마다 끊어 두었고, 맨 위 연도를 누르면 그해로 갑니다.</li>
     </ol>
   </div>
   <div class="step">
@@ -455,16 +456,23 @@
       <li><b>영웅</b> — 누르면 이 노트에서 그 영웅 대목만 모아 봅니다.</li>
     </ol>
   </div>
-  <h3>달력·통계</h3>
+  <p class="tip">노트 안에서는 맨 위 <b>갈래</b> 단추로 원하는 대목(밸런스 업데이트 · 전장 …)으로 바로 갑니다. 버그 수정·수집품 대목은 접혀 있습니다. <b>데이터 변경점</b> 탭은 바뀐 숫자만(예: <code>5초 동안 30%→25% 감소</code>) 보여 주고, 툴팁 문장 전체는 접어 두었습니다.</p>
+  <h3>달력 · 통계</h3>
   <div class="step">
     <figure class="shot" data-shot="patch-cal"></figure>
   </div>
-  <p class="tip">2016년부터의 모든 회차를 달력 한 장에 놓았습니다. 점 색이 본 패치·밸런스·데이터 변경·테스트 서버를 나타내고, 칸을 누르면 그달 회차가 아래에 펼쳐집니다. 위 카드에는 마지막 패치 뒤 며칠째인지, 보통 간격, 가장 긴 공백이 나옵니다.</p>
+  <p class="tip">2016년부터의 모든 회차를 달력 한 장에 놓았습니다. 점 하나가 패치 하나이고, 색이 본 패치·밸런스·데이터 변경·테스트 서버를 나타냅니다. 칸을 누르면 그달 회차가 아래에 펼쳐집니다. 마지막 패치 뒤 며칠째인지, 보통 간격, 요일·영웅별 횟수 같은 숫자는 <b>통계</b> 탭에 따로 있습니다.</p>
   <h3>영웅별 이력</h3>
   <div class="step">
     <figure class="shot" data-shot="patch-hero"></figure>
   </div>
-  <p class="tip">한 영웅의 수치가 패치마다 어떻게 바뀌었는지 꺾은선으로 봅니다. 기간·가로축(패치별/날짜 비례)·방향·Y축·값(절대값/첫값 대비 %)을 위 칸에서 고릅니다. <b>이 영웅만 달력에서 보기</b>로 그 영웅이 나온 회차만 달력에 남길 수도 있습니다.</p>
+  <p class="tip">맨 위 요약에 몇 번 바뀌었는지, 해마다 몇 번인지(막대를 누르면 그해만), 많이 바뀐 기술이 나옵니다. 아래는 세 가지로 봅니다.</p>
+  <ul class="tip">
+    <li><b>시간순</b> — 회차마다 바뀐 기술·특성을 한 줄씩. 공식 노트 문장 아래 회색 칩은 게임 파일에서 확인한 숫자입니다. 원문은 <b>원문 그대로 보기</b>에 접혀 있습니다.</li>
+    <li><b>기술별</b> — 같은 기술·특성의 변화를 한데 모아 언제 어떻게 바뀌어 왔는지 봅니다.</li>
+    <li><b>수치 그래프</b> — 수치가 패치마다 어떻게 오르내렸는지 꺾은선으로 봅니다. 기간·축·색은 <b>그래프 설정</b>을 펼쳐 고릅니다.</li>
+  </ul>
+  <p class="tip">버그 수정·수집품 줄은 기본으로 숨겨 두었고, 위 단추로 켭니다.</p>
 
   <!-- ───────────────────────── 티어표 ───────────────────────── -->
   <h2 id="tier">티어표 만들기 <small>영웅을 끌어다 줄에 놓는다</small></h2>
