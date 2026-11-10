@@ -477,6 +477,16 @@ details.det > summary { cursor:pointer; font-size:12px; color:var(--dim); }
 .kvr .v { padding:4px 9px; overflow-wrap:anywhere; }
 .kvr.calc { box-shadow:inset 3px 0 0 var(--gold); }
 .kvr.calc .v { background:color-mix(in srgb, var(--gold) 14%, transparent); }
+/* 세부 칸 묶음 머리 · 칸 이름(뜻풀이 말풍선, 누르면 용어집) · 게임 자료는 한 줄에 하나 */
+.fgh { font-size:11.5px; color:var(--dim); margin:10px 0 2px; font-weight:600; letter-spacing:.02em; }
+.fgh:first-child { margin-top:2px; }
+.fgh small { font-weight:400; }
+a.fk { color:inherit; text-decoration:underline dotted color-mix(in srgb, currentColor 45%, transparent); text-underline-offset:3px; }
+a.fk:hover { color:var(--fg, inherit); text-decoration-style:solid; }
+.kv.kv1 { grid-template-columns:1fr; }
+.kvr.raw { grid-template-columns:minmax(88px,22%) minmax(0,1fr); }
+.kvr.raw .v > div + div { border-top:1px dashed var(--line); margin-top:3px; padding-top:3px; }
+tr.fdrow:target, tr.fdrow.flash { background:color-mix(in srgb, var(--gold) 18%, transparent); }
 .pick.flash { outline:2px solid var(--gold); }
 .skill .figbox { max-width:340px; }
 
@@ -864,23 +874,73 @@ window.KS={score:score,mark:mark,esc:esc};})();
   const targetOf0 = t => { const m = /^\[[^\]]+\]\s*(.+)$/.exec(t["강화"] || ""); return m ? m[1] : null; };
   const targetOf = (h, t) => { const m = /^\[[^\]]+\]\s*(.+)$/.exec(t["강화"] || ""); return m ? list(h["기술"]).find(a => a["이름"] === m[1]) : null; };
   /* 상세 표 — 위키식 칸을 위키 차례로. 특성이 바꾸는 칸('바뀌는 값')은 금색으로 겹친다 */
-  const DETAIL = ["유형", "성장", "영향", "속성", "지정", "시전 시간", "사거리", "최소 사거리", "범위", "반지름", "각도", "너비", "높이", "도형거리", "판정 범위", "투사체 속도", "적용 주기", "지속", "소환", "게임 툴팁 수치"];
+  /* ── 세부 칸 — 차례·묶음·뜻풀이는 용어 자료(terms.json '세부 칸')가 정한다. 용어집과 상세 표가 같은 목록을 쓴다 ── */
+  const FD_HIDE = new Set(["도형", "그래프", "도형거리"]);           // 그림에만 쓰는 칸
+  const FD_RAW = { "전거리": "특성 전 거리" };                       // 자료 이름 → 용어집 이름
+  const FD_GRP = ["기본", "비용·시간", "거리·범위", "움직임", "효과 수치"];
+  let FD = null;
+  const fdOf = k => { if (!FD && TERMS && TERMS["세부 칸"]) { FD = {}; TERMS["세부 칸"].forEach((x, i) => FD[x["칸"]] = Object.assign({ i }, x)); } return FD && FD[k]; };
+  /* 칸 이름 — 뜻을 말풍선으로, 누르면 용어집의 그 줄로 */
+  const fk = k => { const d = fdOf(k); return d ? `<a class="fk" href="#terms.fd-${d.i}" title="${esc(d["뜻"])}">${esc(k)}</a>` : esc(k); };
+  const SEC = /^(지속 시간|유지 시간|간격|주기|모으기)$/;
+  const fval = (k, v) => v === true ? "예" : Array.isArray(v) ? (v.every(x => typeof x !== "object") ? v.map(num).join(" ~ ") : `${v.length}곳`)
+    : v && typeof v === "object" ? Object.entries(v).map(([a, b]) => `${a} ${fval(a, b)}`).join(" · ") : typeof v === "number" ? num(v) + (SEC.test(k) ? "초" : "") : String(v);
+  /* 게임 자료 한 줄 — {출처, 칸…} 을 '칸 값 · 칸 값' 으로. 출처 id 는 말풍선에 */
+  const rawLine = x => Object.entries(x).filter(([k, v]) => k !== "출처" && v != null && v !== "" && v !== false)
+    .map(([k, v]) => v === true ? fk(k) : `${fk(k)} ${esc(fval(k, v))}`).join(" · ");
+  const RAWS = [["거는 효과", "거는 효과"], ["지속 효과", "반복 효과"], ["투사체", "투사체"], ["범위", "판정"], ["소환", "소환 유닛"], ["밀침", "밀침"], ["순간이동", "순간이동"],
+    ["재사용 조정", "재사용 조정"], ["지속 시간 조정", "지속 시간 조정"], ["퀘스트 점수", "퀘스트 점수"], ["퀘스트로 바뀜", "퀘스트로 바뀜"], ["회복", "회복"]];
+  /* 기술·특성 하나의 세부 칸 줄 — [칸, 값, html?, 금색?]. 위키식 칸은 전부(그림 전용만 빼고), 그다음 날자료의 낱칸 */
+  function fieldRows(a, w) {
+    const rows = [];
+    const res = ["마나", "기력", "분노", "취기", "고철", "생명력 소모"].filter(k => a[k] != null).map(k => (k === "마나" ? "" : k + " ") + num(a[k]));
+    if (res.length) rows.push(["소모 자원", res.join(" · ")]);
+    if (a["재사용 대기시간"] != null) rows.push(["재사용 대기시간", num(a["재사용 대기시간"]) + "초"]);
+    if (a["충전 개수"] != null) rows.push(["충전 개수", num(a["충전 개수"]) + "회"]);
+    if (a["연타 제한"] != null) rows.push(["연타 제한", num(a["연타 제한"]) + "초"]);
+    if (a["마무리 시간"] != null) rows.push(["마무리 시간", num(a["마무리 시간"]) + "초"]);
+    Object.entries(w).forEach(([k, v]) => {
+      if (FD_HIDE.has(k) || v == null || v === "" || (typeof v === "object" && !Array.isArray(v) && k !== "모으기")) return;
+      if (k === "틱 속도(날것)" && v === w["틱 속도"]) return;      // 같으면 한 줄만
+      rows.push([FD_RAW[k] || k, fval(k, v)]);
+    });
+    if (a["이동 거리(추정)"] != null) rows.push(["이동 거리(추정)", num(a["이동 거리(추정)"])]);
+    ["탈것", "모드", "같은 칸", "이어짐", "이어받음", "딸린 곳", "보상 갈래"].forEach(k => { if (a[k] && typeof a[k] !== "object") rows.push([k, String(a[k])]); });
+    const q = a["퀘스트"];
+    if (q) (typeof q === "object" ? Object.entries(q) : [["퀘스트", q]]).forEach(([k, v]) => { if (v != null && typeof v !== "object") rows.push([k === "퀘스트" ? k : "퀘스트 · " + k, String(v)]); });
+    const seen = new Set(), tip = [];
+    list(a["툴팁 수치"]).forEach(r => { if (!r || r["값"] == null) return; const s = `${r["칸"]} ${num(r["값"])}${r["단위"] || ""}`; if (!seen.has(s)) { seen.add(s); tip.push(s); } });
+    if (tip.length) rows.push(["게임 툴팁 수치", tip.join(" · ")]);
+    return rows;
+  }
+  /* 게임 자료 묶음 — 거는 효과·반복 효과·투사체·판정 … 하나하나 */
+  function rawBlock(a) {
+    const out = RAWS.map(([src, name]) => { const xs = list(a[src]).filter(x => x && typeof x === "object");
+      return xs.length ? `<div class="kvr raw"><span class="k">${fk(name)}${xs.length > 1 ? ` <small>${xs.length}</small>` : ""}</span><span class="v">${xs.map(x => `<div title="${esc(x["출처"] || "")}">${rawLine(x) || "—"}</div>`).join("")}</span></div>` : ""; }).join("");
+    return out ? `<div class="fgh">게임 자료 <small>— 줄에 대면 게임 파일의 이름이 보입니다</small></div><div class="kv kv1">${out}</div>` : "";
+  }
+  /* 줄을 묶음별로 — 용어집에 없는 칸은 '기타' */
+  function kvGroups(rows) {
+    const g = {}; rows.forEach(r => { const d = fdOf(r[0].replace(/^퀘스트 · .*/, "퀘스트")); const k = d && FD_GRP.includes(d["묶음"]) ? d["묶음"] : (r[3] ? "특성으로 바뀜" : "기타"); (g[k] = g[k] || []).push(r); });
+    const ord = (x, y) => ((fdOf(x[0]) || { i: 1e4 }).i - (fdOf(y[0]) || { i: 1e4 }).i);
+    return [...FD_GRP, "특성으로 바뀜", "기타"].filter(k => g[k]).map(k => `<div class="fgh">${esc(k)}</div><div class="kv">${g[k].sort(ord).map(r =>
+      `<div class="kvr${r[3] || r[2] === true ? " calc" : ""}"><span class="k">${fk(r[0])}</span><span class="v">${r[2] ? r[1] : esc(r[1])}</span></div>`).join("")}</div>`).join("");
+  }
   function detailTable(a, t, dmgTxt) {
     const w = a["위키식"] || {};
-    const rows = [];
-    if (a["마나"] != null) rows.push(["소모 자원", String(a["마나"])]);
-    if (a["재사용 대기시간"] != null) rows.push(["재사용 대기시간", a["재사용 대기시간"] + "초"]);
-    DETAIL.forEach(k => { const v = w[k]; if (v != null && v !== "" && typeof v !== "object") rows.push([k, String(v)]); });
-    if (dmgTxt) rows.push(["피해", dmgTxt, true]);
+    const rows = fieldRows(a, w);
+    if (dmgTxt) { const i = rows.findIndex(r => r[0] === "피해"); if (i >= 0) rows.splice(i, 1); rows.push(["피해", dmgTxt, true]); }
     const chg = t ? list(t["바뀌는 값"]).map(c => { const m = /^(.*?)\s+(-?[\d.]+.*)$/.exec(c); return m ? [m[1], m[2]] : [c, ""]; }) : [];
     chg.forEach(([k, rest]) => {
       const stem = k.replace(/\s.*$/, "");
-      const r = rows.find(x => x[0] === k || x[0].startsWith(k) || k.startsWith(x[0]) || (stem.length >= 2 && x[0].startsWith(stem)));
+      // 칸이 많아졌으니 이름이 똑같은 칸을 먼저 찾는다('피해' 가 '피해 범위' 에 붙지 않게)
+      const r = rows.find(x => x[0] === k) || rows.find(x => x[0].startsWith(k) || k.startsWith(x[0]) || (stem.length >= 2 && x[0].startsWith(stem)));
       const v = `<b class="calc-v">${esc(rest)}</b> <span class="note">${esc(t["이름"])}</span>`;
-      if (r) { r[1] = esc(r[1]) + "<br>" + v; r[2] = "html"; r[3] = true; } else rows.push([k, v, "html", true]);
+      if (r) { r[1] = (r[2] ? r[1] : esc(r[1])) + "<br>" + v; r[2] = "html"; r[3] = true; } else rows.push([k, v, "html", true]);
     });
-    if (!rows.length) return "";
-    return `<details class="det" open><summary>상세 표</summary><div class="kv">${rows.map(r => `<div class="kvr${r[3] || r[2] === true ? " calc" : ""}"><span class="k">${esc(r[0])}</span><span class="v">${r[2] ? r[1] : esc(r[1])}</span></div>`).join("")}</div></details>`;
+    const raw = rawBlock(a);
+    if (!rows.length && !raw) return "";
+    return `<details class="det" open><summary>상세 표</summary>${kvGroups(rows)}${raw}</details>`;
   }
   function selBlock(h, key, cands, res) {
     const sel = (SEL[h.id] || {})[key];
@@ -990,18 +1050,12 @@ window.KS={score:score,mark:mark,esc:esc};})();
     const wk = p["위키식"] || {};
     let fig = "";
     if (window.hotsShape && (list(wk["도형"]).length || wk["그래프"])) { try { fig = window.hotsShape.svg(wk, { hero: h, yard: YARD }) + (window.hotsShape.graph(wk) || ""); } catch (e) { fig = ""; } }
-    const rows = [];
-    list(p["바뀌는 값"]).forEach(c => rows.push(["바뀌는 값", String(c).replace(/(\d)배(?= \()/g, "$1"), true]));
-    if (wk["특성 전"]) rows.push(["특성 전 → 후", String(wk["특성 전"]), true]);
-    DETAIL.forEach(k => { const v = wk[k]; if (v != null && v !== "" && typeof v !== "object") rows.push([k, String(v)]); });
-    const seen = new Set();
-    list(p["툴팁 수치"]).forEach(r => { if (!r || r["값"] == null) return; const s = `${r["칸"]}|${r["값"]}${r["단위"] || ""}`; if (seen.has(s)) return; seen.add(s); rows.push([r["칸"], `${num(r["값"])}${r["단위"] || ""}`]); });
-    const q = p["퀘스트"];
-    if (q) (typeof q === "object" ? Object.entries(q) : [["퀘스트", q]]).forEach(([k, v]) => { if (v != null && typeof v !== "object") rows.push([k === "퀘스트" ? k : "퀘스트 · " + k, String(v)]); });
-    if (!fig && !rows.length) return "";
-    const kv = rows.length ? `<div class="kv">${rows.map(r => `<div class="kvr${r[2] ? " calc" : ""}"><span class="k">${esc(r[0])}</span><span class="v">${esc(r[1])}</span></div>`).join("")}</div>` : "";
+    const rows = list(p["바뀌는 값"]).map(c => ["바뀌는 값", String(c).replace(/(\d)배(?= \()/g, "$1"), false, true]);
+    fieldRows(p, wk).forEach(r => { if (r[0] === "특성 전") r[3] = true; rows.push(r); });
+    const raw = rawBlock(p);
+    if (!fig && !rows.length && !raw) return "";
     const lab = (fig ? "범위 그림" : "") + (fig && rows.length ? " · " : "") + (rows.length ? `세부 수치 ${rows.length}` : "") + " " + LV0;
-    return `<details class="more2" data-tf="${esc(p.id)}"${TOPEN.has(p.id) ? " open" : ""}><summary>${lab}</summary><div class="figrow">${fig ? `<div class="figbox">${fig}</div>` : ""}${splatBox(h.id, "t", p.id, wk)}</div>${kv}</details>`;
+    return `<details class="more2" data-tf="${esc(p.id)}"${TOPEN.has(p.id) ? " open" : ""}><summary>${lab}</summary><div class="figrow">${fig ? `<div class="figbox">${fig}</div>` : ""}${splatBox(h.id, "t", p.id, wk)}</div>${kvGroups(rows)}${raw}</details>`;
   }
   document.addEventListener("toggle", e => { const d = e.target; if (d.dataset && d.dataset.tf) { if (d.open) TOPEN.add(d.dataset.tf); else TOPEN.delete(d.dataset.tf); } }, true);
   function pHero(id) {
@@ -1350,7 +1404,7 @@ window.KS={score:score,mark:mark,esc:esc};})();
   }
   /* ── 용어 — 게임의 공식 한글 문자열을 기준으로 정한 말 ── */
   let TERMS = null;
-  fetch("data/terms.json").then(r => r.ok ? r.json() : null).then(j => { TERMS = j; if (/^#(terms|home)?$/.test(location.hash || "")) route(true); }).catch(() => {});
+  fetch("data/terms.json").then(r => r.ok ? r.json() : null).then(j => { TERMS = j; FD = null; if (/^#(terms|home|h\.)|^$/.test(location.hash || "")) route(true); }).catch(() => {});
   /* 용어가 위키 안에서 실제로 쓰인 곳 — 기술·특성 설명, 전장·시스템 문서의 글 */
   let UIDX = null;
   function usageIndex() {
@@ -1398,9 +1452,17 @@ window.KS={score:score,mark:mark,esc:esc};})();
       <td>${(t["예전 말"] || []).filter(o => o !== t["공식"]).map(o => `<span class="chip">${esc(o)} <small>${num((t["예전 말 등장"] || {})[o] || 0)}번</small></span>`).join(" ")}</td>
       <td><button type="button" class="lnk" data-term="${esc(w)}"${n ? "" : " disabled"}>${n ? `${num(n)}곳 보기 ›` : "없음"}</button></td>
       <td class="src">${esc(t["근거 키"] || "")}</td></tr>`; };
-    return page({ crumb: crumbs("용어"), title: "용어 정리", lede: `용어 ${TERMS["용어"].length}개 · 게임의 한국어 문자열 기준`,
+    /* 세부 칸 — 기술·특성 상세 표에 나오는 칸 전부. 상세 표의 칸 이름을 누르면 여기 그 줄로 온다 */
+    const FDS = list(TERMS["세부 칸"]);
+    const fg = groupBy(FDS.map((x, i) => Object.assign({ i }, x)), x => x["묶음"]);
+    const fdRow = x => `<tr class="fdrow" id="fd-${x.i}"><td><b>${esc(x["칸"])}</b></td><td class="src" style="color:var(--fg)">${esc(x["영어"] || "")}</td><td>${esc(x["뜻"] || "")}</td>
+      <td class="n">${x["기술"] ? num(x["기술"]) : ""}</td><td class="n">${x["특성"] ? num(x["특성"]) : ""}</td></tr>`;
+    const fdSecs = FDS.length ? [{ title: "기술·특성 세부 칸", html: `<p class="note">영웅 문서의 기술 <b>상세 표</b>와 특성 <b>세부 수치</b>에 나오는 칸 ${FDS.length}가지입니다. 칸 이름은 게임에 공식 한글이 없어 이 위키가 정한 말이고, 영어는 위키(heroesofthestorm.fandom.com)가 쓰는 칸 이름이거나 그 뜻입니다. '기술'·'특성' 칸은 그 칸이 채워진 기술·특성의 수입니다.</p>` }]
+      .concat(Object.keys(fg).map(k => ({ title: "세부 칸 · " + k, html: tbl(["칸", "영어", "뜻", ["기술"], ["특성"]], fg[k].map(fdRow)) }))) : [];
+    return page({ crumb: crumbs("용어"), title: "용어 정리", lede: `용어 ${TERMS["용어"].length}개 · 세부 칸 ${FDS.length}개 · 게임의 한국어 문자열 기준`,
       about: `이 위키에서 쓰는 낱말을 정리한 문서입니다. 모든 낱말은 게임에 들어 있는 <b>공식 한글 문자열</b>을 기준으로 맞췄습니다. '게임 속 등장' 은 한국어 문자열 전체에서 그 말이 몇 번 나오는지, '근거 키' 는 영어·한국어 짝을 찾은 게임 문자열 이름입니다. 게임에 공식 한글이 없는 말은 ${`<span class="bd est">위키 말</span>`} 로 표시했습니다. <b>'N곳 보기'</b> 를 누르면 그 말이 실제로 쓰인 문장과 문서 링크가 나오고, 이름에 밑줄이 있으면 그 말을 설명하는 문서로 갑니다.`,
       sections: order.filter(k => g[k]).map(k => ({ title: k, html: tbl(["공식 한글", "영어 원어", "뜻", ["게임 속 등장"], "예전에 쓰던 말", "위키에서 쓰인 곳", "근거 키"], g[k].map(row)) }))
+        .concat(fdSecs)
         .concat([{ title: "이렇게 맞췄습니다", html: `<ul class="plain"><li>같은 키의 영어·한국어 게임 문자열을 짝지어 '영어 원어 → 공식 한글' 을 찾았습니다.</li>
           <li>예전에 쓰던 말(돌격병·일반 공격·치유의 샘 …)은 공식 문자열에 거의 나오지 않아 공식 말로 바꿨습니다.</li>
           <li>기술·특성 설명처럼 게임이 직접 준 글은 이미 공식 한글이라 그대로 두었습니다.</li>
@@ -1754,7 +1816,8 @@ window.KS={score:score,mark:mark,esc:esc};})();
     const raw = decodeURIComponent((location.hash || "#home").slice(1));
     const [k, ...rest] = raw.split(".");
     // 영웅 문서는 #h.<영웅>.<sk-기술|tal-특성> 로 그 자리까지 간다
-    const id = k === "h" && rest.length > 1 ? rest[0] : rest.join("."), anc = k === "h" && rest.length > 1 ? rest.slice(1).join(".") : "";
+    // 용어집은 #terms.<줄 id> 로 그 줄까지(세부 칸의 뜻풀이 링크)
+    const id = k === "h" && rest.length > 1 ? rest[0] : rest.join("."), anc = k === "h" && rest.length > 1 ? rest.slice(1).join(".") : k === "terms" ? rest.join(".") : "";
     curHero = null;
     const html = k === "patches" ? pPatches(id) : k === "p" ? pPatch(id) : k === "about" ? pAbout() : k === "history" ? pHistory() : k === "stats" ? pStats() : k === "terms" ? pTerms() : k === "heroes" ? pHeroes(id) : k === "maps" ? pMaps() : k === "systems" ? pSystems()
       : k === "h" ? pHero(id) : k === "m" ? pMap(id) : k === "s" ? pSys(id) : pHome();
