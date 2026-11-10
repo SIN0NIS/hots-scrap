@@ -17,6 +17,20 @@
   @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg-glow:radial-gradient(1200px 500px at 50% -10%, #14294a 0%, transparent 60%); --new:#ffb070; --del:#ff9b9b; --del-bg:#4a1d1d; --ins:#8ee0a4; --ins-bg:#143d22; --purple:#c4a5ff; --on-accent:#0b1526; --gold-solid:var(--gold); --warn:#ffc46a; --warn-bg:#4a3410; } }
   :root[data-theme="dark"] { --bg-glow:radial-gradient(1200px 500px at 50% -10%, #14294a 0%, transparent 60%); --new:#ffb070; --del:#ff9b9b; --del-bg:#4a1d1d; --ins:#8ee0a4; --ins-bg:#143d22; --purple:#c4a5ff; --on-accent:#0b1526; --gold-solid:var(--gold); --warn:#ffc46a; --warn-bg:#4a3410; }
 
+  /* 노트 속 기술·특성 이름 → 눌러서 설명 보기 (wireTips) */
+  .official .tipname { cursor:pointer; text-decoration:underline dotted; text-underline-offset:3px; text-decoration-color:var(--gold-line, var(--dim)); }
+  .official .tipname:hover, .official .tipname:focus-visible { color:var(--gold-solid); outline:none; }
+  #tip-pop { position:absolute; z-index:120; width:min(380px, calc(100vw - 24px)); box-sizing:border-box; background:var(--card); color:var(--fg);
+             border:1px solid var(--gold-line, var(--line)); border-radius:12px; padding:10px 12px 11px; box-shadow:0 8px 24px rgba(0,0,0,.28); font-size:13px; line-height:1.55; }
+  #tip-pop .th { display:flex; gap:9px; align-items:center; margin-bottom:6px; }
+  #tip-pop .th img { width:36px; height:36px; border-radius:6px; background:var(--card2); flex:none; }
+  #tip-pop .th b { font-size:14px; } #tip-pop .th .m { font-size:11.5px; color:var(--dim); }
+  #tip-pop .x { margin-left:auto; border:0; background:none; color:inherit; font-size:18px; cursor:pointer; opacity:.7; padding:0 2px; align-self:flex-start; }
+  #tip-pop .tv { color:var(--blue); font-weight:700; } #tip-pop .tq { color:var(--ins); }
+  #tip-pop .cost { font-size:12px; color:var(--dim); margin-top:6px; }
+  #tip-pop .basis { font-size:11px; color:var(--dim); margin-top:7px; border-top:1px dashed var(--line); padding-top:6px; }
+  @media (any-pointer:coarse) { #tip-pop .x { min-width:44px; min-height:44px; margin:-10px -10px 0 0; } }
+
   :root { --cal-d1:#e8eff9; --cal-d2:#d4e3f5; --cal-d3:#bcd4ef; }
   @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --cal-d1:#16294a; --cal-d2:#1d365f; --cal-d3:#274678; } }
   :root[data-theme="dark"] { --cal-d1:#16294a; --cal-d2:#1d365f; --cal-d3:#274678; }
@@ -814,6 +828,74 @@
     app.querySelectorAll('[data-sec]').forEach(a => a.addEventListener('click', () => { const d = document.querySelector(a.getAttribute('href')); if (d) d.open = true; }));
     app.querySelectorAll('details.osec').forEach(d => d.addEventListener('toggle', () => { const f = d.querySelector('.fold'); if (f) f.textContent = d.open ? '접기' : '펼치기'; }));
     app.querySelectorAll('[data-focus]').forEach(a => a.onclick = e => { e.preventDefault(); go({ v: date, b: build, tab, hero: a.dataset.focus === focus ? '' : a.dataset.focus }); });
+    // '.official' 만 찾으면 제목 옆 배지(<span class="badge official">)가 먼저 걸린다 — 본문 칸으로 좁힌다
+    if (tab === 'official' && official) wireTips(app.querySelector('.panel div.official'), channelOf(row));
+  }
+
+  /* **노트 속 기술·특성 이름을 누르면 지금 설명이 뜬다.** "폭탄주 — 중첩당 피해량 보너스가 25에서 30으로" 만 보면
+     폭탄주가 뭔지 모른다. 영웅 머리(h4) 아래의 굵은 이름을 그 영웅의 설명 파일(tips/<판>/<영웅>.json, 평균 11KB)과
+     잇는다 — 누른 영웅 것만 받는다. 판은 노트 채널을 따른다(테스트 서버 노트 → 테스트 서버 설명).
+     설명은 **지금 빌드 기준**이라 옛 노트에서는 당시와 다를 수 있다 — 말풍선에 그렇게 적는다. */
+  const TIP_SKIP = /^(\d+\s*레벨|레벨\s*\d+|특성|기술|능력치|기본|기본 능력치|영웅|전장|일반|버그 수정|퀘스트|보상|신화 보상|.*:)$/;
+  const tipKey = s => s.replace(/\s*[\[(][^\[\]()]{1,12}[\])]\s*$/, '').replace(/[:：]\s*$/, '').trim();
+  function wireTips(root, ch) {
+    if (!root) return;
+    const byName = {};
+    for (const [id, h] of Object.entries(HEROES)) if (h && h.name) byName[h.name] = id;
+    let hero = null;
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_ELEMENT);
+    for (let el = walker.nextNode(); el; el = walker.nextNode()) {
+      if (/^H[1-4]$/.test(el.tagName)) { hero = byName[el.textContent.trim()] || null; continue; }   // 영웅이 아닌 머리(갈래 제목)면 끊는다
+      if (!hero || el.tagName !== 'STRONG' || el.querySelector('a')) continue;
+      const name = tipKey(el.textContent);
+      if (!name || name.length > 30 || TIP_SKIP.test(name) || byName[name]) continue;
+      el.classList.add('tipname');
+      el.tabIndex = 0;
+      el.setAttribute('role', 'button');
+      el.dataset.tipHero = hero;
+      el.dataset.tipName = name;
+    }
+    root.onclick = e => { const t = e.target.closest('.tipname'); if (t) { e.preventDefault(); openTip(t, ch); } };
+    root.onkeydown = e => { const t = e.target.closest && e.target.closest('.tipname'); if (t && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); openTip(t, ch); } };
+  }
+  function closeTip() { const p = document.getElementById('tip-pop'); if (p) p.remove(); }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeTip(); });
+  document.addEventListener('click', e => { if (!e.target.closest('#tip-pop, .tipname')) closeTip(); });
+  async function openTip(el, ch) {
+    closeTip();
+    const pop = document.createElement('div');
+    pop.id = 'tip-pop';
+    pop.setAttribute('role', 'dialog');
+    pop.innerHTML = '<div class="th"><b>' + esc(el.dataset.tipName) + '</b><button class="x" type="button" aria-label="닫기">×</button></div><div>불러오는 중…</div>';
+    document.body.appendChild(pop);
+    const place = () => {
+      const r = el.getBoundingClientRect(), w = pop.offsetWidth;
+      const left = Math.max(12, Math.min(r.left + scrollX, scrollX + document.documentElement.clientWidth - w - 12));
+      const below = r.bottom + pop.offsetHeight + 8 < innerHeight || r.top < pop.offsetHeight + 8;
+      pop.style.left = left + 'px';
+      pop.style.top = (below ? r.bottom + scrollY + 6 : r.top + scrollY - pop.offsetHeight - 6) + 'px';
+    };
+    place();
+    pop.querySelector('.x').onclick = closeTip;
+    let d = null;
+    try { d = await getJSON(`tips/${ch}/${el.dataset.tipHero}.json`); } catch (e) { /* 아래에서 '없음' 으로 */ }
+    if (document.getElementById('tip-pop') !== pop) return;   // 그사이 다른 것을 눌렀다
+    const t = d && d.tips && d.tips[el.dataset.tipName];
+    const chName = ch === 'ptr' ? '테스트 서버' : '본 서버';
+    if (!t) {
+      pop.innerHTML = `<div class="th"><b>${esc(el.dataset.tipName)}</b><button class="x" type="button" aria-label="닫기">×</button></div>
+        <div>지금 ${chName} 자료에 이 이름의 기술·특성이 없습니다. 이후 패치에서 이름이 바뀌었거나 빠졌을 수 있습니다.</div>`;
+    } else {
+      const meta = [t.level ? `${t.level}레벨 특성` : '', t.key ? `[${t.key}]` : ''].filter(Boolean).join(' · ');
+      pop.innerHTML = `<div class="th">${t.icon ? `<img src="${iconUrl(t.icon)}" alt="" onerror="this.style.visibility='hidden'">` : ''}
+          <div><b>${esc(el.dataset.tipName)}</b><div class="m">${esc(heroName(el.dataset.tipHero))}${meta ? ' · ' + esc(meta) : ''}</div></div>
+          <button class="x" type="button" aria-label="닫기">×</button></div>
+        <div>${t.tip}</div>
+        ${t.cd || t.cost ? `<div class="cost">${[t.cd, t.cost].filter(Boolean).map(esc).join(' · ')}</div>` : ''}
+        <div class="basis">${t.from ? `${chName} 자료에 한국어가 아직 없어 ${t.from === 'ptr' ? '테스트 서버' : '본 서버'} 설명을 보여 줍니다.` : `지금 ${chName} 빌드 기준 설명입니다.`} 이 노트 당시와 다를 수 있습니다.</div>`;
+    }
+    pop.querySelector('.x').onclick = closeTip;
+    place();
   }
   // INDEX 는 최신순이다. 다음(더 최신)이 앞, 이전(더 오래됨)이 뒤.
   function pagerHTML(row) {

@@ -33,6 +33,86 @@ def d(s):
     return date.fromisoformat(s[:10])
 
 
+TIP_KEY = {"Q": "Q", "W": "W", "E": "E", "Heroic": "R", "Trait": "D", "Active": "활성", "Passive": "지속 효과"}
+
+
+def tip_html(t):
+    """게임 툴팁 마크업 → 패치 기록 말풍선용 작은 HTML. 값은 <b class=tv>, '지속 효과:' 같은 초록 머리는 <b class=tq>."""
+    import re
+    t = t or ""
+    t = re.sub(r"\s*\(\+([\d.]+%) per level\)", r" (+\1)", t)            # 레벨 성장치는 "(+4%)" 로만 적는다
+    t = re.sub(r'<c val="00ff90">(.*?)</c>', r'<b class="tq">\1</b>', t, flags=re.S)
+    t = re.sub(r"<c [^>]*>(.*?)</c>", r'<b class="tv">\1</b>', t, flags=re.S)
+    t = re.sub(r"<n\s*/>", "<br>", t)
+    t = re.sub(r"<img[^>]*/?>", "", t)
+    t = re.sub(r"</?(?!b\b|/b\b|br\b)[a-zA-Z][^>]*>", "", t)               # s·lang 같은 나머지 태그는 글자만 남긴다
+    return t.strip()
+
+
+def write_tips():
+    """패치 노트 속 기술·특성 이름을 누르면 뜨는 설명 → data/patchnotes/tips/<live|ptr>/<영웅>.json.
+    빌드메이커 자료(data/builds/<판>.ko.json, 1.6MB)를 영웅마다 쪼갠다 — 화면은 누른 영웅 것만 받는다(평균 10KB).
+    현재 빌드 기준이다(옛 패치는 당시 설명과 다를 수 있다 — 화면이 그렇게 적는다).
+    테스트 서버 자료는 새 영웅의 한국어가 비어 영어로 메워져 있기도 하다(잘아타스 28칸). 그런 칸은 **다른 판의 같은 칸**
+    (nameId|buttonId)에 한국어가 있으면 그 이름·설명을 쓰고 `from` 에 그 판을 적는다 — 노트는 한국어 이름으로 부르니까."""
+    import re
+    hangul = re.compile(r"[가-힣]")
+    data = {}
+    for ch in ("live", "ptr"):
+        src = PN.parent / "builds" / f"{ch}.ko.json"
+        if src.exists():
+            data[ch] = json.loads(src.read_text(encoding="utf-8"))
+
+    def slots(h):
+        for lv, g in [(None, g) for g in (h.get("abilities") or {}).values()] + \
+                     [(int(k.replace("level", "")), g) for k, g in (h.get("talents") or {}).items()]:
+            for a in g:
+                yield lv, a
+
+    ko_by_slot = {}   # (판, 영웅, nameId|buttonId) → 한국어가 있는 칸
+    for ch, heroes in data.items():
+        for hid, h in heroes.items():
+            for _, a in slots(h):
+                if hangul.search(a.get("name") or ""):
+                    ko_by_slot[(ch, hid, f"{a.get('nameId')}|{a.get('buttonId')}")] = a
+    for ch, heroes in data.items():
+        other = "live" if ch == "ptr" else "ptr"
+        out_dir = PN / "tips" / ch
+        out_dir.mkdir(parents=True, exist_ok=True)
+        keep = set()
+        for hid, h in heroes.items():
+            tips = {}
+            for lvl, a in slots(h):
+                src_from = None
+                if not hangul.search(a.get("name") or ""):
+                    alt = ko_by_slot.get((other, hid, f"{a.get('nameId')}|{a.get('buttonId')}"))
+                    if alt:
+                        a, src_from = dict(alt, abilityType=a.get("abilityType")), other
+                name = (a.get("name") or "").strip()
+                if not name or name in tips:
+                    continue
+                e = {"icon": a.get("icon"), "tip": tip_html(a.get("fullTooltip"))}
+                if src_from:
+                    e["from"] = src_from
+                if lvl:
+                    e["level"] = lvl
+                k = TIP_KEY.get(a.get("abilityType"))
+                if k:
+                    e["key"] = k
+                for f, src_k in (("cd", "cooldownTooltip"), ("cost", "energyTooltip")):
+                    if a.get(src_k):
+                        e[f] = tip_html(a[src_k]).replace('<b class="tv">', "").replace("</b>", "")
+                tips[name] = e
+            f = out_dir / f"{hid}.json"
+            body = json.dumps({"hero": hid, "name": h.get("name"), "build": None, "tips": tips}, ensure_ascii=False, separators=(",", ":"))
+            if not f.exists() or f.read_text(encoding="utf-8") != body:
+                f.write_text(body, encoding="utf-8")
+            keep.add(f.name)
+        for f in out_dir.glob("*.json"):
+            if f.name not in keep:
+                f.unlink()
+
+
 def write_notice(rows):
     """사이트 하단 알림(shared/notice.js)이 읽는 작은 파일 → site/data/notice.json.
     채널(본 서버·테스트 서버)마다 **가장 최근 노트**가 공식 한글판 없이 자체 번역이면 그 하나를 올린다.
@@ -231,6 +311,7 @@ def main():
     print(f"영웅 이력 {len(hist_h)}개, 전장 이력 {len(hist_b)}개")
     (PN / "index.json").write_text(json.dumps(rows, ensure_ascii=False, indent=1), encoding="utf-8")
     write_notice(rows)
+    write_tips()
     n_off = sum(1 for r in rows if r["official"] and not r.get("translated"))
     n_tr = sum(1 for r in rows if r.get("translated"))
     n_both = sum(1 for r in rows if r["official"] and r["diff"])

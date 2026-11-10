@@ -159,6 +159,12 @@
 - `site/shared/scrap.js` 전역 바+테마(한 줄 로드). **`scrap.css` 도 이 스크립트가 스스로 끌어온다** —
   앱은 `scrap.js` 한 줄만 부르면 된다(예전에는 CSS 를 `<link>` 로 부르는 앱이 패치 기록 하나뿐이라
   공통 계층에 규칙을 넣어도 나머지 네 앱에 안 닿았다). 여기 수정 = 전 앱 영향 → 전 앱 회귀 확인
+- `site/patchnotes/` 노트 속 **기술·특성 이름을 누르면 설명 말풍선**(`wireTips`·`openTip`) — 영웅 머리(h4) 아래 굵은 이름을
+  `data/patchnotes/tips/<live|ptr>/<영웅>.json`(평균 11KB, 누른 영웅 것만 받는다)과 잇는다. 노트 채널의 판, **지금 빌드 기준**.
+  자료는 `build_patch_index.py` 의 `write_tips()` 가 `data/builds/<판>.ko.json` 을 쪼개 만든다(레벨 성장치는 "(+4%)").
+  테스트 서버 자료에 한국어가 비면 다른 판 같은 칸(nameId|buttonId)의 한국어로 메우고 `from` 을 적는다(잘아타스 28칸).
+  ⚠ 본문은 `.panel div.official` 로 찾는다 — `.official` 만 쓰면 제목 옆 배지(`span.badge.official`)가 먼저 걸린다.
+  옛 노트는 이후 이름이 바뀐 특성이 많아 '지금 자료에 없음' 이 뜬다(2018-03: 36 중 8 연결) — 정상이다.
 - `site/shared/notice.js` **하단 알림** — 채널(본 서버·테스트 서버)마다 가장 최근 노트가 공식 한글판 없이 자체 번역이면
   "비공식 번역 제공" + 바로 보기 + '이후로 알리지 않음'(노트 key 별, `scrap.noticeOff`)을 모든 페이지 아래에 띄운다.
   자료 `site/data/notice.json` 은 `build_patch_index.py` 의 `write_notice()` 가 만든다(날짜를 안 보니 돌릴 때마다 안 바뀐다).
