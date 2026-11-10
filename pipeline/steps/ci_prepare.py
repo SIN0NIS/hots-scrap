@@ -61,6 +61,9 @@ def main():
         # 정말 필요한 파일만(패치 사슬을 따라가며) 받는다.
         run(["git", "clone", "--depth", "1", "--filter=blob:none", "--no-checkout", REPO2, str(HD2)])
         run(["git", "checkout"], cwd=HD2)
+    else:
+        # 이미 받아 둔 사본(내 PC)은 그 뒤 빌드가 없을 수 있다 — 복원할 빌드가 있을 때만 최신으로 당긴다
+        run(["git", "pull", "-q", "--ff-only"], cwd=HD2)
 
     import build_talent_data as B   # 패치 사슬 복원기를 그대로 쓴다
     FULL.mkdir(parents=True, exist_ok=True)

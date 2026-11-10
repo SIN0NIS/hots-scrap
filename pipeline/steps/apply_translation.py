@@ -9,6 +9,10 @@
   "translated": {"by": "Claude (claude-opus-5)", "at": "<날짜>", "source": "<블리자드 원문 URL>",
                  "glossary": "HeroesToolChest 공식 게임 텍스트(enus↔kokr) 대조", "segments": 총/번역됨}
 
+raw/translate/auto.json(pretranslate.py 의 자동 초벌)이 있으면 메모리에 없는 문장을 그것으로 채우고
+문서에 "auto": <채운 문장 수> 를 적는다(화면이 '자동 초벌 번역(비공식)' 으로 표시).
+내용이 안 바뀐 문서는 번역 날짜(at)도 그대로 둔다.
+
 사용: python apply_translation.py [--at 2026-09-14]
 """
 import argparse
@@ -69,13 +73,20 @@ class Table:
     def __init__(self):
         mem = json.loads((TR / "memory.json").read_text(encoding="utf-8")) if (TR / "memory.json").exists() else {}
         self.map = {norm(en): ko for en, ko in mem.items() if (ko or "").strip()}
-        self.hit = self.miss = 0
+        # 자동 초벌(pretranslate.py) — 메모리에 없는 문장만 채운다. 메모리에 섞지 않으므로
+        # Claude 번역 차례가 오면 그 문장들은 여전히 '번역할 것'으로 잡힌다.
+        auto = json.loads((TR / "auto.json").read_text(encoding="utf-8")) if (TR / "auto.json").exists() else {}
+        self.auto = {norm(it["en"]): it["ko"] for it in auto.get("items", []) if (it.get("ko") or "").strip()}
+        self.hit = self.miss = self.auto_hit = 0
 
     def get(self, en):
         k = norm(en)
         if not k:
             return None
         v = self.map.get(k)
+        if v is None and k in self.auto:
+            self.auto_hit += 1
+            return self.auto[k]
         if v is None:
             # 눈에 보이는 영문 글자가 있을 때만 '번역 없음'으로 센다 (이미지·링크 조각 제외)
             vis = BeautifulSoup(k, "html.parser").get_text(" ", strip=True)
@@ -175,12 +186,17 @@ def main():
     a = ap.parse_args()
     T = Table()
     OUT.mkdir(parents=True, exist_ok=True)
+    old = {}
     for f in OUT.glob("*.json"):
+        try:
+            old[f.name] = json.loads(f.read_text(encoding="utf-8"))
+        except Exception:
+            pass
         f.unlink()
     done = 0
     for f in sorted(EN.glob("*.json")):
         doc = json.loads(f.read_text(encoding="utf-8"))
-        before = T.miss
+        before, before_auto = T.miss, T.auto_hit
         doc["titleEn"] = doc["title"]
         doc["title"] = T.get(doc["title"]) or doc["title"]
         for sec in doc.get("sections", []):
@@ -204,9 +220,18 @@ def main():
         doc["translated"] = {"by": BY, "at": a.at, "source": doc.get("source"),
                              "glossary": "HeroesToolChest 공식 게임 텍스트(enus↔kokr) 대조",
                              "untranslated": T.miss - before}
+        if T.auto_hit - before_auto:
+            # 공식 한글판도 Claude 번역도 아직 없는 문장을 용어집·번역 메모리 규칙으로 채웠다(비공식 초벌)
+            doc["translated"]["auto"] = T.auto_hit - before_auto
+        prev = old.get(f.name)
+        if prev and isinstance(prev.get("translated"), dict):
+            # 내용이 그대로면 번역 날짜도 그대로 둔다 — 안 그러면 돌릴 때마다 37개 파일이 날짜만 바뀐다
+            same = dict(doc, translated=dict(doc["translated"], at=prev["translated"].get("at")))
+            if same == prev:
+                doc = same
         (OUT / f.name).write_text(json.dumps(doc, ensure_ascii=False, indent=1), encoding="utf-8")
         done += 1
-    print(f"번역본 {done}건 → {OUT}  (문장 치환 {T.hit}, 번역 없음 {T.miss})")
+    print(f"번역본 {done}건 → {OUT}  (문장 치환 {T.hit}, 그중 자동 초벌 {T.auto_hit}, 번역 없음 {T.miss})")
 
 
 if __name__ == "__main__":

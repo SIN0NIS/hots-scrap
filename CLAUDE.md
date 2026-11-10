@@ -325,3 +325,19 @@ hots-scrap  들어온 것은 site/images/ 임시본을 지우고 missing 에서 
 **손으로 확인**: `python pipeline/steps/check_updates.py` (할 일이 있으면 종료 코드 1, 요청 3개)
 새 영문 노트: fetch --en --id → parse --en → extract_strings → make_chunks → (번역) →
 merge_translation → verify → apply_translation → build_patch_index
+
+**공식 한글판이 없는 노트는 바로 자동 번역(비공식)으로 올린다** (라이브·테스트 서버 모두, 2026-11-10~)
+- PC 자동 갱신(`../hotscrap_xyz/auto_update.py`)이 새 영문 노트를 보면 fetch --en → parse --en → extract_strings →
+  make_chunks → **`pretranslate.py`** → apply_translation → ci_prepare → build_patch_index 까지 하고 배포한다.
+- `pretranslate.py` 는 번역기를 부르지 않는다. ① 번역 메모리 그대로 ② 링크 주소만 다른 메모리 문장 ③ 이름 줄
+  (최신 빌드 게임 문자열 enus↔kokr + glossary.json — 이름이 둘로 갈리면 안 옮긴다) ④ 제목 날짜 ⑤ "X increased/reduced
+  from A to B" 꼴(X 의 한국어는 메모리 속 같은 꼴 문장에서 배운다, 조사는 받침으로). 모르는 문장은 **영어로 둔다**.
+  2026-11-09 노트로 잰 값: 181문장 중 136 옮김, 오역 0(말만 다른 것 10).
+- 결과 `raw/translate/auto.json` 은 **메모리에 섞지 않는다**(out/ 밖). apply_translation 이 메모리에 없는 문장만 채우고
+  문서·색인에 `translated.auto`(채운 수)를 적는다 → 화면 배지 '자동 번역(비공식)'. Claude 예약 작업이 make_chunks 로
+  그 문장들을 그대로 다시 잡아 번역하면 auto 가 사라지고 'Claude 번역' 이 된다.
+- 블리자드 한국어판이 나중에 같은 newsId 로 나오면 check_updates 가 새 글로 잡고(공식 한글로 가진 것과만 견준다),
+  build_patch_index 가 번역판을 빼고 공식판을 쓴다.
+- apply_translation 은 내용이 안 바뀐 문서의 번역 날짜(at)를 그대로 둔다(예전엔 돌릴 때마다 37개 파일이 날짜만 바뀌었다).
+- ⚠ `merge_translation` 은 out/ 의 **모든** 묶음을 다시 읽어 메모리를 덮는다. 메모리를 손으로 고쳤으면 out/ 묶음도 같이 고쳐라
+  (2026-11-10: 옛 out/chunk_001 의 '살라타스·공허 연발' 이 메모리의 고친 번역 35개를 되돌렸다 → out 을 메모리에 맞춰 둠).

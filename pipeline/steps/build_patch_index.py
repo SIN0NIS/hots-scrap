@@ -42,8 +42,12 @@ def main():
     officials = []
     for f in sorted((PN / "official").glob("*.json")):
         officials.append({"file": f, "doc": json.loads(f.read_text(encoding="utf-8")), "dir": "official"})
+    have_ko = {str(o["doc"].get("newsId")) for o in officials if o["doc"].get("newsId")}
     for f in sorted((PN / "translated").glob("*.json")):  # 한글 공식판이 없어 자체 번역한 노트
-        officials.append({"file": f, "doc": json.loads(f.read_text(encoding="utf-8")), "dir": "translated"})
+        doc = json.loads(f.read_text(encoding="utf-8"))
+        if doc.get("newsId") and str(doc["newsId"]) in have_ko:
+            continue  # 블리자드 한국어판이 나왔다(같은 글은 언어가 달라도 newsId 가 같다) — 공식판이 이긴다
+        officials.append({"file": f, "doc": doc, "dir": "translated"})
     officials.sort(key=lambda o: (o["doc"]["date"], o["file"].name))  # 날짜 오름차순 — 앞 노트가 앞 빌드를 먼저 가져간다
 
     def has_changes(doc):
@@ -72,7 +76,10 @@ def main():
                "official": f"{o['dir']}/{o['file'].name}", "build": None, "version": None, "diff": None,
                "heroes": doc["heroes"], "battlegrounds": doc["battlegrounds"], "summary": None}
         if o["dir"] == "translated":
-            row["translated"] = {k: doc.get("translated", {}).get(k) for k in ("by", "at")}
+            t = doc.get("translated", {})
+            row["translated"] = {k: t.get(k) for k in ("by", "at")}
+            if t.get("auto"):
+                row["translated"]["auto"] = t["auto"]   # 자동 초벌 문장 수(있을 때만) — 화면이 '자동 초벌(비공식)'로
             row["en"] = f"en/{o['file'].name}"
         if best:
             b = best[1]

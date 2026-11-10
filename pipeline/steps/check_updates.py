@@ -147,7 +147,10 @@ def main():
                               "newKo": [], "newEnOnly": [], "newBuilds": []}, ensure_ascii=False))
         return 2
 
-    new_ko = [x for x in ko if x["newsId"] not in have_news]
+    # 한국어판은 공식 한글로 가진 것과만 견준다 — 영어판을 자체 번역해 둔 글(같은 newsId)에
+    # 블리자드 한국어판이 나중에 나오면 그것도 새 글이다(색인에서 공식판이 번역판을 밀어낸다)
+    have_ko = {str(r["newsId"]) for r in idx if r.get("newsId") and not r.get("translated")}
+    new_ko = [x for x in ko if x["newsId"] not in have_ko]
     new_en = [x for x in en if x["newsId"] not in have_news]
     ko_ids = {x["newsId"] for x in ko}
     # 영어만 있는 것 = 번역 대상 후보

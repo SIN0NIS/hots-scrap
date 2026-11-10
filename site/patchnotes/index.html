@@ -545,7 +545,9 @@
   const channelOf = r => (r.kind === 'ptr' || r.isPtr) ? 'ptr' : 'live';
   const sourceOf = r => r.translated ? 'translated' : r.official ? 'official' : 'data';
   const CH = { live: '라이브', ptr: '테스트 서버' }, SRC = { official: '공식 한글', translated: 'Claude 번역', data: '데이터' };
-  const badges = r => `<span class="badge ${sourceOf(r)}">${SRC[sourceOf(r)]}</span><span class="badge ${channelOf(r)}">${CH[channelOf(r)]}</span>${(r.kind === 'balance' || r.kind === 'hotfix') ? `<span class="badge sub">${KIND[r.kind]}</span>` : ''}`;
+  // 자동 초벌(용어집·이전 번역 규칙으로 바로 옮긴 것, Claude 가 아직 안 다듬음)은 따로 적는다
+  const srcLabel = r => sourceOf(r) === 'translated' && r.translated && r.translated.auto ? '자동 번역(비공식)' : SRC[sourceOf(r)];
+  const badges = r => `<span class="badge ${sourceOf(r)}">${srcLabel(r)}</span><span class="badge ${channelOf(r)}">${CH[channelOf(r)]}</span>${(r.kind === 'balance' || r.kind === 'hotfix') ? `<span class="badge sub">${KIND[r.kind]}</span>` : ''}`;
   const app = document.getElementById('app');
   let INDEX = null, HEROES = {}, BGS = {};
   const cache = {};
@@ -799,7 +801,7 @@
     if (row.en && tab === 'en') want.push(getJSON(row.en).then(d => { enDoc = d; }).catch(e => console.warn(e)));
     await Promise.all(want);
     const tabs = `<div class="tabs">
-      <button data-tab="official" class="${tab === 'official' ? 'on' : ''}" ${row.official ? '' : 'disabled'}>${row.translated ? '한국어 (Claude 번역)' : '공식 패치 노트'}</button>
+      <button data-tab="official" class="${tab === 'official' ? 'on' : ''}" ${row.official ? '' : 'disabled'}>${row.translated ? (row.translated.auto ? '한국어 (자동 번역 · 비공식)' : '한국어 (Claude 번역)') : '공식 패치 노트'}</button>
       <button data-tab="data" class="${tab === 'data' ? 'on' : ''}" ${row.diff ? '' : 'disabled'}>데이터 변경점${row.summary ? ` (${row.summary.heroes}영웅 · ${row.summary.changes})` : ''}</button>
       ${row.en ? `<button data-tab="en" class="${tab === 'en' ? 'on' : ''}">영어 원문</button>` : ''}</div>`;
     app.innerHTML = headHTML('list') + `<a id="pn-back" href="?${backParams()}">← 목록</a>
@@ -829,6 +831,7 @@
     const t = doc.translated;
     if (!t) return '';
     const miss = t.untranslated ? ` 원문 그대로 남은 문장 ${t.untranslated}개가 있습니다.` : '';
+    if (t.auto) return `<div class="trnote"><b class="tag">자동</b> <span><b>한국어 공식판이 아직 없어 자동으로 옮긴 비공식 번역입니다.</b> 게임 공식 용어(영웅·기술·특성 이름)와 이전 번역에서 아는 문장·수치 문장만 옮겼고, 처음 보는 문장은 영어 그대로 두었습니다.${t.untranslated ? ` (영어로 남은 문장 ${t.untranslated}개)` : ''} Claude 가 곧 다듬고, 블리자드 한국어판이 나오면 그것으로 바뀝니다. 원문은 위 <b>영어 원문</b> 탭에서 확인하세요.</span></div>`;
     return `<div class="trnote"><b class="tag">번역</b> <span><b>이 노트는 한국어 공식판이 없습니다.</b> 블리자드 영어 원문을 <b>${esc(t.by || 'Claude')}</b> 가 번역했습니다${t.at ? ` (${esc(t.at)})` : ''}. 공식 번역이 아니므로 표현이 다를 수 있습니다. 영웅·기술·특성 이름은 ${esc(t.glossary || '공식 게임 텍스트')}에 맞췄습니다.${miss} 원문은 위 <b>영어 원문</b> 탭과 아래 출처 링크에서 확인하세요.</span></div>`;
   }
   function officialHTML(doc, focus, row) {
