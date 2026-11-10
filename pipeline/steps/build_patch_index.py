@@ -33,6 +33,24 @@ def d(s):
     return date.fromisoformat(s[:10])
 
 
+def write_notice(rows):
+    """사이트 하단 알림(shared/notice.js)이 읽는 작은 파일 → site/data/notice.json.
+    채널(본 서버·테스트 서버)마다 **가장 최근 노트**가 공식 한글판 없이 자체 번역이면 그 하나를 올린다.
+    더 새 노트나 블리자드 한국어판이 나오면 저절로 빠진다. 날짜를 보지 않으니 돌릴 때마다 안 바뀐다."""
+    items = []
+    for ch in ("live", "ptr"):
+        notes = [r for r in rows if r.get("official")
+                 and (("ptr" if (r.get("isPtr") or r["kind"] == "ptr") else "live") == ch)]
+        if not notes or not notes[0].get("translated"):   # rows 는 최신순
+            continue
+        r = notes[0]
+        items.append({"key": f"{ch}|{r.get('newsId') or r['date']}", "channel": ch, "date": r["date"],
+                      "title": r["title"], "href": "patchnotes/?v=" + r["date"] + (f"&b={r['build']}" if r.get("build") else ""),
+                      "auto": bool(r["translated"].get("auto"))})
+    f = PN.parent / "notice.json"
+    f.write_text(json.dumps({"unofficial": items}, ensure_ascii=False, indent=1), encoding="utf-8")
+
+
 def main():
     builds = json.loads((PN / "builds.json").read_text(encoding="utf-8"))
     diffs = {}  # (toBuild, isPtr) → 파일
@@ -212,6 +230,7 @@ def main():
         (PN / "battlegrounds" / f"{slug}.json").write_text(json.dumps({"id": slug, "entries": entries}, ensure_ascii=False), encoding="utf-8")
     print(f"영웅 이력 {len(hist_h)}개, 전장 이력 {len(hist_b)}개")
     (PN / "index.json").write_text(json.dumps(rows, ensure_ascii=False, indent=1), encoding="utf-8")
+    write_notice(rows)
     n_off = sum(1 for r in rows if r["official"] and not r.get("translated"))
     n_tr = sum(1 for r in rows if r.get("translated"))
     n_both = sum(1 for r in rows if r["official"] and r["diff"])

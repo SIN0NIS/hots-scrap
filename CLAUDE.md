@@ -159,6 +159,11 @@
 - `site/shared/scrap.js` 전역 바+테마(한 줄 로드). **`scrap.css` 도 이 스크립트가 스스로 끌어온다** —
   앱은 `scrap.js` 한 줄만 부르면 된다(예전에는 CSS 를 `<link>` 로 부르는 앱이 패치 기록 하나뿐이라
   공통 계층에 규칙을 넣어도 나머지 네 앱에 안 닿았다). 여기 수정 = 전 앱 영향 → 전 앱 회귀 확인
+- `site/shared/notice.js` **하단 알림** — 채널(본 서버·테스트 서버)마다 가장 최근 노트가 공식 한글판 없이 자체 번역이면
+  "비공식 번역 제공" + 바로 보기 + '이후로 알리지 않음'(노트 key 별, `scrap.noticeOff`)을 모든 페이지 아래에 띄운다.
+  자료 `site/data/notice.json` 은 `build_patch_index.py` 의 `write_notice()` 가 만든다(날짜를 안 보니 돌릴 때마다 안 바뀐다).
+  세션당 한 번만 받는다(`scrap.noticeData` sessionStorage). 허브는 직접 부르고 나머지는 `scrap.js` 가 끌어온다(guide 는 제외).
+  × 는 이 세션만 숨김, 그 노트를 보는 페이지에서는 안 띄운다. 빌드메이커처럼 아래 칸이 있으면 `data-scrap-back-bottom` 높이를 따른다.
 - `site/shared/search.js` **한글 검색기** — 네 앱(빌드·도감·패치 기록·리플레이)이 같이 쓴다. 여기 수정 = 전 앱 회귀 확인
   - `scrapSearch.filter(목록, 검색어, 항목 => [이름들])` · `.score(검색어, 이름들)` · `.mark(이름, 검색어)`
   - **다 친 글자는 글자대로, 자음만 친 것은 그 자리 초성으로** 맞춘다 → `줄ㅈ` 은 줄진만 걸린다.
