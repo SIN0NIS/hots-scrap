@@ -476,6 +476,9 @@
   .itag { font-size:11px; border-radius:6px; padding:0 6px; background:var(--card2); color:var(--dim); }
   .itag.add { background:var(--ins-bg); color:var(--ins); font-weight:700; }
   .itag.dat { background:var(--blue-soft); color:var(--blue); }
+  .itag.pv { background:var(--blue-soft); color:var(--blue); }
+  .itag.pd { background:var(--warn-bg); color:var(--warn); font-weight:700; }
+  .itag.pn { background:var(--card2); color:var(--dim); text-decoration:underline dotted; }
   .ln { margin:4px 0 0 31px; padding-left:16px; font-size:13.5px; }
   .ln li { margin:2px 0; }
   .ln .pn-new { color:var(--new); } .ln s { color:var(--del); }
@@ -1137,10 +1140,56 @@
     if (it.kinds.size === 1 && it.kinds.has('data')) tags.push('<span class="itag dat" title="공식 노트에는 없고 게임 파일 비교에서만 나온 변경">데이터만</span>');
     const lines = it.lines.length ? `<ul class="ln">${it.lines.map(h => `<li>${h}</li>`).join('')}</ul>` : '';
     const bits = it.bits.length ? `<div class="bits"${it.lines.length ? ' title="게임 파일에서 확인한 수치"' : ''}>${it.lines.length ? '<span class="bl">수치</span>' : ''}${it.bits.join('')}</div>` : '';
+    tags.push(ptrTag(it));
     return `<li class="it"><div class="ih">${itemIcon(ic, it)}<b>${esc(it.name)}</b>${it.slot ? `<span class="slot">${esc(it.slot)}</span>` : ''}${tags.join('')}</div>${lines}${bits}</li>`;
   }
+  // ── 테스트 서버 → 라이브. 같은 변경이 테스트 서버 노트·테스트 서버 데이터·라이브 노트로 날짜만 달리 두세 번 나온다.
+  //    테스트 서버 줄마다 그 뒤 90일 안의 첫 라이브 회차에서 같은 이름을 찾아 숫자를 견준다.
+  //    숫자가 대부분 같으면 '그대로 반영' — 기본 화면에서는 테스트 서버 쪽을 접고 라이브 줄에 '테스트 서버 날짜' 를 단다.
+  const PTR_DAYS = 90;
+  const nums = it => new Set(((it.lines.join(' ') + ' ' + it.bits.join(' ')).replace(/<[^>]+>/g, ' ').match(/\d+(?:\.\d+)?/g) || []));
+  const lineNums = it => new Set((it.lines.join(' ').replace(/<[^>]+>/g, ' ').match(/\d+(?:\.\d+)?/g) || []));
+  function sameChange(a, b) {
+    // 둘 다 노트 줄이 있으면 노트 줄끼리, 아니면 수치까지 모아서 — 겹치는 숫자가 작은 쪽의 60% 넘으면 같은 변경
+    // 게임 파일 값을 못 읽은(값 불확실) 데이터 줄은 숫자가 엉터리라 견주지 않는다 — 같은 이름이면 같은 변경으로 본다
+    if ([a, b].some(t => !t.lines.length && t.raw.some(c => c.suspect))) return true;
+    const [x, y] = a.lines.length && b.lines.length ? [lineNums(a), lineNums(b)] : [nums(a), nums(b)];
+    if (!x.size || !y.size) return true;
+    let hit = 0; x.forEach(n => { if (y.has(n)) hit++; });
+    return hit / Math.min(x.size, y.size) > 0.6;
+  }
+  function linkPtr(all) {
+    const day = d => Date.parse(d) / 864e5;
+    const lives = all.filter(x => channelOf(x.e) === 'live').slice().reverse();      // 오래된 것부터
+    all.forEach(x => {
+      if (channelOf(x.e) !== 'ptr') return;
+      const after = lives.filter(l => l.e.date >= x.e.date && day(l.e.date) - day(x.e.date) <= PTR_DAYS);
+      x.items.forEach(it => {
+        if (GENERAL.has(it.name)) return;
+        const nk = normName(it.name) + '|' + (it.talent ? 't' : 'a');
+        for (const l of after) {
+          // 크로미처럼 특성 레벨이 테스트 서버와 라이브에서 달리 적히기도 해서 레벨은 안 본다
+          const li = l.items.find(y => normName(y.name) + '|' + (y.talent ? 't' : 'a') === nk);
+          if (!li) continue;
+          const same = sameChange(it, li);
+          it.went = { date: l.e.date, same };
+          if (same && (!li.from || x.e.date < li.from)) li.from = x.e.date;
+          return;
+        }
+        if (after.length) it.went = { none: after[0].e.date };
+      });
+    });
+  }
+  const md = d => d.slice(5).replace('-', '/');
+  function ptrTag(it) {
+    if (it.from) return `<span class="itag pv" title="테스트 서버 ${it.from} 노트에 먼저 나온 변경">테스트 서버 ${md(it.from)}부터</span>`;
+    const w = it.went; if (!w) return '';
+    if (w.none) return `<span class="itag pn" title="뒤이은 라이브 패치(${w.none})에 이 변경이 없습니다">라이브에 안 들어감</span>`;
+    return w.same ? `<span class="itag pv">라이브 ${md(w.date)} 그대로</span>`
+      : `<span class="itag pd" title="라이브 ${w.date} 에서 숫자가 달라졌습니다">라이브 ${md(w.date)}에서 달라짐</span>`;
+  }
   const heroLink = (id, over) => {
-    const p = q(), o = { view: 'hero', id, hv: p.get('hv'), yr: p.get('yr'), bug: p.get('bug'), cos: p.get('cos'), ...over };
+    const p = q(), o = { view: 'hero', id, hv: p.get('hv'), yr: p.get('yr'), bug: p.get('bug'), cos: p.get('cos'), ptr: p.get('ptr'), ...over };
     return '?' + new URLSearchParams(Object.entries(o).filter(([, v]) => v != null && v !== '' && v !== false)).toString();
   };
   const entLink = (e, id) => `?v=${e.date}${e.build ? '&b=' + e.build : ''}&hero=${id}`;
@@ -1156,7 +1205,7 @@
     if (!HEROES[id]) { app.innerHTML = headHTML('heroes') + `<div class="empty">${esc(id || '')} 영웅을 찾을 수 없습니다.</div>` + creditsHTML(); return; }
     const p = q();
     const hv = ['time', 'item', 'graph'].includes(p.get('hv')) ? p.get('hv') : 'time';
-    const show = { bug: p.get('bug') === '1', cos: p.get('cos') === '1' };
+    const show = { bug: p.get('bug') === '1', cos: p.get('cos') === '1', ptr: p.get('ptr') === '1' };
     const yr = /^\d{4}$/.test(p.get('yr') || '') ? p.get('yr') : '';
     let doc = null, series = null;
     // 시계열(영웅마다 평균 90KB)은 그래프 보기에서만 받는다. 시계열이 없는 영웅은 아예 부르지 않는다(헛걸음 404 를 안 만든다).
@@ -1169,9 +1218,19 @@
     if (q().get('id') !== id || (q().get('hv') || 'time') !== hv) return;   // 받는 사이 다른 화면으로 갔다
     const icons = heroIcons(doc);
     const all = (doc ? doc.entries : []).map(e => ({ e, ...heroItems(e, show, icons) }));
+    linkPtr(all);
+    const onlyHidden = all.filter(x => !x.items.length).length;
+    // 라이브에 그대로 들어간 테스트 서버 줄은 기본으로 접는다(라이브 줄에 '테스트 서버 날짜부터' 가 붙는다)
+    let hiddenPtr = 0, ptrGone = 0;
+    if (!show.ptr) all.forEach(x => {
+      if (!x.items.length) return;
+      const keep = x.items.filter(it => !(it.went && it.went.same));
+      hiddenPtr += x.items.length - keep.length;
+      if (!keep.length) ptrGone++;
+      x.items = keep;
+    });
     const vis = all.filter(x => x.items.length);
     const hiddenBug = all.reduce((a, x) => a + x.hidden.bug, 0), hiddenCos = all.reduce((a, x) => a + x.hidden.cos, 0);
-    const onlyHidden = all.length - vis.length;
     const shown = yr ? vis.filter(x => x.e.date.startsWith(yr)) : vis;
 
     // ── 요약: 기간 · 연도별 횟수 · 많이 바뀐 것
@@ -1196,8 +1255,9 @@
     const seg = (k, label) => `<a href="${heroLink(id, { hv: k === 'time' ? '' : k })}" class="${hv === k ? 'on' : ''}"${hv === k ? ' aria-current="true"' : ''}>${label}</a>`;
     const tog = (k, label, n) => `<a href="${heroLink(id, { [k]: show[k] ? '' : '1' })}" class="tg ${show[k] ? 'on' : ''}" role="switch" aria-checked="${show[k]}">${show[k] ? '✓ ' : ''}${label}${!show[k] && n ? ` <span class="n">${n}줄 숨김</span>` : ''}</a>`;
     const ctl = `<div class="hctl"><div class="hseg">${seg('time', '시간순')}${seg('item', '기술별')}${HEROES[id].noSeries ? '' : seg('graph', '수치 그래프')}</div>
-        ${hv === 'graph' ? '' : `<div class="htg">${tog('bug', '버그 수정', hiddenBug)}${tog('cos', '수집품', hiddenCos)}</div>`}</div>
+        ${hv === 'graph' ? '' : `<div class="htg">${tog('bug', '버그 수정', hiddenBug)}${tog('cos', '수집품', hiddenCos)}${tog('ptr', '라이브와 같은 테스트 서버 줄', hiddenPtr)}</div>`}</div>
       ${hv !== 'graph' && onlyHidden ? `<p class="hnote">버그 수정·수집품만 있던 회차 ${onlyHidden}개는 목록에서 뺐습니다.</p>` : ''}
+      ${hv !== 'graph' && hiddenPtr ? `<p class="hnote">테스트 서버에 먼저 나왔다가 라이브에 <b>그대로</b> 들어간 ${hiddenPtr}줄은 접었습니다${ptrGone ? `(그래서 빈 테스트 서버 회차 ${ptrGone}개도 뺌)` : ''} — 라이브 줄에 '테스트 서버 날짜부터' 로 표시합니다. 라이브에서 숫자가 달라졌거나 안 들어간 테스트 서버 줄은 그대로 둡니다.</p>` : ''}
       ${yr && hv !== 'graph' ? `<p class="hnote"><b>${yr}년</b>만 보는 중 · <a href="${heroLink(id, { yr: '' })}">전체 보기</a></p>` : ''}`;
 
     let body = '';
@@ -1224,7 +1284,7 @@
       body = groups.map(g => {
         const s = sec(g), head = s !== lastSec ? `<h4 class="isec">${esc(s)}</h4>` : ''; lastSec = s;
         const ic = icons.get(g.it.k);
-        const rows = g.rows.map((r, ri) => `<div class="ir"${ri >= 4 ? ' data-rest hidden' : ''}><a class="d" href="${entLink(r.e, id)}">${r.e.date}</a><div class="iv">${r.it.lines.length ? `<ul class="ln">${r.it.lines.map(h => `<li>${h}</li>`).join('')}</ul>` : ''}${r.it.bits.length ? `<div class="bits">${r.it.bits.join('')}</div>` : ''}</div></div>`).join('');
+        const rows = g.rows.map((r, ri) => `<div class="ir"${ri >= 4 ? ' data-rest hidden' : ''}><a class="d" href="${entLink(r.e, id)}">${r.e.date}</a><div class="iv">${(t => t ? `<div>${t}</div>` : '')(ptrTag(r.it))}${r.it.lines.length ? `<ul class="ln">${r.it.lines.map(h => `<li>${h}</li>`).join('')}</ul>` : ''}${r.it.bits.length ? `<div class="bits">${r.it.bits.join('')}</div>` : ''}</div></div>`).join('');
         const more = g.rows.length > 4 ? `<button type="button" class="imore">이전 ${g.rows.length - 4}번 더 보기</button>` : '';
         return `${head}<div class="icard" id="it-${esc(g.it.k)}"><div class="ih">${itemIcon(ic, g.it)}<b>${esc(g.it.name)}</b>${g.it.slot ? `<span class="slot">${esc(g.it.slot)}</span>` : ''}<span class="n">${g.rows.length}번 바뀜</span></div>${rows}${more}</div>`;
       }).join('');

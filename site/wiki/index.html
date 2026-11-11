@@ -197,14 +197,20 @@ i.rdot { display:inline-block; width:9px; height:9px; border-radius:50%; backgro
 .rleg { display:flex; flex-wrap:wrap; gap:4px 12px; font-size:12px; color:var(--dim); }
 .rleg i { display:inline-block; width:10px; height:10px; border-radius:2px; background:var(--rc); margin-right:4px; vertical-align:-1px; }
 /* 한눈에 보는 1위 */
-.tops { display:grid; grid-template-columns:repeat(auto-fill,minmax(170px,1fr)); gap:8px; margin:4px 0 6px; }
+.tops { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:8px; margin:4px 0 6px; }
 .top { border:1px solid var(--line); border-left:4px solid var(--rc); border-radius:var(--r); background:var(--card); padding:8px 10px; display:flex; flex-direction:column; gap:3px; min-width:0; }
 .top .tl { font-size:12px; color:var(--dim); font-weight:600; }
-.top .tw { font-weight:700; min-width:0; }
-.top .tv { font-size:12px; color:var(--dim); min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
-.top .tv b { font-family:var(--f-mono); font-size:18px; color:var(--gold); margin-right:2px; }
+.top ol.tr { list-style:none; margin:2px 0 0; padding:0; display:flex; flex-direction:column; gap:3px; }
+.top ol.tr li { display:grid; grid-template-columns:18px minmax(0,1fr) auto; align-items:center; gap:6px; min-width:0; }
+.top ol.tr .rk { font-family:var(--f-mono); font-size:12px; font-weight:700; color:var(--dim); text-align:center; }
+.top ol.tr li:first-child .rk { color:var(--gold); }
+.top ol.tr .fc { min-width:0; overflow:hidden; }
+.top ol.tr .fc small { display:none; }
+.top .tv { font-size:12px; color:var(--dim); white-space:nowrap; }
+.top .tv b { font-family:var(--f-mono); font-size:14px; color:var(--fg); margin-right:2px; }
+.top ol.tr li:first-child .tv b { font-size:16px; color:var(--gold); }
 .top .tg { font-size:11.5px; min-height:28px; align-self:flex-start; padding:0; }
-@media (max-width:560px) { .tops { grid-template-columns:1fr 1fr; } }
+@media (max-width:560px) { .tops { grid-template-columns:1fr; } }
 /* 영웅 순위표 — 탭·검색·막대 칸 */
 .sttabs { display:flex; gap:0; border-bottom:2px solid var(--line); margin:4px 0 10px; overflow-x:auto; }
 .sttabs button { font:inherit; font-size:14px; font-weight:600; background:none; border:0; border-bottom:3px solid transparent; margin-bottom:-2px; color:var(--dim); padding:8px 14px; cursor:pointer; white-space:nowrap; min-height:44px; }
@@ -1639,16 +1645,18 @@ window.KS={score:score,mark:mark,esc:esc};})();
       ${STTAB === "skill" ? `<div class="sbar stmea">${STMEAS.map(m => `<button type="button" data-stmea="${m}" class="${m === STMEA ? "on" : ""}">${m}</button>`).join("")}</div>` : ""}
       <input id="stq" type="search" placeholder="영웅 이름 찾기" value="${esc(STQ)}" aria-label="영웅 이름 찾기">`;
   }
-  /* 한눈에 보는 1위 — 사람들이 가장 먼저 묻는 것. 누르면 순위표가 그 칸으로 줄을 선다 */
+  /* 한눈에 보는 1위 — 사람들이 가장 먼저 묻는 것. 칸마다 1·2·3위, 누르면 순위표가 그 칸으로 줄을 선다.
+     일반 공격 피해는 넣지 않는다 — 범위 공격·기술 피해가 빠져 '가장 센 영웅'으로 읽히면 틀린 말이 된다.
+     기절·무적도 뺀다 — 구조물 기절(신드라고사)·탈것 무적(의료선·히페리온)이 섞여 1위가 엉뚱하게 나온다 */
   const TOPS = [
     ["가장 튼튼한 영웅", "base", "", ["생명력 (1레벨)"], -1, "1레벨 생명력"],
-    ["일반 공격이 가장 센 영웅", "base", "", ["일반 공격 초당 피해 (1레벨)"], -1, "1레벨 일반 공격 초당 피해"],
+    ["생명력이 가장 낮은 영웅", "base", "", ["생명력 (1레벨)"], 1, "1레벨 생명력"],
     ["사거리가 가장 긴 영웅", "base", "", ["공격 사거리"], -1, "일반 공격 사거리"],
     ["공격이 가장 빠른 영웅", "base", "", ["초당 공격"], -1, "초당 공격 횟수"],
-    ["생명력이 가장 빨리 차는 영웅", "base", "", ["생명력 재생 (1레벨)"], -1, "1레벨 생명력 재생"],
-    ["감속이 가장 센 영웅", "cc", "", ["감속 세기"], -1, "감속 세기"],
     ["가장 오래 묶어 두는 영웅", "cc", "", ["속박"], -1, "속박 지속 시간"],
+    ["감속이 가장 센 영웅", "cc", "", ["감속 세기"], -1, "감속 세기"],
     ["가장 빠르게 달리는 영웅", "self", "", ["이동 속도 증가"], -1, "기술로 얻는 이동 속도 증가"],
+    ["생명력이 가장 빨리 차는 영웅", "base", "", ["생명력 재생 (1레벨)"], -1, "1레벨 생명력 재생"],
   ];
   function topTiles() {
     if (!STX) return `<p class="load">불러오는 중…</p>`;
@@ -1658,11 +1666,16 @@ window.KS={score:score,mark:mark,esc:esc};})();
       const xs = []; hs.forEach(h => cs.forEach(c => { const x = c.get(h); if (x) xs.push({ h, x, c }); }));
       if (!xs.length) return "";
       xs.sort((a, b) => (a.x.v - b.x.v) * d);
-      const v = xs[0].x.v, best = xs.filter(y => +y.x.v.toFixed(3) === +v.toFixed(3)), w = [...new Set(best.map(y => y.h))];
-      const t = xs[0].x.t ? xs[0].x.t.split(" · ")[0].replace(/ [\d.,]+$/, "").replace(/ — .*$/, "") : "";
-      return `<div class="top ${rcOf(w[0]["역할군"])}"><div class="tl">${esc(lab)}</div>
-        <div class="tw">${face(w[0])}${w.length > 1 ? ` <span class="note">외 ${w.length - 1}명</span>` : ""}</div>
-        <div class="tv"><b>${num(v)}</b>${esc(cs[0].u)}${t && w.length === 1 ? ` <small>${esc(t)}</small>` : ""}</div>
+      const seen = new Set(), rows = [];
+      for (const y of xs) { if (seen.has(y.h.id)) continue; seen.add(y.h.id); rows.push(y); }
+      /* 같은 값은 같은 등수(1·1·3). 3등 안에 드는 영웅만 — 동점이 많으면 '외 n명'으로 줄인다 */
+      const key = y => +y.x.v.toFixed(3);
+      rows.forEach((y, i) => { y.rk = i && key(y) === key(rows[i - 1]) ? rows[i - 1].rk : i + 1; });
+      const ins = rows.filter(y => y.rk <= 3), shown = ins.slice(0, 3), more = ins.length - shown.length;
+      const sk = y => y.x.t ? y.x.t.split(" · ")[0].replace(/ [\d.,]+$/, "").replace(/ — .*$/, "") : "";
+      return `<div class="top ${rcOf(shown[0].h["역할군"])}"><div class="tl">${esc(lab)}</div>
+        <ol class="tr">${shown.map(y => `<li class="${rcOf(y.h["역할군"])}"><span class="rk">${y.rk}</span>${face(y.h, sk(y))}<span class="tv"><b>${num(y.x.v)}</b>${esc(cs[0].u)}</span></li>`).join("")}</ol>
+        ${more > 0 ? `<div class="note">같은 값 외 ${more}명</div>` : ""}
         <button type="button" class="lnk tg" data-stgo='${esc(JSON.stringify([tab, mea, xs[0].c.n, d]))}'>${esc(what)} 순위 ›</button></div>`;
     }).join("")}</div>`;
   }
@@ -1720,7 +1733,7 @@ window.KS={score:score,mark:mark,esc:esc};})();
       about: `누가 가장 튼튼한지, 누가 가장 멀리 쏘는지 — 영웅끼리 수치를 견줍니다 ${BD.sure}. 1위 칸을 누르면 그 수치의 전체 순위로 갑니다.`,
       info: bar,
       sections: [
-        { title: "한눈에 보는 1위", html: topTiles() },
+        { title: "한눈에 보는 1·2·3위", html: topTiles() },
         { title: "영웅 순위표", badge: BD.sure, html: `<div id="sthead">${stHead()}</div><div id="stbox">${stBox()}</div>` },
         ...(all.length ? [{ title: "눈에 띄는 영웅", html: outliers(all) }] : []),
         ...(!STROLE ? [{ title: "역할군별 보통 값", html: roleTable(all) }] : []),
