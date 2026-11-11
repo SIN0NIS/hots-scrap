@@ -194,6 +194,51 @@ td.src { font-family:var(--f-mono); font-size:11px; color:var(--dim); overflow-w
 .stc .ln { font-size:12px; color:var(--dim); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 .stc .ln b { color:var(--fg); font-weight:600; }
 .stc .go { font-size:11.5px; color:var(--blue); margin-top:2px; }
+/* 통계 — 가운데 값·높은 셋/낮은 셋·얼굴 */
+.stc .md { font-size:12px; color:var(--dim); } .stc .md b { font-family:var(--f-mono); font-size:19px; color:var(--gold); margin-right:2px; }
+.stc .tp { display:flex; flex-wrap:wrap; align-items:center; gap:2px 6px; font-size:12px; min-width:0; }
+.stc .tp > i { font-style:normal; color:var(--dim); font-size:11px; width:2.4em; flex:0 0 auto; }
+a.fc { display:inline-flex; align-items:center; gap:3px; color:var(--fg); text-decoration:none; max-width:100%; min-width:0; vertical-align:middle; }
+a.fc:hover span { text-decoration:underline; }
+a.fc .ico.xs { width:20px; height:20px; border-radius:50%; flex:0 0 auto; }
+a.fc span { white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+a.fc small { color:var(--dim); font-size:11px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.pr { display:inline-flex; align-items:center; gap:3px; white-space:nowrap; max-width:100%; min-width:0; }
+.vv { font-family:var(--f-mono); color:var(--gold); font-weight:600; font-size:12px; }
+.stl { border:1px solid var(--line); border-radius:var(--r); background:var(--card); padding:8px 12px; margin:8px 0; }
+.stl-t { font-size:12px; color:var(--dim); font-weight:600; margin-bottom:4px; }
+.stl ul { margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:6px; font-size:12.5px; }
+.stl li { display:flex; flex-wrap:wrap; align-items:center; gap:3px 7px; }
+/* 역할군 색 — 순위 막대·점 */
+.rc0 { --rc:#d9534f; } .rc1 { --rc:#e08a2c; } .rc2 { --rc:#9b59b6; } .rc3 { --rc:#3d8fd6; } .rc4 { --rc:#2fa86a; } .rc5 { --rc:#16a3a3; }
+i.rdot { display:inline-block; width:9px; height:9px; border-radius:50%; background:var(--rc); margin-right:5px; vertical-align:baseline; }
+.rleg { display:flex; flex-wrap:wrap; gap:4px 12px; font-size:12px; color:var(--dim); }
+.rleg i { display:inline-block; width:10px; height:10px; border-radius:2px; background:var(--rc); margin-right:4px; vertical-align:-1px; }
+.rbars { display:flex; flex-direction:column; gap:3px; margin-top:6px; }
+.rb { display:grid; grid-template-columns:2.2em minmax(90px,200px) minmax(0,1fr) auto; align-items:center; gap:8px; font-size:12.5px; }
+.rb .no { color:var(--dim); text-align:right; font-family:var(--f-mono); font-size:11.5px; }
+.rb .bar { height:12px; background:var(--card2); border-radius:3px; overflow:hidden; }
+.rb .bar i { display:block; height:100%; background:var(--rc); opacity:.85; border-radius:3px; }
+@media (max-width:560px) { .rb { grid-template-columns:2em minmax(0,1fr) auto; } .rb .bar { grid-column:2 / -1; grid-row:2; } }
+/* 역할군 비교 — 줄 안에서 높을수록 진하게 */
+td.heat { background:color-mix(in srgb, var(--gold) calc(var(--k) * 38%), transparent); }
+th .lnk { white-space:nowrap; }
+/* 눈에 띄는 영웅 · 특수 경우 · 갈래 막대 */
+ul.odd { list-style:none; padding:0; margin:6px 0; display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:6px 14px; font-size:12.5px; }
+ul.odd li { display:flex; flex-direction:column; align-items:flex-start; gap:3px; border:1px solid var(--line); border-radius:var(--r); background:var(--card); padding:7px 10px; }
+ul.odd li > span { min-width:0; }
+details.spc { border:1px solid var(--line); border-radius:var(--r); background:var(--card); margin:6px 0; }
+details.spc > summary { cursor:pointer; padding:7px 11px; font-size:13px; }
+details.spc > summary .note { margin-left:6px; }
+ul.spl { list-style:none; margin:0; padding:2px 12px 10px; display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:5px 14px; font-size:12.5px; }
+ul.spl li { display:flex; flex-wrap:wrap; align-items:center; gap:2px 6px; min-width:0; }
+.cnt { margin:10px 0 14px; } .cnt-t { font-size:12.5px; font-weight:700; margin-bottom:4px; }
+.cbar { display:flex; height:14px; border-radius:4px; overflow:hidden; gap:2px; }
+.cbar i, .ck i { display:block; background:var(--cb); }
+.cb0 { --cb:#3d8fd6; } .cb1 { --cb:#e08a2c; } .cb2 { --cb:#2fa86a; } .cb3 { --cb:#9b59b6; } .cb4 { --cb:#d9534f; } .cb5 { --cb:#16a3a3; } .cb6 { --cb:#b58a2a; } .cb7 { --cb:#7f8c8d; }
+.cnt details > summary { cursor:pointer; display:flex; flex-wrap:wrap; gap:3px 12px; font-size:12px; margin-top:5px; list-style:none; }
+.cnt details > summary::-webkit-details-marker { display:none; }
+.ck { display:inline-flex; align-items:center; gap:4px; color:var(--dim); } .ck b { color:var(--fg); } .ck i { width:9px; height:9px; border-radius:2px; }
 .bigbtn { font:inherit; font-size:13px; border:1px solid var(--line); background:var(--card2); color:var(--fg); border-radius:8px; padding:6px 12px; cursor:pointer; min-height:34px; }
 .bigbtn:hover { border-color:var(--blue); }
 .lnk { font:inherit; font-size:12.5px; border:1px solid var(--line); background:var(--card2); color:var(--blue); border-radius:99px; padding:2px 10px; cursor:pointer; white-space:nowrap; min-height:28px; }
@@ -1468,10 +1513,17 @@ window.KS={score:score,mark:mark,esc:esc};})();
           <li>기술·특성 설명처럼 게임이 직접 준 글은 이미 공식 한글이라 그대로 두었습니다.</li>
           <li>게임이 업데이트되면 <code>python hots_extract/terms_build.py</code> 가 이 표를 다시 만듭니다.</li></ul>` }]) });
   }
-  /* ── 수치 통계 — 여러 영웅이 같은 뜻으로 가진 값만 모아 비교한다 ── */
-  let STROLE = "";
-  const GLOBAL = 100;         // 사거리가 이 이상이면 맵 전체 기술 — 비교에서 뺀다
-  const MINN = 10;            // 이보다 적은 영웅이 가진 값은 비교할 거리가 못 된다
+  /* ── 수치 통계 — 여러 영웅이 같은 뜻으로 가진 값만 모아 비교한다 ──
+     수치마다 성격을 보고 보여 주는 꼴을 고른다:
+       모두 같음 → 한 줄 · 거의 같음(한 값이 80% 이상) → '대부분 X, 예외' 한 줄 · 드묾(10개 미만) → 값 목록
+       퍼짐 → 카드(가운데 값·범위·위 3·아래 3) — 누르면 순위 막대
+     기술 수치·특수 경우는 data/stats.json(wiki_stats.py — 이름이 달라도 뜻이 같은 값은 빌드 때 합쳐 둠) */
+  let STROLE = "", STX = null;
+  const MINN = 10;            // 이보다 적은 영웅(기술)이 가진 값은 견줄 거리가 못 된다 — '드문 수치' 로
+  const NEAR = 0.8;           // 한 값이 이 몫 이상이면 '거의 같은 값'
+  const ROLES = ["전사", "투사", "근접 암살자", "원거리 암살자", "치유사", "지원가"];
+  const rcOf = r => "rc" + Math.max(0, ROLES.indexOf(r));
+  fetch("data/stats.json").then(r => r.ok ? r.json() : null).then(j => { STX = j; if (/^#stats/.test(location.hash || "")) route(true); }).catch(() => {});
   function statDefs() {
     const w0 = h => list(h["기본"]["평타"])[0] || {};
     const g = (h, re) => { const x = list(h["레벨 성장"]).find(y => re.test(y["칸"] || "")); return x ? +x["레벨마다"] : 0; };
@@ -1479,12 +1531,12 @@ window.KS={score:score,mark:mark,esc:esc};})();
        그래서 1레벨 = 자료 × (1+성장률), 20레벨 = 자료 × (1+성장률)^20. 영웅 문서의 리모컨과 같은 셈이다. */
     const at = (v, r, L) => v == null ? null : +(v * Math.pow(1 + (r || 0), L)).toFixed(v >= 100 ? 0 : 2);
     const gA = h => { const x = list(h["레벨 성장"]).find(y => /Weapon|Attack/i.test(y["항목"] || "") && y["칸"] === "Amount"); return x ? +x["레벨마다"] : g(h, /^LifeMax$/); };
-    const hero = [
+    return [
       ["생명력 (1레벨)", h => at(h["기본"]["생명력"], g(h, /^LifeMax$/), 1), "자료 값(0레벨) × (1 + 성장률)"],
-      ["생명력 (20레벨)", h => at(h["기본"]["생명력"], g(h, /^LifeMax$/), 20), "자료 값(0레벨)에 성장률을 20번 겹친 값"],
+      ["생명력 (20레벨)", h => at(h["기본"]["생명력"], g(h, /^LifeMax$/), 20), "자료 값(0레벨)에 성장률을 20번 겹친 값 — 특성·고유 능력 몫은 빼고"],
       ["생명력 레벨 성장률", h => g(h, /^LifeMax$/) ? +(g(h, /^LifeMax$/) * 100).toFixed(2) : null, "", "%"],
       ["생명력 재생 (1레벨)", h => at(h["기본"]["생명력 재생"], g(h, /^LifeRegenRate$/), 1), "", "/초"],
-      ["마나", h => h["기본"]["자원"] === "마나" ? h["기본"]["마나"] : null],
+      ["마나", h => h["기본"]["자원"] === "마나" ? h["기본"]["마나"] : null, "마나를 쓰는 영웅만 — 다른 자원은 아래 '특수 경우'"],
       ["마나 재생", h => h["기본"]["자원"] === "마나" ? h["기본"]["마나 재생"] : null, "", "/초"],
       ["일반 공격 공격력 (1레벨)", h => at(w0(h)["공격력"], gA(h), 1), "한 발 값 — 한 번에 여러 발 쏘는 영웅(루시우 4발)은 초당 피해에 발 수를 곱했습니다"],
       ["초당 공격", h => w0(h)["초당 공격"]],
@@ -1495,68 +1547,67 @@ window.KS={score:score,mark:mark,esc:esc};})();
       ["피격 반지름", h => (h["반지름 둘"] || {})["피격"] || h["기본"]["반지름"], "기술에 맞는 판정"],
       ["충돌 반지름", h => (h["반지름 둘"] || {})["충돌"], "유닛끼리 부딪히는 판정"],
     ];
-    const SL = { b: /^[QWE]$/, r: /^R\d$/ };   // 궁극기 칸은 R1·R2(·R3)
-    const skill = [];
-    [["기본 기술(Q·W·E)", "b"], ["궁극기(R)", "r"]].forEach(([nm, k]) => {
-      [["재사용 대기시간", "재사용 대기시간", "초"], ["마나 비용", "마나", ""], ["사거리", "사거리", ""]].forEach(([lab, key, u]) =>
-        skill.push([`${nm} ${lab}`, h => {
-          const seen = new Set();
-          return list(h["기술"]).filter(a => SL[k].test(a["칸"] || "") && typeof a[key] === "number" && a[key] > 0 && !(key === "사거리" && a[key] >= GLOBAL))
-            .filter(a => { const s = a["이름"] + a["칸"]; if (seen.has(s)) return false; seen.add(s); return true; })
-            .map(a => ({ v: a[key], sub: a["이름"] }));
-        }, "", u]));
-    });
-    return { hero, skill };
   }
-  function statOf(name, rows, note, unit) {
-    rows = rows.filter(r => typeof r.v === "number" && isFinite(r.v));
-    if (rows.length < MINN) return null;
+  const HS = () => STROLE ? H.filter(h => (h["역할군"] || "기타") === STROLE) : H;
+  const medOf = vs => { const a = vs.slice().sort((x, y) => x - y), n = a.length; return n % 2 ? a[(n - 1) / 2] : (a[n / 2 - 1] + a[n / 2]) / 2; };
+  function statOf(name, rows, o) {
+    o = o || {};
+    rows = rows.filter(r => r.h && typeof r.v === "number" && isFinite(r.v));
+    if (!rows.length) return null;
     const vs = rows.map(r => r.v).sort((a, b) => a - b);
-    const lo = vs[0], hi = vs[vs.length - 1];
-    const avg = vs.reduce((a, b) => a + b, 0) / vs.length;
-    const med = vs.length % 2 ? vs[(vs.length - 1) / 2] : (vs[vs.length / 2 - 1] + vs[vs.length / 2]) / 2;
+    const lo = vs[0], hi = vs[vs.length - 1], med = medOf(vs);
+    const mad = medOf(vs.map(v => Math.abs(v - med)));
     const cnt = new Map(); vs.forEach(v => { const k = +v.toFixed(3); cnt.set(k, (cnt.get(k) || 0) + 1); });
     const modes = [...cnt].sort((a, b) => b[1] - a[1] || a[0] - b[0]);
-    /* '흔한 값' 은 3번 이상 · 전체의 5% 이상 겹칠 때만 — 2명이 같은 값은 우연에 가깝다 */
-    const sure = modes[0][1] >= 3 && modes[0][1] >= rows.length * 0.05;
-    return { name, rows, note, unit: unit || "", lo, hi, avg, med, modes, sure, kinds: cnt.size, per: rows[0].sub != null ? "개" : "명" };
+    const kind = cnt.size === 1 ? "same" : modes[0][1] >= rows.length * NEAR ? "near" : rows.length < MINN ? "few" : "spread";
+    return { name, rows, note: o.note || "", unit: o.unit || "", merged: o.merged || [], grp: o.grp || "", lo, hi, med, mad, modes, kind, per: rows[0].sub != null ? "개" : "명" };
   }
-  const who = (rows, v, max) => {
-    const m = max || 3, xs = rows.filter(r => +r.v.toFixed(3) === +v.toFixed(3));
-    return xs.slice(0, m).map(r => `<a href="#h.${esc(r.h.id)}">${esc(r.h["이름"])}</a>${r.sub ? `<span class="note"> ${esc(r.sub)}</span>` : ""}`).join(", ") + (xs.length > m ? ` <span class="note">외 ${xs.length - m}</span>` : "");
-  };
+  /* 얼굴 + 이름(+ 기술) */
+  const face = (h, sub) => `<a class="fc" href="#h.${esc(h.id)}" title="${esc(h["이름"])}${sub ? " · " + esc(sub) : ""}">${icon(h["초상화"], "ico xs")}<span>${esc(h["이름"])}</span>${sub ? `<small>${esc(sub.replace(/ \([^)]*\)$/, ""))}</small>` : ""}</a>`;
+  const tied = (s, v) => s.rows.filter(r => +r.v.toFixed(3) === +v.toFixed(3));
+  /* 끝자리 셋 — 같은 값이 넷 이상이면 'N명 공동' */
+  function ends(s, top) {
+    const sorted = s.rows.slice().sort((a, b) => top ? b.v - a.v : a.v - b.v);
+    const v0 = sorted[0].v, t = tied(s, v0);
+    if (t.length > 3) return `<span class="vv">${num(v0)}${esc(s.unit)}</span> <span class="note">${t.length}${s.per} 공동</span>`;
+    return sorted.slice(0, 3).map(r => `<span class="pr">${face(r.h, r.sub)}<span class="vv">${num(r.v)}</span></span>`).join("");
+  }
   function histHtml(s, B) {
     const span = s.hi - s.lo || 1, bins = Array(B).fill(0);
     const bi = v => Math.min(B - 1, Math.floor((v - s.lo) / span * B));
     s.rows.forEach(r => bins[bi(r.v)]++);
-    const mb = s.sure ? bi(s.modes[0][0]) : -1, top = Math.max(...bins);
+    const mb = bi(s.med), top = Math.max(...bins);
     return `<div class="hist" aria-hidden="true">${bins.map((n, i) => `<i class="${i === mb ? "mode" : ""}" style="height:${n ? Math.max(4, n / top * 100) : 0}%" title="${num(+(s.lo + span * i / B).toFixed(2))}~ : ${n}"></i>`).join("")}</div>`;
   }
-  /* 한눈에 카드 — 누르면 크게 보기(분포·같은 값 무리·전체 순위) */
-  const plainWho = (rows, v) => { const xs = rows.filter(r => +r.v.toFixed(3) === +v.toFixed(3));
-    return esc(xs.slice(0, 2).map(r => r.h["이름"] + (r.sub ? " " + r.sub : "")).join(", ")) + (xs.length > 2 ? ` 외 ${xs.length - 2}` : ""); };
-  const statMini = (s, key) => `<button type="button" class="stc" data-st="${key}" aria-label="${esc(s.name)} 크게 보기">
+  const statMini = (s, key) => `<div class="stc" role="button" tabindex="0" data-st="${key}" aria-label="${esc(s.name)} 순위 보기">
       <span class="nm">${esc(s.name)}<small>${s.rows.length}${s.per}</small></span>
-      <span class="rg">${num(s.lo)}~${num(s.hi)}${esc(s.unit)}</span>
-      ${s.kinds > 2 ? histHtml(s, 16) : ""}
-      <span class="ln">▼ <b>${plainWho(s.rows, s.lo)}</b></span>
-      <span class="ln">▲ <b>${plainWho(s.rows, s.hi)}</b></span>
-      <span class="ln">흔한 값 <b>${s.sure ? `${num(s.modes[0][0])}${esc(s.unit)} (${s.modes[0][1]}${s.per})` : "뚜렷한 값 없음"}</b> · 평균 <b>${num(+s.avg.toFixed(1))}</b></span>
-      <span class="go">크게 보기 ›</span></button>`;
+      <span class="md"><b>${num(+s.med.toFixed(2))}</b>${esc(s.unit)} <small>가운데 값 · ${num(s.lo)}~${num(s.hi)}</small></span>
+      ${histHtml(s, 16)}
+      <span class="tp"><i>높음</i>${ends(s, true)}</span>
+      <span class="tp"><i>낮음</i>${ends(s, false)}</span>
+      <span class="go">순위 보기 ›</span></div>`;
+  /* 거의 같은 값 — '대부분 X, 예외' 한 줄 */
+  const nearRow = (s, key) => { const v0 = s.modes[0][0], ex = s.rows.filter(r => +r.v.toFixed(3) !== v0).sort((a, b) => b.v - a.v);
+    return `<li><button type="button" class="lnk" data-st="${key}">${esc(s.name)}</button> — 대부분 <b>${num(v0)}${esc(s.unit)}</b> <span class="note">(${s.modes[0][1]}/${s.rows.length}${s.per})</span>
+      · 예외 ${ex.slice(0, 6).map(r => `<span class="pr">${face(r.h, r.sub)} <b class="vv">${num(r.v)}</b></span>`).join(" ")}${ex.length > 6 ? ` <span class="note">외 ${ex.length - 6}</span>` : ""}</li>`; };
+  /* 드문 수치 — 가진 영웅(기술)이 적어 값을 다 적는다 */
+  const fewRow = (s, key) => `<li><button type="button" class="lnk" data-st="${key}">${esc(s.name)}</button> <span class="note">${s.rows.length}${s.per}</span> — ${s.rows.slice().sort((a, b) => b.v - a.v).map(r => `<span class="pr">${face(r.h, r.sub)} <b class="vv">${num(r.v)}${esc(s.unit)}</b></span>`).join(" ")}</li>`;
+  /* 크게 보기 — 순위 막대(역할군 색) */
   function statBody(s) {
-    const u = s.unit, span = s.hi - s.lo || 1;
-    const sorted = s.rows.slice().sort((a, b) => b.v - a.v || a.h["이름"].localeCompare(b.h["이름"], "ko"));
-    return `${s.note ? `<p class="note">${esc(s.note)}</p>` : ""}
-      <p>${s.rows.length}${s.per} · 최저 <b>${num(s.lo)}${u}</b> · 최고 <b>${num(s.hi)}${u}</b> · 평균 <b>${num(+s.avg.toFixed(2))}${u}</b> · 중앙값 <b>${num(+s.med.toFixed(3))}${u}</b></p>
-      ${s.kinds > 2 ? histHtml(s, 32) + `<div class="histx"><span>${num(s.lo)}${u}</span><span>${num(+(s.lo + span / 2).toFixed(2))}${u}</span><span>${num(s.hi)}${u}</span></div>` : ""}
-      <h3 class="sub">값이 같은 무리 (많은 순)</h3>${s.sure ? "" : `<p class="note">한 값에 몰린 무리가 없습니다 — 같은 값은 많아야 ${s.modes[0][1]}${s.per}입니다.</p>`}<ul class="plain">${s.modes.filter(m => m[1] > 1).slice(0, 5).map(([v, n]) => `<li><b>${num(v)}${u}</b> — ${n}${s.per} <span class="who">${who(s.rows, v, 6)}</span></li>`).join("")}</ul>
-      <h3 class="sub">전체 순위 (높은 순)</h3><div class="rank">${sorted.map((r, i) => `<div><span class="note">${i + 1}</span><span class="v">${num(r.v)}${u}</span><a href="#h.${esc(r.h.id)}">${esc(r.h["이름"])}${r.sub ? ` · ${esc(r.sub)}` : ""}</a></div>`).join("")}</div>`;
+    const u = s.unit, sorted = s.rows.slice().sort((a, b) => b.v - a.v || a.h["이름"].localeCompare(b.h["이름"], "ko"));
+    const base = s.lo >= 0 ? 0 : s.lo, span = (s.hi - base) || 1;
+    let rank = 0, prev = null;
+    return `${s.note ? `<p class="note">${esc(s.note)}</p>` : ""}${s.merged.length ? `<p class="note">합친 값: ${s.merged.map(esc).join(" · ")}</p>` : ""}
+      <p>${s.rows.length}${s.per} · 가운데 값 <b>${num(+s.med.toFixed(3))}${u}</b> · 가장 낮음 <b>${num(s.lo)}${u}</b> · 가장 높음 <b>${num(s.hi)}${u}</b></p>
+      <p class="rleg">${ROLES.map(r => `<span><i class="${rcOf(r)}"></i>${esc(r)}</span>`).join("")}</p>
+      <div class="rbars">${sorted.map((r, i) => { if (prev === null || +r.v.toFixed(3) !== +prev.toFixed(3)) rank = i + 1; prev = r.v;
+        return `<div class="rb"><span class="no">${rank}</span>${face(r.h, r.sub)}<span class="bar"><i class="${rcOf(r.h["역할군"])}" style="width:${Math.max(1, (r.v - base) / span * 100)}%"></i></span><span class="vv">${num(r.v)}${u}</span></div>`; }).join("")}</div>`;
   }
   let STCUR = { hero: [], skill: [] };
   /* 영웅 수치표 — 영웅 한 줄 · 수치 한 칸. 머리칸을 누르면 그 수치로 줄을 세운다 */
   let HTSORT = { c: -1, d: 1 };
   function heroTable() {
-    const D = statDefs().hero, hs = HS();
+    const D = statDefs(), hs = HS();
     const cols = D.filter(([n, f]) => new Set(hs.map(f).filter(v => typeof v === "number")).size > 1);
     const rows = hs.map(h => ({ h, v: cols.map(([, f]) => f(h)) }));
     const c = HTSORT.c;
@@ -1573,48 +1624,99 @@ window.KS={score:score,mark:mark,esc:esc};})();
     BV.querySelector(".bvin").innerHTML = heroTable();
   });
   function statTable(ss) {
-    return tbl(["수치", ["수"], ["최저"], "최저인 영웅", ["최고"], "최고인 영웅", ["평균"], ["중앙값"], "가장 흔한 값"], ss.map(s =>
-      `<tr><td>${esc(s.name)}</td><td class="n">${s.rows.length}</td><td class="n">${num(s.lo)}${s.unit}</td><td class="who">${who(s.rows, s.lo)}</td>
-       <td class="n">${num(s.hi)}${s.unit}</td><td class="who">${who(s.rows, s.hi)}</td><td class="n">${num(+s.avg.toFixed(2))}</td><td class="n">${num(+s.med.toFixed(3))}</td>
-       <td>${s.sure ? `<b>${num(s.modes[0][0])}${s.unit}</b> <span class="note">${s.modes[0][1]}${s.per}</span>` : `<span class="note">뚜렷한 값 없음${s.modes[0][1] > 1 ? ` (같은 값 최대 ${s.modes[0][1]}${s.per})` : ""}</span>`}</td></tr>`));
+    return tbl(["수치", ["수"], ["가운데 값"], ["가장 낮음"], "가장 낮은 영웅", ["가장 높음"], "가장 높은 영웅"], ss.map(s =>
+      `<tr><td>${esc(s.name)}</td><td class="n">${s.rows.length}</td><td class="n">${num(+s.med.toFixed(3))}${esc(s.unit)}</td>
+       <td class="n">${num(s.lo)}${esc(s.unit)}</td><td class="who">${tied(s, s.lo).slice(0, 3).map(r => face(r.h, r.sub)).join(" ")}${tied(s, s.lo).length > 3 ? ` <span class="note">외 ${tied(s, s.lo).length - 3}</span>` : ""}</td>
+       <td class="n">${num(s.hi)}${esc(s.unit)}</td><td class="who">${tied(s, s.hi).slice(0, 3).map(r => face(r.h, r.sub)).join(" ")}${tied(s, s.hi).length > 3 ? ` <span class="note">외 ${tied(s, s.hi).length - 3}</span>` : ""}</td></tr>`));
   }
-  const HS = () => STROLE ? H.filter(h => (h["역할군"] || "기타") === STROLE) : H;
+  /* 역할군 비교 — 수치마다 역할군별 가운데 값. 그 줄 안에서 높을수록 진하게 */
+  function roleTable(ss) {
+    const rows = ss.filter(s => s.kind === "spread").map(s => {
+      const m = ROLES.map(r => { const vs = s.rows.filter(x => x.h["역할군"] === r).map(x => x.v); return vs.length >= 3 ? { v: medOf(vs), n: vs.length } : null; });
+      const xs = m.filter(Boolean).map(x => x.v), lo = Math.min(...xs), hi = Math.max(...xs);
+      return `<tr><td style="min-width:9em">${esc(s.name)}${s.unit ? ` <span class="note">${esc(s.unit)}</span>` : ""}</td>${m.map(x => x ? `<td class="n heat" style="--k:${hi > lo ? ((x.v - lo) / (hi - lo)).toFixed(2) : 0}" title="${x.n}${s.per}">${num(+x.v.toFixed(Math.abs(x.v) >= 100 ? 0 : 2))}</td>` : `<td class="n note">—</td>`).join("")}</tr>`; });
+    return `<p class="note">칸마다 그 역할군의 <b>가운데 값</b>입니다(3명·3개 미만이면 —). 한 줄 안에서 높을수록 진하게 칠했습니다. 역할군 이름을 누르면 그 역할군만 봅니다.</p>
+      <div class="tbl"><table class="t"><thead><tr><th>수치</th>${ROLES.map(r => `<th class="n"><button type="button" class="lnk" data-role="${esc(r)}"><i class="rdot ${rcOf(r)}"></i>${esc(r)}</button></th>`).join("")}</tr></thead><tbody>${rows.join("")}</tbody></table></div>`;
+  }
+  /* 눈에 띄는 영웅 — 가운데 값에서 많이 벗어난 값(가운데 값과의 차이 ÷ 흩어진 정도). 영웅마다 가장 튀는 것 하나 */
+  function outliers(ss) {
+    const best = new Map();
+    // 0 이 몰린 수치(시전 시간 — 대부분 즉시)는 조금만 커도 튀어 보여 뺀다
+    ss.filter(s => s.kind === "spread" && s.mad > 0 && s.med > 0 && !(s.lo === 0 && s.rows.filter(r => r.v === 0).length >= s.rows.length * 0.3)).forEach(s => s.rows.forEach(r => {
+      const z = (r.v - s.med) / (1.4826 * s.mad), gap = (r.v - s.med) / s.med;
+      if (Math.abs(z) < 3 || Math.abs(gap) < 0.3) return;
+      const cur = best.get(r.h.id); if (!cur || Math.abs(z) > Math.abs(cur.z)) best.set(r.h.id, { s, r, z, gap });
+    }));
+    // 한 수치에서는 둘까지만 — 여러 수치가 고루 보이게
+    const per = new Map(), xs = [...best.values()].sort((a, b) => Math.abs(b.z) - Math.abs(a.z))
+      .filter(x => { const n = per.get(x.s.name) || 0; per.set(x.s.name, n + 1); return n < 2; }).slice(0, 12);
+    if (!xs.length) return `<p class="note">가운데 값에서 크게 벗어난 값이 없습니다.</p>`;
+    return `<p class="note">수치마다 가운데 값에서 유난히 멀리 떨어진 값을 골라, 영웅마다 가장 튀는 것 하나씩, 한 수치에서는 둘까지 보였습니다(가운데 값과 30% 넘게 다르고, 흩어진 정도의 3배 넘게 벗어난 것). 0 이 몰린 수치(시전 시간)는 뺐습니다.</p>
+      <ul class="odd">${xs.map(({ s, r, gap }) => `<li>${face(r.h, r.sub)} <span><b>${esc(s.name)}</b> <b class="vv">${num(r.v)}${esc(s.unit)}</b> — 가운데 값 ${num(+s.med.toFixed(2))}${esc(s.unit)}보다 <b>${Math.round(Math.abs(gap) * 100)}% ${gap > 0 ? "높음" : "낮음"}</b></span></li>`).join("")}</ul>`;
+  }
+  /* 특수 경우 — 한 줄에 세우기 어려운 영웅·기술을 까닭별로 */
+  function specialHtml() {
+    if (!STX) return `<p class="load">불러오는 중…</p>`;
+    const ok = new Set(HS().map(h => h.id));
+    return ["영웅", "기술"].map(g => {
+      const xs = list(STX["특수"]).filter(x => x["갈래"] === g).map(x => Object.assign({}, x, { 항목: list(x["항목"]).filter(([hid]) => ok.has(hid) && hById[hid]) })).filter(x => x["항목"].length);
+      return xs.length ? `<h3 class="sub">${g === "영웅" ? "영웅" : "기술"}</h3>` + xs.map(x => `<details class="spc"><summary><b>${esc(x["제목"])}</b> <span class="note">${x["항목"].length}${g === "영웅" ? "명" : "개"} — ${esc(x["뜻"])}</span></summary>
+        <ul class="spl">${x["항목"].map(([hid, t]) => `<li>${face(hById[hid])}${t ? ` <span class="note">${esc(t)}</span>` : ""}</li>`).join("")}</ul></details>`).join("") : "";
+    }).join("");
+  }
+  /* 갈래별 영웅 수 — 비율 막대 하나 + 펼치면 이름 */
   function countBlock(title, f) {
-    const g = groupBy(HS(), f), ks = Object.keys(g).filter(k => k && k !== "undefined").sort((a, b) => g[b].length - g[a].length);
-    return `<h3 class="sub">${esc(title)}</h3>` + tbl(["갈래", ["영웅 수"], "영웅"], ks.map(k => `<tr><td>${esc(k)}</td><td class="n">${g[k].length}명</td><td class="who">${g[k].slice(0, 8).map(h => `<a href="#h.${esc(h.id)}">${esc(h["이름"])}</a>`).join(", ")}${g[k].length > 8 ? ` <span class="note">외 ${g[k].length - 8}</span>` : ""}</td></tr>`));
+    const hs = HS(), g = groupBy(hs, f), ks = Object.keys(g).filter(k => k && k !== "undefined").sort((a, b) => g[b].length - g[a].length);
+    return `<div class="cnt"><div class="cnt-t">${esc(title)}</div><div class="cbar">${ks.map((k, i) => `<i class="cb${i % 8}" style="flex:${g[k].length}" title="${esc(k)} ${g[k].length}명"></i>`).join("")}</div>
+      <details><summary>${ks.map((k, i) => `<span class="ck"><i class="cb${i % 8}"></i>${esc(k)} <b>${g[k].length}</b></span>`).join("")}</summary>
+      ${ks.map(k => `<p class="who"><b>${esc(k)}</b> — ${g[k].map(h => `<a href="#h.${esc(h.id)}">${esc(h["이름"])}</a>`).join(", ")}</p>`).join("")}</details></div>`;
+  }
+  /* 수치 묶음 하나 — 퍼진 것은 카드, 거의 같은 것·드문 것·모두 같은 것은 아래 줄로 */
+  function statGroup(ss, key, off) {
+    const sp = ss.map((s, i) => [s, i + off]).filter(([s]) => s.kind === "spread"), nr = ss.map((s, i) => [s, i + off]).filter(([s]) => s.kind === "near"),
+      fw = ss.map((s, i) => [s, i + off]).filter(([s]) => s.kind === "few"), sm = ss.filter(s => s.kind === "same");
+    return (sp.length ? `<div class="stg">${sp.map(([s, i]) => statMini(s, key + "." + i)).join("")}</div>` : "")
+      + (nr.length ? `<div class="stl"><div class="stl-t">거의 모두 같은 값</div><ul>${nr.map(([s, i]) => nearRow(s, key + "." + i)).join("")}</ul></div>` : "")
+      + (fw.length ? `<div class="stl"><div class="stl-t">가진 ${key === "hero" ? "영웅" : "기술"}이 적은 수치 <span class="note">(${MINN}${key === "hero" ? "명" : "개"} 미만이라 값을 다 적었습니다)</span></div><ul>${fw.map(([s, i]) => fewRow(s, key + "." + i)).join("")}</ul></div>` : "")
+      + (sm.length ? `<p class="note">모두 같은 값: ${sm.map(s => `${esc(s.name)} ${num(s.lo)}${esc(s.unit)}`).join(" · ")}</p>` : "");
   }
   function pStats() {
-    const D = statDefs(), hs = HS();
-    const heroA = D.hero.map(([n, f, note, u]) => statOf(n, hs.map(h => ({ h, v: f(h) })), note, u)).filter(Boolean);
-    const same = heroA.filter(s => s.kinds === 1), heroS = heroA.filter(s => s.kinds > 1);
-    const nGlobal = hs.reduce((a, h) => a + list(h["기술"]).filter(x => /^([QWE]|R\d)$/.test(x["칸"] || "") && x["사거리"] >= GLOBAL).length, 0);
-    const skillS = D.skill.map(([n, f, note, u]) => statOf(n, hs.flatMap(h => f(h).map(x => ({ h, v: x.v, sub: x.sub }))), note, u)).filter(Boolean);
-    STCUR = { hero: heroS, skill: skillS };
-    const roles = Object.keys(groupBy(H, h => h["역할군"] || "기타")).sort();
-    const bar = `<div class="sbar" role="group" aria-label="역할군 고르기">${[""].concat(roles).map(r => `<button type="button" data-role="${esc(r)}" class="${r === STROLE ? "on" : ""}">${r ? esc(r) : "모든 영웅"}</button>`).join("")}</div>`;
+    const hs = HS(), ok = new Set(hs.map(h => h.id));
+    const heroA = statDefs().map(([n, f, note, u]) => statOf(n, hs.map(h => ({ h, v: f(h) })), { note, unit: u, grp: "영웅 능력치" })).filter(Boolean);
+    const skA = STX ? list(STX["수치"]).map(m => statOf(m["이름"], list(m["행"]).filter(([hid]) => ok.has(hid)).map(([hid, v, sub]) => ({ h: hById[hid], v, sub })),
+      { note: m["뜻"], unit: m["단위"], merged: m["합친 것"], grp: m["묶음"] })).filter(Boolean) : [];
+    STCUR = { hero: heroA, skill: skA };
+    const grps = [...new Set(skA.map(s => s.grp))];
+    const skHtml = grps.map(g => { const ss = skA.filter(s => s.grp === g), o = skA.indexOf(ss[0]); return `<h3 class="sub">${esc(g)}</h3>` + statGroup(ss, "skill", o); }).join("");
+    const roles = ROLES.filter(r => H.some(h => h["역할군"] === r));
+    const bar = `<div class="sbar" role="group" aria-label="역할군 고르기">${[""].concat(roles).map(r => `<button type="button" data-role="${esc(r)}" class="${r === STROLE ? "on" : ""}">${r ? `<i class="rdot ${rcOf(r)}"></i>${esc(r)}` : "모든 영웅"}</button>`).join("")}</div>`;
+    const all = heroA.concat(skA);
     return page({ crumb: crumbs("통계"), title: "수치 통계",
-      lede: `통계 · 영웅 ${hs.length}명${STROLE ? " (" + esc(STROLE) + ")" : ""} · 능력치는 1레벨 값(20레벨 칸 빼고) · 기술 수치는 레벨과 무관`,
-      about: `여러 영웅이 <b>같은 뜻으로</b> 가진 수치만 골라 누가 가장 높고 낮은지, 어떤 값이 흔한지 모은 문서입니다. 값은 모두 게임 파일에서 읽었습니다 ${BD.sure}. 카드 한 장이 수치 하나입니다(▼ 가장 낮은 영웅 · ▲ 가장 높은 영웅). 카드를 누르면 화면 가득 분포 막대(노란 막대가 가장 흔한 값 — 3번 이상, 전체의 5% 이상 겹칠 때만)와 전체 순위가, '표로 크게 보기' 를 누르면 모든 수치를 한 표로 볼 수 있습니다. 위 단추로 역할군만 볼 수도 있습니다. ${MINN}명(개)보다 적게 가진 값은 비교할 거리가 못 되어 뺐습니다.`,
+      lede: `통계 · 영웅 ${hs.length}명${STROLE ? " (" + esc(STROLE) + ")" : ""} · 능력치는 1레벨 값 · 기술 수치는 레벨과 무관`,
+      about: `여러 영웅이 <b>같은 뜻으로</b> 가진 수치를 모아 견줍니다 ${BD.sure}. 값이 퍼진 수치는 카드(가운데 값·높은 셋·낮은 셋)로, 거의 모두 같은 수치는 예외만 한 줄로 보입니다. 카드를 누르면 순위 막대가 나옵니다. 이름이 달라도 뜻이 같은 값은 하나로 합쳤습니다(감속 = '감속' + 음수 '이동 속도' 등).`,
       info: bar,
       sections: [
-        { title: "영웅 능력치", badge: BD.sure, html: `<div class="stg">${heroS.map((s, i) => statMini(s, "hero." + i)).join("")}</div>
-          <p style="display:flex;flex-wrap:wrap;gap:8px"><button type="button" class="bigbtn" data-bvt="hero">⤢ 표로 크게 보기</button><button type="button" class="bigbtn" data-bvt="heroes">⇅ 영웅 수치표 (줄 세우기)</button></p>` + (same.length ? `<p class="note">모든 영웅이 같은 값이라 뺐습니다: ${same.map(s => `${esc(s.name)} ${num(s.lo)}${s.unit}`).join(" · ")}</p>` : "") },
-        { title: "기술 수치", badge: BD.sure, html: `<p class="note">기술 하나가 한 줄입니다(한 영웅이 여러 번 나올 수 있습니다). 모드가 바뀌는 영웅의 같은 이름 기술은 한 번만 셉니다. 기술 피해량은 기술마다 뜻(한 번·틱·조건)이 달라 넣지 않았습니다.${nGlobal ? ` 사거리 ${GLOBAL} 이상인 맵 전체 기술 ${nGlobal}개는 사거리 통계에서 뺐습니다.` : ""}</p><div class="stg">${skillS.map((s, i) => statMini(s, "skill." + i)).join("")}</div>
-          <p><button type="button" class="bigbtn" data-bvt="skill">⤢ 표로 크게 보기</button></p>` },
+        ...(all.length ? [{ title: "눈에 띄는 영웅", html: outliers(all) }] : []),
+        { title: "영웅 능력치", badge: BD.sure, html: statGroup(heroA, "hero", 0)
+          + `<p style="display:flex;flex-wrap:wrap;gap:8px"><button type="button" class="bigbtn" data-bvt="hero">⤢ 표로 크게 보기</button><button type="button" class="bigbtn" data-bvt="heroes">⇅ 영웅 수치표 (줄 세우기)</button></p>` },
+        { title: "기술 수치", badge: BD.sure, html: STX ? `<p class="note">기술 하나가 한 줄입니다. 모습을 바꿔 같은 이름 기술을 또 가지면 한 번만 셉니다. 탈것은 뺐습니다. 기술 피해량은 기술마다 뜻(한 번·틱·조건)이 달라 넣지 않았습니다.</p>${skHtml}
+          <p><button type="button" class="bigbtn" data-bvt="skill">⤢ 표로 크게 보기</button></p>` : `<p class="load">기술 수치를 불러오는 중…</p>` },
+        ...(!STROLE ? [{ title: "역할군 비교", html: roleTable(all) }] : []),
+        { title: "특수 경우", html: `<p class="note">한 줄에 세워 견주기 어려운 영웅·기술을 까닭별로 모았습니다. 위 통계에서 빠졌거나 따로 셈한 것들입니다.</p>` + specialHtml() },
         { title: "갈래별 영웅 수", html: countBlock("역할군", h => h["역할군"] || "기타") + countBlock("자원", h => h["기본"]["자원"] || "없음") + countBlock("일반 공격 방식", h => (list(h["기본"]["평타"])[0] || {})["방식"] || "") + countBlock("세계관", h => h["세계관"] || "") },
         { title: "읽을 때 주의", html: `<ul class="plain">
-          <li>일반 공격은 영웅이 처음부터 쓰는 무기 가운데 첫 번째 것입니다.</li>
-          <li>여러 유닛인 영웅(길 잃은 바이킹 등)은 대표 유닛 하나의 값입니다.</li>
-          <li>게임 파일에 적힌 값은 <b>0레벨</b> 값이고, 영웅이 나오자마자 1레벨 성장이 한 번 붙습니다(<a href="#s.hero_level_scaling">영웅 레벨 성장</a>). 그래서 1레벨 값은 파일 값보다 대개 4% 큽니다 — 영웅 문서의 레벨 리모컨과 같은 셈입니다. 다른 외부 위키는 파일 값을 그대로 '1레벨' 로 적기도 합니다.</li>
-          <li>20레벨 생명력에는 특성·고유 능력으로 늘어나는 몫이 들어 있지 않습니다.</li>
-          <li>특성·모드를 켜야 쓰는 무기(스투코프 척추 발사기, 해머 공성 모드 등)는 일반 공격에 넣지 않았습니다. 갈은 제 일반 공격이 없습니다(초가 공격합니다).</li>
-          <li>'가장 흔한 값' 은 소수점 셋째 자리까지 같은 값끼리 묶었습니다.</li></ul>` },
+          <li>'가운데 값' 은 줄 세웠을 때 한가운데 값입니다 — 튀는 값 하나에 흔들리는 평균보다 '보통' 을 잘 보여 줍니다.</li>
+          <li>일반 공격은 영웅이 처음부터 쓰는 무기 가운데 첫 번째 것입니다. 여러 유닛인 영웅(길 잃은 바이킹 등)은 대표 유닛 하나의 값입니다.</li>
+          <li>게임 파일에 적힌 값은 <b>0레벨</b> 값이고, 영웅이 나오자마자 1레벨 성장이 한 번 붙습니다(<a href="#s.hero_level_scaling">영웅 레벨 성장</a>). 그래서 1레벨 값은 파일 값보다 대개 4% 큽니다.</li>
+          <li>같은 값은 소수점 셋째 자리까지 같은 것끼리 묶었습니다.</li></ul>` },
       ] });
   }
   document.addEventListener("click", e => {
     const b = e.target.closest && e.target.closest("[data-role]"); if (!b) return;
-    STROLE = b.dataset.role; route(true);
+    STROLE = b.dataset.role; if (!BV.hidden) closeBV(); route(true);
   });
+  /* 카드는 링크(얼굴)를 품으므로 button 이 아니라 div — 엔터로도 연다 */
+  document.addEventListener("keydown", e => { const c = e.target.closest && e.target.closest(".stc[data-st]"); if (c && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); c.click(); } });
 
   /* ── 역사 — 자료가 바뀔 때마다 남긴 판(날짜·시간). 맨 위가 지금 판, 아래는 예전 판 ── */
   let HIST = null; const SNAP = {};
@@ -1897,6 +1999,7 @@ window.KS={score:score,mark:mark,esc:esc};})();
   window.addEventListener("hashchange", closeBV);
   document.addEventListener("click", e => {
     const c = e.target.closest && e.target.closest("[data-st], [data-bvt], [data-term]"); if (!c || BV.contains(c)) return;
+    if (c.dataset.st && e.target.closest("a")) return;          // 카드 속 얼굴 링크는 그 영웅으로
     if (c.dataset.st) { const [g, i] = c.dataset.st.split("."), s = STCUR[g][+i]; if (s) openBV(s.name + (STROLE ? ` — ${STROLE}` : ""), statBody(s)); }
     else if (c.dataset.bvt === "heroes") openBV("영웅 수치표" + (STROLE ? ` — ${STROLE}` : ""), heroTable());
     else if (c.dataset.bvt) openBV((c.dataset.bvt === "hero" ? "영웅 능력치" : "기술 수치") + " 표" + (STROLE ? ` — ${STROLE}` : ""), statTable(STCUR[c.dataset.bvt]));
