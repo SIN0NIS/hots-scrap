@@ -51,6 +51,7 @@
   **만드는 곳은 저장소 밖** `../hots_extract`(`update_wiki.py` → `report/wiki/`)이고, `python ../hots_extract/wiki_site.py` 가
   사이트 판으로 감싸(`<html data-site>` + `scrap.js` + 뒤로가기 130px) 이 폴더에 **통째로 덮어쓴다** — 여기서 직접 고치지 마라.
   - 처음엔 영웅 목록(`data/heroes.json`)·핵심 그림(`data/icons.json`)만 받고, 영웅 문서를 열 때 `data/hero/<id>.json`·`data/icon/<id>.json` 을 받는다.
+  - 그림은 `data/img/*.webp` 파일로 따로 둔다 — `icons.json`·`icon/<id>.json` 은 이름→그림 주소만(예전엔 base64 를 박아 첫 화면이 545KB 더 무거웠다, 2026-11-11 분리).
   - **패치** 갈래와 영웅 문서의 '패치 이력' 은 `../data/patchnotes/` 를 **그대로 읽는다**(복사 안 함) — 패치 노트 자동 갱신이 위키에도 바로 보인다.
     그 자료의 모양(`index.json`·`official/`·`diff/`·`heroes/`)을 바꾸면 위키의 `pPatches`·`pPatch`·`pChange` 도 같이 본다.
   - 전장 배치도의 바탕 그림은 사이트에서는 `../replay/maps_lite/*.svg` 를 쓴다(위키 자체 SVG 는 안 옮긴다).
@@ -191,7 +192,7 @@
   `guide/shots.json`(번호 차례대로 `[x,y,w,h]`) — 글의 ①②③ 은 그 차례다. **앱 화면을 바꾸면 그 장면만 다시 찍는다.**
   - 찍을 때 주소를 `scrap.test`(→127.0.0.1)로 연다. **localhost 로 찍으면 도감의 ⚠·메모·메모 막대(개발 전용)가 사진에 나온다.**
   - 번호를 못 찾으면 "못 찾음 / 사진 밖" 을 찍어 준다 — 그 줄의 선택자를 고친다. 상자 수와 설명 수가 다르면 글이 어긋난 것이다.
-- `site/data/97650/` 공통 JSON(heroes.json, heroes/<Id>.json, talents.json), `latest.json` 포인터
+- `site/data/97650/heroes.json` 영웅 목록(이름↔id·역할군) — 패치 기록 파이프라인이 읽는다. 옛 상세(heroes/, talents.json, 14MB)는 아무 화면도 안 써서 2026-11-11 뺐다. `latest.json` 포인터
 - `pipeline/steps/` 데이터 생성 스텝(로컬 실행), `tools/devserver.py`
 
 ## 격리 규약 (PLAN.md 요약)
