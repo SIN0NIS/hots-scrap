@@ -20,8 +20,9 @@
   /* 노트 속 기술·특성 이름 → 눌러서 설명 보기 (wireTips) */
   .official .tipname { cursor:pointer; text-decoration:underline dotted; text-underline-offset:3px; text-decoration-color:var(--gold-line, var(--dim)); }
   .official .tipname:hover, .official .tipname:focus-visible { color:var(--gold-solid); outline:none; }
-  #tip-pop { position:absolute; z-index:120; width:min(380px, calc(100vw - 24px)); box-sizing:border-box; background:var(--card); color:var(--fg);
-             border:1px solid var(--gold-line, var(--line)); border-radius:12px; padding:10px 12px 11px; box-shadow:0 8px 24px rgba(0,0,0,.28); font-size:13px; line-height:1.55; }
+  /* 노트 글을 가리지 않게 — 떠 있는 창이 아니라 누른 줄 바로 아래에 끼워 넣는다 */
+  #tip-pop { display:block; margin:6px 0 8px; max-width:560px; box-sizing:border-box; text-indent:0; font-weight:400; background:var(--card); color:var(--fg);
+             border:1px solid var(--gold-line, var(--line)); border-radius:12px; padding:10px 12px 11px; box-shadow:0 2px 8px rgba(0,0,0,.12); font-size:13px; line-height:1.55; }
   #tip-pop .th { display:flex; gap:9px; align-items:center; margin-bottom:6px; }
   #tip-pop .th img { width:36px; height:36px; border-radius:6px; background:var(--card2); flex:none; }
   #tip-pop .th b { font-size:14px; } #tip-pop .th .m { font-size:11.5px; color:var(--dim); }
@@ -834,7 +835,8 @@
 
   /* **노트 속 기술·특성 이름을 누르면 지금 설명이 뜬다.** "폭탄주 — 중첩당 피해량 보너스가 25에서 30으로" 만 보면
      폭탄주가 뭔지 모른다. 영웅 머리(h4) 아래의 굵은 이름을 그 영웅의 설명 파일(tips/<판>/<영웅>.json, 평균 11KB)과
-     잇는다 — 누른 영웅 것만 받는다. 판은 노트 채널을 따른다(테스트 서버 노트 → 테스트 서버 설명).
+     잇는다 — 누른 영웅 것만 받는다. 설명은 늘 본 서버(LIVE) 것 — 테스트 서버 노트도 지금 라이브와 견줘 보게.
+     본 서버에 아직 없는 새 기술·특성만 테스트 서버 설명으로 메운다.
      설명은 **지금 빌드 기준**이라 옛 노트에서는 당시와 다를 수 있다 — 말풍선에 그렇게 적는다. */
   const TIP_SKIP = /^(\d+\s*레벨|레벨\s*\d+|특성|기술|능력치|기본|기본 능력치|영웅|전장|일반|버그 수정|퀘스트|보상|신화 보상|.*:)$/;
   const tipKey = s => s.replace(/\s*[\[(][^\[\]()]{1,12}[\])]\s*$/, '').replace(/[:：]\s*$/, '').trim();
@@ -867,21 +869,19 @@
     pop.id = 'tip-pop';
     pop.setAttribute('role', 'dialog');
     pop.innerHTML = '<div class="th"><b>' + esc(el.dataset.tipName) + '</b><button class="x" type="button" aria-label="닫기">×</button></div><div>불러오는 중…</div>';
-    document.body.appendChild(pop);
-    const place = () => {
-      const r = el.getBoundingClientRect(), w = pop.offsetWidth;
-      const left = Math.max(12, Math.min(r.left + scrollX, scrollX + document.documentElement.clientWidth - w - 12));
-      const below = r.bottom + pop.offsetHeight + 8 < innerHeight || r.top < pop.offsetHeight + 8;
-      pop.style.left = left + 'px';
-      pop.style.top = (below ? r.bottom + scrollY + 6 : r.top + scrollY - pop.offsetHeight - 6) + 'px';
-    };
+    // 누른 이름이 든 줄(li)의 끝, 줄이 아니면 그 문단 바로 뒤 — 노트와 설명이 함께 보인다
+    const li = el.closest('li'), blk = li ? null : el.closest('p, h4, h5, td, div');
+    if (li) li.appendChild(pop); else if (blk && blk !== document.body) blk.after(pop); else el.after(pop);
+    const place = () => { const r = pop.getBoundingClientRect(); if (r.bottom > innerHeight) pop.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); };
     place();
     pop.querySelector('.x').onclick = closeTip;
     let d = null;
-    try { d = await getJSON(`tips/${ch}/${el.dataset.tipHero}.json`); } catch (e) { /* 아래에서 '없음' 으로 */ }
+    const load = c => getJSON(`tips/${c}/${el.dataset.tipHero}.json`).catch(() => null);
+    d = await load('live');
+    let t = d && d.tips && d.tips[el.dataset.tipName], src = 'live';
+    if (!t && ch === 'ptr') { const p2 = await load('ptr'); t = p2 && p2.tips && p2.tips[el.dataset.tipName]; src = 'ptr'; }
     if (document.getElementById('tip-pop') !== pop) return;   // 그사이 다른 것을 눌렀다
-    const t = d && d.tips && d.tips[el.dataset.tipName];
-    const chName = ch === 'ptr' ? '테스트 서버' : '본 서버';
+    const chName = src === 'ptr' ? '테스트 서버' : '본 서버';
     if (!t) {
       pop.innerHTML = `<div class="th"><b>${esc(el.dataset.tipName)}</b><button class="x" type="button" aria-label="닫기">×</button></div>
         <div>지금 ${chName} 자료에 이 이름의 기술·특성이 없습니다. 이후 패치에서 이름이 바뀌었거나 빠졌을 수 있습니다.</div>`;
@@ -892,7 +892,10 @@
           <button class="x" type="button" aria-label="닫기">×</button></div>
         <div>${t.tip}</div>
         ${t.cd || t.cost ? `<div class="cost">${[t.cd, t.cost].filter(Boolean).map(esc).join(' · ')}</div>` : ''}
-        <div class="basis">${t.from ? `${chName} 자료에 한국어가 아직 없어 ${t.from === 'ptr' ? '테스트 서버' : '본 서버'} 설명을 보여 줍니다.` : `지금 ${chName} 빌드 기준 설명입니다.`} 이 노트 당시와 다를 수 있습니다.</div>`;
+        <div class="basis">${src === 'ptr' ? '본 서버에 아직 없는 기술·특성이라 테스트 서버 설명을 보여 줍니다.'
+          : t.from ? `본 서버 자료에 한국어가 아직 없어 ${t.from === 'ptr' ? '테스트 서버' : '본 서버'} 설명을 보여 줍니다.`
+          : ch === 'ptr' ? '지금 <b>본 서버(LIVE)</b> 설명입니다 — 이 테스트 서버 노트로 바뀌기 전 모습이라 노트와 견줘 보세요.'
+          : '지금 본 서버(LIVE) 빌드 기준 설명입니다. 이 노트 당시와 다를 수 있습니다.'}</div>`;
     }
     pop.querySelector('.x').onclick = closeTip;
     place();
