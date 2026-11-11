@@ -48,7 +48,10 @@
       + '#scrap-notice label{cursor:pointer;display:inline-flex;align-items:center;gap:5px;}'
       + '#scrap-notice .sn-x{border:0;background:none;color:inherit;font-size:20px;line-height:1;cursor:pointer;padding:0 2px;opacity:.7;}'
       + '#scrap-notice .sn-x:hover{opacity:1;}'
-      + '@media (max-width:560px){#scrap-notice{left:8px;right:56px;font-size:12.5px;padding:9px 10px 9px 12px;}}'
+      + '#scrap-notice .sn-short{display:none;}'
+      + '@media (max-width:560px){#scrap-notice{left:8px;right:56px;font-size:12.5px;padding:7px 10px 7px 12px;align-items:center;}'
+      + '#scrap-notice .sn-long{display:none;}#scrap-notice .sn-short{display:inline;}'
+      + '#scrap-notice .sn-foot{margin-top:2px;font-size:11.5px;}#scrap-notice label{min-height:28px;}}'
       + '@media (any-pointer:coarse){#scrap-notice .sn-x{min-width:44px;min-height:44px;margin:-10px -8px -10px 0;}'
       + '#scrap-notice label{min-height:36px;}}'
       + '@media print{#scrap-notice{display:none;}}';
@@ -68,16 +71,18 @@
     css();
     var lines = list.map(function (it) {
       var md = it.date.split('-');
+      // 휴대폰에서는 짧은 줄(sn-short)만 — 긴 설명이 화면 아래 5분의 1을 가렸다
       return '<p class="sn-line"><span class="sn-tag">비공식 번역</span>'
-        + '<b>' + CH[it.channel] + ' 패치 노트 (' + (+md[1]) + '월 ' + (+md[2]) + '일)</b>는 한국어 공식판이 아직 없어 '
-        + (it.auto ? '자동으로 옮긴 ' : '') + '<b>비공식 번역</b>으로 제공합니다. '
+        + '<span class="sn-long"><b>' + CH[it.channel] + ' 패치 노트 (' + (+md[1]) + '월 ' + (+md[2]) + '일)</b>는 한국어 공식판이 아직 없어 '
+        + (it.auto ? '자동으로 옮긴 ' : '') + '<b>비공식 번역</b>으로 제공합니다. </span>'
+        + '<span class="sn-short"><b>' + (it.channel === 'ptr' ? '테스트 서버' : '본 서버') + ' ' + (+md[1]) + '/' + (+md[2]) + ' 노트</b> </span>'
         + '<a class="sn-go" href="' + BASE + esc(it.href) + '">바로 보기 →</a></p>';
     }).join('');
     var box = document.createElement('div');
     box.id = 'scrap-notice';
     box.setAttribute('role', 'status');
     box.innerHTML = '<div class="sn-body">' + lines
-      + '<div class="sn-foot"><span>블리자드 한국어판이 나오면 그것으로 바뀝니다.</span>'
+      + '<div class="sn-foot"><span class="sn-long">블리자드 한국어판이 나오면 그것으로 바뀝니다.</span>'
       + '<label><input type="checkbox" class="sn-off"> 이후로 알리지 않음</label></div></div>'
       + '<button type="button" class="sn-x" title="닫기" aria-label="알림 닫기">×</button>';
     // 앱이 아래에 제 칸을 깔아 두었으면(빌드메이커) 뒤로가기 단추와 같은 높이만큼 띄운다
