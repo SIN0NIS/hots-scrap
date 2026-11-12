@@ -10,6 +10,7 @@
 hots_xml 은 저장소 **밖**이다(게임 자산이라 GitHub 에 안 올린다). 그래서 이 단계는 로컬 전용이고,
 서버(Actions)는 여기서 만들어 커밋한 JSON 을 그대로 쓴다.
 """
+import os
 import json
 import re
 import shutil
@@ -17,7 +18,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-SRC = ROOT.parent / "hots_xml" / "out"
+SRC = (Path(os.environ["HOTS_XML"]) if os.environ.get("HOTS_XML") else ROOT.parent / "hots_xml") / "out"   # HOTS_XML: update_wiki.py 가 넘긴다
 OUT = ROOT / "site" / "data" / "herodex"
 
 # 화면이 쓰는 것만 남긴다(내부 디버그용 칸은 뺀다)

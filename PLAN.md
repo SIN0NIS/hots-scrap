@@ -76,16 +76,17 @@ hots_scrap/
 
 ## 로드맵
 
-- [ ] **P1. 통합 데이터 스키마**: `data/97650/` 정의. 기존 파서 산출물(out/final, out/app) 재활용 — 재추출 아님.
-  - [x] heroes.json 경량 인덱스 + heroes/<Id>.json 상세 92명 (12.9MB) — pipeline/steps/step10
-  - [x] talents.json (talentId → 항목 리스트. 공용 특성 6개는 다중 영웅, 하위유닛 AbathurSymbiote·ValeeraStealthed 는 색인 제외) — 리플레이 TalentChosen 과 일치 확인
-  - [ ] maps.json (hots_maps index.json + 리플레이 뷰어 data_maps.js 병합)
-  - [ ] 아이콘·m3 슬러그·내부명 매핑을 heroes.json 에 추가 (hots_hero_web heroes.js + replay data_heroes.js)
-- [ ] **P2. 리플레이 뷰어 이사**: 생성기(build_talents.py 등)의 입력을 통합 데이터로 교체 → site/replay
-- [ ] **P3. 빌드 메이커 이사**: herodata_* (HDP) → 통합 데이터로 교체. make_build.py 수정 → site/builds
-- [ ] **P4. 도감 이사**: out/app HTML들을 site/encyclopedia 로, 데이터 참조 통일
-- [ ] **P5. 교차 기능**: 리플레이 특성픽 → 빌드 링크, 영웅 클릭 → 도감
-- [ ] **P6. 배포**: 새 GitHub 저장소 + Pages + Actions. 기존 저장소 3개는 보존(README 에 이전 안내)
+> 2026-11-12 정리: 아래 체크는 지금 실제 상태다. 계획 뒤에 생긴 앱(위키·패치 기록·전장 도감·티어표·자료실)과
+> 배포 방식(hotscrap.com = Cloudflare Pages, 옛 GitHub Pages 주소는 넘기기만)은 CLAUDE.md·docs/operations.md 가 기준이다.
+
+- [x] **P1. 통합 데이터 스키마** — 처음 계획한 `data/97650/` 상세는 쓰는 화면이 없어 2026-11-11 뺐다(영웅 목록 heroes.json 만 패치 기록 파이프라인이 읽는다).
+  지금 쓰는 자료: 위키 `site/wiki/data/` · 도감 계열 `site/data/herodex/` · 빌드 `site/data/builds/` · 패치 기록 `site/data/patchnotes/`
+  - [ ] 아이콘·m3 슬러그·내부명 매핑을 한 곳에 (지금은 앱마다 따로)
+- [x] **P2. 리플레이 뷰어 이사** → site/replay
+- [x] **P3. 빌드 메이커 이사** → site/builds (본 서버·테스트 서버 두 갈래)
+- [x] **P4. 도감 이사** → site/encyclopedia(위키 번역본, 유지) · 게임 자료 도감은 위키로 합침(2026-11-12)
+- [ ] **P5. 교차 기능**: 리플레이 특성픽 → 빌드 링크, 영웅 클릭 → 위키 (위키↔번역본 링크는 됨)
+- [x] **P6. 배포**: hotscrap.com(Cloudflare Pages, main 에 push 하면 Actions 가 올림) · 6시간마다 패치 자동 갱신
 - [ ] **P7. 추출 도구 정리판 + manifest**: 로컬 중량 자산용 (3D 뷰어 대비)
 
 ## 주의

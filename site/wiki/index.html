@@ -124,6 +124,9 @@ body.tree-open #scrim { display:block; }
 h1.title { font-size:30px; font-weight:900; margin:0 0 4px; line-height:1.25; text-wrap:balance; }
 .lede { font-size:14.5px; color:var(--dim); margin:0 0 14px; }
 .doc-head { border-bottom:2px solid var(--gold-line); padding-bottom:10px; margin-bottom:16px; }
+.srcbar { display:flex; flex-wrap:wrap; gap:4px 14px; align-items:center; font-size:12.5px; padding:6px 12px; margin:0 0 12px; border:1px solid var(--gold-line); border-radius:10px; background:color-mix(in srgb, var(--gold-line) 12%, transparent); }
+.srcbar span { color:var(--dim); font-weight:700; }
+.srcbar a { font-weight:600; }
 h2.sec { font-size:21px; text-wrap:balance; font-weight:900; margin:26px 0 10px; padding-bottom:5px; border-bottom:1px solid var(--line); display:flex; gap:8px; align-items:baseline; }
 h2.sec .no { color:var(--blue); font-family:var(--f-mono); font-size:15px; }
 h3.sub { font-size:15px; margin:16px 0 6px; }
@@ -201,6 +204,21 @@ i.rdot { display:inline-block; width:9px; height:9px; border-radius:50%; backgro
 .rleg { display:flex; flex-wrap:wrap; gap:4px 12px; font-size:12px; color:var(--dim); }
 .rleg i { display:inline-block; width:10px; height:10px; border-radius:2px; background:var(--rc); margin-right:4px; vertical-align:-1px; }
 /* 한눈에 보는 1위 */
+.radar { display:flex; flex-wrap:wrap; gap:10px 18px; align-items:center; margin:4px 0 8px; }
+.radar svg { flex:1 1 300px; min-width:280px; max-width:440px; height:auto; }
+.radar .rsum { flex:1 1 200px; min-width:200px; }
+.radar .cl { fill:var(--rc, var(--gold)); stroke:var(--bg); stroke-width:4; stroke-linejoin:round; }
+.radar .cl.nil { stroke-dasharray:4 4; stroke:var(--line); stroke-width:1.5; }
+.radar .fr { fill:var(--card); stroke:var(--rc, var(--gold)); stroke-width:4; }
+.radar text { text-anchor:middle; }
+.radar .ln { font-size:13px; font-weight:700; fill:var(--fg); }
+.radar .lv { font-size:15px; font-weight:800; fill:var(--fg); font-family:var(--f-mono); }
+.radar .lr { font-size:12px; fill:var(--dim); }
+.radar .lr.hi { fill:var(--gold); font-weight:800; }
+.radar .rall { display:flex; align-items:baseline; gap:6px; }
+.radar .rall span { color:var(--dim); font-weight:700; }
+.radar .rall b { font-size:30px; font-weight:900; color:var(--rc, var(--gold)); }
+@media (max-width:720px) { .radar svg { margin:0 auto; } .radar .ln { font-size:16px; } .radar .lv { font-size:18px; } .radar .lr { font-size:14.5px; } }
 .tops { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:8px; margin:4px 0 6px; }
 .top { border:1px solid var(--line); border-left:4px solid var(--rc); border-radius:var(--r); background:var(--card); padding:8px 10px; display:flex; flex-direction:column; gap:3px; min-width:0; }
 .top .tl { font-size:12px; color:var(--dim); font-weight:600; }
@@ -755,12 +773,26 @@ window.KS={score:score,mark:mark,esc:esc};})();
     est: `<span class="bd est" title="우리가 계산하거나 유사 엔진으로 돌려 낸 값입니다 — 실제 게임과 다를 수 있습니다">추정</span>`,
     unk: `<span class="bd unk" title="게임 엔진 안에서만 정해져 자료로는 확정하지 못했습니다">미확인</span>`,
   };
-  function page({ crumb, title, lede, about, info, sections, after }) {
+  /* 원본 위키 링크 — 번역본(영웅 도감 위키 번역)은 heroesofthestorm.fandom.com 을 옮긴 것이다. 모든 문서 맨 위에 둔다.
+     영웅 문서면 그 영웅의 원본 쪽(영문 이름 — 빌드 자료의 name_en)과 번역본의 그 영웅으로 바로 간다 */
+  const FANDOM = "https://heroesofthestorm.fandom.com/wiki/";
+  let ENNAME = {};
+  if (IN_SITE) fetch("../data/builds/index.json").then(r => r.ok ? r.json() : null).then(j => {
+    if (!j) return; list(j.heroes).forEach(x => { ENNAME[x.id] = x.name_en; if (x.hId) ENNAME[x.hId] = ENNAME[x.hId] || x.name_en; });
+    if (/^#h\./.test(location.hash || "")) route(true);
+  }).catch(() => {});
+  function srcBar(hid) {
+    const en = hid && ENNAME[hid];
+    const orig = en ? FANDOM + encodeURIComponent(en.replace(/ /g, "_")).replace(/%2F/g, "/") : FANDOM + "Heroes_of_the_Storm_Wiki";
+    return `<div class="srcbar"><span>📚 원본 위키</span><a href="${esc(orig)}" target="_blank" rel="noopener">HotS Wiki${en ? " · " + esc(en) : ""} ↗</a>`
+      + (IN_SITE ? `<a href="../encyclopedia/${hid ? "?hero=" + encodeURIComponent(hid) : ""}">번역본(영웅 도감 위키 번역) →</a>` : "") + `</div>`;
+  }
+  function page({ crumb, title, lede, about, info, sections, after, hid }) {
     // 번호는 제목 있는 절에만 붙인다(제목 없는 첫 덩어리가 끼면 목차와 본문 번호가 어긋났다)
     let n = 0;
     const secs = sections.map(s => s.title ? { ...s, no: ++n } : s);
     const toc = secs.filter(s => s.title).map(s => `<li><button data-go="sec${s.no}">${esc(s.title)}</button></li>`).join("");
-    return `<div class="doc-head"><div class="crumb">${crumb}<button type="button" class="share" data-share title="이 문서 주소를 복사합니다">🔗 링크 복사</button></div><h1 class="title">${esc(title)}</h1>${lede ? `<p class="lede">${lede}</p>` : ""}</div>
+    return `${srcBar(hid)}<div class="doc-head"><div class="crumb">${crumb}<button type="button" class="share" data-share title="이 문서 주소를 복사합니다">🔗 링크 복사</button></div><h1 class="title">${esc(title)}</h1>${lede ? `<p class="lede">${lede}</p>` : ""}</div>
       ${about ? `<div class="about"><b>이 문서는</b> ${about}</div>` : ""}
       ${info || ""}${n > 2 ? `<nav class="toc" aria-label="목차"><b>목차</b><ol>${toc}</ol></nav>` : ""}
       ${secs.map(s => s.title ? `<h2 class="sec" id="sec${s.no}">${s.icon && GLYPH[s.icon] ? svgI(GLYPH[s.icon], "gi") : `<span class="no">${s.no}.</span>`}${esc(s.title)}${s.badge ? " " + s.badge : ""}</h2>${s.html}` : s.html).join("")}
@@ -1183,11 +1215,12 @@ window.KS={score:score,mark:mark,esc:esc};})();
     const info = infobox(h["이름"], icon(h["초상화"], "pic"), [["역할군", esc(h["역할군"] || "")], ["세계관", esc(h["세계관"] || "")], ["자원", esc(st["자원"] || "")],
       ["생명력", fmt((st["생명력"] || 0) * kL(rLife)) + ` <small class="note">${LV}레벨</small>`], ["일반 공격 공격력", w["공격력"] ? fmt(w["공격력"] * kL(+rAtk)) : ""], ["공격 사거리", num(st["공격 사거리"])],
       ["이동 속도", num(st["이동 속도"])], ["내부 id", `<span style="font-family:var(--f-mono);font-size:12px">${esc(h.id)}</span>`]]);
-    return page({ crumb: crumbs(`<a href="#heroes">영웅</a>`, esc(h["역할군"] || "")), title: h["이름"],
+    return page({ hid: id, crumb: crumbs(`<a href="#heroes">영웅</a>`, esc(h["역할군"] || "")), title: h["이름"],
       lede: `영웅 · ${esc(h["역할군"] || "")} · ${esc(h["세계관"] || "")} · 지금 ${LV}레벨`,
       about: `${esc(h["이름"])}의 능력치·기술·특성을 게임 파일에서 읽어 보여 줍니다. <b>레벨</b>은 리모컨으로 바꾸고(수치가 성장률만큼 따라 오릅니다, ${cardLink("hero_level_scaling")}), <b>특성</b>은 기술 카드 아래 '이 기술을 바꾸는 특성' 에서 [적용] 하면 바뀐 값이 금색으로 나옵니다.`,
       info,
       sections: [
+        { title: "한눈에 보는 능력치", html: heroRadar(h) },
         { title: "능력치", badge: BD.sure, html: (st["기준 몸"] ? `<p class="note">아래 값은 <b>${esc(st["기준 몸"])}</b> 기준입니다. 다른 모습의 값은 표 아래에 있습니다.</p>` : "")
             + `<p class="note">아래 표는 리모컨 레벨을 적용한 ${LVN(LV)} 입니다(게임 파일 값 = 0레벨, '0레벨 대비' 칸이 늘어난 몫).</p>`
             + tbl(["항목", [`${LV}레벨`], ["레벨당"], ["0레벨 대비"]], statRows)
@@ -1574,6 +1607,60 @@ window.KS={score:score,mark:mark,esc:esc};})();
     ];
   }
   const HS = () => STROLE ? H.filter(h => (h["역할군"] || "기타") === STROLE) : H;
+  /* ── 영웅 한 명의 능력치 구절판 — 가운데 초상화, 둘레 여덟 칸에 능력치·값·전체 중 순위.
+     칸 색이 진할수록 순위가 높다. 값은 1레벨(통계 순위표와 같은 셈), 같은 값이면 같은 등수.
+     종합은 칸마다 순위를 0~1로 바꿔 평균 낸 것으로 다시 줄 세운 것 */
+  /* 마나·이동 속도·시야는 넣지 않는다 — 이동 속도·시야는 거의 모든 영웅이 같고(공동 1위만 나온다), 마나는 영웅마다 쓰임이 달라 견줄 거리가 못 된다 */
+  const RADAR_AX = [["생명력 (1레벨)", "생명력"], ["생명력 재생 (1레벨)", "생명력 재생"], ["일반 공격 공격력 (1레벨)", "공격력"], ["초당 공격", "공격 속도"],
+    ["일반 공격 초당 피해 (1레벨)", "초당 피해"], ["공격 사거리", "사거리"], ["피격 반지름", "피격 크기"], ["충돌 반지름", "충돌 크기"]];
+  let RADAR = null;
+  function radarAll() {
+    if (RADAR) return RADAR;
+    const defs = Object.fromEntries(statDefs().map(([n, f, note, u]) => [n, { f, u: u || "" }]));
+    const by = {}; H.forEach(h => (by[h.id] = { ax: [], p: [] }));
+    RADAR_AX.forEach(([n], i) => {
+      const d = defs[n];
+      const vs = H.map(h => { const v = d ? d.f(h) : null; return typeof v === "number" && isFinite(v) ? { h, v } : null; }).filter(Boolean);
+      const cnt = vs.length;
+      vs.forEach(x => {
+        const rk = 1 + vs.filter(y => +y.v.toFixed(3) > +x.v.toFixed(3)).length;
+        const tie = vs.filter(y => +y.v.toFixed(3) === +x.v.toFixed(3)).length;
+        const p = cnt > 1 ? (cnt - rk) / (cnt - 1) : 1;
+        by[x.h.id].ax[i] = { v: x.v, u: d.u, rk, n: cnt, tie, p };
+        by[x.h.id].p.push(p);
+      });
+    });
+    const avg = H.map(h => { const ps = by[h.id].p; return { id: h.id, a: ps.length ? ps.reduce((x, y) => x + y, 0) / ps.length : 0 }; }).sort((x, y) => y.a - x.a);
+    avg.forEach((x, i) => { by[x.id].all = { rk: 1 + avg.filter(y => y.a > x.a + 1e-9).length, n: avg.length }; });
+    return (RADAR = by);
+  }
+  function heroRadar(h) {
+    const R = radarAll()[h.id]; if (!R) return "";
+    const W = 440, C = W / 2, RO = 214, RI = 76, n = RADAR_AX.length, st = Math.PI * 2 / n;
+    const at = (a, r) => [C + Math.cos(a) * r, C + Math.sin(a) * r].map(v => v.toFixed(1));
+    const cells = RADAR_AX.map(([, lab], i) => {
+      const a0 = -Math.PI / 2 - st / 2 + i * st, a1 = a0 + st, am = a0 + st / 2, x0 = R.ax[i];
+      const [p1x, p1y] = at(a0, RI), [p2x, p2y] = at(a0, RO), [p3x, p3y] = at(a1, RO), [p4x, p4y] = at(a1, RI);
+      const d = `M${p1x},${p1y} L${p2x},${p2y} L${p3x},${p3y} L${p4x},${p4y} A${RI},${RI} 0 0 0 ${p1x},${p1y} Z`;
+      const [tx, ty] = at(am, (RI + RO * Math.cos(st / 2)) / 2 + 4).map(Number);
+      const val = x0 ? `${num(x0.v)}${x0.u}` : "—";
+      const rk = x0 ? (x0.tie > 1 ? `공동 ${x0.rk}위` : `${x0.rk}위`) + ` / ${x0.n}` : "값 없음";
+      return `<path d="${d}" class="cl${x0 ? "" : " nil"}" style="fill-opacity:${x0 ? (0.07 + 0.5 * x0.p).toFixed(2) : 0}"/>`
+        + `<text x="${tx}" y="${ty - 16}" class="ln">${esc(lab)}</text><text x="${tx}" y="${ty + 2}" class="lv">${esc(val)}</text>`
+        + `<text x="${tx}" y="${ty + 20}" class="lr${x0 && x0.rk <= 10 ? " hi" : ""}">${esc(rk)}</text>`;
+    }).join("");
+    const pic = ICON[String(h["초상화"] || "").toLowerCase()], cid = "rc-" + h.id;
+    const face = `<circle cx="${C}" cy="${C}" r="${RI - 6}" class="fr"/>` + (pic ? `<clipPath id="${esc(cid)}"><circle cx="${C}" cy="${C}" r="${RI - 10}"/></clipPath><image href="${esc(pic)}" x="${C - RI + 10}" y="${C - RI + 10}" width="${2 * (RI - 10)}" height="${2 * (RI - 10)}" clip-path="url(#${esc(cid)})"/>` : "");
+    const rows = RADAR_AX.map(([, lab], i) => R.ax[i] ? [lab, R.ax[i]] : null).filter(Boolean);
+    const best = rows.slice().sort((a, b) => a[1].rk - b[1].rk).slice(0, 2).map(([l, x]) => `${l} ${x.rk}위`).join(" · ");
+    return `<div class="radar ${rcOf(h["역할군"])}"><svg viewBox="0 0 ${W} ${W}" role="img" aria-label="${esc(h["이름"])} 능력치 구절판">${cells}${face}</svg>
+      <div class="rsum"><div class="rall"><span>종합</span><b>${R.all.rk}위</b><small>/ ${R.all.n}명</small></div>
+        <p class="note">가장 앞선 칸: <b>${esc(best)}</b></p>
+        <p class="note">칸마다 <b>1레벨 값</b>과 <b>전체 영웅 ${R.all.n}명 중 순위</b>입니다. 색이 진할수록 순위가 높고, 10위 안은 금색 글씨입니다. 피격 크기(기술에 맞는 몸통)·충돌 크기(유닛끼리 부딪히는 몸통)는 클수록 앞 — 피격 크기가 크면 방향 지정 기술에 잘 맞습니다.</p>
+        <p class="note"><b>종합</b>은 여덟 칸의 순위를 고르게 섞어 다시 줄 세운 것이라 '센 영웅' 순위가 아닙니다 — 기술·특성은 들어 있지 않습니다.</p>
+        <p class="note"><a href="#stats">전체 영웅 순위표 ›</a></p></div></div>`;
+  }
+
   const medOf = vs => { const a = vs.slice().sort((x, y) => x - y), n = a.length; return n % 2 ? a[(n - 1) / 2] : (a[n / 2 - 1] + a[n / 2]) / 2; };
   function statOf(name, rows, o) {
     o = o || {};

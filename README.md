@@ -2,7 +2,7 @@
 
 히어로즈 오브 더 스톰 통합 아카이브 — 원본 게임 데이터 기반의 영웅 도감, 특성 빌드 메이커, 리플레이 뷰어를 하나의 정적 사이트로 제공한다.
 
-- **경량 데이터(JSON·아이콘)**: 이 저장소에 포함, GitHub Pages 로 서빙
+- **경량 데이터(JSON·아이콘)**: 이 저장소에 포함, https://hotscrap.com (Cloudflare Pages)으로 서빙
 - **중량 자산(m3 모델·텍스처)**: 저장소에 포함하지 않음 — 사용자가 추출 도구로 자기 게임 설치본에서 직접 추출해 로컬로 사용
 
 ## 패치 기록 (Patch Note History)
@@ -39,7 +39,7 @@
 | 영웅 선택 | `…/builds/?hero=Diablo` | hyperlinkId 또는 영문명 |
 
 리플레이 파일은 방문자의 브라우저 안에서만 파싱되며 어디에도 업로드되지 않습니다.
-연동 예: `https://sin0nis.github.io/hots-scrap/replay/?src=https://hots.herossearch.com/replays/123.StormReplay`
+연동 예: `https://hotscrap.com/replay/?src=https://hots.herossearch.com/replays/123.StormReplay`
 새 협업 요청은 GitHub 이슈로 — 허용 목록에 호스트 한 줄 추가로 연결됩니다.
 
 ## 권리 고지

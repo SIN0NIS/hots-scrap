@@ -3,7 +3,7 @@
 > **평소에는 아무것도 안 해도 됩니다.** 새 패치는 서버가 알아서 받아 올립니다.
 > 이 문서는 "지금 바로 반영하고 싶을 때"와 "뭔가 안 나올 때"를 위한 것입니다.
 
-사이트: <https://sin0nis.github.io/hots-scrap/>
+사이트: <https://hotscrap.com/> (옛 주소 sin0nis.github.io/hots-scrap 은 같은 자리로 넘어간다)
 
 ---
 
@@ -151,6 +151,7 @@ images 저장소가 6시간 안에 게임에서 꺼내 채웁니다. 급하면 *
 | 증상 | 먼저 볼 곳 | 손으로 하는 법 |
 |---|---|---|
 | 사이트 내용이 안 바뀐다 | [Actions → Deploy Pages](https://github.com/SIN0NIS/hots-scrap/actions) 가 성공했나 | 브라우저 새로고침(Ctrl+F5). GitHub 쪽 캐시로 한 번은 옛 화면이 뜰 수 있습니다 |
+| 6시간 자동 갱신이 안 돈다(Actions 에 schedule 실행이 며칠째 없음) | `gh run list -w update-patchnotes.yml` | 깃허브가 예약을 소리 없이 멈출 때가 있다(2026-10-31~11-11 실제로 멈춤). `gh workflow disable update-patchnotes.yml` 후 `enable` 하면 되살아난다 |
 | 빌드가 옛 것이다 | `python pipeline/steps/check_updates.py` (요청 3개) | ⟳ 지금 갱신, 또는 위 2번(로컬로 직접 뽑기) |
 | 아이콘이 비어 보인다 | `site/images/index.json` 의 `need`·`missing` | [images Actions](https://github.com/SIN0NIS/images/actions) 실행 기록 확인 |
 | 실패 메일이 왔다 | [열린 이슈](https://github.com/SIN0NIS/hots-scrap/issues?q=is%3Aopen+label%3Aauto-update) | 이슈 내용대로. 대개 Claude 에게 그대로 보여 주면 됩니다 |
@@ -162,7 +163,7 @@ images 저장소가 6시간 안에 게임에서 꺼내 채웁니다. 급하면 *
 
 | 무엇 | 어디 |
 |---|---|
-| 사이트 | <https://sin0nis.github.io/hots-scrap/> |
+| 사이트 | <https://hotscrap.com/> |
 | 사이트 저장소 | <https://github.com/SIN0NIS/hots-scrap> |
 | 아이콘 저장소 | <https://github.com/SIN0NIS/images> (Pages: `sin0nis.github.io/images/...`) |
 | 내 PC 작업본 | `D:\03-Fun\01_Game\03_claude\hots_scrap` |

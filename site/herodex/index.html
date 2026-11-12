@@ -9,6 +9,16 @@
 <meta property="og:title" content="영웅 도감 · HotS Scrap">
 <meta property="og:description" content="히어로즈 오브 더 스톰 영웅 기술·특성 상세 — 게임 원본 자료의 유형·사거리·판정·투사체 속도, 범위 구경, 통계">
 <link rel="icon" href="../shared/favicon.svg">
+<script>
+/* 영웅 도감(임시)은 위키로 합쳤다(2026-11-12) — 영웅 문서는 위키의 같은 영웅으로 넘긴다.
+   범위 구경(shapes.html)·칸 통계(stats.html)는 위키에 없는 도구라 그대로 둔다. 예전 화면은 ?old=1 */
+(function () {
+  var q = new URLSearchParams(location.search);
+  if (q.get('old') === '1') return;
+  var h = q.get('hero');
+  location.replace('../wiki/' + (h ? '#h.' + encodeURIComponent(h) : '#heroes'));
+})();
+</script>
 <script src="../shared/search.js"></script>
 <script src="../shared/shape.js"></script>
 <script src="../shared/scrap.js" defer></script>

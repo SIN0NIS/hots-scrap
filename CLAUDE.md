@@ -50,6 +50,7 @@
 - `site/wiki/` **위키** — 허브 '위키' 칸과 전역 바 '위키' 가 여기로 온다. 영웅·전장·시스템·통계·용어·패치 여섯 갈래.
   **만드는 곳은 저장소 밖** `../hots_extract`(`update_wiki.py` → `report/wiki/`)이고, `python ../hots_extract/wiki_site.py` 가
   사이트 판으로 감싸(`<html data-site>` + `scrap.js` + 뒤로가기 130px) 이 폴더에 **통째로 덮어쓴다** — 여기서 직접 고치지 마라.
+  - **2026-11-12 한 곳으로**: 노트북에서는 `update_wiki.py` 한 줄이 영웅 자료(herodex_update)부터 위키까지 **이 저장소(C:audehots_scrap)에 바로** 쓴다 — 옛 사본(C:audeHotShots_scrap)에서 만들어 손으로 복사하던 단계가 없어졌다. 도구들은 `HOTS_SCRAP` > 한 단계 위 `hots_scrap` > 옛 자리 순으로 저장소를 찾고, 해석기는 `update_wiki.py` 가 `HOTS_XML`(=C:audeHotShots_xml)로 넘긴다. `herodex_update.py` 를 따로 돌릴 땐 `HOTS_XML` 을 꼭 줘야 한다(안 주면 옆의 옛 C:audehots_xml 를 쓴다).
   - 처음엔 영웅 목록(`data/heroes.json`)·핵심 그림(`data/icons.json`)만 받고, 영웅 문서를 열 때 `data/hero/<id>.json`·`data/icon/<id>.json` 을 받는다.
   - 그림은 `data/img/*.webp` 파일로 따로 둔다 — `icons.json`·`icon/<id>.json` 은 이름→그림 주소만(예전엔 base64 를 박아 첫 화면이 545KB 더 무거웠다, 2026-11-11 분리).
   - **패치** 갈래와 영웅 문서의 '패치 이력' 은 `../data/patchnotes/` 를 **그대로 읽는다**(복사 안 함) — 패치 노트 자동 갱신이 위키에도 바로 보인다.
@@ -73,6 +74,8 @@
     (`applyChg`). 그림째 바꾸는 특성은 수치가 안 바뀌어도 칩에 넣는다(`hotsSplat.tals`).
   - 이 위키가 못 하는 것은 원래 앱에 남긴다: 범위 구경·칸 통계(herodex), 전장 흐름(maps), 스킨·대사(encyclopedia), 티어표.
 - `site/herodex/` **영웅 도감** — 게임 원본 XML 에서 직접 뽑은 기술·특성 상세.
+  - **2026-11-12 위키로 합침**: `herodex/index.html` 은 들어오자마자 `../wiki/#h.<영웅>` 으로 넘긴다(`?old=1` 이면 예전 화면). 허브 apps.json 에서도 뺐다. 범위 구경(`shapes.html`)·칸 통계(`stats.html`)는 위키에 없는 도구라 그대로 쓴다. 자료(`site/data/herodex/`)도 이 둘과 번역 도감이 읽으므로 그대로 만든다.
+  - 위키 문서 맨 위 `srcBar` = 원본(heroesofthestorm.fandom.com, 영문 이름은 `data/builds/index.json` 의 name_en)·번역본(`encyclopedia/?hero=<id>` — 번역 도감이 이 주소로 영웅을 바로 연다). 영웅 문서 맨 위 "한눈에 보는 능력치" = `heroRadar`(구절판 여덟 칸, 1레벨 값·전체 중 순위, 종합 순위).
   자료는 `site/data/herodex/`(목록 1개 + 영웅마다 1개, 평균 16KB) — 화면은 **고른 영웅 하나만** 받는다.
   주소에 `?hero=` 가 없으면 **영웅 고르는 첫 화면**(역할군별 얼굴판)이다 — 들어오자마자 첫 영웅이
   펼쳐져 있으면 "여기가 어디지" 가 된다. 얼굴·역할군·기술 수는 이미 받는 `index.json` 에 다 있어
@@ -148,6 +151,7 @@
     - 검토용 사진: `python ../hots_xml/tools/shape_shots.py` → `hots_xml/out/sheets/<영웅>.png`
       (머리 없는 크롬이 `shapes.html?hero=..&all=1&cols=3` 을 찍는다. `all=1` 이면 끊지 않고 다 그리고 배경 무늬를 숨긴다)
 - `site/encyclopedia/index.html` 영웅 도감 (HotS wiki 번역) — **단일 파일(4MB, 위키 자료 내장)**, 직접 편집
+  - **2026-11-12 영웅마다 나눔**: 기술·특성(abilities·talents·subAbilities)과 위키 상세 칸은 `encyclopedia/hero/<id>.json` 에 있다(`pipeline/steps/split_encyclopedia.py`). 화면은 영웅을 열 때 그 영웅 것만 받는다(index.html 의 hero-split 코드가 renderHeroPage 를 감쌈). index.html 은 0.8MB(압축 191KB, 예전 814KB). 기술·특성을 고칠 땐 hero/<id>.json 을 고친다. `?hero=<id>` 로 영웅을 바로 연다. hots_extract/enc_next.py(시안 도구)는 옛 한 파일 꼴을 가정해 이제 그대로는 안 돈다.
   - **수치 제원은 도감(herodex) 자료를 받아 쓴다** — 영웅을 고를 때 `data/herodex/<영웅>.json`
     하나(30KB) + `index.json`(눈금·판 번호). 예전에는 옛 파서가 뽑은 `XML_SPECS` 2.1MB 가
     박혀 있었는데 값이 날것이라(재사용 0.0625초 = 연타 잠금, 반경 500 = 무제한 표식) 2026-08 부터

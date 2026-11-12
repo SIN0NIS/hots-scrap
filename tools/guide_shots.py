@@ -33,7 +33,7 @@ W, H = 1280, 800
 
 # 사진에 안 나와야 할 것
 #   되돌아가기 단추 — 찍는 동안 기록이 쌓여 생긴다
-HIDE_CSS = "#scrap-back{display:none!important}"
+HIDE_CSS = "#scrap-back,#scrap-notice{display:none!important}"   # 하단 번역 알림도 — 사진을 가린다
 
 
 def scroll_inner_top(pg):
@@ -127,19 +127,12 @@ SHOTS = [
          marks=["#tc-tabs", ["#tc-modal button >> nth=0", "#tc-modal button >> nth=2"], "#tc-short-lab",
                 "#tc-modal .x-btn"]),
 
-    # 위키 — 영웅 도감
-    dict(id="h-home", url="herodex/", marks=["#q", ".menu", "#home-grid, .hgrid, .faces"]),
-    dict(id="h-hero", url="herodex/?hero=Jaina", marks=[".menu", "#home", "#figs", "#ids"]),
-    dict(id="h-card", url="herodex/?hero=Jaina", do=[scroll_into(".card", "start", -10)],
-         marks=[".card .chips >> nth=0", ".card .tipv >> nth=0", ".card table >> nth=0", ".card .figz >> nth=0"]),
-    dict(id="h-ups", url="herodex/?hero=Jaina", do=[scroll_into(".ups", "center")],
-         marks=[".ups >> nth=0", ".goup >> nth=0", ".more >> nth=0"]),
-    dict(id="h-jump", url="herodex/?hero=Jaina",
-         do=[scroll_into(".ups", "center"), lambda pg: (pg.click(".goup >> nth=0"), pg.wait_for_timeout(1200))],
-         marks=["#goback"]),
-    dict(id="h-zoom", url="herodex/?hero=Jaina",
-         do=[scroll_into(".card", "start", -10), lambda pg: (pg.click(".card .figz >> nth=0"), pg.wait_for_timeout(600))],
-         marks=[".hzfig .fig > svg", ".hzfig .cvd", ".hzside", ".hzhead .go", ".hzx"]),
+    # 위키 — 영웅 문서는 위키로 합쳤다(2026-11-12). 범위 구경·통계 보기는 도감(herodex) 쪽 화면 그대로
+    dict(id="w-home", url="wiki/", marks=["#menu", "#nav", "#q", ".tiles"]),
+    dict(id="w-hero", url="wiki/#h.Jaina", size=(1280, 1060), do=[lambda pg: pg.wait_for_timeout(1200)],
+         marks=[".srcbar", ".radar svg", ".radar .rall", "aside.info"]),
+    dict(id="w-stats", url="wiki/#stats", size=(1280, 1200), do=[lambda pg: pg.wait_for_timeout(1500)],
+         marks=[".tops", ".sttabs"]),
     dict(id="shapes", url="herodex/shapes.html",
          marks=["#q", ["#hero", "#sort"], ["button.f >> text=적", "button.f >> text=둘 다"],
                 ["button.f >> text=갈래", "button.f >> text=튕김"], ["button.f >> text=기술", "button.f >> text=특성"],
@@ -185,8 +178,8 @@ SHOTS = [
     dict(id="patch", url="patchnotes/",
          marks=[["a >> text=패치 목록", "a >> text=전장별 이력"], "#q", ["button >> text=라이브", "button >> text=테스트 서버"],
                 ["button >> text=공식 한글", "button >> text=데이터"], ["#heroPick", "#bgPick"], "a.rmain >> nth=1"]),
-    dict(id="patch-note", url="patchnotes/",
-         do=[lambda pg: (pg.click("a.rmain >> nth=1"), pg.wait_for_timeout(1200))],
+    # 목록 맨 위는 자동으로 붙는 데이터 회차일 때가 많아(원문·영웅 링크가 없다) 공식 노트 하나를 못박아 연다
+    dict(id="patch-note", url="patchnotes/?v=2026-09-29", do=[lambda pg: pg.wait_for_timeout(1200)],
          marks=[["button >> text=공식 패치 노트", "button >> text=데이터 변경점"], "text=블리자드 원문에서 직접 확인",
                 ["a:has-text(\"가로쉬\") >> nth=0", "a:has-text(\"잘아타스\") >> nth=0"]]),
     dict(id="patch-cal", url="patchnotes/?view=cal", marks=[]),

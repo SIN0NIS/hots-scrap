@@ -34,7 +34,8 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-XML = ROOT.parent / "hots_xml"
+# 해석기 폴더: HOTS_XML(update_wiki.py 가 넘긴다) > 저장소 옆 hots_xml
+XML = Path(os.environ["HOTS_XML"]) if os.environ.get("HOTS_XML") else ROOT.parent / "hots_xml"
 SITE = ROOT / "site" / "data" / "herodex"
 KST = timezone(timedelta(hours=9))
 INSTALLS = {
