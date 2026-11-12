@@ -33,6 +33,30 @@
   function isChoJamo(c) { return CHO.indexOf(c) > -1; }
   function isJungJamo(c) { return JUNG.indexOf(c) > -1; }
 
+  /* 겹자음 풀기 — 자판은 자음 둘을 이어 치면 한 글자로 붙여 버린다("ㄹㅁ" → "ㄻ", "기ㄹㅁ" → "긺").
+     그래서 붙은 겹자음을 친 사람이 뜻한 낱자들로 되돌린 검색어도 같이 본다.
+       "ㄻ" → "ㄹㅁ"      "긺" → "기ㄹㅁ"(→ 길마·기름 따위가 걸린다) */
+  var PAIR = { 'ㄳ': 'ㄱㅅ', 'ㄵ': 'ㄴㅈ', 'ㄶ': 'ㄴㅎ', 'ㄺ': 'ㄹㄱ', 'ㄻ': 'ㄹㅁ', 'ㄼ': 'ㄹㅂ',
+               'ㄽ': 'ㄹㅅ', 'ㄾ': 'ㄹㅌ', 'ㄿ': 'ㄹㅍ', 'ㅀ': 'ㄹㅎ', 'ㅄ': 'ㅂㅅ' };
+  function unpair(q) {
+    var out = '';
+    for (var i = 0; i < q.length; i++) {
+      var c = q[i];
+      if (PAIR[c]) { out += PAIR[c]; continue; }
+      if (isSyl(c)) {
+        var p = parts(c), two = PAIR[JONG[p.jong]];
+        if (two) { out += String.fromCharCode(SBASE + (p.cho * NJUNG + p.jung) * NJONG) + two; continue; }
+      }
+      out += c;
+    }
+    return out;
+  }
+  /* 한 검색어로 볼 꼴들 — 원래 것과, 겹자음을 푼 것(다를 때만) */
+  function variants(q) {
+    var u = unpair(q);
+    return u === q ? [tokenize(q)] : [tokenize(q), tokenize(u)];
+  }
+
   /* 검색어를 한 칸씩 뜯는다.
      kind: 'syl' 완성 글자 · 'cho' 자음 하나 · 'jung' 모음 하나 · 'raw' 그 밖(영문·숫자) */
   function tokenize(q) {
@@ -130,7 +154,7 @@
   function score(query, texts) {
     var q = norm(query);
     if (!q) return 1;
-    var toks = tokenize(q);
+    var vs = variants(q);
     var list = Object.prototype.toString.call(texts) === '[object Array]' ? texts : [texts];
     for (var a = 0, n0 = list.length; a < n0; a++) {
       var extra = ALIAS[String(list[a] == null ? '' : list[a]).toLowerCase()];
@@ -138,7 +162,8 @@
     }
     var best = 0;
     for (var i = 0; i < list.length; i++) {
-      var sc = scoreOne(toks, norm(list[i]));
+      var t = norm(list[i]), sc = 0;
+      for (var v = 0; v < vs.length; v++) sc = Math.max(sc, scoreOne(vs[v], t) - (v ? 1 : 0));   // 같으면 친 그대로 쪽
       if (i > 0) sc -= 1;                 // 같은 점수면 첫 번째 이름(보통 한글) 우선
       if (sc > best) best = sc;
     }
@@ -150,7 +175,6 @@
   function filter(list, query, getTexts) {
     var q = norm(query);
     if (!q) return list.slice();
-    var toks = tokenize(q);
     var out = [];
     for (var i = 0; i < list.length; i++) {
       var texts = getTexts ? getTexts(list[i]) : list[i];
@@ -179,9 +203,10 @@
       if (SKIP.test(raw[i])) continue;
       flat += raw[i].toLowerCase(); map.push(i);
     }
-    var toks = tokenize(q);
+    var vs = variants(q);
     for (var s = 0; s < flat.length; s++) {
-      var r = runFrom(toks, flat, s);
+      var r = null;
+      for (var v = 0; v < vs.length && !r; v++) r = runFrom(vs[v], flat, s);
       if (!r) continue;
       var a = map[s], b = map[r.end - 1];
       if (a == null || b == null) break;

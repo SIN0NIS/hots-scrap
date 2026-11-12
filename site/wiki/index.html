@@ -604,6 +604,10 @@ details.more > summary .note { font-weight:400; margin-left:6px; }
 /* ─── 한글 검색기 — HotS Scrap site/shared/search.js 와 같은 규칙(다 친 글자는 글자대로, 자음 하나는 그 자리 초성) ─── */
 (function(){var SB=0xac00,SL=0xd7a3,NJ=21,NO=28,CHO='ㄱㄲㄴㄷㄸㄹㅁㅂㅃㅅㅆㅇㅈㅉㅊㅋㅌㅍㅎ',JUNG='ㅏㅐㅑㅒㅓㅔㅕㅖㅗㅘㅙㅚㅛㅜㅝㅞㅟㅠㅡㅢㅣ',JONG='\u0000ㄱㄲㄳㄴㄵㄶㄷㄹㄺㄻㄼㄽㄾㄿㅀㅁㅂㅄㅅㅆㅇㅈㅊㅋㅌㅍㅎ';
 function isS(c){var u=c.charCodeAt(0);return u>=SB&&u<=SL}function P(c){var u=c.charCodeAt(0)-SB;return{cho:Math.floor(u/(NJ*NO)),jung:Math.floor(u/NO)%NJ,jong:u%NO}}
+/* 겹자음 풀기 — 자판이 자음 둘을 붙여 버린다(ㄹㅁ→ㄻ, 기ㄹㅁ→긺). 푼 검색어도 같이 본다 */
+var PAIR={'ㄳ':'ㄱㅅ','ㄵ':'ㄴㅈ','ㄶ':'ㄴㅎ','ㄺ':'ㄹㄱ','ㄻ':'ㄹㅁ','ㄼ':'ㄹㅂ','ㄽ':'ㄹㅅ','ㄾ':'ㄹㅌ','ㄿ':'ㄹㅍ','ㅀ':'ㄹㅎ','ㅄ':'ㅂㅅ'};
+function unpair(q){var o='';for(var i=0;i<q.length;i++){var c=q[i];if(PAIR[c]){o+=PAIR[c];continue}if(isS(c)){var p=P(c),two=PAIR[JONG[p.jong]];if(two){o+=String.fromCharCode(SB+(p.cho*NJ+p.jung)*NO)+two;continue}}o+=c}return o}
+function vars(q){var u=unpair(q);return u===q?[tok(q)]:[tok(q),tok(u)]}
 function tok(q){var o=[];for(var i=0;i<q.length;i++){var c=q[i];if(isS(c))o.push({k:'s',c:c,p:P(c)});else if(CHO.indexOf(c)>-1)o.push({k:'c',c:c,n:CHO.indexOf(c)});else if(JUNG.indexOf(c)>-1)o.push({k:'j',c:c,n:JUNG.indexOf(c)});else o.push({k:'r',c:c})}return o}
 function run(t,x,s){var i=s,f=0;for(var k=0;k<t.length;k++){var a=t[k],last=k===t.length-1;if(i>=x.length)return null;var c=x[i];
 if(a.k==='s'){if(c===a.c){i++;continue}if(isS(c)&&a.p.jong===0){var p=P(c);if(p.cho===a.p.cho&&p.jung===a.p.jung){if(last){i++;f++;continue}var nx=t[k+1];if(p.jong!==0&&nx&&nx.k==='c'&&JONG.indexOf(nx.c)===p.jong){i++;f++;continue}}}return null}
@@ -611,11 +615,11 @@ if(a.k==='c'){if(k>0&&t[k-1].k==='s'&&t[k-1].p.jong===0&&i>s){var pv=x[i-1];if(i
 if(a.k==='j'){if(isS(c)&&P(c).jung===a.n){i++;f++;continue}if(c===a.c){i++;continue}return null}if(c!==a.c)return null;i++}return{end:i,fuzzy:f}}
 var SKIP=/[\s.'’·\-_,!?()[\]]/;function norm(s){var r=String(s==null?'':s).toLowerCase(),o='';for(var i=0;i<r.length;i++)if(!SKIP.test(r[i]))o+=r[i];return o}
 function one(t,x){if(!t.length)return 1;var b=0;for(var s=0;s<x.length;s++){var r=run(t,x,s);if(!r)continue;var sc=1000-s*40-r.fuzzy*30-(x.length-r.end)*2;if(s===0&&r.end===x.length&&r.fuzzy===0)sc+=500;if(sc>b)b=sc;if(s===0)break}return b>0?b:0}
-var ALIAS={'d.va':['디바']};function score(q,ts){q=norm(q);if(!q)return 1;var t=tok(q),L=[].concat(ts),b=0;for(var a=0,n=L.length;a<n;a++){var e=ALIAS[String(L[a]||'').toLowerCase()];if(e)L=L.concat(e)}
-for(var i=0;i<L.length;i++){var sc=one(t,norm(L[i]));if(i>0)sc-=1;if(sc>b)b=sc}return b}
+var ALIAS={'d.va':['디바']};function score(q,ts){q=norm(q);if(!q)return 1;var V=vars(q),L=[].concat(ts),b=0;for(var a=0,n=L.length;a<n;a++){var e=ALIAS[String(L[a]||'').toLowerCase()];if(e)L=L.concat(e)}
+for(var i=0;i<L.length;i++){var x=norm(L[i]),sc=0;for(var v=0;v<V.length;v++)sc=Math.max(sc,one(V[v],x)-(v?1:0));if(i>0)sc-=1;if(sc>b)b=sc}return b}
 function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
-function mark(text,q){var raw=String(text==null?'':text);q=norm(q);if(!q)return esc(raw);var flat='',map=[];for(var i=0;i<raw.length;i++){if(SKIP.test(raw[i]))continue;flat+=raw[i].toLowerCase();map.push(i)}var t=tok(q);
-for(var s=0;s<flat.length;s++){var r=run(t,flat,s);if(!r)continue;var a=map[s],b=map[r.end-1];if(a==null||b==null)break;return esc(raw.slice(0,a))+'<mark>'+esc(raw.slice(a,b+1))+'</mark>'+esc(raw.slice(b+1))}return esc(raw)}
+function mark(text,q){var raw=String(text==null?'':text);q=norm(q);if(!q)return esc(raw);var flat='',map=[];for(var i=0;i<raw.length;i++){if(SKIP.test(raw[i]))continue;flat+=raw[i].toLowerCase();map.push(i)}var V=vars(q);
+for(var s=0;s<flat.length;s++){var r=null;for(var v=0;v<V.length&&!r;v++)r=run(V[v],flat,s);if(!r)continue;var a=map[s],b=map[r.end-1];if(a==null||b==null)break;return esc(raw.slice(0,a))+'<mark>'+esc(raw.slice(a,b+1))+'</mark>'+esc(raw.slice(b+1))}return esc(raw)}
 window.KS={score:score,mark:mark,esc:esc};})();
 </script>
 <script>
