@@ -313,6 +313,7 @@
         <div id="welcome-area" style="padding:40px; text-align:center; color:#666;">영웅을 선택하세요. / Select a Hero.</div>
         <div id="hero-stat-container">
             <h2 id="hero-info-title" style="margin:0; font-size: 24px;"></h2>
+            <a id="hero-wiki-link" href="../wiki/" style="font-size:12.5px; font-weight:600; text-decoration:none;" title="이 영웅의 능력치 순위·기술·특성 세부·패치 이력">위키에서 자세히 →</a>
             <div style="display:flex; align-items:center; gap:8px; margin: 10px 0;">
               <div id="level-display" style="color:var(--gold); font-weight:bold;">LV 1</div>
               <button type="button" title="레벨 -1" style="background:#132b4d;border:1px solid #233a5c;color:#eaf1fa;border-radius:4px;width:26px;height:26px;cursor:pointer;font-size:15px;line-height:1;"
@@ -657,7 +658,7 @@
         function selectHero(id) {
             currentHeroId = id; const hData = getActiveData()[id];
             document.getElementById("welcome-area").style.display = "none"; hideList();
-            document.getElementById("hero-info-title").innerText = hData.name; document.getElementById("hero-stat-container").style.display = "block";
+            document.getElementById("hero-info-title").innerText = hData.name; document.getElementById("hero-wiki-link").href = "../wiki/#h." + encodeURIComponent(id); document.getElementById("hero-stat-container").style.display = "block";
             const lvs = Object.keys(hData.talents).filter(l => hData.talents[l].length > 0).sort((a,b) => parseInt(a.replace(/\D/g,"")) - parseInt(b.replace(/\D/g,"")));
             selectedTalents = new Array(lvs.length).fill(0);
             /* ⚠ **여기서 비우면 안 된다.** `selectHero` 는 영웅을 바꿀 때만 도는 게

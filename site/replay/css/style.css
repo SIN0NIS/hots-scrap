@@ -638,6 +638,8 @@ body.mode-replay:not(.has-replay) #needRep{display:block}
 .spanpl td.nm{display:flex;align-items:center;gap:5px;font-family:inherit;text-align:left}
 .spanpl td.nm img{width:20px;height:20px;border-radius:4px;flex:none}
 .spanpl td.nm em{font-style:normal;color:var(--dim);font-size:calc(9px * var(--fs))}
+.spanpl td.nm a.wk{color:inherit;text-decoration:underline dotted;text-underline-offset:3px}
+.spanpl td.nm a.wk:hover{color:var(--blue)}
 .spanpl tr.b td.nm{border-left:3px solid var(--blue)}
 .spanpl tr.r td.nm{border-left:3px solid var(--red)}
 .spannote{font-size:calc(10px * var(--fs));color:var(--dim);line-height:1.7;

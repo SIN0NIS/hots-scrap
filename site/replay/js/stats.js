@@ -169,7 +169,8 @@ function spanHTML(a, b){
     const hd = heroByName(r.hero);
     h += `<tr class="${r.team ? 'r' : 'b'}"><td class="nm">`
        + (hd ? `<img src="../shared/icons/${hd.icon}" alt="">` : '')
-       + `<span>${r.hero}</span><em>${r.lab.replace(/\(.*\)$/, '')}</em></td>`
+       + (hd ? `<a class="wk" href="../wiki/#h.${encodeURIComponent(hd.ko)}" target="_blank" rel="noopener" title="위키에서 이 영웅 보기">${r.hero}</a>` : `<span>${r.hero}</span>`)   // 위키는 한글 이름 주소도 받는다
+       + `<em>${r.lab.replace(/\(.*\)$/, '')}</em></td>`
        + `<td>${r.s.td}</td><td>${r.s.death}</td><td>${r.s.cs}</td><td>${r.s.merc}</td>`
        + `<td>${r.s.struct}</td><td>${r.s.globe}</td><td>${r.s.apm}</td>`
        + `<td>${r.s.dead ? Math.floor(r.s.dead/60)+':'+String(r.s.dead%60).padStart(2,'0') : '-'}</td></tr>`;

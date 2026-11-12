@@ -1160,6 +1160,9 @@ window.KS={score:score,mark:mark,esc:esc};})();
   }
   document.addEventListener("toggle", e => { const d = e.target; if (d.dataset && d.dataset.tf) { if (d.open) TOPEN.add(d.dataset.tf); else TOPEN.delete(d.dataset.tf); } }, true);
   function pHero(id) {
+    // 다른 앱(리플레이)은 영웅 내부 id 를 몰라 한글 이름으로 온다(#h.제이나) — 같은 영웅의 id 주소로 바꿔 준다
+    if (!hById[id]) { const nm = (() => { try { return decodeURIComponent(id); } catch (e) { return id; } })(), f = H.find(x => x["이름"] === nm);
+      if (f) { setTimeout(() => location.replace("#h." + f.id)); return page({ crumb: crumbs(`<a href="#heroes">영웅</a>`), title: f["이름"], sections: [{ html: `<p class="load">여는 중…</p>` }] }); } }
     const h = hById[id]; if (!h) return notFound();
     if (!h.__full) { loadHero(id); return page({ crumb: crumbs(`<a href="#heroes">영웅</a>`), title: h["이름"], sections: [{ html: `<p class="load">${esc(h["이름"])} 자료를 불러오는 중…</p>` }] }); }
     curHero = id; tdOf(id);
