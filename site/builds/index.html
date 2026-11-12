@@ -1350,7 +1350,20 @@ window.__bootQuery = function () {
     var b = q.get('b') || q.get('code');
     if (b) { loadBuildCode(b); return; }
     var hero = q.get('hero');
-    if (hero) loadBuildCode('T0000000,' + hero);
+    if (!hero) return;
+    var byKo = heroList.find(function (h) { return h.name_ko === hero; });   // 한글 이름으로도 받는다(리플레이·위키)
+    if (byKo) hero = byKo.id;
+    if (!loadBuildCode('T0000000,' + hero)) return;
+    /* ?hero=X&picks=특성이름|특성이름… — 리플레이가 그 판에 찍은 특성을 이름으로 넘긴다(게임 공식 한글명).
+       티어를 따지지 않고 이름으로 찾아 그 칸의 차례를 코드로 바꾼다 — 크로미처럼 레벨이 다른 영웅도 맞는다 */
+    var picks = (q.get('picks') || '').split('|').filter(Boolean);
+    if (!picks.length) return;
+    var hData = getActiveData()[currentHeroId], lvs = tierLevels(hData), digits = '';
+    lvs.forEach(function (lv) {
+      var i = (hData.talents[lv] || []).findIndex(function (t) { return picks.indexOf(t.name) > -1; });
+      digits += i < 0 ? '0' : String(i + 1);
+    });
+    if (/[1-9]/.test(digits)) loadBuildCode('T' + digits + ',' + (hData.hyperlinkId || currentHeroId));
   } catch (e) {}
 };
 

@@ -640,6 +640,7 @@ body.mode-replay:not(.has-replay) #needRep{display:block}
 .spanpl td.nm em{font-style:normal;color:var(--dim);font-size:calc(9px * var(--fs))}
 .spanpl td.nm a.wk{color:inherit;text-decoration:underline dotted;text-underline-offset:3px}
 .spanpl td.nm a.wk:hover{color:var(--blue)}
+.spanpl td.nm a.bd{margin-left:auto;font-size:calc(9px * var(--fs));color:var(--blue);text-decoration:none;white-space:nowrap}
 .spanpl tr.b td.nm{border-left:3px solid var(--blue)}
 .spanpl tr.r td.nm{border-left:3px solid var(--red)}
 .spannote{font-size:calc(10px * var(--fs));color:var(--dim);line-height:1.7;

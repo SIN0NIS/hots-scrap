@@ -2497,13 +2497,34 @@ function xsTal(nameId) {
         got[id] = true;
       });
   }
+  // 그린 뒤 맨 위에 다른 화면으로 가는 줄 — 이 번역본은 원본 위키를 옮긴 것이고, 중심은 게임 파일(XML)에서 만드는 위키다
+  function links(id) {
+    const box = document.getElementById('hero-page'); if (!box || box.querySelector('.xs-go')) return;
+    const h = dataKO[id] || {}, hl = h.hyperlinkId || id;
+    const bar = document.createElement('div');
+    bar.className = 'xs-go';
+    bar.style.cssText = 'display:flex;flex-wrap:wrap;gap:4px 16px;align-items:center;font-size:13px;padding:7px 12px;margin:0 0 12px;border:1px solid rgba(127,127,127,.35);border-radius:10px';
+    bar.innerHTML = '<b style="opacity:.75">이 영웅 더 보기</b>'
+      + '<a href="../wiki/#h.' + encodeURIComponent(id) + '">게임 자료 위키(능력치 순위·세부 수치·패치 이력) →</a>'
+      + '<a href="../builds/?hero=' + encodeURIComponent(hl) + '">특성 빌드 →</a>'
+      + '<a class="xs-orig" href="' + origOf(id) + '" target="_blank" rel="noopener">원본 HotS Wiki ↗</a>';
+    box.insertBefore(bar, box.firstChild);
+  }
+  // 원본 위키 주소는 영문 이름이 필요하다 — 여기 자료의 이름은 내부 id(Tinker 등)라 빌드 자료의 name_en 을 빌린다
+  const EN = {};
+  const origOf = id => EN[id] ? 'https://heroesofthestorm.fandom.com/wiki/' + encodeURIComponent(EN[id].replace(/ /g, '_'))
+    : 'https://heroesofthestorm.fandom.com/wiki/Special:Search?query=' + encodeURIComponent(id);
+  fetch('../data/builds/index.json').then(r => r.ok ? r.json() : null).then(j => {
+    ((j && j.heroes) || []).forEach(x => { EN[x.id] = x.name_en; });
+    const a = document.querySelector('#hero-page .xs-orig'); if (a && currentHeroId) a.href = origOf(currentHeroId);
+  }).catch(() => {});
   const real = renderHeroPage;
   renderHeroPage = function (keepScroll) {
     const id = currentHeroId;
-    if (!id || got[id] || !dataKO[id] || dataKO[id].talents) return real(keepScroll);
+    if (!id || got[id] || !dataKO[id] || dataKO[id].talents) { const r = real(keepScroll); if (id) links(id); return r; }
     const box = document.getElementById('hero-page');
     if (box && !keepScroll) box.innerHTML = '<p style="padding:24px;opacity:.7">불러오는 중…</p>';
-    load(id).then(() => { if (currentHeroId === id) real(keepScroll); });
+    load(id).then(() => { if (currentHeroId === id) { real(keepScroll); links(id); } });
   };
 })();
 

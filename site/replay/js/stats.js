@@ -170,7 +170,13 @@ function spanHTML(a, b){
     h += `<tr class="${r.team ? 'r' : 'b'}"><td class="nm">`
        + (hd ? `<img src="../shared/icons/${hd.icon}" alt="">` : '')
        + (hd ? `<a class="wk" href="../wiki/#h.${encodeURIComponent(hd.ko)}" target="_blank" rel="noopener" title="위키에서 이 영웅 보기">${r.hero}</a>` : `<span>${r.hero}</span>`)   // 위키는 한글 이름 주소도 받는다
-       + `<em>${r.lab.replace(/\(.*\)$/, '')}</em></td>`
+       + `<em>${r.lab.replace(/\(.*\)$/, '')}</em>`
+       + (() => {   // 이 판에 찍은 특성 그대로 특성 빌드를 연다(이름으로 넘긴다 — 빌드가 차례로 바꾼다)
+           const pm = (typeof teamPicks === 'function' ? teamPicks().pickMap : {})[r.lab] || {};
+           const ns = Object.values(pm).map(p => p.ko).filter(Boolean);
+           return hd && ns.length ? `<a class="bd" href="../builds/?hero=${encodeURIComponent(hd.ko)}&picks=${encodeURIComponent(ns.join('|'))}" target="_blank" rel="noopener" title="이 판에 찍은 특성으로 특성 빌드 열기">특성 →</a>` : '';
+         })()
+       + `</td>`
        + `<td>${r.s.td}</td><td>${r.s.death}</td><td>${r.s.cs}</td><td>${r.s.merc}</td>`
        + `<td>${r.s.struct}</td><td>${r.s.globe}</td><td>${r.s.apm}</td>`
        + `<td>${r.s.dead ? Math.floor(r.s.dead/60)+':'+String(r.s.dead%60).padStart(2,'0') : '-'}</td></tr>`;

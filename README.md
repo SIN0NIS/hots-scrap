@@ -37,6 +37,7 @@
 | 리플레이 열기 | `…/replay/?src=<리플레이파일 URL>` (`?replay=` 도 동일) | https 주소, 파일 서버가 CORS 허용, 출처 호스트가 허용 목록(`replay/js/main.js` 의 `SRC_ALLOW`)에 등록 |
 | 특성 빌드 열기 | `…/builds/?b=[T3211224,Diablo]` | 인게임 특성 코드 |
 | 영웅 선택 | `…/builds/?hero=Diablo` | hyperlinkId 또는 영문명 |
+| 특성 이름으로 빌드 열기 | `…/builds/?hero=제이나&picks=얼음 화살|…` | 영웅은 한글 이름도 됨, 특성은 게임 공식 한글명을 `|` 로 이어서 (리플레이가 씀) |
 
 리플레이 파일은 방문자의 브라우저 안에서만 파싱되며 어디에도 업로드되지 않습니다.
 연동 예: `https://hotscrap.com/replay/?src=https://hots.herossearch.com/replays/123.StormReplay`
