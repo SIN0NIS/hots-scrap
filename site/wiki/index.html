@@ -215,10 +215,7 @@ i.rdot { display:inline-block; width:9px; height:9px; border-radius:50%; backgro
 .radar .lv { font-size:15px; font-weight:800; fill:var(--fg); font-family:var(--f-mono); }
 .radar .lr { font-size:12px; fill:var(--dim); }
 .radar .lr.hi { fill:var(--gold); font-weight:800; }
-.radar .rall { display:flex; align-items:baseline; gap:6px; }
-.radar .rall span { color:var(--dim); font-weight:700; }
-.radar .rall b { font-size:30px; font-weight:900; color:var(--rc, var(--gold)); }
-@media (max-width:720px) { .radar svg { margin:0 auto; } .radar .ln { font-size:16px; } .radar .lv { font-size:18px; } .radar .lr { font-size:14.5px; } }
+@media (max-width:720px) { .radar svg { margin:0 auto; } .radar .ln { font-size:16px; } .radar .lv { font-size:18px; } .radar .lr { font-size:13.5px; } }
 .tops { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:8px; margin:4px 0 6px; }
 .top { border:1px solid var(--line); border-left:4px solid var(--rc); border-radius:var(--r); background:var(--card); padding:8px 10px; display:flex; flex-direction:column; gap:3px; min-width:0; }
 .top .tl { font-size:12px; color:var(--dim); font-weight:600; }
@@ -1612,7 +1609,7 @@ window.KS={score:score,mark:mark,esc:esc};})();
   const HS = () => STROLE ? H.filter(h => (h["역할군"] || "기타") === STROLE) : H;
   /* ── 영웅 한 명의 능력치 구절판 — 가운데 초상화, 둘레 여덟 칸에 능력치·값·전체 중 순위.
      칸 색이 진할수록 순위가 높다. 값은 1레벨(통계 순위표와 같은 셈), 같은 값이면 같은 등수.
-     종합은 칸마다 순위를 0~1로 바꿔 평균 낸 것으로 다시 줄 세운 것 */
+     종합 순위는 두지 않는다 — 능력치만으로 영웅의 세기를 매길 수 없다(사용자 결정 2026-11-12). 등수는 '40/90 (상위 44%)' 꼴 */
   /* 마나·이동 속도·시야는 넣지 않는다 — 이동 속도·시야는 거의 모든 영웅이 같고(공동 1위만 나온다), 마나는 영웅마다 쓰임이 달라 견줄 거리가 못 된다 */
   const RADAR_AX = [["생명력 (1레벨)", "생명력"], ["생명력 재생 (1레벨)", "생명력 재생"], ["일반 공격 공격력 (1레벨)", "공격력"], ["초당 공격", "공격 속도"],
     ["일반 공격 초당 피해 (1레벨)", "초당 피해"], ["공격 사거리", "사거리"], ["피격 반지름", "피격 크기"], ["충돌 반지름", "충돌 크기"]];
@@ -1620,7 +1617,7 @@ window.KS={score:score,mark:mark,esc:esc};})();
   function radarAll() {
     if (RADAR) return RADAR;
     const defs = Object.fromEntries(statDefs().map(([n, f, note, u]) => [n, { f, u: u || "" }]));
-    const by = {}; H.forEach(h => (by[h.id] = { ax: [], p: [] }));
+    const by = {}; H.forEach(h => (by[h.id] = { ax: [] }));
     RADAR_AX.forEach(([n], i) => {
       const d = defs[n];
       const vs = H.map(h => { const v = d ? d.f(h) : null; return typeof v === "number" && isFinite(v) ? { h, v } : null; }).filter(Boolean);
@@ -1630,11 +1627,8 @@ window.KS={score:score,mark:mark,esc:esc};})();
         const tie = vs.filter(y => +y.v.toFixed(3) === +x.v.toFixed(3)).length;
         const p = cnt > 1 ? (cnt - rk) / (cnt - 1) : 1;
         by[x.h.id].ax[i] = { v: x.v, u: d.u, rk, n: cnt, tie, p };
-        by[x.h.id].p.push(p);
       });
     });
-    const avg = H.map(h => { const ps = by[h.id].p; return { id: h.id, a: ps.length ? ps.reduce((x, y) => x + y, 0) / ps.length : 0 }; }).sort((x, y) => y.a - x.a);
-    avg.forEach((x, i) => { by[x.id].all = { rk: 1 + avg.filter(y => y.a > x.a + 1e-9).length, n: avg.length }; });
     return (RADAR = by);
   }
   function heroRadar(h) {
@@ -1647,7 +1641,7 @@ window.KS={score:score,mark:mark,esc:esc};})();
       const d = `M${p1x},${p1y} L${p2x},${p2y} L${p3x},${p3y} L${p4x},${p4y} A${RI},${RI} 0 0 0 ${p1x},${p1y} Z`;
       const [tx, ty] = at(am, (RI + RO * Math.cos(st / 2)) / 2 + 4).map(Number);
       const val = x0 ? `${num(x0.v)}${x0.u}` : "—";
-      const rk = x0 ? (x0.tie > 1 ? `공동 ${x0.rk}위` : `${x0.rk}위`) + ` / ${x0.n}` : "값 없음";
+      const rk = x0 ? `${x0.rk}/${x0.n} (상위 ${Math.max(1, Math.round(x0.rk / x0.n * 100))}%)` : "값 없음";
       return `<path d="${d}" class="cl${x0 ? "" : " nil"}" style="fill-opacity:${x0 ? (0.07 + 0.5 * x0.p).toFixed(2) : 0}"/>`
         + `<text x="${tx}" y="${ty - 16}" class="ln">${esc(lab)}</text><text x="${tx}" y="${ty + 2}" class="lv">${esc(val)}</text>`
         + `<text x="${tx}" y="${ty + 20}" class="lr${x0 && x0.rk <= 10 ? " hi" : ""}">${esc(rk)}</text>`;
@@ -1655,12 +1649,11 @@ window.KS={score:score,mark:mark,esc:esc};})();
     const pic = ICON[String(h["초상화"] || "").toLowerCase()], cid = "rc-" + h.id;
     const face = `<circle cx="${C}" cy="${C}" r="${RI - 6}" class="fr"/>` + (pic ? `<clipPath id="${esc(cid)}"><circle cx="${C}" cy="${C}" r="${RI - 10}"/></clipPath><image href="${esc(pic)}" x="${C - RI + 10}" y="${C - RI + 10}" width="${2 * (RI - 10)}" height="${2 * (RI - 10)}" clip-path="url(#${esc(cid)})"/>` : "");
     const rows = RADAR_AX.map(([, lab], i) => R.ax[i] ? [lab, R.ax[i]] : null).filter(Boolean);
-    const best = rows.slice().sort((a, b) => a[1].rk - b[1].rk).slice(0, 2).map(([l, x]) => `${l} ${x.rk}위`).join(" · ");
+    const best = rows.slice().sort((a, b) => a[1].rk - b[1].rk).slice(0, 2).map(([l, x]) => `${l} ${x.rk}/${x.n}`).join(" · ");
     return `<div class="radar ${rcOf(h["역할군"])}"><svg viewBox="0 0 ${W} ${W}" role="img" aria-label="${esc(h["이름"])} 능력치 구절판">${cells}${face}</svg>
-      <div class="rsum"><div class="rall"><span>종합</span><b>${R.all.rk}위</b><small>/ ${R.all.n}명</small></div>
-        <p class="note">가장 앞선 칸: <b>${esc(best)}</b></p>
-        <p class="note">칸마다 <b>1레벨 값</b>과 <b>전체 영웅 ${R.all.n}명 중 순위</b>입니다. 색이 진할수록 순위가 높고, 10위 안은 금색 글씨입니다. 피격 크기(기술에 맞는 몸통)·충돌 크기(유닛끼리 부딪히는 몸통)는 클수록 앞 — 피격 크기가 크면 방향 지정 기술에 잘 맞습니다.</p>
-        <p class="note"><b>종합</b>은 여덟 칸의 순위를 고르게 섞어 다시 줄 세운 것이라 '센 영웅' 순위가 아닙니다 — 기술·특성은 들어 있지 않습니다.</p>
+      <div class="rsum"><p class="note">가장 앞선 칸: <b>${esc(best)}</b></p>
+        <p class="note">칸마다 <b>1레벨 값</b>과 <b>전체 영웅 중 등수(상위 몇 %)</b>입니다 — 같은 값이면 같은 등수. 색이 진할수록 앞이고, 10등 안은 금색 글씨입니다. 피격 크기(기술에 맞는 몸통)·충돌 크기(유닛끼리 부딪히는 몸통)는 클수록 앞 — 피격 크기가 크면 방향 지정 기술에 잘 맞습니다.</p>
+        <p class="note">기본 능력치만 견준 것이라 영웅의 세기와는 다릅니다 — 기술·특성은 들어 있지 않습니다.</p>
         <p class="note"><a href="#stats">전체 영웅 순위표 ›</a></p></div></div>`;
   }
 

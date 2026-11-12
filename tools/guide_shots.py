@@ -130,7 +130,7 @@ SHOTS = [
     # 위키 — 영웅 문서는 위키로 합쳤다(2026-11-12). 범위 구경·통계 보기는 도감(herodex) 쪽 화면 그대로
     dict(id="w-home", url="wiki/", marks=["#menu", "#nav", "#q", ".tiles"]),
     dict(id="w-hero", url="wiki/#h.Jaina", size=(1280, 1060), do=[lambda pg: pg.wait_for_timeout(1200)],
-         marks=[".srcbar", ".radar svg", ".radar .rall", "aside.info"]),
+         marks=[".srcbar", ".radar svg", "aside.info"]),
     dict(id="w-stats", url="wiki/#stats", size=(1280, 1200), do=[lambda pg: pg.wait_for_timeout(1500)],
          marks=[".tops", ".sttabs"]),
     dict(id="shapes", url="herodex/shapes.html",

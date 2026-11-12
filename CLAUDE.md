@@ -75,7 +75,7 @@
   - 이 위키가 못 하는 것은 원래 앱에 남긴다: 범위 구경·칸 통계(herodex), 전장 흐름(maps), 스킨·대사(encyclopedia), 티어표.
 - `site/herodex/` **영웅 도감** — 게임 원본 XML 에서 직접 뽑은 기술·특성 상세.
   - **2026-11-12 위키로 합침**: `herodex/index.html` 은 들어오자마자 `../wiki/#h.<영웅>` 으로 넘긴다(`?old=1` 이면 예전 화면). 허브 apps.json 에서도 뺐다. 범위 구경(`shapes.html`)·칸 통계(`stats.html`)는 위키에 없는 도구라 그대로 쓴다. 자료(`site/data/herodex/`)도 이 둘과 번역 도감이 읽으므로 그대로 만든다.
-  - 위키 문서 맨 위 `srcBar` = 원본(heroesofthestorm.fandom.com, 영문 이름은 `data/builds/index.json` 의 name_en)·번역본(`encyclopedia/?hero=<id>` — 번역 도감이 이 주소로 영웅을 바로 연다). 영웅 문서 맨 위 "한눈에 보는 능력치" = `heroRadar`(구절판 여덟 칸, 1레벨 값·전체 중 순위, 종합 순위).
+  - 위키 문서 맨 위 `srcBar` = 원본(heroesofthestorm.fandom.com, 영문 이름은 `data/builds/index.json` 의 name_en)·번역본(`encyclopedia/?hero=<id>` — 번역 도감이 이 주소로 영웅을 바로 연다). 영웅 문서 맨 위 "한눈에 보는 능력치" = `heroRadar`(구절판 여덟 칸, 1레벨 값·'40/90 (상위 44%)' 꼴 등수. 종합 순위는 두지 않음 — 사용자 결정 2026-11-12).
   자료는 `site/data/herodex/`(목록 1개 + 영웅마다 1개, 평균 16KB) — 화면은 **고른 영웅 하나만** 받는다.
   주소에 `?hero=` 가 없으면 **영웅 고르는 첫 화면**(역할군별 얼굴판)이다 — 들어오자마자 첫 영웅이
   펼쳐져 있으면 "여기가 어디지" 가 된다. 얼굴·역할군·기술 수는 이미 받는 `index.json` 에 다 있어
