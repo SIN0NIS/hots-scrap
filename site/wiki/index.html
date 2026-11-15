@@ -287,6 +287,51 @@ ul.spl li { display:flex; flex-wrap:wrap; align-items:center; gap:2px 6px; min-w
 #bigview .bvbox { flex:1; min-height:0; overflow:auto; padding:14px max(16px, env(safe-area-inset-right, 0px)) calc(24px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); }
 #bigview .bvin { max-width:1500px; margin:0 auto; }
 #bigview .bvin table.t { font-size:14px; }
+/* 공유 — 단추줄·작은 단추·미리보기. 그림 자체(.shc)는 밝기와 상관없이 늘 같은 어두운 판이다(받는 쪽 화면이 제각각이라) */
+.share-bar { display:flex; flex-wrap:wrap; gap:6px; align-items:center; margin:2px 0 12px; font-size:13px; }
+.share-bar .sb-lab { color:var(--dim); margin-right:2px; }
+.share-bar button, .shr, .shbar button { font:inherit; font-size:12.5px; line-height:1.6; padding:1px 10px; border:1px solid var(--line);
+  border-radius:999px; background:var(--card); color:var(--fg); cursor:pointer; }
+.share-bar button:hover, .shr:hover, .shbar button:hover { border-color:var(--blue); color:var(--blue); }
+.share-bar label, .shbar label { display:inline-flex; gap:4px; align-items:center; color:var(--dim); cursor:pointer; }
+.shr { margin-left:6px; padding:0 8px; font-size:11.5px; vertical-align:2px; }
+.shbar { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:0 0 10px; }
+.shbar .go { background:var(--blue); border-color:var(--blue); color:#fff; font-weight:600; }
+.shbar .go:hover { color:#fff; filter:brightness(1.08); }
+.shmsg { min-height:1.4em; font-size:13px; color:var(--ok); margin:0 0 8px; }
+.shmsg.bad { color:var(--bad); }
+.shprev { overflow:auto; }
+.shprev img { display:block; max-width:100%; height:auto; border-radius:10px; box-shadow:0 2px 14px rgba(0,0,0,.25); }
+.shhint { font-size:12px; color:var(--dim); margin:8px 0 0; }
+.shc { width:680px; box-sizing:border-box; padding:22px 24px 16px; background:#121a2a; color:#e9eef6; border-radius:14px;
+  font-family:var(--f-body); font-size:15px; line-height:1.55; }
+.shc .shc-h { display:flex; gap:14px; align-items:center; margin-bottom:14px; }
+.shc .shc-pic { width:64px; height:64px; border-radius:12px; object-fit:cover; background:#1d2a42; flex:none; }
+.shc .shc-n { font-size:24px; font-weight:800; letter-spacing:-.01em; }
+.shc .shc-s { font-size:13.5px; color:#9fb0c8; }
+.shc .shc-sec { font-size:13px; font-weight:700; color:#e8c268; letter-spacing:.04em; margin:16px 0 8px; padding-bottom:4px; border-bottom:1px solid #2a3b59; }
+.shc .shc-it { display:flex; gap:12px; padding:10px 0; border-top:1px solid #22324e; }
+.shc .shc-it:first-of-type { border-top:0; }
+.shc .shc-ico { width:44px; height:44px; border-radius:8px; flex:none; background:#1d2a42; }
+.shc .shc-b { flex:1; min-width:0; }
+.shc .shc-t { font-size:16.5px; font-weight:700; }
+.shc .shc-k { display:inline-block; font-size:12px; font-weight:700; color:#121a2a; background:#e8c268; border-radius:5px; padding:0 6px; margin-left:4px; vertical-align:2px; }
+.shc .shc-lv { display:inline-block; font-size:12px; font-weight:700; color:#cfe3ff; background:#24426e; border-radius:5px; padding:0 6px; margin-right:4px; vertical-align:2px; }
+.shc .shc-m { font-size:13px; color:#9fb0c8; margin:2px 0 4px; }
+.shc .shc-m b { color:#e9eef6; }
+.shc .shc-d { font-size:14.5px; white-space:normal; }
+.shc .shc-d b { color:#f0c46a; font-weight:700; }
+.shc table.shc-r { width:100%; border-collapse:collapse; margin-top:8px; font-size:13px; color:#e9eef6; font-family:var(--f-body); }
+/* 표는 글자색·크기를 물려받지 않는 화면(호환 모드)이 있다 — 밝은 위키에서 값이 검게 찍혀 안 보였다. 칸마다 못 박는다 */
+.shc table.shc-r td { color:#e9eef6; }
+.shc table.shc-r td { padding:3px 6px; border-top:1px solid #22324e; vertical-align:top; }
+.shc table.shc-r td:first-child { color:#9fb0c8; width:34%; }
+.shc table.shc-st td { padding:5px 8px; font-size:14.5px; }
+.shc table.shc-st td.v { text-align:right; font-weight:700; font-variant-numeric:tabular-nums; }
+.shc .shc-f { display:flex; justify-content:space-between; gap:12px; margin-top:16px; padding-top:9px; border-top:1px solid #2a3b59;
+  font-size:12px; color:#8193ad; }
+.shc .shc-f b { color:#c8d4e6; font-weight:600; }
+.shc .shc-z { font-size:11.5px; color:#6d7f99; margin-top:3px; }
 #bigview .hist { height:120px; }
 .ver { border:1px solid var(--line); border-radius:var(--r); background:var(--card); padding:10px 14px; margin:10px 0; }
 .ver.now { border-color:var(--blue); box-shadow:0 0 0 1px var(--blue) inset; }
@@ -1156,6 +1201,136 @@ window.KS={score:score,mark:mark,esc:esc};})();
     return `<details class="more2" data-tf="${esc(p.id)}"${TOPEN.has(p.id) ? " open" : ""}><summary>${lab}</summary><div class="figrow">${fig ? `<div class="figbox">${fig}</div>` : ""}${splatBox(h.id, "t", p.id, wk)}</div>${kvGroups(rows)}${raw}</details>`;
   }
   document.addEventListener("toggle", e => { const d = e.target; if (d.dataset && d.dataset.tf) { if (d.open) TOPEN.add(d.dataset.tf); else TOPEN.delete(d.dataset.tf); } }, true);
+  /* ── 공유 그림 ── 능력치·기술·특성을 **버전이 찍힌 그림**으로(복사·저장) 또는 글로.
+     그림 도구(html2canvas)는 공유를 누를 때만 받는다 — 안 쓰는 사람까지 매번 외부에서 받지 않게. */
+  let SHCTX = null, SHST = null;
+  const SH_LIB = "https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js";
+  function needH2C() {
+    if (window.html2canvas) return Promise.resolve(window.html2canvas);
+    if (!needH2C.p) needH2C.p = new Promise((ok, no) => { const sc = document.createElement("script"); sc.src = SH_LIB;
+      sc.onload = () => ok(window.html2canvas); sc.onerror = () => { needH2C.p = null; no(new Error("그림 도구를 받지 못했습니다")); };
+      document.head.appendChild(sc); });
+    return needH2C.p;
+  }
+  const shPlain = x => String(x == null ? "" : x).replace(/<[^>]+>/g, "").replace(/&nbsp;/g, " ");
+  // 설명 — 줄바꿈은 살리고 숫자는 굵게(게임 툴팁처럼). 링크·말풍선은 그림에 필요 없다
+  const shDesc = t => esc(t || "").replace(/(\d) (초|%)/g, "$1$2").replace(/(\d[\d,.]*\s?(?:%|초)?)/g, "<b>$1</b>").replace(/\n/g, "<br>");
+  const shRows = rows => rows.length ? `<table class="shc-r">${rows.map(r => `<tr><td>${esc(shPlain(r[0]))}</td><td>${esc(shPlain(r[1]))}</td></tr>`).join("")}</table>` : "";
+  // 세부 칸 — 하나만 공유할 때는 켜고, 여러 개를 묶을 때는 끈 채로 시작한다(전부 + 세부 칸이면 그림 높이가 2만 픽셀에 이른다)
+  const shMany = k => k !== "sk" && k !== "tal";
+  const shDetail = k => { try { const v = store.get(shMany(k) ? "wiki.shareDetN" : "wiki.shareDet1"); return v == null ? !shMany(k) : v === "1"; } catch (e) { return !shMany(k); } };
+  function shMeta(a) {
+    const wk = a["위키식"] || {};
+    return [["재사용", a["재사용 대기시간"], "초"], ["마나", a["마나"], ""], ...["기력", "분노", "취기", "고철", "생명력 소모"].map(k => [k, a[k], ""]),
+      ["사거리", wk["사거리"] || a["사거리"], ""]].filter(x => x[1] != null && x[1] !== "");
+  }
+  function shSkill(a, det) {
+    const meta = shMeta(a), rows = det ? fieldRows(a, a["위키식"] || {}).filter(r => r[0] !== "소모 자원" && r[0] !== "재사용 대기시간") : [];
+    return `<div class="shc-it">${icon(a["아이콘"], "shc-ico")}<div class="shc-b"><div class="shc-t">${esc(a["이름"] || a.id)}${a["칸"] ? `<span class="shc-k">${esc(a["칸"])}</span>` : ""}</div>`
+      + (meta.length ? `<div class="shc-m">${meta.map(x => `${esc(x[0])} <b>${esc(num(x[1]))}</b>${x[2]}`).join(" · ")}</div>` : "")
+      + `<div class="shc-d">${shDesc(a["설명"])}</div>${shRows(rows)}</div></div>`;
+  }
+  function shTal(t, det) {
+    const rows = det ? [...list(t["바뀌는 값"]).map(c => ["바뀌는 값", String(c).replace(/(\d)배(?= \()/g, "$1")]), ...fieldRows(t, t["위키식"] || {})] : [];
+    return `<div class="shc-it">${icon(t["아이콘"], "shc-ico")}<div class="shc-b"><div class="shc-t"><span class="shc-lv">${esc(t["레벨"] ?? "?")}레벨</span>${esc(t["이름"] || t.id)}${t["강화"] ? `<span class="shc-k">${esc(t["강화"])}</span>` : ""}</div>`
+      + `<div class="shc-d">${shDesc(t["설명"])}</div>${shRows(rows)}</div></div>`;
+  }
+  function shStats(c) {
+    return `<table class="shc-r shc-st">${c.stats.map(([k, v, g, u]) => { const now = typeof v === "number" ? v * kL(g) : v;
+      return `<tr><td>${esc(k)}</td><td class="v">${typeof now === "number" ? esc(fmt(now)) : esc(v)}${u || ""}</td><td>${g ? "레벨당 " + esc(num(g * 100)) + "%" : ""}</td></tr>`; }).join("")}</table>`;
+  }
+  const shTiers = (TS, det) => { const g = groupBy(TS, t => t["레벨"] ?? "?");
+    return Object.keys(g).sort((x, y) => +x - +y).map(lv => g[lv].map(t => shTal(t, det)).join("")).join(""); };
+  /* 무엇을 그릴까 — kind: stats · sk(기술 하나) · skills · tal(특성 하나) · talents · all */
+  function shBuild(kind, iid, det) {
+    const c = SHCTX, h = c.h;
+    const it = kind === "sk" ? c.sk.find(a => a.id === iid) : kind === "tal" ? c.TS.find(t => t.id === iid) : null;
+    const what = { stats: `${c.LV}레벨 능력치`, skills: "기술 전부", talents: "특성 전부", all: "능력치 · 기술 · 특성",
+      sk: it ? `기술 · ${it["이름"] || it.id}` : "기술", tal: it ? `${it["레벨"]}레벨 특성 · ${it["이름"] || it.id}` : "특성" }[kind];
+    let body = "";
+    if (kind === "stats" || kind === "all") body += (kind === "all" ? `<div class="shc-sec">능력치 · ${c.LV}레벨</div>` : "") + shStats(c);
+    if (kind === "skills" || kind === "all") body += (kind === "all" ? `<div class="shc-sec">기술</div>` : "") + c.sk.map(a => shSkill(a, det)).join("");
+    if (kind === "talents" || kind === "all") body += (kind === "all" ? `<div class="shc-sec">특성</div>` : "") + shTiers(c.TS, det);
+    if (kind === "sk" && it) body = shSkill(it, det);
+    if (kind === "tal" && it) body = shTal(it, det);
+    const where = IN_SITE ? `hotscrap.com/wiki/#h.${h.id}` : "HotS 자료 위키";
+    const when = H0["만든 시각"] || H0["만든 날"] || "";
+    const zero = kind === "stats" ? "" : " · 설명 숫자는 0레벨 값(패치노트 기준)";
+    const html = `<div class="shc"><div class="shc-h">${icon(h["초상화"], "shc-pic")}<div><div class="shc-n">${esc(h["이름"])}</div>`
+      + `<div class="shc-s">${esc([h["역할군"], what].filter(Boolean).join(" · "))}</div></div></div>${body}`
+      + `<div class="shc-f"><span><b>히오스 ${esc(H0["판"] || "?")}</b> · 위키 v${esc(VER || "?")}${when ? " · " + esc(when) : ""}</span><span>${esc(where)}</span></div>`
+      + (zero ? `<div class="shc-z">${esc(zero.replace(/^ · /, ""))}</div>` : "") + `</div>`;
+    // 글로 — 대화창에 바로 붙여 넣는 꼴
+    const tl = [];
+    const tSk = a => { const m = shMeta(a); tl.push(`■ ${a["이름"] || a.id}${a["칸"] ? ` [${a["칸"]}]` : ""}${m.length ? " — " + m.map(x => `${x[0]} ${num(x[1])}${x[2]}`).join(" · ") : ""}`, shPlain(a["설명"]));
+      if (det) fieldRows(a, a["위키식"] || {}).filter(r => r[0] !== "소모 자원" && r[0] !== "재사용 대기시간").forEach(r => tl.push(`  · ${shPlain(r[0])}: ${shPlain(r[1])}`)); tl.push(""); };
+    const tTal = t => { tl.push(`■ ${t["레벨"]}레벨 ${t["이름"] || t.id}${t["강화"] ? ` (${t["강화"]})` : ""}`, shPlain(t["설명"]));
+      if (det) [...list(t["바뀌는 값"]).map(x => ["바뀌는 값", String(x)]), ...fieldRows(t, t["위키식"] || {})].forEach(r => tl.push(`  · ${shPlain(r[0])}: ${shPlain(r[1])}`)); tl.push(""); };
+    tl.push(`[${h["이름"]}] ${what}`, "");
+    if (kind === "stats" || kind === "all") { c.stats.forEach(([k, v, g, u]) => { const now = typeof v === "number" ? v * kL(g) : v; tl.push(`${k}: ${typeof now === "number" ? fmt(now) : v}${u || ""}${g ? ` (레벨당 ${num(g * 100)}%)` : ""}`); }); tl.push(""); }
+    if (kind === "skills" || kind === "all") c.sk.forEach(tSk);
+    if (kind === "talents" || kind === "all") { const g = groupBy(c.TS, t => t["레벨"] ?? "?"); Object.keys(g).sort((x, y) => +x - +y).forEach(lv => g[lv].forEach(tTal)); }
+    if (kind === "sk" && it) tSk(it);
+    if (kind === "tal" && it) tTal(it);
+    tl.push(`— 히오스 ${H0["판"] || "?"} · 위키 v${VER || "?"}${when ? " · " + when : ""}${zero} · ${where}`);
+    const fname = `${h["이름"]}_${what.replace(/[\\/:*?"<>|·]/g, "").replace(/\s+/g, "_")}_히오스${H0["판"] || ""}_v${VER || ""}.png`;
+    return { html, text: tl.join("\n"), title: `${h["이름"]} — ${what} 공유`, fname };
+  }
+  function shMsg(t, bad) { const m = BV.querySelector(".shmsg"); if (m) { m.textContent = t; m.classList.toggle("bad", !!bad); } }
+  function openShare(kind, iid) {
+    if (!SHCTX) return;
+    const det = shDetail(kind), B = shBuild(kind, iid, det);
+    SHST = { kind, iid, B, blob: null, url: null };
+    const single = kind === "sk" || kind === "tal" || kind === "skills" || kind === "talents" || kind === "all";
+    openBV(B.title, `<div class="shbar"><button type="button" class="go" data-shact="copy">그림 복사</button><button type="button" data-shact="save">그림 저장</button><button type="button" data-shact="text">글 복사</button>`
+      + (single ? `<label><input type="checkbox" id="sh-det"${det ? " checked" : ""}> 세부 칸 포함</label>` : "") + `</div>`
+      + `<p class="shmsg" aria-live="polite"></p><div class="shprev"><p class="load">그림을 만드는 중…</p></div>`
+      + `<p class="shhint">복사·저장이 막힌 화면이면 위 그림을 길게 누르거나 오른쪽 단추로 복사·저장하세요. 그림 아래에 히오스 판과 위키 버전이 찍힙니다.</p>`);
+    shRender();
+  }
+  function shRender() {
+    const st = SHST; if (!st) return;
+    const box = document.createElement("div");
+    box.style.cssText = "position:fixed;left:-10000px;top:0;z-index:-1;pointer-events:none";
+    box.innerHTML = st.B.html; document.body.appendChild(box);
+    const el = box.firstElementChild;
+    const imgs = [...el.querySelectorAll("img")].map(im => im.complete ? null : new Promise(r => { im.onload = im.onerror = r; })).filter(Boolean);
+    // 아주 긴 그림은 배율을 낮춘다 — 폰 브라우저는 캔버스 한 장이 약 1,600만 화소를 넘으면 못 만든다
+    const sc = () => Math.max(0.6, Math.min(2, Math.sqrt(1.6e7 / Math.max(1, el.offsetWidth * el.offsetHeight))));
+    Promise.all(imgs).then(needH2C).then(h2c => h2c(el, { backgroundColor: null, scale: sc(), useCORS: true, logging: false }))
+      .then(cv => new Promise(r => cv.toBlob(r, "image/png")))
+      .then(blob => { if (SHST !== st) return; st.blob = blob; if (st.url) URL.revokeObjectURL(st.url); st.url = URL.createObjectURL(blob);
+        const pv = BV.querySelector(".shprev"); if (pv) pv.innerHTML = `<img alt="${esc(st.B.title)}" src="${st.url}">`; })
+      .catch(e => { const pv = BV.querySelector(".shprev"); if (pv) pv.innerHTML = `<p class="load">그림을 못 만들었습니다(${esc(e.message || e)}). [글 복사] 는 됩니다.</p>`; })
+      .finally(() => box.remove());
+  }
+  function shText(t) {
+    const done = () => shMsg("글을 복사했습니다.");
+    const fall = () => { const ta = document.createElement("textarea"); ta.value = t; ta.style.cssText = "position:fixed;left:-9999px"; document.body.appendChild(ta); ta.select();
+      try { document.execCommand("copy") ? done() : shMsg("복사가 막혀 있습니다 — 아래 글을 직접 골라 복사하세요.", true); } catch (e) { shMsg("복사가 막혀 있습니다.", true); } ta.remove(); };
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(t).then(done, fall); else fall();
+  }
+  document.addEventListener("click", e => {
+    const b = e.target.closest && e.target.closest("[data-shot]");
+    if (b) { e.preventDefault(); openShare(b.dataset.shot, b.dataset.id); return; }
+    const a = e.target.closest && e.target.closest("[data-shact]"); if (!a || !SHST) return;
+    const act = a.dataset.shact;
+    if (act === "text") return shText(SHST.B.text);
+    if (!SHST.blob) return shMsg("그림을 아직 만드는 중입니다 — 잠시 뒤 다시 눌러 주세요.", true);
+    if (act === "copy") {
+      if (navigator.clipboard && window.ClipboardItem) navigator.clipboard.write([new ClipboardItem({ "image/png": SHST.blob })])
+        .then(() => shMsg("그림을 복사했습니다 — 대화창에 붙여 넣으세요."), er => shMsg(`이 화면에서는 그림 복사가 막혀 있습니다(${(er && er.name) || "거절"}) — 그림을 길게 누르거나 오른쪽 단추로 복사하세요.`, true));
+      else shMsg("이 브라우저는 그림 복사를 못 합니다 — 그림을 길게 누르거나 오른쪽 단추로 복사하세요.", true);
+    } else if (act === "save") {
+      const l = document.createElement("a"); l.href = SHST.url; l.download = SHST.B.fname; document.body.appendChild(l); l.click(); l.remove();
+      shMsg("그림을 저장했습니다(받은 파일 폴더). 안 됐으면 그림을 길게 누르거나 오른쪽 단추로 저장하세요.");
+    }
+  });
+  document.addEventListener("change", e => {
+    if (e.target && e.target.id === "sh-det" && SHST) { try { store.set(shMany(SHST.kind) ? "wiki.shareDetN" : "wiki.shareDet1", e.target.checked ? "1" : "0"); } catch (x) {}
+      SHST.B = shBuild(SHST.kind, SHST.iid, e.target.checked); SHST.blob = null;
+      const pv = BV.querySelector(".shprev"); if (pv) pv.innerHTML = `<p class="load">그림을 만드는 중…</p>`; shRender(); }
+  });
   function pHero(id) {
     // 다른 앱(리플레이)은 영웅 내부 id 를 몰라 한글 이름으로 온다(#h.제이나) — 같은 영웅의 id 주소로 바꿔 준다
     if (!hById[id]) { const nm = (() => { try { return decodeURIComponent(id); } catch (e) { return id; } })(), f = H.find(x => x["이름"] === nm);
@@ -1192,6 +1367,7 @@ window.KS={score:score,mark:mark,esc:esc};})();
       starRes = { lines, cond: [], si: null, conds: [] };
     }
     const TALS = window.hotsSplat ? window.hotsSplat.tals(id, () => { if (curHero === id) route(true); }) : null;
+    SHCTX = { h, stats, sk, TS, LV };            // 공유 그림이 쓴다(지금 보이는 레벨 그대로)
     const skill = a => {
       const wk = a["위키식"] || {};
       const fig = (window.hotsShape && (list(wk["도형"]).length || wk["그래프"])) ? (() => { try { return window.hotsShape.svg(wk, { hero: h, yard: YARD }) + (window.hotsShape.graph(wk) || ""); } catch (e) { return ""; } })() : "";
@@ -1202,7 +1378,7 @@ window.KS={score:score,mark:mark,esc:esc};})();
       const t = cands.find(x => x.id === S[a.id]);
       const res = t ? combine(id, a, t) : null;
       const meta = [["재사용", a["재사용 대기시간"], "초"], ["마나", a["마나"], ""], ...["기력", "분노", "취기", "고철", "생명력 소모"].map(k => [k, a[k], ""]), ["사거리", wk["사거리"] || a["사거리"], ""]].filter(x => x[1] != null && x[1] !== "");
-      return `<div class="skill${t ? " touched" : ""}" id="sk-${esc(a.id)}">${icon(a["아이콘"])}<div><div class="nm">${esc(a["이름"] || a.id)} <span class="key">${esc(a["칸"] || "")}</span><a class="anc" href="#h.${esc(id)}.sk-${esc(a.id)}" title="이 기술로 바로 오는 주소 — 눌러서 주소창의 링크를 복사하세요" aria-label="이 기술 링크">#</a></div>
+      return `<div class="skill${t ? " touched" : ""}" id="sk-${esc(a.id)}">${icon(a["아이콘"])}<div><div class="nm">${esc(a["이름"] || a.id)} <span class="key">${esc(a["칸"] || "")}</span><a class="anc" href="#h.${esc(id)}.sk-${esc(a.id)}" title="이 기술로 바로 오는 주소 — 눌러서 주소창의 링크를 복사하세요" aria-label="이 기술 링크">#</a><button type="button" class="shr" data-shot="sk" data-id="${esc(a.id)}" title="이 기술을 그림·글로 공유">공유</button></div>
         <div class="meta">${meta.map(x => `<span>${x[0]} <b>${num(x[1])}</b>${x[2]}</span>`).join("")}${dmgTxt ? `<span>피해 <b class="calc-v">${esc(dmgTxt)}</b> ${LVN(LV)}</span>` : ""}</div>
         <p class="desc" style="margin:4px 0">${descHtml(a["설명"], ctx)}</p>
         ${cands.length ? selBlock(h, a.id, cands, res) : ""}
@@ -1211,7 +1387,7 @@ window.KS={score:score,mark:mark,esc:esc};})();
     };
     const tl = groupBy(TS, t => t["레벨"] ?? "?");
     const tiers = Object.keys(tl).sort((a, b) => +a - +b).map(lv => `<div class="tier"><div class="lv">${esc(lv)}<small>레벨</small></div><div class="picks">${tl[lv].map(p =>
-      `<div class="pick" id="tal-${esc(p.id)}">${icon(p["아이콘"], "ico sm")}<div><div class="nm">${esc(p["이름"] || p.id)}<a class="anc" href="#h.${esc(id)}.tal-${esc(p.id)}" title="이 특성으로 바로 오는 주소" aria-label="이 특성 링크">#</a></div>${p["강화"] ? `<div class="to">${esc(p["강화"])} 강화</div>` : ""}<div class="desc">${descHtml(p["설명"], ctx)}</div></div>${talentMore(h, p)}</div>`).join("")}</div></div>`).join("");
+      `<div class="pick" id="tal-${esc(p.id)}">${icon(p["아이콘"], "ico sm")}<div><div class="nm">${esc(p["이름"] || p.id)}<a class="anc" href="#h.${esc(id)}.tal-${esc(p.id)}" title="이 특성으로 바로 오는 주소" aria-label="이 특성 링크">#</a><button type="button" class="shr" data-shot="tal" data-id="${esc(p.id)}" title="이 특성을 그림·글로 공유">공유</button></div>${p["강화"] ? `<div class="to">${esc(p["강화"])} 강화</div>` : ""}<div class="desc">${descHtml(p["설명"], ctx)}</div></div>${talentMore(h, p)}</div>`).join("")}</div></div>`).join("");
     const info = infobox(h["이름"], icon(h["초상화"], "pic"), [["역할군", esc(h["역할군"] || "")], ["세계관", esc(h["세계관"] || "")], ["자원", esc(st["자원"] || "")],
       ["생명력", fmt((st["생명력"] || 0) * kL(rLife)) + ` <small class="note">${LV}레벨</small>`], ["일반 공격 공격력", w["공격력"] ? fmt(w["공격력"] * kL(+rAtk)) : ""], ["공격 사거리", num(st["공격 사거리"])],
       ["이동 속도", num(st["이동 속도"])], ["내부 id", `<span style="font-family:var(--f-mono);font-size:12px">${esc(h.id)}</span>`]]);
@@ -1220,7 +1396,7 @@ window.KS={score:score,mark:mark,esc:esc};})();
       about: `${esc(h["이름"])}의 능력치·기술·특성을 게임 파일에서 읽어 보여 줍니다. <b>레벨</b>은 리모컨으로 바꾸고(수치가 성장률만큼 따라 오릅니다, ${cardLink("hero_level_scaling")}), <b>특성</b>은 기술 카드 아래 '이 기술을 바꾸는 특성' 에서 [적용] 하면 바뀐 값이 금색으로 나옵니다.`,
       info,
       sections: [
-        { title: "한눈에 보는 능력치", html: heroRadar(h) },
+        { title: "한눈에 보는 능력치", html: `<div class="share-bar"><span class="sb-lab">공유(그림·글)</span><button type="button" data-shot="stats">능력치</button><button type="button" data-shot="skills">기술 전부</button><button type="button" data-shot="talents">특성 전부</button><button type="button" data-shot="all">전부</button></div>` + heroRadar(h) },
         { title: "능력치", badge: BD.sure, html: (st["기준 몸"] ? `<p class="note">아래 값은 <b>${esc(st["기준 몸"])}</b> 기준입니다. 다른 모습의 값은 표 아래에 있습니다.</p>` : "")
             + `<p class="note">아래 표는 리모컨 레벨을 적용한 ${LVN(LV)} 입니다(게임 파일 값 = 0레벨, '0레벨 대비' 칸이 늘어난 몫).</p>`
             + tbl(["항목", [`${LV}레벨`], ["레벨당"], ["0레벨 대비"]], statRows)
