@@ -295,6 +295,7 @@ ul.spl li { display:flex; flex-wrap:wrap; align-items:center; gap:2px 6px; min-w
 .share-bar button:hover, .shr:hover, .shbar button:hover { border-color:var(--blue); color:var(--blue); }
 .share-bar label, .shbar label { display:inline-flex; gap:4px; align-items:center; color:var(--dim); cursor:pointer; }
 .shr { margin-left:6px; padding:0 8px; font-size:11.5px; vertical-align:2px; }
+.tier .lv .shr { display:block; margin:6px auto 0; font-weight:500; }
 .shbar { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:0 0 10px; }
 .shbar .go { background:var(--blue); border-color:var(--blue); color:#fff; font-weight:600; }
 .shbar .go:hover { color:#fff; filter:brightness(1.08); }
@@ -1217,7 +1218,10 @@ window.KS={score:score,mark:mark,esc:esc};})();
   const shDesc = t => esc(t || "").replace(/(\d) (초|%)/g, "$1$2").replace(/(\d[\d,.]*\s?(?:%|초)?)/g, "<b>$1</b>").replace(/\n/g, "<br>");
   const shRows = rows => rows.length ? `<table class="shc-r">${rows.map(r => `<tr><td>${esc(shPlain(r[0]))}</td><td>${esc(shPlain(r[1]))}</td></tr>`).join("")}</table>` : "";
   // 세부 칸 — 하나만 공유할 때는 켜고, 여러 개를 묶을 때는 끈 채로 시작한다(전부 + 세부 칸이면 그림 높이가 2만 픽셀에 이른다)
-  const shMany = k => k !== "sk" && k !== "tal";
+  //   한 레벨 줄(tier)은 3~5장이라 세부 칸을 켜도 길지 않다 — 하나 공유와 같이 켠다.
+  const shMany = k => k !== "sk" && k !== "tal" && k !== "tier";
+  // 기술 통째로 — 기술 하나를 공유할 때 '이 기술을 바꾸는 특성'까지 한 덩어리로 묶는다(기본 켬)
+  const shRelOn = () => { try { return store.get("wiki.shareRel") !== "0"; } catch (e) { return true; } };
   const shDetail = k => { try { const v = store.get(shMany(k) ? "wiki.shareDetN" : "wiki.shareDet1"); return v == null ? !shMany(k) : v === "1"; } catch (e) { return !shMany(k); } };
   function shMeta(a) {
     const wk = a["위키식"] || {};
@@ -1241,18 +1245,22 @@ window.KS={score:score,mark:mark,esc:esc};})();
   }
   const shTiers = (TS, det) => { const g = groupBy(TS, t => t["레벨"] ?? "?");
     return Object.keys(g).sort((x, y) => +x - +y).map(lv => g[lv].map(t => shTal(t, det)).join("")).join(""); };
-  /* 무엇을 그릴까 — kind: stats · sk(기술 하나) · skills · tal(특성 하나) · talents · all */
-  function shBuild(kind, iid, det) {
+  /* 무엇을 그릴까 — kind: stats · sk(기술 하나 · 바꾸는 특성까지) · skills · tal(특성 하나) · tier(한 레벨 줄) · talents · all */
+  function shBuild(kind, iid, det, withRel) {
     const c = SHCTX, h = c.h;
     const it = kind === "sk" ? c.sk.find(a => a.id === iid) : kind === "tal" ? c.TS.find(t => t.id === iid) : null;
+    const rels = kind === "sk" && it && withRel ? c.rel(it) : [];
+    const tierTS = kind === "tier" ? c.TS.filter(t => String(t["레벨"] ?? "?") === String(iid)) : [];
     const what = { stats: `${c.LV}레벨 능력치`, skills: "기술 전부", talents: "특성 전부", all: "능력치 · 기술 · 특성",
-      sk: it ? `기술 · ${it["이름"] || it.id}` : "기술", tal: it ? `${it["레벨"]}레벨 특성 · ${it["이름"] || it.id}` : "특성" }[kind];
+      sk: it ? `기술 · ${it["이름"] || it.id}${rels.length ? " · 바꾸는 특성 " + rels.length + "개" : ""}` : "기술",
+      tal: it ? `${it["레벨"]}레벨 특성 · ${it["이름"] || it.id}` : "특성", tier: `${iid}레벨 특성 ${tierTS.length}개` }[kind];
     let body = "";
     if (kind === "stats" || kind === "all") body += (kind === "all" ? `<div class="shc-sec">능력치 · ${c.LV}레벨</div>` : "") + shStats(c);
     if (kind === "skills" || kind === "all") body += (kind === "all" ? `<div class="shc-sec">기술</div>` : "") + c.sk.map(a => shSkill(a, det)).join("");
     if (kind === "talents" || kind === "all") body += (kind === "all" ? `<div class="shc-sec">특성</div>` : "") + shTiers(c.TS, det);
-    if (kind === "sk" && it) body = shSkill(it, det);
+    if (kind === "sk" && it) body = shSkill(it, det) + (rels.length ? `<div class="shc-sec">이 기술을 바꾸는 특성 ${rels.length}개</div>` + shTiers(rels, det) : "");
     if (kind === "tal" && it) body = shTal(it, det);
+    if (kind === "tier") body = shTiers(tierTS, det);
     const where = IN_SITE ? `hotscrap.com/wiki/#h.${h.id}` : "HotS 자료 위키";
     const when = H0["만든 시각"] || H0["만든 날"] || "";
     const zero = kind === "stats" ? "" : " · 설명 숫자는 0레벨 값(패치노트 기준)";
@@ -1270,8 +1278,9 @@ window.KS={score:score,mark:mark,esc:esc};})();
     if (kind === "stats" || kind === "all") { c.stats.forEach(([k, v, g, u]) => { const now = typeof v === "number" ? v * kL(g) : v; tl.push(`${k}: ${typeof now === "number" ? fmt(now) : v}${u || ""}${g ? ` (레벨당 ${num(g * 100)}%)` : ""}`); }); tl.push(""); }
     if (kind === "skills" || kind === "all") c.sk.forEach(tSk);
     if (kind === "talents" || kind === "all") { const g = groupBy(c.TS, t => t["레벨"] ?? "?"); Object.keys(g).sort((x, y) => +x - +y).forEach(lv => g[lv].forEach(tTal)); }
-    if (kind === "sk" && it) tSk(it);
+    if (kind === "sk" && it) { tSk(it); if (rels.length) { tl.push(`▼ 이 기술을 바꾸는 특성 ${rels.length}개`, ""); rels.slice().sort((x, y) => (x["레벨"] || 0) - (y["레벨"] || 0)).forEach(tTal); } }
     if (kind === "tal" && it) tTal(it);
+    if (kind === "tier") tierTS.forEach(tTal);
     tl.push(`— 히오스 ${H0["판"] || "?"} · 위키 v${VER || "?"}${when ? " · " + when : ""}${zero} · ${where}`);
     const fname = `${h["이름"]}_${what.replace(/[\\/:*?"<>|·]/g, "").replace(/\s+/g, "_")}_히오스${H0["판"] || ""}_v${VER || ""}.png`;
     return { html, text: tl.join("\n"), title: `${h["이름"]} — ${what} 공유`, fname };
@@ -1279,11 +1288,13 @@ window.KS={score:score,mark:mark,esc:esc};})();
   function shMsg(t, bad) { const m = BV.querySelector(".shmsg"); if (m) { m.textContent = t; m.classList.toggle("bad", !!bad); } }
   function openShare(kind, iid) {
     if (!SHCTX) return;
-    const det = shDetail(kind), B = shBuild(kind, iid, det);
-    SHST = { kind, iid, B, blob: null, url: null };
-    const single = kind === "sk" || kind === "tal" || kind === "skills" || kind === "talents" || kind === "all";
+    const det = shDetail(kind), rel = shRelOn(), B = shBuild(kind, iid, det, rel);
+    SHST = { kind, iid, det, rel, B, blob: null, url: null };
+    const single = kind !== "stats";
+    const it = kind === "sk" ? SHCTX.sk.find(a => a.id === iid) : null, nRel = it ? SHCTX.rel(it).length : 0;
     openBV(B.title, `<div class="shbar"><button type="button" class="go" data-shact="copy">그림 복사</button><button type="button" data-shact="save">그림 저장</button><button type="button" data-shact="text">글 복사</button>`
-      + (single ? `<label><input type="checkbox" id="sh-det"${det ? " checked" : ""}> 세부 칸 포함</label>` : "") + `</div>`
+      + (single ? `<label><input type="checkbox" id="sh-det"${det ? " checked" : ""}> 세부 칸 포함</label>` : "")
+      + (nRel ? `<label><input type="checkbox" id="sh-rel"${rel ? " checked" : ""}> 바꾸는 특성 ${nRel}개 포함</label>` : "") + `</div>`
       + `<p class="shmsg" aria-live="polite"></p><div class="shprev"><p class="load">그림을 만드는 중…</p></div>`
       + `<p class="shhint">복사·저장이 막힌 화면이면 위 그림을 길게 누르거나 오른쪽 단추로 복사·저장하세요. 그림 아래에 히오스 판과 위키 버전이 찍힙니다.</p>`);
     shRender();
@@ -1327,8 +1338,12 @@ window.KS={score:score,mark:mark,esc:esc};})();
     }
   });
   document.addEventListener("change", e => {
-    if (e.target && e.target.id === "sh-det" && SHST) { try { store.set(shMany(SHST.kind) ? "wiki.shareDetN" : "wiki.shareDet1", e.target.checked ? "1" : "0"); } catch (x) {}
-      SHST.B = shBuild(SHST.kind, SHST.iid, e.target.checked); SHST.blob = null;
+    const id = e.target && e.target.id;
+    if ((id === "sh-det" || id === "sh-rel") && SHST) {
+      if (id === "sh-det") { SHST.det = e.target.checked; try { store.set(shMany(SHST.kind) ? "wiki.shareDetN" : "wiki.shareDet1", SHST.det ? "1" : "0"); } catch (x) {} }
+      else { SHST.rel = e.target.checked; try { store.set("wiki.shareRel", SHST.rel ? "1" : "0"); } catch (x) {} }
+      SHST.B = shBuild(SHST.kind, SHST.iid, SHST.det, SHST.rel); SHST.blob = null;
+      const bt = BV.querySelector(".bvbar b"); if (bt) bt.textContent = SHST.B.title;
       const pv = BV.querySelector(".shprev"); if (pv) pv.innerHTML = `<p class="load">그림을 만드는 중…</p>`; shRender(); }
   });
   function pHero(id) {
@@ -1367,7 +1382,9 @@ window.KS={score:score,mark:mark,esc:esc};})();
       starRes = { lines, cond: [], si: null, conds: [] };
     }
     const TALS = window.hotsSplat ? window.hotsSplat.tals(id, () => { if (curHero === id) route(true); }) : null;
-    SHCTX = { h, stats, sk, TS, LV };            // 공유 그림이 쓴다(지금 보이는 레벨 그대로)
+    // 이 기술을 바꾸는 특성 — 수치가 안 바뀌어도 '[Q] 기술' 로 강화하면 넣는다(공유는 통째로 보여 주는 게 목적)
+    const relOf = a => TS.filter(t => targetOf(h, t) === a || tdItems(id, t.id).some(x => x["기술"] === a.id) || (TALS && TALS[t.id] === a.id));
+    SHCTX = { h, stats, sk, TS, LV, rel: relOf };  // 공유 그림이 쓴다(지금 보이는 레벨 그대로)
     const skill = a => {
       const wk = a["위키식"] || {};
       const fig = (window.hotsShape && (list(wk["도형"]).length || wk["그래프"])) ? (() => { try { return window.hotsShape.svg(wk, { hero: h, yard: YARD }) + (window.hotsShape.graph(wk) || ""); } catch (e) { return ""; } })() : "";
@@ -1386,7 +1403,7 @@ window.KS={score:score,mark:mark,esc:esc};})();
           return (fig || dt) ? `<details class="more2"${t ? " open" : ""}><summary>${fig ? "범위 그림" : ""}${fig && dt ? " · " : ""}${dt ? "상세 표" : ""}</summary>${`<div class="figrow">${fig ? `<div class="figbox">${fig}</div>` : ""}${splatBox(id, "s", a.id, wk, t)}</div>`}${dt.replace('<details class="det" open><summary>상세 표</summary>', "").replace(/<\/details>$/, "")}</details>` : ""; })()}</div></div>`;
     };
     const tl = groupBy(TS, t => t["레벨"] ?? "?");
-    const tiers = Object.keys(tl).sort((a, b) => +a - +b).map(lv => `<div class="tier"><div class="lv">${esc(lv)}<small>레벨</small></div><div class="picks">${tl[lv].map(p =>
+    const tiers = Object.keys(tl).sort((a, b) => +a - +b).map(lv => `<div class="tier"><div class="lv">${esc(lv)}<small>레벨</small><button type="button" class="shr" data-shot="tier" data-id="${esc(lv)}" title="이 레벨 특성 전부를 그림·글로 공유">공유</button></div><div class="picks">${tl[lv].map(p =>
       `<div class="pick" id="tal-${esc(p.id)}">${icon(p["아이콘"], "ico sm")}<div><div class="nm">${esc(p["이름"] || p.id)}<a class="anc" href="#h.${esc(id)}.tal-${esc(p.id)}" title="이 특성으로 바로 오는 주소" aria-label="이 특성 링크">#</a><button type="button" class="shr" data-shot="tal" data-id="${esc(p.id)}" title="이 특성을 그림·글로 공유">공유</button></div>${p["강화"] ? `<div class="to">${esc(p["강화"])} 강화</div>` : ""}<div class="desc">${descHtml(p["설명"], ctx)}</div></div>${talentMore(h, p)}</div>`).join("")}</div></div>`).join("");
     const info = infobox(h["이름"], icon(h["초상화"], "pic"), [["역할군", esc(h["역할군"] || "")], ["세계관", esc(h["세계관"] || "")], ["자원", esc(st["자원"] || "")],
       ["생명력", fmt((st["생명력"] || 0) * kL(rLife)) + ` <small class="note">${LV}레벨</small>`], ["일반 공격 공격력", w["공격력"] ? fmt(w["공격력"] * kL(+rAtk)) : ""], ["공격 사거리", num(st["공격 사거리"])],
