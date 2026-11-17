@@ -127,8 +127,48 @@ def write_notice(rows):
         items.append({"key": f"{ch}|{r.get('newsId') or r['date']}", "channel": ch, "date": r["date"],
                       "title": r["title"], "href": "patchnotes/?v=" + r["date"] + (f"&b={r['build']}" if r.get("build") else ""),
                       "auto": bool(r["translated"].get("auto"))})
+    # **가장 최근 변경사항**(허브 위쪽 한 줄, 2026-11-17 사용자: 띄우는 알림 대신) — 네 갈래 가운데 가장 새것.
+    #   데이터 변경점(빌드 차이) · 테스트 서버 비공식 번역 · 라이브 비공식 번역 · 라이브 공식 번역
+    # rows 는 최신순이라 갈래마다 처음 만난 것이 그 갈래의 최신이고, 그 가운데 날짜가 가장 늦은 것이 '가장 최근' 이다.
+    def kind_of(r):
+        ptr = bool(r.get("isPtr") or r.get("kind") == "ptr")
+        if r.get("kind") == "data":
+            return "데이터 변경점"
+        if not r.get("official"):
+            return None
+        if r.get("translated"):
+            return "테스트 서버 비공식 번역" if ptr else "라이브 비공식 번역"
+        return "테스트 서버 공식 번역" if ptr else "라이브 공식 번역"
+
+    by_kind = {}
+    for r in rows:
+        k = kind_of(r)
+        if k and k not in by_kind:
+            by_kind[k] = {"kind": k, "date": r["date"], "title": r["title"],
+                          "href": "patchnotes/?v=" + r["date"] + (f"&b={r['build']}" if r.get("build") else "")}
+    latest = max(by_kind.values(), key=lambda x: x["date"]) if by_kind else None
+    # **최근 소식**(허브 아래 길게, 2026-11-17 사용자 그림 "하단부에 길게 최근 뉴스") — 자리마다 가장 새 노트 하나씩:
+    #   라이브 패치 노트(공식 번역이든 비공식 번역이든 더 새것) · 테스트 서버 패치 노트 · 데이터 변경점(라이브 · 테스트 서버)
+    # 화면은 날짜가 늦은 차례로 줄을 세운다.
+    news, seen = [], set()
+    for r in rows:
+        ptr = bool(r.get("isPtr") or r.get("kind") == "ptr")
+        if r.get("kind") == "data":
+            slot, tag = ("data-ptr", "데이터 변경점 · 테스트 서버") if ptr else ("data-live", "데이터 변경점 · 라이브")
+        elif r.get("official"):
+            slot = "note-ptr" if ptr else "note-live"
+            tag = ("테스트 서버" if ptr else "라이브") + (" · 비공식 번역" if r.get("translated") else " · 공식 번역")
+        else:
+            continue
+        if slot in seen:
+            continue
+        seen.add(slot)
+        news.append({"slot": slot, "tag": tag, "date": r["date"], "title": r["title"],
+                     "href": "patchnotes/?v=" + r["date"] + (f"&b={r['build']}" if r.get("build") else "")})
+    news.sort(key=lambda x: x["date"], reverse=True)
     f = PN.parent / "notice.json"
-    f.write_text(json.dumps({"unofficial": items}, ensure_ascii=False, indent=1), encoding="utf-8")
+    f.write_text(json.dumps({"unofficial": items, "latest": latest, "byKind": by_kind, "news": news},
+                            ensure_ascii=False, indent=1), encoding="utf-8")
 
 
 def main():

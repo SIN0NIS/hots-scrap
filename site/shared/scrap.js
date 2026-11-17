@@ -217,14 +217,7 @@
     paint();
   }
 
-  /* 하단 알림(공식 한글판 없는 최신 패치 노트를 비공식 번역으로 제공) — 따로 둔 파일을 끌어온다.
-     허브는 scrap.js 를 안 부르므로 notice.js 를 직접 부른다. 사용법 사진(guide)에는 안 띄운다. */
-  if (!/\/guide\//.test(location.pathname) && !document.querySelector('script[src*="shared/notice.js"]')) {
-    var ns = document.createElement('script');
-    ns.src = BASE + 'shared/notice.js';
-    ns.defer = true;
-    (document.head || document.documentElement).appendChild(ns);
-  }
+  /* 하단에 띄우던 패치 노트 알림(shared/notice.js)은 2026-11-17 뺐다 — 허브 위쪽 '가장 최근 변경사항' 한 줄로 바꿈 */
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', addBar);
   else addBar();

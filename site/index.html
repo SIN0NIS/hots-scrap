@@ -90,6 +90,27 @@
   .leg.off { color:var(--dim); background:transparent; }
 
   .foot { margin-top:30px; color:var(--dim); font-size:11.5px; }
+
+  /* 최근 소식 — 카드 아래 길게(2026-11-17 사용자 그림). 자리마다 가장 새 노트: 라이브·테스트 서버 패치 노트(공식/비공식 번역) · 데이터 변경점 */
+  .news { margin-top:16px; background:var(--card); border:1px solid var(--line); border-left:4px solid var(--gold-line);
+          border-radius:14px; padding:12px 16px 8px; }
+  .news-h { display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; margin-bottom:4px; }
+  .news-h b { font-size:15px; color:var(--fg); }
+  .news-h span { color:var(--dim); font-size:12px; }
+  .news-h a { margin-left:auto; color:var(--gold); font-size:12.5px; font-weight:700; text-decoration:none; }
+  .news-h a:hover { text-decoration:underline; }
+  .news ul { list-style:none; margin:0; padding:0; }
+  .news li a { display:flex; align-items:center; gap:10px; flex-wrap:wrap; padding:8px 2px; border-top:1px solid var(--line);
+               color:var(--fg); text-decoration:none; font-size:13.5px; }
+  .news li:first-child a { border-top:0; }
+  .news li a:hover .nt { color:var(--gold); }
+  .news .nk { font-size:11px; font-weight:700; padding:1px 9px; border-radius:99px; white-space:nowrap;
+              color:var(--blue); background:var(--blue-soft); border:1px solid var(--line); min-width:150px; text-align:center; }
+  .news .nk.data { color:var(--gold); background:transparent; border-color:var(--gold-line); }
+  .news .nt { flex:1 1 220px; min-width:0; font-weight:600; }
+  .news .nd { color:var(--dim); font-size:12px; white-space:nowrap; }
+  .news .nn { font-size:10.5px; font-weight:800; color:#fff; background:#d9534f; border-radius:4px; padding:0 5px; }
+  @media (max-width:560px) { .news .nk { min-width:0; } .news-h a { margin-left:0; } }
 </style>
 </head>
 <body>
@@ -210,6 +231,29 @@
   </div>
 
 
+  <!-- 최근 소식 — data/notice.json 의 news 첫 줄(가장 최근 하나). 깃허브 6시간 작업 build_patch_index.write_notice 가 만든다 -->
+  <section class="news" id="news" hidden aria-label="최근 소식">
+    <div class="news-h"><b>최근 소식</b><span>히오스 업데이트 · 패치 노트 · 데이터 변경점</span>
+      <a href="patchnotes/">전체 패치 기록 →</a></div>
+    <ul id="newsList"></ul>
+  </section>
+  <script>
+  (function () {
+    function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+    fetch('data/notice.json').then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
+      // 네 자리(라이브·테스트 서버 노트 · 데이터 변경점 둘) 가운데 **가장 최근 하나만** 띄운다(2026-11-17 사용자)
+      var xs = ((d && d.news) || []).slice(0, 1); if (!xs.length) return;
+      var now = Date.now();
+      document.getElementById('newsList').innerHTML = xs.map(function (x) {
+        var md = String(x.date).split('-'), fresh = (now - Date.parse(x.date)) < 14 * 864e5;   // 2주 안이면 '새'
+        return '<li><a href="' + esc(x.href) + '"><span class="nk' + (/^데이터/.test(x.tag) ? ' data' : '') + '">' + esc(x.tag) + '</span>'
+          + '<span class="nt">' + esc(x.title) + '</span>' + (fresh ? '<span class="nn">새</span>' : '')
+          + '<span class="nd">' + (+md[0]) + '년 ' + (+md[1]) + '월 ' + (+md[2]) + '일</span></a></li>';
+      }).join('');
+      document.getElementById('news').hidden = false;
+    }).catch(function () {});
+  })();
+  </script>
   <p class="foot" id="foot"></p>
 </div>
 
@@ -271,7 +315,5 @@ document.querySelectorAll('.leg[data-go]').forEach(function (el) {
     .catch(function () {});
 })();
 </script>
-<!-- 하단 알림: 공식 한글판 없는 최신 패치 노트(비공식 번역) — 다른 페이지는 scrap.js 가 같은 파일을 부른다 -->
-<script src="shared/notice.js" defer></script>
 </body>
 </html>

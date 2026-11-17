@@ -268,6 +268,7 @@ details.spc > summary .note { margin-left:6px; }
 ul.spl { list-style:none; margin:0; padding:2px 12px 10px; display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:5px 14px; font-size:12.5px; }
 .jdg { border-top:1px solid var(--line); padding:6px 11px 0; }
 .jdg-h { font-size:13px; }
+.jdg-d { margin:2px 0 8px; } .jdg-d > summary { cursor:pointer; } .jdg-d p { margin:3px 0 0 12px; }
 ul.spl li { display:flex; flex-wrap:wrap; align-items:center; gap:2px 6px; min-width:0; }
 .cnt { margin:10px 0 14px; } .cnt-t { font-size:12.5px; font-weight:700; margin-bottom:4px; }
 .cbar { display:flex; height:14px; border-radius:4px; overflow:hidden; gap:2px; }
@@ -2002,19 +2003,30 @@ window.KS={score:score,mark:mark,esc:esc};})();
   }
   /* 판정 갈래 — 이름이 같아도 게임이 다루는 규칙이 다르면 따로, 완전히 같으면 한 줄(hots_xml 규칙 133) */
   function judgeHtml() {
+    /* 판정 갈래 — 큰 틀 → 비슷한 것 → 세부(접음). 2026-11-17 "큰 틀에서 비슷한 것끼리" */
     if (!STX) return `<p class="load">불러오는 중…</p>`;
-    const ok = new Set(HS().map(h => h.id));
-    const J = list(STX["판정"]).map(x => Object.assign({}, x, { 항목: list(x["항목"]).filter(([hid]) => ok.has(hid) && hById[hid]) })).filter(x => x["항목"].length);
+    const ok = new Set(HS().map(h => h.id)), keep = it => ok.has(it[0]) && hById[it[0]];
+    const J = list(STX["판정"]).map(x => Object.assign({}, x, { 항목: list(x["항목"]).filter(keep),
+      세부: list(x["세부"]).map(d => Object.assign({}, d, { 항목: list(d["항목"]).filter(keep) })).filter(d => d["항목"].length) })).filter(x => x["항목"].length);
     if (!J.length) return `<p class="note">판정 자료가 없습니다.</p>`;
+    const ORD = { "이동기": ["벽 상관없음 — 순간이동", "벽에 막힘 — 땅으로 달림", "벽을 돌아감 — 길을 찾아 쫓음", "벽을 넘음 — 공중으로", "남을 옮김"],
+      "해로운 효과": ["행동 불가", "이동 방해", "능력 방해", "밀침·띄움", "약화", "드러냄", "지속 피해"],
+      "나·아군 효과": ["지켜 줌", "강해짐", "숨음", "제 몸 묶기"] };
+    const skN = vs => new Set(vs.flatMap(v => v["항목"].map(([h, t]) => h + "|" + t))).size;   // 한 기술이 두 갈래에 들면 한 번만
     return ["이동기", "해로운 효과", "나·아군 효과"].map(g => {
       const xs = J.filter(x => x["묶음"] === g); if (!xs.length) return "";
-      const fam = groupBy(xs, x => x["큰 갈래"]), cnt = k => new Set(fam[k].flatMap(v => v["항목"].map(([h, t]) => h + "|" + t))).size;   // 한 기술이 두 갈래에 들면 한 번만
-      const ks = Object.keys(fam).sort((a, b) => cnt(b) - cnt(a));
-      return `<h3 class="sub">${esc(g)} <span class="note">판정 ${xs.length}가지</span></h3>` + ks.map(k => {
+      const fam = groupBy(xs, x => x["큰 틀"]), od = ORD[g] || [], at = k => (od.indexOf(k) + 1 || 99);
+      const ks = Object.keys(fam).sort((a, b) => at(a) - at(b) || skN(fam[b]) - skN(fam[a]));
+      return `<h3 class="sub">${esc(g)} <span class="note">기술 ${skN(xs)}개 · 큰 틀 ${ks.length}가지 · 비슷한 것 ${xs.length}가지</span></h3>` + ks.map(k => {
         const vs = fam[k].slice().sort((a, b) => b["항목"].length - a["항목"].length);
-        return `<details class="spc"><summary><b>${esc(k)}</b> <span class="note">판정 ${vs.length}가지 · 기술 ${cnt(k)}개</span></summary>` +
-          vs.map(v => `<div class="jdg"><div class="jdg-h"><b>${esc(v["이름"])}</b> <span class="note">${v["항목"].length}개${list(v["규칙"]).length ? ` — ${esc(list(v["규칙"]).join(" · "))}` : ""}</span></div>
-            <ul class="spl">${v["항목"].map(([hid, t]) => `<li>${face(hById[hid])} <span class="note">${esc(t)}</span></li>`).join("")}</ul></div>`).join("") + `</details>`;
+        return `<details class="spc"><summary><b>${esc(k)}</b> <span class="note">기술 ${skN(vs)}개 · ${vs.map(v => esc(v["비슷한 것"])).join(" · ")}</span></summary>` +
+          vs.map(v => {
+            const ds = list(v["세부"]), more = ds.length > 1 || (ds[0] && ds[0]["이름"] !== v["비슷한 것"]);
+            return `<div class="jdg"><div class="jdg-h"><b>${esc(v["비슷한 것"])}</b> <span class="note">${v["항목"].length}개</span></div>
+            <ul class="spl">${v["항목"].map(([hid, t]) => `<li>${face(hById[hid])} <span class="note">${esc(t)}</span></li>`).join("")}</ul>` +
+            (more ? `<details class="jdg-d"><summary class="note">세부 판정 ${ds.length}가지 — 기술마다 조금씩 다른 규칙</summary>` +
+              ds.map(d => `<p class="note"><b>${esc(d["이름"])}</b> — ${d["항목"].map(([hid, t]) => esc((hById[hid] || {})["이름"] + " " + t)).join(", ")}</p>`).join("") + `</details>` : "") + `</div>`;
+          }).join("") + `</details>`;
       }).join("");
     }).join("");
   }
@@ -2042,7 +2054,7 @@ window.KS={score:score,mark:mark,esc:esc};})();
         ...(all.length ? [{ title: "눈에 띄는 영웅", html: outliers(all) }] : []),
         ...(!STROLE ? [{ title: "역할군별 보통 값", html: roleTable(all) }] : []),
         { title: "특수 경우", html: `<p class="note">한 줄에 세워 견주기 어려운 영웅·기술을 까닭별로 모았습니다. 순위표에서 빠졌거나 따로 셈한 것들입니다.</p>` + specialHtml() },
-        { title: "판정 갈래", html: `<p class="note">같은 '기절'·'돌진' 이라도 게임이 다루는 규칙(저지 불가·정화에 풀리나, 길을 따라가나 넘어가나 …)이 다르면 다른 갈래로, 완전히 같은 것만 한 줄로 묶었습니다. 세기·지속 같은 숫자는 판정이 아니라서 묶는 데 쓰지 않았습니다. 해로운 효과의 괄호는 게임이 그 효과에 쓰는 기본 틀과 <b>다른 점</b>이고, 이동기·나·아군 효과의 괄호는 그 갈래의 규칙입니다. 이동기는 실제로 움직이는 방식으로 나눴습니다 — 점멸(시작 자리에서 끝 자리로 바로)·대쉬(직선, 벽에 막힘)·도약(벽 넘음)·추적 돌진(길을 찾아 벽을 돌아감). 기술 이름과 다를 수 있습니다(트레이서 '점멸' 은 대쉬). 줄 끝에는 규칙을 전부 적었습니다.</p>` + judgeHtml() },
+        { title: "판정 갈래", html: `<p class="note">게임이 기술을 다루는 규칙(벽을 넘나 막히나, 정화·저지 불가에 풀리나 …)으로 기술을 나눴습니다. 기술마다 조금씩은 다 달라서, <b>큰 틀</b>(이동기는 벽을 어떻게 다루나, 효과는 무슨 종류인가) → <b>비슷한 것</b>(갈래 하나와 꼭 필요한 특징 하나) 으로 묶고, 규칙을 전부 적은 <b>세부 판정</b>은 접어 두었습니다. 기술 상세 표의 판정 칸에도 '비슷한 것' 만 적습니다. 이동기의 큰 틀 — 순간이동(벽 상관없음) · 땅으로 달림(벽에 막힘) · 길을 찾아 쫓음(벽을 돌아감) · 공중으로(벽을 넘음). 기술 이름과 다를 수 있습니다(트레이서 '점멸' 은 대쉬).</p>` + judgeHtml() },
         { title: "갈래별 영웅 수", html: countBlock("역할군", h => h["역할군"] || "기타") + countBlock("자원", h => h["기본"]["자원"] || "없음") + countBlock("일반 공격 방식", h => (list(h["기본"]["평타"])[0] || {})["방식"] || "") + countBlock("세계관", h => h["세계관"] || "") },
         { title: "읽을 때 주의", html: `<ul class="plain">
           <li>'가운데 값' 은 줄 세웠을 때 한가운데 값입니다 — 튀는 값 하나에 흔들리는 평균보다 '보통' 을 잘 보여 줍니다.</li>
