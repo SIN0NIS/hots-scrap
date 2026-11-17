@@ -138,7 +138,8 @@ p { margin:0 0 10px; }
 /* 정보 상자 — 넓으면 오른쪽에 뜨고, 좁으면 위로 */
 .info { float:right; width:290px; margin:0 0 14px 20px; border:1px solid var(--line); border-radius:var(--r); background:var(--card2); overflow:hidden; font-size:13px; }
 .info .ih { background:var(--bar); color:var(--bar-fg); font-weight:900; text-align:center; padding:8px; font-size:15px; }
-.info .pic { display:block; margin:10px auto 4px; width:96px; height:96px; border-radius:10px; border:2px solid var(--gold-line); background:var(--card); }
+/* 초상화는 **원형 그림**이라 틀도 원으로 — 둥근 네모 틀에 원 그림이 들어가 모서리가 비어 보였다(2026-11-17). 그림은 틀을 꽉 채운다 */
+.info .pic { display:block; margin:10px auto 4px; width:96px; height:96px; border-radius:50%; border:2px solid var(--gold-line); background:var(--card); object-fit:cover; overflow:hidden; box-sizing:border-box; }
 .info table { width:100%; border-collapse:collapse; }
 .info th, .info td { padding:5px 10px; border-top:1px solid var(--line); text-align:left; vertical-align:top; }
 .info th { width:40%; color:var(--dim); font-weight:500; background:transparent; }
@@ -163,7 +164,7 @@ td.src { font-family:var(--f-mono); font-size:11px; color:var(--dim); overflow-w
 .ico { width:40px; height:40px; border-radius:6px; border:1px solid var(--line); background:var(--card2); flex:0 0 auto; }
 .ico.sm { width:28px; height:28px; }
 .ico.xs { width:18px; height:18px; border-radius:50%; }
-.face { width:46px; height:46px; border-radius:8px; border:1px solid var(--line); background:var(--card2); }
+.face { width:46px; height:46px; border-radius:50%; border:1px solid var(--line); background:var(--card2); object-fit:cover; }   /* 초상화는 원형 그림 — 틀도 원 */
 .skill { display:grid; grid-template-columns:44px minmax(0,1fr); gap:4px 12px; padding:12px 0; border-bottom:1px dashed var(--line); }
 .skill:last-child { border-bottom:0; }
 .skill .nm { font-weight:700; display:flex; gap:8px; align-items:baseline; flex-wrap:wrap; }
@@ -310,7 +311,7 @@ ul.spl li { display:flex; flex-wrap:wrap; align-items:center; gap:2px 6px; min-w
 .shc { width:680px; box-sizing:border-box; padding:22px 24px 16px; background:#121a2a; color:#e9eef6; border-radius:14px;
   font-family:var(--f-body); font-size:15px; line-height:1.55; }
 .shc .shc-h { display:flex; gap:14px; align-items:center; margin-bottom:14px; }
-.shc .shc-pic { width:64px; height:64px; border-radius:12px; object-fit:cover; background:#1d2a42; flex:none; }
+.shc .shc-pic { width:64px; height:64px; border-radius:50%; object-fit:cover; background:#1d2a42; flex:none; }
 .shc .shc-n { font-size:24px; font-weight:800; letter-spacing:-.01em; }
 .shc .shc-s { font-size:13.5px; color:#9fb0c8; }
 .shc .shc-sec { font-size:13px; font-weight:700; color:#e8c268; letter-spacing:.04em; margin:16px 0 8px; padding-bottom:4px; border-bottom:1px solid #2a3b59; }
@@ -1836,7 +1837,8 @@ window.KS={score:score,mark:mark,esc:esc};})();
      몸 하나를 영웅처럼 만든다(이름 '길 잃은 바이킹 · 올라프', 문서 주소는 그대로). 기술 칸 순위는 영웅 하나로 둔다 */
   function splitBodies(hs) {
     return hs.flatMap(h => { const bs = list(h["각 영웅"]); return bs.length ? bs.map((b, i) => Object.assign({}, h, {
-      "이름": `${h["이름"]} · ${b["이름"]}`, _몸: b["이름"], _i: i, "기본": b, "반지름 둘": { "피격": b["반지름"], "충돌": b["충돌 반지름"] } })) : [h]; });
+      "이름": `${h["이름"]} · ${b["이름"]}`, _몸: b["이름"], _i: i, "기본": b, "반지름 둘": { "피격": b["반지름"], "충돌": b["충돌 반지름"] },
+      "초상화": b["초상화"] || h["초상화"] })) : [h]; });
   }
   function bodyKey(h) { return h._몸 != null ? h.id + "#" + h._i : h.id; }
   /* ── 영웅 한 명의 능력치 구절판 — 가운데 초상화, 둘레 여덟 칸에 능력치·값·전체 중 순위.
