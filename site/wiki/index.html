@@ -467,6 +467,10 @@ a.wl:hover { text-decoration:none; border-bottom-style:solid; }
 .figrow .figbox { flex:1 1 260px; }
 /* 인게임 그림이 있으면 그것만 — 자료가 없으면 splat.js 가 칸을 지워 옛 판정 그림이 돌아온다 */
 .figrow:has(.splatbox) > .figbox { display:none; }
+/* **범위가 서서히 바뀌는 기술**(커지는 원 · 도는 판정 · 휩쓸기 · 모으기)은 시간 손잡이(▶ 처음부터 끝까지)가 있는 판정 그림을
+   인게임 표시 옆에 같이 둔다(2026-11-17 사용자 "천천히 바뀌는 것만"). 두 단계로 한 번 바뀌는 것은 '+N초' 글로만 */
+.figrow:has(.splatbox) > .figbox:has(.cvt) { display:block; }
+.figrow:has(.splatbox) > .figbox:has(.cvt)::before { content:"시간에 따라 바뀌는 모습 — ▶ 로 처음부터 끝까지"; display:block; font-size:12px; color:var(--dim); margin:4px 0 2px; }
 .splatbox { flex:0 0 auto; width:300px; max-width:100%; margin-top:4px; }
 .splatbox canvas { display:block; width:300px; max-width:100%; height:auto; border-radius:8px; border:1px solid var(--line); }
 .splatcap { font-size:12px; color:var(--dim); margin-top:4px; line-height:1.45; }

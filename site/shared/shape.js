@@ -80,9 +80,17 @@
     /* **모으는 시간 손잡이.** 알라라크 돌진·초 주먹은 모은 만큼 멀리 가고,
        요한나 망치는 도는 동안 벌어진다 — 셋 다 '시간이 흐르면 어떻게 되나' 다.
        0(안 모음) ~ 1(끝까지)로 받아 도형이 제 몫을 줄인다. */
-    const chg = (w || {})['모으기'];
+    /* **점점 커지는 원**(빛나래 에메랄드 바람 1.5 → 8.25 · 리밍 비전 보주 0.25 → 2.23 · 메피스토 증오의 족쇄)도 시간에 따라
+       바뀐다 — 한 틱(0.0625초)에 한 단계씩 커진다. 모으기 손잡이를 같이 쓴다(2026-11-17 사용자 "범위가 천천히 바뀌는 것만
+       처음~끝까지" — 두 단계로 한 번 바뀌는 것은 '+N초' 글로 두고 손잡이를 안 단다). */
+    const grows = gs0.filter(g0 => g0.작은 != null && g0.단계 > 0 && Number(g0.반지름) > Number(g0.작은));
+    const chg = (w || {})['모으기']
+             || (grows.length ? { 초: Math.round(Math.max(...grows.map(g0 => g0.단계)) * 0.0625 * 100) / 100, 커지는중: true } : null);
     const at01 = (chg && typeof opt.모음 === 'number')
                  ? Math.max(0, Math.min(1, opt.모음)) : 1;
+    // 커지는 원 하나가 지금 얼마나 커졌나(0~1) — 손잡이 시각(at01 × 전체 초)을 그 원의 단계 시간(단계 × 0.0625초)으로 나눈다
+    const growP = g0 => (chg && chg.커지는중 && g0.단계 > 0)
+      ? Math.max(0, Math.min(1, at01 * chg.초 / (g0.단계 * 0.0625))) : 1;
     const gsExt = span ? gs0.concat(gs0.map(g0 =>
                     g0.모임 ? Object.assign({}, g0, { 모임: span[0] }) : g0)) : gs;
     // 장판이 없어도 **찾는 범위**만 있으면 그릴 값이 있다(겐지 튕겨내기 `Radius 7.0`)
@@ -719,12 +727,16 @@
         // 날아가는 원 — 지나간 자리를 띠로 그린다. 굵기가 그대로면 곧은 띠,
         // 커지면(리밍 보주·안두인 응징) 넓어지는 띠다. '바로 앞에서 맞아도 터진다' 가 여기서 보인다.
         const r0 = (g.작은 === undefined ? g.반지름 : g.작은), r1 = g.반지름, D = g.날아감;
+        // 커지는 중 손잡이 — 지금 날아온 거리·지금 크기까지만 칠하고, 끝 자리는 테두리만(리밍 비전 보주)
+        const gp = growP(g), Dn = D * gp, rn = r0 + (r1 - r0) * gp;
         body += `<polygon points="${px(-r0)},${py(0)} ${px(r0)},${py(0)} `
-              + `${px(r1)},${py(D)} ${px(-r1)},${py(D)}" fill="${C}" fill-opacity=".10" `
+              + `${px(rn)},${py(Dn)} ${px(-rn)},${py(Dn)}" fill="${C}" fill-opacity=".10" `
               + `stroke="${C}" stroke-width="1" stroke-dasharray="4 3"/>`;
         body += `<circle cx="${px(0)}" cy="${py(0)}" r="${r0 * S}" fill="none" stroke="${C}" `
               + `stroke-width="1" stroke-dasharray="3 3"/>`
-              + `<circle cx="${px(0)}" cy="${py(D)}" r="${r1 * S}" ${fill}/>`;
+              + (gp < 1 ? `<circle cx="${px(0)}" cy="${py(D)}" r="${r1 * S}" fill="none" stroke="${C}" `
+                          + `stroke-width="1" stroke-dasharray="2 4" opacity=".6"/>` : '')
+              + `<circle cx="${px(0)}" cy="${py(Dn)}" r="${rn * S}" ${fill}/>`;
       } else if (g.유지) {
         /* **닿는 넓이가 아니라 "이 안에 머물러야 이어진다" 는 거리**(폴스타트 피뢰침).
            속을 칠하면 "여기 있는 모두를 때린다" 로 읽히므로 **테두리만** 긋는다. */
@@ -733,10 +745,24 @@
               + `<text x="${px(0) + 4}" y="${py(at) - g.반지름 * S - 4}" font-size="9" `
               + `fill="${C}" opacity=".95">여기 벗어나면 끊김 ${g.반지름}</text>`;
       } else {
-        body += `<circle cx="${px(0)}" cy="${py(at)}" r="${g.반지름 * S}" ${fill}/>`;
+        const gpc = g.작은 ? growP(g) : 1, rnc = g.작은 ? g.작은 + (g.반지름 - g.작은) * gpc : g.반지름;
+        body += `<circle cx="${px(0)}" cy="${py(at)}" r="${rnc * S}" ${fill}/>`;
+        if (gpc < 1)  // 커지는 중 — 다 커졌을 때의 끝 크기를 옅은 테두리로
+          body += `<circle cx="${px(0)}" cy="${py(at)}" r="${g.반지름 * S}" fill="none" stroke="${C}" `
+                + `stroke-width="1" stroke-dasharray="2 4" opacity=".6"/>`;
         if (g.작은)   // 충전으로 커지는 원 — 처음 크기(충전 안 했을 때)를 점선으로
           body += `<circle cx="${px(0)}" cy="${py(at)}" r="${g.작은 * S}" fill="none" `
                 + `stroke="${C}" stroke-width="1.2" stroke-dasharray="4 3"/>`;
+      }
+      /* **시간차**(2026-11-17) — 먼저 생기는 판정보다 늦게 생기는 것은 몇 초 뒤인지 금색으로 적는다(해석기 `때`).
+         케리건 원시 손아귀: 부채꼴로 끌어당기고 +2.5초 뒤 케리건 둘레 폭발 · 스투코프 거친 휩쓸기 +0.38 · +1.06초. */
+      // 범위 번호(해석기 `범위번호` — 시간이 다른 판정을 차례대로 범위1·2·3) · 늦게 생기는 초 · 되풀이
+      const tLab = [g.범위번호 ? `범위${g.범위번호}` : '', g.때 > 0 ? `+${g.때}초` : '', g.되풀이 && g.되풀이.수 > 1 ? `×${g.되풀이.수}` : ''].filter(Boolean).join(' ');
+      if (tLab) {
+        const top = g.꼴 === '직사각형' ? (g.쓸기 ? g.쓸기 : at + (g.세로 || 0) / 2)
+                  : (g.꼴 === '원' || g.꼴 === '부채꼴' || g.꼴 === '고리') ? at + (g.반지름 || 0) : at;
+        body += `<text x="${(px(0) + 5).toFixed(1)}" y="${(py(top) - 4).toFixed(1)}" font-size="10" `
+              + `font-weight="700" fill="var(--gold)">${tLab}</text>`;
       }
       if (mark >= 0) {   // 제 기준점에서 돌린다(화면은 y 가 아래라 +가 시계 방향)
         const deg = ((spin && spins(g)) ? spin : 0)
@@ -767,7 +793,7 @@
     body += `<circle cx="${px(0)}" cy="${py(0)}" r="${hr * S}" fill="var(--hit)" fill-opacity=".55" `
           + `stroke="var(--hit)" stroke-width="1"/>`;
     body += `<text x="4" y="${H - 5}" font-size="10" fill="var(--hit)">hitbox r ${hr}</text>`;
-    const names = gs.map(g => g.꼴 === '자리들' ? `${(g.점 || []).length}곳` :
+    const names = gs.map(g => (g.범위번호 ? `범위${g.범위번호} ` : '') + (g.때 > 0 ? `+${g.때}초 뒤 ` : '') + (g.꼴 === '자리들' ? `${(g.점 || []).length}곳` :
                                g.쓸기 ? `${g.꼴} ${g.가로} 폭이 ${g.쓸기} 를 지나감` :
                                (g.날아감 && g.작은) ? `날아가며 커지는 ${g.꼴}(${g.작은}→${g.반지름})` :
                                g.날아감 ? `${g.꼴} 반지름 ${g.반지름}이 ${g.날아감} 을 지나감` :
@@ -781,7 +807,7 @@
                                + (g.거리 > 12 ? ' (격자에는 12 까지만)' : '') :
                              g.꼴 === '튕김' ? `${g.반지름} 안으로 옮겨 붙음` + (g.수 > 1 ? ` x${g.수}` : '') :
                              g.꼴 === '이동' ? `${g.거리} 이동(판정 없음)` :
-                               g.직격 ? `${g.꼴}(직격)` : g.꼴)
+                               g.직격 ? `${g.꼴}(직격)` : g.꼴) + (g.되풀이 && g.되풀이.수 > 1 ? ` (${g.되풀이.수}회 · ${g.되풀이.간격}초마다)` : ''))
                    .filter((v, i, z) => z.indexOf(v) === i).join(' · ');
     const cap = [`한 칸 = 거리 1 · 위쪽이 앞`,
                  `<b class="c-hero">●</b> 영웅 히트박스 ${hr}`,
@@ -795,6 +821,8 @@
                  gs.some(g => g.편 === '둘 다') ? `<b class="c-both">■</b> 적·아군 모두` : '',
                  gs.some(g => g.편 === '자신') ? `<b class="c-self">■</b> 나에게만(제 몸에 거는 구역)` : '',
                  names ? `범위 ${esc(names)}` : '',
+                 (w || {})['판정 지연'] ? `첫 판정은 시전 <b>${esc((w || {})['판정 지연'])}</b> 뒤` : '',
+                 gs.some(g => g.때 > 0) ? `<b style="color:var(--gold)">+N초</b> 먼저 생기는 판정보다 그만큼 늦게 생김` : '',
                  gs.some(g => g.직격 && !g.유지) ? `진한 쪽은 한 명만 맞는 직격` : '',
                  gs.some(g => g.유지)
                    ? `<b class="c-dim">◌</b> 점선 안은 맞는 범위가 아니라 <b>붙어 있어야 하는 거리</b>` : '',
@@ -815,7 +843,7 @@
     if ((span || canSpin || canTurn || chg || canAim) && !opt.막대끔) {
       const cur = atTo === null ? (span ? span[1] : 0) : atTo;
       const id = 'cv' + (++SEQ);
-      REG.set(id, { w: w, opt: opt });
+      REG.set(id, { w: w, opt: opt, chg: chg });
       /* `step="any"` — 눈금에 걸리지 않아 **끌기가 매끄럽고 맨 끝까지 닿는다.**
          딱 떨어지는 눈금을 주면 0.4375 + 0.5k 격자에 묶여 최대 12 에 못 간다.
          +/− 단추가 쓸 걸음은 따로 들려 준다. */
@@ -832,8 +860,10 @@
         /* **시간 손잡이** — 왼쪽 끝이 '안 모음', 오른쪽 끝이 '끝까지'.
            초를 아는 것(알라라크 1.5초 · 요한나 3.5초)은 초로, 모르는 것(초 주먹)은
            백분율로 적는다. 0 에서 끝까지 밀어 보면 시간에 따라 어떻게 되는지 보인다. */
-        const chgNm = chg.도는중 ? '도는 중' : chg.휩쓰는중 ? '휩쓰는 중' : '모으기';
-        inner += `<span class="cvl">${chgNm}</span>`
+        const chgNm = chg.도는중 ? '도는 중' : chg.휩쓰는중 ? '휩쓰는 중' : chg.커지는중 ? '커지는 중' : '모으기';
+        // ▶ — 손잡이를 0 에서 끝까지 실제 시간대로 민다(처음~끝, 2026-11-17)
+        inner += `<button type="button" class="cvp" title="처음부터 끝까지" aria-label="처음부터 끝까지 보기">▶</button>`
+               + `<span class="cvl">${chgNm}</span>`
                + `<input type="range" class="cvt" min="0" max="1" step="any" `
                + `value="${at01}" aria-label="${chgNm} 시간">`
                + `<span class="cvn cvs">${chgLabel(chg, at01)}</span>`;
@@ -1006,6 +1036,26 @@
     return Math.atan2(ev.clientX - (r.left + r.width / 2),
                       -(ev.clientY - (r.top + r.height / 2))) * 180 / Math.PI;
   }
+  /* ▶ — 시간 손잡이를 0 에서 끝까지 **실제 시간대로** 민다(짧으면 1.2초, 길면 6초 안에). 다시 누르면 멈춘다. */
+  function playChg(pb) {
+    const box = pb.closest('.cv'), t = box && box.querySelector('.cvt'), m = box && REG.get(box.dataset.cv);
+    if (!t || !m) return;
+    if (pb.dataset.on) { cancelAnimationFrame(Number(pb.dataset.on)); delete pb.dataset.on; pb.textContent = '▶'; return; }
+    const c = m.chg || (m.w || {})['모으기'] || {}, secs = Number(c.초) || 2;
+    const dur = Math.max(1.2, Math.min(6, secs)) * 1000, lab = box.querySelector('.cvs');
+    let t0 = 0;
+    pb.textContent = '⏸';
+    const step = ts => {
+      if (!t0) t0 = ts;
+      const v = Math.min(1, (ts - t0) / dur);
+      t.value = v;
+      if (lab) lab.textContent = chgLabel(c, v);
+      redraw(box);
+      if (v < 1 && pb.isConnected) pb.dataset.on = String(requestAnimationFrame(step));
+      else { delete pb.dataset.on; pb.textContent = '▶'; }
+    };
+    pb.dataset.on = String(requestAnimationFrame(step));
+  }
   function redraw(box, at) {
     const m = REG.get(box.dataset.cv), fig = box.closest('.fig');
     if (!m || !fig) return;
@@ -1039,7 +1089,7 @@
       if (t) {
         const box = t.closest('.cv'), m = REG.get(box.dataset.cv);
         const lab = box.querySelector('.cvs');
-        if (lab && m) lab.textContent = chgLabel((m.w || {})['모으기'], Number(t.value));
+        if (lab && m) lab.textContent = chgLabel(m.chg || (m.w || {})['모으기'], Number(t.value));
         redraw(box);
       }
     }, true);
@@ -1098,6 +1148,8 @@
       else if (e.key === 'Home') setDeg(box, 0, e);
     }, true);
     g.addEventListener('click', e => {
+      const pb = e.target.closest && e.target.closest('.cvp');
+      if (pb) { playChg(pb); return; }
       const b = e.target.closest && e.target.closest('.cvb');
       if (!b) return;
       const box = b.closest('.cv'), r = box.querySelector('.cvr');

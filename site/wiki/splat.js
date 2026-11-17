@@ -414,6 +414,11 @@
     } else if (k === "이동" && g["거리"] > 0 || k === "나선") out.push(...moving(g));
     else return null;
     out.forEach(e => { e.tint = META.tint; });
+    // **시간차**(해석기 `때`, 2026-11-17) — 먼저 생기는 판정보다 늦게 생기면 이름표 뒤에 '+N초'
+    if (+g["때"] > 0) out.forEach(e => { e.late = +g["때"]; });
+    if (g["범위번호"]) out.forEach(e => { e.stage = g["범위번호"]; });
+    if (g["시전자 둘레"]) out.forEach(e => { if (e.lab == null && e.radius) e.lab = `시전자 둘레 ${n2(e.radius)}`; });
+    if (g["되풀이"] && g["되풀이"]["수"] > 1) out.forEach(e => { e.rep = g["되풀이"]; });
     return out;
   }
 
@@ -497,6 +502,10 @@
   const n2 = v => Math.round(v * 100) / 100;
   const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
   function label(e) {
+    const b0 = label0(e), b = (b0 != null && b0 !== "" && e.stage) ? `범위${e.stage} ${b0}` : b0, t = (e.late > 0 ? ` · +${n2(e.late)}초` : "") + (e.rep ? ` · ${e.rep["수"]}회(${n2(e.rep["간격"])}초마다)` : "");
+    return (b == null || b === "" || !t || String(b).includes(t)) ? b : b + t;
+  }
+  function label0(e) {
     if (e.lab != null) return e.lab;
     if (e.area) return `효과 범위 ${n2(e.radius)}`;
     if (e.data === "spiral") return `나선 궤적 ~${n2(e.R)}${e.n > 1 ? ` × ${e.n}개` : ""}`;
@@ -727,6 +736,15 @@
     };
     let ents = build(skill);
     if (!ents || !ents.length) { box.remove(); return; }
+    // 게임 조준 그림에도 범위 번호를 — 같은 꼴·같은 크기의 위키 판정 도형의 번호(케리건 원시 손아귀: 부채꼴 8.2 = 범위1)
+    const wd0 = wikiData(box.dataset.g);
+    if (wd0) for (const e of ents) {
+      if (e.stage != null) continue;
+      const sz = e.kind === "quad" ? e.length : e.radius;
+      const g = (wd0.g || []).find(g => g["범위번호"] && ((e.kind === "cone" && g["꼴"] === "부채꼴") || (e.kind === "circle" && g["꼴"] === "원")
+        || (e.kind === "quad" && g["꼴"] === "직사각형")) && Math.abs((+(g["꼴"] === "직사각형" ? g["세로"] : g["반지름"]) || 0) - (sz || 0)) < 0.2);
+      if (g) e.stage = g["범위번호"];
+    }
     let ghost = null, gone = [];
     if (ta) {
       // 적용 전 그림은 따로 떠 두고, 바뀌었으면 그 테두리를 겹쳐 그린다

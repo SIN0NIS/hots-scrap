@@ -48,6 +48,10 @@
             touch-action:pan-y; }
 .fig .cvl { flex:0 0 auto; color:var(--dim); font-size:11px; }
 .fig .cvs { min-width:3.2em; color:var(--hit); }
+/* ▶ — 손잡이를 처음부터 끝까지 실제 시간대로(2026-11-17) */
+.fig .cvp { flex:0 0 auto; min-width:30px; height:26px; border:1px solid var(--line); border-radius:6px;
+            background:transparent; color:var(--hit); font-size:13px; cursor:pointer; }
+.fig .cvp:focus-visible { outline:2px solid var(--hit); outline-offset:2px; }
 
 /* ── 크게 보기 ────────────────────────────────────────────────────────────
    카드 폭이 290px 안팎이라 반지름 18 짜리 나선이나 조각 여럿은 깨알로 보인다.
