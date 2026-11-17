@@ -876,10 +876,16 @@ function render(h) {
   if (window.hotsShape.크게중()) window.hotsShape.크게끄기();
   /* **능력치는 칩이 아니라 정보상자다.** 위키 문서가 그렇듯 이름 | 값 줄로 세워 두면
      훑어 읽힌다(칩은 줄바꿈 자리가 제멋대로라 눈이 걸린다). 메모 열쇠는 그대로 둔다. */
-  const base = Object.entries(h.기본).filter(([k, v]) => v != null && k !== '평타')
+  const box = o => Object.entries(o).filter(([k, v]) => v != null && k !== '평타' && k !== '이름' && k !== '기준 몸' && typeof v !== 'object')
       .map(([k, v]) => `<div class="srow"><span class="sk${ckC('기본', '영웅', k)}"`
          + `${ckA('기본', '영웅', k, '기본 / ' + k)}>${esc(k)}</span>`
          + `<span class="sv">${esc(v)}</span></div>`).join('');
+  /* **영웅 몸이 여럿이면(길 잃은 바이킹) 몸마다 따로** — 셋을 따로 조종하는 영웅 셋이다(2026-11-17) */
+  const bodies = h['각 영웅'] || [];
+  const statHTML = bodies.length
+    ? `<p style="margin:0 0 6px;color:var(--dim);font-size:12px">영웅 ${bodies.length}명을 따로 조종합니다 — 각각 적습니다.</p>`
+      + bodies.map(b => `<div style="font-weight:700;margin:10px 0 4px">${esc(b.이름)}</div><div class="statbox">${box(b)}</div>${weaponHTML(b.평타)}`).join('')
+    : `<div class="statbox">${box(h.기본)}</div>${weaponHTML(h.기본.평타)}`;
   const meta = (INDEX || []).find(x => x.id === cur) || {};
   const tags = [meta.역할, h.기술 ? h.기술.length + '기술' : '', h.특성 ? h.특성.length + '특성' : '']
       .filter(Boolean).map(t => `<span class="htag">${esc(t)}</span>`).join('');
@@ -899,7 +905,7 @@ function render(h) {
   if (lv !== null) tal += '</div>';
   out += `<section class="sec"><h3 class="sec-h">특성</h3>${tal}</section></div>`
     + `<aside class="hside"><section class="sec"><h3 class="sec-h">능력치</h3>`
-    + `<div class="statbox">${base}</div>${weaponHTML(h.기본.평타)}</section></aside></div>`;
+    + `${statHTML}</section></aside></div>`;
   $('#body').innerHTML = out;
   if (MEMO_ON) {
     $('#body').querySelectorAll('.mm.on, .ck.on').forEach(b2 => {

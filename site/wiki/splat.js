@@ -476,12 +476,15 @@
     const aim = drag || out.some(aimed) || !out.some(e => e.kind !== "range");
     for (const g of w.g) {
       if (g["꼴"] !== "원" || g["날아감"] || g["직격"] || !(g["반지름"] >= 1) || !(w.d > 0)) continue;
-      if (g["자리"] === "원점" || g["자리"] === "앞") continue;
+      // 영웅 둘레 원은 보통 사거리·오라라 덧그리지 않는다 — 단 **시전자 둘레에서 터지는 범위**(해석기 '시전자 둘레')는
+      // 기술의 두 번째 판정이다(케리건 원시 손아귀: 끌어당긴 뒤 2.5초 뒤 케리건 둘레 2.5, 2026-11-17)
+      const around = g["자리"] === "원점" && g["시전자 둘레"];
+      if ((g["자리"] === "원점" && !around) || g["자리"] === "앞") continue;
       if (have.some(r => Math.abs(r - g["반지름"]) < 0.3)) continue;
       have.push(+g["반지름"]);
       for (const e of wikiEnts(g, w) || []) {
         e.data = "more";
-        e.lab = `범위 ${n2(e.radius)}${g["편"] === "자신" ? "(자신)" : g["편"] === "아군" ? "(아군)" : ""}`;
+        e.lab = around ? `시전자 둘레 ${n2(e.radius)}` : `범위 ${n2(e.radius)}${g["편"] === "자신" ? "(자신)" : g["편"] === "아군" ? "(아군)" : ""}`;
         // 시전자에서 뻗는 기술은 찍는 자리가 없다 — 도형거리에 못 박는다
         if (!aim && !e.self) Object.assign(e, { self: true, fwd: Math.min((e.offset || 0) + (e.fwd || 0), MAXD * 1.25), offset: undefined });
         out.push(e);

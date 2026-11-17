@@ -100,6 +100,8 @@ def slim(d, hid, portraits):
             o[k] = d[k]
     if d.get("다른 모습"):          # 디바 메카처럼 영웅 몸과 다른 몸의 생명력·무기(추가 칸)
         o["다른 모습"] = [{k: v for k, v in f.items() if not str(k).startswith("_")} for f in d["다른 모습"]]
+    if d.get("각 영웅"):            # 길 잃은 바이킹 — 따로 조종하는 영웅 셋을 각각(2026-11-17)
+        o["각 영웅"] = [{k: v for k, v in b.items() if not str(k).startswith("_")} for b in d["각 영웅"]]
     def clean(v):
         """**밑줄로 시작하는 칸은 우리끼리 쓰는 표식**이라 내보내지 않는다 —
         원자료 줄에 `_쏜자리 true` · `_찾기 true` 가 그대로 보이고 있었다.

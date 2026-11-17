@@ -1373,8 +1373,26 @@ window.KS={score:score,mark:mark,esc:esc};})();
       ["피격 반지름 · 기술에 맞는 판정", R2["피격"] || st["반지름"], 0], ["충돌 반지름 · 유닛끼리 부딪히는 판정", R2["충돌"], 0]].filter(x => x[1] != null && x[1] !== 0);
     const statRows = stats.map(([k, v, g, u]) => { const now = typeof v === "number" ? v * kL(g) : v;
       return `<tr><td>${esc(k)}</td><td class="n${g && LV > 0 ? " grow" : ""}">${typeof now === "number" ? fmt(now) : esc(v)}${u || ""}</td><td class="n">${g ? num(g * 100) + "%" : ""}</td><td class="n">${g && LV > 0 ? Math.round((kL(g) - 1) * 100) + "% 증가" : ""}</td></tr>`; });
+    /* **영웅 몸이 여럿이면(길 잃은 바이킹) 셋을 나란히** — 셋을 따로 조종하는 영웅 셋이라 올라프 하나로
+       적으면 틀린다(사용자 2026-11-17 "3마리 영웅 다 개별로"). 표는 몸마다 한 칸, 순위표·구절판도 몸마다 따로 */
+    const MB = list(h["각 영웅"]);
+    const mbW = b => list(b["평타"])[0] || {};
+    const mbRows = [["생명력", b => b["생명력"], rLife], ["생명력 재생", b => b["생명력 재생"], rReg, "/초"],
+      ["일반 공격 공격력", b => mbW(b)["공격력"], +rAtk], ["초당 공격", b => mbW(b)["초당 공격"], 0],
+      ["일반 공격 초당 피해", b => mbW(b)["공격력"] && mbW(b)["초당 공격"] ? mbW(b)["공격력"] * (mbW(b)["발 수"] || 1) * mbW(b)["초당 공격"] : null, +rAtk],
+      ["공격 방식", b => [...new Set(list(b["평타"]).map(x => x["방식"]).filter(Boolean))].join(" · ") || null, 0],
+      ["공격 사거리", b => b["공격 사거리(최대)"] ? `${num(b["공격 사거리"])} ~ ${num(b["공격 사거리(최대)"])}` : b["공격 사거리"], 0],
+      ["이동 속도", b => b["이동 속도"], 0], ["시야", b => b["시야"], 0],
+      ["피격 반지름 · 기술에 맞는 판정", b => b["반지름"], 0], ["충돌 반지름 · 유닛끼리 부딪히는 판정", b => b["충돌 반지름"], 0]]
+      .filter(([, f]) => MB.some(b => f(b) != null));
+    const mbVal = (f, b, g) => { const v = f(b); return typeof v === "number" ? v * kL(g) : v; };
+    const mbTable = MB.length ? tbl(["항목", ...MB.map(b => [b["이름"]]), ["레벨당"]], mbRows.map(([k, f, g, u]) =>
+      `<tr><td>${esc(k)}</td>${MB.map(b => { const v = mbVal(f, b, g); return `<td class="n${g && LV > 0 ? " grow" : ""}">${v == null ? "—" : typeof v === "number" ? (g ? fmt(v) : num(v)) + (u || "") : esc(v)}</td>`; }).join("")}<td class="n">${g ? num(g * 100) + "%" : ""}</td></tr>`)) : "";
+    const mbForms = Object.fromEntries(MB.map(b => [b["이름"], { "생명력": (b["생명력"] || 0) * kL(rLife), "생명력 재생": (b["생명력 재생"] || 0) * kL(rReg),
+      "일반 공격 공격력": mbW(b)["공격력"] != null ? mbW(b)["공격력"] * kL(+rAtk) : undefined, "초당 공격": mbW(b)["초당 공격"], "공격 사거리": b["공격 사거리"] }]));
+    const mbLine = f => MB.map(b => `${b["이름"]} ${f(b)}`).join(" · ");
     /* 능력치를 바꾸는 특성은 능력치 표 아래로 모은다 — 기술을 바꾸는 특성은 기술마다 따로 있다 */
-    const statC = TS.map(t => ({ t, fx: statFx(t["설명"], h["이름"]).filter(f => !f.cond) })).filter(x => x.fx.length).sort((a, b) => a.t["레벨"] - b.t["레벨"]);
+    const statC =TS.map(t => ({ t, fx: statFx(t["설명"], h["이름"]).filter(f => !f.cond) })).filter(x => x.fx.length).sort((a, b) => a.t["레벨"] - b.t["레벨"]);
     const statIds = new Set(statC.map(x => x.t.id));
     const stBase = Object.fromEntries(stats.map(([k, v, g]) => [k.replace(/ \(.*$/, ""), typeof v === "number" ? v * kL(g) : v]));
     const starC = TS.filter(t => !statIds.has(t.id) && (tdItems(id, t.id).some(x => x["기술"] === "*" && x["꼴"] === "버프" && plainItem(x)) || (!targetOf(h, t) && list(t["바뀌는 값"]).some(NUMCHG)))).sort((a, b) => a["레벨"] - b["레벨"]);
@@ -1387,7 +1405,10 @@ window.KS={score:score,mark:mark,esc:esc};})();
     const TALS = window.hotsSplat ? window.hotsSplat.tals(id, () => { if (curHero === id) route(true); }) : null;
     // 이 기술을 바꾸는 특성 — 수치가 안 바뀌어도 '[Q] 기술' 로 강화하면 넣는다(공유는 통째로 보여 주는 게 목적)
     const relOf = a => TS.filter(t => targetOf(h, t) === a || tdItems(id, t.id).some(x => x["기술"] === a.id) || (TALS && TALS[t.id] === a.id));
-    SHCTX = { h, stats, sk, TS, LV, rel: relOf };  // 공유 그림이 쓴다(지금 보이는 레벨 그대로)
+    // 몸이 여럿이면 공유 그림·글도 셋을 한 줄씩(값은 레벨을 미리 곱해 글로 넘긴다)
+    const shStatsRows = MB.length ? mbRows.map(([k, f, g, u]) => [`${k} (${MB.map(b => b["이름"]).join(" · ")})`,
+      MB.map(b => { const v = mbVal(f, b, g); return v == null ? "—" : typeof v === "number" ? fmt(v) + (u || "") : String(v); }).join(" · "), 0]) : stats;
+    SHCTX = { h, stats: shStatsRows, sk, TS, LV, rel: relOf };  // 공유 그림이 쓴다(지금 보이는 레벨 그대로)
     const skill = a => {
       const wk = a["위키식"] || {};
       const fig = (window.hotsShape && (list(wk["도형"]).length || wk["그래프"])) ? (() => { try { return window.hotsShape.svg(wk, { hero: h, yard: YARD }) + (window.hotsShape.graph(wk) || ""); } catch (e) { return ""; } })() : "";
@@ -1409,24 +1430,28 @@ window.KS={score:score,mark:mark,esc:esc};})();
     const tiers = Object.keys(tl).sort((a, b) => +a - +b).map(lv => `<div class="tier"><div class="lv">${esc(lv)}<small>레벨</small><button type="button" class="shr" data-shot="tier" data-id="${esc(lv)}" title="이 레벨 특성 전부를 그림·글로 공유">공유</button></div><div class="picks">${tl[lv].map(p =>
       `<div class="pick" id="tal-${esc(p.id)}">${icon(p["아이콘"], "ico sm")}<div><div class="nm">${esc(p["이름"] || p.id)}<a class="anc" href="#h.${esc(id)}.tal-${esc(p.id)}" title="이 특성으로 바로 오는 주소" aria-label="이 특성 링크">#</a><button type="button" class="shr" data-shot="tal" data-id="${esc(p.id)}" title="이 특성을 그림·글로 공유">공유</button></div>${p["강화"] ? `<div class="to">${esc(p["강화"])} 강화</div>` : ""}<div class="desc">${descHtml(p["설명"], ctx)}</div></div>${talentMore(h, p)}</div>`).join("")}</div></div>`).join("");
     const info = infobox(h["이름"], icon(h["초상화"], "pic"), [["역할군", esc(h["역할군"] || "")], ["세계관", esc(h["세계관"] || "")], ["자원", esc(st["자원"] || "")],
-      ["생명력", fmt((st["생명력"] || 0) * kL(rLife)) + ` <small class="note">${LV}레벨</small>`], ["일반 공격 공격력", w["공격력"] ? fmt(w["공격력"] * kL(+rAtk)) : ""], ["공격 사거리", num(st["공격 사거리"])],
+      ...(MB.length ? [["영웅", esc(MB.map(b => b["이름"]).join(" · ")) + ` <small class="note">따로 조종</small>`],
+        ["생명력", esc(mbLine(b => fmt((b["생명력"] || 0) * kL(rLife)))) + ` <small class="note">${LV}레벨</small>`],
+        ["일반 공격 공격력", esc(mbLine(b => mbW(b)["공격력"] ? fmt(mbW(b)["공격력"] * kL(+rAtk)) : "—"))], ["공격 사거리", esc(mbLine(b => num(b["공격 사거리"])))]]
+      : [["생명력", fmt((st["생명력"] || 0) * kL(rLife)) + ` <small class="note">${LV}레벨</small>`], ["일반 공격 공격력", w["공격력"] ? fmt(w["공격력"] * kL(+rAtk)) : ""], ["공격 사거리", num(st["공격 사거리"])]]),
       ["이동 속도", num(st["이동 속도"])], ["내부 id", `<span style="font-family:var(--f-mono);font-size:12px">${esc(h.id)}</span>`]]);
     return page({ hid: id, crumb: crumbs(`<a href="#heroes">영웅</a>`, esc(h["역할군"] || "")), title: h["이름"],
       lede: `영웅 · ${esc(h["역할군"] || "")} · ${esc(h["세계관"] || "")} · 지금 ${LV}레벨`,
       about: `${esc(h["이름"])}의 능력치·기술·특성을 게임 파일에서 읽어 보여 줍니다. <b>레벨</b>은 리모컨으로 바꾸고(수치가 성장률만큼 따라 오릅니다, ${cardLink("hero_level_scaling")}), <b>특성</b>은 기술 카드 아래 '이 기술을 바꾸는 특성' 에서 [적용] 하면 바뀐 값이 금색으로 나옵니다.`,
       info,
       sections: [
-        { title: "한눈에 보는 능력치", html: `<div class="share-bar"><span class="sb-lab">공유(그림·글)</span><button type="button" data-shot="stats">능력치</button><button type="button" data-shot="skills">기술 전부</button><button type="button" data-shot="talents">특성 전부</button><button type="button" data-shot="all">전부</button></div>` + heroRadar(h) },
-        { title: "능력치", badge: BD.sure, html: (st["기준 몸"] ? `<p class="note">아래 값은 <b>${esc(st["기준 몸"])}</b> 기준입니다. 다른 모습의 값은 표 아래에 있습니다.</p>` : "")
-            + `<p class="note">아래 표는 리모컨 레벨을 적용한 ${LVN(LV)} 입니다(게임 파일 값 = 0레벨, '0레벨 대비' 칸이 늘어난 몫).</p>`
-            + tbl(["항목", [`${LV}레벨`], ["레벨당"], ["0레벨 대비"]], statRows)
+        { title: "한눈에 보는 능력치", html: `<div class="share-bar"><span class="sb-lab">공유(그림·글)</span><button type="button" data-shot="stats">능력치</button><button type="button" data-shot="skills">기술 전부</button><button type="button" data-shot="talents">특성 전부</button><button type="button" data-shot="all">전부</button></div>` + (MB.length ? splitBodies([h]).map(x => `<h3 class="sub">${esc(x._몸)}</h3>` + heroRadar(x)).join("") : heroRadar(h)) },
+        { title: "능력치", badge: BD.sure, html: (MB.length ? `<p class="note">${esc(h["이름"])} — 영웅 <b>${MB.length}명</b>(${MB.map(b => esc(b["이름"])).join(" · ")})을 따로 조종합니다. 능력치를 영웅마다 따로 적었고, 통계 순위표에도 따로 올라갑니다.</p>`
+              : st["기준 몸"] ? `<p class="note">아래 값은 <b>${esc(st["기준 몸"])}</b> 기준입니다. 다른 모습의 값은 표 아래에 있습니다.</p>` : "")
+            + `<p class="note">아래 표는 리모컨 레벨을 적용한 ${LVN(LV)} 입니다(게임 파일 값 = 0레벨${MB.length ? "" : ", '0레벨 대비' 칸이 늘어난 몫"}).</p>`
+            + (MB.length ? mbTable : tbl(["항목", [`${LV}레벨`], ["레벨당"], ["0레벨 대비"]], statRows))
             + list(h["다른 모습"]).map(f => { const fw = list(f["평타"])[0] || {};
                 return `<h3 class="sub">다른 모습 — ${esc(f["이름"])}</h3>` + tbl(["항목", [`${LV}레벨`]], [["생명력", f["생명력"], rLife], ["생명력 재생", f["생명력 재생"], rReg, "/초"], ["일반 공격 공격력", fw["공격력"], +rAtk], ["초당 공격", fw["초당 공격"], 0],
                   ["공격 사거리", f["공격 사거리"], 0], ["반지름", f["반지름"], 0]].filter(x => x[1] != null).map(([k, v, g, u]) => `<tr><td>${esc(k)}</td><td class="n${g && LV > 0 ? " grow" : ""}">${typeof v === "number" ? fmt(v * kL(g)) : esc(v)}${u || ""}</td></tr>`)); }).join("")
             + (list(st["켜질 때 쓰는 무기"]).length ? `<p class="note">특성·모드를 켜야 쓰는 무기가 ${list(st["켜질 때 쓰는 무기"]).length}개 더 있습니다(위 일반 공격에는 넣지 않았습니다).</p>` : "")
             + (statC.length || starC.length ? `<p class="note">이 영웅은 능력치를 바꾸는 특성이 있습니다 — <button type="button" class="lnk" data-go="sec2">아래 '특성으로 바뀌는 능력치' 에서 [적용] ↓</button></p>` : "") },
         ...(statC.length || starC.length ? [{ title: "특성으로 바뀌는 능력치", html: `<p class="note">특성을 하나 골라 <b>[적용]</b> 하면 위 능력치 표의 값이 그 특성으로 얼마가 되는지 금색으로 나옵니다. 늘 붙는 % 또는 고정값 증가만 모았습니다(조건부·퀘스트·남에게 주는 효과는 특성 목록에).</p>`
-            + statBlock(h, statC, stBase, Object.fromEntries(list(h["다른 모습"]).map(f => { const fw = list(f["평타"])[0] || {};
+            + statBlock(h, statC, stBase, MB.length ? mbForms : Object.fromEntries(list(h["다른 모습"]).map(f => { const fw = list(f["평타"])[0] || {};
                 return [f["이름"], { "생명력": f["생명력"] * kL(rLife), "생명력 재생": f["생명력 재생"] * kL(rReg), "일반 공격 공격력": fw["공격력"] != null ? fw["공격력"] * kL(+rAtk) : undefined,
                   "초당 공격": fw["초당 공격"], "공격 사거리": f["공격 사거리"] }]; })))
             + (starC.length ? selBlock(h, "*", starC, starRes) : "") }] : []),
@@ -1803,6 +1828,13 @@ window.KS={score:score,mark:mark,esc:esc};})();
     ];
   }
   const HS = () => STROLE ? H.filter(h => (h["역할군"] || "기타") === STROLE) : H;
+  /* **영웅 몸이 여럿이면(길 잃은 바이킹) 능력치는 몸마다 한 줄** — 셋을 따로 조종하는 영웅 셋이다(사용자 2026-11-17).
+     몸 하나를 영웅처럼 만든다(이름 '길 잃은 바이킹 · 올라프', 문서 주소는 그대로). 기술 칸 순위는 영웅 하나로 둔다 */
+  function splitBodies(hs) {
+    return hs.flatMap(h => { const bs = list(h["각 영웅"]); return bs.length ? bs.map((b, i) => Object.assign({}, h, {
+      "이름": `${h["이름"]} · ${b["이름"]}`, _몸: b["이름"], _i: i, "기본": b, "반지름 둘": { "피격": b["반지름"], "충돌": b["충돌 반지름"] } })) : [h]; });
+  }
+  function bodyKey(h) { return h._몸 != null ? h.id + "#" + h._i : h.id; }
   /* ── 영웅 한 명의 능력치 구절판 — 가운데 초상화, 둘레 여덟 칸에 능력치·값·전체 중 순위.
      칸 색이 진할수록 순위가 높다. 값은 1레벨(통계 순위표와 같은 셈), 같은 값이면 같은 등수.
      종합 순위는 두지 않는다 — 능력치만으로 영웅의 세기를 매길 수 없다(사용자 결정 2026-11-12). 등수는 '40/90 (상위 44%)' 꼴 */
@@ -1813,22 +1845,23 @@ window.KS={score:score,mark:mark,esc:esc};})();
   function radarAll() {
     if (RADAR) return RADAR;
     const defs = Object.fromEntries(statDefs().map(([n, f, note, u]) => [n, { f, u: u || "" }]));
-    const by = {}; H.forEach(h => (by[h.id] = { ax: [] }));
+    const HB = splitBodies(H);                  // 바이킹은 셋이 따로 등수를 받는다
+    const by = {}; HB.forEach(h => (by[bodyKey(h)] = { ax: [] }));
     RADAR_AX.forEach(([n], i) => {
       const d = defs[n];
-      const vs = H.map(h => { const v = d ? d.f(h) : null; return typeof v === "number" && isFinite(v) ? { h, v } : null; }).filter(Boolean);
+      const vs = HB.map(h => { const v = d ? d.f(h) : null; return typeof v === "number" && isFinite(v) ? { h, v } : null; }).filter(Boolean);
       const cnt = vs.length;
       vs.forEach(x => {
         const rk = 1 + vs.filter(y => +y.v.toFixed(3) > +x.v.toFixed(3)).length;
         const tie = vs.filter(y => +y.v.toFixed(3) === +x.v.toFixed(3)).length;
         const p = cnt > 1 ? (cnt - rk) / (cnt - 1) : 1;
-        by[x.h.id].ax[i] = { v: x.v, u: d.u, rk, n: cnt, tie, p };
+        by[bodyKey(x.h)].ax[i] = { v: x.v, u: d.u, rk, n: cnt, tie, p };
       });
     });
     return (RADAR = by);
   }
   function heroRadar(h) {
-    const R = radarAll()[h.id]; if (!R) return "";
+    const R = radarAll()[bodyKey(h)]; if (!R) return "";
     const W = 440, C = W / 2, RO = 214, RI = 76, n = RADAR_AX.length, st = Math.PI * 2 / n;
     const at = (a, r) => [C + Math.cos(a) * r, C + Math.sin(a) * r].map(v => v.toFixed(1));
     const cells = RADAR_AX.map(([, lab], i) => {
@@ -1842,7 +1875,7 @@ window.KS={score:score,mark:mark,esc:esc};})();
         + `<text x="${tx}" y="${ty - 16}" class="ln">${esc(lab)}</text><text x="${tx}" y="${ty + 2}" class="lv">${esc(val)}</text>`
         + `<text x="${tx}" y="${ty + 20}" class="lr${x0 && x0.rk <= 10 ? " hi" : ""}">${esc(rk)}</text>`;
     }).join("");
-    const pic = ICON[String(h["초상화"] || "").toLowerCase()], cid = "rc-" + h.id;
+    const pic = ICON[String(h["초상화"] || "").toLowerCase()], cid = "rc-" + bodyKey(h).replace("#", "-");
     const face = `<circle cx="${C}" cy="${C}" r="${RI - 6}" class="fr"/>` + (pic ? `<clipPath id="${esc(cid)}"><circle cx="${C}" cy="${C}" r="${RI - 10}"/></clipPath><image href="${esc(pic)}" x="${C - RI + 10}" y="${C - RI + 10}" width="${2 * (RI - 10)}" height="${2 * (RI - 10)}" clip-path="url(#${esc(cid)})"/>` : "");
     const rows = RADAR_AX.map(([, lab], i) => R.ax[i] ? [lab, R.ax[i]] : null).filter(Boolean);
     const best = rows.slice().sort((a, b) => a[1].rk - b[1].rk).slice(0, 2).map(([l, x]) => `${l} ${x.rk}/${x.n}`).join(" · ");
@@ -1900,7 +1933,7 @@ window.KS={score:score,mark:mark,esc:esc};})();
   }
   /* 순위표 본체 — 탭·검색·줄 세우기를 바꿀 때 이 상자만 다시 그린다 */
   function stBox() {
-    const cols0 = stCols(), hs = HS();
+    const cols0 = stCols(), hs = STTAB === "base" ? splitBodies(HS()) : HS();
     if (STTAB !== "base" && !STX) return `<p class="load">기술 수치를 불러오는 중…</p>`;
     let rows = hs.map(h => ({ h, c: cols0.map(c => c.get(h)) }));
     // 모두 같은 값·값이 하나도 없는 칸은 빼고 아래에 한 줄로
@@ -1950,11 +1983,11 @@ window.KS={score:score,mark:mark,esc:esc};})();
     const hs = HS();
     return `<div class="tops">${TOPS.map(([lab, tab, mea, ns, d, what]) => {
       const cs = stCols(tab, mea).filter(c => ns.includes(c.n)); if (!cs.length) return "";
-      const xs = []; hs.forEach(h => cs.forEach(c => { const x = c.get(h); if (x) xs.push({ h, x, c }); }));
+      const xs = []; (tab === "base" ? splitBodies(hs) : hs).forEach(h => cs.forEach(c => { const x = c.get(h); if (x) xs.push({ h, x, c }); }));
       if (!xs.length) return "";
       xs.sort((a, b) => (a.x.v - b.x.v) * d);
       const seen = new Set(), rows = [];
-      for (const y of xs) { if (seen.has(y.h.id)) continue; seen.add(y.h.id); rows.push(y); }
+      for (const y of xs) { if (seen.has(bodyKey(y.h))) continue; seen.add(bodyKey(y.h)); rows.push(y); }
       /* 같은 값은 같은 등수(1·1·3). 3등 안에 드는 영웅만 — 동점이 많으면 '외 n명'으로 줄인다 */
       const key = y => +y.x.v.toFixed(3);
       rows.forEach((y, i) => { y.rk = i && key(y) === key(rows[i - 1]) ? rows[i - 1].rk : i + 1; });
@@ -2031,15 +2064,15 @@ window.KS={score:score,mark:mark,esc:esc};})();
     }).join("");
   }
   /* 갈래별 영웅 수 — 비율 막대 하나 + 펼치면 이름 */
-  function countBlock(title, f) {
-    const hs = HS(), g = groupBy(hs, f), ks = Object.keys(g).filter(k => k && k !== "undefined").sort((a, b) => g[b].length - g[a].length);
+  function countBlock(title, f, split) {
+    const hs = split ? splitBodies(HS()) : HS(), g = groupBy(hs, f), ks = Object.keys(g).filter(k => k && k !== "undefined").sort((a, b) => g[b].length - g[a].length);
     return `<div class="cnt"><div class="cnt-t">${esc(title)}</div><div class="cbar">${ks.map((k, i) => `<i class="cb${i % 8}" style="flex:${g[k].length}" title="${esc(k)} ${g[k].length}명"></i>`).join("")}</div>
       <details><summary>${ks.map((k, i) => `<span class="ck"><i class="cb${i % 8}"></i>${esc(k)} <b>${g[k].length}</b></span>`).join("")}</summary>
       ${ks.map(k => `<p class="who"><b>${esc(k)}</b> — ${g[k].map(h => `<a href="#h.${esc(h.id)}">${esc(h["이름"])}</a>`).join(", ")}</p>`).join("")}</details></div>`;
   }
   function pStats() {
     const hs = HS(), ok = new Set(hs.map(h => h.id));
-    const heroA = statDefs().map(([n, f, , u]) => statOf(n, hs.map(h => ({ h, v: f(h) })), { unit: u })).filter(Boolean);
+    const heroA = statDefs().map(([n, f, , u]) => statOf(n, splitBodies(hs).map(h => ({ h, v: f(h) })), { unit: u })).filter(Boolean);
     const skA = STX ? list(STX["수치"]).map(m => statOf(m["이름"], list(m["행"]).filter(([hid]) => ok.has(hid)).map(([hid, v, sub]) => ({ h: hById[hid], v, sub })), { unit: m["단위"] })).filter(Boolean) : [];
     const all = heroA.concat(skA);
     const roles = ROLES.filter(r => H.some(h => h["역할군"] === r));
@@ -2055,10 +2088,10 @@ window.KS={score:score,mark:mark,esc:esc};})();
         ...(!STROLE ? [{ title: "역할군별 보통 값", html: roleTable(all) }] : []),
         { title: "특수 경우", html: `<p class="note">한 줄에 세워 견주기 어려운 영웅·기술을 까닭별로 모았습니다. 순위표에서 빠졌거나 따로 셈한 것들입니다.</p>` + specialHtml() },
         { title: "판정 갈래", html: `<p class="note">게임이 기술을 다루는 규칙(벽을 넘나 막히나, 정화·저지 불가에 풀리나 …)으로 기술을 나눴습니다. 기술마다 조금씩은 다 달라서, <b>큰 틀</b>(이동기는 벽을 어떻게 다루나, 효과는 무슨 종류인가) → <b>비슷한 것</b>(갈래 하나와 꼭 필요한 특징 하나) 으로 묶고, 규칙을 전부 적은 <b>세부 판정</b>은 접어 두었습니다. 기술 상세 표의 판정 칸에도 '비슷한 것' 만 적습니다. 이동기의 큰 틀 — 순간이동(벽 상관없음) · 땅으로 달림(벽에 막힘) · 길을 찾아 쫓음(벽을 돌아감) · 공중으로(벽을 넘음). 기술 이름과 다를 수 있습니다(트레이서 '점멸' 은 대쉬).</p>` + judgeHtml() },
-        { title: "갈래별 영웅 수", html: countBlock("역할군", h => h["역할군"] || "기타") + countBlock("자원", h => h["기본"]["자원"] || "없음") + countBlock("일반 공격 방식", h => (list(h["기본"]["평타"])[0] || {})["방식"] || "") + countBlock("세계관", h => h["세계관"] || "") },
+        { title: "갈래별 영웅 수", html: countBlock("역할군", h => h["역할군"] || "기타") + countBlock("자원", h => h["기본"]["자원"] || "없음") + countBlock("일반 공격 방식", h => (list(h["기본"]["평타"])[0] || {})["방식"] || "", true) + countBlock("세계관", h => h["세계관"] || "") },
         { title: "읽을 때 주의", html: `<ul class="plain">
           <li>'가운데 값' 은 줄 세웠을 때 한가운데 값입니다 — 튀는 값 하나에 흔들리는 평균보다 '보통' 을 잘 보여 줍니다.</li>
-          <li>일반 공격은 영웅이 처음부터 쓰는 무기 가운데 첫 번째 것입니다. 여러 유닛인 영웅(길 잃은 바이킹 등)은 대표 유닛 하나의 값입니다. 한 번에 여러 발 쏘는 영웅(루시우 4발)은 초당 피해에 발 수를 곱했습니다.</li>
+          <li>일반 공격은 영웅이 처음부터 쓰는 무기 가운데 첫 번째 것입니다. 길 잃은 바이킹은 영웅 셋(올라프 · 밸로그 · 에릭)을 따로 조종해 능력치 순위·구절판에 영웅마다 따로 올렸습니다(기술 탭은 영웅 하나). 한 번에 여러 발 쏘는 영웅(루시우 4발)은 초당 피해에 발 수를 곱했습니다.</li>
           <li>게임 파일에 적힌 값은 <b>0레벨</b> 값이고, 영웅이 나오자마자 1레벨 성장이 한 번 붙습니다(<a href="#s.hero_level_scaling">영웅 레벨 성장</a>). 그래서 1레벨 값은 파일 값보다 대개 4% 큽니다.</li>
           <li>기술 탭은 기술 자리(Q·W·E·R)마다 한 칸입니다. 모습을 바꿔 같은 자리에 기술이 둘이면 첫 기술 값이고, 칸에 손을 올리면 다른 값이 나옵니다. 탈것은 뺐습니다.</li>
           <li>군중 제어·자기 효과 탭은 영웅이 가진 기술 가운데 가장 큰 값입니다. 영웅에게는 짧고 돌격병·구조물에만 오래 거는 효과도 자료가 나뉘어 있지 않아 그대로 셉니다(아서스 '신드라고사 소환' 기절 등).</li>

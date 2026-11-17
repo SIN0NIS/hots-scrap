@@ -26,6 +26,44 @@
       }
       return window.__h2cLoading;
     };
+    /* **그림 카드 글꼴은 웹 글꼴로 못 박는다**(2026-11-17). 기본 글꼴(sans-serif)로 두면 html2canvas 가 글자 자리를
+       잴 때(문서)와 그릴 때(캔버스) 기기가 서로 다른 글꼴을 골라 — 휴대폰에서 특히 — 글자가 겹치고 띄어쓰기가
+       사라졌다(사용자 그림: 설명이 긴 카드). 글꼴은 저장을 누를 때만, 카드에 나오는 글자 조각만 받는다
+       (구글 글꼴이 한글을 조각으로 나눠 둔다). 재는 쪽(복제 문서)도 같은 글꼴을 다 받은 뒤에 재게 한다.
+       못 받으면(오프라인) 예전 글꼴로 그린다. */
+    window.capFont = (function () {
+      var FAM = '"Noto Sans KR"', CSS = 'https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap';
+      var cssP = null;
+      function css() {
+        if (!cssP) cssP = new Promise(function (ok) {
+          var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = CSS; l.setAttribute('data-cardfont', '1');
+          l.onload = l.onerror = function () { ok(); };
+          document.head.appendChild(l);
+          setTimeout(ok, 6000);
+        });
+        return cssP;
+      }
+      function load(doc, text) {
+        if (!doc.fonts || !doc.fonts.load) return Promise.resolve();
+        var t = (text || '') + '0123456789%()+-.,';
+        var all = Promise.all(['400', '700'].map(function (w) { return doc.fonts.load(w + ' 16px ' + FAM, t).catch(function () {}); }));
+        return Promise.race([all, new Promise(function (ok) { setTimeout(ok, 6000); })]);
+      }
+      return {
+        prep: function (el) {
+          el.style.fontFamily = FAM + ', sans-serif';
+          return css().then(function () { return load(document, el.textContent); }).then(function () {
+            if (document.fonts && document.fonts.check && !document.fonts.check('700 16px ' + FAM, '가')) el.style.fontFamily = '';
+          });
+        },
+        onclone: function (doc, el) {
+          var ls = [].slice.call(doc.querySelectorAll('link[data-cardfont]'));
+          return Promise.all(ls.map(function (l) {
+            return l.sheet ? 0 : new Promise(function (ok) { l.addEventListener('load', ok); l.addEventListener('error', ok); setTimeout(ok, 4000); });
+          })).then(function () { return load(doc, (el || doc.body).textContent); });
+        }
+      };
+    })();
     </script>
     <style>
         :root { --p: #a333ff; --bg: #0b0b0d; --card: #16161a; --blue: #00d4ff; --gold: #ffd700; --green: #00ff00; --fs: 14px; }
@@ -820,8 +858,9 @@
             });
             tempDiv.innerHTML = innerHTML; document.body.appendChild(tempDiv);
             try {
+                await window.capFont.prep(tempDiv);
                 await window.needHtml2Canvas();
-                const canvas = await html2canvas(tempDiv, { useCORS:true, backgroundColor:"#0b0b0d", scale: 2 });
+                const canvas = await html2canvas(tempDiv, { useCORS:true, backgroundColor:"#0b0b0d", scale: 2, onclone: window.capFont.onclone });
                 if (mode === 'save') {
                     const hd = getActiveData()[currentHeroId];
                     const igCode = `[T${selectedTalents.join("")},${hd.hyperlinkId}]`;
@@ -1239,10 +1278,11 @@ window.takeScreenshot = async function (mode) {
   tempDiv.style.cssText = 'position:absolute; left:-9999px; top:0; width:' + buildCardWidth() + 'px; background:' + cardBg + '; padding:25px; border:3px solid ' + borderColor + '; color:' + cardFont + '; border-radius:12px;';
   tempDiv.innerHTML = buildCardInner(nameColor);
   document.body.appendChild(tempDiv);
-  fitShortNames(tempDiv);          // 반드시 붙인 뒤에 — 떼어 둔 채로는 높이를 못 잰다
   try {
+    await window.capFont.prep(tempDiv);   // 글꼴을 다 받은 뒤에 재고 그린다(이름 맞춤도 글꼴을 따른다)
+    fitShortNames(tempDiv);          // 반드시 붙인 뒤에 — 떼어 둔 채로는 높이를 못 잰다
     await window.needHtml2Canvas();
-    var canvas = await html2canvas(tempDiv, { useCORS: true, backgroundColor: cardBg, scale: 2 });
+    var canvas = await html2canvas(tempDiv, { useCORS: true, backgroundColor: cardBg, scale: 2, onclone: window.capFont.onclone });
     if (mode === 'save') {
       var hd = getActiveData()[currentHeroId];
       var igCode = '[T' + selectedTalents.join('') + ',' + hd.hyperlinkId + ']';
@@ -1465,8 +1505,9 @@ async function tcCapture(mode) {
   tempDiv.innerHTML = tcCardInner();
   document.body.appendChild(tempDiv);
   try {
+    await window.capFont.prep(tempDiv);
     await window.needHtml2Canvas();
-    var canvas = await html2canvas(tempDiv, { useCORS: true, backgroundColor: cardBg, scale: 2 });
+    var canvas = await html2canvas(tempDiv, { useCORS: true, backgroundColor: cardBg, scale: 2, onclone: window.capFont.onclone });
     if (mode === 'save') {
       var link = document.createElement('a');
       link.download = 'hots_scrap_talents_' + (window.DATA_BUILD || '97650') + '_' + hData.name + '_' + (isAll ? 'all' : lvNum + 'Lv') + (tcShort ? '_names' : '') + '.png';

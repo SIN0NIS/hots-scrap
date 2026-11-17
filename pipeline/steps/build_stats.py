@@ -338,32 +338,37 @@ def main():
         tot["영웅"] += 1
 
         # ── 영웅 기본 수치 ──────────────────────────────────────────
-        base = dict(d.get("기본") or {})
-        wep = (base.pop("평타", None) or [{}])[0]
-        row = {"id": fn.stem, "영웅": ko}
-        _m = META.get(fn.stem) or {}
-        if _m.get("역할"):
-            row["역할"] = _m["역할"]
-        if _m.get("작은아이콘"):
-            row["_아이콘"] = _m["작은아이콘"]      # 화면에만 쓰는 값 — 통계로 안 센다
-        for k, v in base.items():
-            # **`공격 사거리(최대)` 는 표에 안 올린다.** 넷뿐이라 87칸이 '–' 로 비는데,
-            # 그 넷도 보통 사거리를 따로 들고 있어 표에서는 군더더기다(카탈로그엔 남는다).
-            if k != "공격 사거리(최대)":
-                row[k] = v
-            fld("기본", k).add(v, ko, "기본 수치", "영웅")
-        for k, v in wep.items():
-            if k in ("출처", "이름"):
-                continue
-            row["평타 " + k] = v
-            fld("평타", k).add(v, ko, wep.get("이름") or "평타", "영웅")
-        # **초당 피해는 자료에 없다 — 곱해서 낸다.** 공격력만으로는 주기 1.1 짜리
-        # 누더기와 0.6 짜리 발라를 견줄 수 없다. 읽은 값이 아니라 **센 값**이라
-        # 카탈로그(원본에서 읽히는 항목)에는 올리지 않고 표에만 둔다.
-        _dmg, _aps = wep.get("공격력"), wep.get("초당 공격")
-        if isinstance(_dmg, (int, float)) and isinstance(_aps, (int, float)):
-            row["평타 초당 피해"] = round(_dmg * _aps, 1)
-        heroes.append(row)
+        # **영웅 몸이 여럿이면(길 잃은 바이킹) 몸마다 한 줄** — 셋을 따로 조종하는 영웅 셋이라
+        # 올라프 하나로 '바이킹 생명력 1482' 라 적으면 틀린다(사용자 2026-11-17).
+        bodies = [(b, f"{ko} · {b.get('이름')}") for b in d.get("각 영웅") or []] or [(d.get("기본") or {}, ko)]
+        for body, bko in bodies:
+            tot["영웅 몸"] += 1
+            base = {k: v for k, v in body.items() if k not in ("이름", "기준 몸", "충돌 반지름")}
+            wep = (base.pop("평타", None) or [{}])[0]
+            row = {"id": fn.stem, "영웅": bko}
+            _m = META.get(fn.stem) or {}
+            if _m.get("역할"):
+                row["역할"] = _m["역할"]
+            if _m.get("작은아이콘"):
+                row["_아이콘"] = _m["작은아이콘"]      # 화면에만 쓰는 값 — 통계로 안 센다
+            for k, v in base.items():
+                # **`공격 사거리(최대)` 는 표에 안 올린다.** 넷뿐이라 87칸이 '–' 로 비는데,
+                # 그 넷도 보통 사거리를 따로 들고 있어 표에서는 군더더기다(카탈로그엔 남는다).
+                if k != "공격 사거리(최대)":
+                    row[k] = v
+                fld("기본", k).add(v, bko, "기본 수치", "영웅")
+            for k, v in wep.items():
+                if k in ("출처", "이름"):
+                    continue
+                row["평타 " + k] = v
+                fld("평타", k).add(v, bko, wep.get("이름") or "평타", "영웅")
+            # **초당 피해는 자료에 없다 — 곱해서 낸다.** 공격력만으로는 주기 1.1 짜리
+            # 누더기와 0.6 짜리 발라를 견줄 수 없다. 읽은 값이 아니라 **센 값**이라
+            # 카탈로그(원본에서 읽히는 항목)에는 올리지 않고 표에만 둔다.
+            _dmg, _aps = wep.get("공격력"), wep.get("초당 공격")
+            if isinstance(_dmg, (int, float)) and isinstance(_aps, (int, float)):
+                row["평타 초당 피해"] = round(_dmg * _aps, 1)
+            heroes.append(row)
 
         # ── 기술 ────────────────────────────────────────────────────
         for a in d.get("기술") or []:
@@ -429,7 +434,7 @@ def main():
                 fld("특성 위키식", k).add(v, ko, nm, "특성", _tag, _zid)
 
     # 갈래마다 '모수' 가 다르다 — 덮음(%)을 제대로 내려면 각자 세어야 한다
-    DENOM = {"기본": tot["영웅"], "평타": tot["영웅"], "기술": tot["기술"],
+    DENOM = {"기본": tot["영웅 몸"], "평타": tot["영웅 몸"], "기술": tot["기술"],
              "위키식": tot["기술"], "원자료": tot["기술"],
              "특성": tot["특성"], "특성 위키식": tot["특성"]}
     rows = [f.dump(DENOM.get(f.group, 1)) for f in fields.values()]
