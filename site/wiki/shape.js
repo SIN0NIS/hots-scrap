@@ -63,8 +63,12 @@
        가까이 찍으면 세 줄이 크게 벌어지고 멀리 찍으면 거의 나란해진다 — 한 장면만
        그려 두면 그 변화가 안 보인다. */
     const span = (w || {})['모임 범위'];
+    /* **먼 끝이 비었으면**(null) 커서가 어디든 간다 — 멀리 찍을수록 나란해진다(2026-11-18).
+       그때 `모임` 은 Infinity 까지 받는다(각 0 = 나란히). */
+    const open = !!span && span[1] == null;
     const atTo = (typeof opt.모임 === 'number' && span)
-                 ? Math.round(Math.max(span[0], Math.min(span[1], opt.모임)) * 100) / 100
+                 ? (open ? (isFinite(opt.모임) ? Math.round(Math.max(span[0], opt.모임) * 100) / 100 : Infinity)
+                         : Math.round(Math.max(span[0], Math.min(span[1], opt.모임)) * 100) / 100)
                  : null;      // 글에 3.45025157474266 이 그대로 나오면 안 된다
     const gs0 = (w || {})['도형'] || [];
     const gs = atTo === null ? gs0
@@ -223,8 +227,9 @@
       }
       else if (g.꼴 === '직사각형' && g.모임) {
         // 가까이 찍으면 일찍 엇갈린 뒤 **훨씬 옆까지** 뻗는다 — 도착점을 담아야 안 잘린다
-        const sx = g.옆 || 0, L = g.쓸기 || 0, h = Math.hypot(sx, g.모임) || 1;
-        const ex = sx + L * (-sx) / h, ey = L * g.모임 / h, m = g.세로 / 2 + g.가로 / 2;
+        // 각으로 잰다 — 모임이 Infinity(나란히)여도 atan2 는 0 을 준다(나눗셈은 NaN)
+        const sx = g.옆 || 0, L = g.쓸기 || 0, an = Math.atan2(sx, g.모임);
+        const ex = sx - L * Math.sin(an), ey = L * Math.cos(an), m = g.세로 / 2 + g.가로 / 2;
         put(sx - m, -m); put(sx + m, m); put(ex - m, ey - m); put(ex + m, ey + m);
       }
       else if (g.꼴 === '직사각형') {
@@ -640,8 +645,9 @@
         body += `<rect x="${(x0 - g.가로 * S / 2).toFixed(1)}" y="${(y0 - len * S).toFixed(1)}" `
               + `width="${(g.가로 * S).toFixed(1)}" height="${(len * S).toFixed(1)}" ${fill} `
               + `transform="rotate(${(-ang).toFixed(2)} ${x0.toFixed(1)} ${y0.toFixed(1)})"/>`;
-        if (sx > 0)        // 한 번만 — 세 줄이 만나는 자리
-          body += `<circle cx="${px(0)}" cy="${py(to)}" r="4" fill="none" stroke="${C}" `
+        // 한 번만 — 세 줄이 만나는 자리. 날아가는 거리보다 멀리 찍으면 만나기 전에 끝난다(나란히는 아예 안 만남)
+        if (sx > 0 && isFinite(to) && to <= len + 0.01)
+          body +=`<circle cx="${px(0)}" cy="${py(to)}" r="4" fill="none" stroke="${C}" `
                 + `stroke-width="1.6"/><text x="${px(0) + 7}" y="${py(to) + 3}" font-size="9" `
                 + `fill="${C}" opacity=".95">여기서 모임</text>`;
       } else if (g.꼴 === '직사각형') {
@@ -841,14 +847,31 @@
                 .filter(Boolean).join(' · ');
     let bar = '';
     if ((span || canSpin || canTurn || chg || canAim) && !opt.막대끔) {
-      const cur = atTo === null ? (span ? span[1] : 0) : atTo;
+      // 처음 모습 — 끝이 열린 막대는 자료의 `모임`(날아가는 거리에서 만나는 모습)에서 시작한다
+      const cur = atTo !== null ? atTo
+                : !span ? 0
+                : open ? ((gs0.find(g0 => g0.모임) || {}).모임 || span[0])
+                : span[1];
       const id = 'cv' + (++SEQ);
       REG.set(id, { w: w, opt: opt, chg: chg });
       /* `step="any"` — 눈금에 걸리지 않아 **끌기가 매끄럽고 맨 끝까지 닿는다.**
          딱 떨어지는 눈금을 주면 0.4375 + 0.5k 격자에 묶여 최대 12 에 못 간다.
          +/− 단추가 쓸 걸음은 따로 들려 준다. */
       let inner = '';
-      if (span) {
+      if (span && open) {
+        /* **끝이 없는 막대는 각으로 민다.** 거리를 그대로 얹으면 끝이 없으니, 옆 줄이 꺾이는
+           각을 왼쪽(가장 가까이 = 가장 크게 꺾임) → 오른쪽(각 0 = 나란히)으로 편다.
+           ▶ 는 가까이부터 멀리까지 민다. */
+        const x = convX(gs0), near = Math.max(0.01, span[0]);
+        inner = `<button type="button" class="cvp" data-k="r" title="가까이부터 멀리까지" aria-label="가까이부터 멀리까지 보기">▶</button>`
+              + `<span class="cvl">찍는 거리</span>`
+              + `<button type="button" class="cvb" data-d="-1" aria-label="가깝게">−</button>`
+              + `<input type="range" class="cvr" min="0" max="1" step="any" data-open="1" `
+              + `data-near="${near}" data-x="${x}" data-s="0.05" value="${convPos(cur, near, x).toFixed(4)}" `
+              + `aria-label="찍는 거리">`
+              + `<button type="button" class="cvb" data-d="1" aria-label="멀게">+</button>`
+              + `<span class="cvn">${fmtTo(cur)}</span>`;
+      } else if (span) {
         const step = Math.max(0.25, Math.round((span[1] - span[0]) / 16 * 4) / 4);
         inner = `<button type="button" class="cvb" data-d="-1" aria-label="가깝게">−</button>`
               + `<input type="range" class="cvr" min="${span[0]}" max="${span[1]}" step="any" `
@@ -1036,11 +1059,47 @@
     return Math.atan2(ev.clientX - (r.left + r.width / 2),
                       -(ev.clientY - (r.top + r.height / 2))) * 180 / Math.PI;
   }
-  /* ▶ — 시간 손잡이를 0 에서 끝까지 **실제 시간대로** 민다(짧으면 1.2초, 길면 6초 안에). 다시 누르면 멈춘다. */
+  /* ── 끝이 열린 거리 막대(리밍 마력탄) — 막대 0~1 은 **옆 줄이 꺾이는 각**이다 ──
+     0 = 가장 가까이(최소 사거리에서 가장 크게 꺾임), 1 = 각 0(나란히, 찍은 거리 Infinity). */
+  function convX(gs) {
+    return Math.max(0.01, ...gs.filter(g0 => g0.모임).map(g0 => Math.abs(Number(g0.옆) || 0)));
+  }
+  function convDist(s, near, x) {
+    const a = Math.atan2(x, near) * (1 - Math.max(0, Math.min(1, s)));
+    return a <= 1e-6 ? Infinity : x / Math.tan(a);
+  }
+  function convPos(d, near, x) {
+    if (!isFinite(d)) return 1;
+    return Math.max(0, Math.min(1, 1 - Math.atan2(x, Math.max(near, d)) / Math.atan2(x, near)));
+  }
+  function fmtTo(d) { return isFinite(d) ? String(Math.round(d * 100) / 100) : '멀리 · 나란히'; }
+  /* 막대가 말하는 찍은 거리 — 끝이 열린 막대는 각을 거리로 되돌린다 */
+  function rngTo(r) {
+    const v = Number(r.value);
+    return r.dataset.open ? convDist(v, Number(r.dataset.near) || 0.01, Number(r.dataset.x) || 1) : v;
+  }
+  /* ▶ — 시간 손잡이를 0 에서 끝까지 **실제 시간대로** 민다(짧으면 1.2초, 길면 6초 안에). 다시 누르면 멈춘다.
+     거리 막대의 ▶(`data-k="r"`)는 가까이부터 멀리까지 3초에 민다. */
   function playChg(pb) {
-    const box = pb.closest('.cv'), t = box && box.querySelector('.cvt'), m = box && REG.get(box.dataset.cv);
+    const isR = pb.dataset && pb.dataset.k === 'r';
+    const box = pb.closest('.cv'), t = box && box.querySelector(isR ? '.cvr' : '.cvt'), m = box && REG.get(box.dataset.cv);
     if (!t || !m) return;
     if (pb.dataset.on) { cancelAnimationFrame(Number(pb.dataset.on)); delete pb.dataset.on; pb.textContent = '▶'; return; }
+    if (isR) {
+      const lo = Number(t.min), hi = Number(t.max);
+      let r0 = 0;
+      pb.textContent = '⏸';
+      const stepR = ts => {
+        if (!r0) r0 = ts;
+        const v = Math.min(1, (ts - r0) / 3000);
+        t.value = lo + (hi - lo) * v;
+        redraw(box, rngTo(t));
+        if (v < 1 && pb.isConnected) pb.dataset.on = String(requestAnimationFrame(stepR));
+        else { delete pb.dataset.on; pb.textContent = '▶'; }
+      };
+      pb.dataset.on = String(requestAnimationFrame(stepR));
+      return;
+    }
     const c = m.chg || (m.w || {})['모으기'] || {}, secs = Number(c.초) || 2;
     const dur = Math.max(1.2, Math.min(6, secs)) * 1000, lab = box.querySelector('.cvs');
     let t0 = 0;
@@ -1060,7 +1119,7 @@
     const m = REG.get(box.dataset.cv), fig = box.closest('.fig');
     if (!m || !fig) return;
     const rng = box.querySelector('.cvr');
-    if (at === undefined && rng) at = Number(rng.value);
+    if (at === undefined && rng) at = rngTo(rng);
     /* **그림과 글만** 갈아 끼운다. `.fig` 를 통째로 새로 만들면 끌고 있던 막대가
        사라져 손가락이 끊기고, 다시 그릴 때마다 등록표에 새 자리가 쌓인다. */
     const t = document.createElement('div');
@@ -1078,13 +1137,13 @@
     if (ns && os) os.replaceWith(ns);
     if (nc && oc) oc.replaceWith(nc);
     const lab = box.querySelector('.cvn');
-    if (lab && typeof at === 'number') lab.textContent = Math.round(at * 100) / 100;
+    if (lab && typeof at === 'number') lab.textContent = fmtTo(at);
   }
   if (!g.__hotsShapeWired) {
     g.__hotsShapeWired = true;
     g.addEventListener('input', e => {
       const r = e.target.closest && e.target.closest('.cvr');
-      if (r) { redraw(r.closest('.cv'), Number(r.value)); return; }
+      if (r) { redraw(r.closest('.cv'), rngTo(r)); return; }
       const t = e.target.closest && e.target.closest('.cvt');
       if (t) {
         const box = t.closest('.cv'), m = REG.get(box.dataset.cv);
@@ -1157,7 +1216,7 @@
       const v = Math.max(Number(r.min), Math.min(Number(r.max),
                 Number(r.value) + st * Number(b.dataset.d)));
       r.value = v;                                    // 손잡이도 따라가야 한다
-      redraw(box, v);
+      redraw(box, rngTo(r));
     }, true);
   }
 
@@ -1210,7 +1269,7 @@
     q('.hzhint').textContent = cv
       ? (cv.querySelector('.cvd') ? '다이얼을 끌면 방향이 돌아갑니다(화살표 키로도). ' : '')
         + (cv.querySelector('.cvt') ? '손잡이를 밀면 시간에 따라 어떻게 되는지 보입니다. ' : '')
-        + (cv.querySelector('.cvr') ? '막대를 밀면 모이는 자리가 움직입니다.' : '')
+        + (cv.querySelector('.cvr') ? '막대를 밀면 찍는 거리가 바뀝니다 — 가까이 찍으면 일찍 모이고, 멀리 찍을수록 나란합니다.' : '')
       : '';
     const say = q('.hzsay'), txt = info['설명'];
     const put = t => { say.textContent = t || '게임이 적어 둔 설명이 없습니다.';

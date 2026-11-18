@@ -15,7 +15,8 @@
            flex-wrap:wrap; row-gap:4px; }
 /* ↑ 한 줄에 시간 손잡이와 방향 다이얼이 같이 오면(초갈) 최소 276px 라 폰 카드 폭(약 260px)을
    넘어 문서 전체가 옆으로 밀렸다(320px 에서 94px 넘침). 모자라면 다음 줄로 넘긴다. */
-.fig .cvr { flex:1; min-width:0; height:22px; accent-color:var(--gold); cursor:pointer;
+/* min-width — ▶·'찍는 거리'·방향 다이얼과 한 줄에 서면 0 까지 줄어 손잡이만 남았다(2026-11-18). 모자라면 다음 줄로 */
+.fig .cvr { flex:1; min-width:90px; height:22px; accent-color:var(--gold); cursor:pointer;
             touch-action:pan-y; }
 .fig .cvb { width:30px; height:28px; flex:0 0 auto; padding:0; cursor:pointer;
             border:1px solid var(--line); border-radius:6px; background:var(--card2);

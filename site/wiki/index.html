@@ -472,6 +472,9 @@ a.wl:hover { text-decoration:none; border-bottom-style:solid; }
    인게임 표시 옆에 같이 둔다(2026-11-17 사용자 "천천히 바뀌는 것만"). 두 단계로 한 번 바뀌는 것은 '+N초' 글로만 */
 .figrow:has(.splatbox) > .figbox:has(.cvt) { display:block; }
 .figrow:has(.splatbox) > .figbox:has(.cvt)::before { content:"시간에 따라 바뀌는 모습 — ▶ 로 처음부터 끝까지"; display:block; font-size:12px; color:var(--dim); margin:4px 0 2px; }
+/* **찍는 거리에 따라 꼴이 바뀌는 기술**(리밍 마력탄 — 가까이 찍으면 일찍 모이고 멀리 찍을수록 나란함, 2026-11-18)도 거리 막대 그림을 같이 둔다 */
+.figrow:has(.splatbox) > .figbox:has(.cvr) { display:block; }
+.figrow:has(.splatbox) > .figbox:has(.cvr)::before { content:"찍는 거리에 따라 바뀌는 모습 — ▶ 로 가까이부터 멀리까지"; display:block; font-size:12px; color:var(--dim); margin:4px 0 2px; }
 .splatbox { flex:0 0 auto; width:300px; max-width:100%; margin-top:4px; }
 .splatbox canvas { display:block; width:300px; max-width:100%; height:auto; border-radius:8px; border:1px solid var(--line); }
 .splatcap { font-size:12px; color:var(--dim); margin-top:4px; line-height:1.45; }
@@ -1035,7 +1038,7 @@ window.KS={score:score,mark:mark,esc:esc};})();
   /* 칸 이름 — 뜻을 말풍선으로, 누르면 용어집의 그 줄로 */
   const fk = k => { const d = fdOf(k); return d ? `<a class="fk" href="#terms.fd-${d.i}" title="${esc(d["뜻"])}">${esc(k)}</a>` : esc(k); };
   const SEC = /^(지속 시간|유지 시간|간격|주기|모으기)$/;
-  const fval = (k, v) => v === true ? "예" : Array.isArray(v) ? (v.every(x => typeof x !== "object") ? v.map(num).join(" ~ ") : `${v.length}곳`)
+  const fval = (k, v) => v === true ? "예" : Array.isArray(v) ? (v.every(x => x === null || typeof x !== "object") ? v.map(x => x === null ? "끝 없음" : num(x)).join(" ~ ") : `${v.length}곳`)
     : v && typeof v === "object" ? Object.entries(v).map(([a, b]) => `${a} ${fval(a, b)}`).join(" · ") : typeof v === "number" ? num(v) + (SEC.test(k) ? "초" : "") : String(v);
   /* 게임 자료 한 줄 — {출처, 칸…} 을 '칸 값 · 칸 값' 으로. 출처 id 는 말풍선에 */
   const rawLine = x => Object.entries(x).filter(([k, v]) => k !== "출처" && v != null && v !== "" && v !== false)
