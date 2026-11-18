@@ -863,14 +863,16 @@
            각을 왼쪽(가장 가까이 = 가장 크게 꺾임) → 오른쪽(각 0 = 나란히)으로 편다.
            ▶ 는 가까이부터 멀리까지 민다. */
         const x = convX(gs0), near = Math.max(0.01, span[0]);
+        // 값은 이름 바로 옆에, 막대는 다음 줄에 폭 전부로 — 값이 막대 뒤에 붙으면 폰에서 다음 줄(방향 다이얼 옆)로
+        // 밀려나 무엇의 값인지 알 수 없었다(2026-11-18). `.cvn` 은 이 칸의 첫 값이어야 한다(redraw 가 첫 것을 고친다)
         inner = `<button type="button" class="cvp" data-k="r" title="가까이부터 멀리까지" aria-label="가까이부터 멀리까지 보기">▶</button>`
               + `<span class="cvl">찍는 거리</span>`
+              + `<span class="cvn cvq">${fmtTo(cur)}</span><span class="cvbr" aria-hidden="true"></span>`
               + `<button type="button" class="cvb" data-d="-1" aria-label="가깝게">−</button>`
               + `<input type="range" class="cvr" min="0" max="1" step="any" data-open="1" `
               + `data-near="${near}" data-x="${x}" data-s="0.05" value="${convPos(cur, near, x).toFixed(4)}" `
               + `aria-label="찍는 거리">`
-              + `<button type="button" class="cvb" data-d="1" aria-label="멀게">+</button>`
-              + `<span class="cvn">${fmtTo(cur)}</span>`;
+              + `<button type="button" class="cvb" data-d="1" aria-label="멀게">+</button>`;
       } else if (span) {
         const step = Math.max(0.25, Math.round((span[1] - span[0]) / 16 * 4) / 4);
         inner = `<button type="button" class="cvb" data-d="-1" aria-label="가깝게">−</button>`
@@ -885,12 +887,15 @@
            백분율로 적는다. 0 에서 끝까지 밀어 보면 시간에 따라 어떻게 되는지 보인다. */
         const chgNm = chg.도는중 ? '도는 중' : chg.휩쓰는중 ? '휩쓰는 중' : chg.커지는중 ? '커지는 중' : '모으기';
         // ▶ — 손잡이를 0 에서 끝까지 실제 시간대로 민다(처음~끝, 2026-11-17)
+        if (inner) inner += `<span class="cvbr" aria-hidden="true"></span>`;
         inner += `<button type="button" class="cvp" title="처음부터 끝까지" aria-label="처음부터 끝까지 보기">▶</button>`
                + `<span class="cvl">${chgNm}</span>`
                + `<input type="range" class="cvt" min="0" max="1" step="any" `
                + `value="${at01}" aria-label="${chgNm} 시간">`
                + `<span class="cvn cvs">${chgLabel(chg, at01)}</span>`;
       }
+      // 막대(거리·시간)와 다이얼은 줄을 나눈다 — 섞여 접히면 값과 다이얼이 엉뚱하게 붙었다
+      if (inner && (canTurn || canSpin || canAim)) inner += `<span class="cvbr" aria-hidden="true"></span>`;
       if (canTurn) inner += `<span class="cvl">방향</span>` + dialHTML(spin);
       if (canSpin) inner += `<span class="cvl">끌기</span>` + dragHTML(spin);
       /* 겨냥 손잡이 — 처음 자리는 **사거리 끝, 앞쪽**이다(예전 그림과 같은 자리). */

@@ -645,6 +645,66 @@ details.more2 > summary::before { content:"▸ "; } details.more2[open] > summar
 details.more2 > :not(summary) { margin:6px 10px 10px; }
 details.more > summary .note { font-weight:400; margin-left:6px; }
 @media (max-width:1099px) { body.remote-on:not(.remote-float) #wrap { padding-bottom:130px; } }
+@media (max-width:1099px) { body.remote-on.remote-min:not(.remote-float) #wrap { padding-bottom:64px; } }
+
+/* ── 폰(600px 이하) — 2026-11-18 사용자 "모바일에서 너무 길게 나오거나 많이 가리거나 바로 알기 어렵다".
+   왼쪽 그림 칸(기술 44px · 특성 레벨 52px)이 글을 241px 로 좁혀 기술 하나를 펼치면 화면 두 개 반이었다.
+   그림 옆에는 이름·수치만 두고 설명·특성·범위 그림·상세 표는 폭 전부를 쓴다(`display:contents` 로 몸 칸을 풀어 바로 격자에 올린다) */
+@media (max-width:600px) {
+  #wrap { padding-inline:8px; }      /* 바깥 16 + 문서 14 로 양쪽 30px 씩 비던 것 */
+  .about { font-size:13.5px; line-height:1.65; padding:8px 12px; }
+  .skill { grid-template-columns:40px minmax(0,1fr); column-gap:10px; }
+  .skill > div { display:contents; }
+  .skill > div > * { grid-column:1 / -1; }
+  .skill > .ico { grid-row:span 2; }
+  .skill > div > .nm, .skill > div > .meta { grid-column:2; }
+  .skill.touched { padding-left:6px; }
+  /* 특성 — 레벨을 왼쪽 칸이 아니라 머리 줄로 */
+  .tier { grid-template-columns:minmax(0,1fr); gap:6px; margin:14px 0 10px; }
+  .tier .lv { display:flex; align-items:baseline; gap:4px; text-align:left; padding:0 2px 4px; border-bottom:1px solid var(--gold-line); }
+  .tier .lv small { display:inline; font-size:12px; }
+  .tier .lv .shr { display:inline-block; margin:0 0 0 auto; }
+  .pick > div { display:contents; }
+  .pick > div > * { grid-column:1 / -1; }
+  .pick > .ico { grid-row:span 2; align-self:center; }
+  .pick > div > .nm, .pick > div > .to { grid-column:2; }
+  /* 이 기술을 바꾸는 특성 — 한 줄에 하나, 단추는 오른쪽 끝 */
+  .tsh { display:grid; gap:4px; }
+  .tchip { display:flex; border-radius:12px; }
+  .tchip .tn2 { max-width:none; flex:1 1 auto; min-width:0; }
+  /* 목차 — 한 줄에 하나씩 7줄(354px) → 알약으로 이어 붙인다 */
+  .toc { display:block; }
+  .toc ol { display:flex; flex-wrap:wrap; gap:0 4px; padding:0; list-style:none; }
+  .toc button { padding:0 10px; }
+  /* 범위 그림 — 게임 화면 그림을 먼저, 시간·거리 막대 그림은 그 아래 */
+  .figrow > .splatbox { order:-1; }
+  /* 패치 이력 — 날짜·종류 한 줄, 제목은 그 아래 한 줄(세 칸으로 욱여넣으면 날짜가 세 줄로 접혔다) */
+  .hpn details.more > summary { flex-wrap:wrap; padding:8px 12px; gap:0 8px; }
+  .hpn details.more > summary::after { order:1; }
+  .hpn details.more > summary .note { order:2; flex-basis:100%; margin-left:0; font-size:12.5px; min-width:0;
+    white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+}
+/* 알약 단추 — 누를 자리는 44px 로 두고 **보이는 알약은 안쪽 ::before 에 작게**(사이트 규약). 상자째 44px 이면
+   이동·적용이 세로로 긴 타원이 됐다 */
+@media (any-pointer:coarse) {
+  .tchip { padding-block:0; }
+  .tchip button, .toc button { position:relative; isolation:isolate; background:transparent; border-color:transparent; justify-content:center; min-width:44px; }
+  .tchip button::before { content:""; position:absolute; left:0; right:0; top:50%; height:24px; transform:translateY(-50%);
+    border:1px solid var(--line); border-radius:99px; background:var(--card); z-index:-1; }
+  .tchip.on .tap { background:transparent; border-color:transparent; }
+  .tchip.on .tap::before { background:var(--gold); border-color:var(--gold); }
+}
+@media (any-pointer:coarse) and (max-width:600px) {
+  .toc button::before { content:""; position:absolute; left:0; right:0; top:50%; height:28px; transform:translateY(-50%);
+    border:1px solid var(--line); border-radius:99px; background:var(--card); z-index:-1; }
+}
+/* 레벨 리모컨 접기 — 폰에서는 아래 칸이 화면 15% 를 덮었다. 접으면 머리 줄(− 레벨 +)만 */
+#remote .rfold { border:1px solid rgba(255,255,255,.3); background:transparent; color:var(--bar-fg); border-radius:99px; font-size:11px; padding:0 8px; cursor:pointer; }
+#remote .rh .lv-step { width:30px; height:24px; border-color:rgba(255,255,255,.3); background:transparent; color:var(--bar-fg); }
+#remote.min .rb { display:none; }
+#remote.min .rt { flex:0 0 auto; }
+@media (min-width:1100px) { #remote:not(.floating) .rfold { display:none; } }
+@media (any-pointer:coarse) { #remote .rfold, #remote .rh .lv-step { min-height:36px; } }
 </style>
 <script src="../shared/scrap.js" defer></script>
 </head>
@@ -1473,15 +1533,26 @@ window.KS={score:score,mark:mark,esc:esc};})();
   const R = document.createElement("aside");
   R.id = "remote"; R.hidden = true; R.setAttribute("aria-label", "레벨 리모컨");
   let POS = null; try { POS = JSON.parse(store.get("wiki.remotePos") || "null"); } catch (e) {}
+  /* 접기(2026-11-18) — 고른 적이 없으면 폰(폭 600 이하 · 높이 500 이하)에서 접힌 채로 시작한다. 접혀도 − + 로 레벨은 바꾼다 */
+  const remoteMin = () => { const v = store.get("wiki.remoteMin"); return v === "1" ? true : v === "0" ? false : (innerWidth <= 600 || innerHeight <= 500); };
+  const BACK0 = document.body.getAttribute("data-scrap-back-bottom");
+  function backAbove() {   // 사이트 ← 단추를 리모컨 바로 위로(접으면 따라 내려온다)
+    const bk = document.getElementById("scrap-back"); if (BACK0 == null && !bk) return;
+    const docked = !R.hidden && !POS && innerWidth < 1100;
+    const v = docked ? Math.round(R.getBoundingClientRect().height + 18) + "px" : (BACK0 || "12px");
+    document.body.setAttribute("data-scrap-back-bottom", v); if (bk) bk.style.bottom = v;
+  }
   function renderRemote(on) {
     if (!R.parentNode) $("#wrap").appendChild(R);
     R.hidden = !on; document.body.classList.toggle("remote-on", !!on);
-    if (!on) return;
-    R.innerHTML = `<div class="rh" title="끌어서 옮기기"><span class="grip" aria-hidden="true">⠿</span><span class="rt"><b>레벨</b><span>${LV}</span></span>${POS ? `<button type="button" class="rdock">제자리</button>` : ""}</div>
+    if (!on) { backAbove(); return; }
+    const mn = remoteMin();
+    R.classList.toggle("min", mn); document.body.classList.toggle("remote-min", mn);
+    R.innerHTML = `<div class="rh" title="끌어서 옮기기"><span class="grip" aria-hidden="true">⠿</span>${mn ? `<button type="button" class="lv-step" data-lv="-1" aria-label="레벨 1 내리기">−</button>` : ""}<span class="rt"><b>레벨</b><span>${LV}</span></span>${mn ? `<button type="button" class="lv-step" data-lv="1" aria-label="레벨 1 올리기">+</button><span style="flex:1"></span>` : ""}${POS ? `<button type="button" class="rdock">제자리</button>` : ""}<button type="button" class="rfold" aria-expanded="${!mn}">${mn ? "펴기 ▴" : "접기 ▾"}</button></div>
       <div class="rb"><div class="rl"><button type="button" class="lv-step" data-lv="-1" aria-label="레벨 1 내리기">−</button><input id="remote-lv" type="range" min="0" max="30" value="${LV}" aria-label="레벨"><button type="button" class="lv-step" data-lv="1" aria-label="레벨 1 올리기">+</button><output>${LV}</output></div>
       <div class="rq">${[1, 4, 7, 10, 13, 16, 20, 30].map(v => `<button type="button" class="${v === LV ? "on" : ""}" data-q="${v}">${v}</button>`).join("")}</div>
       <p class="rhint">특성은 각 기술 아래 '이 기술을 바꾸는 특성' 에서 [적용] 합니다.</p></div>`;
-    place();
+    place(); backAbove();
   }
   function place() {
     if (POS) { R.classList.add("floating"); document.body.classList.add("remote-float");
@@ -1495,6 +1566,7 @@ window.KS={score:score,mark:mark,esc:esc};})();
     if (b.dataset.lv) setLv(LV + +b.dataset.lv);
     else if (b.dataset.q) setLv(b.dataset.q);
     else if (b.classList.contains("rdock")) { POS = null; store.set("wiki.remotePos", ""); renderRemote(true); }
+    else if (b.classList.contains("rfold")) { store.set("wiki.remoteMin", remoteMin() ? "0" : "1"); renderRemote(true); }
   });
   R.addEventListener("pointerdown", ev => {
     if (!ev.target.closest(".rh") || ev.target.closest("button")) return;
@@ -1504,7 +1576,7 @@ window.KS={score:score,mark:mark,esc:esc};})();
     const up = () => { removeEventListener("pointermove", mv); removeEventListener("pointerup", up); store.set("wiki.remotePos", JSON.stringify(POS)); renderRemote(true); };
     addEventListener("pointermove", mv); addEventListener("pointerup", up);
   });
-  addEventListener("resize", () => { if (POS) place(); });
+  addEventListener("resize", () => { if (POS) place(); if (!R.hidden) backAbove(); });
   /* 문서 안 — 적용·이동·중첩·조건 */
   document.addEventListener("click", e => {
     const b = e.target.closest && e.target.closest("button[data-sel], button[data-go^='tal-']");
@@ -2306,9 +2378,13 @@ window.KS={score:score,mark:mark,esc:esc};})();
     if (D === undefined) return `<p class="load">패치 이력을 불러오는 중…</p>`;
     if (!D) return `<p class="note">이 영웅의 패치 이력이 없습니다.</p>`;
     const es = list(D.entries);
-    return `<p class="note">이 영웅이 나온 패치 ${es.length}건 — 최근 것부터. 누르면 그 패치 문서로 갑니다.</p>` + es.slice(0, 60).map(e => fold(`${esc(e.date)} · ${esc(PKINDS[e.kind] || e.kind)} <span class="note">${esc(e.title || "")}</span>`,
-      `<p><a href="#p.${esc(pid(e))}">이 패치 문서 →</a></p>${list(e.official).map(o => `<div class="pn">${pnHtml(o.html)}</div>`).join("")}${e.data && list(e.data.changes).length ? `<p class="note">게임 자료에서 바뀐 곳${e.data.from ? ` (히오스 ${esc(e.data.from)} → ${esc(e.data.to || "")})` : ""}</p><ul class="plain pnl">${list(e.data.changes).map(pChange).join("")}</ul>` : ""}`)).join("")
-      + (es.length > 60 ? `<p class="note">외 ${es.length - 60}건은 <a href="#patches">패치 기록</a>에서.</p>` : "");
+    const one = e => fold(`${esc(e.date)} · ${esc(PKINDS[e.kind] || e.kind)} <span class="note">${esc(e.title || "")}</span>`,
+      `<p><a href="#p.${esc(pid(e))}">이 패치 문서 →</a></p>${list(e.official).map(o => `<div class="pn">${pnHtml(o.html)}</div>`).join("")}${e.data && list(e.data.changes).length ? `<p class="note">게임 자료에서 바뀐 곳${e.data.from ? ` (히오스 ${esc(e.data.from)} → ${esc(e.data.to || "")})` : ""}</p><ul class="plain pnl">${list(e.data.changes).map(pChange).join("")}</ul>` : ""}`);
+    // 최근 10건만 펼쳐 두고 나머지는 한 번 더 접는다 — 49건이면 폰에서 화면 일곱 개였다(2026-11-18)
+    const NEAR = 10, old = es.slice(NEAR, 60);
+    return `<p class="note">이 영웅이 나온 패치 ${es.length}건 — 최근 것부터. 누르면 그 패치 문서로 갑니다.</p><div class="hpn">` + es.slice(0, NEAR).map(one).join("")
+      + (old.length ? `<details class="more2"><summary>이전 패치 ${old.length}건 더 보기</summary><div>${old.map(one).join("")}</div></details>` : "")
+      + `</div>` + (es.length > 60 ? `<p class="note">외 ${es.length - 60}건은 <a href="#patches">패치 기록</a>에서.</p>` : "");
   }
   document.addEventListener("click", e => {
     const b = e.target.closest && e.target.closest("[data-pk]"); if (!b) return;

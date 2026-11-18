@@ -24,6 +24,9 @@
 .fig .cvb:active { background:var(--line); }
 .fig .cvn { flex:0 0 auto; min-width:2.6em; text-align:right; color:var(--gold);
             font-size:11px; font-variant-numeric:tabular-nums; }
+/* 줄 나눔 — 막대 줄과 다이얼 줄을 가른다 · 찍는 거리 값은 이름 바로 옆(왼쪽 맞춤, 2026-11-18) */
+.fig .cvbr { flex:0 0 100%; height:0; }
+.fig .cvq { text-align:left; font-size:12px; font-weight:600; }
 
 /* ── 다이얼 셋 ─────────────────────────────────────────────────────────────
    무엇을 정할 수 있는 기술인지 **생김새로 가른다** — 셋이 한 화면에 섞여 나오므로
