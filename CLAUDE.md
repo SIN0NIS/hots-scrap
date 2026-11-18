@@ -233,6 +233,8 @@
   **가장 최근 하나만** 띄운다(사용자 "4개 다 띄우는 게 아니라 그중 최근"), 2주 안이면 '새'. 자료 `site/data/notice.json` 의 `news`(+ `latest` · 갈래별 `byKind`) — `build_patch_index.py` 의
   `write_notice()` 가 만든다(깃허브 6시간 작업, 날짜를 안 보니 돌릴 때마다 안 바뀐다). 예전 모든 페이지 아래 띄우던 `shared/notice.js` 알림은 지웠다.
   × 는 이 세션만 숨김, 그 노트를 보는 페이지에서는 안 띄운다. 빌드메이커처럼 아래 칸이 있으면 `data-scrap-back-bottom` 높이를 따른다.
+- **허브 '참고한 외부 사이트'**(2026-11-18, 사용자 "참고하라고 준 외부 사이트 리스트 하단부에") — `site/index.html` 최근 소식 아래·꼬리글 위 `.refs`.
+  블리자드 뉴스 · 히어로즈 위키(팬덤, 영문) · HeroesToolChest · Nexus Patch Notes · HotS Analytics(hots.herossearch.com, 리플레이 연동). 새 곳이 생기면 `<li>` 한 줄 더.
 - `site/shared/search.js` **한글 검색기** — 네 앱(빌드·도감·패치 기록·리플레이)이 같이 쓴다. 여기 수정 = 전 앱 회귀 확인
   - `scrapSearch.filter(목록, 검색어, 항목 => [이름들])` · `.score(검색어, 이름들)` · `.mark(이름, 검색어)`
   - **다 친 글자는 글자대로, 자음만 친 것은 그 자리 초성으로** 맞춘다 → `줄ㅈ` 은 줄진만 걸린다.
