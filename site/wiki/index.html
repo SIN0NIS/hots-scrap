@@ -643,7 +643,7 @@ details.more2 > summary { cursor:pointer; padding:5px 10px; font-size:12.5px; co
 details.more2 > summary::-webkit-details-marker { display:none; }
 details.more2 > summary::before { content:"▸ "; } details.more2[open] > summary::before { content:"▾ "; }
 details.more2 > :not(summary) { margin:6px 10px 10px; }
-/* 위키 노트 — 팬덤 위키 노트 중 원본으로 확인된 것(우리말). 접힌 채로 시작 */
+/* 노트 — 원본 칸에서 규칙으로 나온 것. 접힌 채로 시작 */
 details.notes { margin-top:6px; border-left:3px solid var(--line); padding-left:8px; }
 .pick details.notes { grid-column:1 / -1; }
 details.notes > summary { cursor:pointer; font-size:12.5px; color:var(--dim); list-style:none; padding:2px 0; }
@@ -1041,8 +1041,8 @@ window.KS={score:score,mark:mark,esc:esc};})();
     return null;
   }
   let curHero = null;
-  /* ── 위키 노트 ── 팬덤 위키(영문) Data:<영웅> 노트 중 **원본 자료로 확인된 것만** 우리말로 옮긴 것
-     (hots_xml/tools/wiki_notes_site.py → wiki_build 가 data/notes/<영웅>.json). 영웅 문서를 열 때 그 영웅 것만 받는다. */
+  /* ── 노트 ── 원본 자료에서 **규칙으로 바로 나오는 것만**(wiki_build 가 hots_xml/out 에서 판마다 data/notes/<영웅>.json 으로).
+     지금 규칙: 버프의 주는 피해·주는 치유 칸은 더하는 칸 → 같은 칸을 쓰는 다른 효과와 더해진다. 영웅 문서를 열 때 그 영웅 것만 받는다. */
   const NT = {}, NOPEN = new Set();
   function notesOf(id) {
     if (NT[id] !== undefined) return NT[id];
@@ -1051,27 +1051,20 @@ window.KS={score:score,mark:mark,esc:esc};})();
       .catch(() => { NT[id] = {}; });
     return null;
   }
-  const NBADGE = { "숫자": ["수치 확인", "ok", "노트의 숫자가 이 기술·특성의 원본 값과 같습니다"],
-    "겹침": ["겹침 확인", "ok", "더해짐·곱해짐·중첩 수가 원본 효과 칸의 종류와 맞습니다"],
-    "엔진 규칙": ["엔진 규칙", "ok", "방어력은 출처끼리 더하지 않고 가장 큰 값 하나만 적용하는 게임 규칙과 맞습니다"],
-    "직접": ["원본 확인", "ok", "원본 파일을 직접 열어 칸 값·깃발로 확인했습니다"],
-    "간접": ["원본으로 유추", "ok", "원본 여러 칸과 엔진 규칙을 엮어 확인했습니다"],
-    "다름": ["원본과 다름", "bad", "팬덤 위키 노트가 원본 자료와 어긋납니다 — 게임에서 다시 볼 만합니다"] };
+  const NBADGE = { "겹침 규칙": ["원본 칸 규칙", "ok", "원본 버프의 칸 종류(더하는 칸)에서 나온 규칙입니다"] };
   function notesBlock(hid, iid) {
     const L = ((NT[hid] || {})["노트"] || {})[iid];
     if (!L || !L.length) return "";
-    const k = hid + "|" + iid, bad = L.filter(n => n["확인"] === "다름").length;
-    return `<details class="notes" data-nt="${esc(k)}"${NOPEN.has(k) ? " open" : ""}><summary>노트 ${L.length}${bad ? ` <span class="nb bad">원본과 다름 ${bad}</span>` : ""}</summary><ul>${L.map(n => {
+    const k = hid + "|" + iid;
+    return `<details class="notes" data-nt="${esc(k)}"${NOPEN.has(k) ? " open" : ""}><summary>노트 ${L.length}</summary><ul>${L.map(n => {
       const b = NBADGE[n["확인"]] || [n["확인"], "", ""];
-      const why = n["근거"] ? (n["확인"] === "다름" ? `<b>원본:</b> ${esc(n["근거"])}` : n["확인"] === "겹침" ? `원본 칸: ${esc(n["근거"])}` : n["확인"] === "엔진 규칙" ? "" : esc(n["근거"])) : "";
-      return `<li>${n["확인"] === "다름" ? "<b>팬덤 위키:</b> " : ""}${esc(n["글"])} <span class="nb ${b[1]}" title="${esc(b[2])}">${esc(b[0])}</span>${why ? `<div class="nwhy">${why}</div>` : ""}</li>`; }).join("")}</ul></details>`;
+      return `<li>${esc(n["글"])} <span class="nb ${b[1]}" title="${esc(b[2])}">${esc(b[0])}</span>${n["근거"] ? `<div class="nwhy">원본 칸: ${esc(n["근거"])}</div>` : ""}</li>`; }).join("")}</ul></details>`;
   }
   function notesCredit(hid) {
     const nt = NT[hid];
     if (!nt || !nt["노트"]) return "";
     const n = Object.values(nt["노트"]).reduce((s, l) => s + l.length, 0);
-    const pg = String(nt["위키 문서"] || "").replace(/ /g, "_");
-    return ` 카드 아래 <b>노트</b>(${n}개)는 <a href="https://heroesofthestorm.fandom.com/wiki/${encodeURIComponent(pg)}" target="_blank" rel="noopener">팬덤 위키</a>(영문, CC BY-SA 3.0)의 노트 가운데 <b>원본 자료로 확인된 것만</b> 우리말로 옮긴 것입니다(확인한 판 ${esc(nt["판"] || "")}). 노트 옆 꼬리표가 어떻게 확인했는지입니다.`;
+    return ` 카드 아래 <b>노트</b>(${n}개)는 원본 자료의 칸에서 규칙으로 바로 나오는 것입니다.`;
   }
   const tdItems = (hid, tid) => ((TD[hid] || {})["특성"] || {})[tid] || [];
   const optOf = (hid, tid) => (OPTS[hid + "|" + tid] = OPTS[hid + "|" + tid] || { stack: null, off: [] });
