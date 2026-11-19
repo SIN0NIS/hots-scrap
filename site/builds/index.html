@@ -129,6 +129,14 @@
         .lv-list-btn { width:35px; background:none; border:1px solid #233a5c; color:var(--blue); font-weight:bold; border-radius:5px; cursor:pointer; padding:4px 0; font:inherit; font-weight:bold; flex-shrink:0; }
         .lv-list-btn:hover { border-color:var(--gold); color:var(--gold); }
         :root[data-theme="light"] .lv-list-btn { border-color:#cdd9ea; }
+        /* 밝은 화면의 고른 특성 — 금색 번짐은 흰 바탕에서 거의 안 보이고, 금색 틀을 가진
+           아이콘(찬란한 질주 강화 등)과 섞인다. 진한 주황 굵은 테 + 번짐으로 바꾸고,
+           고른 줄의 안 고른 아이콘은 흐리게 한다(올려 보면 다시 또렷). 어두운 화면은 그대로. */
+        :root[data-theme="light"] .t-icon { border-color:#b9c6d8; }
+        :root[data-theme="light"] .t-icon.selected { border-color:#d97a00; outline:3px solid #d97a00; outline-offset:1px; box-shadow:0 0 10px 3px rgba(217,122,0,.55); }
+        :root[data-theme="light"] .t-icon.sub { border:1px solid #1758a8; outline:2px dashed #1758a8; outline-offset:2px; box-shadow:0 0 8px 2px rgba(23,88,168,.35); }
+        :root[data-theme="light"] .tier-row:has(.t-icon.selected) .t-icon:not(.selected):not(.sub) { opacity:.45; filter:grayscale(.5); transition:opacity .15s; }
+        :root[data-theme="light"] .tier-row:has(.t-icon.selected) .t-icon:not(.selected):not(.sub):hover { opacity:1; filter:none; }
         /* ── 모바일: 좁은 폭에서 설명이 세로로 찌그러지지 않게 ── */
         @media (max-width: 640px) {
           .tier-row { flex-wrap: wrap; }
