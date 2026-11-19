@@ -643,6 +643,17 @@ details.more2 > summary { cursor:pointer; padding:5px 10px; font-size:12.5px; co
 details.more2 > summary::-webkit-details-marker { display:none; }
 details.more2 > summary::before { content:"▸ "; } details.more2[open] > summary::before { content:"▾ "; }
 details.more2 > :not(summary) { margin:6px 10px 10px; }
+/* 위키 노트 — 팬덤 위키 노트 중 원본으로 확인된 것(우리말). 접힌 채로 시작 */
+details.notes { margin-top:6px; border-left:3px solid var(--line); padding-left:8px; }
+.pick details.notes { grid-column:1 / -1; }
+details.notes > summary { cursor:pointer; font-size:12.5px; color:var(--dim); list-style:none; padding:2px 0; }
+details.notes > summary::-webkit-details-marker { display:none; }
+details.notes > summary::before { content:"▸ "; } details.notes[open] > summary::before { content:"▾ "; }
+details.notes ul { margin:4px 0 6px; padding-left:18px; font-size:13px; line-height:1.55; }
+details.notes li { margin:3px 0; }
+.nb { display:inline-block; font-size:11px; line-height:1.5; padding:0 6px; border-radius:99px; border:1px solid currentColor; vertical-align:1px; white-space:nowrap; }
+.nb.ok { color:var(--ok); } .nb.bad { color:var(--bad); }
+.nwhy { font-size:11.5px; color:var(--dim); margin-top:1px; overflow-wrap:anywhere; }
 details.more > summary .note { font-weight:400; margin-left:6px; }
 @media (max-width:1099px) { body.remote-on:not(.remote-float) #wrap { padding-bottom:130px; } }
 @media (max-width:1099px) { body.remote-on.remote-min:not(.remote-float) #wrap { padding-bottom:64px; } }
@@ -1030,6 +1041,38 @@ window.KS={score:score,mark:mark,esc:esc};})();
     return null;
   }
   let curHero = null;
+  /* ── 위키 노트 ── 팬덤 위키(영문) Data:<영웅> 노트 중 **원본 자료로 확인된 것만** 우리말로 옮긴 것
+     (hots_xml/tools/wiki_notes_site.py → wiki_build 가 data/notes/<영웅>.json). 영웅 문서를 열 때 그 영웅 것만 받는다. */
+  const NT = {}, NOPEN = new Set();
+  function notesOf(id) {
+    if (NT[id] !== undefined) return NT[id];
+    NT[id] = null;
+    fetch(`data/notes/${encodeURIComponent(id)}.json`).then(r => r.ok ? r.json() : {}).then(j => { NT[id] = j || {}; if (curHero === id) route(true); })
+      .catch(() => { NT[id] = {}; });
+    return null;
+  }
+  const NBADGE = { "숫자": ["수치 확인", "ok", "노트의 숫자가 이 기술·특성의 원본 값과 같습니다"],
+    "겹침": ["겹침 확인", "ok", "더해짐·곱해짐·중첩 수가 원본 효과 칸의 종류와 맞습니다"],
+    "엔진 규칙": ["엔진 규칙", "ok", "방어력은 출처끼리 더하지 않고 가장 큰 값 하나만 적용하는 게임 규칙과 맞습니다"],
+    "직접": ["원본 확인", "ok", "원본 파일을 직접 열어 칸 값·깃발로 확인했습니다"],
+    "간접": ["원본으로 유추", "ok", "원본 여러 칸과 엔진 규칙을 엮어 확인했습니다"],
+    "다름": ["원본과 다름", "bad", "팬덤 위키 노트가 원본 자료와 어긋납니다 — 게임에서 다시 볼 만합니다"] };
+  function notesBlock(hid, iid) {
+    const L = ((NT[hid] || {})["노트"] || {})[iid];
+    if (!L || !L.length) return "";
+    const k = hid + "|" + iid, bad = L.filter(n => n["확인"] === "다름").length;
+    return `<details class="notes" data-nt="${esc(k)}"${NOPEN.has(k) ? " open" : ""}><summary>노트 ${L.length}${bad ? ` <span class="nb bad">원본과 다름 ${bad}</span>` : ""}</summary><ul>${L.map(n => {
+      const b = NBADGE[n["확인"]] || [n["확인"], "", ""];
+      const why = n["근거"] ? (n["확인"] === "다름" ? `<b>원본:</b> ${esc(n["근거"])}` : n["확인"] === "겹침" ? `원본 칸: ${esc(n["근거"])}` : n["확인"] === "엔진 규칙" ? "" : esc(n["근거"])) : "";
+      return `<li>${n["확인"] === "다름" ? "<b>팬덤 위키:</b> " : ""}${esc(n["글"])} <span class="nb ${b[1]}" title="${esc(b[2])}">${esc(b[0])}</span>${why ? `<div class="nwhy">${why}</div>` : ""}</li>`; }).join("")}</ul></details>`;
+  }
+  function notesCredit(hid) {
+    const nt = NT[hid];
+    if (!nt || !nt["노트"]) return "";
+    const n = Object.values(nt["노트"]).reduce((s, l) => s + l.length, 0);
+    const pg = String(nt["위키 문서"] || "").replace(/ /g, "_");
+    return ` 카드 아래 <b>노트</b>(${n}개)는 <a href="https://heroesofthestorm.fandom.com/wiki/${encodeURIComponent(pg)}" target="_blank" rel="noopener">팬덤 위키</a>(영문, CC BY-SA 3.0)의 노트 가운데 <b>원본 자료로 확인된 것만</b> 우리말로 옮긴 것입니다(확인한 판 ${esc(nt["판"] || "")}). 노트 옆 꼬리표가 어떻게 확인했는지입니다.`;
+  }
   const tdItems = (hid, tid) => ((TD[hid] || {})["특성"] || {})[tid] || [];
   const optOf = (hid, tid) => (OPTS[hid + "|" + tid] = OPTS[hid + "|" + tid] || { stack: null, off: [] });
   const isStackCond = c => /퀘스트 보상\(겹|중첩 (?:≥ )?\d+|겹\(쌓인 수\)/.test(c);
@@ -1273,6 +1316,7 @@ window.KS={score:score,mark:mark,esc:esc};})();
     return `<details class="more2" data-tf="${esc(p.id)}"${TOPEN.has(p.id) ? " open" : ""}><summary>${lab}</summary><div class="figrow">${fig ? `<div class="figbox">${fig}</div>` : ""}${splatBox(h.id, "t", p.id, wk)}</div>${kvGroups(rows)}${raw}</details>`;
   }
   document.addEventListener("toggle", e => { const d = e.target; if (d.dataset && d.dataset.tf) { if (d.open) TOPEN.add(d.dataset.tf); else TOPEN.delete(d.dataset.tf); } }, true);
+  document.addEventListener("toggle", e => { const d = e.target; if (d.dataset && d.dataset.nt) { if (d.open) NOPEN.add(d.dataset.nt); else NOPEN.delete(d.dataset.nt); } }, true);
   /* ── 공유 그림 ── 능력치·기술·특성을 **버전이 찍힌 그림**으로(복사·저장) 또는 글로.
      그림 도구(html2canvas)는 공유를 누를 때만 받는다 — 안 쓰는 사람까지 매번 외부에서 받지 않게. */
   let SHCTX = null, SHST = null;
@@ -1423,7 +1467,7 @@ window.KS={score:score,mark:mark,esc:esc};})();
       if (f) { setTimeout(() => location.replace("#h." + f.id)); return page({ crumb: crumbs(`<a href="#heroes">영웅</a>`), title: f["이름"], sections: [{ html: `<p class="load">여는 중…</p>` }] }); } }
     const h = hById[id]; if (!h) return notFound();
     if (!h.__full) { loadHero(id); return page({ crumb: crumbs(`<a href="#heroes">영웅</a>`), title: h["이름"], sections: [{ html: `<p class="load">${esc(h["이름"])} 자료를 불러오는 중…</p>` }] }); }
-    curHero = id; tdOf(id);
+    curHero = id; tdOf(id); notesOf(id);
     const st = h["기본"] || h["수치"] || {}, w = (st["평타"] || [])[0] || {};
     const order = { Q: 1, W: 2, E: 3, R: 4, R1: 4, R2: 4.5, D: 5, Z: 6 };
     const sk = list(h["기술"]).slice().sort((a, b) => (order[a["칸"]] || 9) - (order[b["칸"]] || 9));
@@ -1494,11 +1538,11 @@ window.KS={score:score,mark:mark,esc:esc};})();
         <p class="desc" style="margin:4px 0">${descHtml(a["설명"], ctx)}</p>
         ${cands.length ? selBlock(h, a.id, cands, res) : ""}
         ${(() => { const dt = detailTable(a, t, dmgTxt ? dmgTxt + (res && res.lines.length ? "<br>" + res.lines.filter(l => !/^<b>한 번/.test(l)).join("<br>") : "") : "");
-          return (fig || dt) ? `<details class="more2"${t ? " open" : ""}><summary>${fig ? "범위 그림" : ""}${fig && dt ? " · " : ""}${dt ? "상세 표" : ""}</summary>${`<div class="figrow">${fig ? `<div class="figbox">${fig}</div>` : ""}${splatBox(id, "s", a.id, wk, t)}</div>`}${dt.replace('<details class="det" open><summary>상세 표</summary>', "").replace(/<\/details>$/, "")}</details>` : ""; })()}</div></div>`;
+          return (fig || dt) ? `<details class="more2"${t ? " open" : ""}><summary>${fig ? "범위 그림" : ""}${fig && dt ? " · " : ""}${dt ? "상세 표" : ""}</summary>${`<div class="figrow">${fig ? `<div class="figbox">${fig}</div>` : ""}${splatBox(id, "s", a.id, wk, t)}</div>`}${dt.replace('<details class="det" open><summary>상세 표</summary>', "").replace(/<\/details>$/, "")}</details>` : ""; })()}${notesBlock(id, a.id)}</div></div>`;
     };
     const tl = groupBy(TS, t => t["레벨"] ?? "?");
     const tiers = Object.keys(tl).sort((a, b) => +a - +b).map(lv => `<div class="tier"><div class="lv">${esc(lv)}<small>레벨</small><button type="button" class="shr" data-shot="tier" data-id="${esc(lv)}" title="이 레벨 특성 전부를 그림·글로 공유">공유</button></div><div class="picks">${tl[lv].map(p =>
-      `<div class="pick" id="tal-${esc(p.id)}">${icon(p["아이콘"], "ico sm")}<div><div class="nm">${esc(p["이름"] || p.id)}<a class="anc" href="#h.${esc(id)}.tal-${esc(p.id)}" title="이 특성으로 바로 오는 주소" aria-label="이 특성 링크">#</a><button type="button" class="shr" data-shot="tal" data-id="${esc(p.id)}" title="이 특성을 그림·글로 공유">공유</button></div>${p["강화"] ? `<div class="to">${esc(p["강화"])} 강화</div>` : ""}<div class="desc">${descHtml(p["설명"], ctx)}</div></div>${talentMore(h, p)}</div>`).join("")}</div></div>`).join("");
+      `<div class="pick" id="tal-${esc(p.id)}">${icon(p["아이콘"], "ico sm")}<div><div class="nm">${esc(p["이름"] || p.id)}<a class="anc" href="#h.${esc(id)}.tal-${esc(p.id)}" title="이 특성으로 바로 오는 주소" aria-label="이 특성 링크">#</a><button type="button" class="shr" data-shot="tal" data-id="${esc(p.id)}" title="이 특성을 그림·글로 공유">공유</button></div>${p["강화"] ? `<div class="to">${esc(p["강화"])} 강화</div>` : ""}<div class="desc">${descHtml(p["설명"], ctx)}</div></div>${talentMore(h, p)}${notesBlock(id, p.id)}</div>`).join("")}</div></div>`).join("");
     const info = infobox(h["이름"], icon(h["초상화"], "pic"), [["역할군", esc(h["역할군"] || "")], ["세계관", esc(h["세계관"] || "")], ["자원", esc(st["자원"] || "")],
       ...(MB.length ? [["영웅", esc(MB.map(b => b["이름"]).join(" · ")) + ` <small class="note">따로 조종</small>`],
         ["생명력", esc(mbLine(b => fmt((b["생명력"] || 0) * kL(rLife)))) + ` <small class="note">${LV}레벨</small>`],
@@ -1525,7 +1569,7 @@ window.KS={score:score,mark:mark,esc:esc};})();
                 return [f["이름"], { "생명력": f["생명력"] * kL(rLife), "생명력 재생": f["생명력 재생"] * kL(rReg), "일반 공격 공격력": fw["공격력"] != null ? fw["공격력"] * kL(+rAtk) : undefined,
                   "초당 공격": fw["초당 공격"], "공격 사거리": f["공격 사거리"] }]; })))
             + (starC.length ? selBlock(h, "*", starC, starRes) : "") }] : []),
-        { title: "기술", badge: BD.sure, html: `<p class="note">이름·설명은 게임 파일 그대로라 <b>설명 속 숫자는 ${LV0}</b> 입니다. 금색 '피해' 칸은 리모컨 레벨을 적용한 ${LVN(LV)} 이고, 재사용·마나·사거리는 레벨과 상관없습니다. 특성 [적용] 결과의 피해는 ${BD.est}입니다.</p>` + sk.map(skill).join("") },
+        { title: "기술", badge: BD.sure, html: `<p class="note">이름·설명은 게임 파일 그대로라 <b>설명 속 숫자는 ${LV0}</b> 입니다. 금색 '피해' 칸은 리모컨 레벨을 적용한 ${LVN(LV)} 이고, 재사용·마나·사거리는 레벨과 상관없습니다. 특성 [적용] 결과의 피해는 ${BD.est}입니다.${notesCredit(id)}</p>` + sk.map(skill).join("") },
         { title: "특성", badge: BD.sure, html: `<p class="note">레벨마다 하나를 고른다(${cardLink("talent_system")}). 기술 카드의 '이 기술을 바꾸는 특성' 에서 [적용] 하면 그 효과가 기술에 겹쳐 보입니다. 특성 설명과 펼친 세부 수치의 숫자는 ${LV0} 입니다.</p>${tiers}` },
         ...(IN_SITE ? [{ title: "패치 이력", html: heroPatches(id) }] : []),
         { title: "관련 문서", html: `<p>${["hero_level_scaling", "talent_system", "xp_level", "respawn", "mount_hearth", "basic_attack", "quest_tokens", "cc_rules", "damage_mitigation"].map(cardLink).filter(Boolean).join(" · ")}</p>` },
