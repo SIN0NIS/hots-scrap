@@ -411,6 +411,12 @@
   .detail-src a { font-size:12px; border:1px solid var(--line); border-radius:99px; padding:4px 11px;
                   color:var(--fg); text-decoration:none; background:var(--card); }
   .detail-src a:hover { border-color:var(--gold-line); color:var(--gold); }
+  /* 그림 카드 저장(cards.js) — 누를 때만 받는다 */
+  .pn-cardbtn { font:inherit; font-size:12px; border:1px solid var(--gold-line, var(--line)); border-radius:99px; padding:4px 12px;
+                color:var(--fg); background:var(--card); cursor:pointer; }
+  .pn-cardbtn:hover { color:var(--gold); }
+  .pn-cardbtn[disabled] { opacity:.6; cursor:progress; }
+  @media (any-pointer:coarse) { .pn-cardbtn { min-height:44px; } }
 
   /* 칸이 좁아지면 점도 같이 줄여 겹치지 않게 한다(한 칸에 가로 5자리) */
   @media (max-width:900px) { .cal-c { --dot:7px; } }
@@ -838,6 +844,40 @@
     app.querySelectorAll('[data-focus]').forEach(a => a.onclick = e => { e.preventDefault(); go({ v: date, b: build, tab, hero: a.dataset.focus === focus ? '' : a.dataset.focus }); });
     // '.official' 만 찾으면 제목 옆 배지(<span class="badge official">)가 먼저 걸린다 — 본문 칸으로 좁힌다
     if (tab === 'official' && official) wireTips(app.querySelector('.panel div.official'), channelOf(row));
+    if (tab === 'official' && official) wireCardBtn(official, row, focus);
+  }
+
+  /* **그림 카드로 저장** (2026-11-24, 사용자 "패치노트를 이미지카드화 해서 저장하는 기능") — 지금 보는 한국어 노트를
+     영웅·갈래별 카드로 나눠 PNG 여러 장으로 저장한다. 영웅만 보기 중이면 그 영웅 카드만.
+     만드는 일은 cards.js(누를 때만 받는다). 번역판은 영문 원문과 바로 앞 테스트 서버 영문 노트를 더 받아 주황색을 칠한다. */
+  function wireCardBtn(doc, row, focus) {
+    const panel = app.querySelector('.panel');
+    if (!panel) return;
+    const label = focus ? `🖼️ ${heroName(focus)} 카드 이미지로 저장` : '🖼️ 카드 이미지로 저장';
+    const btn = document.createElement('button');
+    btn.type = 'button'; btn.className = 'pn-cardbtn'; btn.textContent = label;
+    const box = panel.querySelector('.detail-src');
+    if (box) box.appendChild(btn); else { const d = document.createElement('div'); d.className = 'detail-src'; d.appendChild(btn); panel.prepend(d); }
+    btn.onclick = async () => {
+      btn.disabled = true; btn.textContent = '카드 만드는 중…';
+      try {
+        if (!window.pnCards) await new Promise((ok, fail) => { const e = document.createElement('script'); e.src = 'cards.js?v=1'; e.onload = ok; e.onerror = () => fail(new Error('cards.js')); document.head.appendChild(e); });
+        let enDoc = null, ptrDoc = null;
+        if (row.translated && row.en && channelOf(row) === 'live') {
+          const pr = INDEX.filter(r => channelOf(r) === 'ptr' && r.en && r.date < row.date).sort((a, b) => b.date.localeCompare(a.date))[0];
+          if (pr) [enDoc, ptrDoc] = await Promise.all([getJSON(row.en), getJSON(pr.en)]).catch(() => [null, null]);
+        }
+        const heroNames = {};
+        Object.values(HEROES).forEach(h => { if (h && h.name) heroNames[h.name] = 1; });
+        const files = await window.pnCards.make({ doc, row, enDoc, ptrDoc, heroNames, focusName: focus ? heroName(focus) : '',
+          onProgress: (i, n) => { btn.textContent = `카드 만드는 중… ${i}/${n}`; } });
+        await window.pnCards.save(files);
+        btn.textContent = `✓ ${files.length}장 저장`;
+        setTimeout(() => { btn.textContent = label; }, 3000);
+      } catch (e) {
+        console.warn(e); btn.textContent = '저장 실패 — 다시 누르기';
+      } finally { btn.disabled = false; }
+    };
   }
 
   /* **노트 속 기술·특성 이름을 누르면 지금 설명이 뜬다.** "폭탄주 — 중첩당 피해량 보너스가 25에서 30으로" 만 보면
