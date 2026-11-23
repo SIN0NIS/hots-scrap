@@ -52,7 +52,8 @@ def parse_ul(ul):
             label = BeautifulSoup(label, "html.parser").get_text(" ", strip=True)
             out.append({"label": label, "kids": parse_ul(sub)})
         else:
-            out.append({"text": leaf_html(li), "plain": norm(li.get_text(" ", strip=True))})
+            out.append({"text": leaf_html(li), "plain": norm(li.get_text(" ", strip=True)),
+                        "new": "pn-new" in (li.get("class") or []) or li.find(class_="pn-new") is not None})
     return out
 
 
@@ -283,7 +284,7 @@ def main():
             continue
         kc = parse_section(s["html"])
         ec = parse_section(en_secs[s["key"]]["html"]) if s["key"] in en_secs else []
-        if ptr and s["key"] in ("balance", "bugs"):  # 주황색은 밸런스·버그 수정에만
+        if ptr and "pn-new" not in s["html"] and s["key"] in ("balance", "bugs"):  # 표시가 없을 때만 직접 견준다
             mark_new(kc, ec, ptr)
         coll = s["key"] == "collection"
         for c in kc:

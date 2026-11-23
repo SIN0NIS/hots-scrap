@@ -180,6 +180,62 @@ def tr_changes(changes, T, hero=None):
     return changes
 
 
+def _leaf_lis(html):
+    soup = BeautifulSoup(html or "", "html.parser")
+    return soup, [li for li in soup.find_all("li") if not li.find(["ul", "ol"])]
+
+
+def ptr_partner(doc, docs):
+    """라이브 노트의 짝 테스트 서버 노트 — 이 노트보다 앞선 가장 가까운 테스트 서버 노트(사이에 다른 라이브 노트가 없을 때)."""
+    if doc.get("kind") != "live":
+        return None
+    intro = " ".join(s.get("html") or "" for s in doc.get("sections", []) if s.get("key") == "intro")
+    if "orange" not in intro.lower():      # 블리자드가 주황색 표시를 쓴다고 밝힌 노트만
+        return None
+    best = None
+    for d in docs:
+        if d is doc or d.get("date", "") >= doc.get("date", ""):
+            continue
+        if best is None or d["date"] > best["date"]:
+            best = d
+    return best if best and best.get("kind") == "ptr" else None
+
+
+def mark_ptr_changes(doc, ptr):
+    """테스트 서버 노트에 없던 잎 문장(li)에 class="pn-new" 를 붙인다 — 공식 한글판의 주황색과 같은 표시.
+       번역은 li 의 속을 갈아끼우므로 표시는 그대로 남는다. 테스트 서버 노트에 있는 갈래(밸런스·버그 수정 등)만 견준다."""
+    seen = set()
+    keys = set()
+    for s in ptr.get("sections", []):
+        keys.add(s.get("key"))
+        for li in _leaf_lis(s.get("html"))[1]:
+            seen.add(norm(li.get_text(" ", strip=True)))
+    n = 0
+
+    def mark(html):
+        nonlocal n
+        soup, lis = _leaf_lis(html)
+        hit = False
+        for li in lis:
+            t = norm(li.get_text(" ", strip=True))
+            if t and t not in seen:
+                cls = li.get("class") or []
+                if "pn-new" not in cls:
+                    li["class"] = cls + ["pn-new"]
+                    hit = True
+        if hit:
+            n += 1
+        return str(soup) if hit else html
+
+    for sec in doc.get("sections", []):
+        if sec.get("key") == "intro" or sec.get("key") not in keys:
+            continue
+        sec["html"] = mark(sec.get("html"))
+        for h in sec.get("heroes", []) + sec.get("items", []):
+            h["html"] = mark(h.get("html"))
+    return n
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--at", default="2026-09-14", help="번역 표기에 남길 날짜")
@@ -194,8 +250,12 @@ def main():
             pass
         f.unlink()
     done = 0
+    ens = {f: json.loads(f.read_text(encoding="utf-8")) for f in sorted(EN.glob("*.json"))}
     for f in sorted(EN.glob("*.json")):
         doc = json.loads(f.read_text(encoding="utf-8"))
+        ptr = ptr_partner(ens[f], list(ens.values()))
+        if ptr:
+            mark_ptr_changes(doc, ptr)
         before, before_auto = T.miss, T.auto_hit
         doc["titleEn"] = doc["title"]
         doc["title"] = T.get(doc["title"]) or doc["title"]
