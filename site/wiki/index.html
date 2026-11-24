@@ -376,6 +376,9 @@ ul.spl li { display:flex; flex-wrap:wrap; align-items:center; gap:2px 6px; min-w
 .chg li { padding:3px 0; border-bottom:1px dashed var(--line); }
 .chg .was { color:var(--dim); text-decoration:line-through; }
 .chg .is { color:var(--gold); font-weight:700; }
+.vcw { margin:10px 0 2px; font-weight:700; }
+.vch[hidden] { display:none; }
+input.vcq { font:inherit; width:min(320px, 100%); box-sizing:border-box; padding:5px 8px; border:1px solid var(--line); border-radius:8px; background:transparent; color:inherit; }
 td.diff { background:var(--blue-soft); }
 .desc { white-space:pre-line; }
 .qnum { display:inline-block; min-width:1.3em; text-align:center; border:1px dashed var(--gold-line); border-radius:4px; color:var(--gold); font-weight:700; cursor:help; }
@@ -1595,6 +1598,7 @@ window.KS={score:score,mark:mark,esc:esc};})();
             + (starC.length ? selBlock(h, "*", starC, starRes) : "") }] : []),
         { title: "기술", badge: BD.sure, html: `<p class="note">이름·설명은 게임 파일 그대로라 <b>설명 속 숫자는 ${LV0}</b> 입니다. 금색 '피해' 칸은 리모컨 레벨을 적용한 ${LVN(LV)} 이고, 재사용·마나·사거리는 레벨과 상관없습니다. 특성 [적용] 결과의 피해는 ${BD.est}입니다.${notesCredit(id)}</p>` + sk.map(skill).join("") },
         { title: "특성", badge: BD.sure, html: `<p class="note">레벨마다 하나를 고른다(${cardLink("talent_system")}). 기술 카드의 '이 기술을 바꾸는 특성' 에서 [적용] 하면 그 효과가 기술에 겹쳐 보입니다. 특성 설명과 펼친 세부 수치의 숫자는 ${LV0} 입니다.</p>${tiers}` },
+        { title: "버전별 바뀐 곳", html: heroVers(id) },
         ...(IN_SITE ? [{ title: "패치 이력", html: heroPatches(id) }] : []),
         { title: "관련 문서", html: `<p>${["hero_level_scaling", "talent_system", "xp_level", "respawn", "mount_hearth", "basic_attack", "quest_tokens", "cc_rules", "damage_mitigation"].map(cardLink).filter(Boolean).join(" · ")}</p>` },
       ] });
@@ -2499,7 +2503,7 @@ window.KS={score:score,mark:mark,esc:esc};})();
   fetch("data/history/index.json").then(r => r.ok ? r.json() : null).then(j => {
     HIST = j; const v = j && j["판들"][0];
     if (v && v["버전"]) { VER = v["버전"]; showBV(); }
-    if (/^#(history|home)?$/.test(location.hash || "")) route(true);
+    if (/^#(history|home|h\..+)?$/.test(location.hash || "")) route(true);
   }).catch(() => {});
   const KIND = { 처음: "기록 시작", "히오스 패치": "히오스 패치", 틀: "틀이 바뀜", 내용: "내용 수정", 자료: "자료가 바뀜", 기타: "내용 수정" };
   const snapOf = id => SNAP[id] ? Promise.resolve(SNAP[id]) : fetch(`data/history/snap/${id}.json`).then(r => r.json()).then(j => (SNAP[id] = j));
@@ -2510,6 +2514,52 @@ window.KS={score:score,mark:mark,esc:esc};})();
       `<li>${esc(c["어디"])} · <b>${esc(c["무엇"])}</b>${"전" in c || "후" in c ? (c["무엇"] === "설명"
         ? `<div class="note">전: <span class="was">${vshow(c["전"])}</span></div><div>후: ${vshow(c["후"])}</div>`
         : ` <span class="was">${vshow(c["전"])}</span> → <span class="is">${vshow(c["후"])}</span>`) : ""}</li>`).join("")}</ul>`).join("");
+  }
+  /* 버전별 바뀐 항목(모든 칸) — wiki_changes.py 가 버전마다 data/history/changes/<id>.json 을 남긴다. 펼칠 때만 받는다.
+     줄 = {갈래, 어디(기술·특성·능력치 …), 무엇(칸 — '피해 1 · 피해량'), 전, 후} · 새로 생긴/빠진 것은 전·후 없이 무엇만 */
+  const VCH = {};
+  const vcOf = id => VCH[id] || (VCH[id] = fetch(`data/history/changes/${id}.json`).then(r => r.ok ? r.json() : null).catch(() => null));   // 받는 중인 것도 기억(두 번 안 받음)
+  const vcLong = c => /설명$/.test(c["무엇"] || "") || [c["전"], c["후"]].some(x => typeof x === "string" && x.length > 40);
+  const vcRow = c => `<li><b>${esc(c["무엇"])}</b>${"전" in c || "후" in c ? (vcLong(c)
+      ? `<div class="note">전: <span class="was">${vshow(c["전"])}</span></div><div>후: <span class="is">${vshow(c["후"])}</span></div>`
+      : ` <span class="was">${vshow(c["전"])}</span> → <span class="is">${vshow(c["후"])}</span>`) : ""}</li>`;
+  const vcRows = rows => { const g = groupBy(rows, r => r["어디"]); return Object.keys(g).map(w => `<p class="vcw">${esc(w)} <span class="note">${g[w].length}곳</span></p><ul class="chg">${g[w].map(vcRow).join("")}</ul>`).join(""); };
+  function vcHtml(d, hid) {
+    if (!d) return `<p class="note">바뀐 항목을 불러오지 못했습니다.</p>`;
+    if (hid) { const h = (d["영웅"] || {})[hid]; return h ? vcRows(h["줄"]) : `<p class="note">이 영웅은 이 버전에서 바뀐 곳이 없습니다.</p>`; }
+    const H = d["영웅"] || {}, hs = Object.keys(H).sort((a, b) => (H[a]["이름"] || "").localeCompare(H[b]["이름"] || "", "ko"));
+    const from = d["판 전"] || {}, to = d["판 후"] || {};
+    return `<p class="note">바로 앞 버전 v${esc(d["앞 버전"] || "?")}(히오스 ${esc(from["판"] || "?")})과 이 버전(히오스 ${esc(to["판"] || "?")})의 위키 자료를 <b>모든 칸</b> 맞대어 본 것입니다. 설명문은 게임 글 그대로, 수치는 0레벨 값입니다.</p>`
+      + (hs.length > 6 ? `<p><input type="search" class="vcq" placeholder="영웅 이름으로 거르기" aria-label="영웅 이름으로 거르기"></p>` : "")
+      + hs.map(k => `<div class="vch" data-n="${esc(H[k]["이름"] || "")}"><h3 class="sub">${hById[k] ? `<a href="#h.${esc(k)}">${esc(H[k]["이름"])}</a>` : esc(H[k]["이름"])} <span class="note">${H[k]["줄"].length}곳</span></h3>${vcRows(H[k]["줄"])}</div>`).join("")
+      + (list(d["전장"]).length ? `<h3 class="sub">전장 <span class="note">${d["전장"].length}곳</span></h3>${vcRows(d["전장"])}` : "")
+      + (list(d["시스템"]).length ? `<h3 class="sub">시스템 <span class="note">${d["시스템"].length}곳</span></h3>${vcRows(d["시스템"])}` : "");
+  }
+  function vcFill(box) {
+    if (box.dataset.done) return; box.dataset.done = "1";
+    vcOf(box.dataset.vc).then(d => { box.innerHTML = vcHtml(d, box.dataset.vh || ""); formatNumbers(box); }).catch(() => { box.innerHTML = vcHtml(null); });
+  }
+  document.addEventListener("toggle", e => { const d = e.target; if (d.open && d.querySelectorAll) d.querySelectorAll("[data-vc]").forEach(b => { if (b.closest("details") === d) vcFill(b); }); }, true);
+  document.addEventListener("input", e => {
+    const q = e.target.classList && e.target.classList.contains("vcq") ? e.target.value.trim() : null; if (q == null) return;
+    const box = e.target.closest("[data-vc]"); if (box) box.querySelectorAll(".vch").forEach(x => { x.hidden = !!q && !x.dataset.n.includes(q); });
+  });
+  /* 영웅 문서 — 위키 버전마다 이 영웅에서 바뀐 곳. 히오스 패치 버전을 앞에, 같은 판에서 다시 분석해 고친 버전은 접어 둔다 */
+  function heroVers(id) {
+    if (!HIST) return `<p class="load">위키 버전 기록을 불러오는 중…</p>`;
+    const vs = HIST["판들"] || [], pat = [], fix = [];
+    vs.forEach((v, i) => {
+      const vc = v["바뀐 항목"], n = vc && vc["영웅"] ? vc["영웅"][id] || 0 : 0, old = vc ? [] : list(v["바뀐 것"]).filter(c => c["영웅"] === id);
+      if (!n && !old.length) return;
+      const k = v["갈래"] || "내용", prevV = vs[i + 1];
+      const head = `v${esc(v["버전"] || "?")} · ${esc((v["시각"] || "").slice(0, 10))} · ${k === "히오스 패치" ? `히오스 패치 ${esc(prevV ? prevV["판"] || "?" : "?")} → ${esc(v["판"] || "?")}` : "같은 판 — 자료를 다시 분석해 고침"} <span class="note">${n || old.length}곳</span>`;
+      const html = fold(head, n ? `<div data-vc="${esc(v.id)}" data-vh="${esc(id)}"><p class="load">불러오는 중…</p></div>` : vcRows(old), false);
+      (k === "히오스 패치" ? pat : fix).push(html);
+    });
+    if (!pat.length && !fix.length) return `<p class="note">위키 기록을 시작한 v${esc((vs[vs.length - 1] || {})["버전"] || "1.0.0")}(${esc(((vs[vs.length - 1] || {})["시각"] || "").slice(0, 10))}) 뒤로 이 영웅 값이 바뀐 버전이 없습니다.</p>`;
+    return `<p class="note">위키 버전이 바뀔 때마다 바로 앞 버전 자료와 맞대어 이 영웅에서 바뀐 곳입니다 — 최근 것부터. 히오스 패치 버전은 <b>모든 칸</b>(피해·범위·특성이 바꾸는 값 …)을 맞댑니다. <a href="#history">위키 변경 기록 →</a></p>`
+      + (pat.length ? pat.join("") : `<p class="note">기록을 시작한 뒤 히오스 패치로 이 영웅이 바뀐 적은 아직 없습니다.</p>`)
+      + (fix.length ? `<details class="more2"><summary>같은 판에서 자료를 다시 분석해 고친 버전 ${fix.length}개</summary><div>${fix.join("")}</div></details>` : "");
   }
   function pHistory() {
     const crumb = crumbs(`<a href="#about">안내</a>`, "위키 변경 기록");
@@ -2523,7 +2573,10 @@ window.KS={score:score,mark:mark,esc:esc};})();
         if (k === "히오스 패치") body += `<p><b>히오스 판이 바뀜: ${esc(prevV["판"] || "?")} → ${esc(v["판"] || "?")}</b>${prevV["전장 판"] !== v["전장 판"] ? ` · 전장 ${esc(prevV["전장 판"] || "?")} → ${esc(v["전장 판"] || "?")}` : ""}</p>`;
         const ch = v["바뀐 것"] || [], f = v["바뀐 틀"];
         if (v["바뀐 자료"]) body += `<p class="note">바뀐 자료: ${v["바뀐 자료"].map(esc).join(" · ")}${k !== "히오스 패치" ? ` (같은 히오스 판 — 다시 분석해 고침)` : ""}</p>`;
-        if (ch.length) body += fold(`바로 앞 버전(v${esc(prevV["버전"])})과 달라진 영웅 값 <span class="note">${ch.length}곳 · 영웅 ${new Set(ch.map(c => c["영웅"])).size}명</span>`, chgList(ch), i === 0 && ch.length < 80);
+        const vc = v["바뀐 항목"], vg = (vc && vc["갈래"]) || {};
+        if (vc && vc["수"]) body += fold(`바로 앞 버전(v${esc(prevV["버전"])})과 바뀐 항목 — 모든 칸 <span class="note">${vc["수"]}곳 · 영웅 ${Object.keys(vc["영웅"] || {}).length}명${["능력치", "기술", "특성", "전장", "시스템"].filter(g => vg[g]).map(g => ` · ${g} ${vg[g]}`).join("")}</span>`,
+          `<div data-vc="${esc(v.id)}"><p class="load">불러오는 중…</p></div>`, i === 0);
+        else if (ch.length) body += fold(`바로 앞 버전(v${esc(prevV["버전"])})과 달라진 영웅 값 <span class="note">${ch.length}곳 · 영웅 ${new Set(ch.map(c => c["영웅"])).size}명</span>`, chgList(ch), i === 0 && ch.length < 80);
         if (f) body += fold(`바뀐 틀 <span class="note">더함 ${list(f["더함"]).length} · 뺌 ${list(f["뺌"]).length}</span>`,
           `<ul class="chg">${list(f["더함"]).map(x => `<li><span class="is">+</span> ${esc(x)}</li>`).join("")}${list(f["뺌"]).map(x => `<li><span class="was">− ${esc(x)}</span></li>`).join("")}</ul>`, false);
         if (!body) body = `<p class="note">자료·틀은 그대로이고 글귀·모양·화면 코드가 바뀌었습니다.</p>`;
@@ -2545,7 +2598,8 @@ window.KS={score:score,mark:mark,esc:esc};})();
             `<tr><td class="n"><b>${esc((v["버전"] || "?").split(".")[0])}</b></td><td>${esc(v["판"] || "")}</td><td>${esc(v["전장 판"] || v["판"] || "")}</td><td>${esc(v["시각"])}</td></tr>`)) +
           `<p class="note">앞 숫자 하나가 히오스 판 하나입니다. 같은 판에서 자료를 다시 분석해 고친 것은 뒤 숫자(내용)로 올립니다.</p>` },
         { title: "버전 목록", html: vs.map(card).join("") },
-        { title: "무엇을 남기나", html: `<ul class="plain"><li>이 버전의 값 보기 — 영웅 기본 능력치(생명력·재생·마나·이동 속도·시야·공격 사거리·일반 공격)</li>
+        { title: "무엇을 남기나", html: `<ul class="plain"><li><b>바뀐 항목 — 모든 칸</b>: 새 버전마다 바로 앞 버전의 위키 자료와 영웅 문서의 모든 칸(능력치·기술의 피해·범위·투사체·위키식 칸·특성이 바꾸는 값·레벨 성장)과 전장·시스템 자료를 맞대어 남깁니다(v2.0.0 부터). 영웅 문서 '버전별 바뀐 곳' 에도 그 영웅 것이 나옵니다.</li>
+          <li>이 버전의 값 보기 — 영웅 기본 능력치(생명력·재생·마나·이동 속도·시야·공격 사거리·일반 공격)</li>
           <li>기술마다 재사용 대기시간·마나·사거리·설명, 특성마다 이름·레벨·설명</li>
           <li>전장·시스템 문서와 특성 피해 계산(${BD.est})은 판 기록에 넣지 않습니다.</li>
           <li>영웅 값 사본은 영웅 값이 바뀐 버전에만 새로 남기고, 아니면 바로 앞 사본을 그대로 씁니다.</li>
@@ -2704,6 +2758,7 @@ window.KS={score:score,mark:mark,esc:esc};})();
     const html = k === "patches" ? pPatches(id) : k === "p" ? pPatch(id) : k === "about" ? pAbout() : k === "history" ? pHistory() : k === "stats" ? pStats() : k === "terms" ? pTerms() : k === "heroes" ? pHeroes(id) : k === "maps" ? pMaps() : k === "systems" ? pSystems()
       : k === "h" ? pHero(id) : k === "m" ? pMap(id) : k === "s" ? pSys(id) : pHome();
     $("#doc").innerHTML = html;
+    $("#doc").querySelectorAll("details[open] [data-vc]").forEach(vcFill);
     renderRemote(k === "h" && !!hById[id]);
     $("#doc").querySelectorAll("[data-go]").forEach(b => b.addEventListener("click", () => { const t = document.getElementById(b.dataset.go); if (t) t.scrollIntoView({ block: "start" }); }));
     const pk = k === "heroes" ? "h" : k === "maps" ? "m" : k === "systems" ? "s" : (k === "h" || k === "m" || k === "s") ? k + "." + id : (k === "stats" || k === "terms" || k === "history" || k === "patches") ? k : k === "p" ? "patches" : "home";

@@ -62,6 +62,11 @@
   - 전장 배치도의 바탕 그림은 사이트에서는 `../replay/maps_lite/*.svg` 를 쓴다(위키 자체 SVG 는 안 옮긴다).
   - 밝기는 `scrap.theme` 을 따른다(`data-site` 면 자기 밝기 단추를 숨긴다). 자기 localStorage 키는 `wiki.*`.
   - 위키 자체의 버전(히오스 패치.틀.내용)은 '위키 변경 기록'(`#history`, 대문 맨 아래)에 있다.
+  - **버전별 바뀐 항목**(2026-11-24, 사용자 "패치 이후 바뀐 항목을 버전별로 꼭 달아야"): 새 위키 버전마다 `../hots_extract/wiki_changes.py` 가
+    바로 앞 버전 자료(`report/wiki_history/last/`)와 영웅 문서의 **모든 칸**(능력치·기술 피해·범위·투사체·위키식 칸·특성이 바꾸는 값·레벨 성장)과
+    전장·시스템 자료를 맞대어 `data/history/changes/<버전 id>.json` 을 만든다(`update_wiki.py` → `wiki_page.py` → `wiki_history.record` 가 부름 — 손으로 할 일 없음).
+    화면: 버전 카드 '바로 앞 버전과 바뀐 항목 — 모든 칸'(펼칠 때 받음, 영웅 이름으로 거르기) · 영웅 문서 '버전별 바뀐 곳'(히오스 패치 버전을 앞에, 같은 판 다시 분석은 접어 둠).
+    ⚠ 올리기 전 중간 버전을 index.json 에서 손으로 뺄 땐 `python ../hots_extract/wiki_changes.py --undo-top` 으로 기준을 되돌리고 그 버전의 `changes/<id>.json` 도 지운 뒤 wiki_page.py 를 다시.
   - **인게임 범위 표시**(`wiki/splat.js` + `wiki/splat/`, 2026-11-02) — 기술 칸의 '범위 그림' 안, 판정 그림 옆에
     게임이 바닥에 까는 노란 범위 UI 를 게임 텍스처 그대로 그린다. 자료는 저장소 밖
     `../02_뷰어/hots_skill_range` 에서 `tools/build_all.py` → `tools/export_site.py` 로 만든다(텍스처 2.3MB, 영웅 문서를 열고
@@ -300,6 +305,13 @@
 ## 자동 갱신
 
 **노트북이 하는 일(2026-11-12~)** — Claude 예약 작업 `hotscrap-data-watch`(매일 08시대). 서버는 게임 설치본이 없어 **XML 위키를 못 만든다** — 그래서 노트북이 `update_wiki.py --check` 로 설치본 판을 보고, 새 판이면 `update_wiki.py` 로 영웅 자료부터 위키까지 이 저장소에 다시 만들고, 검사(영웅 수 줄었나·위키 파일 비었나·지운 줄 과다)를 통과하면 **자동으로 커밋·push** 한다(사용자 결정 2026-11-12). 달라진 점은 `docs/wiki-auto-log.md` 에 적는다. 검사에 걸리면 올리지 않고 알린다. 노트북이 꺼져 있던 날은 다음에 켜졌을 때 돈다.
+
+**설치본을 못 올릴 때 — 블리자드 서버에서 XML 받기**(2026-11-24, 사용자 "내가 못 눌러, 온라인에서 못 해?" → "올려"): 배틀넷이 로그인 화면이면 게임이 업데이트되지 않고,
+이 노트북의 HeroesDataParser 는 윈도 앱 제어 정책에 막혀 있다(보안 설정 — 건드리지 않는다). 그때는 `python ../HotS/hots_xml/tools/xml_online.py` →
+`.github/workflows/extract-xml-online.yml`(손으로 깨우는 작업)이 깃허브 서버에서 블리자드 서버로부터 mods 의 xml·txt·galaxy 등만 꺼내 하루짜리 묶음으로 두고,
+도구가 받아 `hots_xml/<판>/` 에 푼 뒤 **바로 깃허브 묶음을 지운다**(게임 원본을 공개 저장소에 남기지 않음). 그다음 `HOTS_INSTALLED_VERSION=<판>` 을 주고 `update_wiki.py`
+(`herodex_update.installed_version` 이 설치본 대신 그 판). 새 판에 처음 나온 그림은 이 노트북에서 못 꺼낸다 — 아이콘 저장소가 채운다.
+사용자가 시킬 때만 쓴다(예약 작업이 스스로 쓰지는 않는다 — 예약 작업은 '배틀넷 업데이트 필요' 를 알리기만).
 
 **서버(GitHub Actions)가 하는 일** — `.github/workflows/update-patchnotes.yml`, **6시간마다** — cron 은 UTC 00:10·06:10·12:10·18:10 = 한국 09:10·15:10·21:10·03:10
 - 확인은 요청 **3개**로 끝난다(한국어 뉴스 1 + 영어 뉴스 1 + GitHub 빌드 목록 1). 새 것이 없으면 그대로 끝난다.
