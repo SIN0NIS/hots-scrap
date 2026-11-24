@@ -69,7 +69,12 @@ def run(args, cwd, quiet=False):
 
 # ── ① 판 확인 ────────────────────────────────────────────────────────────
 def installed_version(side):
-    """설치본이 지금 몇 판인가 — `.build.info` 의 Version 칸."""
+    """설치본이 지금 몇 판인가 — `.build.info` 의 Version 칸.
+    HOTS_INSTALLED_VERSION 이 있으면 그 판(본 서버만) — 설치본을 못 올릴 때 블리자드 서버에서 꺼낸 XML
+    (`hots_xml/tools/xml_online.py`, 2026-11-24)로 만들려고. 그 판의 hots_xml/<판> 이 있어야 한다."""
+    ov = os.environ.get("HOTS_INSTALLED_VERSION")
+    if ov and side == "live":
+        return ov.strip()
     p = INSTALLS[side] / ".build.info"
     if not p.exists():
         return None

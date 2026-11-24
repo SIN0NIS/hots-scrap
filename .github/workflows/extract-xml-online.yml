@@ -1,0 +1,67 @@
+# 게임 원본 XML 을 블리자드 서버에서 바로 꺼낸다 — PC 설치본을 새 판으로 못 올릴 때(배틀넷 로그인이 없을 때)
+#
+# 사용자(2026-11-24): "내가 못 눌러, 온라인에서 못 해?" — 위키는 게임 원본 XML 로 만드는데, PC 설치본이 옛 판이면 못 만든다.
+# 아이콘 채우기(SIN0NIS/images pick-icons)와 같은 도구(HeroesDataParser casc-extract online)로, 위키에 쓰는 묶음만 꺼낸다:
+#   mods/**/*.xml(카탈로그) · *.txt(글, 모든 언어) · *.galaxy(스크립트) · *.stormlayout · *.stormcomponents · *.version
+# 결과는 잠깐 쓰는 내려받기 파일(artifact, 하루)로만 둔다 — 저장소에는 넣지 않는다(게임 원본이라).
+# PC 의 `python hots_xml/tools/xml_online.py` 가 이 작업을 깨우고, 끝나면 받아서 hots_xml/<판>/ 에 풀고, 받자마자 여기 것을 지운다.
+#
+# 손으로: Actions 탭 → Extract XML Online → Run workflow (ptr 를 켜면 테스트 서버)
+name: Extract XML Online
+
+on:
+  workflow_dispatch:
+    inputs:
+      ptr:
+        description: "테스트 서버(PTR) 판으로"
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: extract-xml-online
+  cancel-in-progress: false
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "10.0.x"
+
+      - name: HeroesDataParser 설치
+        run: dotnet tool install --global HeroesDataParser --version 5.0.2
+
+      - name: 블리자드 서버에서 꺼내기
+        run: |
+          set -o pipefail
+          mkdir -p out
+          dotnet-heroes-data-parser casc-extract online ${{ inputs.ptr && '--download-ptr' || '' }} -t 4 -o out \
+            -i "mods/**/*.xml" -i "mods/**/*.txt" -i "mods/**/*.galaxy" \
+            -i "mods/**/*.stormlayout" -i "mods/**/*.stormcomponents" -i "mods/**/*.version" 2>&1 | tee extract.log | tail -40
+          test -d out/mods
+
+      - name: 판 번호 적기
+        run: |
+          # 꺼낸 판 = 블리자드 판 목록(versions)의 그 지역 판. 도구 출력에 판이 찍히면 그것을 먼저 쓴다
+          VER=$(grep -oE '[0-9]+\.[0-9]+\.[0-9]+\.[0-9]{5,}' extract.log | head -1 || true)
+          if [ -z "$VER" ]; then
+            PROD=${{ inputs.ptr && 'herot' || 'hero' }}
+            VER=$(curl -fsS "http://us.patch.battle.net:1119/$PROD/versions" | awk -F'|' '$1=="us"{print $6}' | head -1)
+          fi
+          echo "판: $VER"
+          printf '{"version":"%s","isPtr":%s,"source":"online","at":"%s"}\n' "$VER" "${{ inputs.ptr && 'true' || 'false' }}" "$(date -u +%FT%TZ)" > out/_online.json
+          cp extract.log out/_extract.log
+          tar -C out -czf xml.tgz .
+          ls -la xml.tgz
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: hots-xml
+          path: xml.tgz
+          retention-days: 1
+          compression-level: 0
